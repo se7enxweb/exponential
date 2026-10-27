@@ -78,7 +78,7 @@ Die beiden Wege sind ein System:
 ## Ein drittes Werkzeug: Einstellungen
 
 Manches ist keins von beidem: Das Kopfmenü dieses Themes ist eine Liste von Knoten-IDs in der `menu.ini`, gelesen vom
-Template der Kopfzeile. Einstellungen werden unter **Setup > Ini Einstellungen** (die Gruppe *System* des Setup-Menüs;
+Template der Kopfzeile. Einstellungen werden unter **Setup > INI-Einstellungen** (die Gruppe *System* des Setup-Menüs;
 so heißt der Eintrag in der deutschen Oberfläche) oder mit `./console exp:ini` geändert, ohne Code
 ([Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md)).
 

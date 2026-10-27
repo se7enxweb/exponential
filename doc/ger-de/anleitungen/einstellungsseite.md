@@ -1,7 +1,7 @@
 # Die Einstellungsseite: sehen, woher jeder INI-Wert kommt, und einen Wert sicher ändern
 
 Diese Anleitung richtet sich an Administratoren, die eine INI-Einstellung in der Administrationsoberfläche statt in
-einem Texteditor nachschlagen oder ändern. Sie folgt der Seite **Setup > Ini Einstellungen** (`settings/view`) und dem
+einem Texteditor nachschlagen oder ändern. Sie folgt der Seite **Setup > INI-Einstellungen** (`settings/view`) und dem
 Formular, zu dem sie führt (`settings/edit`). Am Ende wissen Sie, welche Datei über einen Wert entscheidet, wie Sie
 jede Einstellung in jeder Datei finden, wie Sie zwei Siteaccesses vergleichen und was auf beiden Webservern geschieht,
 wenn Sie speichern.
@@ -24,7 +24,7 @@ Dieselbe Arbeit in einer Shell erledigt `./console exp:ini` (`exp:ini where`, `e
 
 ## 1. Eine Datei öffnen
 
-1. Melden Sie sich an der Administrationsoberfläche an und öffnen Sie **Setup > Ini Einstellungen**.
+1. Melden Sie sich an der Administrationsoberfläche an und öffnen Sie **Setup > INI-Einstellungen**.
 2. Wählen Sie eine **INI-Datei** (die am häufigsten verwendeten stehen oben) und einen **Siteaccess** und klicken Sie
    dann auf **Einstellungen anzeigen**.
 

@@ -48,7 +48,7 @@ ohne irgendein anderes Setup-Recht. **Setup > Cache-Verwaltung** (`/setup/cache`
 ## Prüfen, ob es funktioniert hat
 
 - Als die Kollegin oder der Kollege angemeldet zeigt das Setup-Menü **Cache-Verwaltung**, und **Leeren** funktioniert.
-- Andere Setup-Seiten (Wartung, Cronjobs, Ini Einstellungen) werden nicht angeboten.
+- Andere Setup-Seiten (Wartung, Cronjobs, INI-Einstellungen) werden nicht angeboten.
 
 ## Verwandte Seiten
 - [Veralteter Cache](../../betrieb/vorfaelle/veralteter-cache.md)

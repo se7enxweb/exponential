@@ -4,7 +4,7 @@ audience: trainer, developer
 category: training
 order: 81
 summary: Die Teilnehmenden lesen das Format von .ini- und .ini.append.php-Dateien, verfolgen die Reihenfolge, in der eZINI die Geltungsbereiche liest, erklären Arrays, Rücksetzzeilen und Hashes und führen jeden Wert mit exp:ini where und der Einstellungsseite auf seine Datei zurück. 45 Minuten.
-keywords: entwickler, INI, eZINI, ini.append.php, settings/override, settings/siteaccess, geltungsbereiche, ladereihenfolge, arrays, rücksetzzeile, hash, exp:ini where, einstellungsseite, Ini Einstellungen, ablageorte, developers course, scopes, load order, reset line, settings page, placement
+keywords: entwickler, INI, eZINI, ini.append.php, settings/override, settings/siteaccess, geltungsbereiche, ladereihenfolge, arrays, rücksetzzeile, hash, exp:ini where, einstellungsseite, INI-Einstellungen, ablageorte, developers course, scopes, load order, reset line, settings page, placement
 type: help
 ---
 # Lektion 8.1: Wie Einstellungen gelesen werden
@@ -55,7 +55,7 @@ Quellen: [Spezifikation: INI-Override-Verzeichnisse und Ablageorte](../../../../
    `List[key]=value`.
 4. **Die Werkzeuge** (4 Minuten). `exp:ini where <file>/<Block>/<Variable> [<sa>]` listet jede Datei in
    Ladereihenfolge und den wirksamen Wert auf und führt Dateien inaktiver Erweiterungen getrennt auf. In der
-   Administration zeigt **Setup** > **Ini Einstellungen** jeden Wert mit der Datei, aus der er stammt.
+   Administration zeigt **Setup** > **INI-Einstellungen** jeden Wert mit der Datei, aus der er stammt.
 5. **Caches** (2 Minuten). Einstellungen werden gecacht; `config.php` schaltet die Prüfung der Dateizeit ab, sodass
    eine Änderung von Hand erst nach `php bin/php/ezcache.php --clear-tag=ini` sichtbar wird. `exp:ini` leert den
    Cache nach jedem Schreiben.
@@ -92,7 +92,7 @@ Auf der Entwicklungsinstallation.
 5. Listen Sie die wirksamen Variablen eines Blocks auf: `php bin/php/console exp:ini list site.ini/DebugSettings`.
 6. Listen Sie die Blöcke des globalen Overrides auf: `php bin/php/console exp:ini list site.ini global`. Achten Sie
    auf maskierte Werte, falls vorhanden.
-7. Öffnen Sie in der Administration **Setup** > **Ini Einstellungen**, wählen Sie `site.ini` und suchen Sie
+7. Öffnen Sie in der Administration **Setup** > **INI-Einstellungen**, wählen Sie `site.ini` und suchen Sie
    `SiteName` mit der Datei, aus der der Wert stammt.
 8. Notieren Sie für eine Einstellung Ihrer Wahl die Dateien in Ladereihenfolge und den wirksamen Wert.
 

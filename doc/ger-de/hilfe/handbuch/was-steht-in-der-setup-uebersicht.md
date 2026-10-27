@@ -33,7 +33,7 @@ ihrer eigenen Seite, zum Beispiel `class/*` für **Klassen**, `section/*` für *
    - **Workflows**: Trigger, Workflows, Workflow-Prozesse.
    - **Benutzer und Nachrichten**: Audit, E-Mail-Einstellungen, Benachrichtigungen, Sitzungen, Benutzerkonten prüfen,
      oAuth-Verwaltung.
-   - **System**: Cache-Verwaltung, Wartung, Cronjobs, Logdateien, Extensions, Ini Einstellungen, Site-Daten,
+   - **System**: Cache-Verwaltung, Wartung, Cronjobs, Logdateien, Extensions, INI-Einstellungen, Site-Daten,
      Systeminformationen, Hilfe-Center, Upgrade-Prüfung, Job queue.
 3. Klicken Sie auf eine Kachel, um ihre Seite zu öffnen. Eine kleine Zahl auf einer Kachel (zum Beispiel „92 classes“)
    ist eine schnelle Zählung.

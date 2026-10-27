@@ -78,7 +78,7 @@ Templates `TemplateCompile=disabled`, damit jede Änderung frisch gelesen wird. 
 damit die ersten Besucher nach einem Deployment nicht für das Kompilieren bezahlen.
 
 **Kann die Administration Caches leeren?** Ja: **Setup** > **Cache-Verwaltung** oder der Kasten **Cache leeren** mit
-**Gesamter Cache**, **Inhalt**, **Template**, **Template und Inhalt**, **Ini Einstellungen** und **Statisch**.
+**Gesamter Cache**, **Inhalt**, **Template**, **Template und Inhalt**, **INI-Einstellungen** und **Statisch**.
 
 ### Stolperfallen
 

@@ -106,7 +106,7 @@ ihre Adresse.
    Sondierungsversuch und lesen Sie seine Kategorie und Regel.
 5. Lesen Sie die Checkliste am Ende von [Sicherheitshärtung](../../../sicherheitshaertung.md#checkliste). Markieren Sie
    jede Zeile für Ihre Schulungsinstallation als *erledigt*, *offen* oder *nicht zutreffend*.
-6. Prüfen Sie zwei der Zeilen selbst: Ist die Debug-Ausgabe aus (**Setup > Ini Einstellungen** oder
+6. Prüfen Sie zwei der Zeilen selbst: Ist die Debug-Ausgabe aus (**Setup > INI-Einstellungen** oder
    `php bin/php/console exp:ini get site.ini/DebugSettings/DebugOutput`), und existiert
    `var/log/initial-admin-password` noch?
 7. Sehen Sie sich an, was die Request Rules für eine System-URL entscheiden würden, ohne etwas zu ändern:

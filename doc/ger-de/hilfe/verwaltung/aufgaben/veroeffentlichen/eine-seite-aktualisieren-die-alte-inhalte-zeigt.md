@@ -40,7 +40,7 @@ Cache, der Antwort-Cache von Velocity, ein CDN oder Ihr eigener Browser können 
 5. Immer noch alt: Die Kopie liegt in einem Cache vor dem CMS (statischer Cache, der Antwort-Cache von Velocity, ein
    CDN). Fragen Sie das Web-Team; es kann diese leeren (zum Beispiel `./console exp:velocity cache clear` für Velocity).
 
-Die anderen Auswahlmöglichkeiten des Kastens (**Template**, **Ini Einstellungen**, **Statisch**, **Gesamter Cache**)
+Die anderen Auswahlmöglichkeiten des Kastens (**Template**, **INI-Einstellungen**, **Statisch**, **Gesamter Cache**)
 sind für Administratoren; sie betreffen die ganze Site.
 
 ## Das Ergebnis prüfen

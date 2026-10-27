@@ -689,7 +689,7 @@ einer langen Auswahl kann dasselbe Layout mit `MegaMenuLayout=wide` in seinem `[
   sind neunzehn, hier nach Gruppe: Klassen, Sektionen,
   Gesammelte Informationen (Inhaltsmodell) | RSS, Seiten vorladen, Pakete (Website und URLs) | Audit,
   oAuth-Verwaltung (Benutzer und Nachrichten) | Cache-Verwaltung, Cronjobs, Logdateien,
-  Extensions, Systeminformationen, Ini Einstellungen (System) | `expai_summary`, `expai_models`, `expai_budgets` (KI) |
+  Extensions, Systeminformationen, INI-Einstellungen (System) | `expai_summary`, `expai_models`, `expai_budgets` (KI) |
   `ezupdate`, `git_manager` (Updates). Ohne `expai`, `ezupdate` und `git_manager` fehlen die Gruppen KI und
   Updates, hier wie in der Übersicht, und es bleiben vierzehn Links. Um andere zu wählen, geben Sie die Liste neu an:
 

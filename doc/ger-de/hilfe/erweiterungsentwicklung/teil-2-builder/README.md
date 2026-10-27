@@ -29,7 +29,7 @@ unter Versionskontrolle, statt über `settings/override/` und die Verzeichnisse 
 | [Siteaccess-Einstellungen](siteaccess-einstellungen.md) | Was ein Siteaccess ist, wie eine Anfrage einen auswählt, was in seine Einstellungen gehört |
 | [Einstellungen in einer Erweiterung](erweiterungseinstellungen-fuer-builder.md) | Die Konfiguration einer Website in eine Erweiterung verlagern |
 | [Einstellungen mit exp:ini ändern](der-befehl-exp-ini.md) | Jedes Verb des Einstellungsbefehls, mit Probeläufen und Sicherungen |
-| [Einstellungen in der Administration](einstellungen-in-der-administration.md) | Setup > Ini Einstellungen: die Override-Kette, Vergleich, sicheres Speichern |
+| [Einstellungen in der Administration](einstellungen-in-der-administration.md) | Setup > INI-Einstellungen: die Override-Kette, Vergleich, sicheres Speichern |
 | [.ini.append.php-Dateien und sichere Einstellungen](append-php-dateien-und-sicherheit.md) | Warum der PHP-Rahmen, Geheimnisse, Berechtigungen, was nie committet wird |
 
 ### Templates

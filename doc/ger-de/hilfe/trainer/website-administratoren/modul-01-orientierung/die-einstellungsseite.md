@@ -10,7 +10,7 @@ type: help
 # Lektion 1.4: Die Einstellungsseite
 
 Exponential wird mit INI-Dateien konfiguriert, die in Schichten gelesen werden: die Standardwerte, der Siteaccess, die aktiven Erweiterungen (die den
-Siteaccess übersteuern) und der globale Override, der alles übersteuert. Die Einstellungsseite (**Setup > Ini Einstellungen**) zeigt für jede
+Siteaccess übersteuern) und der globale Override, der alles übersteuert. Die Einstellungsseite (**Setup > INI-Einstellungen**) zeigt für jede
 Einstellung den wirksamen Wert, die Datei, aus der er stammt, und jede Datei, die ihn setzt. Sie ist für neue
 Administratoren der sicherste Weg, sich die Konfiguration anzusehen, und sie kann eine Einstellung auch ändern.
 
@@ -45,7 +45,7 @@ Quelle: [Die Einstellungsseite](../../../../anleitungen/einstellungsseite.md).
    Siteaccess-Verzeichnisse der Erweiterungen, `settings/siteaccess/<siteaccess>`, die aktiven Erweiterungen,
    `settings/override`. Eine spätere Datei gewinnt: Sie ersetzt einen einfachen Wert und ergänzt ein Array, außer
    sie leert das Array zuerst mit `Name[]`.
-2. **Eine Datei öffnen** (3 Minuten). **Setup > Ini Einstellungen**, wählen Sie eine **INI-Datei** und einen
+2. **Eine Datei öffnen** (3 Minuten). **Setup > INI-Einstellungen**, wählen Sie eine **INI-Datei** und einen
    **Siteaccess** und klicken Sie auf **Einstellungen anzeigen**. Die Adresse wird zu
    `settings/view/<siteaccess>/<file>` und lässt sich daher als Lesezeichen speichern.
 3. **Eine Einstellung** (4 Minuten). Zeigen Sie den wirksamen Wert, seine Herkunft (Standard, Extension, Siteaccess,
@@ -90,7 +90,7 @@ von Erweiterungen haben kein Kontrollkästchen.
 
 Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 
-1. Öffnen Sie **Setup > Ini Einstellungen**. Wählen Sie als **INI-Datei** `site.ini` und als **Siteaccess** `site`
+1. Öffnen Sie **Setup > INI-Einstellungen**. Wählen Sie als **INI-Datei** `site.ini` und als **Siteaccess** `site`
    und klicken Sie dann auf **Einstellungen anzeigen**.
 2. Lesen Sie die zusammenfassenden Zahlen. Wie viele Einstellungen sind vom Standard geändert? Wie viele Dateien
    werden gelesen?

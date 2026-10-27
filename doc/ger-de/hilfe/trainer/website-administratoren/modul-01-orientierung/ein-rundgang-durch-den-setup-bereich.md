@@ -53,13 +53,13 @@ andere Designs der Administration zeigen dieselben Seiten in einem anderen Rahme
    | **Website und URLs** | **Seiten vorladen**, **RSS**, **Pakete**, **Suchstatistiken**, **URL-Verwaltung**, **URL-Übersetzer**, **URL Platzhalter** | Module 5 und später |
    | **Workflows** | **Trigger**, **Workflows**, **Workflow-Prozesse** | Modul 6 |
    | **Benutzer und Nachrichten** | **Audit**, **E-Mail-Einstellungen**, **Benachrichtigungen**, **Sitzungen**, **Benutzerkonten prüfen** | Modul 2 und später |
-   | **System** | **Cache-Verwaltung**, **Wartung**, **Cronjobs**, **Logdateien**, **Extensions**, **Ini Einstellungen**, **Site-Daten**, **Systeminformationen**, **Upgrade-Prüfung** | die meisten Module |
+   | **System** | **Cache-Verwaltung**, **Wartung**, **Cronjobs**, **Logdateien**, **Extensions**, **INI-Einstellungen**, **Site-Daten**, **Systeminformationen**, **Upgrade-Prüfung** | die meisten Module |
 
    Installationen mit mehr Erweiterungen zeigen weitere Gruppen, zum Beispiel **KI** und **Updates**.
 3. **Das linke Menü** (2 Minuten). Auf jeder Setup-Seite wiederholt die linke Spalte dieselben Gruppen als Menü, mit
    **Übersicht** ganz oben. Die aktuelle Seite ist hervorgehoben.
 4. **Ansehen oder ändern** (1 Minute). Seiten wie **Systeminformationen**, **Site-Daten** und **Logdateien** lesen
-   nur. **Cache-Verwaltung**, **Wartung**, **Ini Einstellungen** und **Cronjobs** können das Verhalten der Website für
+   nur. **Cache-Verwaltung**, **Wartung**, **INI-Einstellungen** und **Cronjobs** können das Verhalten der Website für
    alle verändern. Sehen Sie sich auf einer Live-Website erst alles an, bevor Sie irgendetwas anklicken.
 
 ### Häufige Fragen
@@ -101,10 +101,10 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 ## Erwartetes Ergebnis
 
 - Schritt 4 führt zu **Sitzungen**, Schritt 5 zu **Sektionen**, Schritt 6 zu **Suchstatistiken**, Schritt 7 zu
-  **Ini Einstellungen**.
+  **INI-Einstellungen**.
 - Das Lesezeichen erscheint in der rechten Spalte unter **Lesezeichen**.
 - Die Liste aus Schritt 10 kennzeichnet **Systeminformationen**, **Suchstatistiken** und **Logdateien** als lesend
-  und **Sitzungen**, **Sektionen** und **Ini Einstellungen** als Seiten, die etwas verändern können (Sitzungen
+  und **Sitzungen**, **Sektionen** und **INI-Einstellungen** als Seiten, die etwas verändern können (Sitzungen
   beenden, Sektionen bearbeiten, Einstellungen speichern).
 - Der Trainer prüft das, indem er eine Aufgabe ausruft („Wo sehe ich die Cronjobs?“) und die Zeit bis zur Antwort
   misst.

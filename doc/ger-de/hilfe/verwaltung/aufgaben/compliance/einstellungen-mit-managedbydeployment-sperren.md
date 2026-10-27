@@ -44,7 +44,7 @@ Setup-Assistenten noch Code-Generatoren ausführen und keine Pakete installieren
 
 ## Prüfen, ob es funktioniert hat
 
-- **Setup > Ini Einstellungen** zeigt Werte, ohne Links zum Bearbeiten.
+- **Setup > INI-Einstellungen** zeigt Werte, ohne Links zum Bearbeiten.
 - `/setup/rad`, `/setup/extensions` und der Template-Editor antworten wie eine abgeschaltete Ansicht (standardmäßig 404).
 - Pakete: Die Liste bietet weder Hochladen noch Installieren an.
 - Das Schreiben einer Einstellung aus der Debug-Leiste wird abgelehnt.

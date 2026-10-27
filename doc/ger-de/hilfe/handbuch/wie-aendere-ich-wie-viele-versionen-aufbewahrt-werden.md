@@ -16,12 +16,12 @@ die Grenze überschreiten, wird die älteste archivierte Version dieses Objekts 
 
 ## Wer das tun kann
 
-Ein Administrator mit **Setup** > **Ini Einstellungen** (eine Rolle mit dem Modul `settings`) oder jemand, der die
+Ein Administrator mit **Setup** > **INI-Einstellungen** (eine Rolle mit dem Modul `settings`) oder jemand, der die
 Einstellungsdateien der Website ändern darf. Für das Bereinigungsskript braucht man Shell-Zugang.
 
 ## Schritte
 
-1. Sehen Sie die aktuellen Werte nach: **Setup** > **Ini Einstellungen**, Datei `content.ini`, Block
+1. Sehen Sie die aktuellen Werte nach: **Setup** > **INI-Einstellungen**, Datei `content.ini`, Block
    `[VersionManagement]`.
    `DefaultVersionHistoryLimit` gilt für alle Klassen; jede Zeile `VersionHistoryClass[]` setzt die Grenze einer
    Klasse, über Klassen-ID oder Bezeichner. Eine neue Installation bewahrt 45 Versionen auf, bei Ordnern 75.

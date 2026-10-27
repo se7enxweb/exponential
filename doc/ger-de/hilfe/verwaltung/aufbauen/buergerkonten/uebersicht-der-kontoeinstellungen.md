@@ -75,7 +75,7 @@ INI-Cache: `php bin/php/ezcache.php --clear-tag=ini`.
 | `mbpaex.ini` | `mbpaexSettings` | `DefaultPasswordLifeTime` | `3` | vor dem Aktivieren von ezmbpaex entscheiden; `0` schaltet den Ablauf aus | [ezmbpaex](../../../../funktionen/6.0/erweiterungen/ezmbpaex.md) |
 | `mbpaex.ini` | `mbpaexSettings` | `PasswordValidationRegexp` | leer | nur, wenn sich eine Regel nicht anders ausdrücken lässt | dasselbe |
 
-Prüfen Sie den auf Ihrer Installation geltenden Wert mit **Setup > Ini Einstellungen** oder `./console exp:ini`
+Prüfen Sie den auf Ihrer Installation geltenden Wert mit **Setup > INI-Einstellungen** oder `./console exp:ini`
 ([Der Befehl exp:ini](../../../../funktionen/6.0/exp-ini-befehl.md)).
 
 ## Verwandte Seiten

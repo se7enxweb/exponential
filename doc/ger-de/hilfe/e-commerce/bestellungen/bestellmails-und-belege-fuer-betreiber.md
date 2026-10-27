@@ -67,7 +67,7 @@ Behandeln Sie einen Beleglink wie den Beleg selbst: Senden Sie ihn nur an die ei
 | Prüfung | Wie |
 |---|---|
 | Wurde die Bestellung überhaupt aufgegeben? | Sie hat eine Bestellnummer in der Bestellliste; andernfalls siehe [Fehlersuche an der Kasse](../betrieb/fehlersuche-an-der-kasse.md) |
-| Ist `SendOrderEmail` eingeschaltet? | **Setup > Ini Einstellungen**, `site.ini`, `ShopSettings` |
+| Ist `SendOrderEmail` eingeschaltet? | **Setup > INI-Einstellungen**, `site.ini`, `ShopSettings` |
 | Stimmt die Adresse in der Bestellung? | Bestellansicht, Kundendaten |
 | Ist die Shop-Kopie bei `AdminEmail` angekommen? | Wenn ja, liegt das Problem bei der Adresse oder dem Spamfilter des Kunden |
 | Versendet die Website überhaupt Mails? | [Benachrichtigungen und Mail](../../ersteller/anwendungsentwickler/benachrichtigungen-und-mail.md), die Einstellungen des Mail-Transports |

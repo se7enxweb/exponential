@@ -100,7 +100,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 4. Lesen Sie die Zuordnungstabelle. Welcher Eintrag führt zu `editor`?
 5. Lesen Sie die Karte von `site`: ihr Design, ihre Sprachen und ob sie eine Anmeldung verlangt.
 6. Klicken Sie auf der Karte von `editor` auf **Öffnen**. Notieren Sie die Adresse, die sich öffnet.
-7. Öffnen Sie **Setup > Ini Einstellungen**, `site.ini` für `site`, und vergleichen Sie sie mit `admin`
+7. Öffnen Sie **Setup > INI-Einstellungen**, `site.ini` für `site`, und vergleichen Sie sie mit `admin`
    (**Mit Siteaccess vergleichen**). Notieren Sie zwei Unterschiede in `[SiteSettings]` oder `[DesignSettings]`.
 8. Verwenden Sie die Schaltfläche **Website oder einen anderen Siteaccess öffnen** in der Kopfzeile und wählen Sie die
    öffentliche Website.

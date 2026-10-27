@@ -3,8 +3,8 @@ title: Einstellungen in der Administration
 audience: developer, designer, app-creator, admin
 category: extension-development
 order: 60
-summary: Setup > Ini Einstellungen zeigt jede Einstellung mit ihrem wirksamen Wert, der Datei, aus der sie stammt, und der ganzen Override-Kette; vergleicht Siteaccesses; ändert Werte sicher mit maskierten Geheimnissen. Wie ein Builder die Seite nutzt.
-keywords: Einstellungsseite, Ini Einstellungen, Override-Kette, Siteaccesses vergleichen, vom Standard geändert, maskierte Geheimnisse, Debug-Leiste, settings page, ini settings, settings/view, settings/edit, override chain, compare siteaccesses, changed from default, masked secrets, debug bar settings tab
+summary: Setup > INI-Einstellungen zeigt jede Einstellung mit ihrem wirksamen Wert, der Datei, aus der sie stammt, und der ganzen Override-Kette; vergleicht Siteaccesses; ändert Werte sicher mit maskierten Geheimnissen. Wie ein Builder die Seite nutzt.
+keywords: Einstellungsseite, INI-Einstellungen, Override-Kette, Siteaccesses vergleichen, vom Standard geändert, maskierte Geheimnisse, Debug-Leiste, settings page, ini settings, settings/view, settings/edit, override chain, compare siteaccesses, changed from default, masked secrets, debug bar settings tab
 type: help
 ---
 # Einstellungen in der Administration
@@ -15,7 +15,7 @@ die vollständige Anleitung ist [Die Einstellungsseite](../../../anleitungen/ein
 
 ## Öffnen
 
-**Setup > Ini Einstellungen** (`settings/view`). Wählen Sie eine INI-Datei und einen Siteaccess und klicken Sie auf
+**Setup > INI-Einstellungen** (`settings/view`). Wählen Sie eine INI-Datei und einen Siteaccess und klicken Sie auf
 **Einstellungen anzeigen**. Die Adresse wird zu `settings/view/<siteaccess>/<file>`, zum Beispiel
 `/settings/view/admin/site.ini` unter dem Pfad der Administration; Sie können sie als Lesezeichen speichern.
 

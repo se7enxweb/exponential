@@ -139,7 +139,7 @@ Browserfenstern.
 3. Richtig oder falsch: Eine höhere `MinPasswordLength` sperrt Benutzer mit kürzeren Passwörtern aus.
 4. Das Konto eines Benutzers wurde übernommen. Er ändert sein Passwort. Was geschieht mit der Sitzung des Angreifers?
 5. Wo entsperren Sie in der Administration ein gesperrtes Konto?
-   A. **Setup > Sitzungen** B. **Benutzer > Benutzerkonten prüfen** C. **Setup > Ini Einstellungen**
+   A. **Setup > Sitzungen** B. **Benutzer > Benutzerkonten prüfen** C. **Setup > INI-Einstellungen**
    D. **Setup > Logdateien**
 
 <details>

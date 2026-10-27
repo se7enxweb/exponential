@@ -17595,7 +17595,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Ini settings</source>
-        <translation>Ini Einstellungen</translation>
+        <translation>INI-Einstellungen</translation>
     </message>
     <message>
         <source>Notification</source>
@@ -53295,7 +53295,7 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
     </message>
     <message>
         <source>Ini settings</source>
-        <translation>Ini Einstellungen</translation>
+        <translation>INI-Einstellungen</translation>
     </message>
     <message>
         <source>Static</source>

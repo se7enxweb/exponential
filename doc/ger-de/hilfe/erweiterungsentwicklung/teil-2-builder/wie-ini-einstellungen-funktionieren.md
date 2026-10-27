@@ -159,7 +159,7 @@ leeren Sie diesen Cache:
 php bin/php/ezcache.php --clear-tag=ini
 ```
 
-`./console exp:ini` und **Setup > Ini Einstellungen** leeren ihn nach einem Schreibvorgang für Sie. Verwenden Sie
+`./console exp:ini` und **Setup > INI-Einstellungen** leeren ihn nach einem Schreibvorgang für Sie. Verwenden Sie
 `--clear-tag=ini`, nicht `--clear-id=ini`: Das Tag leert auch den globalen INI-Cache. Eine Installation, deren
 `config.php` die Prüfung der Dateizeit für den INI-Cache abschaltet, sieht eine geänderte Datei **erst** nach diesem
 Leeren.

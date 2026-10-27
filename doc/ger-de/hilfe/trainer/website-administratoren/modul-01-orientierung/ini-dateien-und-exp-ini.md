@@ -122,7 +122,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
    php bin/php/ezcache.php --clear-tag=ini
    ```
 
-8. Öffnen Sie **Setup > Ini Einstellungen** für `site.ini` und `site` und prüfen Sie, dass die Seite dieselbe Herkunft
+8. Öffnen Sie **Setup > INI-Einstellungen** für `site.ini` und `site` und prüfen Sie, dass die Seite dieselbe Herkunft
    zeigt.
 9. Entfernen Sie die Änderung und leeren Sie den INI-Cache erneut:
 
@@ -142,7 +142,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, die Ausgabe von `where` laut
   vorzulesen.
 
-![Setup, Ini Einstellungen: der Wert einer Einstellung pro Siteaccess und die Datei, aus der er stammt](../../../bilder/trainers/sa-ini-settings.webp)
+![Setup, INI-Einstellungen: der Wert einer Einstellung pro Siteaccess und die Datei, aus der er stammt](../../../bilder/trainers/sa-ini-settings.webp)
 
 ## Quiz
 

@@ -96,7 +96,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
    ```
 
 7. Öffnen Sie den Artikel auf der öffentlichen Website. Welche Sprache wird angezeigt?
-8. Öffnen Sie **Setup > Ini Einstellungen**, `site.ini` für `site`, und lesen Sie `SiteLanguageList` und
+8. Öffnen Sie **Setup > INI-Einstellungen**, `site.ini` für `site`, und lesen Sie `SiteLanguageList` und
    `ShowUntranslatedObjects`. Ändern Sie sie im Kurs nicht; besprechen Sie, was sich ändern würde, wenn `ger-DE` an
    erster Stelle stünde.
 9. Öffnen Sie wieder auf **Setup > Sprachen** die Karte für Deutsch: Lässt sie sich jetzt entfernen? Warum nicht?

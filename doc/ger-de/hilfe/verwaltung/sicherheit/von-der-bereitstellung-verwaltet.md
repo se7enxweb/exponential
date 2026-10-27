@@ -62,7 +62,7 @@ In einer Webanfrage, bei eingeschaltetem Schalter:
    (`settings/siteaccess/...`, Einstellungen der Erweiterungen); Geheimnisse bleiben in `settings/override` außerhalb
    der Versionsverwaltung.
 2. Schalten Sie den Schalter für den Administrations-Siteaccess der Produktion in einer versionierten Datei ein.
-3. Stellen Sie bereit und prüfen Sie dann: Setup > Ini Einstellungen zeigt Werte, aber keine Bearbeitung; `/setup/rad`
+3. Stellen Sie bereit und prüfen Sie dann: Setup > INI-Einstellungen zeigt Werte, aber keine Bearbeitung; `/setup/rad`
    antwortet als deaktiviert.
 4. Teilen Sie den Administratorinnen und Administratoren mit, dass Änderungen an Einstellungen jetzt Änderungsanträge
    sind.

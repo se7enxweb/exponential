@@ -202,7 +202,7 @@ tar czf "$EXPORT/settings.tar.gz" settings/override settings/siteaccess
 
 `settings/override/` kann Passwörter und Schlüssel enthalten (Datenbank, Mail, API-Anbieter): bewahren Sie das Archiv
 wie ein Geheimnis auf. Geänderte Einstellungen von Extensions liegen in denselben beiden Verzeichnissen. Die
-Einstellungen, die jeder Siteaccess tatsächlich verwendet, zeigt auch **Setup** > **Ini Einstellungen** in der Administration
+Einstellungen, die jeder Siteaccess tatsächlich verwendet, zeigt auch **Setup** > **INI-Einstellungen** in der Administration
 ([Die Einstellungsseite](anleitungen/einstellungsseite.md)).
 
 ### 3.7 Übersetzungen

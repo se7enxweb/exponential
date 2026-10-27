@@ -52,7 +52,7 @@ ausgeliefert wird. Geheimnisse wie der API-Schlüssel eines Gateways oder `[Orde
 Überschreibungen stapeln sich, der zählende Wert ist also nicht immer der, den Sie zuletzt bearbeitet haben. Prüfen
 Sie ihn, bevor Sie Fehler suchen:
 
-- **Setup > Ini Einstellungen** (`settings/view`) zeigt für jede Einstellung den wirksamen Wert, die Datei, aus der
+- **Setup > INI-Einstellungen** (`settings/view`) zeigt für jede Einstellung den wirksamen Wert, die Datei, aus der
   er stammt, und jede Datei, die ihn setzt, und kann zwei Siteaccesses vergleichen ([Die Einstellungsseite](../../../anleitungen/einstellungsseite.md)).
 - In einer Shell beantworten `./console exp:ini where` und `./console exp:ini get` dieselben Fragen, zum Beispiel
   `./console exp:ini get shop.ini/VATSettings/Handler`.

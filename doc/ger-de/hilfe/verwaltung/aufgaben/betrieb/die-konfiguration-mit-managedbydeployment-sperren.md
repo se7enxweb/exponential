@@ -48,7 +48,7 @@ Versionsverwaltung und das Änderungsgremium durchläuft. Hintergrund:
 
 ## Prüfen, ob es funktioniert hat
 
-- **Setup > Ini Einstellungen** zeigt Einstellungen, bietet aber kein Bearbeiten an; `/settings/edit` antwortet wie eine
+- **Setup > INI-Einstellungen** zeigt Einstellungen, bietet aber kein Bearbeiten an; `/settings/edit` antwortet wie eine
   abgeschaltete Ansicht (standardmäßig 404).
 - **Setup > Extensions** bietet keine Aktivierung an; Hochladen und Installieren von Paketen sind verschwunden; der
   Template-Editor wird nicht angeboten.

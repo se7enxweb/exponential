@@ -37,7 +37,7 @@ archivierte Version entfernt, um Platz zu schaffen. Hintergrund:
 
 ## Prüfen
 
-**Ini Einstellungen** (`/settings/view`) zeigt den Wert für `content.ini`; nach mehr als 45 Bearbeitungen eines
+**INI-Einstellungen** (`/settings/view`) zeigt den Wert für `content.ini`; nach mehr als 45 Bearbeitungen eines
 Beschlusses listet seine Seite **Versionen** weiterhin die frühen Versionen.
 
 ## Probleme

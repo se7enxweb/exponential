@@ -57,7 +57,7 @@ Quelle: [Caches](../../../../anleitungen/caches.md) und
    **Alle Caches leeren …**. Jedes Leeren nennt zuerst, was entfernt wird, und endet dann mit einer Meldung: was
    geleert wurde, wie viele Millisekunden es dauerte, was als Nächstes zu tun ist und der Befehl für die Shell.
 3. **Die rechte Spalte** (2 Minuten). Auf jeder Seite der Administration hat die rechte Spalte **Cache leeren** mit
-   einer Liste (**Gesamter Cache**, **Inhalt**, **Template**, **Template & Inhalt**, **Ini Einstellungen**,
+   einer Liste (**Gesamter Cache**, **Inhalt**, **Template**, **Template & Inhalt**, **INI-Einstellungen**,
    **Statisch**) und **Leeren**. Auf der Seite eines Elements bietet sie zusätzlich den Inhalt dieses Knotens oder
    Teilbaums an.
 4. **Velocity** (2 Minuten). Eine Seite kann nach dem Leeren noch einige Sekunden alt aussehen, weil sie aus dem
@@ -87,7 +87,7 @@ ein genauerer Blick.
 
 Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 
-1. Öffnen Sie **Setup > Ini Einstellungen**, ändern Sie `SiteName` für den Siteaccess `site` (wie in Lektion 1.4) und
+1. Öffnen Sie **Setup > INI-Einstellungen**, ändern Sie `SiteName` für den Siteaccess `site` (wie in Lektion 1.4) und
    klicken Sie auf **Speichern**. Notieren Sie, welche Caches laut Meldung geleert wurden.
 2. Öffnen Sie **Setup > Cache-Verwaltung**. Haken Sie nur den Cache der Inhaltsansichten an und klicken Sie auf
    **Ausgewähltes leeren**. Lesen Sie die Bestätigung, bestätigen Sie und lesen Sie die Ergebnismeldung: benötigte

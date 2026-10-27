@@ -91,7 +91,7 @@ wird verweigert ([Der Befehl exp:ini](../erweiterungsentwicklung/teil-2-builder/
 
 ## Einstellungen in der Administration
 
-**Setup** > **Ini Einstellungen** (`settings/view`) zeigt die Einstellungen jedes Siteaccess mit der Datei, aus der jeder
+**Setup** > **INI-Einstellungen** (`settings/view`) zeigt die Einstellungen jedes Siteaccess mit der Datei, aus der jeder
 Wert stammt, und kann für Administratoren Werte ändern ([Die Einstellungsseite](../../anleitungen/einstellungsseite.md),
 [Einstellungen in der Administration](../erweiterungsentwicklung/teil-2-builder/einstellungen-in-der-administration.md)). Dort
 vorgenommene Änderungen landen in Dateien; kopieren Sie die, die zum Projekt gehören, in Ihre Erweiterung.
