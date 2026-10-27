@@ -118,7 +118,7 @@
      :lang() rules below), Thai, Devanagari, Arabic and Hebrew. A family that has no glyph for a letter is skipped
      for that letter, so these come into play only for text in those scripts */
   --a4-font-cjk: "PingFang SC", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Microsoft YaHei", "Microsoft JhengHei", "Yu Gothic", "Meiryo", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans CJK SC", "Noto Sans CJK JP", "Noto Sans CJK TC", "Noto Sans CJK KR";
-  --a4-font-intl: var(--a4-font-cjk), "Leelawadee UI", "Thonburi", "Noto Sans Thai", "Nirmala UI", "Kohinoor Devanagari", "Noto Sans Devanagari", "Segoe UI", "Noto Sans Arabic", "Geeza Pro", "Noto Sans Hebrew", "Arial Hebrew";
+  --a4-font-intl: var(--a4-font-cjk), "Leelawadee UI", "Thonburi", "Noto Sans Thai", "Nirmala UI", "Kohinoor Devanagari", "Noto Sans Devanagari", "Segoe UI", "Noto Sans Arabic", "Geeza Pro", "Noto Sans Hebrew", "Arial Hebrew", "Noto Sans Georgian", "Noto Sans Armenian", "Noto Sans Lao", "Phetsarath OT", "Noto Sans Syriac", "Noto Sans Syriac Eastern", "Segoe UI Historic", "Estrangelo Edessa";
   --a4-font: "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, var(--a4-font-intl), sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --a4-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --a4-text-xs: 12px;

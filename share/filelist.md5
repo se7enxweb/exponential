@@ -353,7 +353,7 @@ b85be7774f406553186dbc720d2914a9  design/admin/override/templates/embed_image.tp
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-67a7f54f18b4eef977b1d5e4e6fbba0e  design/admin/stylesheets/components.css
+b1cf4e1bf652a916be9e86fa6e610b69  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
@@ -1110,7 +1110,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 9bfcc92f9192fd13ba4bff2c456a14a4  design/admin4/stylesheets/admin4.css
-67a7f54f18b4eef977b1d5e4e6fbba0e  design/admin4/stylesheets/components.css
+b1cf4e1bf652a916be9e86fa6e610b69  design/admin4/stylesheets/components.css
 a87bec7d01d40f3de1611df181975ceb  design/admin4/stylesheets/content.css
 ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
