@@ -28,8 +28,8 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
         'mal-IN', 'mar-IN', 'mlg-MG', 'mlt-MT', 'mon-MN', 'mri-NZ', 'msa-MY', 'mya-MM', 'nep-NP', 'nor-NO', 'ori-IN',
         'orm-ET', 'pan-IN', 'pcm-NG', 'pnb-PK', 'pol-PL', 'por-BR', 'por-PT', 'pus-AF', 'ron-RO', 'rus-RU', 'ser-SR',
         'sin-LK', 'slk-SK', 'slv-SI', 'sna-ZW', 'snd-PK', 'som-SO', 'sqi-AL', 'srp-RS', 'sun-ID', 'swa-KE', 'swe-SE',
-        'syr-IQ', 'tam-IN', 'tel-IN', 'tha-TH', 'tir-ET', 'tlh-QO', 'tur-TR', 'uig-CN', 'ukr-UA', 'urd-PK', 'uzb-UZ',
-        'vie-VN', 'xho-ZA', 'yid-US', 'yor-NG', 'zul-ZA' );
+        'syr-IQ', 'tam-IN', 'tat-RU', 'tel-IN', 'tha-TH', 'tir-ET', 'tlh-QO', 'tur-TR', 'uig-CN', 'ukr-UA', 'urd-PK',
+        'uzb-UZ', 'vie-VN', 'xho-ZA', 'yid-US', 'yor-NG', 'zul-ZA' );
 
     const TAG = '/<[ \t\n\r]*\/?[ \t\n\r]*[A-Za-z][A-Za-z0-9]*(?:[ \t\n\r][^<>]*)?\/?[ \t\n\r]*>/';
     const ENTITY = '/&(?:#[0-9]+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]*);/';
