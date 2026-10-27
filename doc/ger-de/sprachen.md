@@ -9,11 +9,11 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **77**, davon 77 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **78**, davon 78 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **74** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **74** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **75** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **73** |
 | Länder und Gebiete der Locales | **158** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **138** |
 | Locales, die von rechts nach links geschrieben werden | **40** |
@@ -111,7 +111,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Mexiko | MX | `esl-MX` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mosambik | MZ | `por-MZ` → `por-PT` |
-| Neuseeland | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` (nicht übersetzt) |
+| Neuseeland | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` |
 | Niederlande | NL | `dut-NL`, `fry-NL` (nicht übersetzt) |
 | Niger | NE | `fre-NE` → `fre-FR` |
 | Nigeria | NG | `eng-NG` (Quelltexte), `hau-NG`, `ibo-NG`, `pcm-NG` (nicht übersetzt), `yor-NG` |
@@ -235,13 +235,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **74** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **75** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **74** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **73** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 74 nicht übersetzten Sprachen</summary>
+<details><summary>Die 73 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -288,7 +288,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Maithili | मैथिली | `mai` | `mai-IN` (Indien) |
 | Malagasy | Malagasy | `mlg` | `mlg-MG` (Madagaskar) |
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (Indien) |
-| Māori | Māori | `mri` | `mri-NZ` (Neuseeland) |
 | Mongolian | Монгол | `mon` | `mon-MN` (Mongolei) |
 | Nepali | नेपाली | `nep` | `nep-NP` (Nepal) |
 | Nigerian Pidgin | Naijíriá Píjin | `pcm` | `pcm-NG` (Nigeria) |

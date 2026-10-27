@@ -9,11 +9,11 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **77**, 77 of them complete |
+| Languages of the administration: translations in `share/translations` | **78**, 78 of them complete |
 | Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **74** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **74** |
+| of them shown translated by the administration (own translation, fallback or English) | **75** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **73** |
 | Countries and territories of the locales | **158** |
 | of them with the administration in their language (green on the map) | **138** |
 | Locales written right to left | **40** |
@@ -118,7 +118,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Morocco | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` (untranslated) |
 | Mozambique | MZ | `por-MZ` → `por-PT` |
 | Netherlands | NL | `dut-NL`, `fry-NL` (untranslated) |
-| New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` (untranslated) |
+| New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` |
 | Nicaragua | NI | `esl-NI` → `esl-ES` |
 | Niger | NE | `fre-NE` → `fre-FR` |
 | Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG` (untranslated), `yor-NG` |
@@ -234,12 +234,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **148 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **74** of them translated: at least one of their locales has a translation of its
+administration shows **75** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **74** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **73** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 74 languages not translated</summary>
+<details><summary>The 73 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -286,7 +286,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Maithili | मैथिली | `mai` | `mai-IN` (India) |
 | Malagasy | Malagasy | `mlg` | `mlg-MG` (Madagascar) |
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (India) |
-| Māori | Māori | `mri` | `mri-NZ` (New Zealand) |
 | Mongolian | Монгол | `mon` | `mon-MN` (Mongolia) |
 | Nepali | नेपाली | `nep` | `nep-NP` (Nepal) |
 | Nigerian Pidgin | Naijíriá Píjin | `pcm` | `pcm-NG` (Nigeria) |
