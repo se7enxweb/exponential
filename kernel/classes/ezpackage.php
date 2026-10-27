@@ -1333,18 +1333,22 @@ class eZPackage
             // packages of the 3.x releases were written) is read as V7: the GNU
             // reader never gets past the first "\0" typed file of such an archive and reads the same
             // block for ever.
-            // expPackageArchive::open() scans the tar headers first. Measured with PHP 8.5.4: a PAX archive
-            // (type "x", Python's tarfile since 3.8) kept the GNU reader of ezcArchive in an endless loop until
-            // max_execution_time, and a long name header of any declared size was read into memory before a single
-            // entry was checked. It also extracts with modes 0644/0755 instead of the archive's (a file packed as
-            // 04755 came out set-uid).
-            $archive = expPackageArchive::open( $archiveName, $tarProblem );
+            // expPackageArchive::open() scans the tar headers first, and hands ezcArchive an archive it cannot read
+            // as it is (V7 as 3.x wrote, PAX as bsdtar and GNU tar --format=posix write, links) rewritten. Measured
+            // with PHP 8.5.4: a PAX archive (type "x", Python's tarfile since 3.8) kept the GNU reader of ezcArchive
+            // in an endless loop until max_execution_time, and a long name header of any declared size was read into
+            // memory before a single entry was checked. It also extracts with modes 0644/0755 instead of the
+            // archive's (a file packed as 04755 came out set-uid).
+            $archive = expPackageArchive::open( $archiveName, $tarProblem, array(), $archiveNotices );
             if ( !$archive )
             {
                 eZDebug::writeError( "The archive $archiveName was refused (" . expPackageArchive::problemText( $tarProblem ) . "), not imported", __METHOD__ );
                 eZPackage::removeFiles( $archivePath );
                 return false;
             }
+            // what the package cannot hold (links out of it, devices, fifos) is passed over; the rest is imported
+            foreach ( (array)$archiveNotices as $notice )
+                eZDebug::writeWarning( "The archive $archiveName: " . expPackageArchive::noticeText( $notice ), __METHOD__ );
 
             // the definition in either format: package.xml (classic) or package.json (JSON format)
             $fileList = array();
@@ -1396,8 +1400,9 @@ class eZPackage
 
                 unset( $package );
 
-                // An entry outside the package directory ("..", an absolute path), a link or a device would be
-                // written where it says: such an archive is refused before anything of it is extracted. So is a
+                // An entry outside the package directory ("..", an absolute path) would be written where it says:
+                // such an archive is refused before anything of it is extracted (links and devices never reach
+                // ezcArchive, expPackageArchive passes them over or makes copies of them). So is a
                 // vendor that gives no directory name of its own ("..", "." give an empty one, which put the
                 // package at the top of the package storage, where it showed as a repository).
                 if ( !eZPackageRequestGuard::isSafeName( (string)$repositoryID ) )
@@ -3754,18 +3759,27 @@ class eZPackage
     }
 
     /**
-     * Checks if a package name is valid
+     * Checks if a package name is valid: letters of either case, digits, "_" and "-", not starting with "-", at most
+     * eZPackageRequestGuard::MAX_NAME_LENGTH long. Nothing that could form a path ("/", "\", ".", spaces, control
+     * characters) is valid.
+     *
+     * The rule used to be the "identifier" transformation (lower case letters, digits and "_" only), which refused
+     * packages the 3.x to 5.x releases exported with the case of their content class ("RSSFeed_content_class",
+     * "infoProf"); the name is the directory of the package, kept as it is on a case-sensitive file system.
      *
      * @param string $packageName the package name
-     * @param string $transformedPackageName the package name, transformed to be valid
+     * @param string $transformedPackageName the package name, transformed to a name of the identifier form (lower
+     *        case), for the wizards that offer a name
      * @return boolean true if the package name is valid, false if not
      */
     static function isValidName( $packageName, &$transformedPackageName = null )
     {
         $trans = eZCharTransform::instance();
-        $transformedPackageName = $trans->transformByGroup( $packageName, 'identifier' );
+        $transformedPackageName = $trans->transformByGroup( (string)$packageName, 'identifier' );
 
-        return $transformedPackageName === $packageName;
+        return is_string( $packageName ) &&
+               strlen( $packageName ) <= eZPackageRequestGuard::MAX_NAME_LENGTH &&
+               preg_match( '/^[A-Za-z0-9_][A-Za-z0-9_-]*$/D', $packageName ) === 1;
     }
 
 

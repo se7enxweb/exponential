@@ -44936,6 +44936,14 @@ Ma tha sibh airson beachdan a chur chun an neach-aontachaidh no an staid fhaicin
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Beachd le “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Chaidh duilleag a mholadh dhuibh</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Tha sibh a' faighinn a' phuist-d seo a chionn 's gun do chuir cuideigin a-steach ur seòladh air %site gus duilleag a cho-roinn leibh.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Gus seo a dhèanamh feumaidh sibh na h-òrdughan %chown atharrachadh fo Òrdugha
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Oidhirp a-rithist: %attempt à %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Seall ur cuidhteas</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ ur cunntas a ghnìomhachadh.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Obraichidh an ceangal dìreach aon uair agus dìreach airson %1 mionaid.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Ath-shuidhich ur facal-faire</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Dh'iarr cuideigin facal-faire ur cunntais air %site ath-shuidheachadh. Dearbhaichibh e leis a' phutan, agus cuiridh sinn facal-faire ùr thugaibh ann an dàrna post-d.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Ath-shuidhich am facal-faire agam</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Mura do dh'iarr sibh seo, faodaidh sibh am post-d seo a leigeil seachad: fanaidh ur facal-faire mar a tha e.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Ur facal-faire ùr</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Chaidh ur facal-faire air %site ath-shuidheachadh. Clàraichibh a-steach leis an fhacal-fhaire ùr seo, agus atharraichibh e gu fear dhuibh fhèin an uairsin.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Mura do dh'ath-shuidhich sibh ur facal-faire, clàraichibh a-steach leis an fhear seo agus atharraichibh e sa bhad.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Ath-shuidhich ur facal-faire airson %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Ur facal-faire ùr airson %site</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Chaidh an tasglann a dhiùltadh: tha an inntrigeadh "%path" a' sealltainn taobh a-muigh na pacaid.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Chaidh an tasglann a phacaigeadh san fhòrmat tar PAX, nach gabh ion-phortadh. Pacaigibh a' phacaid san fhòrmat tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Chaidh an tasglann a dhiùltadh: tha ainm faidhle no pasgain nas fhaide na %length bytes aig an inntrigeadh “%path”, agus chan eil siostam faidhlichean sam bith ga stòradh.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Chaidh an tasglann a dhiùltadh: tha an seòrsa tar "%type" aig an inntrigeadh "%path", agus chan eil ann am pacaid ach faidhlichean is pasganan.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Tha an ceangal “%path” a' comharrachadh a-mach às a' phacaid (%target) agus cha deach ion-phortadh.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Tha an ceangal “%path” a' comharrachadh “%target”, nach eil sa phacaid, agus cha deach ion-phortadh.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Tha an ceangal “%path” a' comharrachadh a' phasgain “%target” agus cha deach ion-phortadh.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Tha an inntrigeadh “%path” na uidheam no na phìoban ainmichte (seòrsa tar “%type”) agus cha deach ion-phortadh.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Tha seòrsa tar “%type” aig an inntrigeadh “%path”, nach eil pacaid a' cleachdadh, agus cha deach ion-phortadh.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Your devices</source>
         <translation>Ur n-uidheaman</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Dh'iarr cuideigin %email a chleachdadh airson cunntas air %site. Dearbhaichibh gur ann leibh a tha an seòladh seo.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Dh'iarr sibh (no cuideigin a chuir a-steach ur seòladh) ceangal airson na puist-d a chuireas %site gu %email a stiùireadh. Air an duilleag sin, faodaidh sibh gach seòrsa puist-d a chur air no dheth, no stad a chur air a h-uile post-d roghainneil.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Mura do rinn sibh an t-atharrachadh seo, dh'fhaodadh gu bheil facal-faire agaibh aig cuideigin eile: ath-shuidhichibh e sa bhad le "%forgot" air duilleag a' chlàraidh a-steach, agus cuiribh fios thugainn.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Chaidh ur facal-faire atharrachadh</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>The sessions of this user:</source>
         <translation>Seiseanan a' chleachdaiche seo:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Clàradh a-steach ùr dha ur cunntas</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Uidheam</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àm</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Seòladh tuairmseach</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Mura h-e sibh fhèin a bh' ann, dh'fhaodadh gu bheil ur facal-faire aig cuideigin: clàraichibh a-mach an seisean sin air duilleag nan uidheaman agaibh, agus atharraichibh ur facal-faire an uairsin.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Thoiribh sùil air na h-uidheaman agaibh</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Seall seiseanan a' chleachdaiche seo</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Thèid an t-sreath a thoirt air falbh on chlàr agus cha ghabh a thoirt air ais.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Mura h-obraich am putan, dèanaibh lethbhreac dhen t-seòladh seo dhan bhrabhsair agaibh: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Fosgail an duilleag</translation>
     </message>
 </context>
 </TS>

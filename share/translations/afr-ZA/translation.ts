@@ -44879,6 +44879,14 @@ Gebruik die URL hieronder as u opmerkings aan die goedkeurder wil stuur of die s
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Opmerking deur “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>'n Bladsy is vir u aanbeveel</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>U ontvang hierdie e-pos omdat iemand u adres op %site ingevoer het om 'n bladsy met u te deel.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Om dit te doen, moet die %chown-opdragte onder Alternatiewe doppie-opdragte gewy
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Probeer weer: %attempt uit %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Bekyk u kwitansie</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ u rekening te aktiveer.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Die skakel werk slegs een keer en slegs vir %1 minute.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Herstel u wagwoord</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Iemand het gevra om die wagwoord van u rekening op %site te herstel. Bevestig met die knoppie, en ons stuur vir u 'n nuwe wagwoord in 'n tweede e-pos.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Herstel my wagwoord</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>As u dit nie gevra het nie, kan u hierdie e-pos ignoreer: u wagwoord bly soos dit is.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>U nuwe wagwoord</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>U wagwoord op %site is herstel. Meld aan met hierdie nuwe wagwoord en verander dit dan na een van u eie.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>As u nie self u wagwoord herstel het nie, meld aan met hierdie een en verander dit dadelik.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Herstel u wagwoord vir %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>U nuwe wagwoord vir %site</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Pakket</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Die argief is in die PAX-tar-formaat gepak, wat nie ingevoer kan word nie. Pak die pakket in die GNU-tar-formaat (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Die argief is geweier: die inskrywing “%path” het ’n lêer- of gidsnaam langer as %length grepe, wat geen lêerstelsel stoor nie.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Die argief is geweier: die inskrywing “%path” het die tar-tipe “%type”, en ’n pakket bevat slegs lêers en gidse.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Die skakel “%path” wys buite die pakket (%target) en is nie ingevoer nie.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Die skakel “%path” wys na “%target”, wat nie in die pakket is nie, en is nie ingevoer nie.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Die skakel “%path” wys na die gids “%target” en is nie ingevoer nie.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Die inskrywing “%path” is ’n toestel of ’n benoemde pyp (tar-tipe “%type”) en is nie ingevoer nie.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Die inskrywing “%path” het die tar-tipe “%type”, wat ’n pakket nie gebruik nie, en is nie ingevoer nie.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Your devices</source>
         <translation>U toestelle</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Iemand het gevra om %email vir 'n rekening op %site te gebruik. Bevestig asseblief dat hierdie adres aan u behoort.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>U (of iemand wat u adres ingetik het) het 'n skakel gevra om die e-pos te bestuur wat %site na %email stuur. Op daardie bladsy kan u elke soort e-pos aan- of afskakel, of alle opsionele e-pos stop.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>As u nie hierdie wysiging gemaak het nie, ken iemand anders dalk u wagwoord: stel dit onmiddellik terug met “%forgot” op die aanmeldbladsy, en kontak ons.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>U wagwoord is verander</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>The sessions of this user:</source>
         <translation>Die sessies van hierdie gebruiker:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nuwe aanmelding by u rekening</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Toestel</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tyd</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Benaderde adres</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>As dit nie u was nie, ken iemand dalk u wagwoord: meld daardie sessie af op die bladsy met u toestelle en verander dan u wagwoord.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Gaan u toestelle na</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Bekyk die sessies van hierdie gebruiker</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Push to block</source>
         <translation>Stoot na blok</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>As die knoppie nie werk nie, kopieer hierdie adres na u blaaier: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Open die bladsy</translation>
     </message>
 </context>
 </TS>

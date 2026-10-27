@@ -46,7 +46,7 @@ Die vollständige Liste mit dem Grund für jeden Punkt ist [Die Checkliste der A
 
 - [ ] **Erzwungen**: Das Archiv ist ein mit gzip komprimiertes tar mit `package.xml` oben, nur einfachen Dateien und Verzeichnissen, ohne `..`
       und ohne absolute Pfade.
-- [ ] **Erzwungen**: `<name>` besteht nur aus Kleinbuchstaben, Ziffern und `_`. **Konvention**: Die Datei `.ezpkg` trägt denselben Namen.
+- [ ] **Erzwungen**: `<name>` besteht nur aus Buchstaben, Ziffern, `_` und `-` und beginnt nicht mit `-`. **Konvention**: Die Datei `.ezpkg` trägt denselben Namen.
 - [ ] **Erzwungen** (Hochladen von Paketen in der Administration): `<ezpublish>` und `<packaging>` sind vorhanden.
 - [ ] **Erzwungen**: `<version><number>`, `<release>` und `<type value>` sind einfache Tokens von höchstens 64 Zeichen.
 - [ ] **Erzwungen** (Setup-Assistent): Ein Seitenpaket hat `<type value="site" />`, und jedes Paket, das es verlangt, steht in derselben

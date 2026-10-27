@@ -44936,6 +44936,14 @@ Mēnā e hiahia ana koe ki te tuku kōrero ki te kaiwhakamana, ki te tiro rānei
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Kōrero nā “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>I tūtohua tētahi whārangi ki a koe</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Kei te whiwhi koe i tēnei īmēra nā te mea i tuhia e tētahi tō wāhitau ki %site hei tohatoha i tētahi whārangi ki a koe.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Hei mahi i tēnei me whakarerekē koe i ngā whakahau %chown i raro i a Ētahi a
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Whakamātau anō: %attempt i roto i %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Tirohia tō rihīti</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ i tō pūkete.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Kotahi noa te wā e mahi ai te hono, ā, mō te %1 meneti anake.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Tautuhia anō tō kupuhipa</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>I tono tētahi kia tautuhia anō te kupuhipa o tō pūkete i %site. Whakaūngia mā te pātene, ā, ka tukuna atu e mātou he kupuhipa hou ki a koe i tētahi atu īmēra.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Tautuhia anō taku kupuhipa</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Mēnā kāore koe i tono i tēnei, ka taea e koe te kore aro ki tēnei īmēra: ka noho tonu tō kupuhipa pēnei i tēnei.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Tō kupuhipa hou</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>I tautuhia anōtia tō kupuhipa i %site. Takiurutia mā tēnei kupuhipa hou, ā, whakarerekētia ki tētahi nāu ake i muri mai.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Mēnā kāore koe i tautuhi anō i tō kupuhipa, takiurutia mā tēnei kupuhipa, ā, whakarerekētia i taua wā tonu.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Tautuhia anō tō kupuhipa mō %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Tō kupuhipa hou mō %site</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <translation>I whakahēngia te pūranga: e tohu ana te urunga “%path” ki waho o te mōkihi.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>I kopaina te pūranga ki te hōputu tar PAX, kāore e taea te kawemai. Kopaina te mōkihi ki te hōputu tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>I whakahēngia te pūranga: he roa ake te ingoa kōnae, whaiaronga rānei o te tuhinga “%path” i te %length paita, ā, kāore he pūnaha kōnae e penapena i tērā.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>I whakahēngia te pūranga: he momo tar “%type” tō te urunga “%path”, ā, he kōnae me ngā whaiaronga anake kei roto i tētahi mōkihi.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Ko te hono “%path” e tohu ana ki waho o te mōkihi (%target), ā, kāore i kawea mai.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Ko te hono “%path” e tohu ana ki “%target”, kāore i roto i te mōkihi, ā, kāore i kawea mai.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Ko te hono “%path” e tohu ana ki te whaiaronga “%target”, ā, kāore i kawea mai.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Ko te tuhinga “%path” he pūrere, he paipa whakaingoa rānei (momo tar “%type”), ā, kāore i kawea mai.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Ko te tuhinga “%path” he momo tar “%type”, e kore e whakamahia e te mōkihi, ā, kāore i kawea mai.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Your devices</source>
         <translation>Ō pūrere</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>I tono tētahi kia whakamahia tētahi wāhitau īmēra mō tētahi pūkete i %site: %email. Whakaūngia koa nōu tēnei wāhitau.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>I tono koe (tētahi atu rānei nāna i tuhi tō wāhitau) i tētahi hono hei whakahaere i ngā īmēra e tukuna ana e %site ki %email. I tērā whārangi ka taea e koe te whakaweto, te whakaara rānei i ia momo īmēra, te whakamutu rānei i ngā īmēra kōwhiri katoa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Mēnā kāore koe i mahi i tēnei whakarerekētanga, tērā pea e mōhio ana tētahi atu ki tō kupuhipa: tautuhia anōtia i te wā kotahi mā “%forgot” i te whārangi takiuru, ā, whakapā mai ki a mātou.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Kua whakarerekētia tō kupuhipa</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>The sessions of this user:</source>
         <translation>Ngā wātū o tēnei kaiwhakamahi:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Takiuru hou ki tō pūkete</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pūrere</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wā</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Wāhitau tata</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Mēnā ehara nāu, tērā pea e mōhio ana tētahi ki tō kupuhipa: whakaputaina taua wātū i te whārangi o ō pūrere, ā, whakarerekētia tō kupuhipa.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Tirohia ō pūrere</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Tirohia ngā wātū o tēnei kaiwhakamahi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Ka tangohia te rārangi i te ripanga, ā, kāore e taea te whakahoki mai.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Mēnā kāore e mahi te pātene, tāruatia tēnei wāhitau ki tō pūtirotiro: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Huakina te whārangi</translation>
     </message>
 </context>
 </TS>

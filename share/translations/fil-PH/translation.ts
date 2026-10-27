@@ -44936,6 +44936,14 @@ Kung gusto mong magpadala ng mga komento sa tagapag-apruba o tingnan ang status,
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Komento ni "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>May inirekomendang pahina para sa iyo</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Natanggap mo ang email na ito dahil may nag-enter ng iyong address sa %site para magbahagi ng pahina sa iyo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Para magawa ito, kailangan mong baguhin ang mga %chown command sa ilalim ng Mga 
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Pagsubok: %attempt sa %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Tingnan ang iyong resibo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ ang iyong account.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Gumagana lamang nang isang beses at sa loob ng %1 minuto ang link.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>I-reset ang iyong password</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>May humiling na i-reset ang password ng iyong account sa %site. Kumpirmahin gamit ang button, at magpapadala kami sa iyo ng bagong password sa pangalawang email.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>I-reset ang aking password</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Kung hindi ikaw ang humiling nito, maaari mong balewalain ang email na ito: mananatili ang iyong password.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Ang iyong bagong password</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Na-reset ang iyong password sa %site. Mag-log in gamit ang bagong password na ito, pagkatapos ay palitan ito ng sarili mo.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Kung hindi mo ni-reset ang iyong password, mag-log in gamit ito at palitan ito kaagad.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>I-reset ang iyong password para sa %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Ang iyong bagong password para sa %site</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <translation>Tinanggihan ang archive: tumuturo sa labas ng package ang entry na "%path".</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Na-pack ang archive sa PAX tar format, na hindi maaaring i-import. I-pack ang package sa GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Tinanggihan ang archive: ang entry na “%path” ay may pangalan ng file o direktoryo na mas mahaba sa %length byte, na hindi iniimbak ng anumang file system.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Tinanggihan ang archive: may tar type na "%type" ang entry na "%path", at mga file at direktoryo lamang ang laman ng package.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Ang link na “%path” ay tumuturo sa labas ng package (%target) at hindi na-import.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Ang link na “%path” ay tumuturo sa “%target”, na wala sa package, at hindi na-import.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Ang link na “%path” ay tumuturo sa direktoryong “%target” at hindi na-import.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Ang entry na “%path” ay device o named pipe (tar type na “%type”) at hindi na-import.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Ang entry na “%path” ay may tar type na “%type”, na hindi ginagamit ng package, at hindi na-import.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Your devices</source>
         <translation>Iyong mga device</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>May humiling na gamitin ang %email para sa isang account sa %site. Kumpirmahin mo na sa iyo ang address na ito.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Ikaw (o may nag-type ng iyong address) ay humiling ng link para pamahalaan ang email na ipinapadala ng %site sa %email. Sa pahinang iyon, maaari mong i-on o i-off ang bawat uri ng email, o ihinto ang lahat ng opsyonal na email.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Kung hindi ikaw ang gumawa ng pagbabagong ito, maaaring alam ng iba ang iyong password: i-reset agad ito gamit ang "%forgot" sa pahina ng login, at makipag-ugnayan sa amin.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Binago ang iyong password</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>The sessions of this user:</source>
         <translation>Ang mga session ng user na ito:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Bagong pag-sign in sa iyong account</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oras</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Tinatayang address</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Kung hindi ikaw iyon, maaaring alam ng iba ang iyong password: i-log out ang session na iyon sa pahina ng iyong mga device, pagkatapos ay palitan ang iyong password.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Suriin ang iyong mga device</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Tingnan ang mga session ng user na ito</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Inaalis ang row sa table at hindi na maibabalik.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Kung hindi gumagana ang button, kopyahin ang address na ito sa iyong browser: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Buksan ang pahina</translation>
     </message>
 </context>
 </TS>

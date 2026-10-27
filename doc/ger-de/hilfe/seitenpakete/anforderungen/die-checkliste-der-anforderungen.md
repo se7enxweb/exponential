@@ -33,7 +33,7 @@ dieses Teils erklären jeden Punkt im Detail.
 | [ ] | Dateiname endet auf `.ezpkg`, `.tar.gz` oder `.tgz` (`[UploadSettings] AllowedSuffixes[]`) | Erzwungen bei `package/upload` | `eZPackageUploadInspector::hasAllowedSuffix()` |
 | [ ] | Dateiname ist `<name>.ezpkg`, der Name aus `<name>` | Konvention | Jede `url` der `index.xml` von 6.0.15 endet auf `<name>.ezpkg` |
 | [ ] | `package.xml` (oder `package.json`) ist eine einfache Datei oben, nicht in einem Ordner | Erzwungen | `eZPackage::importUnaudited()` |
-| [ ] | Jeder Eintrag ist eine einfache Datei oder ein Verzeichnis: kein symbolischer Link, kein harter Link, kein Gerät | Erzwungen | `eZPackageUploadInspector::entriesProblem()` (`unsafe_type`) |
+| [ ] | Jeder Eintrag ist eine einfache Datei oder ein Verzeichnis: Ein Link auf eine Datei des Pakets wird als Kopie importiert, andere Links, Geräte und FIFOs werden mit einem Hinweis übergangen | Konvention: das Paket wird trotzdem importiert | `expPackageArchive::index()` (`link_outside`, `link_directory`, `link_missing`, `special_file`) |
 | [ ] | Kein Pfad eines Eintrags mit `..`, führendem `/`, Laufwerksbuchstaben, umgekehrtem Schrägstrich oder Steuerzeichen | Erzwungen | `eZPackageUploadInspector::safeEntryPath()` (`unsafe_path`) |
 | [ ] | Höchstens 256 MiB gepackt, 2 GiB entpackt, 50000 Einträge (Standards von `[UploadSettings]`) | Erzwungen (gepackte Größe: nur `package/upload`) | `eZPackageUploadInspector::limits()` |
 | [ ] | Kein `.git`, keine Backups von Editoren, kein `node_modules` | Konvention | Die Liste `EXCLUDES` von `packages/build.sh` |
@@ -44,7 +44,7 @@ dieses Teils erklären jeden Punkt im Detail.
 |---|---|---|---|
 | [ ] | Wohlgeformtes XML, Wurzelelement `<package>`, kein DOCTYPE | Erzwungen bei `package/upload` | `eZPackageUploadInspector::definition()` |
 | [ ] | Ein nicht leerer `<name>` | Erzwungen | `eZPackage::parseDOMTree()` |
-| [ ] | `<name>` von der Transformation `identifier` unverändert: `a-z`, `0-9`, `_`, kein führendes, abschließendes oder doppeltes `_` | Erzwungen (`STATUS_INVALID_NAME`) | `eZPackage::isValidName()` |
+| [ ] | `<name>` nur `a-z`, `A-Z`, `0-9`, `_` und `-`, nicht mit `-` beginnend (Kleinschreibung ist die Konvention) | Erzwungen (`STATUS_INVALID_NAME`) | `eZPackage::isValidName()` |
 | [ ] | Kein Paket desselben Namens bereits importiert | Erzwungen (`STATUS_ALREADY_EXISTS`) | `eZPackage::importUnaudited()` |
 | [ ] | Elemente `<ezpublish>` und `<packaging>` vorhanden | Erzwungen bei `package/upload` (`definition_incomplete`) | `eZPackageUploadInspector::definition()` |
 | [ ] | `<version><number>`, `<version><release>` und `<type value>` sind leer oder bis zu 64 Zeichen aus `0-9 A-Z a-z . _ + -` | Erzwungen (die Definition wird nicht gelesen) | `eZPackage::isValidDefinitionToken()` |

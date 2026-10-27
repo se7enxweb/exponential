@@ -158,7 +158,8 @@ class expAccountServices extends expUsersBase
             $mail->setSender( $sender );
             $mail->setReceiver( $email );
             $mail->setSubject( $tpl->hasVariable( 'subject' ) ? $tpl->variable( 'subject' ) : ezpI18n::tr( 'kernel/user/register', 'Registration info' ) );
-            $mail->setBody( $body );
+            expMailTemplateBody::apply( $mail, $tpl, $body );
+            $mail->setCategory( 'security' );
             $sent = eZMailTransport::send( $mail );
             if ( class_exists( 'expAuditHook' ) )
                 expAuditHook::emit( 'access.user.password.reset.request', array( 'object' => expAuditHook::user( $user ), 'after' => array( 'mail_sent' => (bool)$sent ) ) );

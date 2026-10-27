@@ -37799,6 +37799,14 @@ Als je opmerkingen naar de goedkeurder wilt sturen of de status wilt bekijken, g
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Reactie van &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Er is een pagina aan je aanbevolen</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Je krijgt deze e-mail omdat iemand op %site je adres heeft ingevuld om een pagina met je te delen.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -45461,6 +45469,10 @@ Daarvoor moet je de %chown-opdrachten onder Alternatieve shellopdrachten wijzige
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Nieuwe poging: %attempt van %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Bon bekijken</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -46427,6 +46439,42 @@ te activeren.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>De link werkt maar één keer en maar %1 minuten.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Wachtwoord opnieuw instellen</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Iemand heeft gevraagd het wachtwoord van je account op %site opnieuw in te stellen. Bevestig dit met de knop, dan sturen we je in een tweede e-mail een nieuw wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Mijn wachtwoord opnieuw instellen</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Heb je hier niet om gevraagd? Dan kun je deze e-mail negeren: je wachtwoord blijft zoals het is.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Je nieuwe wachtwoord</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Je wachtwoord op %site is opnieuw ingesteld. Log in met dit nieuwe wachtwoord en wijzig het daarna in een eigen wachtwoord.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Heb je je wachtwoord niet zelf opnieuw ingesteld? Log dan in met dit wachtwoord en wijzig het meteen.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Wachtwoord opnieuw instellen voor %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Je nieuwe wachtwoord voor %site</translation>
     </message>
 </context>
 <context>
@@ -50120,12 +50168,28 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Het archief is geweigerd: het item &quot;%path&quot; verwijst naar buiten het pakket.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Het archief is ingepakt in de PAX-tar-indeling, die niet kan worden geïmporteerd. Pak het pakket in in de GNU-tar-indeling (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Het archief is geweigerd: het item &quot;%path&quot; heeft een bestands- of mapnaam langer dan %length bytes, die geen bestandssysteem opslaat.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Het archief is geweigerd: het item &quot;%path&quot; heeft het tar-type &quot;%type&quot;, en een pakket bevat alleen bestanden en mappen.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>De koppeling &quot;%path&quot; wijst buiten het pakket (%target) en is niet geïmporteerd.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>De koppeling &quot;%path&quot; wijst naar &quot;%target&quot;, dat niet in het pakket zit, en is niet geïmporteerd.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>De koppeling &quot;%path&quot; wijst naar de map &quot;%target&quot; en is niet geïmporteerd.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Het item &quot;%path&quot; is een apparaat of een named pipe (tar-type &quot;%type&quot;) en is niet geïmporteerd.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Het item &quot;%path&quot; heeft het tar-type &quot;%type&quot;, dat een pakket niet gebruikt, en is niet geïmporteerd.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71253,6 +71317,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Your devices</source>
         <translation>Je apparaten</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Iemand wil %email gebruiken voor een account op %site. Bevestig dat dit adres van jou is.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Jij (of iemand die je adres heeft ingetypt) hebt een link aangevraagd om de e-mail te beheren die %site naar %email stuurt. Op die pagina kun je elk soort e-mail aan- of uitzetten, of alle optionele e-mail stoppen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71609,6 +71681,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Als jij deze wijziging niet hebt gemaakt, kent iemand anders misschien je wachtwoord: stel het direct opnieuw in met &quot;%forgot&quot; op de inlogpagina en neem contact met ons op.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Je wachtwoord is gewijzigd</translation>
     </message>
 </context>
 <context>
@@ -77920,6 +77996,34 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The sessions of this user:</source>
         <translation>De sessies van deze gebruiker:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nieuwe aanmelding op je account</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparaat</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tijd</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Geschat adres</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Was jij dit niet, dan kent iemand misschien je wachtwoord: log die sessie uit op de pagina met je apparaten en wijzig daarna je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Je apparaten controleren</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Sessies van deze gebruiker bekijken</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78446,6 +78550,17 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>De rij wordt uit de tabel verwijderd en kan niet worden teruggehaald.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Als de knop niet werkt, kopieer dan dit adres naar je browser: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Pagina openen</translation>
     </message>
 </context>
 </TS>

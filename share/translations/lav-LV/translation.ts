@@ -44879,6 +44879,14 @@ Ja vēlaties nosūtīt komentārus apstiprinātājam vai skatīt statusu, izmant
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentārs no „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Jums ieteikta lapa</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Jūs saņēmāt šo e-pasta ziņojumu, jo kāds vietnē %site ievadīja jūsu adresi, lai kopīgotu ar jums lapu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Lai to izdarītu, sadaļā „Alternatīvas čaulas komandas“ jāmaina komanda
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Mēģinājums: %attempt no %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Skatīt kvīti</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ tajā sniegtos norādījumus.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Saite darbojas tikai vienu reizi un tikai %1 min.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Paroles atiestatīšana</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Kāds pieprasīja atiestatīt jūsu konta paroli vietnē %site. Apstipriniet ar pogu, un mēs nosūtīsim jums jaunu paroli otrā e-pasta ziņojumā.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Atiestatīt manu paroli</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ja to nepieprasījāt, varat ignorēt šo e-pasta ziņojumu: jūsu parole paliek nemainīta.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Jūsu jaunā parole</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Jūsu parole vietnē %site tika atiestatīta. Pierakstieties ar šo jauno paroli un pēc tam nomainiet to pret savu.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ja jūs neatiestatījāt paroli, pierakstieties ar šo paroli un nekavējoties nomainiet to.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Paroles atiestatīšana vietnē %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Jūsu jaunā parole vietnē %site</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <translation>Pakotne</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arhīvs ir iepakots PAX tar formātā, ko nevar importēt. Iepakojiet pakotni GNU tar formātā (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arhīvs tika noraidīts: ierakstam „%path“ ir faila vai direktorija nosaukums, garāks par %length baitiem, ko neviena failu sistēma neglabā.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arhīvs tika noraidīts: ierakstam „%path“ ir tar tips „%type“, bet pakotnē var būt tikai faili un direktoriji.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Saite „%path“ norāda ārpus pakotnes (%target) un netika importēta.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Saite „%path“ norāda uz „%target“, kas nav pakotnē, un netika importēta.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Saite „%path“ norāda uz direktoriju „%target“ un netika importēta.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Ieraksts „%path“ ir ierīce vai nosaukts kanāls (tar tips „%type“) un netika importēts.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Ierakstam „%path“ ir tar tips „%type“, ko pakotne neizmanto, un tas netika importēts.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Your devices</source>
         <translation>Jūsu ierīces</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Kāds pieprasīja izmantot adresi %email kontam vietnē %site. Lūdzu, apstipriniet, ka šī adrese ir jūsu.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Jūs (vai kāds, kas ievadīja jūsu adresi) pieprasījāt saiti, lai pārvaldītu e-pasta ziņojumus, ko vietne %site sūta uz adresi %email. Šajā lapā varat ieslēgt vai izslēgt katru e-pasta ziņojumu veidu vai pārtraukt visus neobligātos e-pasta ziņojumus.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ja šo izmaiņu neveicāt jūs, kāds cits, iespējams, zina jūsu paroli: nekavējoties atiestatiet to, pierakstīšanās lapā izmantojot „%forgot“, un sazinieties ar mums.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Jūsu parole ir nomainīta</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The sessions of this user:</source>
         <translation>Šī lietotāja sesijas:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Jauna pierakstīšanās jūsu kontā</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ierīce</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laiks</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Aptuvenā adrese</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ja tas nebijāt jūs, kāds var zināt jūsu paroli: izrakstiet šo sesiju savu ierīču lapā un pēc tam nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Pārskatīt ierīces</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Skatīt šī lietotāja sesijas</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Push to block</source>
         <translation>Nosūtīt uz bloku</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ja poga nedarbojas, iekopējiet šo adresi pārlūkprogrammā: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Atvērt lapu</translation>
     </message>
 </context>
 </TS>

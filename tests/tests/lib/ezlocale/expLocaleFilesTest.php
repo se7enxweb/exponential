@@ -21,14 +21,16 @@ class expLocaleFilesTest extends PHPUnit\Framework\TestCase
     const STAMP = 1700000000;
 
     /** Languages written right to left: their files carry a note and [LanguageSettings] TextDirection=rtl. */
-    const RTL_LANGUAGES = array( 'ara', 'heb', 'fas', 'urd', 'pus', 'pnb', 'snd', 'uig', 'yid', 'ckb', 'syr', 'kas', 'nqo', 'div' );
+    const RTL_LANGUAGES = array( 'ara', 'heb', 'fas', 'urd', 'pus', 'pnb', 'snd', 'uig', 'yid', 'ckb', 'syr', 'kas', 'nqo', 'div', 'arc',
+        'huy' );
 
     /** Every right-to-left locale file there must be (Arabic, Hebrew, Persian and Dari, Urdu, Pashto, Western
-     * Punjabi, Sindhi, Uyghur, Yiddish, Central Kurdish, Syriac, Kashmiri, N'Ko, Dhivehi). */
+     * Punjabi, Sindhi, Uyghur, Yiddish, Central Kurdish, Syriac, Kashmiri, N'Ko, Dhivehi, Imperial Aramaic, Hulaulá). */
     const RTL_LOCALES = array( 'ara-SA', 'ara-AE', 'ara-EG', 'ara-MA', 'ara-DZ', 'ara-TN', 'ara-IQ', 'ara-JO', 'ara-LB',
         'ara-SY', 'ara-KW', 'ara-QA', 'ara-BH', 'ara-OM', 'ara-LY', 'ara-PS', 'ara-YE', 'ara-SD', 'ara-MR', 'ara-DJ',
-        'ara-KM', 'ara-SO', 'ara-TD', 'ara-ER', 'heb-IL', 'fas-IR', 'fas-AF', 'urd-PK', 'urd-IN', 'pus-AF', 'pnb-PK', 'snd-PK',
-        'uig-CN', 'yid-US', 'ckb-IQ', 'syr-IQ', 'syr-SY', 'kas-IN', 'nqo-GN', 'div-MV' );
+        'ara-KM', 'ara-SO', 'ara-TD', 'ara-ER', 'ara-EH', 'heb-IL', 'fas-IR', 'fas-AF', 'urd-PK', 'urd-IN', 'pus-AF', 'pnb-PK', 'snd-PK',
+        'uig-CN', 'yid-US', 'ckb-IQ', 'syr-IQ', 'syr-SY', 'kas-IN', 'nqo-GN', 'div-MV',
+        'arc-IQ', 'huy-IL' );
 
     private $timezone;
 

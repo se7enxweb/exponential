@@ -36,6 +36,8 @@ class expLocaleTextDirectionTest extends PHPUnit\Framework\TestCase
             'Yiddish' => array( 'yid-US', 'rtl' ),
             'Central Kurdish' => array( 'ckb-IQ', 'rtl' ),
             'Syriac' => array( 'syr-IQ', 'rtl' ),
+            'Imperial Aramaic (hand-made)' => array( 'arc-IQ', 'rtl' ),
+            'Hulaulá (hand-made)' => array( 'huy-IL', 'rtl' ),
             'Kashmiri' => array( 'kas-IN', 'rtl' ),
             'N\'Ko' => array( 'nqo-GN', 'rtl' ),
             'Dhivehi (hand-made)' => array( 'div-MV', 'rtl' ),

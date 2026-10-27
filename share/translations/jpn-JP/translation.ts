@@ -44879,6 +44879,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>「%1 &lt;%2&gt;」からのコメント</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>ページが紹介されました</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>このメールは、%site でページを共有するためにどなたかがこのアドレスを入力したため送信されています。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Webサーバーのユーザーとグループがわかっている場合は、�
         <source>(Retry: %attempt out of %max).</source>
         <translation>(再試行: %attempt / %max)。</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>領収書の表示</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>このリンクは %1 分間、1 回だけ有効です。</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>パスワードのリセット</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>%site のアカウントのパスワードをリセットするよう依頼がありました。ボタンで確認すると、新しいパスワードを別のメールでお送りします。</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>パスワードをリセット</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>心当たりがない場合は、このメールを無視してください。パスワードは変更されません。</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>新しいパスワード</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site のパスワードがリセットされました。この新しいパスワードでログインし、ご自身で決めたパスワードに変更してください。</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>パスワードをリセットしていない場合は、このパスワードでログインし、すぐに変更してください。</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site のパスワードのリセット</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site の新しいパスワード</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>パッケージ</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>アーカイブファイルはインポートできない PAX tar 形式でパックされています。パッケージを GNU tar 形式でパックしてください (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar)。</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>アーカイブは拒否されました: エントリ「%path」には %length バイトを超えるファイル名またはディレクトリ名があり、どのファイルシステムにも保存できません。</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>アーカイブファイルは拒否されました: エントリ「%path」の tar タイプは「%type」ですが、パッケージに含めることができるのはファイルとディレクトリのみです。</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>リンク「%path」はパッケージの外 (%target) を指しているため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>リンク「%path」はパッケージに含まれない「%target」を指しているため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>リンク「%path」はディレクトリ「%target」を指しているため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>エントリ「%path」はデバイスまたは名前付きパイプ (tar タイプ「%type」) のため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>エントリ「%path」の tar タイプ「%type」はパッケージで使われないため、インポートされませんでした。</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>お使いのデバイス</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>%site のアカウントで %email を使用するよう依頼がありました。このアドレスがご自身のものであることを確認してください。</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>%site から %email に送られるメールを管理するためのリンクが依頼されました（このアドレスを入力した方からの依頼です）。そのページでは、メールの種類ごとに受信のオン／オフを切り替えたり、任意のメールをすべて停止したりできます。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>ご自身で変更していない場合は、他の誰かがパスワードを知っている可能性があります。ログインページの「%forgot」からすぐにリセットし、お問い合わせください。</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>パスワードが変更されました</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>このユーザーのセッション:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>アカウントへの新しいログイン</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>デバイス</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>日時</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>おおよそのアドレス</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>心当たりがない場合は、第三者がパスワードを知っている可能性があります。デバイスのページでそのセッションをログアウトさせてから、パスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>デバイスの確認</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>このユーザーのセッションの表示</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Push to block</source>
         <translation>ブロックへ送信</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ボタンが機能しない場合は、このアドレスをブラウザーにコピーしてください: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>ページを開く</translation>
     </message>
 </context>
 </TS>
