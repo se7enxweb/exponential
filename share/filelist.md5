@@ -12292,7 +12292,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-dc1ab3007f7b8844d8d2afce4d4fac38  doc/eng-us/languages.md
+04fd38bc386d3d77eb08f2da1e8992c8  doc/eng-us/languages.md
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/eng-us/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/eng-us/shop/examples/paypal/extensionfiles.html
@@ -12571,7 +12571,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-ae847040b4ea5c7f7d3ac3147644084b  doc/eng-us/translation-waves.md
+d8dbccd2348c9498bc5c5b0d43ffcbf9  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 4a17b507552fd50a4a416c8e6d5261d6  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 02ca7554f6be881f735fce76a2ce5590  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -21245,7 +21245,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 318e35392529be468f30eb96b9543fa7  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-714e5298257d6f7fb0e6299c26e817b1  doc/ger-de/sprachen.md
+2ae4429cdd2871e30fa47d89936f2dae  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 d668c54ddd26f3b59956c1b468b0e5ff  doc/ger-de/standards/apis-und-protokolle.md
 f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -21435,7 +21435,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-0e85c99c4134561ed12a1c345dd161e8  doc/ger-de/uebersetzungswellen.md
+68a837f9af4bdd5e7f03e93c3df9e56a  doc/ger-de/uebersetzungswellen.md
 aafefe33be1a1d56beba6d5a7b7aacca  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -21799,6 +21799,7 @@ d38dcbe5bf7708c51c36e43e7ee7b6f4  extension/ezjscore/translations/kal-GL/transla
 a9adacbfb776a941d40c4dba273fe30b  extension/ezjscore/translations/kat-GE/translation.ts
 f0205cd489e1830b7a49b5fa25de51fc  extension/ezjscore/translations/kaz-KZ/translation.ts
 451541fc8e4d659b9d72305474f60f64  extension/ezjscore/translations/khm-KH/translation.ts
+cb6a5c131b0e2e766ea34ff9dc670b21  extension/ezjscore/translations/kik-KE/translation.ts
 07a7146c16124dcf09a10adade9db421  extension/ezjscore/translations/kin-RW/translation.ts
 67f9c84a3c584eb5aa1d44fa0cc1f3bc  extension/ezjscore/translations/kor-KR/translation.ts
 4bc64ce43fc785e6c033f1e9de895ed4  extension/ezjscore/translations/kur-TR/translation.ts
@@ -22401,7 +22402,6 @@ ad2c6919eea412d08e663a04065a37d6  extension/ezoe/translations/lav-LV/translation
 ef4a1b559b134ba737fa0d6c6600ac6a  extension/ezoe/translations/por-PT/translation.ts
 a8a1164209bbb869d2ac84b4efbd8228  extension/ezoe/translations/pus-AF/translation.ts
 4b52e5e7fd89a8af569e54fac7dca07a  extension/ezoe/translations/ron-RO/translation.ts
-4ea1dc33e5daca7bf925f81ef9a16bff  extension/ezoe/translations/run-BI/translation.ts
 aed2a450e74b799c548af4acef9fe720  extension/ezoe/translations/rus-RU/translation.ts
 5978045ad27e33cce745b87a651426e9  extension/ezoe/translations/ser-SR/translation.ts
 40b74f34ac7f20973f9901c6c216e843  extension/ezoe/translations/slk-SK/translation.ts
@@ -22413,7 +22413,6 @@ ce0ab7efd0ff1d8f63c6560d31d428a7  extension/ezoe/translations/som-SO/translation
 afd83f7b751f47ea68e9bb07a0dbd7f6  extension/ezoe/translations/swe-SE/translation.ts
 73c6b7ab804240fb28abbeed846fc09b  extension/ezoe/translations/tam-IN/translation.ts
 24ec7626b760910e159b6c93cafd1ecd  extension/ezoe/translations/tel-IN/translation.ts
-6f3af63bd46ffdfe4e036a50bd88d414  extension/ezoe/translations/tgk-TJ/translation.ts
 d75e8173f9468ec864426e66966f3080  extension/ezoe/translations/tlh-QO/translation.ts
 f7ddaf8d57376f2faf86703240c06c27  extension/ezoe/translations/untranslated/translation.ts
 b7a594c5c2553a539edbf245af30b034  extension/ezoe/translations/urd-PK/translation.ts
@@ -25533,6 +25532,8 @@ d7529d3bf3a2dc8cd859c01cfccc792c  share/translations/kat-GE/translation.ts
 a1395d5016888334bf14eed7e7796941  share/translations/kaz-KZ/translation.ts
 8cd1e7b3bff589fa62b5108b84baaad3  share/translations/khm-KH/GUIDE.md
 e01d3f167ed77c2bd08068cc4e01b917  share/translations/khm-KH/translation.ts
+11690575a60fb357fdaf33369e4d794a  share/translations/kik-KE/GUIDE.md
+925270a95c83264cb2e686ab5131f1db  share/translations/kik-KE/translation.ts
 6b38b3553cceec97f12ba185d05800c1  share/translations/kin-RW/GUIDE.md
 db77041531c81654afd8c7c057811004  share/translations/kin-RW/translation.ts
 7919ac0ac1d6e2e5a652a21af0b4eaba  share/translations/kor-KR/GUIDE.md
@@ -27124,13 +27125,13 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
-57ee5165cb55b06978507b9ea749157c  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
+63a351200e463c788995181d740df1a4  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 98e1f0b2248c3a8c16e298ecc9e0b8f7  tests/tests/lib/ezi18n/expChineseHongKongFallbackTest.php
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 9d100c37c28b005fb55aa5877fcbbd2a  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
-d4118e2cf3332ccf6e565c035d9f3250  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-04428c1d97761cae5887a70a286d7e7d  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+b7b11298c60ab19dd3fb51f81c4505c0  tests/tests/lib/ezi18n/expTranslationQualityTest.php
+0676f7e24f65c5a30527b306f21f1542  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
