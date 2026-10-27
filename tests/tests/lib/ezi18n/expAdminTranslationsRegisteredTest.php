@@ -27,7 +27,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'hun-HU', 'isl-IS', 'jpn-JP', 'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU',
         'ser-SR', 'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY',
         'jav-ID', 'sun-ID', 'nep-NP', 'bho-IN', 'mai-IN', 'pcm-NG', 'syr-IQ', 'arc-IQ', 'huy-IL', 'snd-PK', 'pnb-PK',
-        'uzb-UZ', 'mya-MM', 'lin-CD', 'ful-SN' );
+        'uzb-UZ', 'mya-MM', 'lin-CD', 'ful-SN', 'orm-ET' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
     const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL', 'afr-ZA', 'bos-BA', 'bul-BG',
@@ -35,7 +35,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU', 'ser-SR', 'slk-SK', 'slv-SI',
         'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY', 'jav-ID', 'sun-ID', 'nep-NP',
         'bho-IN', 'mai-IN', 'pcm-NG', 'syr-IQ', 'arc-IQ', 'huy-IL', 'snd-PK', 'pnb-PK', 'uzb-UZ', 'mya-MM', 'lin-CD',
-        'ful-SN' );
+        'ful-SN', 'orm-ET' );
 
     /**
      * Complete translations that no ranked group of settings/uiswitch.ini names: the switch offers them in its A-Z
@@ -45,7 +45,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'est-EE', 'fin-FI', 'gle-IE', 'hun-HU', 'isl-IS', 'kal-GL', 'lav-LV', 'lit-LT', 'mlt-MT', 'ron-RO', 'ser-SR',
         'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'tha-TH', 'lao-LA', 'msa-MY', 'jav-ID', 'sun-ID', 'nep-NP',
         'bho-IN', 'mai-IN', 'pcm-NG', 'syr-IQ', 'arc-IQ', 'huy-IL', 'snd-PK', 'pnb-PK', 'uzb-UZ', 'mya-MM', 'lin-CD',
-        'ful-SN' );
+        'ful-SN', 'orm-ET' );
 
     /** @var string the repository */
     protected $root;
