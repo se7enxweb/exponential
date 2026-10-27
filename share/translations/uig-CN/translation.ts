@@ -7090,19 +7090,19 @@
     </message>
     <message>
         <source>A URL wildcard sends a whole group of addresses somewhere else with one rule: news/* to articles/{1\} turns news/2026/october into articles/2026/october. Each * of the pattern matches any text, and {1\}, {2\} ... in the destination put that text back. Wildcards are tried in the order they were created, the first that matches is used, and they are only consulted when no URL alias matches the address.</source>
-        <translation>URL ئومۇمىي ماسلاشتۇرغۇچى بىر قائىدە بىلەن پۈتۈن بىر ئادرېس گۇرۇپپىسىنى باشقا يەرگە ئەۋەتىدۇ: news/* دىن articles/{1\\} غا بولغان قائىدە news/2026/october نى articles/2026/october قا ئايلاندۇرىدۇ. ئۈلگىدىكى ھەر بىر * ھەرقانداق تېكىستكە ماس كېلىدۇ، نىشاندىكى {1\\}، {2\\} ... بۇ تېكىستنى قايتا قويىدۇ. ئومۇمىي ماسلاشتۇرغۇچلار قۇرۇلغان تەرتىپ بويىچە سىنىلىدۇ، ماس كەلگەن بىرىنچىسى ئىشلىتىلىدۇ، ھەمدە ئۇلار پەقەت ئادرېسقا ھېچقانداق URL باشقا ئىسمى ماس كەلمىگەندىلا ئىشلىتىلىدۇ.</translation>
+        <translation>URL ئومۇمىي ماسلاشتۇرغۇچى بىر قائىدە بىلەن پۈتۈن بىر ئادرېس گۇرۇپپىسىنى باشقا يەرگە ئەۋەتىدۇ: news/* دىن articles/{1\} غا بولغان قائىدە news/2026/october نى articles/2026/october قا ئايلاندۇرىدۇ. ئۈلگىدىكى ھەر بىر * ھەرقانداق تېكىستكە ماس كېلىدۇ، نىشاندىكى {1\}، {2\} ... بۇ تېكىستنى قايتا قويىدۇ. ئومۇمىي ماسلاشتۇرغۇچلار قۇرۇلغان تەرتىپ بويىچە سىنىلىدۇ، ماس كەلگەن بىرىنچىسى ئىشلىتىلىدۇ، ھەمدە ئۇلار پەقەت ئادرېسقا ھېچقانداق URL باشقا ئىسمى ماس كەلمىگەندىلا ئىشلىتىلىدۇ.</translation>
     </message>
     <message>
         <source>Create one with the form above, for example old-blog/* to blog/{1\}.</source>
-        <translation>يۇقىرىدىكى جەدۋەل بىلەن بىرنى قۇرۇڭ، مەسىلەن old-blog/* دىن blog/{1\\} غا.</translation>
+        <translation>يۇقىرىدىكى جەدۋەل بىلەن بىرنى قۇرۇڭ، مەسىلەن old-blog/* دىن blog/{1\} غا.</translation>
     </message>
     <message>
         <source>Each * of the pattern is one placeholder, numbered from {1\}. Add a * to the pattern or remove the placeholder; otherwise visitors would be sent to an address with a part missing.</source>
-        <translation>ئۈلگىدىكى ھەر بىر * بىر ئورۇن بەلگىسى بولۇپ، {1\\} دىن باشلاپ نومۇرلىنىدۇ. ئۈلگىگە * قوشۇڭ ياكى ئورۇن بەلگىسىنى چىقىرىۋېتىڭ؛ بولمىسا زىيارەتچىلەر بىر قىسمى كەم ئادرېسقا ئەۋەتىلىدۇ.</translation>
+        <translation>ئۈلگىدىكى ھەر بىر * بىر ئورۇن بەلگىسى بولۇپ، {1\} دىن باشلاپ نومۇرلىنىدۇ. ئۈلگىگە * قوشۇڭ ياكى ئورۇن بەلگىسىنى چىقىرىۋېتىڭ؛ بولمىسا زىيارەتچىلەر بىر قىسمى كەم ئادرېسقا ئەۋەتىلىدۇ.</translation>
     </message>
     <message>
         <source>Where the addresses go: a path of this site, or a full address when redirecting. {1\} is the text the first * matched. Example: dev/{1\}</source>
-        <translation>ئادرېسلار بارىدىغان يەر: بۇ بېكەتنىڭ بىر يولى، ياكى يوللىغاندا تولۇق ئادرېس. {1\\} بىرىنچى * ماس كەلگەن تېكىست. مىسال: dev/{1\\}</translation>
+        <translation>ئادرېسلار بارىدىغان يەر: بۇ بېكەتنىڭ بىر يولى، ياكى يوللىغاندا تولۇق ئادرېس. {1\} بىرىنچى * ماس كەلگەن تېكىست. مىسال: dev/{1\}</translation>
     </message>
 </context>
 <context>
@@ -26100,7 +26100,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>ئوپېراتورنى تازىلاش ئۈچۈن PHP فۇنكسىيەسىنى ئىجرا قىلىدۇ ۋە \\a $operatorValue نى ئۆزگەرتىدۇ.</translation>
+        <translation>ئوپېراتورنى تازىلاش ئۈچۈن PHP فۇنكسىيەسىنى ئىجرا قىلىدۇ ۋە \a $operatorValue نى ئۆزگەرتىدۇ.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return قېلىپ ئوپېراتورىنىڭ نامىنى ئۆز ئىچىگە ئالغان تىزما قايتۇرىدۇ.</translation>
+        <translation>\\return قېلىپ ئوپېراتورىنىڭ نامىنى ئۆز ئىچىگە ئالغان تىزما قايتۇرىدۇ.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return قېلىپ ئوپېراتورىنىڭ نامىنى ئۆز ئىچىگە ئالغان تىزما قايتۇرىدۇ.</translation>
+        <translation>\return قېلىپ ئوپېراتورىنىڭ نامىنى ئۆز ئىچىگە ئالغان تىزما قايتۇرىدۇ.</translation>
     </message>
 </context>
 <context>
@@ -27730,7 +27730,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
-        <translation>bin/ دىكى ھەر بىر بۇيرۇق، cronjobs/ دىكى ھەر بىر cron ۋەزىپە قىسمى ۋە ھەر بىر مودۇل كۆرۈنۈشى بىر تىپتۇر؛ site.ini دا ئاتالغان تارماق تىپ ئۇنىڭ ئورنىدا ئىجرا بولىدۇ، ئاڭلىغۇچىلار ئۇلارنىڭ ھەر قايسىسىدىن بۇرۇن ۋە كېيىن ھەرىكەت قىلالايدۇ. مەسىلەن Implementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView بار بېكەت ئورنىنى ئېلىشى content/history نىڭ myHistoryView نى ئىجرا قىلىشىنى ئەمەلگە ئاشۇرىدۇ، ئۇ يادرو تىپىنى كېڭەيتىدۇ ھەمدە پەقەت ئۆزى ئالماشتۇرغىنىنىلا ئۆزگەرتىدۇ.</translation>
+        <translation>bin/ دىكى ھەر بىر بۇيرۇق، cronjobs/ دىكى ھەر بىر cron ۋەزىپە قىسمى ۋە ھەر بىر مودۇل كۆرۈنۈشى بىر تىپتۇر؛ site.ini دا ئاتالغان تارماق تىپ ئۇنىڭ ئورنىدا ئىجرا بولىدۇ، ئاڭلىغۇچىلار ئۇلارنىڭ ھەر قايسىسىدىن بۇرۇن ۋە كېيىن ھەرىكەت قىلالايدۇ. مەسىلەن Implementation[Exponential\View\Kernel\Content\History]=myHistoryView بار بېكەت ئورنىنى ئېلىشى content/history نىڭ myHistoryView نى ئىجرا قىلىشىنى ئەمەلگە ئاشۇرىدۇ، ئۇ يادرو تىپىنى كېڭەيتىدۇ ھەمدە پەقەت ئۆزى ئالماشتۇرغىنىنىلا ئۆزگەرتىدۇ.</translation>
     </message>
     <message>
         <source>Server functions of ezjscore</source>
@@ -27770,7 +27770,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>ئۇ ئالماشتۇرىدىغان تىپنى كېڭەيتىدۇ: ئاستىدا Exponential\\Runnable\\Command، CronjobPart ياكى ModuleView</translation>
+        <translation>ئۇ ئالماشتۇرىدىغان تىپنى كېڭەيتىدۇ: ئاستىدا Exponential\Runnable\Command، CronjobPart ياكى ModuleView</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
@@ -51026,7 +51026,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>ئوپېراتورنى تازىلاش ئۈچۈن PHP فۇنكسىيەسىنى ئىجرا قىلىدۇ ۋە \\a $operatorValue نى ئۆزگەرتىدۇ.</translation>
+        <translation>ئوپېراتورنى تازىلاش ئۈچۈن PHP فۇنكسىيەسىنى ئىجرا قىلىدۇ ۋە \a $operatorValue نى ئۆزگەرتىدۇ.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return قېلىپ ئوپېراتورىنىڭ نامىنى ئۆز ئىچىگە ئالغان تىزما قايتۇرىدۇ.</translation>
+        <translation>\\return قېلىپ ئوپېراتورىنىڭ نامىنى ئۆز ئىچىگە ئالغان تىزما قايتۇرىدۇ.</translation>
     </message>
 </context>
 <context>
