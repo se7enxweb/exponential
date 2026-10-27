@@ -9,14 +9,14 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **76**, 76 of them complete |
-| Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
-| Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **73** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **75** |
+| Languages of the administration: translations in `share/translations` | **79**, 79 of them complete |
+| Locales: `share/locale/*.ini` files | **270**: 263 languages and countries, 1 test language, 6 variants |
+| Known languages: the language codes of the locales (variants and the test language left out) | **150** |
+| of them shown translated by the administration (own translation, fallback or English) | **76** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **74** |
 | Countries and territories of the locales | **158** |
 | of them with the administration in their language (green on the map) | **138** |
-| Locales written right to left | **40** |
+| Locales written right to left | **42** |
 
 ![World map: 138 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
@@ -91,9 +91,9 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | India | IN | `asm-IN` (untranslated), `ben-IN` → `ben-BD`, `bho-IN` (untranslated), `brx-IN` (untranslated), `doi-IN` (untranslated), `eng-IN` (source texts), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (untranslated), `kok-IN` (untranslated), `mai-IN` (untranslated), `mal-IN`, `mar-IN`, `mni-IN` (untranslated), `ori-IN`, `pan-IN`, `san-IN` (untranslated), `sat-IN` (untranslated), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
 | Indonesia | ID | `ind-ID`, `jav-ID` (untranslated), `sun-ID` (untranslated) |
 | Iran, Islamic Republic of | IR | `fas-IR` |
-| Iraq | IQ | `ara-IQ` → `ara-SA`, `ckb-IQ` (untranslated), `syr-IQ` (untranslated) |
+| Iraq | IQ | `ara-IQ` → `ara-SA`, `arc-IQ`, `ckb-IQ` (untranslated), `syr-IQ` |
 | Ireland | IE | `eng-IE` (source texts), `gle-IE` |
-| Israel | IL | `heb-IL` |
+| Israel | IL | `heb-IL`, `huy-IL` |
 | Italy | IT | `ita-IT` |
 | Japan | JP | `jpn-JP` |
 | Jordan | JO | `ara-JO` → `ara-SA` |
@@ -151,7 +151,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Sudan | SD | `ara-SD` → `ara-SA` |
 | Sweden | SE | `swe-SE` |
 | Switzerland | CH | `fre-CH` → `fre-FR`, `ger-CH` → `ger-DE`, `ita-CH` → `ita-IT`, `roh-CH` (untranslated) |
-| Syrian Arab Republic | SY | `ara-SY` → `ara-SA`, `syr-SY` (untranslated) |
+| Syrian Arab Republic | SY | `ara-SY` → `ara-SA`, `syr-SY` → `syr-IQ` |
 | Taiwan | TW | `chi-TW` |
 | Tanzania, United Republic of | TZ | `swa-TZ` → `swa-KE` |
 | Thailand | TH | `tha-TH` |
@@ -232,14 +232,14 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 <!-- generated: exp:i18n coverage languages (start) -->
 ## The languages not translated yet
 
-Exponential knows **148 languages**: that many different language codes (the three letters before the
+Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **73** of them translated: at least one of their locales has a translation of its
+administration shows **76** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **75** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **74** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 75 languages not translated</summary>
+<details><summary>The 74 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -304,7 +304,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
 | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Morocco) |
 | Sundanese | Basa Sunda | `sun` | `sun-ID` (Indonesia) |
-| Syriac | ܣܘܪܝܝܐ | `syr` | `syr-IQ` (Iraq), `syr-SY` (Syrian Arab Republic) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tajikistan) |
 | Tatar | Татар | `tat` | `tat-RU` (Russian Federation) |
 | Tibetan | བོད་སྐད་ | `bod` | `bod-CN` (China) |
@@ -351,7 +350,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
 
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
@@ -420,6 +419,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ara-TD` | Arabic (Chad) | العربية (تشاد) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-TN` | Arabic (Tunisia) | العربية (تونس) | Africa | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-YE` | Arabic (Yemen) | العربية (اليمن) | Middle East | RTL | Arabic (`Arab`) | CLDR 48 | — |
+| `arc-IQ` | Imperial Aramaic | ארמית | Middle East | RTL | Hebrew (`Hebr`) | hand-made names, CLDR 44 conventions | 100% |
 | `asm-IN` | Assamese | অসমীয়া | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | — |
 | `ast-ES` | Asturian | Asturianu | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `aze-AZ` | Azerbaijani | Azərbaycan | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -551,6 +551,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `hin-IN` | Hindi | हिन्दी | South Asia | LTR | Devanagari (`Deva`) | older, regenerated from CLDR 44 | 100% |
 | `hsb-DE` | Upper Sorbian | Hornjoserbšćina | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `hun-HU` | Hungarian | Magyar | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `huy-IL` | Hulaulá | הולאולא | Middle East | RTL | Hebrew (`Hebr`) | hand-made names, CLDR 44 conventions | 100% |
 | `hye-AM` | Armenian | Հայերեն | Central Asia and Caucasus | LTR | Armenian (`Armn`) | CLDR 44 | — |
 | `ibo-NG` | Igbo | Igbo | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `ind-ID` | Indonesian | Indonesian | Southeast Asia | LTR | Latin (`Latn`) | older, hand-made | 100% |
@@ -635,8 +636,8 @@ The table is generated from the locale files; do not edit it by hand.
 | `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `swa-KE`) |
 | `swe-SE` | Swedish | Svenska | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
-| `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
-| `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
+| `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | 100% |
+| `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | 100% (falls back to `syr-IQ`) |
 | `tam-IN` | Tamil (India) | தமிழ் (இந்தியா) | South Asia | LTR | Tamil (`Taml`) | CLDR 44 | 100% |
 | `tam-LK` | Tamil (Sri Lanka) | தமிழ் (இலங்கை) | South Asia | LTR | Tamil (`Taml`) | CLDR 44 | 100% (falls back to `tam-IN`) |
 | `tam-SG` | Tamil (Singapore) | தமிழ் (சிங்கப்பூர்) | Southeast Asia | LTR | Tamil (`Taml`) | CLDR 44 | 100% (falls back to `tam-IN`) |
@@ -694,6 +695,12 @@ Notes on single locales:
 - **Yiddish** (`yid-US`): CLDR 44 has Yiddish only as `yi_UA` (until CLDR 43 `yi_001`, "world"), and a locale code
   needs a two-letter country. The largest Yiddish-speaking community lives in the United States, so the file has
   CLDR's Yiddish names with the conventions and currency of the United States.
+- **Imperial Aramaic** (`arc-IQ`) and **Hulaulá** (`huy-IL`, Jewish Neo-Aramaic) have no CLDR data and are written
+  in Hebrew square script. `arc-IQ` takes the conventions of CLDR `syr_IQ` (Iraqi dinar) and its Aramaic month and
+  country names, transliterated from Syriac; the day names are the Aramaic ones (חד בשבא ... שבתא). `huy-IL` takes
+  the conventions, month and country names of CLDR `he_IL` (new shekel) and the Jewish Aramaic day names (חד בשבא
+  ... מעלי שבתא, שבתא). The language and currency names are written by hand; each file names the source of every
+  value and needs a review.
 - **Dari** (`fas-AF`) is the Persian of Afghanistan, as in CLDR (`fa_AF`, display name "Dari", دری); `fas-IR`
   stays "Persian".
 - **Central Kurdish** (`ckb-IQ`, Sorani, Arabic script, right to left) has no ISO 639-2 code (639-2 has only `kur`
@@ -840,6 +847,10 @@ source text, and the interface language choice counts English as 100%.
 | `msa-BN` | falls back to `msa-MY` | 100% (falls back to `msa-MY`) |
 | `vie-VN` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 | `ind-ID` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
+| `syr-IQ` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
+| `syr-SY` | falls back to `syr-IQ` | 100% (falls back to `syr-IQ`) |
+| `arc-IQ` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
+| `huy-IL` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 
 Notes:
 
@@ -851,6 +862,12 @@ Notes:
   register of current software without sentence-final particles, words written without spaces and placeholders
   standing free, each with a glossary (`share/translations/tha-TH/GUIDE.md`, `share/translations/lao-LA/GUIDE.md`);
   the kernel, ezoe and ezjscore catalogues are complete. A review by native speakers is welcome.
+- **Aramaic** was added on 26 October 2026, machine-assisted. `syr-IQ` is Modern Aramaic in Syriac script
+  (Assyrian/Syriac), unvocalized and right to left, with the polite plural address and a glossary
+  (`share/translations/syr-IQ/GUIDE.md`); `syr-SY` falls back to it. `arc-IQ` (Imperial Aramaic) and `huy-IL`
+  (Hulaulá, Jewish Neo-Aramaic) are written in Hebrew square script and are no translations of their own: their
+  catalogues are the syr-IQ text transliterated letter for letter (their GUIDE.md gives the mapping). The kernel,
+  ezoe and ezjscore catalogues of all three are complete. A review by native speakers is welcome.
 - **Yiddish** (`yid-US`) was added on 26 October 2026, machine-assisted, in the YIVO orthography and right to left,
   with the formal address and a glossary (`share/translations/yid-US/GUIDE.md`); the kernel, ezoe and ezjscore
   catalogues are complete. A review by a native speaker is welcome.
@@ -1178,13 +1195,15 @@ home languages, then by speakers and difficulty, in [Translation waves](translat
 
 ## 9. Right-to-left languages
 
-40 locale files are written right to left:
+42 locale files are written right to left:
 
 | Language | Locales | Script |
 |---|---|---|
 | Arabic | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA`, `ara-BH`, `ara-OM`, `ara-LY`, `ara-PS`, `ara-YE`, `ara-SD`, `ara-MR`, `ara-DJ`, `ara-KM`, `ara-SO`, `ara-TD`, `ara-ER` | Arabic |
 | Hebrew | `heb-IL` | Hebrew |
 | Yiddish | `yid-US` | Hebrew |
+| Imperial Aramaic | `arc-IQ` | Hebrew |
+| Hulaulá (Jewish Neo-Aramaic) | `huy-IL` | Hebrew |
 | Persian, Dari | `fas-IR`, `fas-AF` | Arabic |
 | Urdu | `urd-PK`, `urd-IN` | Arabic |
 | Pashto | `pus-AF` | Arabic |
@@ -1193,7 +1212,7 @@ home languages, then by speakers and difficulty, in [Translation waves](translat
 | Kashmiri | `kas-IN` | Arabic |
 | Uyghur | `uig-CN` | Arabic |
 | Central Kurdish (Sorani) | `ckb-IQ` | Arabic |
-| Syriac | `syr-IQ`, `syr-SY` | Syriac |
+| Syriac (Aramaic) | `syr-IQ`, `syr-SY` | Syriac |
 | N’Ko | `nqo-GN` | N’Ko |
 | Dhivehi | `div-MV` | Thaana |
 
@@ -1232,9 +1251,10 @@ their layout skeleton (header, left menu, content, right toolbar) is direction-s
 of it being placed by left and right. The details, the CSS rules and what still needs checking are in
 [Right-to-left languages](features/6.0/right-to-left.md).
 
-**Interface translations.** Five right-to-left languages have a complete administration translation: Hebrew
+**Interface translations.** Six right-to-left languages have a complete administration translation: Hebrew
 (`heb-IL`), Arabic (`ara-SA`, Modern Standard Arabic, so every Arabic country falls back to it), Persian (`fas-IR`,
-Dari `fas-AF` falls back to it), Pashto (`pus-AF`) and Yiddish (`yid-US`). All cover the kernel and the bundled ezoe and ezjscore
+Dari `fas-AF` falls back to it), Pashto (`pus-AF`) and Yiddish (`yid-US`); Aramaic has one in Syriac script
+(`syr-IQ`, `syr-SY` falls back to it) and two in Hebrew script (`arc-IQ`, `huy-IL`, transliterated from it). All cover the kernel and the bundled ezoe and ezjscore
 catalogues, and all are machine-assisted: they need a review by a native
 speaker before a site relies on them ([section 8](#8-adding-or-completing-an-administration-translation)).
 Choosing either as the interface language turns the whole administration (admin4l, admin4 and the classic admin)

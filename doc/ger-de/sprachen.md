@@ -9,14 +9,14 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **76**, davon 76 vollständig |
-| Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
-| Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **73** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **75** |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **79**, davon 79 vollständig |
+| Locales: Dateien `share/locale/*.ini` | **270**: 263 Sprachen und Länder, 1 Testsprache, 6 Varianten |
+| Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **76** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **74** |
 | Länder und Gebiete der Locales | **158** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **138** |
-| Locales, die von rechts nach links geschrieben werden | **40** |
+| Locales, die von rechts nach links geschrieben werden | **42** |
 
 ![Weltkarte: 138 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
@@ -74,11 +74,11 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Hongkong | HK | `chi-HK` → `chi-TW` |
 | Indien | IN | `asm-IN` (nicht übersetzt), `ben-IN` → `ben-BD`, `bho-IN` (nicht übersetzt), `brx-IN` (nicht übersetzt), `doi-IN` (nicht übersetzt), `eng-IN` (Quelltexte), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (nicht übersetzt), `kok-IN` (nicht übersetzt), `mai-IN` (nicht übersetzt), `mal-IN`, `mar-IN`, `mni-IN` (nicht übersetzt), `ori-IN`, `pan-IN`, `san-IN` (nicht übersetzt), `sat-IN` (nicht übersetzt), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
 | Indonesien | ID | `ind-ID`, `jav-ID` (nicht übersetzt), `sun-ID` (nicht übersetzt) |
-| Irak | IQ | `ara-IQ` → `ara-SA`, `ckb-IQ` (nicht übersetzt), `syr-IQ` (nicht übersetzt) |
+| Irak | IQ | `ara-IQ` → `ara-SA`, `arc-IQ`, `ckb-IQ` (nicht übersetzt), `syr-IQ` |
 | Iran (Islamische Republik) | IR | `fas-IR` |
 | Irland | IE | `eng-IE` (Quelltexte), `gle-IE` |
 | Island | IS | `isl-IS` |
-| Israel | IL | `heb-IL` |
+| Israel | IL | `heb-IL`, `huy-IL` |
 | Italien | IT | `ita-IT` |
 | Japan | JP | `jpn-JP` |
 | Jemen | YE | `ara-YE` → `ara-SA` |
@@ -147,7 +147,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Staat der Vatikanstadt | VA | `lat-VA` |
 | Sudan | SD | `ara-SD` → `ara-SA` |
 | Südkorea | KR | `kor-KR` |
-| Syrien | SY | `ara-SY` → `ara-SA`, `syr-SY` (nicht übersetzt) |
+| Syrien | SY | `ara-SY` → `ara-SA`, `syr-SY` → `syr-IQ` |
 | Taiwan | TW | `chi-TW` |
 | Tansania | TZ | `swa-TZ` → `swa-KE` |
 | Thailand | TH | `tha-TH` |
@@ -234,14 +234,14 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 <!-- generated: exp:i18n coverage languages (start) -->
 ## Die noch nicht übersetzten Sprachen
 
-Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **73** davon
+Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **76** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **75** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **74** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 75 nicht übersetzten Sprachen</summary>
+<details><summary>Die 74 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -306,7 +306,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
 | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Marokko) |
 | Sundanese | Basa Sunda | `sun` | `sun-ID` (Indonesien) |
-| Syriac | ܣܘܪܝܝܐ | `syr` | `syr-IQ` (Irak), `syr-SY` (Syrien) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tadschikistan) |
 | Tatar | Татар | `tat` | `tat-RU` (Russland) |
 | Tibetan | བོད་སྐད་ | `bod` | `bod-CN` (China) |
@@ -353,7 +352,7 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 | Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `syr-IQ` (und `syr-SY`, das darauf zurückfällt), `arc-IQ`, `huy-IL`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
 | **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 170, die in 6.0.15 hinzukamen |
 
 Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]` nennt,
@@ -425,6 +424,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `ara-TD` | Arabic (Chad) | العربية (تشاد) | Afrika | RTL | Arabisch (`Arab`) | CLDR 48 | — |
 | `ara-TN` | Arabic (Tunisia) | العربية (تونس) | Afrika | RTL | Arabisch (`Arab`) | CLDR 44 | — |
 | `ara-YE` | Arabic (Yemen) | العربية (اليمن) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 48 | — |
+| `arc-IQ` | Imperial Aramaic | ארמית | Naher Osten | RTL | Hebräisch (`Hebr`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
 | `asm-IN` | Assamese | অসমীয়া | Südasien | LTR | Bengalisch (`Beng`) | CLDR 44 | — |
 | `ast-ES` | Asturian | Asturianu | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `aze-AZ` | Azerbaijani | Azərbaycan | Zentralasien und Kaukasus | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -556,6 +556,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `hin-IN` | Hindi | हिन्दी | Südasien | LTR | Devanagari (`Deva`) | älter, neu erzeugt aus CLDR 44 | — |
 | `hsb-DE` | Upper Sorbian | Hornjoserbšćina | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `hun-HU` | Hungarian | Magyar | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | — |
+| `huy-IL` | Hulaulá | הולאולא | Naher Osten | RTL | Hebräisch (`Hebr`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
 | `hye-AM` | Armenian | Հայերեն | Zentralasien und Kaukasus | LTR | Armenisch (`Armn`) | CLDR 44 | — |
 | `ibo-NG` | Igbo | Igbo | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ind-ID` | Indonesian | Indonesian | Südostasien | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
@@ -640,8 +641,8 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `swa-KE` zurück) |
 | `swe-SE` | Swedish | Svenska | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
-| `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | — |
-| `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | — |
+| `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | 100 % |
+| `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | 100 % (fällt auf `syr-IQ` zurück) |
 | `tam-IN` | Tamil (India) | தமிழ் (இந்தியா) | Südasien | LTR | Tamil (`Taml`) | CLDR 44 | 100 % |
 | `tam-LK` | Tamil (Sri Lanka) | தமிழ் (இலங்கை) | Südasien | LTR | Tamil (`Taml`) | CLDR 44 | 100 % (fällt auf `tam-IN` zurück) |
 | `tam-SG` | Tamil (Singapore) | தமிழ் (சிங்கப்பூர்) | Südostasien | LTR | Tamil (`Taml`) | CLDR 44 | 100 % (fällt auf `tam-IN` zurück) |
@@ -701,6 +702,12 @@ Hinweise zu einzelnen Locales:
 - **Jiddisch** (`yid-US`): CLDR 44 hat Jiddisch nur als `yi_UA` (bis CLDR 43 `yi_001`, „Welt“), und ein Locale-Code
   braucht ein zweibuchstabiges Land. Die größte jiddischsprachige Gemeinschaft lebt in den Vereinigten Staaten, daher
   enthält die Datei die jiddischen Namen von CLDR mit den Konventionen und der Währung der Vereinigten Staaten.
+- **Reichsaramäisch** (`arc-IQ`) und **Hulaulá** (`huy-IL`, jüdisches Neuaramäisch) haben keine CLDR-Daten und werden
+  in hebräischer Quadratschrift geschrieben. `arc-IQ` übernimmt die Konventionen von CLDR `syr_IQ` (irakischer Dinar)
+  und dessen aramäische Monats- und Ländernamen, aus der syrischen Schrift transliteriert; die Tagesnamen sind die
+  aramäischen (חד בשבא ... שבתא). `huy-IL` übernimmt Konventionen, Monats- und Ländernamen von CLDR `he_IL` (Neuer
+  Schekel) und die jüdisch-aramäischen Tagesnamen (חד בשבא ... מעלי שבתא, שבתא). Sprach- und Währungsnamen sind von
+  Hand geschrieben; jede Datei nennt die Quelle jedes Werts und braucht eine Prüfung.
 - **Dari** (`fas-AF`) ist das Persisch Afghanistans, wie in CLDR (`fa_AF`, Anzeigename „Dari“, دری); `fas-IR`
   bleibt „Persian“.
 - **Zentralkurdisch** (`ckb-IQ`, Sorani, arabische Schrift, von rechts nach links) hat keinen Code nach ISO 639-2
@@ -837,6 +844,10 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `msa-BN` | fällt auf `msa-MY` zurück | 100 % (fällt auf `msa-MY` zurück) |
 | `vie-VN` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 | `ind-ID` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
+| `syr-IQ` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
+| `syr-SY` | fällt auf `syr-IQ` zurück | 100 % (fällt auf `syr-IQ` zurück) |
+| `arc-IQ` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
+| `huy-IL` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 
 Hinweise:
 
@@ -850,6 +861,13 @@ Hinweise:
   stehenden Platzhaltern, jede mit einem Glossar (`share/translations/tha-TH/GUIDE.md`,
   `share/translations/lao-LA/GUIDE.md`); die Kataloge des Kernels, von ezoe und ezjscore sind vollständig. Eine
   Prüfung durch Muttersprachler ist willkommen.
+- **Aramäisch** ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt. `syr-IQ` ist modernes Aramäisch in
+  syrischer Schrift (assyrisch/syrisch), unvokalisiert und von rechts nach links, mit der höflichen Anrede im Plural
+  und einem Glossar (`share/translations/syr-IQ/GUIDE.md`); `syr-SY` fällt darauf zurück. `arc-IQ` (Reichsaramäisch)
+  und `huy-IL` (Hulaulá, jüdisches Neuaramäisch) werden in hebräischer Quadratschrift geschrieben und sind keine
+  eigenen Übersetzungen: Ihre Kataloge sind der Text von syr-IQ, Buchstabe für Buchstabe transliteriert (ihre
+  GUIDE.md nennt die Zuordnung). Die Kataloge des Kernels, von ezoe und ezjscore sind bei allen dreien vollständig.
+  Eine Prüfung durch Muttersprachler ist willkommen.
 - **Jiddisch** (`yid-US`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in der YIVO-Rechtschreibung und
   von rechts nach links, mit der höflichen Anrede und einem Glossar (`share/translations/yid-US/GUIDE.md`); die Kataloge
   des Kernels, von ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
@@ -1192,13 +1210,15 @@ Herkunftssprachen geflüchteter Kinder, dann nach Sprechern und Schwierigkeit, i
 
 ## 9. Sprachen, die von rechts nach links geschrieben werden
 
-40 Locale-Dateien werden von rechts nach links geschrieben:
+42 Locale-Dateien werden von rechts nach links geschrieben:
 
 | Sprache | Locales | Schrift |
 |---|---|---|
 | Arabisch | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA`, `ara-BH`, `ara-OM`, `ara-LY`, `ara-PS`, `ara-YE`, `ara-SD`, `ara-MR`, `ara-DJ`, `ara-KM`, `ara-SO`, `ara-TD`, `ara-ER` | Arabisch |
 | Hebräisch | `heb-IL` | Hebräisch |
 | Jiddisch | `yid-US` | Hebräisch |
+| Reichsaramäisch | `arc-IQ` | Hebräisch |
+| Hulaulá (jüdisches Neuaramäisch) | `huy-IL` | Hebräisch |
 | Persisch, Dari | `fas-IR`, `fas-AF` | Arabisch |
 | Urdu | `urd-PK`, `urd-IN` | Arabisch |
 | Paschtu | `pus-AF` | Arabisch |
@@ -1207,7 +1227,7 @@ Herkunftssprachen geflüchteter Kinder, dann nach Sprechern und Schwierigkeit, i
 | Kaschmiri | `kas-IN` | Arabisch |
 | Uigurisch | `uig-CN` | Arabisch |
 | Zentralkurdisch (Sorani) | `ckb-IQ` | Arabisch |
-| Syrisch | `syr-IQ`, `syr-SY` | Syrisch |
+| Syrisch (Aramäisch) | `syr-IQ`, `syr-SY` | Syrisch |
 | N’Ko | `nqo-GN` | N’Ko |
 | Dhivehi | `div-MV` | Thaana |
 
@@ -1250,9 +1270,9 @@ richtungssicher: Der Browser spiegelt es, statt dass es über links und rechts p
 CSS-Regeln und was noch zu prüfen ist, stehen unter
 [Sprachen, die von rechts nach links geschrieben werden](funktionen/6.0/rechts-nach-links.md).
 
-**Übersetzungen der Oberfläche.** Fünf Rechts-nach-links-Sprachen haben eine vollständige Übersetzung der
+**Übersetzungen der Oberfläche.** Sechs Rechts-nach-links-Sprachen haben eine vollständige Übersetzung der
 Administrationsoberfläche: Hebräisch (`heb-IL`), Arabisch (`ara-SA`, modernes Hocharabisch, sodass jedes arabische
-Land darauf zurückfällt), Persisch (`fas-IR`, Dari `fas-AF` fällt darauf zurück), Paschtu (`pus-AF`) und Jiddisch (`yid-US`). Alle decken
+Land darauf zurückfällt), Persisch (`fas-IR`, Dari `fas-AF` fällt darauf zurück), Paschtu (`pus-AF`) und Jiddisch (`yid-US`); Aramäisch hat eine in syrischer Schrift (`syr-IQ`, `syr-SY` fällt darauf zurück) und zwei in hebräischer Schrift (`arc-IQ`, `huy-IL`, daraus transliteriert). Alle decken
 den Kernel und die Kataloge der mitgelieferten ezoe und ezjscore ab, und alle sind maschinell unterstützt: Sie
 brauchen eine Prüfung durch einen Muttersprachler, bevor sich eine Website auf sie verlässt
 ([Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
