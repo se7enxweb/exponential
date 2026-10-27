@@ -44879,6 +44879,14 @@ Jos haluat lähettää kommentteja hyväksyjälle tai tarkastella tilaa, käytä
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Kommentin kirjoittaja: ”%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Sinulle suositeltiin sivua</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Saat tämän viestin, koska joku syötti osoitteesi sivustolla %site jakaakseen sivun kanssasi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Muuta sitä varten kohdan Vaihtoehtoiset komentotulkin komennot %chown-komennot.
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Yritys: %attempt / %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Näytä kuitti</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ ohjeita.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Linkki toimii vain kerran ja vain %1 minuuttia.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Salasanan palauttaminen</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Joku pyysi palauttamaan tilisi salasanan sivustolla %site. Vahvista pyyntö painikkeella, niin lähetämme sinulle uuden salasanan toisessa sähköpostiviestissä.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Palauta salasanani</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Jos et pyytänyt tätä, voit jättää tämän viestin huomiotta: salasanasi pysyy ennallaan.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Uusi salasanasi</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Salasanasi sivustolla %site palautettiin. Kirjaudu sisään tällä uudella salasanalla ja vaihda se sitten omaan salasanaasi.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Jos et itse palauttanut salasanaasi, kirjaudu sisään tällä salasanalla ja vaihda se heti.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Sivuston %site salasanan palauttaminen</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Uusi salasanasi sivustolle %site</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Paketti</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkisto on pakattu PAX-tar-muotoon, jota ei voi tuoda. Pakkaa paketti GNU-tar-muotoon (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkisto hylättiin: merkinnän ”%path” tiedosto- tai hakemistonimi on yli %length tavua pitkä, eikä mikään tiedostojärjestelmä tallenna sitä.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arkisto hylättiin: kohteen ”%path” tar-tyyppi on ”%type”, ja paketti voi sisältää vain tiedostoja ja hakemistoja.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Linkki ”%path” osoittaa paketin ulkopuolelle (%target), eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Linkki ”%path” osoittaa kohteeseen ”%target”, jota paketissa ei ole, eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Linkki ”%path” osoittaa hakemistoon ”%target”, eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Merkintä ”%path” on laite tai nimetty putki (tar-tyyppi ”%type”), eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Merkinnän ”%path” tar-tyyppi on ”%type”, jota paketti ei käytä, eikä sitä tuotu.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Your devices</source>
         <translation>Laitteesi</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Joku pyysi käyttämään osoitetta %email tilille sivustolla %site. Vahvista, että osoite on sinun.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Sinä (tai joku, joka kirjoitti osoitteesi) pyysit linkkiä, jolla voi hallita sähköposteja, joita %site lähettää osoitteeseen %email. Sillä sivulla voit ottaa kunkin sähköpostityypin käyttöön tai poistaa sen käytöstä tai lopettaa kaikki valinnaiset sähköpostit.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Jos et tehnyt tätä muutosta, joku muu saattaa tietää salasanasi: palauta se heti kirjautumissivun toiminnolla ”%forgot” ja ota meihin yhteyttä.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Salasanasi vaihdettiin</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>The sessions of this user:</source>
         <translation>Tämän käyttäjän istunnot:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Uusi kirjautuminen tilillesi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Laite</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aika</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Likimääräinen osoite</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Jos se et ollut sinä, joku saattaa tietää salasanasi: kirjaa istunto ulos laitteidesi sivulla ja vaihda sitten salasanasi.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Tarkista laitteesi</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Näytä tämän käyttäjän istunnot</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Push to block</source>
         <translation>Siirrä lohkoon</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jos painike ei toimi, kopioi tämä osoite selaimeesi: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Avaa sivu</translation>
     </message>
 </context>
 </TS>

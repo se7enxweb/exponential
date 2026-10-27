@@ -3,17 +3,17 @@
      is_update=false()}
 {section loop=$object.versions}{if and($:item.status|eq(3),$:item.version|ne($object.current_version))}{set is_update=true()}{/if}{/section}
 {section show=$is_update}
-{set-block scope=root variable=subject}{$object.content_class.name|wash} {'"%name" was updated'|i18n('design/standard/notification', '', hash( '%name', $object.name|wash ))} [{ezini("SiteSettings","SiteURL")} - {$object.main_node.parent.name|wash}]{/set-block}
-{set-block scope=root variable=from}{concat($object.current.creator.name|wash,' <', $sender, '>')}{/set-block}
+{set-block scope=root variable=subject}{$object.content_class.name} {'"%name" was updated'|i18n('design/standard/notification', '', hash( '%name', $object.name ))} [{ezini("SiteSettings","SiteURL")} - {$object.main_node.parent.name}]{/set-block}
+{set-block scope=root variable=from}{concat($object.current.creator.name,' <', $sender, '>')}{/set-block}
 {set-block scope=root variable=message_id}{concat('<node.',$object.main_node_id,'.eznotification','@',ezini("SiteSettings","SiteURL"),'>')}{/set-block}
 {set-block scope=root variable=reply_to}{concat('<node.',$object.main_node_id,'.eznotification','@',ezini("SiteSettings","SiteURL"),'>')}{/set-block}
 {set-block scope=root variable=references}{section name=Parent loop=$object.main_node.path_array}{concat('<node.',$:item,'.eznotification','@',ezini("SiteSettings","SiteURL"),'>')}{delimiter}{" "}{/delimiter}{/section}{/set-block}
 {"This email is to inform you that an updated item has been published at %sitename."|i18n('design/standard/notification','',hash('%sitename',ezini("SiteSettings","SiteURL")))}
 {"The item can be viewed by using the URL below."|i18n('design/standard/notification')}
 
-{$object.name|wash} - {$object.current.creator.name|wash} {'(Owner: %owner)'|i18n( 'design/standard/notification',, hash( '%owner', $object.owner.name|wash ) )}
+{$object.name} - {$object.current.creator.name} {'(Owner: %owner)'|i18n( 'design/standard/notification',, hash( '%owner', $object.owner.name ) )}
 {section-else}
-{set-block scope=root variable=subject}{$object.content_class.name|wash} {'"%name" was published'|i18n('design/standard/notification', '', hash( '%name', $object.name|wash ))} [{ezini("SiteSettings","SiteURL")} - {$object.main_node.parent.name|wash}]{/set-block}
+{set-block scope=root variable=subject}{$object.content_class.name} {'"%name" was published'|i18n('design/standard/notification', '', hash( '%name', $object.name ))} [{ezini("SiteSettings","SiteURL")} - {$object.main_node.parent.name}]{/set-block}
 {set-block scope=root variable=from}{concat($object.owner.name,' <', $sender, '>')}{/set-block}
 {set-block scope=root variable=message_id}{concat('<node.',$object.main_node_id,'.eznotification','@',ezini("SiteSettings","SiteURL"),'>')}{/set-block}
 {set-block scope=root variable=reply_to}{concat('<node.',$object.main_node.parent_node_id,'.eznotification','@',ezini("SiteSettings","SiteURL"),'>')}{/set-block}
@@ -21,16 +21,16 @@
 {"This email is to inform you that a new item has been published at %sitename."|i18n('design/standard/notification','',hash('%sitename',ezini("SiteSettings","SiteURL")))}
 {"The item can be viewed by using the URL below."|i18n('design/standard/notification')}
 
-{$object.name|wash} - {$object.owner.name|wash}
+{$object.name} - {$object.owner.name}
 {/section}
 
-http://{ezini("SiteSettings","SiteURL")}{cond( $use_url_translation, $object.main_node.url_alias|ezurl(no),
+https://{ezini("SiteSettings","SiteURL")}{cond( $use_url_translation, $object.main_node.url_alias|ezurl(no),
                                                true(), concat( "/content/view/full/", $object.main_node_id )|ezurl(no) )}
 
 
 {"If you do not want to continue receiving these notifications,
 change your settings at:"|i18n('design/standard/notification')}
-http://{ezini("SiteSettings","SiteURL")}{concat("notification/settings/")|ezurl(no)}
+https://{ezini("SiteSettings","SiteURL")}{concat("notification/settings/")|ezurl(no)}
 
 -- 
 {"%sitename notification system"

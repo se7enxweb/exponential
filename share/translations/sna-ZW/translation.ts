@@ -44936,6 +44936,14 @@ Kana muchida kutumira mhinduro kumunhu anobvumira kana kutarisa chimiro shandisa
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Mhinduro yakatumirwa na “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Makurudzirwa peji</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Muri kuwana tsamba iyi nekuti mumwe munhu akaisa kero yenyu pa %site kuti agovane peji nemi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Kuti muite izvi munofanira kushandura mirairo ye %chown iri pasi pe Mirairo yesh
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Kuedza zvakare: %attempt pa %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Tarisa risiti yenyu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ akaundi yenyu.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Link inoshanda kamwe chete uye kwemaminetsi %1 chete.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Seta patsva pasiwedhi</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Mumwe munhu akakumbira kuseta patsva pasiwedhi yeakaundi yenyu pa %site. Simbisai nebhatani, uye tichakutumirai pasiwedhi itsva mutsamba yechipiri.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Seta patsva pasiwedhi yangu</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Kana musina kukumbira izvi, munogona kufuratira tsamba iyi: pasiwedhi yenyu inoramba yakadaro.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Pasiwedhi yenyu itsva</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Pasiwedhi yenyu pa %site yasetwa patsva. Pindai nepasiwedhi itsva iyi, mobva maichinja kuita yenyu pachenyu.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Kana musina kuseta patsva pasiwedhi yenyu, pindai neiyi mobva maichinja nekukurumidza.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Seta patsva pasiwedhi ye %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Pasiwedhi yenyu itsva ye %site</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <translation>Faira rakamanikidzwa rakaramba: chinyorwa “%path” chinonongedzera kunze kwepakeji.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Faira rakamanikidzwa rakagadzirwa nefomati yePAX tar, isingagoni kupinzwa. Gadzirai pakeji nefomati yeGNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Dura rakarambwa: chinhu “%path” chine zita refaira kana dhairekitori rakareba kupfuura mabhaiti %length, iro risingachengetwi nechero hurongwa hwemafaira.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Faira rakamanikidzwa rakaramba: chinyorwa “%path” chine rudzi rwetar “%type”, uye pakeji inongova nemafaira nemaforoda.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Link “%path” inonongedza kunze kwepakeji (%target) uye haina kupinzwa.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Link “%path” inonongedza ku “%target”, iyo isiri mupakeji, uye haina kupinzwa.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Link “%path” inonongedza kudhairekitori “%target” uye haina kupinzwa.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Chinhu “%path” mudziyo kana pombi ine zita (rudzi rwe tar “%type”) uye hachina kupinzwa.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Chinhu “%path” chine rudzi rwe tar “%type”, rusingashandiswi nepakeji, uye hachina kupinzwa.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>Your devices</source>
         <translation>Madziyo enyu</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Mumwe munhu akakumbira kushandisa %email paakaundi pa %site. Simbisai kuti kero iyi ndeyenyu.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Imi (kana mumwe munhu akanyora kero yenyu) makakumbira link yekutungamira imeri inotumirwa na %site ku %email. Papeji iyoyo munogona kubatidza kana kudzima rudzi rwega rwega rweimeri, kana kumisa imeri dzose dzisingamanikidzwi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Kana musina kuita shanduko iyi, mumwe munhu angava anoziva pasiwedhi yenyu: ichinjei pakarepo ne“%forgot” papeji rekupinda, mutaure nesu.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Pasiwedhi yenyu yachinjwa</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>The sessions of this user:</source>
         <translation>Masesheni emushandisi uyu:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Kupinda kutsva muakaundi yenyu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Mudziyo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Nguva</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Kero inofungidzirwa</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Kana musiri imi, mumwe munhu angangoziva pasiwedhi yenyu: budisai sesheni iyoyo papeji yemidziyo yenyu, mobva machinja pasiwedhi yenyu.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Ongorora midziyo yenyu</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Tarisa masesheni emushandisi uyu</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Mutsetse unobviswa patafura uye hauzodzoserwi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Kana bhatani risingashandi, kopai kero iyi mubhurawuza renyu: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Vhura peji</translation>
     </message>
 </context>
 </TS>

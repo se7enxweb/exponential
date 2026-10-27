@@ -44936,6 +44936,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>კომენტარის ავტორი: "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>თქვენ გვერდი გირჩიეს</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>ამ წერილს იღებთ, რადგან ვიღაცამ საიტზე %site თქვენი მისამართი შეიყვანა, რათა თქვენთვის გვერდი გაეზიარებინა.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ხელახალი მცდელობა: %attempt, სულ %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>ქვითრის ნახვა</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>ბმული მოქმედებს მხოლოდ ერთხელ და მხოლოდ %1 წუთის განმავლობაში.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>პაროლის აღდგენა</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>ვიღაცამ მოითხოვა თქვენი ანგარიშის პაროლის აღდგენა საიტზე %site. დაადასტურეთ ღილაკით და ახალ პაროლს მეორე წერილით გამოგიგზავნით.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>ჩემი პაროლის აღდგენა</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>თუ ეს თქვენ არ მოგითხოვიათ, შეგიძლიათ ეს წერილი უგულებელყოთ: თქვენი პაროლი უცვლელი რჩება.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>თქვენი ახალი პაროლი</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>თქვენი პაროლი საიტზე %site აღდგენილია. შედით ამ ახალი პაროლით, შემდეგ კი შეცვალეთ იგი საკუთარით.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>თუ პაროლი თქვენ არ აღგიდგენიათ, შედით ამ პაროლით და დაუყოვნებლივ შეცვალეთ იგი.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>პაროლის აღდგენა საიტისთვის %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>თქვენი ახალი პაროლი საიტისთვის %site</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>არქივი უარყოფილია: ჩანაწერი „%path“ პაკეტის გარეთ მიუთითებს.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>არქივი დაპაკეტებულია PAX tar ფორმატში, რომლის იმპორტიც შეუძლებელია. დაპაკეტეთ პაკეტი GNU tar ფორმატში (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>არქივი უარყოფილია: ჩანაწერს „%path“ აქვს ფაილის ან დირექტორიის სახელი, რომელიც %length ბაიტზე გრძელია, და ასეთ სახელს არცერთი ფაილური სისტემა არ ინახავს.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>არქივი უარყოფილია: ჩანაწერს „%path“ აქვს tar ტიპი „%type“, პაკეტი კი მხოლოდ ფაილებსა და დირექტორიებს შეიცავს.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>ბმული „%path“ მიუთითებს პაკეტის გარეთ (%target) და არ იმპორტირდა.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>ბმული „%path“ მიუთითებს ობიექტზე „%target“, რომელიც პაკეტში არ არის, და არ იმპორტირდა.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>ბმული „%path“ მიუთითებს დირექტორიაზე „%target“ და არ იმპორტირდა.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>ჩანაწერი „%path“ არის მოწყობილობა ან სახელდებული არხი (tar-ის ტიპი „%type“) და არ იმპორტირდა.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>ჩანაწერს „%path“ აქვს tar-ის ტიპი „%type“, რომელსაც პაკეტი არ იყენებს, და არ იმპორტირდა.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>თქვენი მოწყობილობები</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>ვიღაცამ მოითხოვა მისამართის %email გამოყენება ანგარიშისთვის საიტზე %site. გთხოვთ, დაადასტუროთ, რომ ეს მისამართი თქვენია.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>თქვენ (ან ვინმემ, ვინც თქვენი მისამართი აკრიფა) მოითხოვეთ ბმული, რომლითაც შეგიძლიათ მართოთ წერილები, რომლებსაც საიტი %site მისამართზე %email აგზავნის. იმ გვერდზე შეგიძლიათ ჩართოთ ან გამორთოთ წერილის თითოეული სახეობა ან შეაჩეროთ ყველა არასავალდებულო წერილი.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>თუ ეს ცვლილება თქვენ არ გაგიკეთებიათ, შესაძლოა, თქვენი პაროლი სხვამ იცის: დაუყოვნებლივ აღადგინეთ ის შესვლის გვერდზე ფუნქციით „%forgot“ და დაგვიკავშირდით.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>თქვენი პაროლი შეიცვალა</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>ამ მომხმარებლის სესიები:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ახალი შესვლა თქვენს ანგარიშში</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>მოწყობილობა</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>დრო</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>მიახლოებითი მისამართი</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>თუ ეს თქვენ არ იყავით, შესაძლოა ვინმემ თქვენი პაროლი იცის: დაასრულეთ ეს სესია თქვენი მოწყობილობების გვერდზე, შემდეგ კი შეცვალეთ პაროლი.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>თქვენი მოწყობილობების გადახედვა</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ამ მომხმარებლის სესიების ნახვა</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>მწკრივი ცხრილიდან მოცილდება და მისი დაბრუნება შეუძლებელია.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>თუ ღილაკი არ მუშაობს, დააკოპირეთ ეს მისამართი თქვენს ბრაუზერში: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>გვერდის გახსნა</translation>
     </message>
 </context>
 </TS>

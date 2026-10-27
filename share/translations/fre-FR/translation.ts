@@ -37899,6 +37899,14 @@ Si vous voulez laisser un commentaire au responsable de l&apos;approbation ou en
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Commentaire par &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Une page vous a été recommandée</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Vous recevez cet e-mail parce que quelqu'un a saisi votre adresse sur %site pour partager une page avec vous.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -45599,6 +45607,10 @@ Pour faire cela, vous avez besoin de changer les commandes %chown sous une autre
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Nouvel essai : %attempt sur %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Afficher votre reçu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -46558,6 +46570,42 @@ votre compte.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Le lien ne fonctionne qu'une fois et pendant %1 minutes seulement.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Réinitialisation du mot de passe</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Quelqu'un a demandé la réinitialisation du mot de passe de votre compte sur %site. Confirmez avec le bouton, et nous vous enverrons un nouveau mot de passe dans un second e-mail.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Réinitialiser mon mot de passe</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Si vous n'avez pas fait cette demande, vous pouvez ignorer cet e-mail : votre mot de passe reste inchangé.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Votre nouveau mot de passe</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Votre mot de passe sur %site a été réinitialisé. Connectez-vous avec ce nouveau mot de passe, puis remplacez-le par un mot de passe de votre choix.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Si vous n'avez pas réinitialisé votre mot de passe, connectez-vous avec celui-ci et changez-le immédiatement.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Réinitialisation de votre mot de passe sur %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Votre nouveau mot de passe pour %site</translation>
     </message>
 </context>
 <context>
@@ -50251,12 +50299,28 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>L&apos;archive a été refusée : l&apos;entrée « %path » pointe hors du paquetage.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>L&apos;archive a été créée au format tar PAX, qui ne peut pas être importé. Créez le paquetage au format tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>L&apos;archive a été refusée : l&apos;entrée « %path » a un nom de fichier ou de répertoire de plus de %length octets, qu&apos;aucun système de fichiers n&apos;enregistre.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>L&apos;archive a été refusée : l&apos;entrée « %path » est de type tar « %type », et un paquetage ne contient que des fichiers et des répertoires.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Le lien « %path » pointe hors du paquetage (%target) et n&apos;a pas été importé.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Le lien « %path » pointe vers « %target », que le paquetage ne contient pas, et n&apos;a pas été importé.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Le lien « %path » pointe vers le répertoire « %target » et n&apos;a pas été importé.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>L&apos;entrée « %path » est un périphérique ou un tube nommé (type tar « %type ») et n&apos;a pas été importée.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>L&apos;entrée « %path » est de type tar « %type », qu&apos;un paquetage n&apos;utilise pas, et n&apos;a pas été importée.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71388,6 +71452,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Your devices</source>
         <translation>Vos appareils</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Quelqu'un a demandé à utiliser %email pour un compte sur %site. Veuillez confirmer que cette adresse est la vôtre.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Vous (ou quelqu'un qui a saisi votre adresse) avez demandé un lien pour gérer les e-mails que %site envoie à %email. Sur cette page, vous pouvez activer ou désactiver chaque type d'e-mail, ou arrêter tous les e-mails facultatifs.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71744,6 +71816,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Si vous n&apos;avez pas effectué cette modification, quelqu&apos;un d&apos;autre connaît peut-être votre mot de passe : réinitialisez-le immédiatement avec &quot;%forgot&quot; sur la page de connexion, et contactez-nous.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Votre mot de passe a été changé</translation>
     </message>
 </context>
 <context>
@@ -78103,6 +78179,34 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The sessions of this user:</source>
         <translation>Les sessions de cet utilisateur :</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nouvelle connexion à votre compte</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Appareil</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Heure</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adresse approximative</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Si ce n'était pas vous, quelqu'un connaît peut-être votre mot de passe : déconnectez cette session sur la page de vos appareils, puis changez votre mot de passe.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Vérifier vos appareils</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Afficher les sessions de cet utilisateur</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78661,6 +78765,17 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Push to block</source>
         <translation>Envoyer vers un bloc</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Si le bouton ne fonctionne pas, copiez cette adresse dans votre navigateur : %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Ouvrir la page</translation>
     </message>
 </context>
 </TS>

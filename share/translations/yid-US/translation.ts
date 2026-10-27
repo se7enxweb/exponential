@@ -44936,6 +44936,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>קאָמענטאַר פֿון "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>מע האָט אייַך רעקאָמענדירט אַ בלאַט</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>איר באַקומט דעם בליצבריוו, ווייַל עמעצער האָט אַרייַנגעשריבן אייַער אַדרעס אויף %site כּדי צו טיילן מיט אייַך אַ בלאַט.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(פּרוּוו: %attempt פֿון %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>ווייַזן אייַער קוויטונג</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>דער לינק אַרבעט נאָר איין מאָל און נאָר %1 מינוט.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>פּאַראָל־צוריקשטעלונג</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>עמעצער האָט געבעטן צוריקשטעלן דעם פּאַראָל פֿון אייַער קאָנטע אויף %site. באַשטעטיקט מיט דעם קנעפּל, און מיר וועלן אייַך שיקן אַ נייַעם פּאַראָל אין אַ צווייטן בליצבריוו.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>צוריקשטעלן מייַן פּאַראָל</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>אויב איר האָט דאָס ניט געבעטן, קענט איר איגנאָרירן דעם בליצבריוו: אייַער פּאַראָל בלייבט ווי ער איז.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>אייַער נייַער פּאַראָל</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>אייַער פּאַראָל אויף %site איז צוריקגעשטעלט געוואָרן. לאָגירט אַרייַן מיט דעם נייַעם פּאַראָל, און דערנאָך ענדערט אים אויף אַן אייגענעם.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>אויב איר האָט ניט צוריקגעשטעלט אייַער פּאַראָל, לאָגירט אַרייַן מיט דעם דאָזיקן און ענדערט אים תּיכף.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>פּאַראָל־צוריקשטעלונג פֿאַר %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>אייַער נייַער פּאַראָל פֿאַר %site</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>דער אַרכיוו איז אָפּגעזאָגט געוואָרן: די פּאָזיציע "%path" ווייַזט אַרויס פֿונעם פּעקל.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>דער אַרכיוו איז איינגעפּאַקט געוואָרן אינעם PAX־tar־פֿאָרמאַט, וואָס מען קען ניט אימפּאָרטירן. פּאַקט אייַן דאָס פּעקל אינעם GNU־tar־פֿאָרמאַט (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>דער אַרכיוו איז אָפּגעזאָגט געוואָרן: די פּאָזיציע "%path" האָט אַ טעקע־ אָדער מאַפּע־נאָמען לענגער ווי %length בייטן, וואָס קיין טעקע־סיסטעם היט נישט.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>דער אַרכיוו איז אָפּגעזאָגט געוואָרן: די פּאָזיציע "%path" האָט דעם tar־טיפּ "%type", און אַ פּעקל האַלט נאָר טעקעס און מאַפּעס.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>דער לינק "%path" ווייזט אַרויס פֿונעם פּעקל (%target) און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>דער לינק "%path" ווייזט אויף "%target", וואָס איז נישטאָ אינעם פּעקל, און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>דער לינק "%path" ווייזט אויף דער מאַפּע "%target" און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>די פּאָזיציע "%path" איז אַ מכשיר אָדער אַ באַנאָמענטע רער (tar־טיפּ "%type") און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>די פּאָזיציע "%path" האָט דעם tar־טיפּ "%type", וואָס אַ פּעקל ניצט נישט, און איז נישט אימפּאָרטירט געוואָרן.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>אייַערע מכשירים</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>עמעצער האָט געבעטן ניצן %email פֿאַר אַ קאָנטע אויף %site. באַשטעטיקט, ביטע, אַז דער אַדרעס געהערט צו אייַך.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>איר (אָדער עמעצער וואָס האָט אַרייַנגעטיפּט אייַער אַדרעס) האָט געבעטן אַ לינק צו פֿאַרוואַלטן די בליצבריוו וואָס %site שיקט צו %email. אויף יענעם בלאַט קענט איר אייַנשאַלטן אָדער אויסשאַלטן יעדן מין בליצבריוו, אָדער אָפּשטעלן אַלע ניט־נייטיקע בליצבריוו.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>אויב איר האָט ניט געמאַכט די ענדערונג, ווייסט אפֿשר עמעצער אַנדערש אייַער פּאַראָל: שטעלט עס תּיכּף צוריק מיט "%forgot" אויפֿן אַרייַנלאָגירונג־בלאַט, און פֿאַרבינדט זיך מיט אונדז.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>אייַער פּאַראָל איז געענדערט געוואָרן</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>די סעסיעס פֿון דעם דאָזיקן באַניצער:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>נייַע אַרייַנלאָגירונג אין אייַער קאָנטע</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מכשיר</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>צייַט</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>בערך אַדרעס</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>אויב דאָס זענט ניט איר געווען, קען עמעצער וויסן אייַער פּאַראָל: לאָגירט אַרויס יענע סעסיע אויפֿן בלאַט פֿון אייַערע מכשירים, און דערנאָך ענדערט אייַער פּאַראָל.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>איבערקוקן אייַערע מכשירים</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ווייַזן די סעסיעס פֿון דעם דאָזיקן באַניצער</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>די שורה ווערט אַוועקגענומען פֿון דער טאַבעלע און מען קען זי ניט צוריקברענגען.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>אויב דאָס קנעפּל אַרבעט ניט, קאָפּירט דעם דאָזיקן אַדרעס אין אייַער בלעטערער: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>עפֿענען דעם בלאַט</translation>
     </message>
 </context>
 </TS>

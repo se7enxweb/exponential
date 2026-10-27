@@ -50,7 +50,43 @@
     ],
     "kernel/classes/mail/expmailtemplatebody.php": [
       "tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php",
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php",
       "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php"
+    ],
+    "design/standard/templates/mail/*.tpl": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php",
+      "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php",
+      "tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php"
+    ],
+    "design/standard/templates/user/forgotpasswordmail.tpl": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "design/standard/templates/user/password_changed_mail.tpl": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "design/standard/templates/user/new_signin_*.tpl": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "design/standard/templates/mailpreferences/mail/*.tpl": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "design/standard/templates/content/tipafriendmail.tpl": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "design/standard/templates/content/collectedinfomail*": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "design/*/templates/shop/orderemail.tpl": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "kernel/classes/notification/ezmailnotificationtransport.php": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "kernel/classes/audit/sinks/expauditmailsink.php": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
+    ],
+    "kernel/classes/mailpreferences/expmailgate.php": [
+      "tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php"
     ],
     "design/standard/templates/user/registrationinfo.tpl": [
       "tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php"
