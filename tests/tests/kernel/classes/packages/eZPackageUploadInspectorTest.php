@@ -2,10 +2,12 @@
 /**
  * Tests of eZPackageUploadInspector and of the archive check in eZPackage::import(): an uploaded package archive
  * is refused, before anything of it is extracted, for a wrong suffix, no gzip signature, a size or entry count
- * over the limits, an entry outside the package ("../", an absolute path, a back slash), a link or device entry,
- * a missing, malformed or incomplete package.xml, an invalid package name (a path in <name>) and a vendor that
- * gives no repository name; a good archive passes. eZPackage::import() refuses the zip-slip archives itself, so
- * every caller (ezpm, the setup wizard) is covered; nothing reaches the package storage.
+ * over the limits, an entry outside the package ("../", an absolute path, a back slash), a missing, malformed or
+ * incomplete package.xml, an invalid package name (a path in <name>) and a vendor that gives no repository name;
+ * a good archive passes. eZPackage::import() refuses the zip-slip archives itself, so every caller (ezpm, the setup
+ * wizard) is covered; nothing reaches the package storage. A link to a file of the package is imported as a copy; a
+ * link out of it, to a directory or to nothing, a device and a fifo are passed over with a notice, and the package
+ * is imported without them.
  *
  * Archives are written byte by byte under var/tmp (eZPackageTestFixtures) and removed in tearDown(). No database.
  *
@@ -76,6 +78,14 @@ class eZPackageUploadInspectorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'suffix', $this->code( $path, 'k1_upload.ezpkg.php' ) );
         file_put_contents( $this->dir . '/plain.ezpkg', 'PK not a gzip' );
         $this->assertSame( 'not_gzip', $this->code( $this->dir . '/plain.ezpkg' ) );
+        // an uncompressed tar archive, as some 4.x installations exported their packages, is read as it is
+        $tar = '';
+        foreach ( $this->good() as $entry )
+            $tar .= eZPackageTestFixtures::tarEntry( $entry[0], isset( $entry[1] ) ? $entry[1] : '', isset( $entry[2] ) ? $entry[2] : '0' );
+        file_put_contents( $this->dir . '/uncompressed.ezpkg', $tar . str_repeat( "\0", 1024 ) );
+        $this->assertSame( 'ok', $this->code( $this->dir . '/uncompressed.ezpkg' ) );
+        $this->assertTrue( expPackageJson::extractArchive( $this->dir . '/uncompressed.ezpkg', $this->dir . '/uncompressed', $error ), (string)$error );
+        $this->assertFileExists( $this->dir . '/uncompressed/ezcontentclass/class-article.xml' );
         file_put_contents( $this->dir . '/empty.ezpkg', '' );
         $this->assertSame( 'no_file', $this->code( $this->dir . '/empty.ezpkg' ) );
         $this->assertSame( 'no_file', $this->code( $this->dir . '/missing.ezpkg' ) );
@@ -98,12 +108,42 @@ class eZPackageUploadInspectorTest extends PHPUnit\Framework\TestCase
             'deep parent' => array( array( 'ezcontentclass/../../../settings/override/x.php', '<?php' ), 'unsafe_path' ),
             'absolute' => array( array( '/tmp/evil.txt', 'x' ), 'unsafe_path' ),
             'backslash' => array( array( '..\\..\\evil.txt', 'x' ), 'unsafe_path' ),
-            'symlink' => array( array( 'link', '', '2', '/etc/passwd' ), 'unsafe_type' ),
-            'symlink inside' => array( array( 'link', '', '2', 'package.xml' ), 'unsafe_type' ),
-            'hard link' => array( array( 'hard', '', '1', 'package.xml' ), 'unsafe_type' ),
-            'device' => array( array( 'dev', '', '3' ), 'unsafe_type' ),
-            'fifo' => array( array( 'fifo', '', '6' ), 'unsafe_type' ),
+            'symlink named outside' => array( array( '../link', '', '2', 'package.xml' ), 'unsafe_path' ),
         );
+    }
+
+    /**
+     * Links, devices and fifos do not refuse the package (the packages of eZ Publish 3.x to 5.x and hand repacked
+     * ones hold them): a link to a file of the package is imported as a copy, the rest is passed over with a notice.
+     */
+    public static function passedOverEntries()
+    {
+        return array(
+            'symlink outside' => array( array( 'link', '', '2', '/etc/passwd' ), 'link_outside' ),
+            'symlink up and out' => array( array( 'ezcontentclass/link', '', '2', '../../etc/passwd' ), 'link_outside' ),
+            'symlink inside' => array( array( 'link', '', '2', 'package.xml' ), null ),
+            'symlink to a directory' => array( array( 'link', '', '2', 'ezcontentclass' ), 'link_directory' ),
+            'symlink to nothing' => array( array( 'link', '', '2', 'missing.xml' ), 'link_missing' ),
+            'hard link' => array( array( 'hard', '', '1', 'package.xml' ), null ),
+            'device' => array( array( 'dev', '', '3' ), 'special_file' ),
+            'fifo' => array( array( 'fifo', '', '6' ), 'special_file' ),
+        );
+    }
+
+    #[PHPUnit\Framework\Attributes\DataProvider( 'passedOverEntries' )]
+    public function testLinksAndDevicesArePassedOverOrCopied( array $entry, $notice )
+    {
+        $path = $this->archive( $this->good( array( $entry ) ) );
+        $result = eZPackageUploadInspector::inspect( $path, 'k1.ezpkg', $this->limits );
+        $this->assertTrue( $result['ok'], (string)$result['code'] );
+        $this->assertSame( $notice === null ? array() : array( $notice ), array_column( $result['notices'], 'code' ) );
+        $target = $this->dir . '/out';
+        $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
+        $this->assertFalse( is_link( "$target/{$entry[0]}" ) );
+        if ( $notice === null )
+            $this->assertSame( file_get_contents( "$target/package.xml" ), file_get_contents( "$target/{$entry[0]}" ) );
+        else
+            $this->assertFalse( file_exists( "$target/{$entry[0]}" ) );
     }
 
     /**
@@ -176,15 +216,23 @@ class eZPackageUploadInspectorTest extends PHPUnit\Framework\TestCase
     {
         $before = is_dir( eZPackage::repositoryPath() . '/k1-zipslip-vendor' );
         $this->assertFalse( $before );
-        foreach ( array( array( '../k1-escaped.txt', 'x' ), array( 'link', '', '2', '/etc' ) ) as $i => $entry )
+        foreach ( array( array( '../k1-escaped.txt', 'x' ), array( '/k1-escaped.txt', 'x' ) ) as $i => $entry )
         {
             $path = $this->archive( $this->good( array( $entry ), array( 'name' => 'k1_zipslip_' . $i, 'vendor' => 'k1-zipslip-vendor' ) ), "slip$i.ezpkg" );
             $name = '';
             $result = @eZPackage::importUnaudited( $path, $name, false );
             $this->assertFalse( $result, 'archive ' . $i );
-            $this->assertSame( 'k1_zipslip_' . $i, $name );
             $this->assertFalse( is_dir( eZPackage::repositoryPath() . '/k1-zipslip-vendor' ), 'nothing written for archive ' . $i );
         }
+        // a link out of the package is passed over, the package itself imported without it
+        $path = $this->archive( $this->good( array( array( 'link', '', '2', '/etc' ) ), array( 'name' => 'k1_zipslip_link', 'vendor' => 'k1-zipslip-vendor' ) ), 'sliplink.ezpkg' );
+        $name = '';
+        $result = @eZPackage::importUnaudited( $path, $name, false );
+        $this->assertInstanceOf( 'eZPackage', $result );
+        $this->assertSame( 'k1_zipslip_link', $name );
+        $imported = eZPackage::repositoryPath() . '/k1-zipslip-vendor/k1_zipslip_link';
+        $this->assertFileExists( "$imported/package.xml" );
+        $this->assertFalse( file_exists( "$imported/link" ) || is_link( "$imported/link" ) );
         // a vendor that gives no directory name
         $path = $this->archive( $this->good( array(), array( 'name' => 'k1_novendor', 'vendor' => '..' ) ), 'novendor.ezpkg' );
         $name = '';

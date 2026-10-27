@@ -308,8 +308,17 @@ XML;
     {
         return array(
             'valid' => array( 'my_package', true, 'my_package' ),
-            'uppercase' => array( 'MyPackage', false, 'mypackage' ),
+            // as the 3.x to 5.x releases exported them (RSSFeed_content_class, infoProf)
+            'uppercase' => array( 'MyPackage', true, 'mypackage' ),
+            'hyphen inside' => array( 'my-package', true, 'my_package' ),
             'spaces' => array( 'my package', false, 'my_package' ),
+            'leading hyphen' => array( '-package', false, 'package' ),
+            'dot' => array( 'my.package', false, 'my_package' ),
+            'dot dot' => array( '..', false, '' ),
+            'slash' => array( 'a/b', false, 'a_b' ),
+            'back slash' => array( 'a\\b', false, 'a_b' ),
+            'control character' => array( "a\nb", false, 'a_b' ),
+            'too long' => array( str_repeat( 'a', 201 ), false, str_repeat( 'a', 201 ) ),
         );
     }
 

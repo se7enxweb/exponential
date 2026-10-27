@@ -57,7 +57,7 @@ Fallen zwischen beidem. Alle Verweise beziehen sich auf `kernel/classes/ezpackag
 
 | Element | Erforderlich | Hinweise |
 |---|---|---|
-| `<name>` | **ja** | Der Paketname. Beim Import muss er `eZPackage::isValidName()` bestehen (die Transformation `identifier` muss ihn unverändert lassen), sonst `STATUS_INVALID_NAME`. Er ist auch der Verzeichnisname im Repository |
+| `<name>` | **ja** | Der Paketname. Beim Import muss er `eZPackage::isValidName()` bestehen (Buchstaben in Groß- oder Kleinschreibung, Ziffern, `_` und `-`, nicht mit `-` beginnend), sonst `STATUS_INVALID_NAME`. Er ist auch der Verzeichnisname im Repository |
 | `<summary>` | nein | Eine Zeile; der Setup-Assistent zeigt sie als Titel der Website, und `[site_details] Title` ist standardmäßig dieser Wert |
 | `<description>` | nein | Längerer Text |
 | `<vendor>` | nein | Wählt das Repository-Verzeichnis: der Hersteller, durch die Transformation `urlalias` geleitet (`7x` bleibt `7x`, `eZ systems` wird zu `ez-systems`); ohne Hersteller geht das Paket nach `local` |

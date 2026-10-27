@@ -747,7 +747,7 @@ class expUserSessionTracker
             $mail->setSender( $sender );
             $mail->setReceiver( $email );
             $mail->setSubject( $subject );
-            $mail->setBody( $body );
+            expMailTemplateBody::applyRendered( $mail, $rendered, $body );
             $mail->setCategory( $category );
             $ok = (bool)eZMailTransport::send( $mail );
             self::$sentMails[] = array( 'template' => $template, 'category' => $category, 'ok' => $ok );

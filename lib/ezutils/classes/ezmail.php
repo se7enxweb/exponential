@@ -781,6 +781,8 @@ class eZMail
         }
         $newBody = preg_replace( "/\r\n|\r|\n/", eZMail::lineSeparator(), $newBody );
         $this->BodyText = $newBody;
+        // a new body: the parts of an earlier multipart/alternative body no longer describe it
+        $this->AlternativeParts = null;
     }
 
     /*!
@@ -1377,6 +1379,9 @@ class eZMail
     public $MIMEVersion;
     /// The category of e-mail (setCategory()), null when not declared
     public $Category = null;
+    /// The text and the HTML of a multipart/alternative body (expMailTemplateBody::setAlternative()), null otherwise:
+    /// the mail gate adds its footer to both parts and builds the body again
+    public $AlternativeParts = null;
 
     /**
      * Contains an object of type ezcMail, which is used to store the
