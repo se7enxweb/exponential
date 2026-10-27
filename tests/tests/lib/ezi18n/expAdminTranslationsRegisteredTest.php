@@ -118,7 +118,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
             self::$switchEntries = ( new expUISwitchLanguageCatalogue( $this->root, '' ) )->entries();
         $entry = self::$switchEntries[$code] ?? null;
         $this->assertIsArray( $entry, "$code is not in the catalogue of the interface language switch" );
-        $this->assertGreaterThanOrEqual( 99, $entry['coverage'], "$code: coverage" );
+        $this->assertSame( 100, (int)$entry['coverage'], "$code: coverage" );
         $this->assertFalse( $entry['test'], "$code must not be a test language" );
     }
 
@@ -145,7 +145,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     public function testLanguagesDocumentListsTheTranslationAsComplete( $code )
     {
         $doc = (string)file_get_contents( $this->root . '/doc/eng-us/languages.md' );
-        $this->assertMatchesRegularExpression( '/^\| `' . preg_quote( $code, '/' ) . '` \| (99|100)% /m', $doc );
+        $this->assertMatchesRegularExpression( '/^\| `' . preg_quote( $code, '/' ) . '` \| 100% /m', $doc );
     }
 
     public static function extensionCatalogues()

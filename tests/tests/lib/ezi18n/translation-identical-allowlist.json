@@ -12438,6 +12438,8 @@
         "Hide password": "short label or code, the word Nigerian Pidgin uses",
         "Old password": "short label or code, the word Nigerian Pidgin uses",
         "New password": "short label or code, the word Nigerian Pidgin uses",
+        "Your new password": "short label, the words Nigerian Pidgin uses",
+        "Your new password for %site": "short label, the words Nigerian Pidgin uses",
         "Change password for <%username>": "short label or code, the word Nigerian Pidgin uses",
         "Confirm new password": "short label or code, the word Nigerian Pidgin uses",
         "Register new user": "short label or code, the word Nigerian Pidgin uses",
