@@ -20,7 +20,7 @@
 class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
     const LANGUAGES = array( 'afr-ZA', 'amh-ET', 'ara-SA', 'ben-BD', 'bos-BA', 'bul-BG', 'cat-ES', 'chi-CN', 'chi-TW',
-        'cro-HR', 'cze-CZ', 'dan-DK', 'dsb-DE', 'dut-NL', 'ell-GR', 'esl-ES', 'esl-MX', 'est-EE', 'fas-IR', 'fin-FI',
+        'cro-HR', 'cze-CZ', 'dan-DK', 'dsb-DE', 'dut-NL', 'ell-GR', 'esl-ES', 'esl-MX', 'est-EE', 'fas-IR', 'fil-PH', 'fin-FI',
         'fre-FR', 'ger-DE', 'gla-GB', 'gle-IE', 'guj-IN', 'hau-NG', 'heb-IL', 'hin-IN', 'hun-HU', 'ibo-NG', 'ind-ID', 'isl-IS',
         'ita-IT', 'jpn-JP', 'kal-GL', 'kan-IN', 'kor-KR', 'kur-TR', 'lao-LA', 'lat-VA', 'lav-LV', 'lit-LT', 'mal-IN', 'mar-IN',
         'mlt-MT', 'mri-NZ', 'msa-MY', 'nor-NO', 'ori-IN', 'pan-IN', 'pol-PL', 'por-BR', 'por-PT', 'pus-AF', 'ron-RO', 'rus-RU', 'ser-SR',
