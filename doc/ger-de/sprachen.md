@@ -185,7 +185,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Vereinigtes Königreich | GB | `cym-GB` (nicht übersetzt), `eng-GB` (Quelltexte), `gla-GB` (nicht übersetzt) |
 | Vietnam | VN | `vie-VN` |
 | Westsahara | EH | `ara-EH` → `ara-SA` |
-| Zaire | CD | `fre-CD` → `fre-FR`, `lin-CD` (nicht übersetzt) |
+| Zaire | CD | `fre-CD` → `fre-FR`, `lin-CD` |
 | Zentralafrikanische Republik | CF | `fre-CF` → `fre-FR` |
 
 </details>
@@ -228,7 +228,7 @@ Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch
 Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch
 (Kurmandschi), Suaheli, Hindi, Koreanisch, Japanisch, Griechisch, Finnisch, Ungarisch, Rumänisch, Slowakisch,
 Slowenisch, Bosnisch, Albanisch, Estnisch, Lettisch, Isländisch, Irisch, Maltesisch, Niedersorbisch, Grönländisch, Chinesisch (vereinfacht und traditionell),
-Russisch, Katalanisch, Serbisch (kyrillisch und lateinisch), Bulgarisch, Litauisch, Portugiesisch (Portugal), Afrikaans, Englisch (Australien), Bengalisch, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharisch, Yoruba, Malayalam, Punjabi (Gurmukhi), Odia, Igbo, isiZulu, Somali, isiXhosa, Jiddisch, Vietnamesisch, Indonesisch, Javanisch, Sundanesisch, Nepali, Bhojpuri, Maithili, Nigerianisches Pidgin, Sindhi, Westpunjabi, Usbekisch, Birmanisch,
+Russisch, Katalanisch, Serbisch (kyrillisch und lateinisch), Bulgarisch, Litauisch, Portugiesisch (Portugal), Afrikaans, Englisch (Australien), Bengalisch, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharisch, Yoruba, Malayalam, Punjabi (Gurmukhi), Odia, Igbo, isiZulu, Somali, isiXhosa, Jiddisch, Vietnamesisch, Indonesisch, Javanisch, Sundanesisch, Nepali, Bhojpuri, Maithili, Nigerianisches Pidgin, Sindhi, Westpunjabi, Usbekisch, Birmanisch, Lingala,
 Latein und, zum Spaß, Klingonisch).
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
@@ -363,7 +363,7 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 | Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (und `syr-SY`, das darauf zurückfällt), `arc-IQ`, `huy-IL`, `snd-PK`, `pnb-PK`, `uzb-UZ`, `mya-MM`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (und `syr-SY`, das darauf zurückfällt), `arc-IQ`, `huy-IL`, `snd-PK`, `pnb-PK`, `uzb-UZ`, `mya-MM`, `lin-CD`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
 | **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 237, die in 6.0.15 hinzukamen |
 
 Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]` nennt,
@@ -610,7 +610,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `lao-LA` | Lao | ລາວ | Südostasien | LTR | Laotisch (`Laoo`) | CLDR 44 | 100 % |
 | `lat-VA` | Latin | Latina | Europa | LTR | Lateinisch (`Latn`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
 | `lav-LV` | Latvian | Latviešu | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
-| `lin-CD` | Lingala | Lingála | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `lin-CD` | Lingala | Lingála | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `lit-LT` | Lithuanian | Lietuvių | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ltz-LU` | Luxembourgish | Lëtzebuergesch | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `lug-UG` | Ganda | Luganda | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -888,6 +888,7 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `pnb-PK` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 | `uzb-UZ` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 | `mya-MM` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
+| `lin-CD` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 
 Hinweise:
 
