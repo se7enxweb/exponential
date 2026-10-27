@@ -44879,6 +44879,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Σχόλιο από «%1 &lt;%2&gt;»</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Σας προτάθηκε μια σελίδα</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Λαμβάνετε αυτό το e-mail επειδή κάποιος εισήγαγε τη διεύθυνσή σας στο %site για να μοιραστεί μια σελίδα μαζί σας.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Προσπάθεια: %attempt από %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Προβολή της απόδειξής σας</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Η σύνδεση λειτουργεί μόνο μία φορά και μόνο για %1 λεπτά.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Επαναφορά κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Κάποιος ζήτησε την επαναφορά του κωδικού πρόσβασης του λογαριασμού σας στο %site. Επιβεβαιώστε με το κουμπί και θα σας στείλουμε νέο κωδικό πρόσβασης σε δεύτερο e-mail.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Επαναφορά του κωδικού πρόσβασής μου</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Αν δεν το ζητήσατε εσείς, μπορείτε να αγνοήσετε αυτό το e-mail: ο κωδικός πρόσβασής σας παραμένει ως έχει.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Ο νέος κωδικός πρόσβασής σας</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Ο κωδικός πρόσβασής σας στο %site επαναφέρθηκε. Συνδεθείτε με αυτόν τον νέο κωδικό πρόσβασης και, στη συνέχεια, αλλάξτε τον σε δικό σας.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Αν δεν επαναφέρατε εσείς τον κωδικό πρόσβασής σας, συνδεθείτε με αυτόν και αλλάξτε τον αμέσως.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Επαναφορά κωδικού πρόσβασης για το %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Ο νέος κωδικός πρόσβασής σας για το %site</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Πακέτο</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Το αρχείο συμπίεσης δημιουργήθηκε σε μορφή PAX tar, η οποία δεν μπορεί να εισαχθεί. Δημιουργήστε το πακέτο σε μορφή GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Το αρχείο απορρίφθηκε: η καταχώριση «%path» έχει όνομα αρχείου ή καταλόγου μεγαλύτερο από %length byte, που κανένα σύστημα αρχείων δεν αποθηκεύει.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Το αρχείο συμπίεσης απορρίφθηκε: η καταχώριση «%path» έχει τύπο tar «%type», ενώ ένα πακέτο περιέχει μόνο αρχεία και φακέλους.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Ο σύνδεσμος «%path» δείχνει έξω από το πακέτο (%target) και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Ο σύνδεσμος «%path» δείχνει στο «%target», που δεν υπάρχει στο πακέτο, και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Ο σύνδεσμος «%path» δείχνει στον κατάλογο «%target» και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Η καταχώριση «%path» είναι συσκευή ή επώνυμη σωλήνωση (τύπος tar «%type») και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Η καταχώριση «%path» έχει τύπο tar «%type», που ένα πακέτο δεν χρησιμοποιεί, και δεν εισήχθη.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>Οι συσκευές σας</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Κάποιος ζήτησε να χρησιμοποιηθεί η διεύθυνση %email για λογαριασμό στο %site. Επιβεβαιώστε ότι αυτή η διεύθυνση είναι δική σας.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Εσείς (ή κάποιος που πληκτρολόγησε τη διεύθυνσή σας) ζητήσατε μια σύνδεση για τη διαχείριση των e-mail που στέλνει το %site στη διεύθυνση %email. Σε αυτή τη σελίδα μπορείτε να ενεργοποιήσετε ή να απενεργοποιήσετε κάθε είδος e-mail ή να διακόψετε όλα τα προαιρετικά e-mail.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Αν δεν κάνατε εσείς αυτή την αλλαγή, κάποιος άλλος μπορεί να γνωρίζει τον κωδικό πρόσβασής σας: επαναφέρετέ τον αμέσως με την επιλογή «%forgot» στη σελίδα σύνδεσης και επικοινωνήστε μαζί μας.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Ο κωδικός πρόσβασής σας άλλαξε</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>Οι περίοδοι λειτουργίας αυτού του χρήστη:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Νέα σύνδεση στον λογαριασμό σας</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Συσκευή</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ώρα</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Κατά προσέγγιση διεύθυνση</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Αν δεν ήσασταν εσείς, ίσως κάποιος γνωρίζει τον κωδικό πρόσβασής σας: αποσυνδέστε αυτή την περίοδο λειτουργίας στη σελίδα των συσκευών σας και, στη συνέχεια, αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Έλεγχος των συσκευών σας</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Προβολή των περιόδων λειτουργίας αυτού του χρήστη</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Push to block</source>
         <translation>Προώθηση σε μπλοκ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Αν το κουμπί δεν λειτουργεί, αντιγράψτε αυτή τη διεύθυνση στο πρόγραμμα περιήγησής σας: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Άνοιγμα της σελίδας</translation>
     </message>
 </context>
 </TS>

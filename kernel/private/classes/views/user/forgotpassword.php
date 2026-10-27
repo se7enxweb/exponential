@@ -125,7 +125,7 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                 if ( $tpl->hasVariable( 'content_type' ) )
                     $mail->setContentType( $tpl->variable( 'content_type' ) );
                 $mail->setSubject( $subject );
-                $mail->setBody( $templateResult );
+                \expMailTemplateBody::apply( $mail, $tpl, $templateResult );
                 $mail->setCategory( 'security' );
                 $mailResult = \eZMailTransport::send( $mail );
                 $tpl->setVariable( 'generated', true );
@@ -269,7 +269,7 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
                     if ( $tpl->hasVariable( 'subject' ) )
                         $subject = $tpl->variable( 'subject' );
                     $mail->setSubject( $subject );
-                    $mail->setBody( $templateResult );
+                    \expMailTemplateBody::apply( $mail, $tpl, $templateResult );
                     $mail->setCategory( 'security' );
                     $mailResult = \eZMailTransport::send( $mail );
                     $tpl->setVariable( 'email', $email );

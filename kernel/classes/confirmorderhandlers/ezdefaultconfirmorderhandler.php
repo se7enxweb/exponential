@@ -54,7 +54,7 @@ class eZDefaultConfirmOrderHandler
             $mail->setReceiver( $email );
             $mail->setSender( $emailSender );
             $mail->setSubject( $subject );
-            $mail->setBody( $templateResult );
+            expMailTemplateBody::apply( $mail, $tpl, $templateResult );
             $mail->setCategory( 'orders' );
             $mailResult = eZMailTransport::send( $mail );
 
@@ -68,7 +68,7 @@ class eZDefaultConfirmOrderHandler
             $mail->setReceiver( $email );
             $mail->setSender( $emailSender );
             $mail->setSubject( $subject );
-            $mail->setBody( $templateResult );
+            expMailTemplateBody::apply( $mail, $tpl, $templateResult );
             $mail->setCategory( 'orders' );
             $mailResult = eZMailTransport::send( $mail );
         }

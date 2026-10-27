@@ -44879,6 +44879,14 @@ Akuersisumut oqaaseqaatinik nassiussiniaruit imaluunniit killiffia takuniarukku 
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Oqaaseqaat, allattoq: »%1 &lt;%2&gt;«</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Qupperneq illinnut innersuussutigineqarpoq</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>E-mail una pivat, arlaata %site-imi najugarisat allagaa qupperneq illinnut ingerlateqqinniarlugu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Taamaaliorniaruit inassutit %chown, »Shell-imut inassutit taarsiutissat« ataan
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Misileqqinneq: %attempt / %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Akiliinermut uppernarsaat takuuk</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ ilitsersuutit malikkit.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Innersuussut ataasiarluni minutsinilu %1-ini kisimi atuuppoq.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Isissutissap nutaamik aaqqissorneqarnera</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Arlaata %site-imi kontuppit isissutissaata nutaamik aaqqissornissaa qinnutigaa. Toortagaq atorlugu uppernarsaruk, taava isissutissaq nutaaq e-mail-imi aappaani nassiutissavarput.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Isissutissara nutaamik aaqqissoruk</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Qinnuteqarsimanngikkuit e-mail una soqutiginngitsoorsinnaavat: isissutissat allanngortinneqassanngilaq.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Isissutissat nutaaq</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site-imi isissutissat nutaamik aaqqissorneqarpoq. Isissutissaq nutaaq una atorlugu iserit, taava isissutissamut nammineq toqqakkannut allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Isissutissat nutaamik aaqqissorsimanngikkukku, una atorlugu iserit erniinnarlu allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site-imut isissutissap nutaamik aaqqissornera</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site-imut isissutissat nutaaq</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Poortugaq</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkivfiili PAX tar-ip ilusaani poortorneqarpoq, isertinneqarsinnaanngitsumi. Poortugaq GNU tar-ip ilusaani poortoruk (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkivfiili itigartinneqarpoq: allattugaq »%path« fiilip imaluunniit mappip aqqanik %length byte-nit takinerusumik imaqarpoq, fiilinillu aaqqissuussineq sumilluunniit toqqorneqarsinnaanngitsumik.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arkivfiili itigartinneqarpoq: allattugaq »%path« tar-ip suussusaanik »%type« suussuseqarpoq, poortugarli fiilinik mappinillu kisiannik imaqartarpoq.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Atassut »%path« poortugaq qaangerlugu tikkuussivoq (%target) eqqussorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Atassut »%path« »%target«-mut tikkuussivoq, poortugami pigineqanngitsumut, eqqussorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Atassut »%path« mappimut »%target«-mut tikkuussivoq eqqussorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Allattugaq »%path« atortuuvoq imaluunniit ruujori aqqulik (tar-ip suussusaa »%type«) eqqussorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Allattugaq »%path« tar-ip suussusaanik »%type« suussuseqarpoq, poortugap atorneq ajornagu, eqqussorneqanngilaq.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Your devices</source>
         <translation>Atortutit</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Arlaata %email %site-imi kontomut atorusuppaa. Najugaq una pigigit uppernarsaruk.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Illit (imaluunniit arlaata najugarisat allassimasaa) e-mail-it %site-ip %email-imut nassiutarisai aqunniarlugit innersuussut qinnutigaat. Quppernermi tassani e-mail-it suussusaat tamaasa ikitsinnaavatit qamitsinnaavatilluunniit, imaluunniit e-mail-it pisariaqanngitsut tamaasa unitsissinnaavatit.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Allannguut illit pilersissimanngikkukku allap isissutissat ilisimasinnaavaa: erniinnaq isernermut quppernermi »%forgot« atorlugu nutaamik aaqqissoruk, attavigisigullu.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Isissutissat allanngortinneqarpoq</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The sessions of this user:</source>
         <translation>Atuisup matuma isersimanerai:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Kontuunnut iserneq nutaaq</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Atortoq</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Piffissaq</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Najugaq missiliorneqartoq</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Illit iseriarsimanngikkuit arlaata isissutissat ilisimasinnaavaa: isersimaneq taanna atortutit quppernerianni anitsiguk, taava isissutissat allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Atortutit misissukkit</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Atuisup matuma isersimanerai takukkit</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Push to block</source>
         <translation>Blokkimut nassiuguk</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Toortagaq sulinngippat najugaq una browserinnut assiliuk: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Qupperneq ammaruk</translation>
     </message>
 </context>
 </TS>

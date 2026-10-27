@@ -661,7 +661,7 @@ class expPasswordPolicy
         $mail->setSender( $sender );
         $mail->setReceiver( $email );
         $mail->setSubject( $subject );
-        $mail->setBody( $body );
+        expMailTemplateBody::applyRendered( $mail, $rendered, $body );
         $mail->setCategory( 'security' );
         return (bool)eZMailTransport::send( $mail );
     }

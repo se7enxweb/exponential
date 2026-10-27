@@ -3,12 +3,15 @@
  * Tests of expPackageArchive: the tar headers of a package archive are scanned before
  * ezcArchive reads them, and what is extracted gets modes 0644/0755.
  *
- * - a GNU archive with a long name ("L") is read and extracted as before, a V7 archive passes the scan;
- * - a PAX archive ("x", "g") is refused with a message of its own, and quickly: ezcArchive's GNU reader looped on it
- *   until max_execution_time (checked in a child process with a deadline, so a regression fails instead of hanging
- *   the suite);
- * - a header type ezcArchive cannot read ("V", "K", "\0" in an archive with the ustar magic) is refused;
- * - a long name header that says it is larger than 4096 bytes is refused before anything of it is read;
+ * - a GNU archive with a long name ("L") is read and extracted as before, a V7 archive (also with files typed "\0")
+ *   is imported;
+ * - a PAX archive ("x", "g") is imported, and quickly: ezcArchive's GNU reader looped on it until max_execution_time
+ *   (checked in a child process with a deadline, so a regression fails instead of hanging the suite); a PAX header is
+ *   read bounded;
+ * - header types ezcArchive cannot read itself ("V", "D", "K", "7", "\0" with the ustar magic, "S", unknown) are read
+ *   or passed over with a notice;
+ * - a long name header that says it is larger than 4096 bytes is refused before anything of it is read, one of a
+ *   block multiple is read;
  * - a size field of 12 octal digits without terminator is read, a base-256 or not octal size is refused;
  * - a file packed as 04755 comes out 0644, directories packed as 0777 and 0000 come out 0755.
  *
@@ -168,22 +171,44 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $this->assertSame( ezcArchive::TAR_V7, eZPackage::archiveTarType( $path ) );
         $this->assertNull( expPackageArchive::scan( $path, $this->limits ) );
         $this->assertSame( 'ok', $this->inspect( $path ) );
-        // regular files typed "\0" pass the scan too (the V7 reader does not loop on them); that ezcArchive's V7
-        // reader takes them for no file under PHP 8 (unpack() gives "", and "" == 0 is false) is not the scan's
-        // business: entriesProblem() refuses them as before
-        $nul = self::file( 'package.xml', eZPackageTestFixtures::definition( array( 'name' => 'k1_archive' ) ), '0000644', $v7, "\0" );
-        $this->assertNull( expPackageArchive::scan( $this->write( $nul, 'nul.ezpkg' ), $this->limits ) );
+        // regular files typed "\0", as the packages of eZ Publish 3.x have them: ezcArchive's V7 reader takes them
+        // for no file under PHP 8 (unpack() gives "", and "" == 0 is false), so the archive is rewritten for it
+        $nul = self::file( 'package.xml', eZPackageTestFixtures::definition( array( 'name' => 'k1_archive' ) ), '0000644', $v7, "\0" )
+             . self::file( 'a.txt', 'nul typed', '0000644', $v7, "\0" );
+        $path = $this->write( $nul, 'nul.ezpkg' );
+        $this->assertNull( expPackageArchive::scan( $path, $this->limits ) );
+        $this->assertTrue( expPackageArchive::index( $path, $this->limits )['rewrite'] );
+        $this->assertSame( 'ok', $this->inspect( $path ) );
+        $target = $this->dir . '/out';
+        $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
+        $this->assertSame( 'nul typed', file_get_contents( "$target/a.txt" ) );
+    }
+
+    /**
+     * A PAX record "<length> <key>=<value>\n", its length counting itself.
+     */
+    private static function paxRecord( $key, $value )
+    {
+        $body = " $key=$value\n";
+        $length = strlen( $body ) + 1;
+        while ( strlen( (string)$length ) + strlen( $body ) !== $length )
+            $length = strlen( (string)$length ) + strlen( $body );
+        return $length . $body;
     }
 
     public static function paxTypes()
     {
-        return array( 'extended header' => array( 'x' ), 'global header' => array( 'g' ) );
+        return array( 'extended header' => array( 'x', "k1_archive/n\xC3\xA4me.txt" ), 'global header' => array( 'g', 'name.txt' ) );
     }
 
+    /**
+     * PAX archives (GNU tar --format=posix, bsdtar, Python's tarfile) are read: an extended header's path names the
+     * entry after it, a global header is passed over.
+     */
     #[PHPUnit\Framework\Attributes\DataProvider( 'paxTypes' )]
-    public function testPaxArchiveIsRefused( $type )
+    public function testPaxArchiveIsImported( $type, $extracted )
     {
-        $record = "30 path=k1_archive/n\xC3\xA4me.txt\n";
+        $record = self::paxRecord( 'path', "k1_archive/n\xC3\xA4me.txt" ) . self::paxRecord( 'SCHILY.xattr.user.k1', 'v' );
         $tar = self::definition()
              . self::header( 'PaxHeaders.0/name.txt', strlen( $record ), $type ) . self::data( $record )
              . self::file( 'name.txt', 'x' );
@@ -191,18 +216,40 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $start = microtime( true );
         $result = eZPackageUploadInspector::inspect( $path, 'k1_archive.ezpkg', $this->limits );
         $this->assertLessThan( 2.0, microtime( true ) - $start );
-        $this->assertFalse( $result['ok'] );
-        $this->assertSame( 'tar_pax', $result['code'] );
-        // GNU tar spells the format "gnu", bsdtar (macOS, the BSDs) answers that with "No such format" and wants "gnutar"
-        $message = eZPackageUploadInspector::message( $result, $this->limits );
-        $this->assertStringContainsString( 'tar --format=gnu,', $message );
-        $this->assertStringContainsString( 'tar --format=gnutar', $message );
+        $this->assertTrue( $result['ok'], (string)$result['code'] );
+        $this->assertSame( array(), $result['notices'] );
 
-        $this->assertFalse( expPackageJson::extractArchive( $path, $this->dir . '/out', $error ) );
-        $this->assertStringContainsString( 'tar_pax', $error );
-        $this->assertFalse( is_dir( $this->dir . '/out' ) );
-        $name = '';
-        $this->assertFalse( @eZPackage::importUnaudited( $path, $name, false ) );
+        $target = $this->dir . '/out';
+        $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
+        $this->assertSame( 'x', file_get_contents( "$target/$extracted" ) );
+        $this->assertFalse( file_exists( "$target/PaxHeaders.0" ) );
+    }
+
+    /**
+     * A PAX header is read bounded: one larger than MAX_PAX_SIZE, or records that are not well formed, refuse the
+     * archive before anything of it is extracted; a size given in the PAX header replaces the header's own.
+     */
+    public function testPaxHeaderIsReadBounded()
+    {
+        $big = self::paxRecord( 'comment', str_repeat( 'c', expPackageArchive::MAX_PAX_SIZE ) );
+        $tar = self::definition() . self::header( 'PaxHeaders.0/a', strlen( $big ), 'x' ) . self::data( $big ) . self::file( 'a', 'x' );
+        $this->assertSame( 'tar_long_name', expPackageArchive::scan( $this->write( $tar, 'big.ezpkg' ), $this->limits )['code'] );
+
+        foreach ( array( 'length too long' => "99 path=a\n", 'no length' => "path=a\n", 'no equals sign' => "8 path a\n", 'not a number' => "x0 path=a\n" ) as $label => $record )
+        {
+            $bad = self::definition() . self::header( 'PaxHeaders.0/a', strlen( $record ), 'x' ) . self::data( $record ) . self::file( 'a', 'x' );
+            $this->assertSame( 'unreadable', expPackageArchive::scan( $this->write( $bad, 'bad.ezpkg' ), $this->limits )['code'] ?? null, $label );
+        }
+
+        // the size of the entry in its PAX header (the header's own field says 0 here)
+        $content = 'sized by the PAX header';
+        $record = self::paxRecord( 'size', (string)strlen( $content ) );
+        $sized = self::definition() . self::header( 'PaxHeaders.0/sized.txt', strlen( $record ), 'x' ) . self::data( $record )
+               . self::header( 'sized.txt', 0, '0' ) . self::data( $content );
+        $path = $this->write( $sized, 'sized.ezpkg' );
+        $target = $this->dir . '/sized';
+        $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
+        $this->assertSame( $content, file_get_contents( "$target/sized.txt" ) );
     }
 
     /**
@@ -211,13 +258,13 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
      */
     public function testPaxArchiveDoesNotHang()
     {
-        $record = "30 path=k1_archive/n\xC3\xA4me.txt\n";
+        $record = self::paxRecord( 'path', "k1_archive/n\xC3\xA4me.txt" );
         $path = $this->write( self::definition() . self::header( 'PaxHeaders.0/name.txt', strlen( $record ), 'x' ) . self::data( $record )
                             . self::file( 'name.txt', 'x' ) );
         $root = dirname( __DIR__, 5 );
         $code = 'chdir( ' . var_export( $root, true ) . ' ); require "autoload.php";'
               . '$r = eZPackageUploadInspector::inspect( ' . var_export( realpath( $path ), true ) . ', "k1.ezpkg" );'
-              . 'echo $r["code"];';
+              . 'echo $r["ok"] ? "ok" : $r["code"];';
         $process = proc_open( array( PHP_BINARY, '-d', 'max_execution_time=0', '-r', $code ),
                               array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root );
         $this->assertIsResource( $process );
@@ -241,23 +288,31 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         fclose( $pipes[2] );
         proc_close( $process );
         $this->assertFalse( $running, 'inspect() of a PAX archive did not end within 15 seconds' );
-        $this->assertSame( 'tar_pax', trim( $output ), $stderr );
+        $this->assertSame( 'ok', trim( $output ), $stderr );
     }
 
-    public static function unreadableTypes()
+    /**
+     * type => magic, what lands as "odd" ('file', 'dir' or null), the notice expected
+     */
+    public static function unusualTypes()
     {
         return array(
-            'GNU multivolume' => array( 'V', self::GNU_MAGIC, 'tar_entry_type' ),
-            'GNU dump dir' => array( 'D', self::GNU_MAGIC, 'tar_entry_type' ),
-            'GNU long link' => array( 'K', self::GNU_MAGIC, 'tar_entry_type' ),
-            'contiguous file' => array( '7', self::USTAR_MAGIC, 'tar_entry_type' ),
-            'NUL typed file with ustar magic' => array( "\0", self::USTAR_MAGIC, 'tar_entry_type' ),
-            'unknown letter' => array( 'Q', self::USTAR_MAGIC, 'tar_entry_type' ),
+            'GNU volume label' => array( 'V', self::GNU_MAGIC, null, null ),
+            'GNU dump dir' => array( 'D', self::GNU_MAGIC, 'dir', null ),
+            'GNU long link' => array( 'K', self::GNU_MAGIC, null, null ),
+            'contiguous file' => array( '7', self::USTAR_MAGIC, 'file', null ),
+            'NUL typed file with ustar magic' => array( "\0", self::USTAR_MAGIC, 'file', null ),
+            'unknown letter' => array( 'Q', self::USTAR_MAGIC, null, 'unsupported_entry' ),
+            'old GNU sparse file' => array( 'S', self::GNU_MAGIC, null, 'unsupported_entry' ),
         );
     }
 
-    #[PHPUnit\Framework\Attributes\DataProvider( 'unreadableTypes' )]
-    public function testUnreadableHeaderTypeIsRefused( $type, $magic, $code )
+    /**
+     * Header types ezcArchive cannot read itself (its GNU reader looped on every one that is not a digit) are read:
+     * the archive is rewritten for it, quickly, and what is not a file or a directory is passed over.
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'unusualTypes' )]
+    public function testUnusualHeaderTypeIsRead( $type, $magic, $lands, $notice )
     {
         $tar = self::definition( $magic ) . self::header( 'odd', 3, $type, '0000644', $magic ) . self::data( 'abc' )
              . self::file( 'after.txt', 'x', '0000644', $magic );
@@ -265,12 +320,22 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $start = microtime( true );
         $result = eZPackageUploadInspector::inspect( $path, 'k1_archive.ezpkg', $this->limits );
         $this->assertLessThan( 2.0, microtime( true ) - $start );
-        $this->assertSame( $code, $result['code'] );
-        $this->assertSame( 'odd', $result['path'] );
-        $this->assertSame( $type, $result['type'] );
-        $message = eZPackageUploadInspector::message( $result, $this->limits );
-        $this->assertStringContainsString( '"odd"', $message );
-        $this->assertStringContainsString( expPackageArchive::typeText( $type ), $message );
+        $this->assertTrue( $result['ok'], (string)$result['code'] );
+        $this->assertSame( $notice === null ? array() : array( $notice ), array_column( $result['notices'], 'code' ) );
+        foreach ( $result['notices'] as $item )
+        {
+            $this->assertSame( 'odd', $item['path'] );
+            $this->assertStringContainsString( expPackageArchive::typeText( $type ), expPackageArchive::noticeMessage( $item ) );
+        }
+        $target = $this->dir . '/out';
+        $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
+        $this->assertSame( 'x', file_get_contents( "$target/after.txt" ) );
+        if ( $lands === 'file' )
+            $this->assertSame( 'abc', file_get_contents( "$target/odd" ) );
+        else if ( $lands === 'dir' )
+            $this->assertDirectoryExists( "$target/odd" );
+        else
+            $this->assertFalse( file_exists( "$target/odd" ) );
     }
 
     public function testHugeLongNameIsRefusedBeforeItIsRead()
@@ -283,34 +348,61 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $this->assertLessThan( 1048576, memory_get_usage() - $memory );
         $this->assertSame( 'tar_long_name', $this->inspect( $path ) );
 
-        // the limit itself: 4095 bytes pass (4096 is a multiple of 512, see the next test), 4097 do not
-        $name = str_repeat( 'n', 4094 ) . "\0";
-        $ok = self::definition( self::GNU_MAGIC ) . self::header( '././@LongLink', 4095, 'L', '0000644', self::GNU_MAGIC ) . self::data( $name )
+        // the limit itself: a long name of 4095 bytes and its NUL pass (rewritten: 4096 is a multiple of 512), 4097 do not
+        $name = self::segmentedName( 4095 );
+        $ok = self::definition( self::GNU_MAGIC ) . self::header( '././@LongLink', 4096, 'L', '0000644', self::GNU_MAGIC ) . self::data( $name . "\0" )
             . self::file( 'short', 'x', '0000644', self::GNU_MAGIC );
-        $this->assertNull( expPackageArchive::scan( $this->write( $ok, 'ok.ezpkg' ), $this->limits ) );
-        $over = self::definition( self::GNU_MAGIC ) . self::header( '././@LongLink', 4097, 'L', '0000644', self::GNU_MAGIC ) . self::data( $name . 'nn' )
+        $okPath = $this->write( $ok, 'ok.ezpkg' );
+        $this->assertNull( expPackageArchive::scan( $okPath, $this->limits ) );
+        $this->assertSame( 'ok', $this->inspect( $okPath ) );
+        $over = self::definition( self::GNU_MAGIC ) . self::header( '././@LongLink', 4097, 'L', '0000644', self::GNU_MAGIC ) . self::data( $name . "n\0" )
               . self::file( 'short', 'x', '0000644', self::GNU_MAGIC );
         $this->assertSame( 'tar_long_name', expPackageArchive::scan( $this->write( $over, 'over.ezpkg' ), $this->limits )['code'] );
+        // a single name longer than a file system stores ends ezcArchive with a fatal error: refused before
+        $segment = self::definition( self::GNU_MAGIC ) . self::header( '././@LongLink', 301, 'L', '0000644', self::GNU_MAGIC ) . self::data( str_repeat( 'n', 300 ) . "\0" )
+                 . self::file( 'short', 'x', '0000644', self::GNU_MAGIC );
+        $this->assertSame( 'tar_name_segment', $this->inspect( $this->write( $segment, 'segment.ezpkg' ) ) );
+    }
+
+    /**
+     * A relative path of $length bytes whose names are each at most 200 bytes long.
+     */
+    private static function segmentedName( $length )
+    {
+        $name = 'k1_archive';
+        while ( strlen( $name ) < $length )
+            $name .= '/' . str_repeat( 'n', min( 200, $length - strlen( $name ) - 1 ) );
+        return $name;
     }
 
     /**
      * ezcArchiveGnuHeader::readExtension() reads one block too many when the long name size is a multiple of 512: it
      * skips the real entry header and parses the entry's data as the next header. A forged PAX header in that data
-     * passed the scan and looped ezcArchive again (found in review, measured: hung until killed).
+     * looped ezcArchive (found in review, measured: hung until killed). Such an archive is rewritten for ezcArchive,
+     * so the entry and its data are read as what they are; an empty long name names nothing.
      */
-    public function testLongNameOfABlockMultipleIsRefused()
+    public function testLongNameOfABlockMultipleIsRead()
     {
         $forged = self::header( 'PaxHeaders.0/x', 10, 'x', '0000644', self::GNU_MAGIC );
+        $name = self::segmentedName( 511 );
         $tar = self::definition( self::GNU_MAGIC )
-             . self::header( '././@LongLink', 512, 'L', '0000644', self::GNU_MAGIC ) . self::data( str_repeat( 'n', 511 ) . "\0" )
+             . self::header( '././@LongLink', 512, 'L', '0000644', self::GNU_MAGIC ) . self::data( $name . "\0" )
              . self::header( 'k1_archive/carrier', 512, '0', '0000644', self::GNU_MAGIC ) . $forged;
         $path = $this->write( $tar );
-        $this->assertSame( 'tar_long_name', expPackageArchive::scan( $path, $this->limits )['code'] );
-        $this->assertSame( 'tar_long_name', $this->inspect( $path ) );
+        $this->assertNull( expPackageArchive::scan( $path, $this->limits ) );
+        $start = microtime( true );
+        $this->assertSame( 'ok', $this->inspect( $path ) );
+        $this->assertTrue( expPackageJson::extractArchive( $path, $this->dir . '/out', $error ), (string)$error );
+        $this->assertLessThan( 2.0, microtime( true ) - $start );
+        $this->assertSame( $forged, file_get_contents( $this->dir . '/out/' . $name ) );
+        $this->assertFalse( file_exists( $this->dir . '/out/k1_archive/carrier' ) );
 
         $empty = self::definition( self::GNU_MAGIC ) . self::header( '././@LongLink', 0, 'L', '0000644', self::GNU_MAGIC )
                . self::file( 'short', 'x', '0000644', self::GNU_MAGIC );
-        $this->assertSame( 'tar_long_name', expPackageArchive::scan( $this->write( $empty, 'empty.ezpkg' ), $this->limits )['code'] );
+        $emptyPath = $this->write( $empty, 'empty.ezpkg' );
+        $this->assertNull( expPackageArchive::scan( $emptyPath, $this->limits ) );
+        $this->assertTrue( expPackageJson::extractArchive( $emptyPath, $this->dir . '/empty', $error ), (string)$error );
+        $this->assertSame( 'x', file_get_contents( $this->dir . '/empty/short' ) );
     }
 
     /**

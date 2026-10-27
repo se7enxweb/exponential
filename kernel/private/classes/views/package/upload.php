@@ -147,9 +147,13 @@ class Upload extends \Exponential\Runnable\ModuleView
         $work = \expPackageJson::workDirectory( 'upload-validate' );
         try
         {
-            if ( !\expPackageJson::extractArchive( $archive, $work . '/pkg', $error ) )
+            if ( !\expPackageJson::extractArchive( $archive, $work . '/pkg', $error, $notices ) )
                 return array( 'valid' => false, 'errors' => array( (string)$error ), 'warnings' => array(), 'format' => '', 'documents' => 0, 'files' => 0, 'checksums' => false );
             $report = \expPackageJson::validateDirectory( $work . '/pkg' );
+            // what the archive held that a package cannot (links out of it, devices, fifos) was passed over: shown
+            // with the validation, the package itself is imported
+            foreach ( $notices as $notice )
+                $report['warnings'][] = \expPackageArchive::noticeMessage( $notice );
             $report['checksums'] = $report['format'] === \eZPackage::FORMAT_JSON && !in_array( 'package.json has no checksums', $report['warnings'], true );
             return $report;
         }

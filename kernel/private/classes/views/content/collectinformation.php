@@ -371,7 +371,7 @@ class Collectinformation extends \Exponential\Runnable\ModuleView
                     }
 
                     $mail->setSubject( $subject );
-                    $mail->setBody( $templateResult );
+                    \expMailTemplateBody::apply( $mail, $tpl, $templateResult );
                     $mailResult = \eZMailTransport::send( $mail );
                 }
 
