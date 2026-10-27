@@ -26100,7 +26100,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>অপাৰেটৰ ক্লিনআপৰ বাবে PHP ফাংচন চলায় আৰু \\a $operatorValue সলনি কৰে।</translation>
+        <translation>অপাৰেটৰ ক্লিনআপৰ বাবে PHP ফাংচন চলায় আৰু \a $operatorValue সলনি কৰে।</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return টেমপ্লেট অপাৰেটৰৰ নামসহ এটা এৰে।</translation>
+        <translation>\\return টেমপ্লেট অপাৰেটৰৰ নামসহ এটা এৰে।</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return টেমপ্লেট অপাৰেটৰৰ নামসহ এটা এৰে।</translation>
+        <translation>\return টেমপ্লেট অপাৰেটৰৰ নামসহ এটা এৰে।</translation>
     </message>
 </context>
 <context>
@@ -27730,7 +27730,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
-        <translation>bin/ ৰ প্ৰতিটো আদেশ, cronjobs/ ৰ প্ৰতিটো cron অংশ আৰু মডিউল দৰ্শন এটা শ্ৰেণী; ইয়াৰ এটাৰ উপশ্ৰেণী, site.ini ত নাম দিয়া, ইয়াৰ ঠাইত চলে, আৰু শ্ৰৱণকাৰীবোৰে সেইবোৰৰ যিকোনোটোৰ আগত আৰু পিছত কাম কৰিব পাৰে। উদাহৰণস্বৰূপে Implementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView থকা এটা ছাইট অভাৰৰাইডে content/history ক myHistoryView চলাবলৈ দিয়ে, যিটোৱে কেন্দ্ৰ শ্ৰেণী সম্প্ৰসাৰণ কৰে আৰু কেৱল অভাৰৰাইড কৰাখিনিহে সলনি কৰে।</translation>
+        <translation>bin/ ৰ প্ৰতিটো আদেশ, cronjobs/ ৰ প্ৰতিটো cron অংশ আৰু মডিউল দৰ্শন এটা শ্ৰেণী; ইয়াৰ এটাৰ উপশ্ৰেণী, site.ini ত নাম দিয়া, ইয়াৰ ঠাইত চলে, আৰু শ্ৰৱণকাৰীবোৰে সেইবোৰৰ যিকোনোটোৰ আগত আৰু পিছত কাম কৰিব পাৰে। উদাহৰণস্বৰূপে Implementation[Exponential\View\Kernel\Content\History]=myHistoryView থকা এটা ছাইট অভাৰৰাইডে content/history ক myHistoryView চলাবলৈ দিয়ে, যিটোৱে কেন্দ্ৰ শ্ৰেণী সম্প্ৰসাৰণ কৰে আৰু কেৱল অভাৰৰাইড কৰাখিনিহে সলনি কৰে।</translation>
     </message>
     <message>
         <source>Server functions of ezjscore</source>
@@ -27770,7 +27770,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>ই সলনি কৰা শ্ৰেণীটো সম্প্ৰসাৰণ কৰে: তলত Exponential\\Runnable\\Command, CronjobPart বা ModuleView</translation>
+        <translation>ই সলনি কৰা শ্ৰেণীটো সম্প্ৰসাৰণ কৰে: তলত Exponential\Runnable\Command, CronjobPart বা ModuleView</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
@@ -51026,7 +51026,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>অপাৰেটৰ ক্লিনআপৰ বাবে PHP ফাংচন চলায় আৰু \\a $operatorValue সলনি কৰে।</translation>
+        <translation>অপাৰেটৰ ক্লিনআপৰ বাবে PHP ফাংচন চলায় আৰু \a $operatorValue সলনি কৰে।</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return টেমপ্লেট অপাৰেটৰৰ নামসহ এটা এৰে।</translation>
+        <translation>\\return টেমপ্লেট অপাৰেটৰৰ নামসহ এটা এৰে।</translation>
     </message>
 </context>
 <context>

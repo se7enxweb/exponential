@@ -26100,7 +26100,7 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Hojii PHP kan operator cleanup raawwata, \\a $operatorValue immoo jijjiira.</translation>
+        <translation>Hojii PHP kan operator cleanup raawwata, \a $operatorValue immoo jijjiira.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return tarree maqaa operator unka qabu.</translation>
+        <translation>\\return tarree maqaa operator unka qabu.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return tarree maqaa operator unka qabu.</translation>
+        <translation>\return tarree maqaa operator unka qabu.</translation>
     </message>
 </context>
 <context>
@@ -27730,7 +27730,7 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     </message>
     <message>
         <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
-        <translation>Ajajni bin/ keessa jiru hundi, kutaan cronjob cronjobs/ keessa jiru fi mul'ata moojulii hundi gita dha; gitni jalaa isaan keessaa tokko site.ini keessatti moggaafame bakka isaa hojjeta, dhaggeeffattoonni immoo isaan hunda dura fi booda hojjechuu danda'u. Fakkeenyaaf bakka bu'aan marsariitii Implementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView waliin content/history akka myHistoryView hojjetu godha, kan gita handhuuraa dheeressee wanta bakka buusu qofa jijjiiru.</translation>
+        <translation>Ajajni bin/ keessa jiru hundi, kutaan cronjob cronjobs/ keessa jiru fi mul'ata moojulii hundi gita dha; gitni jalaa isaan keessaa tokko site.ini keessatti moggaafame bakka isaa hojjeta, dhaggeeffattoonni immoo isaan hunda dura fi booda hojjechuu danda'u. Fakkeenyaaf bakka bu'aan marsariitii Implementation[Exponential\View\Kernel\Content\History]=myHistoryView waliin content/history akka myHistoryView hojjetu godha, kan gita handhuuraa dheeressee wanta bakka buusu qofa jijjiiru.</translation>
     </message>
     <message>
         <source>Server functions of ezjscore</source>
@@ -27770,7 +27770,7 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>gita bakka buusu dheeressa: Exponential\\Runnable\\Command, CronjobPart yookiin ModuleView jala jiru</translation>
+        <translation>gita bakka buusu dheeressa: Exponential\Runnable\Command, CronjobPart yookiin ModuleView jala jiru</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
@@ -51026,7 +51026,7 @@ Ibsa dabalataaf fuula barbaachisummaa ilaalaa.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Hojii PHP kan operator cleanup raawwata, \\a $operatorValue immoo jijjiira.</translation>
+        <translation>Hojii PHP kan operator cleanup raawwata, \a $operatorValue immoo jijjiira.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ Ibsa dabalataaf fuula barbaachisummaa ilaalaa.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return tarree maqaa operator unka qabu.</translation>
+        <translation>\\return tarree maqaa operator unka qabu.</translation>
     </message>
 </context>
 <context>
