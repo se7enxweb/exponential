@@ -20,10 +20,11 @@
 class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
     const LANGUAGES = array( 'afr-ZA', 'aka-GH', 'amh-ET', 'ara-SA', 'arc-IQ', 'asm-IN', 'aze-AZ', 'ben-BD', 'bho-IN',
-        'bos-BA', 'bul-BG', 'cat-ES', 'che-RU', 'chi-CN', 'chi-TW', 'cro-HR', 'cze-CZ', 'dan-DK', 'dsb-DE', 'dut-NL',
-        'ell-GR', 'esl-ES', 'esl-MX', 'est-EE', 'fas-IR', 'fil-PH', 'fin-FI', 'fre-FR', 'ful-SN', 'ger-DE', 'gla-GB',
-        'gle-IE', 'guj-IN', 'hau-NG', 'haw-US', 'heb-IL', 'hin-IN', 'hun-HU', 'huy-IL', 'hye-AM', 'ibo-NG', 'ind-ID',
-        'isl-IS', 'ita-IT', 'jav-ID', 'jpn-JP', 'kal-GL', 'kan-IN', 'kat-GE', 'kaz-KZ', 'khm-KH', 'kin-RW', 'kor-KR',
+        'bos-BA', 'bul-BG', 'cat-ES', 'ceb-PH', 'che-RU', 'chi-CN', 'chi-TW', 'cro-HR', 'cze-CZ', 'dan-DK', 'dsb-DE',
+        'dut-NL', 'ell-GR', 'esl-ES', 'esl-MX', 'est-EE', 'fas-IR', 'fil-PH', 'fin-FI', 'fre-FR', 'ful-SN', 'ger-DE',
+        'gla-GB', 'gle-IE', 'guj-IN', 'hau-NG', 'haw-US', 'heb-IL', 'hin-IN', 'hun-HU', 'huy-IL', 'hye-AM', 'ibo-NG',
+        'ind-ID', 'isl-IS', 'ita-IT', 'jav-ID', 'jpn-JP', 'kal-GL', 'kan-IN', 'kat-GE', 'kaz-KZ', 'khm-KH', 'kin-RW',
+        'kor-KR',
         'kur-TR', 'lao-LA', 'lat-VA', 'lav-LV', 'lin-CD', 'lit-LT', 'mai-IN', 'mal-IN', 'mar-IN', 'mlt-MT', 'mri-NZ',
         'msa-MY', 'mya-MM', 'nep-NP', 'nor-NO', 'ori-IN', 'orm-ET', 'pan-IN', 'pcm-NG', 'pnb-PK', 'pol-PL', 'por-BR',
         'por-PT', 'pus-AF', 'ron-RO', 'rus-RU', 'ser-SR', 'sin-LK', 'slk-SK', 'slv-SI', 'sna-ZW', 'snd-PK', 'som-SO',

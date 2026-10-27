@@ -26100,7 +26100,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>ប្រតិបត្តិមុខងារ PHP សម្រាប់ការសម្អាតប្រមាណវិធី ហើយកែប្រែ \\a $operatorValue ។</translation>
+        <translation>ប្រតិបត្តិមុខងារ PHP សម្រាប់ការសម្អាតប្រមាណវិធី ហើយកែប្រែ \a $operatorValue ។</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return អារេដែលមានឈ្មោះប្រមាណវិធីគំរូ។</translation>
+        <translation>\\return អារេដែលមានឈ្មោះប្រមាណវិធីគំរូ។</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return អារេដែលមានឈ្មោះប្រមាណវិធីគំរូ។</translation>
+        <translation>\return អារេដែលមានឈ្មោះប្រមាណវិធីគំរូ។</translation>
     </message>
 </context>
 <context>
@@ -27730,7 +27730,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
-        <translation>រាល់ពាក្យបញ្ជាក្នុង bin/ ផ្នែក cronjob ក្នុង cronjobs/ និងទិដ្ឋភាពម៉ូឌុលគឺជាថ្នាក់; ថ្នាក់រងមួយដែលដាក់ឈ្មោះក្នុង site.ini ដំណើរការជំនួស ហើយអ្នកស្តាប់អាចធ្វើសកម្មភាពមុន និងក្រោយណាមួយ។ ឧទាហរណ៍ ការជំនួសគេហទំព័រជាមួយ Implementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView ធ្វើឱ្យ content/history ដំណើរការ myHistoryView ដែលពង្រីកថ្នាក់ស្នូល ហើយផ្លាស់ប្តូរតែអ្វីដែលវាជំនួស។</translation>
+        <translation>រាល់ពាក្យបញ្ជាក្នុង bin/ ផ្នែក cronjob ក្នុង cronjobs/ និងទិដ្ឋភាពម៉ូឌុលគឺជាថ្នាក់; ថ្នាក់រងមួយដែលដាក់ឈ្មោះក្នុង site.ini ដំណើរការជំនួស ហើយអ្នកស្តាប់អាចធ្វើសកម្មភាពមុន និងក្រោយណាមួយ។ ឧទាហរណ៍ ការជំនួសគេហទំព័រជាមួយ Implementation[Exponential\View\Kernel\Content\History]=myHistoryView ធ្វើឱ្យ content/history ដំណើរការ myHistoryView ដែលពង្រីកថ្នាក់ស្នូល ហើយផ្លាស់ប្តូរតែអ្វីដែលវាជំនួស។</translation>
     </message>
     <message>
         <source>Server functions of ezjscore</source>
@@ -27770,7 +27770,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>ពង្រីកថ្នាក់ដែលវាជំនួស: Exponential\\Runnable\\Command, CronjobPart ឬ ModuleView នៅខាងក្រោម</translation>
+        <translation>ពង្រីកថ្នាក់ដែលវាជំនួស: Exponential\Runnable\Command, CronjobPart ឬ ModuleView នៅខាងក្រោម</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
@@ -51026,7 +51026,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>ប្រតិបត្តិមុខងារ PHP សម្រាប់ការសម្អាតប្រមាណវិធី ហើយកែប្រែ \\a $operatorValue ។</translation>
+        <translation>ប្រតិបត្តិមុខងារ PHP សម្រាប់ការសម្អាតប្រមាណវិធី ហើយកែប្រែ \a $operatorValue ។</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return អារេដែលមានឈ្មោះប្រមាណវិធីគំរូ។</translation>
+        <translation>\\return អារេដែលមានឈ្មោះប្រមាណវិធីគំរូ។</translation>
     </message>
 </context>
 <context>
