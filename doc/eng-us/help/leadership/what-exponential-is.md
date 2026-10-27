@@ -98,7 +98,7 @@ What that means for a project, with the page that explains each part:
 | Page building | Exponential Layouts: layouts, zones, blocks and rules | [The layouts editor](../layouts-editor.md) |
 | Writing assistance | Exponential Intelligence: drafts only, never publishes on its own | [Exponential Intelligence](../../features/6.0/extensions/expai.md) |
 | Multisite | Several sites from one installation, each a siteaccess | [Planning multisite and multilingual projects](multisite-and-multilingual-planning.md) |
-| Languages | 268 locale files as content languages; 73 administration translations, all complete (26 October 2026) | [Languages in Exponential](../../languages.md) |
+| Languages | 268 locale files as content languages; administration translations (the current totals are at the top of the languages page) | [Languages in Exponential](../../languages.md) |
 | E-commerce | Products, baskets, orders, VAT, currencies, PayPal | [Who is 7x?](../who-is-7x.md#a-cms-a-cmf-and-a-shop-in-one) |
 | Integration | REST API v1 and v2 | [REST API v1 and v2](../../guides/rest-api-v1-and-v2.md) |
 | Security and audit | Content Security Policy, two-step sign-in, a tamper-evident audit trail | [Security hardening](../security-hardening.md), [Audit trail](../../features/6.0/audit-trail.md) |
@@ -164,8 +164,7 @@ The decision between them is the subject of
 ## Languages and accessibility
 
 - **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations), in 32 scripts,
-  40 of them written right to left, can be chosen as content languages; **73 administration translations** exist, all
-  of them complete (26 October 2026) ([Languages in Exponential](../../languages.md)).
+  40 of them written right to left, can be chosen as content languages; **administration translations** exist (the current totals are at the top of the languages page) ([Languages in Exponential](../../languages.md)).
 - One installation holds at most 62 content languages at a time on 64-bit PHP
   ([Languages](../../languages.md#11-the-limit-of-62-content-languages)).
 - The administration turns around for right-to-left interface languages, and content in a right-to-left language is
