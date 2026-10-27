@@ -198,7 +198,8 @@ class expHelpAudience
     /** [TypeSettings] PathRules[] by default */
     const TYPE_RULES = array(
         'doc/eng-us/help/*;help', 'doc/eng-us/guides/*;guide', 'doc/eng-us/features/*;feature', 'doc/eng-us/bc/*;bc', 'doc/changelogs/*;changelog',
-        'doc/eng-us/install/*;install', 'doc/eng-us/INSTALL.md;install', 'doc/eng-us/specifications/*;specification', 'doc/eng-us/history/*;history',
+        'doc/eng-us/install/*;install', 'doc/eng-us/INSTALL.md;install', 'doc/eng-us/UPDATE.md;install', 'doc/eng-us/UNINSTALL.md;install',
+        'doc/eng-us/specifications/*;specification', 'doc/eng-us/history/*;history',
         'doc/eng-us/examples/*;example', 'extension/*;extension', '*;reference',
     );
 
@@ -345,6 +346,8 @@ class expHelpAudience
     const PAGE_ORDER = array(
         'project/README.md' => 0,
         'INSTALL.md' => 10,
+        'UPDATE.md' => 12,
+        'UNINSTALL.md' => 14,
         'languages.md' => 20,
         'branch-overview.md' => 30,
         'release-overview' => 40,

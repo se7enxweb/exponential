@@ -3387,9 +3387,11 @@ f3810ed1fe8ce28f454c0747ce38f8cb  doc/changelogs/extensions/symfony.md
 ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
-d94f710eb23f96234fa2bb64bed8bb46  doc/eng-us/INSTALL.md
+f5eb49a6dfad0b1dc390e10d9e81f02d  doc/eng-us/INSTALL.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 c52deabeab21e6f51d003fdec625ac99  doc/eng-us/README-LICENSE.md
+a0b8e9e6da1afe489cbf4cba1b48f48e  doc/eng-us/UNINSTALL.md
+46cf9f04983c22502e21bb120ce1e49b  doc/eng-us/UPDATE.md
 18eb180621655795c488a99d85dd26f0  doc/eng-us/bc/4.1/changes-4.1.0.txt
 23d0e20abd1918e03ad0770ee403ff66  doc/eng-us/bc/4.2/changes-4.2.0.txt
 21caf491f15ecab82c5915c46c526f3c  doc/eng-us/bc/4.3/changes-4.3.0.txt
@@ -12586,9 +12588,11 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-4871f58dbe8cf8909151fc4c9d53e9a2  doc/ger-de/.paths.json
-8711f537a8d8be14952a796ca3992b04  doc/ger-de/INSTALL.md
+a67a98b37ca1aa1a42355377747eb8ff  doc/ger-de/.paths.json
+bb3a945902ac11b7d40c047580f5b6b8  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
+0b8986521633b2b0041d7a1c0a557dca  doc/ger-de/UNINSTALL.md
+80ec60e13949248ef8a58a8e4f97ab5b  doc/ger-de/UPDATE.md
 e00ddb4c9c765b0204eda8d076778404  doc/ger-de/anleitungen/README.md
 923680cc7a7fb9ad0e45bdf385bd0244  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -22885,7 +22889,7 @@ e1cf2ed6731faa55a6ae425a4c13754d  kernel/classes/help/content/rest/exphelprestpr
 f2930f5888a3669a5297db3ac470495f  kernel/classes/help/content/rest/exphelprestviewcontroller.php
 085cfc7a0a8c8a953d7d32e051cc002a  kernel/classes/help/exphelp.php
 08577a78a42affb345573dd7a1788329  kernel/classes/help/exphelpallowlist.php
-178ee1795e57ac17da82402fb45bd0ea  kernel/classes/help/exphelpaudience.php
+a392d2aaf1a83e12021f388d5ef42c9d  kernel/classes/help/exphelpaudience.php
 b9abbada4676605e209c224dfdede8a2  kernel/classes/help/exphelpcommitfeed.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
@@ -24509,7 +24513,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 546a2136d4ba2d6bff06dee5f0a8fe6f  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-afee1583a8b357955892e870cd885f0d  settings/exphelp.ini
+a51748c9ce221341c223bc661a17ce17  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
