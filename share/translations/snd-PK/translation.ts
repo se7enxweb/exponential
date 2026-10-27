@@ -44936,6 +44936,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>"%1 &lt;%2&gt;" طرفان تبصرو</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>توهان کي هڪ صفحو تجويز ڪيو ويو آهي</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>توهان کي هي اي ميل ان ڪري ملي آهي جو ڪنهن توهان سان هڪ صفحو شيئر ڪرڻ لاءِ %site تي توهان جو پتو داخل ڪيو.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ٻيهر ڪوشش: %max مان %attempt).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>پنهنجي رسيد ڏسو</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>هي لنڪ صرف هڪ ڀيرو ۽ صرف %1 منٽن تائين ڪم ڪري ٿو.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>پنهنجو پاسورڊ ري سيٽ ڪريو</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>ڪنهن %site تي توهان جي اڪائونٽ جو پاسورڊ ري سيٽ ڪرڻ جي گذارش ڪئي آهي. بٽڻ سان تصديق ڪريو، ۽ اسين توهان کي ٻي اي ميل ۾ نئون پاسورڊ موڪليندا سين.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>منهنجو پاسورڊ ري سيٽ ڪريو</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>جيڪڏهن توهان هي گذارش نه ڪئي هئي ته توهان هن اي ميل کي نظرانداز ڪري سگهو ٿا: توهان جو پاسورڊ جيئن آهي تيئن ئي رهندو.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>توهان جو نئون پاسورڊ</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site تي توهان جو پاسورڊ ري سيٽ ڪيو ويو آهي. هن نئين پاسورڊ سان لاگ ان ڪريو، پوءِ ان کي پنهنجي پسند جي پاسورڊ ۾ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>جيڪڏهن توهان پنهنجو پاسورڊ ري سيٽ نه ڪيو هو ته هن سان لاگ ان ڪريو ۽ ان کي هڪدم تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site لاءِ پنهنجو پاسورڊ ري سيٽ ڪريو</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site لاءِ توهان جو نئون پاسورڊ</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>آرڪائيو رد ڪيو ويو: اندراج "%path" پيڪيج کان ٻاهر ڏانهن اشارو ڪري ٿو.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>آرڪائيو PAX tar فارميٽ ۾ پيڪ ڪيو ويو هو، جيڪو درآمد نٿو ڪري سگهجي. پيڪيج کي GNU tar فارميٽ ۾ پيڪ ڪريو (GNU tar: tar --format=gnu، bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>آرڪائيو رد ڪيو ويو: اينٽري "%path" ۾ فائل يا ڊائريڪٽري جو نالو %length بائيٽ کان ڊگهو آهي، جنهن کي ڪو به فائل سسٽم محفوظ نٿو ڪري.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>آرڪائيو رد ڪيو ويو: اندراج "%path" جو tar قسم "%type" آهي، ۽ پيڪيج ۾ صرف فائلون ۽ ڊائريڪٽريون هونديون آهن.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>لنڪ "%path" پيڪيج کان ٻاهر اشارو ڪري ٿي (%target) ۽ درآمد نه ڪئي وئي.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>لنڪ "%path" "%target" ڏانهن اشارو ڪري ٿي، جيڪو پيڪيج ۾ ناهي، ۽ درآمد نه ڪئي وئي.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>لنڪ "%path" ڊائريڪٽري "%target" ڏانهن اشارو ڪري ٿي ۽ درآمد نه ڪئي وئي.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>اينٽري "%path" هڪ ڊوائيس يا نالي وارو پائپ آهي (tar قسم "%type") ۽ درآمد نه ڪئي وئي.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>اينٽري "%path" جو tar قسم "%type" آهي، جيڪو پيڪيج استعمال نٿو ڪري، ۽ درآمد نه ڪئي وئي.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>توهان جا ڊوائيس</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>ڪنهن %site تي هڪ اڪائونٽ لاءِ %email استعمال ڪرڻ جي گذارش ڪئي آهي. مهرباني ڪري تصديق ڪريو ته هي پتو توهان جو آهي.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>توهان (يا ڪنهن اهڙي شخص جنهن توهان جو پتو ٽائيپ ڪيو) %site پاران %email تي موڪليل اي ميل جي انتظام لاءِ لنڪ گهري آهي. ان صفحي تي توهان هر قسم جي اي ميل آن يا آف ڪري سگهو ٿا، يا سڀ اختياري اي ميل بند ڪري سگهو ٿا.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>جيڪڏهن توهان هي تبديلي نه ڪئي هجي ته ٿي سگهي ٿو ڪو ٻيو توهان جو پاسورڊ ڄاڻي ٿو: لاگ ان صفحي تي "%forgot" سان ان کي فوري ري سيٽ ڪريو، ۽ اسان سان رابطو ڪريو.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>توهان جو پاسورڊ تبديل ڪيو ويو</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>هن استعمال ڪندڙ جا سيشن:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>توهان جي اڪائونٽ ۾ نئون لاگ ان</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ڊوائيس</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وقت</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>اندازي مطابق پتو</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>جيڪڏهن اهو توهان نه هئا ته ٿي سگهي ٿو ڪنهن کي توهان جو پاسورڊ معلوم هجي: پنهنجي ڊوائيسز جي صفحي تي اهو سيشن لاگ آئوٽ ڪريو، پوءِ پنهنجو پاسورڊ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>پنهنجا ڊوائيس جانچيو</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>هن استعمال ڪندڙ جا سيشن ڏسو</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>قطار ٽيبل مان هٽائي وڃي ٿي ۽ واپس نه آندي ويندي.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>جيڪڏهن بٽڻ ڪم نه ڪري ته هي پتو پنهنجي براؤزر ۾ نقل ڪريو: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>صفحو کوليو</translation>
     </message>
 </context>
 </TS>
