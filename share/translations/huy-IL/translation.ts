@@ -44937,6 +44937,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>פושקא מן „%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>פאתא אתמלכת לכון</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>מקבליתון ברידא הנא מטל דאנש אעל מונעא דיוכון ב %site דנשותף עמכון פאתא.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52452,6 +52460,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(נסינא תנינא: %attempt מן %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>חזיא דקובלתא דיוכון</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53490,6 +53502,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>אסורא פלח חד זבן בלחוד ולמדא ד %1 קטינתא בלחוד.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>מתובא דמלתא דעברא דיוכון</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>אנש בעא למתובא דמלתא דעברא דחושבנא דיוכון ב %site. שררו בקפתא, ואנחנן נשדר לכון מלתא דעברא חדתא בברידא תרינא.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>מתובא דמלתא דעברא</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>אן לא בעיתון הדא, מציתון למשבק ברידא הנא: מלתא דעברא דיוכון קימא איך דהי.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>מלתא דעברא חדתא דיוכון</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>מלתא דעברא דיוכון ב %site אתמתיבת. עלו במלתא דעברא חדתא הדא, והידיך חלפוהי למלתא דעברא דילכון.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>אן לא מתובתון למלתא דעברא דיוכון, עלו בהדא וחלפוהי השא.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>מתובא דמלתא דעברא דיוכון ל %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>מלתא דעברא חדתא דיוכון ל %site</translation>
     </message>
 </context>
 <context>
@@ -57368,6 +57416,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Package</source>
         <translation>צררא</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>בית גנזא אתסלי: מעליתא „%path” אית לה שמא דפנקיתא או תיקא אריכא מן %length איתא, דלא מתנטר באפלא חד מנטרנא דפנקיתא.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>אסורא „%path” מפנא לבר מן צררא (%target) ולא אתעל.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>אסורא „%path” מפנא ל „%target”, דלית בצררא, ולא אתעל.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>אסורא „%path” מפנא לתיקא „%target” ולא אתעל.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>מעליתא „%path” הי מאנא או נביבא דאית לה שמא (גנסא ד tar „%type”) ולא אתעלת.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>מעליתא „%path” אית לה גנסא ד tar „%type”, דצררא לא מפלח לה, ולא אתעלת.</translation>
     </message>
 </context>
 <context>
@@ -71486,6 +71558,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>מאנא דילכון</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>אנש בעא למפלח %email לחושבנא ב %site. בבעותא שררו דמונעא הנא דילכון הו.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>אחתון (או אנש דכתב מונעא דיוכון) בעיתון אסורא למדברו ברידא ד %site משדר ל %email. בהי פאתא מציתון למפעלו או למבטלו כל גנסא דברידא, או למפסק כלהון ברידא גביא.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71842,6 +71922,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>אן לא עבדתון הנא שוחלפא, מציא דאנשא אחריא ידע מלתא דעברא דילכון: הפכו לה מחדיאית ב „%forgot” בפאתא דעללא, ואתקרבו לותן.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>מלתא דעברא דיוכון אשתחלפת</translation>
     </message>
 </context>
 <context>
@@ -76696,6 +76780,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>מותבא דהנא מפלחנא:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>עללא חדתא לחושבנא דיוכון</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מאנא</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>זבנא</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>מונעא תחמיניא</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>אן לא אחתון הויתון, מטשא דאנש ידע למלתא דעברא דיוכון: פלטו להו מותבא בפאתא דמאנא דיוכון, והידיך חלפו למלתא דעברא דיוכון.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>חזיא דמאנא דיוכון</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>חזיא דמותבא דהנא מפלחנא</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77222,6 +77334,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>שורתא מתשקלא מן פנקיתא ולא מציא דתתדער.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>אן קפתא לא פלחא, נסחו מונעא הנא לחירנא דיוכון: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>פתחא דפאתא</translation>
     </message>
 </context>
 </TS>

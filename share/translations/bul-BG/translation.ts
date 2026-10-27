@@ -3332,7 +3332,7 @@
     </message>
     <message>
         <source>Publish the contents of the draft that is being edited. The draft will become the published version of the object.</source>
-        <translation>Публикувайте съдържанието на чернова��а, която се редактира. Черновата ще стане публикуваната версия на обекта.</translation>
+        <translation>Публикувайте съдържанието на черновата, която се редактира. Черновата ще стане публикуваната версия на обекта.</translation>
     </message>
     <message>
         <source>Class identifier</source>
@@ -6235,7 +6235,7 @@
     </message>
     <message>
         <source>The newly created object will be automatically related to the draft being edited (&lt;%version_name&gt;).</source>
-        <translation>Новосъздаденият обект автоматично ще бъде свързан с чернова��а, която се редактира (&lt;%version_name&gt;).</translation>
+        <translation>Новосъздаденият обект автоматично ще бъде свързан с черновата, която се редактира (&lt;%version_name&gt;).</translation>
     </message>
     <message>
         <source>The newly created object will be placed within the specified location.</source>

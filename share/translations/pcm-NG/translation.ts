@@ -44936,6 +44936,14 @@ If you wan send comments to di approver or see di status, use di URL wey dey bel
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Comment by "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Dem recommend one page for you</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>You dey get dis mail because somebody enter your address for %site to share one page wit you.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do am, you need change di %chown commands under Other shell commands.</transl
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Try again: %attempt from %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>See your receipt</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Di link dey work only one time and only for %1 minutes.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Set your password again</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Somebody ask make dem reset di password of your account for %site. Confirm wit di button, and we go send you new password for second mail.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Set my password again</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>If na no you ask for dis, you fit ignore dis mail: your password go stay as e dey.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Your new password</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Dem don reset your password for %site. Sign in wit dis new password, den change am to your own.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>If na no you reset your password, sign in wit dis one and change am sharp sharp.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Set your password again for %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Your new password for %site</translation>
     </message>
 </context>
 <context>
@@ -57367,6 +57415,30 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Package</source>
         <translation>Package</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Dem reject di archive: di entry "%path" get file or directory name wey long pass %length bytes, wey no file system fit store.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Di link "%path" dey point go outside di package (%target) and dem no import am.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Di link "%path" dey point go "%target", wey di package no get, and dem no import am.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Di link "%path" dey point go di directory "%target" and dem no import am.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Di entry "%path" na device or named pipe (tar type "%type") and dem no import am.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Di entry "%path" get tar type "%type", wey package no dey use, and dem no import am.</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71557,14 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Your devices</source>
         <translation>Your devices</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Somebody ask to use %email for account for %site. Abeg confirm say dis address na your own.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>You (or somebody wey type your address) ask for link to manage di email wey %site dey send go %email. For dat page you fit turn each kind of email on or off, or stop all optional email.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71921,10 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>If no be you make dis change, somebody else fit know your password: reset am sharp sharp wit "%forgot" for di login page, and contact us.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Dem don change your password</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76779,34 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>The sessions of this user:</source>
         <translation>Di sessions of dis user:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>New sign-in to your account</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Time</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Rough address</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>If na no you, somebody fit know your password: sign out dat session for your devices page, den change your password.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Check your devices</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>See di sessions of dis user</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77333,17 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Dem go comot di row from di table and e no go fit come back.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>If di button no work, copy dis address put for your browser: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Open di page</translation>
     </message>
 </context>
 </TS>

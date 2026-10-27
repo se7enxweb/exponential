@@ -44936,6 +44936,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>"%1 &lt;%2&gt;" को टिप्पणी</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>तपाईंलाई एउटा पृष्ठ सिफारिस गरिएको थियो</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>तपाईंले यो इमेल पाउनुभएको कारण कसैले तपाईंसँग एउटा पृष्ठ साझा गर्न %site मा तपाईंको ठेगाना हालेको हो।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(पुनः प्रयास: %max मध्ये %attempt)।</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>आफ्नो रसिद हेर्नुहोस्</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>लिङ्कले एक पटक मात्र र %1 मिनेटसम्म मात्र काम गर्छ।</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>आफ्नो पासवर्ड रिसेट गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>कसैले %site मा तपाईंको खाताको पासवर्ड रिसेट गर्न अनुरोध गरेको छ। बटनबाट पुष्टि गर्नुहोस्, र हामी तपाईंलाई दोस्रो इमेलमा नयाँ पासवर्ड पठाउनेछौं।</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>मेरो पासवर्ड रिसेट गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>यदि तपाईंले यो अनुरोध गर्नुभएको होइन भने, तपाईं यो इमेललाई बेवास्ता गर्न सक्नुहुन्छ: तपाईंको पासवर्ड जस्ताको तस्तै रहन्छ।</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>तपाईंको नयाँ पासवर्ड</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site मा तपाईंको पासवर्ड रिसेट गरिएको छ। यही नयाँ पासवर्डबाट लग इन गर्नुहोस्, त्यसपछि यसलाई आफ्नै पासवर्डमा बदल्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>यदि तपाईंले पासवर्ड रिसेट गर्नुभएको होइन भने, यही पासवर्डबाट लग इन गर्नुहोस् र तुरुन्तै बदल्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site को लागि आफ्नो पासवर्ड रिसेट गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site को लागि तपाईंको नयाँ पासवर्ड</translation>
     </message>
 </context>
 <context>
@@ -57367,6 +57415,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Package</source>
         <translation>प्याकेज</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>अभिलेख अस्वीकार गरियो: प्रविष्टि "%path" को फाइल वा डाइरेक्टरीको नाम %length बाइटभन्दा लामो छ, जुन कुनै पनि फाइल प्रणालीले भण्डारण गर्दैन।</translation>
+    </message>
+    <message>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>लिङ्क "%path" प्याकेज (%target) बाहिर सङ्केत गर्छ र आयात गरिएन।</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>लिङ्क "%path" ले "%target" लाई सङ्केत गर्छ, जुन प्याकेजमा छैन, र आयात गरिएन।</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>लिङ्क "%path" ले डाइरेक्टरी "%target" लाई सङ्केत गर्छ र आयात गरिएन।</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>प्रविष्टि "%path" एउटा उपकरण वा नामयुक्त पाइप हो (tar प्रकार "%type") र आयात गरिएन।</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>प्रविष्टि "%path" को tar प्रकार "%type" छ, जुन प्याकेजले प्रयोग गर्दैन, र आयात गरिएन।</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71557,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>तपाईंका उपकरणहरू</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>कसैले %site मा खाताका लागि %email प्रयोग गर्न अनुरोध गरेको छ। कृपया यो ठेगाना तपाईंको हो भनी पुष्टि गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>तपाईंले (वा तपाईंको ठेगाना टाइप गर्ने कसैले) %site ले %email मा पठाउने इमेल व्यवस्थापन गर्ने लिङ्कको अनुरोध गर्नुभयो। त्यस पृष्ठमा तपाईं प्रत्येक प्रकारको इमेल खोल्न वा बन्द गर्न, वा सबै ऐच्छिक इमेल रोक्न सक्नुहुन्छ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71921,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>यो परिवर्तन तपाईंले गर्नुभएको होइन भने, अरू कसैले तपाईंको पासवर्ड जान्न सक्छ: लगइन पृष्ठमा "%forgot" बाट यसलाई तुरुन्तै रिसेट गर्नुहोस्, र हामीलाई सम्पर्क गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>तपाईंको पासवर्ड बदलियो</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76779,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>यस प्रयोगकर्ताका सत्रहरू:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>तपाईंको खातामा नयाँ लग इन</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>उपकरण</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>समय</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>अनुमानित ठेगाना</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>यदि यो तपाईं होइन भने, कसैलाई तपाईंको पासवर्ड थाहा भएको हुन सक्छ: तपाईंको उपकरण पृष्ठमा त्यो सत्र लग आउट गर्नुहोस्, त्यसपछि आफ्नो पासवर्ड बदल्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>आफ्ना उपकरणहरू हेर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>यस प्रयोगकर्ताका सत्रहरू हेर्नुहोस्</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77333,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>पङ्क्ति तालिकाबाट हटाइन्छ र फिर्ता ल्याउन सकिँदैन।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>यदि बटनले काम गरेन भने, यो ठेगाना आफ्नो ब्राउजरमा कपी गर्नुहोस्: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>पृष्ठ खोल्नुहोस्</translation>
     </message>
 </context>
 </TS>

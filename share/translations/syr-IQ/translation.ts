@@ -44936,6 +44936,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>ܦܘܫܩܐ ܡܢ «%1 &lt;%2&gt;»</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>ܦܐܬܐ ܐܬܡܠܟܬ ܠܟܘܢ</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>ܡܩܒܠܝܬܘܢ ܒܪܝܕܐ ܗܢܐ ܡܛܠ ܕܐܢܫ ܐܥܠ ܡܘܢܥܐ ܕܝܘܟܘܢ ܒ %site ܕܢܫܘܬܦ ܥܡܟܘܢ ܦܐܬܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ܢܣܝܢܐ ܬܢܝܢܐ: %attempt ܡܢ %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>ܚܙܝܐ ܕܩܘܒܠܬܐ ܕܝܘܟܘܢ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>ܐܣܘܪܐ ܦܠܚ ܚܕ ܙܒܢ ܒܠܚܘܕ ܘܠܡܕܐ ܕ %1 ܩܛܝܢ̈ܬܐ ܒܠܚܘܕ.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>ܡܬܘܒܐ ܕܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>ܐܢܫ ܒܥܐ ܠܡܬܘܒܐ ܕܡܠܬܐ ܕܥܒܪܐ ܕܚܘܫܒܢܐ ܕܝܘܟܘܢ ܒ %site. ܫܪܪܘ ܒܩܦܬܐ، ܘܐܢܚܢܢ ܢܫܕܪ ܠܟܘܢ ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܒܒܪܝܕܐ ܬܪܝܢܐ.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>ܡܬܘܒܐ ܕܡܠܬܐ ܕܥܒܪܐ</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>ܐܢ ܠܐ ܒܥܝܬܘܢ ܗܕܐ، ܡܨܝܬܘܢ ܠܡܫܒܩ ܒܪܝܕܐ ܗܢܐ: ܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ ܩܝܡܐ ܐܝܟ ܕܗܝ.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܕܝܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ ܒ %site ܐܬܡܬܝܒܬ. ܥܠܘ ܒܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܗܕܐ، ܘܗܝܕܝܟ ܚܠܦܘܗܝ ܠܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>ܐܢ ܠܐ ܡܬܘܒܬܘܢ ܠܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ، ܥܠܘ ܒܗܕܐ ܘܚܠܦܘܗܝ ܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>ܡܬܘܒܐ ܕܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ ܠ %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܕܝܘܟܘܢ ܠ %site</translation>
     </message>
 </context>
 <context>
@@ -57367,6 +57415,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Package</source>
         <translation>ܨܪܪܐ</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>ܒܝܬ ܓܢܙܐ ܐܬܣܠܝ: ܡܥܠܝܬܐ «%path» ܐܝܬ ܠܗ ܫܡܐ ܕܦܢܩܝܬܐ ܐܘ ܬܝܩܐ ܐܪܝܟܐ ܡܢ %length ܐܝܬ̈ܐ، ܕܠܐ ܡܬܢܛܪ ܒܐܦܠܐ ܚܕ ܡܢܛܪܢܐ ܕܦܢܩ̈ܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>ܐܣܘܪܐ «%path» ܡܦܢܐ ܠܒܪ ܡܢ ܨܪܪܐ (%target) ܘܠܐ ܐܬܥܠ.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>ܐܣܘܪܐ «%path» ܡܦܢܐ ܠ «%target»، ܕܠܝܬ ܒܨܪܪܐ، ܘܠܐ ܐܬܥܠ.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>ܐܣܘܪܐ «%path» ܡܦܢܐ ܠܬܝܩܐ «%target» ܘܠܐ ܐܬܥܠ.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>ܡܥܠܝܬܐ «%path» ܗܝ ܡܐܢܐ ܐܘ ܢܒܝܒܐ ܕܐܝܬ ܠܗ ܫܡܐ (ܓܢܣܐ ܕ tar «%type») ܘܠܐ ܐܬܥܠܬ.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>ܡܥܠܝܬܐ «%path» ܐܝܬ ܠܗ ܓܢܣܐ ܕ tar «%type»، ܕܨܪܪܐ ܠܐ ܡܦܠܚ ܠܗ، ܘܠܐ ܐܬܥܠܬ.</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71557,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>ܡܐܢ̈ܐ ܕܝܠܟܘܢ</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>ܐܢܫ ܒܥܐ ܠܡܦܠܚ %email ܠܚܘܫܒܢܐ ܒ %site. ܒܒܥܘܬܐ ܫܪܪܘ ܕܡܘܢܥܐ ܗܢܐ ܕܝܠܟܘܢ ܗܘ.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>ܐܚܬܘܢ (ܐܘ ܐܢܫ ܕܟܬܒ ܡܘܢܥܐ ܕܝܘܟܘܢ) ܒܥܝܬܘܢ ܐܣܘܪܐ ܠܡܕܒܪܘ ܒܪܝܕܐ ܕ %site ܡܫܕܪ ܠ %email. ܒܗܝ ܦܐܬܐ ܡܨܝܬܘܢ ܠܡܦܥܠܘ ܐܘ ܠܡܒܛܠܘ ܟܠ ܓܢܣܐ ܕܒܪܝܕܐ، ܐܘ ܠܡܦܣܩ ܟܠܗܘܢ ܒܪܝܕ̈ܐ ܓܒܝܐ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71921,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>ܐܢ ܠܐ ܥܒܕܬܘܢ ܗܢܐ ܫܘܚܠܦܐ، ܡܨܝܐ ܕܐܢܫܐ ܐܚܪܝܐ ܝܕܥ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܟܘܢ: ܗܦܟܘ ܠܗ ܡܚܕܝܐܝܬ ܒ «%forgot» ܒܦܐܬܐ ܕܥܠܠܐ، ܘܐܬܩܪܒܘ ܠܘܬܢ.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ ܐܫܬܚܠܦܬ</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76779,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>ܡܘ̈ܬܒܐ ܕܗܢܐ ܡܦܠܚܢܐ:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ܥܠܠܐ ܚܕܬܐ ܠܚܘܫܒܢܐ ܕܝܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ܡܐܢܐ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ܡܘܢܥܐ ܬܚܡܝܢܝܐ</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>ܐܢ ܠܐ ܐܚܬܘܢ ܗܘܝܬܘܢ، ܡܛܫܐ ܕܐܢܫ ܝܕܥ ܠܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ: ܦܠܛܘ ܠܗܘ ܡܘܬܒܐ ܒܦܐܬܐ ܕܡܐܢ̈ܐ ܕܝܘܟܘܢ، ܘܗܝܕܝܟ ܚܠܦܘ ܠܡܠܬܐ ܕܥܒܪܐ ܕܝܘܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ܚܙܝܐ ܕܡܐܢ̈ܐ ܕܝܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ܚܙܝܐ ܕܡܘܬܒ̈ܐ ܕܗܢܐ ܡܦܠܚܢܐ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77333,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>ܫܘܪܬܐ ܡܬܫܩܠܐ ܡܢ ܦܢܩܝܬܐ ܘܠܐ ܡܨܝܐ ܕܬܬܕܥܪ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ܐܢ ܩܦܬܐ ܠܐ ܦܠܚܐ، ܢܣܚܘ ܡܘܢܥܐ ܗܢܐ ܠܚܝܪܢܐ ܕܝܘܟܘܢ: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>ܦܬܚܐ ܕܦܐܬܐ</translation>
     </message>
 </context>
 </TS>
