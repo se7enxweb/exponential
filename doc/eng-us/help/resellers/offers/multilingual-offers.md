@@ -3,7 +3,7 @@ title: Multilingual offers
 audience: reseller, partner, sales-marketing
 category: reselling
 order: 230
-summary: How to sell multilingual Exponential sites honestly - translations per content object, a siteaccess per language, 268 locale files and 73 administration translations, right-to-left support, the limit of 62 content languages on 64-bit PHP, what to check before you promise a language, and what to price.
+summary: How to sell multilingual Exponential sites honestly - translations per content object, a siteaccess per language, 268 locale files and administration translations, right-to-left support, the limit of 62 content languages on 64-bit PHP, what to check before you promise a language, and what to price.
 keywords: multilingual, languages, translation, locale, content language, administration translation, siteaccess per language, right to left, RTL, 62 content languages, 64-bit, machine-assisted translations, pricing
 type: help
 ---
@@ -29,7 +29,7 @@ happy customer and a surprised one.
 | A siteaccess per language | Each language can have its own address, such as `example.com/ger` or `example.de` | [Siteaccess by host prefix, and the redirect to the language](../../../features/6.0/siteaccess-host-and-language-matching.md) |
 | Locale per site | Dates, numbers and currency follow `site.ini [RegionalSettings] Locale` | [Languages and locales](../../businesses/multilingual/languages-and-locales.md) |
 | 268 locale files, 32 scripts | Content in almost any written language | [Languages](../../languages.md) |
-| 73 administration translations, all complete (26 October 2026) | Editors can work in their own language, for the complete ones | same |
+| administration translations (the current totals are at the top of [Languages in Exponential](../../../languages.md)) | Editors can work in their own language, for the complete ones | same |
 | 40 right-to-left locales | Hebrew, Arabic, Persian, Urdu and others; the administration turns around | [Right-to-left languages](../../../features/6.0/right-to-left.md) |
 | Fallback of interface translations | An Austrian or Swiss team gets the German administration without extra work | [Languages and locales](../../businesses/multilingual/languages-and-locales.md) |
 

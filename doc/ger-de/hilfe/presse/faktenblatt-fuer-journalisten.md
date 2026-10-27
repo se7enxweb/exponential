@@ -49,7 +49,7 @@ NEU IN 6.0.15* Exponential Velocity (PHP-Webserver), Exponential Layouts (Seiten
                Intelligence (schreibt nur Entwürfe), Design admin4, Prüfprotokoll, Hilfesystem.
 SICHERHEIT     Vertrauliche Meldungen an security@se7enx.com; "a first answer within one business day";
                Korrekturen erscheinen im nächsten 6.0.x-Release; veröffentlichte Versionen werden nie geändert.
-SPRACHEN *     268 Locale-Dateien (40 von rechts nach links); 73 Übersetzungen der Administration, alle vollständig
+SPRACHEN *     268 Locale-Dateien (40 von rechts nach links); Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md))
                (26. Okt.).
 NICHT          Nicht mit eZ Systems oder Ibexa verbunden.
 CODE           github.com/se7enxweb/exponential        Pakete: Composer / Packagist, Vendor se7enxweb
