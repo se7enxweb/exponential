@@ -9,11 +9,11 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **88**, 88 of them complete |
+| Languages of the administration: translations in `share/translations` | **89**, 89 of them complete |
 | Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **85** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **65** |
+| of them shown translated by the administration (own translation, fallback or English) | **86** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **64** |
 | Countries and territories of the locales | **175** |
 | of them with the administration in their language (green on the map) | **160** |
 | Locales written right to left | **43** |
@@ -251,12 +251,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **85** of them translated: at least one of their locales has a translation of its
+administration shows **86** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **65** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **64** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 65 languages not translated</summary>
+<details><summary>The 64 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -284,7 +284,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Fula | Pulaar | `ful` | `ful-SN` (Senegal) |
 | Galician | Galego | `glg` | `glg-ES` (Spain) |
 | Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
-| Hawaiian | ʻŌlelo Hawaiʻi | `haw` | `haw-US` (United States of America) |
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algeria) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (India) |
 | Khmer | ខ្មែរ | `khm` | `khm-KH` (Cambodia) |
