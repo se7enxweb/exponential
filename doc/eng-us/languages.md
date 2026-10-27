@@ -904,7 +904,9 @@ source text, and the interface language choice counts English as 100%.
 | `ckb-IQ` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 | `tir-ET` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 | `mlg-MG` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
-<<<<<<< HEAD
+| `run-BI` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `tgk-TJ` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `bod-CN` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 | `bel-BY` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 
 Notes:
@@ -913,18 +915,11 @@ Notes:
   of 2008 with і, ў and the apostrophe, the polite address *вы*, the infinitive on buttons (Захаваць, Скасаваць,
   Выдаліць, Рэдагаваць) and Belarusian words rather than the Russian ones of `rus-RU`, with a glossary
   (`share/translations/bel-BY/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete. A review by native
-=======
-| `run-BI` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
-| `tgk-TJ` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
-| `bod-CN` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
-
-Notes:
-
+  speakers is welcome.
 - **Tibetan** (`bod-CN`, བོད་སྐད་) was added on 27 October 2026, machine-assisted, in modern standard written Tibetan
   close to the Lhasa standard, in the Tibetan script with the tsheg between syllables and the shad as the sentence end,
   the established Tibetan computing terms and bare verbs on buttons, with a glossary
   (`share/translations/bod-CN/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete. A review by native
->>>>>>> theirs
   speakers is welcome.
 - **Kikuyu** (`kik-KE`, Gĩkũyũ) was added on 27 October 2026, machine-assisted, in the standard orthography with the
   letters ĩ and ũ, the address *wee*, the short imperative on buttons (Iga, Tiga, Thiria, Cenjia) and loan words in

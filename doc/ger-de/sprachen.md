@@ -909,7 +909,9 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `ckb-IQ` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 | `tir-ET` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 | `mlg-MG` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
-<<<<<<< HEAD
+| `run-BI` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
+| `tgk-TJ` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
+| `bod-CN` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 | `bel-BY` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 
 Hinweise:
@@ -919,19 +921,11 @@ Hinweise:
   Schaltflächen (Захаваць, Скасаваць, Выдаліць, Рэдагаваць) und belarussischen statt der russischen Wörter von
   `rus-RU`, mit einem Glossar (`share/translations/bel-BY/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind
   vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
-=======
-| `run-BI` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
-| `tgk-TJ` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
-| `bod-CN` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
-
-Hinweise:
-
 - **Tibetisch** (`bod-CN`, བོད་སྐད་) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in modernem
   geschriebenem Standardtibetisch nahe dem Lhasa-Standard, in tibetischer Schrift mit dem Tsheg zwischen den Silben und
   dem Shad als Satzende, den eingeführten tibetischen Computerbegriffen und bloßen Verben auf Schaltflächen, mit einem
   Glossar (`share/translations/bod-CN/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine
   Prüfung durch Muttersprachler ist willkommen.
->>>>>>> theirs
 - **Kikuyu** (`kik-KE`, Gĩkũyũ) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
   Standardrechtschreibung mit den Buchstaben ĩ und ũ, der Anrede *wee*, dem kurzen Imperativ auf Schaltflächen (Iga,
   Tiga, Thiria, Cenjia) und Lehnwörtern in Kikuyu-Schreibung, meist über Suaheli (`swa-KE`), mit einem Glossar
