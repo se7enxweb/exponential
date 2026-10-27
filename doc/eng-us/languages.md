@@ -9,11 +9,11 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **102**, 102 of them complete |
+| Languages of the administration: translations in `share/translations` | **103**, 103 of them complete |
 | Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **99** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **51** |
+| of them shown translated by the administration (own translation, fallback or English) | **100** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **50** |
 | Countries and territories of the locales | **175** |
 | of them with the administration in their language (green on the map) | **164** |
 | Locales written right to left | **43** |
@@ -251,12 +251,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **99** of them translated: at least one of their locales has a translation of its
+administration shows **100** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **51** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **50** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 51 languages not translated</summary>
+<details><summary>The 50 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -298,7 +298,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Romansh | Rumantsch | `roh` | `roh-CH` (Switzerland) |
 | Sanskrit | संस्कृत भाषा | `san` | `san-IN` (India) |
 | Santali | ᱥᱟᱱᱛᱟᱲᱤ | `sat` | `sat-IN` (India) |
-| Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
 | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Morocco) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tajikistan) |
 | Tatar | Татар | `tat` | `tat-RU` (Russian Federation) |
