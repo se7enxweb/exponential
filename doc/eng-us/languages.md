@@ -100,7 +100,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Faroe Islands | FO | `dan-FO` → `dan-DK`, `fao-FO` (untranslated) |
 | Fiji | FJ | `eng-FJ` (source texts) |
 | Finland | FI | `fin-FI` |
-| France | FR | `bre-FR`, `fre-FR`, `oci-FR` (untranslated) |
+| France | FR | `bre-FR`, `fre-FR`, `oci-FR` |
 | French Polynesia | PF | `fre-PF` → `fre-FR` |
 | French Southern Territories | TF | `fre-TF` → `fre-FR` |
 | Gabon | GA | `fre-GA` → `fre-FR` |
@@ -402,7 +402,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `lin-CD`, `ful-SN`, `orm-ET`, `eng-AU` (and `eng-NZ`, which falls back to it), `hye-AM`, `uzb-UZ`, `snd-PK`, `pnb-PK`, `mya-MM`, `haw-US`, `aze-AZ`, `aka-GH`, `sin-LK`, `asm-IN`, `kin-RW`, `mlg-MG`, `uig-CN`, `khm-KH`, `ceb-PH`, `ckb-IQ`, `tir-ET`, `kik-KE`, `run-BI`, `tgk-TJ`, `bod-CN`, `bel-BY`, `mon-MN`, `glg-ES`, `kir-KG`, `eus-ES`, `tat-RU`, `cym-GB`, `tuk-TM`, `mkd-MK`, `lug-UG`, `ltz-LU`, `wol-SN`, `ast-ES`, `bre-FR`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `lin-CD`, `ful-SN`, `orm-ET`, `eng-AU` (and `eng-NZ`, which falls back to it), `hye-AM`, `uzb-UZ`, `snd-PK`, `pnb-PK`, `mya-MM`, `haw-US`, `aze-AZ`, `aka-GH`, `sin-LK`, `asm-IN`, `kin-RW`, `mlg-MG`, `uig-CN`, `khm-KH`, `ceb-PH`, `ckb-IQ`, `tir-ET`, `kik-KE`, `run-BI`, `tgk-TJ`, `bod-CN`, `bel-BY`, `mon-MN`, `glg-ES`, `kir-KG`, `eus-ES`, `tat-RU`, `cym-GB`, `tuk-TM`, `mkd-MK`, `lug-UG`, `ltz-LU`, `wol-SN`, `ast-ES`, `bre-FR`, `oci-FR`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 237 added in 6.0.15 |
 
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
@@ -1037,9 +1037,15 @@ source text, and the interface language choice counts English as 100%.
 | `wol-SN` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 | `ast-ES` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 | `bre-FR` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `oci-FR` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 
 Notes:
 
+- **Occitan** (`oci-FR`, occitan) was added on 28 October 2026, machine-assisted, in its Languedocien form and the
+  classical spelling of the Conselh de la Lenga Occitana, with the computing terms of the Occitan localisations, the
+  polite address *vos*, the infinitive on buttons (Enregistrar, Anullar, Suprimir, Modificar) and Occitan words
+  rather than French or Catalan ones, with a glossary (`share/translations/oci-FR/GUIDE.md`); the kernel, ezoe and
+  ezjscore catalogues are complete. A review by native speakers is welcome.
 - **Breton** (`bre-FR`, brezhoneg) was added on 27 October 2026, machine-assisted, in the unified spelling
   (peurunvan) with the computing terms of the Ofis Publik ar Brezhoneg and of the Breton localisations, the polite
   address *c'hwi*, the verb-noun on buttons (Enrollañ, Nullañ, Dilemel, Kemmañ), the mutations of the grammar and
