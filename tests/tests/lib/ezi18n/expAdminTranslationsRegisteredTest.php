@@ -31,7 +31,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'lin-CD', 'ful-SN', 'orm-ET', 'aze-AZ', 'aka-GH', 'sin-LK', 'asm-IN', 'kik-KE', 'khm-KH', 'uig-CN', 'kin-RW',
         'ceb-PH', 'ckb-IQ', 'tir-ET', 'mlg-MG', 'mon-MN', 'kir-KG', 'tat-RU', 'tuk-TM', 'lug-UG', 'wol-SN', 'bel-BY',
         'glg-ES', 'eus-ES', 'cym-GB', 'mkd-MK', 'ltz-LU', 'run-BI', 'tgk-TJ', 'bod-CN', 'dzo-BT', 'div-MV', 'kok-IN',
-        'mni-IN', 'doi-IN', 'kas-IN', 'brx-IN' );
+        'mni-IN', 'doi-IN', 'kas-IN', 'brx-IN', 'ast-ES', 'bre-FR', 'oci-FR', 'bam-ML', 'ewe-GH', 'kor-KP', 'fas-AF',
+        'roh-CH', 'hsb-DE', 'fry-NL', 'fao-FO', 'sme-NO', 'epo-EO', 'kab-DZ', 'zgh-MA', 'nqo-GN', 'que-PE' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
     const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL', 'afr-ZA', 'bos-BA', 'bul-BG',
@@ -43,7 +44,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'aze-AZ', 'aka-GH', 'sin-LK', 'asm-IN', 'kik-KE', 'khm-KH', 'uig-CN', 'kin-RW', 'ceb-PH', 'ckb-IQ', 'tir-ET',
         'mlg-MG', 'mon-MN', 'kir-KG', 'tat-RU', 'tuk-TM', 'lug-UG', 'wol-SN', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB',
         'mkd-MK', 'ltz-LU', 'run-BI', 'tgk-TJ', 'bod-CN', 'dzo-BT', 'div-MV', 'kok-IN', 'mni-IN', 'doi-IN', 'kas-IN',
-        'brx-IN' );
+        'brx-IN', 'ast-ES', 'bre-FR', 'oci-FR', 'bam-ML', 'ewe-GH', 'kor-KP', 'fas-AF', 'roh-CH', 'hsb-DE', 'fry-NL',
+        'fao-FO', 'sme-NO', 'epo-EO', 'kab-DZ', 'zgh-MA', 'nqo-GN', 'que-PE' );
 
     /**
      * Complete translations that no ranked group of settings/uiswitch.ini names: the switch offers them in its A-Z
@@ -57,7 +59,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'aze-AZ', 'aka-GH', 'sin-LK', 'asm-IN', 'kik-KE', 'khm-KH', 'uig-CN', 'kin-RW', 'ceb-PH', 'ckb-IQ', 'tir-ET',
         'mlg-MG', 'mon-MN', 'kir-KG', 'tat-RU', 'tuk-TM', 'lug-UG', 'wol-SN', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB',
         'mkd-MK', 'ltz-LU', 'run-BI', 'tgk-TJ', 'bod-CN', 'dzo-BT', 'div-MV', 'kok-IN', 'mni-IN', 'doi-IN', 'kas-IN',
-        'brx-IN' );
+        'brx-IN', 'ast-ES', 'bre-FR', 'oci-FR', 'bam-ML', 'ewe-GH', 'kor-KP', 'fas-AF', 'roh-CH', 'hsb-DE', 'fry-NL',
+        'fao-FO', 'sme-NO', 'epo-EO', 'kab-DZ', 'zgh-MA', 'nqo-GN', 'que-PE' );
 
     /** @var string the repository */
     protected $root;
@@ -282,8 +285,10 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
             'Western Punjabi' => array( 'pnb-PK', 'pa-PK', 'Western Punjabi', '\p{Arabic}' ),
             'Uyghur' => array( 'uig-CN', 'ug-CN', 'Uyghur', '\p{Arabic}' ),
             'Central Kurdish' => array( 'ckb-IQ', 'ckb-IQ', 'Central Kurdish', '\p{Arabic}' ),
+            'N’Ko' => array( 'nqo-GN', 'nqo-GN', 'N’Ko', '\p{Nko}' ),
             'Dhivehi' => array( 'div-MV', 'dv-MV', 'Dhivehi', '\p{Thaana}' ),
             'Kashmiri' => array( 'kas-IN', 'ks-IN', 'Kashmiri', '\p{Arabic}' ),
+            'Dari' => array( 'fas-AF', 'fa-AF', 'Dari', '\p{Arabic}' ),
         );
     }
 
