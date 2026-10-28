@@ -20,18 +20,18 @@
 class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
     const LANGUAGES = array( 'afr-ZA', 'aka-GH', 'amh-ET', 'ara-SA', 'arc-IQ', 'asm-IN', 'aze-AZ', 'bel-BY', 'ben-BD',
-        'bho-IN', 'bod-CN', 'bos-BA', 'bul-BG', 'cat-ES', 'ceb-PH', 'che-RU', 'chi-CN', 'chi-TW', 'ckb-IQ', 'cro-HR',
-        'cym-GB', 'cze-CZ', 'dan-DK', 'div-MV', 'doi-IN', 'dsb-DE', 'dut-NL', 'dzo-BT', 'ell-GR', 'esl-ES', 'esl-MX',
-        'est-EE', 'eus-ES', 'fas-IR', 'fil-PH', 'fin-FI', 'fre-FR', 'ful-SN', 'ger-DE', 'gla-GB', 'gle-IE', 'glg-ES',
-        'guj-IN', 'hau-NG', 'haw-US', 'heb-IL', 'hin-IN', 'hun-HU', 'huy-IL', 'hye-AM', 'ibo-NG', 'ind-ID', 'isl-IS',
-        'ita-IT', 'jav-ID', 'jpn-JP', 'kal-GL', 'kan-IN', 'kas-IN', 'kat-GE', 'kaz-KZ', 'khm-KH', 'kik-KE', 'kin-RW',
-        'kir-KG', 'kok-IN', 'kor-KR', 'kur-TR', 'lao-LA', 'lat-VA', 'lav-LV', 'lin-CD', 'lit-LT', 'ltz-LU', 'lug-UG',
-        'mai-IN', 'mal-IN', 'mar-IN', 'mkd-MK', 'mlg-MG', 'mlt-MT', 'mni-IN', 'mon-MN', 'mri-NZ', 'msa-MY', 'mya-MM',
-        'nep-NP', 'nor-NO', 'ori-IN', 'orm-ET', 'pan-IN', 'pcm-NG', 'pnb-PK', 'pol-PL', 'por-BR', 'por-PT', 'pus-AF',
-        'ron-RO', 'run-BI', 'rus-RU', 'ser-SR', 'sin-LK', 'slk-SK', 'slv-SI', 'sna-ZW', 'snd-PK', 'som-SO', 'sqi-AL',
-        'srp-RS', 'sun-ID', 'swa-KE', 'swe-SE', 'syr-IQ', 'tam-IN', 'tat-RU', 'tel-IN', 'tgk-TJ', 'tha-TH', 'tir-ET',
-        'tlh-QO', 'tuk-TM', 'tur-TR', 'uig-CN', 'ukr-UA', 'urd-PK', 'uzb-UZ', 'vie-VN', 'wol-SN', 'xho-ZA', 'yid-US',
-        'yor-NG', 'zul-ZA' );
+        'bho-IN', 'bod-CN', 'bos-BA', 'brx-IN', 'bul-BG', 'cat-ES', 'ceb-PH', 'che-RU', 'chi-CN', 'chi-TW', 'ckb-IQ',
+        'cro-HR', 'cym-GB', 'cze-CZ', 'dan-DK', 'div-MV', 'doi-IN', 'dsb-DE', 'dut-NL', 'dzo-BT', 'ell-GR', 'esl-ES',
+        'esl-MX', 'est-EE', 'eus-ES', 'fas-IR', 'fil-PH', 'fin-FI', 'fre-FR', 'ful-SN', 'ger-DE', 'gla-GB', 'gle-IE',
+        'glg-ES', 'guj-IN', 'hau-NG', 'haw-US', 'heb-IL', 'hin-IN', 'hun-HU', 'huy-IL', 'hye-AM', 'ibo-NG', 'ind-ID',
+        'isl-IS', 'ita-IT', 'jav-ID', 'jpn-JP', 'kal-GL', 'kan-IN', 'kas-IN', 'kat-GE', 'kaz-KZ', 'khm-KH', 'kik-KE',
+        'kin-RW', 'kir-KG', 'kok-IN', 'kor-KR', 'kur-TR', 'lao-LA', 'lat-VA', 'lav-LV', 'lin-CD', 'lit-LT', 'ltz-LU',
+        'lug-UG', 'mai-IN', 'mal-IN', 'mar-IN', 'mkd-MK', 'mlg-MG', 'mlt-MT', 'mni-IN', 'mon-MN', 'mri-NZ', 'msa-MY',
+        'mya-MM', 'nep-NP', 'nor-NO', 'ori-IN', 'orm-ET', 'pan-IN', 'pcm-NG', 'pnb-PK', 'pol-PL', 'por-BR', 'por-PT',
+        'pus-AF', 'ron-RO', 'run-BI', 'rus-RU', 'ser-SR', 'sin-LK', 'slk-SK', 'slv-SI', 'sna-ZW', 'snd-PK', 'som-SO',
+        'sqi-AL', 'srp-RS', 'sun-ID', 'swa-KE', 'swe-SE', 'syr-IQ', 'tam-IN', 'tat-RU', 'tel-IN', 'tgk-TJ', 'tha-TH',
+        'tir-ET', 'tlh-QO', 'tuk-TM', 'tur-TR', 'uig-CN', 'ukr-UA', 'urd-PK', 'uzb-UZ', 'vie-VN', 'wol-SN', 'xho-ZA',
+        'yid-US', 'yor-NG', 'zul-ZA' );
 
     const TAG = '/<[ \t\n\r]*\/?[ \t\n\r]*[A-Za-z][A-Za-z0-9]*(?:[ \t\n\r][^<>]*)?\/?[ \t\n\r]*>/';
     const ENTITY = '/&(?:#[0-9]+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]*);/';
