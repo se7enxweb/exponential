@@ -26537,7 +26537,7 @@ adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branc
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 1caa43f8dcde88f3e6ee02df004779b9  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
-ac5b60985e025782746177216256790f  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
+5c7a22467eda9deedb3fbca52c90fc51  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
 9186831128133636b56a2caf51105db6  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 48973364e4ad637a659b7cdee8273a8a  tests/tests/kernel/classes/ini/command/IniCommandTest.php
 85a363e40b9ad90084f0a1679949ecaf  tests/tests/kernel/classes/ini/command/IniMoveTest.php
