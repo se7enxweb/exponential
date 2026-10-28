@@ -938,7 +938,8 @@ CREATE INDEX IF NOT EXISTS exphelp_feedback_created ON exphelp_feedback USING bt
 -- (doc/eng-us/features/6.0/order-siteaccess.md). The shop records it when the
 -- basket becomes an order; the order view and the order lists show it and
 -- filter by it. Orders placed before keep '' and are shown as unknown: which
--- siteaccess they came from cannot be told afterwards, so there is no backfill.
+-- siteaccess they came from is not recorded; bin/php/expbackfillordersiteaccess.php
+-- infers it from the content tree where it can (dry run unless --apply).
 -- Until the column is there the kernel stores and reads orders without it.
 -- Added only when it is missing, so the block can run again.
 --

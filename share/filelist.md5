@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6b46d9fc07327c0fe9cb81e5b1e79674  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-510e5e04ed86afd3ff2119bd74be4fd1  autoload/ezp_kernel.php
+7efd8b716eb296425bb199875db1a9de  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -75,6 +75,7 @@ ae936b01bf488f32d13e3199c7907a9a  bin/php/clusterize.php
 745bd14e507d9b1d6d852169eaf8f5bc  bin/php/convertezenumtoezselection.php
 0a7d1915373ef3451e32dbafc6b08c6e  bin/php/convertprice2multiprice.php
 c0e2aa3b432485dd3e2c0edad20c76c5  bin/php/dfscleanup.php
+5d7e81e406052b8aa8400c3f76513df2  bin/php/expbackfillordersiteaccess.php
 f0f67c88d699385e2c4f30e0c72a413f  bin/php/expcontentjob.php
 18dbf963ecedf6d32e912a17871d532b  bin/php/expfetch.php
 8b33cb85c93dabca1f508dc840803030  bin/php/exphelp.php
@@ -3291,7 +3292,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-c5167d4847aeefed635ad82931ff9181  doc/changelogs/6.0/6.0.15.md
+163b326d27580da5f8ff41e111308570  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6473,7 +6474,7 @@ ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrid
 328d31cb3c5429d428bb28e53e460208  doc/eng-us/features/6.0/online-editor-tinymce8.md
 e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
 28c90ba4d835d68a0013426971fcec5b  doc/eng-us/features/6.0/order-receipts.md
-44cabf38cf79ba36e38520082756ca0a  doc/eng-us/features/6.0/order-siteaccess.md
+228f101e28d6ee5515e3c8352e09df5d  doc/eng-us/features/6.0/order-siteaccess.md
 1658b1350b277d357beb534a6ba9dcc9  doc/eng-us/features/6.0/package-compare-and-import.md
 c4a200c5702d75559c297c3520f503f9  doc/eng-us/features/6.0/package-installer-batching.md
 a965ba169b72f314b100976debf1caf2  doc/eng-us/features/6.0/package-licenses-and-versions.md
@@ -15403,7 +15404,7 @@ b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
 35c3ee521f88e5e8fff1d90b48bfd900  doc/ger-de/funktionen/6.0/benutzersitzungen.md
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
-24775b0e0d4456f0a7a820d222265f2a  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
+ab6a755708c4e9762363b370cbb25479  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
@@ -22736,6 +22737,7 @@ f33944dda86f2612b983e1d72273dccc  kernel/classes/expnamepatternresolverinterface
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
 2b141e8596da58d9d22a67c4021cba74  kernel/classes/expnotificationservice.php
 ecefb83903a40f49f220224f79d70efc  kernel/classes/expordersiteaccess.php
+41c31e437f4434b1a9f5198db71f0e31  kernel/classes/expordersiteaccessbackfill.php
 fe60fe7756ce4fc83e3be16b477b20a3  kernel/classes/exppackagearchive.php
 ff21db9e62979a47ec36d34ca3d7a32e  kernel/classes/exppackagearchivemodes.php
 57cba6faffa4b17b05a923a1427a986c  kernel/classes/exppackageconflictreport.php
@@ -23441,6 +23443,7 @@ fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborations
 8cb86b084e5c4f0aa0ecb7f2531ce427  kernel/private/classes/commands/convertezenumtoezselection.php
 072c61113b02311ea154c708f79e3e8c  kernel/private/classes/commands/convertprice2multiprice.php
 5e242e01ae17e9af4730a1dfa8c42a71  kernel/private/classes/commands/dfscleanup.php
+2ab3e43aa1553aebfef42971ec154a84  kernel/private/classes/commands/expbackfillordersiteaccess.php
 dc85ce7ce1594bf547f142c6174c1f4b  kernel/private/classes/commands/expcontentjob.php
 7454fdd05a72f8378dd7173255b9e426  kernel/private/classes/commands/exphelp.php
 094060b3c283007c3f9a1124fd70f4d6  kernel/private/classes/commands/exphelpcontent.php
@@ -26719,6 +26722,7 @@ ff0f446447b511ded16794509df958e8  tests/tests/kernel/classes/setupsteps/eZSetupS
 9b06f6476b309fd2b41458004178fa7f  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 6c40a46fb606c4d27b987d2f6826eb21  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
 94f7de1b3237cc5c060982a0527dbf18  tests/tests/kernel/classes/shop/eZCurrencyConverterRoundingTest.php
+46d32a3a23b8cf2da1bc7da1efe434ac  tests/tests/kernel/classes/shop/expOrderSiteaccessBackfillTest.php
 8cebaf7cc62521d2dcadfce2a21579b0  tests/tests/kernel/classes/shop/expOrderSiteaccessTest.php
 009298166c4d9895d0b6c4969ee530e6  tests/tests/kernel/classes/shopprices/eZPaymentCallbackCheckerTest.php
 74e70aebcfe0d18ff0c2edfde58983b2  tests/tests/kernel/classes/shopprices/eZShopPricesTest.php
@@ -27557,7 +27561,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-4d12f4d6e810f14f97fafcd997d9dcb5  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+a4864481a8a5e848b05a55cc76ac0481  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -27616,9 +27620,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-cf28e9baf5a7b2f138b6e22fbcaa190e  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+4e054a3ead5a91c3e05e3438d13cfc89  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-b749e3e97def6417632ff5dc0f79db72  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+3bab1c4b480280cfc5bd0eebe661614b  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 1d8a3b4f06940a3e1c110786b909946f  webdav.php

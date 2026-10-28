@@ -30,8 +30,30 @@ when it differs. The customer order view lists it per order. The order view a cu
 - `eZOrder::activate()` fills it in for an order that still has none, such as a basket started before the update.
 - On the command line the order records the siteaccess the script runs in (its `--siteaccess`, or the configured
   default); through REST, the siteaccess REST runs in. When no siteaccess is known the column stays `''`.
-- Orders placed before the update keep `''` and are shown as unknown. Which siteaccess they came from cannot be told
-  afterwards, so there is no backfill script.
+- Orders placed before the update keep `''` and are shown as unknown, until the backfill below infers their
+  siteaccess where it can.
+
+## Fill in the siteaccess of older orders
+
+`bin/php/expbackfillordersiteaccess.php` infers the siteaccess of orders that have none from the content tree each
+siteaccess serves: the node of its `site.ini [SiteAccessSettings] PathPrefix`, else its
+`content.ini [NodeSettings] RootNode`. An order whose products (the main location of each item's object) all lie in
+the tree of exactly one siteaccess gets that siteaccess. An order matching none or several, or with a product that is
+no longer in the tree, stays unknown. An order that has a siteaccess is never changed.
+
+```bash
+php bin/php/expbackfillordersiteaccess.php                        # dry run: lists every order and the counts
+php bin/php/expbackfillordersiteaccess.php --prefer-deepest-root  # see below
+php bin/php/expbackfillordersiteaccess.php --apply                # writes
+```
+
+Without `--apply` nothing is written: each order is listed with the siteaccess it would get, or why it stays
+unknown, followed by the counts. Read the dry run first.
+
+An administration or editor siteaccess usually serves the whole tree, so every product lies in its tree as well as
+in a shop's: by the plain rule such orders match several siteaccesses and stay unknown. With `--prefer-deepest-root`,
+of several siteaccesses that serve every product the one whose root is deepest wins, when it is the only one that
+deep; two siteaccesses with the same root (a shop and its mobile twin) still leave the order unknown.
 
 ## For developers
 

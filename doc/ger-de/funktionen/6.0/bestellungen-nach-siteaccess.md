@@ -33,8 +33,32 @@ ein Kunde sieht (`design/standard`, `design/base`), zeigt den Namen des Shops.
 - Auf der Kommandozeile speichert die Bestellung den Siteaccess, in dem das Skript läuft (sein `--siteaccess` oder
   den konfigurierten Standard); über REST den Siteaccess, in dem REST läuft. Ist kein Siteaccess bekannt, bleibt die
   Spalte `''`.
-- Bestellungen von vor der Aktualisierung behalten `''` und werden als unbekannt gezeigt. Aus welchem Siteaccess sie
-  kamen, lässt sich nachträglich nicht feststellen; deshalb gibt es kein Skript zum Nachtragen.
+- Bestellungen von vor der Aktualisierung behalten `''` und werden als unbekannt gezeigt, bis das Nachtragen unten
+  ihren Siteaccess ableitet, wo es möglich ist.
+
+## Den Siteaccess älterer Bestellungen nachtragen
+
+`bin/php/expbackfillordersiteaccess.php` leitet den Siteaccess von Bestellungen ohne einen aus dem Inhaltsbaum ab, den
+jeder Siteaccess ausliefert: den Knoten seines `site.ini [SiteAccessSettings] PathPrefix`, sonst seinen
+`content.ini [NodeSettings] RootNode`. Eine Bestellung, deren Produkte (der Hauptort des Objekts jeder Position) alle
+im Baum genau eines Siteaccess liegen, erhält diesen Siteaccess. Eine Bestellung, die keinem oder mehreren entspricht
+oder ein Produkt enthält, das nicht mehr im Baum ist, bleibt unbekannt. Eine Bestellung mit Siteaccess wird nie
+geändert.
+
+```bash
+php bin/php/expbackfillordersiteaccess.php                        # Probelauf: listet jede Bestellung und die Summen
+php bin/php/expbackfillordersiteaccess.php --prefer-deepest-root  # siehe unten
+php bin/php/expbackfillordersiteaccess.php --apply                # schreibt
+```
+
+Ohne `--apply` wird nichts geschrieben: Jede Bestellung wird mit dem Siteaccess aufgeführt, den sie erhielte, oder mit
+dem Grund, warum sie unbekannt bleibt, danach die Summen. Lesen Sie zuerst den Probelauf.
+
+Ein Administrations- oder Redaktions-Siteaccess liefert meist den ganzen Baum aus, so dass jedes Produkt auch in
+seinem Baum liegt und nicht nur in dem eines Shops: Nach der einfachen Regel entsprechen solche Bestellungen mehreren
+Siteaccesses und bleiben unbekannt. Mit `--prefer-deepest-root` gewinnt von mehreren Siteaccesses, die jedes Produkt
+ausliefern, derjenige mit der tiefsten Wurzel, wenn er als einziger so tief liegt; zwei Siteaccesses mit derselben
+Wurzel (ein Shop und sein mobiler Zwilling) lassen die Bestellung weiter unbekannt.
 
 ## Für Entwickler
 
