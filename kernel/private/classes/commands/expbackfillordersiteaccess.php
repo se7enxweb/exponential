@@ -20,10 +20,13 @@ class Expbackfillordersiteaccess extends \Exponential\Runnable\Command
         $script = $this->script(
             array(
                 'description' => "Infer the siteaccess of orders that have none (placed before Exponential 6.0.15 recorded it)\n"
-                    . "from the content tree each siteaccess serves: an order whose products all lie in the tree of exactly\n"
-                    . "one siteaccess (its PathPrefix node, else its RootNode) gets that siteaccess; orders matching none or\n"
-                    . "several stay unknown. An order that has a siteaccess is never changed. Without --apply nothing is\n"
-                    . "written: each order is listed with the siteaccess it would get, or why it stays unknown.\n\n"
+                    . "from the content tree each site siteaccess serves: an order whose products all lie in the tree of\n"
+                    . "exactly one site (its PathPrefix node, else its RootNode) gets that siteaccess; orders matching none\n"
+                    . "or several stay unknown. Administrations (admin, editor ...) never take orders and are left out,\n"
+                    . "decided as the siteaccess menu decides them ([AdminSiteAccessMenu] AdminSiteAccessList[], else the\n"
+                    . "design). An order that has a siteaccess is never changed. Without --apply nothing is written: the\n"
+                    . "siteaccesses considered and left out are listed, then each order with the siteaccess it would get,\n"
+                    . "or why it stays unknown.\n\n"
                     . "Example: php bin/php/expbackfillordersiteaccess.php\n"
                     . "         php bin/php/expbackfillordersiteaccess.php --prefer-deepest-root\n"
                     . "         php bin/php/expbackfillordersiteaccess.php --apply",
@@ -37,8 +40,8 @@ class Expbackfillordersiteaccess extends \Exponential\Runnable\Command
             '',
             array(
                 'apply' => "Write the inferred siteaccesses (the default is a dry run that changes nothing)",
-                'prefer-deepest-root' => "Of several siteaccesses that serve every product, take the one whose root is deepest\n"
-                    . "when it is the only one that deep (a shop's siteaccess beats an administration that serves the whole tree)"
+                'prefer-deepest-root' => "Off by default. Only for public sites with nested roots (a shop inside another site's tree):\n"
+                    . "of several sites that serve every product, take the one whose root is deepest when it is the only one that deep"
             )
         );
         $apply = (bool)$options['apply'];
@@ -50,9 +53,12 @@ class Expbackfillordersiteaccess extends \Exponential\Runnable\Command
         }
 
         $problems = array();
-        $roots = \expOrderSiteaccessBackfill::siteaccessRoots( $problems );
+        $administrations = array();
+        $roots = \expOrderSiteaccessBackfill::siteaccessRoots( $problems, $administrations );
         foreach ( $roots as $siteaccess => $root )
-            $cli->output( sprintf( "siteaccess %-20s serves %s", $siteaccess, $root ) );
+            $cli->output( sprintf( "considered siteaccess %-20s serves %s", $siteaccess, $root ) );
+        foreach ( $administrations as $siteaccess )
+            $cli->output( sprintf( "left out   siteaccess %-20s an administration, never takes orders", $siteaccess ) );
         foreach ( $problems as $siteaccess => $why )
             $cli->warning( "siteaccess $siteaccess left out: $why" );
         $cli->output();

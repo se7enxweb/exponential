@@ -45,20 +45,26 @@ im Baum genau eines Siteaccess liegen, erhält diesen Siteaccess. Eine Bestellun
 oder ein Produkt enthält, das nicht mehr im Baum ist, bleibt unbekannt. Eine Bestellung mit Siteaccess wird nie
 geändert.
 
+Administrationen (admin, editor und ähnliche) nehmen nie Bestellungen an und kommen daher nie in Frage. Sie werden so
+bestimmt wie im Siteaccess-Menü der Admin-Kopfzeile: die Siteaccesses aus `site.ini [AdminSiteAccessMenu]
+AdminSiteAccessList[]` oder, wenn diese Liste leer ist, die mit einem Administrations-Design (`SiteDesign` oder
+`AdditionalSiteDesignList[]` beginnt mit `admin`, so dass auch ein Editor zählt, der auf die Admin-Designs
+zurückfällt) oder mit einem `[SiteSettings] FrontSiteAccess`.
+
 ```bash
 php bin/php/expbackfillordersiteaccess.php                        # Probelauf: listet jede Bestellung und die Summen
 php bin/php/expbackfillordersiteaccess.php --prefer-deepest-root  # siehe unten
 php bin/php/expbackfillordersiteaccess.php --apply                # schreibt
 ```
 
-Ohne `--apply` wird nichts geschrieben: Jede Bestellung wird mit dem Siteaccess aufgeführt, den sie erhielte, oder mit
-dem Grund, warum sie unbekannt bleibt, danach die Summen. Lesen Sie zuerst den Probelauf.
+Ohne `--apply` wird nichts geschrieben: Aufgeführt werden die berücksichtigten Siteaccesses (mit der Wurzel, die jeder
+ausliefert) und die als Administration ausgelassenen, dann jede Bestellung mit dem Siteaccess, den sie erhielte, oder
+mit dem Grund, warum sie unbekannt bleibt, danach die Summen. Lesen Sie zuerst den Probelauf.
 
-Ein Administrations- oder Redaktions-Siteaccess liefert meist den ganzen Baum aus, so dass jedes Produkt auch in
-seinem Baum liegt und nicht nur in dem eines Shops: Nach der einfachen Regel entsprechen solche Bestellungen mehreren
-Siteaccesses und bleiben unbekannt. Mit `--prefer-deepest-root` gewinnt von mehreren Siteaccesses, die jedes Produkt
-ausliefern, derjenige mit der tiefsten Wurzel, wenn er als einziger so tief liegt; zwei Siteaccesses mit derselben
-Wurzel (ein Shop und sein mobiler Zwilling) lassen die Bestellung weiter unbekannt.
+`--prefer-deepest-root` ist standardmäßig aus und nur für öffentliche Sites mit verschachtelten Wurzeln gedacht, etwa
+einen Shop im Baum einer anderen Site: Von mehreren Sites, die jedes Produkt ausliefern, gewinnt die mit der tiefsten
+Wurzel, wenn sie als einzige so tief liegt; zwei Sites mit derselben Wurzel (ein Shop und sein mobiler Zwilling)
+lassen die Bestellung weiter unbekannt.
 
 ## Für Entwickler
 

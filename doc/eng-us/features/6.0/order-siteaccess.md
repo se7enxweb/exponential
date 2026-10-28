@@ -41,19 +41,25 @@ siteaccess serves: the node of its `site.ini [SiteAccessSettings] PathPrefix`, e
 the tree of exactly one siteaccess gets that siteaccess. An order matching none or several, or with a product that is
 no longer in the tree, stays unknown. An order that has a siteaccess is never changed.
 
+Administrations (admin, editor and the like) never take orders, so they are never candidates. They are decided as
+the siteaccess menu of the admin header decides them: the siteaccesses of `site.ini [AdminSiteAccessMenu]
+AdminSiteAccessList[]`, or, when that list is empty, those with an administration design (`SiteDesign` or
+`AdditionalSiteDesignList[]` starting with `admin`, so an editor that falls back to the admin designs counts) or a
+`[SiteSettings] FrontSiteAccess`.
+
 ```bash
 php bin/php/expbackfillordersiteaccess.php                        # dry run: lists every order and the counts
 php bin/php/expbackfillordersiteaccess.php --prefer-deepest-root  # see below
 php bin/php/expbackfillordersiteaccess.php --apply                # writes
 ```
 
-Without `--apply` nothing is written: each order is listed with the siteaccess it would get, or why it stays
-unknown, followed by the counts. Read the dry run first.
+Without `--apply` nothing is written: the siteaccesses considered (with the root each serves) and those left out as
+administrations are listed, then each order with the siteaccess it would get, or why it stays unknown, followed by
+the counts. Read the dry run first.
 
-An administration or editor siteaccess usually serves the whole tree, so every product lies in its tree as well as
-in a shop's: by the plain rule such orders match several siteaccesses and stay unknown. With `--prefer-deepest-root`,
-of several siteaccesses that serve every product the one whose root is deepest wins, when it is the only one that
-deep; two siteaccesses with the same root (a shop and its mobile twin) still leave the order unknown.
+`--prefer-deepest-root` is off by default and only for public sites with nested roots, such as a shop inside
+another site's tree: of several sites that serve every product, the one whose root is deepest wins, when it is the
+only one that deep; two sites with the same root (a shop and its mobile twin) still leave the order unknown.
 
 ## For developers
 
