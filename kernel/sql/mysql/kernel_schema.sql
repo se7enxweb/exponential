@@ -980,6 +980,7 @@ CREATE TABLE ezorder (
   is_temporary int(11) NOT NULL default '1',
   order_nr int(11) NOT NULL default '0',
   productcollection_id int(11) NOT NULL default '0',
+  siteaccess varchar(255) NOT NULL default '',
   status_id int(11) default '0',
   status_modified int(11) default '0',
   status_modifier_id int(11) default '0',
