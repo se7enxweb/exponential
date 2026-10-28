@@ -10,22 +10,22 @@ and `settings/i18n.ini`, no extension) has:
 | What | How many |
 |---|---:|
 | Languages of the administration: translations in `share/translations` | **128**, 128 of them complete |
-| Locales: `share/locale/*.ini` files | **353**: 346 languages and countries, 1 test language, 6 variants |
+| Locales: `share/locale/*.ini` files | **354**: 347 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
 | of them shown translated by the administration (own translation, fallback or English) | **125** |
 | of them not translated ([list](#the-languages-not-translated-yet)) | **25** |
-| Countries and territories of the locales | **236** |
-| of them with the administration in their language (green on the map) | **234** |
+| Countries and territories of the locales | **237** |
+| of them with the administration in their language (green on the map) | **235** |
 | Locales written right to left | **43** |
 
-![World map: 234 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 235 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 234 countries and territories in green</summary>
+<details><summary>The 235 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -210,6 +210,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Saint Pierre and Miquelon | PM | `fre-PM` → `fre-FR` |
 | Saint Vincent and The Grenadines | VC | `eng-VC` (source texts) |
 | Samoa | WS | `eng-WS` (source texts) |
+| San Marino | SM | `ita-SM` → `ita-IT` |
 | Sao Tome and Principe | ST | `por-ST` → `por-PT` |
 | Saudi Arabia | SA | `ara-SA` |
 | Senegal | SN | `fre-SN` → `fre-FR`, `ful-SN`, `wol-SN` |
@@ -283,7 +284,7 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 26 October 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-In short: **353 locale files** (346 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
+In short: **354 locale files** (347 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
 them written right to left) can be chosen as content languages and siteaccess locales; **128 administration
 translations** exist, all of them complete: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian (`sqi-AL`), Amharic
 (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Azerbaijani (`aze-AZ`), Basque
@@ -685,6 +686,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `isl-IS` | Icelandic | Íslenska | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `ita-CH` | Italian (Switzerland) | Italiano (Svizzera) | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `ita-IT`) |
 | `ita-IT` | Italian (Italy) | Italiano (Italia) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `ita-SM` | Italian (San Marino) | Italiano (San Marino) | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `ita-IT`) |
 | `jav-ID` | Javanese | Jawa | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `jpn-JP` | Japanese | 日本語 | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older, hand-made | 100% |
 | `jpn-JP@international` | Variant of `jpn-JP`: @international |  | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older variation, hand-made | 100% (falls back to `jpn-JP`) |
