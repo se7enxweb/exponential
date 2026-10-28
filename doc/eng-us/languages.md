@@ -9,11 +9,11 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **131**, 131 of them complete |
+| Languages of the administration: translations in `share/translations` | **132**, 132 of them complete |
 | Locales: `share/locale/*.ini` files | **355**: 348 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **126** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **24** |
+| of them shown translated by the administration (own translation, fallback or English) | **127** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **23** |
 | Countries and territories of the locales | **238** |
 | of them with the administration in their language (green on the map) | **236** |
 | Locales written right to left | **43** |
@@ -157,7 +157,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Madagascar | MG | `fre-MG` → `fre-FR`, `mlg-MG` |
 | Malawi | MW | `eng-MW` (source texts) |
 | Malaysia | MY | `msa-MY` |
-| Mali | ML | `bam-ML` (untranslated), `fre-ML` → `fre-FR` |
+| Mali | ML | `bam-ML`, `fre-ML` → `fre-FR` |
 | Malta | MT | `mlt-MT` |
 | Marshall Islands | MH | `eng-MH` (source texts) |
 | Martinique | MQ | `fre-MQ` → `fre-FR` |
@@ -285,13 +285,13 @@ were taken on 15 October 2026, those of the administration translations on 26 Oc
 
 <!-- generated: exp:i18n coverage translations (start) -->
 In short: **355 locale files** (348 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
-them written right to left) can be chosen as content languages and siteaccess locales; **131 administration
+them written right to left) can be chosen as content languages and siteaccess locales; **132 administration
 translations** exist, all of them complete: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian (`sqi-AL`), Amharic
 (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian (`ast-ES`),
-Azerbaijani (`aze-AZ`), Basque (`eus-ES`), Belarusian (`bel-BY`), Bengali (Bangladesh) (`ben-BD`), Bhojpuri
-(`bho-IN`), Bosnian (`bos-BA`), Bulgarian (`bul-BG`), Burmese (`mya-MM`), Catalan (`cat-ES`), Cebuano (`ceb-PH`),
-Central Kurdish (`ckb-IQ`), Chechen (`che-RU`), Croatian (`cro-HR`), Czech (`cze-CZ`), Danish (`dan-DK`), Dari
-(Afghanistan) (`fas-AF`), Dutch (Netherlands) (`dut-NL`), English (Australia) (`eng-AU`), English (United States)
+Azerbaijani (`aze-AZ`), Bambara (`bam-ML`), Basque (`eus-ES`), Belarusian (`bel-BY`), Bengali (Bangladesh) (`ben-BD`),
+Bhojpuri (`bho-IN`), Bosnian (`bos-BA`), Bulgarian (`bul-BG`), Burmese (`mya-MM`), Catalan (`cat-ES`), Cebuano
+(`ceb-PH`), Central Kurdish (`ckb-IQ`), Chechen (`che-RU`), Croatian (`cro-HR`), Czech (`cze-CZ`), Danish (`dan-DK`),
+Dari (Afghanistan) (`fas-AF`), Dutch (Netherlands) (`dut-NL`), English (Australia) (`eng-AU`), English (United States)
 (`eng-US`), Estonian (`est-EE`), Filipino (`fil-PH`), Finnish (`fin-FI`), French (France) (`fre-FR`), Fula (`ful-SN`),
 Galician (`glg-ES`), Ganda (`lug-UG`), Georgian (`kat-GE`), German (Germany) (`ger-DE`), Greek (Hellenic) (`ell-GR`),
 Greenlandic (`kal-GL`), Gujarati (`guj-IN`), Hausa (`hau-NG`), Hawaiian (`haw-US`), Hebrew (`heb-IL`), Hindi
@@ -337,16 +337,15 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **126** of them translated: at least one of their locales has a translation of its
+administration shows **127** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **24** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **23** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 24 languages not translated</summary>
+<details><summary>The 23 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
-| Bambara | Bamanakan | `bam` | `bam-ML` (Mali) |
 | Bodo | बर’ | `brx` | `brx-IN` (India) |
 | Breton | Brezhoneg | `bre` | `bre-FR` (France) |
 | Dhivehi | ދިވެހި | `div` | `div-MV` (Maldives) |
@@ -477,7 +476,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `asm-IN` | Assamese | অসমীয়া | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | 100% |
 | `ast-ES` | Asturian | Asturianu | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `aze-AZ` | Azerbaijani | Azərbaycan | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | 100% |
-| `bam-ML` | Bambara | Bamanakan | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `bam-ML` | Bambara | Bamanakan | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `bel-BY` | Belarusian | Беларуская | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% |
 | `ben-BD` | Bengali (Bangladesh) | বাংলা (বাংলাদেশ) | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | 100% |
 | `ben-IN` | Bengali (India) | বাংলা (ভারত) | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | 100% (falls back to `ben-BD`) |
