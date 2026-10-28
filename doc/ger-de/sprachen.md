@@ -9,11 +9,11 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **141**, davon 141 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **142**, davon 142 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **355**: 348 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **136** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **14** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **137** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **13** |
 | Länder und Gebiete der Locales | **238** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **238** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
@@ -286,7 +286,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 
 <!-- generated: exp:i18n coverage translations (start) -->
 Kurz gefasst: **355 Locale-Dateien** (348 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **141
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **142
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian
 (`ast-ES`), Azerbaijani (`aze-AZ`), Bambara (`bam-ML`), Basque (`eus-ES`), Belarusian (`bel-BY`), Bengali (Bangladesh)
@@ -313,9 +313,9 @@ Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Ser
 (`zgh-MA`), Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac (Iraq) (`syr-IQ`), Tajik
 (`tgk-TJ`), Tamil (India) (`tam-IN`), Tatar (`tat-RU`), Telugu (`tel-IN`), Thai (`tha-TH`), Tibetan (`bod-CN`),
 Tigrinya (`tir-ET`), Traditional Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Turkmen (`tuk-TM`), Ukrainian
-(`ukr-UA`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`), Uzbek (`uzb-UZ`), Vietnamese (`vie-VN`), Welsh (`cym-GB`),
-Western Punjabi (Shahmukhi) (`pnb-PK`), Wolof (`wol-SN`), Xhosa (`xho-ZA`), Yiddish (`yid-US`), Yoruba (`yor-NG`),
-Zulu (`zul-ZA`). Die Namen sind die englischen der Locale-Dateien.
+(`ukr-UA`), Upper Sorbian (`hsb-DE`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`), Uzbek (`uzb-UZ`), Vietnamese
+(`vie-VN`), Welsh (`cym-GB`), Western Punjabi (Shahmukhi) (`pnb-PK`), Wolof (`wol-SN`), Xhosa (`xho-ZA`), Yiddish
+(`yid-US`), Yoruba (`yor-NG`), Zulu (`zul-ZA`). Die Namen sind die englischen der Locale-Dateien.
 <!-- generated: exp:i18n coverage translations (end) -->
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
@@ -339,13 +339,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **136** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **137** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **14** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **13** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 14 nicht übersetzten Sprachen</summary>
+<details><summary>Die 13 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -361,7 +361,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Sanskrit | संस्कृत भाषा | `san` | `san-IN` (Indien) |
 | Santali | ᱥᱟᱱᱛᱟᱲᱤ | `sat` | `sat-IN` (Indien) |
 | Tongan | Lea fakatonga | `ton` | `ton-TO` (Tonga) |
-| Upper Sorbian | Hornjoserbšćina | `hsb` | `hsb-DE` (Deutschland) |
 | Western Frisian | Frysk | `fry` | `fry-NL` (Niederlande) |
 
 </details>
@@ -673,7 +672,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `haw-US` | Hawaiian | ʻŌlelo Hawaiʻi | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `heb-IL` | Hebrew | עברית | Naher Osten | RTL | Hebräisch (`Hebr`) | älter, neu erzeugt aus CLDR 44 | 100 % |
 | `hin-IN` | Hindi | हिन्दी | Südasien | LTR | Devanagari (`Deva`) | älter, neu erzeugt aus CLDR 44 | 100 % |
-| `hsb-DE` | Upper Sorbian | Hornjoserbšćina | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `hsb-DE` | Upper Sorbian | Hornjoserbšćina | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `hun-HU` | Hungarian | Magyar | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `huy-IL` | Hulaulá | הולאולא | Naher Osten | RTL | Hebräisch (`Hebr`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
 | `hye-AM` | Armenian | Հայերեն | Zentralasien und Kaukasus | LTR | Armenisch (`Armn`) | CLDR 44 | 100 % |
