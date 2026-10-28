@@ -40,6 +40,7 @@
     <th scope="col">{'Total (ex. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
     <th scope="col">{'Total (inc. VAT)'|i18n( 'design/admin/shop/customerorderview' )}</th>
     <th scope="col">{'Time'|i18n( 'design/admin/shop/customerorderview' )}</th>
+    <th scope="col">{'Siteaccess'|i18n( 'design/admin/content/job' )}</th>
     <th scope="col">{'Status'|i18n( 'design/admin/shop/customerorderview' )}</th>
 </tr>
 {section var=Orders loop=$order_list sequence=array( bglight, bgdark )}
@@ -57,6 +58,7 @@
     <td class="number" align="right">{$Orders.item.total_ex_vat|l10n( 'currency', $locale, $symbol )}</td>
     <td class="number" align="right">{$Orders.item.total_inc_vat|l10n( 'currency', $locale, $symbol )}</td>
     <td>{$Orders.item.created|l10n( shortdatetime )}</td>
+    <td>{if $Orders.item.siteaccess_name}{$Orders.item.siteaccess_name|wash}{else}<span class="a4-muted">{'Unknown'|i18n( 'design/admin/settings' )}</span>{/if}</td>
     <td>{$Orders.item.status_name|wash}</td>
 </tr>
 {/section}

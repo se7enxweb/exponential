@@ -58,6 +58,16 @@ class Archivelist extends \Exponential\Runnable\ModuleView
 
         $http = \eZHTTPTool::instance();
 
+        // The siteaccess (store or site) the orders were placed in, as the view parameter (siteaccess)/<name>, '-'
+        // for the orders without one (expOrderSiteaccess); the filter form is answered with the address carrying it.
+        if ( $http->hasGetVariable( 'SiteaccessFilter' ) )
+        {
+            $module->redirectTo( \expOrderSiteaccess::filterUri( '/shop/archivelist', $http->getVariable( 'SiteaccessFilter' ) ) );
+            return $this->viewResult( null, null );
+        }
+        $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
+        $siteaccessFilter = \expOrderSiteaccess::filterFromParameter( isset( $userParameters['siteaccess'] ) ? $userParameters['siteaccess'] : null );
+
         // Unarchive options.
         if ( $http->hasPostVariable( 'UnarchiveButton' ) )
         {
@@ -72,14 +82,17 @@ class Archivelist extends \Exponential\Runnable\ModuleView
             }
         }
 
-        $archiveArray = \eZOrder::active( true, $offset, $limit, $sortField, $sortOrder, \eZOrder::SHOW_ARCHIVED );
-        $archiveCount = \eZOrder::activeCount( \eZOrder::SHOW_ARCHIVED );
+        $archiveArray = \eZOrder::active( true, $offset, $limit, $sortField, $sortOrder, \eZOrder::SHOW_ARCHIVED, $siteaccessFilter );
+        $archiveCount = \eZOrder::activeCount( \eZOrder::SHOW_ARCHIVED, $siteaccessFilter );
 
         $tpl->setVariable( 'archive_list', $archiveArray );
         $tpl->setVariable( 'archive_list_count', $archiveCount );
         $tpl->setVariable( 'limit', $limit );
 
-        $viewParameters = array( 'offset' => $offset );
+        $tpl->setVariable( 'siteaccess_filter', \expOrderSiteaccess::templateFilter( $siteaccessFilter ) );
+
+        $viewParameters = array( 'offset'     => $offset,
+                                 'siteaccess' => \expOrderSiteaccess::parameterFromFilter( $siteaccessFilter ) );
         $tpl->setVariable( 'view_parameters', $viewParameters );
         $tpl->setVariable( 'sort_field', $sortField );
         $tpl->setVariable( 'sort_order', $sortOrder );

@@ -25,6 +25,8 @@
          symbol = $currency.symbol}
 {/if}
 
+<p class="exp-order-siteaccess"><b>{'Siteaccess'|i18n( 'design/admin/content/job' )}:</b> {if $order.siteaccess_name}{$order.siteaccess_name|wash}{if ne( $order.store_name, $order.siteaccess_name )} ({$order.store_name|wash}){/if}{else}<span class="a4-muted">{'Unknown'|i18n( 'design/admin/settings' )}</span>{/if}</p>
+
 <b>{'Product items'|i18n( 'design/admin/shop/orderview' )}</b>
 <table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
 <tr>
