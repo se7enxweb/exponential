@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **137**, 137 of them complete |
+| Languages of the administration: translations in `share/translations` | **138**, 138 of them complete |
 | Locales: `share/locale/*.ini` files | **355**: 348 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **132** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **18** |
+| of them shown translated by the administration (own translation, fallback or English) | **133** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **17** |
 | Countries and territories of the locales | **238** |
-| of them with the administration in their language (green on the map) | **237** |
+| of them with the administration in their language (green on the map) | **238** |
 | Locales written right to left | **43** |
 
-![World map: 237 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 238 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 237 countries and territories in green</summary>
+<details><summary>The 238 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -158,6 +158,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Madagascar | MG | `fre-MG` → `fre-FR`, `mlg-MG` |
 | Malawi | MW | `eng-MW` (source texts) |
 | Malaysia | MY | `msa-MY` |
+| Maldives | MV | `div-MV` |
 | Mali | ML | `bam-ML`, `fre-ML` → `fre-FR` |
 | Malta | MT | `mlt-MT` |
 | Marshall Islands | MH | `eng-MH` (source texts) |
@@ -269,11 +270,10 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 </details>
 
-<details><summary>The 1 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 0 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
-| Maldives | MV | `div-MV` |
 
 </details>
 
@@ -285,35 +285,35 @@ were taken on 15 October 2026, those of the administration translations on 26 Oc
 
 <!-- generated: exp:i18n coverage translations (start) -->
 In short: **355 locale files** (348 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
-them written right to left) can be chosen as content languages and siteaccess locales; **137 administration
+them written right to left) can be chosen as content languages and siteaccess locales; **138 administration
 translations** exist, all of them complete: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian (`sqi-AL`), Amharic
 (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian (`ast-ES`),
 Azerbaijani (`aze-AZ`), Bambara (`bam-ML`), Basque (`eus-ES`), Belarusian (`bel-BY`), Bengali (Bangladesh) (`ben-BD`),
 Bhojpuri (`bho-IN`), Bosnian (`bos-BA`), Breton (`bre-FR`), Bulgarian (`bul-BG`), Burmese (`mya-MM`), Catalan
 (`cat-ES`), Cebuano (`ceb-PH`), Central Kurdish (`ckb-IQ`), Chechen (`che-RU`), Croatian (`cro-HR`), Czech (`cze-CZ`),
-Danish (`dan-DK`), Dari (Afghanistan) (`fas-AF`), Dutch (Netherlands) (`dut-NL`), Dzongkha (`dzo-BT`), English
-(Australia) (`eng-AU`), English (United States) (`eng-US`), Estonian (`est-EE`), Ewe (`ewe-GH`), Filipino (`fil-PH`),
-Finnish (`fin-FI`), French (France) (`fre-FR`), Fula (`ful-SN`), Galician (`glg-ES`), Ganda (`lug-UG`), Georgian
-(`kat-GE`), German (Germany) (`ger-DE`), Greek (Hellenic) (`ell-GR`), Greenlandic (`kal-GL`), Gujarati (`guj-IN`),
-Hausa (`hau-NG`), Hawaiian (`haw-US`), Hebrew (`heb-IL`), Hindi (`hin-IN`), Hulaulá (`huy-IL`), Hungarian (`hun-HU`),
-Icelandic (`isl-IS`), Igbo (`ibo-NG`), Imperial Aramaic (`arc-IQ`), Indonesian (`ind-ID`), Irish (`gle-IE`), Italian
-(Italy) (`ita-IT`), Japanese (`jpn-JP`), Javanese (`jav-ID`), Kabyle (`kab-DZ`), Kannada (`kan-IN`), Kazakh
-(`kaz-KZ`), Khmer (`khm-KH`), Kikuyu (`kik-KE`), Kinyarwanda (`kin-RW`), Kirundi (`run-BI`), Klingon (`tlh-QO`),
-Korean (`kor-KR`), Korean (North Korea) (`kor-KP`), Kurdish (`kur-TR`), Kyrgyz (`kir-KG`), Lao (`lao-LA`), Latin
-(`lat-VA`), Latvian (`lav-LV`), Lingala (`lin-CD`), Lithuanian (`lit-LT`), Lower Sorbian (`dsb-DE`), Luxembourgish
-(`ltz-LU`), Macedonian (`mkd-MK`), Maithili (`mai-IN`), Malagasy (`mlg-MG`), Malay (Malaysia) (`msa-MY`), Malayalam
-(`mal-IN`), Maltese (`mlt-MT`), Māori (`mri-NZ`), Marathi (`mar-IN`), Mongolian (`mon-MN`), Nepali (`nep-NP`),
-Nigerian Pidgin (`pcm-NG`), Norwegian Bokmål (`nor-NO`), Occitan (`oci-FR`), Odia (`ori-IN`), Oromo (`orm-ET`),
-Pashto (`pus-AF`), Persian (`fas-IR`), Polish (`pol-PL`), Portuguese (Brazil) (`por-BR`), Portuguese (Portugal)
-(`por-PT`), Punjabi (`pan-IN`), Romanian (`ron-RO`), Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski)
-(`ser-SR`), Serbian (Српски) (`srp-RS`), Shona (`sna-ZW`), Simplified Chinese (`chi-CN`), Sindhi (`snd-PK`),
-Sinhala (`sin-LK`), Slovak (`slk-SK`), Slovenian (`slv-SI`), Somali (`som-SO`), Spanish (Mexico) (`esl-MX`), Spanish
-(Spain) (`esl-ES`), Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac (Iraq) (`syr-IQ`),
-Tajik (`tgk-TJ`), Tamil (India) (`tam-IN`), Tatar (`tat-RU`), Telugu (`tel-IN`), Thai (`tha-TH`), Tibetan (`bod-CN`),
-Tigrinya (`tir-ET`), Traditional Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Turkmen (`tuk-TM`), Ukrainian
-(`ukr-UA`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`), Uzbek (`uzb-UZ`), Vietnamese (`vie-VN`), Welsh (`cym-GB`),
-Western Punjabi (Shahmukhi) (`pnb-PK`), Wolof (`wol-SN`), Xhosa (`xho-ZA`), Yiddish (`yid-US`), Yoruba (`yor-NG`),
-Zulu (`zul-ZA`). The names are the English ones of the locale files.
+Danish (`dan-DK`), Dari (Afghanistan) (`fas-AF`), Dhivehi (`div-MV`), Dutch (Netherlands) (`dut-NL`), Dzongkha
+(`dzo-BT`), English (Australia) (`eng-AU`), English (United States) (`eng-US`), Estonian (`est-EE`), Ewe (`ewe-GH`),
+Filipino (`fil-PH`), Finnish (`fin-FI`), French (France) (`fre-FR`), Fula (`ful-SN`), Galician (`glg-ES`), Ganda
+(`lug-UG`), Georgian (`kat-GE`), German (Germany) (`ger-DE`), Greek (Hellenic) (`ell-GR`), Greenlandic (`kal-GL`),
+Gujarati (`guj-IN`), Hausa (`hau-NG`), Hawaiian (`haw-US`), Hebrew (`heb-IL`), Hindi (`hin-IN`), Hulaulá (`huy-IL`),
+Hungarian (`hun-HU`), Icelandic (`isl-IS`), Igbo (`ibo-NG`), Imperial Aramaic (`arc-IQ`), Indonesian (`ind-ID`), Irish
+(`gle-IE`), Italian (Italy) (`ita-IT`), Japanese (`jpn-JP`), Javanese (`jav-ID`), Kabyle (`kab-DZ`), Kannada
+(`kan-IN`), Kazakh (`kaz-KZ`), Khmer (`khm-KH`), Kikuyu (`kik-KE`), Kinyarwanda (`kin-RW`), Kirundi (`run-BI`),
+Klingon (`tlh-QO`), Korean (`kor-KR`), Korean (North Korea) (`kor-KP`), Kurdish (`kur-TR`), Kyrgyz (`kir-KG`), Lao
+(`lao-LA`), Latin (`lat-VA`), Latvian (`lav-LV`), Lingala (`lin-CD`), Lithuanian (`lit-LT`), Lower Sorbian (`dsb-DE`),
+Luxembourgish (`ltz-LU`), Macedonian (`mkd-MK`), Maithili (`mai-IN`), Malagasy (`mlg-MG`), Malay (Malaysia)
+(`msa-MY`), Malayalam (`mal-IN`), Maltese (`mlt-MT`), Māori (`mri-NZ`), Marathi (`mar-IN`), Mongolian (`mon-MN`),
+Nepali (`nep-NP`), Nigerian Pidgin (`pcm-NG`), Norwegian Bokmål (`nor-NO`), Occitan (`oci-FR`), Odia (`ori-IN`),
+Oromo (`orm-ET`), Pashto (`pus-AF`), Persian (`fas-IR`), Polish (`pol-PL`), Portuguese (Brazil) (`por-BR`), Portuguese
+(Portugal) (`por-PT`), Punjabi (`pan-IN`), Romanian (`ron-RO`), Russian (`rus-RU`), Scottish Gaelic (`gla-GB`),
+Serbian (Srpski) (`ser-SR`), Serbian (Српски) (`srp-RS`), Shona (`sna-ZW`), Simplified Chinese (`chi-CN`),
+Sindhi (`snd-PK`), Sinhala (`sin-LK`), Slovak (`slk-SK`), Slovenian (`slv-SI`), Somali (`som-SO`), Spanish (Mexico)
+(`esl-MX`), Spanish (Spain) (`esl-ES`), Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac
+(Iraq) (`syr-IQ`), Tajik (`tgk-TJ`), Tamil (India) (`tam-IN`), Tatar (`tat-RU`), Telugu (`tel-IN`), Thai (`tha-TH`),
+Tibetan (`bod-CN`), Tigrinya (`tir-ET`), Traditional Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Turkmen
+(`tuk-TM`), Ukrainian (`ukr-UA`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`), Uzbek (`uzb-UZ`), Vietnamese
+(`vie-VN`), Welsh (`cym-GB`), Western Punjabi (Shahmukhi) (`pnb-PK`), Wolof (`wol-SN`), Xhosa (`xho-ZA`), Yiddish
+(`yid-US`), Yoruba (`yor-NG`), Zulu (`zul-ZA`). The names are the English ones of the locale files.
 <!-- generated: exp:i18n coverage translations (end) -->
 Every locale is plain INI: nothing here needs a PHP extension at run time.
 
@@ -338,17 +338,16 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **132** of them translated: at least one of their locales has a translation of its
+administration shows **133** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **18** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **17** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 18 languages not translated</summary>
+<details><summary>The 17 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
 | Bodo | बर’ | `brx` | `brx-IN` (India) |
-| Dhivehi | ދިވެހި | `div` | `div-MV` (Maldives) |
 | Dogri | डोगरी | `doi` | `doi-IN` (India) |
 | Esperanto | Esperanto | `epo` | `epo-EO` |
 | Faroese | Føroyskt | `fao` | `fao-FO` (Faroe Islands) |
@@ -497,7 +496,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `cze-CZ` | Czech | Čeština | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `dan-DK` | Danish | Dansk | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `dan-FO` | Danish (Faroe Islands) | Dansk (Færøerne) | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `dan-DK`) |
-| `div-MV` | Dhivehi | ދިވެހި | South Asia | RTL | Thaana (`Thaa`) | hand-made names, CLDR 44 conventions | — |
+| `div-MV` | Dhivehi | ދިވެހި | South Asia | RTL | Thaana (`Thaa`) | hand-made names, CLDR 44 conventions | 100% |
 | `doi-IN` | Dogri | डोगरी | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `dsb-DE` | Lower Sorbian | Dolnoserbšćina | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `dut-AW` | Dutch (Aruba) | Nederlands (Aruba) | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `dut-NL`) |
