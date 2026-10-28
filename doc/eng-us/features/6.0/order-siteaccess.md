@@ -71,6 +71,8 @@ deep; two siteaccesses with the same root (a shop and its mobile twin) still lea
 - `eZOrder::active()`, `activeSorted()` and `activeCount()` take an optional last argument: `null` for every order,
   `''` for the orders without a siteaccess, or a name. `sortColumnsForList()` has `siteaccess`.
 - `expOrderSiteaccess` (`kernel/classes/expordersiteaccess.php`) records the name and builds the filters.
+- The commerce services of `expservices` (every order they return, such as `expOrderServices` `view`, `list` and
+  `mine`) include `siteaccess`: the name, or `null` when it is not known.
 - Tests: `tests/tests/kernel/classes/shop/expOrderSiteaccessTest.php` (no database).
 
 ## Related pages

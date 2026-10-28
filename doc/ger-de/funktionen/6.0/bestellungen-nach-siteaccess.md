@@ -77,6 +77,8 @@ Wurzel (ein Shop und sein mobiler Zwilling) lassen die Bestellung weiter unbekan
 - `eZOrder::active()`, `activeSorted()` und `activeCount()` nehmen ein optionales letztes Argument: `null` für jede
   Bestellung, `''` für die Bestellungen ohne Siteaccess oder einen Namen. `sortColumnsForList()` enthält `siteaccess`.
 - `expOrderSiteaccess` (`kernel/classes/expordersiteaccess.php`) speichert den Namen und baut die Filter.
+- Die Commerce-Dienste von `expservices` (jede Bestellung, die sie liefern, etwa bei `expOrderServices` `view`,
+  `list` und `mine`) enthalten `siteaccess`: den Namen oder `null`, wenn er nicht bekannt ist.
 - Tests: `tests/tests/kernel/classes/shop/expOrderSiteaccessTest.php` (ohne Datenbank).
 
 ## Verwandte Seiten
