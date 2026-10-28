@@ -29,7 +29,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
-| Afghanistan | AF | `fas-AF` → `fas-IR`, `pus-AF` |
+| Afghanistan | AF | `fas-AF`, `pus-AF` |
 | Åland | AX | `swe-AX` → `swe-SE` |
 | Albania | AL | `sqi-AL` |
 | Algeria | DZ | `ara-DZ` → `ara-SA`, `fre-DZ` → `fre-FR`, `kab-DZ` (untranslated) |
@@ -402,7 +402,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `lin-CD`, `ful-SN`, `orm-ET`, `eng-AU` (and `eng-NZ`, which falls back to it), `hye-AM`, `uzb-UZ`, `snd-PK`, `pnb-PK`, `mya-MM`, `haw-US`, `aze-AZ`, `aka-GH`, `sin-LK`, `asm-IN`, `kin-RW`, `mlg-MG`, `uig-CN`, `khm-KH`, `ceb-PH`, `ckb-IQ`, `tir-ET`, `kik-KE`, `run-BI`, `tgk-TJ`, `bod-CN`, `bel-BY`, `mon-MN`, `glg-ES`, `kir-KG`, `eus-ES`, `tat-RU`, `cym-GB`, `tuk-TM`, `mkd-MK`, `lug-UG`, `ltz-LU`, `wol-SN`, `kor-KP`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR`, `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `lin-CD`, `ful-SN`, `orm-ET`, `eng-AU` (and `eng-NZ`, which falls back to it), `hye-AM`, `uzb-UZ`, `snd-PK`, `pnb-PK`, `mya-MM`, `haw-US`, `aze-AZ`, `aka-GH`, `sin-LK`, `asm-IN`, `kin-RW`, `mlg-MG`, `uig-CN`, `khm-KH`, `ceb-PH`, `ckb-IQ`, `tir-ET`, `kik-KE`, `run-BI`, `tgk-TJ`, `bod-CN`, `bel-BY`, `mon-MN`, `glg-ES`, `kir-KG`, `eus-ES`, `tat-RU`, `cym-GB`, `tuk-TM`, `mkd-MK`, `lug-UG`, `ltz-LU`, `wol-SN`, `kor-KP`, `fas-AF`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 237 added in 6.0.15 |
 
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
@@ -1036,9 +1036,16 @@ source text, and the interface language choice counts English as 100%.
 | `ltz-LU` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 | `wol-SN` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 | `kor-KP` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `fas-AF` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 
 Notes:
 
+- **Dari** (`fas-AF`, دری) has had its own catalogue since 27 October 2026, machine-assisted, adapted row by row from
+  the complete Iranian Persian catalogue to Afghan usage: معلومات for information, بلی and نخیر, the Afghan spelling
+  of loanwords (ویب، انترنت، کمپیوتر، تیلفون) and the words Afghan writing uses where Iranian Persian has its own
+  (فولدر، لینک، آدرس، رمز عبور، فرمایش for a shop order, تخلص, ولایت), in Arabic script, right to left, with a
+  glossary (`share/translations/fas-AF/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete, and the
+  locale no longer falls back to `fas-IR`. A review by native speakers is welcome.
 - **Korean (North)** (`kor-KP`, 조선말) was added on 27 October 2026, machine-assisted, adapted row by row from the
   complete South Korean catalogue to the cultured language of the DPRK (문화어): the initial ㄹ and ㄴ of Sino-Korean
   words kept (리용, 련결, 렬), ‑였‑ after ㅣ and ㅐ (되였습니다), no sai-siot (수자), dependent nouns and auxiliary
@@ -1261,7 +1268,7 @@ Notes:
   ezjscore are complete too, those of the other bundled extensions come with their own releases. All three address
   the user formally (Persian *shomā*, Pashto *tāso*, Kurmanji *hûn*); buttons and menu items are nouns or verbal
   nouns. Persian is standard written Persian with the Persian letters ی and ک and the zero-width non-joiner; Dari
-  (`fas-AF`) has no catalogue of its own and falls back to it. Kurmanji has no catalogue for other countries yet.
+  (`fas-AF`) has had its own catalogue since 27 October 2026, see above. Kurmanji has no catalogue for other countries yet.
   A review by a native speaker is welcome.
 - **Swahili** (`swa-KE`, new) is complete since 23 October 2026 for all 18,404 strings of that day, made the same
   way; the catalogues of ezoe and ezjscore are complete too, those of the other bundled extensions come with their
@@ -1325,7 +1332,7 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 24 | Tamil | 86 | `tam-IN`, `tam-LK`, `tam-SG` | `tam-IN` complete; `tam-LK`, `tam-SG` fall back to it |
 | 25 | Yue Chinese (Cantonese) | 86 | `chi-HK` (written Traditional Chinese) | `chi-HK` falls back to `chi-TW` |
 | 26 | Wu Chinese | 83 | written as Simplified Chinese: `chi-CN` | `chi-CN` complete |
-| 27 | Persian | 82 | `fas-IR`, `fas-AF` (Dari) | `fas-IR` complete, `fas-AF` falls back to it |
+| 27 | Persian | 82 | `fas-IR`, `fas-AF` (Dari) | `fas-IR`, `fas-AF` complete |
 | 28 | Korean | 82 | `kor-KR`, `kor-KP` | `kor-KR`, `kor-KP` complete |
 | 29 | Amharic | 78 | `amh-ET` | `amh-ET` complete |
 | 30 | Thai | 71 | `tha-TH` | `tha-TH` complete |
@@ -1583,9 +1590,9 @@ their layout skeleton (header, left menu, content, right toolbar) is direction-s
 of it being placed by left and right. The details, the CSS rules and what still needs checking are in
 [Right-to-left languages](features/6.0/right-to-left.md).
 
-**Interface translations.** Eleven right-to-left translations of the administration are complete: Hebrew
-(`heb-IL`), Arabic (`ara-SA`, Modern Standard Arabic, so every Arabic country falls back to it), Persian (`fas-IR`,
-Dari `fas-AF` falls back to it), Pashto (`pus-AF`), Urdu (`urd-PK`), Sindhi (`snd-PK`), Western Punjabi (`pnb-PK`,
+**Interface translations.** Twelve right-to-left translations of the administration are complete: Hebrew
+(`heb-IL`), Arabic (`ara-SA`, Modern Standard Arabic, so every Arabic country falls back to it), Persian (`fas-IR`),
+Dari (`fas-AF`), Pashto (`pus-AF`), Urdu (`urd-PK`), Sindhi (`snd-PK`), Western Punjabi (`pnb-PK`,
 Shahmukhi script) and Yiddish (`yid-US`); Aramaic has one in Syriac script
 (`syr-IQ`, `syr-SY` falls back to it) and two in Hebrew script (`arc-IQ`, `huy-IL`, transliterated from it). All cover the kernel and the bundled ezoe and ezjscore
 catalogues, and all are machine-assisted: they need a review by a native
