@@ -139,6 +139,8 @@ class expOrderSiteaccess
 
     /**
      * The SQL condition of a filter, to append to a WHERE clause: '' for no filter, else " AND <column> = '<name>'".
+     * The orders without a siteaccess also match NULL: Oracle stores an empty string as NULL, so its column is
+     * nullable (extension/ezoracle, settings/dbschema.ini.append.php) and holds NULL where the others hold ''.
      *
      * @param string|null $filter
      * @param eZDBInterface|null $db escapes the name; null for eZDB::instance()
@@ -149,6 +151,8 @@ class expOrderSiteaccess
     {
         if ( $filter === null )
             return '';
+        if ( $filter === '' )
+            return ' AND ( ' . $column . " = '' OR " . $column . ' IS NULL )';
         if ( $db === null )
             $db = eZDB::instance();
         return ' AND ' . $column . " = '" . $db->escapeString( (string)$filter ) . "'";

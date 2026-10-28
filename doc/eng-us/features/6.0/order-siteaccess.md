@@ -38,6 +38,10 @@ when it differs. The customer order view lists it per order. The order view a cu
 - Column `ezorder.siteaccess varchar(255) NOT NULL default ''`, in every kernel schema, `share/db_schema.dba` and
   `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`. The MySQL and PostgreSQL statements add it only when
   it is missing, so they can run again.
+- Oracle (the `ezoracle` extension): `update/database/ezpublish/6.0/dbupdate-6.0.0-6.0.15-order-siteaccess.sql`
+  adds a nullable `VARCHAR2(255)` in a PL/SQL block that checks `user_tab_columns` first, so it can run again.
+  Oracle stores `''` as `NULL`, so the column cannot be `NOT NULL DEFAULT ''`; the kernel reads `NULL` as no
+  siteaccess, and the Unknown filter matches both.
 - Before the update has run, `eZOrder::definition()` leaves the column out (`eZOrder::hasSiteaccessColumn()`), so
   the shop keeps working with the old table; the lists then show every order as unknown and offer no filter.
 - Template attributes of an order: `siteaccess` (the column), `siteaccess_name` (the same, `''` before the update)

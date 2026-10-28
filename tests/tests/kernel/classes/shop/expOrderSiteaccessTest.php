@@ -22,6 +22,36 @@
  * @group shop
  */
 
+/** A database that answers the catalogue query of eZOrder::hasSiteaccessColumn() as the named engine would. */
+class expOrderSiteaccessTestDatabase extends eZDBInterface
+{
+    public $queries = array();
+    public $engine;
+    public $count;
+
+    public function __construct( $engine = 'oracle', $count = 1 )
+    {
+        $this->engine = $engine;
+        $this->count = $count;
+    }
+
+    function databaseName()
+    {
+        return $this->engine;
+    }
+
+    function arrayQuery( $sql, $params = array(), $server = false )
+    {
+        $this->queries[] = $sql;
+        return array( array( 'c' => $this->count ) );
+    }
+
+    function isConnected()
+    {
+        return true;
+    }
+}
+
 class expOrderSiteaccessTest extends PHPUnit\Framework\TestCase
 {
     /** @var string the repository */
@@ -153,13 +183,52 @@ class expOrderSiteaccessTest extends PHPUnit\Framework\TestCase
             public function escapeString( $s ) { return str_replace( "'", "''", $s ); }
         };
         $this->assertSame( '', expOrderSiteaccess::sqlCondition( null, $db ) );
-        $this->assertSame( " AND siteaccess = ''", expOrderSiteaccess::sqlCondition( '', $db ) );
+        // Oracle keeps '' as NULL: the orders without a siteaccess match either
+        $this->assertSame( " AND ( siteaccess = '' OR siteaccess IS NULL )", expOrderSiteaccess::sqlCondition( '', $db ) );
+        $this->assertSame( " AND ( o.siteaccess = '' OR o.siteaccess IS NULL )", expOrderSiteaccess::sqlCondition( '', $db, 'o.siteaccess' ) );
         $this->assertSame( " AND o.siteaccess = 'shop_de'", expOrderSiteaccess::sqlCondition( 'shop_de', $db, 'o.siteaccess' ) );
         $this->assertSame( " AND siteaccess = 'a''b'", expOrderSiteaccess::sqlCondition( "a'b", $db ), 'escaped' );
 
         $this->assertSame( array(), expOrderSiteaccess::conditions( null ) );
         $this->assertSame( array( 'siteaccess' => '' ), expOrderSiteaccess::conditions( '' ) );
         $this->assertSame( array( 'siteaccess' => 'shop_de' ), expOrderSiteaccess::conditions( 'shop_de' ) );
+    }
+
+    /** Oracle: the column is looked up in user_tab_columns, by its upper-case names (extension/ezoracle's update) */
+    public function testOracleColumnCheck()
+    {
+        $hadDb = array_key_exists( 'eZDBGlobalInstance', $GLOBALS );
+        $savedDb = $hadDb ? $GLOBALS['eZDBGlobalInstance'] : null;
+        try
+        {
+            foreach ( array( 1 => true, 0 => false ) as $count => $found )
+            {
+                $db = new expOrderSiteaccessTestDatabase( 'oracle', $count );
+                eZDB::setInstance( $db );
+                $this->assertSame( $found, eZOrder::hasSiteaccessColumn( true ), "user_tab_columns lists it $count time(s)" );
+                $this->assertCount( 1, $db->queries );
+                $this->assertStringContainsString( "FROM user_tab_columns WHERE table_name = 'EZORDER' AND column_name = 'SITEACCESS'", $db->queries[0] );
+                $definition = eZOrder::definition();
+                $this->assertSame( $found, isset( $definition['fields']['siteaccess'] ), 'the definition follows the answer' );
+            }
+        }
+        finally
+        {
+            if ( $hadDb )
+                $GLOBALS['eZDBGlobalInstance'] = $savedDb;
+            else
+                unset( $GLOBALS['eZDBGlobalInstance'] );
+        }
+    }
+
+    /** Oracle keeps '' as NULL: an order read from it has a NULL siteaccess, which counts as none */
+    public function testNullSiteaccessIsUnknown()
+    {
+        $this->columnFlag()->setValue( null, true );
+        $order = new eZOrder( array( 'id' => 9, 'siteaccess' => null ) );
+        $this->assertSame( '', $order->attribute( 'siteaccess_name' ) );
+        $this->assertSame( '', $order->attribute( 'store_name' ) );
+        $this->assertSame( array( 'site' ), expOrderSiteaccess::mergeKnown( array(), array( null, 'site' ) ) );
     }
 
     public function testKnownSiteaccesses()

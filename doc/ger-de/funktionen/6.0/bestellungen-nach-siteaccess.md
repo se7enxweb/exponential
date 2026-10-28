@@ -41,6 +41,10 @@ ein Kunde sieht (`design/standard`, `design/base`), zeigt den Namen des Shops.
 - Spalte `ezorder.siteaccess varchar(255) NOT NULL default ''`, in jedem Kernel-Schema, in `share/db_schema.dba` und
   in `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`. Die Anweisungen für MySQL und PostgreSQL legen sie nur
   an, wenn sie fehlt, und können deshalb erneut laufen.
+- Oracle (die Extension `ezoracle`): `update/database/ezpublish/6.0/dbupdate-6.0.0-6.0.15-order-siteaccess.sql`
+  legt ein `VARCHAR2(255)` ohne `NOT NULL` in einem PL/SQL-Block an, der zuerst `user_tab_columns` prüft, und kann
+  deshalb erneut laufen. Oracle speichert `''` als `NULL`, daher kann die Spalte nicht `NOT NULL DEFAULT ''` sein;
+  der Kernel liest `NULL` als keinen Siteaccess, und der Filter Unbekannt findet beides.
 - Bevor die Aktualisierung gelaufen ist, lässt `eZOrder::definition()` die Spalte weg
   (`eZOrder::hasSiteaccessColumn()`), so dass der Shop mit der alten Tabelle weiter arbeitet; die Listen zeigen dann
   jede Bestellung als unbekannt und bieten keinen Filter.

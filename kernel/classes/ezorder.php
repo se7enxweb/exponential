@@ -401,14 +401,21 @@ class eZOrder extends eZPersistentObject
             {
                 $where['is_archived'] = $show;
             }
-            $where = array_merge( $where, expOrderSiteaccess::conditions( $siteaccess ) );
+            // the document store matches the field; SQL gets the condition that also finds Oracle's NULL
+            $customConds = null;
+            $db = eZDB::instance();
+            if ( $db->databaseName() === 'mongo' )
+                $where = array_merge( $where, expOrderSiteaccess::conditions( $siteaccess ) );
+            else if ( $siteaccess !== null )
+                $customConds = expOrderSiteaccess::sqlCondition( $siteaccess, $db );
 
             return eZPersistentObject::fetchObjectList( eZOrder::definition(),
                                                         null,
                                                         $where ,
                                                         array( $sortField => $sortOrder ),
                                                         array( 'offset' => $offset,
-                                                               'length' => $limit ), $asObject );
+                                                               'length' => $limit ), $asObject,
+                                                        false, null, null, $customConds );
         }
     }
 
