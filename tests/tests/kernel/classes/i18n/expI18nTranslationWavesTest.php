@@ -131,7 +131,7 @@ class expI18nTranslationWavesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '](uebersetzungswellen.md)', (string)file_get_contents( $root . '/doc/ger-de/sprachen.md' ) );
         $data = $waves->data();
         $this->assertSame( count( glob( $root . '/share/translations/*/translation.ts' ) ) - 1, count( $data['status'] ), 'every translation but the source texts' );
-        $this->assertArrayHasKey( 'kor-KP', $data['untranslated'], 'North Korean is planned' );
+        $this->assertArrayHasKey( 'kor-KP', $data['status'], 'North Korean is translated' );
     }
 
     /** TW-02 */
