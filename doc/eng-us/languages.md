@@ -9,11 +9,11 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **142**, 142 of them complete |
+| Languages of the administration: translations in `share/translations` | **143**, 143 of them complete |
 | Locales: `share/locale/*.ini` files | **355**: 348 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **137** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **13** |
+| of them shown translated by the administration (own translation, fallback or English) | **138** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **12** |
 | Countries and territories of the locales | **238** |
 | of them with the administration in their language (green on the map) | **238** |
 | Locales written right to left | **43** |
@@ -285,7 +285,7 @@ were taken on 15 October 2026, those of the administration translations on 26 Oc
 
 <!-- generated: exp:i18n coverage translations (start) -->
 In short: **355 locale files** (348 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
-them written right to left) can be chosen as content languages and siteaccess locales; **142 administration
+them written right to left) can be chosen as content languages and siteaccess locales; **143 administration
 translations** exist, all of them complete: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian (`sqi-AL`), Amharic
 (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian (`ast-ES`),
 Azerbaijani (`aze-AZ`), Bambara (`bam-ML`), Basque (`eus-ES`), Belarusian (`bel-BY`), Bengali (Bangladesh) (`ben-BD`),
@@ -302,11 +302,11 @@ Hungarian (`hun-HU`), Icelandic (`isl-IS`), Igbo (`ibo-NG`), Imperial Aramaic (`
 Klingon (`tlh-QO`), Konkani (`kok-IN`), Korean (`kor-KR`), Korean (North Korea) (`kor-KP`), Kurdish (`kur-TR`), Kyrgyz
 (`kir-KG`), Lao (`lao-LA`), Latin (`lat-VA`), Latvian (`lav-LV`), Lingala (`lin-CD`), Lithuanian (`lit-LT`), Lower
 Sorbian (`dsb-DE`), Luxembourgish (`ltz-LU`), Macedonian (`mkd-MK`), Maithili (`mai-IN`), Malagasy (`mlg-MG`), Malay
-(Malaysia) (`msa-MY`), Malayalam (`mal-IN`), Maltese (`mlt-MT`), Māori (`mri-NZ`), Marathi (`mar-IN`), Mongolian
-(`mon-MN`), Nepali (`nep-NP`), Nigerian Pidgin (`pcm-NG`), Norwegian Bokmål (`nor-NO`), Occitan (`oci-FR`), Odia
-(`ori-IN`), Oromo (`orm-ET`), Pashto (`pus-AF`), Persian (`fas-IR`), Polish (`pol-PL`), Portuguese (Brazil)
-(`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi (`pan-IN`), Romanian (`ron-RO`), Romansh (`roh-CH`), Russian
-(`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian (Српски) (`srp-RS`), Shona
+(Malaysia) (`msa-MY`), Malayalam (`mal-IN`), Maltese (`mlt-MT`), Manipuri (`mni-IN`), Māori (`mri-NZ`), Marathi
+(`mar-IN`), Mongolian (`mon-MN`), Nepali (`nep-NP`), Nigerian Pidgin (`pcm-NG`), Norwegian Bokmål (`nor-NO`), Occitan
+(`oci-FR`), Odia (`ori-IN`), Oromo (`orm-ET`), Pashto (`pus-AF`), Persian (`fas-IR`), Polish (`pol-PL`), Portuguese
+(Brazil) (`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi (`pan-IN`), Romanian (`ron-RO`), Romansh (`roh-CH`),
+Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian (Српски) (`srp-RS`), Shona
 (`sna-ZW`), Simplified Chinese (`chi-CN`), Sindhi (`snd-PK`), Sinhala (`sin-LK`), Slovak (`slk-SK`), Slovenian
 (`slv-SI`), Somali (`som-SO`), Spanish (Mexico) (`esl-MX`), Spanish (Spain) (`esl-ES`), Standard Moroccan Tamazight
 (`zgh-MA`), Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac (Iraq) (`syr-IQ`), Tajik
@@ -339,12 +339,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **137** of them translated: at least one of their locales has a translation of its
+administration shows **138** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **13** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **12** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 13 languages not translated</summary>
+<details><summary>The 12 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -353,7 +353,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Esperanto | Esperanto | `epo` | `epo-EO` |
 | Faroese | Føroyskt | `fao` | `fao-FO` (Faroe Islands) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (India) |
-| Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (India) |
 | Northern Sami | Davvisámegiella | `sme` | `sme-NO` (Norway) |
 | N’Ko | ߒߞߏ | `nqo` | `nqo-GN` (Guinea) |
 | Quechua | Runasimi | `que` | `que-PE` (Peru) |
@@ -708,7 +707,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `mkd-MK` | Macedonian | Македонски | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% |
 | `mlg-MG` | Malagasy | Malagasy | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `mlt-MT` | Maltese | Malti | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
-| `mni-IN` | Manipuri | মৈতৈলোন্ | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | — |
+| `mni-IN` | Manipuri | মৈতৈলোন্ | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | 100% |
 | `mon-MN` | Mongolian | Монгол | East Asia | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% |
 | `mri-NZ` | Māori | Māori | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `msa-BN` | Malay (Brunei) | Melayu (Brunei) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `msa-MY`) |
