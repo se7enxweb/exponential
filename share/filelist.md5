@@ -3291,7 +3291,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-5a8571bd4c7e3aefda3215d15938e4ce  doc/changelogs/6.0/6.0.15.md
+c5167d4847aeefed635ad82931ff9181  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6350,7 +6350,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-42fb621a4db9d336bf9b873c3623e160  doc/eng-us/features/6.0/README.md
+ccd84fb18b599803f4586d49d01feaba  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6473,6 +6473,7 @@ ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrid
 328d31cb3c5429d428bb28e53e460208  doc/eng-us/features/6.0/online-editor-tinymce8.md
 e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
 28c90ba4d835d68a0013426971fcec5b  doc/eng-us/features/6.0/order-receipts.md
+3c004060d5490515c8fe6e9bb3dab8c4  doc/eng-us/features/6.0/order-siteaccess.md
 1658b1350b277d357beb534a6ba9dcc9  doc/eng-us/features/6.0/package-compare-and-import.md
 c4a200c5702d75559c297c3520f503f9  doc/eng-us/features/6.0/package-installer-batching.md
 a965ba169b72f314b100976debf1caf2  doc/eng-us/features/6.0/package-licenses-and-versions.md
@@ -12590,7 +12591,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-a67a98b37ca1aa1a42355377747eb8ff  doc/ger-de/.paths.json
+1365fe9407ca35609ff6326dd4b9bfcd  doc/ger-de/.paths.json
 bb3a945902ac11b7d40c047580f5b6b8  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 b58ded94c758f0e4cc4ec1c8b1e60ef7  doc/ger-de/UNINSTALL.md
@@ -15381,7 +15382,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-369c5ea26839222d742265af1d8a20cd  doc/ger-de/funktionen/6.0/README.md
+29102eaeb7ee6ac0a826b594c42fd161  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 daea7f2e38000ce15caa57c898b75b10  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15402,6 +15403,7 @@ b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
 35c3ee521f88e5e8fff1d90b48bfd900  doc/ger-de/funktionen/6.0/benutzersitzungen.md
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
+0812a25dd4d773d45bda62b69ce3965b  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
 c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-policy.md
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
