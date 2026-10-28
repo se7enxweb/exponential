@@ -29,7 +29,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'jav-ID', 'sun-ID', 'nep-NP', 'bho-IN', 'mai-IN', 'pcm-NG', 'syr-IQ', 'arc-IQ', 'huy-IL', 'kat-GE', 'sna-ZW',
         'kaz-KZ', 'gla-GB', 'mri-NZ', 'fil-PH', 'che-RU', 'snd-PK', 'pnb-PK', 'uzb-UZ', 'mya-MM', 'haw-US', 'hye-AM',
         'lin-CD', 'ful-SN', 'orm-ET', 'aze-AZ', 'aka-GH', 'sin-LK', 'asm-IN', 'kik-KE', 'khm-KH', 'uig-CN', 'kin-RW',
-        'ceb-PH', 'ckb-IQ', 'tir-ET', 'mlg-MG', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB' );
+        'ceb-PH', 'ckb-IQ', 'tir-ET', 'mlg-MG', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB', 'mon-MN', 'kir-KG', 'tat-RU',
+        'run-BI', 'tgk-TJ', 'bod-CN' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
     const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL', 'afr-ZA', 'bos-BA', 'bul-BG',
@@ -39,7 +40,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'bho-IN', 'mai-IN', 'pcm-NG', 'syr-IQ', 'arc-IQ', 'huy-IL', 'kat-GE', 'sna-ZW', 'kaz-KZ', 'gla-GB', 'mri-NZ',
         'fil-PH', 'che-RU', 'snd-PK', 'pnb-PK', 'uzb-UZ', 'mya-MM', 'haw-US', 'hye-AM', 'lin-CD', 'ful-SN', 'orm-ET',
         'aze-AZ', 'aka-GH', 'sin-LK', 'asm-IN', 'kik-KE', 'khm-KH', 'uig-CN', 'kin-RW', 'ceb-PH', 'ckb-IQ', 'tir-ET',
-        'mlg-MG', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB' );
+        'mlg-MG', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB', 'mon-MN', 'kir-KG', 'tat-RU', 'run-BI', 'tgk-TJ', 'bod-CN' );
 
     /**
      * Complete translations that no ranked group of settings/uiswitch.ini names: the switch offers them in its A-Z
@@ -51,7 +52,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'bho-IN', 'mai-IN', 'pcm-NG', 'syr-IQ', 'arc-IQ', 'huy-IL', 'kat-GE', 'sna-ZW', 'kaz-KZ', 'gla-GB', 'mri-NZ',
         'fil-PH', 'che-RU', 'snd-PK', 'pnb-PK', 'uzb-UZ', 'mya-MM', 'haw-US', 'hye-AM', 'lin-CD', 'ful-SN', 'orm-ET',
         'aze-AZ', 'aka-GH', 'sin-LK', 'asm-IN', 'kik-KE', 'khm-KH', 'uig-CN', 'kin-RW', 'ceb-PH', 'ckb-IQ', 'tir-ET',
-        'mlg-MG', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB' );
+        'mlg-MG', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB', 'mon-MN', 'kir-KG', 'tat-RU', 'run-BI', 'tgk-TJ', 'bod-CN' );
 
     /** @var string the repository */
     protected $root;
