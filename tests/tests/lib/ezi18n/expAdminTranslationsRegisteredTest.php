@@ -62,6 +62,16 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     /** @var array|null the entries of the interface language switch, built from the files once */
     protected static $switchEntries = null;
 
+    /** @var int|null how far building them raised the peak memory, in bytes; null when it could not be told */
+    protected static $switchPeakGrowth = null;
+
+    /**
+     * The memory building the catalogue of every locale may take on top of what the process already used. Measured
+     * 2026-10-27 with 125 complete translations of 18,839 messages: some 8 MB (it was more than 400 MB while the
+     * catalogue kept every translation's messages). The bound leaves room for twice as many languages and more.
+     */
+    const SWITCH_PEAK_GROWTH_LIMIT = 128 * 1024 * 1024;
+
     protected function setUp(): void
     {
         $this->root = dirname( __DIR__, 4 );
@@ -121,15 +131,49 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
                                "$code: catalogue language" );
     }
 
+    /**
+     * The entries of the interface language switch, built once for every data set: setUp() empties the catalogue's
+     * memory, and building it from every translation file again for each language took some ten seconds a language,
+     * four to five minutes for the data sets together. The first build also records how far it raised the peak memory.
+     *
+     * @return array
+     */
+    protected function switchEntries()
+    {
+        if ( self::$switchEntries === null )
+        {
+            // PHP 8.2 and later reset the peak, so it is the build's alone; on 8.1 only a build that raised the
+            // process's peak can be measured
+            $canReset = function_exists( 'memory_reset_peak_usage' );
+            if ( $canReset )
+                memory_reset_peak_usage();
+            $before = memory_get_usage();
+            $peakBefore = memory_get_peak_usage();
+            self::$switchEntries = ( new expUISwitchLanguageCatalogue( $this->root, '' ) )->entries();
+            $peak = memory_get_peak_usage();
+            self::$switchPeakGrowth = $canReset || $peak > $peakBefore ? $peak - $before : null;
+        }
+        return self::$switchEntries;
+    }
+
+    /**
+     * The catalogue measures each translation on its own: its memory must not grow with the number of translations
+     * (with every translation's messages kept, 125 of them exhausted a memory limit of 1 GB).
+     */
+    public function testTheSwitchCatalogueOfEveryLocaleStaysSmallInMemory()
+    {
+        $this->assertNotEmpty( $this->switchEntries() );
+        if ( self::$switchPeakGrowth === null )
+            $this->markTestSkipped( 'the peak memory was reached before the catalogue was built and cannot be reset (PHP 8.1)' );
+        $this->assertLessThan( self::SWITCH_PEAK_GROWTH_LIMIT, self::$switchPeakGrowth,
+                               sprintf( 'building the catalogue raised the peak memory by %.1f MB', self::$switchPeakGrowth / 1048576 ) );
+    }
+
     #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
     public function testTheSwitchMeasuresTheCatalogueAsComplete( $code )
     {
-        // Built once for every data set: setUp() empties the catalogue's memory, and building it
-        // from every translation file again for each language took some ten seconds a language,
-        // four to five minutes for the data sets together.
-        if ( self::$switchEntries === null )
-            self::$switchEntries = ( new expUISwitchLanguageCatalogue( $this->root, '' ) )->entries();
-        $entry = self::$switchEntries[$code] ?? null;
+        $entries = $this->switchEntries();
+        $entry = $entries[$code] ?? null;
         $this->assertIsArray( $entry, "$code is not in the catalogue of the interface language switch" );
         $this->assertSame( 100, (int)$entry['coverage'], "$code: coverage" );
         $this->assertFalse( $entry['test'], "$code must not be a test language" );

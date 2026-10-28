@@ -16,7 +16,9 @@
  * automatic same-language fallback; ger-AT to ger-DE), because the translator loads that one in its place. With
  * FallbackMode=merge it counts with every translation of the chain together.
  *
- * Reading 25 translation files of 1 to 3 MB takes seconds, so the result is cached: in memory for the process and in
+ * Each translation file is streamed on its own and kept only as a mask of the source messages it translates, so the
+ * memory stays flat however many translations there are. Reading 125 translation files of 1 to 3 MB takes seconds, so
+ * the result is cached: in memory for the process and in
  * <cache directory>/uiswitch/language-catalogue.json, both keyed by a signature of the names, sizes and modification
  * times of the files read. A changed or added file builds the catalogue again on its next use; nothing needs clearing.
  * Guide: doc/eng-us/features/6.0/ui-switch-languages.md
@@ -261,9 +263,12 @@ class expUISwitchLanguageCatalogue
      */
     public function build()
     {
-        $sourceKeys = $this->messageKeys( $this->path( 'share/translations/untranslated/translation.ts' ), false );
+        // Every translation is read on its own and kept only as a mask of the source messages it translates (a byte
+        // each, some 19 KB), never as its messages: with 125 complete translations of 19,000 messages their key
+        // arrays took more than a gigabyte together.
+        $sourceIndex = array_flip( array_keys( $this->messageKeys( $this->path( 'share/translations/untranslated/translation.ts' ), false ) ) );
         $entries = array();
-        $keysOf = array();
+        $maskOf = array();
         $resolver = $this->resolver();
         $merge = $resolver->mode() === 'merge';
         foreach ( $this->localeCodes( true ) as $code )
@@ -298,14 +303,17 @@ class expUISwitchLanguageCatalogue
                 }
                 if ( $files )
                 {
-                    $translated = array();
+                    // the translated source messages of the files together: the masks OR-ed, a byte per message
+                    $mask = '';
+                    $any = false;
                     foreach ( $files as $ts )
                     {
-                        if ( !isset( $keysOf[$ts] ) )
-                            $keysOf[$ts] = $this->messageKeys( $ts, true );
-                        $translated += $keysOf[$ts];
+                        if ( !isset( $maskOf[$ts] ) )
+                            $maskOf[$ts] = $this->translatedMask( $ts, $sourceIndex );
+                        $mask = $mask === '' ? $maskOf[$ts]['mask'] : ( $mask | $maskOf[$ts]['mask'] );
+                        $any = $any || $maskOf[$ts]['any'];
                     }
-                    $coverage = self::coveragePercent( $sourceKeys, $translated );
+                    $coverage = self::maskCoveragePercent( $mask, count( $sourceIndex ), $any );
                 }
             }
             $entries[$code] = array( 'native' => $names['LanguageName'], 'english' => $names['InternationalLanguageName'],
@@ -398,6 +406,43 @@ class expUISwitchLanguageCatalogue
     }
 
     /**
+     * coveragePercent() of a mask of translatedMask(): the share of the source messages whose byte is set.
+     *
+     * @param string $mask
+     * @param int $sourceCount
+     * @param bool $any whether the translation translates any message (for a missing source catalogue)
+     * @return int 0 to 100
+     */
+    public static function maskCoveragePercent( $mask, $sourceCount, $any )
+    {
+        if ( $sourceCount < 1 )
+            return $any ? 100 : 0;
+        $done = substr_count( (string)$mask, "\x01" );
+        return (int)min( 100, floor( $done * 100 / $sourceCount ) );
+    }
+
+    /**
+     * Which source messages a translation file translates, read message by message without keeping them: mask has
+     * a byte per source message ($sourceIndex key => position), "\x01" where translated, else "\x00"; any whether
+     * the file translates any message at all.
+     *
+     * @param string $file
+     * @param array $sourceIndex key => position
+     * @return array hash( mask, any )
+     */
+    public function translatedMask( $file, array $sourceIndex )
+    {
+        $mask = str_repeat( "\x00", count( $sourceIndex ) );
+        $any = false;
+        $this->eachMessageKey( $file, true, function ( $key ) use ( &$mask, &$any, $sourceIndex ) {
+            $any = true;
+            if ( isset( $sourceIndex[$key] ) )
+                $mask[$sourceIndex[$key]] = "\x01";
+        } );
+        return array( 'mask' => $mask, 'any' => $any );
+    }
+
+    /**
      * The messages of a Qt Linguist file, as context, source and comment joined, the key the translator uses. With
      * $translatedOnly only those with a translation that is neither empty, unfinished nor obsolete.
      *
@@ -408,11 +453,26 @@ class expUISwitchLanguageCatalogue
     public function messageKeys( $file, $translatedOnly )
     {
         $keys = array();
+        $this->eachMessageKey( $file, $translatedOnly, function ( $key ) use ( &$keys ) {
+            $keys[$key] = true;
+        } );
+        return $keys;
+    }
+
+    /**
+     * Calls $each with the key of every message of a Qt Linguist file (see messageKeys()), streamed with XMLReader.
+     *
+     * @param string $file
+     * @param bool $translatedOnly
+     * @param callable $each function( string $key )
+     */
+    protected function eachMessageKey( $file, $translatedOnly, callable $each )
+    {
         if ( !is_file( $file ) || !class_exists( 'XMLReader' ) )
-            return $keys;
+            return;
         $reader = new XMLReader();
         if ( !@$reader->open( $file, null, LIBXML_NONET ) )
-            return $keys;
+            return;
         // A broken file (a merge in progress) counts what was read before the error, without a PHP warning for
         // each parser complaint.
         $useInternal = libxml_use_internal_errors( true );
@@ -453,8 +513,8 @@ class expUISwitchLanguageCatalogue
                         continue;
                     if ( !$translatedOnly && $type === 'obsolete' )
                         continue;
-                    $keys[$context . "\x1F" . $source . "\x1F" . $comment] = true;
                     $reader->next();
+                    $each( $context . "\x1F" . $source . "\x1F" . $comment );
                 }
             }
         }
@@ -465,7 +525,6 @@ class expUISwitchLanguageCatalogue
         $reader->close();
         libxml_clear_errors();
         libxml_use_internal_errors( $useInternal );
-        return $keys;
     }
 
     /**

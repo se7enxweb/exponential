@@ -23155,7 +23155,7 @@ fcb8f52f2118ee9e605f129c6723ff9d  kernel/classes/transfer/expkerneltransfertask.
 3e015343c58fde0e208b1f68b7e4a6a6  kernel/classes/transfer/expkerneltransfertool.php
 df88021792b0b11ae5e52e4fb8714679  kernel/classes/uiswitch/expuiswitch.php
 cd54fa40fed2f285f3992b4a8a4634aa  kernel/classes/uiswitch/expuiswitchdesignprovider.php
-2eaf46fffb8bf8a2ef20e950ec19528c  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
+74880ba42f190a2c60ace445c81e0660  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
 be939cdaec3f7a64802683939dcd7c6b  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 f3e123acabebb7cd6c72627fc0419402  kernel/classes/uiswitch/expuiswitchprovider.php
 20500f7b2073d61636cb8c7261e58578  kernel/classes/uiswitch/expuiswitchproviderinterface.php
@@ -27165,7 +27165,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
-886a4f7774c74f3eb6d14422309ddd92  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
+2cd4981a192f42cbb6a4fa65a43e66cc  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 98e1f0b2248c3a8c16e298ecc9e0b8f7  tests/tests/lib/ezi18n/expChineseHongKongFallbackTest.php
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
