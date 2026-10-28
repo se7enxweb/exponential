@@ -9,11 +9,11 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **149**, davon 149 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **150**, davon 150 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **355**: 348 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **144** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **6** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **145** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **5** |
 | Länder und Gebiete der Locales | **238** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **238** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
@@ -191,7 +191,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Panama | PA | `esl-PA` → `esl-ES` |
 | Papua-Neuguinea | PG | `eng-PG` (Quelltexte) |
 | Paraguay | PY | `esl-PY` → `esl-ES` |
-| Peru | PE | `esl-PE` → `esl-ES`, `que-PE` (nicht übersetzt) |
+| Peru | PE | `esl-PE` → `esl-ES`, `que-PE` |
 | Philippinen | PH | `ceb-PH`, `eng-PH` (Quelltexte), `fil-PH` |
 | Pitcairn | PN | `eng-PN` (Quelltexte) |
 | Polen | PL | `pol-PL` |
@@ -286,7 +286,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 
 <!-- generated: exp:i18n coverage translations (start) -->
 Kurz gefasst: **355 Locale-Dateien** (348 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **149
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **150
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian
 (`ast-ES`), Azerbaijani (`aze-AZ`), Bambara (`bam-ML`), Basque (`eus-ES`), Belarusian (`bel-BY`), Bengali (Bangladesh)
@@ -307,17 +307,17 @@ Macedonian (`mkd-MK`), Maithili (`mai-IN`), Malagasy (`mlg-MG`), Malay (Malaysia
 Maltese (`mlt-MT`), Manipuri (`mni-IN`), Māori (`mri-NZ`), Marathi (`mar-IN`), Mongolian (`mon-MN`), Nepali
 (`nep-NP`), Nigerian Pidgin (`pcm-NG`), Northern Sami (`sme-NO`), Norwegian Bokmål (`nor-NO`), N’Ko (`nqo-GN`),
 Occitan (`oci-FR`), Odia (`ori-IN`), Oromo (`orm-ET`), Pashto (`pus-AF`), Persian (`fas-IR`), Polish (`pol-PL`),
-Portuguese (Brazil) (`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi (`pan-IN`), Romanian (`ron-RO`), Romansh
-(`roh-CH`), Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian (Српски)
-(`srp-RS`), Shona (`sna-ZW`), Simplified Chinese (`chi-CN`), Sindhi (`snd-PK`), Sinhala (`sin-LK`), Slovak (`slk-SK`),
-Slovenian (`slv-SI`), Somali (`som-SO`), Spanish (Mexico) (`esl-MX`), Spanish (Spain) (`esl-ES`), Standard Moroccan
-Tamazight (`zgh-MA`), Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac (Iraq) (`syr-IQ`),
-Tajik (`tgk-TJ`), Tamil (India) (`tam-IN`), Tatar (`tat-RU`), Telugu (`tel-IN`), Thai (`tha-TH`), Tibetan (`bod-CN`),
-Tigrinya (`tir-ET`), Traditional Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Turkmen (`tuk-TM`), Ukrainian
-(`ukr-UA`), Upper Sorbian (`hsb-DE`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`), Uzbek (`uzb-UZ`), Vietnamese
-(`vie-VN`), Welsh (`cym-GB`), Western Frisian (`fry-NL`), Western Punjabi (Shahmukhi) (`pnb-PK`), Wolof (`wol-SN`),
-Xhosa (`xho-ZA`), Yiddish (`yid-US`), Yoruba (`yor-NG`), Zulu (`zul-ZA`). Die Namen sind die englischen der
-Locale-Dateien.
+Portuguese (Brazil) (`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi (`pan-IN`), Quechua (`que-PE`), Romanian
+(`ron-RO`), Romansh (`roh-CH`), Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian
+(Српски) (`srp-RS`), Shona (`sna-ZW`), Simplified Chinese (`chi-CN`), Sindhi (`snd-PK`), Sinhala (`sin-LK`),
+Slovak (`slk-SK`), Slovenian (`slv-SI`), Somali (`som-SO`), Spanish (Mexico) (`esl-MX`), Spanish (Spain) (`esl-ES`),
+Standard Moroccan Tamazight (`zgh-MA`), Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac
+(Iraq) (`syr-IQ`), Tajik (`tgk-TJ`), Tamil (India) (`tam-IN`), Tatar (`tat-RU`), Telugu (`tel-IN`), Thai (`tha-TH`),
+Tibetan (`bod-CN`), Tigrinya (`tir-ET`), Traditional Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Turkmen
+(`tuk-TM`), Ukrainian (`ukr-UA`), Upper Sorbian (`hsb-DE`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`), Uzbek
+(`uzb-UZ`), Vietnamese (`vie-VN`), Welsh (`cym-GB`), Western Frisian (`fry-NL`), Western Punjabi (Shahmukhi)
+(`pnb-PK`), Wolof (`wol-SN`), Xhosa (`xho-ZA`), Yiddish (`yid-US`), Yoruba (`yor-NG`), Zulu (`zul-ZA`). Die Namen sind
+die englischen der Locale-Dateien.
 <!-- generated: exp:i18n coverage translations (end) -->
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
@@ -341,19 +341,18 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **144** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **145** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **6** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **5** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 6 nicht übersetzten Sprachen</summary>
+<details><summary>Die 5 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
 | Bodo | बर’ | `brx` | `brx-IN` (Indien) |
 | Esperanto | Esperanto | `epo` | `epo-EO` |
-| Quechua | Runasimi | `que` | `que-PE` (Peru) |
 | Sanskrit | संस्कृत भाषा | `san` | `san-IN` (Indien) |
 | Santali | ᱥᱟᱱᱛᱟᱲᱤ | `sat` | `sat-IN` (Indien) |
 | Tongan | Lea fakatonga | `ton` | `ton-TO` (Tonga) |
@@ -738,7 +737,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `por-TL` | Portuguese (Timor-Leste) | Português (Timor-Leste) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `por-PT` zurück) |
 | `pus-AF` | Pashto | پښتو | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
 | `qlo-ZZ` | Lorem Ipsum | Lorem Ipsum | Keine (Testsprache) | LTR | Lateinisch (`Latn`) | von Hand erstellt, nur Testsprache | — |
-| `que-PE` | Quechua | Runasimi | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `que-PE` | Quechua | Runasimi | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `roh-CH` | Romansh | Rumantsch | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ron-MD` | Romanian (Moldova) | Română (Republica Moldova) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ron-RO` zurück) |
 | `ron-RO` | Romanian | Română | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
