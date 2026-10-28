@@ -10,55 +10,72 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 | Was | Anzahl |
 |---|---:|
 | Sprachen der Administration: Übersetzungen in `share/translations` | **128**, davon 128 vollständig |
-| Locales: Dateien `share/locale/*.ini` | **289**: 282 Sprachen und Länder, 1 Testsprache, 6 Varianten |
+| Locales: Dateien `share/locale/*.ini` | **353**: 346 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
 | davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **125** |
 | davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **25** |
-| Länder und Gebiete der Locales | **175** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **171** |
+| Länder und Gebiete der Locales | **236** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **234** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
 
-![Weltkarte: 171 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 234 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 171 Länder und Gebiete in Grün</summary>
+<details><summary>Die 234 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
 | Afghanistan | AF | `fas-AF` → `fas-IR`, `pus-AF` |
 | Ägypten | EG | `ara-EG` → `ara-SA` |
+| Alandinseln | AX | `swe-AX` → `swe-SE` |
 | Albanien | AL | `sqi-AL` |
 | Algerien | DZ | `ara-DZ` → `ara-SA`, `fre-DZ` → `fre-FR`, `kab-DZ` (nicht übersetzt) |
+| Amerikanisch-Samoa | AS | `eng-AS` (Quelltexte) |
+| Amerikanische Jungferninseln | VI | `eng-VI` (Quelltexte) |
+| Andorra | AD | `cat-AD` → `cat-ES` |
 | Angola | AO | `por-AO` → `por-PT` |
+| Anguilla | AI | `eng-AI` (Quelltexte) |
+| Antigua und Barbuda | AG | `eng-AG` (Quelltexte) |
 | Äquatorialguinea | GQ | `esl-GQ` → `esl-ES`, `fre-GQ` → `fre-FR` |
 | Argentinien | AR | `esl-AR` → `esl-ES` |
 | Armenien | AM | `hye-AM` |
+| Aruba | AW | `dut-AW` → `dut-NL` |
 | Aserbaidschan | AZ | `aze-AZ` |
 | Äthiopien | ET | `amh-ET`, `orm-ET`, `tir-ET` |
 | Australien | AU | `eng-AU` |
+| Bahamas | BS | `eng-BS` (Quelltexte) |
 | Bahrain | BH | `ara-BH` → `ara-SA` |
 | Bangladesch | BD | `ben-BD` |
+| Barbados | BB | `eng-BB` (Quelltexte) |
 | Belarus | BY | `bel-BY` |
 | Belgien | BE | `dut-BE` → `dut-NL`, `fre-BE` → `fre-FR`, `ger-BE` → `ger-DE` |
+| Belize | BZ | `eng-BZ` (Quelltexte) |
 | Benin | BJ | `fre-BJ` → `fre-FR` |
+| Bermuda | BM | `eng-BM` (Quelltexte) |
 | Birma (Myanmar) | MM | `mya-MM` |
 | Bolivien | BO | `esl-BO` → `esl-ES` |
+| Bonaire, Saint Eustatius and Saba | BQ | `dut-BQ` → `dut-NL` |
 | Bosnien und Herzegowina | BA | `bos-BA` |
 | Botsuana | BW | `eng-BW` (Quelltexte) |
 | Brasilien | BR | `por-BR` |
+| Britische Jungferninseln | VG | `eng-VG` (Quelltexte) |
+| Britisches Territorium im Indischen Ozean | IO | `eng-IO` (Quelltexte) |
 | Brunei | BN | `msa-BN` → `msa-MY` |
 | Bulgarien | BG | `bul-BG` |
 | Burkina Faso | BF | `fre-BF` → `fre-FR` |
 | Burundi | BI | `fre-BI` → `fre-FR`, `run-BI` |
 | Chile | CL | `esl-CL` → `esl-ES` |
 | China | CN | `bod-CN`, `chi-CN`, `uig-CN` |
+| Cookinseln | CK | `eng-CK` (Quelltexte) |
 | Costa Rica | CR | `esl-CR` → `esl-ES` |
+| Curaçao | CW | `dut-CW` → `dut-NL` |
 | Dänemark | DK | `dan-DK` |
 | Deutschland | DE | `dsb-DE`, `ger-DE`, `hsb-DE` (nicht übersetzt) |
+| Dominica | DM | `eng-DM` (Quelltexte) |
 | Dominikanische Republik | DO | `esl-DO` → `esl-ES` |
 | Dschibuti | DJ | `ara-DJ` → `ara-SA`, `fre-DJ` → `fre-FR` |
 | Ecuador | EC | `esl-EC` → `esl-ES` |
@@ -68,15 +85,24 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Eritrea | ER | `ara-ER` → `ara-SA` |
 | Estland | EE | `est-EE` |
 | Falklandinseln | FK | `eng-FK` (Quelltexte) |
+| Färöer-Inseln | FO | `dan-FO` → `dan-DK`, `fao-FO` (nicht übersetzt) |
+| Fidschi | FJ | `eng-FJ` (Quelltexte) |
 | Finnland | FI | `fin-FI` |
 | Frankreich | FR | `bre-FR` (nicht übersetzt), `fre-FR`, `oci-FR` (nicht übersetzt) |
+| Französisch-Polynesien | PF | `fre-PF` → `fre-FR` |
+| Französische Süd- und Antarktisgebiete | TF | `fre-TF` → `fre-FR` |
 | Gabun | GA | `fre-GA` → `fre-FR` |
 | Gambia | GM | `eng-GM` (Quelltexte) |
 | Georgien | GE | `kat-GE` |
 | Ghana | GH | `aka-GH`, `eng-GH` (Quelltexte), `ewe-GH` (nicht übersetzt) |
+| Gibraltar | GI | `eng-GI` (Quelltexte) |
+| Grenada | GD | `eng-GD` (Quelltexte) |
 | Griechenland | GR | `ell-GR` |
 | Grönland | GL | `kal-GL` |
+| Guadeloupe | GP | `fre-GP` → `fre-FR` |
+| Guam | GU | `eng-GU` (Quelltexte) |
 | Guatemala | GT | `esl-GT` → `esl-ES` |
+| Guernsey | GG | `eng-GG` (Quelltexte) |
 | Guinea | GN | `fre-GN` → `fre-FR`, `nqo-GN` (nicht übersetzt) |
 | Guinea-Bissau | GW | `por-GW` → `por-PT` |
 | Guyana | GY | `eng-GY` (Quelltexte) |
@@ -85,15 +111,19 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Hongkong | HK | `chi-HK` → `chi-TW` |
 | Indien | IN | `asm-IN`, `ben-IN` → `ben-BD`, `bho-IN`, `brx-IN` (nicht übersetzt), `doi-IN` (nicht übersetzt), `eng-IN` (Quelltexte), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (nicht übersetzt), `kok-IN` (nicht übersetzt), `mai-IN`, `mal-IN`, `mar-IN`, `mni-IN` (nicht übersetzt), `ori-IN`, `pan-IN`, `san-IN` (nicht übersetzt), `sat-IN` (nicht übersetzt), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
 | Indonesien | ID | `ind-ID`, `jav-ID`, `sun-ID` |
+| Insel Man | IM | `eng-IM` (Quelltexte) |
 | Irak | IQ | `ara-IQ` → `ara-SA`, `arc-IQ`, `ckb-IQ`, `syr-IQ` |
 | Iran (Islamische Republik) | IR | `fas-IR` |
 | Irland | IE | `eng-IE` (Quelltexte), `gle-IE` |
 | Island | IS | `isl-IS` |
 | Israel | IL | `heb-IL`, `huy-IL` |
 | Italien | IT | `ita-IT` |
+| Jamaika | JM | `eng-JM` (Quelltexte) |
 | Japan | JP | `jpn-JP` |
 | Jemen | YE | `ara-YE` → `ara-SA` |
+| Jersey | JE | `eng-JE` (Quelltexte) |
 | Jordanien | JO | `ara-JO` → `ara-SA` |
+| Kaimaninseln | KY | `eng-KY` (Quelltexte) |
 | Kambodscha | KH | `khm-KH` |
 | Kamerun | CM | `fre-CM` → `fre-FR` |
 | Kanada | CA | `eng-CA` (Quelltexte), `fre-CA` → `fre-FR` |
@@ -102,12 +132,15 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Katar | QA | `ara-QA` → `ara-SA` |
 | Kenia | KE | `eng-KE` (Quelltexte), `kik-KE`, `swa-KE` |
 | Kirgistan | KG | `kir-KG` |
+| Kiribati | KI | `eng-KI` (Quelltexte) |
 | Kolumbien | CO | `esl-CO` → `esl-ES` |
 | Komoren | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Kongo (Republik Kongo) | CG | `fre-CG` → `fre-FR` |
+| Kosovo | XK | `sqi-XK` → `sqi-AL` |
 | Kroatien | HR | `cro-HR` |
 | Kuba | CU | `esl-CU` → `esl-ES` |
 | Kuwait | KW | `ara-KW` → `ara-SA` |
+| Land Sint Maarten | SX | `dut-SX` → `dut-NL` |
 | Laos | LA | `lao-LA` |
 | Lesotho | LS | `eng-LS` (Quelltexte) |
 | Lettland | LV | `lav-LV` |
@@ -117,34 +150,47 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Liechtenstein | LI | `ger-LI` → `ger-DE` |
 | Litauen | LT | `lit-LT` |
 | Luxemburg | LU | `fre-LU` → `fre-FR`, `ger-LU` → `ger-DE`, `ltz-LU` |
+| Macau | MO | `chi-MO` → `chi-TW` |
 | Madagaskar | MG | `fre-MG` → `fre-FR`, `mlg-MG` |
 | Malawi | MW | `eng-MW` (Quelltexte) |
 | Malaysien | MY | `msa-MY` |
 | Mali | ML | `bam-ML` (nicht übersetzt), `fre-ML` → `fre-FR` |
 | Malta | MT | `mlt-MT` |
 | Marokko | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` (nicht übersetzt) |
+| Marshall-Inseln | MH | `eng-MH` (Quelltexte) |
+| Martinique | MQ | `fre-MQ` → `fre-FR` |
 | Mauretanien | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
 | Mauritius | MU | `fre-MU` → `fre-FR` |
 | Mexiko | MX | `esl-MX` |
+| Mikronesien | FM | `eng-FM` (Quelltexte) |
+| Moldau (Republik Moldau) | MD | `ron-MD` → `ron-RO` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mongolei | MN | `mon-MN` |
+| Montenegro | ME | `srp-ME` → `srp-RS` |
 | Mosambik | MZ | `por-MZ` → `por-PT` |
 | Namibia | NA | `eng-NA` (Quelltexte) |
+| Nauru | NR | `eng-NR` (Quelltexte) |
 | Nepal | NP | `nep-NP` |
+| Neukaledonien | NC | `fre-NC` → `fre-FR` |
 | Neuseeland | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` |
 | Niederlande | NL | `dut-NL`, `fry-NL` (nicht übersetzt) |
 | Niger | NE | `fre-NE` → `fre-FR` |
 | Nigeria | NG | `eng-NG` (Quelltexte), `hau-NG`, `ibo-NG`, `pcm-NG`, `yor-NG` |
 | Nikaragua | NI | `esl-NI` → `esl-ES` |
+| Niue | NU | `eng-NU` (Quelltexte) |
+| Nördliche Marianen | MP | `eng-MP` (Quelltexte) |
 | Norwegen | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` (nicht übersetzt) |
 | Oman | OM | `ara-OM` → `ara-SA` |
 | Österreich | AT | `ger-AT` → `ger-DE` |
 | Pakistan | PK | `eng-PK` (Quelltexte), `pnb-PK`, `snd-PK`, `urd-PK` |
 | Palästinensische Autonomiegebiete | PS | `ara-PS` → `ara-SA` |
+| Palau | PW | `eng-PW` (Quelltexte) |
 | Panama | PA | `esl-PA` → `esl-ES` |
+| Papua-Neuguinea | PG | `eng-PG` (Quelltexte) |
 | Paraguay | PY | `esl-PY` → `esl-ES` |
 | Peru | PE | `esl-PE` → `esl-ES`, `que-PE` (nicht übersetzt) |
 | Philippinen | PH | `ceb-PH`, `eng-PH` (Quelltexte), `fil-PH` |
+| Pitcairn | PN | `eng-PN` (Quelltexte) |
 | Polen | PL | `pol-PL` |
 | Portugal | PT | `por-PT` |
 | Puerto Rico | PR | `esl-PR` → `esl-ES` |
@@ -152,7 +198,9 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Ruanda | RW | `fre-RW` → `fre-FR`, `kin-RW` |
 | Rumänien | RO | `ron-RO` |
 | Russland | RU | `che-RU`, `rus-RU`, `tat-RU` |
+| Saint Kitts und Nevis | KN | `eng-KN` (Quelltexte) |
 | Sambia | ZM | `eng-ZM` (Quelltexte) |
+| Samoa | WS | `eng-WS` (Quelltexte) |
 | Sao Tomé und Principe | ST | `por-ST` → `por-PT` |
 | Saudi-Arabien | SA | `ara-SA` |
 | Schweden | SE | `swe-SE` |
@@ -165,12 +213,19 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Singapur | SG | `chi-SG` → `chi-CN`, `eng-SG` (Quelltexte), `msa-SG` → `msa-MY`, `tam-SG` → `tam-IN` |
 | Slowakei (Slowakische Republik) | SK | `slk-SK` |
 | Slowenien | SI | `slv-SI` |
+| Solomon-Inseln | SB | `eng-SB` (Quelltexte) |
 | Somalia | SO | `ara-SO` → `ara-SA`, `som-SO` |
 | Spanien | ES | `ast-ES` (nicht übersetzt), `cat-ES`, `esl-ES`, `eus-ES`, `glg-ES` |
 | Sri Lanka | LK | `sin-LK`, `tam-LK` → `tam-IN` |
+| St. Barthélemy | BL | `fre-BL` → `fre-FR` |
 | St. Helena | SH | `eng-SH` (Quelltexte) |
+| St. Lucia | LC | `eng-LC` (Quelltexte) |
+| St. Martin | MF | `fre-MF` → `fre-FR` |
+| St. Pierre und Miquelon | PM | `fre-PM` → `fre-FR` |
+| St. Vincent und die Grenadinen | VC | `eng-VC` (Quelltexte) |
 | Staat der Vatikanstadt | VA | `lat-VA` |
 | Sudan | SD | `ara-SD` → `ara-SA` |
+| Südgeorgien und die Südlichen Sandwichinseln | GS | `eng-GS` (Quelltexte) |
 | Südkorea | KR | `kor-KR` |
 | Südsudan | SS | `eng-SS` (Quelltexte) |
 | Suriname | SR | `dut-SR` → `dut-NL` |
@@ -180,12 +235,18 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Taiwan | TW | `chi-TW` |
 | Tansania | TZ | `swa-TZ` → `swa-KE` |
 | Thailand | TH | `tha-TH` |
+| Timor-Leste | TL | `por-TL` → `por-PT` |
 | Togo | TG | `fre-TG` → `fre-FR` |
+| Tokelau | TK | `eng-TK` (Quelltexte) |
+| Tonga | TO | `eng-TO` (Quelltexte), `ton-TO` (nicht übersetzt) |
+| Trinidad und Tobago | TT | `eng-TT` (Quelltexte) |
 | Tschad | TD | `ara-TD` → `ara-SA`, `fre-TD` → `fre-FR` |
 | Tschechien | CZ | `cze-CZ` |
 | Tunesien | TN | `ara-TN` → `ara-SA`, `fre-TN` → `fre-FR` |
 | Türkei | TR | `kur-TR`, `tur-TR` |
 | Turkmenistan | TM | `tuk-TM` |
+| Turks- und Caicosinseln | TC | `eng-TC` (Quelltexte) |
+| Tuwalu | TV | `eng-TV` (Quelltexte) |
 | Uganda | UG | `eng-UG` (Quelltexte), `lug-UG` |
 | Ukraine | UA | `ukr-UA` |
 | Ungarn | HU | `hun-HU` |
@@ -197,20 +258,20 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Vereinigte Arabische Emirate | AE | `ara-AE` → `ara-SA` |
 | Vereinigtes Königreich | GB | `cym-GB`, `eng-GB` (Quelltexte), `gla-GB` |
 | Vietnam | VN | `vie-VN` |
+| Wallis und Futuna | WF | `fre-WF` → `fre-FR` |
 | Westsahara | EH | `ara-EH` → `ara-SA` |
 | Zaire | CD | `fre-CD` → `fre-FR`, `lin-CD` |
 | Zentralafrikanische Republik | CF | `fre-CF` → `fre-FR` |
+| Zypern | CY | `ell-CY` → `ell-GR`, `tur-CY` → `tur-TR` |
 
 </details>
 
-<details><summary>Die 4 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
+<details><summary>Die 2 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
 | Bhutan | BT | `dzo-BT` |
-| Färöer-Inseln | FO | `fao-FO` |
 | Malediven | MV | `div-MV` |
-| Tonga | TO | `ton-TO` |
 
 </details>
 
@@ -222,7 +283,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 26. Oktober 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-Kurz gefasst: **289 Locale-Dateien** (282 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
+Kurz gefasst: **353 Locale-Dateien** (346 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **128
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`),
@@ -429,11 +490,13 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `bre-FR` | Breton | Brezhoneg | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `brx-IN` | Bodo | बर’ | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `bul-BG` | Bulgarian | Български | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % |
+| `cat-AD` | Catalan (Andorra) | Català (Andorra) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `cat-ES` zurück) |
 | `cat-ES` | Catalan | Català | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `ceb-PH` | Cebuano | Cebuano | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `che-RU` | Chechen | Нохчийн | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % |
 | `chi-CN` | Simplified Chinese | 简体中文 | Ostasien | LTR | Han (vereinfacht) (`Hans`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 100 % |
 | `chi-HK` | Traditional Chinese (HongKong) | 繁體中文 (香港) | Ostasien | LTR | Han (traditionell) (`Hant`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 100 % (fällt auf `chi-TW` zurück) |
+| `chi-MO` | Chinese (Macao SAR China) | 中文 (中國澳門特別行政區) | Ostasien | LTR | Han (traditionell) (`Hant`) | CLDR 44 | 100 % (fällt auf `chi-TW` zurück) |
 | `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Südostasien | LTR | Han (vereinfacht) (`Hans`) | CLDR 44 | 100 % (fällt auf `chi-CN` zurück) |
 | `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | Ostasien | LTR | Han (traditionell) (`Hant`) | älter, von Hand erstellt | 100 % |
 | `ckb-IQ` | Central Kurdish | کوردیی ناوەندی | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
@@ -441,41 +504,88 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `cym-GB` | Welsh | Cymraeg | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `cze-CZ` | Czech | Čeština | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `dan-DK` | Danish | Dansk | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `dan-FO` | Danish (Faroe Islands) | Dansk (Færøerne) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `dan-DK` zurück) |
 | `div-MV` | Dhivehi | ދިވެހި | Südasien | RTL | Thaana (`Thaa`) | Namen von Hand, Konventionen aus CLDR 44 | — |
 | `doi-IN` | Dogri | डोगरी | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `dsb-DE` | Lower Sorbian | Dolnoserbšćina | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `dut-AW` | Dutch (Aruba) | Nederlands (Aruba) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `dut-NL` zurück) |
 | `dut-BE` | Dutch (Belgium) | Nederlands (België) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `dut-NL` zurück) |
+| `dut-BQ` | Dutch (Caribbean Netherlands) | Nederlands (Caribisch Nederland) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `dut-NL` zurück) |
+| `dut-CW` | Dutch (Curaçao) | Nederlands (Curaçao) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `dut-NL` zurück) |
 | `dut-NL` | Dutch (Netherlands) | Nederlands (Nederland) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `dut-SR` | Dutch (Suriname) | Nederlands (Suriname) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `dut-NL` zurück) |
+| `dut-SX` | Dutch (Sint Maarten) | Nederlands (Sint-Maarten) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `dut-NL` zurück) |
 | `dzo-BT` | Dzongkha | རྫོང་ཁ | Südasien | LTR | Tibetisch (`Tibt`) | CLDR 44 | — |
+| `ell-CY` | Greek (Cyprus) | Ελληνικά (Κύπρος) | Europa | LTR | Griechisch (`Grek`) | CLDR 44 | 100 % (fällt auf `ell-GR` zurück) |
 | `ell-GR` | Greek (Hellenic) | Ελληνικά | Europa | LTR | Griechisch (`Grek`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 100 % |
+| `eng-AG` | English (Antigua & Barbuda) | English (Antigua & Barbuda) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-AI` | English (Anguilla) | English (Anguilla) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-AS` | English (American Samoa) | English (American Samoa) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-AU` | English (Australia) | English (Australia) | Ozeanien | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `eng-BB` | English (Barbados) | English (Barbados) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-BM` | English (Bermuda) | English (Bermuda) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-BS` | English (Bahamas) | English (Bahamas) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-BW` | English (Botswana) | English (Botswana) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-BZ` | English (Belize) | English (Belize) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-CA` | English (Canada) | English (Canada) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `eng-CK` | English (Cook Islands) | English (Cook Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-DM` | English (Dominica) | English (Dominica) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-FJ` | English (Fiji) | English (Fiji) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-FK` | English (Falkland Islands) | English (Falkland Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-FM` | English (Micronesia) | English (Micronesia) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-GB` | English (United Kingdom) | English (United Kingdom) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `eng-GB@euro` | Variant of `eng-GB`: Euro support |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | 100 % |
+| `eng-GD` | English (Grenada) | English (Grenada) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-GG` | English (Guernsey) | English (Guernsey) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-GH` | English (Ghana) | English (Ghana) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-GI` | English (Gibraltar) | English (Gibraltar) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-GM` | English (Gambia) | English (Gambia) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-GS` | English (South Georgia & South Sandwich Islands) | English (South Georgia & South Sandwich Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-GU` | English (Guam) | English (Guam) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-GY` | English (Guyana) | English (Guyana) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-IE` | English (Ireland) | English (Ireland) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-IM` | English (Isle of Man) | English (Isle of Man) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-IN` | English (India) | English (India) | Südasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-IO` | English (British Indian Ocean Territory) | English (British Indian Ocean Territory) | Südasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-JE` | English (Jersey) | English (Jersey) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-JM` | English (Jamaica) | English (Jamaica) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-KE` | English (Kenya) | English (Kenya) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-KI` | English (Kiribati) | English (Kiribati) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-KN` | English (St. Kitts & Nevis) | English (St Kitts & Nevis) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-KY` | English (Cayman Islands) | English (Cayman Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-LC` | English (St. Lucia) | English (St Lucia) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-LR` | English (Liberia) | English (Liberia) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-LS` | English (Lesotho) | English (Lesotho) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-MH` | English (Marshall Islands) | English (Marshall Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-MP` | English (Northern Mariana Islands) | English (Northern Mariana Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MW` | English (Malawi) | English (Malawi) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NA` | English (Namibia) | English (Namibia) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NG` | English (Nigeria) | English (Nigeria) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-NR` | English (Nauru) | English (Nauru) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-NU` | English (Niue) | English (Niue) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NZ` | English (New Zealand) | English (New Zealand) | Ozeanien | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % (fällt auf `eng-AU` zurück) |
+| `eng-PG` | English (Papua New Guinea) | English (Papua New Guinea) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-PH` | English (Philippines) | English (Philippines) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-PK` | English (Pakistan) | English (Pakistan) | Südasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-PN` | English (Pitcairn Islands) | English (Pitcairn Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-PW` | English (Palau) | English (Palau) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-SB` | English (Solomon Islands) | English (Solomon Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-SG` | English (Singapore) | English (Singapore) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-SH` | English (St. Helena) | English (St Helena) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-SL` | English (Sierra Leone) | English (Sierra Leone) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-SS` | English (South Sudan) | English (South Sudan) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-SZ` | English (Eswatini) | English (Eswatini) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-TC` | English (Turks & Caicos Islands) | English (Turks & Caicos Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-TK` | English (Tokelau) | English (Tokelau) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-TO` | English (Tonga) | English (Tonga) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-TT` | English (Trinidad & Tobago) | English (Trinidad & Tobago) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-TV` | English (Tuvalu) | English (Tuvalu) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-UG` | English (Uganda) | English (Uganda) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-US` | English (United States) | English (United States) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `eng-VC` | English (St. Vincent & Grenadines) | English (St Vincent & the Grenadines) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-VG` | English (British Virgin Islands) | English (British Virgin Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-VI` | English (U.S. Virgin Islands) | English (U.S. Virgin Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-WS` | English (Samoa) | English (Samoa) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-ZA` | English (South Africa) | English (South Africa) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-ZM` | English (Zambia) | English (Zambia) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-ZW` | English (Zimbabwe) | English (Zimbabwe) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -514,6 +624,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-BF` | French (Burkina Faso) | Français (Burkina Faso) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-BI` | French (Burundi) | Français (Burundi) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-BJ` | French (Benin) | Français (Bénin) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-BL` | French (St. Barthélemy) | Français (Saint-Barthélemy) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-CA` | French (Canada) | Français (Canada) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-CD` | French (Congo - Kinshasa) | Français (Congo-Kinshasa) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-CF` | French (Central African Republic) | Français (République centrafricaine) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
@@ -526,24 +637,32 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-FR` | French (France) | Français (France) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `fre-GA` | French (Gabon) | Français (Gabon) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GN` | French (Guinea) | Français (Guinée) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-GP` | French (Guadeloupe) | Français (Guadeloupe) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GQ` | French (Equatorial Guinea) | Français (Guinée équatoriale) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-HT` | French (Haiti) | Français (Haïti) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-KM` | French (Comoros) | Français (Comores) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-LU` | French (Luxembourg) | Français (Luxembourg) | Europa | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-MA` | French (Morocco) | Français (Maroc) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-MC` | French (Monaco) | Français (Monaco) | Europa | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-MF` | French (St. Martin) | Français (Saint-Martin) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-MG` | French (Madagascar) | Français (Madagascar) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-ML` | French (Mali) | Français (Mali) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-MQ` | French (Martinique) | Français (Martinique) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-MR` | French (Mauritania) | Français (Mauritanie) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-MU` | French (Mauritius) | Français (Maurice) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-NC` | French (New Caledonia) | Français (Nouvelle-Calédonie) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-NE` | French (Niger) | Français (Niger) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-PF` | French (French Polynesia) | Français (Polynésie française) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-PM` | French (St. Pierre & Miquelon) | Français (Saint-Pierre-et-Miquelon) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-RW` | French (Rwanda) | Français (Rwanda) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-SC` | French (Seychelles) | Français (Seychelles) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-SN` | French (Senegal) | Français (Sénégal) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-TD` | French (Chad) | Français (Tchad) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-TF` | French (French Southern Territories) | Français (Terres australes françaises) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-TG` | French (Togo) | Français (Togo) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-TN` | French (Tunisia) | Français (Tunisie) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-VU` | French (Vanuatu) | Français (Vanuatu) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-WF` | French (Wallis & Futuna) | Français (Wallis-et-Futuna) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fry-NL` | Western Frisian | Frysk | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `ful-SN` | Fula | Pulaar | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ger-AT` | German (Austria) | Deutsch (Österreich) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ger-DE` zurück) |
@@ -627,10 +746,12 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `por-PT` | Portuguese (Portugal) | Português | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `por-PT@euro` | Variant of `por-PT`: Suporte para Euro |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | 100 % (fällt auf `por-PT` zurück) |
 | `por-ST` | Portuguese (São Tomé & Príncipe) | Português (São Tomé e Príncipe) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `por-PT` zurück) |
+| `por-TL` | Portuguese (Timor-Leste) | Português (Timor-Leste) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `por-PT` zurück) |
 | `pus-AF` | Pashto | پښتو | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
 | `qlo-ZZ` | Lorem Ipsum | Lorem Ipsum | Keine (Testsprache) | LTR | Lateinisch (`Latn`) | von Hand erstellt, nur Testsprache | — |
 | `que-PE` | Quechua | Runasimi | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `roh-CH` | Romansh | Rumantsch | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `ron-MD` | Romanian (Moldova) | Română (Republica Moldova) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ron-RO` zurück) |
 | `ron-RO` | Romanian | Română | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `run-BI` | Kirundi | Ikirundi | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `rus-RU` | Russian | Русский | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 100 % |
@@ -645,10 +766,13 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `snd-PK` | Sindhi | سنڌي | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
 | `som-SO` | Somali | Soomaali | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `sqi-AL` | Albanian | Shqip | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `sqi-XK` | Albanian (Kosovo) | Shqip (Kosovë) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `sqi-AL` zurück) |
+| `srp-ME` | Serbian (Montenegro) | Српски (Црна Гора) | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % (fällt auf `srp-RS` zurück) |
 | `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 100 % |
 | `sun-ID` | Sundanese | Basa Sunda | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `swa-KE` zurück) |
+| `swe-AX` | Swedish (Åland Islands) | Svenska (Åland) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `swe-SE` zurück) |
 | `swe-SE` | Swedish | Svenska | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | 100 % |
 | `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | 100 % (fällt auf `syr-IQ` zurück) |
@@ -663,10 +787,10 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `tlh-QO` | Klingon | tlhIngan Hol | Weltweit (fiktiv) | LTR | Lateinisch (`Latn`) | von Hand erstellt | 100 % |
 | `ton-TO` | Tongan | Lea fakatonga | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `tuk-TM` | Turkmen | Türkmen dili | Zentralasien und Kaukasus | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `tur-CY` | Turkish (Cyprus) | Türkçe (Kıbrıs) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `tur-TR` zurück) |
 | `tur-TR` | Turkish | Türkçe | Naher Osten | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `uig-CN` | Uyghur | ئۇيغۇرچە | Ostasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
 | `ukr-UA` | Ukrainian | Українська | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 100 % |
-| `ara-SA` | 100% (17307 of 17307) | 100 % |
 | `urd-IN` | Urdu (India) | اردو (بھارت) | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % (fällt auf `urd-PK` zurück) |
 | `urd-PK` | Urdu (Pakistan) | اردو (پاکستان) | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
 | `uzb-UZ` | Uzbek | O‘zbek | Zentralasien und Kaukasus | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |

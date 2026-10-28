@@ -70,8 +70,9 @@ class expI18nCoverageMap
     /** The height of the legend strip below the map, in map units */
     const LEGEND_HEIGHT = 140;
 
-    /** Region codes that name no country: user-assigned ISO 3166-1 codes (QO, ZZ ...) */
-    const NO_COUNTRY = '/^(AA|Q[M-Z]|X[A-Z]|ZZ)$/';
+    /** Region codes that name no country: user-assigned ISO 3166-1 codes (QO, ZZ ...); XK, Kosovo, is the one
+     * user-assigned code that CLDR, the European Union and the outline of the map use for a country */
+    const NO_COUNTRY = '/^(AA|Q[M-Z]|X[A-JL-Z]|ZZ)$/';
 
     /** @var string the installation root, without a trailing slash */
     protected $root;
