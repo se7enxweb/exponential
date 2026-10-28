@@ -6526,7 +6526,7 @@ c1d35c36ad8001ff08accbbb4dcb4b7f  doc/eng-us/features/6.0/transfer-registry.md
 57c4106059d194a44e5f1db41823a12d  doc/eng-us/features/6.0/translations-and-languages.md
 52655ccd8d99de4f991040e3be60a92a  doc/eng-us/features/6.0/trash-who-and-where.md
 01c1af354bf09f4fd77c533d051b7106  doc/eng-us/features/6.0/ui-switch-design.md
-6586bcc3de074253bac811b9c4f7aaa1  doc/eng-us/features/6.0/ui-switch-languages.md
+5ef33046e1d4d1024b83856954e4a4d6  doc/eng-us/features/6.0/ui-switch-languages.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 86e455aa2147f5763a183b396caab8c7  doc/eng-us/features/6.0/user-hygiene.md
 207228500b8e72a85d90aeb0c9f0a5a0  doc/eng-us/features/6.0/user-sessions.md
@@ -15549,7 +15549,7 @@ e24a7bd7bc416dfbe85b84c2aa2a29d9  doc/ger-de/funktionen/6.0/transfer-laeufe.md
 cf540cda5c81291d0b6b879de40bd2f7  doc/ger-de/funktionen/6.0/transfer-register.md
 d8811a6943bde3813b7afe286f9d2629  doc/ger-de/funktionen/6.0/uebersetzungen-und-sprachen.md
 de3819d9e1d4985d7a1647e5e065add1  doc/ger-de/funktionen/6.0/ui-umschalter-design.md
-31d14e5c1b5fad8438595b66c4a6b54e  doc/ger-de/funktionen/6.0/ui-umschalter-sprachen.md
+80d54e583466897653208d6d89f50395  doc/ger-de/funktionen/6.0/ui-umschalter-sprachen.md
 2cd891c2e50279534ff464caeb48d90c  doc/ger-de/funktionen/6.0/ui-umschalter.md
 491d879bcd909b60ac5fb9ffe5a83da4  doc/ger-de/funktionen/6.0/umbenennung-in-exponential.md
 fdbd3678418acb16837dc2783cd78dd7  doc/ger-de/funktionen/6.0/umgebungseinstellungen.md
@@ -22761,7 +22761,7 @@ d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 7b7d28344ef2191a3ba27703ab4b304b  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 046ae550b5ef2b208448e9407174c875  kernel/classes/expvelocityconfiglayout.php
-82a2caa706092dbefeac60fde834c5ce  kernel/classes/expvelocitydeploy.php
+093c479f48e03a303ce5207d19a8f608  kernel/classes/expvelocitydeploy.php
 ca152db03e020c7bbe4ba8951c72a906  kernel/classes/expvelocityfrankenphp.php
 7c4ebba6437621654ba6ac7004296173  kernel/classes/expvelocityfrankenphpinstaller.php
 600c52c5993053d67fa78bde9b37ff99  kernel/classes/expvelocitymarkers.php
@@ -22964,7 +22964,7 @@ d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
 c27d8162e494a41713e53e5af9cf0d7e  kernel/classes/help/exphelpremoteimages.php
 ee756ea5fba2ba58e03c8c75da88abd7  kernel/classes/help/exphelpsearch.php
 38c99baeae5129cb1c4365659cfadd1f  kernel/classes/i18n/expi18ncoveragemap.php
-9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
+526cda33b51ca4b46597f0c1aebf902e  kernel/classes/i18n/expi18nfallbackreport.php
 3b3e89da20129fdcb5a216fe5780cd34  kernel/classes/i18n/expi18ntranslationwaves.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
 203479e7dccaed76ef07b8e33efa41a9  kernel/classes/ini/actions/expiniactionactions.php
@@ -23164,7 +23164,7 @@ fcb8f52f2118ee9e605f129c6723ff9d  kernel/classes/transfer/expkerneltransfertask.
 3e015343c58fde0e208b1f68b7e4a6a6  kernel/classes/transfer/expkerneltransfertool.php
 df88021792b0b11ae5e52e4fb8714679  kernel/classes/uiswitch/expuiswitch.php
 cd54fa40fed2f285f3992b4a8a4634aa  kernel/classes/uiswitch/expuiswitchdesignprovider.php
-74880ba42f190a2c60ace445c81e0660  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
+f395e6c4bf8caa1211ed8ca77d443ff8  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
 be939cdaec3f7a64802683939dcd7c6b  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 f3e123acabebb7cd6c72627fc0419402  kernel/classes/uiswitch/expuiswitchprovider.php
 20500f7b2073d61636cb8c7261e58578  kernel/classes/uiswitch/expuiswitchproviderinterface.php
@@ -25847,7 +25847,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-b662cafc72fd02e99a1803002a7a123a  tests/test-map.json
+4d9ab499b140f5980c7f519b9dfd4ae1  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -26767,6 +26767,7 @@ a2ac644b2f632bc8978f9753406fa288  tests/tests/kernel/classes/trash/TrashedByColu
 52fe322a79e2cb6e5252b1e1328bcdb5  tests/tests/kernel/classes/trash/eZContentObjectTrashOldSchemaTest.php
 0a909c2ed4309301ba5e654a7be1d57c  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 2a1c3e2261fa870f1f85265314db67b7  tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php
+c019cebab4555dd22110b0984146e8c2  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageCatalogueScanTest.php
 5dbbb3796697a8328c0edee53a7e0748  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php
 9e9196bdb9fc31635c0f3674910665d2  tests/tests/kernel/classes/uiswitch/expUISwitchTest.php
 16869d53d788cbb17b7831da7c4cadbf  tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php

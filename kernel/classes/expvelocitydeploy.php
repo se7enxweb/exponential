@@ -141,6 +141,8 @@ class expVelocityDeploy
         foreach ( $this->helpCacheSteps() as $step )
             $steps[] = $step;
 
+        $steps[] = $this->languageCacheStep();
+
         $steps[] = $this->warmUpStep();
 
         return $steps;
@@ -196,6 +198,32 @@ class expVelocityDeploy
             );
         }
         return $steps;
+    }
+
+    /**
+     * The interface language caches (expUISwitchLanguageCatalogue, expI18nFallbackReport: the coverage of every
+     * translation, which Setup > Interface languages and the language choice show): ./console exp:i18n fallbacks
+     * builds what changed since they were written, the translations a landing changed, so no visitor waits for it.
+     * They are no cache a deploy clears; without changed translations this takes a moment. A failure is reported
+     * and does not stop the deploy: the page builds them itself.
+     *
+     * @return array
+     */
+    protected function languageCacheStep()
+    {
+        $args = array( 'bin/php/console', 'exp:i18n', 'fallbacks', '--only=own', '--allow-root-user', '--no-colors' );
+        $self = $this;
+        return array(
+            'id' => 'language-cache', 'label' => 'interface language caches', 'skip' => '',
+            'command' => 'php ' . implode( ' ', $args ),
+            'dry' => function () use ( $args ) { return 'php ' . implode( ' ', $args ); },
+            'run' => function () use ( $self, $args ) {
+                list( $code, $output ) = $self->runCommand( array_merge( array( PHP_BINARY ), $args ) );
+                if ( $code !== 0 || preg_match( '/(Fatal error|Exception|Parse error)/', implode( "\n", $output ) ) )
+                    return array( null, 'not built (exit ' . $code . '); the page builds them itself' );
+                return array( true, 'built' );
+            },
+        );
     }
 
     /**
