@@ -1,8 +1,8 @@
 {* The filter of the order lists by the siteaccess (store or site) the orders were placed in (expOrderSiteaccess,
    doc/eng-us/features/6.0/order-siteaccess.md).
 
-   A form of its own, sent with GET, outside the list's form: the view answers with the list's address carrying
-   (siteaccess)/<name>, so paging and sorting keep the filter. "Unknown" lists the orders placed before the
+   A form of its own, sent with GET, outside the list's form: the view lists what it chose, and the links of the
+   page (paging, sorting, the list's form) carry it as (siteaccess)/<name>, so they keep the filter. "Unknown" lists the orders placed before the
    siteaccess was recorded. The texts reuse messages every catalogue translates already.
 
    page_uri         the list's address, '/shop/orderlist' or '/shop/archivelist'

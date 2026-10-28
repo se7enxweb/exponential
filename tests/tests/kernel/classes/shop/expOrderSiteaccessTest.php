@@ -135,11 +135,16 @@ class expOrderSiteaccessTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', expOrderSiteaccess::uriSuffix( null ) );
         $this->assertSame( '/(siteaccess)/-', expOrderSiteaccess::uriSuffix( '' ) );
         $this->assertSame( '/(siteaccess)/shop_de', expOrderSiteaccess::uriSuffix( 'shop_de' ) );
-        $this->assertSame( '/shop/orderlist/(sort)/created/(dir)/asc/(siteaccess)/shop_de',
-                           expOrderSiteaccess::filterUri( '/shop/orderlist/(sort)/created/(dir)/asc', 'shop_de' ) );
-        $this->assertSame( '/shop/archivelist', expOrderSiteaccess::filterUri( '/shop/archivelist', '' ), 'all orders' );
-        $this->assertSame( '/shop/archivelist', expOrderSiteaccess::filterUri( '/shop/archivelist', "x'y" ), 'no name: all orders' );
-        $this->assertSame( '/shop/archivelist/(siteaccess)/-', expOrderSiteaccess::filterUri( '/shop/archivelist', '-' ) );
+    }
+
+    public function testTheFormWinsOverTheViewParameter()
+    {
+        $this->assertSame( 'admin', expOrderSiteaccess::filterFromRequest( 'admin', 'site' ), 'the form chose admin' );
+        $this->assertNull( expOrderSiteaccess::filterFromRequest( '', 'site' ), 'the form chose All' );
+        $this->assertSame( '', expOrderSiteaccess::filterFromRequest( '-', null ), 'the form chose Unknown' );
+        $this->assertNull( expOrderSiteaccess::filterFromRequest( "x'y", 'site' ), 'no name: every order' );
+        $this->assertSame( 'site', expOrderSiteaccess::filterFromRequest( null, 'site' ), 'no form: the address decides' );
+        $this->assertNull( expOrderSiteaccess::filterFromRequest( null, null ) );
     }
 
     public function testConditions()

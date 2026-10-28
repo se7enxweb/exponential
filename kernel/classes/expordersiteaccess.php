@@ -108,16 +108,17 @@ class expOrderSiteaccess
     }
 
     /**
-     * Where the filter form of an order list leads: the list's address with the chosen siteaccess as a view
-     * parameter, so paging, sorting and a link keep it. A choice that is no siteaccess name lists every order.
+     * The filter an order list shows: the choice of the filter form (sent with GET; '' is every order) when the
+     * request has one, else the (siteaccess) view parameter the page's links carry. A module redirect keeps the
+     * query string, so the form is answered directly rather than redirected to the address with the parameter.
      *
-     * @param string $baseUri the list's address with the view parameters it keeps (sort, dir)
-     * @param mixed $chosen the value of the form's select: '' for all, UNKNOWN_PARAMETER, or a name
-     * @return string
+     * @param mixed $formValue the form's SiteaccessFilter, null when the request has none
+     * @param mixed $viewParameter the (siteaccess) view parameter, null when the address has none
+     * @return string|null see filterFromParameter()
      */
-    public static function filterUri( $baseUri, $chosen )
+    public static function filterFromRequest( $formValue, $viewParameter )
     {
-        return $baseUri . self::uriSuffix( self::filterFromParameter( $chosen ) );
+        return self::filterFromParameter( $formValue !== null ? $formValue : $viewParameter );
     }
 
     /**

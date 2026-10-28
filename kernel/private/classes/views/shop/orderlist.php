@@ -62,15 +62,11 @@ class Orderlist extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
 
         // The siteaccess (store or site) the orders were placed in, as the view parameter (siteaccess)/<name>, '-'
-        // for the orders without one (expOrderSiteaccess). The filter form sends it as SiteaccessFilter and is
-        // answered with the address that carries it, so paging and sorting keep it.
-        if ( $http->hasGetVariable( 'SiteaccessFilter' ) )
-        {
-            $module->redirectTo( \expOrderSiteaccess::filterUri( '/shop/orderlist/(sort)/' . $sortField . '/(dir)/' . $sortOrder,
-                                                                 $http->getVariable( 'SiteaccessFilter' ) ) );
-            return $this->viewResult( null, null );
-        }
-        $siteaccessFilter = \expOrderSiteaccess::filterFromParameter( isset( $userParameters['siteaccess'] ) ? $userParameters['siteaccess'] : null );
+        // for the orders without one (expOrderSiteaccess). The filter form sends it as SiteaccessFilter (GET), which
+        // wins; the links of the page (paging, sorting, the form's action) carry it as the view parameter.
+        $siteaccessFilter = \expOrderSiteaccess::filterFromRequest(
+            $http->hasGetVariable( 'SiteaccessFilter' ) ? $http->getVariable( 'SiteaccessFilter' ) : null,
+            isset( $userParameters['siteaccess'] ) ? $userParameters['siteaccess'] : null );
 
         // The RemoveButton is not present in the orderlist, but is here for backwards
         // compatibility. Simply replace the ArchiveButton for the RemoveButton will

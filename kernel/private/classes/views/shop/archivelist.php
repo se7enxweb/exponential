@@ -59,14 +59,12 @@ class Archivelist extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
 
         // The siteaccess (store or site) the orders were placed in, as the view parameter (siteaccess)/<name>, '-'
-        // for the orders without one (expOrderSiteaccess); the filter form is answered with the address carrying it.
-        if ( $http->hasGetVariable( 'SiteaccessFilter' ) )
-        {
-            $module->redirectTo( \expOrderSiteaccess::filterUri( '/shop/archivelist', $http->getVariable( 'SiteaccessFilter' ) ) );
-            return $this->viewResult( null, null );
-        }
+        // for the orders without one (expOrderSiteaccess). The filter form sends it as SiteaccessFilter (GET), which
+        // wins; the links of the page (paging, the form's action) carry it as the view parameter.
         $userParameters = isset( $scope['Params']['UserParameters'] ) ? (array)$scope['Params']['UserParameters'] : array();
-        $siteaccessFilter = \expOrderSiteaccess::filterFromParameter( isset( $userParameters['siteaccess'] ) ? $userParameters['siteaccess'] : null );
+        $siteaccessFilter = \expOrderSiteaccess::filterFromRequest(
+            $http->hasGetVariable( 'SiteaccessFilter' ) ? $http->getVariable( 'SiteaccessFilter' ) : null,
+            isset( $userParameters['siteaccess'] ) ? $userParameters['siteaccess'] : null );
 
         // Unarchive options.
         if ( $http->hasPostVariable( 'UnarchiveButton' ) )
