@@ -10,22 +10,22 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 | Was | Anzahl |
 |---|---:|
 | Sprachen der Administration: Übersetzungen in `share/translations` | **128**, davon 128 vollständig |
-| Locales: Dateien `share/locale/*.ini` | **353**: 346 Sprachen und Länder, 1 Testsprache, 6 Varianten |
+| Locales: Dateien `share/locale/*.ini` | **354**: 347 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
 | davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **125** |
 | davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **25** |
-| Länder und Gebiete der Locales | **236** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **234** |
+| Länder und Gebiete der Locales | **237** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **235** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
 
-![Weltkarte: 234 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 235 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 234 Länder und Gebiete in Grün</summary>
+<details><summary>Die 235 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -201,6 +201,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Saint Kitts und Nevis | KN | `eng-KN` (Quelltexte) |
 | Sambia | ZM | `eng-ZM` (Quelltexte) |
 | Samoa | WS | `eng-WS` (Quelltexte) |
+| San Marino | SM | `ita-SM` → `ita-IT` |
 | Sao Tomé und Principe | ST | `por-ST` → `por-PT` |
 | Saudi-Arabien | SA | `ara-SA` |
 | Schweden | SE | `swe-SE` |
@@ -283,7 +284,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 26. Oktober 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-Kurz gefasst: **353 Locale-Dateien** (346 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
+Kurz gefasst: **354 Locale-Dateien** (347 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **128
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`),
@@ -689,6 +690,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `isl-IS` | Icelandic | Íslenska | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ita-CH` | Italian (Switzerland) | Italiano (Svizzera) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ita-IT` zurück) |
 | `ita-IT` | Italian (Italy) | Italiano (Italia) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `ita-SM` | Italian (San Marino) | Italiano (San Marino) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ita-IT` zurück) |
 | `jav-ID` | Javanese | Jawa | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `jpn-JP` | Japanese | 日本語 | Ostasien | LTR | Japanisch (Han, Hiragana, Katakana) (`Jpan`) | älter, von Hand erstellt | 100 % |
 | `jpn-JP@international` | Variant of `jpn-JP`: @international |  | Ostasien | LTR | Japanisch (Han, Hiragana, Katakana) (`Jpan`) | ältere Variante, von Hand erstellt | 100 % (fällt auf `jpn-JP` zurück) |
