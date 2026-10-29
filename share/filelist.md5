@@ -23296,7 +23296,7 @@ f7effc41230d544e41a80cf064a96a9d  kernel/classes/help/exphelppdfwriter.php
 d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
 c27d8162e494a41713e53e5af9cf0d7e  kernel/classes/help/exphelpremoteimages.php
 ee756ea5fba2ba58e03c8c75da88abd7  kernel/classes/help/exphelpsearch.php
-e4c37b450dc1b9f43dba33ddf412355f  kernel/classes/i18n/expi18ncoveragemap.php
+01d1ca25fdefbb96d223c186bdfb2823  kernel/classes/i18n/expi18ncoveragemap.php
 526cda33b51ca4b46597f0c1aebf902e  kernel/classes/i18n/expi18nfallbackreport.php
 3b3e89da20129fdcb5a216fe5780cd34  kernel/classes/i18n/expi18ntranslationwaves.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
@@ -26962,7 +26962,7 @@ f42ff50eccca16045301996e0e3adafe  tests/tests/kernel/classes/help/expHelpSearchV
 c73b3316fa67b8c61e5eb6829c307139  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
-02e5c5384bb5e869c6fe4fbeef331663  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
+73004725c237c4032e19734560385a00  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 5c7a22467eda9deedb3fbca52c90fc51  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
 9186831128133636b56a2caf51105db6  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
