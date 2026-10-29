@@ -3520,7 +3520,7 @@ fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
 64389016aada25c568fdafc2ebe6ce5e  doc/eng-us/bc/6.0/trusted-proxies.md
 78f77d46a1c4fda9c55f0f24527261ed  doc/eng-us/bc/6.0/ui-switch-design.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/eng-us/bc/6.0/ui-switch.md
-90573d1bfa29b82384fa7b822d9e994e  doc/eng-us/bc/6.0/user-account-approval.md
+c5e1fcd33a7ce006a2b64a5d38a09fd1  doc/eng-us/bc/6.0/user-account-approval.md
 7928239ba6369a6bb899ee998ce94b05  doc/eng-us/bc/6.0/user-password-change.md
 e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-notes.md
 581014adb19d45706387b21712a2d17d  doc/eng-us/bc/6.0/velocity-engines.md
@@ -6388,7 +6388,7 @@ f58ef44439a83c0f3bd4e9ede1173901  doc/eng-us/features/6.0/cronjobs-console.md
 877894137f78a89528a5fc4c24f8ae42  doc/eng-us/features/6.0/data-tables.md
 038ad003cc7c482d85ba9496eb507bf6  doc/eng-us/features/6.0/debug-output-improvements.md
 2ede246757068e064cab00fcf3fb1795  doc/eng-us/features/6.0/default-extension-distribution.md
-455933483ea7185824e534ef083ef5ca  doc/eng-us/features/6.0/editor-account-approval.md
+3256f78ed5e5317b12c59445c530ee04  doc/eng-us/features/6.0/editor-account-approval.md
 8bb25377c53c0d863e0b1ad669e226da  doc/eng-us/features/6.0/environment-settings.md
 f5e17a628226b4d9abe759ffb9647918  doc/eng-us/features/6.0/exp-adminui.md
 1475af7d4f1609ef6fd36e28e10cf44d  doc/eng-us/features/6.0/exp-debug-bar.md
@@ -12711,7 +12711,7 @@ c837b1b052fefd9478c4cb6452f2a62a  doc/ger-de/bc/6.0/einstellungen-fuer-seitengro
 cf30ae36391fd9291768f9c45cba9a85  doc/ger-de/bc/6.0/ezoe-tinymce8.md
 ea6144326c90e9795e6e5828d13b06fd  doc/ger-de/bc/6.0/ezpsessionhandlerdb-php8-korrektur-und-tests.md
 0aa81e666c1834c4420fdcbcc18bb318  doc/ger-de/bc/6.0/frankenphp.md
-3d04e9747c3162723eaafeba4f866fdc  doc/ger-de/bc/6.0/freigabe-von-benutzerkonten.md
+e01fec4c939d804cc4dc386cd1634aa4  doc/ger-de/bc/6.0/freigabe-von-benutzerkonten.md
 b8c45092d70c0b14cebc1ddfd4f2ff31  doc/ger-de/bc/6.0/geheimnispruefung-fuer-erweiterungspakete.md
 52b211fd631425615685a4dadf9654d2  doc/ger-de/bc/6.0/haertung.md
 1fb15f8731664c314258588e1c734ea6  doc/ger-de/bc/6.0/hilfeinhalte-dita-ebooks-reviews.md
@@ -15485,7 +15485,7 @@ b3f4195f79b892bca854beb80acf293a  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 0de4b3d8a279a43c0f19fcb08c3b54ec  doc/ger-de/funktionen/6.0/extension-liste-und-downloads.md
 2e31533efcf8f0f4f1dce7fa4d593a7b  doc/ger-de/funktionen/6.0/ezpm-paketmanager-cli.md
 9d9894268f854965be088eb0dcfdd36c  doc/ger-de/funktionen/6.0/filter-fuer-cronjob-teile.md
-deeaaa21af70d1a936c366b5206d0a47  doc/ger-de/funktionen/6.0/freigabe-von-redakteurskonten.md
+079053206ad4d0b3b187225c608e55e4  doc/ger-de/funktionen/6.0/freigabe-von-redakteurskonten.md
 be024ce43b83d098e3f788a3b450d3f9  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
@@ -23244,6 +23244,7 @@ d14e09a7f3bb40ffa6eaf0dd37dae59a  kernel/classes/user/expuseraccountstatus.php
 a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
 f54a7ee5b5b359afe464a291d6220ab2  kernel/classes/user/expuseragent.php
 f805a286790715ca14cc7047b9b0d1d7  kernel/classes/user/expuserapproval.php
+24cbb1cec4904b8dabbb6d1cf4a94dbc  kernel/classes/user/expuserapprovalsection.php
 4e5388e3e848288d567ad6083f1a8ea3  kernel/classes/user/expuseraudit.php
 885251530a15938c095c306fd0ce6715  kernel/classes/user/expuserdeactivation.php
 f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
@@ -26541,6 +26542,7 @@ c513b931571a3dd56abff2cfcdd557c6  tests/tests/kernel/classes/expSystemReportMask
 0e63665c6be316de4385ab860a4aeff3  tests/tests/kernel/classes/expSystemReportTest.php
 c46fd8ef85c10a50ff801cd31cba5ed6  tests/tests/kernel/classes/expTestLanguageTest.php
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
+5c30d6ebb73c686509d4679007c0d539  tests/tests/kernel/classes/expUserApprovalSectionTest.php
 51f04265ca12861f1309c56449d3e328  tests/tests/kernel/classes/expUserApprovalTest.php
 808113843572bb212ca69e58f900b4dd  tests/tests/kernel/classes/expUserLoginIntegrityTest.php
 c687ac729fa5a22204958abaf63ed47c  tests/tests/kernel/classes/expVelocityEnginesTest.php
