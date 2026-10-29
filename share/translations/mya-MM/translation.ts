@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>စနစ်ထည့်သွင်းမှု &gt; Cronjob များ</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cronjob အပိုင်း တစ်ခုမျှ မလုပ်ဆောင်ရသေးပါ - အလုပ်တန်းစီ၊ တင်သွင်းမှုများ၊ အသိပေးချက်များနှင့် ရှာဖွေရေးအညွှန်း စောင့်နေသည်။ php bin/php/installcrontab.php --add --apply ကို လုပ်ဆောင်ပါ၊ သို့မဟုတ် --show ၏ စာကြောင်းများကို crontab ထဲသို့ ထည့်ပါ။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ဤထည့်သွင်းမှုသည် အများသိ သရုပ်ပြတစ်ခု ဖြစ်သည် - မည်သူမဆို ၎င်း၏ စီမံခန့်ခွဲသူ စကားဝှက်ကို သိနိုင်ပြီး စီမံခန့်ခွဲသူ စကားဝှက်များကို ပြောင်း၍ သို့မဟုတ် ပြန်လည်သတ်မှတ်၍ မရပါ။ ဤနေရာတွင် ကိုယ်ရေးကိုယ်တာ မည်သည့်အရာမျှ မထည့်ပါနှင့်။</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>သင့်စက်ပစ္စည်းများ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>အကောင့်အလိုက် မည်သူ ပြောင်းလဲခဲ့သည်၊ ဝင်ရောက်ခဲ့သည် သို့မဟုတ် ငြင်းပယ်ခံခဲ့ရသည်ကို ပြသည်၊ စစ်ထုတ်ပြီး ထုတ်ယူနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ဝင်ရောက်မှု အစီရင်ခံစာ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>မည်သူ ဝင်ထားသည်၊ တစ်ရက်လျှင် ဝင်ရောက်မှုနှင့် မအောင်မြင်မှုများ၊ အသုံးပြုသူတစ်ဦးကို နေရာအားလုံးမှ ထွက်စေခြင်း။</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ကိုင်တွယ်သူ၏ သက်တမ်းကုန်ဆုံးသော ဆက်ရှင်များကို ဤစာမျက်နှာ သို့မဟုတ် session_gc cronjob အပိုင်းက မဟုတ်ဘဲ PHP ကိုယ်တိုင် (session.gc_maxlifetime) ဖယ်ရှားသည်။</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>အသုံးပြုသူတိုင်း၏ ဝင်ထားသော ဆက်ရှင်များကို ဝင်ရောက်မှု အစီရင်ခံစာတွင် စာရင်းပြပြီး ထွက်စေနိုင်သည်၊ ထိုအစီရင်ခံစာသည် ဆက်ရှင် handler တိုင်းနှင့် အလုပ်လုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ဝင်ရောက်မှု အစီရင်ခံစာ ဖွင့်ရန်</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>မရှိသေးပါ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>သင်၏ မကြာသေးမီက ဝင်ရောက်မှုများ၊ မအောင်မြင်သော ကြိုးပမ်းမှုများနှင့် စကားဝှက်၊ အီးမေးလ်လိပ်စာနှင့် နှစ်ဆင့်ဝင်ရောက်မှု ပြောင်းလဲမှုများ။</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ဤအကောင့်၏ မကြာသေးမီက ဝင်ရောက်မှုများ၊ မအောင်မြင်သော ကြိုးပမ်းမှုများနှင့် လုံခြုံရေး ပြောင်းလဲမှုများ။</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>လှုပ်ရှားမှု စစ်ဆေးရန်</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>မအောင်မြင်သော ဝင်ရောက်မှု %count ကြိမ်</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ကို မရေးခဲ့ပါ (%reason )။ ဤစာကြောင်းများကို ဆိုက်လည်ပတ်နေသော အသုံးပြုသူ၏ crontab သို့ ထည့်ပါ၊ မဟုတ်လျှင် တန်းစီ၊ တင်သွင်းမှုများ၊ အသိပေးချက်များနှင့် ရှာဖွေမှုအညွှန်းတို့ ဘယ်တော့မှ မလုပ်ဆောင်ပါ။</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ပြန်လည်ထည့်သွင်းခြင်းကို Kickstarter (%file ၊ ထို့နောက် php bin/php/kickstarter.php run --apply) ဖြင့် သို့မဟုတ် အသစ်ထည့်သွင်းခြင်းဖြင့် ပြုလုပ်သည်။</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>နောက်ဆုံးလုပ်ဆောင်မှုတွင် မေးလ်ပို့ဆောင်မှုက မက်ဆေ့ချ် %count ခုကို ငြင်းပယ်ခဲ့သည်။ မေးလ်ဆာဗာနှင့် site.ini MailSettings ကို စစ်ဆေးပါ။</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ဖြစ်ရပ် %count ခု စောင့်နေပြီး အသိပေးချက် cronjob ၏ လုပ်ဆောင်မှု မှတ်တမ်းမရှိပါ။ Cronjob အပိုင်း &quot;frequent&quot; ကို crontab ထဲသို့ ထည့်ပါ၊ သို့မဟုတ် exp:notification:run --apply ကို လုပ်ဆောင်ပါ။</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>နုဒ်ရွေးကိရိယာဖြင့် အခြားဆိုက် သို့မဟုတ် အပိုင်းကို ရွေးပါ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>စနစ်စီမံခန့်ခွဲသူသာ ပိုင်ရှင်ကို ပြောင်းနိုင်သည် - ./console exp:content-check --fix-permissions --apply ကို root အဖြစ် လုပ်ဆောင်ပါ။</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ဗလာ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>လက်မှတ်ထိုးသော့သည် တစ်နှစ်ကျော်ပြီ - exp:audit key rotate --apply ဖြင့် လှည့်ပြောင်းပါ။</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>မပို့ပါ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>အသိပေးချက် cronjob သည် ၎င်း၏ လုပ်ဆောင်မှုတိုင်းကို ဤနေရာတွင် မှတ်တမ်းတင်သည်။ frequent အပိုင်းကို crontab ထဲသို့ ထည့်ပါ၊ သို့မဟုတ် exp:notification:run --apply ကို လုပ်ဆောင်ပါ။</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ကွန်ဆိုးလ်ကို အသုံးပြုပါ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>မရှိပါ။</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>အထောက်အထားစိစစ်အက်ပ်ဖြင့်</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>အီးမေးလ်ဖြင့် ကုဒ်တစ်ခုဖြင့်</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ်ဖြင့်</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>Passkey ဖြင့်</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ပြင်ပအကောင့်ဖြင့်</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>၎င်း၏ ကွန်ရက်အဖြစ် ပြသည်၊ လိပ်စာကို ဆိုက်၏ ဒေတာကာကွယ်ရေး ဆက်တင်များအတိုင်း သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>မှတ်တမ်းမတင်ထားပါ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>တည်နေရာ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ခန့်မှန်းခြေ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>စက်ပစ္စည်းများ စီမံရန်</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>အထောက်အထားစိစစ်အက်ပ်ဖြင့်</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>အီးမေးလ်ဖြင့် ကုဒ်တစ်ခုဖြင့်</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ်ဖြင့်</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>Passkey ဖြင့်</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ပြင်ပအကောင့်ဖြင့်</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>မှတ်တမ်းမတင်ထားပါ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>တည်နေရာ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ခန့်မှန်းခြေ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ဤအသုံးပြုသူ၏ ဆက်ရှင်များကို ကြည့်ရန်</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site ပေါ်ရှိ သင်၏ %login အကောင့်ကို မကြာသေးမီက မဝင်ခဲ့ဖူးသော နေရာမှ ဝင်ရောက်ရန် ယခုလေးတင် အသုံးပြုခဲ့သည်:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ခန့်မှန်းခြေ တည်နေရာ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os ပေါ်ရှိ %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ဝင်ရောက်မှု အစီရင်ခံစာ</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>မသိ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>သင့်အကောင့်ကို လုံခြုံအောင်ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site ပေါ်ရှိ သင်၏ %login အကောင့်သို့ ဝင်ရောက်ရန် ပြန်လည်ရယူရေးကုဒ်တစ်ခုကို အသုံးပြုခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ်တစ်ခု အသုံးပြုခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>အကောင့်</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ခန့်မှန်းခြေ လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ထပ်မံဝင်ရောက်ရန် စကားဝှက်အသစ် တောင်းဆိုပါ၊ သို့မဟုတ် ဆိုက်၏ စီမံခန့်ခွဲသူများကို ဆက်သွယ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>စကားဝှက်အသစ် တောင်းဆိုရန်</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ်တစ်ခုစီကို တစ်ကြိမ်သာ အသုံးပြုနိုင်သည်။ သင့်ဖုန်း ပျောက်ဆုံးသွားပါက အထောက်အထားစိစစ်အက်ပ်ကို ပြန်လည်သတ်မှတ်ပြီး ပြန်လည်ရယူရေးကုဒ်အသစ်များကို လုံခြုံသောနေရာတွင် သိမ်းထားပါ။</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>သင့်အကောင့်တွင် မအောင်မြင်သော ဝင်ရောက်ရန်ကြိုးပမ်းမှုများ</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ယခုမှစ၍ ဝင်ရောက်သည့်အခါ သင့်စကားဝှက်အပြင် ကုဒ်တစ်ခုကိုပါ တောင်းမည်။ ဤအရာကို သင်ကိုယ်တိုင် ပြုလုပ်ခဲ့ပါက ဘာမျှ လုပ်ရန်မလိုပါ။</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>သင်ဖြစ်ပြီး စကားဝှက်ကို မေ့သွားပါက အသစ်တစ်ခု တောင်းဆိုပါ။ သင်မဟုတ်ပါက ပိုမိုခိုင်မာသော စကားဝှက်ကို ရွေးပြီး နှစ်ဆင့်ဝင်ရောက်မှုကို ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ဤအရာကို သင်မပြုလုပ်ခဲ့ပါက တစ်စုံတစ်ဦးက သင့်စကားဝှက်ကို သိနေနိုင်သည် - ယခုပင် ပြောင်းပြီး သင့်အကောင့် မည်သည့်နေရာတွင် ဝင်ထားသည်ကို စစ်ဆေးပါ။</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ကျန်ရှိသော ပြန်လည်ရယူရေးကုဒ်များ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>သင့်စက်ပစ္စည်းများကို စစ်ဆေးရန်</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>လုံခြုံရေး သတိပေးချက်</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>တစ်စုံတစ်ဦးက %site ပေါ်ရှိ သင်၏ %login အကောင့်သို့ မှားယွင်းသော စကားဝှက်ဖြင့် %count ကြိမ် ဆက်တိုက် ဝင်ရောက်ရန် ကြိုးပမ်းခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site ပေါ်ရှိ သင်၏ %login အကောင့်တွင် လုံခြုံရေးဖြစ်ရပ်တစ်ခု ဖြစ်ပေါ်ခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ဤသည်မှာ သင့်အကောင့်နှင့် ပတ်သက်သော လုံခြုံရေး သတိပေးချက် ဖြစ်သည်။ ထိုကဲ့သို့ ပြောင်းလဲမှုတိုင်းအတွက် ပို့ပြီး ပိတ်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>အချိန်</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site ပေါ်ရှိ သင်၏ %login အကောင့်အတွက် နှစ်ဆင့်ဝင်ရောက်မှုကို ပိတ်လိုက်ပြီ။</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>နှစ်ဆင့်ဝင်ရောက်မှုကို ပိတ်လိုက်ပြီ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site ပေါ်ရှိ သင်၏ %login အကောင့်အတွက် နှစ်ဆင့်ဝင်ရောက်မှုကို ဖွင့်လိုက်ပြီ။</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>နှစ်ဆင့်ဝင်ရောက်မှုကို ဖွင့်လိုက်ပြီ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site ပေါ်ရှိ သင်၏ %login အကောင့်ကို မအောင်မြင်သော ဝင်ရောက်မှု အကြိမ်များလွန်းသဖြင့် လော့ခ်ချလိုက်ပြီ။</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>သင့်အကောင့်ကို ယခု သင့်စကားဝှက်တစ်ခုတည်းဖြင့်သာ ကာကွယ်ထားသည်။ ဤအရာကို သင်မပြုလုပ်ခဲ့ပါက စကားဝှက်ကို ပြောင်းပြီးနောက် နှစ်ဆင့်ဝင်ရောက်မှုကို ပြန်ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>သင့်အကောင့်ကို လော့ခ်ချလိုက်ပြီ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ၏ လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ဝင်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>မအောင်မြင်သော ဝင်ရောက်ရန်ကြိုးပမ်းမှု</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ထွက်ပြီး</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ဆက်ရှင်များကို ထွက်စေပြီး</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>စက်ပစ္စည်းအသစ်မှ ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>တည်နေရာအသစ်မှ ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ကိုယ်ပိုင်အထောက်အထား အတည်ပြုပြီး (&quot;သင်ဖြစ်ကြောင်း စစ်ဆေးပါ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ကိုယ်ပိုင်အထောက်အထား စစ်ဆေးမှု မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Passkey ဖြင့် ဝင်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey ဖြင့် ဝင်ရောက်မှု မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ဝင်ရောက်မှု ငြင်းပယ်ခံရသည် - နှစ်ဆင့်ကုဒ် မရှိခြင်း သို့မဟုတ် မှားနေခြင်း</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>နှစ်ဆင့်ကုဒ် မှားနေသည်</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>မအောင်မြင်သော ဝင်ရောက်မှုများကြောင့် အကောင့်ကို လော့ခ်ချထားသည်</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>အကောင့်ကို လော့ခ်ဖွင့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>စကားဝှက် ပြောင်းပြီး</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>စကားဝှက် ပြောင်းခြင်း မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>စကားဝှက် ပြန်လည်သတ်မှတ်ပြီး</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>စကားဝှက်အသစ် တောင်းဆိုပြီး</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>အီးမေးလ်လိပ်စာ ပြောင်းပြီး</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>အသုံးပြုသူအမည် ပြောင်းပြီး</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>နှစ်ဆင့်ဝင်ရောက်မှု ဖွင့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>နှစ်ဆင့်ဝင်ရောက်မှု ပိတ်ပြီး</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ် အသုံးပြုပြီး</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ်အသစ်များ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>အက်ပ် စကားဝှက် ဖန်တီးခြင်း</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>အက်ပ် စကားဝှက် ရုပ်သိမ်းခြင်း</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ထည့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey ဖယ်ရှားပြီး</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>အကောင့် ဖွင့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>အကောင့် ပိတ်ပြီး</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ဝင်ရောက်မှုများနှင့် ဆက်ရှင်များ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>အကောင့် ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>အာရုံစိုက်ရန်လိုသည်</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>သင်ကိုယ်တိုင်</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>အသုံးပြုသူကိုယ်တိုင်</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login က</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>နည်းလမ်း</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ဘရောက်ဇာ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>လည်ပတ်မှုစနစ်</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>စက်ပစ္စည်း</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>နေရာ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>နိုင်ငံ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ဆက်ရှင်များ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>မည်သည့်အရာ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ချန်နယ်</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>မအောင်မြင်သော ကြိုးပမ်းမှုများ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ကျန်ရှိသော ကုဒ်များ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ဝင်ရောက်မှု handler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ၏ လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>သင့်အကောင့်၏ ဝင်ရောက်မှုများနှင့် လုံခြုံရေး ပြောင်းလဲမှုများ။ သင်မပြုလုပ်ခဲ့သော အရာတစ်ခုကို တွေ့ပါက သင့်စကားဝှက်ကို ပြောင်းပြီး သင်မသိသော စက်ပစ္စည်းများကို ထွက်စေပါ။</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ဤအကောင့်၏ ဝင်ရောက်မှုများနှင့် လုံခြုံရေး ပြောင်းလဲမှုများ။</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>သင့်စက်ပစ္စည်းများ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>စကားဝှက် ပြောင်းရန်</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>အကောင့်သို့ ပြန်သွားရန်</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှုကို မှတ်တမ်းမတင်ထားပါ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>၎င်းကို အသုံးပြုသူ စာရင်းစစ်မှတ်တမ်းမှ ဖတ်သည်၊ ၎င်း၏ ဇယား expuser_audit မရှိပါ သို့မဟုတ် ဤဒေတာဘေ့စ်တွင် ပံ့ပိုးမထားပါ။ php update/common/scripts/6.0/createuseraudittable.php ကို လုပ်ဆောင်ပါ၊ သို့မဟုတ် 6.0.15 ၏ ဒေတာဘေ့စ် အပ်ဒိတ်ကို လုပ်ဆောင်ပါ။</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>နောက်ဆုံး %days ရက်</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>နောက်ဆုံး %days ရက်အတွင်း ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>မကြာသေးမီက လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ငြင်းပယ်ခံရသည်</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု မှတ်တမ်းမတင်ရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>လုံခြုံရေးဖြစ်ရပ်များကို %days ရက် သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>လုံခြုံရေးဖြစ်ရပ်များကို စီမံခန့်ခွဲသူက ဖယ်ရှားသည်အထိ သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ကျွန်ုပ်၏ ဝင်ရောက်မှုဒေတာကို ဒေါင်းလုဒ်ဆွဲရန်</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>သင့်ဆက်ရှင်များနှင့် လုံခြုံရေးဖြစ်ရပ်များကို JSON ဖိုင်အဖြစ်။</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ဝင်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>မအောင်မြင်သော ဝင်ရောက်ရန်ကြိုးပမ်းမှု</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ထွက်ပြီး</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ဆက်ရှင်များကို ထွက်စေပြီး</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>စက်ပစ္စည်းအသစ်မှ ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>တည်နေရာအသစ်မှ ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ကိုယ်ပိုင်အထောက်အထား အတည်ပြုပြီး (&quot;သင်ဖြစ်ကြောင်း စစ်ဆေးပါ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ကိုယ်ပိုင်အထောက်အထား စစ်ဆေးမှု မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Passkey ဖြင့် ဝင်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey ဖြင့် ဝင်ရောက်မှု မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ဝင်ရောက်မှု ငြင်းပယ်ခံရသည် - နှစ်ဆင့်ကုဒ် မရှိခြင်း သို့မဟုတ် မှားနေခြင်း</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>နှစ်ဆင့်ကုဒ် မှားနေသည်</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>မအောင်မြင်သော ဝင်ရောက်မှုများကြောင့် အကောင့်ကို လော့ခ်ချထားသည်</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>အကောင့်ကို လော့ခ်ဖွင့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>စကားဝှက် ပြောင်းပြီး</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>စကားဝှက် ပြောင်းခြင်း မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>စကားဝှက် ပြန်လည်သတ်မှတ်ပြီး</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>စကားဝှက်အသစ် တောင်းဆိုပြီး</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>အီးမေးလ်လိပ်စာ ပြောင်းပြီး</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>အသုံးပြုသူအမည် ပြောင်းပြီး</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>နှစ်ဆင့်ဝင်ရောက်မှု ဖွင့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>နှစ်ဆင့်ဝင်ရောက်မှု ပိတ်ပြီး</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ် အသုံးပြုပြီး</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ပြန်လည်ရယူရေးကုဒ်အသစ်များ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>အက်ပ် စကားဝှက် ဖန်တီးခြင်း</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>အက်ပ် စကားဝှက် ရုပ်သိမ်းခြင်း</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ထည့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey ဖယ်ရှားပြီး</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>အကောင့် ဖွင့်ပြီး</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>အကောင့် ပိတ်ပြီး</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ဝင်ရောက်မှုများနှင့် ဆက်ရှင်များ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>အကောင့် ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>အာရုံစိုက်ရန်လိုသည်</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ၏ လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>သင့်အကောင့်၏ ဝင်ရောက်မှုများနှင့် လုံခြုံရေး ပြောင်းလဲမှုများ။ သင်မပြုလုပ်ခဲ့သော အရာတစ်ခုကို တွေ့ပါက သင့်စကားဝှက်ကို ပြောင်းပြီး သင်မသိသော စက်ပစ္စည်းများကို ထွက်စေပါ။</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>သင့်စက်ပစ္စည်းများ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>စကားဝှက် ပြောင်းရန်</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ဤဆိုက်တွင် လုံခြုံရေး လှုပ်ရှားမှုကို မှတ်တမ်းမတင်ရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>နောက်ဆုံး %days ရက်အတွင်း ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>မအောင်မြင်သော ကြိုးပမ်းမှုများ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု မှတ်တမ်းမတင်ရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ကျွန်ုပ်၏ ဝင်ရောက်မှုဒေတာကို ဒေါင်းလုဒ်ဆွဲရန်</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>သင့်ဆက်ရှင်များနှင့် လုံခြုံရေးဖြစ်ရပ်များကို JSON ဖိုင်အဖြစ်။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>စကားဝှက်</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>စကားဝှက်နှင့် နှစ်ဆင့်ကုဒ်</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST အင်တာဖေ့စ်</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP အင်တာဖေ့စ်</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>တစ်ကြိမ်တည်း ဝင်ရောက်မှု (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ဆက်ရှင်များကို မှတ်တမ်းမတင်မီ ဝင်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ဝင်ရောက်မှု အစီရင်ခံစာ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ဆိုက်သို့ မည်သူ ဝင်ထားသည်၊ အကောင့်များ မည်မျှ မကြာခဏ ဝင်ရောက်ပြီး မအောင်မြင်သည်၊ အသုံးပြုသူတစ်ဦးကို နေရာအားလုံးမှ ထွက်စေခြင်း။ ဆက်ရှင် handler တိုင်းနှင့် အလုပ်လုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ဆက်ရှင်ကို ထွက်စေပြီးပါပြီ။ စက်ပစ္စည်းသည် ထပ်မံဝင်ရောက်ရမည်။</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ကို ဆက်ရှင် %count ခုမှ ထွက်စေပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login တွင် လုပ်ဆောင်နေသော ဆက်ရှင် မရှိခဲ့ပါ။</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ထို ID ၊ အသုံးပြုသူအမည် သို့မဟုတ် အီးမေးလ်လိပ်စာ ပါသော အကောင့် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ဤသည်မှာ သင်အသုံးပြုနေသော ဆက်ရှင် ဖြစ်သည်။ ၎င်းကို အဆုံးသတ်ရန် ထွက်ပါ။</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ထိုဆက်ရှင်သည် အဆုံးသတ်ပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>စာမျက်နှာ သက်တမ်းကုန်သွားသည်။ ဘာမျှ မပြောင်းလဲခဲ့ပါ၊ ထပ်မံကြိုးစားပါ။</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ဤဆိုက်တွင် ဆက်ရှင်များကို မှတ်တမ်းမတင်ပါ (site.ini [UserSessionSettings] Tracking=disabled)။</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ဇယား expuser_session မရှိပါ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>၎င်းကို ဖန်တီးပြီးသည်နှင့် ဆက်ရှင်များကို မှတ်တမ်းတင်မည်: php update/common/scripts/6.0/createusersessiontable.php သို့မဟုတ် 6.0.15 ၏ ဒေတာဘေ့စ် အပ်ဒိတ်။</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ယခုနှင့် ယနေ့</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>လုပ်ဆောင်နေသော ဆက်ရှင်များ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ဝင်ထားသော အသုံးပြုသူများ</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ယနေ့ ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ယနေ့ မအောင်မြင်သော ကြိုးပမ်းမှုများ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>အသုံးပြုသူတစ်ဦးကို နေရာအားလုံးမှ ထွက်စေရန်</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>အကောင့်၏ ဆက်ရှင်တိုင်းသည် ၎င်း၏ နောက်တောင်းဆိုမှုတွင် ပြီးဆုံးမည်၊ &quot;ကျွန်ုပ်ကို မှတ်ထားပါ&quot; ဖြင့် ထိန်းထားသော ဆက်ရှင်များလည်း ပါဝင်သည်။ အကောင့်တစ်ခု မှားယွင်းသူ၏ လက်ထဲ ရောက်နေနိုင်သည့်အခါ အသုံးပြုပါ၊ ထို့နောက် ၎င်း၏ စကားဝှက်ကို ပြန်လည်သတ်မှတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>အသုံးပြုသူ ID ၊ အသုံးပြုသူအမည် သို့မဟုတ် အီးမေးလ်လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>နေရာအားလုံးမှ ထွက်ရန်</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ယခု ဝင်ထားသည်</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>နောက်ဆုံး အသုံးပြုခဲ့သော %limit ခုကို ပြထားသည်။</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>အသုံးပြုသူ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>စက်ပစ္စည်း</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ဝင်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>နောက်ဆုံး လှုပ်ရှားချိန်</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>လုပ်ဆောင်ချက်များ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ဤစက်ပစ္စည်း</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>မှတ်တမ်းမတင်ထားပါ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ထွက်ရန်</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ဝင်ထားသော ဆက်ရှင် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>နောက်ဆုံး %days ရက်</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ဝင်ရောက်မှုများနှင့် မအောင်မြင်သော ကြိုးပမ်းမှုများကို အသုံးပြုသူ စာရင်းစစ်မှတ်တမ်းမှ ရေတွက်သည်၊ ၎င်း မရှိပါ၊ ဆက်ရှင်အသစ်များကိုမူ ရေတွက်သည်။</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ရက်</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>မအောင်မြင်သော ကြိုးပမ်းမှုများ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ဆက်ရှင်အသစ်များ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ဆက်ရှင် handler: %handler ။ ဆက်ရှင်များကို ဇယား expuser_session မှ ဖတ်သဖြင့် အစီရင်ခံစာသည် handler တိုင်းနှင့် အလုပ်လုပ်သည်။</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>သင့်အကောင့်အတွက် လုံခြုံရေး သတိပေးချက်</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>သင်၏ %login အကောင့်တွင် လုံခြုံရေးဖြစ်ရပ်တစ်ခု ဖြစ်ပေါ်ခဲ့သည်: %event ။ သင်မဟုတ်ပါက %url တွင် သင့်အကောင့်ကို လုံခြုံအောင်ပြုလုပ်ပါ။</translation>
     </message>
 </context>
 </TS>

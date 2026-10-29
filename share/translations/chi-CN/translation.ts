@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>设置 &gt; cron 任务</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>尚未运行任何 cron 任务部分：作业队列、导入、通知和搜索索引都在等待。请运行 php bin/php/installcrontab.php --add --apply，或将 --show 输出的行添加到 crontab 中。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>此安装为公开演示：任何人都可能知道其管理员密码，且管理员密码无法更改或重置。请勿在此输入任何私人信息。</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15300,6 +15312,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>按帐户查看谁做了更改、谁已登录或被拒绝；可筛选和导出。</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>登录报告</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>当前登录的用户、每日登录和失败次数；让用户在所有设备上退出登录。</translation>
     </message>
 </context>
 <context>
@@ -33605,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP 处理程序的已超时会话由 PHP 自身（session.gc_maxlifetime）移除，而不是由此页面或 session_gc cron 任务部分移除。</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>所有用户的已登录会话都在登录报告中列出，并可在其中退出登录；该报告适用于任何会话处理程序。</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>打开登录报告</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37929,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>暂无</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>您最近的登录、失败的尝试，以及对密码、电子邮件地址和两步验证的更改。</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>此帐户最近的登录、失败的尝试和安全更改。</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>查看活动</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count 次登录失败</translation>
     </message>
 </context>
 <context>
@@ -51019,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>未能写入 crontab（%reason）。请将以下各行添加到运行站点的用户的 crontab 中，否则队列、导入、通知和搜索索引将永远不会运行：</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>重新安装可通过 Kickstarter（%file，然后运行 php bin/php/kickstarter.php run --apply）或全新安装完成。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56811,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>上次运行中，邮件传输拒绝了 %count 封邮件。请检查邮件服务器和 site.ini MailSettings。</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>有 %count 个事件正在等待，且没有通知 cron 任务的运行记录。请将 cron 任务部分“frequent”添加到 crontab，或运行 exp:notification:run --apply。</translation>
     </message>
 </context>
 <context>
@@ -63067,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>使用节点选择器选择其他站点或分区</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>只有系统管理员可以更改所有者：请以 root 身份运行 ./console exp:content-check --fix-permissions --apply。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64600,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>空</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>签名密钥已使用超过一年：请使用 exp:audit key rotate --apply 轮换密钥。</translation>
     </message>
 </context>
 <context>
@@ -70310,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>未发送</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>通知 cron 任务会在此处记录每次运行。请将 frequent 部分添加到 crontab，或运行 exp:notification:run --apply。</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>请使用控制台：./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76483,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>无。</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>使用身份验证器应用</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>使用电子邮件验证码</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>使用恢复代码</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>使用通行密钥</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>使用外部帐户</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>显示为其所在网络；地址按站点的数据保护设置保存。</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>未记录</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>大致</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>管理设备</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>使用身份验证器应用</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>使用电子邮件验证码</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>使用恢复代码</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>使用通行密钥</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>使用外部帐户</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>未记录</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>大致</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>查看此用户的会话</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>您在 %site 上的帐户 %login 刚刚从一个最近未曾登录过的位置登录：</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>大致位置</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os 上的 %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>登录报告</translation>
     </message>
 </context>
 <context>
@@ -77489,6 +77649,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>未知</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>保护您的帐户</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>有人使用恢复代码登录了您在 %site 上的帐户 %login。</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>已使用恢复代码</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>帐户</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>大致地址</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>请申请新密码以重新登录，或联系站点管理员。</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>申请新密码</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>每个恢复代码只能使用一次。如果您的手机丢失，请重新设置身份验证器应用，并将新的恢复代码保存在安全的地方。</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>您的帐户有登录失败的尝试</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>从现在起，登录时除密码外还需要输入验证码。如果这是您本人的操作，则无需执行任何操作。</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>如果是您本人且忘记了密码，请申请新密码。如果不是，请选择更强的密码并开启两步验证。</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>如果这不是您本人的操作，可能有人知道您的密码：请立即更改密码，并检查您的帐户在何处已登录。</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>剩余恢复代码</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>查看您的设备</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>安全警报</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>有人尝试使用错误的密码连续 %count 次登录您在 %site 上的帐户 %login。</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>您在 %site 上的帐户 %login 发生了一个安全事件。</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>这是一封关于您帐户的安全警报。每次发生此类更改时都会发送，且无法关闭。</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>时间</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>已为您在 %site 上的帐户 %login 关闭两步验证。</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>已关闭两步验证</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>已为您在 %site 上的帐户 %login 开启两步验证。</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>已开启两步验证</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>您在 %site 上的帐户 %login 因登录失败次数过多已锁定。</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>您的帐户现在仅受密码保护。如果这不是您本人的操作，请在更改密码后重新开启两步验证。</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>您的帐户已锁定</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 的安全活动</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>已登录</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>登录尝试失败</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已退出登录</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>会话已退出登录</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>从新设备登录</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>从新位置登录</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>身份已确认（“验证是您本人”）</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>身份确认失败</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>已使用通行密钥登录</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>通行密钥登录失败</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>已拒绝登录：两步验证码缺失或错误</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>两步验证码错误</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>帐户因登录失败已锁定</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>帐户已解锁</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>密码已更改</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>密码更改失败</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>密码已重置</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>已申请新密码</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>电子邮件地址已更改</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>用户名已更改</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>两步验证已开启</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>两步验证已关闭</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>已使用恢复代码</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>已生成新的恢复代码</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>已创建应用密码</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>已撤销应用密码</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>已添加通行密钥</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>已移除通行密钥</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>帐户已启用</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>帐户已禁用</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>登录和会话</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>帐户更改</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>需要注意</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>由您</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>由该用户</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>由 %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>方式</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>浏览器</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>操作系统</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>设备</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>地点</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>国家/地区</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>会话</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>哪些</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>发送渠道</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失败的尝试</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>剩余代码</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>登录处理程序</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 的安全活动</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>您帐户的登录和安全更改。如果您发现有不是您本人进行的操作，请更改密码，并让您不认识的设备退出登录。</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>此帐户的登录和安全更改。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>更改密码</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>返回帐户</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>未记录安全活动</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>安全活动从用户审计日志中读取，但其数据表 expuser_audit 不存在或在此数据库上不受支持。请运行 php update/common/scripts/6.0/createuseraudittable.php，或运行 6.0.15 的数据库更新。</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>最近 %days 天</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>最近 %days 天的登录</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>最近的安全活动</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>显示</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>失败</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>已拒绝</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>尚未记录任何安全活动。</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>安全事件保留 %days 天。</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>安全事件会一直保留，直到管理员将其删除。</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>下载我的登录数据</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>您的会话和安全事件，以 JSON 文件形式提供。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>已登录</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>登录尝试失败</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已退出登录</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>会话已退出登录</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>从新设备登录</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>从新位置登录</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>身份已确认（“验证是您本人”）</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>身份确认失败</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>已使用通行密钥登录</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>通行密钥登录失败</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>已拒绝登录：两步验证码缺失或错误</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>两步验证码错误</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>帐户因登录失败已锁定</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>帐户已解锁</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>密码已更改</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>密码更改失败</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>密码已重置</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>已申请新密码</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>电子邮件地址已更改</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>用户名已更改</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>两步验证已开启</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>两步验证已关闭</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>已使用恢复代码</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>已生成新的恢复代码</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>已创建应用密码</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>已撤销应用密码</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>已添加通行密钥</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>已移除通行密钥</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>帐户已启用</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>帐户已禁用</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>登录和会话</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>帐户更改</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>需要注意</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全活动</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 的安全活动</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>您帐户的登录和安全更改。如果您发现有不是您本人进行的操作，请更改密码，并让您不认识的设备退出登录。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>更改密码</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>此站点尚未记录安全活动。</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>最近 %days 天的登录</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失败的尝试</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>尚未记录任何安全活动。</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>下载我的登录数据</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>您的会话和安全事件，以 JSON 文件形式提供。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>密码</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>密码和两步验证码</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 接口</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 接口</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>单点登录</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>在开始记录会话之前登录</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>登录报告</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>谁已登录站点、帐户登录及登录失败的频率，以及让用户在所有设备上退出登录。适用于任何会话处理程序。</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>该会话已退出登录。该设备需要重新登录。</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>已将 %login 从 %count 个会话中退出登录。</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login 没有正在运行的会话。</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>没有帐户使用该 ID、用户名或电子邮件地址。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>这是您正在使用的会话。要结束它，请退出登录。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>该会话已经结束。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>页面已过期。未进行任何更改；请重试。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>此站点不记录会话（site.ini [UserSessionSettings] Tracking=disabled）。</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>数据表 expuser_session 不存在</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>创建该表后即开始记录会话：php update/common/scripts/6.0/createusersessiontable.php，或 6.0.15 的数据库更新。</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>当前和今天</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>运行中的会话</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>已登录用户</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>今日登录次数</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>今日失败尝试次数</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>让用户在所有设备上退出登录</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>该帐户的每个会话都会在其下一次请求时结束，包括通过“记住我”保持的会话。当帐户可能落入他人之手时使用此功能，然后重置其密码。</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>用户 ID、用户名或电子邮件地址</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>在所有设备上退出登录</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>当前已登录</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>显示最近使用的 %limit 个。</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>用户</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>设备</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>地址</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>已登录</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>上次活动</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>此设备</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>未记录</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>退出登录</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>没有已登录的会话。</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>最近 %days 天</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>登录和失败尝试次数从用户审计日志中统计，但该日志不存在；新会话仍会统计。</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>日期</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>登录次数</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失败的尝试</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>新会话</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>会话处理程序：%handler。会话从数据表 expuser_session 中读取，因此该报告适用于任何处理程序。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>您帐户的安全警报</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>您的帐户 %login 发生了一个安全事件：%event。如果不是您本人，请在 %url 保护您的帐户。</translation>
     </message>
 </context>
 </TS>

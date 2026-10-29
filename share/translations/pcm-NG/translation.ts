@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Setup &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>No cronjob part don run yet: di job queue, di imports, di notifications and di search index dey wait. Run php bin/php/installcrontab.php --add --apply, or add di lines of --show to di crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: Dem no go uninstall di packages.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Dis installation na public demo: anybody fit know im administrator password, and dem no fit change or reset administrator passwords. No enter anything private here.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: Dem no go uninstall di packages.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Who change am, log in or dem refuse, for each account; filter am and export am.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Report of di sign-ins</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Who dey signed in, sign-ins and failures for each day; sign one user out for everywhere.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: Dem no go uninstall di packages.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP itself dey remove sessions wey don time out for di PHP handler (session.gc_maxlifetime), no be dis page or di session_gc cronjob part.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Di report of di sign-ins dey list di signed-in sessions of every user, and you fit sign dem out dia; e dey work wit every session handler.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Open di report of di sign-ins</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</translation>
     <message>
         <source>None yet</source>
         <translation>Nothing yet</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Your sign-ins wey just happen, di tries wey no work and di changes to your password, email address and two-step sign-in.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Di sign-ins wey just happen, di tries wey no work and di security changes of dis account.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Check wetin happen</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Sign-ins wey no work: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Check di requirements page for more information.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Dem no write di crontab (%reason). Add dis lines to di crontab of di user wey di site dey run as, if not di queue, di imports, di notifications and di search index no go ever run:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>To install am again, use di kickstarter (%file, den php bin/php/kickstarter.php run --apply) or do fresh installation.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Di mail transport refuse %count messages for di last run. Check di mail server and site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count events dey wait and dem no record any run of di notification cronjob. Add di cronjob part &quot;frequent&quot; to di crontab, or run exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63077,6 +63133,10 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Choose another site or section wit di node picker</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Na only di system administrator fit change di owner: run ./console exp:content-check --fix-permissions --apply as root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64610,6 +64670,10 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>empty</source>
         <translation>empty</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Di signing key don pass one year: change am wit exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70320,6 +70384,14 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>not sent</source>
         <translation>dem no send am</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Di notification cronjob dey record each of im runs for here. Add di part frequent to di crontab, or run exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Use di console: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76493,6 +76565,46 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>None.</source>
         <translation>Nothing.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>wit authenticator app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>wit code wey dem send for email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>wit recovery code</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>wit passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>wit account from outside</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Na im network dem dey show; dem dey keep di address as di data protection settings of di site talk.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Dem no record am</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wia e dey</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>e near am</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76736,6 +76848,42 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Manage devices</source>
         <translation>Manage devices</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>wit authenticator app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>wit code wey dem send for email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>wit recovery code</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>wit passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>wit account from outside</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Dem no record am</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wia e dey</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>e near am</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76815,6 +76963,14 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>View the sessions of this user</source>
         <translation>See di sessions of dis user</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Somebody just use your account %login for %site sign in from one place wey e never sign in from lately:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Di place wey e near</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76853,6 +77009,10 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser on %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Report of di sign-ins</translation>
     </message>
 </context>
 <context>
@@ -77499,6 +77659,788 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>unknown</source>
         <translation>dem no know am</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Make your account safe</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Dem use one recovery code sign in to your account %login for %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Dem use one recovery code</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Di address wey e near</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Ask for new password make you fit sign in again, or contact di administrators of di site.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Ask for new password</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Each recovery code dey work only one time. If your phone don lost, set up your authenticator app again and keep di new recovery codes for safe place.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Sign-in tries wey no work for your account</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>From now go, sign-in go ask for code join your password. If na you do am, you no need do anything.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>If na you and you don forget your password, ask for new one. If no be you, choose password wey strong pass and switch on two-step sign-in.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>If no be you, somebody fit sabi your password: change am now and check wia your account dey signed in.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Recovery codes wey remain</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Check your devices</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Security warning</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Somebody try sign in to your account %login for %site wit wrong password %count times one after di other.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Security event happen for your account %login for %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Dis na security warning about your account. Dem dey send am for every change like dis and you no fit off am.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Di time</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Dem don off two-step sign-in for your account %login for %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Dem don off two-step sign-in</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Dem don switch on two-step sign-in for your account %login for %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Dem don switch on two-step sign-in</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Dem don lock your account %login for %site after too many sign-ins wey no work.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Na only your password dey protect your account now. If no be you do am, switch on two-step sign-in again after you don change your password.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Dem don lock your account</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Wetin happen for di security of %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>E don sign in</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Sign-in try wey no work</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>E don sign out</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Dem don sign out di sessions</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sign-in from new device</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sign-in from new place</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Dem don confirm sey na di person (&quot;Verify say na you&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Di identity check no work</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>E sign in wit passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey sign-in no work</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Dem refuse di sign-in: di two-step code no dey or e wrong</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Di two-step code wrong</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Dem lock di account after sign-ins wey no work</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Dem don unlock di account</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Dem don change di password</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Password change no work</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Dem don reset di password</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Dem ask for new password</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Dem don change di email address</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Dem don change di username</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dem switch on two-step sign-in</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dem off two-step sign-in</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Dem use recovery code</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>New recovery codes dem</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Dem create app password</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Dem cancel app password</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Dem add passkey</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Dem comot passkey</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Di account dey on</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Di account dey off</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sign-ins and di sessions</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Changes for di account</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>E need attention</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>na you do am</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>na di user do am</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>na %login do am</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>How e take happen</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Di browser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operating system</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Di place</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Country</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Which one</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>How dem send am</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Tries wey no work</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Codes wey remain</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Di sign-in handler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Wetin happen for di security of %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sign-ins and changes to di security of your account. If you see something wey no be you do am, change your password and sign out di devices wey you no sabi.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Sign-ins and changes to di security of dis account.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Change password</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Go back to di account</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Dem no dey record wetin happen for security</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Dem dey read am from di user audit log, but im table expuser_audit no dey or dis database no support am. Run php update/common/scripts/6.0/createuseraudittable.php, or di database update of 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Di last %days days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sign-ins for di last %days days</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Wetin just happen for security</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>e no work</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>dem refuse am</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Dem never record anything for security yet.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Dem dey keep security events for %days days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Dem dey keep security events until administrator comot dem.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Download di data of my sign-ins</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Your sessions and security events as JSON file.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>E don sign in</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Sign-in try wey no work</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>E don sign out</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Dem don sign out di sessions</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sign-in from new device</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sign-in from new place</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Dem don confirm sey na di person (&quot;Verify say na you&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Di identity check no work</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>E sign in wit passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey sign-in no work</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Dem refuse di sign-in: di two-step code no dey or e wrong</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Di two-step code wrong</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Dem lock di account after sign-ins wey no work</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Dem don unlock di account</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Dem don change di password</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Password change no work</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Dem don reset di password</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Dem ask for new password</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Dem don change di email address</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Dem don change di username</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dem switch on two-step sign-in</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dem off two-step sign-in</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Dem use recovery code</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>New recovery codes dem</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Dem create app password</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Dem cancel app password</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Dem add passkey</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Dem comot passkey</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Di account dey on</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Di account dey off</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sign-ins and di sessions</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Changes for di account</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>E need attention</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Wetin happen for di security of %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sign-ins and changes to di security of your account. If you see something wey no be you do am, change your password and sign out di devices wey you no sabi.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Change password</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Dem never dey record wetin happen for security for dis site.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sign-ins for di last %days days</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Tries wey no work</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Dem never record anything for security yet.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Download di data of my sign-ins</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Your sessions and security events as JSON file.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password and two-step code</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>E sign in before dem start to record sessions</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Report of di sign-ins</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Who dey signed in to di site, how often accounts dey sign in and fail, and how to sign one user out for everywhere. E dey work wit every session handler.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Dem don sign out di session. Di device go need sign in again.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Dem don sign %login out from %count sessions.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login no get any session wey dey run.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>No account get dat ID, username or email address.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Na dis session you dey use. To end am, sign out.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Dat session don already end.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Di page don expire. Nothing change; abeg try again.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Dem no dey record sessions for dis site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Di table expuser_session no dey</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Dem go record sessions once dem create am: php update/common/scripts/6.0/createusersessiontable.php, or di database update of 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Now and dis today</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sessions wey dey run</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Users wey dey signed in</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Sign-ins wey happen today</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Tries wey no work today</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Sign one user out for everywhere</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Every session of di account go end for im next request, plus di ones wey Remember me dey keep. Use am wen account fit dey for wrong hand; den reset im password.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>User ID, username or email address</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sign out for everywhere</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>E dey signed in now</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Na di %limit wey dem use last we dey show.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>E don sign in</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Last time e dey active</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dis device</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Dem no record am</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sign out</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>No session dey signed in.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Di last %days days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Dem dey count sign-ins and tries wey no work from di user audit log, but e no dey; dem still dey count di new sessions.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Day</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Sign-ins</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Tries wey no work</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Di new sessions</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Session handler: %handler. Dem dey read di sessions from di table expuser_session, so di report dey work wit every handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Security warning for your account</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Security event happen for your account %login: %event. If no be you, make your account safe for %url.</translation>
     </message>
 </context>
 </TS>

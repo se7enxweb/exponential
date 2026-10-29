@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ߟߊߓߍ߲ߣߌ &gt; cron ߓߊߙߊߟߎ</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ߞߙߏߣ ߓߊߙߊ ߦߐߙߐ ߛߌ ߡߊ ߓߊߙߊ ߞߍ ߝߐߟߐ: ߓߊߙߊ ߖߍߣߐߜ߳ߐ߲ߦߊߟߎ߸ ߘߏ߲ߣߍ߲ߟߎ߸ ߞߎ߲ߣߊߝߏߣߌߘߌߟߎ ߊߣߌ ߢߌߣߌߣߌ ߖߌߙߌߛߍߓߍ߲ ߓߋ ߡߊߞߐߣߐߣߌ ߟߊ. ߌ ߞߊ php bin/php/installcrontab.php --add --apply ߞߍ߸ ߥߊߟߌߡߊ ߞߊ --show ߛߊߙߌߦߊߟߎ ߝߊߙߊ crontab ߞߊ߲.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ߣߌ߲ ߛߌߜ߳ߌߟߌ ߦߋ ߘߍߡߏ ߦߋ ߡߌ߲ ߓߋ ߡߐߜ߳ߐ ߓߍߓߍ ߓߟߏ: ߡߐߜ߳ߐ ߏ ߡߐߜ߳ߐ ߓߋ ߛߋ ߞߊ ߊ ߡߊߙߊߓߊߜ߳ߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߘߏ߲߸ ߊߣߌ ߡߊߙߊߓߊߜ߳ߊߟߎ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍߟߎ ߕߍ ߛߋ ߞߊ ߦߍߟߍߡߊ ߥߊߟߌߡߊ ߞߊ ߛߋߜ߳ߌ߲ ߞߏߞߎߙߊ. ߌ ߞߊߣߊ ߝߏߦߌ ߜ߳ߎ߲ߘߏ ߘߏ߲ ߦߊ߲.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ߌ ߞߊ ߡߌߣߍߣߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ߖߐ߲ ߦߋ ߦߍߟߍߡߊ ߞߍ߸ ߖߐ߲ ߘߏ߲߸ ߥߊߟߌߡߊ ߖߐ߲ ߘߏ߲ߣߌ ߓߊ߲ߣߍ߲ ߘߏ߲߸ ߞߐ߲ߕߌ ߞߋߟߋ߲ ߞߋߟߋ߲ ߣߊ; ߛߍ߲ߛߍ߲ ߊߣߌ ߟߊߓߐ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ߘߏ߲ߣߌ ߖߊߕߋߓߐߛߍߓߍ߲</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ߡߌ߲ߣߎ߲ ߘߏ߲ߣߍ߲ ߓߋ߸ ߘߏ߲ߣߌߟߎ ߊߣߌ ߕߌߢߍߣߌߟߎ ߘߏ߲ ߏ ߘߏ߲; ߓߊߙߊߞߍߟߊ ߘߐ ߓߐ ߦߐߙߐ ߓߍߍ.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ߢߍߣߊߓߐߓߊߜ߳ߊ ߞߊ ߛߍߛߌߦߐ߲ ߕߍߡߍߣߍ߲ߟߎ ߓߋ ߓߐߛߌ PHP ߦߍߙߍ ߝߍ (session.gc_maxlifetime)߸ ߣߌ߲ ߢߍ ߥߊߟߌߡߊ session_gc cron ߓߊߙߊ ߝߊ߲ ߕߍ.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ߘߏ߲ߣߌ ߖߊߕߋߓߐߛߍߓߍ߲ ߓߋ ߓߊߙߊߞߍߟߊ ߓߍߍ ߟߊ ߛߍߛߌߦߐ߲ ߘߏ߲ߣߍ߲ߟߎ ߖߌߙߊ߸ ߞߊ ߏߟߎ ߓߐ ߝߊ߲ߓߊ; ߊ ߓߋ ߓߊߙߊ ߞߍ ߣߌ ߛߍߛߌߦߐ߲ ߢߍߣߊߓߐߓߊߜ߳ߊ ߓߍߍ ߦߋ.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ߘߏ߲ߣߌ ߖߊߕߋߓߐߛߍߓߍ߲ ߘߊ ߥߎߟߌ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ߝߏߦߌ ߕߍ ߝߐߟߐ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ߌ ߞߊ ߘߏ߲ߣߌ ߞߐߝߐߟߐߟߎ߸ ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ ߊߣߌ ߦߍߟߍߡߊߟߌߟߎ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ߸ ߌ ߞߊ ߌߡߍߟߌ ߊߘߙߍߛߌ ߊߣߌ ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ߣߌ߲ ߞߐ߲ߕߌ ߣߌ߲ ߟߊ ߘߏ߲ߣߌ ߞߐߝߐߟߐߟߎ߸ ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ ߊߣߌ ߟߊߞߊߣߊ ߦߍߟߍߡߊߟߌߟߎ.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ߞߍߥߊߟߍߟߎ ߟߊߖߍ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ߘߏ߲ߣߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ߡߊ ߛߍߓߍ߲ (%reason). ߣߌ߲ ߛߌߙߊ ߣߌ߲ߣߎ ߝߊߙߊ ߓߊߙߊߞߍߟߊ ߞߊ crontab ߞߊ߲ ߡߌ߲ ߓߋ ߛߌߕߌ ߓߏߟߌ߸ ߣߏ ߕߍ ߢߍߣߐߜ߳ߐ߸ ߟߊߘߊߡߎߟߎ߸ ߞߎ߲ߣߊߝߏߣߌߘߌߟߎ ߣߌ ߢߌߣߌߣߌ ߕߊߡߊߛߌߦߍ߲ ߕߍߣߊ ߓߏߟߌ ߊߓߊߘߊ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ߊ ߓߋ ߛߌߜ߳ߌ ߞߏߞߎߙߊ ߣߌ Kickstarter ߦߋ (%file, ߏ ߞߐ php bin/php/kickstarter.php run --apply) ߥߊߟߌߡߊ ߣߌ ߛߌߜ߳ߌߟߌ ߞߎߙߊ ߦߋ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ߌߡߍߟߌ ߗߌߦߐߙߐ ߓߊ߲ߣߊ ߗߌ %count ߟߊ ߓߏߟߌ ߟߊߓߊ߲ ߣߊ. ߌߡߍߟߌ ߛߍߙߌߥߍߙߌ ߣߌ site.ini MailSettings ߛߍߜ߳ߍߛߍߜ߳ߍ.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ߞߍߥߊߟߍ %count ߓߋ ߡߊߞߐߣߐߣߌ ߟߊ ߊߣߌ ߞߎ߲ߣߊߝߏߣߌߘߌ ߞߙߏߣ ߓߊߙߊ ߓߏߟߌ ߛߌ ߡߊ ߛߍߓߍ. ߞߙߏߣ ߓߊߙߊ ߦߐߙߐ «frequent» ߝߊߙߊ crontab ߞߊ߲߸ ߥߊߟߌߡߊ exp:notification:run --apply ߞߍ.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ߛߌߕߌ ߥߍߙߍ ߥߊߟߊ ߛߍߞߌߛߌߦߐ߲ ߥߍߙߍ ߛߎߜ߳ߊ߲ߘߌ ߣߌ ߣߐߘߌ ߛߎߜ߳ߊ߲ߘߌߓߊߜ߳ߊ ߦߋ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ߛߌߛߕߍߡߌ ߞߎ߲ߕߌߜ߳ߌ ߘߊߡߊ ߘߍ ߓߋ ߛߋ ߞߊ ߕߌߜ߳ߌ ߦߍߟߍߡߊ: ./console exp:content-check --fix-permissions --apply ߞߍ ߌ ߣ&apos;ߊ ߝߐ root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ߟߊ߲ߞߏߟߏ߲</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>ߓߟߏߣߐߓߌߟߊ ߞߌߟߍ ߕߍߡߍߣߊ ߛߊ߲ ߞߋߟߋ߲ ߞߊ߲: ߊ ߦߍߟߍߡߊ ߣߌ exp:audit key rotate --apply ߦߋ.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ߗߌ ߡߊ ߞߍ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ߞߎ߲ߣߊߝߏߣߌߘߌ ߞߙߏߣ ߓߊߙߊ ߓߋ ߊ ߓߏߟߌ ߞߋߟߋ߲ ߞߋߟߋ߲ ߓߍߍ ߛߍߓߍ ߦߊ߲. ߦߐߙߐ frequent ߝߊߙߊ crontab ߞߊ߲߸ ߥߊߟߌߡߊ exp:notification:run --apply ߞߍ.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ߞߐ߲ߛߏߟߌ ߞߍ ߓߊߙߊ ߟߊ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ߝߏߦߌ ߕߍ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ߣߌ authenticator ߔߏߙߏߜ߳ߙߊߡߎ ߦߋ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ߣߌ ߞߏߘߍ ߦߋ ߡߌ߲ ߗߌߙߊ ߌߡߍߟߌ ߝߍ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ߣߌ ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߦߋ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ߣߌ ߞߍߣߍߡߊ ߞߐ߲ߕߌ ߦߋ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ߊ ߖߌߙߊߣߍ߲ ߘߏ߲ ߌ ߣ&apos;ߊ ߝߐ ߊ ߟߊ ߙߋߖߏ; ߊߘߌߙߍߛߌ ߓߋ ߡߊߙߊ ߌ ߣ&apos;ߊ ߝߐ ߛߌߕߌ ߟߊ ߞߎ߲ߣߊߝߏߣߌߟߎ ߟߊߞߊߣߊ ߟߊߓߍ߲ߟߎ ߓߋ ߊ ߝߐ ߗߏߜ߳ߏ ߡߌ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ߊ ߡߊ ߛߍߓߍ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ߦߐߙߐ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ߊ ߢߐߜ߳ߐ߲</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ߡߌߣߍߣߍߟߎ ߡߊߙߊ</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ߣߌ authenticator ߔߏߙߏߜ߳ߙߊߡߎ ߦߋ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ߣߌ ߞߏߘߍ ߦߋ ߡߌ߲ ߗߌߙߊ ߌߡߍߟߌ ߝߍ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ߣߌ ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߦߋ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ߣߌ ߞߍߣߍߡߊ ߞߐ߲ߕߌ ߦߋ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ߊ ߡߊ ߛߍߓߍ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ߦߐߙߐ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ߊ ߢߐߜ߳ߐ߲</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ߣߌ߲ ߓߊߙߊߞߍߟߊ ߞߊ ߛߍߛߌߦߐ߲ߟߎ ߟߊߖߍ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>ߌ ߞߊ ߞߐ߲ߕߌ %login ߡߌ߲ ߓߋ %site ߞߊ߲߸ ߏ ߞߍߙߊ ߛߌߛߊ߲ ߞߊ ߘߏ߲ ߞߊ ߓߐ ߦߐߙߐ ߘߐ ߟߊ߸ ߊ ߡߊ ߘߏ߲ ߞߊ ߓߐ ߦߐߙߐ ߡߌ߲ ߣߊ ߞߐߝߍ ߣߌ߲ ߣߊ:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ߦߐߙߐ ߊ ߢߐߜ߳ߐ߲</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser %os ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ߘߏ߲ߣߌ ߖߊߕߋߓߐߛߍߓߍ߲</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>ߊ ߕߍ ߘߏ߲</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߘߐ ߞߍߙߊ ߞߊ ߘߏ߲ ߌ ߞߊ ߞߐ߲ߕߌ %login ߞߐߣߐ %site ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߘߐ ߞߍߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ߞߐ߲ߕߌ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ߊߘߌߙߍߛߌ ߊ ߢߐߜ߳ߐ߲</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߙߊ ߢߌߣߌ ߥߊߟߊߛߊ ߞߊ ߘߏ߲ ߞߏߞߎߙߊ߸ ߥߊߟߌߡߊ ߞߊ ߛߌߕߌ ߞߎ߲ߕߌߜ߳ߌߟߎ ߥߍߟߍ.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߙߊ ߢߌߣߌ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߞߋߟߋ߲ ߞߋߟߋ߲ ߓߍߍ ߓߋ ߓߊߙߊ ߞߍ ߛߌߢߍ ߞߋߟߋ߲. ߣߌ ߌ ߞߊ ߕߋߟߋߝߐߣߌ ߕߎߣߎߣߊ߸ ߌ ߞߊ authenticator ߔߏߙߏߜ߳ߙߊߡߎ ߟߊߓߍ߲ ߞߏߞߎߙߊ ߊߣߌ ߞߊ ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߞߎߙߊߟߎ ߡߊߙߊ ߦߐߙߐ ߟߊߞߊߣߊߣߍ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ߘߏ߲ߣߌ ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ ߌ ߞߊ ߞߐ߲ߕߌ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ߞߊ ߓߐ ߛߌߛߊ߲ ߣߊ߸ ߘߏ߲ߣߌ ߓߋߣߊ ߞߏߘߍ ߘߐ ߢߌߣߌ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߐ. ߣߌ ߌߟߋ ߘߍ ߦߋ ߊ ߞߍ߸ ߌ ߡߊ߲ ߞߊ߲ ߞߊ ߝߏߦߌ ߞߍ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ߣߌ ߌߟߋ ߘߏ߲ ߊߣߌ ߌ ߢߌߣߊ߲ߣߊ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߐ߸ ߞߎߙߊ ߘߐ ߢߌߣߌ. ߣߌ ߌߟߋ ߕߍ߸ ߜ߳ߎ߲ߘߏߘߊߢߍ ߓߊߙߌߞߊߡߊ ߛߎߜ߳ߊ߲ߘߌ ߊߣߌ ߞߊ ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߘߊߡߌߣߍ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ߣߌ ߌߟߋ ߕߍ ߡߌ߲ ߦߋ ߊ ߞߍ߸ ߡߐߜ߳ߐ ߘߐ ߓߋ ߛߋ ߞߊ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߘߐ߲: ߊ ߦߍߟߍߡߊ ߛߌߛߊ߲ ߊߣߌ ߞߊ ߦߐߙߐ ߟߊߖߍ ߌ ߞߊ ߞߐ߲ߕߌ ߘߏ߲ߣߍ߲ ߓߋ ߦߐߙߐ ߡߌ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߡߌ߲ߣߎ߲ ߕߏߙߊ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ߌ ߞߊ ߡߌߣߍߣߍߟߎ ߟߊߖߍ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ߟߊߞߊߣߊ ߟߊߛߐߡߌߣߌ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>ߡߐߜ߳ߐ ߘߐ ߦߋ ߊ ߢߌߣߌ ߞߊ ߘߏ߲ ߌ ߞߊ ߞߐ߲ߕߌ %login ߞߐߣߐ %site ߞߊ߲ ߣߌ ߜ߳ߎ߲ߘߏߘߊߢߍ ߝߌߟߊߣߍ߲ ߦߋ ߛߌߢߍ %count ߢߐߜ߳ߐ߲ ߞߐ.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍ ߘߐ ߞߍߙߊ ߌ ߞߊ ߞߐ߲ߕߌ %login ߞߊ߲ %site ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ߣߌ߲ ߦߋ ߟߊߞߊߣߊ ߟߊߛߐߡߌߣߌ ߦߋ ߌ ߞߊ ߞߐ߲ߕߌ ߞߏ ߟߊ. ߊ ߓߋ ߗߌ ߏ ߦߍߟߍߡߊߟߌ ߛߎߜ߳ߎߦߊ ߓߍߍ ߟߊ ߊߣߌ ߊ ߕߍ ߛߋ ߞߊ ߓߌߟߊ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ߥߊߕߌ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߓߌߟߊߙߊ ߌ ߞߊ ߞߐ߲ߕߌ %login ߦߋ %site ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߓߌߟߊߙߊ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߘߊߡߌߣߍߣߊ ߌ ߞߊ ߞߐ߲ߕߌ %login ߦߋ %site ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߘߊߡߌߣߍߣߊ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>ߌ ߞߊ ߞߐ߲ߕߌ %login ߡߌ߲ ߓߋ %site ߞߊ߲߸ ߏ ߘߊߕߎߜ߳ߎߙߊ ߘߏ߲ߣߌ ߛߌߦߊߡߊ߲ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ ߏߟߎ ߞߐ.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ߛߌߛߊ߲ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊߣߍ߲ ߓߋ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߘߊߡߊ ߘߍ ߝߍ. ߣߌ ߌߟߋ ߕߍ ߡߌ߲ ߦߋ ߊ ߞߍ߸ ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߘߊߡߌߣߍ ߞߏߞߎߙߊ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊߟߌ ߞߐ.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ߌ ߞߊ ߞߐ߲ߕߌ ߘߊߕߎߜ߳ߎߙߊ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ߟߊ ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ߊ ߘߏ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ߘߏ߲ߣߌ ߗߍߛߌߙߌ ߡߌ߲ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ߊ ߓߐߙߊ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ ߓߐߙߊ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ߘߏ߲ߣߌ ߞߊ ߓߐ ߡߌߣߍ߲ ߞߎߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ߘߏ߲ߣߌ ߞߊ ߓߐ ߦߐߙߐ ߞߎߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ߡߐߜ߳ߐߦߊ ߛߍߡߍ߲ߕߌߦߊߙߊ («ߌ ߦߍߙߍ ߛߐ߲»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ߡߐߜ߳ߐߦߊ ߟߊߖߍߟߌ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ߊ ߘߏ߲ߣߊ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ߘߏ߲ߣߌ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ߘߏ߲ߣߌ ߓߊ߲ߣߊ: ߛߍ߲ ߝߌߟߊ ߞߏߘߍ ߕߍ ߦߋ߲ ߥߊߟߌߡߊ ߊ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ߛߍ߲ ߝߌߟߊ ߞߏߘߍ ߝߌߟߊߣߍ߲</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ߞߐ߲ߕߌ ߘߊߕߎߜ߳ߎߙߊ ߘߏ߲ߣߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ ߏߟߎ ߞߐ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ߞߐ߲ߕߌ ߘߊߦߍߟߍߙߊ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊߟߌ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߟߊߓߍ߲ߣߊ ߞߏߞߎߙߊ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߙߊ ߢߌߣߌߣߊ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ߌߡߍߟߌ ߊߘߙߍߛߌ ߦߍߟߍߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ߓߊߙߊߞߍߟߊ ߕߐߜ߳ߐ ߦߍߟߍߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߓߋ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߓߐߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߞߍߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߞߎߙߊߟߎ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ߊߔߟߌߞߊߛߌߦߐ߲ ߜ߳ߎ߲ߘߏߘߊߢߍ ߘߌߟߊ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ߊߔߟߌߞߊߛߌߦߐ߲ ߜ߳ߎ߲ߘߏߘߊߢߍ ߓߐߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߝߊߙߊߟߊ ߊ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߓߐߛߌߙߊ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ߞߐ߲ߕߌ ߓߌߟߊߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ߞߐ߲ߕߌ ߓߐߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ߓߍߓߍ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߊߣߌ ߛߍߛߌߦߐ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ߞߐ߲ߕߌ ߦߍߟߍߡߊߟߌߟߎ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ߊ ߡߊߜ߳ߏ ߓߋ ߖߊ߲ߕߏ ߟߊ</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ߌߟߋ ߝߍ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ߓߊߙߊߞߍߟߊ ߝߍ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login ߝߍ</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ߗߏߜ߳ߏߦߊ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ߥߍߓߎ ߦߊߟߊߟߊ߲</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ߛߌߛߕߍߡߌ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ߡߌߣߍ߲</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ߦߐߙߐ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ߖߊߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ߖߎߡߍ߲</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ߗߌߟߌ ߛߌߙߊ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ߞߏߘߍ ߡߌ߲ߣߎ߲ ߕߏߙߊ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ߘߏ߲ߣߌ ߢߍߣߊߓߐߓߊߜ߳ߊ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ߟߊ ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߊߣߌ ߦߍߟߍߡߊߟߌߟߎ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊߟߌ ߟߊ. ߣߌ ߌ ߦߋ ߝߍ߲ ߘߐ ߦߋ ߌ ߡߊ ߡߌ߲ ߞߍ߸ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊ ߊߣߌ ߞߊ ߡߌߣߍ߲ ߡߌ߲ߣߎ߲ ߌ ߕߍ ߏߟߎ ߘߐ߲߸ ߏߟߎ ߓߐ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߊߣߌ ߦߍߟߍߡߊߟߌߟߎ ߣߌ߲ ߞߐ߲ߕߌ ߣߌ߲ ߟߊߞߊߣߊߟߌ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ߌ ߞߊ ߡߌߣߍߣߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊ</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ߛߍߜ߳ߌ߲ ߞߐ߲ߕߌ ߟߊ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߕߍ ߛߍߓߍ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ߊ ߓߋ ߞߊߙߊ߲ ߞߊ ߓߐ ߓߊߙߊߞߍߟߊ ߛߍߜ߳ߍߛߍߜ߳ߍߟߌ ߛߍߓߍ߲ ߣߊ߸ ߊ ߟߊ ߕߊߓߊߟߌ expuser_audit ߕߍ ߦߋ߲ ߥߊߟߌߡߊ ߊ ߕߍ ߘߍߡߍ ߣߌ߲ ߓߍߖߍߝߊ߲ߓߊ ߣߌ߲ ߞߊ߲. php update/common/scripts/6.0/createuseraudittable.php ߞߍ߸ ߥߊߟߌߡߊ 6.0.15 ߟߊ ߓߍߖߍߝߊ߲ߓߊ ߞߎߙߊߦߊ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ߘߏ߲ %days ߟߊߓߊ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߘߏ߲ %days ߟߊߓߊ߲ߟߎ ߞߐߣߐ</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍ ߞߐߝߐߟߐߟߎ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ߖߌߙߊ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ߊ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ߊ ߓߊ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍ ߛߌ ߡߊ ߛߍߓߍ ߝߐߟߐ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߓߋ ߡߊߙߊ ߘߏ߲ %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߓߋ ߡߊߙߊ ߝߏ ߞߎ߲ߕߌߜ߳ߌ ߘߐ ߞߊ ߏߟߎ ߓߐߛߌ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ߒ ߞߊ ߘߏ߲ߣߌ ߞߎ߲ߣߊߝߏߣߌߟߎ ߟߊߖߌߜ߳ߌ߲</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ߌ ߞߊ ߛߍߛߌߦߐ߲ߟߎ ߊߣߌ ߌ ߞߊ ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߌ ߣ&apos;ߊ ߝߐ JSON ߝߌߛߌߦߋ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ߊ ߘߏ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ߘߏ߲ߣߌ ߗߍߛߌߙߌ ߡߌ߲ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ߊ ߓߐߙߊ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ ߓߐߙߊ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ߘߏ߲ߣߌ ߞߊ ߓߐ ߡߌߣߍ߲ ߞߎߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ߘߏ߲ߣߌ ߞߊ ߓߐ ߦߐߙߐ ߞߎߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ߡߐߜ߳ߐߦߊ ߛߍߡߍ߲ߕߌߦߊߙߊ («ߌ ߦߍߙߍ ߛߐ߲»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ߡߐߜ߳ߐߦߊ ߟߊߖߍߟߌ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ߊ ߘߏ߲ߣߊ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ߘߏ߲ߣߌ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ߘߏ߲ߣߌ ߓߊ߲ߣߊ: ߛߍ߲ ߝߌߟߊ ߞߏߘߍ ߕߍ ߦߋ߲ ߥߊߟߌߡߊ ߊ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ߛߍ߲ ߝߌߟߊ ߞߏߘߍ ߝߌߟߊߣߍ߲</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ߞߐ߲ߕߌ ߘߊߕߎߜ߳ߎߙߊ ߘߏ߲ߣߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ ߏߟߎ ߞߐ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ߞߐ߲ߕߌ ߘߊߦߍߟߍߙߊ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊߟߌ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߟߊߓߍ߲ߣߊ ߞߏߞߎߙߊ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߙߊ ߢߌߣߌߣߊ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ߌߡߍߟߌ ߊߘߙߍߛߌ ߦߍߟߍߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ߓߊߙߊߞߍߟߊ ߕߐߜ߳ߐ ߦߍߟߍߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߓߋ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ ߓߐߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߞߍߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ߟߊߛߋߜ߳ߌ߲ ߞߏߘߍ ߞߎߙߊߟߎ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ߊߔߟߌߞߊߛߌߦߐ߲ ߜ߳ߎ߲ߘߏߘߊߢߍ ߘߌߟߊ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ߊߔߟߌߞߊߛߌߦߐ߲ ߜ߳ߎ߲ߘߏߘߊߢߍ ߓߐߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߝߊߙߊߟߊ ߊ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߓߐߛߌߙߊ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ߞߐ߲ߕߌ ߓߌߟߊߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ߞߐ߲ߕߌ ߓߐߙߊ ߓߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ߓߍߓߍ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߊߣߌ ߛߍߛߌߦߐ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ߞߐ߲ߕߌ ߦߍߟߍߡߊߟߌߟߎ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ߊ ߡߊߜ߳ߏ ߓߋ ߖߊ߲ߕߏ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ߟߊ ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߊߣߌ ߦߍߟߍߡߊߟߌߟߎ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊߟߌ ߟߊ. ߣߌ ߌ ߦߋ ߝߍ߲ ߘߐ ߦߋ ߌ ߡߊ ߡߌ߲ ߞߍ߸ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊ ߊߣߌ ߞߊ ߡߌߣߍ߲ ߡߌ߲ߣߎ߲ ߌ ߕߍ ߏߟߎ ߘߐ߲߸ ߏߟߎ ߓߐ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ߌ ߞߊ ߡߌߣߍߣߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߍߟߍߡߊ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߕߍ ߛߍߓߍ ߣߌ߲ ߛߌߕߌ ߣߌ߲ ߞߊ߲ ߝߐߟߐ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߘߏ߲ %days ߟߊߓߊ߲ߟߎ ߞߐߣߐ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍ ߛߌ ߡߊ ߛߍߓߍ ߝߐߟߐ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ߒ ߞߊ ߘߏ߲ߣߌ ߞߎ߲ߣߊߝߏߣߌߟߎ ߟߊߖߌߜ߳ߌ߲</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ߌ ߞߊ ߛߍߛߌߦߐ߲ߟߎ ߊߣߌ ߌ ߞߊ ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߌ ߣ&apos;ߊ ߝߐ JSON ߝߌߛߌߦߋ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ߜ߳ߎ߲ߘߏߘߊߢߍ ߊߣߌ ߛߍ߲ ߝߌߟߊ ߞߏߘߍ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ߢߐߜ߳ߐ߲ߘߊ߲ߓߊߜ߳ߊ</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ߢߐߜ߳ߐ߲ߘߊ߲ߓߊߜ߳ߊ</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ߘߏ߲ߣߌ ߞߋߟߋ߲ (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ߊ ߘߏ߲ߣߊ ߛߊ߲ߣߌ ߛߍߛߌߦߐ߲ߟߎ ߞߊ ߘߊߡߌߣߍ ߞߊ ߛߍߓߍ</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ߘߏ߲ߣߌ ߖߊߕߋߓߐߛߍߓߍ߲</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ߡߌ߲ߣߎ߲ ߘߏ߲ߣߍ߲ ߓߋ ߛߌߕߌ ߞߐߣߐ߸ ߞߐ߲ߕߌߟߎ ߓߋ ߘߏ߲ ߊߣߌ ߏߟߎ ߓߋ ߕߌߢߍ ߛߌߢߍ ߖߏߟߌ߸ ߊߣߌ ߓߊߙߊߞߍߟߊ ߘߐ ߓߐߟߌ ߦߐߙߐ ߓߍߍ. ߊ ߓߋ ߓߊߙߊ ߞߍ ߣߌ ߛߍߛߌߦߐ߲ ߢߍߣߊߓߐߓߊߜ߳ߊ ߓߍߍ ߦߋ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߓߐߙߊ. ߡߌߣߍ߲ ߞߊ ߞߊ߲ ߞߊ ߘߏ߲ ߞߏߞߎߙߊ.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ߓߐߙߊ ߛߍߛߌߦߐ߲ %count ߞߐߣߐ.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߛߌ ߕߎ߲ ߕߍ ߕߊ ߟߊ %login ߝߍ.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ߞߐ߲ߕߌ ߛߌ ߕߍ ߡߌ߲ ߟߊ ID߸ ߓߊߙߊߞߍߟߊ ߕߐߜ߳ߐ ߥߊߟߌߡߊ ߌߡߍߟߌ ߊߘߙߍߛߌ ߦߋ ߏ ߦߋ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ߣߌ߲ ߦߋ ߛߍߛߌߦߐ߲ ߦߋ ߌ ߓߋ ߓߊߙߊ ߞߍ ߣߌ ߡߌ߲ ߦߋ. ߥߊߟߊߛߊ ߞߊ ߊ ߟߊߓߊ߲߸ ߌ ߞߊ ߓߐ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ߏ ߛߍߛߌߦߐ߲ ߕߎ߲ ߓߊ߲ߣߊ ߞߊߓߊ߲.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ߢߍ ߥߊߕߌ ߕߎ߲ ߕߍߡߍߣߊ. ߝߏߦߌ ߡߊ ߦߍߟߍߡߊ; ߤߊߞߍߕߏ߸ ߌ ߞߊ ߊ ߟߊߖߍ ߞߏߞߎߙߊ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ ߕߍ ߛߍߓߍ ߣߌ߲ ߛߌߕߌ ߣߌ߲ ߞߊ߲ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ߕߊߓߊߟߌ expuser_session ߕߍ ߦߋ߲</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ ߓߋߣߊ ߛߍߓߍ ߣߌ ߊ ߘߌߟߊ߲ߣߊ: php update/common/scripts/6.0/createusersessiontable.php߸ ߥߊߟߌߡߊ 6.0.15 ߟߊ ߓߍߖߍߝߊ߲ߓߊ ߞߎߙߊߦߊ.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ߛߌߛߊ߲ ߊߣߌ ߓߌ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>ߛߍߛߌߦߐ߲ ߡߌ߲ߣߎ߲ ߓߋ ߕߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ߓߊߙߊߞߍߟߊ ߘߏ߲ߣߍ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ߓߌ ߘߏ߲ߣߌߟߎ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ߓߌ ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ߓߊߙߊߞߍߟߊ ߘߐ ߓߐ ߦߐߙߐ ߓߍߍ</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ߞߐ߲ߕߌ ߟߊ ߛߍߛߌߦߐ߲ ߓߍߍ ߓߋ ߓߊ߲ ߊ ߟߊ ߢߌߣߌߣߌ ߣߊߕߊ ߟߊ߸ «ߒ ߤߊߞߌߟߌ ߕߏ» ߦߋ ߡߌ߲ߣߎ߲ ߡߊߙߊ߸ ߏߟߎ ߝߊ߲ߓߊ. ߊ ߞߍ ߣߌ ߞߐ߲ߕߌ ߘߐ ߓߋ ߛߋ ߞߊ ߞߍ ߓߟߏ ߖߎߜ߳ߎ ߟߊ; ߏ ߞߐ ߊ ߟߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߟߊߓߍ߲ ߞߏߞߎߙߊ.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ߓߊߙߊߞߍߟߊ ID߸ ߓߊߙߊߞߍߟߊ ߕߐߜ߳ߐ ߥߊߟߌߡߊ ߌߡߍߟߌ ߊߘߙߍߛߌ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ߦߐߙߐ ߓߍߍ ߓߐ</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ߊ ߘߏ߲ߣߍ߲ ߓߋ ߛߌߛߊ߲</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit ߡߌ߲ߣߎ߲ ߞߍߙߊ ߓߊߙߊ ߟߊ ߟߊߓߊ߲ ߣߊ߸ ߏߟߎ ߖߌߙߊߣߍ߲ ߘߏ߲.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ߓߊߙߊߞߍߟߊ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ߡߌߣߍ߲</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ߊߘߌߙߍߛߌ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ߊ ߘߏ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ߓߊߙߊ ߟߊߓߊ߲ ߥߊߕߌ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ߥߊߟߋߟߎ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ߣߌ߲ ߡߌߣߍ߲ ߣߌ߲</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ߊ ߡߊ ߛߍߓߍ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ߓߐ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߛߌ ߘߏ߲ߣߍ߲ ߕߍ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ߘߏ߲ %days ߟߊߓߊ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ߘߏ߲ߣߌߟߎ ߊߣߌ ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ߸ ߏߟߎ ߓߋ ߖߊߕߋ ߞߊ ߓߐ ߓߊߙߊߞߍߟߊ ߛߍߜ߳ߍߛߍߜ߳ߍߟߌ ߛߍߓߍ߲ ߣߊ߸ ߡߌ߲ ߕߍ ߦߋ߲; ߛߍߛߌߦߐ߲ ߞߎߙߊߟߎ ߓߋ ߖߊߕߋ.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ߘߏ߲</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ߘߏ߲ߣߌߟߎ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ߗߍߛߌߙߌ ߡߌ߲ߣߎ߲ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ߛߍߛߌߦߐ߲ ߞߎߙߊߟߎ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߢߍߣߊߓߐߓߊߜ߳ߊ: %handler. ߛߍߛߌߦߐ߲ߟߎ ߓߋ ߞߊߙߊ߲ ߞߊ ߓߐ ߕߊߓߊߟߌ expuser_session ߣߊ߸ ߏ ߘߐߙߐ߲ ߞߏߛߐ߲ ߖߊߕߋߓߐߛߍߓߍ߲ ߓߋ ߓߊߙߊ ߞߍ ߣߌ ߢߍߣߊߓߐߓߊߜ߳ߊ ߓߍߍ ߦߋ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ߟߊߞߊߣߊ ߟߊߛߐߡߌߣߌ ߌ ߞߊ ߞߐ߲ߕߌ ߞߏ ߟߊ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍ ߘߐ ߞߍߙߊ ߌ ߞߊ ߞߐ߲ߕߌ %login ߞߊ߲: %event. ߣߌ ߌߟߋ ߕߎ߲ ߕߍ߸ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊ %url ߟߊ.</translation>
     </message>
 </context>
 </TS>

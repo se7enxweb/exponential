@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Configuración &gt; Tarees programaes</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Entá nun s&apos;executó nenguna parte de les xeres programaes: la cola de xeres, les importaciones, los avisos y l&apos;índiz de gueta tán esperando. Executa php bin/php/installcrontab.php --add --apply o amiesta les llinies de --show a la crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Nota: los paquetes nun se desinstalarán.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Esta instalación ye una demostración pública: cualquiera pue conocer la so contraseña d'alministrador, y les contraseñes de los alministradores nun puen camudase nin reaniciase. Nun introduzas equí nada priváu.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Los tos preseos</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Nota: los paquetes nun se desinstalarán.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Quién camudó, anició sesión o foi refugáu, por cuenta; filtrar y esportar.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Informe d&apos;anicios de sesión</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Quién tien la sesión aniciada, anicios de sesión y fallos per día; zarrar la sesión d&apos;un usuariu en toes partes.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Nota: los paquetes nun se desinstalarán.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Les sesiones caducaes del xestor de PHP quítales el propiu PHP (session.gc_maxlifetime), non esta páxina nin la parte session_gc de les xeres programaes.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Les sesiones aniciaes de tolos usuarios llístense, y ziérrense, nel informe d&apos;anicios de sesión, que funciona con cualquier xestor de sesiones.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Abrir l&apos;informe d&apos;anicios de sesión</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ la to cuenta.</translation>
     <message>
         <source>None yet</source>
         <translation>Nengún entá</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Los tos anicios de sesión recientes, los intentos fallaos y los cambeos na to contraseña, na to direición de corréu electrónicu y nel aniciu de sesión en dos pasos.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Los anicios de sesión recientes, los intentos fallaos y los cambeos de seguridá d&apos;esta cuenta.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Revisar l&apos;actividá</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Anicios de sesión fallaos: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Mira la páxina de requisitos pa más información.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Nun se escribió'l crontab (%reason). Amiesta estes llinies al crontab del usuariu col que s'executa'l sitiu; si non, la cola, les importaciones, los avisos y l'índiz de gueta nun s'executarán nunca:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>La reinstalación faise col kickstarter (%file y depués php bin/php/kickstarter.php run --apply) o con una instalación nueva.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>El tresporte de corréu refugó %count mensaxes na última execución. Comprueba'l sirvidor de corréu y site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Eventos n&apos;espera: %count, y nun consta nenguna execución de la xera programada d&apos;avisos. Amiesta la parte de xera programada &quot;frequent&quot; a la crontab o executa exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Esbillar otru sitiu o seición col esbillador de nodos</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Namás l&apos;alministrador del sistema pue cambiar el propietariu: executa ./console exp:content-check --fix-permissions --apply como root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>empty</source>
         <translation>baleru</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>La clave de robla tien más d&apos;un añu: renuévala con exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>not sent</source>
         <translation>non unviáu</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>La xera programada d&apos;avisos rexistra equí cada execución so. Amiesta la parte frequent a la crontab o executa exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Usa la consola: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>None.</source>
         <translation>Nenguna.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>con una aplicación d&apos;autenticación</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>con un códigu per corréu electrónicu</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>con un códigu de recuperación</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>con una clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>con una cuenta esterna</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Amuésase como la so rede; la direición guárdase como digan los axustes de proteición de datos del sitiu.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non rexistráu</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Llugar</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aproximáu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Manage devices</source>
         <translation>Xestionar los preseos</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>con una aplicación d&apos;autenticación</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>con un códigu per corréu electrónicu</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>con un códigu de recuperación</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>con una clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>con una cuenta esterna</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non rexistráu</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Llugar</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aproximáu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>View the sessions of this user</source>
         <translation>Ver les sesiones d'esti usuariu</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>La to cuenta %login en %site acaba d&apos;usase p&apos;aniciar sesión dende un llugar dende&apos;l que nun lo fixera últimamente:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Llugar aproximáu</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser en %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Informe d&apos;anicios de sesión</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>unknown</source>
         <translation>desconocíu</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protexer la to cuenta</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Usóse un códigu de recuperación p&apos;aniciar sesión na to cuenta %login en %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Usóse un códigu de recuperación</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cuenta</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Direición aproximada</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Pidi una contraseña nueva p&apos;aniciar sesión otra vegada, o ponte en contautu colos alministradores del sitiu.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Pidir una contraseña nueva</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Cada códigu de recuperación sirve namás una vegada. Si perdiesti&apos;l teléfonu, configura otra vegada la to aplicación d&apos;autenticación y guarda los códigos de recuperación nuevos nun llugar seguru.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Intentos fallaos d&apos;aniciar sesión na to cuenta</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>D&apos;equí p&apos;alantre, l&apos;aniciu de sesión pide un códigu amás de la to contraseña. Si lo fixesti tu, nun tienes de facer nada.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Si fuisti tu y escaeciesti la contraseña, pidi una nueva. Si non, escueyi una contraseña más segura y activa l&apos;aniciu de sesión en dos pasos.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Si nun fuisti tu, puede que daquién conoza la to contraseña: camúdala agora y comprueba ónde tien la sesión aniciada la to cuenta.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Códigos de recuperación que queden</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Revisar los tos preseos</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Alerta de seguridá</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Daquién intentó aniciar sesión na to cuenta %login en %site con una contraseña incorreuta %count vegaes siguíes.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Hebo un eventu de seguridá na to cuenta %login en %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Esta ye una alerta de seguridá sobre la to cuenta. Únviase con cada cambéu d&apos;esti tipu y nun se pue desactivar.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Desactivóse l&apos;aniciu de sesión en dos pasos de la to cuenta %login en %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Desactivóse l&apos;aniciu de sesión en dos pasos</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Activóse l&apos;aniciu de sesión en dos pasos de la to cuenta %login en %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Activóse l&apos;aniciu de sesión en dos pasos</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>La to cuenta %login en %site bloquióse dempués de demasiaos anicios de sesión fallaos.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Agora la to cuenta ta protexida namás pola to contraseña. Si nun lo fixesti tu, activa otra vegada l&apos;aniciu de sesión en dos pasos dempués de cambiar la contraseña.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>La to cuenta bloquióse</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Actividá de seguridá de %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectáu</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Intentu fallíu d&apos;aniciu de sesión</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Sesión zarrada</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiones zarraes</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Aniciu de sesión dende un preséu nuevu</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Aniciu de sesión dende un llugar nuevu</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identidá confirmada (&quot;Confirma que yes tu&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Falló la comprobación d&apos;identidá</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Sesión aniciada con una clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Falló l&apos;aniciu de sesión con clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Aniciu de sesión refugáu: falta&apos;l códigu del aniciu de sesión en dos pasos o ye incorreutu</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Códigu del aniciu de sesión en dos pasos incorreutu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cuenta bloquiada dempués d&apos;anicios de sesión fallaos</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cuenta desbloquiada</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Contraseña camudada</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Falló&apos;l cambéu de contraseña</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Contraseña reafitada</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Contraseña nueva pidida</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Direición de corréu electrónicu camudada</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nome d&apos;usuariu camudáu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Aniciu de sesión en dos pasos activáu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Aniciu de sesión en dos pasos desactiváu</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Códigu de recuperación usáu</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Códigos de recuperación nuevos</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Contraseña d&apos;aplicación creada</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Contraseña d&apos;aplicación revocada</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Clave d&apos;accesu amestada</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Clave d&apos;accesu quitada</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Cuenta activada</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Cuenta desactivada</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Too</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Anicios de sesión y sesiones</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Cambeos na cuenta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Precisa atención</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>por ti</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>pol usuariu</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>por %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Métodu</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Restolador</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Preséu</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Llugar</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>País</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiones</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Cuáles</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Canal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Intentos fallaos</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Códigos que queden</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Xestor d&apos;aniciu de sesión</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Actividá de seguridá de %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Anicios de sesión y cambeos na seguridá de la to cuenta. Si ves daqué que nun fixesti tu, camuda la contraseña y zarra la sesión de los preseos que nun conozas.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Anicios de sesión y cambeos na seguridá d&apos;esta cuenta.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Los tos preseos</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Cambiar contraseña</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Volver a la cuenta</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>L&apos;actividá de seguridá nun se rexistra</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Llése del rexistru d&apos;auditoría d&apos;usuarios, que la so tabla expuser_audit falta o nun ye compatible con esta base de datos. Executa php update/common/scripts/6.0/createuseraudittable.php o l&apos;anovamientu de la base de datos de la versión 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Los caberos %days díes</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Anicios de sesión de los caberos %days díes</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Actividá de seguridá recién</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Amosar</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>falláu</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refugáu</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Entá nun se rexistró nenguna actividá de seguridá.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Los eventos de seguridá caltiénense %days díes.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Los eventos de seguridá caltiénense hasta qu&apos;un alministrador los desanicia.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Baxar los mios datos d&apos;aniciu de sesión</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Les tos sesiones y eventos de seguridá nun ficheru JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectáu</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Intentu fallíu d&apos;aniciu de sesión</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Sesión zarrada</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiones zarraes</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Aniciu de sesión dende un preséu nuevu</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Aniciu de sesión dende un llugar nuevu</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identidá confirmada (&quot;Confirma que yes tu&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Falló la comprobación d&apos;identidá</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Sesión aniciada con una clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Falló l&apos;aniciu de sesión con clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Aniciu de sesión refugáu: falta&apos;l códigu del aniciu de sesión en dos pasos o ye incorreutu</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Códigu del aniciu de sesión en dos pasos incorreutu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cuenta bloquiada dempués d&apos;anicios de sesión fallaos</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cuenta desbloquiada</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Contraseña camudada</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Falló&apos;l cambéu de contraseña</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Contraseña reafitada</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Contraseña nueva pidida</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Direición de corréu electrónicu camudada</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nome d&apos;usuariu camudáu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Aniciu de sesión en dos pasos activáu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Aniciu de sesión en dos pasos desactiváu</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Códigu de recuperación usáu</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Códigos de recuperación nuevos</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Contraseña d&apos;aplicación creada</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Contraseña d&apos;aplicación revocada</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Clave d&apos;accesu amestada</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Clave d&apos;accesu quitada</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Cuenta activada</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Cuenta desactivada</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Too</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Anicios de sesión y sesiones</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Cambeos na cuenta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Precisa atención</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Actividá de seguridá de %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Anicios de sesión y cambeos na seguridá de la to cuenta. Si ves daqué que nun fixesti tu, camuda la contraseña y zarra la sesión de los preseos que nun conozas.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Los tos preseos</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Cambiar contraseña</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>L&apos;actividá de seguridá entá nun se rexistra nesti sitiu.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Anicios de sesión de los caberos %days díes</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Intentos fallaos</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Entá nun se rexistró nenguna actividá de seguridá.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Baxar los mios datos d&apos;aniciu de sesión</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Les tos sesiones y eventos de seguridá nun ficheru JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Contraseña</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Contraseña y códigu del aniciu de sesión en dos pasos</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfaz REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfaz SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Aniciu de sesión únicu</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sesión aniciada enantes de que se rexistraren les sesiones</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Informe d&apos;anicios de sesión</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Quién tien la sesión aniciada nel sitiu, con qué frecuencia anicien sesión les cuentes o fallen al facelo, y zarrar la sesión d&apos;un usuariu en toes partes. Funciona con cualquier xestor de sesiones.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Zarróse la sesión. El preséu tien d&apos;aniciar sesión otra vegada.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Zarróse la sesión de %login en %count sesiones.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login nun tenía nenguna sesión activa.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Nenguna cuenta tien esa ID, esi nome d&apos;usuariu o esa direición de corréu electrónicu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Esta ye la sesión que tas usando. Pa finala, zarra la sesión.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Esa sesión yá finara.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La páxina caducara. Nun se camudó nada; volvi intentalo.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Les sesiones nun se rexistren nesti sitiu (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Falta la tabla expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Les sesiones rexístrense en cuantes que se cree: php update/common/scripts/6.0/createusersessiontable.php o l&apos;anovamientu de la base de datos de la versión 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Agora y güei</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesiones actives</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Usuarios conectaos</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Anicios de sesión de güei</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Intentos fallaos de güei</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Zarrar la sesión d&apos;un usuariu en toes partes</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Cada sesión de la cuenta fina na so siguiente solicitú, tamién les que caltién &quot;Recordame&quot;. Úsalo cuando una cuenta pueda tar en males manes; dempués reafita la so contraseña.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID d&apos;usuariu, nome d&apos;usuariu o direición de corréu electrónicu</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Zarrar la sesión en toes partes</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Conectaos agora</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Amuésense les %limit usaes más apocayá.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usuariu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Preséu</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Direición</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectáu</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Última actividá</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aiciones</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Esti preséu</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non rexistráu</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Zarrar sesión</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nun hai nenguna sesión aniciada.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Los caberos %days díes</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Los anicios de sesión y los intentos fallaos cuéntense a partir del rexistru d&apos;auditoría d&apos;usuarios, que nun esiste; les sesiones nueves sí se cuenten.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Día</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Anicios de sesión</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Intentos fallaos</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesiones nueves</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Xestor de sesiones: %handler. Les sesiones lléense de la tabla expuser_session, polo que l&apos;informe funciona con cualquier xestor.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Alerta de seguridá sobre la to cuenta</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Hebo un eventu de seguridá na to cuenta %login: %event. Si nun fuisti tu, protexi la to cuenta en %url.</translation>
     </message>
 </context>
 </TS>

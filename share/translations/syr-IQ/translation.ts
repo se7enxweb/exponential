@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ܛܘܝܒܐ &gt; ܥܒ̈ܕܐ ܕ cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ܠܐ ܚܕ ܦܠܓܐ ܕ cron ܪܗܛ ܥܕܟܝܠ: ܣܕܪܐ ܕܥܒ̈ܕܐ، ܡ̈ܥܠܐ، ܡܘܕܥ̈ܢܘܬܐ ܘܡܚܘܝܢܐ ܕܒܨܝܐ ܡܣܟܝܢ. ܪܗܛܘܢ php bin/php/installcrontab.php --add --apply، ܐܘ ܐܘܣܦܘܢ ܣܪ̈ܛܐ ܕ --show ܠ crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ܗܕܐ ܡܩܝܡܢܘܬܐ ܚܘܝܐ ܓܠܝܐ ܗܝ: ܟܠ ܐܢܫ ܡܨܐ ܝܕܥ ܠܡܠܬܐ ܕܥܒܪܐ ܕܡܕܒܪܢܐ ܕܝܠܗ، ܘܡ̈ܠܐ ܕܥܒܪܐ ܕܡܕܒܪ̈ܢܐ ܠܐ ܡܨܝܢ ܕܡܫܬܚܠܦܢ ܐܘ ܡܬܚܕܬܢ. ܠܐ ܥܠܘܢ ܗܪܟܐ ܡܕܡ ܕܝܚܝܕܝܐ.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ܡܐܢ̈ܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ܡܢܘ ܫܚܠܦ، ܥܠ ܐܘ ܐܬܟܠܝ، ܠܟܠ ܚܘܫܒܢܐ؛ ܨܠܠܐ ܘܡܦܩܐ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ܡܘܕܥܢܘܬܐ ܕܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ܡܢܘ ܥܠܝܠܐ، ܥܠ̈ܠܐ ܘܥܠ̈ܠܐ ܕܠܐ ܐܨܠܚܘ ܠܟܠ ܝܘܡܐ؛ ܦܠܛܐ ܕܡܦܠܚܢܐ ܡܢ ܟܠ ܕܘܟܐ.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>ܡܘܬ̈ܒܐ ܕܓܡܪܘ ܙܒܢܗܘܢ ܕܡܥܒܕܢܐ ܕ PHP ܡܬܫܩܠܝܢ ܒ PHP ܒܢܦܫܗ (session.gc_maxlifetime)، ܘܠܐ ܒܦܐܬܐ ܗܕܐ ܘܠܐ ܒܦܠܓܐ ܕܥܒܕܐ ܕ session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ܡܘܬ̈ܒܐ ܥܠܝ̈ܠܐ ܕܟܠ ܡܦܠ̈ܚܢܐ ܡܬܚܘܝܢ، ܘܡܬܦܠܛܝܢ، ܒܡܘܕܥܢܘܬܐ ܕܥܠܠܐ، ܕܦܠܚܐ ܥܡ ܟܠ ܡܥܒܕܢܐ ܕܡܘܬ̈ܒܐ.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ܦܬܚܐ ܕܡܘܕܥܢܘܬܐ ܕܥܠܠܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ܠܥܠܡ ܠܐ ܐܝܬ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ܥܠ̈ܠܐ ܐܚܪ̈ܝܐ ܕܝܠܘܟܘܢ، ܢܣܝܘܢ̈ܐ ܕܠܐ ܐܨܠܚܘ ܘܫܘܚ̈ܠܦܐ ܒܡܠܬܐ ܕܥܒܪܐ، ܒܡܘܢܥܐ ܕܒܪܝܕܐ ܘܒܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ܥܠ̈ܠܐ ܐܚܪ̈ܝܐ، ܢܣܝܘܢ̈ܐ ܕܠܐ ܐܨܠܚܘ ܘܫܘܚ̈ܠܦܐ ܕܫܠܡܘܬܐ ܕܗܢܐ ܚܘܫܒܢܐ.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ܒܘܚܢܐ ܕܥܒܕܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count ܥܠ̈ܠܐ ܕܠܐ ܐܨܠܚܘ</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ܠܐ ܐܬܟܬܒ (%reason). ܘܣܦܘ ܫܪܒ̈ܬܐ ܗܠܝܢ ܠ crontab ܕܡܦܠܚܢܐ ܕܐܬܪܐ ܡܬܪܗܛ ܒܗ، ܐܘ ܣܕܪܐ ܘܡܥܠܝ̈ܐ ܘܡܘܕܥܢܘ̈ܬܐ ܘܡܚܘܝܢܐ ܕܒܨܝܐ ܠܐ ܡܬܪܗܛܝܢ ܠܥܠܡ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ܐܩܡܬܐ ܡܢ ܕܪܝܫ ܡܬܥܒܕܐ ܥܡ kickstarter (%file، ܗܝܕܝܢ php bin/php/kickstarter.php run --apply) ܐܘ ܥܡ ܐܩܡܬܐ ܚܕܬܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ܡܕܒܪܢܐ ܕܒܪܝ̈ܕܐ ܣܠܐ %count ܫܠܝ̈ܚܘܬܐ ܒܡܪܗܛܐ ܐܚܪܝܐ. ܒܚܘܢ ܡܫܡܫܢܐ ܕܒܪܝ̈ܕܐ ܘܛܘܝܒܐ ܕ site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ܓܕ̈ܫܐ ܡܣܟܝܢ ܘܠܐ ܚܕ ܪܗܛܐ ܕܥܒܕܐ ܕ cron ܕܡܘܕܥ̈ܢܘܬܐ ܐܬܪܫܡ. ܐܘܣܦܘܢ ܦܠܓܐ ܕ cron «frequent» ܠ crontab، ܐܘ ܪܗܛܘܢ exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63077,6 +63133,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ܓܒܘܢ ܐܬܪܐ ܐܘ ܦܠܓܘܬܐ ܐܚܪܬܐ ܒܓܒܝܢܐ ܕܩܛܪ̈ܐ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ܒܠܚܘܕ ܡܕܒܪܢܐ ܕܡܪܟܒܬܐ ܡܨܐ ܠܫܘܚܠܦܐ ܕܡܪܐ: ܪܗܛܘܢ ./console exp:content-check --fix-permissions --apply ܐܝܟ root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64610,6 +64670,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ܣܪܝܩܐ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>ܩܠܝܕܐ ܕܚܬܡܐ ܥܬܝܩ ܝܬܝܪ ܡܢ ܫܢܬܐ: ܫܚܠܦܘܢ ܠܗ ܥܡ exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70320,6 +70384,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ܠܐ ܐܫܬܕܪ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ܥܒܕܐ ܕ cron ܕܡܘܕܥ̈ܢܘܬܐ ܪܫܡ ܗܪܟܐ ܟܠ ܪܗܛܐ ܕܝܠܗ. ܐܘܣܦܘܢ ܦܠܓܐ frequent ܠ crontab، ܐܘ ܪܗܛܘܢ exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ܦܠܚܘܢ ܒܟܘܢܣܘܠ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76493,6 +76565,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ܠܐ ܚܕ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ܥܡ ܐܦܠܝܩܐܨܝܐ ܕܫܘܪܪܐ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ܥܡ ܪܡܙܐ ܒܒܪܝܕܐ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ܥܡ ܪܡܙܐ ܕܕܘܥܪܐ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ܥܡ ܩܠܝܕܐ ܕܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ܥܡ ܚܘܫܒܢܐ ܒܪܝܐ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ܡܬܚܘܝܐ ܐܝܟ ܡܨܕܬܐ ܕܝܠܗ؛ ܡܘܢܥܐ ܡܬܢܛܪ ܐܝܟ ܕܐܡܪܝܢ ܛܘܝ̈ܒܐ ܕܢܛܘܪܘܬܐ ܕܝܕ̈ܥܬܐ ܕܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ܠܐ ܐܬܪܫܡ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ܕܘܟܬܐ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ܒܩܘܪܒܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76736,6 +76848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ܕܘܒܪܐ ܕܡܐܢ̈ܐ</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ܥܡ ܐܦܠܝܩܐܨܝܐ ܕܫܘܪܪܐ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ܥܡ ܪܡܙܐ ܒܒܪܝܕܐ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ܥܡ ܪܡܙܐ ܕܕܘܥܪܐ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ܥܡ ܩܠܝܕܐ ܕܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ܥܡ ܚܘܫܒܢܐ ܒܪܝܐ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ܠܐ ܐܬܪܫܡ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ܕܘܟܬܐ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ܒܩܘܪܒܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76815,6 +76963,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ܚܙܝܐ ܕܡܘܬܒ̈ܐ ܕܗܢܐ ܡܦܠܚܢܐ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login ܥܠ %site ܗܫܐ ܐܬܦܠܚ ܠܥܠܠܐ ܡܢ ܕܘܟܬܐ ܕܡܢܗ ܠܐ ܥܠ ܒܙܒܢܐ ܐܚܪܝܐ:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ܕܘܟܬܐ ܒܩܘܪܒܐ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76853,6 +77009,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ܥܠ %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ܡܘܕܥܢܘܬܐ ܕܥܠܠܐ</translation>
     </message>
 </context>
 <context>
@@ -77499,6 +77659,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>ܠܐ ܝܕܝܥܐ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ܚܡܝܐ ܕܚܘܫܒܢܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>ܪܡܙܐ ܕܕܘܥܪܐ ܐܬܦܠܚ ܠܥܠܠܐ ܠܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login ܥܠ %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ܪܡܙܐ ܕܕܘܥܪܐ ܐܬܦܠܚ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ܚܘܫܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ܡܘܢܥܐ ܒܩܘܪܒܐ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ܒܥܘ ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܕܬܥܠܘܢ ܬܘܒ، ܐܘ ܐܬܚܒܪܘ ܥܡ ܡܕܒܪ̈ܢܐ ܕܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ܒܥܬܐ ܕܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ܟܠ ܪܡܙܐ ܕܕܘܥܪܐ ܦܠܚ ܚܕ ܙܒܢܐ. ܐܢ ܐܘܒܕܬܘܢ ܬܠܝܦܘܢ ܕܝܠܘܟܘܢ، ܛܝܒܘ ܬܘܒ ܐܦܠܝܩܐܨܝܐ ܕܫܘܪܪܐ ܘܢܛܘܪܘ ܪ̈ܡܙܐ ܚܕ̈ܬܐ ܕܕܘܥܪܐ ܒܕܘܟܬܐ ܫܠܝܡܬܐ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ܢܣܝܘܢ̈ܐ ܕܥܠܠܐ ܕܠܐ ܐܨܠܚܘ ܠܚܘܫܒܢܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ܡܢ ܗܫܐ ܘܠܗܠ، ܥܠܠܐ ܒܥܐ ܪܡܙܐ ܠܒܪ ܡܢ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܘܟܘܢ. ܐܢ ܐܚܬܘܢ ܥܒܕܬܘܢ ܗܕܐ، ܠܐ ܣܢܝܩܝܬܘܢ ܠܡܥܒܕ ܡܕܡ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ܐܢ ܐܚܬܘܢ ܗܘܝܬܘܢ ܘܛܥܝܬܘܢ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܘܟܘܢ، ܒܥܘ ܚܕܐ ܚܕܬܐ. ܐܢ ܠܐ، ܓܒܘܢ ܡܠܬܐ ܕܥܒܪܐ ܚܝܠܬܢܝܬܐ ܝܬܝܪ ܘܦܥܠܘ ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ܐܢ ܠܐ ܐܚܬܘܢ ܗܘܝܬܘܢ، ܐܢܫ ܡܨܐ ܕܝܕܥ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܘܟܘܢ: ܫܚܠܦܘܗ ܗܫܐ ܘܒܨܘ ܐܝܟܐ ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ ܥܠܝܠܐ.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ܪ̈ܡܙܐ ܕܕܘܥܪܐ ܕܦܫܘ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ܒܘܚܢܐ ܕܡܐܢ̈ܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ܙܘܗܪܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>ܐܢܫ ܢܣܐ ܠܡܥܠ ܠܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login ܥܠ %site ܥܡ ܡܠܬܐ ܕܥܒܪܐ ܠܐ ܬܪܝܨܬܐ %count ܙܒ̈ܢܐ ܚܕ ܒܬܪ ܚܕ.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>ܗܘܐ ܓܕܫܐ ܕܫܠܡܘܬܐ ܒܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login ܥܠ %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ܗܢܐ ܙܘܗܪܐ ܕܫܠܡܘܬܐ ܥܠ ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ. ܡܫܬܕܪ ܥܠ ܟܠ ܫܘܚܠܦܐ ܐܝܟ ܗܢܐ ܘܠܐ ܡܨܐ ܕܡܬܒܛܠ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܒܛܠ ܠܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login ܥܠ %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܒܛܠ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܦܥܠ ܠܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login ܥܠ %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܦܥܠ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login ܥܠ %site ܐܬܩܦܠ ܒܬܪ ܣܓܝܐܐ ܥܠ̈ܠܐ ܕܠܐ ܐܨܠܚܘ.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ ܗܫܐ ܢܛܝܪ ܒܠܚܘܕ ܒܡܠܬܐ ܕܥܒܪܐ ܕܝܠܘܟܘܢ. ܐܢ ܠܐ ܐܚܬܘܢ ܥܒܕܬܘܢ ܗܕܐ، ܦܥܠܘ ܬܘܒ ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܒܬܪ ܕܫܚܠܦܬܘܢ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܘܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ ܐܬܩܦܠ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ ܕ %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ܥܠܝܠܐ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ܢܣܝܘܢܐ ܕܥܠܠܐ ܕܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ܦܠܝܛܐ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ܡܘܬ̈ܒܐ ܐܬܦܠܛܘ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ܥܠܠܐ ܡܢ ܡܐܢܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ܥܠܠܐ ܡܢ ܕܘܟܬܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ܐܝܬܝܘܬܐ ܐܫܬܪܪܬ («ܫܪܪܘ ܕܐܢܬܘܢ ܗܘܝܬܘܢ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ܒܘܚܢܐ ܕܐܝܬܝܘܬܐ ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ܥܠܝܠܐ ܥܡ ܩܠܝܕܐ ܕܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ܥܠܠܐ ܥܡ ܩܠܝܕܐ ܕܥܠܠܐ ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ܥܠܠܐ ܐܬܟܠܝ: ܪܡܙܐ ܕܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܚܣܝܪܐ ܐܘ ܠܐ ܬܪܝܨܐ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ܪܡܙܐ ܕܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܠܐ ܬܪܝܨܐ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܩܦܠ ܒܬܪ ܥܠ̈ܠܐ ܕܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܦܬܚ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܐܫܬܚܠܦܬ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ܫܘܚܠܦܐ ܕܡܠܬܐ ܕܥܒܪܐ ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܐܬܛܝܒܬ ܡܢ ܕܪܝܫ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܐܬܒܥܝܬ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ܡܘܢܥܐ ܕܒܪܝܕܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ܫܡܐ ܕܡܦܠܚܢܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܦܥܠ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܒܛܠ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ܪܡܙܐ ܕܕܘܥܪܐ ܐܬܦܠܚ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ܪ̈ܡܙܐ ܚܕ̈ܬܐ ܕܕܘܥܪܐ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܕܐܦܠܝܩܐܨܝܐ ܐܬܒܪܝܬ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܕܐܦܠܝܩܐܨܝܐ ܐܬܒܛܠܬ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ܩܠܝܕܐ ܕܥܠܠܐ ܐܬܘܣܦ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ܩܠܝܕܐ ܕܥܠܠܐ ܐܫܬܩܠ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܦܥܠ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܒܛܠ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ܟܠ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ܥܠ̈ܠܐ ܘܡܘܬ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ܫܘܚ̈ܠܦܐ ܕܚܘܫܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ܣܢܝܩ ܠܚܦܝܛܘܬܐ</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ܡܢ ܠܘܬܟܘܢ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ܡܢ ܡܦܠܚܢܐ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ܡܢ %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ܐܘܪܚܐ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ܚܝܪܢܐ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ܡܪܟܒܬܐ ܕܦܘܠܚܢܐ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ܡܐܢܐ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ܐܬܪܐ ܓܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ܡܕܝܢܬܐ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ܡܘܬ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ܐܝܢܝܢ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ܐܘܪܚܐ ܕܫܘܕܪܐ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ܢܣܝܘܢ̈ܐ ܕܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ܪ̈ܡܙܐ ܕܦܫܘ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ܡܥܒܕܢܐ ܕܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ ܕ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ܥܠ̈ܠܐ ܘܫܘܚ̈ܠܦܐ ܒܫܠܡܘܬܐ ܕܚܘܫܒܢܐ ܕܝܠܘܟܘܢ. ܐܢ ܚܙܝܬܘܢ ܡܕܡ ܕܠܐ ܥܒܕܬܘܢ، ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܘܟܘܢ ܘܦܠܛܘ ܡܐܢ̈ܐ ܕܠܐ ܝܕܥܝܬܘܢ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ܥܠ̈ܠܐ ܘܫܘܚ̈ܠܦܐ ܒܫܠܡܘܬܐ ܕܗܢܐ ܚܘܫܒܢܐ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ܡܐܢ̈ܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ܫܘܚܠܦܐ ܕܡܠܬܐ ܕܥܒܪܐ</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ܠܒܣܬܪ ܠܚܘܫܒܢܐ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ ܠܐ ܡܬܪܫܡܐ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ܡܬܩܪܝܐ ܡܢ ܪܘܫܡܐ ܕܒܘܩܝܐ ܕܡܦܠ̈ܚܢܐ، ܕܦܬܘܪܐ ܕܝܠܗ expuser_audit ܚܣܝܪܐ ܐܘ ܠܐ ܡܣܬܡܟܐ ܒܗܢܐ ܒܝܬ ܝܕ̈ܥܬܐ. ܪܗܛܘܢ php update/common/scripts/6.0/createuseraudittable.php، ܐܘ ܚܘܕܬܐ ܕܒܝܬ ܝܕ̈ܥܬܐ ܕ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ܝܘ̈ܡܬܐ ܐܚܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ܥܠ̈ܠܐ ܒ %days ܝܘ̈ܡܬܐ ܐܚܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܐܚܪܝܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ܡܚܘܝܐ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ܐܬܟܠܝ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ܥܕܟܝܠ ܠܐ ܐܬܪܫܡܬ ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ܓܕ̈ܫܐ ܕܫܠܡܘܬܐ ܡܬܢܛܪܝܢ %days ܝܘ̈ܡܬܐ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ܓܕ̈ܫܐ ܕܫܠܡܘܬܐ ܡܬܢܛܪܝܢ ܥܕܡܐ ܕܡܕܒܪܢܐ ܫܩܠ ܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ܡܚܬܐ ܕܝܕ̈ܥܬܐ ܕܥܠܠܐ ܕܝܠܝ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ܡܘܬ̈ܒܐ ܘܓܕ̈ܫܐ ܕܫܠܡܘܬܐ ܕܝܠܘܟܘܢ ܐܝܟ ܦܢܩܝܬܐ ܕ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ܥܠܝܠܐ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ܢܣܝܘܢܐ ܕܥܠܠܐ ܕܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ܦܠܝܛܐ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ܡܘܬ̈ܒܐ ܐܬܦܠܛܘ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ܥܠܠܐ ܡܢ ܡܐܢܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ܥܠܠܐ ܡܢ ܕܘܟܬܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ܐܝܬܝܘܬܐ ܐܫܬܪܪܬ («ܫܪܪܘ ܕܐܢܬܘܢ ܗܘܝܬܘܢ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ܒܘܚܢܐ ܕܐܝܬܝܘܬܐ ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ܥܠܝܠܐ ܥܡ ܩܠܝܕܐ ܕܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ܥܠܠܐ ܥܡ ܩܠܝܕܐ ܕܥܠܠܐ ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ܥܠܠܐ ܐܬܟܠܝ: ܪܡܙܐ ܕܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܚܣܝܪܐ ܐܘ ܠܐ ܬܪܝܨܐ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ܪܡܙܐ ܕܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܠܐ ܬܪܝܨܐ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܩܦܠ ܒܬܪ ܥܠ̈ܠܐ ܕܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܦܬܚ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܐܫܬܚܠܦܬ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ܫܘܚܠܦܐ ܕܡܠܬܐ ܕܥܒܪܐ ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܐܬܛܝܒܬ ܡܢ ܕܪܝܫ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܐܬܒܥܝܬ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ܡܘܢܥܐ ܕܒܪܝܕܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ܫܡܐ ܕܡܦܠܚܢܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܦܥܠ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ ܐܬܒܛܠ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ܪܡܙܐ ܕܕܘܥܪܐ ܐܬܦܠܚ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ܪ̈ܡܙܐ ܚܕ̈ܬܐ ܕܕܘܥܪܐ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܕܐܦܠܝܩܐܨܝܐ ܐܬܒܪܝܬ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܕܐܦܠܝܩܐܨܝܐ ܐܬܒܛܠܬ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ܩܠܝܕܐ ܕܥܠܠܐ ܐܬܘܣܦ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ܩܠܝܕܐ ܕܥܠܠܐ ܐܫܬܩܠ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܦܥܠ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ܚܘܫܒܢܐ ܐܬܒܛܠ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ܟܠ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ܥܠ̈ܠܐ ܘܡܘܬ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ܫܘܚ̈ܠܦܐ ܕܚܘܫܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ܣܢܝܩ ܠܚܦܝܛܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ ܕ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ܥܠ̈ܠܐ ܘܫܘܚ̈ܠܦܐ ܒܫܠܡܘܬܐ ܕܚܘܫܒܢܐ ܕܝܠܘܟܘܢ. ܐܢ ܚܙܝܬܘܢ ܡܕܡ ܕܠܐ ܥܒܕܬܘܢ، ܫܚܠܦܘ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܘܟܘܢ ܘܦܠܛܘ ܡܐܢ̈ܐ ܕܠܐ ܝܕܥܝܬܘܢ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ܡܐܢ̈ܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ܫܘܚܠܦܐ ܕܡܠܬܐ ܕܥܒܪܐ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ ܥܕܟܝܠ ܠܐ ܡܬܪܫܡܐ ܒܗܢܐ ܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ܥܠ̈ܠܐ ܒ %days ܝܘ̈ܡܬܐ ܐܚܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ܢܣܝܘܢ̈ܐ ܕܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ܥܕܟܝܠ ܠܐ ܐܬܪܫܡܬ ܥܒܕܢܘܬܐ ܕܫܠܡܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ܡܚܬܐ ܕܝܕ̈ܥܬܐ ܕܥܠܠܐ ܕܝܠܝ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ܡܘܬ̈ܒܐ ܘܓܕ̈ܫܐ ܕܫܠܡܘܬܐ ܕܝܠܘܟܘܢ ܐܝܟ ܦܢܩܝܬܐ ܕ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ܡܠܬܐ ܕܥܒܪܐ ܘܪܡܙܐ ܕܥܠܠܐ ܒܬܪܬܝܢ ܕܪ̈ܓܐ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>ܡܨܥܝܘܬܐ ܕ REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>ܡܨܥܝܘܬܐ ܕ SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ܥܠܠܐ ܚܕ ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ܥܠܝܠܐ ܩܕܡ ܕܡܘܬ̈ܒܐ ܢܬܪܫܡܘܢ</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ܡܘܕܥܢܘܬܐ ܕܥܠܠܐ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ܡܢܘ ܥܠܝܠܐ ܒܐܬܪܐ، ܟܡܐ ܙܒ̈ܢܐ ܚܘܫ̈ܒܢܐ ܥܐܠܝܢ ܘܠܐ ܡܨܠܚܝܢ، ܘܦܠܛܐ ܕܡܦܠܚܢܐ ܡܢ ܟܠ ܕܘܟܐ. ܦܠܚ ܥܡ ܟܠ ܡܥܒܕܢܐ ܕܡܘܬ̈ܒܐ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ܡܘܬܒܐ ܐܬܦܠܛ. ܡܐܢܐ ܣܢܝܩ ܠܡܥܠ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ܐܬܦܠܛ ܡܢ %count ܡܘܬ̈ܒܐ.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>ܠ %login ܠܐ ܗܘܐ ܡܘܬܒܐ ܪܗܛܐ.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ܠܐ ܚܕ ܚܘܫܒܢܐ ܐܝܬ ܠܗ ܗܢܐ ID، ܫܡܐ ܕܡܦܠܚܢܐ ܐܘ ܡܘܢܥܐ ܕܒܪܝܕܐ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ܗܢܘ ܡܘܬܒܐ ܕܐܚܬܘܢ ܡܦܠܚܝܬܘܢ. ܠܫܘܠܡܗ، ܦܠܛܘ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ܗܘ ܡܘܬܒܐ ܟܒܪ ܫܠܡ ܗܘܐ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ܦܐܬܐ ܥܒܪ ܙܒܢܗ. ܡܕܡ ܠܐ ܐܫܬܚܠܦ؛ ܒܒܥܘܬܐ ܢܣܘ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ܡܘܬ̈ܒܐ ܠܐ ܡܬܪܫܡܝܢ ܒܗܢܐ ܐܬܪܐ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ܦܬܘܪܐ expuser_session ܚܣܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ܡܘܬ̈ܒܐ ܡܬܪܫܡܝܢ ܡܐ ܕܐܬܒܪܝ: php update/common/scripts/6.0/createusersessiontable.php، ܐܘ ܚܘܕܬܐ ܕܒܝܬ ܝܕ̈ܥܬܐ ܕ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ܗܫܐ ܘܐܕܝܘܡ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>ܡܘܬ̈ܒܐ ܪܗܛ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ܡܦܠ̈ܚܢܐ ܥܠܝ̈ܠܐ</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ܥܠ̈ܠܐ ܐܕܝܘܡ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ܢܣܝܘܢ̈ܐ ܕܠܐ ܐܨܠܚܘ ܐܕܝܘܡ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ܦܠܛܐ ܕܡܦܠܚܢܐ ܡܢ ܟܠ ܕܘܟܐ</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ܟܠ ܡܘܬܒܐ ܕܚܘܫܒܢܐ ܫܠܡ ܒܒܥܘܬܐ ܕܒܬܪܗ، ܐܦ ܐܝܠܝܢ ܕܡܬܢܛܪܝܢ ܒ «ܕܟܪܘܢܝ». ܦܠܚܘ ܒܗ ܐܡܬܝ ܕܚܘܫܒܢܐ ܡܨܐ ܕܢܗܘܐ ܒܐܝ̈ܕܝܐ ܠܐ ܬܪ̈ܝܨܬܐ؛ ܘܗܝܕܝܢ ܛܝܒܘ ܡܢ ܕܪܝܫ ܡܠܬܐ ܕܥܒܪܐ ܕܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ܕܡܦܠܚܢܐ، ܫܡܐ ܕܡܦܠܚܢܐ ܐܘ ܡܘܢܥܐ ܕܒܪܝܕܐ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ܦܠܛܐ ܡܢ ܟܠ ܕܘܟܐ</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ܥܠܝܠܐ ܗܫܐ</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit ܐܝܠܝܢ ܕܐܬܦܠܚܘ ܐܚܪܝܐܝܬ ܡܬܚܘܝܢ.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ܡܦܠܚܢܐ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ܡܐܢܐ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ܡܘܢܥܐ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ܥܠܝܠܐ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ܦܥܝܠܐ ܐܚܪܝܐܝܬ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ܣܘܥܪ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ܗܢܐ ܡܐܢܐ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ܠܐ ܐܬܪܫܡ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ܦܠܛܐ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ܠܐ ܚܕ ܡܘܬܒܐ ܥܠܝܠܐ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ܝܘ̈ܡܬܐ ܐܚܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ܥܠ̈ܠܐ ܘܢܣܝܘܢ̈ܐ ܕܠܐ ܐܨܠܚܘ ܡܬܡܢܝܢ ܡܢ ܪܘܫܡܐ ܕܒܘܩܝܐ ܕܡܦܠ̈ܚܢܐ، ܕܠܝܬܘܗܝ؛ ܡܘܬ̈ܒܐ ܚܕ̈ܬܐ ܡܬܡܢܝܢ.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ܝܘܡܐ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ܥܠ̈ܠܐ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ܢܣܝܘܢ̈ܐ ܕܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ܡܘܬ̈ܒܐ ܚܕ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ܡܥܒܕܢܐ ܕܡܘܬ̈ܒܐ: %handler. ܡܘܬ̈ܒܐ ܡܬܩܪܝܢ ܡܢ ܦܬܘܪܐ expuser_session، ܡܛܠ ܗܢܐ ܡܘܕܥܢܘܬܐ ܦܠܚܐ ܥܡ ܟܠ ܡܥܒܕܢܐ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ܙܘܗܪܐ ܕܫܠܡܘܬܐ ܠܚܘܫܒܢܐ ܕܝܠܘܟܘܢ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ܗܘܐ ܓܕܫܐ ܕܫܠܡܘܬܐ ܒܚܘܫܒܢܐ ܕܝܠܘܟܘܢ %login: %event. ܐܢ ܠܐ ܐܚܬܘܢ ܗܘܝܬܘܢ، ܚܡܘ ܚܘܫܒܢܐ ܕܝܠܘܟܘܢ ܒ %url.</translation>
     </message>
 </context>
 </TS>

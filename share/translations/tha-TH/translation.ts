@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ตั้งค่าระบบ &gt; งาน cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ยังไม่มีส่วนของงาน cron ใดทำงาน: คิวงาน การนำเข้า การแจ้งเตือน และดัชนีการค้นหากำลังรออยู่. กรุณาเรียกใช้ php bin/php/installcrontab.php --add --apply หรือเพิ่มบรรทัดจาก --show ลงใน crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>การติดตั้งนี้เป็นการสาธิตสาธารณะ ทุกคนอาจทราบรหัสผ่านของผู้ดูแลระบบ และไม่สามารถเปลี่ยนหรือรีเซ็ตรหัสผ่านของผู้ดูแลระบบได้ กรุณาอย่าป้อนข้อมูลส่วนตัวใด ๆ ที่นี่.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>อุปกรณ์ของคุณ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>ใครเปลี่ยนแปลง เข้าสู่ระบบ หรือถูกปฏิเสธ แยกตามบัญชี; กรองและส่งออกได้.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>รายงานการเข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ใครเข้าสู่ระบบอยู่ จำนวนการเข้าสู่ระบบและความล้มเหลวต่อวัน และการให้ผู้ใช้ออกจากระบบทุกที่.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>เซสชันที่หมดเวลาของตัวจัดการ PHP จะถูกนำออกโดย PHP เอง (session.gc_maxlifetime) ไม่ใช่โดยหน้านี้หรือส่วน session_gc ของงาน cron.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>เซสชันที่เข้าสู่ระบบอยู่ของผู้ใช้ทุกคนแสดงอยู่ในรายงานการเข้าสู่ระบบ และสามารถออกจากระบบได้จากที่นั่น รายงานนี้ทำงานกับตัวจัดการเซสชันทุกแบบ.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>เปิดรายงานการเข้าสู่ระบบ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ยังไม่มี</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>การเข้าสู่ระบบล่าสุด ความพยายามที่ล้มเหลว และการเปลี่ยนแปลงรหัสผ่าน ที่อยู่อีเมล และการเข้าสู่ระบบแบบสองขั้นตอนของคุณ.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>การเข้าสู่ระบบล่าสุด ความพยายามที่ล้มเหลว และการเปลี่ยนแปลงด้านความปลอดภัยของบัญชีนี้.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ตรวจดูกิจกรรม</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>เข้าสู่ระบบล้มเหลว %count ครั้ง</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>ไม่ได้เขียน crontab (%reason). เพิ่มบรรทัดเหล่านี้ลงใน crontab ของผู้ใช้ที่ไซต์ทำงานอยู่ มิฉะนั้นคิว การนำเข้า การแจ้งเตือน และดัชนีการค้นหาจะไม่ทำงานเลย:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>การติดตั้งใหม่ทำได้ด้วย Kickstarter (%file แล้วเรียกใช้ php bin/php/kickstarter.php run --apply) หรือด้วยการติดตั้งใหม่ทั้งหมด.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ระบบส่งอีเมลปฏิเสธข้อความ %count รายการในการเรียกใช้ครั้งล่าสุด. กรุณาตรวจสอบเซิร์ฟเวอร์อีเมลและ site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>มี %count เหตุการณ์ที่รออยู่ และไม่มีการบันทึกการทำงานของงาน cron การแจ้งเตือน. กรุณาเพิ่มส่วนของงาน cron &quot;frequent&quot; ลงใน crontab หรือเรียกใช้ exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>เลือกไซต์หรือส่วนอื่นด้วยตัวเลือกโหนด</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>มีเพียงผู้ดูแลระบบเท่านั้นที่เปลี่ยนเจ้าของได้: กรุณาเรียกใช้ ./console exp:content-check --fix-permissions --apply ในฐานะ root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ว่างเปล่า</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>คีย์สำหรับลงนามมีอายุเกินหนึ่งปีแล้ว: กรุณาหมุนเวียนคีย์ด้วย exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ไม่ได้ส่ง</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>งาน cron การแจ้งเตือนจะบันทึกการทำงานแต่ละครั้งไว้ที่นี่. กรุณาเพิ่มส่วน frequent ลงใน crontab หรือเรียกใช้ exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ใช้คอนโซล: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ไม่มี.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ด้วยแอปยืนยันตัวตน</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ด้วยรหัสทางอีเมล</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ด้วยรหัสกู้คืน</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ด้วยพาสคีย์</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ด้วยบัญชีภายนอก</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>แสดงเป็นเครือข่าย ที่อยู่จะถูกเก็บไว้ตามการตั้งค่าการปกป้องข้อมูลของไซต์.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ไม่ได้บันทึกไว้</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ตำแหน่งที่ตั้ง</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>โดยประมาณ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>จัดการอุปกรณ์</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ด้วยแอปยืนยันตัวตน</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ด้วยรหัสทางอีเมล</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ด้วยรหัสกู้คืน</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ด้วยพาสคีย์</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ด้วยบัญชีภายนอก</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ไม่ได้บันทึกไว้</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ตำแหน่งที่ตั้ง</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>โดยประมาณ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ดูเซสชันของผู้ใช้นี้</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>บัญชี %login ของคุณบน %site เพิ่งถูกใช้เข้าสู่ระบบจากสถานที่ที่ไม่ได้เข้าสู่ระบบมาระยะหนึ่งแล้ว:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ตำแหน่งที่ตั้งโดยประมาณ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser บน %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>รายงานการเข้าสู่ระบบ</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>ไม่ทราบ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ปกป้องบัญชีของคุณ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>มีการใช้รหัสกู้คืนเพื่อเข้าสู่ระบบบัญชี %login ของคุณบน %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>มีการใช้รหัสกู้คืน</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>บัญชี</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ที่อยู่โดยประมาณ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>กรุณาขอรหัสผ่านใหม่เพื่อเข้าสู่ระบบอีกครั้ง หรือติดต่อผู้ดูแลไซต์.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ขอรหัสผ่านใหม่</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>รหัสกู้คืนแต่ละรหัสใช้ได้เพียงครั้งเดียว. หากคุณทำโทรศัพท์หาย กรุณาตั้งค่าแอปยืนยันตัวตนใหม่ และเก็บรหัสกู้คืนชุดใหม่ไว้ในที่ปลอดภัย.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>มีความพยายามเข้าสู่ระบบบัญชีของคุณที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ตั้งแต่นี้ไป การเข้าสู่ระบบจะขอรหัสเพิ่มเติมจากรหัสผ่านของคุณ. หากคุณเป็นผู้ดำเนินการเอง คุณไม่ต้องทำอะไร.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>หากเป็นคุณและคุณลืมรหัสผ่าน กรุณาขอรหัสผ่านใหม่. หากไม่ใช่ กรุณาเลือกรหัสผ่านที่รัดกุมกว่าเดิมและเปิดการเข้าสู่ระบบแบบสองขั้นตอน.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>หากไม่ใช่คุณ อาจมีคนรู้รหัสผ่านของคุณ: กรุณาเปลี่ยนรหัสผ่านทันทีและตรวจสอบว่าบัญชีของคุณเข้าสู่ระบบอยู่ที่ใดบ้าง.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>รหัสกู้คืนที่เหลือ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ตรวจดูอุปกรณ์ของคุณ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>การแจ้งเตือนด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>มีผู้พยายามเข้าสู่ระบบบัญชี %login ของคุณบน %site ด้วยรหัสผ่านที่ไม่ถูกต้อง %count ครั้งติดต่อกัน.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>เกิดเหตุการณ์ด้านความปลอดภัยกับบัญชี %login ของคุณบน %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>นี่คือการแจ้งเตือนด้านความปลอดภัยเกี่ยวกับบัญชีของคุณ. จะส่งทุกครั้งที่มีการเปลี่ยนแปลงลักษณะนี้และไม่สามารถปิดได้.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>เวลา</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>ปิดการเข้าสู่ระบบแบบสองขั้นตอนสำหรับบัญชี %login ของคุณบน %site แล้ว.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ปิดการเข้าสู่ระบบแบบสองขั้นตอนแล้ว</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>เปิดการเข้าสู่ระบบแบบสองขั้นตอนสำหรับบัญชี %login ของคุณบน %site แล้ว.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>เปิดการเข้าสู่ระบบแบบสองขั้นตอนแล้ว</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>บัญชี %login ของคุณบน %site ถูกล็อกหลังจากเข้าสู่ระบบล้มเหลวหลายครั้งเกินไป.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ขณะนี้บัญชีของคุณได้รับการปกป้องด้วยรหัสผ่านเพียงอย่างเดียว. หากคุณไม่ได้ดำเนินการนี้ กรุณาเปิดการเข้าสู่ระบบแบบสองขั้นตอนอีกครั้งหลังจากเปลี่ยนรหัสผ่านแล้ว.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>บัญชีของคุณถูกล็อก</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>กิจกรรมด้านความปลอดภัยของ %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>เข้าสู่ระบบแล้ว</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ความพยายามเข้าสู่ระบบที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ออกจากระบบแล้ว</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ออกจากระบบเซสชันแล้ว</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>เข้าสู่ระบบจากอุปกรณ์ใหม่</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>เข้าสู่ระบบจากตำแหน่งที่ตั้งใหม่</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ยืนยันตัวตนแล้ว (&quot;ยืนยันว่าเป็นคุณ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>การตรวจสอบตัวตนล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>เข้าสู่ระบบด้วยพาสคีย์แล้ว</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>การเข้าสู่ระบบด้วยพาสคีย์ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ปฏิเสธการเข้าสู่ระบบ: ไม่มีรหัสสองขั้นตอนหรือรหัสไม่ถูกต้อง</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>รหัสสองขั้นตอนไม่ถูกต้อง</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>บัญชีถูกล็อกหลังจากเข้าสู่ระบบล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ปลดล็อกบัญชีแล้ว</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>เปลี่ยนรหัสผ่านแล้ว</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>การเปลี่ยนรหัสผ่านล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>รีเซ็ตรหัสผ่านแล้ว</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ขอรหัสผ่านใหม่แล้ว</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>เปลี่ยนที่อยู่อีเมลแล้ว</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>เปลี่ยนชื่อผู้ใช้แล้ว</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>เปิดการเข้าสู่ระบบแบบสองขั้นตอนแล้ว</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ปิดการเข้าสู่ระบบแบบสองขั้นตอนแล้ว</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ใช้รหัสกู้คืนแล้ว</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>รหัสกู้คืนชุดใหม่</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>สร้างรหัสผ่านแอปแล้ว</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>เพิกถอนรหัสผ่านแอปแล้ว</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>เพิ่มพาสคีย์แล้ว</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>นำพาสคีย์ออกแล้ว</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>เปิดใช้งานบัญชีแล้ว</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ปิดใช้งานบัญชีแล้ว</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>การเข้าสู่ระบบและเซสชัน</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>การเปลี่ยนแปลงบัญชี</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ต้องให้ความสนใจ</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>โดยคุณ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>โดยผู้ใช้</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>โดย %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>วิธีการ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>เบราว์เซอร์</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ระบบปฏิบัติการ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>อุปกรณ์</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>สถานที่</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ประเทศ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>เซสชัน</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>รายการใด</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ช่องทาง</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ความพยายามที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>รหัสที่เหลือ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ตัวจัดการการเข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>กิจกรรมด้านความปลอดภัยของ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>การเข้าสู่ระบบและการเปลี่ยนแปลงด้านความปลอดภัยของบัญชีของคุณ. หากคุณเห็นสิ่งที่คุณไม่ได้ทำ กรุณาเปลี่ยนรหัสผ่านและออกจากระบบอุปกรณ์ที่คุณไม่รู้จัก.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>การเข้าสู่ระบบและการเปลี่ยนแปลงด้านความปลอดภัยของบัญชีนี้.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>อุปกรณ์ของคุณ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>เปลี่ยนรหัสผ่าน</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>กลับไปที่บัญชี</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ไม่มีการบันทึกกิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>กิจกรรมนี้อ่านจากล็อกการตรวจสอบผู้ใช้ ซึ่งตาราง expuser_audit ของล็อกนั้นไม่มีอยู่หรือไม่รองรับในฐานข้อมูลนี้. กรุณาเรียกใช้ php update/common/scripts/6.0/createuseraudittable.php หรือการอัปเดตฐานข้อมูลของ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days วันที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>การเข้าสู่ระบบใน %days วันที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัยล่าสุด</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ถูกปฏิเสธ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ยังไม่มีการบันทึกกิจกรรมด้านความปลอดภัย.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>เหตุการณ์ด้านความปลอดภัยจะเก็บไว้ %days วัน.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>เหตุการณ์ด้านความปลอดภัยจะเก็บไว้จนกว่าผู้ดูแลระบบจะนำออก.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ดาวน์โหลดข้อมูลการเข้าสู่ระบบของฉัน</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>เซสชันและเหตุการณ์ด้านความปลอดภัยของคุณในรูปแบบไฟล์ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>เข้าสู่ระบบแล้ว</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ความพยายามเข้าสู่ระบบที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ออกจากระบบแล้ว</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ออกจากระบบเซสชันแล้ว</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>เข้าสู่ระบบจากอุปกรณ์ใหม่</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>เข้าสู่ระบบจากตำแหน่งที่ตั้งใหม่</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ยืนยันตัวตนแล้ว (&quot;ยืนยันว่าเป็นคุณ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>การตรวจสอบตัวตนล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>เข้าสู่ระบบด้วยพาสคีย์แล้ว</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>การเข้าสู่ระบบด้วยพาสคีย์ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ปฏิเสธการเข้าสู่ระบบ: ไม่มีรหัสสองขั้นตอนหรือรหัสไม่ถูกต้อง</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>รหัสสองขั้นตอนไม่ถูกต้อง</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>บัญชีถูกล็อกหลังจากเข้าสู่ระบบล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ปลดล็อกบัญชีแล้ว</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>เปลี่ยนรหัสผ่านแล้ว</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>การเปลี่ยนรหัสผ่านล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>รีเซ็ตรหัสผ่านแล้ว</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ขอรหัสผ่านใหม่แล้ว</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>เปลี่ยนที่อยู่อีเมลแล้ว</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>เปลี่ยนชื่อผู้ใช้แล้ว</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>เปิดการเข้าสู่ระบบแบบสองขั้นตอนแล้ว</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ปิดการเข้าสู่ระบบแบบสองขั้นตอนแล้ว</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ใช้รหัสกู้คืนแล้ว</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>รหัสกู้คืนชุดใหม่</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>สร้างรหัสผ่านแอปแล้ว</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>เพิกถอนรหัสผ่านแอปแล้ว</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>เพิ่มพาสคีย์แล้ว</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>นำพาสคีย์ออกแล้ว</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>เปิดใช้งานบัญชีแล้ว</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ปิดใช้งานบัญชีแล้ว</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>การเข้าสู่ระบบและเซสชัน</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>การเปลี่ยนแปลงบัญชี</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ต้องให้ความสนใจ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>กิจกรรมด้านความปลอดภัย</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>กิจกรรมด้านความปลอดภัยของ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>การเข้าสู่ระบบและการเปลี่ยนแปลงด้านความปลอดภัยของบัญชีของคุณ. หากคุณเห็นสิ่งที่คุณไม่ได้ทำ กรุณาเปลี่ยนรหัสผ่านและออกจากระบบอุปกรณ์ที่คุณไม่รู้จัก.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>อุปกรณ์ของคุณ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>เปลี่ยนรหัสผ่าน</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ไซต์นี้ยังไม่มีการบันทึกกิจกรรมด้านความปลอดภัย.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>การเข้าสู่ระบบใน %days วันที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ความพยายามที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ยังไม่มีการบันทึกกิจกรรมด้านความปลอดภัย.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ดาวน์โหลดข้อมูลการเข้าสู่ระบบของฉัน</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>เซสชันและเหตุการณ์ด้านความปลอดภัยของคุณในรูปแบบไฟล์ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>รหัสผ่าน</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>รหัสผ่านและรหัสสองขั้นตอน</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>อินเทอร์เฟซ REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>อินเทอร์เฟซ SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>การเข้าสู่ระบบครั้งเดียว (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>เข้าสู่ระบบก่อนเริ่มบันทึกเซสชัน</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>รายงานการเข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ใครเข้าสู่ระบบไซต์อยู่ บัญชีเข้าสู่ระบบและล้มเหลวบ่อยเพียงใด และการให้ผู้ใช้ออกจากระบบทุกที่. ทำงานกับตัวจัดการเซสชันทุกแบบ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ออกจากระบบเซสชันแล้ว. อุปกรณ์ต้องเข้าสู่ระบบอีกครั้ง.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ถูกออกจากระบบจาก %count เซสชัน.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ไม่มีเซสชันที่กำลังทำงานอยู่.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ไม่มีบัญชีที่มี ID ชื่อผู้ใช้ หรือที่อยู่อีเมลนั้น.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>นี่คือเซสชันที่คุณกำลังใช้อยู่. หากต้องการสิ้นสุดเซสชัน กรุณาออกจากระบบ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>เซสชันนั้นสิ้นสุดไปแล้ว.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>หน้านี้หมดอายุแล้ว. ไม่มีการเปลี่ยนแปลงใด กรุณาลองอีกครั้ง.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ไซต์นี้ไม่บันทึกเซสชัน (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ไม่มีตาราง expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>เซสชันจะถูกบันทึกเมื่อสร้างตารางแล้ว: php update/common/scripts/6.0/createusersessiontable.php หรือการอัปเดตฐานข้อมูลของ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ขณะนี้และวันนี้</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>เซสชันที่กำลังทำงาน</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ผู้ใช้ที่เข้าสู่ระบบอยู่</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>การเข้าสู่ระบบวันนี้</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ความพยายามที่ล้มเหลววันนี้</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ให้ผู้ใช้ออกจากระบบทุกที่</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ทุกเซสชันของบัญชีจะสิ้นสุดเมื่อมีคำขอครั้งถัดไป รวมถึงเซสชันที่คงไว้ด้วย &quot;จดจำฉัน&quot;. ใช้เมื่อบัญชีอาจตกอยู่ในมือผู้อื่น จากนั้นรีเซ็ตรหัสผ่านของบัญชี.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ผู้ใช้ ชื่อผู้ใช้ หรือที่อยู่อีเมล</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ออกจากระบบทุกที่</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>เข้าสู่ระบบอยู่ขณะนี้</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>แสดง %limit รายการที่ใช้ล่าสุด.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ผู้ใช้</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>อุปกรณ์</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ที่อยู่</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>เข้าสู่ระบบแล้ว</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ใช้งานล่าสุด</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>การดำเนินการ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>อุปกรณ์นี้</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ไม่ได้บันทึกไว้</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ออกจากระบบ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ไม่มีเซสชันที่เข้าสู่ระบบอยู่.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days วันที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>การเข้าสู่ระบบและความพยายามที่ล้มเหลวนับจากล็อกการตรวจสอบผู้ใช้ ซึ่งไม่มีอยู่ ส่วนเซสชันใหม่ยังคงนับได้.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>วัน</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>การเข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ความพยายามที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>เซสชันใหม่</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ตัวจัดการเซสชัน: %handler. เซสชันอ่านจากตาราง expuser_session ดังนั้นรายงานจึงทำงานกับตัวจัดการทุกแบบ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>การแจ้งเตือนด้านความปลอดภัยสำหรับบัญชีของคุณ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>เกิดเหตุการณ์ด้านความปลอดภัยกับบัญชี %login ของคุณ: %event. หากไม่ใช่คุณ กรุณาปกป้องบัญชีของคุณที่ %url.</translation>
     </message>
 </context>
 </TS>

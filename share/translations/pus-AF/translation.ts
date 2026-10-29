@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>جوړونه &gt; مهالوېشلې دندې</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>تر اوسه د مهالوېشلو دندو هېڅ برخه نه ده چلېدلې: د دندو کتار، واردول، خبرتیاوې او د لټون لړلیک په تمه دي. php bin/php/installcrontab.php --add --apply وچلوئ، یا د --show کرښې crontab ته زیاتې کړئ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>دا نصب یو عمومي ډیمو دی: هر څوک کېدای شي د مدیر پټنوم یې وپېژني، او د مدیرانو پټنومونه نه بدلېدای شي او نه بېرته تنظیمېدای شي. دلته هېڅ شخصي شی مه لیکئ.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسایل</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15300,6 +15312,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>چا بدلون راوست، ننوت یا رد شو، د هر حساب له مخې؛ فلټر او صادرول.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>د ننوتلو راپور</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>څوک ننوتی دی، په هره ورځ ننوتل او ناکامۍ؛ یو کارن له هر ځایه ایستل.</translation>
     </message>
 </context>
 <context>
@@ -33605,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>د PHP چلوونکي د وخت تېرې ناستې پخپله PHP لرې کوي (session.gc_maxlifetime)، نه دغه پاڼه او نه د session_gc مهالوېشلې دندې برخه.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>د ټولو کارنانو ننوتې ناستې د ننوتلو په راپور کې لېست کېږي او ایستل کېږي؛ دا راپور د ناستې له هر چلوونکي سره کار کوي.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>د ننوتلو راپور پرانیستل</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37929,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>تر اوسه هېڅ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ستاسو وروستي ننوتل، ناکامې هڅې او ستاسو په پټنوم، برېښنالیک پته او دوه‌ګامه ننوتلو کې بدلونونه.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>د دې حساب وروستي ننوتل، ناکامې هڅې او امنیتي بدلونونه.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>د فعالیت کتل</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count ناکام ننوتل</translation>
     </message>
 </context>
 <context>
@@ -51019,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ونه لیکل شو (%reason). دا کرښې د هغه کارن crontab ته زیاتې کړئ چې سایټ یې په نوم چلېږي، کنه کتار، واردول، خبرتیاوې او د لټون لړلیک به هېڅکله ونه چلېږي:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>بیا نصبول د kickstarter په واسطه کېږي (%file، بیا php bin/php/kickstarter.php run --apply) یا د یو نوي نصب په واسطه.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56811,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>د برېښنالیک د لېږد سیستم په وروستي چلول کې %count پیغامونه رد کړل. د برېښنالیک سرور او site.ini MailSettings وګورئ.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count پېښې په تمه دي او د خبرتیاوو د مهالوېشلې دندې هېڅ چلول نه دي ثبت شوي. د مهالوېشلې دندې برخه &quot;frequent&quot; crontab ته زیاته کړئ، یا exp:notification:run --apply وچلوئ.</translation>
     </message>
 </context>
 <context>
@@ -63067,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>د غوټې د ټاکونکي په وسیله بل سایټ یا برخه ټاکل</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>یوازې د سیستم مدیر کولی شي خاوند بدل کړي: ./console exp:content-check --fix-permissions --apply د root په توګه وچلوئ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64600,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>تش</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>د لاسلیک کیلي له یو کال څخه زړه ده: هغه د exp:audit key rotate --apply په واسطه بدله کړئ.</translation>
     </message>
 </context>
 <context>
@@ -68860,6 +68924,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>نه دی لېږل شوی</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>د خبرتیاوو مهالوېشلې دنده خپل هر چلول دلته ثبتوي. د frequent برخه crontab ته زیاته کړئ، یا exp:notification:run --apply وچلوئ.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>کنسول وکاروئ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76483,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>هېڅ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>د تصدیق اپلیکېشن سره</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>د برېښنالیک له لارې د کوډ سره</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>د بیا رغونې کوډ سره</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>د پاس‌کي سره</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>د بهرني حساب سره</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>د هغې د شبکې په توګه ښودل کېږي؛ پته هماغسې ساتل کېږي لکه څنګه چې د سایټ د معلوماتو د ساتنې تنظیمات وايي.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>نه دی ثبت شوی</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>موقعیت</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>نږدې</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>د وسیلو مدیریت</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>د تصدیق اپلیکېشن سره</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>د برېښنالیک له لارې د کوډ سره</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>د بیا رغونې کوډ سره</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>د پاس‌کي سره</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>د بهرني حساب سره</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>نه دی ثبت شوی</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>موقعیت</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>نږدې</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>د دغه کارن ناستې کتل</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>ستاسو حساب %login په %site کې همدا اوس له داسې ځایه د ننوتلو لپاره وکارول شو چې پر دې وروستیو کې ترې نه و ننوتی:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>نږدې موقعیت</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser په %os کې</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>د ننوتلو راپور</translation>
     </message>
 </context>
 <context>
@@ -77489,6 +77649,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>نامعلوم</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>خپل حساب خوندي کړئ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>په %site کې ستاسو حساب %login ته د ننوتلو لپاره د بیا رغونې یو کوډ وکارول شو.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>د بیا رغونې یو کوډ وکارول شو</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>حساب</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>نږدې پته</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>د بیا ننوتلو لپاره نوی پټنوم وغواړئ، یا د سایټ له مدیرانو سره اړیکه ونیسئ.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>د نوي پټنوم غوښتل</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>د بیا رغونې هر کوډ یو ځل کار کوي. که مو خپل تلیفون ورک کړی وي، خپل د تصدیق اپلیکېشن بیا تنظیم کړئ او د بیا رغونې نوي کوډونه په یو خوندي ځای کې وساتئ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ستاسو حساب ته د ننوتلو ناکامې هڅې</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>له اوس وروسته، ننوتل ستاسو له پټنوم سربېره یو کوډ هم غواړي. که دا کار تاسو کړی وي، هېڅ کار ته اړتیا نشته.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>که تاسو وئ او خپل پټنوم مو هېر کړی وي، نوی پټنوم وغواړئ. که نه، یو پیاوړی پټنوم وټاکئ او دوه‌ګامه ننوتل فعال کړئ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>که دا تاسو نه وئ، ښايي څوک ستاسو پټنوم پېژني: همدا اوس یې بدل کړئ او وګورئ چې ستاسو حساب چېرې ننوتی دی.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>د بیا رغونې پاتې کوډونه</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>خپل وسایل وګورئ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>امنیتي خبرداری</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>یو چا هڅه وکړه چې په %site کې ستاسو حساب %login ته په پرله پسې ډول %count ځله د غلط پټنوم سره ننوځي.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>په %site کې ستاسو په حساب %login کې یوه امنیتي پېښه رامنځته شوه.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>دا ستاسو د حساب په اړه امنیتي خبرداری دی. د هر داسې بدلون لپاره لېږل کېږي او بندېدای نه شي.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وخت</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>په %site کې ستاسو د حساب %login لپاره دوه‌ګامه ننوتل بند شول.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>دوه‌ګامه ننوتل بند شول</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>په %site کې ستاسو د حساب %login لپاره دوه‌ګامه ننوتل فعال شول.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>دوه‌ګامه ننوتل فعال شول</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>په %site کې ستاسو حساب %login د ډېرو ناکامو ننوتلو وروسته قلف شو.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ستاسو حساب اوس یوازې ستاسو د پټنوم په واسطه خوندي دی. که دا کار تاسو نه وي کړی، د خپل پټنوم له بدلولو وروسته دوه‌ګامه ننوتل بیا فعال کړئ.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ستاسو حساب قلف شو</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>د %name امنیتي فعالیت</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ننوتی</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>د ننوتلو ناکامه هڅه</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>وتلی</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ناستې وایستل شوې</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>له نوې وسیلې ننوتل</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>له نوي موقعیت ننوتل</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>هویت تایید شو («هویت تایید کړئ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>د هویت تایید ناکام شو</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>د پاس‌کي سره ننوتی</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>د پاس‌کي سره ننوتل ناکام شول</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ننوتل رد شول: د دوه‌ګامه ننوتلو کوډ نشته یا غلط دی</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>د دوه‌ګامه ننوتلو غلط کوډ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>حساب د ناکامو ننوتلو وروسته قلف شو</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>د حساب قلف خلاص شو</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>پټنوم بدل شو</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>د پټنوم بدلول ناکام شول</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>پټنوم بیا تنظیم شو</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>نوی پټنوم وغوښتل شو</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>برېښنالیک پته بدله شوه</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>کارن‌نوم بدل شو</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>دوه‌ګامه ننوتل فعال شول</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>دوه‌ګامه ننوتل بند شول</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>د بیا رغونې کوډ وکارول شو</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>د بیا رغونې نوي کوډونه</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>د اپلیکېشن پټنوم جوړ شو</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>د اپلیکېشن پټنوم لغوه شو</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>پاس‌کي زیات شو</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>پاس‌کي لرې شو</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>حساب فعال شو</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>حساب غیر فعال شو</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ټول</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ننوتل او ناستې</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>د حساب بدلونونه</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>پاملرنې ته اړتیا لري</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ستاسو له خوا</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>د کارن له خوا</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>د %login له خوا</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>طریقه</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>براوزر</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>عملیاتي سیستم</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>وسیله</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ځای</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>هېواد</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ناستې</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>کومې</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>چینل</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکامې هڅې</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>پاتې کوډونه</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>د ننوتلو چلوونکی</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>د %name امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ستاسو د حساب په امنیت کې ننوتل او بدلونونه. که داسې څه وینئ چې تاسو نه وي کړي، خپل پټنوم بدل کړئ او هغه وسایل وباسئ چې نه یې پېژنئ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>د دې حساب په امنیت کې ننوتل او بدلونونه.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسایل</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>پټنوم بدلول</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>حساب ته بیرته</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>امنیتي فعالیت نه ثبتېږي</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>دا د کارنانو د پلټنې له لاګ څخه لوستل کېږي، چې جدول یې expuser_audit نشته یا په دې ډېټابېس کې نه ملاتړ کېږي. php update/common/scripts/6.0/createuseraudittable.php یا د 6.0.15 د ډېټابېس تازه کول وچلوئ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>وروستۍ %days ورځې</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>په وروستیو %days ورځو کې ننوتل</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>وروستی امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ښودل</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رد شوی</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>تر اوسه هېڅ امنیتي فعالیت نه دی ثبت شوی.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>امنیتي پېښې %days ورځې ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>امنیتي پېښې تر هغه ساتل کېږي چې یو مدیر یې لرې کړي.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>زما د ننوتلو معلومات ښکته کول</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ستاسو ناستې او امنیتي پېښې د JSON دوتنې په توګه.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ننوتی</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>د ننوتلو ناکامه هڅه</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>وتلی</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ناستې وایستل شوې</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>له نوې وسیلې ننوتل</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>له نوي موقعیت ننوتل</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>هویت تایید شو («هویت تایید کړئ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>د هویت تایید ناکام شو</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>د پاس‌کي سره ننوتی</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>د پاس‌کي سره ننوتل ناکام شول</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ننوتل رد شول: د دوه‌ګامه ننوتلو کوډ نشته یا غلط دی</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>د دوه‌ګامه ننوتلو غلط کوډ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>حساب د ناکامو ننوتلو وروسته قلف شو</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>د حساب قلف خلاص شو</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>پټنوم بدل شو</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>د پټنوم بدلول ناکام شول</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>پټنوم بیا تنظیم شو</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>نوی پټنوم وغوښتل شو</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>برېښنالیک پته بدله شوه</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>کارن‌نوم بدل شو</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>دوه‌ګامه ننوتل فعال شول</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>دوه‌ګامه ننوتل بند شول</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>د بیا رغونې کوډ وکارول شو</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>د بیا رغونې نوي کوډونه</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>د اپلیکېشن پټنوم جوړ شو</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>د اپلیکېشن پټنوم لغوه شو</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>پاس‌کي زیات شو</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>پاس‌کي لرې شو</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>حساب فعال شو</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>حساب غیر فعال شو</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ټول</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ننوتل او ناستې</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>د حساب بدلونونه</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>پاملرنې ته اړتیا لري</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>د %name امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ستاسو د حساب په امنیت کې ننوتل او بدلونونه. که داسې څه وینئ چې تاسو نه وي کړي، خپل پټنوم بدل کړئ او هغه وسایل وباسئ چې نه یې پېژنئ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسایل</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>پټنوم بدلول</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>امنیتي فعالیت تر اوسه په دې سایټ کې نه ثبتېږي.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>په وروستیو %days ورځو کې ننوتل</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکامې هڅې</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>تر اوسه هېڅ امنیتي فعالیت نه دی ثبت شوی.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>زما د ننوتلو معلومات ښکته کول</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ستاسو ناستې او امنیتي پېښې د JSON دوتنې په توګه.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>پټنوم</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>پټنوم او د دوه‌ګامه ننوتلو کوډ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>د REST انټرفېس</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>د SOAP انټرفېس</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>یو ځلي ننوتل</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>د ناستو له ثبتولو مخکې ننوتی</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>د ننوتلو راپور</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>څوک په سایټ کې ننوتی دی، حسابونه څو ځله ننوځي او پاتې راځي، او یو کارن له هر ځایه ایستل. د ناستې له هر چلوونکي سره کار کوي.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ناسته وایستل شوه. وسیله باید بیا ننوځي.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login له %count ناستو وایستل شو.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login هېڅ روانه ناسته نه درلوده.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>هېڅ حساب دا پېژند، کارن‌نوم یا برېښنالیک پته نه لري.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>دا هغه ناسته ده چې تاسو یې کاروئ. د پای ته رسولو لپاره یې ووځئ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>هغه ناسته دمخه پای ته رسېدلې وه.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>د پاڼې موده پای ته رسېدلې وه. هېڅ شی بدل نه شو؛ مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>په دې سایټ کې ناستې نه ثبتېږي (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>جدول expuser_session نشته</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ناستې هغه وخت ثبتېږي چې دا جوړ شي: php update/common/scripts/6.0/createusersessiontable.php، یا د 6.0.15 د ډېټابېس تازه کول.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>اوس او نن</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>روانې ناستې</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ننوتي کارنان</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>نن ننوتل</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>نن ناکامې هڅې</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>یو کارن له هر ځایه ایستل</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>د حساب هره ناسته په خپلې راتلونکې غوښتنې پای ته رسېږي، هغه هم چې د «ما په یاد ولرئ» په واسطه ساتل شوې. دا هغه وخت وکاروئ چې یو حساب ښايي په غلطو لاسونو کې وي؛ بیا یې پټنوم بیا تنظیم کړئ.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>د کارن پېژند، کارن‌نوم یا برېښنالیک پته</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>له هر ځایه وتل</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>اوس ننوتي</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>وروستي %limit کارول شوې ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>کارن</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>وسیله</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پته</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ننوتی</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>وروستی فعال</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کړنې</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>دا وسیله</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>نه دی ثبت شوی</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>وتل</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>هېڅ ناسته ننوتې نه ده.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>وروستۍ %days ورځې</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ننوتل او ناکامې هڅې د کارنانو د پلټنې له لاګ څخه شمېرل کېږي، چې نشته؛ نوې ناستې شمېرل کېږي.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ورځ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ننوتل</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکامې هڅې</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>نوې ناستې</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>د ناستې چلوونکی: %handler. ناستې د expuser_session له جدول څخه لوستل کېږي، نو راپور د هر چلوونکي سره کار کوي.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ستاسو د حساب لپاره امنیتي خبرداری</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ستاسو په حساب %login کې یوه امنیتي پېښه رامنځته شوه: %event. که دا تاسو نه وئ، خپل حساب په %url کې خوندي کړئ.</translation>
     </message>
 </context>
 </TS>

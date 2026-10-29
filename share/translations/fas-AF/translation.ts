@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>راه‌اندازی &gt; کارهای زمان‌بندی‌شده</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>هنوز هیچ قسمت کار زمان‌بندی‌شده‌ای اجرا نشده است: صف کارها، درون‌بری‌ها، اعلان‌ها و نمایهٔ جستجو در انتظارند. php bin/php/installcrontab.php --add --apply را اجرا کنید، یا خطوط --show را به crontab بیفزایید.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>این نصب یک نسخهٔ نمایشی عمومی است: هر کسی ممکن است رمز عبور مدیر آن را بداند، و رمزهای عبور مدیران قابل تغییر یا بازنشانی نیستند. هیچ معلومات خصوصی‌ای در اینجا وارد نکنید.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>چه کسی تغییر داد، وارد شد یا رد شد، به تفکیک حساب؛ فیلتر و برون‌بری.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>گزارش ورود</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>چه کسی وارد شده است، ورودها و ناکامی‌ها در هر روز؛ خارج کردن یک کاربر از همه‌جا.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>نشست‌های منقضی گردانندهٔ PHP توسط خود PHP برداشته می‌شوند (session.gc_maxlifetime)، نه توسط این صفحه یا قسمت کار زمان‌بندی‌شدهٔ session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>نشست‌های واردشدهٔ همهٔ کاربران در گزارش ورود فهرست و خارج می‌شوند؛ این گزارش با هر گردانندهٔ نشستی کار می‌کند.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>باز کردن گزارش ورود</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>هنوز هیچ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ورودهای اخیر شما، تلاش‌های ناموفق و تغییرات رمز عبور، آدرس ایمیل و ورود دومرحله‌ای شما.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ورودهای اخیر، تلاش‌های ناموفق و تغییرات امنیتی این حساب.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>بررسی فعالیت</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count ورود ناموفق</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab نوشته نشد (%reason). این سطرها را به crontab کاربری که سایت با آن اجرا می‌شود بیفزایید، وگرنه صف، درون‌ریزی‌ها، اعلان‌ها و نمایهٔ جستجو هرگز اجرا نمی‌شوند:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>نصب دوباره با kickstarter انجام می‌شود (%file، سپس php bin/php/kickstarter.php run --apply) یا با یک نصب تازه.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>سامانهٔ انتقال ایمیل در آخرین اجرا %count پیام را رد کرد. سرور ایمیل و site.ini MailSettings را بررسی کنید.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count رویداد در انتظار است و هیچ اجرایی از کار زمان‌بندی‌شدهٔ اعلان‌ها ثبت نشده است. قسمت کار زمان‌بندی‌شدهٔ «frequent» را به crontab بیفزایید، یا exp:notification:run --apply را اجرا کنید.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>انتخاب سایت یا بخش دیگر با انتخابگر گره</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>فقط مدیر سیستم می‌تواند مالک را تغییر دهد: ./console exp:content-check --fix-permissions --apply را با کاربر root اجرا کنید.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>خالی</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>کلید امضا بیش از یک سال عمر دارد: آن را با exp:audit key rotate --apply عوض کنید.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ارسال‌نشده</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>کار زمان‌بندی‌شدهٔ اعلان‌ها هر اجرای خود را اینجا ثبت می‌کند. قسمت frequent را به crontab بیفزایید، یا exp:notification:run --apply را اجرا کنید.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>از کنسول استفاده کنید: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>هیچ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>با برنامهٔ احراز هویت</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>با کدی از طریق ایمیل</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>با کد بازیابی</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>با کلید عبور</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>با حساب خارجی</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>به‌صورت شبکهٔ آن نمایش داده می‌شود؛ آدرس طبق تنظیمات حفاظت از دادهٔ سایت نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ثبت نشده</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>موقعیت</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تقریبی</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>مدیریت دستگاه‌ها</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>با برنامهٔ احراز هویت</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>با کدی از طریق ایمیل</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>با کد بازیابی</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>با کلید عبور</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>با حساب خارجی</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ثبت نشده</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>موقعیت</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تقریبی</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>مشاهدهٔ نشست‌های این کاربر</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>حساب شما %login در %site همین حالا برای ورود از جایی به کار رفت که اخیراً از آنجا وارد نشده بود:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>موقعیت تقریبی</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser روی %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>گزارش ورود</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>نامشخص</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ایمن کردن حساب</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>یک کد بازیابی برای ورود به حساب شما %login در %site به کار رفت.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>یک کد بازیابی به کار رفت</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>حساب</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>آدرس تقریبی</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>برای ورود دوباره رمز عبور جدیدی درخواست کنید، یا با مدیران سایت تماس بگیرید.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>درخواست رمز عبور جدید</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>هر کد بازیابی یک بار کار می‌کند. اگر تیلفون خود را گم کرده‌اید، برنامهٔ احراز هویت خود را دوباره راه‌اندازی کنید و کدهای بازیابی جدید را در جای امنی نگه دارید.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>تلاش‌های ناموفق ورود به حساب شما</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>از این پس، ورود افزون بر رمز عبور شما یک کد هم می‌خواهد. اگر این کار را خودتان انجام داده‌اید، لازم نیست کاری بکنید.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>اگر خودتان بودید و رمز عبور خود را فراموش کرده‌اید، رمز عبور جدیدی درخواست کنید. اگر نه، رمز عبور قوی‌تری برگزینید و ورود دومرحله‌ای را روشن کنید.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>اگر این کار شما نبوده است، ممکن است کسی رمز عبور شما را بداند: همین حالا آن را تغییر دهید و بررسی کنید حساب شما در کجا وارد شده است.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>کدهای بازیابی باقی‌مانده</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>بررسی دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>اخطار امنیتی</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>کسی %count بار پشت سر هم کوشید با رمز عبور نادرست به حساب شما %login در %site وارد شود.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>رویدادی امنیتی در حساب شما %login در %site رخ داد.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>این یک اخطار امنیتی دربارهٔ حساب شماست. برای هر تغییری از این دست فرستاده می‌شود و نمی‌توان آن را خاموش کرد.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>زمان</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>ورود دومرحله‌ای برای حساب شما %login در %site خاموش شد.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ورود دومرحله‌ای خاموش شد</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>ورود دومرحله‌ای برای حساب شما %login در %site روشن شد.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ورود دومرحله‌ای روشن شد</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>حساب شما %login در %site پس از ورودهای ناموفق بیش از حد قفل شد.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>حساب شما اکنون فقط با رمز عبورتان محافظت می‌شود. اگر این کار را خودتان انجام نداده‌اید، پس از تغییر رمز عبور، ورود دومرحله‌ای را دوباره روشن کنید.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>حساب شما قفل شد</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>فعالیت امنیتی %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ورود</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>تلاش ناموفق برای ورود</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>نشست‌ها خارج شدند</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ورود از دستگاهی جدید</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ورود از موقعیتی جدید</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>هویت تأیید شد («تأیید هویت»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>بررسی هویت ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ورود با کلید عبور</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ورود با کلید عبور ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ورود رد شد: کد ورود دومرحله‌ای وجود ندارد یا نادرست است</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>کد ورود دومرحله‌ای نادرست</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>حساب پس از ورودهای ناموفق قفل شد</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>قفل حساب باز شد</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>رمز عبور تغییر کرد</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>تغییر رمز عبور ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>رمز عبور بازنشانی شد</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>رمز عبور جدید درخواست شد</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>آدرس ایمیل تغییر کرد</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>نام کاربری تغییر کرد</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ورود دومرحله‌ای روشن شد</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ورود دومرحله‌ای خاموش شد</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>کد بازیابی به کار رفت</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>کدهای بازیابی جدید</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>رمز عبور برنامه ایجاد شد</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>رمز عبور برنامه باطل شد</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>کلید عبور افزوده شد</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>کلید عبور برداشته شد</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>حساب فعال شد</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>حساب غیرفعال شد</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ورودها و نشست‌ها</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>تغییرات حساب</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>نیازمند توجه</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>توسط شما</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>توسط کاربر</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>توسط %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>روش</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>مرورگر</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>سیستم‌عامل</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>دستگاه</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>مکان</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>کشور</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>نشست‌ها</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>کدام‌ها</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>کانال</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>تلاش‌های ناموفق</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>کدهای باقی‌مانده</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>گردانندهٔ ورود</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>فعالیت امنیتی %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ورودها و تغییرات امنیتی حساب شما. اگر چیزی می‌بینید که خودتان انجام نداده‌اید، رمز عبور خود را تغییر دهید و دستگاه‌هایی را که نمی‌شناسید خارج کنید.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ورودها و تغییرات امنیتی این حساب.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>تغییر رمز عبور</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>بازگشت به حساب</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>فعالیت امنیتی ثبت نمی‌شود</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>این فعالیت از گزارش ممیزی کاربران خوانده می‌شود که جدول آن، expuser_audit، وجود ندارد یا در این پایگاه داده پشتیبانی نمی‌شود. php update/common/scripts/6.0/createuseraudittable.php یا به‌روزرسانی پایگاه دادهٔ 6.0.15 را اجرا کنید.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days روز گذشته</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ورودها در %days روز گذشته</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>فعالیت امنیتی اخیر</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>نمایش</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ردشده</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>هنوز هیچ فعالیت امنیتی ثبت نشده است.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>رویدادهای امنیتی %days روز نگه داشته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>رویدادهای امنیتی تا زمانی که یک مدیر آن‌ها را بردارد نگه داشته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>دانلود داده‌های ورود من</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>نشست‌ها و رویدادهای امنیتی شما در قالب فایل JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ورود</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>تلاش ناموفق برای ورود</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>نشست‌ها خارج شدند</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ورود از دستگاهی جدید</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ورود از موقعیتی جدید</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>هویت تأیید شد («تأیید هویت»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>بررسی هویت ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ورود با کلید عبور</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ورود با کلید عبور ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ورود رد شد: کد ورود دومرحله‌ای وجود ندارد یا نادرست است</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>کد ورود دومرحله‌ای نادرست</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>حساب پس از ورودهای ناموفق قفل شد</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>قفل حساب باز شد</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>رمز عبور تغییر کرد</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>تغییر رمز عبور ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>رمز عبور بازنشانی شد</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>رمز عبور جدید درخواست شد</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>آدرس ایمیل تغییر کرد</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>نام کاربری تغییر کرد</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ورود دومرحله‌ای روشن شد</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ورود دومرحله‌ای خاموش شد</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>کد بازیابی به کار رفت</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>کدهای بازیابی جدید</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>رمز عبور برنامه ایجاد شد</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>رمز عبور برنامه باطل شد</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>کلید عبور افزوده شد</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>کلید عبور برداشته شد</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>حساب فعال شد</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>حساب غیرفعال شد</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ورودها و نشست‌ها</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>تغییرات حساب</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>نیازمند توجه</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>فعالیت امنیتی %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ورودها و تغییرات امنیتی حساب شما. اگر چیزی می‌بینید که خودتان انجام نداده‌اید، رمز عبور خود را تغییر دهید و دستگاه‌هایی را که نمی‌شناسید خارج کنید.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>تغییر رمز عبور</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>فعالیت امنیتی هنوز در این سایت ثبت نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ورودها در %days روز گذشته</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>تلاش‌های ناموفق</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>هنوز هیچ فعالیت امنیتی ثبت نشده است.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>دانلود داده‌های ورود من</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>نشست‌ها و رویدادهای امنیتی شما در قالب فایل JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>رمز عبور</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>رمز عبور و کد ورود دومرحله‌ای</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>رابط REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>رابط SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ورود یکپارچه</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ورود پیش از آغاز ثبت نشست‌ها</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>گزارش ورود</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>چه کسی در سایت وارد شده است، حساب‌ها هر چند وقت یک بار وارد می‌شوند و ناکام می‌مانند، و خارج کردن یک کاربر از همه‌جا. با هر گردانندهٔ نشستی کار می‌کند.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>نشست خارج شد. دستگاه باید دوباره وارد شود.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login از %count نشست خارج شد.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login هیچ نشست در حال اجرایی نداشت.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>هیچ حسابی این شناسه، نام کاربری یا آدرس ایمیل را ندارد.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>این همان نشستی است که از آن استفاده می‌کنید. برای پایان دادن به آن، خارج شوید.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>آن نشست پیش‌تر پایان یافته بود.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>مهلت صفحه به پایان رسیده بود. چیزی تغییر نکرد؛ لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>نشست‌ها در این سایت ثبت نمی‌شوند (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>جدول expuser_session وجود ندارد</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>نشست‌ها پس از ایجاد آن ثبت می‌شوند: php update/common/scripts/6.0/createusersessiontable.php یا به‌روزرسانی پایگاه دادهٔ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>اکنون و امروز</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>نشست‌های در حال اجرا</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>کاربران واردشده</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ورودهای امروز</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>تلاش‌های ناموفق امروز</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>خارج کردن یک کاربر از همه‌جا</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>هر نشست این حساب در درخواست بعدی‌اش پایان می‌یابد، از جمله نشست‌هایی که با «مرا به خاطر بسپار» نگه داشته شده‌اند. هنگامی از آن استفاده کنید که ممکن است حسابی به دست نادرستی افتاده باشد؛ سپس رمز عبور آن را بازنشانی کنید.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>شناسهٔ کاربر، نام کاربری یا آدرس ایمیل</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>خروج از همه‌جا</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>اکنون واردشده</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit نشستی که اخیراً بیش از همه به کار رفته‌اند نمایش داده می‌شوند.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>کاربر</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>دستگاه</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>آدرس</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ورود</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخرین فعالیت</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عملیات</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>این دستگاه</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ثبت نشده</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>هیچ نشستی وارد نشده است.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days روز گذشته</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ورودها و تلاش‌های ناموفق از گزارش ممیزی کاربران شمرده می‌شوند که وجود ندارد؛ نشست‌های جدید شمرده می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>روز</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ورودها</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>تلاش‌های ناموفق</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>نشست‌های جدید</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>گردانندهٔ نشست: %handler. نشست‌ها از جدول expuser_session خوانده می‌شوند، بنابراین گزارش با هر گرداننده‌ای کار می‌کند.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>اخطار امنیتی برای حساب شما</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>رویدادی امنیتی در حساب شما %login رخ داد: %event. اگر شما نبودید، حساب خود را در %url ایمن کنید.</translation>
     </message>
 </context>
 </TS>

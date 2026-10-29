@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Panyiapan &gt; Tugas cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Durung ana bagean tugas cron sing wis mlaku: antrian tugas, impor, kabar lan indeks panggolekan isih ngenteni. Lakokake php bin/php/installcrontab.php --add --apply, utawa tambahake baris saka --show menyang crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Instalasi iki demo umum: sapa wae bisa ngerti tembung sandhi pangurus, lan tembung sandhi pangurus ora bisa diganti utawa disetel ulang. Aja nglebokake apa wae sing pribadi ing kene.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Piranti panjenengan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Sapa sing ngowahi, mlebu utawa ditolak, saben akun; saring lan ekspor.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan mlebu</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Sapa sing lagi mlebu, proses mlebu lan sing gagal saben dina; metokake panganggo ing ngendi-endi.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sesi panangan PHP sing kadaluwarsa dibusak dening PHP dhewe (session.gc_maxlifetime), dudu dening kaca iki utawa bagean tugas cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Sesi sing lagi mlebu saka saben panganggo kadhaftar, lan bisa dimetokake, ing laporan mlebu, sing bisa mlaku karo saben penangan sesi.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Bukak laporan mlebu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ akun panjenengan.</translation>
     <message>
         <source>None yet</source>
         <translation>Durung ana</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Proses mlebu panjenengan sing anyar, upaya sing gagal lan owahan tembung sandhi, alamat email lan mlebu rong langkah panjenengan.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Proses mlebu sing anyar, upaya sing gagal lan owahan keamanan akun iki.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Priksa aktivitas</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count proses mlebu gagal</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Deleng kaca syarat kanggo katrangan luwih lengkap.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ora katulis (%reason). Tambahake baris iki menyang crontab panganggo sing njalanake situs, yen ora antrian, impor, kabar lan indeks panggolekan ora bakal mlaku:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Pamasangan maneh ditindakake nganggo kickstarter (%file, banjur php bin/php/kickstarter.php run --apply) utawa nganggo pamasangan anyar.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transport email nolak %count pesen ing proses pungkasan. Priksa server email lan site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count kedadeyan ngenteni lan ora ana lakon tugas cron kabar sing kacathet. Tambahake bagean tugas cron &quot;frequent&quot; menyang crontab, utawa lakokake exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63077,6 +63133,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Choose another site or section with the node picker</source>
         <translation>Pilih situs utawa seksi liya nganggo pamilih simpul</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Mung pangurus sistem sing bisa ngganti pamilik: lakokake ./console exp:content-check --fix-permissions --apply minangka root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64610,6 +64670,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>empty</source>
         <translation>kosong</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Kunci tandha tangan wis luwih saka setaun: ganti nganggo exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70320,6 +70384,14 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>not sent</source>
         <translation>ora kakirim</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Tugas cron kabar nyathet saben lakone ing kene. Tambahake bagean frequent menyang crontab, utawa lakokake exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Gunakake konsol: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76493,6 +76565,46 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>None.</source>
         <translation>Ora ana.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nganggo aplikasi autentikator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>nganggo kode liwat email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>nganggo kode pemulihan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nganggo kunci sandhi</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>nganggo akun njaba</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ditampilake minangka jaringane; alamat disimpen miturut setelan pangreksan data situs.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ora kacathet</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kira-kira</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76736,6 +76848,42 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Manage devices</source>
         <translation>Urus piranti</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nganggo aplikasi autentikator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>nganggo kode liwat email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>nganggo kode pemulihan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nganggo kunci sandhi</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>nganggo akun njaba</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ora kacathet</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kira-kira</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76815,6 +76963,14 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>View the sessions of this user</source>
         <translation>Deleng sesi pangguna iki</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Akun panjenengan %login ing %site lagi wae dienggo mlebu saka papan sing akhir-akhir iki ora tau dienggo mlebu:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Kira-kira lokasi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76853,6 +77009,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ing %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan mlebu</translation>
     </message>
 </context>
 <context>
@@ -77499,6 +77659,788 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>unknown</source>
         <translation>ora dingerteni</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Amanake akun panjenengan</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Kode pemulihan dienggo mlebu menyang akun panjenengan %login ing %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Kode pemulihan wis dienggo</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akun</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Kira-kira alamat</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Njaluk tembung sandhi anyar supaya bisa mlebu maneh, utawa hubungi pangurus situs.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Njaluk tembung sandhi anyar</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Saben kode pemulihan mung bisa dienggo sepisan. Yen telpon panjenengan ilang, setel maneh aplikasi autentikator panjenengan lan simpen kode pemulihan sing anyar ing papan sing aman.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Upaya mlebu sing gagal ing akun panjenengan</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Wiwit saiki, proses mlebu njaluk kode saliyane tembung sandhi panjenengan. Yen panjenengan sing nindakake, panjenengan ora perlu nindakake apa-apa.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Yen kuwi panjenengan lan panjenengan lali tembung sandhi, njaluka sing anyar. Yen dudu, pilih tembung sandhi sing luwih kuwat lan aktifake mlebu rong langkah.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Yen iki dudu panjenengan, bisa uga ana wong sing ngerti tembung sandhi panjenengan: ganti saiki lan priksa ing ngendi akun panjenengan lagi mlebu.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kode pemulihan sing isih ana</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Priksa piranti panjenengan</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Pengetan keamanan</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Ana wong sing nyoba mlebu menyang akun panjenengan %login ing %site nganggo tembung sandhi sing salah kaping %count berturut-turut.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Ana kedadeyan keamanan ing akun panjenengan %login ing %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Iki pengetan keamanan babagan akun panjenengan. Pengetan iki dikirim kanggo saben owahan kaya ngene lan ora bisa dipateni.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wektu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Mlebu rong langkah wis dipateni kanggo akun panjenengan %login ing %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Mlebu rong langkah wis dipateni</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Mlebu rong langkah wis diaktifake kanggo akun panjenengan %login ing %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Mlebu rong langkah wis diaktifake</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Akun panjenengan %login ing %site dikunci sawise kakehan proses mlebu sing gagal.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Akun panjenengan saiki mung direksa dening tembung sandhi. Yen dudu panjenengan sing nindakake, aktifake maneh mlebu rong langkah sawise panjenengan ngganti tembung sandhi.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Akun panjenengan wis dikunci</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivitas keamanan %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Mlebu</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Upaya mlebu gagal</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Metu</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesi dimetokake</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Mlebu saka piranti anyar</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Mlebu saka lokasi anyar</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitas dikonfirmasi (&quot;Verifikasi yen iki panjenengan&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Pamriksan identitas gagal</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mlebu nganggo kunci sandhi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Mlebu nganggo kunci sandhi gagal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Proses mlebu ditolak: kode rong langkah ora ana utawa salah</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kode rong langkah salah</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akun dikunci sawise proses mlebu gagal</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kunci akun dibukak</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Tembung sandhi diganti</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ngganti tembung sandhi gagal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Tembung sandhi disetel ulang</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Tembung sandhi anyar dijaluk</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Alamat email diganti</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Jeneng panganggo diganti</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Mlebu rong langkah diaktifake</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Mlebu rong langkah dipateni</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kode pemulihan dienggo</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kode pemulihan anyar</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Tembung sandhi aplikasi digawe</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Tembung sandhi aplikasi dicabut</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kunci sandhi ditambahake</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kunci sandhi dibusak</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akun diaktifake</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akun dipateni</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kabeh</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Proses mlebu lan sesi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Owahan akun</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Perlu digatekake</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>dening panjenengan</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>dening panganggo</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>dening %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Cara</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Panjlajah</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem operasi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Piranti</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Papan</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Negara</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesi</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Sing endi</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Saluran</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Upaya gagal</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kode sing isih ana</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Penangan mlebu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivitas keamanan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Proses mlebu lan owahan keamanan akun panjenengan. Yen panjenengan weruh bab sing ora panjenengan tindakake, ganti tembung sandhi panjenengan lan metokake piranti sing ora panjenengan kenal.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Proses mlebu lan owahan keamanan akun iki.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Piranti panjenengan</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ganti tembung sandhi</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Bali menyang akun</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Aktivitas keamanan ora dicathet</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Aktivitas iki diwaca saka log audit panganggo, sing tabele, expuser_audit, ora ana utawa ora didhukung ing basis data iki. Lakokake php update/common/scripts/6.0/createuseraudittable.php, utawa pembaruan basis data 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days dina pungkasan</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Proses mlebu ing %days dina pungkasan</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Aktivitas keamanan anyar</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tampilake</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ditolak</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Durung ana aktivitas keamanan sing kacathet.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Kedadeyan keamanan disimpen suwene %days dina.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Kedadeyan keamanan disimpen nganti pangurus mbusak.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Undhuh data mlebuku</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesi lan kedadeyan keamanan panjenengan minangka berkas JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Mlebu</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Upaya mlebu gagal</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Metu</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesi dimetokake</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Mlebu saka piranti anyar</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Mlebu saka lokasi anyar</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitas dikonfirmasi (&quot;Verifikasi yen iki panjenengan&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Pamriksan identitas gagal</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mlebu nganggo kunci sandhi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Mlebu nganggo kunci sandhi gagal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Proses mlebu ditolak: kode rong langkah ora ana utawa salah</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kode rong langkah salah</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akun dikunci sawise proses mlebu gagal</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kunci akun dibukak</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Tembung sandhi diganti</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ngganti tembung sandhi gagal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Tembung sandhi disetel ulang</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Tembung sandhi anyar dijaluk</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Alamat email diganti</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Jeneng panganggo diganti</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Mlebu rong langkah diaktifake</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Mlebu rong langkah dipateni</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kode pemulihan dienggo</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kode pemulihan anyar</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Tembung sandhi aplikasi digawe</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Tembung sandhi aplikasi dicabut</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kunci sandhi ditambahake</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kunci sandhi dibusak</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akun diaktifake</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akun dipateni</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kabeh</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Proses mlebu lan sesi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Owahan akun</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Perlu digatekake</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas keamanan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivitas keamanan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Proses mlebu lan owahan keamanan akun panjenengan. Yen panjenengan weruh bab sing ora panjenengan tindakake, ganti tembung sandhi panjenengan lan metokake piranti sing ora panjenengan kenal.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Piranti panjenengan</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ganti tembung sandhi</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Aktivitas keamanan durung dicathet ing situs iki.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Proses mlebu ing %days dina pungkasan</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Upaya gagal</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Durung ana aktivitas keamanan sing kacathet.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Undhuh data mlebuku</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesi lan kedadeyan keamanan panjenengan minangka berkas JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Tembung sandhi</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Tembung sandhi lan kode rong langkah</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Antarmuka REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Antarmuka SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Mlebu tunggal (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Mlebu sadurunge sesi dicathet</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan mlebu</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Sapa sing lagi mlebu ing situs, sepira kerepe akun mlebu lan gagal mlebu, lan metokake panganggo ing ngendi-endi. Laporan iki bisa mlaku karo saben penangan sesi.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesi wis dimetokake. Piranti kuwi kudu mlebu maneh.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login wis dimetokake saka %count sesi.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ora duwe sesi sing lagi mlaku.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ora ana akun sing duwe ID, jeneng panganggo utawa alamat email kuwi.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Iki sesi sing lagi panjenengan gunakake. Kanggo mungkasi, metua.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sesi kuwi wis rampung.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kaca wis kadaluwarsa. Ora ana sing diganti; mangga jajal maneh.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sesi ora dicathet ing situs iki (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabel expuser_session ora ana</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesi dicathet sawise tabel kuwi digawe: php update/common/scripts/6.0/createusersessiontable.php, utawa pembaruan basis data 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Saiki lan dina iki</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesi sing mlaku</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Panganggo sing mlebu</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Proses mlebu dina iki</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Upaya gagal dina iki</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Metokake panganggo ing ngendi-endi</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Saben sesi akun rampung ing panjalukan sabanjure, uga sesi sing dijaga dening Elinga aku. Gunakake iki yen akun bisa uga ana ing tangan sing salah; banjur setel ulang tembung sandhine.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID panganggo, jeneng panganggo utawa alamat email</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Metu ing ngendi-endi</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Lagi mlebu</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit sing pungkasan dienggo ditampilake.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Panganggo</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Piranti</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Alamat</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Mlebu</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Pungkasan aktif</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Piranti iki</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ora kacathet</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Metu</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ora ana sesi sing mlebu.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days dina pungkasan</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Proses mlebu lan upaya gagal diitung saka log audit panganggo, sing ora ana; sesi anyar tetep diitung.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dina</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Proses mlebu</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Upaya gagal</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesi anyar</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Penangan sesi: %handler. Sesi diwaca saka tabel expuser_session, mula laporan iki bisa mlaku karo saben penangan.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Pengetan keamanan kanggo akun panjenengan</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Ana kedadeyan keamanan ing akun panjenengan %login: %event. Yen dudu panjenengan, amanake akun panjenengan ing %url.</translation>
     </message>
 </context>
 </TS>

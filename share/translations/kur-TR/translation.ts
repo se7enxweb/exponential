@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Sazkirin &gt; Karên demsazkirî</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Hêj tu beşeke karên demsazkirî nexebitiye: rêza karan, îtxalkirin, agahdarî û îndeksa lêgerînê li bendê ne. php bin/php/installcrontab.php --add --apply bimeşînin, an rêzên --show li crontab zêde bikin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ev sazkirin demoyeke giştî ye: her kes dikare şîfreya rêveberê wê zanibe, û şîfreyên rêveberan nayên guhertin an ji nû ve danîn. Li vir tiştekî taybet nenivîsin.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cîhazên we</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15300,6 +15312,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Kê guherand, têket an hate redkirin, li gorî her hesabî; fîlterkirin û derxistin.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapora têketinê</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kî têketî ye, têketin û têkçûn li gorî rojê; derxistina bikarhênerekî ji her derê.</translation>
     </message>
 </context>
 <context>
@@ -33605,6 +33625,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Danişînên dema wan qediyayî yên birêvebirê PHP ji aliyê PHP bi xwe ve tên rakirin (session.gc_maxlifetime), ne ji aliyê vê rûpelê an beşa cronjob session_gc ve.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Danişînên têketî yên hemû bikarhêneran di rapora têketinê de tên rêzkirin û tên derxistin; ev rapor bi her birêvebirê danişînê re dixebite.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Vekirina rapora têketinê</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37929,6 +37957,26 @@ bişopînin.</translation>
     <message>
         <source>None yet</source>
         <translation>Hîn tune</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Têketinên we yên dawî, hewldanên bi ser neketî û guhertinên di şîfre, navnîşana e-nameyê û têketina du-gavî ya we de.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Têketinên dawî, hewldanên bi ser neketî û guhertinên ewlehiyê yên vî hesabî.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Çavdêriya çalakiyê</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Têketinên bi ser neketî: %count</translation>
     </message>
 </context>
 <context>
@@ -51019,6 +51067,10 @@ Ji bo bêtir agahiyan li rûpela pêdiviyan binêrin.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab nehat nivîsandin (%reason). Van rêzan li crontab a wî bikarhênerî zêde bikin ku malper pê dixebite, wekî din rêza karan, anîn, agahdarî û îndeksa lêgerînê qet naxebitin:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ji nû ve sazkirin bi kickstarter tê kirin (%file, paşê php bin/php/kickstarter.php run --apply) an jî bi sazkirineke nû.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56811,6 +56863,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Veguhestina e-nameyê di xebitandina dawî de %count peyam red kirin. Pêşkêşkarê e-nameyê û site.ini MailSettings kontrol bikin.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count bûyer li bendê ne û tu meşandina karê demsazkirî yê agahdariyan nehatiye tomarkirin. Beşa karê demsazkirî &quot;frequent&quot; li crontab zêde bikin, an exp:notification:run --apply bimeşînin.</translation>
     </message>
 </context>
 <context>
@@ -63067,6 +63123,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Choose another site or section with the node picker</source>
         <translation>Bi hilbijêrê girêkan malper an beşeke din hilbijartin</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Tenê rêveberê pergalê dikare xwedî biguherîne: ./console exp:content-check --fix-permissions --apply wek root bimeşînin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64600,6 +64660,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>empty</source>
         <translation>vala</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Mifteya îmzekirinê ji salekê kevntir e: wê bi exp:audit key rotate --apply biguherînin.</translation>
     </message>
 </context>
 <context>
@@ -68860,6 +68924,14 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>not sent</source>
         <translation>nehat şandin</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Karê demsazkirî yê agahdariyan her meşandina xwe li vir tomar dike. Beşa frequent li crontab zêde bikin, an exp:notification:run --apply bimeşînin.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsolê bikar bînin: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76483,6 +76555,46 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>None.</source>
         <translation>Tune.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>bi sepana piştrastkirinê</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>bi kodeke bi e-nameyê</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bi koda vegerandinê</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>bi mifteya têketinê</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>bi hesabekî derveyî</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Wek tora wê tê nîşandan; navnîşan li gorî mîhengên parastina daneyan ên malperê tê hilanîn.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nehatiye tomarkirin</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Cih</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>nêzîkî</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Manage devices</source>
         <translation>Rêvebirina cîhazan</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>bi sepana piştrastkirinê</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>bi kodeke bi e-nameyê</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bi koda vegerandinê</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>bi mifteya têketinê</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>bi hesabekî derveyî</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nehatiye tomarkirin</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Cih</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>nêzîkî</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>View the sessions of this user</source>
         <translation>Nîşandana danişînên vî bikarhênerî</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Hesabê we %login li ser %site niha ji bo têketinê ji cihekî hat bikaranîn ku vê dawiyê jê neketibû:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Cihê nêzîkî</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser li ser %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapora têketinê</translation>
     </message>
 </context>
 <context>
@@ -77489,6 +77649,788 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>unknown</source>
         <translation>nenas</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabê xwe biparêzin</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Ji bo têketina hesabê we %login li ser %site kodeke vegerandinê hat bikaranîn.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Kodeke vegerandinê hat bikaranîn</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesab</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Navnîşana nêzîkî</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Ji bo ku hûn dîsa têkevin şîfreyeke nû bixwazin, an bi rêveberên malperê re têkilî daynin.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Şîfreyeke nû xwestin</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Her koda vegerandinê carekê dixebite. Heke we telefona xwe winda kiriye, sepana xwe ya piştrastkirinê ji nû ve saz bikin û kodên vegerandinê yên nû li cihekî ewle biparêzin.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Hewldanên têketinê yên bi ser neketî li ser hesabê we</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Ji niha û pê ve, têketin ji bilî şîfreya we kodekê jî dixwaze. Heke we ev kiriye, ne hewce ye hûn tiştekî bikin.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Heke hûn bûn û we şîfreya xwe ji bîr kiriye, şîfreyeke nû bixwazin. Heke na, şîfreyeke xurttir hilbijêrin û têketina du-gavî vekin.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Heke ne hûn bûn, dibe ku kesek şîfreya we dizane: niha wê biguherînin û kontrol bikin ku hesabê we li ku derê têketî ye.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kodên vegerandinê yên mayî</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Cîhazên xwe kontrol bikin</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Alarma ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kesekî hewl da ku bi şîfreyeke şaş %count caran li pey hev têkeve hesabê we %login li ser %site.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Li ser hesabê we %login li ser %site bûyereke ewlehiyê çêbû.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ev alarmeke ewlehiyê ye derbarê hesabê we de. Ji bo her guhertineke wiha tê şandin û nayê girtin.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Dem</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Têketina du-gavî ji bo hesabê we %login li ser %site hat girtin.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Têketina du-gavî hat girtin</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Têketina du-gavî ji bo hesabê we %login li ser %site hat vekirin.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Têketina du-gavî hat vekirin</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Hesabê we %login li ser %site piştî gelek têketinên bi ser neketî hat kilîtkirin.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Hesabê we niha tenê bi şîfreya we tê parastin. Heke we ev nekiriye, piştî ku we şîfreya xwe guhert têketina du-gavî dîsa vekin.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Hesabê we hat kilîtkirin</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Çalakiya ewlehiyê ya %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Têketî</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Hewldana têketinê ya bi ser neketî</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Derketî</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Danişîn hatin derxistin</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Têketin ji cîhazeke nû</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Têketin ji cihekî nû</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Nasname hat piştrastkirin (&quot;Piştrast bikin ku hûn in&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kontrola nasnameyê bi ser neket</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Bi mifteya têketinê têketî</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Têketina bi mifteya têketinê bi ser neket</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Têketin hat redkirin: koda du-gavî tune ye an şaş e</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koda du-gavî ya şaş</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hesab piştî têketinên bi ser neketî hat kilîtkirin</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kilîta hesabê hat vekirin</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Şîfre hat guhertin</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Guhertina şîfreyê bi ser neket</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Şîfre hat nûkirin</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Şîfreyeke nû hat xwestin</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Navnîşana e-nameyê hat guhertin</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Navê bikarhêner hat guhertin</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Têketina du-gavî hat vekirin</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Têketina du-gavî hat girtin</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koda vegerandinê hat bikaranîn</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodên vegerandinê yên nû</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Şîfreya sepanê hat çêkirin</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Şîfreya sepanê hat vekişandin</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Mifteya têketinê hat zêdekirin</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Mifteya têketinê hat rakirin</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hesab hat çalakkirin</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hesab hat neçalakkirin</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hemû</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Têketin û danişîn</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Guhertinên hesabê</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Hewceyî baldariyê</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ji aliyê we ve</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ji aliyê bikarhêner ve</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ji aliyê %login ve</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Rêbaz</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Gerok</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Pergala xebitandinê</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cîhaz</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Der</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Welat</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Danişîn</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Kîjan</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Hewldanên bi ser neketî</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kodên mayî</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Birêvebirê têketinê</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Çalakiya ewlehiyê ya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Têketin û guhertinên di ewlehiya hesabê we de. Heke hûn tiştekî dibînin ku we nekiriye, şîfreya xwe biguherînin û cîhazên ku hûn nas nakin derxînin.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Têketin û guhertinên di ewlehiya vî hesabî de.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cîhazên we</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Şîfreyê guhertin</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Paşve bo hesabê</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Çalakiya ewlehiyê nayê tomarkirin</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ew ji tomara kontrolê ya bikarhêneran tê xwendin, ku tabloya wê expuser_audit tune ye an li ser vê danegehê nayê piştgirîkirin. php update/common/scripts/6.0/createuseraudittable.php bimeşînin, an nûjenkirina danegehê ya 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days rojên dawî</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Têketin di %days rojên dawî de</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Çalakiya ewlehiyê ya dawî</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nîşandan</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>bi ser neket</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>hat redkirin</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hêj tu çalakiya ewlehiyê nehatiye tomarkirin.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Bûyerên ewlehiyê %days rojan tên hilanîn.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Bûyerên ewlehiyê heta ku rêveberek wan rake tên hilanîn.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Daneyên têketina min daxistin</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Danişîn û bûyerên ewlehiyê yên we wek pelekî JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Têketî</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Hewldana têketinê ya bi ser neketî</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Derketî</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Danişîn hatin derxistin</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Têketin ji cîhazeke nû</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Têketin ji cihekî nû</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Nasname hat piştrastkirin (&quot;Piştrast bikin ku hûn in&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kontrola nasnameyê bi ser neket</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Bi mifteya têketinê têketî</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Têketina bi mifteya têketinê bi ser neket</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Têketin hat redkirin: koda du-gavî tune ye an şaş e</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koda du-gavî ya şaş</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hesab piştî têketinên bi ser neketî hat kilîtkirin</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kilîta hesabê hat vekirin</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Şîfre hat guhertin</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Guhertina şîfreyê bi ser neket</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Şîfre hat nûkirin</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Şîfreyeke nû hat xwestin</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Navnîşana e-nameyê hat guhertin</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Navê bikarhêner hat guhertin</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Têketina du-gavî hat vekirin</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Têketina du-gavî hat girtin</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koda vegerandinê hat bikaranîn</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodên vegerandinê yên nû</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Şîfreya sepanê hat çêkirin</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Şîfreya sepanê hat vekişandin</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Mifteya têketinê hat zêdekirin</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Mifteya têketinê hat rakirin</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hesab hat çalakkirin</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hesab hat neçalakkirin</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hemû</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Têketin û danişîn</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Guhertinên hesabê</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Hewceyî baldariyê</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Çalakiya ewlehiyê</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Çalakiya ewlehiyê ya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Têketin û guhertinên di ewlehiya hesabê we de. Heke hûn tiştekî dibînin ku we nekiriye, şîfreya xwe biguherînin û cîhazên ku hûn nas nakin derxînin.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cîhazên we</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Şîfreyê guhertin</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Çalakiya ewlehiyê hêj li ser vê malperê nayê tomarkirin.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Têketin di %days rojên dawî de</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Hewldanên bi ser neketî</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hêj tu çalakiya ewlehiyê nehatiye tomarkirin.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Daneyên têketina min daxistin</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Danişîn û bûyerên ewlehiyê yên we wek pelekî JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Şîfre</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Şîfre û koda du-gavî</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Navrûya REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Navrûya SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Têketina yekane</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Têketî berî ku danişîn bên tomarkirin</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapora têketinê</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kî li ser malperê têketî ye, hesab çiqas caran têdikevin û bi ser nakevin, û derxistina bikarhênerekî ji her derê. Bi her birêvebirê danişînê re dixebite.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Danişîn hat derxistin. Divê cîhaz dîsa têkeve.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ji %count danişînan hat derxistin.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Danişîneke %login a dimeşe tune bû.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Tu hesab xwediyê vê ID, navê bikarhêner an navnîşana e-nameyê nîne.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ev danişîna ku hûn bikar tînin e. Ji bo ku wê biqedînin, derkevin.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ew danişîn berê qediyabû.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Dema rûpelê derbas bûbû. Tiştek nehat guhertin; ji kerema xwe dîsa biceribînin.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Danişîn li ser vê malperê nayên tomarkirin (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabloya expuser_session tune ye</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Danişîn tên tomarkirin gava ku ew were çêkirin: php update/common/scripts/6.0/createusersessiontable.php, an nûjenkirina danegehê ya 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Niha û îro</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Danişînên dimeşin</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Bikarhênerên têketî</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Têketinên îro</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Hewldanên bi ser neketî yên îro</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Derxistina bikarhênerekî ji her derê</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Her danişîna hesabê di daxwaza xwe ya din de diqede, yên ku bi &quot;Min bi bîr bînin&quot; hatine hilanîn jî. Wê bikar bînin dema ku dibe ku hesabek di destên şaş de be; paşê şîfreya wê nû bikin.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ya bikarhêner, navê bikarhêner an navnîşana e-nameyê</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Derketin ji her derê</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Niha têketî</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit yên herî dawî hatine bikaranîn tên nîşandan.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bikarhêner</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cîhaz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Navnîşan</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Têketî</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Çalakiya dawî</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Çalakî</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ev cîhaz</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nehatiye tomarkirin</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Derketin</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Tu danişîn têketî nîne.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days rojên dawî</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Têketin û hewldanên bi ser neketî ji tomara kontrolê ya bikarhêneran tên hejmartin, ku tune ye; danişînên nû tên hejmartin.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Roj</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Têketin</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Hewldanên bi ser neketî</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Danişînên nû</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Birêvebirê danişînê: %handler. Danişîn ji tabloya expuser_session tên xwendin, ji ber vê yekê rapor bi her birêvebirî re dixebite.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Alarma ewlehiyê ji bo hesabê we</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Li ser hesabê we %login bûyereke ewlehiyê çêbû: %event. Heke ne hûn bûn, hesabê xwe li %url biparêzin.</translation>
     </message>
 </context>
 </TS>
