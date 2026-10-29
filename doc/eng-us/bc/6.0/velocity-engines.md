@@ -90,13 +90,13 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 |---|---|---|
 | 1 | extension autoloads | `php bin/php/ezpgenerateautoloads.php -e` |
 | 2 | kernel autoloads, only with `--kernel` | `php bin/php/ezpgenerateautoloads.php -k`, restricted to `kernel/` and `lib/` |
-| 3 | INI caches, and the compiled kernel service container (cache item `kernelservices`, [kernel services](kernel-services.md)) | `php bin/php/ezcache.php --clear-tag=ini` (`./console exp:services:compile` for the container alone) |
-| 4 | template, template-override, translation and design_base caches | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, one id per call |
+| 3 | INI caches, and the compiled kernel service container (cache item `kernelservices`, [kernel services](kernel-services.md)), when settings changed or with `--kernel` | `php bin/php/ezcache.php --clear-tag=ini` (`./console exp:services:compile` for the container alone) |
+| 4 | template, template-override, translation and design_base caches, each when what it holds can have changed (below) | `--clear-id=template`, `--clear-id=template-override`, `--clear-id=translation`, `--clear-id=design_base`, one id per call |
 | 5 | engine archive, when Velocity runs from one | `php bin/php/phar.php build`: rebuilt only when a file in `kernel/`, `lib/` or `autoload/` changed, every file parsed first |
 | 6 | PHP-FPM: wait until its OPcache has revalidated the changed files (no reload), or reload it when that cannot be relied on | `sleep <revalidate_freq + 1>`, or `systemctl reload <[DeploySettings] PhpFpmService>` |
 | 7 | restart Velocity, when it is running | `exp:velocity restart` |
-| 8 | content, exphttpcache, ezjscore-packer (only with `--packer`) and template-block caches | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
-| 9 | Velocity's response cache | `exp:velocity cache clear` |
+| 8 | content, exphttpcache, ezjscore-packer (only with `--packer`) and template-block caches, when templates, design files, settings or translations changed | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
+| 9 | Velocity's response cache, with step 8 | `exp:velocity cache clear` |
 | 10 | warm-up: `[DeploySettings] WarmUpURL[]` requested once each by a background process | `curl URL...` |
 
 **`config.php` counts as a PHP change.** The qbix engine's persistent workers
@@ -111,6 +111,33 @@ read it on every request once OPcache sees the new file; with
 are cleared only after PHP-FPM and Velocity run the new code. Cleared before,
 every page requested in between is rendered by the old code and cached again,
 and the change looks as if it had not worked.
+
+**A cache is cleared only when what it holds can have changed.** A deploy that
+passes records when it started (`var/cache/velocity-deploy/last.json`); the next
+one looks for files modified since then below `design/`, `settings/`,
+`share/translations/`, the same directories of every extension, and the code of
+the template engines and operator registrations (`lib/eztemplate`, `lib/smarty`,
+`lib/twig`, `lib/templatebridge`, `kernel/common`, `extension/*/autoloads`):
+
+| Changed since the last deploy | Cleared |
+|---|---|
+| settings | INI caches, template-override, design_base, the caches of rendered output (steps 8 and 9) |
+| templates or other design files | template, template-override, design_base, the caches of rendered output |
+| translations | translation, the caches of rendered output |
+| template engine or operator registration code | template (compiled templates) |
+| only PHP classes | nothing of steps 3, 4, 8 and 9 |
+
+So a deploy of PHP classes keeps the pages already rendered, and the first
+visitors after it do not each wait for a page to be rendered again. `--dry-run`
+says for each cache why it would be cleared or kept, naming the changed files.
+`--clear-content` clears the caches of rendered output anyway (after a change of
+PHP code that changes what a page shows), `--all-caches` clears every cache. With
+`--kernel` the INI caches are cleared too (the kernel service container is
+compiled again). Without a record of an earlier deploy (the first one, or the
+file removed) every cache is cleared, as before; an upgrade
+(`exp:upgrade`) deploys with `--all-caches`. A file is "changed" by its
+modification time: a copy that keeps the old time (`cp -p`, `rsync -t`) is not
+seen, so deploy such a copy with `--all-caches`.
 
 **The first step that fails stops the run.** A kernel file that does not parse
 fails step 5, before PHP-FPM or Velocity has been touched; a restart that does

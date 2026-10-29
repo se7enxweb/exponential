@@ -2100,7 +2100,8 @@
       "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php"
     ],
     "kernel/classes/expvelocitydeploy.php": [
-      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
+      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php",
+      "tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php"
     ]
   },
   "generated": {
