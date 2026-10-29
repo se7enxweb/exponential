@@ -105,8 +105,8 @@ commands too; the autoload generator loads its class itself, since it runs befor
 ## Copyright and headers
 
 Every copyright notice names the project's own holders first, above the notice of the original holder, which stays
-as the GPL requires; since 29 October 2026 that line reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x.
-All rights reserved." ([Copyright and copyleft](../../help/copyright-and-copyleft.md)). Entry point files carry a
+as the GPL requires; since 29 October 2026 that line reads
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." ([Copyright and copyleft](../../help/copyright-and-copyleft.md)). Entry point files carry a
 header of the Exponential Foundation and 7x
 with the description kept; the original header moved into the class file.
 

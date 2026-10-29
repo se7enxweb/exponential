@@ -6514,7 +6514,7 @@ cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.
 2e6216a45844e2f3da0b09fbbea87102  doc/eng-us/features/6.0/platform-sqlite-install.md
 90c5f27d343a57526bf016d4e13900ef  doc/eng-us/features/6.0/preload-sites-view.md
 79030ca296afed184958364e53456507  doc/eng-us/features/6.0/publish-without-notification.md
-9abcd46c5356aca9e9a26ee3da627abb  doc/eng-us/features/6.0/quality-checks.md
+d0d71384a715b0e9b82b4822b07fc6ad  doc/eng-us/features/6.0/quality-checks.md
 0abce1968ade7c7a1806b822ac4e7f28  doc/eng-us/features/6.0/quick-location-buttons.md
 ed0aaba04814f4c4a95783747d008baf  doc/eng-us/features/6.0/rad-tools.md
 f7a865c242f17225cb98ff1463606013  doc/eng-us/features/6.0/rebranding-to-exponential.md
@@ -12450,7 +12450,7 @@ e7befd5e293bc2d00f3136d0e99c245b  doc/eng-us/specifications/6.0/notifications-in
 f05e686d93651677d7909d9a043f684b  doc/eng-us/specifications/6.0/platform-console-commands.md
 ae360783d46830e044f01e061dd7d3e1  doc/eng-us/specifications/6.0/platform-package-map.md
 9fe14a3b13d6da50b9dffc8c3858c342  doc/eng-us/specifications/6.0/platform-sqlite-installer.md
-eb33310b4bf95828106ebdd01a566e1f  doc/eng-us/specifications/6.0/runnable-commands-cronjobs-views.md
+acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-commands-cronjobs-views.md
 23f61875abe6d0daab3192081594c35c  doc/eng-us/specifications/6.0/security-defaults-2026-09.md
 7cfa35396e92191dbe2408004e86d416  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
@@ -15637,7 +15637,7 @@ b12e55bc3bb06c0e1b05cacfb6438c47  doc/ger-de/funktionen/6.0/plattform-dxp-skelet
 04a57e6e4790f4c646e57c18412a6b61  doc/ger-de/funktionen/6.0/plattform-sqlite-installation.md
 566dbc8ab28ae074d810044f0c1b0bc8  doc/ger-de/funktionen/6.0/pruefprotokoll.md
 1b7d415eb35e75914386eae1e439cd70  doc/ger-de/funktionen/6.0/pruefung-umgekehrter-beziehungen.md
-8bbdd8f0c14001c0d6b062449a285581  doc/ger-de/funktionen/6.0/qualitaetspruefungen.md
+f26dac1f67a167938fc16af98359092b  doc/ger-de/funktionen/6.0/qualitaetspruefungen.md
 949e080995a2e635e45f5b14ada02f81  doc/ger-de/funktionen/6.0/rad-werkzeuge.md
 d6dce0754b23a5d686de2f906e7e3477  doc/ger-de/funktionen/6.0/rechts-nach-links.md
 5bfc5fe179d133dd360031bc27435eb4  doc/ger-de/funktionen/6.0/reihenfolge-der-richtlinien-einer-rolle.md
@@ -23024,9 +23024,9 @@ e37b92a509e502956a6317750d478f0c  kernel/classes/expbenchmark.php
 dc12399d3e06ce2689d9fdc5a0c19335  kernel/classes/expbenchmarkkernel.php
 1128be3474dbfb631037c851b7a5e212  kernel/classes/expbenchmarkmicro.php
 6e1e520c83fa6c7b99f8a1405002f7d9  kernel/classes/expbookmarkpage.php
-a5d495e6d6dfee0336f239d6be3705f5  kernel/classes/expbookmarktype.php
-5482010cf8b0da1f8ad8969f6079a9c9  kernel/classes/expbookmarktypesearch.php
-1457a4e764be91d122ed511a019db7c3  kernel/classes/expbookmarktypesystempage.php
+772e3ba0cc4d6cd23f787152d648a9c2  kernel/classes/expbookmarktype.php
+2f12796d7160f856b09f2ca717034d4f  kernel/classes/expbookmarktypesearch.php
+1fe08923429074cdebf9118cd151a595  kernel/classes/expbookmarktypesystempage.php
 b761599628675ad45c7a93d35b13b27d  kernel/classes/expbookmarkview.php
 d236086274adf9bd9b5de8f0768f2393  kernel/classes/expcachecatalogue.php
 5dd06b1fa297c0097dde4df061456db6  kernel/classes/expcachemanager.php

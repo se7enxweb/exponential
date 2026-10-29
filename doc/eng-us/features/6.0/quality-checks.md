@@ -255,9 +255,9 @@ passed (October 2026).
 
 The copyright notice is checked the same way: every PHP, JavaScript, template, style sheet, XML, INI, SQL and text
 file, every script in `bin/`, `LICENSE`, `composer.json` and every catalogue runs `CopyrightNoticeTest`, which fails
-on any line that names 7x or the Exponential Foundation as a holder in a form other than "Copyright (C) 1998 - 2026
-Exponential Foundation and 7x. All rights reserved." or "Exponential Copyright © 1998-2026 Exponential Foundation
-and 7x" (exceptions with their reasons: `tests/tests/bin/copyright-notice-allowlist.json`); the footers, the
+on any line that names 7x or the Exponential Foundation as a holder in a form other than these two:
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." or
+"Exponential Copyright © 1998-2026 Exponential Foundation and 7x" (exceptions with their reasons: `tests/tests/bin/copyright-notice-allowlist.json`); the footers, the
 sign-in pages, the copyright page, the help notice, the console and the catalogues also run
 `CopyrightFooterNoticeTest`. See [Copyright and copyleft](../../help/copyright-and-copyleft.md).
 

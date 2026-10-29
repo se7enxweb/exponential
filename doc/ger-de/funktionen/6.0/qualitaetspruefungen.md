@@ -273,9 +273,9 @@ mitbringt. Jeder dieser Fälle erreichte einmal `main` über eine Änderung, der
 
 Der Copyright-Hinweis wird ebenso geprüft: Jede PHP-, JavaScript-, Template-, Stylesheet-, XML-, INI-, SQL- und
 Textdatei, jedes Skript in `bin/`, `LICENSE`, `composer.json` und jeder Katalog führt `CopyrightNoticeTest` aus, der
-bei jeder Zeile fehlschlägt, die 7x oder die Exponential Foundation in einer anderen Form als „Copyright (C) 1998 -
-2026 Exponential Foundation and 7x. All rights reserved.“ oder „Exponential Copyright © 1998-2026 Exponential
-Foundation and 7x“ als Rechteinhaber nennt (Ausnahmen mit Begründung: `tests/tests/bin/copyright-notice-allowlist.json`);
+bei jeder Zeile fehlschlägt, die 7x oder die Exponential Foundation in einer anderen Form als diesen beiden:
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ oder
+„Exponential Copyright © 1998-2026 Exponential Foundation and 7x“ als Rechteinhaber nennt (Ausnahmen mit Begründung: `tests/tests/bin/copyright-notice-allowlist.json`);
 die Fußzeilen, die Anmeldeseiten, die Copyright-Seite, der Hinweis der Hilfe, die Konsole und die Kataloge führen
 außerdem `CopyrightFooterNoticeTest` aus. Siehe [Urheberrecht und Copyleft](../../hilfe/urheberrecht-und-copyleft.md).
 
