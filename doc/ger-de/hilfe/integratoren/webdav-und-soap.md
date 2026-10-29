@@ -4,14 +4,14 @@ audience: integrator, developer, admin
 category: integration
 order: 120
 summary: Die beiden älteren Protokolle, die Exponential noch spricht - WebDAV, um Inhalte als Laufwerk einzubinden, und ein SOAP-1.1-Server, dem Erweiterungen Funktionen hinzufügen - wie Sie jedes einschalten, wie sie authentifizieren, ihre bekannten Lücken und wann Sie sie in einer neuen Integration verwenden.
-keywords: WebDAV, SOAP, Laufwerk, ältere Protokolle, Authentifizierung, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
+keywords: WebDAV, SOAP, Laufwerk, ältere Protokolle, Authentifizierung, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, index_soap.php, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
 type: help
 ---
 # WebDAV und SOAP
 
 Diese Seite richtet sich an Integratoren, die auf eine Anforderung treffen wie "Redakteure speichern Dateien von ihrem
 Desktop direkt in die Website" oder "unsere Middleware spricht SOAP". Exponential liefert einen WebDAV-Server
-(`webdav.php`) und einen SOAP-1.1-Server (`soap.php`) mit. Beide sind **standardmäßig aus**, beide haben bekannte
+(`webdav.php`) und einen SOAP-1.1-Server (`index_soap.php`, vor 6.0.15 `soap.php`) mit. Beide sind **standardmäßig aus**, beide haben bekannte
 Lücken, und beide lohnen sich nur, wenn die Gegenseite nichts Neueres verwenden kann. Ihren Stand gegenüber den
 Standards beschreibt [Standards für APIs und Protokolle](../../standards/apis-und-protokolle.md#webdav-rfc-4918).
 
@@ -80,7 +80,9 @@ ohne seine Zeile in `ezuser_setting` kann sich nicht anmelden.
 
 ## SOAP
 
-Der Einstiegspunkt ist `soap.php`. Die Bibliothek ist `lib/ezsoap/classes/` (`eZSOAPServer`, `eZSOAPClient`, Envelope,
+Der Einstiegspunkt ist `index_soap.php` im Wurzelverzeichnis der Installation; bis 6.0.15 war es `soap.php`, das
+jetzt nur noch dorthin weiterleitet und einmal am Tag einen Hinweis nach `var/log/warning.log` schreibt (siehe
+[Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md)). Die Bibliothek ist `lib/ezsoap/classes/` (`eZSOAPServer`, `eZSOAPClient`, Envelope,
 Codec, Fault), nur SOAP 1.1, ohne WSDL. Schalten Sie sie ein und ergänzen Sie in
 `settings/override/soap.ini.append.php` die Erweiterungen, die Funktionen registrieren:
 
@@ -96,7 +98,7 @@ SOAPExtensions[]=myintegration
 */ ?>
 ```
 
-Für jede aufgeführte Erweiterung bindet `soap.php` `extension/<extension>/soap/initialize.php` ein, wo die Erweiterung
+Für jede aufgeführte Erweiterung bindet `index_soap.php` `extension/<extension>/soap/initialize.php` ein, wo die Erweiterung
 ihre Funktionen beim Serverobjekt `$server` (einem `eZSOAPServer`) registriert. Die Erweiterung `syndication` ist das
 echte Beispiel:
 
@@ -115,9 +117,27 @@ function myIntegrationStock( $remoteID )
 }
 ```
 
-Trägt die Anfrage HTTP-Basic-Zugangsdaten, meldet `soap.php` diesen Benutzer vor dem Aufruf an
+Trägt die Anfrage HTTP-Basic-Zugangsdaten, meldet `index_soap.php` diesen Benutzer vor dem Aufruf an
 (`eZUser::loginUser()`), sodass die Funktion mit den Richtlinien des Benutzers läuft. Ohne Zugangsdaten läuft sie
-anonym.
+anonym. Ein zweiter Anmeldeschritt gilt für SOAP nie: Ein Konto, das einen braucht, meldet sich mit einem App-Passwort
+an ([der zweite Schritt auf anderen Anmeldewegen](../../funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md)).
+
+### Durch den Webserver lassen
+
+Die mitgelieferten Rewrite-Regeln schicken jede unbekannte Adresse an `index.php`; mit SOAP an muss der Webserver
+`index_soap.php` also durchlassen: Nehmen Sie in der `.htaccess` (aus `.htaccess_root`) das Kommentarzeichen vor
+`RewriteRule ^index_soap\.php - [L]` weg, ergänzen Sie `RewriteRule ^/index_soap\.php - [L]` im HTTPS-Virtual-Host
+oder eine `location = /index_soap.php` in nginx. Beschränken Sie den Zugriff auf die Adressen der Systeme, die ihn
+aufrufen. Dann prüfen Sie es:
+
+```bash
+curl -sS -i 'https://www.example.com/index_soap.php?wsdl'
+```
+
+Die Antwort ist `200` mit „Error: this web page does only understand POST methods“ (der Server hat keine WSDL); ein
+`404` oder eine Seite der Website heißt, dass die Regel fehlt. Die Zeilen für Apache, Plesk, nginx und die anderen
+Server, einen `POST`-Test mit einem SOAP-Umschlag und die Prüfung im Protokoll auf Clients, die noch `soap.php`
+aufrufen, stehen auf [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md).
 
 ## Den SOAP-Dienst eines anderen Systems aufrufen
 
@@ -139,6 +159,7 @@ eigene `SoapClient` von PHP (die PHP-Erweiterung `soap`) das bessere Werkzeug.
 
 - [Standards für APIs und Protokolle](../../standards/apis-und-protokolle.md)
 - [TLS des SOAP-Clients](../../funktionen/6.0/soap-client-tls.md)
+- [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md)
 - [Syndizierung zwischen Installationen](syndizierung-zwischen-installationen.md)
 - [Integrationsschnittstellen auf einen Blick](integrationsschnittstellen-auf-einen-blick.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

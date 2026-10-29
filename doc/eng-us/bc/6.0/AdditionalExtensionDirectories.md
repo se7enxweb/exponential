@@ -270,7 +270,7 @@ uses the helpers above.
 | i18n | `lib/ezi18n/classes/eztstranslator.php` | `expandedPathList()` |
 | RSS | `kernel/classes/ezrssimport.php` | `extensionPath()` |
 | Icons | `kernel/common/ezwordtoimageoperator.php` | `expandedPathList()` |
-| SOAP | `soap.php` | `extensionPath()` |
+| SOAP | `index_soap.php` (`soap.php` only forwards to it) | `extensionPath()` |
 | Package handling | `kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php`, `kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php`, `kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php`, `kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php` | `extensionRootDirectories()`, `extensionPath()`, `baseDirectory()` |
 | Setup / upgrade | `kernel/setup/extensions.php`, `kernel/setup/systemupgrade.php` | `extensionRootDirectories()`, `extensionPath()` |
 | Test toolkit | `tests/toolkit/ezptestrunner.php`, `tests/toolkit/ezpextensionhelper.php` | `extensionRootDirectories()`, `extensionPath()` |

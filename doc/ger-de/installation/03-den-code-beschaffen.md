@@ -407,7 +407,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `index_rest.php` | Der Front-Controller der REST-API (`/api/`). |
 | `index_cluster.php` | Liefert Dateien aus dem Datenbank-Cluster aus. |
 | `index_treemenu.php` | Der schnelle Endpunkt für das Inhaltsbaummenü der Administration. |
-| `soap.php`, `webdav.php` | Die Einstiegspunkte für SOAP und WebDAV. |
+| `index_soap.php`, `webdav.php` | Die Einstiegspunkte für SOAP und WebDAV (`soap.php` leitet nur an `index_soap.php` weiter; lassen Sie `index_soap.php` durch den Webserver, wenn SOAP an ist). |
 | `runcronjobs.php` | Führt Cronjob-Teile aus: `php runcronjobs.php --list`. |
 | `autoload.php` | Lädt den Autoloader von Composer und den des Kernels; jeder Einstiegspunkt beginnt damit. |
 | `ezpm.php` | Der Paketmanager auf der Kommandozeile. |

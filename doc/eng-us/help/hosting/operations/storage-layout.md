@@ -31,6 +31,7 @@ check them.
 | Path | What it is | Writable by PHP | Back up |
 |---|---|---|---|
 | `index.php`, `index_rest.php`, `index_treemenu.php` | the front controllers | no | comes with the code |
+| `index_soap.php`, `soap.php` | the SOAP server, and its former name, which only forwards to it (6.0.15) | no | comes with the code |
 | `kernel/`, `lib/`, `bin/`, `share/`, `update/` | the kernel, libraries, scripts, translations, database updates | no | comes with the code |
 | `vendor/` | the Composer packages | no (Composer writes it) | rebuilt by Composer from `composer.lock` |
 | `extension/` | extensions, from Composer or written by hand | only while packages are installed from the administration | yes, when not in a repository |

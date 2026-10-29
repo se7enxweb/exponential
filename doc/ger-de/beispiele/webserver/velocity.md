@@ -171,6 +171,11 @@ eine Beispielinstallation gekürzt, die Liste der statischen Pfade abgeschnitten
 }
 ```
 
+`scripts` führt jedes Skript auf, das der Server ausführt. Der SOAP-Server (`index_soap.php`, vor 6.0.15 `soap.php`)
+steht nicht darauf und stand es auch vorher nicht: Liefern Sie SOAP über das Apache- oder nginx-Frontend der
+Installation aus (siehe
+[Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md)).
+
 Bearbeiten Sie keine erzeugte Datei: Ändern Sie `velocity.ini` und starten Sie neu. Um eine eigene Datei zu behalten,
 entfernen Sie ihre Markierung `"_generated"`; dann wird sie nie überschrieben, wie eine Conffile von dpkg. Aktivieren
 und deaktivieren Sie wie mit `a2ensite`, `a2enconf` und `a2enmod`:

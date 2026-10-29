@@ -82,7 +82,8 @@ Was auch immer die Website ausliefert, es gelten dieselben Regeln
 - Das Routing ist einmal aufgeschrieben, in `.htaccess_root`. Die Engines von Velocity und die erzeugte Konfiguration von FrankenPHP
   setzen dieselbe Liste Regel für Regel um.
 - Keine PHP-Datei läuft, weil ihr Pfad angefragt wurde, außer den Front-Controllern in der Wurzel (`index.php`, `index_rest.php`,
-  `index_treemenu.php`).
+  `index_treemenu.php` und, wenn SOAP an ist, `index_soap.php`; vor 6.0.15 hieß es `soap.php`, siehe
+  [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../../bc/6.0/soap-einstiegsskript-index-soap.md)).
 - Nur aufgeführte Asset-Pfade werden als Dateien gesendet; `settings/site.ini`, die SQLite-Datenbank oder eine Quelldatei des Kernels,
   die per Pfad angefragt werden, erreichen `index.php`, nie die Datei.
 - Der Benutzer, der PHP ausführt, muss `var/` und die Verzeichnisse unter `settings/` schreiben können, und **ein** Benutzer (oder eine

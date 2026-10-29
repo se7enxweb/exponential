@@ -40,7 +40,7 @@ are in [API and protocol standards](../../standards/apis-and-protocols.md).
 | RSS, Atom and OPML exports | Out | RSS 1.0, RSS 2.0, Atom, OPML 2.0, Apple Podcasts; `/rss/feed/<address>` | `kernel/classes/ezrssexport.php`, Setup > RSS | None configured |
 | RSS imports | In | RSS 0.91 to 2.0 | `kernel/classes/ezrssimport.php`, cronjob `rssimport.php` | In the global cronjob part |
 | `syndication` | Both, installation to installation | XML feeds over SOAP | `syndication` extension, `/syndication/menu` | Needs `soap.ini EnableSOAP=true` |
-| SOAP server | In | SOAP 1.1, no WSDL | `soap.php`, `lib/ezsoap/` | `soap.ini [GeneralSettings] EnableSOAP=false` |
+| SOAP server | In | SOAP 1.1, no WSDL | `index_soap.php` (`soap.php` before 6.0.15), `lib/ezsoap/` | `soap.ini [GeneralSettings] EnableSOAP=false` |
 | WebDAV | Both | WebDAV class 1 | `webdav.php`, `kernel/private/classes/webdav/` | `webdav.ini [GeneralSettings] EnableWebDAV=false` |
 | Packages (`.ezpkg`) | Both | Package archives; JSON package format | `ezpm.php`, Setup > Packages | On |
 | CSV import and export | Both | CSV | `bin/php/ezcsvimport.php`, `bin/php/ezcsvexport.php` | On |

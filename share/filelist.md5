@@ -3295,7 +3295,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-8ca4fc89a07af413d1dcd36cd055b065  doc/changelogs/6.0/6.0.15.md
+3f74d50c1418195e199ba69471640fb5  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3414,7 +3414,7 @@ ef64aacab3749199176823b6f77f0728  doc/eng-us/bc/5.4/changes-5.4.txt
 8a4010370ef872c3d529faa9c3f42642  doc/eng-us/bc/5.90/password_length.md
 8e4e20228b74a840e621adb208d674d9  doc/eng-us/bc/5.90/php7.md
 cdbe0fdc9c9011438bf808f4842b0982  doc/eng-us/bc/5.90/relation_indexing.md
-80fe50b87915a03608f4e2717961df7b  doc/eng-us/bc/6.0/AdditionalExtensionDirectories.md
+3de909a5e24ec949c9d29bf096850a74  doc/eng-us/bc/6.0/AdditionalExtensionDirectories.md
 1e03a68c3131eb9d1c8b4570c969d237  doc/eng-us/bc/6.0/EXT_SORT_ORDERS.md
 accadab106c015d13ca13436972c269e  doc/eng-us/bc/6.0/ICONS.md
 2c56f7a3506917910383af311b62a3cb  doc/eng-us/bc/6.0/LAYOUTS.md
@@ -3510,6 +3510,7 @@ fb1fc98da050946003d9f5471b75257d  doc/eng-us/bc/6.0/phpunitv10.md
 32fecff4dc4fca7d6cd3480e44f1b157  doc/eng-us/bc/6.0/rest-cors.md
 0785742cb6ad30c25657d8d3a4363ac9  doc/eng-us/bc/6.0/role-policy-paging.md
 981cb46d02cc504b4d483962e3e5f0ed  doc/eng-us/bc/6.0/shop-basket-view-name.md
+234bd17d78e67391a89b1303fbb0f366  doc/eng-us/bc/6.0/soap-entry-script-index-soap.md
 60039ee545481e1d04fdc0979ea8846d  doc/eng-us/bc/6.0/sql-query-cache.md
 fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
 8c049b9e96e696cfa8b154f6d0589886  doc/eng-us/bc/6.0/static-cache-defaults.md
@@ -3772,7 +3773,7 @@ b6d8c2f2aadc2c4bcd1b4334a65ebc0f  doc/eng-us/examples/extension-points/uiswitch.
 739353e0e206c0c99411e02339e0056a  doc/eng-us/examples/extension-points/upload.md
 43ef1efbc446af32c0815832790ffe48  doc/eng-us/examples/extension-points/webdav.md
 c697443b2cb0beaf349fdd5c4e59da40  doc/eng-us/examples/extension-points/workflow.md
-6d36b9252f4129b6abeb4324df2d255d  doc/eng-us/examples/ezpublish.conf
+b1c024bc7461eff2ad2af8072dd4966a  doc/eng-us/examples/ezpublish.conf
 477b5f2d211e002826ed1635ec5bf52c  doc/eng-us/examples/fetch-functions/README.md
 25ce910ea7fcb5532f1594686358fc71  doc/eng-us/examples/fetch-functions/apikey/README.md
 8b5bdf584f6096ee3ec75ebfddb5f5e4  doc/eng-us/examples/fetch-functions/apikey/can_create.md
@@ -3981,7 +3982,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 730f579dd258e0333c5897c1cc90d74b  doc/eng-us/examples/fetch-functions/workflow/README.md
 42a70c11641a0fce108e4659cd159987  doc/eng-us/examples/fetch-functions/workflow/workflow_statuses.md
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
-af5a82232fdead993b9bef8e8974484a  doc/eng-us/examples/htaccess
+38932beb406af2b99d37e8480238cc7d  doc/eng-us/examples/htaccess
 e1e3a4960d4fbe9ae2c11b114a24b25e  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
@@ -6113,21 +6114,21 @@ bc129231cf0289cb931a741a6c9e423e  doc/eng-us/examples/template-operators/x18n.md
 c55e9272c733a9a75938a44a3e9551c0  doc/eng-us/examples/template-operators/xml_encode.md
 33da36f0c7267aa2b77bfbeed6a8d54d  doc/eng-us/examples/web-servers/Caddyfile.example
 c2149008788f7ee1636ec75b3f7feae6  doc/eng-us/examples/web-servers/README.md
-7271fed303c2f4b669de74ee3bbf3dc1  doc/eng-us/examples/web-servers/apache-htaccess.md
-5c67db3e3d98b84a894617ca4f1daf36  doc/eng-us/examples/web-servers/apache-virtual-host.md
+ef10b51e035b8ece1b17e5eb4847a71b  doc/eng-us/examples/web-servers/apache-htaccess.md
+e06e95f50a7ec4424d07cca7ad612ca6  doc/eng-us/examples/web-servers/apache-virtual-host.md
 add7a29a0b3198171d02d0d6c1b56fa8  doc/eng-us/examples/web-servers/caddy.md
 70add323ced892c26dbbf0f24c7bb464  doc/eng-us/examples/web-servers/exponential-velocity.service
 a93f387807c168bbf28609a8d19df8c4  doc/eng-us/examples/web-servers/frankenphp.Caddyfile.example
 87c9ed86a07e126051c7f909e2132f4f  doc/eng-us/examples/web-servers/frankenphp.md
 8141e57e3903126d7c3814384e588da8  doc/eng-us/examples/web-servers/iis.md
 9d14d26cd741de33ad4b92e0316db3e0  doc/eng-us/examples/web-servers/litespeed.md
-588cb7b557f8fef5a239ad221e82a6d6  doc/eng-us/examples/web-servers/nginx.conf
-758e95cdf298ff0cf33d8ea44c596a79  doc/eng-us/examples/web-servers/nginx.md
-026381ebbc0ff245ee7416b5615679d8  doc/eng-us/examples/web-servers/openlitespeed-vhost.conf
+ed5e5903cdf2d7b808797b61ec57ffa6  doc/eng-us/examples/web-servers/nginx.conf
+d27ddb0fcf00bca0dc5d00e2b327a812  doc/eng-us/examples/web-servers/nginx.md
+75c7c92892dce72d1a1e56de1ab52f6a  doc/eng-us/examples/web-servers/openlitespeed-vhost.conf
 b463f3d46879593889bc6491f01d197e  doc/eng-us/examples/web-servers/php-fpm-pool.conf
 3f8e838591eece5a108f0cb1efcc5324  doc/eng-us/examples/web-servers/php-fpm.md
 6233301948ec4ffb5f6f988dbfbd3db9  doc/eng-us/examples/web-servers/velocity.ini.append.php.example
-4413a8ba691289847043e7554ceaf39c  doc/eng-us/examples/web-servers/velocity.md
+3bc7e5c5d49f2f8e723d4eef3e250cb2  doc/eng-us/examples/web-servers/velocity.md
 975a957f04dc4be6ccfe238567647911  doc/eng-us/examples/web-servers/web.config
 5d457e8a2537bc11cdd8d4e528f1e846  doc/eng-us/examples/workflow-events/README.md
 f3b80ec6a7ed748d708a5d5401944b3f  doc/eng-us/examples/workflow-events/expdatatablemirror.md
@@ -6448,7 +6449,7 @@ b8f242606ca4ce999158939e09ee1700  doc/eng-us/features/6.0/extensions/sevenx_auth
 0856bc1a2d33f4452ecbed9cd49006eb  doc/eng-us/features/6.0/extensions/sevenx_themes_simple.md
 cf383c2a63e360a65b7db996e72203a2  doc/eng-us/features/6.0/extensions/sevenx_valkey_cache.md
 9cd0cebfad33921b50e290764f75d896  doc/eng-us/features/6.0/extensions/swark.md
-dcbdd3e171449fc8716a0696d97d5791  doc/eng-us/features/6.0/extensions/syndication.md
+cf61421a9e9e2d96d1156b7974bb9ca2  doc/eng-us/features/6.0/extensions/syndication.md
 860250ba5cc32b4b1a75f2392c6a0121  doc/eng-us/features/6.0/extensions/xrowextract.md
 c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadata.md
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
@@ -6472,7 +6473,7 @@ a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 df9251aeb6fb79ab9f17590b0bbbb3fb  doc/eng-us/features/6.0/mongodb-database-support.md
 ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrides.md
-561eeea647d1ff6ba854805056fdc479  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
+ea884a82caaec56516cbccdc72bbfa80  doc/eng-us/features/6.0/multi-site-log-and-cache-paths.md
 89aef2cbcbbeb2e4a7246cd080448bae  doc/eng-us/features/6.0/multisite-cross-site-links.md
 1e5257640f8fa49f18f0eebd491884c2  doc/eng-us/features/6.0/notifications.md
 328d31cb3c5429d428bb28e53e460208  doc/eng-us/features/6.0/online-editor-tinymce8.md
@@ -6514,7 +6515,7 @@ f7cbe38d847fe4d918e89191f4cc6d99  doc/eng-us/features/6.0/role-assignment-paging
 dc1fd58d472fa3c3a1c8e324f1cf8729  doc/eng-us/features/6.0/role-policy-order.md
 af2ea1c17487c15b45d19b7ce95ab33d  doc/eng-us/features/6.0/rss-podcast-and-feed-list.md
 5a25fab404068e02e43fddfc228ce716  doc/eng-us/features/6.0/safe-redirects.md
-defa3ccdb9844ad78a0df579935f6fea  doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md
+61983faf4d33d187a84605497dc206f2  doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md
 feeacad1371c0dcfb7a2afc264bf32bd  doc/eng-us/features/6.0/secret-store.md
 1671b58594af2d53ae16a4bc8b67a51e  doc/eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md
 a3c9e2957fb512acbbbb3f7ecbf57df4  doc/eng-us/features/6.0/siteaccess-host-and-language-matching.md
@@ -9525,7 +9526,7 @@ b0b3bfab60356828280f39ad16045e15  doc/eng-us/help/hosting/operations/maintenance
 02d2eb38a91c922fa5d1de99b4409d9b  doc/eng-us/help/hosting/operations/restore-and-restore-tests.md
 fd55a62434bb5508415ca9cddeab1556  doc/eng-us/help/hosting/operations/security-log.md
 611c8f598809428d1067f6a7d7b8d206  doc/eng-us/help/hosting/operations/several-web-nodes.md
-49016eede8a2637fb4e2afbf6c59a16e  doc/eng-us/help/hosting/operations/storage-layout.md
+e4fcf5fe468ba994b7965985a9ca2403  doc/eng-us/help/hosting/operations/storage-layout.md
 a174164828d99869f94f8f0bfbe371ec  doc/eng-us/help/hosting/operations/system-card-for-hosts.md
 f3efbbdd7ce7f58bb9a90b868c252bce  doc/eng-us/help/hosting/operations/upgrading-customer-sites.md
 d337a00b81569ffab7830148fefab3ad  doc/eng-us/help/hosting/panels/README.md
@@ -9535,7 +9536,7 @@ e9b98cb4d4ac0ad7b33d4fb93a00d5b8  doc/eng-us/help/hosting/panels/cron-and-shell-
 0ea5b11a98cdb9d6a80d7364cc2efc38  doc/eng-us/help/hosting/panels/directadmin.md
 d870babc7a2405887c61bfc8de783325  doc/eng-us/help/hosting/panels/ispconfig.md
 9cd55cfa0659b1b02af301e2fbc9412d  doc/eng-us/help/hosting/panels/php-selection-and-fpm-pools.md
-c689973045ba27314c8e26f53a221c3f  doc/eng-us/help/hosting/panels/plesk.md
+32fa4b7460b03b319f77ee6366329f5b  doc/eng-us/help/hosting/panels/plesk.md
 aa9479873bd1b70d024253b8b2b821bb  doc/eng-us/help/hosting/panels/tls-certificates-in-panels.md
 db86da8d06053001f49acb25555d7c85  doc/eng-us/help/hosting/panels/webmin.md
 cfb2ccb3750352982141be1a72f28821  doc/eng-us/help/hosting/performance/README.md
@@ -9575,7 +9576,7 @@ a38605c8dff6cd9185ee3dfaad0970d8  doc/eng-us/help/hosting/security/audit-trail.m
 f9e24af157cd9124863971e70d49367d  doc/eng-us/help/hosting/security/content-security-policy.md
 99f36d7eb44fac278278f219e56c0e06  doc/eng-us/help/hosting/security/demo-mode-for-hosts.md
 d1422d12bf074699258312be6c5bf7b7  doc/eng-us/help/hosting/security/first-sign-in-and-default-passwords.md
-a215a7d475a0ef4cc24eaedba047be20  doc/eng-us/help/hosting/security/hardening-for-hosts.md
+f4104c0c28fd3d62106eb07b414ebb36  doc/eng-us/help/hosting/security/hardening-for-hosts.md
 1b3dd4255dc7469355bafe2ea89ead08  doc/eng-us/help/hosting/security/log-and-data-retention.md
 4717a1f7dee918f111c379ed9b1680bc  doc/eng-us/help/hosting/security/multi-tenant-isolation.md
 5a015106329e344e84346cfe63464782  doc/eng-us/help/hosting/security/per-customer-users-and-pools.md
@@ -9584,7 +9585,7 @@ b4889089ee79195b8a5d02e8e75625f3  doc/eng-us/help/hosting/security/restricting-t
 4369ad54578d378d2315e9c7b08c4b40  doc/eng-us/help/hosting/security/security-updates-and-disclosure.md
 e51fa5ca7320486e6b10cc1837333e9a  doc/eng-us/help/hosting/security/tls-and-https.md
 c9bf1c3d023c0ffe72880bb6f8cc8b6d  doc/eng-us/help/hosting/security/two-factor-sign-in.md
-b8c87d99e2c6676e77850b1f6435c9b0  doc/eng-us/help/hosting/servers/README.md
+f31cf2c370df66f009c2bd764c1dd3b0  doc/eng-us/help/hosting/servers/README.md
 75563a41da4d427061d8698889b30507  doc/eng-us/help/hosting/servers/apache-with-php-fpm.md
 5ea692b1b24d83234c705c6c7cc6f890  doc/eng-us/help/hosting/servers/caddy.md
 526214a2ca8abaeaaae8d43cad1ddd34  doc/eng-us/help/hosting/servers/choosing-a-web-server.md
@@ -10179,9 +10180,9 @@ c1e418e7b1f570925b852d167831cf5a  doc/eng-us/help/integrators/integration-discov
 9b86f06dfbf8750c7183004968475ba4  doc/eng-us/help/integrators/integration-patterns-push-pull-batch-real-time.md
 55c979de61204fa7e379c5418932ccf9  doc/eng-us/help/integrators/integration-project-playbook.md
 ae530e8f6e2bf36b38302523015595d1  doc/eng-us/help/integrators/integration-security-checklist.md
-8c80016ee4a23678f835a04551818ca6  doc/eng-us/help/integrators/integration-surfaces-at-a-glance.md
+22420b0dbcbc9d144b846dd6e7c58c0f  doc/eng-us/help/integrators/integration-surfaces-at-a-glance.md
 916464bef5e85c91428943fdd34a8c71  doc/eng-us/help/integrators/integrators-and-the-partner-program.md
-b70267d7d98a1d20f38b43d4917c0980  doc/eng-us/help/integrators/integrators-faq.md
+5e93f2f529d773f86a5f7cdb584b42bd  doc/eng-us/help/integrators/integrators-faq.md
 fd9fe00928989008faf41480f3ff93b3  doc/eng-us/help/integrators/integrators-glossary.md
 07ba1293d3ad559c807db33e5d12ce05  doc/eng-us/help/integrators/integrators-reading-path.md
 c3f54d549b91ae75acd6fd0653fc3e0d  doc/eng-us/help/integrators/integrators-start-here.md
@@ -10204,11 +10205,11 @@ fd2eac0db5aeb155096c08158cfb65b6  doc/eng-us/help/integrators/rss-atom-and-opml-
 caf919549e5121886d7611ffd2e15129  doc/eng-us/help/integrators/service-accounts-roles-and-policies.md
 be2f436bcaf7b3060333270610f3bee6  doc/eng-us/help/integrators/single-sign-on-and-social-login.md
 e37232e565c99985c1df10f87433d8d9  doc/eng-us/help/integrators/statements-of-work-for-integrations.md
-a627247c853dce82d5b06e055e572acd  doc/eng-us/help/integrators/syndication-between-installations.md
+1f9d4b4d24c2ae0564861512393826a4  doc/eng-us/help/integrators/syndication-between-installations.md
 09d924e598a90d4c808fd3b26dc9c803  doc/eng-us/help/integrators/testing-integrations.md
 247bb915d78f0a9441c1b2ae2e653a02  doc/eng-us/help/integrators/upgrades-without-breaking-integrations.md
 501ca0774b554c58930114335c73b430  doc/eng-us/help/integrators/velocity-and-performance-for-integrations.md
-d2e3e59cb5f415a88583fafaf18d59d0  doc/eng-us/help/integrators/webdav-and-soap.md
+a97a3bc3d444365c6afca63d42b4f924  doc/eng-us/help/integrators/webdav-and-soap.md
 1a14cc46ca2370354063794245ffc950  doc/eng-us/help/integrators/what-integrators-do-with-exponential.md
 719d17210f1ea527e8b9eaccad844fdc  doc/eng-us/help/integrators/workflows-and-triggers-as-hooks.md
 e5e6c739439786c25d6c52fe3f97f25a  doc/eng-us/help/integrators/writing-an-export-or-outbound-sync.md
@@ -10640,7 +10641,7 @@ e8625001529ca717de81a02cb0aa50fe  doc/eng-us/help/partners/what-is-an-exponentia
 f8d3b30ecbefe588d62f98643087855f  doc/eng-us/help/partners/your-first-year.md
 a9183a7583474c8fa6563874a16aeea6  doc/eng-us/help/partners/your-partner-page.md
 64275982968dc95b6da628983e4420af  doc/eng-us/help/php-developers/a-php-development-checkout.md
-66c347241bf1da6e368a63feac363fb8  doc/eng-us/help/php-developers/a-tour-of-the-source-tree.md
+8bee7a673567c491a91cbd09eee8a940  doc/eng-us/help/php-developers/a-tour-of-the-source-tree.md
 77cc1a3d4bef0992f36a7249e7bf7251  doc/eng-us/help/php-developers/autoloads-and-class-maps.md
 5e7228eadf0aeb06d318aeca574867a7  doc/eng-us/help/php-developers/ci-and-reproducing-a-red-check.md
 dff878e1f6c456031a44b1fe315879e6  doc/eng-us/help/php-developers/class-naming-and-the-exp-prefix.md
@@ -12261,7 +12262,7 @@ b157c3ab90ba4fbce6c8fe089c88636b  doc/eng-us/history/velocity/2026-09d.md
 6ccd8897deaf61af5fbf3624fef2a549  doc/eng-us/images/languages/world-outline.svg
 c2daac44615144bd3fdc43b77d02a7fb  doc/eng-us/install/01-introduction.md
 956503fceb5e35f318db4eb9f5388440  doc/eng-us/install/02-requirements.md
-eeed09f20f70df3689710abe9b8f4296  doc/eng-us/install/03-getting-the-code.md
+c527d2a1a48bf3a31a660f3ea1f92993  doc/eng-us/install/03-getting-the-code.md
 28eb992069d12fde6d6c23a4b46bed9d  doc/eng-us/install/04-choosing-an-install-method.md
 247e7f750faa09e797a03dd0f6e6d5f2  doc/eng-us/install/05-setup-wizard.md
 f091808bae7212316fcb774ef6f272ae  doc/eng-us/install/06-kickstarter.md
@@ -12379,7 +12380,7 @@ f215c05198661b115822ecf85b049791  doc/eng-us/specifications/trunk/webdav/design.
 5437549b02cb05d98a6c0e9faa2a9d6e  doc/eng-us/specifications/trunk/webdav/testing.txt
 063ce552bc878f747754fe24aeba8d5b  doc/eng-us/standards/README.md
 252df4ad929147a4f4291beb83c99f09  doc/eng-us/standards/accessibility.md
-d2e882b12acbac67e2b1f352b0cde134  doc/eng-us/standards/apis-and-protocols.md
+81482e842b330df247f9886d1bdc5c85  doc/eng-us/standards/apis-and-protocols.md
 76b1855ff6528d0dced746e1ff7e1e5c  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
 7cb780b6b347d8eae94a177996e7ef6d  doc/eng-us/standards/architecture/kernel-architecture.md
 c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
@@ -12597,7 +12598,7 @@ c278fda159a7fda59b2deed36dbd8176  doc/ger-de/.examples/descriptions/10-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-45d8872a2c7e817a002028a52b6019e3  doc/ger-de/.paths.json
+b9b79906b383bcc92aca12c7708ac43e  doc/ger-de/.paths.json
 bb3a945902ac11b7d40c047580f5b6b8  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 b58ded94c758f0e4cc4ec1c8b1e60ef7  doc/ger-de/UNINSTALL.md
@@ -12770,6 +12771,7 @@ a1f06eaaed77feadea50b05555c358e6  doc/ger-de/bc/6.0/reparatur.md
 40828a6a1fabb215580f471d7f4631c5  doc/ger-de/bc/6.0/schwache-passwoerter-und-gueltigkeit-von-reset-links.md
 d1cf560d1b942596beff989679e73cdc  doc/ger-de/bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md
 921790ef7d99a25307b8fac0541ba842  doc/ger-de/bc/6.0/sicherheit-von-content-view-full.md
+44d691b031a25d3611dc2407f174777b  doc/ger-de/bc/6.0/soap-einstiegsskript-index-soap.md
 55d3efaab66248dc5839d5e6bce188ad  doc/ger-de/bc/6.0/sql-abfrage-cache.md
 18a8a897af6e9f4e71e174f2b2423e5d  doc/ger-de/bc/6.0/sqlite-transaktionen.md
 a116fde084e46d66497d2eb6cfbb9006  doc/ger-de/bc/6.0/standardwerte-des-statischen-caches.md
@@ -12792,7 +12794,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 45d36688020334839b661bb980c6f6ce  doc/ger-de/bc/6.0/view-name-des-shop-warenkorbs.md
 5a1298d4fd011fce58a72f9df8dff74f  doc/ger-de/bc/6.0/yui-entfernung.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
-0ad668da2bd726246806af66e6fd019b  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
+87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 bb96faa8eec1f544d841b3d0c1b4cf44  doc/ger-de/beispiele/README.md
 65d31a2490a6a59373322e23bf14e2a2  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
@@ -15362,15 +15364,15 @@ b3e0468e76ff6f8c9b6526915c9e417f  doc/ger-de/beispiele/template-operatoren/wordt
 7184f9eff33c2a9eec01cdc8537aad77  doc/ger-de/beispiele/template-operatoren/x18n.md
 daf0c69d584667351d9aeaeaf1f299b0  doc/ger-de/beispiele/template-operatoren/xml_encode.md
 b3280f13916cb8f63b1cbc55a86a60cf  doc/ger-de/beispiele/webserver/README.md
-3e79536fbc1eb4ab42cb199ca167cd42  doc/ger-de/beispiele/webserver/apache-htaccess.md
-c1292e509a18b26ea7bcfa82ce1beb4a  doc/ger-de/beispiele/webserver/apache-virtueller-host.md
+e7c3159f48345997b6aa3f78ab0f23ec  doc/ger-de/beispiele/webserver/apache-htaccess.md
+7de364aa2a4480154688d359b1e896a4  doc/ger-de/beispiele/webserver/apache-virtueller-host.md
 118b5c59ade93551fef0f66f3b88a1ea  doc/ger-de/beispiele/webserver/caddy.md
 8ac39eb4a08b60e7b71a3de2aadade9a  doc/ger-de/beispiele/webserver/frankenphp.md
 9a2eb763bca85f247a983cded068b0bc  doc/ger-de/beispiele/webserver/iis.md
 8acd7c27b8b2a43b1f72e08f4446eaab  doc/ger-de/beispiele/webserver/litespeed.md
-b873658ebd5153831aa9bc11e28a264b  doc/ger-de/beispiele/webserver/nginx.md
+53e43fe8d04c264e30a25e4bbad9d53a  doc/ger-de/beispiele/webserver/nginx.md
 f6d566d98588b47da2a87fcd0a08950c  doc/ger-de/beispiele/webserver/php-fpm.md
-d0ea7bc2526c89a28cefaf12a08947a7  doc/ger-de/beispiele/webserver/velocity.md
+f79cca0063a1b7ead4815cfa7e2dbe1c  doc/ger-de/beispiele/webserver/velocity.md
 dae7f55981b11717772facaf8c48b790  doc/ger-de/beispiele/workflow-ereignisse/README.md
 aeb849f3caecbc4f04968d73a2413c95  doc/ger-de/beispiele/workflow-ereignisse/ausloeser.md
 dc2acc3efd3408cc6bb16a67bfe500ff  doc/ger-de/beispiele/workflow-ereignisse/expdatatablemirror.md
@@ -15476,7 +15478,7 @@ a4030805d2febdd6ebb1b2e76b05a1bb  doc/ger-de/funktionen/6.0/erweiterungen/sevenx
 f33e38096cdaa422b2e902b85b9b0744  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_themes_simple.md
 c4ac384cbe89a44c6a11a586759b5c84  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_valkey_cache.md
 49759ac740e09b8256f2d8debc50bdad  doc/ger-de/funktionen/6.0/erweiterungen/swark.md
-6c313bdbc4c476c7c28f4d75bb27b362  doc/ger-de/funktionen/6.0/erweiterungen/syndication.md
+6ceaec8d21c65296b235dc600f6172f3  doc/ger-de/funktionen/6.0/erweiterungen/syndication.md
 ed1a430f83a335748be13a51820a6cc2  doc/ger-de/funktionen/6.0/erweiterungen/xrowextract.md
 0a352feeafe3914509786f11718402cf  doc/ger-de/funktionen/6.0/erweiterungen/xrowmetadata.md
 8cf66efadc6d76ebae0d8481ef2dabeb  doc/ger-de/funktionen/6.0/exp-adminui.md
@@ -15509,7 +15511,7 @@ aded008fb0cb6c843f2caa5ce1fa255f  doc/ger-de/funktionen/6.0/legacy-bridge.md
 da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
 3e21e2c7d791d5c588752175514567a0  doc/ger-de/funktionen/6.0/log-rotation.md
-9a05d40030100a3818154e3c0a0ce8a5  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
+1c74b7e6258de74330d2eaeefe1cc8f1  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
 ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaenderung.md
 298bb86f3a6c50d18a8fd5252f6d84ec  doc/ger-de/funktionen/6.0/modulueberschreibung-durch-extensions.md
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
@@ -15588,7 +15590,7 @@ b2ec6f7c415225178be44e5caeab8388  doc/ger-de/funktionen/6.0/velocity-zeitplaner.
 bea8ea9f00dfc81102f6e376de1bea4e  doc/ger-de/funktionen/6.0/websiteuebergreifende-links-im-multisite.md
 3c2b3930490f58368df9a670f4cf0959  doc/ger-de/funktionen/6.0/zugriffs-und-cache-filter.md
 aba05fee1af76fb5cde206933fa6cb94  doc/ger-de/funktionen/6.0/zusaetzliche-extension-verzeichnisse.md
-796711990921370e64d0193636cd3e97  doc/ger-de/funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md
+9d70ffdca42b50591ebc2e41ca136136  doc/ger-de/funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md
 f93c81f4ad0dd384ce6de2fb1688d476  doc/ger-de/geschichte/2023/2023-12.md
 e6058bf5bf6fcbfe5cb963fdab35d6cd  doc/ger-de/geschichte/2024/2024-01a.md
 707d66e5767a0e07fad4308fa952623e  doc/ger-de/geschichte/2024/2024-01b.md
@@ -17737,7 +17739,7 @@ d4994335da097a577333272204cc71c5  doc/ger-de/hilfe/hosting/bereitstellung/exp-in
 c61d439508facadeb59d0ec7bad0c8f9  doc/ger-de/hilfe/hosting/betrieb/README.md
 a267904036aadda63aa3f60194b5b4c3  doc/ger-de/hilfe/hosting/betrieb/aenderungen-ausrollen.md
 2d44d4497245854249077cf301ebccf8  doc/ger-de/hilfe/hosting/betrieb/anfrage-logs.md
-f52bec521d6e5e6605c784a4f19590a4  doc/ger-de/hilfe/hosting/betrieb/aufbau-des-speichers.md
+83446b7c8b959e882ed65e998eec2bd0  doc/ger-de/hilfe/hosting/betrieb/aufbau-des-speichers.md
 32c2a3ccd9221a1035e3d5d3f421ae7a  doc/ger-de/hilfe/hosting/betrieb/automatische-updates-mit-ezupdate.md
 00d77c0b310451b73ffd4e0d07d14b39  doc/ger-de/hilfe/hosting/betrieb/backup-zeitplaene-und-aufbewahrung.md
 57edac404a5260717629912fcb075ab3  doc/ger-de/hilfe/hosting/betrieb/backups-was-gesichert-werden-muss.md
@@ -17769,7 +17771,7 @@ e1c536b3ea3db7c2dac7859b32dec02f  doc/ger-de/hilfe/hosting/control-panels/datenb
 7d75137c3b24992f1a644dd25e8102f1  doc/ger-de/hilfe/hosting/control-panels/directadmin.md
 6c11796f6635be13b0ee2dcc157fb0e0  doc/ger-de/hilfe/hosting/control-panels/ispconfig.md
 21d1f62084d81224a7bcf55303cdbf96  doc/ger-de/hilfe/hosting/control-panels/php-auswahl-und-fpm-pools.md
-78cbfc10ec58eff9502a20f1d0f5af62  doc/ger-de/hilfe/hosting/control-panels/plesk.md
+b970bfe822e7026d24bec7e40a1f6ab4  doc/ger-de/hilfe/hosting/control-panels/plesk.md
 96f8d132c48eb3a82bbe2bc365433a45  doc/ger-de/hilfe/hosting/control-panels/tls-zertifikate-in-panels.md
 cf8e7db9f6b3081983a520ebe91694ae  doc/ger-de/hilfe/hosting/control-panels/webmin.md
 3df2375b691647d76edb197d2ac5db98  doc/ger-de/hilfe/hosting/geschaeft/README.md
@@ -17839,7 +17841,7 @@ b25d750038eefdcf6ce69ceaf635a18c  doc/ger-de/hilfe/hosting/runbooks/php-upgrade.
 f8de7be4889a92bfe1f1636cbfa51167  doc/ger-de/hilfe/hosting/runbooks/probleme-mit-dem-demomodus.md
 82be8123cb11e848fc8eebde45faee39  doc/ger-de/hilfe/hosting/runbooks/velocity-startet-nicht.md
 7c79210c3fa6ddc69538b7130c0e8277  doc/ger-de/hilfe/hosting/runbooks/website-nicht-erreichbar.md
-f64df443433f7e3722a9f2c39cbb524a  doc/ger-de/hilfe/hosting/server/README.md
+3846acd168693dab48b2fa844820965b  doc/ger-de/hilfe/hosting/server/README.md
 e2d4e13321b2492b47f07db945b99d02  doc/ger-de/hilfe/hosting/server/apache-mit-php-fpm.md
 81c7ff83e875fff2a959e8309fac10db  doc/ger-de/hilfe/hosting/server/caddy.md
 12d178b9aa5f17ddf56ea0d5741be1d0  doc/ger-de/hilfe/hosting/server/einen-webserver-waehlen.md
@@ -17860,7 +17862,7 @@ ee648c450770470300ea2cf6d21f52d8  doc/ger-de/hilfe/hosting/sicherheit/content-se
 3122190555c111e3ced8e1c45227b01d  doc/ger-de/hilfe/hosting/sicherheit/demomodus-fuer-hoster.md
 79aff4ceb6013ca24c20b9567bc4af4b  doc/ger-de/hilfe/hosting/sicherheit/die-administration-einschraenken.md
 57ae8730f8b6e1b124b7b800cf7b470d  doc/ger-de/hilfe/hosting/sicherheit/erste-anmeldung-und-standardpasswoerter.md
-3e9d12924ced5f8daec6e6cf29278dd9  doc/ger-de/hilfe/hosting/sicherheit/haertung-fuer-hoster.md
+57499d5ee77a729b28c2df02c9c94300  doc/ger-de/hilfe/hosting/sicherheit/haertung-fuer-hoster.md
 955b99cdc249245a0af835f263c45ebd  doc/ger-de/hilfe/hosting/sicherheit/pruefprotokoll.md
 2a3d302e91f279cc2b9f343b4d400ec5  doc/ger-de/hilfe/hosting/sicherheit/request-shield-und-request-regeln.md
 a03cffad6f781a2fbcd82672906f920a  doc/ger-de/hilfe/hosting/sicherheit/sicherheitsupdates-und-offenlegung.md
@@ -17893,7 +17895,7 @@ e95f578053141d8113771ecfba8dbbe6  doc/ger-de/hilfe/integratoren/einen-export-ode
 3a37f651fa8c1141ee0a56a40ab5e8fd  doc/ger-de/hilfe/integratoren/entfernte-dienste-mit-expservices.md
 24638c34373f701ef61e2d20793c00eb  doc/ger-de/hilfe/integratoren/event-listener-fuer-integrationen.md
 3198decaf3ef39f40469cd27b366df23  doc/ger-de/hilfe/integratoren/ezjscore-serverfunktionen-fuer-integrationen.md
-73cf618a4a6a60f0f93d102ed943f3f1  doc/ger-de/hilfe/integratoren/faq-fuer-integratoren.md
+65c82411987182a2b2df7baaf23a98d2  doc/ger-de/hilfe/integratoren/faq-fuer-integratoren.md
 fb923b5514866a5258e57db38a00436c  doc/ger-de/hilfe/integratoren/fehlerbehandlung-und-protokollierung.md
 a23397d6c7d54060ea6242d16b1d4abc  doc/ger-de/hilfe/integratoren/formulare-und-gesammelte-informationen.md
 f7b3f2b801e9f2779f4b6bf0ba518358  doc/ger-de/hilfe/integratoren/glossar-fuer-integratoren.md
@@ -17906,7 +17908,7 @@ b74dfc516f28da4f7aca3d5ba0cc5672  doc/ger-de/hilfe/integratoren/integrationen-ue
 ba4b89c9556028d9827a54c7460098c8  doc/ger-de/hilfe/integratoren/integrationen-zurueckgeben.md
 b38df691e2403788051b66d204dbb4ca  doc/ger-de/hilfe/integratoren/integrationsaufwand-schaetzen.md
 cbdeb66760289c11fe50fbd7010934d7  doc/ger-de/hilfe/integratoren/integrationsmuster-push-pull-batch-echtzeit.md
-ef2b7533cf89c4d82f5f69971e71e1d6  doc/ger-de/hilfe/integratoren/integrationsschnittstellen-auf-einen-blick.md
+cb27b71b1c8b44bd787730977eb0a819  doc/ger-de/hilfe/integratoren/integrationsschnittstellen-auf-einen-blick.md
 b42569c80f472ab0f82ba262fad99d37  doc/ger-de/hilfe/integratoren/integratoren-hier-beginnen.md
 a17256a97cb2d43cd1414e43e30d86d6  doc/ger-de/hilfe/integratoren/integratoren-und-das-partnerprogramm.md
 56f4dd45e47ba287f5f7d95ee01984aa  doc/ger-de/hilfe/integratoren/ki-jobwarteschlange-und-mcp.md
@@ -17923,13 +17925,13 @@ bbfd66970f1b397389e7213b14e83aef  doc/ger-de/hilfe/integratoren/playbook-fuer-in
 7082a5d44727e3ace7f0abfdd97f05dd  doc/ger-de/hilfe/integratoren/sicherheit-fuer-integrationen.md
 d48b613ee00f01eecf62a1d709a16fea  doc/ger-de/hilfe/integratoren/sicherheits-checkliste-fuer-integrationen.md
 bc9dab2ea23607a96822057e0093dbe2  doc/ger-de/hilfe/integratoren/single-sign-on-und-social-login.md
-246ad50210d4d8397058bbaf773f86db  doc/ger-de/hilfe/integratoren/syndizierung-zwischen-installationen.md
+e713716161a395a381bcfc69702541b0  doc/ger-de/hilfe/integratoren/syndizierung-zwischen-installationen.md
 355a1e638e1404e5a83cde5f7d3c86f2  doc/ger-de/hilfe/integratoren/uebergabe-einer-integration.md
 a4079eacdea5bab07b34149aae6bc586  doc/ger-de/hilfe/integratoren/upgrades-ohne-defekte-integrationen.md
 2ce677a5304d762c3b64d55726373b3f  doc/ger-de/hilfe/integratoren/velocity-und-leistung-fuer-integrationen.md
 19f111a4fcd9966ee3699b8d5cfec93a  doc/ger-de/hilfe/integratoren/vorlage-fuer-eine-schnittstellenspezifikation.md
 22a826a91f1a769d447b83d233354a9d  doc/ger-de/hilfe/integratoren/was-integratoren-mit-exponential-tun.md
-4e936c03f6f6e474f27eaac08936676e  doc/ger-de/hilfe/integratoren/webdav-und-soap.md
+fda55ff5106528ad6a45250f5bb66f59  doc/ger-de/hilfe/integratoren/webdav-und-soap.md
 bbf44d6f18db0cd75a0c86e463043335  doc/ger-de/hilfe/integratoren/workflows-und-trigger-als-hooks.md
 fc494ee8d53fe23b6cbb2d1f6bd0506b  doc/ger-de/hilfe/integratoren/zahlungsanbieter-und-der-shop.md
 6d9d5cf3b3b53770d5938793a4e25344  doc/ger-de/hilfe/integratoren/zugangsdaten-fuer-eine-integration-waehlen.md
@@ -18540,7 +18542,7 @@ c8e2c829d3c170676e6264b7f41e4bc3  doc/ger-de/hilfe/php-entwickler/debugging-mit-
 200520efaa4f61e9220235378c37ef72  doc/ger-de/hilfe/php-entwickler/der-kernel-service-container.md
 ccea96e06902786ae559fd16d1072331  doc/ger-de/hilfe/php-entwickler/die-debug-leiste-fuer-php-entwickler.md
 24fae2e46772d4deb2e00c4643d47d2d  doc/ger-de/hilfe/php-entwickler/ein-php-entwicklungs-checkout.md
-0d5f8ba139169048d14ba44ed7f7ba3c  doc/ger-de/hilfe/php-entwickler/ein-rundgang-durch-den-quellbaum.md
+1426d1217a0dcaab6c32eff33b9f4c10  doc/ger-de/hilfe/php-entwickler/ein-rundgang-durch-den-quellbaum.md
 c11ba297d517eabce51c0352809cc8ae  doc/ger-de/hilfe/php-entwickler/eine-fetch-funktion-schreiben.md
 05442bb23571bd7f83bd4db7fa1f86f3  doc/ger-de/hilfe/php-entwickler/einen-cronjob-teil-schreiben.md
 777374ddfe80b7413a6392eeccd8c0db  doc/ger-de/hilfe/php-entwickler/einen-datentyp-schreiben.md
@@ -21181,7 +21183,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 7b4de1d134e1317c82fbce40572f8ae4  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
 31c873da0d9d22612cac654656a0764b  doc/ger-de/installation/01-einfuehrung.md
 902863969e0cf8d2b9cdf98a5ac483ff  doc/ger-de/installation/02-voraussetzungen.md
-41ad8724fe66ba4a01f89a491326d8b1  doc/ger-de/installation/03-den-code-beschaffen.md
+9cb2efa1f8c5b06ed1a2e3428f59f53f  doc/ger-de/installation/03-den-code-beschaffen.md
 156edaa8c690d1815b2008c9b4115b54  doc/ger-de/installation/04-installationsweg-waehlen.md
 ddeede628d09085451ea18e24d10fc89  doc/ger-de/installation/05-setup-assistent.md
 245cc829bfb6fe3572e75bb156c91a43  doc/ger-de/installation/06-kickstarter.md
@@ -21260,7 +21262,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
 6e3f9f9fac65535ee5fc8b3a64f4112e  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
-d668c54ddd26f3b59956c1b468b0e5ff  doc/ger-de/standards/apis-und-protokolle.md
+b694e40fc789ed59f42291489cc39f6d  doc/ger-de/standards/apis-und-protokolle.md
 f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
 8b6b6fca0836e5563e177dc55378dc84  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
 43a2f1d024a49dcd7669c76add1cc44a  doc/ger-de/standards/architektur/schichten-und-benennung.md

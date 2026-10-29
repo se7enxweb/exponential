@@ -108,6 +108,10 @@ RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
+# The SOAP server (settings/soap.ini EnableSOAP=true) is index_soap.php since
+# Exponential 6.0.15; soap.php, its old name, only forwards to it. Uncomment
+# when SOAP is switched on, and let the SOAP clients call index_soap.php:
+#RewriteRule ^index_soap\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 # SVG images are sanitized on upload; served from the storage they also run
@@ -235,6 +239,7 @@ RewriteRule .* index.php
 | `RewriteRule (^\|/)\.(?!well-known(/\|$)) - [R=404,L]` | jeder Pfad mit einem Segment, das mit einem Punkt beginnt, beantwortet 404, außer `.well-known` | `.git/config`, `.env`, der `.cache` eines Pakets, die eigene `.htaccess` einer Erweiterung |
 | `RewriteCond %{REQUEST_FILENAME} -f` + `RewriteRule ^.+/[^/]+\.(php[0-9]?\|phtml\|phar)$ - [R=404,L]` | ein vorhandenes Skript unterhalb des Wurzelverzeichnisses beantwortet 404 | keine Bibliothek, kein Installer, keine Paketeinstellung und kein verirrtes Skript wird ausgeführt, nur weil sein Pfad angefragt wurde; nur die Front-Controller im Wurzelverzeichnis laufen |
 | `RewriteRule ^api/ index_rest.php [L]`, `^index_rest\.php - [L]` | die REST-API | `index_rest.php` ist der REST-Front-Controller |
+| `#RewriteRule ^index_soap\.php - [L]` (auskommentiert) | der SOAP-Server, wenn `soap.ini [GeneralSettings] EnableSOAP=true` gilt | `index_soap.php` ist seit 6.0.15 der SOAP-Front-Controller; `soap.php` leitet nur dorthin weiter. Nehmen Sie mit SOAP an das Kommentarzeichen weg, sonst enden SOAP-Anfragen bei `index.php`; siehe [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md) |
 | `RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]` | das Baummenü der Administration, mit oder ohne vorangestellten Siteaccess | ein schlanker Front-Controller für das JSON des Baums |
 | `^var/([^/]+/)?storage/images(-versioned)?/.*` | gespeicherte Bildvarianten werden als Datei gesendet | Bilder in Inhalten |
 | der Block `<FilesMatch "(?i)\.svgz?$">` | ein SVG wird mit `Content-Security-Policy: sandbox ...` gesendet | ein direkt geöffnetes SVG führt nichts aus und lädt nichts |

@@ -398,7 +398,7 @@ Git repository; the others are created by Composer or at run time.
 | `index_rest.php` | The front controller of the REST API (`/api/`). |
 | `index_cluster.php` | Serves files from the database cluster. |
 | `index_treemenu.php` | The fast endpoint of the admin's content tree menu. |
-| `soap.php`, `webdav.php` | The SOAP and WebDAV entry points. |
+| `index_soap.php`, `webdav.php` | The SOAP and WebDAV entry points (`soap.php` only forwards to `index_soap.php`; let `index_soap.php` through the web server when SOAP is on). |
 | `runcronjobs.php` | Runs cronjob parts: `php runcronjobs.php --list`. |
 | `autoload.php` | Loads Composer's autoloader and the kernel's; every entry point starts with it. |
 | `ezpm.php` | The package manager on the command line. |

@@ -81,7 +81,8 @@ Whatever serves the site, the same rules apply ([Chapter 8, How a request is ser
 - The routing is written down once, in `.htaccess_root`. Velocity's engines and the generated FrankenPHP
   configuration implement the same list rule for rule.
 - No PHP file runs because its path was asked for, except the front controllers at the root (`index.php`,
-  `index_rest.php`, `index_treemenu.php`).
+  `index_rest.php`, `index_treemenu.php`, and `index_soap.php` when SOAP is on; it was `soap.php` before 6.0.15, see
+  [the SOAP entry script is now index_soap.php](../../../bc/6.0/soap-entry-script-index-soap.md)).
 - Only listed asset paths are sent as files; `settings/site.ini`, the SQLite database or a kernel source requested by
   path reach `index.php`, never the file.
 - The user that runs PHP must be able to write `var/` and the `settings/` directories, and **one** user (or one

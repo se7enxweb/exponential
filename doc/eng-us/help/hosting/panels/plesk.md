@@ -193,6 +193,8 @@ The development server runs Velocity next to Plesk's Apache on the same installa
 
 - [ ] Domain's PHP version 8.0 or later (Velocity included); "FPM application served by Apache".
 - [ ] Document root = installation root; `.htaccess` copied from `.htaccess_root`.
+- [ ] With SOAP on: `index_soap.php` let through in **Additional directives for HTTPS** (or `.htaccess`), not only the
+      old `soap.php` ([the SOAP entry script is now index_soap.php](../../../bc/6.0/soap-entry-script-index-soap.md#plesk)).
 - [ ] Composer, console and cron use `/opt/plesk/php/<version>/bin/php`.
 - [ ] `PhpCliPath` set; cron lines in the domain user's crontab.
 - [ ] Reload `plesk-php<XY>-fpm` after PHP changes; `PhpFpmService` correct in `exp:velocity deploy --dry-run`.

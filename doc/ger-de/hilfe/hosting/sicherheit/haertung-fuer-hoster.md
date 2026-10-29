@@ -187,6 +187,9 @@ Betriebssystem und die Engine von Velocity aktuell: [Sicherheitsupdates und Offe
 
 - [ ] Rewrite-Regeln: eine aktuelle Kopie von `.htaccess_root`, der abgeleitete nginx-Block oder Velocity; die Prüfung von außen liefert
       keine Datei.
+- [ ] SOAP nur, wo ein Kunde es braucht: `index_soap.php` durchgelassen (vor 6.0.15 hieß es `soap.php`) und auf die
+      Adressen der Aufrufer beschränkt; `soap.php` abgelehnt, sobald es niemand mehr aufruft
+      ([Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../../bc/6.0/soap-einstiegsskript-index-soap.md)).
 - [ ] `settings/override/` mit Modus `0640` oder strenger, außerhalb der Versionsverwaltung, verschlüsselt gesichert.
 - [ ] Die Bereitstellung entfernt `kickstart.ini` und `var/log/initial-admin-password` und hinterlässt nie ein bekanntes Passwort.
 - [ ] `DebugOutput=disabled`; PHP `display_errors=Off`, `expose_php=Off`.

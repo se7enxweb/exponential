@@ -145,6 +145,9 @@ später); das dokumentierte Beispiel um sie herum ist freie Dokumentation (GFDL 
         # REST API
         RewriteRule ^/api/ /index_rest.php [L]
         RewriteRule ^/index_rest\.php - [L]
+        # SOAP server (soap.ini EnableSOAP=true): index_soap.php since
+        # Exponential 6.0.15, soap.php only forwards to it. Uncomment with SOAP on:
+        #RewriteRule ^/index_soap\.php - [L]
         RewriteRule ^/([^/]+/)?content/treemenu.* /index_treemenu.php [L]
         RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* - [L]
         # The stored files of PDF exports generated once (Setup > PDF export)
@@ -245,7 +248,10 @@ Und eine Folge daraus: `[L]` beendet hier die Verarbeitung, daher erreicht `/con
 Alles, was nicht auf der Asset-Liste steht, `settings/`, `var/log/`, `vendor/`, `kernel/` und `composer.json`
 eingeschlossen, wird auf `/index.php` umgeschrieben und niemals gesendet. Der Handler `<FilesMatch "\.php$">` übergibt
 `/index.php`, `/index_rest.php` und `/index_treemenu.php` an PHP-FPM; kein anderes Skript wird je erreicht, weil die
-Regeln nichts anderes an eine `.php`-Datei weiterleiten.
+Regeln nichts anderes an eine `.php`-Datei weiterleiten. Mit SOAP an nehmen Sie das Kommentarzeichen vor der Zeile für
+`index_soap.php` weg: Der SOAP-Server heißt seit Exponential 6.0.15 `index_soap.php` (vorher `soap.php`, jetzt ein
+Shim, das dorthin weiterleitet). Was zu ändern und wie es zu testen ist:
+[Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md).
 
 ## Header und Caching
 

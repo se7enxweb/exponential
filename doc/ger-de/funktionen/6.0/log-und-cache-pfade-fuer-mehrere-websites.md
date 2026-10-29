@@ -127,7 +127,7 @@ und `/srv/cache` erlaubt nicht mehr `/srv/cache-other`.
 `eZSiteAccess::change()` setzt alle drei für den Siteaccess, zu dem gewechselt wird: das Log-Verzeichnis
 (`eZSiteAccess::updateLogDirectory()`), das INI-Cache-Verzeichnis (`eZSiteAccess::updateINICacheDirectory()`) und die
 Ablaufdatei (`eZExpiryHandler::resetForCurrentCacheDirectory()`). Dies geschieht für jeden Front-Controller,
-einschließlich `soap.php` und `webdav.php`, und für jedes Skript, sodass `bin/php/ezcache.php -s example` und die
+einschließlich `index_soap.php` und `webdav.php`, und für jedes Skript, sodass `bin/php/ezcache.php -s example` und die
 Cronjobs einer Website in die Verzeichnisse dieser Website schreiben.
 
 Mit `INICacheDir=site` wird auch die `site.ini` des Siteaccess selbst im INI-Cache der Website zwischengespeichert:

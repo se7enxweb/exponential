@@ -165,6 +165,10 @@ shortened to an example installation, the static path list cut):
 }
 ```
 
+`scripts` lists every script the server runs. The SOAP server (`index_soap.php`, called `soap.php` before 6.0.15) is
+not on it, and was not before either: serve SOAP through the Apache or nginx front end of the installation (see
+[the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md)).
+
 Do not edit a generated file: change `velocity.ini` and restart. To keep a file of your own, remove its
 `"_generated"` marker; it is then never overwritten, like a dpkg conffile. Enable and disable like `a2ensite`,
 `a2enconf` and `a2enmod`:

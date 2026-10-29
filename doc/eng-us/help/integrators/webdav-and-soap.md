@@ -4,13 +4,14 @@ audience: integrator, developer, admin
 category: integration
 order: 120
 summary: The two older protocols Exponential still speaks - WebDAV for mounting content as a drive, and a SOAP 1.1 server that extensions add functions to - how to switch each on, how they authenticate, their known gaps, and when to use them in a new integration.
-keywords: WebDAV, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, SOAP, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
+keywords: WebDAV, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, SOAP, index_soap.php, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
 type: help
 ---
 # WebDAV and SOAP
 
 This page is for integrators who meet a requirement such as "editors save files from their desktop into the site" or
-"our middleware speaks SOAP". Exponential ships a WebDAV server (`webdav.php`) and a SOAP 1.1 server (`soap.php`).
+"our middleware speaks SOAP". Exponential ships a WebDAV server (`webdav.php`) and a SOAP 1.1 server (`index_soap.php`, called
+`soap.php` before 6.0.15).
 Both are **off by default**, both have known gaps, and both are worth considering only when the other side cannot use
 something newer. Their status against the standards is in
 [API and protocol standards](../../standards/apis-and-protocols.md#webdav-rfc-4918).
@@ -77,7 +78,9 @@ without its `ezuser_setting` row cannot sign in.
 
 ## SOAP
 
-The entry point is `soap.php`. The library is `lib/ezsoap/classes/` (`eZSOAPServer`, `eZSOAPClient`, envelope,
+The entry point is `index_soap.php` at the installation root; until 6.0.15 it was `soap.php`, which now only forwards
+to it and writes a notice to `var/log/warning.log` once a day (see
+[the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md)). The library is `lib/ezsoap/classes/` (`eZSOAPServer`, `eZSOAPClient`, envelope,
 codec, fault), SOAP 1.1 only, without WSDL. Switch it on and add the extensions that register functions, in
 `settings/override/soap.ini.append.php`:
 
@@ -93,7 +96,7 @@ SOAPExtensions[]=myintegration
 */ ?>
 ```
 
-For each listed extension, `soap.php` includes `extension/<extension>/soap/initialize.php`, where the extension
+For each listed extension, `index_soap.php` includes `extension/<extension>/soap/initialize.php`, where the extension
 registers its functions with the server object `$server` (an `eZSOAPServer`). The `syndication` extension is the real
 example:
 
@@ -112,8 +115,26 @@ function myIntegrationStock( $remoteID )
 }
 ```
 
-When the request carries HTTP basic credentials, `soap.php` signs that user in before the call
+When the request carries HTTP basic credentials, `index_soap.php` signs that user in before the call
 (`eZUser::loginUser()`), so the function runs with the user's policies. Without credentials it runs as anonymous.
+A second sign-in step never applies to SOAP: an account that needs one signs in with an app password
+([the second step on the other sign-in paths](../../features/6.0/second-factor-on-other-sign-in-paths.md)).
+
+### Letting it through the web server
+
+The shipped rewrite rules send every unknown address to `index.php`, so with SOAP on the web server must let
+`index_soap.php` through: uncomment `RewriteRule ^index_soap\.php - [L]` in `.htaccess` (from `.htaccess_root`), add
+`RewriteRule ^/index_soap\.php - [L]` to the HTTPS virtual host, or a `location = /index_soap.php` in nginx. Restrict it
+to the addresses of the systems that call it. Then check it:
+
+```bash
+curl -sS -i 'https://www.example.com/index_soap.php?wsdl'
+```
+
+The answer is `200` with "Error: this web page does only understand POST methods" (the server has no WSDL); a `404`
+or a page of the site means the rule is missing. The lines for Apache, Plesk, nginx, the other servers, a `POST` test
+with a SOAP envelope and the log check for clients still calling `soap.php` are on
+[the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md).
 
 ## Calling another system's SOAP service
 
@@ -135,6 +156,7 @@ extension) is usually the better tool inside your extension.
 
 - [API and protocol standards](../../standards/apis-and-protocols.md)
 - [SOAP client TLS](../../features/6.0/soap-client-tls.md)
+- [The SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md)
 - [Syndication between installations](syndication-between-installations.md)
 - [Integration surfaces at a glance](integration-surfaces-at-a-glance.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

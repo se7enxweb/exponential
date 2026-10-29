@@ -121,7 +121,7 @@ entry that does not exist allows nothing (before, it allowed every path), and `/
 `eZSiteAccess::change()` sets all three for the siteaccess it changes to: the log directory
 (`eZSiteAccess::updateLogDirectory()`), the INI cache directory (`eZSiteAccess::updateINICacheDirectory()`) and the
 expiry file (`eZExpiryHandler::resetForCurrentCacheDirectory()`). It does so for every front controller, including
-`soap.php` and `webdav.php`, and for every script, so `bin/php/ezcache.php -s example` and the cronjobs of a site
+`index_soap.php` and `webdav.php`, and for every script, so `bin/php/ezcache.php -s example` and the cronjobs of a site
 write into the directories of that site.
 
 With `INICacheDir=site` the `site.ini` of the siteaccess itself is cached in the INI cache of the site as well:
