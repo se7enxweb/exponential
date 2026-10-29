@@ -26,7 +26,7 @@ Aus einem Checkout von Exponential, dessen Voraussetzungen erfüllt sind
 ([Voraussetzungen](../../../installation/02-voraussetzungen.md)):
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 Das installiert das Multisite-Paket auf SQLite in `eng-US` mit den Siteaccesses `site` und `admin` und gibt die

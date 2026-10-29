@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Тохируулга &gt; Cron даалгаврууд</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron даалгаврын аль ч хэсэг хараахан ажиллаагүй байна: даалгаврын дараалал, импорт, мэдэгдэл болон хайлтын индекс хүлээгдэж байна. php bin/php/installcrontab.php --add --apply командыг ажиллуулна уу, эсвэл --show командын гаргасан мөрүүдийг crontab файлд нэмнэ үү.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Энэ суулгац нь олон нийтийн демо юм: түүний администраторын нууц үгийг хэн ч мэдэж болох бөгөөд администраторын нууц үгийг өөрчлөх эсвэл сэргээх боломжгүй. Энд хувийн юу ч бүү оруулаарай.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Таны төхөөрөмжүүд</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Хэн ч ашигладаггүй эсвэл анхаарал шаардсан бүртгэлүүд; тэдгээрийг идэвхгүй болгох, нээх эсвэл экспортлох.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Хэрэглэгчийн аудитын бүртгэл</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Бүртгэл тус бүрээр хэн өөрчилсөн, хэн нэвтэрсэн эсвэл хэнд татгалзсан; шүүх болон экспортлох.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Нэвтрэлтийн тайлан</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Хэн нэвтэрсэн, өдөр бүрийн нэвтрэлт ба бүтэлгүйтэл; хэрэглэгчийг бүх газраас гаргах.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP боловсруулагчийн хугацаа дууссан сессүүдийг энэ хуудас эсвэл session_gc cron даалгаврын хэсэг бус PHP өөрөө (session.gc_maxlifetime) хасдаг.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Бүх хэрэглэгчийн нэвтэрсэн сессүүд нэвтрэлтийн тайланд жагсаагдаж, тэндээс дуусгагдана; тайлан аливаа сессийн боловсруулагчтай ажилладаг.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Нэвтрэлтийн тайланг нээх</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Одоохондоо байхгүй</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Таны сүүлийн нэвтрэлтүүд, бүтэлгүйтсэн оролдлогууд болон нууц үг, имэйл хаяг, хоёр шаттай нэвтрэлтэд орсон өөрчлөлтүүд.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Энэ бүртгэлийн сүүлийн нэвтрэлтүүд, бүтэлгүйтсэн оролдлогууд болон аюулгүй байдлын өөрчлөлтүүд.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Үйл ажиллагааг хянах</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Бүтэлгүйтсэн нэвтрэлт: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab-д бичсэнгүй (%reason). Эдгээр мөрийг сайтыг ажиллуулж буй хэрэглэгчийн crontab-д нэмнэ үү, эс бөгөөс дараалал, импорт, мэдэгдэл болон хайлтын индекс хэзээ ч ажиллахгүй:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Дахин суулгахдаа kickstarter (%file, дараа нь php bin/php/kickstarter.php run --apply) эсвэл шинэ суулгалт ашиглана.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Сүүлийн ажиллалтад шуудангийн дамжуулалт %count мессежийг татгалзсан. Шуудангийн сервер болон site.ini MailSettings-ийг шалгана уу.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Хүлээгдэж буй үйл явдал: %count, гэвч мэдэгдлийн cron даалгавар нэг ч удаа ажилласан бүртгэл алга. «frequent» cron хэсгийг crontab файлд нэмнэ үү, эсвэл exp:notification:run --apply командыг ажиллуулна уу.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Зангилаа сонгогчоор өөр сайт эсвэл хэсэг сонгох</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Эзэмшигчийг зөвхөн системийн администратор өөрчилж чадна: ./console exp:content-check --fix-permissions --apply командыг root эрхээр ажиллуулна уу.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>хоосон</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Гарын үсгийн түлхүүр нэг жилээс илүү хуучин байна: exp:audit key rotate --apply командаар солино уу.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>илгээгдээгүй</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Мэдэгдлийн cron даалгавар ажилласан удаа бүрээ энд бүртгэдэг. frequent хэсгийг crontab файлд нэмнэ үү, эсвэл exp:notification:run --apply командыг ажиллуулна уу.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Консол ашиглана уу: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Байхгүй.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>баталгаажуулагч програмаар</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>имэйлээр ирсэн кодоор</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>сэргээх кодоор</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>нэвтрэх түлхүүрээр</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>гадаад бүртгэлээр</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Сүлжээ хэлбэрээр харуулна; хаягийг сайтын өгөгдөл хамгаалах тохиргоонд заасны дагуу хадгална.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Бүртгээгүй</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Байршил</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ойролцоогоор</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Төхөөрөмжүүдийг удирдах</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>баталгаажуулагч програмаар</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>имэйлээр ирсэн кодоор</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>сэргээх кодоор</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>нэвтрэх түлхүүрээр</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>гадаад бүртгэлээр</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Бүртгээгүй</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Байршил</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ойролцоогоор</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Энэ хэрэглэгчийн сессүүдийг харах</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site сайт дахь Таны %login бүртгэлээр сүүлийн үед нэвтэрч байгаагүй газраас саяхан нэвтэрлээ:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ойролцоо байршил</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os дээрх %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Нэвтрэлтийн тайлан</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Хуудсыг нээх</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, нийт %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Нэвтрэх нэр эсвэл хэрэглэгчийн ID: үйл явдал хамаарах бүртгэл эсвэл үйлдэл хийсэн хэрэглэгч.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Бүртгэл</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Үйлдэл</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Дараа нь</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Бүх үр дүн</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Өмнө нь</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Гүйцэтгэгч</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Цэвэрлэх</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Амжилттай</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Үйл явдлыг %days хоног хадгална.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Үйл явдлыг гараар устгах хүртэл хадгална.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Үйл явдлууд</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Бүх үйлдэл</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Энэ бүртгэлийн бүх үйл явдал</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Жагсаалтыг CSV хэлбэрээр экспортлох (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Амжилтгүй</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Эхлэх</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Жагсаалтыг нарийсгах</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Тохирох үйл явдал алга.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Нэг хуудсанд</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini файлд бичлэг хийхийг унтраасан ([UserAuditSettings] UserAudit); жагсаалт өмнө нь бичигдсэнийг харуулна.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Татгалзсан</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Үр дүн</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Хэрэглэгчийн аудитын бүртгэлийн хүснэгт байхгүй байна. Үүнийг php update/common/scripts/6.0/createuseraudittable.php ашиглан үүсгэнэ үү; тэр болтол аудитын файлууд үйл явдал бүрийг хадгална.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Энэ хуудсанд SQL өгөгдлийн сан шаардлагатай; MongoDB дээр ашиглах боломжгүй. Аудитын файлууд үйл явдал бүрийг хадгална.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Хүртэл</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Хэрэглэгчийн аудитын бүртгэл</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Хэрэглэгч</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Хэзээ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Хаана</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Хэн аль бүртгэлийг өөрчилсөн, үүсгэсэн, идэвхжүүлсэн, идэвхгүй болгосон, зөөсөн эсвэл хассан, хэн нэвтэрсэн эсвэл хэнд татгалзсан, ямар үүрэг оноосон: үйл явдал бүрт нэг мөр, талбаруудын өмнөх болон дараах утгатай. Нууц үг болон нууц мэдээллийг хэзээ ч бүртгэдэггүй.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>бүлэг</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>систем</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>үл мэдэгдэх</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Бүртгэлээ хамгаалах</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site сайт дахь Таны %login бүртгэлд сэргээх кодоор нэвтэрлээ.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Сэргээх код ашиглагдлаа</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Бүртгэл</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Ойролцоо хаяг</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Дахин нэвтрэхийн тулд шинэ нууц үг хүснэ үү, эсвэл сайтын администраторуудад хандана уу.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Шинэ нууц үг хүсэх</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Сэргээх код бүр зөвхөн нэг удаа ажилладаг. Хэрэв Та утсаа гээсэн бол баталгаажуулагч програмаа дахин тохируулж, шинэ сэргээх кодуудаа найдвартай газар хадгална уу.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Таны бүртгэлд нэвтрэх бүтэлгүйтсэн оролдлогууд</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Одоогоос эхлэн нэвтрэхэд нууц үгээс гадна код асууна. Хэрэв үүнийг Та хийсэн бол юу ч хийх шаардлагагүй.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Хэрэв энэ Та байсан бөгөөд нууц үгээ мартсан бол шинийг хүснэ үү. Хэрэв үгүй бол илүү хүчтэй нууц үг сонгож, хоёр шаттай нэвтрэлтийг идэвхжүүлнэ үү.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Хэрэв энэ Та биш байсан бол хэн нэгэн Таны нууц үгийг мэдэж магадгүй: үүнийг одоо сольж, бүртгэл тань хаана нэвтэрсэн байгааг шалгана уу.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Үлдсэн сэргээх кодууд</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Төхөөрөмжүүдээ шалгах</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Аюулгүй байдлын сэрэмжлүүлэг</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Хэн нэгэн %site сайт дахь Таны %login бүртгэлд буруу нууц үгээр дараалан хэд хэдэн удаа нэвтрэхийг оролдлоо (оролдлого: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site сайт дахь Таны %login бүртгэлд аюулгүй байдлын үйл явдал гарлаа.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Энэ бол Таны бүртгэлийн талаарх аюулгүй байдлын сэрэмжлүүлэг юм. Ийм өөрчлөлт бүрт илгээгддэг бөгөөд унтраах боломжгүй.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Цаг</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site сайт дахь Таны %login бүртгэлийн хоёр шаттай нэвтрэлтийг унтраалаа.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Хоёр шаттай нэвтрэлтийг унтраалаа</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site сайт дахь Таны %login бүртгэлийн хоёр шаттай нэвтрэлтийг асаалаа.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Хоёр шаттай нэвтрэлтийг асаалаа</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site сайт дахь Таны %login бүртгэл хэт олон удаа амжилтгүй нэвтэрсний дараа түгжигдлээ.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Таны бүртгэл одоо зөвхөн нууц үгээр хамгаалагдаж байна. Хэрэв үүнийг Та хийгээгүй бол нууц үгээ сольсны дараа хоёр шаттай нэвтрэлтийг дахин асаана уу.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Таны бүртгэл түгжигдлээ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Нэвтрэх бүтэлгүйтсэн оролдлого</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Гарсан</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сессүүдийг дуусгасан</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Шинэ төхөөрөмжөөс нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Шинэ байршлаас нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Хэн болохыг баталгаажуулсан («Та мөн эсэхээ баталгаажуулах»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Хэн болохыг шалгах амжилтгүй болсон</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Нэвтрэх түлхүүрээр нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Нэвтрэх түлхүүрээр нэвтрэх амжилтгүй болсон</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Нэвтрэлтийг татгалзсан: хоёр шаттай нэвтрэлтийн код байхгүй эсвэл буруу</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Хоёр шаттай нэвтрэлтийн буруу код</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Амжилтгүй нэвтрэлтийн дараа бүртгэл түгжигдсэн</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Бүртгэлийн түгжээг тайлсан</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Нууц үг өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Нууц үг өөрчлөх амжилтгүй болсон</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Нууц үгийг шинэчилсэн</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Шинэ нууц үг хүссэн</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Имэйл хаяг өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Хэрэглэгчийн нэр өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Хоёр шаттай нэвтрэлтийг асаасан</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Хоёр шаттай нэвтрэлтийг унтраасан</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Сэргээх код ашигласан</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Шинэ сэргээх кодууд</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Аппын нууц үг үүсгэсэн</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Аппын нууц үгийг хүчингүй болгосон</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Нэвтрэх түлхүүр нэмсэн</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Нэвтрэх түлхүүр хассан</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Бүртгэлийг идэвхжүүлсэн</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Бүртгэлийг идэвхгүй болгосон</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Бүгд</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Нэвтрэлт ба сессүүд</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Бүртгэлийн өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Анхаарал шаардлагатай</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>Та хийсэн</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>хэрэглэгч хийсэн</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login хийсэн</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Арга</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Браузер</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Үйлдлийн систем</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Төхөөрөмж</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Газар</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Улс</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сессүүд</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Аль нь</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Суваг</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Бүтэлгүйтсэн оролдлогууд</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Үлдсэн кодууд</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Нэвтрэлтийн боловсруулагч</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Таны бүртгэлийн нэвтрэлтүүд болон аюулгүй байдлын өөрчлөлтүүд. Хэрэв Та өөрөө хийгээгүй зүйл харвал нууц үгээ сольж, танихгүй төхөөрөмжүүдийг гаргана уу.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Энэ бүртгэлийн нэвтрэлтүүд болон аюулгүй байдлын өөрчлөлтүүд.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Таны төхөөрөмжүүд</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Нууц үг солих</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Бүртгэл рүү буцах</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Аюулгүй байдлын үйл ажиллагааг бүртгэдэггүй</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Үүнийг хэрэглэгчийн аудитын бүртгэлээс уншдаг бөгөөд түүний expuser_audit хүснэгт байхгүй эсвэл энэ өгөгдлийн санд дэмжигддэггүй. php update/common/scripts/6.0/createuseraudittable.php командыг эсвэл 6.0.15 хувилбарын өгөгдлийн сангийн шинэчлэлийг ажиллуулна уу.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Сүүлийн %days өдөр</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Сүүлийн %days өдрийн нэвтрэлтүүд</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Аюулгүй байдлын сүүлийн үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>бүтэлгүйтсэн</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>татгалзсан</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа хараахан бүртгэгдээгүй байна.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Аюулгүй байдлын үйл явдлыг %days өдөр хадгална.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Аюулгүй байдлын үйл явдлыг администратор хасах хүртэл хадгална.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Миний нэвтрэлтийн өгөгдлийг татаж авах</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Таны сессүүд болон аюулгүй байдлын үйл явдлууд JSON файл хэлбэрээр.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Нэвтрэх бүтэлгүйтсэн оролдлого</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Гарсан</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сессүүдийг дуусгасан</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Шинэ төхөөрөмжөөс нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Шинэ байршлаас нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Хэн болохыг баталгаажуулсан («Та мөн эсэхээ баталгаажуулах»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Хэн болохыг шалгах амжилтгүй болсон</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Нэвтрэх түлхүүрээр нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Нэвтрэх түлхүүрээр нэвтрэх амжилтгүй болсон</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Нэвтрэлтийг татгалзсан: хоёр шаттай нэвтрэлтийн код байхгүй эсвэл буруу</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Хоёр шаттай нэвтрэлтийн буруу код</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Амжилтгүй нэвтрэлтийн дараа бүртгэл түгжигдсэн</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Бүртгэлийн түгжээг тайлсан</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Нууц үг өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Нууц үг өөрчлөх амжилтгүй болсон</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Нууц үгийг шинэчилсэн</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Шинэ нууц үг хүссэн</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Имэйл хаяг өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Хэрэглэгчийн нэр өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Хоёр шаттай нэвтрэлтийг асаасан</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Хоёр шаттай нэвтрэлтийг унтраасан</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Сэргээх код ашигласан</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Шинэ сэргээх кодууд</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Аппын нууц үг үүсгэсэн</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Аппын нууц үгийг хүчингүй болгосон</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Нэвтрэх түлхүүр нэмсэн</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Нэвтрэх түлхүүр хассан</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Бүртгэлийг идэвхжүүлсэн</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Бүртгэлийг идэвхгүй болгосон</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Бүгд</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Нэвтрэлт ба сессүүд</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Бүртгэлийн өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Анхаарал шаардлагатай</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Таны бүртгэлийн нэвтрэлтүүд болон аюулгүй байдлын өөрчлөлтүүд. Хэрэв Та өөрөө хийгээгүй зүйл харвал нууц үгээ сольж, танихгүй төхөөрөмжүүдийг гаргана уу.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Таны төхөөрөмжүүд</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Нууц үг солих</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Энэ сайтад аюулгүй байдлын үйл ажиллагааг хараахан бүртгэдэггүй.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Сүүлийн %days өдрийн нэвтрэлтүүд</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Бүтэлгүйтсэн оролдлогууд</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа хараахан бүртгэгдээгүй байна.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Миний нэвтрэлтийн өгөгдлийг татаж авах</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Таны сессүүд болон аюулгүй байдлын үйл явдлууд JSON файл хэлбэрээр.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Нууц үг</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Нууц үг ба хоёр шаттай нэвтрэлтийн код</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST интерфейс</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP интерфейс</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Нэгдсэн нэвтрэлт</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Сессүүдийг бүртгэж эхлэхээс өмнө нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Нэвтрэлтийн тайлан</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Сайтад хэн нэвтэрсэн, бүртгэлүүд хэр олон удаа нэвтэрч, нэвтэрч чадахгүй байгаа, мөн хэрэглэгчийг бүх газраас гаргах. Аливаа сессийн боловсруулагчтай ажилладаг.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сессийг дуусгалаа. Төхөөрөмж дахин нэвтрэх шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login хэрэглэгчийг гаргалаа, дуусгасан сесс: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login хэрэглэгчид ажиллаж буй сесс байгаагүй.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ийм ID, хэрэглэгчийн нэр эсвэл имэйл хаягтай бүртгэл байхгүй.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Энэ бол Таны ашиглаж буй сесс. Үүнийг дуусгахын тулд системээс гарна уу.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Тэр сесс аль хэдийн дууссан байсан.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Хуудасны хугацаа дууссан байсан. Юу ч өөрчлөгдсөнгүй; дахин оролдоно уу.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Энэ сайтад сессүүдийг бүртгэдэггүй (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session хүснэгт байхгүй байна</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Хүснэгт үүссэний дараа сессүүд бүртгэгдэж эхэлнэ: php update/common/scripts/6.0/createusersessiontable.php эсвэл 6.0.15 хувилбарын өгөгдлийн сангийн шинэчлэл.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Одоо ба өнөөдөр</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ажиллаж буй сессүүд</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Нэвтэрсэн хэрэглэгчид</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Өнөөдрийн нэвтрэлтүүд</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Өнөөдрийн бүтэлгүйтсэн оролдлогууд</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Хэрэглэгчийг бүх газраас гаргах</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Бүртгэлийн сесс бүр дараагийн хүсэлтээр дуусна, «Намайг санах»-аар хадгалагдсан сессүүд ч мөн адил. Бүртгэл буруу гарт орсон байж болзошгүй үед үүнийг ашиглана уу; дараа нь нууц үгийг нь шинэчилнэ үү.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Хэрэглэгчийн ID, хэрэглэгчийн нэр эсвэл имэйл хаяг</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Бүх газраас гарах</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Одоо нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Хамгийн сүүлд ашигласан %limit сессийг харуулж байна.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Хэрэглэгч</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Төхөөрөмж</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Хаяг</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Сүүлд идэвхтэй байсан</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Үйлдлүүд</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Энэ төхөөрөмж</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Бүртгээгүй</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Гарах</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Нэвтэрсэн сесс алга.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Сүүлийн %days өдөр</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Нэвтрэлт болон бүтэлгүйтсэн оролдлогуудыг хэрэглэгчийн аудитын бүртгэлээс тоолдог боловч энэ бүртгэл байхгүй; шинэ сессүүдийг тоолно.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Өдөр</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Нэвтрэлтүүд</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Бүтэлгүйтсэн оролдлогууд</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Шинэ сессүүд</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Сессийн боловсруулагч: %handler. Сессүүдийг expuser_session хүснэгтээс уншдаг тул тайлан аливаа боловсруулагчтай ажилладаг.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Таны бүртгэлийн аюулгүй байдлын сэрэмжлүүлэг</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Таны %login бүртгэлд аюулгүй байдлын үйл явдал гарлаа: %event. Хэрэв энэ Та биш байсан бол бүртгэлээ %url хаягаар хамгаална уу.</translation>
     </message>
 </context>
 </TS>

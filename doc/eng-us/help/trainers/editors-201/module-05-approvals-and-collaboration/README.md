@@ -38,8 +38,8 @@ habits that keep a team from overwriting each other's work. Most exercises are d
 
     ```bash
     ./console exp:collaborationsampledata --dry-run --allow-root-user
-    ./console exp:collaborationsampledata --allow-root-user
-    ./console exp:collaborationsampledata --remove --allow-root-user
+    ./console exp:collaborationsampledata --apply --allow-root-user
+    ./console exp:collaborationsampledata --apply --remove --allow-root-user
     ```
 
 - The workflow cronjob must run (check **Setup** > **Workflow processes**: its status bar says when it runs next), or

@@ -34,7 +34,7 @@ die Website sichern und wiederherstellen und ein Upgrade planen und prüfen.
 | Format | Präsenz oder online; praktisch im Browser und am Terminal |
 | Niveau | Fortgeschrittene |
 | Voraussetzungen | Redakteure 101 (oder vergleichbare Erfahrung als Redakteur); Grundkenntnisse der Kommandozeile |
-| Übungsumgebung | Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install` (siehe [Installation über die Kommandozeile](../../../installation/07-installation-ueber-die-konsole.md)) und gestartet mit `exp:velocity start`; die Teilnehmenden brauchen das Administratorkonto ihrer eigenen Installation und ein Terminal auf deren Rechner |
+| Übungsumgebung | Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install --apply` (siehe [Installation über die Kommandozeile](../../../installation/07-installation-ueber-die-konsole.md)) und gestartet mit `exp:velocity start`; die Teilnehmenden brauchen das Administratorkonto ihrer eigenen Installation und ein Terminal auf deren Rechner |
 
 ## Module
 

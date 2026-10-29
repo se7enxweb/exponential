@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>སྒྲིག་བཙུགས། &gt; Cron ལཱ།</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ད་ཚུན་ Cron ལཱ་གི་ཡན་ལག་གཅིག་ཡང་གཡོག་བཀོལ་མ་ཚར་བས། ལཱ་གི་གྲལ་རིམ་དང་ ནང་འདྲེན་ཚུ་ བརྡ་ཐོ་ཚུ་ འཚོལ་ཞིབ་ཀྱི་ཟུར་ཐོ་ཚུ་ སྒུག་སྡོད་དེ་ཡོདཔ་ཨིན། php bin/php/installcrontab.php --add --apply གཡོག་བཀོལ་གནང་། ཡང་ན་ --show གིས་སྟོན་མི་གྲལ་ཐིག་ཚུ་ crontab ཡིག་སྣོད་ནང་ཁ་སྐོང་འབད་གནང་།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>གཞི་བཙུགས་འདི་ མི་མང་གི་སྟོན་འབུལ་ཅིག་ཨིན། ཀུན་གྱིས་འཛིན་སྐྱོང་པའི་ཆོག་ཚིག་ཤེས་སྲིད་ལས་ འཛིན་སྐྱོང་པའི་ཆོག་ཚིག་བསྒྱུར་ནི་དང་བསྐྱར་སྒྲིག་འབད་མི་ཚུགས། འདི་ནང་ སྒེརཔ་ཅིག་གང་ཡང་མ་བཙུགས་གནང་།</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ཁྱོད་རང་གི་སྒྲིག་ཆས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>སུ་གིའང་ལག་ལེན་མི་འཐབ་པའི་ ཡང་ན་ བལྟ་དགོ་པའི་རྩིས་ཐོ་ཚུ། དེ་ཚུ་ལག་ལེན་མ་འཐབ་བཅུག་ སྒོ་འབྱེད་ ཡང་ན་ ཕྱིར་གཏང་འབད།</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ལག་ལེན་པའི་རྩིས་ཞིབ་དྲན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>རྩིས་ཐོ་རེ་རེ་ལུ་ ག་གིས་བསྒྱུར་བཅོས་འབད་ཡི་ ནང་འཛུལ་འབད་ཡི་ ཡང་ན་ ངོས་ལེན་མ་འབད་ཡི། འཚག་འདེམས་དང་ཕྱིར་གཏང་འབད་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ནང་འཛུལ་གྱི་སྙན་ཞུ།</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ནང་འཛུལ་འབད་ཡོད་མི་ག་ཨིན་ན་ ཉིན་རེའི་ནང་འཛུལ་དང་འཐུས་ཤོར་ཚུ། ལག་ལེན་པ་གཅིག་ས་ཁོངས་ཆ་མཉམ་ལས་ཕྱིར་འཐོན་འབད།</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ལག་ལེན་པ་གི་དུས་ཚོད་ཆད་པའི་ལཱ་ཚོགས་ཚུ་ PHP རང་གིས་ (session.gc_maxlifetime) བཏོནམ་ཨིནམ་ལས་ ཤོག་ལེབ་འདི་ཡང་ན་ session_gc ཀྲོན་ལཱ་གི་ཆ་ཤས་གིས་མེན།</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ལག་ལེན་པ་ཆ་མཉམ་གྱི་ནང་འཛུལ་འབད་ཡོད་པའི་ལཱ་ཚོགས་ཚུ་ ནང་འཛུལ་གྱི་སྙན་ཞུ་ནང་ཐོ་བཀོད་འབདཝ་ཨིནམ་དང་ དེ་ལས་ཕྱིར་འཐོན་འབད་ཚུགས། དེ་གིས་ལཱ་ཚོགས་སྐྱོང་མཁན་ག་དང་གཅིག་ཁར་ཡང་ལཱ་འབདཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ནང་འཛུལ་གྱི་སྙན་ཞུ་ཁ་ཕྱེ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ད་ལྟོ་ཚུན་མེད།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ཁྱོད་རང་གི་ཉེ་གནས་ཀྱི་ནང་འཛུལ་དང་ འཐུས་ཤོར་བྱུང་བའི་འབད་རྩོལ་ཚུ་ དེ་ལས་ཆོག་ཚིག་དང་ གློག་འཕྲིན་ཁ་བྱང་ རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་ལུ་འགྱུར་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>རྩིས་ཐོ་འདི་གི་ཉེ་གནས་ཀྱི་ནང་འཛུལ་དང་ འཐུས་ཤོར་བྱུང་བའི་འབད་རྩོལ་ཚུ་ ཉེན་སྲུང་གི་འགྱུར་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>བྱ་བ་བསྐྱར་ཞིབ།</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>འཐུས་ཤོར་བྱུང་བའི་ནང་འཛུལ་: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab འབྲི་མ་ཚུགས་པས (%reason)། ཐིག་ཕྲེང་འདི་ཚུ་ དྲྭ་ཚིགས་གཡོག་བཀོལ་མི་ལག་ལེན་པའི་ crontab ནང་ཁ་སྐོང་འབད། དེ་མ་ཐད་ན་ གྲལ་རིམ་ ནང་འཁྱེར་ བརྡ་ཐོ་དང་འཚོལ་ཞིབ་དཀར་ཆག་ཚུ་ནམ་ཡང་གཡོག་མི་བཀོལ།</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>སླར་གཞི་བཙུགས་འདི་ Kickstarter ལག་ལེན་འཐབ་ཏེ་ (%file དེ་ལས་ php bin/php/kickstarter.php run --apply) ཡང་ན་ གཞི་བཙུགས་གསརཔ་གཅིག་གིས་འབདཝ་ཨིན།</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>མཇུག་གི་གཡོག་བཀོལ་ནང་ གློག་འཕྲིན་སྐྱེལ་འདྲེན་གྱིས་འཕྲིན་ཡིག་ %count ངོས་ལེན་མ་འབད། གློག་འཕྲིན་སར་བར་དང་ site.ini MailSettings ཞིབ་དཔྱད་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>བྱུང་ལས་ %count སྒུག་སྡོད་དེ་ཡོདཔ་དང་ བརྡ་ཐོའི་ Cron ལཱ་གཡོག་བཀོལ་བའི་དྲན་ཐོ་གཅིག་ཡང་མེད། Cron ལཱ་གི་ཡན་ལག་ &quot;frequent&quot; crontab ཡིག་སྣོད་ནང་ཁ་སྐོང་འབད་གནང་། ཡང་ན་ exp:notification:run --apply གཡོག་བཀོལ་གནང་།</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>མདུད་ཚིག་སེལ་འཐུ་ཆས་ཀྱིས་དྲྭ་ཚིགས་ཡང་ན་སྡེ་ཚན་གཞན་ཅིག་སེལ་འཐུ་འབད།</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ཇོ་བདག་སོར་ཚུགས་མི་འདི་ རིམ་ལུགས་བདག་སྐྱོང་པ་རྐྱངམ་ཅིག་ཨིན: root སྦེ་ ./console exp:content-check --fix-permissions --apply གཡོག་བཀོལ་གནང་།</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>སྟོངམ།</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>མཚན་རྟགས་ཀྱི་ལྡེ་མིག་འདི་ལོ་གཅིག་ལས་ལྷག་སྟེ་རྙིངམ་ཨིན: exp:audit key rotate --apply གིས་སོར་གནང་།</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>མ་གཏང་པའི།</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>བརྡ་ཐོའི་ Cron ལཱ་གིས་ གཡོག་བཀོལ་རེ་རེ་བཞིན་ནཱ་ལུ་དྲན་ཐོ་བཀོདཔ་ཨིན། ཡན་ལག་ frequent crontab ཡིག་སྣོད་ནང་ཁ་སྐོང་འབད་གནང་། ཡང་ན་ exp:notification:run --apply གཡོག་བཀོལ་གནང་།</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ཚད་འཛིན་ངོས་ལག་ལེན་འཐབ་གནང་: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>མེདཔ།</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>བདེན་དཔང་ཨེཔ་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>གློག་འཕྲིན་གྱི་ཐོག་ལས་ཨང་རྟགས་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ཕྱི་ཁའི་རྩིས་ཐོ་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>འདིའི་ཡོངས་འབྲེལ་སྦེ་སྟོནམ་ཨིན། ཁ་བྱང་འདི་ ས་ཁོངས་ཀྱི་གནད་སྡུད་ཉེན་སྲུང་གི་སྒྲིག་བཀོད་ཀྱིས་བཀོད་དོ་བཟུམ་སྦེ་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>དྲན་ཐོ་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>གནས་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ཚོད་དཔག</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ཆས་ཚུ་འཛིན་སྐྱོང་འབད།</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>བདེན་དཔང་ཨེཔ་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>གློག་འཕྲིན་གྱི་ཐོག་ལས་ཨང་རྟགས་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ཕྱི་ཁའི་རྩིས་ཐོ་གཅིག་གིས།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>དྲན་ཐོ་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>གནས་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ཚོད་དཔག</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ལག་ལེན་པ་འདི་གི་ལཱ་ཚོགས་བལྟ།</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site གུ་ཁྱོད་རང་གི་རྩིས་ཐོ་ %login གིས་ ཉེ་ཆར་ནང་འཛུལ་མ་འབད་བའི་ས་གནས་ཅིག་ལས་ ད་ལྟོ་ར་ནང་འཛུལ་འབད་ཡི:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ཚོད་དཔག་གི་གནས་ཁོངས།</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os གུ་ %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ནང་འཛུལ་གྱི་སྙན་ཞུ།</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ཤོག་ལེབ་ཁ་ཕྱེ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ལས་ %to ཚུན། བསྡོམས་ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ནང་འཛུལ་མིང་ ཡང་ན་ ལག་ལེན་པའི་ ID: བྱུང་རིམ་དེ་ག་འདི་གི་སྐོར་ལས་ཨིན་མི་རྩིས་ཐོ་ ཡང་ན་ བྱ་བ་འབད་མི་ལག་ལེན་པ།</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>རྩིས་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ཤུལ་མར།</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>གྲུབ་འབྲས་ག་ཅི་རང་ཨིན་རུང་།</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ཧེ་མར།</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>འབད་མི།</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>གཙང་སྦྲ།</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ཚར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>བྱུང་རིམ་ཚུ་ ཉིན་གྲངས་ %days གི་རིང་ སྲུང་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>བྱུང་རིམ་ཚུ་ ལག་ཐོག་ལས་ བཏོན་གཏང་ཚུན་ཚོད་ སྲུང་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>བྱུང་རིམ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>བྱ་བ་ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>རྩིས་ཐོ་འདི་གི་བྱུང་རིམ་ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ཐོ་ཡིག་ CSV སྦེ་ ཕྱིར་གཏང་། (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>འཐུས་ཤོར།</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ག་ལས།</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ཐོ་ཡིག་ཆུང་ཀུ་བཟོ།</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>མཐུན་པའི་བྱུང་རིམ་མིན་འདུག</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ཤོག་ལེབ་རེ་རེ་ལུ།</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ནང་ ཐོ་བཀོད་ བཀག་ཡོདཔ་ཨིན། ([UserAuditSettings] UserAudit) ཐོ་ཡིག་ནང་ ཧེ་མ་ཐོ་བཀོད་འབད་མི་ཚུ་ སྟོནམ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ངོས་ལེན་མ་འབད།</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>གྲུབ་འབྲས།</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>སྟོན།</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ལག་ལེན་པའི་རྩིས་ཞིབ་དྲན་ཐོའི་ཐིག་ཁྲམ་མིན་འདུག php update/common/scripts/6.0/createuseraudittable.php གིས་ གསར་བཟོ་འབད་གནང་། དེ་ཚུན་ཚོད་ རྩིས་ཞིབ་ཡིག་སྣོད་ཚུ་གིས་ བྱུང་རིམ་ག་ར་ སྲུང་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ཤོག་ལེབ་འདི་ལུ་ SQL གནད་སྡུད་མཛོད་དགོཔ་ཨིན། MongoDB གུ་ མི་ཐོབ། རྩིས་ཞིབ་ཡིག་སྣོད་ཚུ་གིས་ བྱུང་རིམ་ག་ར་ སྲུང་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ཚུན།</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ལག་ལེན་པའི་རྩིས་ཞིབ་དྲན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ལག་ལེན་པ།</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>དུས་ཚོད།</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ས་གནས།</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ག་གིས་ རྩིས་ཐོ་ག་འདི་ བསྒྱུར་བཅོས་ གསར་བཟོ་ ལག་ལེན་འཐབ་བཅུག ལག་ལེན་མ་འཐབ་བཅུག སྤོ་བཤུད་ ཡང་ན་ བཏོན་གཏང་ཡི་ ག་གིས་ ནང་འཛུལ་འབད་ཡི་ ཡང་ན་ ངོས་ལེན་མ་འབད་ཡི་ འགན་ཁུར་ག་ཅི་ཚུ་ བཀོད་ཡི། བྱུང་རིམ་རེ་རེ་ལུ་ གྱལ་རིམ་གཅིག་ ཧེ་མ་དང་ཤུལ་མའི་ས་སྒོ་ཚུ་དང་གཅིག་ཁར། ཆོག་ཚིག་དང་ གསང་བའི་བརྡ་དོན་ཚུ་ ནམ་ཡང་ ཐོ་བཀོད་མི་འབད།</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ཚོགས་སྡེ།</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>རིམ་ལུགས།</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ངོས་མ་འཛིན་པའི།</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོ་ཉེན་སྲུང་འབད།</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site གུ་ཁྱོད་རང་གི་རྩིས་ཐོ་ %login ནང་ལུ་ནང་འཛུལ་འབད་ནིའི་དོན་ལུ་ སླར་གསོའི་ཨང་རྟགས་གཅིག་ལག་ལེན་འཐབ་ཅི།</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་གཅིག་ལག་ལེན་འཐབ་ཅི།</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>རྩིས་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ཚོད་དཔག་གི་ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ལོག་སྟེ་ནང་འཛུལ་འབད་ནིའི་དོན་ལུ་ ཆོག་ཚིག་གསརཔ་ཅིག་ཞུ་གནང་། ཡང་ན་ ས་ཁོངས་ཀྱི་བདག་སྐྱོང་པ་ཚུ་དང་འབྲེལ་བ་འཐབ་གནང་།</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ཆོག་ཚིག་གསརཔ་ཞུ།</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་རེ་རེ་ཚར་གཅིག་ལས་ལཱ་མི་འབད། ཁྱོད་རང་གི་བརྒྱུད་འཕྲིན་བརླག་སྟོར་ཞུགས་པ་ཅིན་ བདེན་དཔང་ཨེཔ་ལོག་སྟེ་གཞི་སྒྲིག་འབད་ཞིནམ་ལས་ སླར་གསོའི་ཨང་རྟགས་གསརཔ་ཚུ་ ཉེན་སྲུང་ཅན་གྱི་ས་གནས་ཅིག་ལུ་བཞག་གནང་།</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོ་ལུ་འཐུས་ཤོར་བྱུང་བའི་ནང་འཛུལ་འབད་རྩོལ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ད་ལས་ཕར་ ནང་འཛུལ་འབད་བའི་སྐབས་ ཆོག་ཚིག་གི་ཁ་སྐོང་ལུ་ཨང་རྟགས་ཅིག་ཡང་ཞུ་འོང་། འདི་ཁྱོད་རང་གིས་འབད་བ་ཅིན་ ག་ནི་ཡང་འབད་དགོཔ་མེད།</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ཁྱོད་རང་ཨིན་པ་ཅིན་དང་ ཆོག་ཚིག་བརྗེད་ཡོད་པ་ཅིན་ ཆོག་ཚིག་གསརཔ་ཅིག་ཞུ་གནང་། དེ་མིན་པ་ཅིན་ ཆོག་ཚིག་སྙིང་སྟོབས་ཅན་ཅིག་སེལ་འཐུ་འབད་ཞིནམ་ལས་ རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་འགོ་བཙུགས་གནང་།</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>འདི་ཁྱོད་རང་མིན་པ་ཅིན་ མི་ལ་ལུ་ཅིག་གིས་ཁྱོད་རང་གི་ཆོག་ཚིག་ཤེས་འོང་: ད་ལྟོ་ར་སོར་ཞིནམ་ལས་ ཁྱོད་རང་གི་རྩིས་ཐོ་ག་ཏེ་ལུ་ནང་འཛུལ་འབད་དེ་ཡོདཔ་ཨིན་ན་ཞིབ་དཔྱད་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ལྷག་ལུས་སླར་གསོའི་ཨང་རྟགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ཁྱོད་རང་གི་སྒྲིག་ཆས་ཚུ་བསྐྱར་ཞིབ།</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ཉེན་སྲུང་གི་ཉེན་བརྡ།</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>མི་ལ་ལུ་ཅིག་གིས་ %site གུ་ཁྱོད་རང་གི་རྩིས་ཐོ་ %login ནང་ལུ་ ཆོག་ཚིག་ཕྱི་འགྱུར་གྱིས་ ཐེངས་ %count རྒྱུན་ཆད་མེད་པར་ནང་འཛུལ་འབད་ནི་ལུ་འབད་རྩོལ་བསྐྱེད་ཅི།</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site གུ་ཁྱོད་རང་གི་རྩིས་ཐོ་ %login ལུ་ཉེན་སྲུང་གི་བྱུང་ལས་ཅིག་བྱུང་ཡི།</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>འདི་ཁྱོད་རང་གི་རྩིས་ཐོའི་སྐོར་ལས་ཉེན་སྲུང་གི་ཉེན་བརྡ་ཅིག་ཨིན། འགྱུར་བ་འདི་བཟུམ་རེ་རེ་ལུ་གཏང་འོང་ནི་དང་ བཀག་ཆ་འབད་མི་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>དུས་ཚོད།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site གུ་ཁྱོད་རང་གི་རྩིས་ཐོ་ %login གི་དོན་ལུ་ རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་བཀག་ཆ་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་བཀག་ཆ་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site གུ་ཁྱོད་རང་གི་རྩིས་ཐོ་ %login གི་དོན་ལུ་ རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་འགོ་བཙུགས་ཡི།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་འགོ་བཙུགས་ཡི།</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>ནང་འཛུལ་ལན་གྲངས་མང་རབས་འཐུས་ཤོར་བྱུང་ཞིནམ་ལས་ %site གུ་ཁྱོད་རང་གི་རྩིས་ཐོ་ %login ལུ་ཟྭ་བརྒྱབ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོ་འདི་ ད་ལྟོ་ཆོག་ཚིག་རྐྱངམ་ཅིག་གིས་ཉེན་སྲུང་འབད་དོ་ཡོདཔ་ཨིན། འདི་ཁྱོད་རང་གིས་མ་འབད་བ་ཅིན་ ཆོག་ཚིག་སོར་ཞིནམ་ལས་ རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་ལོག་སྟེ་འགོ་བཙུགས་གནང་།</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོ་ལུ་ཟྭ་བརྒྱབ་ཡི།</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ་: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ནང་འཛུལ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>འཐུས་ཤོར་བྱུང་བའི་ནང་འཛུལ་འབད་རྩོལ།</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ཕྱིར་འཐོན་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ལཱ་ཚོགས་ཚུ་ཕྱིར་འཐོན་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>སྒྲིག་ཆས་གསརཔ་ཅིག་ལས་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>གནས་ཁོངས་གསརཔ་ཅིག་ལས་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ངོ་རྟགས་ངེས་བརྟན་འབད་ཡི། (&quot;ཁྱོད་རང་ཨིན་མི་ངེས་བརྟན་འབད།&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ངོ་རྟགས་ཞིབ་དཔྱད་འཐུས་ཤོར་བྱུང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་གིས་ནང་འཛུལ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་གི་ནང་འཛུལ་འཐུས་ཤོར་བྱུང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ནང་འཛུལ་ངོས་ལེན་མ་འབད: རིམ་པ་གཉིས་ཀྱི་ཨང་རྟགས་མེདཔ་ཡང་ན་ཕྱི་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ཨང་རྟགས་ཕྱི་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ནང་འཛུལ་འཐུས་ཤོར་བྱུང་ཞིནམ་ལས་ རྩིས་ཐོ་ལུ་ཟྭ་བརྒྱབ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>རྩིས་ཐོའི་ཟྭ་ཕྱེ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ཆོག་ཚིག་སོར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ཆོག་ཚིག་སོར་ནི་འཐུས་ཤོར་བྱུང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ཆོག་ཚིག་སླར་སྒྲིག་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ཆོག་ཚིག་གསརཔ་ཞུ་ཡི།</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>གློག་འཕྲིན་ཁ་བྱང་སོར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ལག་ལེན་པའི་མིང་སོར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་འགོ་བཙུགས་ཡི།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་བཀག་ཆ་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་ལག་ལེན་འཐབ་ཡི།</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་གསརཔ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ཨེཔ་ཆོག་ཚིག་གསར་བཟོ་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ཨེཔ་ཆོག་ཚིག་ཆ་མེད་བཏང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་ཁ་སྐོང་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་བཏོན་གཏང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>རྩིས་ཐོ་ལག་ལེན་འཐབ་ཚུགསཔ་བཟོ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>རྩིས་ཐོ་ལག་ལེན་འཐབ་མ་ཚུགསཔ་བཟོ་ཡི།</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ནང་འཛུལ་དང་ལཱ་ཚོགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>རྩིས་ཐོའི་འགྱུར་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>དོ་སྣང་དགོཔ།</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ཁྱོད་རང་གིས།</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ལག་ལེན་པ་གིས།</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>འབད་མི་: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ཐབས་ལམ།</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>བརའུ་ཟར།</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>བཀོལ་སྤྱོད་རིམ་ལུགས།</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>སྒྲིག་ཆས།</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ས་གནས།</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>རྒྱལ་ཁབ།</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ལཱ་ཚོགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ག་ཅི་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>གཏང་ཐངས།</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>འཐུས་ཤོར་བྱུང་བའི་འབད་རྩོལ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ལྷག་ལུས་ཨང་རྟགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ནང་འཛུལ་སྐྱོང་མཁན།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ་: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོའི་ནང་འཛུལ་དང་ ཉེན་སྲུང་ལུ་འགྱུར་བ་ཚུ། ཁྱོད་རང་གིས་མ་འབད་བའི་ག་ཅི་ཅིག་མཐོང་པ་ཅིན་ ཆོག་ཚིག་སོར་ཞིནམ་ལས་ ངོས་མ་ཤེས་པའི་སྒྲིག་ཆས་ཚུ་ཕྱིར་འཐོན་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>རྩིས་ཐོ་འདི་གི་ནང་འཛུལ་དང་ ཉེན་སྲུང་ལུ་འགྱུར་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ཁྱོད་རང་གི་སྒྲིག་ཆས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>རྩིས་ཐོ་ལུ་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ་དྲན་ཐོ་མི་བཀོད།</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>འདི་ ལག་ལེན་པའི་རྩིས་ཞིབ་དྲན་ཐོ་ལས་ལྷགཔ་ཨིན། དེ་གི་ཐིག་ཁྲམ་ expuser_audit མེདཔ་ཡང་ན་ གནད་སྡུད་གཞི་རྟེན་འདི་གུ་རྒྱབ་སྐྱོར་མེད། php update/common/scripts/6.0/createuseraudittable.php གཡོག་བཀོལ་གནང་། ཡང་ན་ 6.0.15 གི་གནད་སྡུད་གཞི་རྟེན་དུས་མཐུན་གཡོག་བཀོལ་གནང་།</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>མཇུག་གི་ཉིནམ་ %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>མཇུག་གི་ཉིནམ་ %days ནང་གི་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ཉེ་གནས་ཀྱི་ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>སྟོན།</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>འཐུས་ཤོར།</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ངོས་ལེན་མ་འབད།</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ད་ཚུན་ ཉེན་སྲུང་གི་བྱ་བ་དྲན་ཐོ་གཅིག་ཡང་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ཉེན་སྲུང་གི་བྱུང་ལས་ཚུ་ ཉིནམ་ %days གི་རིང་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ཉེན་སྲུང་གི་བྱུང་ལས་ཚུ་ བདག་སྐྱོང་པ་ཅིག་གིས་བཏོན་གཏང་ཚུན་ཚོད་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ངེ་གི་ནང་འཛུལ་གནད་སྡུད་ཌའུན་ལོཌ།</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ཁྱོད་རང་གི་ལཱ་ཚོགས་དང་ཉེན་སྲུང་གི་བྱུང་ལས་ཚུ་ JSON ཡིག་སྣོད་སྦེ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ནང་འཛུལ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>འཐུས་ཤོར་བྱུང་བའི་ནང་འཛུལ་འབད་རྩོལ།</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ཕྱིར་འཐོན་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ལཱ་ཚོགས་ཚུ་ཕྱིར་འཐོན་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>སྒྲིག་ཆས་གསརཔ་ཅིག་ལས་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>གནས་ཁོངས་གསརཔ་ཅིག་ལས་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ངོ་རྟགས་ངེས་བརྟན་འབད་ཡི། (&quot;ཁྱོད་རང་ཨིན་མི་ངེས་བརྟན་འབད།&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ངོ་རྟགས་ཞིབ་དཔྱད་འཐུས་ཤོར་བྱུང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་གིས་ནང་འཛུལ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་གི་ནང་འཛུལ་འཐུས་ཤོར་བྱུང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ནང་འཛུལ་ངོས་ལེན་མ་འབད: རིམ་པ་གཉིས་ཀྱི་ཨང་རྟགས་མེདཔ་ཡང་ན་ཕྱི་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ཨང་རྟགས་ཕྱི་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ནང་འཛུལ་འཐུས་ཤོར་བྱུང་ཞིནམ་ལས་ རྩིས་ཐོ་ལུ་ཟྭ་བརྒྱབ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>རྩིས་ཐོའི་ཟྭ་ཕྱེ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ཆོག་ཚིག་སོར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ཆོག་ཚིག་སོར་ནི་འཐུས་ཤོར་བྱུང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ཆོག་ཚིག་སླར་སྒྲིག་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ཆོག་ཚིག་གསརཔ་ཞུ་ཡི།</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>གློག་འཕྲིན་ཁ་བྱང་སོར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ལག་ལེན་པའི་མིང་སོར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་འགོ་བཙུགས་ཡི།</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>རིམ་པ་གཉིས་ཀྱི་ནང་འཛུལ་བཀག་ཆ་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་ལག་ལེན་འཐབ་ཡི།</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>སླར་གསོའི་ཨང་རྟགས་གསརཔ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ཨེཔ་ཆོག་ཚིག་གསར་བཟོ་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ཨེཔ་ཆོག་ཚིག་ཆ་མེད་བཏང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་ཁ་སྐོང་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ནང་འཛུལ་ལྡེ་མིག་བཏོན་གཏང་ཡི།</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>རྩིས་ཐོ་ལག་ལེན་འཐབ་ཚུགསཔ་བཟོ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>རྩིས་ཐོ་ལག་ལེན་འཐབ་མ་ཚུགསཔ་བཟོ་ཡི།</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ནང་འཛུལ་དང་ལཱ་ཚོགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>རྩིས་ཐོའི་འགྱུར་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>དོ་སྣང་དགོཔ།</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ཉེན་སྲུང་གི་བྱ་བ་: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོའི་ནང་འཛུལ་དང་ ཉེན་སྲུང་ལུ་འགྱུར་བ་ཚུ། ཁྱོད་རང་གིས་མ་འབད་བའི་ག་ཅི་ཅིག་མཐོང་པ་ཅིན་ ཆོག་ཚིག་སོར་ཞིནམ་ལས་ ངོས་མ་ཤེས་པའི་སྒྲིག་ཆས་ཚུ་ཕྱིར་འཐོན་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ཁྱོད་རང་གི་སྒྲིག་ཆས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ཆོག་ཚིག་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ས་ཁོངས་འདི་གུ་ ཉེན་སྲུང་གི་བྱ་བ་ད་ཚུན་དྲན་ཐོ་མི་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>མཇུག་གི་ཉིནམ་ %days ནང་གི་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>འཐུས་ཤོར་བྱུང་བའི་འབད་རྩོལ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ད་ཚུན་ ཉེན་སྲུང་གི་བྱ་བ་དྲན་ཐོ་གཅིག་ཡང་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ངེ་གི་ནང་འཛུལ་གནད་སྡུད་ཌའུན་ལོཌ།</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ཁྱོད་རང་གི་ལཱ་ཚོགས་དང་ཉེན་སྲུང་གི་བྱུང་ལས་ཚུ་ JSON ཡིག་སྣོད་སྦེ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ཆོག་ཚིག</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ཆོག་ཚིག་དང་རིམ་པ་གཉིས་ཀྱི་ཨང་རྟགས།</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ངོས་འདྲ།</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ངོས་འདྲ།</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ཚར་གཅིག་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ལཱ་ཚོགས་དྲན་ཐོ་མ་བཀོད་པའི་ཧེ་མ་ནང་འཛུལ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ནང་འཛུལ་གྱི་སྙན་ཞུ།</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ས་ཁོངས་ནང་ནང་འཛུལ་འབད་ཡོད་མི་ག་ཨིན་ན་ རྩིས་ཐོ་ཚུ་གིས་ཚར་ག་དེམ་ཅིག་ནང་འཛུལ་འབདཝ་དང་འཐུས་ཤོར་བྱུངམ་ཨིན་ན་ དེ་ལས་ལག་ལེན་པ་གཅིག་ས་ཁོངས་ཆ་མཉམ་ལས་ཕྱིར་འཐོན་འབད་ནི། འདི་གིས་ལཱ་ཚོགས་སྐྱོང་མཁན་ག་དང་གཅིག་ཁར་ཡང་ལཱ་འབདཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ལཱ་ཚོགས་འདི་ཕྱིར་འཐོན་འབད་ཡི། སྒྲིག་ཆས་འདི་གིས་ལོག་སྟེ་ནང་འཛུལ་འབད་དགོ།</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login འདི་ ལཱ་ཚོགས་ %count ལས་ཕྱིར་འཐོན་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ལུ་ གཡོག་བཀོལ་བཞིན་པའི་ལཱ་ཚོགས་ཅིག་ཡང་མེདཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ID དང་ ལག་ལེན་པའི་མིང་ ཡང་ན་ གློག་འཕྲིན་ཁ་བྱང་འདི་ཡོད་པའི་རྩིས་ཐོ་གཅིག་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>འདི་ཁྱོད་རང་གིས་ལག་ལེན་འཐབ་དོ་ཡོད་པའི་ལཱ་ཚོགས་ཨིན། འདི་མཇུག་བསྡུ་ནིའི་དོན་ལུ་ ཕྱིར་འཐོན་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ལཱ་ཚོགས་དེ་ཧེ་མ་ལས་རང་མཇུག་བསྡུ་ཚར་ཡི།</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ཤོག་ལེབ་འདི་གི་དུས་ཡུན་རྫོགས་ཚར་ཡི། ག་ནི་ཡང་མ་སོར། ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ས་ཁོངས་འདི་གུ་ ལཱ་ཚོགས་ཚུ་དྲན་ཐོ་མི་བཀོད། (site.ini [UserSessionSettings] Tracking=disabled)</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ཐིག་ཁྲམ་ expuser_session མེད།</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>དེ་གསར་བཟོ་འབད་ཚར་ཞིནམ་ལས་ ལཱ་ཚོགས་ཚུ་དྲན་ཐོ་བཀོད་འོང་: php update/common/scripts/6.0/createusersessiontable.php ཡང་ན་ 6.0.15 གི་གནད་སྡུད་གཞི་རྟེན་དུས་མཐུན།</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ད་ལྟོ་དང་ད་རིས།</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>གཡོག་བཀོལ་བཞིན་པའི་ལཱ་ཚོགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ནང་འཛུལ་འབད་ཡོད་པའི་ལག་ལེན་པ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ད་རིས་ཀྱི་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ད་རིས་ཀྱི་འཐུས་ཤོར་བྱུང་བའི་འབད་རྩོལ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ལག་ལེན་པ་གཅིག་ས་ཁོངས་ཆ་མཉམ་ལས་ཕྱིར་འཐོན་འབད།</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>རྩིས་ཐོའི་ལཱ་ཚོགས་རེ་རེ་ ཞུ་བ་ཤུལ་མམ་ལུ་མཇུག་བསྡུཝ་ཨིན། &quot;ང་དྲན་འཛིན་འབད།&quot; གིས་བཞག་ཡོད་མི་ཚུ་ཡང་ཨིན། རྩིས་ཐོ་ཅིག་ ལག་པ་ཕྱི་འགྱུར་ནང་ལུ་ཐོབ་འོང་ནི་ཨིན་པ་ཅིན་ འདི་ལག་ལེན་འཐབ་གནང་། དེ་ལས་ དེ་གི་ཆོག་ཚིག་སླར་སྒྲིག་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ལག་ལེན་པའི་ ID དང་ ལག་ལེན་པའི་མིང་ ཡང་ན་ གློག་འཕྲིན་ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ས་ཁོངས་ཆ་མཉམ་ལས་ཕྱིར་འཐོན།</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ད་ལྟོ་ནང་འཛུལ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ཉེ་ཆར་ལག་ལེན་འཐབ་མི་ %limit སྟོན་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ལག་ལེན་པ།</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>སྒྲིག་ཆས།</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ནང་འཛུལ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>མཇུག་མམ་ལཱ་འབད་མི།</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>བྱ་བའི་ཐོ།</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>སྒྲིག་ཆས་འདི།</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>དྲན་ཐོ་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ཕྱིར་འཐོན།</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ནང་འཛུལ་འབད་ཡོད་པའི་ལཱ་ཚོགས་གཅིག་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>མཇུག་གི་ཉིནམ་ %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ནང་འཛུལ་དང་ འཐུས་ཤོར་བྱུང་བའི་འབད་རྩོལ་ཚུ་ ལག་ལེན་པའི་རྩིས་ཞིབ་དྲན་ཐོ་ལས་རྩིས་རྐྱབ་ཨིན། དེ་མེད། ལཱ་ཚོགས་གསརཔ་ཚུ་རྩིས་རྐྱབ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ཉིནམ།</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ནང་འཛུལ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>འཐུས་ཤོར་བྱུང་བའི་འབད་རྩོལ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ལཱ་ཚོགས་གསརཔ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ལཱ་ཚོགས་སྐྱོང་མཁན་: %handler། ལཱ་ཚོགས་ཚུ་ ཐིག་ཁྲམ་ expuser_session ལས་ལྷགཔ་ཨིན། དེ་འབདཝ་ལས་ སྙན་ཞུ་འདི་གིས་སྐྱོང་མཁན་ག་དང་གཅིག་ཁར་ཡང་ལཱ་འབདཝ་ཨིན།</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོའི་དོན་ལུ་ཉེན་སྲུང་གི་ཉེན་བརྡ།</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ཁྱོད་རང་གི་རྩིས་ཐོ་ %login ལུ་ཉེན་སྲུང་གི་བྱུང་ལས་ཅིག་བྱུང་ཡི: %event། འདི་ཁྱོད་རང་མིན་པ་ཅིན་ %url ལུ་ ཁྱོད་རང་གི་རྩིས་ཐོ་ཉེན་སྲུང་འབད་གནང་།</translation>
     </message>
 </context>
 </TS>

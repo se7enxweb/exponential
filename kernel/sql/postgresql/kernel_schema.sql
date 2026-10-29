@@ -2673,6 +2673,17 @@ CREATE TABLE expuser_session (
 
 
 
+CREATE TABLE expuser_session_info (
+    auth_detail character varying(32) DEFAULT ''::character varying NOT NULL,
+    country character varying(2) DEFAULT ''::character varying NOT NULL,
+    host character varying(255) DEFAULT ''::character varying NOT NULL,
+    location character varying(128) DEFAULT ''::character varying NOT NULL,
+    session_id integer DEFAULT 0 NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
 CREATE TABLE expuser_audit (
     actor_id integer DEFAULT 0 NOT NULL,
     actor_login character varying(150) DEFAULT ''::character varying NOT NULL,
@@ -4230,6 +4241,10 @@ CREATE INDEX expuser_session_active ON expuser_session USING btree (ended, last_
 
 
 
+CREATE INDEX expuser_session_info_user ON expuser_session_info USING btree (user_id);
+
+
+
 CREATE UNIQUE INDEX expuser_audit_event ON expuser_audit USING btree (event_id);
 
 
@@ -5353,6 +5368,11 @@ ALTER TABLE ONLY exp_data_sync_link
 
 ALTER TABLE ONLY expuser_session
     ADD CONSTRAINT expuser_session_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY expuser_session_info
+    ADD CONSTRAINT expuser_session_info_pkey PRIMARY KEY (session_id);
 
 
 

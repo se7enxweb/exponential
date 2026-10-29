@@ -87,7 +87,7 @@ und Läufe im Hintergrund ja.
 ## Praktische Übung
 
 Verwenden Sie eine Schulungsinstallation, auf der Sie Shell-Zugang haben (Ihre eigene, installiert mit
-`php bin/php/console exp:install`, siehe [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md)).
+`php bin/php/console exp:install --apply`, siehe [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md)).
 Nie auf einer Live-Website.
 
 1. Lesen Sie die Schritte „Einschalten“ der Funktionsseite und prüfen Sie, welche auf Ihrer Installation schon erledigt

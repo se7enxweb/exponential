@@ -44,7 +44,7 @@ Ask one question: "What would you like to do with Exponential?"
 
 ```text
 EDITOR       Sign in -> the "?" help button -> Getting started -> A tour of the administration
-EVALUATOR    ./console exp:install -> Getting started -> the layouts editor -> the forums
+EVALUATOR    ./console exp:install --apply -> Getting started -> the layouts editor -> the forums
 ADMIN        Database support -> Operating system support -> Security hardening -> Upgrading
 DEVELOPER    Develop with Git -> Extensions guide -> Setup > RAD -> Templates and design
 CONTRIBUTOR  Improving the help -> Helping with translations -> Reporting bugs well

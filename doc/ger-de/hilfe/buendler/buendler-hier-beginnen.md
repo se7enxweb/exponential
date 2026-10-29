@@ -42,7 +42,7 @@ dem aktuellen Stand halten.
   (Legacy, Nexus) ([Die Basis wählen](die-basis-waehlen.md)).
 - **Legen Sie Versionen fest.** Ein Release-Tag ändert sich nie; bauen Sie aus Tags und behalten Sie Ihre Lock-Datei
   ([Versionen, Tags und Pinning](versionen-tags-und-pinning.md)).
-- **Installieren Sie unbeaufsichtigt.** `php bin/php/console exp:install` oder der Kickstarter (`kickstart.ini`)
+- **Installieren Sie unbeaufsichtigt.** `php bin/php/console exp:install --apply` oder der Kickstarter (`kickstart.ini`)
   erledigen die gesamte Installation ohne Browser ([Die drei Installer](die-drei-installer.md)).
 - **Liefern Sie nie ein bekanntes Passwort aus.** Die Installer erzeugen ein zufälliges Administratorpasswort, wenn
   keines angegeben ist, und schreiben es nach `var/log/initial-admin-password`; öffentliche Demos sind die einzige

@@ -14326,6 +14326,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>このインストールは公開デモです。管理者パスワードは誰でも知り得る状態にあり、管理者パスワードの変更やリセットはできません。ここには個人的な情報を入力しないでください。</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>誰も使用していないアカウントや確認が必要なアカウント。無効化、ロック解除、エクスポートができます。</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ユーザー監査ログ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>アカウントごとに、変更した人、ログインした人、拒否された人を確認できます。フィルターとエクスポートも可能です。</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ログインレポート</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ログイン中のユーザー、日ごとのログイン数と失敗数、ユーザーのすべての場所からのログアウト。</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHPハンドラーのタイムアウトしたセッションは、このページや session_gc の cron ジョブのパートではなく、PHP 自身によって削除されます (session.gc_maxlifetime)。</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>すべてのユーザーのログイン中のセッションは、ログインレポートで一覧表示され、ログアウトさせることもできます。このレポートはどのセッションハンドラーでも動作します。</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ログインレポートを開く</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>まだありません</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>最近のログイン、失敗した試行、およびパスワード、メールアドレス、2 段階認証の変更。</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>このアカウントの最近のログイン、失敗した試行、セキュリティの変更。</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>アクティビティの確認</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ログイン失敗 %count 回</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab は書き込まれませんでした (%reason)。サイトを実行しているユーザーの crontab に次の行を追加してください。追加しないと、キュー、インポート、通知、検索インデックスが実行されません:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>再インストールは Kickstarter (%file の後、php bin/php/kickstarter.php run --apply) または新規インストールで行います。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>前回の実行で、メール転送が %count 件のメッセージを拒否しました。メールサーバーと site.ini MailSettings を確認してください。</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count 件のイベントが待機中ですが、通知の cron ジョブの実行は記録されていません。cron ジョブのパート「frequent」を crontab に追加するか、exp:notification:run --apply を実行してください。</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ノードピッカーで別のサイトまたはセクションを選択</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>所有者を変更できるのはシステム管理者だけです。root として ./console exp:content-check --fix-permissions --apply を実行してください。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>空</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>署名キーは 1 年以上前のものです。exp:audit key rotate --apply でローテーションしてください。</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>未送信</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>通知の cron ジョブは、実行のたびにここに記録します。パート frequent を crontab に追加するか、exp:notification:run --apply を実行してください。</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>コンソールを使用してください: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Setup &gt; Cronjobs</source>
         <translation>システム設定 &gt; cron ジョブ</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>cron ジョブのパートはまだ一度も実行されていません。ジョブキュー、インポート、通知、検索インデックスが待機しています。php bin/php/installcrontab.php --add --apply を実行するか、--show の出力行を crontab に追加してください。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>なし。</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>認証アプリで確認</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>メールのコードで確認</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>回復コードで確認</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>パスキーで確認</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>外部アカウントで確認</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ネットワーク単位で表示されます。アドレスはサイトのデータ保護設定に従って保存されます。</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>記録なし</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>場所</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>おおよそ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>デバイスの管理</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>認証アプリで確認</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>メールのコードで確認</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>回復コードで確認</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>パスキーで確認</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>外部アカウントで確認</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>記録なし</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>場所</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>おおよそ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>このユーザーのセッションの表示</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site のアカウント %login で、最近ログインしたことのない場所からログインがありました:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>おおよその場所</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os 上の %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ログインレポート</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ページを開く</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count 件中 %from–%to 件</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ユーザー名またはユーザー ID：イベントの対象となったアカウント、または操作を行ったユーザー。</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>アカウント</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>変更後</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>すべての結果</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>変更前</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>実行者</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>クリア</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>イベントは %days 日間保存されます。</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>イベントは手動で削除されるまで保存されます。</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>イベント</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>すべての操作</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>このアカウントのすべてのイベント</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>一覧を CSV でエクスポート（%count）</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>開始日時</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>一覧の絞り込み</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>一致するイベントはありません。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>1 ページの表示件数</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini で記録が無効になっています（[UserAuditSettings] UserAudit）。一覧には以前に記録された内容が表示されます。</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>拒否</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ユーザー監査ログのテーブルがありません。php update/common/scripts/6.0/createuseraudittable.php で作成してください。それまでは、監査ファイルにすべてのイベントが保存されます。</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>このページには SQL データベースが必要です。MongoDB では利用できません。監査ファイルにはすべてのイベントが保存されます。</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>終了日時</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ユーザー監査ログ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ユーザー</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>日時</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>場所</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>誰がどのアカウントを変更、作成、有効化、無効化、移動、または削除したか、誰がログインしたか拒否されたか、どのロールが割り当てられたか：イベントごとに 1 行、変更前と変更後のフィールド付きで記録されます。パスワードとシークレットが記録されることはありません。</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>グループ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>システム</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>不明</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>アカウントの保護</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site のアカウント %login に、回復コードを使用してログインがありました。</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>回復コードが使用されました</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>アカウント</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>おおよそのアドレス</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>再度ログインするには新しいパスワードを申請するか、サイトの管理者にお問い合わせください。</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>新しいパスワードの申請</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>各回復コードは 1 回だけ使用できます。携帯電話を紛失した場合は、認証アプリを設定し直し、新しい回復コードを安全な場所に保管してください。</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>アカウントへのログイン試行の失敗</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>今後は、ログイン時にパスワードに加えてコードの入力が求められます。ご自身で行った操作であれば、何もする必要はありません。</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ご自身による試行でパスワードを忘れた場合は、新しいパスワードを申請してください。そうでない場合は、より強力なパスワードを選択し、2 段階認証をオンにしてください。</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>心当たりがない場合は、第三者がパスワードを知っている可能性があります。今すぐパスワードを変更し、アカウントがどこでログインしているかを確認してください。</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>残りの回復コード</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>お使いのデバイスの確認</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>セキュリティ警告</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>%site のアカウント %login に、誤ったパスワードで %count 回連続してログインしようとする試行がありました。</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site のアカウント %login でセキュリティイベントが発生しました。</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>これはアカウントに関するセキュリティ警告です。この種の変更があるたびに送信され、オフにすることはできません。</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>日時</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site のアカウント %login の 2 段階認証がオフになりました。</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>2 段階認証がオフになりました</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site のアカウント %login の 2 段階認証がオンになりました。</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>2 段階認証がオンになりました</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site のアカウント %login は、ログインの失敗が多すぎたためロックされました。</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>アカウントは現在、パスワードだけで保護されています。心当たりがない場合は、パスワードを変更した後で 2 段階認証を再度オンにしてください。</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>アカウントがロックされました</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name のセキュリティアクティビティ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ログイン</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ログイン試行の失敗</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ログアウト</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>セッションのログアウト</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>新しいデバイスからのログイン</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>新しい場所からのログイン</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>本人確認済み (「本人確認」)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>本人確認の失敗</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>パスキーでログイン</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>パスキーによるログインの失敗</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ログイン拒否: 2 段階認証のコードがないか、正しくありません</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>2 段階認証のコードが正しくありません</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ログインの失敗によるアカウントのロック</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>アカウントのロック解除</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>パスワードの変更</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>パスワードの変更の失敗</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>パスワードのリセット</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>新しいパスワードの申請</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>メールアドレスの変更</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ユーザー名の変更</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>2 段階認証をオン</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>2 段階認証をオフ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>回復コードの使用</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>新しい回復コード</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>アプリパスワードを作成</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>アプリパスワードを取り消し</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>パスキーを追加</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>パスキーを削除</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>アカウントを有効化</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>アカウントを無効化</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ログインとセッション</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>アカウントの変更</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>要確認</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>自分</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ユーザー本人</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>実行者: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>方法</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ブラウザー</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>OS</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>デバイス</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>場所</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>国</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>セッション</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>対象</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>送信方法</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失敗した試行</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>残りのコード</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ログインハンドラー</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name のセキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>アカウントのログインとセキュリティの変更です。心当たりのない操作がある場合は、パスワードを変更し、見覚えのないデバイスをログアウトさせてください。</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>このアカウントのログインとセキュリティの変更です。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>パスワードの変更</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>アカウントに戻る</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>セキュリティアクティビティは記録されていません</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>セキュリティアクティビティはユーザー監査ログから読み取られますが、そのテーブル expuser_audit が存在しないか、このデータベースではサポートされていません。php update/common/scripts/6.0/createuseraudittable.php または 6.0.15 のデータベース更新を実行してください。</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>過去 %days 日間</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>過去 %days 日間のログイン</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>最近のセキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>拒否</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>セキュリティアクティビティはまだ記録されていません。</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>セキュリティイベントは %days 日間保持されます。</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>セキュリティイベントは、管理者が削除するまで保持されます。</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ログインデータのダウンロード</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>セッションとセキュリティイベントを JSON ファイルとして取得します。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ログイン</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ログイン試行の失敗</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ログアウト</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>セッションのログアウト</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>新しいデバイスからのログイン</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>新しい場所からのログイン</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>本人確認済み (「本人確認」)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>本人確認の失敗</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>パスキーでログイン</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>パスキーによるログインの失敗</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ログイン拒否: 2 段階認証のコードがないか、正しくありません</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>2 段階認証のコードが正しくありません</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ログインの失敗によるアカウントのロック</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>アカウントのロック解除</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>パスワードの変更</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>パスワードの変更の失敗</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>パスワードのリセット</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>新しいパスワードの申請</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>メールアドレスの変更</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ユーザー名の変更</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>2 段階認証をオン</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>2 段階認証をオフ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>回復コードの使用</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>新しい回復コード</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>アプリパスワードを作成</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>アプリパスワードを取り消し</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>パスキーを追加</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>パスキーを削除</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>アカウントを有効化</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>アカウントを無効化</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ログインとセッション</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>アカウントの変更</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>要確認</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>セキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name のセキュリティアクティビティ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>アカウントのログインとセキュリティの変更です。心当たりのない操作がある場合は、パスワードを変更し、見覚えのないデバイスをログアウトさせてください。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>パスワードの変更</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>このサイトでは、セキュリティアクティビティはまだ記録されていません。</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>過去 %days 日間のログイン</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失敗した試行</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>セキュリティアクティビティはまだ記録されていません。</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ログインデータのダウンロード</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>セッションとセキュリティイベントを JSON ファイルとして取得します。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>パスワード</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>パスワードと 2 段階認証のコード</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST インターフェイス</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP インターフェイス</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>シングルサインオン</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>セッションの記録開始前にログイン</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ログインレポート</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>サイトにログインしているユーザー、アカウントのログインとその失敗の頻度、およびユーザーのすべての場所からのログアウト。どのセッションハンドラーでも動作します。</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>セッションはログアウトされました。そのデバイスでは再度ログインする必要があります。</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login を %count 件のセッションからログアウトさせました。</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login には実行中のセッションがありませんでした。</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>その ID、ユーザー名、メールアドレスを持つアカウントはありません。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>これは現在使用中のセッションです。終了するには、ログアウトしてください。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>そのセッションは既に終了していました。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ページの有効期限が切れていました。何も変更されていません。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>このサイトではセッションは記録されません (site.ini [UserSessionSettings] Tracking=disabled)。</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>テーブル expuser_session がありません</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>テーブルを作成すると、セッションが記録されるようになります: php update/common/scripts/6.0/createusersessiontable.php または 6.0.15 のデータベース更新。</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>現在と今日</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>実行中のセッション</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ログイン中のユーザー</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>今日のログイン数</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>今日の失敗した試行</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ユーザーをすべての場所からログアウト</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>アカウントのすべてのセッションは、次のリクエストの時点で終了します。「ログイン状態を保持する」で維持されているセッションも同様です。アカウントが第三者の手に渡ったおそれがある場合に使用し、その後パスワードをリセットしてください。</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ユーザー ID、ユーザー名、またはメールアドレス</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>すべての場所からログアウト</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>現在ログイン中</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>最近使用された %limit 件を表示しています。</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ユーザー</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>デバイス</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>アドレス</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ログイン</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>最終アクティビティ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>このデバイス</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>記録なし</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ログアウト</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ログイン中のセッションはありません。</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>過去 %days 日間</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ログイン数と失敗した試行はユーザー監査ログから集計されますが、そのログが存在しません。新しいセッションは集計されます。</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>日付</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ログイン回数</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失敗した試行</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>新しいセッション</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>セッションハンドラー: %handler。セッションはテーブル expuser_session から読み取られるため、このレポートはどのハンドラーでも動作します。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>アカウントのセキュリティ警告</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>アカウント %login でセキュリティイベントが発生しました: %event。心当たりがない場合は、%url でアカウントを保護してください。</translation>
     </message>
 </context>
 </TS>

@@ -35,6 +35,12 @@
  * the sign-out keep their events (access.session.login, access.session.logout, now with the session's row id);
  * ending a session from the page is access.session.revoke, a sign-in from a new device access.session.new_device.
  *
+ * Each sign-in also keeps its details in expuser_session_info (expUserSessionInfo): the host, the second step
+ * (setMethodHint( $method, $detail )) and the place a local GeoIP database names (expUserGeoIP, off by default); a
+ * sign-in from a country the account was not signed in from within the retention is access.session.new_location and
+ * goes into the same mail. Addresses are kept as [UserSessionSettings] RecordIP says (by default as the audit keeps
+ * them). exportForUser() and eraseForUser() serve a data export and erasure.
+ *
  * Statics are per request (keyed by the request's start time), so persistent workers (Velocity) carry nothing over.
  * Guide: doc/eng-us/features/6.0/user-sessions.md, doc/eng-us/guides/your-devices-and-sessions.md
  *
@@ -55,7 +61,10 @@ class expUserSessionTracker
     const AUDIT_REVOKE = 'access.session.revoke';
     const AUDIT_NEW_DEVICE = 'access.session.new_device';
 
-    /** @var string|null a method an extension names for the sign-in being made (setMethodHint()) */
+    const AUDIT_NEW_LOCATION = 'access.session.new_location';
+
+    /** @var array|null array( request key, method, detail ): what an extension names for the sign-in being made
+     *  (setMethodHint()); kept for its request only, so a persistent worker never hands it to the next one */
     protected static $methodHint = null;
 
     /** @var array request key => array( token hash => bool ) the checks of this request */
@@ -67,8 +76,11 @@ class expUserSessionTracker
     /** @var bool a revoked session is being signed out (the logout asks for the current user again) */
     protected static $ending = false;
 
-    /** @var int|null the row of this request's sign-in */
+    /** @var array|null array( request key, row id ): the row of this request's session */
     protected static $currentRowID = null;
+
+    /** @var string the second step of the sign-in being recorded (detectMethod() leaves it here for create()) */
+    protected static $pendingDetail = '';
 
     /** @var array|null the mails sent in this request (tests) */
     public static $sentMails = array();
@@ -124,18 +136,29 @@ class expUserSessionTracker
         self::$checked = array();
         self::$currentRowID = null;
         self::$methodHint = null;
+        self::$pendingDetail = '';
         self::$sentMails = array();
+        if ( class_exists( 'expUserSessionInfo' ) )
+            expUserSessionInfo::reset();
     }
 
     /**
      * Lets an extension name the method of the sign-in it is about to make (eZUser::setCurrentlyLoggedInUser()):
-     * two_factor, single_sign_on ... Used once.
+     * two_factor, single_sign_on ... and the second step it used (totp, email, recovery, passkey, oauth). Used once,
+     * and only in the request that set it.
      *
      * @param string $method one of expUserSession::METHODS
+     * @param string|null $detail one of expUserSessionInfo::AUTH_DETAILS
      */
-    public static function setMethodHint( $method )
+    public static function setMethodHint( $method, $detail = null )
     {
-        self::$methodHint = in_array( $method, expUserSession::METHODS, true ) ? $method : null;
+        if ( !in_array( $method, expUserSession::METHODS, true ) )
+        {
+            self::$methodHint = null;
+            return;
+        }
+        $detail = in_array( $detail, expUserSessionInfo::AUTH_DETAILS, true ) ? $detail : '';
+        self::$methodHint = array( self::requestKey(), $method, $detail );
     }
 
     /**
@@ -145,16 +168,22 @@ class expUserSessionTracker
      */
     public static function detectMethod()
     {
+        self::$pendingDetail = '';
         if ( self::$methodHint !== null )
         {
-            $method = self::$methodHint;
+            list( $key, $method, $detail ) = self::$methodHint;
             self::$methodHint = null;
-            return $method;
+            if ( $key === self::requestKey() )
+            {
+                self::$pendingDetail = $detail;
+                return $method;
+            }
         }
         $script = basename( (string)eZSys::serverVariable( 'SCRIPT_NAME', true ) );
-        if ( $script === 'soap.php' )
+        if ( $script === 'index_soap.php' || $script === 'soap.php' )
             return 'soap';
-        if ( $script === 'webdav.php' )
+        // index_webdav.php, or webdav.php, its old name kept as a forwarding shim
+        if ( $script === 'index_webdav.php' || $script === 'webdav.php' )
             return 'webdav';
         if ( $script === 'index_rest.php' )
             return 'rest';
@@ -217,13 +246,93 @@ class expUserSessionTracker
     /** @return int|null the row of this session */
     public static function currentRowID()
     {
-        if ( self::$currentRowID !== null )
-            return self::$currentRowID;
+        if ( self::$currentRowID !== null && self::$currentRowID[0] === self::requestKey() )
+            return self::$currentRowID[1];
         $hash = self::currentTokenHash();
         if ( $hash === null || !self::available() )
             return null;
         $row = expUserSession::fetchByTokenHash( $hash );
         return $row ? (int)$row->attribute( 'id' ) : null;
+    }
+
+    /**
+     * Remembers the row of this request's session.
+     *
+     * @param int|null $id
+     */
+    protected static function setCurrentRowID( $id )
+    {
+        self::$currentRowID = $id === null ? null : array( self::requestKey(), (int)$id );
+    }
+
+    /**
+     * How addresses are kept: [UserSessionSettings] RecordIP, full, truncated (the network only: 203.0.113.x,
+     * 2001:db8:85a3::/48) or disabled (none). Empty or "audit" (the default) follows the data protection settings of
+     * the audit: none when audit.ini [UserAuditSettings] RecordIP=disabled or [AuditPrivacySettings]
+     * Field[actor.ip]=off, the network when it is truncate or hash, else the full address.
+     *
+     * @return string full, truncated, disabled
+     */
+    public static function recordIPMode()
+    {
+        $mode = strtolower( trim( (string)self::setting( 'RecordIP', 'audit' ) ) );
+        if ( in_array( $mode, array( 'full', 'enabled' ), true ) )
+            return 'full';
+        if ( in_array( $mode, array( 'truncated', 'truncate' ), true ) )
+            return 'truncated';
+        if ( $mode === 'disabled' || $mode === 'off' )
+            return 'disabled';
+        $audit = eZINI::instance( 'audit.ini' );
+        if ( $audit->hasVariable( 'UserAuditSettings', 'RecordIP' ) && $audit->variable( 'UserAuditSettings', 'RecordIP' ) === 'disabled' )
+            return 'disabled';
+        $fields = $audit->hasVariable( 'AuditPrivacySettings', 'Field' ) ? (array)$audit->variable( 'AuditPrivacySettings', 'Field' ) : array();
+        return self::modeFromAuditField( isset( $fields['actor.ip'] ) ? (string)$fields['actor.ip'] : 'full' );
+    }
+
+    /**
+     * The address mode that matches the audit's rule for actor.ip.
+     *
+     * @param string $rule full, truncate, hash, off
+     * @return string full, truncated, disabled
+     */
+    public static function modeFromAuditField( $rule )
+    {
+        switch ( strtolower( trim( (string)$rule ) ) )
+        {
+            case 'off':
+                return 'disabled';
+            case 'truncate':
+            case 'hash':
+                return 'truncated';
+            default:
+                return 'full';
+        }
+    }
+
+    /**
+     * An address as it is stored.
+     *
+     * @param string $ip
+     * @param string $mode full, truncated, disabled
+     * @return string
+     */
+    public static function storedIP( $ip, $mode )
+    {
+        $ip = mb_substr( trim( (string)$ip ), 0, 64 );
+        if ( $mode === 'disabled' || $ip === '' )
+            return '';
+        if ( $mode === 'truncated' )
+            return mb_substr( expUserAgent::approximateIP( $ip ), 0, 64 );
+        return $ip;
+    }
+
+    /** @return string the host this request was sent to, as it is stored */
+    public static function requestHost()
+    {
+        $host = (string)eZSys::serverVariable( 'HTTP_HOST', true );
+        if ( $host === '' )
+            $host = (string)eZSys::serverVariable( 'SERVER_NAME', true );
+        return strtolower( mb_substr( preg_replace( '/[^A-Za-z0-9.\-:\[\]]/', '', $host ), 0, 255 ) );
     }
 
     /**
@@ -251,9 +360,18 @@ class expUserSessionTracker
                 if ( $previous && $previous->isActive() )
                     $previous->end( 'replaced', $userID );
             }
-            $row = self::create( $userID, $method );
-            if ( $row && self::isNewDevice( $userID, $row ) )
-                self::newDevice( $user, $row );
+            $row = self::create( $userID, $method, self::$pendingDetail );
+            self::$pendingDetail = '';
+            if ( $row )
+            {
+                $reasons = array();
+                if ( self::isNewDevice( $userID, $row ) )
+                    $reasons[] = 'device';
+                if ( self::isNewLocation( $userID, $row ) )
+                    $reasons[] = 'location';
+                if ( $reasons )
+                    self::newDevice( $user, $row, $reasons );
+            }
             return $row;
         }
         catch ( Throwable $e )
@@ -264,20 +382,23 @@ class expUserSessionTracker
     }
 
     /**
-     * A row for this session, with a new token in the session.
+     * A row for this session, with a new token in the session, and its details (expUserSessionInfo: the host, the
+     * place a local GeoIP database names for the full address, the second step), when that table is there.
      *
      * @param int $userID
      * @param string $method
+     * @param string $detail the second step (expUserSessionInfo::AUTH_DETAILS) or ''
      * @return expUserSession|null
      */
-    protected static function create( $userID, $method )
+    protected static function create( $userID, $method, $detail = '' )
     {
         $token = bin2hex( random_bytes( 32 ) );
         eZSession::set( self::SESSION_KEY, $token );
         $now = time();
         $ua = expUserAgent::clean( eZSys::serverVariable( 'HTTP_USER_AGENT', true ) );
         $parsed = expUserAgent::parse( $ua );
-        $ip = mb_substr( (string)eZSys::clientIP(), 0, 64 );
+        $rawIP = (string)eZSys::clientIP();
+        $ip = self::storedIP( $rawIP, self::recordIPMode() );
         $lifetime = (int)eZSession::get( eZSession::COOKIE_LIFETIME_KEY, 0 );
         $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : '';
         $row = new expUserSession( array(
@@ -289,8 +410,19 @@ class expUserSessionTracker
             'ended' => 0, 'ended_by' => 0, 'end_reason' => '',
         ) );
         $row->store();
-        self::$currentRowID = (int)$row->attribute( 'id' );
+        self::setCurrentRowID( (int)$row->attribute( 'id' ) );
         self::$checked = array( self::requestKey() => array( $row->attribute( 'token_hash' ) => true ) );
+        try
+        {
+            $place = class_exists( 'expUserGeoIP' ) && expUserGeoIP::available() ? expUserGeoIP::lookup( $rawIP ) : null;
+            expUserSessionInfo::record( (int)$row->attribute( 'id' ), (int)$userID, array(
+                'host' => self::requestHost(), 'auth_detail' => (string)$detail,
+                'country' => $place ? $place['country'] : '', 'location' => $place ? $place['location'] : '' ) );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( 'Could not record the details of the sign-in: ' . $e->getMessage(), __METHOD__ );
+        }
         return $row;
     }
 
@@ -346,9 +478,10 @@ class expUserSessionTracker
      */
     protected static function touch( expUserSession $row )
     {
-        self::$currentRowID = (int)$row->attribute( 'id' );
+        self::setCurrentRowID( (int)$row->attribute( 'id' ) );
+        // time(), never REQUEST_TIME: a persistent worker (Velocity) keeps the latter from its first request
         $now = time();
-        $ip = mb_substr( (string)eZSys::clientIP(), 0, 64 );
+        $ip = self::storedIP( (string)eZSys::clientIP(), self::recordIPMode() );
         $interval = max( 0, (int)self::setting( 'TouchInterval', 300 ) );
         if ( $now - (int)$row->attribute( 'last_active' ) < $interval && $ip === (string)$row->attribute( 'last_ip' ) )
             return;
@@ -598,23 +731,67 @@ class expUserSessionTracker
     }
 
     /**
-     * A sign-in from a new device: the audit event and the mails.
+     * Whether a sign-in comes from a country the user's sessions within the retention never came from. Needs a
+     * GeoIP database (expUserGeoIP): without one no session has a country and no sign-in is "new" here. Neither is
+     * the first sign-in with a country (nothing to compare with).
+     *
+     * @param int $userID
+     * @param expUserSession $row the new row
+     * @return bool
+     */
+    public static function isNewLocation( $userID, expUserSession $row )
+    {
+        $info = expUserSessionInfo::fetchForSessions( array( (int)$row->attribute( 'id' ) ) );
+        $country = isset( $info[(int)$row->attribute( 'id' )] ) ? $info[(int)$row->attribute( 'id' )]['country'] : '';
+        if ( $country === '' )
+            return false;
+        return self::isNewCountryAmong( $country, expUserSessionInfo::countriesOfUser( (int)$userID, (int)$row->attribute( 'id' ) ) );
+    }
+
+    /**
+     * The rule of isNewLocation() without a database.
+     *
+     * @param string $country the sign-in's country ('' unknown)
+     * @param string[] $earlier the countries of the earlier sign-ins
+     * @return bool
+     */
+    public static function isNewCountryAmong( $country, array $earlier )
+    {
+        $country = strtoupper( (string)$country );
+        if ( $country === '' || !$earlier )
+            return false;
+        return !in_array( $country, array_map( 'strtoupper', $earlier ), true );
+    }
+
+    /**
+     * A sign-in from a new device or a new place: the audit events and the mails (one mail for both).
      *
      * @param eZUser $user
      * @param expUserSession $row
+     * @param string[] $reasons device, location
      */
-    protected static function newDevice( eZUser $user, expUserSession $row )
+    protected static function newDevice( eZUser $user, expUserSession $row, array $reasons = array( 'device' ) )
     {
-        $userID = (int)$user->attribute( 'contentobject_id' );
+        $info = expUserSessionInfo::fetchForSessions( array( (int)$row->attribute( 'id' ) ) );
+        $info = isset( $info[(int)$row->attribute( 'id' )] ) ? $info[(int)$row->attribute( 'id' )] : array( 'country' => '', 'location' => '' );
         if ( class_exists( 'expAuditHook' ) )
-            expAuditHook::emit( self::AUDIT_NEW_DEVICE, function () use ( $user, $row ) {
-                return array( 'object' => expAuditHook::user( $user ),
-                              'after' => array( 'session' => (int)$row->attribute( 'id' ), 'browser' => (string)$row->attribute( 'browser' ),
-                                                'os' => (string)$row->attribute( 'os' ), 'device' => (string)$row->attribute( 'device_type' ),
-                                                'method' => (string)$row->attribute( 'method' ) ) );
-            } );
+        {
+            if ( in_array( 'device', $reasons, true ) )
+                expAuditHook::emit( self::AUDIT_NEW_DEVICE, function () use ( $user, $row ) {
+                    return array( 'object' => expAuditHook::user( $user ),
+                                  'after' => array( 'session' => (int)$row->attribute( 'id' ), 'browser' => (string)$row->attribute( 'browser' ),
+                                                    'os' => (string)$row->attribute( 'os' ), 'device' => (string)$row->attribute( 'device_type' ),
+                                                    'method' => (string)$row->attribute( 'method' ) ) );
+                } );
+            if ( in_array( 'location', $reasons, true ) )
+                expAuditHook::emit( self::AUDIT_NEW_LOCATION, function () use ( $user, $row, $info ) {
+                    return array( 'object' => expAuditHook::user( $user ),
+                                  'after' => array( 'session' => (int)$row->attribute( 'id' ), 'country' => $info['country'],
+                                                    'location' => $info['location'], 'method' => (string)$row->attribute( 'method' ) ) );
+                } );
+        }
         if ( self::userMailWanted( $user ) )
-            self::sendUserMail( $user, $row );
+            self::sendUserMail( $user, $row, $reasons );
         if ( self::setting( 'NewDeviceAdminMail', 'disabled' ) === 'enabled' )
             self::sendAdminMail( $user, $row );
     }
@@ -659,13 +836,19 @@ class expUserSessionTracker
      * @param expUserSession $row
      * @return array
      */
-    protected static function mailVariables( eZUser $user, expUserSession $row )
+    protected static function mailVariables( eZUser $user, expUserSession $row, array $reasons = array( 'device' ) )
     {
         $url = 'user/sessions';
         eZURI::transformURI( $url, false, 'full' );
+        $secure = 'user/security';
+        eZURI::transformURI( $secure, false, 'full' );
+        $info = expUserSessionInfo::fetchForSessions( array( (int)$row->attribute( 'id' ) ) );
+        $info = isset( $info[(int)$row->attribute( 'id' )] ) ? $info[(int)$row->attribute( 'id' )] : array( 'location' => '', 'host' => '', 'auth_detail' => '' );
         return array( 'user' => $user, 'session' => $row, 'device' => $row->label(), 'device_type' => (string)$row->attribute( 'device_type' ),
                       'ip' => $row->approximateIP(), 'signed_in_at' => (int)$row->attribute( 'created' ),
-                      'method' => (string)$row->attribute( 'method' ), 'sessions_url' => $url );
+                      'method' => (string)$row->attribute( 'method' ), 'sessions_url' => $url, 'security_url' => $secure,
+                      'location' => (string)$info['location'], 'new_device' => in_array( 'device', $reasons, true ),
+                      'new_location' => in_array( 'location', $reasons, true ) );
     }
 
     /**
@@ -673,14 +856,15 @@ class expUserSessionTracker
      *
      * @param eZUser $user
      * @param expUserSession $row
+     * @param string[] $reasons device, location: what is new about the sign-in
      * @return bool handed to the transport
      */
-    public static function sendUserMail( eZUser $user, expUserSession $row )
+    public static function sendUserMail( eZUser $user, expUserSession $row, array $reasons = array( 'device' ) )
     {
         $email = (string)$user->attribute( 'email' );
         if ( !eZMail::validate( $email ) )
             return false;
-        $vars = self::mailVariables( $user, $row );
+        $vars = self::mailVariables( $user, $row, $reasons );
         $subject = ezpI18n::tr( 'kernel/user/sessions/mail', 'New sign-in to your account' );
         $body = ezpI18n::tr( 'kernel/user/sessions/mail', 'Your account %login was used to sign in from %device (%ip) on %date.', null,
                              array( '%login' => $user->attribute( 'login' ), '%device' => $vars['device'], '%ip' => $vars['ip'],
@@ -775,10 +959,12 @@ class expUserSessionTracker
         $ended = array();
         $timeout = self::sessionTimeout();
         $now = time();
-        foreach ( expUserSession::fetchForUser( (int)$userID, false, 200 ) as $row )
+        $rows = expUserSession::fetchForUser( (int)$userID, false, 200 );
+        $infos = expUserSessionInfo::fetchForSessions( array_map( function ( $r ) { return (int)$r->attribute( 'id' ); }, $rows ) );
+        foreach ( $rows as $row )
         {
-            $item = self::describe( $row, $current );
-            if ( $row->isActive() && ( $timeout <= 0 || $now - (int)$row->attribute( 'last_active' ) <= $timeout ) )
+            $item = self::describe( $row, $current, isset( $infos[(int)$row->attribute( 'id' )] ) ? $infos[(int)$row->attribute( 'id' )] : null );
+            if ( $row->isActive() && !self::hasTimedOut( (int)$row->attribute( 'last_active' ), (int)$row->attribute( 'remember_until' ), $timeout, $now ) )
                 $active[] = $item;
             elseif ( $history )
                 $ended[] = $item;
@@ -802,10 +988,14 @@ class expUserSessionTracker
      * @param string|null $currentHash
      * @return array
      */
-    public static function describe( expUserSession $row, $currentHash = null )
+    public static function describe( expUserSession $row, $currentHash = null, $info = null )
     {
         $parsed = $row->parsed();
+        $info = is_array( $info ) ? $info + array( 'host' => '', 'country' => '', 'location' => '', 'auth_detail' => '' )
+                                  : array( 'host' => '', 'country' => '', 'location' => '', 'auth_detail' => '' );
         return array(
+            'host' => $info['host'], 'country' => $info['country'], 'location' => $info['location'],
+            'auth_detail' => $info['auth_detail'], 'remember' => (int)$row->attribute( 'remember_until' ) > 0,
             'id' => (int)$row->attribute( 'id' ),
             'current' => $currentHash !== null && hash_equals( (string)$row->attribute( 'token_hash' ), (string)$currentHash ),
             'browser' => $parsed['browser'], 'browser_version' => $parsed['browser_version'],
@@ -818,6 +1008,23 @@ class expUserSessionTracker
             'siteaccess' => (string)$row->attribute( 'siteaccess' ), 'ended' => (int)$row->attribute( 'ended' ),
             'end_reason' => (string)$row->attribute( 'end_reason' ), 'ended_by' => (int)$row->attribute( 'ended_by' ),
         );
+    }
+
+    /**
+     * Whether a running session is over by time: not used for [Session] SessionTimeout and past its Remember me (a
+     * session kept by Remember me, 360 days by default, stays until then however long it was not used).
+     *
+     * @param int $lastActive
+     * @param int $rememberUntil 0: no Remember me
+     * @param int $timeout seconds, 0: none
+     * @param int $now
+     * @return bool
+     */
+    public static function hasTimedOut( $lastActive, $rememberUntil, $timeout, $now )
+    {
+        if ( $timeout <= 0 )
+            return false;
+        return $now - (int)$lastActive > (int)$timeout && $now > (int)$rememberUntil;
     }
 
     /** @return int [Session] SessionTimeout in seconds (0: none) */
@@ -845,13 +1052,21 @@ class expUserSessionTracker
         $timeout = self::sessionTimeout();
         if ( $timeout > 0 )
         {
+            // a session kept by Remember me stays until its remember_until (hasTimedOut()), so the pages walk on
+            // past the rows that are kept
+            $offset = 0;
             do
             {
                 $rows = expUserSession::fetchObjectList( $def, null, array( 'ended' => 0, 'last_active' => array( '<', $now - $timeout ) ),
-                                                         array( 'id' => 'asc' ), array( 'offset' => 0, 'length' => 500 ) );
+                                                         array( 'id' => 'asc' ), array( 'offset' => $offset, 'length' => 500 ) );
                 foreach ( (array)$rows as $row )
                 {
-                    $row->end( 'expired', 0, (int)$row->attribute( 'last_active' ) + $timeout );
+                    if ( !self::hasTimedOut( (int)$row->attribute( 'last_active' ), (int)$row->attribute( 'remember_until' ), $timeout, $now ) )
+                    {
+                        $offset++;
+                        continue;
+                    }
+                    $row->end( 'expired', 0, max( (int)$row->attribute( 'last_active' ) + $timeout, (int)$row->attribute( 'remember_until' ) ) );
                     $result['expired']++;
                 }
             } while ( is_array( $rows ) && count( $rows ) === 500 );
@@ -864,6 +1079,7 @@ class expUserSessionTracker
                                                      array( 'offset' => 0, 'length' => 500 ) );
             foreach ( (array)$rows as $row )
             {
+                expUserSessionInfo::removeForSession( (int)$row->attribute( 'id' ) );
                 $row->remove();
                 $result['removed']++;
             }
@@ -881,8 +1097,61 @@ class expUserSessionTracker
                 $row->remove();
                 $result['orphaned']++;
             }
+            expUserSessionInfo::removeForUser( $userID );
         }
         return $result;
+    }
+
+    /**
+     * Everything kept about a user's sessions, for a data export (GDPR: the right of access): every row of the user
+     * with its details, oldest first. The token's hash is left out: it is a key, not a fact about the person.
+     *
+     * @param int $userID
+     * @return array[]
+     */
+    public static function exportForUser( $userID )
+    {
+        if ( !self::available() )
+            return array();
+        $rows = array_reverse( expUserSession::fetchForUser( (int)$userID, false, 5000 ) );
+        $infos = expUserSessionInfo::fetchForSessions( array_map( function ( $r ) { return (int)$r->attribute( 'id' ); }, $rows ) );
+        $out = array();
+        foreach ( $rows as $row )
+        {
+            $id = (int)$row->attribute( 'id' );
+            $item = array();
+            foreach ( array_keys( expUserSession::definition()['fields'] ) as $field )
+                if ( $field !== 'token_hash' )
+                    $item[$field] = $row->attribute( $field );
+            $out[] = $item + ( isset( $infos[$id] ) ? $infos[$id] : array( 'host' => '', 'country' => '', 'location' => '', 'auth_detail' => '' ) );
+        }
+        return $out;
+    }
+
+    /**
+     * Removes every session row of a user and its details (GDPR: the right to erasure; a removed account). The user
+     * is signed out everywhere first: a running session whose row is gone ends on its next request.
+     *
+     * @param int $userID
+     * @return int rows removed
+     */
+    public static function eraseForUser( $userID )
+    {
+        if ( (int)$userID <= 0 || !self::available() )
+            return 0;
+        $n = 0;
+        do
+        {
+            $rows = expUserSession::fetchForUser( (int)$userID, false, 500 );
+            foreach ( $rows as $row )
+            {
+                $row->remove();
+                $n++;
+            }
+        } while ( count( $rows ) === 500 );
+        expUserSessionInfo::removeForUser( (int)$userID );
+        self::forgetChecks();
+        return $n;
     }
 
     /**

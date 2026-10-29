@@ -1,7 +1,7 @@
 # Caches vorwärmen: eine Site aufwärmen, bevor Besucher kommen
 
 Diese Anleitung erklärt das Vorladen von Caches in Exponential: **Setup > Vorladen** (`/setup/preload`) und den Befehl
-`php bin/php/preload.php`. Beide sind derselbe Lauf. Er ruft die Seiten einer Site so ab, wie es ein anonymer Besucher
+`php bin/php/preload.php --apply`. Beide sind derselbe Lauf. Er ruft die Seiten einer Site so ab, wie es ein anonymer Besucher
 täte, damit die Caches warm sind, bevor der erste Besucher kommt, und er listet die defekten Links mit den Seiten auf,
 die auf sie verweisen.
 
@@ -91,13 +91,13 @@ geclusterten Datei-Handler (`file.ini [ClusteringSettings] FileHandler` anders a
 php bin/php/preload.php --siteaccess=site --dry-run
 
 # warm the site of the siteaccess "site"
-php bin/php/preload.php --siteaccess=site
+php bin/php/preload.php --apply --siteaccess=site
 
 # a small run: the starting pages and the pages they link to, at most 20
-php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1
+php bin/php/preload.php --apply --siteaccess=site --max-pages=20 --max-depth=1
 
 # with the image check
-php bin/php/preload.php --siteaccess=site --images
+php bin/php/preload.php --apply --siteaccess=site --images
 ```
 
 | Option | Bedeutung |
@@ -126,7 +126,7 @@ lief und dieses nicht gestartet wurde.
 Für Cron, zum Beispiel nach dem nächtlichen Leeren der Caches:
 
 ```
-30 4 * * * cd /path/to/exponential && php bin/php/preload.php --siteaccess=site -q
+30 4 * * * cd /path/to/exponential && php bin/php/preload.php --apply --siteaccess=site -q
 ```
 
 Die Seite zeigt diese Zeile für die Auswahl in ihrem Formular. Der Befehl braucht die PHP-Kommandozeile und die

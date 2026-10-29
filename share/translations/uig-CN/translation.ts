@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ئورنىتىش &gt; Cron ۋەزىپىلىرى</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>تېخى ھېچقانداق cron ۋەزىپە قىسمى ئىجرا بولمىدى: ۋەزىپە ئۆچىرىكى، ئەكىرىشلەر، ئۇقتۇرۇشلار ۋە ئىزدەش ئىندېكسى كۈتۈۋاتىدۇ. php bin/php/installcrontab.php --add --apply نى ئىجرا قىلىڭ، ياكى --show چىقارغان قۇرلارنى crontab قا قوشۇڭ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>بۇ ئورنىتىلما ئاممىۋى سىناق نۇسخىسى: ھەر كىم ئۇنىڭ باشقۇرغۇچى ئىمىنى بىلىشى مۇمكىن، باشقۇرغۇچى ئىملىرىنى ئۆزگەرتكىلى ياكى ئەسلىگە كەلتۈرگىلى بولمايدۇ. بۇ يەرگە شەخسىي ھېچنېمە كىرگۈزمەڭ.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ئۈسكۈنىلىرىڭىز</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ھېچكىم ئىشلەتمەيدىغان ياكى دىققەت قىلىشقا تېگىشلىك ھېساباتلار؛ ئۇلارنى چەكلەڭ، قۇلۇپىنى ئېچىڭ ياكى چىقىرىڭ.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ئىشلەتكۈچى تەكشۈرۈش خاتىرىسى</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ھەر بىر ھېسابات بويىچە كىم ئۆزگەرتتى، كىم كىردى ياكى رەت قىلىندى؛ سۈزۈش ۋە چىقىرىش.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>كىرىش دوكلاتى</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>كىمنىڭ كىرگەنلىكى، ھەر كۈنلۈك كىرىش ۋە مەغلۇبىيەتلەر؛ بىر ئىشلەتكۈچىنى ھەممە يەردىن چىقىرىش.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP بىر تەرەپ قىلغۇچىنىڭ ۋاقتى ئۆتكەن سۆزلىشىشلىرىنى PHP ئۆزى (session.gc_maxlifetime) چىقىرىۋېتىدۇ، بۇ بەت ياكى session_gc cron ۋەزىپىسىنىڭ قىسمى ئەمەس.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>بارلىق ئىشلەتكۈچىلەرنىڭ كىرگەن سۆزلىشىشلىرى كىرىش دوكلاتىدا تىزىملىنىدۇ ۋە ئۇ يەردە چىقىرىلىدۇ، بۇ دوكلات ھەر قانداق سۆزلىشىش بىر تەرەپ قىلغۇچى بىلەن ئىشلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>كىرىش دوكلاتىنى ئاچ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>تېخى يوق</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>يېقىنقى كىرىشلىرىڭىز، مەغلۇپ بولغان سىناقلار ۋە ئىم، ئېلخەت ئادرېسى ۋە ئىككى باسقۇچلۇق كىرىشكە قىلىنغان ئۆزگەرتىشلەر.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>بۇ ھېساباتنىڭ يېقىنقى كىرىشلىرى، مەغلۇپ بولغان سىناقلىرى ۋە بىخەتەرلىك ئۆزگەرتىشلىرى.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>پائالىيەتنى تەكشۈر</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>مەغلۇپ بولغان كىرىش: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab يېزىلمىدى (%reason). بۇ قۇرلارنى تور بېكەت ئىجرا بولىدىغان ئىشلەتكۈچىنىڭ crontab ىغا قوشۇڭ، بولمىسا ئۆچرەت، ئەكىرىشلەر، ئۇقتۇرۇشلار ۋە ئىزدەش ئىندېكسى ھەرگىز ئىجرا بولمايدۇ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>قايتا ئورنىتىش Kickstarter (%file، ئاندىن php bin/php/kickstarter.php run --apply) ياكى يېڭى ئورنىتىش ئارقىلىق ئېلىپ بېرىلىدۇ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ئېلخەت توشۇغۇچى ئاخىرقى ئىجرادا %count ئۇچۇرنى رەت قىلدى. ئېلخەت مۇلازىمېتىرى ۋە site.ini MailSettings نى تەكشۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ھادىسە كۈتۈۋاتىدۇ ۋە ئۇقتۇرۇش cron ۋەزىپىسىنىڭ ھېچقانداق ئىجرا خاتىرىسى يوق. &quot;frequent&quot; cron ۋەزىپە قىسمىنى crontab قا قوشۇڭ، ياكى exp:notification:run --apply نى ئىجرا قىلىڭ.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>تۈگۈن تاللىغۇچ بىلەن باشقا تور بېكەت ياكى بۆلەكنى تاللاڭ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>پەقەت سىستېما باشقۇرغۇچىسىلا ئىگىسىنى ئۆزگەرتەلەيدۇ: ./console exp:content-check --fix-permissions --apply نى root سۈپىتىدە ئىجرا قىلىڭ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>بوش</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>ئىمزا ئاچقۇچى بىر يىلدىن ئېشىپ كەتتى: ئۇنى exp:audit key rotate --apply ئارقىلىق ئالماشتۇرۇڭ.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ئەۋەتىلمىدى</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ئۇقتۇرۇش cron ۋەزىپىسى ھەر بىر ئىجراسىنى بۇ يەرگە خاتىرىلەيدۇ. frequent قىسمىنى crontab قا قوشۇڭ، ياكى exp:notification:run --apply نى ئىجرا قىلىڭ.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>كونترول سۇپىسىنى ئىشلىتىڭ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>يوق.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>دەلىللەش ئەپى ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ئېلخەتتىكى كود ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ئەسلىگە كەلتۈرۈش كودى ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ئۆتۈش ئاچقۇچى ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>سىرتقى ھېسابات ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>تورى بويىچە كۆرسىتىلىدۇ؛ ئادرېس تور بېكەتنىڭ سانلىق مەلۇمات قوغداش تەڭشەكلىرى بويىچە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>خاتىرىلەنمىگەن</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>جاي</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تەخمىنىي</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ئۈسكۈنىلەرنى باشقۇر</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>دەلىللەش ئەپى ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ئېلخەتتىكى كود ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ئەسلىگە كەلتۈرۈش كودى ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ئۆتۈش ئاچقۇچى ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>سىرتقى ھېسابات ئارقىلىق</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>خاتىرىلەنمىگەن</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>جاي</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تەخمىنىي</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>بۇ ئىشلەتكۈچىنىڭ سۆزلىشىشلىرىنى كۆر</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site تور بېكىتىدىكى %login ھېساباتىڭىز ئارقىلىق يېقىندىن بۇيان كىرىلمىگەن بىر جايدىن ھازىرلا كىرىلدى:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>تەخمىنىي جاي</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os دىكى %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>كىرىش دوكلاتى</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>بەتنى ئاچ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to، جەمئىي %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>كىرىش ئىسمى ياكى ئىشلەتكۈچى ID: ھادىسە مۇناسىۋەتلىك ھېسابات ياكى مەشغۇلات قىلغان ئىشلەتكۈچى.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ھېسابات</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>مەشغۇلات</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>كېيىن</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ھەممە نەتىجە</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ئىلگىرى</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>قىلغۇچى</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>تازىلا</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تاماملاندى</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ھادىسىلەر %days كۈن ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ھادىسىلەر قولدا چىقىرىۋېتىلگۈچە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ھادىسىلەر</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ھەممە مەشغۇلات</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>بۇ ھېساباتنىڭ ھەممە ھادىسىلىرى</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>تىزىملىكنى CSV قىلىپ چىقار (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>باشلىنىش</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>تىزىملىكنى تارايتىش</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ماس كېلىدىغان ھادىسە يوق.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ھەر بەتتە</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>خاتىرىلەش audit.ini ھۆججىتىدە تاقالغان ([UserAuditSettings] UserAudit)؛ تىزىملىك ئىلگىرى خاتىرىلەنگەنلەرنى كۆرسىتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رەت قىلىندى</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نەتىجە</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>كۆرسەت</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ئىشلەتكۈچى تەكشۈرۈش خاتىرىسىنىڭ جەدۋىلى يوق. ئۇنى php update/common/scripts/6.0/createuseraudittable.php ئارقىلىق قۇرۇڭ؛ ئۇنىڭغىچە تەكشۈرۈش ھۆججەتلىرى ھەر بىر ھادىسىنى ساقلايدۇ.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>بۇ بەتكە SQL ساندان كېرەك؛ ئۇ MongoDB ئۈستىدە ئىشلىمەيدۇ. تەكشۈرۈش ھۆججەتلىرى ھەر بىر ھادىسىنى ساقلايدۇ.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ئاخىرلىشىش</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ئىشلەتكۈچى تەكشۈرۈش خاتىرىسى</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ئىشلەتكۈچى</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ۋاقىت</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ئورۇن</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>كىم قايسى ھېساباتنى ئۆزگەرتتى، قۇردى، قوزغاتتى، چەكلىدى، يۆتكىدى ياكى چىقىرىۋەتتى، كىم كىردى ياكى رەت قىلىندى ۋە قايسى روللار تەقسىم قىلىندى: ھەر بىر ھادىسە ئۈچۈن بىر قۇر، ئۆزگىرىشتىن ئىلگىرىكى ۋە كېيىنكى قىممەتلەر بىلەن. ئىم ۋە مەخپىي ئۇچۇرلار ھەرگىز خاتىرىلەنمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>گۇرۇپپا</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سىستېما</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامەلۇم</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ھېساباتىڭىزنى قوغداڭ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site تور بېكىتىدىكى %login ھېساباتىڭىزغا ئەسلىگە كەلتۈرۈش كودى ئارقىلىق كىرىلدى.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ئەسلىگە كەلتۈرۈش كودى ئىشلىتىلدى</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ھېسابات</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>تەخمىنىي ئادرېس</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>قايتا كىرىش ئۈچۈن يېڭى ئىم سوراڭ، ياكى تور بېكەت باشقۇرغۇچىلىرى بىلەن ئالاقىلىشىڭ.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>يېڭى ئىم سورا</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ھەر بىر ئەسلىگە كەلتۈرۈش كودى پەقەت بىر قېتىم ئىشلەيدۇ. ئەگەر تېلېفونىڭىزنى يوقىتىپ قويغان بولسىڭىز، دەلىللەش ئەپىڭىزنى قايتا تەڭشەڭ ۋە يېڭى ئەسلىگە كەلتۈرۈش كودلىرىنى بىخەتەر جايدا ساقلاڭ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ھېساباتىڭىزغا مەغلۇپ بولغان كىرىش سىناقلىرى</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>بۇنىڭدىن كېيىن، كىرگەندە ئىمىڭىزدىن باشقا بىر كود سورىلىدۇ. ئەگەر بۇنى ئۆزىڭىز قىلغان بولسىڭىز، ھېچ ئىش قىلىشىڭىزنىڭ ھاجىتى يوق.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ئەگەر ئۆزىڭىز بولسىڭىز ۋە ئىمىڭىزنى ئۇنتۇپ قالغان بولسىڭىز، يېڭى ئىم سوراڭ. ئۇنداق بولمىسا، تېخىمۇ كۈچلۈك ئىم تاللاڭ ۋە ئىككى باسقۇچلۇق كىرىشنى ئېچىڭ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ئەگەر بۇ سىز بولمىسىڭىز، بىرەيلەن ئىمىڭىزنى بىلىشى مۇمكىن: ئۇنى ھازىرلا ئۆزگەرتىڭ ۋە ھېساباتىڭىزنىڭ قەيەرلەردە كىرگەنلىكىنى تەكشۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>قالغان ئەسلىگە كەلتۈرۈش كودلىرى</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ئۈسكۈنىلىرىڭىزنى تەكشۈرۈڭ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>بىخەتەرلىك ئاگاھلاندۇرۇشى</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>بىرەيلەن %site تور بېكىتىدىكى %login ھېساباتىڭىزغا خاتا ئىم بىلەن ئۇدا %count قېتىم كىرىشكە ئۇرۇندى.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site تور بېكىتىدىكى %login ھېساباتىڭىزدا بىر بىخەتەرلىك ھادىسىسى يۈز بەردى.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>بۇ ھېساباتىڭىز ھەققىدىكى بىخەتەرلىك ئاگاھلاندۇرۇشى. ئۇ ھەر قېتىملىق بۇنداق ئۆزگىرىش ئۈچۈن ئەۋەتىلىدۇ ۋە ئۇنى تاقىغىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ۋاقىت</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site تور بېكىتىدىكى %login ھېساباتىڭىزنىڭ ئىككى باسقۇچلۇق كىرىشى تاقالدى.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ئىككى باسقۇچلۇق كىرىش تاقالدى</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site تور بېكىتىدىكى %login ھېساباتىڭىزنىڭ ئىككى باسقۇچلۇق كىرىشى ئېچىلدى.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ئىككى باسقۇچلۇق كىرىش ئېچىلدى</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site تور بېكىتىدىكى %login ھېساباتىڭىز كىرىش بەك كۆپ قېتىم مەغلۇپ بولغانلىقى ئۈچۈن قۇلۇپلاندى.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ھېساباتىڭىز ھازىر پەقەت ئىمىڭىز بىلەنلا قوغدىلىدۇ. ئەگەر بۇنى سىز قىلمىغان بولسىڭىز، ئىمىڭىزنى ئۆزگەرتكەندىن كېيىن ئىككى باسقۇچلۇق كىرىشنى قايتا ئېچىڭ.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ھېساباتىڭىز قۇلۇپلاندى</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ئىشلەتكۈچىنىڭ بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>كىردى</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>مەغلۇپ بولغان كىرىش سىنىقى</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>چىقتى</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سۆزلىشىشلەردىن چىقىرىلدى</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>يېڭى ئۈسكۈنىدىن كىرىش</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>يېڭى جايدىن كىرىش</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>سالاھىيەت جەزملەندى (&quot;ئۆزىڭىزنى جەزملەڭ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>سالاھىيەت تەكشۈرۈش مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ئۆتۈش ئاچقۇچى بىلەن كىردى</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ئۆتۈش ئاچقۇچى بىلەن كىرىش مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>كىرىش رەت قىلىندى: ئىككى باسقۇچلۇق كود يوق ياكى خاتا</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ئىككى باسقۇچلۇق كود خاتا</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>مەغلۇپ بولغان كىرىشلەردىن كېيىن ھېسابات قۇلۇپلاندى</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ھېسابات قۇلۇپتىن ئېچىلدى</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ئىم ئۆزگەرتىلدى</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ئىم ئۆزگەرتىش مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ئىم ئەسلىگە قايتۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>يېڭى ئىم سورالدى</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ئېلخەت ئادرېسى ئۆزگەرتىلدى</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ئىشلەتكۈچى ئىسمى ئۆزگەرتىلدى</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ئىككى باسقۇچلۇق كىرىش ئېچىلدى</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ئىككى باسقۇچلۇق كىرىش تاقالدى</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ئەسلىگە كەلتۈرۈش كودى ئىشلىتىلدى</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>يېڭى ئەسلىگە كەلتۈرۈش كودلىرى</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ئەپ ئىمى قۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ئەپ ئىمى بىكار قىلىندى</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ئۆتۈش ئاچقۇچى قوشۇلدى</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ئۆتۈش ئاچقۇچى چىقىرىۋېتىلدى</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ھېسابات قوزغىتىلدى</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ھېسابات چەكلەندى</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ھەممىسى</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>كىرىشلەر ۋە سۆزلىشىشلەر</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ھېسابات ئۆزگەرتىشلىرى</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>دىققەت قىلىشقا تېگىشلىك</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>سىز تەرىپىدىن</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ئىشلەتكۈچى تەرىپىدىن</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ئىجرا قىلغۇچى: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ئۇسۇل</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>توركۆرگۈ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>مەشغۇلات سىستېمىسى</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ئۈسكۈنە</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>جاي</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>دۆلەت</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>سۆزلىشىشلەر</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>قايسىلىرى</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>قانال</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>مەغلۇپ بولغان سىناقلار</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>قالغان كودلار</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>كىرىش بىر تەرەپ قىلغۇچى</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ئىشلەتكۈچىنىڭ بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ھېساباتىڭىزنىڭ كىرىشلىرى ۋە بىخەتەرلىك ئۆزگەرتىشلىرى. ئەگەر سىز قىلمىغان بىر ئىشنى كۆرسىڭىز، ئىمىڭىزنى ئۆزگەرتىڭ ۋە تونۇمايدىغان ئۈسكۈنىلەرنى چىقىرىۋېتىڭ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>بۇ ھېساباتنىڭ كىرىشلىرى ۋە بىخەتەرلىك ئۆزگەرتىشلىرى.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ئۈسكۈنىلىرىڭىز</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ئىمنى ئۆزگەرت</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ھېساباتقا قايت</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>بىخەتەرلىك پائالىيىتى خاتىرىلەنمەيدۇ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ئۇ ئىشلەتكۈچى تەكشۈرۈش خاتىرىسىدىن ئوقۇلىدۇ، ئەمما ئۇنىڭ expuser_audit جەدۋىلى يوق ياكى بۇ ساندان ئۇنى قوللىمايدۇ. php update/common/scripts/6.0/createuseraudittable.php نى ياكى 6.0.15 نەشرىنىڭ ساندان يېڭىلىنىشىنى ئىجرا قىلىڭ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ئاخىرقى %days كۈن</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ئاخىرقى %days كۈندىكى كىرىشلەر</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>يېقىنقى بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>كۆرسەت</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رەت قىلىندى</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>تېخى ھېچقانداق بىخەتەرلىك پائالىيىتى خاتىرىلەنمىدى.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>بىخەتەرلىك ھادىسىلىرى %days كۈن ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>بىخەتەرلىك ھادىسىلىرى باشقۇرغۇچى ئۇلارنى چىقىرىۋەتكۈچە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>كىرىش سانلىق مەلۇماتلىرىمنى چۈشۈر</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>سۆزلىشىشلىرىڭىز ۋە بىخەتەرلىك ھادىسىلىرىڭىز JSON ھۆججىتى سۈپىتىدە.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>كىردى</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>مەغلۇپ بولغان كىرىش سىنىقى</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>چىقتى</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سۆزلىشىشلەردىن چىقىرىلدى</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>يېڭى ئۈسكۈنىدىن كىرىش</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>يېڭى جايدىن كىرىش</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>سالاھىيەت جەزملەندى (&quot;ئۆزىڭىزنى جەزملەڭ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>سالاھىيەت تەكشۈرۈش مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ئۆتۈش ئاچقۇچى بىلەن كىردى</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ئۆتۈش ئاچقۇچى بىلەن كىرىش مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>كىرىش رەت قىلىندى: ئىككى باسقۇچلۇق كود يوق ياكى خاتا</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ئىككى باسقۇچلۇق كود خاتا</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>مەغلۇپ بولغان كىرىشلەردىن كېيىن ھېسابات قۇلۇپلاندى</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ھېسابات قۇلۇپتىن ئېچىلدى</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ئىم ئۆزگەرتىلدى</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ئىم ئۆزگەرتىش مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ئىم ئەسلىگە قايتۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>يېڭى ئىم سورالدى</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ئېلخەت ئادرېسى ئۆزگەرتىلدى</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ئىشلەتكۈچى ئىسمى ئۆزگەرتىلدى</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ئىككى باسقۇچلۇق كىرىش ئېچىلدى</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ئىككى باسقۇچلۇق كىرىش تاقالدى</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ئەسلىگە كەلتۈرۈش كودى ئىشلىتىلدى</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>يېڭى ئەسلىگە كەلتۈرۈش كودلىرى</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ئەپ ئىمى قۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ئەپ ئىمى بىكار قىلىندى</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ئۆتۈش ئاچقۇچى قوشۇلدى</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ئۆتۈش ئاچقۇچى چىقىرىۋېتىلدى</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ھېسابات قوزغىتىلدى</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ھېسابات چەكلەندى</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ھەممىسى</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>كىرىشلەر ۋە سۆزلىشىشلەر</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ھېسابات ئۆزگەرتىشلىرى</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>دىققەت قىلىشقا تېگىشلىك</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ئىشلەتكۈچىنىڭ بىخەتەرلىك پائالىيىتى</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ھېساباتىڭىزنىڭ كىرىشلىرى ۋە بىخەتەرلىك ئۆزگەرتىشلىرى. ئەگەر سىز قىلمىغان بىر ئىشنى كۆرسىڭىز، ئىمىڭىزنى ئۆزگەرتىڭ ۋە تونۇمايدىغان ئۈسكۈنىلەرنى چىقىرىۋېتىڭ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ئۈسكۈنىلىرىڭىز</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ئىمنى ئۆزگەرت</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>بۇ تور بېكەتتە بىخەتەرلىك پائالىيىتى تېخى خاتىرىلەنمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ئاخىرقى %days كۈندىكى كىرىشلەر</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>مەغلۇپ بولغان سىناقلار</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>تېخى ھېچقانداق بىخەتەرلىك پائالىيىتى خاتىرىلەنمىدى.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>كىرىش سانلىق مەلۇماتلىرىمنى چۈشۈر</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>سۆزلىشىشلىرىڭىز ۋە بىخەتەرلىك ھادىسىلىرىڭىز JSON ھۆججىتى سۈپىتىدە.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ئىم</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ئىم ۋە ئىككى باسقۇچلۇق كود</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ئارايۈزى</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ئارايۈزى</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>بىر قېتىملىق كىرىش (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>سۆزلىشىشلەر خاتىرىلىنىشتىن بۇرۇن كىرگەن</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>كىرىش دوكلاتى</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>تور بېكەتكە كىمنىڭ كىرگەنلىكى، ھېساباتلارنىڭ قانچىلىك دائىم كىرىدىغانلىقى ۋە مەغلۇپ بولىدىغانلىقى، ھەمدە بىر ئىشلەتكۈچىنى ھەممە يەردىن چىقىرىش. ھەر قانداق سۆزلىشىش بىر تەرەپ قىلغۇچى بىلەن ئىشلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>سۆزلىشىش چىقىرىلدى. ئۈسكۈنە قايتا كىرىشى كېرەك.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ئىشلەتكۈچى %count سۆزلىشىشتىن چىقىرىلدى.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ئىشلەتكۈچىنىڭ ئىجرا بولۇۋاتقان سۆزلىشىشى يوق ئىدى.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>بۇ ID، ئىشلەتكۈچى ئىسمى ياكى ئېلخەت ئادرېسىغا ئىگە ھېسابات يوق.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>بۇ سىز ئىشلىتىۋاتقان سۆزلىشىش. ئۇنى ئاخىرلاشتۇرۇش ئۈچۈن چىقىڭ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ئۇ سۆزلىشىش ئاللىبۇرۇن ئاخىرلاشقان ئىدى.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>بەتنىڭ ۋاقتى ئۆتۈپ كەتتى. ھېچنېمە ئۆزگەرتىلمىدى؛ قايتا سىناڭ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>بۇ تور بېكەتتە سۆزلىشىشلەر خاتىرىلەنمەيدۇ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session جەدۋىلى يوق</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ئۇ قۇرۇلغاندىن كېيىن سۆزلىشىشلەر خاتىرىلىنىدۇ: php update/common/scripts/6.0/createusersessiontable.php، ياكى 6.0.15 نەشرىنىڭ ساندان يېڭىلىنىشى.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ھازىر ۋە بۈگۈن</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>ئىجرا بولۇۋاتقان سۆزلىشىشلەر</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>كىرگەن ئىشلەتكۈچىلەر</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>بۈگۈنكى كىرىشلەر</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>بۈگۈنكى مەغلۇپ بولغان سىناقلار</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>بىر ئىشلەتكۈچىنى ھەممە يەردىن چىقار</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ھېساباتنىڭ ھەر بىر سۆزلىشىشى كېيىنكى ئىلتىماسىدا ئاخىرلىشىدۇ، &quot;مېنى ئەستە ساقلا&quot; ئارقىلىق ساقلانغانلىرىمۇ شۇنداق. ھېسابات خاتا قوللارغا چۈشۈپ قالغان بولۇشى مۇمكىن بولغاندا ئىشلىتىڭ؛ ئاندىن ئۇنىڭ ئىمىنى ئەسلىگە قايتۇرۇڭ.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ئىشلەتكۈچى ID، ئىشلەتكۈچى ئىسمى ياكى ئېلخەت ئادرېسى</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ھەممە يەردىن چىق</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ھازىر كىرگەن</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ئەڭ يېقىندا ئىشلىتىلگەن %limit سۆزلىشىش كۆرسىتىلدى.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ئىشلەتكۈچى</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ئۈسكۈنە</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ئادرېس</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>كىردى</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ئاخىرقى پائالىيەت</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>مەشغۇلاتلار</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>بۇ ئۈسكۈنە</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>خاتىرىلەنمىگەن</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>چىقىش</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ھېچقانداق سۆزلىشىش كىرمىگەن.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ئاخىرقى %days كۈن</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>كىرىشلەر ۋە مەغلۇپ بولغان سىناقلار ئىشلەتكۈچى تەكشۈرۈش خاتىرىسىدىن سانىلىدۇ، ئەمما ئۇ يوق؛ يېڭى سۆزلىشىشلەر سانىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>كۈن</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>كىرىشلەر</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>مەغلۇپ بولغان سىناقلار</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>يېڭى سۆزلىشىشلەر</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>سۆزلىشىش بىر تەرەپ قىلغۇچى: %handler. سۆزلىشىشلەر expuser_session جەدۋىلىدىن ئوقۇلىدۇ، شۇڭا دوكلات ھەر قانداق بىر تەرەپ قىلغۇچى بىلەن ئىشلەيدۇ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ھېساباتىڭىزنىڭ بىخەتەرلىك ئاگاھلاندۇرۇشى</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>%login ھېساباتىڭىزدا بىر بىخەتەرلىك ھادىسىسى يۈز بەردى: %event. ئەگەر بۇ سىز بولمىسىڭىز، ھېساباتىڭىزنى %url ئادرېسىدا قوغداڭ.</translation>
     </message>
 </context>
 </TS>

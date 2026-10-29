@@ -192,6 +192,19 @@ $ViewList['sessions'] = array(
     'params' => array( 'UserID' ),
 );
 
+// "Security activity" (doc/eng-us/features/6.0/user-sessions.md): the recent security events of the signed-in user's
+// own account (sign-ins, failed attempts, new devices and places, password, e-mail, two-step sign-in), read from the
+// user audit log; user/security/<user id> for another account needs the policy user/sessions, which the view checks.
+// Read only. See kernel/private/classes/views/user/security.php
+$ViewList['security'] = array(
+    'functions' => array( 'login' ),
+    'script' => 'security.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezmynavigationpart',
+    'unordered_params' => array( 'offset' => 'Offset' ),
+    'params' => array( 'UserID' ),
+);
+
 // The user audit log (doc/eng-us/features/6.0/user-audit.md): the security events about user accounts and groups
 // (table expuser_audit) filtered by user, action, result and date, paged, and the CSV of the filtered list (POST).
 // Needs the policy user/audit. See kernel/private/classes/views/user/audit.php
@@ -201,6 +214,19 @@ $ViewList['audit'] = array(
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezusernavigationpart',
     'unordered_params' => array( 'offset' => 'Offset' ),
+    'params' => array(),
+);
+
+// The sign-in report (doc/eng-us/features/6.0/user-sessions.md): how many sessions run and whose, the sign-ins and
+// failed attempts per day, the running sessions of every user (sign one out) and "Sign a user out everywhere". Reads
+// expuser_session, so it works with every session handler, the PHP files of the default one too. Needs the policy
+// user/sessions_manage; changes are POST only, with the page's own token. See
+// kernel/private/classes/views/user/sessionreport.php
+$ViewList['sessionreport'] = array(
+    'functions' => array( 'sessions_manage' ),
+    'script' => 'sessionreport.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezusernavigationpart',
     'params' => array(),
 );
 
@@ -225,5 +251,8 @@ $FunctionList['deactivate'] = array();
 $FunctionList['sessions'] = array();
 // read and export the user audit log (user/audit): who changed, signed in or was refused, for every account
 $FunctionList['audit'] = array();
+// the sign-in report of the whole site (user/sessionreport): running sessions of every user, sign-ins and failures per
+// day, and signing a user out everywhere
+$FunctionList['sessions_manage'] = array();
 
 ?>

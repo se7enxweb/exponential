@@ -4,7 +4,7 @@ audience: trainer, admin, developer
 category: training
 order: 63
 summary: Die Teilnehmenden schreiben kickstart.ini mit exp:kickstarter ini --yes, prüfen die mit REVIEW markierten Werte, setzen die Port-Zuordnung für drei Siteaccesses, führen einen Probelauf und eine Installation aus und lesen kickstart.log und setup.log. 55 Minuten.
-keywords: multisite und seitenpakete, kickstarter, probelauf, port-zuordnung, wartungsmodus, multisite and site packages, exp:kickstarter, kickstart.ini, ini --yes, run --dry-run, run --force, --list-steps, REVIEW, Continue=true, site_details, site_access, DatabaseAction, kickstart.log, setup.log, maintenance mode
+keywords: multisite und seitenpakete, kickstarter, probelauf, port-zuordnung, wartungsmodus, multisite and site packages, exp:kickstarter, kickstart.ini, ini --yes, run --dry-run, run --apply, --list-steps, REVIEW, Continue=true, site_details, site_access, DatabaseAction, kickstart.log, setup.log, maintenance mode
 type: help
 ---
 # Lektion 6.3: Der Kickstarter und kickstart.ini
@@ -35,7 +35,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 - `kickstart.ini` mit `exp:kickstarter ini --yes` schreiben und die mit `# REVIEW` markierten Werte prüfen;
 - die Abschnitte, `Continue=true` und die Schlüssel von `[site_access]` und `[site_details]` erklären;
-- eine Datei mit `run --list-steps` und `run --dry-run` prüfen und mit `run --force` installieren;
+- eine Datei mit `run --list-steps` und `run --dry-run` prüfen und mit `run --apply` installieren;
 - `var/log/kickstart.log` und `var/log/setup.log` lesen und nach einem Fehler mit der Wartungsseite umgehen.
 
 ## Hinweise für Trainer
@@ -57,7 +57,7 @@ Quelle: [6. Der Kickstarter](../../../../installation/06-kickstarter.md).
    `EditorAccess` für Pfade; `AccessPort`, `AdminAccessPort`, `EditorAccessPort` für Ports; die Schlüssel
    `...Hostname` für Hosts. Geben Sie zur Sicherheit alle drei einer Art an.
 4. **Ausführen** (4 Minuten). `run --list-steps` gibt die Schritttabelle aus; `run --dry-run` führt `DatabaseChoice`
-   bis `SiteDetails` aus, importiert das Paket in ein temporäres Repository und schreibt nichts; `run --force`
+   bis `SiteDetails` aus, importiert das Paket in ein temporäres Repository und schreibt nichts; `run --apply`
    installiert. Ohne `--force` hält ein Lauf an, der `CreateSites` enthält. Während er arbeitet, zeigt die Website die
    Wartungsseite; nach einem fehlgeschlagenen Schritt bleibt sie im Wartungsmodus bis zum nächsten erfolgreichen Lauf
    oder `php bin/php/maintenance.php off`.
@@ -99,10 +99,10 @@ ausliefern wird.
      `AdminAccessPort=9001`, `EditorAccessPort=9002`;
    - `[site_admin]`: `Email=webmaster@example.invalid`, `Password` leer gelassen.
 4. Zeigen Sie die Schritte an: `php bin/php/console exp:kickstarter run --list-steps`.
-5. Führen Sie ohne `--force` aus: `php bin/php/console exp:kickstarter run`. Lesen Sie die Meldung und den
+5. Führen Sie ohne `--force` aus: `php bin/php/console exp:kickstarter run --apply`. Lesen Sie die Meldung und den
    Exit-Status.
 6. Probelauf: `php bin/php/console exp:kickstarter run --dry-run`. Warten Sie auf "Dry-run completed".
-7. Installieren Sie: `php bin/php/console exp:kickstarter run --force`. Achten Sie auf "Maintenance mode on" am Anfang
+7. Installieren Sie: `php bin/php/console exp:kickstarter run --apply --force`. Achten Sie auf "Maintenance mode on" am Anfang
    und die Zusammenfassung am Ende, mit dem erzeugten Passwort.
 8. Lesen Sie die Port-Einstellungen, die der Lauf geschrieben hat:
    `php bin/php/console exp:ini list site.ini/PortAccessSettings global` und

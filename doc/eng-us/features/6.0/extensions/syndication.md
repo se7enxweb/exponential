@@ -90,6 +90,7 @@ not as a manual kernel edit.
 | 1.3.1 | 2 October 2026 | `share/db_schema.dba` describes the eleven syndication tables (columns, defaults, primary keys and the SOAP log's three indexes) in the engine-neutral schema format, so an installer can create them on every database Exponential supports, not only MySQL. Verified by loading it into a fresh SQLite database and by generating the MySQL and PostgreSQL schema from it. `ezinfo.php` and `extension.xml` state version, license and website. |
 | 1.3.2 | 2 October 2026 | Commands and cronjob parts list a description; copyright notices name 1998 - 2026 7x & Exponential Foundation first. |
 | 1.3.3 | | A dashboard, lists with filter, sort and paging, detail views for feeds and imports, removal with confirmation, inline notices, German strings; the tables can be created from the dashboard; "run now" in the background; console commands and runnable cronjob parts. Fixes: removing a feed, source, filter or import was a fatal error on PHP 8; the import wizard started over on every click; filter types were evaluated as code; remote data was unserialized with objects; a first fetch failed because the `modified` parameter was left out. |
+| 1.3.14 | 29 October 2026 | The dashboard and a feed's page show the SOAP server as `index_soap.php` when the kernel has it (6.0.15 and later; `soap.php` on an older kernel), and the import wizard gives `https://example.com/index_soap.php` as the example ([the SOAP entry script is now index_soap.php](../../../bc/6.0/soap-entry-script-index-soap.md)). |
 
 ## Related pages
 

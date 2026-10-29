@@ -102,4 +102,19 @@ class eZSOAPServerFunctionNameTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 1, $server->responses );
         $this->assertInstanceOf( 'eZSOAPFault', $server->responses[0][2] );
     }
+
+    /**
+     * An empty POST body (a probe, a broken client) and XML without a SOAP Body are answered with the "Bad XML"
+     * fault: DOMDocument::loadXML('') throws on PHP 8, which used to end in a 500 error page.
+     */
+    public function testEmptyBodyAndMissingSoapBodyAnswerAFault()
+    {
+        foreach ( array( '', "  \n", '<?xml version="1.0"?><nothing/>' ) as $raw )
+        {
+            $server = new eZSOAPServerFunctionNameTestServer( $raw );
+            $server->processRequest();
+            $this->assertCount( 1, $server->responses, var_export( $raw, true ) );
+            $this->assertInstanceOf( 'eZSOAPFault', $server->responses[0][2] );
+        }
+    }
 }

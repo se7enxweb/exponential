@@ -139,7 +139,7 @@ Die Details zu jedem Konzept stehen unter [Inhalte auf Exponential abbilden](inh
 - [ ] Kündigen Sie der Redaktion das Einfrieren an; stoppen Sie Änderungen an der alten Site.
 - [ ] Letzter Export, letzter Import, Zählung, Test der Weiterleitungen.
 - [ ] Senken Sie die DNS-TTL einen Tag vorher; schalten Sie DNS oder den Proxy um.
-- [ ] Leeren Sie die Caches und wärmen Sie die meistbesuchten Seiten vor (`./console exp:warm`, `./console exp:preload`).
+- [ ] Leeren Sie die Caches und wärmen Sie die meistbesuchten Seiten vor (`./console exp:warm`, `./console exp:preload --apply`).
 - [ ] Beobachten Sie in den ersten Stunden die Protokolle (`./console exp:explogs`) und die 404-Liste; ergänzen Sie
       Weiterleitungen für das, was dort auftaucht.
 - [ ] Reichen Sie die Sitemap ein; prüfen Sie die Search Console jeder Suchmaschine auf Crawling-Fehler.

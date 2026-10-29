@@ -59,7 +59,7 @@ something editors manage (make it a content class); configuring the same value i
 
 ## Your first week
 
-1. Install a development copy (`./console exp:install`) and read [Exponential for web framework developers](exponential-for-framework-developers.md).
+1. Install a development copy (`./console exp:install --apply`) and read [Exponential for web framework developers](exponential-for-framework-developers.md).
 2. Day two: [The request lifecycle](the-request-lifecycle.md), [Siteaccesses](siteaccesses-hosts-and-tenants.md),
    [Configuration](configuration-ini-files.md).
 3. Day three: [Task: build a small CRUD module](your-first-module-step-by-step.md).

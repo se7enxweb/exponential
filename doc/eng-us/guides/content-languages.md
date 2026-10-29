@@ -399,7 +399,7 @@ installation root; add `--allow-root-user` when you run as root.
 
 | Command | When |
 |---|---|
-| `php bin/php/ezcache.php --clear-id=content_language` | The cached list of content languages: after removing a language, and after the table was changed by hand or by a script; then `./console exp:velocity cache clear`, so the pages on port 8080 drop it too |
+| `php bin/php/ezcache.php --clear-id=content_language` | The cached list of content languages: after removing a language, and after the table was changed by hand or by a script; then `./console exp:velocity cache clear --apply`, so the pages on port 8080 drop it too |
 | `php bin/php/ezcache.php --clear-tag=ini` | After changing a `SiteLanguageList` or any `[RegionalSettings]` setting |
 | `php bin/php/ezcache.php --clear-tag=content` | After a change to languages or translations, so lists and pages are drawn again (adding or removing a language from the page does this itself) |
 | `./console exp:updateniceurls --update-nodes` or `php bin/php/updateniceurls.php -s admin` | Rebuild the URL aliases of all nodes, for example after many translations were added by a script; aliases are kept per language |
@@ -410,7 +410,7 @@ installation root; add `--allow-root-user` when you run as root.
 | `./console exp:loremipsum <object id> --dry-run` | Fill the translation of objects in the test language Lorem Ipsum with lorem ipsum text, once it is added; [guide](test-language-lorem-ipsum.md) |
 
 Velocity (the application server on port 8080) keeps its own response cache: after any of these, also run
-`./console exp:velocity cache clear`.
+`./console exp:velocity cache clear --apply`.
 
 ## 11. Workflows, step by step
 
@@ -427,7 +427,7 @@ The site has one public siteaccess, `site`, with `SiteLanguageList[]=eng-US`.
    `settings/override/site.ini.append.php`, and set up the matching (a `/de` URL element or a host name, see
    [10.2](../install/10-after-installing.md#102-siteaccesses-and-site-addresses)).
 3. **Clear the caches**: `php bin/php/ezcache.php --clear-tag=ini,content`, then
-   `./console exp:velocity cache clear`. The German card now shows *Shown first by 1* and the chip `site_de`.
+   `./console exp:velocity cache clear --apply`. The German card now shows *Shown first by 1* and the chip `site_de`.
 4. **Translate.** Start with the front page and the main menu folders (section 7). Until a page is translated,
    `site_de` shows its English translation, because `eng-US` is the second language of its list.
 5. **Mark the shared objects always available** where they are not already (users, media folders), so they show on
@@ -493,7 +493,7 @@ the **Language** limitation of the user's `content/edit`, `content/translate` an
 set `Locale` for the interface, `SiteLanguageList` for content.
 
 **The page looks different on port 8080 than through Apache.** Velocity caches responses and keeps PHP classes
-loaded: run `./console exp:velocity cache clear`, and after an update of the kernel `./console exp:velocity deploy`.
+loaded: run `./console exp:velocity cache clear --apply`, and after an update of the kernel `./console exp:velocity deploy`.
 
 ## References
 

@@ -68,7 +68,7 @@ Für Integrationen bedeutet das:
 - **Anonyme** `GET`-Aufrufe (ein öffentlicher RSS-Feed, ein anonymer `ezjscore`-Aufruf) können für die Lebensdauer der
   Seite aus dem Cache beantwortet werden; die Header `X-Cache: HIT` und `Age` sagen das. Senden Sie aus eigenen
   Endpunkten, die immer frisch sein müssen, `Cache-Control: no-store`.
-- Leeren Sie nach einem Import den Antwort-Cache (`php bin/php/console exp:velocity cache clear`), wenn anonyme Clients
+- Leeren Sie nach einem Import den Antwort-Cache (`php bin/php/console exp:velocity cache clear --apply`), wenn anonyme Clients
   die Änderung sofort sehen müssen ([Caching nach Importen](caching-nach-importen.md)).
 
 ## Wo die Last laufen sollte

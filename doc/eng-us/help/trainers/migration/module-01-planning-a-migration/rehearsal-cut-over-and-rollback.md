@@ -76,7 +76,7 @@ system.
 
 ## Hands-on exercise
 
-Use your own training installation (installed with `php bin/php/console exp:install`) as the "new site". You will put
+Use your own training installation (installed with `php bin/php/console exp:install --apply`) as the "new site". You will put
 it into maintenance mode and back, as in a cut-over.
 
 1. In the installation root, show the options of the maintenance script:

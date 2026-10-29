@@ -264,6 +264,12 @@ Die drei Änderungen, auf die man am häufigsten stößt:
   eingeschaltet (September und Oktober 2026): Wenn ein Host Ihre Administration in einem Frame einbettet, setzen Sie den
   Header bewusst.
 
+**Wenn WebDAV eingeschaltet ist**: Seit 6.0.15 heißt sein Einstiegsskript `index_webdav.php`. `webdav.php` leitet nur
+noch dorthin weiter und wird in einer späteren Hauptversion entfernt. Ändern Sie den virtuellen Host (auch den für
+HTTPS) und die Rewrite-Regeln, und testen Sie mit
+`curl -i -X PROPFIND -H 'Depth: 1' https://www.example.com/index_webdav.php/` (erwartet: `207 Multi-Status`):
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../bc/6.0/webdav-einstiegsskript-index-webdav.md).
+
 Was sich Monat für Monat geändert hat, erzählt die [Chronik](../../eng-us/history/2026/); jede einzelne Änderung steht im
 [Verzeichnis des Root-Repositorys](../geschichte/aenderungsverzeichnis/exponential-root.md).
 

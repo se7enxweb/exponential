@@ -133,7 +133,7 @@ RewriteRule ^/var_cache/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.ph
 |---|---|---|
 | `php bin/php/clusterize.php` | moves the files of `var/` into the cluster; `-u` moves them back | `-u`, `--skip-binary-files`, `--skip-media-files`, `--skip-images`, `-r` (remove after copying), `-n` (do not wait) |
 | `php bin/php/dfscleanup.php` | checks the mount against the `ezdfsfile` table and the other way | `-S` (share against database), `-B` (database against share), `-D` (delete what does not exist), `--path`, `--iteration-limit` |
-| `php bin/php/clusterpurge.php` | physically removes cluster files that expired | `--scopes=...`, `--expiry=<days>` (default 30), `--dry-run`, `--iteration-sleep`, `--iteration-limit`, `--memory-monitoring` |
+| `php bin/php/clusterpurge.php --apply` | physically removes cluster files that expired | `--scopes=...`, `--expiry=<days>` (default 30), `--dry-run`, `--iteration-sleep`, `--iteration-limit`, `--memory-monitoring` |
 
 Run `dfscleanup.php` with `-S` and `-B` first and read the result before you add `-D`
 ([15.17](../../../install/15-migrating-from-5x-legacy.md#1517-cluster-and-dfs)). `clusterpurge.php` is also the cronjob part

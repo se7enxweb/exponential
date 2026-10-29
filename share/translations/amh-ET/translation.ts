@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ዝግጅት &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>እስካሁን ምንም የክሮን ሥራ (cronjob) ክፍል አልሄደም፦ የሥራ ወረፋው፣ ማስመጣቶቹ፣ ማሳወቂያዎቹ እና የፍለጋ ማውጫው በመጠበቅ ላይ ናቸው። php bin/php/installcrontab.php --add --apply ያሂዱ፣ ወይም የ --show መስመሮችን ወደ crontab ያክሉ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ይህ ጭነት ይፋዊ የሙከራ ማሳያ ነው፤ ማንኛውም ሰው የአስተዳዳሪውን የይለፍ ቃል ሊያውቅ ይችላል፣ እንዲሁም የአስተዳዳሪ የይለፍ ቃሎች ሊቀየሩ ወይም ዳግም ሊቀናበሩ አይችሉም። እዚህ ምንም የግል መረጃ አያስገቡ።</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ማንም የማይጠቀምባቸው ወይም ትኩረት የሚያስፈልጋቸው መለያዎች፤ ያሰናክሏቸው፣ ይክፈቱ ወይም ይላኳቸው።</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>የተጠቃሚ ኦዲት ምዝግብ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ማን እንደቀየረ፣ እንደገባ ወይም ውድቅ እንደተደረገ በእያንዳንዱ መለያ፤ ማጣራት እና መላክ።</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>የመግቢያ ሪፖርት</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ማን እንደገባ፣ በየቀኑ የተደረጉ መግቢያዎች እና ውድቀቶች፤ ተጠቃሚን ከሁሉም ቦታ ያስወጡ።</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>የPHP ማስተናገጃ ጊዜያቸው ያለፈ ክፍለ ጊዜዎች የሚወገዱት በPHP ራሱ (session.gc_maxlifetime) ነው፤ በዚህ ገጽ ወይም በsession_gc cronjob ክፍል አይደለም።</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>የሁሉም ተጠቃሚዎች የገቡ ክፍለ ጊዜዎች በመግቢያ ሪፖርቱ ላይ ይዘረዘራሉ፣ ይወጣሉም፤ ሪፖርቱ ከማንኛውም የክፍለ ጊዜ ተቆጣጣሪ ጋር ይሠራል።</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>የመግቢያ ሪፖርቱን ክፈት</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>እስካሁን የለም</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>የቅርብ ጊዜ መግቢያዎችዎ፣ ያልተሳኩ ሙከራዎች እና በይለፍ ቃልዎ፣ በኢሜይል አድራሻዎ እና በባለሁለት ደረጃ መግቢያ ላይ የተደረጉ ለውጦች።</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>የዚህ መለያ የቅርብ ጊዜ መግቢያዎች፣ ያልተሳኩ ሙከራዎች እና የደህንነት ለውጦች።</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>እንቅስቃሴውን ገምግም</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ያልተሳኩ መግቢያዎች፦ %count</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab አልተጻፈም (%reason)። እነዚህን መስመሮች ጣቢያው በሚሰራበት ተጠቃሚ crontab ውስጥ ያክሉ፣ አለበለዚያ ወረፋው፣ ማስመጣቶቹ፣ ማሳወቂያዎቹ እና የፍለጋ ማውጫው በጭራሽ አይሰሩም፦</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ዳግም መጫን የሚደረገው በKickstarter (%file፣ ከዚያም php bin/php/kickstarter.php run --apply) ወይም በአዲስ ጭነት ነው።</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>የደብዳቤ ማስተላለፊያው ባለፈው ሩጫ %count መልዕክቶችን ውድቅ አድርጓል። የደብዳቤ አገልጋዩን እና site.ini MailSettings ን ይፈትሹ።</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ክስተቶች በመጠበቅ ላይ ናቸው፣ የማሳወቂያው የክሮን ሥራ ምንም ሩጫ አልተመዘገበም። የክሮን ሥራ ክፍሉን «frequent» ወደ crontab ያክሉ፣ ወይም exp:notification:run --apply ያሂዱ።</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>በመስቀለኛ ነጥብ መራጭ ሌላ ጣቢያ ወይም ክፍል ይምረጡ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ባለቤቱን መቀየር የሚችለው የሥርዓቱ አስተዳዳሪ ብቻ ነው፦ ./console exp:content-check --fix-permissions --apply እንደ root ያሂዱ።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ባዶ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>የመፈረሚያ ቁልፉ ከአንድ ዓመት በላይ ሆኖታል፦ በ exp:audit key rotate --apply ይቀይሩት።</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ያልተላከ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>የማሳወቂያው የክሮን ሥራ እያንዳንዱን ሩጫውን እዚህ ይመዘግባል። ክፍሉን frequent ወደ crontab ያክሉ፣ ወይም exp:notification:run --apply ያሂዱ።</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ኮንሶሉን ይጠቀሙ፦ ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ምንም።</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>በማረጋገጫ መተግበሪያ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>በኢሜይል በተላከ ኮድ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>በመልሶ ማግኛ ኮድ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>በይለፍ ቁልፍ (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>በውጫዊ መለያ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>እንደ አውታረ መረቡ ይታያል፤ አድራሻው የሚቀመጠው የጣቢያው የውሂብ ጥበቃ ቅንብሮች እንደሚሉት ነው።</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>አልተመዘገበም</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>አካባቢ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>በግምት</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>መሣሪያዎችን አስተዳድር</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>በማረጋገጫ መተግበሪያ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>በኢሜይል በተላከ ኮድ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>በመልሶ ማግኛ ኮድ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>በይለፍ ቁልፍ (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>በውጫዊ መለያ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>አልተመዘገበም</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>አካባቢ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>በግምት</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>የዚህን ተጠቃሚ ክፍለ ጊዜዎች አሳይ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>በ %site ላይ ያለው መለያዎ %login በቅርቡ ካልገባበት ቦታ ለመግባት አሁን ጥቅም ላይ ውሏል፦</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ግምታዊ አካባቢ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser በ %os ላይ</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>የመግቢያ ሪፖርት</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ገጹን ክፈት</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from እስከ %to ከ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>የተጠቃሚ ስም ወይም የተጠቃሚ መታወቂያ፦ ክስተቱ የሚመለከተው መለያ ወይም እርምጃውን የወሰደው ተጠቃሚ።</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>መለያ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>እርምጃ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>በኋላ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ማንኛውም ውጤት</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>በፊት</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ፈጻሚ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>አጽዳ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ተከናውኗል</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ክስተቶች ለ %days ቀናት ይቀመጣሉ።</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ክስተቶች በእጅ እስኪወገዱ ድረስ ይቀመጣሉ።</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ክስተቶች</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ማንኛውም እርምጃ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>የዚህ መለያ ሁሉም ክስተቶች</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ዝርዝሩን እንደ CSV ላክ (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>አልተሳካም</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ከ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ዝርዝሩን አጥብብ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ምንም ተዛማጅ ክስተት የለም።</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>በአንድ ገጽ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>መመዝገብ በ audit.ini ውስጥ ጠፍቷል ([UserAuditSettings] UserAudit)፤ ዝርዝሩ ከዚህ በፊት የተመዘገበውን ያሳያል።</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ውድቅ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጤት</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>አሳይ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>የተጠቃሚ ኦዲት ምዝግብ ሰንጠረዥ የለም። በ php update/common/scripts/6.0/createuseraudittable.php ይፍጠሩት፤ እስከዚያ ድረስ የኦዲት ፋይሎቹ እያንዳንዱን ክስተት ይይዛሉ።</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ይህ ገጽ የ SQL የውሂብ ጎታ ያስፈልገዋል፤ በ MongoDB ላይ አይገኝም። የኦዲት ፋይሎቹ እያንዳንዱን ክስተት ይይዛሉ።</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>እስከ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>የተጠቃሚ ኦዲት ምዝግብ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>መቼ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>የት</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ማን የትኛውን መለያ እንደቀየረ፣ እንደፈጠረ፣ እንዳነቃ፣ እንዳሰናከለ፣ እንዳዛወረ ወይም እንዳስወገደ፣ ማን እንደገባ ወይም ውድቅ እንደተደረገ፣ እና የትኞቹ ሚናዎች እንደተመደቡ፦ ለእያንዳንዱ ክስተት አንድ መስመር፣ ከለውጡ በፊት እና በኋላ ካሉት መስኮች ጋር። የይለፍ ቃላት እና ሚስጥሮች በጭራሽ አይመዘገቡም።</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ቡድን</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ሲስተም</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ያልታወቀ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>መለያዎን ይጠብቁ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>በ %site ላይ ወዳለው መለያዎ %login ለመግባት የመልሶ ማግኛ ኮድ ጥቅም ላይ ውሏል።</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>የመልሶ ማግኛ ኮድ ጥቅም ላይ ውሏል</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>መለያ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ግምታዊ አድራሻ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>እንደገና ለመግባት አዲስ የይለፍ ቃል ይጠይቁ፣ ወይም የጣቢያውን አስተዳዳሪዎች ያግኙ።</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>አዲስ የይለፍ ቃል ጠይቅ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>እያንዳንዱ የመልሶ ማግኛ ኮድ የሚሠራው አንድ ጊዜ ብቻ ነው። ስልክዎ ከጠፋብዎ፣ የማረጋገጫ መተግበሪያዎን እንደገና ያዋቅሩ እና አዲሶቹን የመልሶ ማግኛ ኮዶች ደህንነቱ በተጠበቀ ቦታ ያስቀምጡ።</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>በመለያዎ ላይ ያልተሳኩ የመግቢያ ሙከራዎች</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ከአሁን ጀምሮ፣ መግባት ከይለፍ ቃልዎ በተጨማሪ ኮድ ይጠይቃል። ይህን ያደረጉት እርስዎ ከሆኑ፣ ምንም ማድረግ አያስፈልግዎትም።</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>እርስዎ ከሆኑ እና የይለፍ ቃልዎን ከረሱ፣ አዲስ ይጠይቁ። ካልሆነ፣ ይበልጥ ጠንካራ የይለፍ ቃል ይምረጡ እና ባለሁለት ደረጃ መግቢያን ያብሩ።</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ይህ እርስዎ ካልሆኑ፣ አንድ ሰው የይለፍ ቃልዎን ሊያውቅ ይችላል፦ አሁኑኑ ይቀይሩት እና መለያዎ የት እንደገባ ያረጋግጡ።</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>የቀሩ የመልሶ ማግኛ ኮዶች</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>መሣሪያዎችዎን ገምግም</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>የደህንነት ማስጠንቀቂያ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>አንድ ሰው በ %site ላይ ወዳለው መለያዎ %login በተሳሳተ የይለፍ ቃል በተከታታይ %count ጊዜ ለመግባት ሞክሯል።</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>በ %site ላይ ባለው መለያዎ %login ላይ የደህንነት ክስተት ተከስቷል።</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ይህ ስለ መለያዎ የደህንነት ማስጠንቀቂያ ነው። ለእያንዳንዱ እንደዚህ ያለ ለውጥ ይላካል፣ ሊጠፋም አይችልም።</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ሰዓት</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>በ %site ላይ ላለው መለያዎ %login ባለሁለት ደረጃ መግቢያ ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ባለሁለት ደረጃ መግቢያ ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>በ %site ላይ ላለው መለያዎ %login ባለሁለት ደረጃ መግቢያ በርቷል።</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ባለሁለት ደረጃ መግቢያ በርቷል</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>በ %site ላይ ያለው መለያዎ %login ከብዙ ያልተሳኩ መግቢያዎች በኋላ ተቆልፏል።</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>መለያዎ አሁን የሚጠበቀው በይለፍ ቃልዎ ብቻ ነው። ይህን ያደረጉት እርስዎ ካልሆኑ፣ የይለፍ ቃልዎን ከቀየሩ በኋላ ባለሁለት ደረጃ መግቢያን እንደገና ያብሩ።</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>መለያዎ ተቆልፏል</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>የ %name የደህንነት እንቅስቃሴ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ገብቷል</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ያልተሳካ የመግቢያ ሙከራ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ወጥቷል</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ክፍለ ጊዜዎች ወጥተዋል</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ከአዲስ መሣሪያ መግባት</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ከአዲስ አካባቢ መግባት</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ማንነት ተረጋግጧል («እርስዎ መሆንዎን ያረጋግጡ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>የማንነት ማረጋገጫ አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>በይለፍ ቁልፍ ገብቷል</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>በይለፍ ቁልፍ መግባት አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>መግባት ተከልክሏል፦ የሁለተኛው ደረጃ ኮድ የለም ወይም የተሳሳተ ነው</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>የተሳሳተ የሁለተኛ ደረጃ ኮድ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ከያልተሳኩ መግቢያዎች በኋላ መለያው ተቆልፏል</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>መለያው ተከፍቷል</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>የይለፍ ቃል ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>የይለፍ ቃል መቀየር አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>የይለፍ ቃል ዳግም ተቀናብሯል</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>አዲስ የይለፍ ቃል ተጠይቋል</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>የኢሜይል አድራሻ ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>የተጠቃሚ ስም ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ባለሁለት ደረጃ መግቢያ በርቷል</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ባለሁለት ደረጃ መግቢያ ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>የመልሶ ማግኛ ኮድ ጥቅም ላይ ውሏል</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>አዲስ የመልሶ ማግኛ ኮዶች</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>የመተግበሪያ የይለፍ ቃል ተፈጥሯል</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>የመተግበሪያ የይለፍ ቃል ተሽሯል</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>የይለፍ ቁልፍ ታክሏል</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>የይለፍ ቁልፍ ተወግዷል</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>መለያው ነቅቷል</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>መለያው ተሰናክሏል</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ሁሉም</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>መግቢያዎች እና ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>የመለያ ለውጦች</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ትኩረት ይፈልጋል</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>በእርስዎ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>በተጠቃሚው</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>በ %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ዘዴ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>አሳሽ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ስርዓተ ክወና</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ቦታ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ሀገር</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>የትኞቹ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>የመላኪያ መንገድ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ያልተሳኩ ሙከራዎች</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>የቀሩ ኮዶች</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>የመግቢያ ተቆጣጣሪ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>የ %name የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>መግቢያዎች እና በመለያዎ ደህንነት ላይ የተደረጉ ለውጦች። ያላደረጉት ነገር ካዩ፣ የይለፍ ቃልዎን ይቀይሩ እና የማያውቋቸውን መሣሪያዎች ያስወጡ።</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>መግቢያዎች እና በዚህ መለያ ደህንነት ላይ የተደረጉ ለውጦች።</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>የይለፍ ቃል ቀይር</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ወደ መለያው ተመለስ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>የደህንነት እንቅስቃሴው አይመዘገብም</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>የሚነበበው ከተጠቃሚ ኦዲት ምዝግብ ማስታወሻ ነው፤ ሠንጠረዡ expuser_audit የለም ወይም በዚህ የውሂብ ጎታ ላይ አይደገፍም። php update/common/scripts/6.0/createuseraudittable.php ያሂዱ፣ ወይም የ6.0.15 የውሂብ ጎታ ማዘመኛን ያሂዱ።</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ያለፉት %days ቀናት</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ባለፉት %days ቀናት የተደረጉ መግቢያዎች</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>የቅርብ ጊዜ የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>አሳይ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>አልተሳካም</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ተከልክሏል</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>እስካሁን ምንም የደህንነት እንቅስቃሴ አልተመዘገበም።</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>የደህንነት ክስተቶች ለ %days ቀናት ይቀመጣሉ።</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>የደህንነት ክስተቶች አንድ አስተዳዳሪ እስኪያስወግዳቸው ድረስ ይቀመጣሉ።</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>የመግቢያ ውሂቤን አውርድ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ክፍለ ጊዜዎችዎ እና የደህንነት ክስተቶችዎ እንደ JSON ፋይል።</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ገብቷል</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ያልተሳካ የመግቢያ ሙከራ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ወጥቷል</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ክፍለ ጊዜዎች ወጥተዋል</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ከአዲስ መሣሪያ መግባት</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ከአዲስ አካባቢ መግባት</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ማንነት ተረጋግጧል («እርስዎ መሆንዎን ያረጋግጡ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>የማንነት ማረጋገጫ አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>በይለፍ ቁልፍ ገብቷል</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>በይለፍ ቁልፍ መግባት አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>መግባት ተከልክሏል፦ የሁለተኛው ደረጃ ኮድ የለም ወይም የተሳሳተ ነው</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>የተሳሳተ የሁለተኛ ደረጃ ኮድ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ከያልተሳኩ መግቢያዎች በኋላ መለያው ተቆልፏል</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>መለያው ተከፍቷል</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>የይለፍ ቃል ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>የይለፍ ቃል መቀየር አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>የይለፍ ቃል ዳግም ተቀናብሯል</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>አዲስ የይለፍ ቃል ተጠይቋል</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>የኢሜይል አድራሻ ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>የተጠቃሚ ስም ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ባለሁለት ደረጃ መግቢያ በርቷል</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ባለሁለት ደረጃ መግቢያ ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>የመልሶ ማግኛ ኮድ ጥቅም ላይ ውሏል</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>አዲስ የመልሶ ማግኛ ኮዶች</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>የመተግበሪያ የይለፍ ቃል ተፈጥሯል</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>የመተግበሪያ የይለፍ ቃል ተሽሯል</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>የይለፍ ቁልፍ ታክሏል</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>የይለፍ ቁልፍ ተወግዷል</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>መለያው ነቅቷል</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>መለያው ተሰናክሏል</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ሁሉም</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>መግቢያዎች እና ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>የመለያ ለውጦች</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ትኩረት ይፈልጋል</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>የ %name የደህንነት እንቅስቃሴ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>መግቢያዎች እና በመለያዎ ደህንነት ላይ የተደረጉ ለውጦች። ያላደረጉት ነገር ካዩ፣ የይለፍ ቃልዎን ይቀይሩ እና የማያውቋቸውን መሣሪያዎች ያስወጡ።</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>የይለፍ ቃል ቀይር</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>በዚህ ጣቢያ ላይ የደህንነት እንቅስቃሴ እስካሁን አይመዘገብም።</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ባለፉት %days ቀናት የተደረጉ መግቢያዎች</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ያልተሳኩ ሙከራዎች</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>እስካሁን ምንም የደህንነት እንቅስቃሴ አልተመዘገበም።</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>የመግቢያ ውሂቤን አውርድ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ክፍለ ጊዜዎችዎ እና የደህንነት ክስተቶችዎ እንደ JSON ፋይል።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>የይለፍ ቃል</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>የይለፍ ቃል እና የሁለተኛ ደረጃ ኮድ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>የREST በይነገጽ</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>የSOAP በይነገጽ</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ነጠላ መግቢያ (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ክፍለ ጊዜዎች መመዝገብ ከመጀመራቸው በፊት ገብቷል</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>የመግቢያ ሪፖርት</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>በጣቢያው ላይ ማን እንደገባ፣ መለያዎች ምን ያህል ጊዜ እንደሚገቡ እና እንደሚወድቁ፣ እና ተጠቃሚን ከሁሉም ቦታ ማስወጣት። ከማንኛውም የክፍለ ጊዜ ተቆጣጣሪ ጋር ይሠራል።</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ክፍለ ጊዜው ወጥቷል። መሣሪያው እንደገና መግባት አለበት።</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ከ %count ክፍለ ጊዜዎች ወጥቷል።</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login የሚሄድ ክፍለ ጊዜ አልነበረውም።</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ያ መታወቂያ (ID)፣ የተጠቃሚ ስም ወይም የኢሜይል አድራሻ ያለው መለያ የለም።</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ይህ እርስዎ እየተጠቀሙበት ያለው ክፍለ ጊዜ ነው። ለመጨረስ፣ ይውጡ።</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ያ ክፍለ ጊዜ አስቀድሞ አብቅቶ ነበር።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>የገጹ ጊዜ አልፎ ነበር። ምንም አልተቀየረም፤ እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>በዚህ ጣቢያ ላይ ክፍለ ጊዜዎች አይመዘገቡም (site.ini [UserSessionSettings] Tracking=disabled)።</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ሠንጠረዡ expuser_session የለም</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ሠንጠረዡ ከተፈጠረ በኋላ ክፍለ ጊዜዎች ይመዘገባሉ፦ php update/common/scripts/6.0/createusersessiontable.php፣ ወይም የ6.0.15 የውሂብ ጎታ ማዘመኛ።</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>አሁን እና ዛሬ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>የሚሄዱ ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>የገቡ ተጠቃሚዎች</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>የዛሬ መግቢያዎች</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>የዛሬ ያልተሳኩ ሙከራዎች</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ተጠቃሚን ከሁሉም ቦታ ያስወጡ</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>እያንዳንዱ የመለያው ክፍለ ጊዜ በሚቀጥለው ጥያቄው ላይ ያበቃል፣ በ«አስታውሰኝ» የተያዙትም ጭምር። መለያው በተሳሳተ እጅ ሊሆን ሲችል ይህን ይጠቀሙ፤ ከዚያም የይለፍ ቃሉን ዳግም ያቀናብሩ።</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>የተጠቃሚ መታወቂያ (ID)፣ የተጠቃሚ ስም ወይም የኢሜይል አድራሻ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ከሁሉም ቦታ አስወጣ</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>አሁን የገባ</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>በቅርቡ ጥቅም ላይ የዋሉት %limit ይታያሉ።</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>አድራሻ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ገብቷል</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>መጨረሻ የነቃበት</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>እርምጃዎች</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ይህ መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>አልተመዘገበም</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>አስወጣ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ምንም የገባ ክፍለ ጊዜ የለም።</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ያለፉት %days ቀናት</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>መግቢያዎች እና ያልተሳኩ ሙከራዎች የሚቆጠሩት ከሌለው የተጠቃሚ ኦዲት ምዝግብ ማስታወሻ ነው፤ የሚቆጠሩት አዲሶቹ ክፍለ ጊዜዎች ናቸው።</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ቀን</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>መግቢያዎች</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ያልተሳኩ ሙከራዎች</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>አዲስ ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>የክፍለ ጊዜ ተቆጣጣሪ፦ %handler። ክፍለ ጊዜዎቹ የሚነበቡት ከሠንጠረዡ expuser_session ስለሆነ ሪፖርቱ ከማንኛውም ተቆጣጣሪ ጋር ይሠራል።</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ለመለያዎ የደህንነት ማስጠንቀቂያ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>በመለያዎ %login ላይ የደህንነት ክስተት ተከስቷል፦ %event። ይህ እርስዎ ካልሆኑ፣ መለያዎን በ %url ይጠብቁ።</translation>
     </message>
 </context>
 </TS>

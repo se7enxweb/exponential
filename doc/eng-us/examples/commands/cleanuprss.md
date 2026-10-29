@@ -2,14 +2,14 @@
 title: exp:cleanuprss
 audience: developer, admin
 category: examples
-summary: Trim RSS-imported content, keeping the newest items of each active import.
+summary: Trim RSS-imported content, keeping the newest items of each active import (dry run unless --apply).
 keywords: exp:cleanuprss, cleanuprss, console, command, CLI, cleanuprss.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:cleanuprss
 
-Trim RSS-imported content, keeping the newest items of each active import.
+Trim RSS-imported content, keeping the newest items of each active import (dry run unless --apply).
 
 Script `bin/php/cleanuprss.php`, code in `kernel/private/classes/commands/cleanuprss.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -26,15 +26,20 @@ Keeps the newest items of each active RSS import and removes the rest.
 
 Configured in content.ini [RSSImportCleanupSettings]; it removes nothing
 until that names the classes it is allowed to remove.
+Without --apply nothing is removed: the script lists the items it would remove.
+--dry-run is still accepted and means the same as no flag; --apply together with
+--dry-run is a usage error (exit 2). The cronjob part cleanuprss removes as before.
 
-./bin/php/cleanuprss.php --dry-run
+./bin/php/cleanuprss.php
+./bin/php/cleanuprss.php --apply
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | List what would be removed, and remove nothing |
+| `--apply` |  | Remove the items (the default is a dry run that lists them and removes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list what would be removed, remove nothing |
 | `--keep` | required | Keep this many items per feed instead of the configured number |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

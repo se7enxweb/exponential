@@ -62,9 +62,9 @@ Sie in diesem Fall `[HTTPSSettings] Enabled` auf `false`.
 Jedes PEM-Zertifikat von einer CA oder einem Hosting-Panel (Leaf mit Kette und der private Schlüssel):
 
 ```bash
-php bin/php/console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Enabled true --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 php bin/php/console exp:velocity ssl show --allow-root-user
 curl -sI https://example.com/ | head -1
@@ -95,7 +95,7 @@ cat > /etc/vc/conf-available/https-acme.conf <<'EOF'
   }
 } } } }
 EOF
-php bin/php/console exp:velocity conf enable https-acme --allow-root-user
+php bin/php/console exp:velocity conf enable --apply https-acme --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 php bin/php/console exp:velocity ssl show --allow-root-user
 ```

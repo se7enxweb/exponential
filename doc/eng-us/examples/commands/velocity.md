@@ -34,7 +34,8 @@ php bin/php/velocity.php --help
 | `--no-https` |  |  |
 | `--rebuild-phar` |  | start, restart, graceful, deploy: rebuild the engine archive even when it is current |
 | `--kernel` |  | deploy: regenerate the kernel autoload array too (kernel/ and lib/ only) |
-| `--dry-run` |  | deploy: print the steps and what each would do, and do nothing |
+| `--apply` |  | config set\|unset, cache clear, layout migrate, site\|conf\|mod, ssl renew, watchdog install\|remove, install: make the change (without it they are a dry run that changes nothing) |
+| `--dry-run` |  | the default of the commands that write (kept for scripts that pass it); deploy: print the steps and what each would do, and do nothing |
 | `--no-fpm` |  | deploy: leave PHP-FPM alone (no reload, no wait) |
 | `--fpm-reload` |  | deploy: reload PHP-FPM even when its OPcache revalidates the files (php.ini or pool changed, files renamed) |
 | `--no-velocity` |  | deploy: do not restart Velocity |

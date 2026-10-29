@@ -27,7 +27,7 @@ Installation. Diese Lektion macht die Idee greifbar, bevor eine Website hinzugef
 | Dauer | 45 Minuten (20 Präsentation, 25 Übung) |
 | Niveau | Fortgeschrittene |
 | Zielgruppe | Administratoren und Entwickler, die mehrere Websites auf einer Installation betreiben werden |
-| Voraussetzungen | Eine eigene Schulungsinstallation mit Shell-Zugang (installiert mit `php bin/php/console exp:install`); Grundkenntnisse im Terminal |
+| Voraussetzungen | Eine eigene Schulungsinstallation mit Shell-Zugang (installiert mit `php bin/php/console exp:install --apply`); Grundkenntnisse im Terminal |
 
 ## Lernziele
 
@@ -96,7 +96,7 @@ die Datei mit den Voreinstellungen.
 
 ## Praktische Übung
 
-Verwenden Sie Ihre eigene Schulungsinstallation, installiert mit `php bin/php/console exp:install` wie in
+Verwenden Sie Ihre eigene Schulungsinstallation, installiert mit `php bin/php/console exp:install --apply` wie in
 [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md). Arbeiten Sie in ihrem
 Wurzelverzeichnis (dem, das `index.php` enthält).
 

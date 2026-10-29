@@ -261,7 +261,7 @@ class expHelpManualSync
         $manualsNode = $manualsFolder instanceof eZContentObject ? $manualsFolder->attribute( 'main_node' ) : null;
         if ( !$manualsNode instanceof eZContentObjectTreeNode )
         {
-            $this->change( 'error', 'the folder Manuals (remote_id ' . expHelpContentSchema::MANUALS . ') does not exist (run exp:help:content install)' );
+            $this->change( 'error', 'the folder Manuals (remote_id ' . expHelpContentSchema::MANUALS . ') does not exist (run exp:help:content install --apply)' );
             return false;
         }
         if ( $this->manual !== null && !isset( $plan['manuals'][$this->manual] ) )
@@ -497,7 +497,7 @@ class expHelpManualSync
         }
         if ( !isset( $this->classes[$item['class']] ) )
         {
-            $this->change( 'error', "$label: the class {$item['class']} does not exist (run exp:help:content install)" );
+            $this->change( 'error', "$label: the class {$item['class']} does not exist (run exp:help:content install --apply)" );
             return;
         }
         if ( $stored === null )

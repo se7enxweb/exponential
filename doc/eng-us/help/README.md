@@ -53,11 +53,15 @@ allowed to use is shown grayed out or not at all.
 | [Languages](languages.md) | Translate content, and choose the language of the administration itself |
 | [The layouts editor](layouts-editor.md) | Arrange the blocks of a page in zones, and publish the layout |
 
-## Your account
+## Accounts, roles and members
 
 | Page | What it helps you do |
 |---|---|
 | [Your account and signing in](accounts-and-sign-in.md) | Sign in and out, change your password, turn on two-step sign-in |
+| [Setting up accounts for editors and administrators](setting-up-editor-and-admin-accounts.md) | Create an editor's account in the Editors group, check it, and hand it over so that only the editor knows the password; the same for the few administrators |
+| [What the Editor role allows](what-the-editor-role-allows.md) | Know what an editor may do, and what stays with administrators |
+| [Managing members](managing-members.md) | As an editor, create, change, disable, move and remove the accounts of the site's members |
+| [The user audit log](the-user-audit-log.md) | Find out who did what to an account, when and from where |
 
 ## Working faster, and getting help
 

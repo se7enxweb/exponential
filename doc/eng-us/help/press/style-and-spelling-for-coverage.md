@@ -54,7 +54,7 @@ Write names of menus and buttons as they appear, in bold if your style allows: *
 ## Code, commands and files
 
 - Code identifiers, file names, package names and commands in code style if your medium has it: `eZContentObject`,
-  `SECURITY.md`, `expai`, `./console exp:install`.
+  `SECURITY.md`, `expai`, `./console exp:install --apply`.
 - Never translate or "correct" code names ([Why it is called Exponential](why-it-is-called-exponential.md)).
 - Package names are lowercase as in `composer.json`.
 

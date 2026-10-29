@@ -1,7 +1,7 @@
 <?php
 /**
  * The audit command, exp:audit: the records of the audit channels and their hash chains.
- * @description Audit log: tail, show one event, verify the hash chains, list the channels
+ * @description Audit log: tail, show one event, verify the hash chains, list the channels (the manage actions are a dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/audit.md ("The command: exp:audit", "Stage 2 — built")
  *
  *   exp:audit status                                   audit on/off, channels, today's records, chain state
@@ -10,7 +10,11 @@
  *   exp:audit show <event id> [--json]                 one record with its request siblings and children
  *   exp:audit verify [--channel=content] [--date=YYYY-MM-DD] [--json]
  *                                                      exit 0 intact, 1 broken, 2 error
- *   exp:audit checkpoint                               writes a signed checkpoint of every channel's head now
+ *   exp:audit checkpoint --apply                       writes a signed checkpoint of every channel's head now
+ *
+ * The manage actions (rotate, archive, restore, purge, reindex, pseudonymise, import, checkpoint, key rotate,
+ * sinks flush, cron) only say what they would do unless --apply is given; --dry-run means the same as no --apply,
+ * both together are a usage error (exit 2). Reading, searching, verifying and export are not changed.
  *
  * Reading records is itself recorded (system.audit.read), as are verification (system.audit.verify) and every
  * break found (system.audit.chain.broken). Run as root, files it writes get the site user's owner and group.
@@ -28,6 +32,13 @@ class Audit extends \Exponential\Runnable\Command
     /** @var array the parsed options */
     protected $options = array();
 
+    /** @var bool --apply: the manage actions write; without it they only say what they would do */
+    protected $apply = false;
+
+    /** The manage actions that change something, with --apply only */
+    const WRITING_ACTIONS = array( 'rotate', 'archive', 'restore', 'purge', 'reindex', 'pseudonymise', 'pseudonymize', 'import', 'checkpoint',
+                                   'key rotate', 'keys rotate', 'sinks flush', 'cron' );
+
     public function run()
     {
         $this->script( array( 'description' => "Audit log: the records of the audit channels and their hash chains\n\n" .
@@ -36,19 +47,22 @@ class Audit extends \Exponential\Runnable\Command
                                                 "  exp:audit show <event id> [--json]\n" .
                                                 "  exp:audit search [filters] [--files] [--limit=50] [--json]\n" .
                                                 "  exp:audit verify [--channel=<c>] [--date=YYYY-MM-DD] [--archives] [--json]\n" .
-                                                "  exp:audit rotate [--channel=<c>] [--dry-run]\n" .
-                                                "  exp:audit archive [--channel=<c>] [--before=YYYY-MM-DD] [--format=gzip|bzip2|xz|zstd|zip] [--dry-run]\n" .
-                                                "  exp:audit restore --channel=<c> --date=YYYY-MM-DD [--to=<dir>]\n" .
-                                                "  exp:audit purge [--channel=<c>] [--dry-run]\n" .
-                                                "  exp:audit reindex [--incremental] [--archives] [--channel=<c>]\n" .
-                                                "  exp:audit pseudonymise [--dry-run]\n" .
+                                                "  exp:audit rotate [--channel=<c>] [--apply]\n" .
+                                                "  exp:audit archive [--channel=<c>] [--before=YYYY-MM-DD] [--format=gzip|bzip2|xz|zstd|zip] [--apply]\n" .
+                                                "  exp:audit restore --channel=<c> --date=YYYY-MM-DD [--to=<dir>] [--apply]\n" .
+                                                "  exp:audit purge [--channel=<c>] [--apply]\n" .
+                                                "  exp:audit reindex [--incremental] [--archives] [--channel=<c>] [--apply]\n" .
+                                                "  exp:audit pseudonymise [--apply]\n" .
                                                 "  exp:audit export [filters] [--subject-user=<id>] [--format=jsonl|csv|bundle] --out=<path>\n" .
-                                                "  exp:audit import [--dir=<old log dir>] [--file=login.log] [--dry-run] [--keep-originals]\n" .
-                                                "  exp:audit key list|rotate|fingerprint [--pseudonym]\n" .
-                                                "  exp:audit checkpoint\n" .
-                                                "  exp:audit sinks list|test <name>|flush [<name>]\n" .
+                                                "  exp:audit import [--dir=<old log dir>] [--file=login.log] [--keep-originals] [--apply]\n" .
+                                                "  exp:audit key list|rotate [--apply]|fingerprint [--pseudonym]\n" .
+                                                "  exp:audit checkpoint [--apply]\n" .
+                                                "  exp:audit sinks list|test <name>|flush [<name>] [--apply]\n" .
                                                 "  exp:audit alerts list|test <rule> [--replay=YYYY-MM-DD]|recipients [--rule=<rule>]\n" .
-                                                "  exp:audit cron [--daily]           one run of the cronjob part (--daily: the daily tasks now)\n\n" .
+                                                "  exp:audit cron [--daily] [--apply]  one run of the cronjob part (--daily: the daily tasks now)\n\n" .
+                                                "The manage actions (rotate, archive, restore, purge, reindex, pseudonymise, import, key rotate,\n" .
+                                                "checkpoint, sinks flush, cron) only say what they would do unless --apply is given. --dry-run means\n" .
+                                                "the same as no --apply; --apply together with --dry-run is a usage error (exit 2).\n\n" .
                                                 "Filters (search, export): --name=<pattern> --user=<id> --login= --object=<type:id> --target=<type:id>\n" .
                                                 "  --result=success|refused|failed --severity=<min> --request= --job= --run= --ip=<network>\n" .
                                                 "  --from=YYYY-MM-DD[THH:MM[:SS]][Z|+HH:MM] --to=... (UTC unless an offset is given; --to includes that day,\n" .
@@ -58,7 +72,7 @@ class Audit extends \Exponential\Runnable\Command
                               'use-session' => false,
                               'use-modules' => false,
                               'use-extensions' => true ) );
-        $this->options = $this->startup( '[channel:][name:][lines:][follow][json][date:][archives][dry-run][before:][format:][to:][incremental]' .
+        $this->options = $this->startup( '[channel:][name:][lines:][follow][json][date:][archives][apply][dry-run][before:][format:][to:][incremental]' .
                                          '[user:][login:][object:][target:][result:][severity:][request:][job:][run:][ip:][from:][query:]' .
                                          '[legacy-file:][limit:][files][out:][subject-user:][dir:][file:][keep-originals][pseudonym][replay:][daily][rule:]',
                                          '[action][id][extra]',
@@ -71,7 +85,8 @@ class Audit extends \Exponential\Runnable\Command
                                                 'json' => 'Print records and results as JSON',
                                                 'date' => 'verify: only that day\'s files; restore: the archived day (YYYY-MM-DD, UTC)',
                                                 'archives' => 'verify: also the archives (manifests, HMAC, checksums, the chain through them); reindex: also the archives',
-                                                'dry-run' => 'rotate, archive, purge, import, pseudonymise: only say what would be done',
+                                                'apply' => 'rotate, archive, restore, purge, reindex, pseudonymise, import, key rotate, checkpoint, sinks flush, cron: do it (the default is a dry run)',
+                                                'dry-run' => 'The default, kept for scripts that pass it: only say what would be done',
                                                 'before' => 'archive: the days before this date (default: older than LiveDays)',
                                                 'format' => 'archive: the format handler; export: jsonl, csv or bundle',
                                                 'to' => 'restore: the directory (default <LogDir>/restored); search, export: up to and including this time (as --from)',
@@ -87,8 +102,17 @@ class Audit extends \Exponential\Runnable\Command
                                                 'replay' => 'alerts test: run the rule over the records since this date, without firing',
                                                 'daily' => 'cron: run the daily tasks now',
                                                 'rule' => 'alerts recipients: only this rule' ) );
+        $apply = self::applyRequested( $this->options );
+        if ( $apply === null )
+        {
+            $this->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+        }
+        $dryRun = !$apply;
+        $this->apply = $apply;
         $args = $this->options['arguments'];
         $action = isset( $args[0] ) ? $args[0] : 'status';
+        $writing = false;
         if ( !class_exists( 'expAudit' ) || !class_exists( 'expAuditVerifier' ) )
         {
             $this->error( 'The audit classes are not in the autoload array: run php bin/php/ezpgenerateautoloads.php -k' );
@@ -102,6 +126,8 @@ class Audit extends \Exponential\Runnable\Command
                 $this->error( $refused );
                 $this->shutdown( 2 );
             }
+            $writing = in_array( $action, self::WRITING_ACTIONS, true )
+                       || in_array( $action . ' ' . ( isset( $args[1] ) ? $args[1] : '' ), self::WRITING_ACTIONS, true );
             switch ( $action )
             {
                 case 'status':
@@ -180,6 +206,9 @@ class Audit extends \Exponential\Runnable\Command
             $this->error( get_class( $e ) . ': ' . $e->getMessage() );
             $code = 2;
         }
+        if ( $writing && $dryRun && $code === 0 && empty( $this->options['json'] ) )
+            $this->output( 'PASS: ' . ( in_array( $action, self::WRITING_ACTIONS, true ) ? $action : $action . ' ' . $args[1] )
+                           . ' (dry run, nothing changed; --apply writes)' );
         $this->shutdown( $code );
     }
 
@@ -217,10 +246,10 @@ class Audit extends \Exponential\Runnable\Command
         return $c !== null ? array( $c ) : $this->config()['channels'];
     }
 
-    /** @return bool --dry-run */
+    /** @return bool no --apply: the manage actions only say what they would do */
     protected function dryRun()
     {
-        return !empty( $this->options['dry-run'] );
+        return !$this->apply;
     }
 
     /**
@@ -623,6 +652,11 @@ class Audit extends \Exponential\Runnable\Command
 
     protected function checkpoint()
     {
+        if ( $this->dryRun() )
+        {
+            $this->output( 'would write a signed checkpoint of every channel\'s head (system channel): ' . implode( ', ', $this->channelList() ) );
+            return 0;
+        }
         $id = \expAudit::checkpoint();
         if ( $id === null )
         {
@@ -741,6 +775,11 @@ class Audit extends \Exponential\Runnable\Command
         $date = (string)$this->options['date'];
         if ( $c === null || !preg_match( '/^\d{4}-\d{2}-\d{2}$/', $date ) )
             throw new \InvalidArgumentException( 'restore needs --channel= and --date=YYYY-MM-DD' );
+        if ( $this->dryRun() )
+        {
+            $this->output( "would restore the archived $c day $date to " . ( $this->options['to'] ? (string)$this->options['to'] : '<LogDir>/restored' ) );
+            return 0;
+        }
         $r = $this->archiver()->restore( $c, $date, $this->options['to'] ? (string)$this->options['to'] : null );
         if ( $this->json( $r ) )
             return $r['error'] ? 2 : 0;
@@ -791,9 +830,15 @@ class Audit extends \Exponential\Runnable\Command
             $this->error( 'The audit index is not available in this installation (its classes are missing)' );
             return 2;
         }
+        $options = array( 'channel' => $this->channelOption(), 'archives' => !empty( $this->options['archives'] ), 'wait' => true );
+        if ( $this->dryRun() )
+        {
+            $this->output( 'would ' . ( !empty( $this->options['incremental'] ) ? 'add what is new to' : 'rebuild' ) . ' the audit index of '
+                           . ( $options['channel'] !== null ? 'the channel ' . $options['channel'] : 'every channel' ) . ( $options['archives'] ? ', archives included' : '' ) );
+            return 0;
+        }
         $indexer = new \expAuditIndexer();
         $indexer->setProgress( function ( $line ) { $this->output( $line ); } );
-        $options = array( 'channel' => $this->channelOption(), 'archives' => !empty( $this->options['archives'] ), 'wait' => true );
         $r = !empty( $this->options['incremental'] ) ? $indexer->run( $options ) : $indexer->rebuild( $options );
         \expAudit::event( 'system.audit.reindex', array( 'object' => array( 'type' => 'index', 'id' => 'expaudit_event' ),
                                                          'result' => !empty( $r['ok'] ) ? 'success' : 'failed',
@@ -877,6 +922,18 @@ class Audit extends \Exponential\Runnable\Command
                     $this->output( sprintf( '%s  %s%s', $k['id'], $k['fingerprint'], $k['active'] ? '  (active)' : '' ) );
                 return 0;
             case 'rotate':
+                if ( $this->dryRun() )
+                {
+                    $active = '?';
+                    foreach ( $keys->listKeys() as $k )
+                    {
+                        if ( $k['active'] )
+                            $active = $k['id'];
+                    }
+                    $this->output( !empty( $this->options['pseudonym'] ) ? 'would replace the pseudonym key'
+                                                                         : "would rotate the signing key (active now: $active); the old key would stay for its archives" );
+                    return 0;
+                }
                 if ( !empty( $this->options['pseudonym'] ) )
                 {
                     $r = $keys->rotatePseudonym();
@@ -933,6 +990,15 @@ class Audit extends \Exponential\Runnable\Command
                                                : "Not delivered through $name: " . ( $r['error'] ?: $r['problem'] ) );
                 return $r['delivered'] ? 0 : 1;
             case 'flush':
+                if ( $this->dryRun() )
+                {
+                    foreach ( \expAuditSinkRegistry::status() as $n => $i )
+                    {
+                        if ( $name === null || $name === $n )
+                            $this->output( sprintf( '%-10s would deliver %d spooled record(s)', $n, $i['spooled'] ) );
+                    }
+                    return 0;
+                }
                 $r = \expAuditSinkRegistry::deliverSpools( true, $name );
                 if ( $this->json( $r ) )
                     return 0;
@@ -1005,6 +1071,11 @@ class Audit extends \Exponential\Runnable\Command
 
     protected function cron()
     {
+        if ( $this->dryRun() )
+        {
+            $this->output( 'would run the audit cronjob part once' . ( !empty( $this->options['daily'] ) ? ', with the daily tasks' : '' ) );
+            return 0;
+        }
         $m = new \expAuditMaintenance( function ( $line ) { $this->output( $line ); } );
         $r = $m->run( array( 'daily' => !empty( $this->options['daily'] ) ) );
         if ( !$this->json( $r ) )

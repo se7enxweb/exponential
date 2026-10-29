@@ -2,14 +2,14 @@
 title: exp:adduserapproval
 audience: developer, admin
 category: examples
-summary: "Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first)."
+summary: "Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts; --mode=section sets up the optional alternative, a section Staff ..."
 keywords: exp:adduserapproval, adduserapproval, console, command, CLI, adduserapproval.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:adduserapproval
 
-Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first).
+Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts; --mode=section sets up the optional alternative, a section Staff with the plain approval event (both a dry run unless --apply).
 
 Script `bin/php/adduserapproval.php`, code in `kernel/private/classes/commands/adduserapproval.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -28,7 +28,11 @@ Set up the approval of new user accounts: the workflow "
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | List what would be created and changed; change nothing |
+| `--apply` |  | Make the changes, in either mode (the default is a dry run that lists them and changes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list what would be created and changed, change nothing |
+| `--mode` | required | group (default: the event "Approve user accounts") or section (the section Staff and the plain approval event) |
+| `--staff` | required | --mode=section: a group whose accounts go into the section Staff (default Administrator users and Editors), may be repeated |
+| `--exempt` | required | --mode=section: a group whose members need no approval (default Administrator users), may be repeated |
 | `--required` | required | A group whose new accounts need approval (default Editors), may be repeated |
 | `--approvers` | required | A group whose members approve (default Administrator users), may be repeated |
 | `--requesters` | required | A group that may create accounts in the required groups and waits for approval (default Editors), may be repeated |

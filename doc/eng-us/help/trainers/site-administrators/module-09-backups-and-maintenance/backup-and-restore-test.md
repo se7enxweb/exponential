@@ -126,7 +126,7 @@ shows.
 
     ```bash
     php bin/php/console exp:velocity start
-    php bin/php/console exp:velocity cache clear
+    php bin/php/console exp:velocity cache clear --apply
     php bin/php/maintenance.php off
     ```
 

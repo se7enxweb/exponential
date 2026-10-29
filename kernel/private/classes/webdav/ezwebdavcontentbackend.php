@@ -770,7 +770,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
      * The paths of the responses stay plain (decoded) text: the lock plugin
      * compares them with request paths and sends its own requests to them.
      * The URIs written for the client are encoded by expWebDAVPathFactory,
-     * which webdav.php sets as the server's path factory.
+     * which index_webdav.php sets as the server's path factory.
      *
      * @param ezcWebdavPropFindRequest $request
      * @return ezcWebdavResponse

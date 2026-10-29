@@ -42,7 +42,7 @@ you are likely to hear.
 | 2 | Why I care | One photo or sentence about your use | Your own story, no customer names without consent | [Protecting people's privacy](protecting-peoples-privacy.md) |
 | 3 | What it is | "PHP framework + CMS + shop" | The README's definition | [Exponential 6](../who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
 | 4 | Your content, your model | A content class with fields | Content types are defined in the administration | [Content model](../../guides/content-model-and-editing.md) |
-| 5 | Many sites, many languages | Siteaccesses, language badges | 359 locale files; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md)) | [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
+| 5 | Many sites, many languages | Siteaccesses, language badges | 368 locale files; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md)) | [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
 | 6 | Runs where you want | PHP 8.0-8.5, six databases, OS tiers | Name SQLite as the default | [Talking points: hosting](talking-points-hosting-databases-and-freedom.md) |
 | 7 | A long story | Timeline 1999 to 2026 | The history, with the old name in the past tense | [Talking points: longevity](talking-points-longevity-and-history.md) |
 | 8 | Who is behind it | 7x and the Exponential Foundation side by side | Two organizations, one project | [7x and the Foundation](7x-and-the-foundation-for-advocates.md) |
@@ -53,7 +53,7 @@ you are likely to hear.
 | 13 | Free software | GPL + GFDL | Code and docs are free | [Talking points: open source](talking-points-open-source-and-licensing.md) |
 | 14 | Every pull request is merged | A merged PR screenshot (public) | The project's rule | [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
 | 15 | Join | Forums, Telegram, eZpedia, GitHub, Projects | Only documented channels | [The community channels](community-channels.md) |
-| 16 | Try it | `./console exp:install` + links | One command, SQLite | [Install in one command](../../features/6.0/install-in-one-command.md) |
+| 16 | Try it | `./console exp:install --apply` + links | One command, SQLite | [Install in one command](../../features/6.0/install-in-one-command.md) |
 
 ## The live demo segment
 

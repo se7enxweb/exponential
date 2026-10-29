@@ -14326,6 +14326,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ez a telepítés nyilvános bemutató: a rendszergazdai jelszót bárki ismerheti, és a rendszergazdai jelszavak nem módosíthatók és nem állíthatók vissza. Ne adjon meg itt semmilyen személyes adatot.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Fiókok, amelyeket senki sem használ, vagy amelyeket érdemes megnézni; letiltásuk, zárolásuk feloldása vagy exportálásuk.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Felhasználói auditnapló</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ki módosított, jelentkezett be vagy kapott elutasítást, fiókonként; szűrés és exportálás.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Bejelentkezési jelentés</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ki van bejelentkezve, bejelentkezések és sikertelen kísérletek naponta; egy felhasználó kijelentkeztetése mindenhonnan.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>A PHP-kezelő lejárt munkameneteit maga a PHP távolítja el (session.gc_maxlifetime), nem ez az oldal, és nem a session_gc cron-feladatrész.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Az összes felhasználó bejelentkezett munkamenetei a bejelentkezési jelentésben láthatók, és ott ki is jelentkeztethetők; a jelentés minden munkamenet-kezelővel működik.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Bejelentkezési jelentés megnyitása</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ a fiókja aktiválásához.</translation>
     <message>
         <source>None yet</source>
         <translation>Még nincs</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Az Ön legutóbbi bejelentkezései, sikertelen kísérletei, valamint a jelszavát, e-mail-címét és kétlépéses bejelentkezését érintő változások.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>A fiók legutóbbi bejelentkezései, sikertelen kísérletei és biztonsági változásai.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Tevékenység áttekintése</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Sikertelen bejelentkezések: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ További információt a követelményeket ismertető oldalon talál.</translati
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>A crontab fájl nem lett megírva (%reason). Vegye fel ezeket a sorokat annak a felhasználónak a crontab fájljába, akinek a nevében a webhely fut, különben a várólista, az importálások, az értesítések és a keresési index soha nem fut le:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Az újratelepítés a kickstarterrel (%file, majd php bin/php/kickstarter.php run --apply) vagy egy új telepítéssel történik.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>A levélküldési mód az utolsó futás során %count üzenetet elutasított. Ellenőrizze a levelezőkiszolgálót és a site.ini MailSettings beállításait.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count esemény várakozik, és az értesítési cron-feladat egyetlen futása sincs rögzítve. Vegye fel a „frequent” cron-feladatrészt a crontabba, vagy futtassa az exp:notification:run --apply parancsot.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Másik webhely vagy szakasz kiválasztása a csomópontválasztóval</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Csak a rendszergazda módosíthatja a tulajdonost: futtassa root felhasználóként a ./console exp:content-check --fix-permissions --apply parancsot.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>empty</source>
         <translation>üres</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Az aláírókulcs több mint egyéves: cserélje le az exp:audit key rotate --apply paranccsal.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>not sent</source>
         <translation>nincs elküldve</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Az értesítési cron-feladat itt rögzíti minden futását. Vegye fel a frequent részt a crontabba, vagy futtassa az exp:notification:run --apply parancsot.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Használja a konzolt: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Rendszer &gt; Cron-feladatok</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Még egyetlen cron-feladatrész sem futott: a feladatsor, az importálások, az értesítések és a keresési index várakoznak. Futtassa a php bin/php/installcrontab.php --add --apply parancsot, vagy vegye fel a --show által kiírt sorokat a crontabba.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>None.</source>
         <translation>Nincs.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>hitelesítő alkalmazással</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-mailben kapott kóddal</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>helyreállító kóddal</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>külső fiókkal</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>A hálózata látható; a címet a webhely adatvédelmi beállításai szerint tároljuk.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nincs rögzítve</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>hozzávetőleges</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Manage devices</source>
         <translation>Eszközök kezelése</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>hitelesítő alkalmazással</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-mailben kapott kóddal</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>helyreállító kóddal</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>külső fiókkal</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nincs rögzítve</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>hozzávetőleges</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>View the sessions of this user</source>
         <translation>A felhasználó munkameneteinek megtekintése</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Az Ön %login fiókjával a(z) %site webhelyen az imént olyan helyről jelentkeztek be, ahonnan mostanában nem történt bejelentkezés:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Hozzávetőleges hely</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser, %os rendszeren</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Bejelentkezési jelentés</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Open the page</source>
         <translation>Oldal megnyitása</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, összesen: %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Bejelentkezési név vagy felhasználói azonosító: a fiók, amelyre az esemény vonatkozott, vagy a felhasználó, aki a műveletet végezte.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Fiók</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Művelet</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Utána</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Bármely eredmény</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Előtte</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Végrehajtó</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Sikeres</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Az események megőrzési ideje %days nap.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Az események addig maradnak meg, amíg kézzel el nem távolítják őket.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Események</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Minden művelet</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>A fiók összes eseménye</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>A lista exportálása CSV formátumban (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sikertelen</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ettől</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>A lista szűkítése</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nincs egyező esemény.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Oldalanként</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>A rögzítés ki van kapcsolva az audit.ini fájlban ([UserAuditSettings] UserAudit); a lista a korábban rögzítetteket mutatja.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Elutasítva</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Eredmény</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Megjelenítés</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>A felhasználói auditnapló táblája hiányzik. Hozza létre a következő paranccsal: php update/common/scripts/6.0/createuseraudittable.php; addig az auditfájlok minden eseményt megőriznek.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ehhez az oldalhoz SQL-adatbázis szükséges; MongoDB esetén nem érhető el. Az auditfájlok minden eseményt megőriznek.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Eddig</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Felhasználói auditnapló</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Felhasználó</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Időpont</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ki melyik fiókot módosította, hozta létre, engedélyezte, tiltotta le, helyezte át vagy távolította el, ki jelentkezett be vagy kapott elutasítást, és milyen szerepköröket rendeltek hozzá: eseményenként egy sor, a mezők előtte és utána. A jelszavakat és a titkos adatokat a rendszer soha nem rögzíti.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>csoport</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>rendszer</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ismeretlen</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Fiók védelme</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Az Ön %login fiókjába a(z) %site webhelyen egy helyreállító kóddal jelentkeztek be.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Helyreállító kódot használtak</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Fiók</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Hozzávetőleges cím</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Kérjen új jelszót az ismételt bejelentkezéshez, vagy forduljon a webhely rendszergazdáihoz.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Új jelszó kérése</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Minden helyreállító kód egyszer használható. Ha elvesztette a telefonját, állítsa be újra a hitelesítő alkalmazást, és tartsa biztonságos helyen az új helyreállító kódokat.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Sikertelen bejelentkezési kísérletek a fiókjában</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Mostantól a bejelentkezés a jelszó mellett egy kódot is kér. Ha Ön végezte ezt a módosítást, nincs teendője.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ha Ön volt az, és elfelejtette a jelszavát, kérjen újat. Ha nem, válasszon erősebb jelszót, és kapcsolja be a kétlépéses bejelentkezést.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ha nem Ön volt az, lehet, hogy valaki ismeri a jelszavát: változtassa meg most, és ellenőrizze, hol van bejelentkezve a fiókja.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Megmaradt helyreállító kódok</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Eszközök áttekintése</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Biztonsági figyelmeztetés</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Valaki egymás után %count alkalommal próbált meg hibás jelszóval bejelentkezni az Ön %login fiókjába a(z) %site webhelyen.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Biztonsági esemény történt az Ön %login fiókjában a(z) %site webhelyen.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ez egy biztonsági figyelmeztetés az Ön fiókjáról. Minden ilyen változáskor elküldjük, és nem kapcsolható ki.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Időpont</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>A kétlépéses bejelentkezés ki lett kapcsolva az Ön %login fiókjában a(z) %site webhelyen.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>A kétlépéses bejelentkezés ki lett kapcsolva</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>A kétlépéses bejelentkezés be lett kapcsolva az Ön %login fiókjában a(z) %site webhelyen.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>A kétlépéses bejelentkezés be lett kapcsolva</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Az Ön %login fiókját a(z) %site webhelyen túl sok sikertelen bejelentkezés után zároltuk.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>A fiókját mostantól csak a jelszava védi. Ha nem Ön tette ezt, a jelszava megváltoztatása után kapcsolja be újra a kétlépéses bejelentkezést.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>A fiókját zároltuk</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Biztonsági tevékenység – %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Bejelentkezve</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Sikertelen bejelentkezési kísérlet</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kijelentkezve</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Munkamenetek kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Bejelentkezés új eszközről</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Bejelentkezés új helyről</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Személyazonosság megerősítve („Személyazonosság megerősítése”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>A személyazonosság ellenőrzése sikertelen</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Bejelentkezés hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sikertelen bejelentkezés hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Bejelentkezés elutasítva: a kétlépéses kód hiányzik vagy hibás</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Hibás kétlépéses kód</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Fiók zárolva sikertelen bejelentkezések után</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Fiók zárolása feloldva</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Jelszó módosítva</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Sikertelen jelszómódosítás</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Jelszó visszaállítva</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Új jelszó kérve</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mail-cím módosítva</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Felhasználónév módosítva</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kétlépéses bejelentkezés bekapcsolva</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kétlépéses bejelentkezés kikapcsolva</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Helyreállító kód felhasználva</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Új helyreállító kódok</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Alkalmazásjelszó létrehozva</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Alkalmazásjelszó visszavonva</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Hozzáférési kulcs hozzáadva</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Hozzáférési kulcs eltávolítva</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Fiók engedélyezve</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Fiók letiltva</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Összes</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Bejelentkezések és munkamenetek</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Fiókváltozások</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Figyelmet igényel</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>Ön által</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>a felhasználó által</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>végrehajtó: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Módszer</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Böngésző</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operációs rendszer</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Eszköz</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ország</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Munkamenetek</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Melyek</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Csatorna</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Sikertelen kísérletek</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Megmaradt kódok</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Bejelentkezéskezelő</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Biztonsági tevékenység – %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>A fiókja bejelentkezései és biztonsági változásai. Ha olyasmit lát, amit nem Ön tett, változtassa meg a jelszavát, és jelentkeztesse ki azokat az eszközöket, amelyeket nem ismer fel.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>A fiók bejelentkezései és biztonsági változásai.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Jelszó módosítása</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Vissza a fiókhoz</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>A biztonsági tevékenység rögzítése nem történik</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Az adatok a felhasználói auditnaplóból származnak, amelynek expuser_audit táblája hiányzik, vagy ez az adatbázis nem támogatja. Futtassa a php update/common/scripts/6.0/createuseraudittable.php parancsot vagy a 6.0.15-ös verzió adatbázis-frissítését.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Az elmúlt napok: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Bejelentkezések az elmúlt napokban (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Legutóbbi biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Megjelenítés</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>sikertelen</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>elutasítva</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Még nincs rögzített biztonsági tevékenység.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>A biztonsági események megőrzési ideje: %days nap.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>A biztonsági eseményeket addig őrizzük, amíg egy rendszergazda el nem távolítja őket.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Bejelentkezési adataim letöltése</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Munkamenetei és biztonsági eseményei JSON-fájlként.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Bejelentkezve</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Sikertelen bejelentkezési kísérlet</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kijelentkezve</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Munkamenetek kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Bejelentkezés új eszközről</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Bejelentkezés új helyről</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Személyazonosság megerősítve („Személyazonosság megerősítése”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>A személyazonosság ellenőrzése sikertelen</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Bejelentkezés hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sikertelen bejelentkezés hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Bejelentkezés elutasítva: a kétlépéses kód hiányzik vagy hibás</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Hibás kétlépéses kód</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Fiók zárolva sikertelen bejelentkezések után</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Fiók zárolása feloldva</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Jelszó módosítva</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Sikertelen jelszómódosítás</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Jelszó visszaállítva</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Új jelszó kérve</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mail-cím módosítva</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Felhasználónév módosítva</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kétlépéses bejelentkezés bekapcsolva</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kétlépéses bejelentkezés kikapcsolva</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Helyreállító kód felhasználva</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Új helyreállító kódok</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Alkalmazásjelszó létrehozva</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Alkalmazásjelszó visszavonva</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Hozzáférési kulcs hozzáadva</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Hozzáférési kulcs eltávolítva</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Fiók engedélyezve</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Fiók letiltva</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Összes</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Bejelentkezések és munkamenetek</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Fiókváltozások</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Figyelmet igényel</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Biztonsági tevékenység</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Biztonsági tevékenység – %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>A fiókja bejelentkezései és biztonsági változásai. Ha olyasmit lát, amit nem Ön tett, változtassa meg a jelszavát, és jelentkeztesse ki azokat az eszközöket, amelyeket nem ismer fel.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Jelszó módosítása</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Ezen a webhelyen még nem történik a biztonsági tevékenység rögzítése.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Bejelentkezések az elmúlt napokban (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Sikertelen kísérletek</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Még nincs rögzített biztonsági tevékenység.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Bejelentkezési adataim letöltése</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Munkamenetei és biztonsági eseményei JSON-fájlként.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Jelszó</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Jelszó és kétlépéses kód</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-felület</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-felület</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Egyszeri bejelentkezés</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>A munkamenetek rögzítése előtt jelentkezett be</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Bejelentkezési jelentés</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ki van bejelentkezve a webhelyre, milyen gyakran jelentkeznek be a fiókok, és milyen gyakran sikertelenül, valamint egy felhasználó kijelentkeztetése mindenhonnan. Minden munkamenet-kezelővel működik.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>A munkamenet kijelentkeztetve. Az eszköznek újra be kell jelentkeznie.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login kijelentkeztetve a munkamenetekből (%count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login felhasználónak nem volt futó munkamenete.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Egyik fióknak sincs ilyen azonosítója, felhasználóneve vagy e-mail-címe.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ez az Ön által használt munkamenet. A befejezéséhez jelentkezzen ki.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ez a munkamenet már véget ért.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Az oldal lejárt. Semmi sem változott; próbálja meg újra.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ezen a webhelyen nem történik a munkamenetek rögzítése (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Az expuser_session tábla hiányzik</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>A munkamenetek rögzítése a tábla létrehozása után kezdődik: php update/common/scripts/6.0/createusersessiontable.php vagy a 6.0.15-ös verzió adatbázis-frissítése.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Most és ma</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Futó munkamenetek</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Bejelentkezett felhasználók</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Mai bejelentkezések</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Mai sikertelen kísérletek</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Felhasználó kijelentkeztetése mindenhonnan</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>A fiók minden munkamenete a következő kérésénél véget ér, az „Emlékezzen rám” által megtartottak is. Akkor használja, ha egy fiók rossz kezekbe kerülhetett; utána állítsa vissza a jelszavát.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Felhasználói azonosító, felhasználónév vagy e-mail-cím</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Kijelentkeztetés mindenhonnan</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Most bejelentkezve</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>A legutóbb használtak láthatók, legfeljebb %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Felhasználó</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Eszköz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Bejelentkezve</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Utoljára aktív</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Műveletek</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ez az eszköz</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nincs rögzítve</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kijelentkeztetés</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nincs bejelentkezett munkamenet.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Az elmúlt napok: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>A bejelentkezések és a sikertelen kísérletek számát a felhasználói auditnaplóból számoljuk, amely nem létezik; az új munkameneteket számoljuk.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Nap</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Bejelentkezések</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Sikertelen kísérletek</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Új munkamenetek</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Munkamenet-kezelő: %handler. A munkamenetek az expuser_session táblából olvashatók ki, így a jelentés minden kezelővel működik.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Biztonsági figyelmeztetés a fiókjáról</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Biztonsági esemény történt az Ön %login fiókjában: %event. Ha nem Ön volt az, védje meg fiókját itt: %url.</translation>
     </message>
 </context>
 </TS>

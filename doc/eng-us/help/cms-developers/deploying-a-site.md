@@ -86,7 +86,7 @@ in [Deploying changes](../hosting/operations/deploying-changes.md).
 
 | Change | Steps |
 |---|---|
-| An existing template | `./console exp:cache clear --id=template --allow-root-user`, then `./console exp:velocity cache clear --allow-root-user` |
+| An existing template | `./console exp:cache clear --id=template --allow-root-user`, then `./console exp:velocity cache clear --apply --allow-root-user` |
 | A new template or override rule | clear `ini`, `template-override` and `content`, then Velocity's cache |
 | A stylesheet or script | deploy with `--packer`, or clear the packer and template-block caches; never add `?v=` to asset links |
 | An INI file | `--clear-tag=ini`, restart Velocity |

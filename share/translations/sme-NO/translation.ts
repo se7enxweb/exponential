@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Ásaheapmi &gt; Cron-barggut</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Ii oktage cron-barggu oassi leat vel vuodjan: bargovuordinláhkki, sisafievrrideamit, dieđáhusat ja ohcanindeaksa vurdet. Vuoje php bin/php/installcrontab.php --add --apply, dahje lasit --show linjáid crontab:ii.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Dát sajáiduhttin lea almmolaš demo: gii beare sáhttá dovdat dan hálddašeaddji beassansáni, ja hálddašeaddji beassansániid ii sáhte rievdadit dahje máhcahit. Ale čále dása mihkkege priváhta.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Du neavvut</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontot maid oktage ii geavat dahje mat dárbbašit geahčadit; heaittit, rabas dahje olggosfievrit daid.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Geavaheaddjiid revišuvdnalogga</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Gii rievdadii, čálihii sisa dahje hilgojuvvui, kontto mielde; sillo ja fievrrit olggos.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sisačálihanraporta</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Gii lea sisačálihuvvon, sisačáliheamit ja meattáhusat beaivválaččat; čálit geavaheaddji olggos juohke sajis.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP-gieđahalli gollan sešuvnnaid váldá eret PHP ieš (session.gc_maxlifetime), ii dát siidu iige session_gc-cron-barggu oassi.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Buot geavaheddjiid sisačálihuvvon sešuvnnat čájehuvvojit ja čálihuvvojit olggos sisačálihanraporttas, mii doaibmá buot sešuvnnaid gieđahalliiguin.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Rahpat sisačálihanraportta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ du konto.</translation>
     <message>
         <source>None yet</source>
         <translation>Ii vel ii oktage</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Du maŋimuš sisačáliheamit, eahpelihkostuvvan geahččaleamit ja rievdadusat du beassansáni, e-poastačujuhusa ja guovtteaskkálaš sisačálihusa ektui.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Dán kontu maŋimuš sisačáliheamit, eahpelihkostuvvan geahččaleamit ja sihkarvuođarievdadusat.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Geahčadit doaimmaid</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Eahpelihkostuvvan sisačáliheamit: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Geahča gáibádussiidda eambbo dieđuid dihte.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ii čállojuvvon (%reason). Lasit dát linnját crontabii geavaheaddjis gii neahttabáikki vuoddjá, muđui vuordinláhkki, sisafievrridemiid, dieđáhusaid ja ohcanindeaksa eai goassige vuodját:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ođđasit sajáiduhttin dahkkojuvvo kickstarteriin (%file, dasto php bin/php/kickstarter.php run --apply) dahje ođđa sajáiduhttimiin.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>E-poasttajohtolat biehttalii %count reive maŋimus vuodjimis. Dárkkis e-poastabálvá ja site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Dáhpáhusat mat vurdet: %count, ja dieđáhus-cron-barggu vuodjin ii leat registrerejuvvon. Lasit cron-barggu oasi &quot;frequent&quot; crontab:ii, dahje vuoje exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Vállje eará neahttabáikki dahje oasi čuolbmaválljejeaddjiin</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Dušše vuogádathálddašeaddji sáhttá rievdadit eaiggáda: vuoje ./console exp:content-check --fix-permissions --apply root-geavaheaddjin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>empty</source>
         <translation>guorus</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Vuolláičállinčoavdda lea badjel jagi boaris: molso dan exp:audit key rotate --apply bokte.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>not sent</source>
         <translation>ii sáddejuvvon</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Dieđáhus-cron-bargu registrere dása juohke vuodjima. Lasit oasi frequent crontab:ii, dahje vuoje exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Geavat konsolla: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>None.</source>
         <translation>Ii mihkkege.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentiseren-prográmmain</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kodain e-poastta bokte</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>máhcahankodain</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>beassančoavdagiin</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>olgguldas kontuin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Čájehuvvo fierpmádahkan; čujuhus vurkejuvvo nugo neahttabáikki dáhtasuodjalanheivehusat dadjet.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ii merkejuvvon</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Sajádat</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>likká</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Manage devices</source>
         <translation>Hálddašit neavvuid</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentiseren-prográmmain</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kodain e-poastta bokte</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>máhcahankodain</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>beassančoavdagiin</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>olgguldas kontuin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ii merkejuvvon</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Sajádat</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>likká</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>View the sessions of this user</source>
         <translation>Čájehit dán geavaheaddji sešuvnnaid</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Du kontu %login neahttabáikkis %site bokte čálihuvvui dál sisa báikkis gos dat ii leat čálihuvvon sisa áiggi mielde:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Likká sajádat</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser, %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sisačálihanraporta</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>Open the page</source>
         <translation>Rahpat siidu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, oktiibuot %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Geavaheaddjinamma dahje geavaheaddji ID: konto maid dáhpáhus guoskkai, dahje geavaheaddji gii doaimmai.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Doaibma</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Maŋŋil</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Buot bohtosat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ovdal</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Dahkki</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Guorrut</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Dahkkon</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Dáhpáhusat vurkejuvvojit %days beaivvi.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Dáhpáhusat vurkejuvvojit dassážii go dat sihkkojuvvojit gieđain.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dáhpáhusat</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Buot doaimmat</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Dán kontto buot dáhpáhusat</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Fievrrit listtu olggos CSV-fiilan (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Rájes</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ráddje listtu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ii oktage dáhpáhus heive.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Siidui</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registreren lea jáddaduvvon audit.ini-fiillas ([UserAuditSettings] UserAudit); listu čájeha dan mii registrerejuvvui ovdal.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hilgojuvvon</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bohtosat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Čájet</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Geavaheaddjiid revišuvdnaloggatabealla váilu. Ráhkat dan dáinna: php update/common/scripts/6.0/createuseraudittable.php; dassážii revišuvdnafiillat vurkejit buot dáhpáhusaid.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Dát siidu dárbbaša SQL-diehtovuođu; dat ii leat olámuttus MongoDB:s. Revišuvdnafiillat vurkejit buot dáhpáhusaid.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Rádjái</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Geavaheaddjiid revišuvdnalogga</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Geavaheaddji</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Goas</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Gos</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Gii rievdadii, ráhkadii, doaimmahii, jáddadii, sirddii dahje sihkui man kontto, gii čálihii sisa dahje hilgojuvvui, ja makkár rollat juhkkojuvvojedje: okta linnjá juohke dáhpáhussii, gieddiiguin ovdal ja maŋŋil. Beassansánit ja čiegusvuođat eai goassege registrerejuvvo.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>joavku</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>vuogádat</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>amas</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sihkkarastit konto</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Máhcahankoda geavahuvvui čálihit sisa du kontui %login neahttabáikkis %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Máhcahankoda geavahuvvui</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Likká čujuhus</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Bivdde ođđa beassansáni vai sáhtát fas čálihit sisa, dahje váldde oktavuođa neahttabáikki hálddašeddjiiguin.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Bivdit ođđa beassansáni</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Juohke máhcahankoda doaibmá oktii. Jus leat massán telefovnna, ráhkat autentiseren-prográmma ođđasit ja vurke ođđa máhcahankodaid oadjebas sadjái.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Eahpelihkostuvvan sisačálihangeahččaleamit du kontus</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Dás duohko sisačálihus bivdá koda beassansáni lassin. Jus don dahket dán, de it dárbbaš maidege dahkat.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Jus dat ledjet don ja leat vajálduhttán beassansáni, de bivdde ođđa. Jus ii, de vállje garraset beassansáni ja čuoggát guovtteaskkálaš sisačálihusa doaibmii.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Jus dat it lean don, de soapmásaš sáhttá diehtit du beassansáni: rievdat dan dál ja dárkkis gos du konto lea sisačálihuvvon.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Báhcán máhcahankodat</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Geahčat lávdeidat</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Sihkarvuođavárrehus</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Soapmásaš geahččalii čálihit sisa du kontui %login neahttabáikkis %site boasttu beassansániin máŋgii maŋŋálagaid (geahččaleamit: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Du kontus %login neahttabáikkis %site dáhpáhuvai sihkarvuođadáhpáhus.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Dát lea sihkarvuođavárrehus du kontu birra. Dat sáddejuvvo juohke dakkár rievdadusa maŋŋá iige sáhte jáddaduvvot.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Áigi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Guovtteaskkálaš sisačálihus jáddaduvvui du kontus %login neahttabáikkis %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Guovtteaskkálaš sisačálihus jáddaduvvui</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Guovtteaskkálaš sisačálihus čuoggáhuvvui doaibmii du kontus %login neahttabáikkis %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Guovtteaskkálaš sisačálihus čuoggáhuvvui doaibmii</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Du konto %login neahttabáikkis %site lohkkaduvvui go ledje beare ollu eahpelihkostuvvan sisačáliheamit.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Du konto lea dál suddjejuvvon dušše beassansániin. Jus it dahkan dán, de čuoggát guovtteaskkálaš sisačálihusa fas doaibmii go leat rievdadan beassansáni.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Du konto lohkkaduvvui</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sihkarvuođadoaimmat: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Čálihuvvon sisa</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Eahpelihkostuvvan sisačálihangeahččaleapmi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Čálihuvvon olggos</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sešuvnnat čálihuvvon olggos</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sisačálihus ođđa lávdis</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sisačálihus ođđa sajádagas</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitehta duođaštuvvon (&quot;Duođašte ahte don leat&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitehtadárkkisteapmi ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Čálihuvvon sisa beassančoavdagiin</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sisačálihus beassančoavdagiin ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Sisačálihus hilgojuvvon: guovttelávkásaš koda váilu dahje lea boastut</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Boasttu guovttelávkásaš koda</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto lohkkaduvvon eahpelihkostuvvan sisačálihemiid maŋŋá</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto rahppojuvvon</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Beassansátni rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Beassansáni rievdadeapmi ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Beassansátni máhcahuvvon</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ođđa beassansátni bivdojuvvon</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-poastačujuhus rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Geavaheaddjinamma rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Guovtteaskkálaš sisačálihus doaibmii</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Guovtteaskkálaš sisačálihus jáddaduvvon</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Máhcahankoda geavahuvvon</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ođđa máhcahankodat</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Applikašuvdnabeassansátni ráhkaduvvon</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Applikašuvdnabeassansátni gomihuvvon</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Beassančoavdda lasihuvvon</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Beassančoavdda váldojuvvon eret</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto doaibmá</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto heaittihuvvon</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Buot</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sisačáliheamit ja sešuvnnat</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontorievdadusat</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Dárbbaša fuolahusa</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>du bokte</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>geavaheaddji bokte</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>geavaheaddji %login bokte</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Vuohki</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Neahttalogan</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Doaibmavuogádat</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Lávdi</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Báiki</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Riika</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sešuvnnat</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Mat</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanála</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Eahpelihkostuvvan geahččaleamit</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Báhcán kodat</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Sisačálihusa gieđahalli</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sihkarvuođadoaimmat: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sisačáliheamit ja rievdadusat du kontu sihkarvuođas. Jus oainnát juoidá maid it leat dahkan, de rievdat beassansáni ja čálit olggos lávddiid maid it dovdda.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Sisačáliheamit ja rievdadusat dán kontu sihkarvuođas.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Du neavvut</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Rievdadit beassansáni</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Ruovttoluotta kontui</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Sihkarvuođadoaimmat eai registrerejuvvo</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Dat lohkkojuvvojit geavaheddjiid revišuvdnaloggas, muhto dan tabealla expuser_audit váilu dahje ii dorjojuvvo dán diehtovuođus. Vuoje php update/common/scripts/6.0/createuseraudittable.php, dahje 6.0.15 diehtovuođuođasmahttima.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Maŋimuš beaivvit: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sisačáliheamit maŋimuš beivviid (beaivvit: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Maŋimuš sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Čájehit</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>hilgojuvvon</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Sihkarvuođadoaimmat eai leat vel registrerejuvvon.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Sihkarvuođadáhpáhusat vurkejuvvojit dihto áigge (beaivvit: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Sihkarvuođadáhpáhusat vurkejuvvojit dassážii go hálddašeaddji sihkku daid.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Viežžat mu sisačálihandieđuid</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Du sešuvnnat ja sihkarvuođadáhpáhusat JSON-fiilan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Čálihuvvon sisa</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Eahpelihkostuvvan sisačálihangeahččaleapmi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Čálihuvvon olggos</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sešuvnnat čálihuvvon olggos</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sisačálihus ođđa lávdis</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sisačálihus ođđa sajádagas</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitehta duođaštuvvon (&quot;Duođašte ahte don leat&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitehtadárkkisteapmi ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Čálihuvvon sisa beassančoavdagiin</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sisačálihus beassančoavdagiin ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Sisačálihus hilgojuvvon: guovttelávkásaš koda váilu dahje lea boastut</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Boasttu guovttelávkásaš koda</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto lohkkaduvvon eahpelihkostuvvan sisačálihemiid maŋŋá</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto rahppojuvvon</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Beassansátni rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Beassansáni rievdadeapmi ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Beassansátni máhcahuvvon</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ođđa beassansátni bivdojuvvon</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-poastačujuhus rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Geavaheaddjinamma rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Guovtteaskkálaš sisačálihus doaibmii</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Guovtteaskkálaš sisačálihus jáddaduvvon</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Máhcahankoda geavahuvvon</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ođđa máhcahankodat</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Applikašuvdnabeassansátni ráhkaduvvon</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Applikašuvdnabeassansátni gomihuvvon</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Beassančoavdda lasihuvvon</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Beassančoavdda váldojuvvon eret</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto doaibmá</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto heaittihuvvon</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Buot</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sisačáliheamit ja sešuvnnat</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontorievdadusat</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Dárbbaša fuolahusa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sihkarvuođadoaimmat</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sihkarvuođadoaimmat: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sisačáliheamit ja rievdadusat du kontu sihkarvuođas. Jus oainnát juoidá maid it leat dahkan, de rievdat beassansáni ja čálit olggos lávddiid maid it dovdda.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Du neavvut</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Rievdadit beassansáni</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Sihkarvuođadoaimmat eai vel registrerejuvvo dán neahttabáikkis.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sisačáliheamit maŋimuš beivviid (beaivvit: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Eahpelihkostuvvan geahččaleamit</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Sihkarvuođadoaimmat eai leat vel registrerejuvvon.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Viežžat mu sisačálihandieđuid</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Du sešuvnnat ja sihkarvuođadáhpáhusat JSON-fiilan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Beassansátni</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Beassansátni ja guovttelávkásaš koda</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-ráddjehus</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-ráddjehus</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Okta sisačálihus</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Čálihii sisa ovdal go sešuvnnat registrerejuvvojedje</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sisačálihanraporta</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Gii lea sisačálihuvvon neahttabáikái, man dávjá kontot čálihit sisa ja eai lihkostuva, ja geavaheaddji olggoščáliheapmi juohke sajis. Doaibmá buot sešuvnnaid gieđahalliiguin.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sešuvdna čálihuvvui olggos. Lávdi ferte čálihit sisa ođđasit.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Geavaheaddji %login čálihuvvui olggos sešuvnnain (lohku: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Geavaheaddjis %login ii lean doaibmi sešuvdna.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ii oktage konto leat dainna ID:in, geavaheaddjinamain dahje e-poastačujuhusain.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dát lea sešuvdna maid don geavahat. Čálit olggos vai heaittihat dan.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Dat sešuvdna lei juo heaittihuvvon.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siidu lei nogaduvvon. Maidege ii rievdaduvvon; geahččal ođđasit.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sešuvnnat eai registrerejuvvo dán neahttabáikkis (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabealla expuser_session váilu</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sešuvnnat registrerejuvvojit go dat lea ráhkaduvvon: php update/common/scripts/6.0/createusersessiontable.php, dahje 6.0.15 diehtovuođuođasmahttin.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Dál ja odne</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Doaibmi sešuvnnat</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Sisačálihuvvon geavaheaddjit</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Sisačáliheamit odne</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Eahpelihkostuvvan geahččaleamit odne</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Čálihit geavaheaddji olggos juohke sajis</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kontu juohke sešuvdna nohká dan boahtte jearaldagas, maiddái dat mat &quot;Muitte mu&quot; doallá. Geavat dán go konto sáhttá leat boasttu gieđain; máhcat dasto dan beassansáni.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Geavaheaddji-ID, geavaheaddjinamma dahje e-poastačujuhus</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Čálihit olggos juohke sajis</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Sisačálihan dál</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Maŋimusat geavahuvvon čájehuvvojit (eanemusat: %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Geavaheaddji</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Lávdi</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Čujuhus</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Čálihuvvon sisa</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Maŋemus aktiivvalaš</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Doaimmat</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dát lávdi</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ii merkejuvvon</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Čálihit olggos</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ii oktage sešuvdna lea sisačálihuvvon.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Maŋimuš beaivvit: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Sisačáliheamit ja eahpelihkostuvvan geahččaleamit rehkenastojuvvojit geavaheddjiid revišuvdnaloggas, mii váilu; ođđa sešuvnnat rehkenastojuvvojit.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Beaivi</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Sisačáliheamit</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Eahpelihkostuvvan geahččaleamit</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Ođđa sešuvnnat</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sešuvnnaid gieđahalli: %handler. Sešuvnnat lohkkojuvvojit tabeallas expuser_session, nu ahte raporta doaibmá buot gieđahalliiguin.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Sihkarvuođavárrehus du kontu birra</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Du kontus %login dáhpáhuvai sihkarvuođadáhpáhus: %event. Jus dat it lean don, de sihkkarastte du konto čujuhusas %url.</translation>
     </message>
 </context>
 </TS>

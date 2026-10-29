@@ -14326,6 +14326,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>이 설치는 공개 데모입니다. 누구나 관리자 암호를 알 수 있으며, 관리자 암호는 변경하거나 재설정할 수 없습니다. 여기에 개인 정보를 입력하지 마십시오.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>아무도 사용하지 않거나 확인이 필요한 계정입니다. 사용하지 않도록 설정하거나 잠금을 해제하거나 내보낼 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>사용자 감사 로그</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>계정별로 누가 변경했는지, 누가 로그인했거나 거부되었는지 확인하고 필터링하거나 내보낼 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>로그인 보고서</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>로그인한 사용자, 일별 로그인 및 실패 수, 사용자를 모든 위치에서 로그아웃.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP 처리기의 시간이 초과된 세션은 이 페이지나 session_gc 크론 작업 부분이 아니라 PHP 자체(session.gc_maxlifetime)가 제거합니다.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>모든 사용자의 로그인된 세션은 로그인 보고서에 나열되며 거기에서 로그아웃할 수 있습니다. 이 보고서는 모든 세션 처리기에서 작동합니다.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>로그인 보고서 열기</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>아직 없음</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>최근 로그인, 실패한 시도 및 암호, 이메일 주소, 2단계 로그인 변경 내용입니다.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>이 계정의 최근 로그인, 실패한 시도 및 보안 변경 내용입니다.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>활동 검토</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>로그인 실패 %count회</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab이 기록되지 않았습니다(%reason). 사이트를 실행하는 사용자의 crontab에 다음 줄을 추가하십시오. 그렇지 않으면 대기열, 가져오기, 알림, 검색 인덱스가 실행되지 않습니다:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>재설치는 Kickstarter(%file 작성 후 php bin/php/kickstarter.php run --apply 실행) 또는 새 설치로 수행합니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>마지막 실행에서 메일 전송이 메시지 %count개를 거부했습니다. 메일 서버와 site.ini MailSettings를 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>이벤트 %count개가 대기 중이며 알림 크론 작업의 실행 기록이 없습니다. 크론 작업 부분 “frequent”를 crontab에 추가하거나 exp:notification:run --apply 명령을 실행하십시오.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>노드 선택기로 다른 사이트 또는 섹션 선택</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>소유자는 시스템 관리자만 변경할 수 있습니다. root로 ./console exp:content-check --fix-permissions --apply 명령을 실행하십시오.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>비어 있음</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>서명 키가 1년 이상 되었습니다. exp:audit key rotate --apply 명령으로 키를 교체하십시오.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>전송되지 않음</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>알림 크론 작업은 실행할 때마다 여기에 기록합니다. frequent 부분을 crontab에 추가하거나 exp:notification:run --apply 명령을 실행하십시오.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>콘솔 사용: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Setup &gt; Cronjobs</source>
         <translation>설정 &gt; 크론 작업</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>아직 실행된 크론 작업 부분이 없습니다. 작업 큐, 가져오기, 알림 및 검색 인덱스가 대기 중입니다. php bin/php/installcrontab.php --add --apply 명령을 실행하거나 --show 출력의 줄을 crontab에 추가하십시오.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>없음.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>인증 앱 사용</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>이메일 코드 사용</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>복구 코드 사용</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>패스키 사용</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>외부 계정 사용</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>네트워크 단위로 표시됩니다. 주소는 사이트의 데이터 보호 설정에 따라 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>기록되지 않음</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>대략적</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>장치 관리</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>인증 앱 사용</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>이메일 코드 사용</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>복구 코드 사용</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>패스키 사용</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>외부 계정 사용</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>기록되지 않음</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>대략적</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>이 사용자의 세션 보기</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site의 %login 계정으로 최근에 로그인한 적이 없는 위치에서 방금 로그인했습니다:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>대략적인 위치</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os의 %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>로그인 보고서</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>페이지 열기</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / 전체 %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>사용자 이름 또는 사용자 ID: 이벤트의 대상이 된 계정 또는 작업을 수행한 사용자입니다.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>계정</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>변경 후</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>모든 결과</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>변경 전</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>수행자</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>지우기</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>완료</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>이벤트는 %days 일 동안 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>이벤트는 수동으로 제거할 때까지 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>이벤트</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>모든 작업</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>이 계정의 모든 이벤트</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>목록을 CSV로 내보내기 (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>시작</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>목록 범위 좁히기</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>일치하는 이벤트가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>페이지당</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini 파일에서 기록이 꺼져 있습니다([UserAuditSettings] UserAudit). 목록에는 이전에 기록된 내용이 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>거부됨</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>결과</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>사용자 감사 로그 테이블이 없습니다. php update/common/scripts/6.0/createuseraudittable.php 명령으로 만드십시오. 그때까지는 감사 파일에 모든 이벤트가 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>이 페이지에는 SQL 데이터베이스가 필요하며 MongoDB 환경에서는 사용할 수 없습니다. 감사 파일에 모든 이벤트가 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>종료</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>사용자 감사 로그</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>사용자</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>누가 어떤 계정을 변경, 생성, 사용 설정, 사용 중지, 이동 또는 제거했는지, 누가 로그인했거나 거부되었는지, 어떤 역할이 할당되었는지 기록합니다. 이벤트당 한 줄이며 변경 전후 필드가 함께 표시됩니다. 암호와 비밀 값은 기록되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>그룹</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>시스템</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>알 수 없음</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>계정 보호</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site의 %login 계정에 복구 코드를 사용하여 로그인했습니다.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>복구 코드가 사용되었습니다</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>계정</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>대략적인 주소</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>다시 로그인하려면 새 암호를 요청하거나 사이트 관리자에게 문의하십시오.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>새 암호 요청</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>각 복구 코드는 한 번만 사용할 수 있습니다. 휴대폰을 분실한 경우 인증 앱을 다시 설정하고 새 복구 코드를 안전한 곳에 보관하십시오.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>계정에 대한 로그인 시도 실패</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>이제부터 로그인할 때 암호 외에 코드를 입력해야 합니다. 직접 변경한 경우에는 아무것도 하지 않아도 됩니다.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>본인이 시도했고 암호를 잊어버린 경우 새 암호를 요청하십시오. 본인이 아니라면 더 강력한 암호를 선택하고 2단계 로그인을 켜십시오.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>본인이 한 것이 아니라면 다른 사람이 암호를 알고 있을 수 있습니다. 지금 암호를 변경하고 계정이 어디에 로그인되어 있는지 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>남은 복구 코드</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>내 장치 검토</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>보안 경고</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>누군가 %site의 %login 계정에 잘못된 암호로 %count회 연속 로그인을 시도했습니다.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site의 %login 계정에서 보안 이벤트가 발생했습니다.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>계정에 대한 보안 경고입니다. 이러한 변경이 있을 때마다 전송되며 끌 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site의 %login 계정에 대한 2단계 로그인이 꺼졌습니다.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>2단계 로그인이 꺼졌습니다</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site의 %login 계정에 대한 2단계 로그인이 켜졌습니다.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>2단계 로그인이 켜졌습니다</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site의 %login 계정이 로그인 실패 횟수가 너무 많아 잠겼습니다.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>이제 계정은 암호로만 보호됩니다. 직접 변경하지 않았다면 암호를 변경한 후 2단계 로그인을 다시 켜십시오.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>계정이 잠겼습니다</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 사용자의 보안 활동</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>로그인함</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>로그인 시도 실패</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>로그아웃함</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>세션 로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>새 장치에서 로그인</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>새 위치에서 로그인</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>본인 확인됨(“본인 확인”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>본인 확인 실패</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>패스키로 로그인함</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>패스키 로그인 실패</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>로그인 거부: 2단계 로그인 코드가 없거나 잘못됨</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>잘못된 2단계 로그인 코드</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>로그인 실패로 계정 잠김</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>계정 잠금 해제됨</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>암호 변경됨</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>암호 변경 실패</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>암호 재설정됨</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>새 암호 요청됨</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>이메일 주소 변경됨</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>사용자 이름 변경됨</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>2단계 로그인 켜짐</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>2단계 로그인 꺼짐</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>복구 코드 사용됨</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>새 복구 코드</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>앱 암호 생성됨</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>앱 암호 해지됨</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>패스키 추가됨</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>패스키 제거됨</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>계정 사용</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>계정 사용 안 함</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>모두</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>로그인 및 세션</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>계정 변경</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>주의 필요</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>본인</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>해당 사용자</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>실행한 사용자: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>방법</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>브라우저</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>운영 체제</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>장치</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>장소</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>국가</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>세션</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>대상</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>전송 방법</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>실패한 시도</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>남은 코드</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>로그인 처리기</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 사용자의 보안 활동</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>계정의 로그인 및 보안 변경 내용입니다. 직접 하지 않은 항목이 있으면 암호를 변경하고 알 수 없는 장치를 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>이 계정의 로그인 및 보안 변경 내용입니다.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>암호 변경</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>계정으로 돌아가기</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>보안 활동이 기록되지 않습니다</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>보안 활동은 사용자 감사 로그에서 읽어 오는데, 해당 테이블 expuser_audit이 없거나 이 데이터베이스에서 지원되지 않습니다. php update/common/scripts/6.0/createuseraudittable.php 명령 또는 6.0.15의 데이터베이스 업데이트를 실행하십시오.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>최근 %days일</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>최근 %days일 동안의 로그인</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>최근 보안 활동</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>거부됨</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>아직 기록된 보안 활동이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>보안 이벤트는 %days일 동안 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>보안 이벤트는 관리자가 제거할 때까지 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>내 로그인 데이터 다운로드</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>세션 및 보안 이벤트를 JSON 파일로 받습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>로그인함</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>로그인 시도 실패</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>로그아웃함</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>세션 로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>새 장치에서 로그인</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>새 위치에서 로그인</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>본인 확인됨(“본인 확인”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>본인 확인 실패</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>패스키로 로그인함</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>패스키 로그인 실패</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>로그인 거부: 2단계 로그인 코드가 없거나 잘못됨</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>잘못된 2단계 로그인 코드</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>로그인 실패로 계정 잠김</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>계정 잠금 해제됨</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>암호 변경됨</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>암호 변경 실패</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>암호 재설정됨</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>새 암호 요청됨</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>이메일 주소 변경됨</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>사용자 이름 변경됨</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>2단계 로그인 켜짐</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>2단계 로그인 꺼짐</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>복구 코드 사용됨</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>새 복구 코드</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>앱 암호 생성됨</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>앱 암호 해지됨</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>패스키 추가됨</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>패스키 제거됨</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>계정 사용</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>계정 사용 안 함</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>모두</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>로그인 및 세션</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>계정 변경</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>주의 필요</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 사용자의 보안 활동</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>계정의 로그인 및 보안 변경 내용입니다. 직접 하지 않은 항목이 있으면 암호를 변경하고 알 수 없는 장치를 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>암호 변경</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>이 사이트에서는 아직 보안 활동이 기록되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>최근 %days일 동안의 로그인</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>실패한 시도</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>아직 기록된 보안 활동이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>내 로그인 데이터 다운로드</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>세션 및 보안 이벤트를 JSON 파일로 받습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>암호</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>암호 및 2단계 로그인 코드</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 인터페이스</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 인터페이스</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single Sign-On(SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>세션 기록 전에 로그인함</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>로그인 보고서</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>사이트에 로그인한 사용자, 계정의 로그인 및 실패 빈도, 사용자를 모든 위치에서 로그아웃. 모든 세션 처리기에서 작동합니다.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>세션이 로그아웃되었습니다. 해당 장치에서 다시 로그인해야 합니다.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login 사용자가 세션 %count개에서 로그아웃되었습니다.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login 사용자에게 실행 중인 세션이 없었습니다.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>해당 ID, 사용자 이름 또는 이메일 주소를 가진 계정이 없습니다.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>현재 사용 중인 세션입니다. 종료하려면 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>해당 세션은 이미 종료되었습니다.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>페이지가 만료되었습니다. 변경된 내용은 없습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>이 사이트에서는 세션이 기록되지 않습니다(site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session 테이블이 없습니다</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>테이블을 만들면 세션이 기록됩니다: php update/common/scripts/6.0/createusersessiontable.php 또는 6.0.15의 데이터베이스 업데이트.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>현재 및 오늘</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>실행 중인 세션</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>로그인한 사용자</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>오늘 로그인</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>오늘 실패한 시도</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>사용자를 모든 위치에서 로그아웃</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>계정의 모든 세션은 다음 요청 시 종료되며, “로그인 상태 유지”로 유지되는 세션도 마찬가지입니다. 계정이 다른 사람의 손에 들어갔을 수 있을 때 사용하고, 그런 다음 암호를 재설정하십시오.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>사용자 ID, 사용자 이름 또는 이메일 주소</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>모든 위치에서 로그아웃</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>현재 로그인됨</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>최근에 사용된 %limit개가 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>사용자</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>장치</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>주소</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>로그인함</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>마지막 활동</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>이 장치</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>기록되지 않음</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>로그아웃</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>로그인된 세션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>최근 %days일</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>로그인 및 실패한 시도는 사용자 감사 로그에서 집계되는데 해당 로그가 없습니다. 새 세션은 집계됩니다.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>날짜</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>로그인</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>실패한 시도</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>새 세션</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>세션 처리기: %handler. 세션은 expuser_session 테이블에서 읽으므로 이 보고서는 모든 처리기에서 작동합니다.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>계정 보안 경고</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>%login 계정에서 보안 이벤트가 발생했습니다: %event. 본인이 아니라면 %url에서 계정을 보호하십시오.</translation>
     </message>
 </context>
 </TS>

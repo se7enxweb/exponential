@@ -87,7 +87,7 @@ In a running installation, an administrator can show the database engine under *
 
 > **Tip**
 > Offer the buyer a test installation they control. One command installs a working site on SQLite, with no database
-> server: `./console exp:install` ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
+> server: `./console exp:install --apply` ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
 
 ## No lock-in, point by point
 
@@ -140,7 +140,7 @@ the other columns for the buyer.
 | Published releases immutable      | Yes                                                 |          |          | SECURITY.md  |
 | Security reporting                | Private, first answer within one business day       |          |          | SECURITY.md  |
 | Multisite from one installation   | Yes (siteaccesses)                                  |          |          | README.md    |
-| Content languages                 | 359 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
+| Content languages                 | 368 locale files; at most 62 per installation       |          |          | doc/eng-us/languages.md |
 | Administration translations       | all complete (totals: languages page)               |          |          | doc/eng-us/languages.md |
 | Visual page builder               | Exponential Layouts                                 |          |          | layouts-editor |
 | Audit trail                       | Tamper-evident, on by default                       |          |          | audit-trail  |
@@ -187,7 +187,7 @@ Some buyers know the history. Use the tone of the history pages: factual, source
 | "We are better than X." | "Here is what Exponential does, and how you can check it." | No source can prove a ranking. |
 | "X locks you in." | "With Exponential you keep the code under the GPL and your content in a standard database." | Describe Exponential, not others. |
 | "It is the fastest CMS." | "The README documents 0.36 ms per cached page on a 12-core machine, reproducible with shipped scripts; let us measure on your hardware." | Figures need their context ([Benchmarking](../../guides/benchmarking.md)). |
-| "It supports every language." | "359 locale files for content; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))." | Exact and sourced. |
+| "It supports every language." | "368 locale files for content; administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md))." | Exact and sourced. |
 | "It is the new eZ Publish." | "Exponential continues the code base of eZ Publish, a product its creator discontinued after almost 18 years." | The product's name is Exponential. |
 | "We guarantee support." | "Security reports get a first answer within one business day (SECURITY.md); service terms come from your provider." | Only what is written down. |
 | "Hundreds of companies use it." | "The sources do not count users. The history shows hundreds of contributors over the years." | [Contributors](../who-is-7x.md#contributors-and-friends-of-the-project) |

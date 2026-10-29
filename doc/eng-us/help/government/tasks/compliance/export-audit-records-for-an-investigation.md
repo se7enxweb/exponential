@@ -32,7 +32,7 @@ procedure.
 ## Steps
 
 1. If the period is older than 90 days, restore those days per channel:
-   `./console exp:audit restore --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
+   `./console exp:audit restore --apply --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
 2. Verify: `./console exp:audit verify --allow-root-user` (add `--archives` for archived days). Save the output.
 3. Try the selection with `search` first, then export:
 

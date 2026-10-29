@@ -22,7 +22,7 @@ Diese Aufgabe richtet sich an Administratoren und Site-Ersteller, auf einer Test
 
    ```bash
    php bin/php/exploremipsumfill.php --subtree=2 --limit=20 --dry-run
-   php bin/php/exploremipsumfill.php --subtree=2 --limit=20
+   php bin/php/exploremipsumfill.php --apply --subtree=2 --limit=20
    ```
 
    (`./console exp:loremipsum` ist derselbe Befehl.) Er füllt nur Testsprachen.

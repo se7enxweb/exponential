@@ -53,7 +53,7 @@ see patterns; your network team has the full addresses in their own logs.
 - **Caches in front of PHP**: under Velocity the response cache serves pages without PHP
   ([Velocity response cache](../../../../features/6.0/velocity-response-cache.md)); the static cache lets the web
   server answer public pages as files ([Static cache](../availability/static-cache.md)).
-- **Warm** the most visited pages after a cache clear: `php bin/php/preload.php --siteaccess=site --allow-root-user`.
+- **Warm** the most visited pages after a cache clear: `php bin/php/preload.php --apply --siteaccess=site --allow-root-user`.
 - **Maintenance mode** with a short message is a last resort for a site that cannot cope; it answers before settings
   or the database are touched.
 

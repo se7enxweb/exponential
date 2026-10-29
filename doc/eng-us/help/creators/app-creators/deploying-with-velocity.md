@@ -62,7 +62,7 @@ Templates need no restart:
 
 ```bash
 ./console exp:cache clear --id=template --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 ```
 
 A new template file or override rule also needs `template-override`; a stylesheet needs `--packer` or the

@@ -65,7 +65,7 @@ ClassList[]=<class identifier>
 Die Klasse braucht ein Attribut mit dem Bezeichner `unpublish_date`. Bevorzugen Sie für Inhalte des öffentlichen
 Sektors `hide.php`: Versteckte Inhalte bleiben, wo sie waren, mit ihren Versionen, und lassen sich später leichter
 nachweisen; Inhalte im Papierkorb verschwinden endgültig, wenn der Papierkorb geleert wird (**Papierkorb leeren** oder
-`./console exp:trashpurge`).
+`./console exp:trashpurge --apply`).
 
 ## Archive nach Jahr
 

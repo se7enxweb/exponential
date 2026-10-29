@@ -151,7 +151,7 @@ class expPreloadJob
     public static function commandLine( $siteaccess, array $options )
     {
         $options = self::options( $options );
-        $parts = array( 'php bin/php/preload.php' );
+        $parts = array( 'php bin/php/preload.php', '--apply' );
         if ( preg_match( '#^[A-Za-z0-9_-]+$#', (string)$siteaccess ) )
             $parts[] = '--siteaccess=' . $siteaccess;
         // the limits always: the command's default page limit (1000) is not the page's

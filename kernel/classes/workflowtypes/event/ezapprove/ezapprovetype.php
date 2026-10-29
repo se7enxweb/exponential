@@ -305,6 +305,11 @@ class eZApproveType extends eZWorkflowEventType
                 $this->setInformation( "We are going to create approval" );
                 $process->setAttribute( 'event_state', eZApproveType::COLLABORATION_CREATED );
                 $process->store();
+                // A user account or user group (the section based approval of accounts, e.g. a Staff section): every
+                // approver gets the mail with the link to the item in the administration, and the request is audited
+                // (doc/eng-us/bc/6.0/user-account-approval.md)
+                if ( class_exists( 'expUserApproval' ) && expUserApproval::isAccountOrGroup( $object ) )
+                    expUserApproval::sectionRequested( $process, $event, $object, $versionID, $user, $approveUserIDArray );
                 eZDebugSetting::writeDebug( 'kernel-workflow-approve', $this, 'approve execute' );
                 return eZWorkflowType::STATUS_DEFERRED_TO_CRON_REPEAT;
             }

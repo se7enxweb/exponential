@@ -50,7 +50,7 @@ its history, so you can read why code is the way it is and send fixes back
 ## Step 2: install with one command
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 Without options this installs the `sevenx_multisite` site package on SQLite in `eng-US` and prints the site address,

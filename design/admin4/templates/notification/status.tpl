@@ -38,7 +38,7 @@
         <div class="a4-notice is-info" role="status"><p>{'A run is in progress (process %pid, since %time).'|i18n( 'design/admin/notification/status',, hash( '%pid', $status.running.pid, '%time', $status.running.since|l10n( 'shortdatetime' ) ) )}</p></div>
 {/if}
 {if $job_available|not}
-        <div class="a4-notice is-warn" role="status"><p>{'Run now needs a background process: %reason'|i18n( 'design/admin/notification/status',, hash( '%reason', $job_error ) )|wash} {'Use the console: ./console exp:notification:run'|i18n( 'design/admin/notification/status' )}</p></div>
+        <div class="a4-notice is-warn" role="status"><p>{'Run now needs a background process: %reason'|i18n( 'design/admin/notification/status',, hash( '%reason', $job_error ) )|wash} {'Use the console: ./console exp:notification:run --apply'|i18n( 'design/admin/notification/status' )}</p></div>
 {/if}
         <div class="a4-actions">
             <button type="button" class="a4-btn a4-btn-primary" id="nf-run-now"{if $job_available|not} disabled="disabled"{/if}>{'Run now'|i18n( 'design/admin/notification/status' )}</button>
@@ -68,7 +68,7 @@
             </table></div>
             <p class="a4-help">{'Messages: sent / recipients.'|i18n( 'design/admin/notification/status' )}</p>
 {else}
-            <div class="a4-empty"><h3 class="a4-h3">{'No run is recorded yet'|i18n( 'design/admin/notification/status' )}</h3><p>{'The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.'|i18n( 'design/admin/notification/status' )}</p></div>
+            <div class="a4-empty"><h3 class="a4-h3">{'No run is recorded yet'|i18n( 'design/admin/notification/status' )}</h3><p>{'The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.'|i18n( 'design/admin/notification/status' )}</p></div>
 {/if}
         </section>
 

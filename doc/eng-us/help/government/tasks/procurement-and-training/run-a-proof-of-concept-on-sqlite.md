@@ -39,7 +39,7 @@ and [7. The console install](../../../../install/07-console-install.md).
    and `admin`:
 
    ```bash
-   ./console exp:install
+   ./console exp:install --apply
    ```
 
 3. Read the summary: it prints the site and administration addresses and the user name. The administrator password is

@@ -127,7 +127,7 @@ Kinder sortiert werden, und der Attribut-Join der eingebauten Suchmaschine, wenn
 nach einem Klassenattribut sortiert werden). Oracle erlaubt `AS` nur für Spaltenaliase
 (`ORA-00933`), deshalb schlugen beide dort fehl; die Aliase werden jetzt ohne `AS` geschrieben, was
 auf jeder Datenbank gleich ist. Installieren Sie auf Oracle mit
-`./console exp:install --db=oracle` (siehe
+`./console exp:install --apply --db=oracle` (siehe
 [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ### Oracle und der SQL-Abfrage-Cache (1. und 2. Oktober 2026)

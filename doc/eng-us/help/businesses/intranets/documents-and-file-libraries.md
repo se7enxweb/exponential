@@ -106,7 +106,8 @@ through `ezfind`, file contents can be indexed too ([Intranet search](intranet-s
 
 ## WebDAV
 
-The kernel contains a WebDAV entry point (`webdav.php`) with its settings in `settings/webdav.ini`. It is switched off
+The kernel contains a WebDAV entry point (`index_webdav.php`; `webdav.php` until 6.0.14, see
+[the change](../../../bc/6.0/webdav-entry-script-index-webdav.md)) with its settings in `settings/webdav.ini`. It is switched off
 by default (`EnableWebDAV=false`) and starts at node 2. Uploads through WebDAV pass the same image checks as other
 uploads (changelog 6.0.15). This help has no step-by-step guide for it; if staff want to mount the library as a
 network drive, ask your partner to test it on your installation before you promise it.

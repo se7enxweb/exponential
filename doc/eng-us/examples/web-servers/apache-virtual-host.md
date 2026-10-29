@@ -143,6 +143,9 @@ them is free documentation (GFDL 1.3 or later), like this page.
         # REST API
         RewriteRule ^/api/ /index_rest.php [L]
         RewriteRule ^/index_rest\.php - [L]
+        # SOAP server (soap.ini EnableSOAP=true): index_soap.php since
+        # Exponential 6.0.15, soap.php only forwards to it. Uncomment with SOAP on:
+        #RewriteRule ^/index_soap\.php - [L]
         RewriteRule ^/([^/]+/)?content/treemenu.* /index_treemenu.php [L]
         RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* - [L]
         # The stored files of PDF exports generated once (Setup > PDF export)
@@ -239,6 +242,9 @@ And one consequence: `[L]` ends the processing here, so `/content/treemenu/...` 
 Everything not on the asset list, `settings/`, `var/log/`, `vendor/`, `kernel/`, `composer.json` included, is rewritten
 to `/index.php` and never sent. The `<FilesMatch "\.php$">` handler hands `/index.php`, `/index_rest.php` and
 `/index_treemenu.php` to PHP-FPM; no other script is ever reached, because the rules send nothing else to a `.php`.
+With SOAP on, uncomment the `index_soap.php` line: the SOAP server is `index_soap.php` since Exponential 6.0.15
+(`soap.php` before, now a shim that forwards to it). What to change and how to test it:
+[the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md).
 
 ## Headers and caching
 
@@ -255,6 +261,15 @@ When TLS ends at a proxy, keep only the port 80 host (without its redirect, with
 the 443 host), let the proxy send `X-Forwarded-Proto` and the original `Host`, and list the proxy's address in
 `site.ini [HTTPHeaderSettings] TrustedProxies[]`. See
 [chapter 8, section 8.8](../../install/08-serving-the-site.md#88-behind-a-reverse-proxy).
+
+## WebDAV
+
+This virtual host does not route WebDAV (off by default). To serve it, add `RewriteRule ^index_webdav\.php - [L]`
+inside the `<Directory>` block, before the catch-all, in the **HTTPS** host (the port 80 host only redirects), or a
+virtual host of its own (`webdav.example.com`) with `RewriteRule . /index_webdav.php [L]`. Since 6.0.15 the script
+is `index_webdav.php`; rules written for `webdav.php` keep working through a forwarding shim until a later major
+version. Before/after and the test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`):
+[The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md#apache-the-virtual-hosts-http-and-https).
 
 ## Check it
 

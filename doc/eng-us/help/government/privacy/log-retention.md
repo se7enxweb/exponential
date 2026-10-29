@@ -70,7 +70,7 @@ Age limits act when a prune runs:
 ```bash
 ./console exp:logs --archives --allow-root-user          # each log, its archives, sizes and limits
 ./console exp:logs --prune --dry-run --allow-root-user   # what would go
-./console exp:logs --prune --allow-root-user             # remove it
+./console exp:logs --apply --prune --allow-root-user             # remove it
 ```
 
 Or the cronjob part `logs` (in no default group, so add it), as the site's user:

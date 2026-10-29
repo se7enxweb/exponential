@@ -34,7 +34,7 @@ again in modules 2 to 4.
 
 ## Preparing this module
 
-- One training installation per learner, installed with `php bin/php/console exp:install` (URL matching, the
+- One training installation per learner, installed with `php bin/php/console exp:install --apply` (URL matching, the
   default), with shell access and an administrator account. How to build such a lab:
   [Lesson 2.3 of Train the trainer](../../train-the-trainer/module-02-building-the-lab/one-install-per-learner.md).
 - Learners can run `php bin/php/console` in the installation root as the user that serves the site; if they must work

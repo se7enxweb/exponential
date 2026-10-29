@@ -33,7 +33,7 @@ Release 0.0.4.54 braucht sie PHP 8.0 oder später, dazu die Erweiterung `sockets
 ```bash
 composer install                                                   # brings the engine the kernel's composer.json requires
 php bin/php/console exp:velocity ext check                         # missing PHP extensions, with the install command
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 ```
 
 Lesen Sie die Version aus dem Block `require` der `composer.json` des Kernels ab: Am 25. Oktober 2026 war es
@@ -57,7 +57,7 @@ des Control Panels über die Befehlszeile, damit das Passwort nie auf dem Bildsc
 | 3:00 | Entwicklerwerkzeuge des Browsers, Netzwerk | Die Startseite zweimal neu laden | „Die erste Antwort wird gerendert; die zweite hat `X-Cache: HIT`: beantwortet aus dem Antwort-Cache des Servers.“ ([Antwort-Cache von Velocity](../../funktionen/6.0/velocity-antwort-cache.md#ablesen-header-und-zustand)) |
 | 4:00 | Browser | `/Q/dashboard` öffnen (im Panel angemeldet) | „Das eigene Dashboard des Servers: laufende Anfragen, Worker, Speicher, Statuscodes, häufigste Pfade, ohne Neuladen.“ |
 | 5:00 | Terminal | `./console exp:velocity graceful` | „Die Worker laden einer nach dem anderen neu; der Port antwortet weiter.“ |
-| 5:45 | Terminal | `./console exp:velocity cache clear` | „Nach einer Änderung an einem Template oder Stylesheet leert dies jeden Cache.“ |
+| 5:45 | Terminal | `./console exp:velocity cache clear --apply` | „Nach einer Änderung an einem Template oder Stylesheet leert dies jeden Cache.“ |
 | 6:30 | Titelkarte | | Geschwindigkeit, wie unten. Dann: „Die Befehle und die Methode sind unten verlinkt.“ |
 
 `./console` ist eine Verknüpfung, die Sie mit `ln -s bin/php/console console` anlegen; ohne sie tippen Sie

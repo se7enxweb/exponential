@@ -46,7 +46,7 @@ Installationsbuchs ([Kapitel 12](../../../installation/12-fehlerbehebung.md)), f
 php bin/php/console exp:velocity status --allow-root-user   # is Velocity running and answering?
 php bin/php/maintenance.php status --allow-root-user        # is maintenance mode on?
 php bin/php/ezcache.php --clear-all --allow-root-user       # when unsure which cache
-php bin/php/console exp:velocity cache clear --allow-root-user  # Velocity's response cache, after a restart
+php bin/php/console exp:velocity cache clear --apply --allow-root-user  # Velocity's response cache, after a restart
 ```
 
 ## Verwandte Seiten

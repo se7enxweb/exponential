@@ -35,7 +35,7 @@ Datei geprüft werden sollen oder das Seitenpaket aus einem lokalen Paket-Reposi
 php bin/php/console exp:kickstarter ini --yes          # write kickstart.ini from the built-in defaults
 php bin/php/console exp:kickstarter run --list-steps   # show the steps, change nothing
 php bin/php/console exp:kickstarter run --dry-run      # check, stop after SiteDetails
-php bin/php/console exp:kickstarter run --force        # install
+php bin/php/console exp:kickstarter run --apply --force        # install
 ```
 
 - `ini` schreibt die Datei: interaktiv, mit `--yes` (eingebaute Standardwerte) oder `--defaults` (die Werte aus `kickstart.ini-dist`).
@@ -75,7 +75,7 @@ cd /var/www/vhosts/<domain>/<installation>
 umask 077
 envsubst < deploy/kickstart.ini.template > kickstart.ini
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 rm -f kickstart.ini
 ```
 

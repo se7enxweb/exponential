@@ -85,7 +85,7 @@ sollte: ein stabiler Schlüssel mit Präfix je Quelldatensatz
 ([Idempotente Importe, geschlüsselt nach remote_id](idempotente-importe-ueber-die-remote-id.md)).
 
 Ein Import fügt Objekte hinzu und entfernt oder aktualisiert sie nie. Damit ein lebhafter Feed nicht grenzenlos wächst,
-schalten Sie das Aufräumen ein (`content.ini [RSSImportCleanupSettings]`, Befehl `php bin/php/cleanuprss.php`,
+schalten Sie das Aufräumen ein (`content.ini [RSSImportCleanupSettings]`, Befehl `php bin/php/cleanuprss.php --apply`,
 Cronjob-Teil `cleanuprss`), das je aktivem Import die neuesten *N* Einträge behält
 ([Aufräumen von RSS-Importen](../../bc/6.0/cleanuprss.md)).
 

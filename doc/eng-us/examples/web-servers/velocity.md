@@ -19,6 +19,12 @@ extension); after an upgrade it takes effect with the restart that `exp:velocity
 
 Everything is configured in `velocity.ini`; the `/etc/vc` tree is generated from it on every start.
 
+**WebDAV is not served by Velocity.** Its entry scripts are `index.php`, `index_rest.php` and `index_treemenu.php`;
+the WebDAV server, `index_webdav.php` since 6.0.15 (formerly `webdav.php`), is not among them, under either name. Serve
+WebDAV through Apache or nginx with PHP-FPM, best on a host of its own such as `webdav.example.com`; nothing in
+`velocity.ini` needs to change for the rename. See
+[The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md).
+
 ## 1. The settings
 
 [`velocity.ini.append.php.example`](velocity.ini.append.php.example) is an override for a public site on the standard
@@ -79,15 +85,15 @@ Install it as `settings/override/velocity.ini.append.php` (merge it into an exis
 one, which writes the same file:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine qbix --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Host 0.0.0.0 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Port 80 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings HTTPSPort 443 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings User example --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Group example --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Enabled true --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Host 0.0.0.0 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Port 80 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings HTTPSPort 443 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings User example --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Group example --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true --allow-root-user
 php bin/php/console exp:velocity config list --allow-root-user      # * marks what you set
 php bin/php/console exp:velocity restart --allow-root-user
 php bin/php/console exp:velocity status --allow-root-user
@@ -165,15 +171,19 @@ shortened to an example installation, the static path list cut):
 }
 ```
 
+`scripts` lists every script the server runs. The SOAP server (`index_soap.php`, called `soap.php` before 6.0.15) is
+not on it, and was not before either: serve SOAP through the Apache or nginx front end of the installation (see
+[the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md)).
+
 Do not edit a generated file: change `velocity.ini` and restart. To keep a file of your own, remove its
 `"_generated"` marker; it is then never overwritten, like a dpkg conffile. Enable and disable like `a2ensite`,
 `a2enconf` and `a2enmod`:
 
 ```bash
 php bin/php/console exp:velocity layout --allow-root-user                 # every path, what is enabled, the files in use
-php bin/php/console exp:velocity site enable example.com --allow-root-user
-php bin/php/console exp:velocity conf enable reverse-proxy --allow-root-user
-php bin/php/console exp:velocity mod disable http2 --allow-root-user
+php bin/php/console exp:velocity site enable --apply example.com --allow-root-user
+php bin/php/console exp:velocity conf enable --apply reverse-proxy --allow-root-user
+php bin/php/console exp:velocity mod disable --apply http2 --allow-root-user
 php bin/php/console exp:velocity ctl configtest --allow-root-user         # the engine's own check of the tree
 ```
 

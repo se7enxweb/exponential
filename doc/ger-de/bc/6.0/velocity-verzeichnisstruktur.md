@@ -59,8 +59,8 @@ Engines (`expVelocityConfigLayout::exportable()` und `siteExportable()`, die die
 
 ```bash
 ./console exp:velocity layout                      # resolved paths and migration state
-./console exp:velocity site enable <name>          # also: site disable, conf enable|disable, mod enable|disable
-./console exp:velocity layout migrate              # run the migration explicitly
+./console exp:velocity site enable --apply <name>          # also: site disable, conf enable|disable, mod enable|disable
+./console exp:velocity layout migrate --apply              # run the migration explicitly
 ```
 
 Das Aktivieren legt den relativen symbolischen Link im Verzeichnis `*-enabled` an. Das Deaktivieren entfernt nur den

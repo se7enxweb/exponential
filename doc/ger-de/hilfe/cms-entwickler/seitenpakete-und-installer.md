@@ -37,7 +37,7 @@ Voreinstellungen einrichten. Installationen finden Pakete auf einem Paketserver 
 
 | Installer | Verwenden Sie ihn für |
 |---|---|
-| `./console exp:install` | Entwicklung und skriptgesteuerte Installationen; standardmäßig SQLite und `sevenx_multisite` ([Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md)) |
+| `./console exp:install --apply` | Entwicklung und skriptgesteuerte Installationen; standardmäßig SQLite und `sevenx_multisite` ([Die Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md)) |
 | Der Kickstarter (`bin/php/kickstarter.php`, `kickstart.ini`) | unbeaufsichtigte Installationen, gesteuert durch eine Einstellungsdatei ([Kickstarter](../../installation/06-kickstarter.md)) |
 | Der Einrichtungsassistent im Browser | Installationen beim Hosting ohne Shell ([Einrichtungsassistent](../../installation/05-setup-assistent.md)) |
 

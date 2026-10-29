@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Panyetélan &gt; Tugas cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Teu acan aya bagian tugas cron nu parantos dijalankeun: antrian tugas, impor, béja sareng indéks pamaluruhan masih ngantosan. Jalankeun php bin/php/installcrontab.php --add --apply, atanapi tambihkeun baris ti --show kana crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Instalasi ieu téh démo umum: saha waé tiasa terang sandi pangurusna, sareng sandi pangurus teu tiasa dirobih atanapi diatur ulang. Ulah ngasupkeun nanaon nu sipatna pribadi di dieu.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Alat anjeun</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akun nu teu dianggo ku saha waé atanapi nu kedah diparios; pareuman, buka konci, atanapi ékspor.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log audit pamaké</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Saha nu ngarobih, asup atanapi ditolak, per akun; saring sareng ékspor.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan asup</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Saha nu nuju asup, prosés asup sareng nu gagal unggal poé; kaluarkeun pamaké di mana-mana.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sési panangan PHP nu kadaluwarsa dihapus ku PHP sorangan (session.gc_maxlifetime), lain ku kaca ieu atanapi bagéan tugas cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Sési nu nuju asup ti unggal pamaké didaptarkeun, sareng tiasa dikaluarkeun, dina laporan asup, nu tiasa jalan sareng unggal panangan sési.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Buka laporan asup</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ akun anjeun.</translation>
     <message>
         <source>None yet</source>
         <translation>Acan aya</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Prosés asup anjeun nu anyar, usaha nu gagal sareng robihan kana sandi, alamat surélék sareng asup dua léngkah anjeun.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Prosés asup nu anyar, usaha nu gagal sareng robihan kaamanan akun ieu.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Pariksa aktivitas</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count prosés asup gagal</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Tingali kaca sarat pikeun émbaran nu langkung lengkep.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab teu ditulis (%reason). Tambahkeun baris ieu kana crontab pamaké nu ngajalankeun situs, atanapi antrian, impor, béja sareng indéks pamaluruhan moal pernah jalan:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Masang deui dilakukeun ku kickstarter (%file, lajeng php bin/php/kickstarter.php run --apply) atanapi ku pamasangan énggal.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transpor surélék nolak %count pesen dina prosés pamungkas. Pariksa server surélék sareng site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count kajadian ngantosan sareng teu aya jalanna tugas cron béja nu kacatet. Tambihkeun bagian tugas cron &quot;frequent&quot; kana crontab, atanapi jalankeun exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63133,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Pilih situs atanapi séksi séjén ku pamilih simpul</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Ngan pangurus sistem nu tiasa ngarobih nu gaduh: jalankeun ./console exp:content-check --fix-permissions --apply salaku root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64670,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>empty</source>
         <translation>kosong</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Konci tanda tangan parantos langkung ti sataun: gentos ku exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70384,14 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>not sent</source>
         <translation>teu dikirim</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Tugas cron béja nyatet unggal jalanna di dieu. Tambihkeun bagian frequent kana crontab, atanapi jalankeun exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Paké konsol: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76565,46 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>None.</source>
         <translation>Euweuh.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nganggo aplikasi autentikator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>nganggo kodeu liwat surélék</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>nganggo kodeu pamulihan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nganggo passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>nganggo akun luar</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ditémbongkeun salaku jaringanana; alamat disimpen numutkeun setélan panyalindungan data situs.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Teu kacatet</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kira-kira</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76848,42 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Manage devices</source>
         <translation>Atur alat</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nganggo aplikasi autentikator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>nganggo kodeu liwat surélék</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>nganggo kodeu pamulihan</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nganggo passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>nganggo akun luar</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Teu kacatet</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kira-kira</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76963,14 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>View the sessions of this user</source>
         <translation>Tingali sési pamaké ieu</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Akun anjeun %login di %site nembé dianggo asup ti tempat nu akhir-akhir ieu teu acan kantos dianggo asup:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Kira-kira lokasi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77009,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser dina %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan asup</translation>
     </message>
 </context>
 <context>
@@ -77344,6 +77512,935 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Open the page</source>
         <translation>Buka kaca</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from dugi ka %to ti %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ngaran login atanapi ID pamaké: akun anu dimaksud ku kajadian atanapi pamaké anu ngalakukeunana.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akun</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Saatos</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Sadaya hasil</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Sateuacan</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Beresihan</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Réngsé</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Kajadian disimpen salami %days dinten.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Kajadian disimpen dugi ka dikaluarkeun sacara manual.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Kajadian</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Sadaya tindakan</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Sadaya kajadian akun ieu</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Ékspor daptar salaku CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ti</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Saring daptar</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Teu aya kajadian anu cocog.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per kaca</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ngarékam dipareuman dina audit.ini ([UserAuditSettings] UserAudit); daptar némbongkeun naon anu parantos karékam sateuacanna.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ditolak</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hasil</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Témbongkeun</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabél log audit pamaké teu aya. Jieun ku php update/common/scripts/6.0/createuseraudittable.php; dugi ka harita, berkas audit nyimpen unggal kajadian.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Kaca ieu peryogi basis data SQL; teu sayogi dina MongoDB. Berkas audit nyimpen unggal kajadian.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log audit pamaké</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Pamaké</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Iraha</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Dimana</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Saha nu ngarobih, nyieun, ngaktipkeun, mareuman, mindahkeun atanapi ngaluarkeun akun mana, saha nu asup atanapi ditolak, sareng peran mana anu dipasihkeun: hiji baris per kajadian, kalayan widang sateuacan sareng saatosna. Sandi sareng rusiah henteu kantos dirékam.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>teu dipikanyaho</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Amankeun akun anjeun</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Kodeu pamulihan dianggo asup ka akun anjeun %login di %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Kodeu pamulihan parantos dianggo</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akun</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Kira-kira alamat</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Pénta sandi énggal kanggo asup deui, atanapi hubungi pangurus situs.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Pénta sandi énggal</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Unggal kodeu pamulihan ngan tiasa dianggo sakali. Upami telepon anjeun leungit, setél deui aplikasi autentikator anjeun sareng simpen kodeu pamulihan nu énggal di tempat nu aman.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Usaha asup nu gagal dina akun anjeun</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Ti ayeuna, prosés asup ménta kodeu salian ti sandi anjeun. Upami anjeun nu ngalakukeunana, anjeun teu kedah ngalakukeun nanaon.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Upami éta anjeun sareng anjeun hilap sandi, pénta nu énggal. Upami sanés, pilih sandi nu langkung kuat sareng aktipkeun asup dua léngkah.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Upami ieu sanés anjeun, panginten aya nu terang sandi anjeun: robih ayeuna sareng pariksa di mana akun anjeun nuju asup.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kodeu pamulihan nu sésana</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Pariksa alat anjeun</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Peringatan kaamanan</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Aya nu nyobian asup ka akun anjeun %login di %site nganggo sandi nu lepat %count kali sacara runtuy.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Aya kajadian kaamanan dina akun anjeun %login di %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ieu peringatan kaamanan ngeunaan akun anjeun. Peringatan ieu dikirim pikeun unggal robihan sapertos kieu sareng teu tiasa dipareuman.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktos</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Asup dua léngkah parantos dipareuman pikeun akun anjeun %login di %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Asup dua léngkah parantos dipareuman</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Asup dua léngkah parantos diaktipkeun pikeun akun anjeun %login di %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Asup dua léngkah parantos diaktipkeun</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Akun anjeun %login di %site dikonci saatos seueur teuing prosés asup nu gagal.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Akun anjeun ayeuna ngan dijaga ku sandi. Upami sanés anjeun nu ngalakukeunana, aktipkeun deui asup dua léngkah saatos anjeun ngarobih sandi.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Akun anjeun parantos dikonci</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivitas kaamanan %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Asup</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Usaha asup gagal</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kaluar</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sési dikaluarkeun</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Asup ti alat énggal</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Asup ti lokasi énggal</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Idéntitas dikonfirmasi (&quot;Vérifikasi yén éta anjeun&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Pamariksaan idéntitas gagal</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Asup nganggo passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Asup nganggo passkey gagal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Prosés asup ditolak: kodeu dua léngkah teu aya atanapi lepat</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kodeu dua léngkah lepat</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akun dikonci saatos prosés asup gagal</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konci akun dibuka</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Sandi dirobih</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ngarobih sandi gagal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Sandi disetél deui</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Sandi énggal dipénta</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Alamat surélék dirobih</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ngaran pamaké dirobih</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Asup dua léngkah diaktipkeun</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Asup dua léngkah dipareuman</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kodeu pamulihan dianggo</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodeu pamulihan énggal</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Sandi aplikasi dijieun</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Sandi aplikasi dicabut</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ditambihkeun</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey dihapus</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akun diaktipkeun</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akun dipareuman</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sadayana</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Prosés asup sareng sési</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Robihan akun</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Peryogi perhatosan</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ku anjeun</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ku pamaké</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ku %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Cara</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Panyungsi</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem operasi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Alat</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Tempat</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Nagara</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sési</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Nu mana</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Saluran</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Usaha gagal</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kodeu nu sésana</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Panangan asup</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivitas kaamanan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Prosés asup sareng robihan kana kaamanan akun anjeun. Upami anjeun ningali hal nu sanés dilakukeun ku anjeun, robih sandi anjeun sareng kaluarkeun alat nu teu dipikawanoh ku anjeun.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Prosés asup sareng robihan kana kaamanan akun ieu.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Alat anjeun</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Robih sandi</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Balik ka akun</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Aktivitas kaamanan teu dicatet</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Aktivitas ieu dibaca tina log audit pamaké, anu tabélna, expuser_audit, teu aya atanapi teu dirojong dina basis data ieu. Jalankeun php update/common/scripts/6.0/createuseraudittable.php, atanapi pembaruan basis data 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days poé pamungkas</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Prosés asup dina %days poé pamungkas</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Aktivitas kaamanan anyar</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Témbongkeun</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ditolak</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Teu acan aya aktivitas kaamanan nu kacatet.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Kajadian kaamanan disimpen salami %days poé.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Kajadian kaamanan disimpen dugi ka pangurus ngahapusna.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Unduh data asup abdi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sési sareng kajadian kaamanan anjeun salaku berkas JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Asup</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Usaha asup gagal</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kaluar</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sési dikaluarkeun</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Asup ti alat énggal</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Asup ti lokasi énggal</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Idéntitas dikonfirmasi (&quot;Vérifikasi yén éta anjeun&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Pamariksaan idéntitas gagal</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Asup nganggo passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Asup nganggo passkey gagal</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Prosés asup ditolak: kodeu dua léngkah teu aya atanapi lepat</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kodeu dua léngkah lepat</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akun dikonci saatos prosés asup gagal</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konci akun dibuka</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Sandi dirobih</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ngarobih sandi gagal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Sandi disetél deui</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Sandi énggal dipénta</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Alamat surélék dirobih</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ngaran pamaké dirobih</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Asup dua léngkah diaktipkeun</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Asup dua léngkah dipareuman</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kodeu pamulihan dianggo</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodeu pamulihan énggal</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Sandi aplikasi dijieun</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Sandi aplikasi dicabut</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ditambihkeun</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey dihapus</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akun diaktipkeun</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akun dipareuman</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sadayana</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Prosés asup sareng sési</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Robihan akun</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Peryogi perhatosan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivitas kaamanan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Prosés asup sareng robihan kana kaamanan akun anjeun. Upami anjeun ningali hal nu sanés dilakukeun ku anjeun, robih sandi anjeun sareng kaluarkeun alat nu teu dipikawanoh ku anjeun.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Alat anjeun</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Robih sandi</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Aktivitas kaamanan teu acan dicatet dina situs ieu.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Prosés asup dina %days poé pamungkas</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Usaha gagal</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Teu acan aya aktivitas kaamanan nu kacatet.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Unduh data asup abdi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sési sareng kajadian kaamanan anjeun salaku berkas JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Sandi</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Sandi sareng kodeu dua léngkah</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Antarmuka REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Antarmuka SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Asup tunggal (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Asup saméméh sési dicatet</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Laporan asup</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Saha nu nuju asup ka situs, sabaraha sering akun asup sareng gagal asup, sareng ngaluarkeun pamaké di mana-mana. Laporan ieu tiasa jalan sareng unggal panangan sési.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sési parantos dikaluarkeun. Alat éta kedah asup deui.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login parantos dikaluarkeun tina %count sési.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login teu gaduh sési nu nuju jalan.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Teu aya akun nu gaduh ID, ngaran pamaké atanapi alamat surélék éta.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ieu sési nu nuju dianggo ku anjeun. Pikeun ngeureunkeunana, kaluar.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sési éta parantos réngsé.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kaca parantos kadaluwarsa. Teu aya nu dirobih; mangga cobian deui.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sési teu dicatet dina situs ieu (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabél expuser_session teu aya</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sési dicatet saatos tabél éta dijieun: php update/common/scripts/6.0/createusersessiontable.php, atanapi pembaruan basis data 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Ayeuna sareng dinten ieu</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sési nu jalan</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Pamaké nu asup</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Prosés asup dinten ieu</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Usaha gagal dinten ieu</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Kaluarkeun pamaké di mana-mana</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Unggal sési akun réngsé dina pamundut salajengna, kaasup sési nu dijaga ku Émut kuring. Paké ieu upami akun panginten aya dina leungeun nu salah; lajeng setél deui sandina.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID pamaké, ngaran pamaké atanapi alamat surélék</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Kaluar di mana-mana</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nuju asup</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit nu pamungkas dianggo ditémbongkeun.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Pamaké</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Alat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Alamat</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Asup</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Pamungkas aktip</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Alat ieu</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Teu kacatet</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kaluar</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Teu aya sési nu asup.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days poé pamungkas</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Prosés asup sareng usaha gagal diitung tina log audit pamaké, nu teu aya; sési énggal tetep diitung.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Poé</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Prosés asup</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Usaha gagal</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sési énggal</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Panangan sési: %handler. Sési dibaca tina tabél expuser_session, janten laporan ieu tiasa jalan sareng unggal panangan.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Peringatan kaamanan pikeun akun anjeun</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Aya kajadian kaamanan dina akun anjeun %login: %event. Upami sanés anjeun, amankeun akun anjeun di %url.</translation>
     </message>
 </context>
 </TS>

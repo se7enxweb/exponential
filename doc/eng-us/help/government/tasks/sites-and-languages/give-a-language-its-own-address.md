@@ -38,7 +38,7 @@ and [Language addresses: path or host](../../languages/language-addresses-path-o
 3. In `settings/override/site.ini.append.php` add `AvailableSiteAccessList[]=fr` and `RelatedSiteAccessList[]=fr`.
 4. Matching: for a path, `MatchOrder=uri` with `URIMatchType=element` (shipped); for a host,
    `HostMatchMapItems[]=fr.example.gov;fr` with `MatchOrder=host` or `host;uri`, plus DNS, web server and certificate.
-5. Clear caches: `php bin/php/ezcache.php --clear-tag=ini,content`; with Velocity also `./console exp:velocity cache clear`.
+5. Clear caches: `php bin/php/ezcache.php --clear-tag=ini,content`; with Velocity also `./console exp:velocity cache clear --apply`.
 
 ## Check
 

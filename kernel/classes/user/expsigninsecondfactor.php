@@ -55,6 +55,17 @@ class expSignInSecondFactor
     const AUDIT_APP_PASSWORD_REVOKE = 'access.user.app_password.revoke';
     const AUDIT_APP_PASSWORD_USE = 'access.user.app_password.use';
 
+    /** Two-step sign-in turned on for an account (after: method) */
+    const AUDIT_2FA_ENROLL = 'access.user.two_factor.enroll';
+    /** Two-step sign-in turned off or reset (after: method) */
+    const AUDIT_2FA_REMOVE = 'access.user.two_factor.remove';
+    /** A recovery code signed in in place of the app's code (after: left) */
+    const AUDIT_2FA_RECOVERY_USED = 'access.user.two_factor.recovery_used';
+    /** A new set of recovery codes (after: count) */
+    const AUDIT_2FA_RECOVERY_ISSUED = 'access.user.two_factor.recovery_issued';
+    /** A wrong code at the second step of a web sign-in (after: method) */
+    const AUDIT_2FA_VERIFY_FAILED = 'access.user.two_factor.verify.failed';
+
     /** The request header of a one-time code when site.ini does not name one */
     const DEFAULT_CODE_HEADER = 'X-Exp-OTP';
 
@@ -374,8 +385,11 @@ class expSignInSecondFactor
     }
 
     /**
-     * Records an event of the catalogue for an account: a refusal, or what a handler did with an app password
-     * (AUDIT_APP_PASSWORD_CREATE, AUDIT_APP_PASSWORD_REVOKE, AUDIT_APP_PASSWORD_USE). Never a secret, a hash or a code.
+     * Records an event of the catalogue for an account: a refusal, what a handler did with an app password
+     * (AUDIT_APP_PASSWORD_CREATE, AUDIT_APP_PASSWORD_REVOKE, AUDIT_APP_PASSWORD_USE), or a change of the account's
+     * two-step sign-in (AUDIT_2FA_*: turned on or off, recovery codes issued or used, a wrong code at the second step).
+     * Never a secret, a hash or a code. The events reach the user audit log, the security activity (user/security) and
+     * the security alerts (expUserSecurityAlerts).
      *
      * @param string $name
      * @param eZUser $user
@@ -388,7 +402,8 @@ class expSignInSecondFactor
         if ( !class_exists( 'expAuditHook' ) )
             return;
         if ( !in_array( $name, array( self::AUDIT_REFUSED, self::AUDIT_APP_PASSWORD_CREATE, self::AUDIT_APP_PASSWORD_REVOKE,
-                                      self::AUDIT_APP_PASSWORD_USE ), true ) )
+                                      self::AUDIT_APP_PASSWORD_USE, self::AUDIT_2FA_ENROLL, self::AUDIT_2FA_REMOVE,
+                                      self::AUDIT_2FA_RECOVERY_USED, self::AUDIT_2FA_RECOVERY_ISSUED, self::AUDIT_2FA_VERIFY_FAILED ), true ) )
             return;
         expAuditHook::emit( $name, function () use ( $user, $after, $result, $reason ) {
             $data = array( 'object' => expAuditHook::user( $user ), 'result' => (string)$result, 'after' => $after );

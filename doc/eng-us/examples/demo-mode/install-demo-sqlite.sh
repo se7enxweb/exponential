@@ -46,8 +46,10 @@ cd "$build"
 "$COMPOSER" install --quiet --no-dev --no-interaction || fail "composer install"
 
 # the installation: SQLite, the published administrator password as given
-"$PHP" bin/php/install.php --db=sqlite --url="$URL" --password="$DEMO_PASSWORD" \
+"$PHP" bin/php/install.php --apply --db=sqlite --url="$URL" --password="$DEMO_PASSWORD" \
     --email=demo@example.invalid > "$BUILDS/install-$stamp.txt" 2>&1 || fail "exp:install (see $BUILDS/install-$stamp.txt)"
+# without --apply exp:install is a dry run that installs nothing: never swap such a build in
+[ -f settings/override/site.ini.append.php ] || fail "exp:install installed nothing (is --apply given?)"
 
 # exp:install replaces a password it may not install by a generated one and
 # records it in var/log/initial-admin-password. On a demo that means demo mode
@@ -87,6 +89,6 @@ rm -rf "$BUILDS/old-$stamp"
 
 # warm the new site with the kernel's preloader
 cd "$SITE_ROOT/$DOCROOT_NAME"
-"$PHP" bin/php/preload.php --siteaccess site > /dev/null 2>&1 || echo "WARN: the preloader did not finish" >&2
+"$PHP" bin/php/preload.php --apply --siteaccess site > /dev/null 2>&1 || echo "WARN: the preloader did not finish" >&2
 
 echo "PASS: demo rebuilt ($stamp)"

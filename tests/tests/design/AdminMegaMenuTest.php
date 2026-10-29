@@ -943,7 +943,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         // the left menu of the tab: its links (Check user accounts since user/hygiene, the user audit log since
         // user/audit), no groups
         $this->assertSame( array( 'roles_and_policies' => 'role/list', 'unactivated' => 'user/unactivated', 'user_hygiene' => 'user/hygiene',
-                                  'user_audit' => 'user/audit' ),
+                                  'user_audit' => 'user/audit', 'session_report' => 'user/sessionreport' ),
                            $ini['Leftmenu_user']['Links'] );
         $this->assertArrayNotHasKey( 'Groups', $ini['Leftmenu_user'] );
         $this->assertStringContainsString( "{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_user' i18n_hash=", self::read( 'design/admin4/templates/parts/user/menu.tpl' ) );

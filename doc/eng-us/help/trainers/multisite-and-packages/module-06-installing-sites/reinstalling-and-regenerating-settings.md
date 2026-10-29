@@ -73,7 +73,7 @@ Sources: [6.5 DatabaseAction](../../../../install/06-kickstarter.md#65-databasea
 **Can I resume a failed run at the failed step?** No; run the whole sequence again after fixing the cause. With
 `remove`, a complete second run replaces whatever the failed one left.
 
-**How do I reset a training lab fastest?** The same `kickstart.ini` with `DatabaseAction=remove` and `run --force`,
+**How do I reset a training lab fastest?** The same `kickstart.ini` with `DatabaseAction=remove` and `run --apply`,
 or the same `exp:install --force` command. Train the trainer lesson 2.6 covers lab resets.
 
 **I changed the database engine and the site still talks to the old one.** Settings in `settings/override/` win; set
@@ -103,11 +103,11 @@ Use the installation of lesson 6.3 (`kickstart-course`) and its `kickstart.ini`,
    ```
 
 4. Put `kickstart.ini` back into the installation root and set `DatabaseAction=remove` in `[site_details]`.
-5. Run `php bin/php/console exp:kickstarter run --dry-run`, then `run --force`.
+5. Run `php bin/php/console exp:kickstarter run` (a dry run), then `run --apply`.
 6. Check the content tree: the folder *Before reset* is gone; the site is as freshly installed. Note the new
    administrator password from the summary.
 7. Add a hand-made setting: `php bin/php/console exp:ini set site.ini/SiteSettings/SiteName "Hand-made name" global`.
-8. Regenerate the settings, keeping the data: set `DatabaseAction=skip`, and run `run --force` again.
+8. Regenerate the settings, keeping the data: set `DatabaseAction=skip`, and run `run --apply` again.
 9. Run `exp:ini where site.ini/SiteSettings/SiteName`: the hand-made line is gone from the global override. Find the backup of the
    override in `var/backup/ini/` from step 7, and set the value again by hand.
 10. Move `kickstart.ini` out of the installation root again.

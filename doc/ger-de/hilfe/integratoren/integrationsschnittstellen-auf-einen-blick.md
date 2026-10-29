@@ -41,8 +41,8 @@ muss. Die Standards hinter jedem Protokoll, mit ihren bekannten Lücken, stehen 
 | RSS-, Atom- und OPML-Exporte | hinaus | RSS 1.0, RSS 2.0, Atom, OPML 2.0, Apple Podcasts; `/rss/feed/<address>` | `kernel/classes/ezrssexport.php`, Setup > RSS | keine eingerichtet |
 | RSS-Importe | hinein | RSS 0.91 bis 2.0 | `kernel/classes/ezrssimport.php`, Cronjob `rssimport.php` | im globalen Cronjob-Teil |
 | `syndication` | beide, Installation zu Installation | XML-Feeds über SOAP | Erweiterung `syndication`, `/syndication/menu` | braucht `soap.ini EnableSOAP=true` |
-| SOAP-Server | hinein | SOAP 1.1, keine WSDL | `soap.php`, `lib/ezsoap/` | `soap.ini [GeneralSettings] EnableSOAP=false` |
-| WebDAV | beide | WebDAV Klasse 1 | `webdav.php`, `kernel/private/classes/webdav/` | `webdav.ini [GeneralSettings] EnableWebDAV=false` |
+| SOAP-Server | hinein | SOAP 1.1, keine WSDL | `index_soap.php` (vor 6.0.15 `soap.php`), `lib/ezsoap/` | `soap.ini [GeneralSettings] EnableSOAP=false` |
+| WebDAV | beide | WebDAV Klasse 1 | `index_webdav.php` ([in 6.0.15 umbenannt](../../bc/6.0/webdav-einstiegsskript-index-webdav.md)), `kernel/private/classes/webdav/` | `webdav.ini [GeneralSettings] EnableWebDAV=false` |
 | Pakete (`.ezpkg`) | beide | Paketarchive; JSON-Paketformat | `ezpm.php`, Setup > Pakete | an |
 | CSV-Import und -Export | beide | CSV | `bin/php/ezcsvimport.php`, `bin/php/ezcsvexport.php` | an |
 | `xrowextract` | beide, zeitgesteuert | CSV, JSON, XML, `.ezpkg`; SFTP, FTP, S3, WebDAV, HTTP POST | Erweiterung `xrowextract`, Administration **Export** | mit der Distribution installiert |

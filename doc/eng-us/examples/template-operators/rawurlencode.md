@@ -29,7 +29,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/shop/archivelist.tpl` line 73:
+The first use in the templates of this installation, `design/admin/templates/shop/archivelist.tpl` line 75:
 
 ```tpl
 <td><a href={concat( '/shop/customerorderview/', $Orders.item.user_id, '/', $Orders.item.account_email|rawurlencode )|ezurl}>{$Orders.item.account_name|wash}</a></td> {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 5a17c08bfc), Copyright (C) Mugo Web, GPL v2 *}

@@ -14326,6 +14326,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ky instalim është një demo publike: fjalëkalimin e administratorit mund ta dijë kushdo, dhe fjalëkalimet e administratorëve nuk mund të ndryshohen ose të rivendosen. Mos futni këtu asgjë private.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Shënim: paketat nuk do të çinstalohen.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Llogari që nuk i përdor askush ose që duan një kontroll; çaktivizojini, zhbllokojini ose eksportojini.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Regjistri i auditimit të përdoruesve</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kush ndryshoi, u identifikua ose u refuzua, sipas llogarisë; filtrim dhe eksport.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raporti i identifikimeve</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kush është i identifikuar, identifikimet dhe dështimet për çdo ditë; nxjerrja e një përdoruesi kudo.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Seancat e skaduara të trajtuesit PHP i heq vetë PHP-ja (session.gc_maxlifetime), jo kjo faqe apo pjesa session_gc e punëve cron.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Seancat aktive të të gjithë përdoruesve listohen dhe mbyllen te raporti i identifikimeve, i cili funksionon me çdo trajtues seancash.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Hap raportin e identifikimeve</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ llogarinë tuaj.</translation>
     <message>
         <source>None yet</source>
         <translation>Asnjë ende</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Identifikimet tuaja të fundit, përpjekjet e dështuara dhe ndryshimet e fjalëkalimit, adresës së email-it dhe identifikimit me dy hapa.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Identifikimet e fundit, përpjekjet e dështuara dhe ndryshimet e sigurisë së kësaj llogarie.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Shqyrto aktivitetin</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Identifikime të dështuara: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ Për më shumë informacion shihni faqen e kërkesave.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab-i nuk u shkrua (%reason). Shtojini këto rreshta në crontab-in e përdoruesit me të cilin ekzekutohet sajti, përndryshe radha, importet, njoftimet dhe indeksi i kërkimit nuk do të ekzekutohen kurrë:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Riinstalimi bëhet me kickstarter (%file, pastaj php bin/php/kickstarter.php run --apply) ose me një instalim të ri.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transporti i postës refuzoi mesazhe në ekzekutimin e fundit (%count). Kontrolloni serverin e postës dhe site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ngjarje në pritje: %count, dhe nuk është regjistruar asnjë ekzekutim i punës cron të njoftimeve. Shtoni në crontab pjesën e punëve cron „frequent“ ose ekzekutoni exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Choose another site or section with the node picker</source>
         <translation>Zgjidh një sajt ose seksion tjetër me përzgjedhësin e nyjeve</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Vetëm administratori i sistemit mund ta ndryshojë pronarin: ekzekutoni ./console exp:content-check --fix-permissions --apply si root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>empty</source>
         <translation>bosh</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Çelësi i nënshkrimit është më i vjetër se një vit: ndërrojeni me exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>not sent</source>
         <translation>i padërguar</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Puna cron e njoftimeve regjistron këtu çdo ekzekutim të saj. Shtoni në crontab pjesën frequent ose ekzekutoni exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Përdorni konsolën: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Setup &gt; Cronjobs</source>
         <translation>Konfigurimi &gt; Punët cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Asnjë pjesë e punëve cron nuk është ekzekutuar ende: radha e punëve, importimet, njoftimet dhe indeksi i kërkimit janë në pritje. Ekzekutoni php bin/php/installcrontab.php --add --apply ose shtoni në crontab rreshtat e --show.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>None.</source>
         <translation>Asnjë.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>me një aplikacion vërtetimi</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>me një kod me email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>me një kod rikuperimi</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>me një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>me një llogari të jashtme</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Shfaqet si rrjeti i saj; adresa ruhet ashtu siç përcaktojnë cilësimet e mbrojtjes së të dhënave të sajtit.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>I paregjistruar</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vendndodhja</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>e përafërt</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Manage devices</source>
         <translation>Menaxho pajisjet</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>me një aplikacion vërtetimi</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>me një kod me email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>me një kod rikuperimi</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>me një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>me një llogari të jashtme</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>I paregjistruar</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vendndodhja</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>e përafërt</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>View the sessions of this user</source>
         <translation>Shiko seancat e këtij përdoruesi</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Llogaria juaj %login në %site sapo u përdor për t&apos;u identifikuar nga një vend prej të cilit nuk është identifikuar së fundi:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Vendndodhja e përafërt</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser në %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raporti i identifikimeve</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Open the page</source>
         <translation>Hap faqen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from deri në %to nga %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Një emër identifikimi ose ID përdoruesi: llogaria së cilës i përkiste ngjarja ose përdoruesi që veproi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Llogaria</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Veprimi</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pas</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Çdo rezultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Para</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kryer nga</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Pastro</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>U krye</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ngjarjet ruhen për %days ditë.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ngjarjet ruhen derisa të hiqen me dorë.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngjarjet</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Çdo veprim</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Të gjitha ngjarjet e kësaj llogarie</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksporto listën si CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Dështoi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ngushtoni listën</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Asnjë ngjarje nuk përputhet.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Për faqe</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Regjistrimi është i çaktivizuar në audit.ini ([UserAuditSettings] UserAudit); lista tregon atë që u regjistrua më parë.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>U refuzua</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultati</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabela e regjistrit të auditimit të përdoruesve mungon. Krijojeni me php update/common/scripts/6.0/createuseraudittable.php; deri atëherë skedarët e auditimit ruajnë çdo ngjarje.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Kjo faqe kërkon një bazë të dhënash SQL; nuk është e disponueshme në MongoDB. Skedarët e auditimit ruajnë çdo ngjarje.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Deri</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Regjistri i auditimit të përdoruesve</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Përdoruesi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kush ndryshoi, krijoi, aktivizoi, çaktivizoi, zhvendosi ose hoqi cilën llogari, kush u identifikua ose u refuzua dhe cilat role u caktuan: një rresht për çdo ngjarje, me fushat para dhe pas. Fjalëkalimet dhe të dhënat sekrete nuk regjistrohen kurrë.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistemi</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>i panjohur</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Siguroni llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Në llogarinë tuaj %login në %site u bë identifikim me një kod rikuperimi.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>U përdor një kod rikuperimi</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Llogaria</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adresa e përafërt</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Kërkoni një fjalëkalim të ri për t&apos;u identifikuar përsëri ose kontaktoni administratorët e sajtit.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Kërko një fjalëkalim të ri</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Çdo kod rikuperimi funksionon një herë. Nëse e keni humbur telefonin, konfiguroni përsëri aplikacionin e vërtetimit dhe ruajini kodet e reja të rikuperimit në një vend të sigurt.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Përpjekje të dështuara identifikimi në llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Tani e tutje, identifikimi kërkon një kod përveç fjalëkalimit tuaj. Nëse këtë e bëtë ju, nuk keni nevojë të bëni asgjë.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Nëse ishit ju dhe e keni harruar fjalëkalimin, kërkoni një të ri. Nëse jo, zgjidhni një fjalëkalim më të fortë dhe aktivizoni identifikimin me dy hapa.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Nëse nuk ishit ju, dikush mund ta dijë fjalëkalimin tuaj: ndryshojeni tani dhe kontrolloni ku është e identifikuar llogaria juaj.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kode rikuperimi të mbetura</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Shqyrto pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Sinjalizim sigurie</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Dikush u përpoq të identifikohej në llogarinë tuaj %login në %site me një fjalëkalim të gabuar disa herë radhazi: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Ndodhi një ngjarje sigurie në llogarinë tuaj %login në %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ky është një sinjalizim sigurie për llogarinë tuaj. Dërgohet për çdo ndryshim të tillë dhe nuk mund të çaktivizohet.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Koha</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Identifikimi me dy hapa u çaktivizua për llogarinë tuaj %login në %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Identifikimi me dy hapa u çaktivizua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Identifikimi me dy hapa u aktivizua për llogarinë tuaj %login në %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Identifikimi me dy hapa u aktivizua</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Llogaria juaj %login në %site u bllokua pas shumë identifikimeve të dështuara.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Llogaria juaj tani mbrohet vetëm nga fjalëkalimi. Nëse këtë nuk e bëtë ju, aktivizoni përsëri identifikimin me dy hapa pasi të keni ndryshuar fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Llogaria juaj u bllokua</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktiviteti i sigurisë së %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Identifikuar</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Përpjekje e dështuar identifikimi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Doli</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seancat u mbyllën</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Identifikim nga një pajisje e re</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Identifikim nga një vendndodhje e re</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiteti u konfirmua („Konfirmoni se jeni ju“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kontrolli i identitetit dështoi</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Identifikuar me një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Identifikimi me çelës kalimi dështoi</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Identifikimi u refuzua: kodi i identifikimit me dy hapa mungon ose është i gabuar</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kod i gabuar i identifikimit me dy hapa</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Llogaria u bllokua pas identifikimeve të dështuara</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Llogaria u zhbllokua</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Fjalëkalimi u ndryshua</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ndryshimi i fjalëkalimit dështoi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Fjalëkalimi u rivendos</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>U kërkua një fjalëkalim i ri</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adresa e email-it u ndryshua</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Emri i përdoruesit u ndryshua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Identifikimi me dy hapa u aktivizua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Identifikimi me dy hapa u çaktivizua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>U përdor një kod rikuperimi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kode të reja rikuperimi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>U krijua fjalëkalim aplikacioni</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>U revokua fjalëkalim aplikacioni</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>U shtua çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>U hoq çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Llogaria u aktivizua</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Llogaria u çaktivizua</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Të gjitha</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Identifikimet dhe seancat</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ndryshimet e llogarisë</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kërkojnë vëmendje</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>nga ju</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>nga përdoruesi</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>nga %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metoda</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Shfletuesi</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistemi operativ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pajisja</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Vendi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Shteti</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seancat</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Cilat</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanali</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Përpjekjet e dështuara</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kodet e mbetura</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Trajtuesi i identifikimit</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktiviteti i sigurisë së %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Identifikimet dhe ndryshimet në sigurinë e llogarisë suaj. Nëse shihni diçka që nuk e keni bërë, ndryshoni fjalëkalimin dhe nxirrni pajisjet që nuk i njihni.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Identifikimet dhe ndryshimet në sigurinë e kësaj llogarie.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ndrysho fjalëkalimin</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Kthehu te llogaria</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Aktiviteti i sigurisë nuk regjistrohet</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ai lexohet nga regjistri i auditimit të përdoruesve, tabela expuser_audit e të cilit mungon ose nuk mbështetet në këtë bazë të dhënash. Ekzekutoni php update/common/scripts/6.0/createuseraudittable.php ose përditësimin e bazës së të dhënave të versionit 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ditët e fundit: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Identifikimet në ditët e fundit (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Aktiviteti i fundit i sigurisë</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>dështoi</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>u refuzua</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nuk është regjistruar ende asnjë aktivitet sigurie.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Ngjarjet e sigurisë ruhen për %days ditë.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Ngjarjet e sigurisë ruhen derisa një administrator t&apos;i heqë.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Shkarko të dhënat e mia të identifikimit</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Seancat dhe ngjarjet tuaja të sigurisë si skedar JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Identifikuar</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Përpjekje e dështuar identifikimi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Doli</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seancat u mbyllën</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Identifikim nga një pajisje e re</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Identifikim nga një vendndodhje e re</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiteti u konfirmua („Konfirmoni se jeni ju“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kontrolli i identitetit dështoi</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Identifikuar me një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Identifikimi me çelës kalimi dështoi</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Identifikimi u refuzua: kodi i identifikimit me dy hapa mungon ose është i gabuar</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kod i gabuar i identifikimit me dy hapa</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Llogaria u bllokua pas identifikimeve të dështuara</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Llogaria u zhbllokua</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Fjalëkalimi u ndryshua</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ndryshimi i fjalëkalimit dështoi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Fjalëkalimi u rivendos</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>U kërkua një fjalëkalim i ri</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adresa e email-it u ndryshua</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Emri i përdoruesit u ndryshua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Identifikimi me dy hapa u aktivizua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Identifikimi me dy hapa u çaktivizua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>U përdor një kod rikuperimi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kode të reja rikuperimi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>U krijua fjalëkalim aplikacioni</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>U revokua fjalëkalim aplikacioni</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>U shtua çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>U hoq çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Llogaria u aktivizua</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Llogaria u çaktivizua</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Të gjitha</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Identifikimet dhe seancat</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ndryshimet e llogarisë</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kërkojnë vëmendje</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviteti i sigurisë</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktiviteti i sigurisë së %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Identifikimet dhe ndryshimet në sigurinë e llogarisë suaj. Nëse shihni diçka që nuk e keni bërë, ndryshoni fjalëkalimin dhe nxirrni pajisjet që nuk i njihni.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ndrysho fjalëkalimin</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Aktiviteti i sigurisë nuk regjistrohet ende në këtë sajt.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Identifikimet në ditët e fundit (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Përpjekjet e dështuara</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nuk është regjistruar ende asnjë aktivitet sigurie.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Shkarko të dhënat e mia të identifikimit</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Seancat dhe ngjarjet tuaja të sigurisë si skedar JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Fjalëkalimi</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Fjalëkalimi dhe kodi i identifikimit me dy hapa</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ndërfaqja REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ndërfaqja SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Identifikim i njëhershëm (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Identifikuar para se të regjistroheshin seancat</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raporti i identifikimeve</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kush është i identifikuar në sajt, sa shpesh identifikohen llogaritë dhe sa shpesh dështojnë, si dhe nxjerrja e një përdoruesi kudo. Funksionon me çdo trajtues seancash.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seanca u mbyll. Pajisja duhet të identifikohet përsëri.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login u nxor nga seancat: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login nuk kishte asnjë seancë aktive.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Asnjë llogari nuk e ka këtë ID, emër përdoruesi ose adresë email-i.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Kjo është seanca që po përdorni. Për ta mbyllur, dilni.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ajo seancë kishte përfunduar tashmë.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Faqja kishte skaduar. Nuk u ndryshua asgjë; ju lutemi provoni përsëri.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Seancat nuk regjistrohen në këtë sajt (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabela expuser_session mungon</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seancat regjistrohen sapo ajo të krijohet: php update/common/scripts/6.0/createusersessiontable.php ose përditësimi i bazës së të dhënave të versionit 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Tani dhe sot</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Seancat aktive</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Përdoruesit e identifikuar</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Identifikimet sot</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Përpjekjet e dështuara sot</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Nxirr një përdorues kudo</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Çdo seancë e llogarisë përfundon në kërkesën e saj të radhës, edhe ato që mbahen nga „Më mbaj mend“. Përdoreni kur një llogari mund të jetë në duar të gabuara; pastaj rivendosni fjalëkalimin e saj.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID e përdoruesit, emri i përdoruesit ose adresa e email-it</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Dil kudo</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Të identifikuar tani</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Shfaqen të përdorurat më së fundi, deri në %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Përdoruesi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pajisja</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Identifikuar</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Aktiv së fundi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veprimet</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kjo pajisje</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>I paregjistruar</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Nxirr</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Asnjë seancë nuk është e identifikuar.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ditët e fundit: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Identifikimet dhe përpjekjet e dështuara numërohen nga regjistri i auditimit të përdoruesve, i cili mungon; seancat e reja numërohen.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dita</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Identifikimet</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Përpjekjet e dështuara</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Seancat e reja</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Trajtuesi i seancave: %handler. Seancat lexohen nga tabela expuser_session, prandaj raporti funksionon me çdo trajtues.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Sinjalizim sigurie për llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Ndodhi një ngjarje sigurie në llogarinë tuaj %login: %event. Nëse nuk ishit ju, siguroni llogarinë tuaj te %url.</translation>
     </message>
 </context>
 </TS>

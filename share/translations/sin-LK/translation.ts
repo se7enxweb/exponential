@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>පිහිටුවීම &gt; Cron කාර්ය</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>තවමත් කිසිදු cron කාර්ය කොටසක් ධාවනය වී නැත: කාර්ය පෝලිම, ආයාත, දැනුම්දීම් සහ සෙවුම් සුචිය රැඳී සිටී. php bin/php/installcrontab.php --add --apply ධාවනය කරන්න, නැතහොත් --show පෙන්වන පේළි crontab ගොනුවට එක් කරන්න.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>මෙම ස්ථාපනය පොදු ආදර්ශනයකි: පරිපාලක මුරපදය ඕනෑම කෙනෙකුට දැන ගත හැක, පරිපාලක මුරපද වෙනස් කිරීමට හෝ යළි සැකසීමට නොහැක. මෙහි පෞද්ගලික කිසිවක් ඇතුළත් නොකරන්න.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ඔබේ උපාංග</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>කිසිවෙක් භාවිත නොකරන හෝ අවධානය අවශ්‍ය ගිණුම්; ඒවා අබල කරන්න, අගුලු හරින්න හෝ අපනයනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>පරිශීලක විගණන ලොගය</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ගිණුම අනුව වෙනස් කළේ කවුද, පිවිසියේ කවුද හෝ ප්‍රතික්ෂේප වූයේ කවුද; පෙරහන් කර අපනයනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>පිවිසුම් වාර්තාව</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>පිවිසී සිටින්නේ කවුද, දිනකට පිවිසුම් සහ අසාර්ථක වීම්; පරිශීලකයෙකු සෑම තැනකින්ම ඉවත් කරවන්න.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP හසුරුවන්නාගේ කල් ඉකුත් වූ සැසි ඉවත් කරන්නේ PHP විසින්ම (session.gc_maxlifetime) මිස මෙම පිටුව හෝ session_gc කාලසටහන් කාර්යයේ කොටස නොවේ.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>සියලු පරිශීලකයින්ගේ පිවිසී ඇති සැසි පිවිසුම් වාර්තාවේ ලැයිස්තුගත වන අතර එතැනින්ම ඉවත් කරවිය හැක; එය සෑම සැසි හසුරුවන්නක් සමඟම ක්‍රියා කරයි.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>පිවිසුම් වාර්තාව විවෘත කරන්න</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>තවම නැත</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ඔබේ මෑත පිවිසුම්, අසාර්ථක උත්සාහයන් සහ ඔබේ මුරපදය, ඊමේල් ලිපිනය සහ පියවර දෙකේ පිවිසුමේ වෙනස්කම්.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>මෙම ගිණුමේ මෑත පිවිසුම්, අසාර්ථක උත්සාහයන් සහ ආරක්ෂක වෙනස්කම්.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ක්‍රියාකාරකම් සමාලෝචනය කරන්න</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>අසාර්ථක පිවිසුම් %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ලියන ලද්දේ නැත (%reason). මෙම පේළි අඩවිය ධාවනය වන පරිශීලකයාගේ crontab වෙත එක් කරන්න, එසේ නොමැති නම් පෝලිම, ආයාත, දැනුම්දීම් සහ සෙවුම් දර්ශකය කිසිවිටෙකත් ධාවනය නොවේ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>නැවත ස්ථාපනය කරනු ලබන්නේ kickstarter මගින් (%file, ඉන්පසු php bin/php/kickstarter.php run --apply) හෝ නව ස්ථාපනයක් මගිනි.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>අවසන් ධාවනයේදී තැපැල් ප්‍රවාහනය පණිවිඩ %count ක් ප්‍රතික්ෂේප කළේය. තැපැල් සේවාදායකය සහ site.ini MailSettings පරීක්ෂා කරන්න.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>සිදුවීම් %count ක් රැඳී සිටින අතර දැනුම්දීම් cron කාර්යයේ කිසිදු ධාවනයක් සටහන් කර නැත. &quot;frequent&quot; නම් cron කාර්ය කොටස crontab ගොනුවට එක් කරන්න, නැතහොත් exp:notification:run --apply ධාවනය කරන්න.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>නෝඩ තෝරකය සමඟ වෙනත් අඩවියක් හෝ කොටසක් තෝරන්න</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>හිමිකරු වෙනස් කළ හැක්කේ පද්ධති පරිපාලකට පමණි: root ලෙස ./console exp:content-check --fix-permissions --apply ධාවනය කරන්න.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>හිස්</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>අත්සන් යතුර වසරකට වඩා පැරණිය: exp:audit key rotate --apply මගින් එය මාරු කරන්න.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>යවා නැත</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>දැනුම්දීම් cron කාර්යය එහි සෑම ධාවනයක්ම මෙහි සටහන් කරයි. frequent කොටස crontab ගොනුවට එක් කරන්න, නැතහොත් exp:notification:run --apply ධාවනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>කොන්සෝලය භාවිත කරන්න: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>කිසිවක් නැත.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>සත්‍යාපන යෙදුමක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ඊමේල් මගින් ලැබුණු කේතයක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ප්‍රතිසාධන කේතයක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>පාස්කී එකක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>බාහිර ගිණුමක් සමඟ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>එහි ජාලය ලෙස පෙන්වයි; අඩවියේ දත්ත ආරක්ෂණ සැකසුම් පවසන පරිදි ලිපිනය තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>සටහන් කර නැත</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ස්ථානය</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ආසන්න වශයෙන්</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>උපාංග කළමනාකරණය කරන්න</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>සත්‍යාපන යෙදුමක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ඊමේල් මගින් ලැබුණු කේතයක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ප්‍රතිසාධන කේතයක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>පාස්කී එකක් සමඟ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>බාහිර ගිණුමක් සමඟ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>සටහන් කර නැත</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ස්ථානය</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ආසන්න වශයෙන්</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>මෙම පරිශීලකයාගේ සැසි බලන්න</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site අඩවියේ ඔබේ ගිණුම %login මගින්, මෑතකදී පිවිසී නොමැති ස්ථානයකින් දැන් පිවිසුමක් සිදු විය:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ආසන්න ස්ථානය</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os මත %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>පිවිසුම් වාර්තාව</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>පිටුව විවෘත කරන්න</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from සිට %to දක්වා, මුළු %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>පිවිසුම් නාමයක් හෝ පරිශීලක ID එකක්: සිදුවීම අදාළ වූ ගිණුම හෝ ක්‍රියා කළ පරිශීලකයා.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ගිණුම</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ක්‍රියාව</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>පසු</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ඕනෑම ප්‍රතිඵලයක්</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>පෙර</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>කළේ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>හිස් කරන්න</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>සාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>සිදුවීම් දින %days ක් තබා ගැනේ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>සිදුවීම් අතින් ඉවත් කරන තෙක් තබා ගැනේ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>සිදුවීම්</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>සියලු ක්‍රියා</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>මෙම ගිණුමේ සියලු සිදුවීම්</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ලැයිස්තුව CSV ලෙස අපනයනය කරන්න (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>සිට</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ලැයිස්තුව සීමා කරන්න</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>කිසිදු සිදුවීමක් නොගැළපේ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>පිටුවකට</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ([UserAuditSettings] UserAudit) තුළ වාර්තා කිරීම අක්‍රිය කර ඇත; ලැයිස්තුව පෙර වාර්තා කළ දේ පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ප්‍රතික්ෂේපිතයි</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ප්‍රතිඵලය</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>පරිශීලක විගණන ලොගයේ වගුව නොමැත. php update/common/scripts/6.0/createuseraudittable.php මගින් එය සාදන්න; එතෙක් විගණන ගොනු සෑම සිදුවීමක්ම තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>මෙම පිටුවට SQL දත්ත සමුදායක් අවශ්‍යයි; එය MongoDB මත ලබා ගත නොහැක. විගණන ගොනු සෑම සිදුවීමක්ම තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>දක්වා</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>පරිශීලක විගණන ලොගය</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>පරිශීලකයා</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>කවදා</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>කොහේ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>කවුරුන් කුමන ගිණුම වෙනස් කළේද, සෑදුවේද, සබල කළේද, අබල කළේද, ගෙන ගියේද හෝ ඉවත් කළේද, කවුරුන් පිවිසියේද හෝ ප්‍රතික්ෂේප වූයේද, සහ කුමන භූමිකා පවරා දුන්නේද: සිදුවීමකට එක් පේළියක්, පෙර සහ පසු ක්ෂේත්‍ර සමඟ. මුරපද සහ රහස් කිසි විටෙක වාර්තා නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>සමූහය</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>පද්ධතිය</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>නොදන්නා</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ඔබේ ගිණුම සුරක්ෂිත කරන්න</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site අඩවියේ ඔබේ ගිණුම %login වෙත පිවිසීමට ප්‍රතිසාධන කේතයක් භාවිත කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ප්‍රතිසාධන කේතයක් භාවිත කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ගිණුම</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ආසන්න ලිපිනය</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>නැවත පිවිසීමට නව මුරපදයක් ඉල්ලන්න, නැතහොත් අඩවියේ පරිපාලකයින් අමතන්න.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>නව මුරපදයක් ඉල්ලන්න</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>සෑම ප්‍රතිසාධන කේතයක්ම එක් වරක් පමණක් ක්‍රියා කරයි. ඔබේ දුරකථනය නැති වූයේ නම්, ඔබේ සත්‍යාපන යෙදුම නැවත සකසා නව ප්‍රතිසාධන කේත ආරක්ෂිත ස්ථානයක තබා ගන්න.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ඔබේ ගිණුමේ අසාර්ථක පිවිසුම් උත්සාහයන්</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>මෙතැන් සිට පිවිසීමේදී ඔබේ මුරපදයට අමතරව කේතයක් ද ඉල්ලනු ඇත. මෙය කළේ ඔබ නම්, ඔබ කිසිවක් කළ යුතු නැත.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>එය ඔබ නම් සහ ඔබට මුරපදය අමතක වී ඇත්නම්, නව එකක් ඉල්ලන්න. එසේ නොවේ නම්, වඩා ශක්තිමත් මුරපදයක් තෝරා පියවර දෙකේ පිවිසුම සක්‍රිය කරන්න.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>මෙය ඔබ නොවේ නම්, යමෙකු ඔබේ මුරපදය දන්නවා විය හැක: දැන්ම එය වෙනස් කර ඔබේ ගිණුම පිවිසී ඇත්තේ කොතැනද යන්න පරීක්ෂා කරන්න.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ඉතිරි ප්‍රතිසාධන කේත</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ඔබේ උපාංග සමාලෝචනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ආරක්ෂක ඇඟවීම</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>යමෙකු %site අඩවියේ ඔබේ ගිණුම %login වෙත වැරදි මුරපදයක් සමඟ අඛණ්ඩව %count වරක් පිවිසීමට උත්සාහ කළේය.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site අඩවියේ ඔබේ ගිණුම %login හි ආරක්ෂක සිදුවීමක් සිදු විය.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>මෙය ඔබේ ගිණුම පිළිබඳ ආරක්ෂක ඇඟවීමකි. එවැනි සෑම වෙනසක් සඳහාම මෙය යවනු ලබන අතර එය අක්‍රිය කළ නොහැක.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>වේලාව</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site අඩවියේ ඔබේ ගිණුම %login සඳහා පියවර දෙකේ පිවිසුම අක්‍රිය කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>පියවර දෙකේ පිවිසුම අක්‍රිය කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site අඩවියේ ඔබේ ගිණුම %login සඳහා පියවර දෙකේ පිවිසුම සක්‍රිය කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>පියවර දෙකේ පිවිසුම සක්‍රිය කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>අසාර්ථක පිවිසුම් බොහොමයකට පසු %site අඩවියේ ඔබේ ගිණුම %login අගුළු දමන ලදී.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ඔබේ ගිණුම දැන් ආරක්ෂා වන්නේ ඔබේ මුරපදයෙන් පමණි. මෙය ඔබ නොකළේ නම්, ඔබේ මුරපදය වෙනස් කළ පසු පියවර දෙකේ පිවිසුම නැවත සක්‍රිය කරන්න.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ඔබේ ගිණුම අගුළු දමන ලදී</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ගේ ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>පිවිසුණු</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>අසාර්ථක පිවිසුම් උත්සාහය</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ඉවත් විය</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>සැසි ඉවත් කරවන ලදී</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>නව උපාංගයකින් පිවිසුම</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>නව ස්ථානයකින් පිවිසුම</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>අනන්‍යතාව තහවුරු විය (&quot;ඔබ බව තහවුරු කරන්න&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>අනන්‍යතා පරීක්ෂාව අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>පාස්කී සමඟ පිවිසුණු</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>පාස්කී පිවිසුම අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>පිවිසුම ප්‍රතික්ෂේප විය: පියවර දෙකේ කේතය නැත හෝ වැරදිය</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>වැරදි පියවර දෙකේ කේතය</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>අසාර්ථක පිවිසුම් නිසා ගිණුම අගුළු දමන ලදී</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ගිණුමේ අගුළ ඇරින ලදී</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>මුරපදය වෙනස් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>මුරපදය වෙනස් කිරීම අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>මුරපදය යළි සකසන ලදී</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>නව මුරපදයක් ඉල්ලන ලදී</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ඊමේල් ලිපිනය වෙනස් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>පරිශීලක නාමය වෙනස් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>පියවර දෙකේ පිවිසුම සක්‍රිය කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>පියවර දෙකේ පිවිසුම අක්‍රිය කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ප්‍රතිසාධන කේතය භාවිත කරන ලදී</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>නව ප්‍රතිසාධන කේත</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>යෙදුම් මුරපදය සාදන ලදී</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>යෙදුම් මුරපදය අවලංගු කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>පාස්කී එක් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>පාස්කී ඉවත් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ගිණුම සබල කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ගිණුම අබල කරන ලදී</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>සියල්ල</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>පිවිසුම් සහ සැසි</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ගිණුම් වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>අවධානය අවශ්‍යයි</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ඔබ විසින්</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>පරිශීලකයා විසින්</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>කළේ: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ක්‍රමය</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>බ්‍රව්සරය</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>මෙහෙයුම් පද්ධතිය</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>උපාංගය</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ස්ථානය</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>රට</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>සැසි</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>කුමක්ද</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>යැවූ මාර්ගය</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>අසාර්ථක උත්සාහයන්</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ඉතිරි කේත</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>පිවිසුම් හසුරුවන්නා</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ගේ ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ඔබේ ගිණුමේ පිවිසුම් සහ ආරක්ෂාවේ වෙනස්කම්. ඔබ නොකළ දෙයක් දුටුවහොත්, ඔබේ මුරපදය වෙනස් කර ඔබ හඳුනා නොගන්නා උපාංග ඉවත් කරවන්න.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>මෙම ගිණුමේ පිවිසුම් සහ ආරක්ෂාවේ වෙනස්කම්.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ඔබේ උපාංග</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>මුරපදය වෙනස් කරන්න</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ගිණුමට ආපසු</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම් සටහන් නොවේ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>එය කියවනු ලබන්නේ පරිශීලක විගණන ලොගයෙනි, එහි වගුව expuser_audit නොමැත හෝ මෙම දත්ත සමුදායේ සහාය නොදක්වයි. php update/common/scripts/6.0/createuseraudittable.php ධාවනය කරන්න, නැතහොත් 6.0.15 හි දත්ත සමුදා යාවත්කාලීනය ධාවනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>පසුගිය දින %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>පසුගිය දින %days තුළ පිවිසුම්</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>මෑත ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ප්‍රතික්ෂේපිතයි</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>තවමත් කිසිදු ආරක්ෂක ක්‍රියාකාරකමක් සටහන් කර නැත.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ආරක්ෂක සිදුවීම් දින %days ක් තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>පරිපාලකයෙකු ඉවත් කරන තුරු ආරක්ෂක සිදුවීම් තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>මගේ පිවිසුම් දත්ත බාගන්න</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ඔබේ සැසි සහ ආරක්ෂක සිදුවීම් JSON ගොනුවක් ලෙස.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>පිවිසුණු</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>අසාර්ථක පිවිසුම් උත්සාහය</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ඉවත් විය</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>සැසි ඉවත් කරවන ලදී</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>නව උපාංගයකින් පිවිසුම</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>නව ස්ථානයකින් පිවිසුම</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>අනන්‍යතාව තහවුරු විය (&quot;ඔබ බව තහවුරු කරන්න&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>අනන්‍යතා පරීක්ෂාව අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>පාස්කී සමඟ පිවිසුණු</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>පාස්කී පිවිසුම අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>පිවිසුම ප්‍රතික්ෂේප විය: පියවර දෙකේ කේතය නැත හෝ වැරදිය</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>වැරදි පියවර දෙකේ කේතය</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>අසාර්ථක පිවිසුම් නිසා ගිණුම අගුළු දමන ලදී</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ගිණුමේ අගුළ ඇරින ලදී</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>මුරපදය වෙනස් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>මුරපදය වෙනස් කිරීම අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>මුරපදය යළි සකසන ලදී</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>නව මුරපදයක් ඉල්ලන ලදී</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ඊමේල් ලිපිනය වෙනස් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>පරිශීලක නාමය වෙනස් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>පියවර දෙකේ පිවිසුම සක්‍රිය කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>පියවර දෙකේ පිවිසුම අක්‍රිය කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ප්‍රතිසාධන කේතය භාවිත කරන ලදී</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>නව ප්‍රතිසාධන කේත</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>යෙදුම් මුරපදය සාදන ලදී</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>යෙදුම් මුරපදය අවලංගු කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>පාස්කී එක් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>පාස්කී ඉවත් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ගිණුම සබල කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ගිණුම අබල කරන ලදී</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>සියල්ල</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>පිවිසුම් සහ සැසි</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ගිණුම් වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>අවධානය අවශ්‍යයි</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ගේ ආරක්ෂක ක්‍රියාකාරකම්</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ඔබේ ගිණුමේ පිවිසුම් සහ ආරක්ෂාවේ වෙනස්කම්. ඔබ නොකළ දෙයක් දුටුවහොත්, ඔබේ මුරපදය වෙනස් කර ඔබ හඳුනා නොගන්නා උපාංග ඉවත් කරවන්න.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ඔබේ උපාංග</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>මුරපදය වෙනස් කරන්න</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>මෙම අඩවියේ ආරක්ෂක ක්‍රියාකාරකම් තවමත් සටහන් නොවේ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>පසුගිය දින %days තුළ පිවිසුම්</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>අසාර්ථක උත්සාහයන්</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>තවමත් කිසිදු ආරක්ෂක ක්‍රියාකාරකමක් සටහන් කර නැත.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>මගේ පිවිසුම් දත්ත බාගන්න</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ඔබේ සැසි සහ ආරක්ෂක සිදුවීම් JSON ගොනුවක් ලෙස.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>මුරපදය</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>මුරපදය සහ පියවර දෙකේ කේතය</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST අතුරුමුහුණත</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP අතුරුමුහුණත</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>තනි පිවිසුම (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>සැසි සටහන් කිරීමට පෙර පිවිසුණු</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>පිවිසුම් වාර්තාව</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>අඩවියට පිවිසී සිටින්නේ කවුද, ගිණුම් කොපමණ වාර ගණනක් පිවිසෙන්නේද සහ අසාර්ථක වන්නේද, සහ පරිශීලකයෙකු සෑම තැනකින්ම ඉවත් කරවීම. මෙය සෑම සැසි හසුරුවන්නක් සමඟම ක්‍රියා කරයි.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>සැසිය ඉවත් කරවන ලදී. උපාංගය නැවත පිවිසිය යුතුය.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login සැසි %count කින් ඉවත් කරවන ලදී.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login සඳහා ධාවනය වන සැසියක් නොතිබුණි.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>මෙම ID, පරිශීලක නාමය හෝ ඊමේල් ලිපිනය ඇති ගිණුමක් නැත.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>මෙය ඔබ භාවිත කරන සැසියයි. එය අවසන් කිරීමට ඉවත් වන්න.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>එම සැසිය දැනටමත් අවසන් වී තිබුණි.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>පිටුව කල් ඉකුත් වී තිබුණි. කිසිවක් වෙනස් නොකළේය; කරුණාකර නැවත උත්සාහ කරන්න.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>මෙම අඩවියේ සැසි සටහන් නොකෙරේ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session වගුව නොමැත</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>එය සෑදූ විගස සැසි සටහන් වේ: php update/common/scripts/6.0/createusersessiontable.php, නැතහොත් 6.0.15 හි දත්ත සමුදා යාවත්කාලීනය.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>දැන් සහ අද</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>ධාවනය වන සැසි</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>පිවිසී සිටින පරිශීලකයින්</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>අද පිවිසුම්</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>අද අසාර්ථක උත්සාහයන්</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>පරිශීලකයෙකු සෑම තැනකින්ම ඉවත් කරවන්න</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ගිණුමේ සෑම සැසියක්ම එහි මීළඟ ඉල්ලීමේදී අවසන් වේ, &quot;මාව මතක තබාගන්න&quot; මගින් තබා ගත් ඒවා ද ඇතුළුව. ගිණුමක් වැරදි අතට පත්ව ඇති බවට සැකයක් ඇති විට මෙය භාවිත කරන්න; ඉන්පසු එහි මුරපදය යළි සකසන්න.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>පරිශීලක ID, පරිශීලක නාමය හෝ ඊමේල් ලිපිනය</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>සෑම තැනකින්ම ඉවත් කරවන්න</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>දැන් පිවිසී සිටින</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>වඩාත් මෑතකදී භාවිත කළ %limit පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>පරිශීලකයා</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>උපාංගය</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ලිපිනය</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>පිවිසුණු</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>අවසන් වරට සක්‍රිය</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ක්‍රියා</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>මෙම උපාංගය</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>සටහන් කර නැත</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ඉවත් කරවන්න</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>කිසිදු සැසියක් පිවිසී නැත.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>පසුගිය දින %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>පිවිසුම් සහ අසාර්ථක උත්සාහයන් ගණන් කරනු ලබන්නේ පරිශීලක විගණන ලොගයෙනි, එය නොමැත; නව සැසි ගණන් කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>දිනය</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>පිවිසුම්</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>අසාර්ථක උත්සාහයන්</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>නව සැසි</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>සැසි හසුරුවන්නා: %handler. සැසි කියවනු ලබන්නේ expuser_session වගුවෙන් බැවින්, වාර්තාව සෑම හසුරුවන්නක් සමඟම ක්‍රියා කරයි.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ඔබේ ගිණුම සඳහා ආරක්ෂක ඇඟවීම</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ඔබේ ගිණුම %login හි ආරක්ෂක සිදුවීමක් සිදු විය: %event. මෙය ඔබ නොවේ නම්, %url හි ඔබේ ගිණුම සුරක්ෂිත කරන්න.</translation>
     </message>
 </context>
 </TS>

@@ -29,7 +29,7 @@ bringt Trainern bei, den Befehl auszuführen, zu prüfen und seine Ausgabe zu le
 
 Nach dieser Lektion können die Teilnehmenden:
 
-- Exponential mit `php bin/php/console exp:install` und seinen nützlichsten Optionen installieren;
+- Exponential mit `php bin/php/console exp:install --apply` und seinen nützlichsten Optionen installieren;
 - vor der Installation die Konfiguration mit `--print` und den ganzen Ablauf mit `--dry-run` prüfen;
 - den Administrator-Login und das erzeugte Passwort finden und die Passwortdatei nach der ersten Anmeldung entfernen;
 - erklären, warum der Befehl ohne `--force` nicht über eine vorhandene Installation installiert.
@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-1. Zeigen Sie den Befehl in seiner einfachsten Form (3 Minuten): `php bin/php/console exp:install` installiert das
+1. Zeigen Sie den Befehl in seiner einfachsten Form (3 Minuten): `php bin/php/console exp:install --apply` installiert das
    Seitenpaket `sevenx_multisite` auf SQLite (`var/storage/sqlite3/exponential.db`) mit dem Administrator `admin`
    und einem erzeugten Passwort, das am Ende einmal angezeigt wird.
 2. Zeigen Sie `--print` (2 Minuten): Es gibt die Konfiguration aus, Passwörter maskiert, und schreibt nichts.
@@ -79,7 +79,7 @@ Im Verzeichnis `editor-course` aus Lektion 2.2 (oder in einem beliebigen frische
    ausgegebene Konfiguration: Suchen Sie `Site_package`, `Type=sqlite3` und `EditorAccess`.
 2. `php bin/php/console exp:install --dry-run --url=http://127.0.0.1:8087 --title="Training site"`. Warten Sie auf die
    Zeile „Dry-run completed“.
-3. Installieren Sie: `php bin/php/console exp:install --url=http://127.0.0.1:8087 --title="Training site"`.
+3. Installieren Sie: `php bin/php/console exp:install --apply --url=http://127.0.0.1:8087 --title="Training site"`.
 4. Lesen Sie die Zusammenfassung: die Adresse der Website, den Login der Administration und das Passwort. Kopieren Sie
    das Passwort an einen sicheren Ort.
 5. `ls -l var/log/initial-admin-password` und `ls -l var/storage/sqlite3/`: Die Passwortdatei (nur für den Eigentümer

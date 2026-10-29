@@ -124,7 +124,7 @@ From a shell, always with a dry run first:
 
 ```bash
 ./console exp:content-check --missing-files --node=2 --fix=regenerate --dry-run --allow-root-user
-./console exp:content-check --fix=restore --items=13905-2 --allow-root-user
+./console exp:content-check --apply --fix=restore --items=13905-2 --allow-root-user
 ```
 
 ```

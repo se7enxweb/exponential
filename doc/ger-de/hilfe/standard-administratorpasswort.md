@@ -81,7 +81,7 @@ Password=
 
 ## Die Konsoleninstallation (exp:install)
 
-`./console exp:install` (oder `php bin/php/install.php`) schreibt aus seinen Optionen eine `kickstart.ini` und führt
+`./console exp:install --apply` (oder `php bin/php/install.php --apply`) schreibt aus seinen Optionen eine `kickstart.ini` und führt
 den Kickstarter aus ([Kapitel 7](../installation/07-installation-ueber-die-konsole.md#75-das-passwort-des-administrators)):
 
 - **Ohne `--password`** oder mit `--random-password`: ein zufälliges Passwort mit 24 Zeichen.

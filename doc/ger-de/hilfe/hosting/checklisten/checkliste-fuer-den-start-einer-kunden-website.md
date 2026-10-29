@@ -40,7 +40,7 @@ Site: <domain>        Customer: <customer>        Go-live: <date>        Checked
 
 - [ ] Der View-Cache und der Template-Cache sind für die öffentlichen Siteaccesses an ([Cache-Schichten](../leistung/cache-schichten.md)).
 - [ ] Mit Velocity: Der Antwort-Cache ist an und nach dem letzten Ausrollen geleert
-      (`php bin/php/console exp:velocity cache clear --allow-root-user`).
+      (`php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 - [ ] Die Startseite und die wichtigsten Seiten der Bereiche antworten aus einem warmen Cache innerhalb des Ziels Ihres
       Tarifs; gemessen mit dem Benchmark-Befehl ([Benchmark einer gehosteten Website](../leistung/benchmark-einer-gehosteten-website.md)).
 

@@ -57,7 +57,7 @@ rewritten quietly by an attacker who takes the server ([Forwarding the audit tra
 
 The test sends one record; ask the SOC to confirm it arrived. Then sign in to the administration and check that the
 `access.session.login` record arrives too. If delivery fails, records are spooled and sent by the cronjob part;
-`./console exp:audit sinks flush syslog --allow-root-user` sends what waits.
+`./console exp:audit sinks flush --apply syslog --allow-root-user` sends what waits.
 
 ## Related pages
 

@@ -21,6 +21,11 @@
                       'replaced', 'Replaced by a new sign-in'|i18n( 'design/admin/user/sessions' ),
                       'password_change', 'Ended by a password change'|i18n( 'design/admin/user/sessions' ),
                       'expired', 'Expired'|i18n( 'design/admin/user/sessions' ) )
+     $details = hash( 'totp', 'with an authenticator app'|i18n( 'design/admin/user/sessions' ),
+                      'email', 'with a code by e-mail'|i18n( 'design/admin/user/sessions' ),
+                      'recovery', 'with a recovery code'|i18n( 'design/admin/user/sessions' ),
+                      'passkey', 'with a passkey'|i18n( 'design/admin/user/sessions' ),
+                      'oauth', 'with an external account'|i18n( 'design/admin/user/sessions' ) )
      $others = 0}
 {foreach $sessions_active as $s}{if $s.current|not}{set $others = inc( $others )}{/if}{/foreach}
 <div class="a4-page a4-standalone" id="exp-user-sessions">
@@ -31,6 +36,7 @@
         <p class="a4-pagehead-sub">{if $sessions_own}{'Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.'|i18n( 'design/admin/user/sessions' )}{else}{'Where this account is signed in right now. Signing the user out ends every session at its next request.'|i18n( 'design/admin/user/sessions' )}{/if}</p>
     </div>
     <div class="a4-pagehead-actions">
+        <a class="a4-btn" href={cond( $sessions_own, 'user/security', concat( 'user/security/', $sessions_user_id ) )|ezurl}><span class="a4-icon a4-bi-shield-lock" aria-hidden="true"></span> {'Security activity'|i18n( 'design/admin/user/sessions' )}</a>
         <a class="a4-btn" href={cond( $sessions_own, 'user/edit', concat( 'user/edit/', $sessions_user_id ) )|ezurl}>{'Back to the account'|i18n( 'design/admin/user/sessions' )}</a>
     </div>
 </div>
@@ -87,11 +93,12 @@
         </div>
         <dl class="a4-facts is-rows">
             <dt>{'Device'|i18n( 'design/admin/user/sessions' )}</dt><dd>{first_set( $device_names[$s.device], $s.device )|wash}</dd>
-            <dt>{'Address'|i18n( 'design/admin/user/sessions' )}</dt><dd><span title="{'Shown as its network; the full address is kept for the administrators.'|i18n( 'design/admin/user/sessions' )|wash}">{$s.ip|wash}</span>{if and( $s.first_ip, ne( $s.first_ip, $s.ip ) )} <span class="a4-meta">{'signed in from %ip'|i18n( 'design/admin/user/sessions',, hash( '%ip', $s.first_ip ) )|wash}</span>{/if}{if $sessions_own|not} <code class="a4-code">{$s.ip_full|wash}</code>{/if}</dd>
-            <dt>{'Signed in'|i18n( 'design/admin/user/sessions' )}</dt><dd>{$s.created|l10n( 'shortdatetime' )} <span class="a4-meta">{first_set( $methods[$s.method], $s.method )|wash}</span></dd>
+            <dt>{'Address'|i18n( 'design/admin/user/sessions' )}</dt><dd>{if $s.ip}<span title="{'Shown as its network; the address is kept as the data protection settings of the site say.'|i18n( 'design/admin/user/sessions' )|wash}">{$s.ip|wash}</span>{if and( $s.first_ip, ne( $s.first_ip, $s.ip ) )} <span class="a4-meta">{'signed in from %ip'|i18n( 'design/admin/user/sessions',, hash( '%ip', $s.first_ip ) )|wash}</span>{/if}{if and( $sessions_own|not, ne( $s.ip_full, $s.ip ) )} <code class="a4-code">{$s.ip_full|wash}</code>{/if}{else}<span class="a4-meta">{'Not recorded'|i18n( 'design/admin/user/sessions' )}</span>{/if}</dd>
+            {if $s.location}<dt>{'Location'|i18n( 'design/admin/user/sessions' )}</dt><dd>{$s.location|wash} <span class="a4-meta">{'approximate'|i18n( 'design/admin/user/sessions' )}</span></dd>{/if}
+            <dt>{'Signed in'|i18n( 'design/admin/user/sessions' )}</dt><dd>{$s.created|l10n( 'shortdatetime' )} <span class="a4-meta">{first_set( $methods[$s.method], $s.method )|wash}{if is_set( $details[$s.auth_detail] )} {$details[$s.auth_detail]|wash}{/if}</span></dd>
             <dt>{'Last active'|i18n( 'design/admin/user/sessions' )}</dt><dd>{if $s.current}{'Now'|i18n( 'design/admin/user/sessions' )}{else}{$s.last_active|l10n( 'shortdatetime' )}{/if}</dd>
             <dt>{'Stays signed in'|i18n( 'design/admin/user/sessions' )}</dt><dd>{if $s.remember_until}{'Remember me, until %date'|i18n( 'design/admin/user/sessions',, hash( '%date', $s.remember_until|l10n( 'shortdate' ) ) )|wash}{else}{'Until the browser is closed'|i18n( 'design/admin/user/sessions' )}{/if}</dd>
-            {if $s.siteaccess}<dt>{'Signed in at'|i18n( 'design/admin/user/sessions' )}</dt><dd><code class="a4-code">{$s.siteaccess|wash}</code></dd>{/if}
+            {if or( $s.siteaccess, $s.host )}<dt>{'Signed in at'|i18n( 'design/admin/user/sessions' )}</dt><dd>{if $s.host}{$s.host|wash} {/if}{if $s.siteaccess}<code class="a4-code">{$s.siteaccess|wash}</code>{/if}</dd>{/if}
         </dl>
         <details class="a4-fold"><summary>{'Browser identification'|i18n( 'design/admin/user/sessions' )}</summary><div class="a4-fold-body"><code class="a4-code">{$s.user_agent|wash}</code></div></details>
         {if $s.current}
@@ -141,7 +148,7 @@
         {foreach $sessions_ended as $s}
         <tr>
             <td><span class="a4-icon a4-bi-{first_set( $device_icons[$s.device], 'globe' )|wash}" aria-hidden="true"></span> {$s.label|wash}</td>
-            <td>{$s.ip|wash}</td>
+            <td>{$s.ip|wash}{if $s.location} <span class="a4-meta">{$s.location|wash}</span>{/if}</td>
             <td class="a4-nowrap">{$s.created|l10n( 'shortdatetime' )}</td>
             <td class="a4-nowrap">{if $s.ended}{$s.ended|l10n( 'shortdatetime' )}{else}{$s.last_active|l10n( 'shortdatetime' )}{/if}</td>
             <td>{if $s.end_reason}{first_set( $reasons[$s.end_reason], $s.end_reason )|wash}{else}{'Expired'|i18n( 'design/admin/user/sessions' )}{/if}</td>
@@ -157,4 +164,4 @@
 
 {/if}
 </div>
-{undef $device_icons $device_names $methods $reasons $others}
+{undef $device_icons $device_names $methods $reasons $details $others}

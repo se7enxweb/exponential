@@ -7675,6 +7675,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Konfiguracja &gt; Zadania cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Żadna część zadania cron nie została jeszcze uruchomiona: kolejka zadań, importy, powiadomienia i indeks wyszukiwania czekają. Należy uruchomić php bin/php/installcrontab.php --add --apply lub dodać wiersze z --show do crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14789,6 +14793,14 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ta instalacja jest publiczną wersją demonstracyjną: każdy może znać hasło administratora, a haseł administratorów nie można zmienić ani zresetować. Nie należy tu wpisywać niczego prywatnego.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15717,6 +15729,22 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konta, których nikt nie używa lub które wymagają uwagi; wyłączyć, odblokować lub wyeksportować.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Dziennik audytu użytkowników</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kto zmienił, zalogował się lub został odrzucony, według konta; filtrowanie i eksport.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raport logowań</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kto jest zalogowany, logowania i nieudane próby dziennie; wylogowanie użytkownika ze wszystkich urządzeń.</translation>
     </message>
 </context>
 <context>
@@ -27488,6 +27516,14 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <message>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Wygasłe sesje procedury obsługi PHP są usuwane przez samo PHP (session.gc_maxlifetime), a nie przez tę stronę ani część zadania cron session_gc.</translation>
+    </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Zalogowane sesje wszystkich użytkowników są wyświetlane i wylogowywane w raporcie logowań, który działa z każdą procedurą obsługi sesji.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Otworzyć raport logowań</translation>
     </message>
 </context>
 <context>
@@ -43993,6 +44029,10 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab nie został zapisany (%reason). Należy dodać te wiersze do crontaba użytkownika, na którego koncie działa witryna, w przeciwnym razie kolejka, importy, powiadomienia i indeks wyszukiwania nigdy nie zostaną uruchomione:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ponowną instalację wykonuje się za pomocą kickstartera (%file, następnie php bin/php/kickstarter.php run --apply) lub przez nową instalację.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -49659,6 +49699,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transport poczty odrzucił podczas ostatniego uruchomienia wiadomości: %count. Należy sprawdzić serwer poczty i site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Oczekujące zdarzenia: %count, a nie odnotowano żadnego uruchomienia zadania cron powiadomień. Należy dodać część zadania cron &quot;frequent&quot; do crontab lub uruchomić exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -59097,6 +59141,26 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>None yet</source>
         <translation>Jeszcze brak</translation>
     </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ostatnie logowania, nieudane próby oraz zmiany hasła, adresu e-mail i logowania dwuetapowego.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Ostatnie logowania, nieudane próby i zmiany zabezpieczeń tego konta.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Przejrzeć aktywność</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Nieudane logowania: %count</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
@@ -64266,6 +64330,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Wybrać inną witrynę lub sekcję za pomocą selektora węzłów</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Tylko administrator systemu może zmienić właściciela: należy uruchomić ./console exp:content-check --fix-permissions --apply jako root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -65799,6 +65867,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>empty</source>
         <translation>pusty</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Klucz podpisu ma ponad rok: należy go wymienić poleceniem exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70059,6 +70131,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>not sent</source>
         <translation>niewysłane</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Zadanie cron powiadomień zapisuje tutaj każde swoje uruchomienie. Należy dodać część frequent do crontab lub uruchomić exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Należy użyć konsoli: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -77689,6 +77769,46 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>None.</source>
         <translation>Brak.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>aplikacją uwierzytelniającą</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kodem wysłanym e-mailem</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>kodem odzyskiwania</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>kluczem dostępu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>kontem zewnętrznym</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Wyświetlany jako sieć; adres jest przechowywany zgodnie z ustawieniami ochrony danych witryny.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nie zarejestrowano</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokalizacja</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>w przybliżeniu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -77932,6 +78052,42 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Manage devices</source>
         <translation>Zarządzać urządzeniami</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>aplikacją uwierzytelniającą</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kodem wysłanym e-mailem</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>kodem odzyskiwania</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>kluczem dostępu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>kontem zewnętrznym</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nie zarejestrowano</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokalizacja</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>w przybliżeniu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -78011,6 +78167,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>View the sessions of this user</source>
         <translation>Wyświetlić sesje tego użytkownika</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Konto %login w witrynie %site zostało właśnie użyte do zalogowania się z miejsca, z którego ostatnio nie logowano się na nie:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Przybliżona lokalizacja</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78049,6 +78213,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser w systemie %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raport logowań</translation>
     </message>
 </context>
 <context>
@@ -78548,6 +78716,935 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Open the page</source>
         <translation>Otworzyć stronę</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to z %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Login lub identyfikator użytkownika: konto, którego dotyczyło zdarzenie, albo użytkownik, który wykonał działanie.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcja</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Po</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Dowolny wynik</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Przed</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wykonawca</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wyczyścić</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wykonano</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Zdarzenia są przechowywane przez %days dni.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Zdarzenia są przechowywane do czasu ręcznego usunięcia.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Zdarzenia</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Każda akcja</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Wszystkie zdarzenia tego konta</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksportować listę jako CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Niepowodzenie</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Zawężenie listy</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Brak pasujących zdarzeń.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stronę</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Rejestrowanie jest wyłączone w audit.ini ([UserAuditSettings] UserAudit); lista pokazuje to, co zarejestrowano wcześniej.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odrzucono</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wynik</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Brak tabeli dziennika audytu użytkowników. Można ją utworzyć poleceniem php update/common/scripts/6.0/createuseraudittable.php; do tego czasu pliki audytu przechowują każde zdarzenie.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ta strona wymaga bazy danych SQL; nie jest dostępna w MongoDB. Pliki audytu przechowują każde zdarzenie.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Dziennik audytu użytkowników</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Użytkownik</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kiedy</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Gdzie</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kto zmienił, utworzył, włączył, wyłączył, przeniósł lub usunął które konto, kto się zalogował lub został odrzucony oraz jakie role przypisano: jeden wiersz na zdarzenie, z wartościami pól przed i po. Hasła i sekrety nigdy nie są rejestrowane.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupa</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>proces systemowy</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nieznane</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpieczyć konto</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Kod odzyskiwania został użyty do zalogowania się na konto %login w witrynie %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Użyto kodu odzyskiwania</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Przybliżony adres</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Aby zalogować się ponownie, należy poprosić o nowe hasło lub skontaktować się z administratorami witryny.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Poprosić o nowe hasło</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Każdy kod odzyskiwania działa tylko raz. W przypadku utraty telefonu należy ponownie skonfigurować aplikację uwierzytelniającą i przechowywać nowe kody odzyskiwania w bezpiecznym miejscu.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Nieudane próby logowania na konto</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Od teraz logowanie wymaga oprócz hasła także kodu. Jeśli ta zmiana została wprowadzona przez właściciela konta, nie trzeba nic robić.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Jeśli była to próba właściciela konta, który zapomniał hasła, należy poprosić o nowe. W przeciwnym razie należy wybrać silniejsze hasło i włączyć logowanie dwuetapowe.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Jeśli nie było to działanie właściciela konta, ktoś może znać hasło: należy je natychmiast zmienić i sprawdzić, gdzie konto jest zalogowane.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Pozostałe kody odzyskiwania</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Przejrzeć urządzenia</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Alert bezpieczeństwa</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Ktoś próbował zalogować się na konto %login w witrynie %site przy użyciu błędnego hasła. Liczba prób z rzędu: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Na koncie %login w witrynie %site wystąpiło zdarzenie związane z bezpieczeństwem.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>To jest alert bezpieczeństwa dotyczący konta. Jest wysyłany przy każdej takiej zmianie i nie można go wyłączyć.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Czas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Logowanie dwuetapowe zostało wyłączone dla konta %login w witrynie %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Wyłączono logowanie dwuetapowe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Logowanie dwuetapowe zostało włączone dla konta %login w witrynie %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Włączono logowanie dwuetapowe</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Konto %login w witrynie %site zostało zablokowane po zbyt wielu nieudanych logowaniach.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Konto jest teraz chronione wyłącznie hasłem. Jeśli ta zmiana nie została wprowadzona przez właściciela konta, należy zmienić hasło, a następnie ponownie włączyć logowanie dwuetapowe.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Konto zostało zablokowane</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktywność związana z bezpieczeństwem: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Zalogowano</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nieudana próba logowania</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wylogowano</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Wylogowano sesje</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Logowanie z nowego urządzenia</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Logowanie z nowej lokalizacji</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Potwierdzono tożsamość („Potwierdzenie tożsamości”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Weryfikacja tożsamości nie powiodła się</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Zalogowano kluczem dostępu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Logowanie kluczem dostępu nie powiodło się</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Odrzucono logowanie: brak kodu logowania dwuetapowego lub błędny kod</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Błędny kod logowania dwuetapowego</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto zablokowane po nieudanych logowaniach</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto odblokowane</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Zmieniono hasło</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Zmiana hasła nie powiodła się</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Zresetowano hasło</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Zażądano nowego hasła</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Zmieniono adres e-mail</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Zmieniono nazwę użytkownika</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Włączono logowanie dwuetapowe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Wyłączono logowanie dwuetapowe</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Użyto kodu odzyskiwania</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nowe kody odzyskiwania</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Utworzono hasło aplikacji</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Unieważniono hasło aplikacji</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Dodano klucz dostępu</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Usunięto klucz dostępu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Włączono konto</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Wyłączono konto</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wszystkie</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Logowania i sesje</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Zmiany konta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Wymaga uwagi</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>przez bieżącego użytkownika</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>przez użytkownika</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>przez %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metoda</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Przeglądarka</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System operacyjny</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Urządzenie</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Miejsce</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Kraj</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesje</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Które</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanał</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nieudane próby</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Pozostałe kody</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Procedura obsługi logowania</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktywność związana z bezpieczeństwem: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Logowania i zmiany zabezpieczeń konta. W razie zauważenia nieznanej czynności należy zmienić hasło i wylogować nierozpoznane urządzenia.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Logowania i zmiany zabezpieczeń tego konta.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Zmienić hasło</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Powrót do konta</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Aktywność związana z bezpieczeństwem nie jest rejestrowana</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Jest odczytywana z dziennika audytu użytkowników, którego tabela expuser_audit nie istnieje lub nie jest obsługiwana w tej bazie danych. Należy uruchomić php update/common/scripts/6.0/createuseraudittable.php lub aktualizację bazy danych do wersji 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ostatnie dni: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Logowania (ostatnie dni: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ostatnia aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nieudane</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>odrzucone</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nie zarejestrowano jeszcze żadnej aktywności związanej z bezpieczeństwem.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Zdarzenia bezpieczeństwa są przechowywane przez określoną liczbę dni: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Zdarzenia bezpieczeństwa są przechowywane do czasu ich usunięcia przez administratora.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Pobrać dane logowania</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesje i zdarzenia bezpieczeństwa jako plik JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Zalogowano</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nieudana próba logowania</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wylogowano</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Wylogowano sesje</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Logowanie z nowego urządzenia</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Logowanie z nowej lokalizacji</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Potwierdzono tożsamość („Potwierdzenie tożsamości”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Weryfikacja tożsamości nie powiodła się</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Zalogowano kluczem dostępu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Logowanie kluczem dostępu nie powiodło się</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Odrzucono logowanie: brak kodu logowania dwuetapowego lub błędny kod</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Błędny kod logowania dwuetapowego</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto zablokowane po nieudanych logowaniach</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto odblokowane</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Zmieniono hasło</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Zmiana hasła nie powiodła się</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Zresetowano hasło</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Zażądano nowego hasła</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Zmieniono adres e-mail</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Zmieniono nazwę użytkownika</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Włączono logowanie dwuetapowe</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Wyłączono logowanie dwuetapowe</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Użyto kodu odzyskiwania</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nowe kody odzyskiwania</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Utworzono hasło aplikacji</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Unieważniono hasło aplikacji</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Dodano klucz dostępu</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Usunięto klucz dostępu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Włączono konto</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Wyłączono konto</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wszystkie</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Logowania i sesje</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Zmiany konta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Wymaga uwagi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktywność związana z bezpieczeństwem: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Logowania i zmiany zabezpieczeń konta. W razie zauważenia nieznanej czynności należy zmienić hasło i wylogować nierozpoznane urządzenia.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Zmienić hasło</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Aktywność związana z bezpieczeństwem nie jest jeszcze rejestrowana w tej witrynie.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Logowania (ostatnie dni: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nieudane próby</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nie zarejestrowano jeszcze żadnej aktywności związanej z bezpieczeństwem.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Pobrać dane logowania</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sesje i zdarzenia bezpieczeństwa jako plik JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Hasło</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Hasło i kod logowania dwuetapowego</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfejs REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfejs SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Logowanie jednokrotne (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Zalogowano przed rozpoczęciem rejestrowania sesji</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raport logowań</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kto jest zalogowany w witrynie, jak często konta logują się i jak często im się to nie udaje, oraz wylogowanie użytkownika ze wszystkich urządzeń. Działa z każdą procedurą obsługi sesji.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesja została wylogowana. Urządzenie musi zalogować się ponownie.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Użytkownik %login został wylogowany z sesji. Liczba sesji: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Użytkownik %login nie miał aktywnej sesji.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Żadne konto nie ma takiego identyfikatora, nazwy użytkownika ani adresu e-mail.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To jest bieżąca sesja. Aby ją zakończyć, należy się wylogować.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ta sesja została już zakończona.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona wygasła. Nic nie zostało zmienione; proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sesje nie są rejestrowane w tej witrynie (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Brak tabeli expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesje będą rejestrowane po jej utworzeniu: php update/common/scripts/6.0/createusersessiontable.php lub aktualizacja bazy danych do wersji 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Teraz i dzisiaj</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Aktywne sesje</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Zalogowani użytkownicy</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Logowania dzisiaj</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Nieudane próby dzisiaj</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Wylogowanie użytkownika ze wszystkich urządzeń</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Każda sesja konta kończy się przy następnym żądaniu, także sesje utrzymywane przez „Zapamiętać mnie”. Należy tego użyć, gdy konto mogło trafić w niepowołane ręce, a następnie zresetować jego hasło.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Identyfikator użytkownika, nazwa użytkownika lub adres e-mail</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Wylogować wszędzie</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Zalogowani teraz</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Wyświetlane są ostatnio używane (limit: %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Użytkownik</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Urządzenie</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Zalogowano</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ostatnia aktywność</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcje</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>To urządzenie</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nie zarejestrowano</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Wylogować</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Żadna sesja nie jest zalogowana.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ostatnie dni: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Logowania i nieudane próby są liczone na podstawie dziennika audytu użytkowników, którego brak; nowe sesje są liczone.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dzień</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Logowania</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nieudane próby</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nowe sesje</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Procedura obsługi sesji: %handler. Sesje są odczytywane z tabeli expuser_session, dlatego raport działa z każdą procedurą obsługi.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Alert bezpieczeństwa dotyczący konta</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Na koncie %login wystąpiło zdarzenie związane z bezpieczeństwem: %event. Jeśli nie było to działanie właściciela konta, należy zabezpieczyć konto pod adresem %url.</translation>
     </message>
 </context>
 </TS>

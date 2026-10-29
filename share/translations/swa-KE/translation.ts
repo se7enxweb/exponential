@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Usanidi &gt; Kazi zilizoratibiwa</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Hakuna sehemu ya kazi iliyoratibiwa (cronjob) iliyoendeshwa bado: foleni ya kazi, uletaji, arifa na faharasa ya utafutaji vinasubiri. Endesha php bin/php/installcrontab.php --add --apply, au ongeza mistari ya --show kwenye crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Usakinishaji huu ni wa maonyesho ya umma: mtu yeyote anaweza kujua nenosiri lake la msimamizi, na manenosiri ya msimamizi hayawezi kubadilishwa wala kuwekwa upya. Usiweke chochote cha faragha hapa.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vifaa vyako</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akaunti zisizotumiwa na mtu yeyote au zinazohitaji kuangaliwa; zizime, zifungue au zihamishe.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kumbukumbu za ukaguzi wa watumiaji</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Nani alibadilisha, aliingia au alikataliwa, kwa kila akaunti; chuja na uhamishe.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ripoti ya kuingia</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Nani ameingia, kuingia na kushindwa kwa kila siku; mtoe mtumiaji kila mahali.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Vipindi vilivyoisha muda vya kishughulikiaji cha PHP huondolewa na PHP yenyewe (session.gc_maxlifetime), si na ukurasa huu wala sehemu ya kazi iliyoratibiwa session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Vipindi vilivyoingia vya kila mtumiaji vinaorodheshwa, na kutolewa, kwenye ripoti ya kuingia, ambayo hufanya kazi na kila kishughulikiaji cha vipindi.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Fungua ripoti ya kuingia</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ akaunti yako.</translation>
     <message>
         <source>None yet</source>
         <translation>Bado hakuna</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Kuingia kwako kwa hivi karibuni, majaribio yaliyoshindwa na mabadiliko ya nenosiri lako, anwani ya barua pepe na kuingia kwa hatua mbili.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Kuingia kwa hivi karibuni, majaribio yaliyoshindwa na mabadiliko ya usalama ya akaunti hii.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Kagua shughuli</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Majaribio %count ya kuingia yaliyoshindwa</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ Tazama ukurasa wa mahitaji kwa taarifa zaidi.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab haikuandikwa (%reason). Ongeza mistari hii kwenye crontab ya mtumiaji ambaye tovuti inaendeshwa kama yeye, la sivyo foleni, uletaji, arifa na faharasa ya utafutaji havitaendeshwa kamwe:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Kusakinisha upya hufanywa kwa Kickstarter (%file, kisha php bin/php/kickstarter.php run --apply) au kwa usakinishaji mpya.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Usafirishaji wa barua pepe ulikataa ujumbe katika uendeshaji wa mwisho, idadi: %count. Kagua seva ya barua pepe na site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Matukio %count yanasubiri na hakuna uendeshaji wa kazi iliyoratibiwa ya arifa uliorekodiwa. Ongeza sehemu ya cronjob &quot;frequent&quot; kwenye crontab, au endesha exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Choose another site or section with the node picker</source>
         <translation>Chagua tovuti au sehemu nyingine kwa kichaguzi cha nodi</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Msimamizi wa mfumo pekee ndiye anayeweza kubadilisha mmiliki: endesha ./console exp:content-check --fix-permissions --apply kama root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>empty</source>
         <translation>tupu</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Ufunguo wa kutia sahihi una umri wa zaidi ya mwaka mmoja: ubadilishe kwa exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>not sent</source>
         <translation>haujatumwa</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Kazi iliyoratibiwa ya arifa hurekodi hapa kila uendeshaji wake. Ongeza sehemu frequent kwenye crontab, au endesha exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Tumia konsoli: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>None.</source>
         <translation>Hakuna.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>kwa programu ya uthibitishaji</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kwa msimbo kupitia barua pepe</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>kwa msimbo wa kurejesha</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>kwa ufunguo wa siri (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>kwa akaunti ya nje</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Inaonyeshwa kama mtandao wake; anwani huhifadhiwa kama mipangilio ya ulinzi wa data ya tovuti inavyoelekeza.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Haijarekodiwa</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Eneo</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>takriban</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Manage devices</source>
         <translation>Simamia vifaa</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>kwa programu ya uthibitishaji</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kwa msimbo kupitia barua pepe</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>kwa msimbo wa kurejesha</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>kwa ufunguo wa siri (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>kwa akaunti ya nje</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Haijarekodiwa</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Eneo</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>takriban</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>View the sessions of this user</source>
         <translation>Tazama vipindi vya mtumiaji huyu</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Akaunti yako %login kwenye %site imetumika hivi punde kuingia kutoka mahali ambapo haijaingia kutoka hivi karibuni:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Eneo la takriban</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser kwenye %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ripoti ya kuingia</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Open the page</source>
         <translation>Fungua ukurasa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hadi %to kati ya %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Jina la kuingia au kitambulisho cha mtumiaji: akaunti iliyohusika na tukio au mtumiaji aliyetenda.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaunti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kitendo</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Baadaye</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Matokeo yoyote</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Kabla</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Mtendaji</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Futa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Imefanikiwa</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Matukio huhifadhiwa kwa siku %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Matukio huhifadhiwa hadi yaondolewe kwa mkono.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Matukio</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kila kitendo</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Matukio yote ya akaunti hii</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Hamisha orodha kama CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Imeshindikana</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kutoka</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Punguza orodha</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Hakuna tukio linalolingana.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Kwa kila ukurasa</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kurekodi kumezimwa katika audit.ini ([UserAuditSettings] UserAudit); orodha inaonyesha kilichorekodiwa awali.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Imekataliwa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Matokeo</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Onyesha</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Jedwali la kumbukumbu za ukaguzi wa watumiaji halipo. Liunde kwa php update/common/scripts/6.0/createuseraudittable.php; hadi wakati huo faili za ukaguzi huhifadhi kila tukio.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ukurasa huu unahitaji hifadhidata ya SQL; haupatikani kwenye MongoDB. Faili za ukaguzi huhifadhi kila tukio.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hadi</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kumbukumbu za ukaguzi wa watumiaji</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mtumiaji</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Lini</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wapi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Nani alibadilisha, aliunda, aliwezesha, alizima, alihamisha au aliondoa akaunti gani, nani aliingia au alikataliwa, na majukumu gani yalikabidhiwa: mstari mmoja kwa kila tukio, pamoja na sehemu za data kabla na baada. Manenosiri na siri hayarekodiwi kamwe.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>kundi</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>mfumo</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>haijulikani</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Linda akaunti yako</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Msimbo wa kurejesha ulitumika kuingia kwenye akaunti yako %login kwenye %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Msimbo wa kurejesha ulitumika</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaunti</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Anwani ya takriban</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Omba nenosiri jipya ili uingie tena, au wasiliana na wasimamizi wa tovuti.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Omba nenosiri jipya</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kila msimbo wa kurejesha hufanya kazi mara moja tu. Ikiwa umepoteza simu yako, sanidi tena programu yako ya uthibitishaji na uhifadhi misimbo mipya ya kurejesha mahali salama.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Majaribio ya kuingia yaliyoshindwa kwenye akaunti yako</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Kuanzia sasa, kuingia kunaomba msimbo pamoja na nenosiri lako. Ikiwa ni wewe uliyefanya hivi, huhitaji kufanya chochote.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ikiwa ni wewe na umesahau nenosiri lako, omba jipya. Ikiwa sivyo, chagua nenosiri lenye nguvu zaidi na uwashe kuingia kwa hatua mbili.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ikiwa si wewe, huenda mtu anajua nenosiri lako: libadilishe sasa na ukague mahali ambapo akaunti yako imeingia.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Misimbo ya kurejesha iliyobaki</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Kagua vifaa vyako</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Tahadhari ya usalama</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Mtu alijaribu kuingia kwenye akaunti yako %login kwenye %site kwa nenosiri lisilo sahihi mara %count mfululizo.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Kulikuwa na tukio la usalama kwenye akaunti yako %login kwenye %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Hii ni tahadhari ya usalama kuhusu akaunti yako. Hutumwa kwa kila badiliko la aina hii na haiwezi kuzimwa.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wakati</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Kuingia kwa hatua mbili kulizimwa kwa akaunti yako %login kwenye %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Kuingia kwa hatua mbili kulizimwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kuingia kwa hatua mbili kuliwashwa kwa akaunti yako %login kwenye %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kuingia kwa hatua mbili kuliwashwa</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Akaunti yako %login kwenye %site ilifungwa baada ya majaribio mengi mno ya kuingia yaliyoshindwa.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Akaunti yako sasa inalindwa na nenosiri lako pekee. Ikiwa si wewe uliyefanya hivi, washa tena kuingia kwa hatua mbili baada ya kubadilisha nenosiri lako.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Akaunti yako ilifungwa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Shughuli za usalama za %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Aliingia</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Jaribio la kuingia lililoshindwa</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Alitoka</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Vipindi vimetolewa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kuingia kutoka kifaa kipya</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kuingia kutoka eneo jipya</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Utambulisho umethibitishwa (&quot;Thibitisha kwamba ni wewe&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ukaguzi wa utambulisho umeshindikana</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Aliingia kwa ufunguo wa siri (passkey)</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kuingia kwa ufunguo wa siri kumeshindikana</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kuingia kumekataliwa: msimbo wa hatua mbili haupo au si sahihi</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Msimbo wa hatua mbili si sahihi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaunti imefungwa baada ya kuingia kulikoshindwa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akaunti imefunguliwa</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Nenosiri limebadilishwa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Kubadilisha nenosiri kumeshindikana</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Nenosiri limewekwa upya</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nenosiri jipya limeombwa</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Anwani ya barua pepe imebadilishwa</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Jina la mtumiaji limebadilishwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kuingia kwa hatua mbili kumewashwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kuingia kwa hatua mbili kumezimwa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Msimbo wa kurejesha umetumika</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Misimbo mipya ya kurejesha</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Nenosiri la programu limeundwa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Nenosiri la programu limebatilishwa</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ufunguo wa siri umeongezwa</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ufunguo wa siri umeondolewa</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaunti imewezeshwa</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaunti imezimwa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zote</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kuingia na vipindi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mabadiliko ya akaunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Inahitaji uangalifu</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>na wewe</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>na mtumiaji</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>na %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Mbinu</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Kivinjari</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Mfumo wa uendeshaji</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Kifaa</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Mahali</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Nchi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Vipindi</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Vipi hasa</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Njia ya kutuma</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Majaribio yaliyoshindwa</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Misimbo iliyobaki</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Kishughulikiaji cha kuingia</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Shughuli za usalama za %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kuingia na mabadiliko ya usalama wa akaunti yako. Ukiona kitu ambacho hukufanya, badilisha nenosiri lako na utoe vifaa usivyovitambua.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Kuingia na mabadiliko ya usalama wa akaunti hii.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vifaa vyako</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Badilisha nenosiri</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Rudi kwenye akaunti</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Shughuli za usalama hazirekodiwi</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Husomwa kutoka kumbukumbu za ukaguzi wa watumiaji, ambazo jedwali lake expuser_audit halipo au halitumiki kwenye hifadhidata hii. Endesha php update/common/scripts/6.0/createuseraudittable.php, au sasisho la hifadhidata la 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Siku %days zilizopita</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kuingia katika siku %days zilizopita</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Shughuli za usalama za hivi karibuni</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Onyesha</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>imeshindikana</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>imekataliwa</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Bado hakuna shughuli za usalama zilizorekodiwa.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Matukio ya usalama huhifadhiwa kwa siku %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Matukio ya usalama huhifadhiwa hadi msimamizi ayaondoe.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Pakua data yangu ya kuingia</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Vipindi vyako na matukio ya usalama kama faili ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Aliingia</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Jaribio la kuingia lililoshindwa</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Alitoka</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Vipindi vimetolewa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kuingia kutoka kifaa kipya</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kuingia kutoka eneo jipya</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Utambulisho umethibitishwa (&quot;Thibitisha kwamba ni wewe&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ukaguzi wa utambulisho umeshindikana</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Aliingia kwa ufunguo wa siri (passkey)</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kuingia kwa ufunguo wa siri kumeshindikana</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kuingia kumekataliwa: msimbo wa hatua mbili haupo au si sahihi</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Msimbo wa hatua mbili si sahihi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaunti imefungwa baada ya kuingia kulikoshindwa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akaunti imefunguliwa</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Nenosiri limebadilishwa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Kubadilisha nenosiri kumeshindikana</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Nenosiri limewekwa upya</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nenosiri jipya limeombwa</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Anwani ya barua pepe imebadilishwa</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Jina la mtumiaji limebadilishwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kuingia kwa hatua mbili kumewashwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kuingia kwa hatua mbili kumezimwa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Msimbo wa kurejesha umetumika</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Misimbo mipya ya kurejesha</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Nenosiri la programu limeundwa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Nenosiri la programu limebatilishwa</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ufunguo wa siri umeongezwa</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ufunguo wa siri umeondolewa</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaunti imewezeshwa</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaunti imezimwa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zote</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kuingia na vipindi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mabadiliko ya akaunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Inahitaji uangalifu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Shughuli za usalama za %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kuingia na mabadiliko ya usalama wa akaunti yako. Ukiona kitu ambacho hukufanya, badilisha nenosiri lako na utoe vifaa usivyovitambua.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vifaa vyako</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Badilisha nenosiri</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Shughuli za usalama bado hazirekodiwi kwenye tovuti hii.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kuingia katika siku %days zilizopita</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Majaribio yaliyoshindwa</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Bado hakuna shughuli za usalama zilizorekodiwa.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Pakua data yangu ya kuingia</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Vipindi vyako na matukio ya usalama kama faili ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Nenosiri</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Nenosiri na msimbo wa hatua mbili</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Kiolesura cha REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Kiolesura cha SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Kuingia mara moja (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Aliingia kabla vipindi havijaanza kurekodiwa</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ripoti ya kuingia</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Nani ameingia kwenye tovuti, akaunti huingia na kushindwa mara ngapi, na kumtoa mtumiaji kila mahali. Hufanya kazi na kila kishughulikiaji cha vipindi.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Kipindi kimetolewa. Kifaa kinapaswa kuingia tena.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ametolewa kwenye vipindi %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login hakuwa na kipindi kinachoendelea.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Hakuna akaunti yenye ID, jina la mtumiaji au anwani hiyo ya barua pepe.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Hiki ndicho kipindi unachotumia. Ili kukimaliza, toka.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Kipindi hicho kilikuwa kimeshaisha.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Muda wa ukurasa ulikuwa umekwisha. Hakuna kilichobadilishwa; tafadhali jaribu tena.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Vipindi havirekodiwi kwenye tovuti hii (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Jedwali expuser_session halipo</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Vipindi hurekodiwa mara tu linapoundwa: php update/common/scripts/6.0/createusersessiontable.php, au sasisho la hifadhidata la 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Sasa na leo</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Vipindi vinavyoendelea</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Watumiaji walioingia</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Kuingia leo</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Majaribio yaliyoshindwa leo</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Mtoe mtumiaji kila mahali</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kila kipindi cha akaunti huisha katika ombi lake linalofuata, pamoja na vile vinavyodumishwa na Nikumbuke. Tumia hii wakati akaunti huenda iko mikononi isiyo sahihi; kisha weka upya nenosiri lake.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ya mtumiaji, jina la mtumiaji au anwani ya barua pepe</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Toa kila mahali</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ameingia sasa</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Vilivyotumika hivi karibuni zaidi %limit vinaonyeshwa.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mtumiaji</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Kifaa</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Anwani</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Aliingia</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Shughuli ya mwisho</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Vitendo</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kifaa hiki</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Haijarekodiwa</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Toa</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Hakuna kipindi kilichoingia.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Siku %days zilizopita</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Kuingia na majaribio yaliyoshindwa huhesabiwa kutoka kumbukumbu za ukaguzi wa watumiaji, ambazo hazipo; vipindi vipya vinahesabiwa.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Siku</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Kuingia</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Majaribio yaliyoshindwa</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Vipindi vipya</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Kishughulikiaji cha vipindi: %handler. Vipindi husomwa kutoka jedwali expuser_session, kwa hivyo ripoti hufanya kazi na kila kishughulikiaji.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Tahadhari ya usalama kwa akaunti yako</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Kulikuwa na tukio la usalama kwenye akaunti yako %login: %event. Ikiwa si wewe, linda akaunti yako kwenye %url.</translation>
     </message>
 </context>
 </TS>

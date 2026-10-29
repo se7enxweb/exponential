@@ -150,6 +150,9 @@ class I18n extends \Exponential\Runnable\Command
                                    $l['files'], $l['variants'], $l['test'], $l['languages'], $l['rtl'] ) );
             $cli->output( sprintf( 'Countries and territories: %d, %d of them with the administration in their language',
                                    count( $data['countries'] ), $data['covered'] ) );
+            $cli->output( sprintf( 'ISO 3166-1 codes without a locale: %d by design (%s), %d not yet%s',
+                                   count( $data['without']['design'] ), implode( ', ', array_keys( $data['without']['design'] ) ) ?: '-',
+                                   count( $data['without']['missing'] ), $data['without']['missing'] ? ' (' . implode( ', ', $data['without']['missing'] ) . ')' : '' ) );
             $cli->output( sprintf( 'Languages: %d known, %d shown translated, %d not translated',
                                    count( $data['languages'] ), $data['supported'], count( $data['languages'] ) - $data['supported'] ) );
             if ( !empty( $options['check'] ) )

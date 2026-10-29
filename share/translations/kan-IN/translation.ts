@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ಸೆಟಪ್ &gt; ಕ್ರಾನ್ ಜಾಬ್‌ಗಳು</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಕ್ರಾನ್‌ಜಾಬ್ ಭಾಗ ರನ್ ಆಗಿಲ್ಲ: ಜಾಬ್ ಸರತಿ, ಆಮದುಗಳು, ಅಧಿಸೂಚನೆಗಳು ಮತ್ತು ಹುಡುಕಾಟ ಸೂಚ್ಯಂಕ ಕಾಯುತ್ತಿವೆ. php bin/php/installcrontab.php --add --apply ಅನ್ನು ರನ್ ಮಾಡಿ, ಅಥವಾ --show ತೋರಿಸುವ ಸಾಲುಗಳನ್ನು crontab ಫೈಲ್‌ಗೆ ಸೇರಿಸಿ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಸಾರ್ವಜನಿಕ ಡೆಮೊ ಆಗಿದೆ: ಯಾರಿಗಾದರೂ ಇದರ ನಿರ್ವಾಹಕ ಪಾಸ್‌ವರ್ಡ್ ತಿಳಿದಿರಬಹುದು, ಮತ್ತು ನಿರ್ವಾಹಕ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲು ಅಥವಾ ಮರುಹೊಂದಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಇಲ್ಲಿ ಯಾವುದೇ ಖಾಸಗಿ ಮಾಹಿತಿಯನ್ನು ನಮೂದಿಸಬೇಡಿ.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ಯಾರೂ ಬಳಸದ ಅಥವಾ ಗಮನಿಸಬೇಕಾದ ಖಾತೆಗಳು; ಅವನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ, ಅನ್‌ಲಾಕ್ ಮಾಡಿ ಅಥವಾ ರಫ್ತು ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ಬಳಕೆದಾರ ಆಡಿಟ್ ಲಾಗ್</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ಪ್ರತಿ ಖಾತೆಗೆ ಯಾರು ಬದಲಾಯಿಸಿದರು, ಸೈನ್ ಇನ್ ಮಾಡಿದರು ಅಥವಾ ನಿರಾಕರಿಸಲ್ಪಟ್ಟರು; ಫಿಲ್ಟರ್ ಮಾಡಿ ಮತ್ತು ರಫ್ತು ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ಸೈನ್ ಇನ್ ವರದಿ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ಯಾರು ಸೈನ್ ಇನ್ ಆಗಿದ್ದಾರೆ, ದಿನವಾರು ಸೈನ್ ಇನ್‌ಗಳು ಮತ್ತು ವೈಫಲ್ಯಗಳು; ಒಬ್ಬ ಬಳಕೆದಾರರನ್ನು ಎಲ್ಲೆಡೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡು.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ಹ್ಯಾಂಡ್ಲರ್‌ನ ಅವಧಿ ಮುಗಿದ ಸೆಷನ್‌ಗಳನ್ನು PHP ತಾನೇ (session.gc_maxlifetime) ತೆಗೆದುಹಾಕುತ್ತದೆ; ಈ ಪುಟ ಅಥವಾ session_gc ಕ್ರಾನ್‌ಜಾಬ್ ಭಾಗ ಅದನ್ನು ಮಾಡುವುದಿಲ್ಲ.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ಎಲ್ಲಾ ಬಳಕೆದಾರರ ಸೈನ್ ಇನ್ ಆಗಿರುವ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಇನ್ ವರದಿಯಲ್ಲಿ ಪಟ್ಟಿ ಮಾಡಲಾಗುತ್ತದೆ ಮತ್ತು ಅಲ್ಲಿಂದಲೇ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗುತ್ತದೆ; ಅದು ಪ್ರತಿಯೊಂದು ಸೆಷನ್ ಹ್ಯಾಂಡ್ಲರ್‌ನೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ಸೈನ್ ಇನ್ ವರದಿ ತೆರೆ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ಇನ್ನೂ ಯಾವುದೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ನಿಮ್ಮ ಇತ್ತೀಚಿನ ಸೈನ್ ಇನ್‌ಗಳು, ವಿಫಲ ಪ್ರಯತ್ನಗಳು ಮತ್ತು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್, ಇ-ಮೇಲ್ ವಿಳಾಸ ಹಾಗೂ ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್‌ನಲ್ಲಿನ ಬದಲಾವಣೆಗಳು.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ಈ ಖಾತೆಯ ಇತ್ತೀಚಿನ ಸೈನ್ ಇನ್‌ಗಳು, ವಿಫಲ ಪ್ರಯತ್ನಗಳು ಮತ್ತು ಭದ್ರತಾ ಬದಲಾವಣೆಗಳು.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ಚಟುವಟಿಕೆ ಪರಿಶೀಲಿಸು</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count ವಿಫಲ ಸೈನ್ ಇನ್‌ಗಳು</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ಬರೆಯಲಾಗಿಲ್ಲ (%reason). ಸೈಟ್ ಯಾವ ಬಳಕೆದಾರರಾಗಿ ಚಾಲನೆಯಾಗುತ್ತದೆಯೋ ಆ ಬಳಕೆದಾರರ crontab ಗೆ ಈ ಸಾಲುಗಳನ್ನು ಸೇರಿಸಿ, ಇಲ್ಲದಿದ್ದರೆ ಸರತಿ, ಆಮದುಗಳು, ಅಧಿಸೂಚನೆಗಳು ಮತ್ತು ಹುಡುಕಾಟ ಸೂಚಿ ಎಂದಿಗೂ ಚಾಲನೆಯಾಗುವುದಿಲ್ಲ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ಮರುಸ್ಥಾಪನೆಯನ್ನು ಕಿಕ್‌ಸ್ಟಾರ್ಟರ್ ಮೂಲಕ (%file, ನಂತರ php bin/php/kickstarter.php run --apply) ಅಥವಾ ಹೊಸ ಸ್ಥಾಪನೆಯ ಮೂಲಕ ಮಾಡಲಾಗುತ್ತದೆ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ಕೊನೆಯ ರನ್‌ನಲ್ಲಿ ಮೇಲ್ ಟ್ರಾನ್ಸ್‌ಪೋರ್ಟ್ %count ಸಂದೇಶಗಳನ್ನು ನಿರಾಕರಿಸಿದೆ. ಮೇಲ್ ಸರ್ವರ್ ಮತ್ತು site.ini MailSettings ಪರಿಶೀಲಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ಘಟನೆಗಳು ಕಾಯುತ್ತಿವೆ ಮತ್ತು ಅಧಿಸೂಚನೆ ಕ್ರಾನ್‌ಜಾಬ್‌ನ ಯಾವುದೇ ರನ್ ದಾಖಲಾಗಿಲ್ಲ. &quot;frequent&quot; ಎಂಬ ಕ್ರಾನ್‌ಜಾಬ್ ಭಾಗವನ್ನು crontab ಫೈಲ್‌ಗೆ ಸೇರಿಸಿ, ಅಥವಾ exp:notification:run --apply ಅನ್ನು ರನ್ ಮಾಡಿ.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ನೋಡ್ ಪಿಕ್ಕರ್ ಬಳಸಿ ಮತ್ತೊಂದು ಸೈಟ್ ಅಥವಾ ವಿಭಾಗವನ್ನು ಆರಿಸಿ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ಸಿಸ್ಟಮ್ ನಿರ್ವಾಹಕರು ಮಾತ್ರ ಮಾಲೀಕರನ್ನು ಬದಲಾಯಿಸಬಹುದು: root ಆಗಿ ./console exp:content-check --fix-permissions --apply ಅನ್ನು ರನ್ ಮಾಡಿ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ಖಾಲಿ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>ಸಹಿ ಕೀ ಒಂದು ವರ್ಷಕ್ಕಿಂತ ಹಳೆಯದು: exp:audit key rotate --apply ಮೂಲಕ ಅದನ್ನು ಬದಲಾಯಿಸಿ.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ಕಳುಹಿಸಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ಅಧಿಸೂಚನೆ ಕ್ರಾನ್‌ಜಾಬ್ ತನ್ನ ಪ್ರತಿ ರನ್ ಅನ್ನು ಇಲ್ಲಿ ದಾಖಲಿಸುತ್ತದೆ. frequent ಭಾಗವನ್ನು crontab ಫೈಲ್‌ಗೆ ಸೇರಿಸಿ, ಅಥವಾ exp:notification:run --apply ಅನ್ನು ರನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ಕನ್ಸೋಲ್ ಬಳಸಿ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ಯಾವುದೂ ಇಲ್ಲ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ಇ-ಮೇಲ್ ಮೂಲಕ ಬಂದ ಕೋಡ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀಯೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ಬಾಹ್ಯ ಖಾತೆಯೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ಅದರ ನೆಟ್‌ವರ್ಕ್ ಆಗಿ ತೋರಿಸಲಾಗಿದೆ; ಸೈಟ್‌ನ ಡೇಟಾ ಸಂರಕ್ಷಣಾ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಹೇಳಿದಂತೆ ವಿಳಾಸವನ್ನು ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ದಾಖಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ಸ್ಥಳ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ಅಂದಾಜು</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ಸಾಧನಗಳನ್ನು ನಿರ್ವಹಿಸು</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ಇ-ಮೇಲ್ ಮೂಲಕ ಬಂದ ಕೋಡ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀಯೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ಬಾಹ್ಯ ಖಾತೆಯೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ದಾಖಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ಸ್ಥಳ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ಅಂದಾಜು</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ಈ ಬಳಕೆದಾರರ ಸೆಷನ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸು</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ಮೂಲಕ, ಇತ್ತೀಚೆಗೆ ಸೈನ್ ಇನ್ ಆಗದ ಸ್ಥಳದಿಂದ ಈಗಷ್ಟೇ ಸೈನ್ ಇನ್ ಮಾಡಲಾಗಿದೆ:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ಅಂದಾಜು ಸ್ಥಳ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os ನಲ್ಲಿ %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ಸೈನ್ ಇನ್ ವರದಿ</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ಪುಟವನ್ನು ತೆರೆ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, ಒಟ್ಟು %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ಲಾಗಿನ್ ಅಥವಾ ಬಳಕೆದಾರ ID: ಈವೆಂಟ್ ಯಾವ ಖಾತೆಗೆ ಸಂಬಂಧಿಸಿದೆಯೋ ಆ ಖಾತೆ, ಅಥವಾ ಕ್ರಿಯೆ ನಡೆಸಿದ ಬಳಕೆದಾರ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ಖಾತೆ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ಕ್ರಿಯೆ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ನಂತರ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ಯಾವುದೇ ಫಲಿತಾಂಶ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ಮಾಡಿದವರು</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ತೆರವುಗೊಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ಈವೆಂಟ್‌ಗಳನ್ನು %days ದಿನಗಳವರೆಗೆ ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ಈವೆಂಟ್‌ಗಳನ್ನು ಕೈಯಾರೆ ತೆಗೆದುಹಾಕುವವರೆಗೆ ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ಈವೆಂಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ಎಲ್ಲಾ ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ಈ ಖಾತೆಯ ಎಲ್ಲಾ ಈವೆಂಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ಪಟ್ಟಿಯನ್ನು CSV ಆಗಿ ರಫ್ತು ಮಾಡು (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ಇಂದ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ಪಟ್ಟಿಯನ್ನು ಸಂಕುಚಿತಗೊಳಿಸು</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ಯಾವುದೇ ಈವೆಂಟ್ ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ಪ್ರತಿ ಪುಟಕ್ಕೆ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ನಲ್ಲಿ ದಾಖಲಾತಿ ಆಫ್ ಮಾಡಲಾಗಿದೆ ([UserAuditSettings] UserAudit); ಪಟ್ಟಿಯು ಹಿಂದೆ ದಾಖಲಾದುದನ್ನು ತೋರಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ಫಲಿತಾಂಶ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ಬಳಕೆದಾರ ಆಡಿಟ್ ಲಾಗ್‌ನ ಕೋಷ್ಟಕ ಇಲ್ಲ. ಅದನ್ನು php update/common/scripts/6.0/createuseraudittable.php ಮೂಲಕ ರಚಿಸಿ; ಅಲ್ಲಿಯವರೆಗೆ ಆಡಿಟ್ ಫೈಲ್‌ಗಳು ಪ್ರತಿಯೊಂದು ಈವೆಂಟ್ ಅನ್ನು ಇರಿಸಿಕೊಳ್ಳುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ಈ ಪುಟಕ್ಕೆ SQL ಡೇಟಾಬೇಸ್ ಅಗತ್ಯವಿದೆ; ಇದು MongoDB ನಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ. ಆಡಿಟ್ ಫೈಲ್‌ಗಳು ಪ್ರತಿಯೊಂದು ಈವೆಂಟ್ ಅನ್ನು ಇರಿಸಿಕೊಳ್ಳುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ವರೆಗೆ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ಬಳಕೆದಾರ ಆಡಿಟ್ ಲಾಗ್</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ಬಳಕೆದಾರ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ಯಾವಾಗ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ಎಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ಯಾರು ಯಾವ ಖಾತೆಯನ್ನು ಬದಲಾಯಿಸಿದರು, ರಚಿಸಿದರು, ಸಕ್ರಿಯಗೊಳಿಸಿದರು, ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿದರು, ಸರಿಸಿದರು ಅಥವಾ ತೆಗೆದುಹಾಕಿದರು, ಯಾರು ಸೈನ್ ಇನ್ ಮಾಡಿದರು ಅಥವಾ ನಿರಾಕರಿಸಲ್ಪಟ್ಟರು, ಮತ್ತು ಯಾವ ಪಾತ್ರಗಳನ್ನು ನಿಯೋಜಿಸಲಾಯಿತು: ಪ್ರತಿ ಈವೆಂಟ್‌ಗೆ ಒಂದು ಸಾಲು, ಮೊದಲಿನ ಮತ್ತು ನಂತರದ ಕ್ಷೇತ್ರಗಳೊಂದಿಗೆ. ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಮತ್ತು ರಹಸ್ಯಗಳನ್ನು ಎಂದಿಗೂ ದಾಖಲಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ಗುಂಪು</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ಸಿಸ್ಟಮ್</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ಅಜ್ಞಾತ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್ ಬಳಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್ ಬಳಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ಖಾತೆ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ಅಂದಾಜು ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಹೊಸ ಪಾಸ್‌ವರ್ಡ್‌ಗೆ ವಿನಂತಿಸಿ, ಅಥವಾ ಸೈಟ್‌ನ ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ಹೊಸ ಪಾಸ್‌ವರ್ಡ್‌ಗೆ ವಿನಂತಿಸು</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ಪ್ರತಿ ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್ ಒಮ್ಮೆ ಮಾತ್ರ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ. ನಿಮ್ಮ ಫೋನ್ ಕಳೆದುಹೋಗಿದ್ದರೆ, ನಿಮ್ಮ ದೃಢೀಕರಣ ಆ್ಯಪ್ ಅನ್ನು ಮತ್ತೆ ಹೊಂದಿಸಿ ಮತ್ತು ಹೊಸ ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್‌ಗಳನ್ನು ಸುರಕ್ಷಿತ ಸ್ಥಳದಲ್ಲಿ ಇರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯಲ್ಲಿ ವಿಫಲ ಸೈನ್ ಇನ್ ಪ್ರಯತ್ನಗಳು</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ಇನ್ನು ಮುಂದೆ ಸೈನ್ ಇನ್ ಮಾಡುವಾಗ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಜೊತೆಗೆ ಒಂದು ಕೋಡ್ ಕೇಳಲಾಗುತ್ತದೆ. ಇದನ್ನು ನೀವೇ ಮಾಡಿದ್ದರೆ, ನೀವು ಏನನ್ನೂ ಮಾಡಬೇಕಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ಅದು ನೀವೇ ಆಗಿದ್ದು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಮರೆತಿದ್ದರೆ, ಹೊಸದಕ್ಕೆ ವಿನಂತಿಸಿ. ಇಲ್ಲದಿದ್ದರೆ, ಹೆಚ್ಚು ಬಲವಾದ ಪಾಸ್‌ವರ್ಡ್ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಆನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ಇದು ನೀವಲ್ಲದಿದ್ದರೆ, ಯಾರಿಗಾದರೂ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ತಿಳಿದಿರಬಹುದು: ಈಗಲೇ ಅದನ್ನು ಬದಲಾಯಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಖಾತೆ ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ ಎಂದು ಪರಿಶೀಲಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ಉಳಿದಿರುವ ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳನ್ನು ಪರಿಶೀಲಿಸು</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ಭದ್ರತಾ ಎಚ್ಚರಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>ಯಾರೋ %site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ಗೆ ತಪ್ಪು ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಸತತವಾಗಿ %count ಬಾರಿ ಸೈನ್ ಇನ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿದ್ದಾರೆ.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ನಲ್ಲಿ ಒಂದು ಭದ್ರತಾ ಘಟನೆ ನಡೆದಿದೆ.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ಇದು ನಿಮ್ಮ ಖಾತೆಯ ಕುರಿತಾದ ಭದ್ರತಾ ಎಚ್ಚರಿಕೆ. ಇಂತಹ ಪ್ರತಿಯೊಂದು ಬದಲಾವಣೆಗೂ ಇದನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಇದನ್ನು ಆಫ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ಸಮಯ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ಗೆ ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಅನ್ನು ಆಫ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಆಫ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ಗೆ ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಅನ್ನು ಆನ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಆನ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>ಹಲವು ವಿಫಲ ಸೈನ್ ಇನ್‌ಗಳ ನಂತರ %site ಸೈಟ್‌ನಲ್ಲಿರುವ ನಿಮ್ಮ ಖಾತೆ %login ಅನ್ನು ಲಾಕ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ ಈಗ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್‌ನಿಂದ ಮಾತ್ರ ರಕ್ಷಿತವಾಗಿದೆ. ಇದನ್ನು ನೀವು ಮಾಡದಿದ್ದರೆ, ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿದ ನಂತರ ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಅನ್ನು ಮತ್ತೆ ಆನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ಅವರ ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ವಿಫಲ ಸೈನ್ ಇನ್ ಪ್ರಯತ್ನ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ಹೊಸ ಸಾಧನದಿಂದ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ಹೊಸ ಸ್ಥಳದಿಂದ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ಗುರುತು ದೃಢೀಕರಿಸಲಾಗಿದೆ (“ಇದು ನೀವೇ ಎಂದು ಪರಿಶೀಲಿಸಿ”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ಗುರುತು ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸೈನ್ ಇನ್ ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ಸೈನ್ ಇನ್ ನಿರಾಕರಿಸಲಾಗಿದೆ: ಎರಡು ಹಂತದ ಕೋಡ್ ಇಲ್ಲ ಅಥವಾ ತಪ್ಪಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ತಪ್ಪು ಎರಡು ಹಂತದ ಕೋಡ್</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ವಿಫಲ ಸೈನ್ ಇನ್‌ಗಳ ನಂತರ ಖಾತೆ ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ಖಾತೆ ಅನ್‌ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾವಣೆ ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ಹೊಸ ಪಾಸ್‌ವರ್ಡ್‌ಗೆ ವಿನಂತಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ಇ-ಮೇಲ್ ವಿಳಾಸ ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ಬಳಕೆದಾರಹೆಸರು ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಆನ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಆಫ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್ ಬಳಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ಹೊಸ ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ಆ್ಯಪ್ ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ಆ್ಯಪ್ ಪಾಸ್‌ವರ್ಡ್ ಹಿಂಪಡೆಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸೇರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ಪಾಸ್‌ಕೀ ತೆಗೆದುಹಾಕಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ಖಾತೆ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ಖಾತೆ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ಎಲ್ಲಾ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ಸೈನ್ ಇನ್‌ಗಳು ಮತ್ತು ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ಖಾತೆ ಬದಲಾವಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ಗಮನ ಅಗತ್ಯ</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ನಿಮ್ಮಿಂದ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ಬಳಕೆದಾರರಿಂದ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ಮಾಡಿದವರು: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ವಿಧಾನ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ಬ್ರೌಸರ್</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ಆಪರೇಟಿಂಗ್ ಸಿಸ್ಟಮ್</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ಸ್ಥಳ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ದೇಶ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ಯಾವುವು</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ಕಳುಹಿಸಿದ ಮಾರ್ಗ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ವಿಫಲ ಪ್ರಯತ್ನಗಳು</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ಉಳಿದಿರುವ ಕೋಡ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ಸೈನ್ ಇನ್ ಹ್ಯಾಂಡ್ಲರ್</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ಅವರ ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯ ಸೈನ್ ಇನ್‌ಗಳು ಮತ್ತು ಭದ್ರತೆಯಲ್ಲಿನ ಬದಲಾವಣೆಗಳು. ನೀವು ಮಾಡದ ಏನಾದರೂ ಕಂಡರೆ, ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ ಮತ್ತು ನೀವು ಗುರುತಿಸದ ಸಾಧನಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ಈ ಖಾತೆಯ ಸೈನ್ ಇನ್‌ಗಳು ಮತ್ತು ಭದ್ರತೆಯಲ್ಲಿನ ಬದಲಾವಣೆಗಳು.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸು</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ಖಾತೆಗೆ ಹಿಂತಿರುಗು</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ ದಾಖಲಾಗುತ್ತಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ಇದನ್ನು ಬಳಕೆದಾರ ಆಡಿಟ್ ಲಾಗ್‌ನಿಂದ ಓದಲಾಗುತ್ತದೆ, ಅದರ ಟೇಬಲ್ expuser_audit ಇಲ್ಲ ಅಥವಾ ಈ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ. php update/common/scripts/6.0/createuseraudittable.php ಅನ್ನು ರನ್ ಮಾಡಿ, ಅಥವಾ 6.0.15 ರ ಡೇಟಾಬೇಸ್ ಅಪ್‌ಡೇಟ್ ರನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ಕಳೆದ %days ದಿನಗಳು</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ಕಳೆದ %days ದಿನಗಳಲ್ಲಿ ಸೈನ್ ಇನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ಇತ್ತೀಚಿನ ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಭದ್ರತಾ ಚಟುವಟಿಕೆ ದಾಖಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ಭದ್ರತಾ ಘಟನೆಗಳನ್ನು %days ದಿನಗಳವರೆಗೆ ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ನಿರ್ವಾಹಕರು ತೆಗೆದುಹಾಕುವವರೆಗೆ ಭದ್ರತಾ ಘಟನೆಗಳನ್ನು ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ನನ್ನ ಸೈನ್ ಇನ್ ಡೇಟಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ನಿಮ್ಮ ಸೆಷನ್‌ಗಳು ಮತ್ತು ಭದ್ರತಾ ಘಟನೆಗಳು JSON ಫೈಲ್ ಆಗಿ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ವಿಫಲ ಸೈನ್ ಇನ್ ಪ್ರಯತ್ನ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ಹೊಸ ಸಾಧನದಿಂದ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ಹೊಸ ಸ್ಥಳದಿಂದ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ಗುರುತು ದೃಢೀಕರಿಸಲಾಗಿದೆ (“ಇದು ನೀವೇ ಎಂದು ಪರಿಶೀಲಿಸಿ”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ಗುರುತು ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸೈನ್ ಇನ್ ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ಸೈನ್ ಇನ್ ನಿರಾಕರಿಸಲಾಗಿದೆ: ಎರಡು ಹಂತದ ಕೋಡ್ ಇಲ್ಲ ಅಥವಾ ತಪ್ಪಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ತಪ್ಪು ಎರಡು ಹಂತದ ಕೋಡ್</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ವಿಫಲ ಸೈನ್ ಇನ್‌ಗಳ ನಂತರ ಖಾತೆ ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ಖಾತೆ ಅನ್‌ಲಾಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾವಣೆ ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ಹೊಸ ಪಾಸ್‌ವರ್ಡ್‌ಗೆ ವಿನಂತಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ಇ-ಮೇಲ್ ವಿಳಾಸ ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ಬಳಕೆದಾರಹೆಸರು ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಆನ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ಎರಡು ಹಂತದ ಸೈನ್ ಇನ್ ಆಫ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್ ಬಳಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ಹೊಸ ಮರುಪ್ರಾಪ್ತಿ ಕೋಡ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ಆ್ಯಪ್ ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ಆ್ಯಪ್ ಪಾಸ್‌ವರ್ಡ್ ಹಿಂಪಡೆಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸೇರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ಪಾಸ್‌ಕೀ ತೆಗೆದುಹಾಕಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ಖಾತೆ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ಖಾತೆ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ಎಲ್ಲಾ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ಸೈನ್ ಇನ್‌ಗಳು ಮತ್ತು ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ಖಾತೆ ಬದಲಾವಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ಗಮನ ಅಗತ್ಯ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ಅವರ ಭದ್ರತಾ ಚಟುವಟಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಯ ಸೈನ್ ಇನ್‌ಗಳು ಮತ್ತು ಭದ್ರತೆಯಲ್ಲಿನ ಬದಲಾವಣೆಗಳು. ನೀವು ಮಾಡದ ಏನಾದರೂ ಕಂಡರೆ, ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ ಮತ್ತು ನೀವು ಗುರುತಿಸದ ಸಾಧನಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸು</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಭದ್ರತಾ ಚಟುವಟಿಕೆ ಇನ್ನೂ ದಾಖಲಾಗುತ್ತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ಕಳೆದ %days ದಿನಗಳಲ್ಲಿ ಸೈನ್ ಇನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ವಿಫಲ ಪ್ರಯತ್ನಗಳು</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಭದ್ರತಾ ಚಟುವಟಿಕೆ ದಾಖಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ನನ್ನ ಸೈನ್ ಇನ್ ಡೇಟಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ನಿಮ್ಮ ಸೆಷನ್‌ಗಳು ಮತ್ತು ಭದ್ರತಾ ಘಟನೆಗಳು JSON ಫೈಲ್ ಆಗಿ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಮತ್ತು ಎರಡು ಹಂತದ ಕೋಡ್</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ಇಂಟರ್‌ಫೇಸ್</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ಇಂಟರ್‌ಫೇಸ್</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ಸಿಂಗಲ್ ಸೈನ್-ಆನ್</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ಸೆಷನ್‌ಗಳು ದಾಖಲಾಗುವ ಮೊದಲೇ ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ಸೈನ್ ಇನ್ ವರದಿ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ಸೈಟ್‌ನಲ್ಲಿ ಯಾರು ಸೈನ್ ಇನ್ ಆಗಿದ್ದಾರೆ, ಖಾತೆಗಳು ಎಷ್ಟು ಬಾರಿ ಸೈನ್ ಇನ್ ಆಗುತ್ತವೆ ಮತ್ತು ವಿಫಲವಾಗುತ್ತವೆ, ಹಾಗೂ ಒಬ್ಬ ಬಳಕೆದಾರರನ್ನು ಎಲ್ಲೆಡೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡುವುದು. ಇದು ಪ್ರತಿಯೊಂದು ಸೆಷನ್ ಹ್ಯಾಂಡ್ಲರ್‌ನೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ. ಸಾಧನವು ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ಅವರನ್ನು %count ಸೆಷನ್‌ಗಳಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ಅವರಿಗೆ ಯಾವುದೇ ಚಾಲನೆಯಲ್ಲಿರುವ ಸೆಷನ್ ಇರಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ಈ ID, ಬಳಕೆದಾರಹೆಸರು ಅಥವಾ ಇ-ಮೇಲ್ ವಿಳಾಸ ಹೊಂದಿರುವ ಯಾವುದೇ ಖಾತೆ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ಇದು ನೀವು ಬಳಸುತ್ತಿರುವ ಸೆಷನ್. ಅದನ್ನು ಕೊನೆಗೊಳಿಸಲು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ಆ ಸೆಷನ್ ಈಗಾಗಲೇ ಕೊನೆಗೊಂಡಿತ್ತು.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ಪುಟದ ಅವಧಿ ಮುಗಿದಿತ್ತು. ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ; ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸಲಾಗುವುದಿಲ್ಲ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session ಟೇಬಲ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ಅದನ್ನು ರಚಿಸಿದ ತಕ್ಷಣ ಸೆಷನ್‌ಗಳು ದಾಖಲಾಗುತ್ತವೆ: php update/common/scripts/6.0/createusersessiontable.php, ಅಥವಾ 6.0.15 ರ ಡೇಟಾಬೇಸ್ ಅಪ್‌ಡೇಟ್.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ಈಗ ಮತ್ತು ಇಂದು</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>ಚಾಲನೆಯಲ್ಲಿರುವ ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿರುವ ಬಳಕೆದಾರರು</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ಇಂದಿನ ಸೈನ್ ಇನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ಇಂದಿನ ವಿಫಲ ಪ್ರಯತ್ನಗಳು</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ಒಬ್ಬ ಬಳಕೆದಾರರನ್ನು ಎಲ್ಲೆಡೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ಖಾತೆಯ ಪ್ರತಿಯೊಂದು ಸೆಷನ್ ಅದರ ಮುಂದಿನ ವಿನಂತಿಯಲ್ಲಿ ಕೊನೆಗೊಳ್ಳುತ್ತದೆ, “ನನ್ನನ್ನು ನೆನಪಿಡಿ” ಮೂಲಕ ಇರಿಸಿದವೂ ಸಹ. ಒಂದು ಖಾತೆ ತಪ್ಪು ಕೈಗಳಲ್ಲಿರಬಹುದು ಎನಿಸಿದಾಗ ಇದನ್ನು ಬಳಸಿ; ನಂತರ ಅದರ ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ಬಳಕೆದಾರ ID, ಬಳಕೆದಾರಹೆಸರು ಅಥವಾ ಇ-ಮೇಲ್ ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ಎಲ್ಲೆಡೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ಈಗ ಸೈನ್ ಇನ್ ಆಗಿರುವವು</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ಇತ್ತೀಚೆಗೆ ಬಳಸಿದ %limit ಅನ್ನು ತೋರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ಬಳಕೆದಾರ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ಕೊನೆಯದಾಗಿ ಸಕ್ರಿಯ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ಈ ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ದಾಖಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ಯಾವುದೇ ಸೆಷನ್ ಸೈನ್ ಇನ್ ಆಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ಕಳೆದ %days ದಿನಗಳು</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ಸೈನ್ ಇನ್‌ಗಳು ಮತ್ತು ವಿಫಲ ಪ್ರಯತ್ನಗಳನ್ನು ಬಳಕೆದಾರ ಆಡಿಟ್ ಲಾಗ್‌ನಿಂದ ಎಣಿಸಲಾಗುತ್ತದೆ, ಅದು ಇಲ್ಲ; ಹೊಸ ಸೆಷನ್‌ಗಳನ್ನು ಎಣಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ದಿನ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ಸೈನ್ ಇನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ವಿಫಲ ಪ್ರಯತ್ನಗಳು</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ಹೊಸ ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ಸೆಷನ್ ಹ್ಯಾಂಡ್ಲರ್: %handler. ಸೆಷನ್‌ಗಳನ್ನು expuser_session ಟೇಬಲ್‌ನಿಂದ ಓದಲಾಗುತ್ತದೆ, ಆದ್ದರಿಂದ ವರದಿ ಪ್ರತಿಯೊಂದು ಹ್ಯಾಂಡ್ಲರ್‌ನೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಗಾಗಿ ಭದ್ರತಾ ಎಚ್ಚರಿಕೆ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ %login ನಲ್ಲಿ ಒಂದು ಭದ್ರತಾ ಘಟನೆ ನಡೆದಿದೆ: %event. ಇದು ನೀವಲ್ಲದಿದ್ದರೆ, %url ನಲ್ಲಿ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸುರಕ್ಷಿತಗೊಳಿಸಿ.</translation>
     </message>
 </context>
 </TS>

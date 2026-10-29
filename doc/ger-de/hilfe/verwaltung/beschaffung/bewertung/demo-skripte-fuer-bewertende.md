@@ -42,7 +42,7 @@ Hilfe wieder, die die genauen Schaltflächen und die Quelle jeder Aussage nennen
 Quellskript: [Demo-Skript: Installation von null an](../../../presse/demo-skript-installation-von-null.md).
 
 1. Zeigen Sie die Anforderungen des verwendeten Rechners ([Anforderungen](../../../../installation/02-voraussetzungen.md)).
-2. Führen Sie die Installation mit einem Befehl mit SQLite aus: `./console exp:install`
+2. Führen Sie die Installation mit einem Befehl mit SQLite aus: `./console exp:install --apply`
    ([Installation mit einem Befehl](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 3. Zeigen Sie, dass das generierte Administratorpasswort einmal ausgegeben und nach `var/log/initial-admin-password`
    geschrieben wird, und ändern Sie es bei der ersten Anmeldung.

@@ -2,14 +2,14 @@
 title: exp:cleanuppolicies
 audience: developer, admin
 category: examples
-summary: Remove policies of modules that no longer exist (--dry-run lists them first).
+summary: Remove policies of modules that no longer exist (dry run unless --apply).
 keywords: exp:cleanuppolicies, cleanuppolicies, console, command, CLI, cleanuppolicies.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:cleanuppolicies
 
-Remove policies of modules that no longer exist (--dry-run lists them first).
+Remove policies of modules that no longer exist (dry run unless --apply).
 
 Script `bin/php/cleanuppolicies.php`, code in `kernel/private/classes/commands/cleanuppolicies.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -22,17 +22,23 @@ php bin/php/cleanuppolicies.php --help
 
 ```text
 Remove from database policies defined on module which do not exist in a modules folder
-according to settings from module.ini/[ModuleSettings]/ExtensionRepositories
+according to settings from module.ini/[ModuleSettings]/ExtensionRepositories.
+Without --apply nothing is written: the script lists the policies it would remove. --dry-run is
+still accepted and means the same as no flag; --apply together with --dry-run is a usage error
+(exit 2). With --apply the script waits 10 seconds before it removes anything (-n: do not wait)
+and checks afterwards that none is left. Prints PASS or FAIL at the end.
 
-Example: ./bin/php/cleanuppolicies.php --dry-run
+Example: ./bin/php/cleanuppolicies.php
+         ./bin/php/cleanuppolicies.php --apply -n
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | Test mode, output the list of affected policies without removing them |
-| `-n` |  | Do not wait |
+| `--apply` |  | Remove the policies (the default is a dry run that lists them and changes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list the policies that would be removed, change nothing |
+| `-n` |  | With --apply: do not wait 10 seconds before removing |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

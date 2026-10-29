@@ -153,7 +153,7 @@ Depth: [Static cache generator](../features/6.0/static-cache-generator.md), [sta
 After a clear or a deploy the first visitor pays for the render. Warm the pages yourself:
 
 ```bash
-php bin/php/preload.php --siteaccess=site --allow-root-user
+php bin/php/preload.php --apply --siteaccess=site --allow-root-user
 ```
 
 It requests the section pages first, then follows the links of the site, with PHP's curl extension (no `wget` needed); one preload runs at a time, and every run is listed on Setup > Preload. To warm every published page, which suits a cron entry every few minutes:

@@ -74,7 +74,7 @@ Password=
 
 ## The console install (exp:install)
 
-`./console exp:install` (or `php bin/php/install.php`) writes a `kickstart.ini` from its options and runs the
+`./console exp:install --apply` (or `php bin/php/install.php --apply`) writes a `kickstart.ini` from its options and runs the
 kickstarter ([chapter 7](../install/07-console-install.md#75-the-administrator-password)):
 
 - **Without `--password`**, or with `--random-password`: a random 24-character password.

@@ -97,7 +97,7 @@ Wenden Sie bei einem Upgrade die Datei `dbupdate-cluster-...` jedes Schritts an,
 |---|---|
 | `php bin/php/clusterize.php` (`exp:clusterize`) | verschiebt die Dateien von `var/` in den Cluster; `-u` verschiebt sie zurück |
 | `php bin/php/dfscleanup.php` (`exp:dfscleanup`) | prüft den Mount gegen `ezdfsfile` (`-S`) und die Tabelle gegen den Mount (`-B`); `-D` löscht, was nicht existiert |
-| `php bin/php/clusterpurge.php` (`exp:clusterpurge`) | entfernt abgelaufene Cluster-Dateien physisch (`--scopes`, `--expiry`, `--dry-run`) |
+| `php bin/php/clusterpurge.php --apply` (`exp:clusterpurge`) | entfernt abgelaufene Cluster-Dateien physisch (`--scopes`, `--expiry`, `--dry-run`) |
 
 Führen Sie `dfscleanup.php` zuerst mit `-S` und `-B` aus und lesen Sie das Ergebnis, bevor Sie `-D` hinzufügen. `clusterpurge.php`
 ist der Cronjob-Teil `cluster_maintenance`, den `cronjob.ini [AdminSettings] ForbiddenParts[]` vom Browser fernhält; führen Sie

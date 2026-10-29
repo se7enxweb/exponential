@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Configuración &gt; Tarefas cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Aínda non se executou ningunha parte do cronjob: a cola de tarefas, as importacións, as notificacións e o índice de busca están á espera. Execute php bin/php/installcrontab.php --add --apply ou engada as liñas de --show á crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Nota: os paquetes non se desinstalarán.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Esta instalación é unha demostración pública: calquera pode coñecer o contrasinal do seu administrador, e os contrasinais de administrador non se poden cambiar nin restablecer. Non introduza nada privado aquí.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Os seus dispositivos</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Nota: os paquetes non se desinstalarán.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Contas que ninguén usa ou que precisan unha ollada; desactivalas, desbloquealas ou expórtaas.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rexistro de auditoría de usuarios</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Quen fixo cambios, iniciou sesión ou foi rexeitado, por conta; filtrar e exportar.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Informe de accesos</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Quen está conectado, accesos e fallos por día; desconectar un usuario en todas partes.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Nota: os paquetes non se desinstalarán.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>As sesións caducadas do xestor de PHP quítaas o propio PHP (session.gc_maxlifetime), non esta páxina nin a parte session_gc das tarefas programadas.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>As sesións iniciadas de todos os usuarios lístanse, e péchanse, no informe de accesos, que funciona con calquera xestor de sesións.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Abrir o informe de accesos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ a súa conta.</translation>
     <message>
         <source>None yet</source>
         <translation>Ningún aínda</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Os seus accesos recentes, os intentos fallidos e os cambios no seu contrasinal, no seu enderezo de correo electrónico e no acceso en dous pasos.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Os accesos recentes, os intentos fallidos e os cambios de seguridade desta conta.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Revisar a actividade</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Accesos fallidos: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Consulte a páxina de requisitos para obter máis información.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Non se escribiu a crontab (%reason). Engada estas liñas á crontab do usuario co que se executa o sitio; se non, a cola, as importacións, as notificacións e o índice de busca nunca se executarán:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>A reinstalación faise co kickstarter (%file e despois php bin/php/kickstarter.php run --apply) ou cunha instalación nova.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>O transporte de correo rexeitou %count mensaxes na última execución. Comprobe o servidor de correo e site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Eventos en espera: %count, e non consta ningunha execución do cronjob de notificacións. Engada a parte de cronjob &quot;frequent&quot; á crontab ou execute exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Escoller outro sitio ou sección co selector de nodos</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Só o administrador do sistema pode cambiar o propietario: execute ./console exp:content-check --fix-permissions --apply como root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>empty</source>
         <translation>baleiro</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>A chave de sinatura ten máis dun ano: renóvea con exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>not sent</source>
         <translation>non enviado</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>O cronjob de notificacións rexistra aquí cada unha das súas execucións. Engada a parte frequent á crontab ou execute exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Use a consola: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>None.</source>
         <translation>Ningún.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>cunha aplicación autenticadora</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>cun código por correo electrónico</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cun código de recuperación</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>cunha passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>cunha conta externa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Móstrase como a súa rede; o enderezo gárdase segundo indique a configuración de protección de datos do sitio.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non rexistrado</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lugar</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aproximado</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Manage devices</source>
         <translation>Xestionar os dispositivos</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>cunha aplicación autenticadora</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>cun código por correo electrónico</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cun código de recuperación</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>cunha passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>cunha conta externa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non rexistrado</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lugar</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aproximado</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>View the sessions of this user</source>
         <translation>Ver as sesións deste usuario</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Acaba de usarse a súa conta %login en %site para acceder desde un lugar desde o que non accedía ultimamente:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Lugar aproximado</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser en %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Informe de accesos</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Open the page</source>
         <translation>Abrir a páxina</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Un nome de usuario ou un ID de usuario: a conta á que se refería o evento ou o usuario que actuou.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Conta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acción</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Despois</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Calquera resultado</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Antes</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Por</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Limpar</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Feito</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Os eventos consérvanse durante %days días.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Os eventos consérvanse ata que se eliminan manualmente.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventos</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Todas as accións</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Todos os eventos desta conta</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportar a lista como CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fallado</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Desde</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Acoutar a lista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ningún evento coincide.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Por páxina</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>O rexistro está desactivado en audit.ini ([UserAuditSettings] UserAudit); a lista amosa o que se rexistrou antes.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rexeitado</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Amosar</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Falta a táboa do rexistro de auditoría de usuarios. Créea con php update/common/scripts/6.0/createuseraudittable.php; ata entón, os ficheiros de auditoría conservan todos os eventos.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Esta páxina necesita unha base de datos SQL; non está dispoñible con MongoDB. Os ficheiros de auditoría conservan todos os eventos.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ata</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rexistro de auditoría de usuarios</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usuario</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cando</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Onde</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Quen modificou, creou, activou, desactivou, moveu ou eliminou que conta, quen iniciou sesión ou foi rexeitado e que roles se asignaron: unha liña por evento, cos campos antes e despois. Os contrasinais e os segredos nunca se rexistran.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>descoñecido</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protexer a súa conta</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Usouse un código de recuperación para acceder á súa conta %login en %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Usouse un código de recuperación</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Conta</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Enderezo aproximado</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Solicite un contrasinal novo para volver acceder ou contacte cos administradores do sitio.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Solicitar un contrasinal novo</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Cada código de recuperación funciona unha soa vez. Se perdeu o teléfono, configure de novo a súa aplicación autenticadora e garde os novos códigos de recuperación nun lugar seguro.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Intentos de acceso fallidos na súa conta</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>A partir de agora, o acceso pide un código ademais do seu contrasinal. Se foi vostede, non ten que facer nada.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Se foi vostede e esqueceu o contrasinal, solicite un novo. Se non, escolla un contrasinal máis seguro e active o acceso en dous pasos.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Se non foi vostede, pode que alguén coñeza o seu contrasinal: cámbieo agora e comprobe onde ten a súa conta a sesión iniciada.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Códigos de recuperación restantes</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Revisar os seus dispositivos</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Alerta de seguridade</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Alguén intentou acceder á súa conta %login en %site cun contrasinal incorrecto %count veces seguidas.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Produciuse un evento de seguridade na súa conta %login en %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Esta é unha alerta de seguridade sobre a súa conta. Envíase con cada cambio deste tipo e non se pode desactivar.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Desactivouse o acceso en dous pasos da súa conta %login en %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Desactivouse o acceso en dous pasos</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Activouse o acceso en dous pasos da súa conta %login en %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Activouse o acceso en dous pasos</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>A súa conta %login en %site bloqueouse despois de demasiados accesos fallidos.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Agora a súa conta só está protexida polo seu contrasinal. Se non foi vostede, active de novo o acceso en dous pasos despois de cambiar o contrasinal.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>A súa conta bloqueouse</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Actividade de seguridade de %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Acceso</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Intento de acceso fallido</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Saída</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesións pechadas</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Acceso desde un dispositivo novo</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Acceso desde un lugar novo</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identidade confirmada (&quot;Confirme que é vostede&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Fallou a comprobación de identidade</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Acceso cunha passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Fallou o acceso con passkey</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Acceso rexeitado: falta o código en dous pasos ou é incorrecto</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Código en dous pasos incorrecto</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Conta bloqueada despois de accesos fallidos</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Conta desbloqueada</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Contrasinal cambiado</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Fallou o cambio de contrasinal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Contrasinal restablecido</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Contrasinal novo solicitado</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Enderezo de correo electrónico cambiado</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nome de usuario cambiado</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Acceso en dous pasos activado</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Acceso en dous pasos desactivado</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Código de recuperación usado</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novos códigos de recuperación</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Contrasinal de aplicación creado</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Contrasinal de aplicación revogado</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey engadida</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey quitada</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Conta activada</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Conta desactivada</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Todo</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Accesos e sesións</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Cambios na conta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Require atención</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>por vostede</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>polo usuario</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>por %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Método</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Navegador</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositivo</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Lugar</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>País</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesións</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Cales</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Canle</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Intentos fallidos</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Códigos restantes</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Xestor de acceso</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Actividade de seguridade de %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Accesos e cambios na seguridade da súa conta. Se ve algo que non fixo vostede, cambie o contrasinal e desconecte os dispositivos que non recoñeza.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Accesos e cambios na seguridade desta conta.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Os seus dispositivos</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Cambiar o contrasinal</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Volver á conta</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>A actividade de seguridade non se rexistra</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Lese do rexistro de auditoría de usuarios, cuxa táboa expuser_audit falta ou non é compatible con esta base de datos. Execute php update/common/scripts/6.0/createuseraudittable.php ou a actualización da base de datos da versión 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Os últimos %days días</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Accesos nos últimos %days días</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Actividade de seguridade recente</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Amosar</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>fallido</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rexeitado</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Aínda non hai actividade de seguridade rexistrada.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Os eventos de seguridade consérvanse %days días.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Os eventos de seguridade consérvanse ata que un administrador os elimina.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Descargar os meus datos de acceso</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>As súas sesións e eventos de seguridade nun ficheiro JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Acceso</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Intento de acceso fallido</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Saída</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesións pechadas</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Acceso desde un dispositivo novo</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Acceso desde un lugar novo</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identidade confirmada (&quot;Confirme que é vostede&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Fallou a comprobación de identidade</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Acceso cunha passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Fallou o acceso con passkey</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Acceso rexeitado: falta o código en dous pasos ou é incorrecto</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Código en dous pasos incorrecto</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Conta bloqueada despois de accesos fallidos</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Conta desbloqueada</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Contrasinal cambiado</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Fallou o cambio de contrasinal</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Contrasinal restablecido</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Contrasinal novo solicitado</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Enderezo de correo electrónico cambiado</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nome de usuario cambiado</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Acceso en dous pasos activado</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Acceso en dous pasos desactivado</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Código de recuperación usado</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novos códigos de recuperación</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Contrasinal de aplicación creado</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Contrasinal de aplicación revogado</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey engadida</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey quitada</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Conta activada</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Conta desactivada</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Todo</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Accesos e sesións</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Cambios na conta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Require atención</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividade de seguridade</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Actividade de seguridade de %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Accesos e cambios na seguridade da súa conta. Se ve algo que non fixo vostede, cambie o contrasinal e desconecte os dispositivos que non recoñeza.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Os seus dispositivos</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Cambiar o contrasinal</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>A actividade de seguridade aínda non se rexistra neste sitio.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Accesos nos últimos %days días</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Intentos fallidos</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Aínda non hai actividade de seguridade rexistrada.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Descargar os meus datos de acceso</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>As súas sesións e eventos de seguridade nun ficheiro JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Contrasinal</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Contrasinal e código en dous pasos</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interface REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interface SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Acceso único</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Acceso anterior ao rexistro das sesións</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Informe de accesos</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Quen está conectado ao sitio, con que frecuencia acceden as contas ou fallan ao facelo, e desconectar un usuario en todas partes. Funciona con calquera xestor de sesións.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Pechouse a sesión. O dispositivo ten que acceder de novo.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Pechouse a sesión de %login en %count sesións.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login non tiña ningunha sesión activa.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ningunha conta ten ese ID, nome de usuario ou enderezo de correo electrónico.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Esta é a sesión que está a usar. Para rematala, saia.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Esa sesión xa rematara.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>A páxina caducara. Non se cambiou nada; ténteo de novo.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>As sesións non se rexistran neste sitio (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Falta a táboa expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>As sesións rexístranse en canto se cree: php update/common/scripts/6.0/createusersessiontable.php ou a actualización da base de datos da versión 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Agora e hoxe</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesións activas</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Usuarios conectados</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Accesos de hoxe</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Intentos fallidos de hoxe</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Desconectar un usuario en todas partes</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Cada sesión da conta remata na súa seguinte petición, tamén as que mantén &quot;Lembrarme&quot;. Úseo cando unha conta poida estar en mans equivocadas; despois restableza o seu contrasinal.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID de usuario, nome de usuario ou enderezo de correo electrónico</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Desconectar en todas partes</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Conectados agora</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Amósanse as %limit usadas máis recentemente.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usuario</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositivo</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Enderezo</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Acceso</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Última actividade</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Accións</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Este dispositivo</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non rexistrado</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Saír</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Non hai ningunha sesión iniciada.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Os últimos %days días</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Os accesos e os intentos fallidos cóntanse a partir do rexistro de auditoría de usuarios, que non existe; as sesións novas si se contan.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Día</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Accesos</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Intentos fallidos</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesións novas</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Xestor de sesións: %handler. As sesións lense da táboa expuser_session, polo que o informe funciona con calquera xestor.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Alerta de seguridade sobre a súa conta</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Produciuse un evento de seguridade na súa conta %login: %event. Se non foi vostede, protexa a súa conta en %url.</translation>
     </message>
 </context>
 </TS>

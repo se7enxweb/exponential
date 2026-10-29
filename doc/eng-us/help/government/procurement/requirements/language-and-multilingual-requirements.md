@@ -51,7 +51,7 @@ each capability, from [Internationalization standards](../../../../standards/int
 | LAN-05 | [Siteaccess host and language matching](../../../../features/6.0/siteaccess-host-and-language-matching.md), [Language switcher and language URLs](../../../creators/website-creators/language-switcher-and-language-urls.md); BCP 47 tags sent to browsers: **Complies**; admin pagelayouts set `<html lang>` ([Accessibility standards](../../../../standards/accessibility.md)) |
 | LAN-06 | [UI switch: interface languages](../../../../features/6.0/ui-switch-languages.md); [Languages in Exponential](../../../../languages.md) counts the shipped administration translations |
 | LAN-07 | UTF-8 internal encoding **Complies**; 4-byte UTF-8 on MySQL/MariaDB **Partly complies** ([Rich text supplementary characters](../../../../features/6.0/rich-text-supplementary-characters-and-tex-source.md)) |
-| LAN-08 | Locale files built from Unicode CLDR data, 359 locale files as of October 2026 ([Languages in Exponential](../../../../languages.md)) |
+| LAN-08 | Locale files built from Unicode CLDR data, 368 locale files as of October 2026 ([Languages in Exponential](../../../../languages.md)) |
 
 ## Known gaps to ask about
 

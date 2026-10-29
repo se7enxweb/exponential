@@ -114,7 +114,7 @@ Bewahren Sie die Sicherung für die Übung im Verzeichnis `var/` der Installatio
 
    ```bash
    php bin/php/ezcache.php --clear-all
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 9. Öffnen Sie den Ordner in der Administration und prüfen Sie seinen Namen.

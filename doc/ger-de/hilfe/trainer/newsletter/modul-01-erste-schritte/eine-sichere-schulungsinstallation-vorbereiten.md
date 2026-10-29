@@ -101,7 +101,7 @@ Adresse um, sendet aber trotzdem. Für Schulungen sind Dateien sicherer.
 
 ## Praktische Übung
 
-Verwenden Sie Ihre eigene Schulungsinstallation, zum Beispiel eine mit `php bin/php/console exp:install`
+Verwenden Sie Ihre eigene Schulungsinstallation, zum Beispiel eine mit `php bin/php/console exp:install --apply`
 installierte ([Kapitel 7](../../../../installation/07-installation-ueber-die-konsole.md)), mit aktiver Erweiterung `cjw_newsletter`.
 Arbeiten Sie im Wurzelverzeichnis der Installation.
 

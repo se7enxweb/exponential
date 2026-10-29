@@ -66,7 +66,7 @@ they tick the collaboration setting **Approval** on their notification page
 that says whether the workflow cronjob is scheduled and when it runs next. **Cancel...** stops a process after a
 confirmation; no content is deleted ([Workflows, 7](../../../guides/workflows.md#7-cancelling-and-cleaning-up-processes-safely)).
 
-A sample approval setup can be created and removed again with `./console exp:collaborationsampledata`, which helps
+A sample approval setup can be created and removed again with `./console exp:collaborationsampledata --apply`, which helps
 when training approvers ([Workflows, 3.6](../../../guides/workflows.md#36-the-sample-approvals)).
 
 ## Review stages with object states

@@ -56,8 +56,8 @@ After this lesson, learners can:
 role does not have it, and the help is never shown to visitors who are not signed in.
 
 **An editor does not see the "?" button.** The Help button appears only for users who have `exphelp/read`. On an
-installation from before the help system, an administrator grants it with `php bin/php/addexphelpreadpolicy.php`
-(try it first with `--dry-run`).
+installation from before the help system, an administrator grants it with `php bin/php/addexphelpreadpolicy.php --apply`
+(without `--apply` it only lists what it would grant).
 
 **Is the help the same as the website `doc.exponential.earth`?** The Help center is generated from the `doc/`
 directory of the installation itself, so it always matches the installed version.

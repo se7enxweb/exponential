@@ -89,7 +89,7 @@ VersionHistoryClass[distribution]=200
 ```
 
 Clear the INI cache afterwards (`php bin/php/ezcache.php --clear-tag=ini`). Lowering a limit later does not remove
-versions by itself; `php bin/php/cleanupversions.php` removes the archived versions beyond the limit. More
+versions by itself; `php bin/php/cleanupversions.php --apply` removes the archived versions beyond the limit. More
 versions take more database and storage space; check with your administrator.
 
 ## Related pages

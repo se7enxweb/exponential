@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Setup &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Wala pay bahin sa cronjob nga nidagan: naghulat ang linya sa trabaho, ang mga import, ang mga pahibalo ug ang indeks sa pagpangita. Padagana ang php bin/php/installcrontab.php --add --apply, o idugang ang mga linya sa --show ngadto sa crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Kini nga installation usa ka publikong demo: bisan kinsa mahimong makahibalo sa password sa administrador niini, ug ang mga password sa administrador dili mausab o ma-reset. Ayaw butang ug bisan unsang pribado dinhi.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Imong mga device</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Mga account nga walay naggamit o kinahanglan tan-awon; i-disable, i-unlock o i-export kini.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit log sa mga tiggamit</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kinsa ang nag-usab, nag-login o gibalibaran, matag account; salaa ug i-export.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Report sa pag-login</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kinsa ang naka-login, mga pag-login ug mga kapakyasan matag adlaw; i-logout ang usa ka tiggamit sa tanang dapit.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Ang mga sesyon nga nag-timeout sa PHP handler gikuha sa mismong PHP (session.gc_maxlifetime), dili niini nga panid o sa bahin nga session_gc sa cron job.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ang mga naka-login nga sesyon sa matag tiggamit gilista, ug mahimong i-logout, sa report sa pag-login, nga molihok sa matag handler sa sesyon.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Ablihi ang report sa pag-login</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ ang imong account.</translation>
     <message>
         <source>None yet</source>
         <translation>Wala pa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ang imong bag-ong mga pag-login, napakyas nga mga pagsulay ug mga kausaban sa imong password, e-mail address ug duha-ka-lakang nga pag-login.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Ang bag-ong mga pag-login, napakyas nga mga pagsulay ug mga kausaban sa seguridad niini nga account.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Susiha ang kalihokan</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Napakyas nga pag-login: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Tan-awa ang panid sa mga gikinahanglan alang sa dugang nga impormasyon.</transla
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Wala masulat ang crontab (%reason). Idugang kining mga linyaha sa crontab sa tiggamit nga gigamit sa site, o dili modagan gayod ang linya, ang mga import, ang mga pahibalo ug ang indeks sa pagpangita:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ang pag-instalar pag-usab gihimo pinaagi sa kickstarter (%file, dayon php bin/php/kickstarter.php run --apply) o pinaagi sa bag-ong instalasyon.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Gisalikway sa mail transport ang %count ka mensahe sa katapusang pagdagan. Susiha ang mail server ug site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ka panghitabo ang naghulat ug walay natala nga pagdagan sa cronjob sa pahibalo. Idugang ang bahin sa cronjob nga &quot;frequent&quot; sa crontab, o padagana ang exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Choose another site or section with the node picker</source>
         <translation>Pilia ang laing site o seksyon gamit ang tigpili sa node</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Ang administrador sa sistema lamang ang makausab sa tag-iya: padagana ang ./console exp:content-check --fix-permissions --apply isip root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>empty</source>
         <translation>walay sulod</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Kapin na sa usa ka tuig ang yawe sa pagpirma: ilisi kini gamit ang exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>not sent</source>
         <translation>wala ipadala</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ang cronjob sa pahibalo nagtala dinhi sa matag pagdagan niini. Idugang ang bahin nga frequent sa crontab, o padagana ang exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Gamita ang console: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>None.</source>
         <translation>Wala.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>gamit ang authenticator app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>gamit ang code pinaagi sa e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>gamit ang recovery code</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>gamit ang passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>gamit ang gawas nga account</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Gipakita isip network niini; ang adres gitipigan sumala sa mga setting sa proteksyon sa datos sa site.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Wala natala</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasyon</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>gibanabana</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Manage devices</source>
         <translation>Dumalaha ang mga device</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>gamit ang authenticator app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>gamit ang code pinaagi sa e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>gamit ang recovery code</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>gamit ang passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>gamit ang gawas nga account</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Wala natala</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasyon</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>gibanabana</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>View the sessions of this user</source>
         <translation>Tan-awa ang mga sesyon niini nga tiggamit</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Ang imong account nga %login sa %site bag-o lang gigamit sa pag-login gikan sa usa ka dapit nga wala kini mag-login niining bag-o lang:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Gibanabana nga lokasyon</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser sa %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Report sa pag-login</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>Open the page</source>
         <translation>Ablihi ang panid</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hangtod %to sa %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Usa ka ngalan sa pag-login o ID sa tiggamit: ang account nga gihisgutan sa panghitabo o ang tiggamit nga milihok.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account sa tiggamit</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksyon</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pagkahuman</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Bisan unsang resulta</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Sa wala pa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gihimo ni</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Limpyohi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Nahuman</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ang mga panghitabo tipigan sulod sa %days ka adlaw.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ang mga panghitabo tipigan hangtod kini kuhaon sa kamot.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Mga panghitabo</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Tanang aksyon</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Tanang panghitabo niini nga account</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>I-export ang lista isip CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Napakyas</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Gikan sa</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Pig-ota ang lista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Walay panghitabo nga mohaum.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Matag panid</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Gipalong ang pagrekord sa audit.ini ([UserAuditSettings] UserAudit); gipakita sa lista ang narekord kaniadto.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Gibalibaran</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resulta</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ipakita</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Wala ang table sa audit log sa mga tiggamit. Himoa kini gamit ang php update/common/scripts/6.0/createuseraudittable.php; hangtod niana, ang mga audit file magtipig sa matag panghitabo.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Kini nga panid nagkinahanglan og SQL database; dili kini magamit sa MongoDB. Ang mga audit file nagtipig sa matag panghitabo.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hangtod</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit log sa mga tiggamit</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Tiggamit</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kanus-a</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Asa</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kinsa ang nag-usab, naghimo, nag-enable, nag-disable, nagbalhin o nagkuha sa unsang account, kinsa ang nag-login o gibalibaran, ug unsang mga papel ang gi-assign: usa ka linya matag panghitabo, uban ang mga field sa wala pa ug pagkahuman. Ang mga password ug sekreto dili gayud girekord.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>wala mailhi</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Seguroha ang imong account</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Usa ka recovery code ang gigamit sa pag-login sa imong account nga %login sa %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Usa ka recovery code ang gigamit</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Gibanabana nga adres</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Pangayo og bag-ong password aron makalogin pag-usab, o kontaka ang mga administrador sa site.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Pangayo og bag-ong password</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Ang matag recovery code molihok kausa ra. Kon nawala nimo ang imong telepono, i-set up pag-usab ang imong authenticator app ug tipigi ang bag-ong mga recovery code sa luwas nga dapit.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Napakyas nga mga pagsulay sa pag-login sa imong account</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Sukad karon, ang pag-login mangayo og code dugang sa imong password. Kon ikaw ang naghimo niini, wala kay kinahanglan buhaton.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Kon ikaw kadto ug nakalimtan nimo ang imong password, pangayo og bag-o. Kon dili, pagpili og mas lig-on nga password ug i-on ang duha-ka-lakang nga pag-login.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Kon dili ikaw kini, tingali adunay nakahibalo sa imong password: usba kini karon ug susiha kon asa naka-login ang imong account.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Nahabilin nga mga recovery code</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Susiha ang imong mga device</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Pasidaan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Adunay misulay sa pag-login sa imong account nga %login sa %site gamit ang sayop nga password sa %count ka higayon nga sunod-sunod.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Adunay panghitabo sa seguridad sa imong account nga %login sa %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Kini usa ka pasidaan sa seguridad bahin sa imong account. Gipadala kini sa matag ingon niini nga kausaban ug dili kini mapalong.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oras</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Gipalong ang duha-ka-lakang nga pag-login para sa imong account nga %login sa %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Gipalong ang duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Gi-on ang duha-ka-lakang nga pag-login para sa imong account nga %login sa %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Gi-on ang duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Gi-lock ang imong account nga %login sa %site human sa daghan kaayong napakyas nga pag-login.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ang imong account karon gipanalipdan lamang sa imong password. Kon dili ikaw ang naghimo niini, i-on pag-usab ang duha-ka-lakang nga pag-login human nimo usba ang imong password.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Gi-lock ang imong account</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Kalihokan sa seguridad ni %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Naka-login</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Napakyas nga pagsulay sa pag-login</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Naka-logout</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Gi-logout ang mga sesyon</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Pag-login gikan sa bag-ong device</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Pag-login gikan sa bag-ong lokasyon</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Nakumpirma ang pagkatawo (&quot;Kumpirmaha nga ikaw kini&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Napakyas ang pagsusi sa pagkatawo</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Nag-login gamit ang passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Napakyas ang pag-login gamit ang passkey</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gibalibaran ang pag-login: wala o sayop ang code sa duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Sayop nga code sa duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Gi-lock ang account human sa napakyas nga mga pag-login</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Gi-unlock ang account</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Giusab ang password</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Napakyas ang pag-usab sa password</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Gi-reset ang password</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Gipangayo ang bag-ong password</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Giusab ang e-mail address</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Giusab ang ngalan sa tiggamit</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Gi-on ang duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Gipalong ang duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Gigamit ang recovery code</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Bag-ong mga recovery code</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Nahimo ang app password</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Gibawi ang app password</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Gidugang ang passkey</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Gikuha ang passkey</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Gi-enable ang account</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Gi-disable ang account</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tanan</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Mga pag-login ug sesyon</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mga kausaban sa account</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kinahanglan tagdon</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>gihimo nimo</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>gihimo sa tiggamit</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>gihimo ni %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Pamaagi</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Web browser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema sa operasyon</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gamit</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Dapit</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Nasud</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Mga sesyon</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Hain</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Agianan</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Napakyas nga mga pagsulay</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Nahabilin nga mga code</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Handler sa pag-login</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Kalihokan sa seguridad ni %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Mga pag-login ug mga kausaban sa seguridad sa imong account. Kon makakita ka og butang nga wala nimo buhata, usba ang imong password ug i-logout ang mga device nga wala nimo mailhi.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Mga pag-login ug mga kausaban sa seguridad niini nga account.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Imong mga device</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Usba ang password</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Balik sa account</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Wala gitala ang kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Gibasa kini gikan sa audit log sa tiggamit, kansang table nga expuser_audit wala o dili suportado niini nga database. Padagana ang php update/common/scripts/6.0/createuseraudittable.php, o ang update sa database sa 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ang miaging %days ka adlaw</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Mga pag-login sa miaging %days ka adlaw</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Bag-ong kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ipakita</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>napakyas</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>gibalibaran</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Wala pay natala nga kalihokan sa seguridad.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Ang mga panghitabo sa seguridad gitipigan sulod sa %days ka adlaw.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Ang mga panghitabo sa seguridad gitipigan hangtod kuhaon kini sa usa ka administrador.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>I-download ang akong datos sa pag-login</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ang imong mga sesyon ug mga panghitabo sa seguridad isip JSON file.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Naka-login</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Napakyas nga pagsulay sa pag-login</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Naka-logout</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Gi-logout ang mga sesyon</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Pag-login gikan sa bag-ong device</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Pag-login gikan sa bag-ong lokasyon</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Nakumpirma ang pagkatawo (&quot;Kumpirmaha nga ikaw kini&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Napakyas ang pagsusi sa pagkatawo</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Nag-login gamit ang passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Napakyas ang pag-login gamit ang passkey</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gibalibaran ang pag-login: wala o sayop ang code sa duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Sayop nga code sa duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Gi-lock ang account human sa napakyas nga mga pag-login</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Gi-unlock ang account</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Giusab ang password</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Napakyas ang pag-usab sa password</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Gi-reset ang password</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Gipangayo ang bag-ong password</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Giusab ang e-mail address</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Giusab ang ngalan sa tiggamit</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Gi-on ang duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Gipalong ang duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Gigamit ang recovery code</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Bag-ong mga recovery code</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Nahimo ang app password</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Gibawi ang app password</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Gidugang ang passkey</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Gikuha ang passkey</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Gi-enable ang account</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Gi-disable ang account</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tanan</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Mga pag-login ug sesyon</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mga kausaban sa account</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kinahanglan tagdon</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Kalihokan sa seguridad ni %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Mga pag-login ug mga kausaban sa seguridad sa imong account. Kon makakita ka og butang nga wala nimo buhata, usba ang imong password ug i-logout ang mga device nga wala nimo mailhi.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Imong mga device</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Usba ang password</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Wala pa gitala ang kalihokan sa seguridad niini nga site.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Mga pag-login sa miaging %days ka adlaw</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Napakyas nga mga pagsulay</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Wala pay natala nga kalihokan sa seguridad.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>I-download ang akong datos sa pag-login</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ang imong mga sesyon ug mga panghitabo sa seguridad isip JSON file.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password ug code sa duha-ka-lakang nga pag-login</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interface sa REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interface sa SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Naka-login sa wala pa gitala ang mga sesyon</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Report sa pag-login</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kinsa ang naka-login sa site, unsa ka sagad mag-login ug mapakyas ang mga account, ug pag-logout sa usa ka tiggamit sa tanang dapit. Molihok kini sa matag handler sa sesyon.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Gi-logout ang sesyon. Kinahanglan mag-login pag-usab ang device.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Gi-logout si %login gikan sa %count ka sesyon.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Walay nagdagan nga sesyon si %login.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Walay account nga adunay ingon niana nga ID, ngalan sa tiggamit o e-mail address.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Kini ang sesyon nga imong gigamit. Aron tapuson kini, mag-logout.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Natapos na kadto nga sesyon.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Nag-expire na ang panid. Walay giusab; palihug sulayi pag-usab.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ang mga sesyon wala gitala niini nga site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Wala ang table nga expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Matala ang mga sesyon kon mahimo na kini: php update/common/scripts/6.0/createusersessiontable.php, o ang update sa database sa 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Karon ug karong adlawa</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Nagdagan nga mga sesyon</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Naka-login nga mga tiggamit</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Mga pag-login karong adlawa</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Napakyas nga mga pagsulay karong adlawa</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>I-logout ang usa ka tiggamit sa tanang dapit</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Ang matag sesyon sa account matapos sa sunod niini nga hangyo, apil ang gitipigan sa Hinumdomi ako. Gamita kini kon ang usa ka account tingali naa sa sayop nga mga kamot; dayon i-reset ang password niini.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID sa tiggamit, ngalan sa tiggamit o e-mail address</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Mag-logout sa tanang dapit</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Naka-login karon</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Gipakita ang %limit nga pinakabag-o nga gigamit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Tiggamit</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gamit</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Naka-login</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Katapusang aktibo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Mga aksyon</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kini nga device</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Wala natala</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Mag-logout</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Walay sesyon nga naka-login.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ang miaging %days ka adlaw</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Ang mga pag-login ug napakyas nga mga pagsulay giihap gikan sa audit log sa tiggamit, nga wala; ang bag-ong mga sesyon giihap gihapon.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Adlaw</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Mga pag-login</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Napakyas nga mga pagsulay</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Bag-ong mga sesyon</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Handler sa sesyon: %handler. Ang mga sesyon gibasa gikan sa table nga expuser_session, busa ang report molihok sa matag handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Pasidaan sa seguridad para sa imong account</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Adunay panghitabo sa seguridad sa imong account nga %login: %event. Kon dili ikaw kadto, seguroha ang imong account sa %url.</translation>
     </message>
 </context>
 </TS>

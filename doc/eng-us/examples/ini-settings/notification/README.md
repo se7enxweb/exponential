@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # notification.ini
 
-The shipped settings of `settings/notification.ini`: 6 blocks, 17 settings.
+The shipped settings of `settings/notification.ini`: 6 blocks, 18 settings.
 
 > Exponential configuration file for notification.  
 >
@@ -30,7 +30,7 @@ The shipped settings of `settings/notification.ini`: 6 blocks, 17 settings.
 | [NotificationEventTypeSettings](NotificationEventTypeSettings.md) | 3 |
 | [NotificationEventHandlerSettings](NotificationEventHandlerSettings.md) | 3 |
 | [TransportSettings](TransportSettings.md) | 2 |
-| [MailSettings](MailSettings.md) | 1 |
+| [MailSettings](MailSettings.md) | 2 |
 
 - [All examples](../../README.md)
 

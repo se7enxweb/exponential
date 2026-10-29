@@ -42,7 +42,7 @@ After this lesson, learners can:
 
 ### Preparing the accounts
 
-Before the class, on the training installation (for example one installed with `php bin/php/console exp:install`,
+Before the class, on the training installation (for example one installed with `php bin/php/console exp:install --apply`,
 see [7. The console install](../../../../install/07-console-install.md)), sign in as the administrator whose
 password the installer printed and create one user per learner below **Users**, in the editors' user group, with
 the **Editor** role. Give each a name like `learner01` and an e-mail address such as `learner01@example.invalid`.

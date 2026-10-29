@@ -39,12 +39,12 @@ Datenverzeichnis der Datenbank, Systemlogs.
 php bin/php/ezcache.php --clear-all --allow-root-user   # caches are regenerated
 ./console exp:logs --archives                           # see the log archives
 ./console exp:logs --prune --dry-run                    # what pruning would remove
-./console exp:logs --prune
-./console exp:logs --compress
+./console exp:logs --apply --prune
+./console exp:logs --apply --compress
 ```
 
 Ein Log, das um Megabytes pro Minute wächst, ist ein Symptom: Finden Sie heraus, warum, bevor Sie es mit
-`./console exp:logs --truncate=<key>` leeren (der Inhalt bleibt im Archiv `.1` erhalten). Wärmen Sie die Caches wieder
+`./console exp:logs --apply --truncate=<key>` leeren (der Inhalt bleibt im Archiv `.1` erhalten). Wärmen Sie die Caches wieder
 vor, sobald Platz ist: `php bin/php/warm.php --allow-root-user`.
 
 ## Was Sie nie entfernen dürfen

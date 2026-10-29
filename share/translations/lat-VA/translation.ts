@@ -14329,6 +14329,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Nothing new</source>
         <translation>Nihil novi</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15240,6 +15248,22 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Rationes quibus nemo utitur aut quae inspici debent; eas inactivare, reserare aut exportare.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Acta inspectionis usorum</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Quis mutaverit, intraverit vel repulsus sit, per rationes; filtrare et exportare.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Relatio introituum</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Qui intraverint, introitus et defectus in singulos dies; usorem ubique exire cogere.</translation>
     </message>
 </context>
 <context>
@@ -33545,6 +33569,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sessiones exspiratae tractatoris PHP ab ipso PHP removentur (session.gc_maxlifetime), non ab hac pagina neque a parte session_gc operis statuti.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Sessiones apertae omnium usorum in relatione introituum enumerantur et clauduntur, quae cum quovis tractatore sessionum operatur.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Relationem introituum aperire</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37869,6 +37901,26 @@ rationem tuam activeres.</translation>
     <message>
         <source>None yet</source>
         <translation>Nullae adhuc</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Introitus tui recentes, conatus irriti et mutationes tesserae, inscriptionis electronicae et introitus duorum graduum.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Introitus recentes, conatus irriti et mutationes securitatis huius rationis.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Acta inspicere</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Introitus irriti: %count</translation>
     </message>
 </context>
 <context>
@@ -50959,6 +51011,10 @@ Plura vide in pagina postulatorum.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab scriptum non est (%reason). Has lineas in crontab usoris sub quo situs currit adde, aliter ordo exspectationis, importationes, notificationes et index quaestionis numquam currunt:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Iterum instituitur kickstarter adhibito (%file, deinde php bin/php/kickstarter.php run --apply) aut nova institutione.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56751,6 +56807,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Vector epistularum in ultimo cursu nuntios recusavit: %count. Servitrum epistularum et site.ini MailSettings inspice.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Eventus exspectantes: %count, neque ulla actio operis statuti monitionum notata est. Partem operis statuti &quot;frequent&quot; in crontab adde, aut exsequere exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63007,6 +63067,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Alium situm vel sectionem selectore nodorum eligere</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Solus administrator systematis possessorem mutare potest: exsequere ./console exp:content-check --fix-permissions --apply ut root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64540,6 +64604,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>empty</source>
         <translation>vacua</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Clavis signandi plus quam annum habet: eam muta per exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -68800,6 +68868,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>not sent</source>
         <translation>non missum</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Opus statutum monitionum hic singulas actiones suas notat. Partem frequent in crontab adde, aut exsequere exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Consolam adhibe: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76140,6 +76216,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Configuratio &gt; Opera statuta</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Nulla pars operum statutorum adhuc acta est: ordo exspectationis operum, importationes, monitiones et index quaestionis exspectant. Exsequere php bin/php/installcrontab.php --add --apply, aut versus ab --show monstratos in crontab adde.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76478,6 +76558,46 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>None.</source>
         <translation>Nullae.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>applicatione authenticationis</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>codice per epistulam electronicam</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>codice restitutionis</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>clave accessus</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ratione externa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ut rete suum ostenditur; inscriptio servatur ut optiones tutelae datorum situs praescribunt.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non notatum</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Locus</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>proxime</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76721,6 +76841,42 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Manage devices</source>
         <translation>Instrumenta administrare</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>applicatione authenticationis</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>codice per epistulam electronicam</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>codice restitutionis</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>clave accessus</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ratione externa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non notatum</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Locus</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>proxime</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76800,6 +76956,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>View the sessions of this user</source>
         <translation>Sessiones huius usoris inspicere</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Ratio tua %login in %site modo adhibita est ad intrandum ex loco unde nuper non intraverat:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Locus proximus</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76838,6 +77002,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser in %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Relatio introituum</translation>
     </message>
 </context>
 <context>
@@ -77369,6 +77537,935 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Open the page</source>
         <translation>Paginam aperire</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ad %to ex %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Nomen accessus vel numerus usoris: ratio ad quam eventus pertinebat vel usor qui egit.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Ratio</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Actio</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Quilibet exitus</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ante</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Auctor</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Purgare</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Factum</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Eventus per %days dies servantur.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Eventus servantur donec manu removentur.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventus</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Quaelibet actio</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Omnes eventus huius rationis</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Indicem ut CSV exportare (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defecit</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ex</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Indicem angustare</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nullus eventus congruit.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>In singulis paginis</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Inscriptio in audit.ini exstincta est ([UserAuditSettings] UserAudit); index ostendit quae antea inscripta sunt.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Repulsum</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ostendere</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabula actorum inspectionis usorum deest. Crea eam per php update/common/scripts/6.0/createuseraudittable.php; interea fasciculi inspectionis omnes eventus servant.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Haec pagina basim datorum SQL requirit; apud MongoDB non praesto est. Fasciculi inspectionis omnes eventus servant.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Usque ad</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Acta inspectionis usorum</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usor</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Quando</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ubi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Quis quam rationem mutaverit, creaverit, activaverit, deactivaverit, moverit vel removerit, quis intraverit vel repulsus sit, et quae munera assignata sint: una linea pro quoque eventu, cum campis ante et post. Tesserae et arcana numquam inscribuntur.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grex</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ignotum</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Rationem tuam munire</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Codex restitutionis adhibitus est ad intrandum in rationem tuam %login in %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Codex restitutionis adhibitus est</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Ratio</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Inscriptio proxima</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Novam tesseram pete ut iterum intres, aut administratores situs adi.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Novam tesseram petere</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Quisque codex restitutionis semel tantum valet. Si telephonum amisisti, applicationem authenticationis denuo constitue et novos codices restitutionis loco tuto serva.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Conatus irriti intrandi in rationem tuam</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Posthac introitus praeter tesseram tuam codicem poscit. Si hoc tu fecisti, nihil tibi agendum est.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Si tu eras et tesseram oblitus es, novam pete. Sin minus, tesseram firmiorem elige et introitum duorum graduum activa.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Si tu non eras, fortasse aliquis tesseram tuam novit: eam nunc muta et inspice ubi ratio tua aperta sit.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Codices restitutionis reliqui</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Instrumenta tua inspicere</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Monitio securitatis</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Aliquis tessera falsa in rationem tuam %login in %site intrare conatus est, continenter vicibus: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Eventus securitatis in ratione tua %login in %site accidit.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Haec est monitio securitatis de ratione tua. Ad quamque talem mutationem mittitur neque inactivari potest.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tempus</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Introitus duorum graduum rationi tuae %login in %site inactivatus est.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Introitus duorum graduum inactivatus est</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Introitus duorum graduum rationi tuae %login in %site activatus est.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Introitus duorum graduum activatus est</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Ratio tua %login in %site post nimios introitus irritos clausa est.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ratio tua nunc sola tessera munitur. Si hoc non fecisti, introitum duorum graduum iterum activa postquam tesseram mutaveris.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Ratio tua clausa est</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Acta securitatis: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Introitus</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Conatus intrandi irritus</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiones clausae</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Introitus ex novo instrumento</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Introitus ex novo loco</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitas confirmata (&quot;Confirma te esse&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Probatio identitatis defecit</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Introitus clave accessus</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Introitus clave accessus defecit</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Introitus recusatus: codex introitus duorum graduum deest aut falsus est</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Codex introitus duorum graduum falsus</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ratio post introitus irritos clausa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ratio reserata</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Tessera mutata</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Mutatio tesserae defecit</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Tessera restituta</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nova tessera petita</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Inscriptio electronica mutata</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nomen usoris mutatum</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Introitus duorum graduum activatus</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Introitus duorum graduum inactivatus</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Codex restitutionis adhibitus</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novi codices restitutionis</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Tessera applicationis creata</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Tessera applicationis revocata</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Clavis accessus addita</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Clavis accessus remota</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ratio activata</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ratio inactivata</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnia</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Introitus et sessiones</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mutationes rationis</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Cura opus est</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>a te</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ab usore</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ab usore %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Navigatrum</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systema</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Instrumentum</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Locus</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Civitas</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiones</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Quae</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Via</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Conatus irriti</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Codices reliqui</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Tractator introitus</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Acta securitatis: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Introitus et mutationes securitatis rationis tuae. Si quid vides quod non fecisti, tesseram muta et instrumenta quae non agnoscis exire coge.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Introitus et mutationes securitatis huius rationis.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Tesseram mutare</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Ad rationem redire</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Acta securitatis non notantur</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ex actis inspectionis usorum leguntur, quorum tabula expuser_audit deest aut in hac datorum basi non sustinetur. Exsequere php update/common/scripts/6.0/createuseraudittable.php, aut renovationem datorum basis versionis 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Dies ultimi: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Introitus dierum ultimorum: %days</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Acta securitatis recentia</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ostendere</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>irritum</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>recusatum</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nulla acta securitatis adhuc notata sunt.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Eventus securitatis servantur per dies: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Eventus securitatis servantur donec administrator eos removeat.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Data introituum meorum depromere</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessiones et eventus securitatis tui ut fasciculus JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Introitus</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Conatus intrandi irritus</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiones clausae</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Introitus ex novo instrumento</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Introitus ex novo loco</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitas confirmata (&quot;Confirma te esse&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Probatio identitatis defecit</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Introitus clave accessus</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Introitus clave accessus defecit</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Introitus recusatus: codex introitus duorum graduum deest aut falsus est</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Codex introitus duorum graduum falsus</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ratio post introitus irritos clausa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ratio reserata</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Tessera mutata</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Mutatio tesserae defecit</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Tessera restituta</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nova tessera petita</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Inscriptio electronica mutata</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nomen usoris mutatum</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Introitus duorum graduum activatus</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Introitus duorum graduum inactivatus</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Codex restitutionis adhibitus</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novi codices restitutionis</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Tessera applicationis creata</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Tessera applicationis revocata</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Clavis accessus addita</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Clavis accessus remota</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ratio activata</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ratio inactivata</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnia</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Introitus et sessiones</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mutationes rationis</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Cura opus est</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Acta securitatis</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Acta securitatis: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Introitus et mutationes securitatis rationis tuae. Si quid vides quod non fecisti, tesseram muta et instrumenta quae non agnoscis exire coge.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Tesseram mutare</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Acta securitatis in hoc situ nondum notantur.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Introitus dierum ultimorum: %days</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Conatus irriti</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nulla acta securitatis adhuc notata sunt.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Data introituum meorum depromere</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessiones et eventus securitatis tui ut fasciculus JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Tessera</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Tessera et codex introitus duorum graduum</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfacies REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfacies SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Introitus unicus</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Introitus antequam sessiones notarentur</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Relatio introituum</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Qui in situ intraverint, quam saepe rationes intrent aut frustra conentur, et usorem ubique exire cogere. Cum quovis tractatore sessionum operatur.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessio clausa est. Instrumentum iterum intrare debet.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Usor %login e sessionibus exire coactus est: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Usor %login nullam sessionem apertam habebat.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Nulla ratio hoc ID, hoc nomen usoris aut hanc inscriptionem electronicam habet.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Haec est sessio qua uteris. Ut eam finias, exi.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ea sessio iam finita erat.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina exspiraverat. Nihil mutatum est; quaeso, iterum conare.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessiones in hoc situ non notantur (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabula expuser_session deest</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessiones notantur simul ac creata est: php update/common/scripts/6.0/createusersessiontable.php, aut renovatio datorum basis versionis 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nunc et hodie</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sessiones currentes</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Usores intus</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Introitus hodie</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Conatus irriti hodie</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Usorem ubique exire cogere</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Quaeque sessio rationis ad proximam petitionem suam finitur, etiam eae quas &quot;Memento mei&quot; servat. Hoc adhibe cum ratio in alienas manus venisse possit; deinde tesseram eius restitue.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID usoris, nomen usoris aut inscriptio electronica</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Ubique exire cogere</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nunc intus</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Recentissime adhibitae ostenduntur: %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usor</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Instrumentum</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Inscriptio</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Introitus</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ultimo activum</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Hoc instrumentum</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Non notatum</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Exire</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nulla sessio aperta est.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Dies ultimi: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Introitus et conatus irriti ex actis inspectionis usorum numerantur, quae desunt; novae sessiones numerantur.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dies</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Introitus</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Conatus irriti</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Novae sessiones</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Tractator sessionum: %handler. Sessiones e tabula expuser_session leguntur, itaque relatio cum quovis tractatore operatur.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Monitio securitatis de ratione tua</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Eventus securitatis in ratione tua %login accidit: %event. Si tu non eras, rationem tuam muni apud %url.</translation>
     </message>
 </context>
 </TS>

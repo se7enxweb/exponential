@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Setup &gt; Liggéeyu cron yi</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Benn pàcc liggéeyu cron dawagul ba tey: toflanteb liggéey yi, li ñu indi yi, yégle yi ak indeksu seet bi ñungi xaar. Doxal php bin/php/installcrontab.php --add --apply, walla yokk rëdd yi --show di wone ci crontab bi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Samp bii demo bu mbooloo la: kenn ku nekk mën na xam baatu jàllu saytukat bi, te baatu jàllu saytukat yi mënuñu ñu soppi walla dellu leen. Bul fi dugal dara ju sa bopp.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Say jumtukaay</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Jëfi kaaraange</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kont yu kenn jëfandikoowul walla yu soxla ñu xool leen; fey leen, ubbi leen walla génne leen.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Téereb saytu jëfandikukat yi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ku soppi, ku dugg walla ku ñu gàntal, ci kont bu nekk; sef ak génne.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapooru dugg</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ñi dugg, dugg yi ak lu antuwul bés bu nekk; génnal jëfandikukat fépp.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sesiyoŋ yu jeex yu jëfekatu PHP, PHP boppam mooy dindi leen (session.gc_maxlifetime), du xët bii mbaa pàrtu cronjob session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Rapooru dugg bi dafay lim sesiyoŋ yi dugg yu jëfandikukat bu nekk, te di leen génne; mu ngi liggéey ak bépp jëfekatu sesiyoŋ.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Ubbi rapooru dugg bi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ sa kont.</translation>
     <message>
         <source>None yet</source>
         <translation>Amul ba léegi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Jëfi kaaraange</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Sa dugg yu mujj yi, jéem yu antuwul ak coppite yi ci sa baatu jàll, sa adreesu imeel ak sa dugg ci ñaari tappal.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Dugg yu mujj yi, jéem yu antuwul ak coppitey kaaraange yu kont bii.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Seetaat jëf yi</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Dugg yu antuwul: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Xoolal xëtu lu ñu laaj yi ngir yeneen xibaar.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab bi bindu ñu ko (%reason). Yokkal rëti yii ci crontab bu jëfandikukat bi sit bi di dox ci moom, lu ko moy toog-toog bi, dugal yi, yégle yi ak tabalu seet bi duñu doon dox mukk:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Dañuy defaraat ko ak Kickstarter (%file, ginnaaw ga php bin/php/kickstarter.php run --apply) walla ak samp bu bees.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transporu imeel bi gàntu na %count bataaxal ci dox bu mujj bi. Seetal serwëeru imeel bi ak site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count xew-xew ñungi xaar te bindeesul benn dox bu liggéeyu cron bu yégle yi. Yokk pàccu liggéeyu cron «frequent» ci crontab bi, walla doxal exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Tànn beneen sit walla xaaj ak tànnukaayu noo</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Saytukatu sistem bi rekk mën a soppi boroom bi: doxal ./console exp:content-check --fix-permissions --apply ni root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>empty</source>
         <translation>amul dara</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Caabiy xaatimu bi weesu na benn at: soppi ko ak exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>not sent</source>
         <translation>yónnee ñu ko</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Liggéeyu cron bu yégle yi day bind fii dox yépp. Yokk pàcc frequent ci crontab bi, walla doxal exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Jëfandikool konsool bi: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>None.</source>
         <translation>Dara.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ak app bu seede</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ak kood bu ñu yónnee ci imeel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ak koodu delluwaay</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ak caabiy dugg</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ak kont bu bitti</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Jëfi kaaraange</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ñu ngi koy wone ni resoom; adrees bi dañu koy denc ni tànneefi kaaraange done yu sit bi waxe.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Bindeesu ko</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Bérab</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>lu jege</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Manage devices</source>
         <translation>Saytu jumtukaay yi</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ak app bu seede</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ak kood bu ñu yónnee ci imeel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ak koodu delluwaay</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ak caabiy dugg</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ak kont bu bitti</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Jëfi kaaraange</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Bindeesu ko</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Bérab</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>lu jege</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>View the sessions of this user</source>
         <translation>Wone sesiyoŋ yu jëfandikukat bii</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Sa kont %login ci %site leegi lañu ko jëfandikoo ngir dugg jóge ci bérab bu mu dugguwul ca jamono yii:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Bérab bu jege</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ci %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapooru dugg</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>Open the page</source>
         <translation>Ubbil xët wi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ba %to ci %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Turu duggu walla ID jëfandikukat: kont bi xew-xew bi jëm walla jëfandikukat bi def jëf ji.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Jëf</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Gannaaw</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Njureel bu nekk</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Balaa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ki ko def</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Setal</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Antu na</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Xew-xew yi dañu leen di denc %days fan.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Xew-xew yi dañu leen di denc ba kenn far leen ak loxo.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Xew-xew yi</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Jëf bu nekk</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Xew-xew yépp yu kont bii</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Génne lim bi ni CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fakkastalu na</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dale</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Wàññi lim bi</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Amul benn xew-xew bu dëppoo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ci xët</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Bind gi dañu ko fey ci audit.ini ([UserAuditSettings] UserAudit); lim bi dafay wone li ñu bindoon balaa.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Dañu ko gàntal</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njureel</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wone</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tablo téereb saytu jëfandikukat yi amul. Sosal ko ak php update/common/scripts/6.0/createuseraudittable.php; ba ci kanam, fisie saytu yi dañuy denc xew-xew bu nekk.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Xët wii dafa soxla dénkukaayu done SQL; amul ci MongoDB. Fisie saytu yi dañuy denc xew-xew bu nekk.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ba</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Téereb saytu jëfandikukat yi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Jëfandikukat</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kañ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ku soppi, sos, taal, fey, toxal walla far ban kont, ku dugg walla ku ñu gàntal, ak ban wàll lañu jox: benn rëdd ci xew-xew bu nekk, ak tool yi balaa ak gannaaw. Baatu jàll yi ak kumpa yi duñu leen mukk bind.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>mbooloo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>xamuñu ko</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Aar sa kont</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Ñu jëfandikoo koodu delluwaay ngir dugg ci sa kont %login ci %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Ñu jëfandikoo koodu delluwaay</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adrees bu jege</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Laajal baatu jàll bu bees ngir dugg ati, walla jokkool ak saytukati sit bi.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Laaj baatu jàll bu bees</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Koodu delluwaay bu nekk benn yoon rekk lay liggéey. Su sa telefon réeree, defaraatal sa app bu seede te denc koodu delluwaay yu bees yi ci bérab bu wóor.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Jéemi dugg yu antuwul ci sa kont</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Li dale leegi, dugg dina laaj ab kood ak sa baatu jàll. Su dee yow moo ko def, soxlaa nga def dara.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Su dee yow la te fàtte nga sa baatu jàll, laajal bu bees. Su dee du yow, tànnal baatu jàll bu gën a dëgër te taal dugg ci ñaari tappal.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Su dee du yow moo ko def, kenn mën na xam sa baatu jàll: soppi ko leegi te seet fan la sa kont dugg.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Koodu delluwaay yi des</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Seetaat say jumtukaay</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Artu kaaraange</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kenn jéem na dugg ci sa kont %login ci %site ak baatu jàll bu baaxul %count yoon topp.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Am na xew-xewu kaaraange ci sa kont %login ci %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Lii artu kaaraange la ci sa kont. Dañu koy yónnee ci bépp coppite bu ni mel te mënu ñu koo fey.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waxtu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Dugg ci ñaari tappal fey nañu ko ci sa kont %login ci %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Dugg ci ñaari tappal fey nañu ko</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Dugg ci ñaari tappal taal nañu ko ci sa kont %login ci %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Dugg ci ñaari tappal taal nañu ko</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Sa kont %login ci %site tëj nañu ko ginnaaw dugg yu bari yu antuwul.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Leegi sa baatu jàll rekk moo aar sa kont. Su dee du yow moo ko def, taalaat dugg ci ñaari tappal ginnaaw bi nga soppee sa baatu jàll.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Sa kont tëj nañu ko</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Jëfi kaaraange</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Jëfi kaaraange yu %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Dugg na</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Jéemu dugg bu antuwul</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Génn na</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiyoŋ yi génne nañu leen</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Dugg jóge ci jumtukaay bu bees</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Dugg jóge ci bérab bu bees</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Wóorlu nañu kiy kan («Wóorlul ne yaa nekk»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Seetu kiy kan antuwul</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Dugg na ak caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Dugg ak caabiy dugg antuwul</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Dugg bi ñu bañ ko: koodu ñaari tappal bi amul walla baaxul</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodu ñaari tappal bu baaxul</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont bi tëj nañu ko ginnaaw dugg yu antuwul</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont bi ubbi nañu ko</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Baatu jàll bi soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Soppi baatu jàll bi antuwul</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Baatu jàll bi defaraat nañu ko</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Laaj nañu baatu jàll bu bees</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adreesu imeel bi soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Turu jëfandikukat bi soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dugg ci ñaari tappal taal na</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dugg ci ñaari tappal fey na</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Jëfandikoo nañu koodu delluwaay</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodu delluwaay yu bees</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Baatu jàllu app bi sos nañu ko</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Baatu jàllu app bi dindi nañu sañ-sañam</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Yokk nañu caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Dindi nañu caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont bi dox na</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont bi taxaw na</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Yépp</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Dugg yi ak sesiyoŋ yi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Coppitey kont</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Soxla na ñu ko teewlu</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>yow moo ko def</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>jëfandikukat bi moo ko def</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login moo ko def</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Pexe</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Nawigatëer</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Jumtukaay</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Bérab</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Réew</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiyoŋ yi</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ban</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Yoonu yónnee</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Jéem yu antuwul</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kood yi des</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Jëfekatu dugg</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Jëfi kaaraange</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Jëfi kaaraange yu %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Dugg yi ak coppite yi ci kaaraange sa kont. Su nga gisee lu nga deful, soppil sa baatu jàll te génne jumtukaay yi nga xamul.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Dugg yi ak coppite yi ci kaaraange kont bii.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Say jumtukaay</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Soppi baatu jàll</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Dellu ci kont bi</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Jëfi kaaraange yi bindeesu leen</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Dañu koy jàng ci téereb saytu jëfandikukat yi, te taabal bi expuser_audit amul walla nangoowul ci dàttub done bii. Doxal php update/common/scripts/6.0/createuseraudittable.php, walla yeesalu dàttub done bu 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days bés yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Dugg yi ci %days bés yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Jëfi kaaraange yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wone</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>antuwul</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>bañ nañu ko</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Benn jëfu kaaraange bindeesu ko ba tey.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Xew-xewi kaaraange yi dañu leen di denc %days bés.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Xew-xewi kaaraange yi dañu leen di denc ba benn saytukat dindi leen.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Yebbi samay done yu dugg</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Say sesiyoŋ ak say xew-xewi kaaraange ni fisie JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Dugg na</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Jéemu dugg bu antuwul</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Génn na</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiyoŋ yi génne nañu leen</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Dugg jóge ci jumtukaay bu bees</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Dugg jóge ci bérab bu bees</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Wóorlu nañu kiy kan («Wóorlul ne yaa nekk»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Seetu kiy kan antuwul</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Dugg na ak caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Dugg ak caabiy dugg antuwul</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Dugg bi ñu bañ ko: koodu ñaari tappal bi amul walla baaxul</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodu ñaari tappal bu baaxul</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont bi tëj nañu ko ginnaaw dugg yu antuwul</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont bi ubbi nañu ko</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Baatu jàll bi soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Soppi baatu jàll bi antuwul</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Baatu jàll bi defaraat nañu ko</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Laaj nañu baatu jàll bu bees</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adreesu imeel bi soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Turu jëfandikukat bi soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dugg ci ñaari tappal taal na</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dugg ci ñaari tappal fey na</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Jëfandikoo nañu koodu delluwaay</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodu delluwaay yu bees</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Baatu jàllu app bi sos nañu ko</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Baatu jàllu app bi dindi nañu sañ-sañam</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Yokk nañu caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Dindi nañu caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont bi dox na</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont bi taxaw na</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Yépp</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Dugg yi ak sesiyoŋ yi</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Coppitey kont</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Soxla na ñu ko teewlu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Jëfi kaaraange</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Jëfi kaaraange yu %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Dugg yi ak coppite yi ci kaaraange sa kont. Su nga gisee lu nga deful, soppil sa baatu jàll te génne jumtukaay yi nga xamul.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Say jumtukaay</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Soppi baatu jàll</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Jëfi kaaraange yi bindeesu leen ci sit bii ba tey.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Dugg yi ci %days bés yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Jéem yu antuwul</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Benn jëfu kaaraange bindeesu ko ba tey.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Yebbi samay done yu dugg</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Say sesiyoŋ ak say xew-xewi kaaraange ni fisie JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Baatu jàll</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Baatu jàll ak koodu ñaari tappal</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Jokkalekaay REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Jokkalekaay SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Dugg benn yoon (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Dugg na laata ñuy tàmbali bind sesiyoŋ yi</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapooru dugg</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ñi dugg ci sit bi, ñaata yoon la kont yi di dugg ak di dugg te antuwul, ak génne jëfandikukat fépp. Mu ngi liggéey ak bépp jëfekatu sesiyoŋ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesiyoŋ bi génne nañu ko. Jumtukaay bi war na dugg ati.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login génne nañu ko ci %count sesiyoŋ.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login amul benn sesiyoŋ buy dox.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Amul benn kont bu am ID boobu, turu jëfandikukat boobu walla adreesu imeel boobu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Lii mooy sesiyoŋ bi ngay jëfandikoo. Ngir jeexal ko, génnal.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sesiyoŋ boobu jeex na ba noppi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Xët bi jeex na waxtoom. Dara soppiku wul; su la neexee, jéemaatal.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sesiyoŋ yi bindeesu leen ci sit bii (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Taabal bi expuser_session amul</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesiyoŋ yi dinañu leen bind bu ñu ko sosee: php update/common/scripts/6.0/createusersessiontable.php, walla yeesalu dàttub done bu 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Leegi ak tey</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesiyoŋ yiy dox</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Jëfandikukat yi dugg</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Dugg yu tey</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Jéem yu antuwul tey</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Génne jëfandikukat fépp</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Bépp sesiyoŋ bu kont bi dina jeex ci laaj bi ci topp, ba ci yi «Fattaliku ma» di denc. Jëfandikool ko su kont mën a nekk ci loxo yu baaxul; ginnaaw ga defaraatal baatu jàllam.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID jëfandikukat, turu jëfandikukat walla adreesu imeel</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Génn fépp</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Dugg na leegi</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit yi ñu mujj a jëfandikoo lañuy wone.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Jëfandikukat</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Jumtukaay</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrees</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Dugg na</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Liggéey bu mujj</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Jëf yi</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Jumtukaay bii</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Bindeesu ko</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Génn</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Amul benn sesiyoŋ bu dugg.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days bés yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Dugg yi ak jéem yu antuwul dañu leen di lim ci téereb saytu jëfandikukat yi, te amul; sesiyoŋ yu bees yi ñoo ñuy lim.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Bés</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Dugg yi</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Jéem yu antuwul</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesiyoŋ yu bees</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Jëfekatu sesiyoŋ: %handler. Sesiyoŋ yi dañu leen di jàng ci taabal bi expuser_session, moo tax rapoor bi di liggéey ak bépp jëfekat.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Artu kaaraange ci sa kont</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Am na xew-xewu kaaraange ci sa kont %login: %event. Su dee du yow, aaral sa kont ci %url.</translation>
     </message>
 </context>
 </TS>

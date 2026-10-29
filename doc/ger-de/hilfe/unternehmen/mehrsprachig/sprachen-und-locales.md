@@ -4,7 +4,7 @@ audience: businesses, project-manager, admin
 category: business-solutions
 order: 20
 summary: Was Exponential bei Sprachen unterstützt, erklärt für Entscheider – Locales, Inhaltssprachen, Übersetzungen der Administration und Website-Locales, die drei Unterstützungsstufen, die Grenze von 62 Sprachen und wie Sie eine Sprache prüfen, bevor Sie sich auf einen Markt festlegen.
-keywords: Sprachen, Locales, Inhaltssprachen, Übersetzung der Administration, Sprache der Oberfläche, Unterstützungsstufen, 359 Locales, Übersetzungen der Administration, Grenze von 62 Sprachen, Ausweichsprache, Unternehmen, languages, locales, content languages, administration translation, interface language, support levels, limit of 62 languages, fallback, business
+keywords: Sprachen, Locales, Inhaltssprachen, Übersetzung der Administration, Sprache der Oberfläche, Unterstützungsstufen, 368 Locales, Übersetzungen der Administration, Grenze von 62 Sprachen, Ausweichsprache, Unternehmen, languages, locales, content languages, administration translation, interface language, support levels, limit of 62 languages, fallback, business
 type: help
 ---
 # Sprachen und Locales
@@ -43,7 +43,7 @@ fügt keine Inhaltssprache hinzu, ändert keine Website und belegt keinen der Pl
 
 Gezählt in [Sprachen in Exponential](../../../sprachen.md) (Exponential 6.0.15, Oktober 2026):
 
-- **359 Locale-Dateien**: 352 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten.
+- **368 Locale-Dateien**: 361 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten.
 - **Viele Schriftsysteme**, von Lateinisch, Kyrillisch und Griechisch bis Arabisch, Hebräisch, Devanagari, Chinesisch und
   viele weitere.
 - **43 Locales mit Rechts-nach-links-Schrift** ([Märkte mit Rechts-nach-links-Schrift](maerkte-mit-rechts-nach-links-schrift.md)).

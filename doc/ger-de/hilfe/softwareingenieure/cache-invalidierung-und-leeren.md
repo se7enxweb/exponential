@@ -42,7 +42,7 @@ php bin/php/ezcache.php --list-tags --allow-root-user       # every tag
 php bin/php/ezcache.php --clear-tag=ini --allow-root-user   # the INI and global INI caches
 php bin/php/ezcache.php --clear-id=template-block --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user       # everything: expensive on a busy site
-./console exp:velocity cache clear                         # Velocity's response cache
+./console exp:velocity cache clear --apply                         # Velocity's response cache
 ```
 
 Zu den Cache-IDs in `eZCache` gehören `content`, `template`, `template-block`, `template-override`, `ini`, `global_ini`,

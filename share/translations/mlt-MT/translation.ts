@@ -14326,6 +14326,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Din l-installazzjoni hija demo pubblika: kulħadd jista&apos; jkun jaf il-password tal-amministratur tagħha, u l-passwords tal-amministraturi ma jistgħux jinbidlu jew jiġu rrisettjati. Tdaħħalx xejn privat hawn.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontijiet li ħadd ma juża jew li jeħtieġu attenzjoni; iddiżattivahom, iżblokkahom jew esportahom.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Reġistru tal-awditu tal-utenti</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Min biddel, daħal jew ġie miċħud, għal kull kont; iffiltra u esporta.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport tad-dħul</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Min hu dieħel, id-dħul u l-fallimenti kuljum; oħroġ utent minn kullimkien.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Is-sessjonijiet skaduti tal-ġestur tal-PHP jitneħħew mill-PHP innifsu (session.gc_maxlifetime), mhux minn din il-paġna jew mill-parti tal-kompitu cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Is-sessjonijiet attivi ta&apos; kull utent jidhru, u jistgħu jiġu magħluqa, fir-rapport tad-dħul, li jaħdem ma&apos; kull ġestur tas-sessjonijiet.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Iftaħ ir-rapport tad-dħul</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ il-kont tiegħek.</translation>
     <message>
         <source>None yet</source>
         <translation>L-ebda waħda s'issa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Id-dħul reċenti tiegħek, it-tentattivi falluti u l-bidliet fil-password, fl-indirizz tal-email u fid-dħul f&apos;żewġ passi.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Id-dħul reċenti, it-tentattivi falluti u l-bidliet tas-sigurtà ta&apos; dan il-kont.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Irrevedi l-attività</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Tentattivi ta&apos; dħul falluti: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ Ara l-paġna tar-rekwiżiti għal aktar informazzjoni.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Il-crontab ma nkitebx (%reason). Żid dawn il-linji mal-crontab tal-utent li bih jaħdem is-sit, inkella l-kju, l-importazzjonijiet, in-notifiki u l-indiċi tat-tfittxija qatt ma jaħdmu:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>L-installazzjoni mill-ġdid issir bil-kickstarter (%file, imbagħad php bin/php/kickstarter.php run --apply) jew b&apos;installazzjoni ġdida.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>It-trasport tal-posta rrifjuta messaġġi fl-aħħar tħaddim: %count. Iċċekkja s-server tal-posta u site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Avvenimenti qed jistennew: %count, u l-ebda tħaddim tal-kompitu cron tan-notifiki mhu rreġistrat. Żid il-parti “frequent” tal-kompiti cron mal-crontab, jew ħaddem exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Agħżel sit jew taqsima oħra bis-selettur tan-nodi</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>L-amministratur tas-sistema biss jista&apos; jibdel is-sid: ħaddem ./console exp:content-check --fix-permissions --apply bħala root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>empty</source>
         <translation>vojta</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Iċ-ċavetta tal-firma għandha aktar minn sena: biddilha b&apos;exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>not sent</source>
         <translation>mhux mibgħut</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Il-kompitu cron tan-notifiki jirreġistra hawn kull tħaddim tiegħu. Żid il-parti frequent mal-crontab, jew ħaddem exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Uża l-console: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Konfigurazzjoni &gt; Kompiti cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>L-ebda parti tal-kompiti cron għadha ma tħaddmet: il-kju tax-xogħlijiet, l-importazzjonijiet, in-notifiki u l-indiċi tat-tfittxija qed jistennew. Ħaddem php bin/php/installcrontab.php --add --apply, jew żid il-linji ta&apos; --show mal-crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>None.</source>
         <translation>Xejn.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>b&apos;app tal-awtentikazzjoni</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>b&apos;kodiċi bl-email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>b&apos;kodiċi ta&apos; rkupru</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>b&apos;passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>b&apos;kont estern</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Jidher bħala n-netwerk tiegħu; l-indirizz jinżamm kif jgħidu s-settings tal-protezzjoni tad-data tas-sit.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Mhux irreġistrat</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bejn wieħed u ieħor</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Manage devices</source>
         <translation>Immaniġġja l-apparati</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>b&apos;app tal-awtentikazzjoni</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>b&apos;kodiċi bl-email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>b&apos;kodiċi ta&apos; rkupru</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>b&apos;passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>b&apos;kont estern</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Mhux irreġistrat</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bejn wieħed u ieħor</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>View the sessions of this user</source>
         <translation>Ara s-sessjonijiet ta' dan l-utent</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Il-kont tiegħek %login fuq %site għadu kif intuża biex jidħol minn post li ma daħalx minnu dan l-aħħar:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Post approssimattiv</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser fuq %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport tad-dħul</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Open the page</source>
         <translation>Iftaħ il-paġna</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sa %to minn %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Isem tad-dħul jew ID tal-utent: il-kont li l-avveniment kien dwaru jew l-utent li aġixxa.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Azzjoni</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Wara</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Kull riżultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Qabel</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Magħmul minn</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Neħħi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Sar</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>L-avvenimenti jinżammu għal %days jum.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>L-avvenimenti jinżammu sakemm jitneħħew manwalment.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Avvenimenti</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kull azzjoni</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>L-avvenimenti kollha ta&apos; dan il-kont</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Esporta l-lista bħala CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falla</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Illimita l-lista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>L-ebda avveniment ma jaqbel.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Għal kull paġna</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ir-reġistrazzjoni hija mitfija f&apos;audit.ini ([UserAuditSettings] UserAudit); il-lista turi dak li ġie rreġistrat qabel.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Miċħud</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Riżultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>It-tabella tar-reġistru tal-awditu tal-utenti hija nieqsa. Oħloqha permezz ta&apos; php update/common/scripts/6.0/createuseraudittable.php; sa dakinhar il-fajls tal-awditu jżommu kull avveniment.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Din il-paġna teħtieġ database SQL; mhijiex disponibbli fuq MongoDB. Il-fajls tal-awditu jżommu kull avveniment.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Reġistru tal-awditu tal-utenti</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utent</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Meta</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Fejn</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Min biddel, ħoloq, attiva, iddiżattiva, ċaqlaq jew neħħa liema kont, min daħal jew ġie miċħud, u liema rwoli ġew assenjati: linja waħda għal kull avveniment, bil-oqsma qabel u wara. Il-passwords u s-sigrieti qatt ma jiġu rreġistrati.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupp</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>mhux magħruf</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Assigura l-kont tiegħek</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Intuża kodiċi ta&apos; rkupru biex jidħol fil-kont tiegħek %login fuq %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Intuża kodiċi ta&apos; rkupru</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Indirizz approssimattiv</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Itlob password ġdida biex terġa&apos; tidħol, jew ikkuntattja lill-amministraturi tas-sit.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Itlob password ġdida</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kull kodiċi ta&apos; rkupru jaħdem darba biss. Jekk tlift it-telefon tiegħek, erġa&apos; ssettja l-app tal-awtentikazzjoni u żomm il-kodiċijiet ta&apos; rkupru l-ġodda f&apos;post sigur.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Tentattivi ta&apos; dħul falluti fil-kont tiegħek</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Minn issa &apos;l quddiem, id-dħul jitlob kodiċi minbarra l-password tiegħek. Jekk għamilt dan int, m&apos;għandek bżonn tagħmel xejn.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Jekk kont int u nsejt il-password tiegħek, itlob waħda ġdida. Jekk le, agħżel password aktar b&apos;saħħitha u ixgħel id-dħul f&apos;żewġ passi.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Jekk ma kontx int, xi ħadd jista&apos; jkun jaf il-password tiegħek: biddilha issa u ċċekkja fejn il-kont tiegħek huwa dieħel.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kodiċijiet ta&apos; rkupru li fadal</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Irrevedi l-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Twissija tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Xi ħadd ipprova jidħol fil-kont tiegħek %login fuq %site b&apos;password ħażina diversi drabi wara xulxin: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Kien hemm avveniment tas-sigurtà fil-kont tiegħek %login fuq %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Din hija twissija tas-sigurtà dwar il-kont tiegħek. Tintbagħat għal kull bidla bħal din u ma tistax tintefa.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ħin</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Id-dħul f&apos;żewġ passi ntefa għall-kont tiegħek %login fuq %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Id-dħul f&apos;żewġ passi ntefa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Id-dħul f&apos;żewġ passi ġie mixgħul għall-kont tiegħek %login fuq %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Id-dħul f&apos;żewġ passi ġie mixgħul</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Il-kont tiegħek %login fuq %site ġie msakkar wara wisq tentattivi ta&apos; dħul falluti.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Il-kont tiegħek issa huwa protett mill-password tiegħek biss. Jekk ma għamiltx dan int, erġa&apos; ixgħel id-dħul f&apos;żewġ passi wara li tibdel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Il-kont tiegħek ġie msakkar</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Attività tas-sigurtà ta&apos; %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Dieħel</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Tentattiv ta&apos; dħul fallut</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ħareġ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessjonijiet magħluqa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Dħul minn apparat ġdid</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Dħul minn post ġdid</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identità kkonfermata (“Ivverifika li int”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Il-verifika tal-identità falliet</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Daħal b&apos;passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Id-dħul b&apos;passkey falla</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Dħul miċħud: il-kodiċi tad-dħul f&apos;żewġ passi nieqes jew ħażin</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kodiċi tad-dħul f&apos;żewġ passi ħażin</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont imsakkar wara tentattivi ta&apos; dħul falluti</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont miftuħ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Password mibdula</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Il-bidla tal-password falliet</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Password irrisettjata</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Intalbet password ġdida</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Indirizz tal-email mibdul</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Isem tal-utent mibdul</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dħul f&apos;żewġ passi mixgħul</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dħul f&apos;żewġ passi mitfi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kodiċi ta&apos; rkupru użat</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodiċijiet ta&apos; rkupru ġodda</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Password tal-app maħluqa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Password tal-app revokata</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey miżjuda</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey imneħħija</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont attivat</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont diżattivat</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kollha</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Dħul u sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Bidliet fil-kont</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Jeħtieġu attenzjoni</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>minnek</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>mill-utent</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>minn %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metodu</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Brawżer</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema operattiva</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparat</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Pajjiż</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Liema</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Mezz</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Tentattivi falluti</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kodiċijiet li fadal</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Ġestur tad-dħul</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Attività tas-sigurtà ta&apos; %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Id-dħul u l-bidliet fis-sigurtà tal-kont tiegħek. Jekk tara xi ħaġa li ma għamiltx int, ibdel il-password tiegħek u oħroġ l-apparati li ma tagħrafx.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Id-dħul u l-bidliet fis-sigurtà ta&apos; dan il-kont.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ibdel il-password</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Lura għall-kont</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>L-attività tas-sigurtà mhix qed tiġi rreġistrata</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Tinqara mir-reġistru tal-awditu tal-utenti, li t-tabella tiegħu expuser_audit hija nieqsa jew mhix appoġġata f&apos;din id-database. Ħaddem php update/common/scripts/6.0/createuseraudittable.php, jew l-aġġornament tad-database tal-verżjoni 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>L-aħħar jiem: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Dħul fl-aħħar jiem (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Attività reċenti tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>falla</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>miċħud</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>L-ebda attività tas-sigurtà għadha ma ġiet irreġistrata.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>L-avvenimenti tas-sigurtà jinżammu għal %days jum.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>L-avvenimenti tas-sigurtà jinżammu sakemm amministratur ineħħihom.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Niżżel id-data tad-dħul tiegħi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Is-sessjonijiet u l-avvenimenti tas-sigurtà tiegħek bħala fajl JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Dieħel</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Tentattiv ta&apos; dħul fallut</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ħareġ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessjonijiet magħluqa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Dħul minn apparat ġdid</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Dħul minn post ġdid</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identità kkonfermata (“Ivverifika li int”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Il-verifika tal-identità falliet</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Daħal b&apos;passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Id-dħul b&apos;passkey falla</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Dħul miċħud: il-kodiċi tad-dħul f&apos;żewġ passi nieqes jew ħażin</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kodiċi tad-dħul f&apos;żewġ passi ħażin</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont imsakkar wara tentattivi ta&apos; dħul falluti</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont miftuħ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Password mibdula</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Il-bidla tal-password falliet</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Password irrisettjata</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Intalbet password ġdida</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Indirizz tal-email mibdul</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Isem tal-utent mibdul</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dħul f&apos;żewġ passi mixgħul</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dħul f&apos;żewġ passi mitfi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kodiċi ta&apos; rkupru użat</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodiċijiet ta&apos; rkupru ġodda</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Password tal-app maħluqa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Password tal-app revokata</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey miżjuda</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey imneħħija</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont attivat</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont diżattivat</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kollha</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Dħul u sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Bidliet fil-kont</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Jeħtieġu attenzjoni</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Attività tas-sigurtà</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Attività tas-sigurtà ta&apos; %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Id-dħul u l-bidliet fis-sigurtà tal-kont tiegħek. Jekk tara xi ħaġa li ma għamiltx int, ibdel il-password tiegħek u oħroġ l-apparati li ma tagħrafx.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ibdel il-password</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>L-attività tas-sigurtà għadha mhix qed tiġi rreġistrata f&apos;dan is-sit.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Dħul fl-aħħar jiem (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Tentattivi falluti</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>L-ebda attività tas-sigurtà għadha ma ġiet irreġistrata.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Niżżel id-data tad-dħul tiegħi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Is-sessjonijiet u l-avvenimenti tas-sigurtà tiegħek bħala fajl JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password u kodiċi tad-dħul f&apos;żewġ passi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfaċċa REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfaċċa SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Dħul uniku</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Daħal qabel ma bdew jiġu rreġistrati s-sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport tad-dħul</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Min hu dieħel fis-sit, kemm-il darba l-kontijiet jidħlu u jfallu, u l-ħruġ ta&apos; utent minn kullimkien. Jaħdem ma&apos; kull ġestur tas-sessjonijiet.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Is-sessjoni ngħalqet. L-apparat irid jerġa&apos; jidħol.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ħareġ mis-sessjonijiet: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ma kellux sessjoni attiva.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>L-ebda kont ma għandu dak l-ID, isem tal-utent jew indirizz tal-email.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Din hija s-sessjoni li qed tuża. Biex ittemmha, oħroġ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Dik is-sessjoni kienet diġà ntemmet.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Il-paġna kienet skadiet. Ma nbidel xejn; erġa&apos; pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Is-sessjonijiet mhumiex irreġistrati f&apos;dan is-sit (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>It-tabella expuser_session hija nieqsa</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Is-sessjonijiet jiġu rreġistrati hekk kif tinħoloq: php update/common/scripts/6.0/createusersessiontable.php, jew l-aġġornament tad-database tal-verżjoni 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Issa u llum</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sessjonijiet attivi</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Utenti dieħla</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Dħul illum</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Tentattivi falluti llum</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Oħroġ utent minn kullimkien</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kull sessjoni tal-kont tintemm fit-talba li jmiss tagħha, anke dawk miżmuma minn “Ftakar fija”. Użah meta kont jista&apos; jkun f&apos;idejn il-ħażin; imbagħad irrisettja l-password tiegħu.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID tal-utent, isem tal-utent jew indirizz tal-email</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Oħroġ minn kullimkien</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Dieħla issa</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Jidhru l-aktar użati reċentement, sa %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utent</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Indirizz</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Dieħel</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>L-aħħar attività</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Azzjonijiet</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dan l-apparat</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Mhux irreġistrat</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oħroġ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>L-ebda sessjoni mhi dieħla.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>L-aħħar jiem: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Id-dħul u t-tentattivi falluti jingħaddu mir-reġistru tal-awditu tal-utenti, li mhux hemm; is-sessjonijiet il-ġodda jingħaddu.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Jum</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Dħul</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Tentattivi falluti</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sessjonijiet ġodda</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Ġestur tas-sessjonijiet: %handler. Is-sessjonijiet jinqraw mit-tabella expuser_session, għalhekk ir-rapport jaħdem ma&apos; kull ġestur.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Twissija tas-sigurtà dwar il-kont tiegħek</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Kien hemm avveniment tas-sigurtà fil-kont tiegħek %login: %event. Jekk ma kontx int, assigura l-kont tiegħek fuq %url.</translation>
     </message>
 </context>
 </TS>

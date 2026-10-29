@@ -14,7 +14,7 @@ The code is ported from the **bccleanuprss** extension by Brookins Consulting
 
 | | |
 |---|---|
-| What changed | New command `bin/php/cleanuprss.php` (`./console exp:cleanuprss`), cronjob part `cleanuprss`, class `expCleanupRSS`, settings `content.ini [RSSImportCleanupSettings]`. |
+| What changed | New command `bin/php/cleanuprss.php` (`./console exp:cleanuprss --apply`), cronjob part `cleanuprss`, class `expCleanupRSS`, settings `content.ini [RSSImportCleanupSettings]`. |
 | Who is affected | Nobody until you enable it. Users of the bccleanuprss extension: its settings file `bccleanuprss.ini` is not read. |
 | How to check | `php bin/php/cleanuprss.php --dry-run --allow-root-user` prints what it would remove, or why it removes nothing. |
 | How to switch on | Set `Enabled`, `ClassIdentifiers[]` and `KeepPerFeed`, dry-run, then schedule the cronjob part. |
@@ -34,7 +34,7 @@ The code is ported from the **bccleanuprss** extension by Brookins Consulting
 
 2. Clear the INI cache: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`
 3. Dry-run and read the list: `php bin/php/cleanuprss.php --dry-run --allow-root-user`
-4. Run it: `php bin/php/cleanuprss.php --allow-root-user`
+4. Run it: `php bin/php/cleanuprss.php --apply --allow-root-user`
 5. Schedule it nightly: `php runcronjobs.php cleanuprss` in your crontab.
 
 ## It does nothing until you tell it what to remove
@@ -108,9 +108,9 @@ once you trust the class list.
 
 ```
 php bin/php/cleanuprss.php --dry-run --allow-root-user
-php bin/php/cleanuprss.php --allow-root-user
-php bin/php/cleanuprss.php --keep=50 --allow-root-user
-php bin/php/cleanuprss.php -s my_siteaccess --allow-root-user
+php bin/php/cleanuprss.php --apply --allow-root-user
+php bin/php/cleanuprss.php --apply --keep=50 --allow-root-user
+php bin/php/cleanuprss.php --apply -s my_siteaccess --allow-root-user
 ./console exp:cleanuprss --dry-run --allow-root-user     # the same script through the console
 ```
 

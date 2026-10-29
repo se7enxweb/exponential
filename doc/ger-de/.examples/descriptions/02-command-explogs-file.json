@@ -104,8 +104,8 @@
         "de": "Nur Einträge, deren Anfrage diesen Text enthält"
     },
     "command:exploremipsumfill": {
-        "en": "Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text",
-        "de": "Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-Ipsum-Text"
+        "en": "Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text (dry run unless --apply)",
+        "de": "Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-ipsum-Text (Probelauf, außer mit --apply)"
     },
     "command:exploremipsumfill --language": {
         "en": "the test language to fill (default: ",
@@ -552,12 +552,20 @@
         "de": "Fügt ein Datenbankschema und Daten aus einer .dba-Datei in eine Datenbank ein (--type, --user)"
     },
     "command:ezsubtreecopy": {
-        "en": "Copy a content subtree to a new location (--src-node-id, --dst-node-id)",
-        "de": "Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id)"
+        "en": "Copy a content subtree to a new location (--src-node-id, --dst-node-id; dry run unless --apply)",
+        "de": "Kopiert einen Inhaltsteilbaum an einen neuen Ort (--src-node-id, --dst-node-id; Probelauf, außer mit --apply)"
     },
     "command:ezsubtreecopy --all-versions": {
         "en": "Copy all versions for each contentobject being copied.",
         "de": "Alle Versionen jedes kopierten Inhaltsobjekts kopieren."
+    },
+    "command:ezsubtreecopy --apply": {
+        "en": "Copy the subtree (the default is a dry run that lists it and copies nothing)",
+        "de": "Den Teilbaum kopieren (Standard ist ein Probelauf, der ihn auflistet und nichts kopiert)"
+    },
+    "command:ezsubtreecopy --dry-run": {
+        "en": "The default: list the nodes that would be copied, change nothing",
+        "de": "Der Standard: die Knoten auflisten, die kopiert würden, nichts ändern"
     },
     "command:ezsubtreecopy --dst-node-id": {
         "en": "Destination node ID.",
@@ -576,8 +584,16 @@
         "de": "ID des Elternknotens des Quell-Teilbaums."
     },
     "command:ezsubtreeremove": {
-        "en": "Remove content subtrees by node ID, to the trash unless --ignore-trash is given",
-        "de": "Entfernt Teilbäume von Inhalten nach Knoten-ID, in den Papierkorb, außer --ignore-trash ist angegeben"
+        "en": "Remove content subtrees by node ID, to the trash unless --ignore-trash is given (dry run unless --apply)",
+        "de": "Entfernt Inhaltsteilbäume nach Knoten-ID, in den Papierkorb, außer mit --ignore-trash (Probelauf, außer mit --apply)"
+    },
+    "command:ezsubtreeremove --apply": {
+        "en": "Remove the subtrees (the default is a dry run that lists them and removes nothing)",
+        "de": "Die Teilbäume entfernen (Standard ist ein Probelauf, der sie auflistet und nichts entfernt)"
+    },
+    "command:ezsubtreeremove --dry-run": {
+        "en": "The default: list what would be removed, change nothing",
+        "de": "Der Standard: auflisten, was entfernt würde, nichts ändern"
     },
     "command:ezsubtreeremove --ignore-trash": {
         "en": "Ignore trash ('move to trash' by default).",
@@ -703,9 +719,17 @@
         "en": "start, stop, restart, graceful, kill or status every engine, one after the other",
         "de": "start, stop, restart, graceful, kill oder status für jede Engine, eine nach der anderen"
     },
+    "command:frankenphp --apply": {
+        "en": "the commands that write (config set|unset, cache clear, install ...): make the change; without it they are a dry run, as with exp:velocity",
+        "de": "die schreibenden Befehle (config set|unset, cache clear, install ...): die Änderung vornehmen; ohne die Option sind sie ein Probelauf, wie bei exp:velocity"
+    },
     "command:frankenphp --check": {
         "en": "install: re-hash the installed binary against its SHA-256",
         "de": "install: den Hash der installierten Binärdatei erneut gegen ihre SHA-256 prüfen"
+    },
+    "command:frankenphp --dry-run": {
+        "en": "the default of the commands that write; passed on to exp:velocity",
+        "de": "der Standard der schreibenden Befehle; wird an exp:velocity weitergegeben"
     },
     "command:frankenphp --engine": {
         "en": "override the frankenphp default for this command only (php, qbix, or several)",
@@ -768,20 +792,52 @@
         "de": "INI-Einstellungen in jedem Bereich lesen und ändern: get, set, add, rem, clear, toggle, copy, move, where, list, scopes"
     },
     "command:install": {
-        "en": "One-command installation, SQLite by default, no kickstart.ini needed",
-        "de": "Installation mit einem Befehl, standardmäßig mit SQLite, ohne kickstart.ini"
+        "en": "One-command installation, SQLite by default, no kickstart.ini needed (a dry run unless --apply)",
+        "de": "Installation mit einem Befehl, standardmäßig SQLite, keine kickstart.ini nötig (ein Probelauf, außer mit --apply)"
+    },
+    "command:installcrontab": {
+        "en": "Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--add and --remove: dry run unless --apply)",
+        "de": "Den Cronjob der Installation zeigen, hinzufügen oder entfernen: die Crontab-Zeilen, die ihre Cronjob-Teile ausführen (--add und --remove: Probelauf, außer mit --apply)"
+    },
+    "command:installcrontab --add": {
+        "en": "Add or update the block",
+        "de": "Den Block hinzufügen oder aktualisieren"
+    },
+    "command:installcrontab --admin-siteaccess": {
+        "en": "The siteaccess of the admin parts (default: [CrontabSettings] AdminSiteAccess, else admin)",
+        "de": "Der Siteaccess der Admin-Teile (Standard: [CrontabSettings] AdminSiteAccess, sonst admin)"
+    },
+    "command:installcrontab --apply": {
+        "en": "With --add or --remove: write the crontab (the default shows what would change)",
+        "de": "Mit --add oder --remove: die Crontab schreiben (Standard zeigt, was sich ändern würde)"
+    },
+    "command:installcrontab --dry-run": {
+        "en": "The default, kept for scripts that pass it: show what would change, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: zeigen, was sich ändern würde, nichts ändern"
+    },
+    "command:installcrontab --remove": {
+        "en": "Remove the block",
+        "de": "Den Block entfernen"
+    },
+    "command:installcrontab --show": {
+        "en": "The planned lines, the block in the crontab and the last runs (the default)",
+        "de": "Die geplanten Zeilen, der Block in der Crontab und die letzten Läufe (der Standard)"
     },
     "command:kickstarter": {
-        "en": "Kickstarter runner. Supports \"ini\" generation and full \"run\" setup subcommands",
-        "de": "Kickstarter-Runner. Unterstützt die Unterbefehle \"ini\" zum Erzeugen und \"run\" für die vollständige Einrichtung"
+        "en": "Kickstarter runner: \"ini\" writes kickstart.ini, \"run\" installs from it (a dry run unless --apply)",
+        "de": "Kickstarter: \"ini\" schreibt kickstart.ini, \"run\" installiert daraus (ein Probelauf, außer mit --apply)"
     },
     "command:mailbounces": {
-        "en": "Read the bounce mailbox: hard bounces and spam complaints go on the suppression list",
-        "de": "Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste"
+        "en": "Read the bounce mailbox: hard bounces and spam complaints go on the suppression list (dry run unless --apply)",
+        "de": "Liest das Bounce-Postfach: harte Bounces und Spam-Beschwerden kommen auf die Sperrliste (Probelauf, außer mit --apply)"
+    },
+    "command:mailbounces --apply": {
+        "en": "Suppress the addresses, handle the messages and write the status (the default is a dry run)",
+        "de": "Die Adressen sperren, die Nachrichten behandeln und den Status schreiben (Standard ist ein Probelauf)"
     },
     "command:mailbounces --dry-run": {
-        "en": "Report only: nothing is suppressed, no message is changed, the status is not written",
-        "de": "Nur berichten: nichts wird gesperrt, keine Nachricht geändert, der Status nicht geschrieben"
+        "en": "The default, kept for scripts that pass it: report only, nothing is suppressed, no message is changed, the status is not written",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: nur berichten, nichts sperren, keine Nachricht ändern, den Status nicht schreiben"
     },
     "command:mailbounces --file": {
         "en": "Read these saved messages (.eml file, or a directory of them) instead of the mailbox",
@@ -792,8 +848,8 @@
         "de": "Den letzten Lauf zeigen und aufhören"
     },
     "command:mailconsent": {
-        "en": "The consent log of the e-mail preferences: list, export as CSV, retention cleanup",
-        "de": "Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen"
+        "en": "The consent log of the e-mail preferences: list, export as CSV, retention cleanup (dry run unless --apply)",
+        "de": "Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist aufräumen (Probelauf, außer mit --apply)"
     },
     "command:mailconsent --action": {
         "en": "on, off, pending, confirm, ...",
@@ -803,12 +859,16 @@
         "en": "list: show addresses instead of hiding them",
         "de": "list: Adressen zeigen, statt sie zu verbergen"
     },
+    "command:mailconsent --apply": {
+        "en": "cleanup: remove the rows (the default counts them and removes nothing)",
+        "de": "cleanup: die Zeilen entfernen (Standard zählt sie und entfernt nichts)"
+    },
     "command:mailconsent --category": {
         "en": "a category identifier",
         "de": "ein Kategoriebezeichner"
     },
     "command:mailconsent --dry-run": {
-        "en": "cleanup: count only",
-        "de": "cleanup: nur zählen"
+        "en": "cleanup: the default, kept for scripts that pass it: count only",
+        "de": "cleanup: der Standard, beibehalten für Skripte, die die Option übergeben: nur zählen"
     }
 }

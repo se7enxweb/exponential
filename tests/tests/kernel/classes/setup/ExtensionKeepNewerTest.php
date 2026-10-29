@@ -6,7 +6,8 @@
  *  KN-01 - normalizeVersion(): release numbers pass ("v" removed), "dev-master", "//autogentag//", "" do not
  *  KN-02 - extensionVersionText()/extensionVersion(): extension.xml <metadata><version> first, ezinfo.php
  *          'Version' when extension.xml has no release number, null when neither has one
- *  KN-03 - keepInstalled(): newer package replaces, same or older is kept, unknown never wins over a known number,
+ *  KN-03 - keepInstalled(): a copy Composer or git manages is always kept; else a newer package replaces, same or
+ *          older is kept, unknown never wins over a known number,
  *          an installed copy without a number stays only when Composer or git manages it
  *  KN-04 - extensionManager(): a .git entry is git, an install-path of vendor/composer/installed.json is composer
  *          (format 1 and 2), anything else ''
@@ -90,6 +91,10 @@ class ExtensionKeepNewerTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( eZExtensionPackageHandler::keepInstalled( '2.4.25', '2.3.0', 'composer' ) );
         // a package without a release number never replaces a numbered copy
         $this->assertTrue( eZExtensionPackageHandler::keepInstalled( '6.0.27', null ) );
+        // Composer or git manages it: kept even against a newer package (ezwt 6.0.16 by Composer, package 6.0.17)
+        $this->assertTrue( eZExtensionPackageHandler::keepInstalled( '6.0.16', '6.0.17', 'composer' ) );
+        $this->assertTrue( eZExtensionPackageHandler::keepInstalled( '6.0.9', '6.0.10', 'git' ) );
+        $this->assertTrue( eZExtensionPackageHandler::keepInstalled( '2.3.0', '2.4.27', 'composer' ) );
         // an installed copy without a number: kept when managed, replaced when a plain copy
         $this->assertTrue( eZExtensionPackageHandler::keepInstalled( null, '5.3', 'git' ) );
         $this->assertTrue( eZExtensionPackageHandler::keepInstalled( null, null, 'composer' ) );
@@ -148,6 +153,13 @@ class ExtensionKeepNewerTest extends PHPUnit\Framework\TestCase
         }
         $this->assertStringContainsString( '(installed by Composer)',
             eZExtensionPackageHandler::keepInstalledReason( $this->dir . '/site/extension/ezwebin', $this->dir . '/package/ezextension/ezwebin', $root ) );
+
+        // a newer package does not replace the Composer copy either, and the reason names both versions
+        $composerOlder = $this->extension( 'site/extension/ezwebin', '6.0.27', '6.0.27' );
+        $packageNewer = $this->extension( 'package/ezextension/ezwebin-newer/ezwebin', '6.0.29' );
+        $reason = eZExtensionPackageHandler::keepInstalledReason( $composerOlder, $packageNewer, $root );
+        $this->assertStringContainsString( 'the installed copy 6.0.27 (installed by Composer) is kept', $reason );
+        $this->assertStringContainsString( 'the package carries 6.0.29', $reason );
 
         // a newer package replaces; an unnumbered plain copy is replaced
         $old = $this->extension( 'site/extension/oldcopy', '1.0.0' );

@@ -132,7 +132,7 @@ Nach einem Leeren oder einem Deployment „bezahlt der erste Besucher für das R
 ([Betrieb einer Site, die Site vorwärmen](../../../anleitungen/betrieb-einer-website.md#5-die-site-vorwärmen-preload)):
 
 ```bash
-php bin/php/preload.php --siteaccess=site --allow-root-user
+php bin/php/preload.php --apply --siteaccess=site --allow-root-user
 ```
 
 Verwenden Sie den Namen Ihres eigenen öffentlichen Siteaccess. Dasselbe steht in der Administration als

@@ -35,7 +35,7 @@ One command installs a complete site on SQLite, with no database server, in `eng
 
 ```bash
 ./console exp:install --dry-run    # checks the configuration and installs nothing
-./console exp:install              # installs the multisite package on SQLite
+./console exp:install --apply              # installs the multisite package on SQLite
 ```
 
 - The administrator is `admin` with a generated password, printed in the summary and written to
@@ -139,7 +139,7 @@ siteaccess." ([Which pages use a layout](../layouts-editor.md#which-pages-use-a-
    the side columns change places and text starts at the right." ([Right to left](../../features/6.0/right-to-left.md))
 5. Switch back to English.
 
-Talk track: "359 locale files can be used as content languages; administration translations exist (the current totals are at the top of the languages page)." ([Languages in Exponential](../../languages.md))
+Talk track: "368 locale files can be used as content languages; administration translations exist (the current totals are at the top of the languages page)." ([Languages in Exponential](../../languages.md))
 
 ### Part 4: help and proof (4 minutes)
 

@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>設定 &gt; cron 工作</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>尚未執行任何 cron 工作部分：工作佇列、匯入、通知和搜尋索引都在等候。請執行 php bin/php/installcrontab.php --add --apply，或將 --show 輸出的各行加入 crontab。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>此安裝為公開示範站台：任何人都可能知道其系統管理員密碼，且系統管理員密碼無法變更或重設。請勿在此輸入任何私人資料。</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>無人使用或需要留意的帳號；可停用、解除鎖定或匯出。</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>使用者稽核日誌</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>依帳號查看誰做了變更、誰登入或遭拒絕；可篩選及匯出。</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>登入報告</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>目前登入的使用者、每日登入和失敗次數；讓使用者從所有裝置登出。</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP 處理常式的已逾時工作階段由 PHP 自行移除（session.gc_maxlifetime），而非由此頁面或 session_gc cron 工作部分移除。</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>所有使用者的已登入工作階段都列在登入報告中，也可以在那裡將其登出；該報告適用於任何工作階段處理常式。</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>開啟登入報告</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>尚無</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>您最近的登入、失敗的嘗試，以及密碼、電子郵件地址和兩步驟驗證的變更。</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>此帳號最近的登入、失敗的嘗試和安全性變更。</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>檢視活動</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count 次登入失敗</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>未寫入 crontab（%reason）。請將以下各行加入執行網站之使用者的 crontab，否則佇列、匯入、通知和搜尋索引永遠不會執行：</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>重新安裝可透過 Kickstarter（%file，然後執行 php bin/php/kickstarter.php run --apply）或全新安裝完成。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>上次執行時，郵件傳輸方式拒絕了 %count 則郵件。請檢查郵件伺服器和 site.ini MailSettings。</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>有 %count 個事件正在等候，且沒有通知 cron 工作的執行記錄。請將 cron 工作部分「frequent」加入 crontab，或執行 exp:notification:run --apply。</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>使用節點選擇器選擇其他網站或區段</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>只有系統管理員可以變更擁有者：請以 root 身分執行 ./console exp:content-check --fix-permissions --apply。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>空白</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>簽章金鑰已使用超過一年：請使用 exp:audit key rotate --apply 輪替金鑰。</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>未寄出</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>通知 cron 工作會在這裡記錄每次執行。請將 frequent 部分加入 crontab，或執行 exp:notification:run --apply。</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>請使用主控台：./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>無。</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>使用驗證器應用程式</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>使用電子郵件驗證碼</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>使用復原碼</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>使用密碼金鑰</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>使用外部帳號</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>顯示為其所在網路；位址依網站的資料保護設定保存。</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>未記錄</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>大約</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>管理裝置</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>使用驗證器應用程式</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>使用電子郵件驗證碼</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>使用復原碼</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>使用密碼金鑰</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>使用外部帳號</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>未記錄</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>大約</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>檢視此使用者的工作階段</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>您在 %site 上的帳號 %login 剛剛從一個最近未曾登入過的位置登入：</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>大約位置</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os 上的 %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>登入報告</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>開啟頁面</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>第 %from–%to 筆，共 %count 筆</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>使用者名稱或使用者 ID：事件所涉及的帳號，或執行動作的使用者。</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>帳號</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>之後</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>所有結果</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>之前</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>執行者</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>清除</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>已完成</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>事件保留 %days 天。</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>事件會一直保留，直到手動移除為止。</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>事件</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>所有動作</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>此帳號的所有事件</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>將清單匯出為 CSV（%count）</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>從</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>縮小清單範圍</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>沒有符合的事件。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>每頁</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>已在 audit.ini 中關閉記錄（[UserAuditSettings] UserAudit）；清單顯示的是先前記錄的內容。</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>已拒絕</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>使用者稽核日誌的資料表不存在。請使用 php update/common/scripts/6.0/createuseraudittable.php 建立；在此之前，稽核檔案會保留每個事件。</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>此頁面需要 SQL 資料庫，在 MongoDB 上無法使用。稽核檔案會保留每個事件。</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>至</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>使用者稽核日誌</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>使用者</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>誰變更、建立、啟用、停用、移動或移除了哪個帳號，誰登入或遭拒絕，以及指派了哪些角色：每個事件一行，並列出變更前後的欄位。密碼與祕密絕不會被記錄。</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>群組</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>系統</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>未知</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>保護您的帳號</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>有人使用復原碼登入了您在 %site 上的帳號 %login。</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>已使用復原碼</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>帳號</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>大約位址</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>請申請新密碼以重新登入，或聯絡網站的系統管理員。</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>申請新密碼</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>每個復原碼只能使用一次。如果您遺失了手機，請重新設定驗證器應用程式，並將新的復原碼保存在安全的地方。</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>您的帳號有登入失敗的嘗試</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>從現在起，登入時除了密碼之外還需要輸入驗證碼。如果這是您本人的操作，則無需採取任何動作。</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>如果是您本人且忘記了密碼，請申請新密碼。如果不是，請選擇更強的密碼並開啟兩步驟驗證。</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>如果這不是您本人的操作，可能有人知道您的密碼：請立即變更密碼，並檢查您的帳號在哪些地方已登入。</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>剩餘的復原碼</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>檢視您的裝置</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>安全性警示</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>有人嘗試使用錯誤的密碼連續 %count 次登入您在 %site 上的帳號 %login。</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>您在 %site 上的帳號 %login 發生了一個安全性事件。</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>這是一則關於您帳號的安全性警示。每次發生此類變更時都會傳送，且無法關閉。</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>已為您在 %site 上的帳號 %login 關閉兩步驟驗證。</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>已關閉兩步驟驗證</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>已為您在 %site 上的帳號 %login 開啟兩步驟驗證。</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>已開啟兩步驟驗證</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>您在 %site 上的帳號 %login 因登入失敗次數過多已鎖定。</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>您的帳號現在僅受密碼保護。如果這不是您本人的操作，請在變更密碼後重新開啟兩步驟驗證。</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>您的帳號已鎖定</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 的安全性活動</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>已登入</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>登入嘗試失敗</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已登出</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>工作階段已登出</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>從新裝置登入</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>從新位置登入</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>身分已確認（「驗證是您本人」）</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>身分確認失敗</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>已使用密碼金鑰登入</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>密碼金鑰登入失敗</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>已拒絕登入：兩步驟驗證碼遺漏或錯誤</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>兩步驟驗證碼錯誤</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>帳號因登入失敗已鎖定</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>帳號已解除鎖定</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>密碼已變更</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>密碼變更失敗</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>密碼已重設</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>已申請新密碼</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>電子郵件地址已變更</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>使用者名稱已變更</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>兩步驟驗證已開啟</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>兩步驟驗證已關閉</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>已使用復原碼</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>已產生新的復原碼</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>已建立應用程式密碼</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>已撤銷應用程式密碼</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>已新增密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>已移除密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>帳號已啟用</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>帳號已停用</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>登入和工作階段</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>帳號變更</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>需要注意</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>由您</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>由該使用者</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>由 %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>方式</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>瀏覽器</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>作業系統</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>裝置</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>地點</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>國家/地區</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>工作階段</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>哪些</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>傳送管道</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失敗的嘗試</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>剩餘代碼</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>登入處理常式</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 的安全性活動</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>您帳號的登入和安全性變更。如果您發現有不是您本人進行的操作，請變更密碼，並將您不認得的裝置登出。</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>此帳號的登入和安全性變更。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>變更密碼</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>返回帳號</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>未記錄安全性活動</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>安全性活動是從使用者稽核日誌讀取的，但其資料表 expuser_audit 不存在或此資料庫不支援。請執行 php update/common/scripts/6.0/createuseraudittable.php，或執行 6.0.15 的資料庫更新。</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>最近 %days 天</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>最近 %days 天的登入</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>最近的安全性活動</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>已拒絕</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>尚未記錄任何安全性活動。</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>安全性事件會保留 %days 天。</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>安全性事件會一直保留，直到系統管理員將其移除。</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>下載我的登入資料</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>您的工作階段和安全性事件，以 JSON 檔案形式提供。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>已登入</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>登入嘗試失敗</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已登出</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>工作階段已登出</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>從新裝置登入</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>從新位置登入</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>身分已確認（「驗證是您本人」）</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>身分確認失敗</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>已使用密碼金鑰登入</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>密碼金鑰登入失敗</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>已拒絕登入：兩步驟驗證碼遺漏或錯誤</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>兩步驟驗證碼錯誤</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>帳號因登入失敗已鎖定</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>帳號已解除鎖定</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>密碼已變更</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>密碼變更失敗</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>密碼已重設</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>已申請新密碼</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>電子郵件地址已變更</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>使用者名稱已變更</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>兩步驟驗證已開啟</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>兩步驟驗證已關閉</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>已使用復原碼</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>已產生新的復原碼</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>已建立應用程式密碼</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>已撤銷應用程式密碼</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>已新增密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>已移除密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>帳號已啟用</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>帳號已停用</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>登入和工作階段</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>帳號變更</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>需要注意</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>安全性活動</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name 的安全性活動</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>您帳號的登入和安全性變更。如果您發現有不是您本人進行的操作，請變更密碼，並將您不認得的裝置登出。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>變更密碼</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>此網站尚未記錄安全性活動。</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>最近 %days 天的登入</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失敗的嘗試</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>尚未記錄任何安全性活動。</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>下載我的登入資料</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>您的工作階段和安全性事件，以 JSON 檔案形式提供。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>密碼</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>密碼和兩步驟驗證碼</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 介面</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 介面</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>單一登入</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>在開始記錄工作階段之前登入</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>登入報告</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>誰已登入網站、帳號登入及登入失敗的頻率，以及讓使用者從所有裝置登出。適用於任何工作階段處理常式。</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>該工作階段已登出。該裝置必須重新登入。</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>已將 %login 從 %count 個工作階段登出。</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login 沒有執行中的工作階段。</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>沒有帳號使用此 ID、使用者名稱或電子郵件地址。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>這是您正在使用的工作階段。若要結束，請登出。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>該工作階段已經結束。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>頁面已過期。未進行任何變更；請再試一次。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>此網站不記錄工作階段（site.ini [UserSessionSettings] Tracking=disabled）。</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>資料表 expuser_session 不存在</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>建立該資料表後即開始記錄工作階段：php update/common/scripts/6.0/createusersessiontable.php，或 6.0.15 的資料庫更新。</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>目前和今天</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>執行中的工作階段</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>已登入的使用者</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>今日登入次數</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>今日失敗嘗試次數</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>讓使用者從所有裝置登出</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>該帳號的每個工作階段都會在下一次要求時結束，包括透過「記住我」保持的工作階段。當帳號可能落入他人之手時使用此功能，然後重設其密碼。</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>使用者 ID、使用者名稱或電子郵件地址</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>從所有裝置登出</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>目前已登入</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>顯示最近使用的 %limit 個。</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>使用者</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>裝置</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>位址</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>已登入</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>上次活動</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>此裝置</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>未記錄</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>登出</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>沒有已登入的工作階段。</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>最近 %days 天</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>登入和失敗嘗試次數是從使用者稽核日誌統計的，但該日誌不存在；新工作階段仍會統計。</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>日期</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>登入次數</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>失敗的嘗試</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>新工作階段</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>工作階段處理常式：%handler。工作階段是從資料表 expuser_session 讀取的，因此該報告適用於任何處理常式。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>您帳號的安全性警示</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>您的帳號 %login 發生了一個安全性事件：%event。如果不是您本人，請在 %url 保護您的帳號。</translation>
     </message>
 </context>
 </TS>

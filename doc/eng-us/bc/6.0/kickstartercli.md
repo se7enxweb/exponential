@@ -8,7 +8,7 @@ wizard without a browser: it reads every wizard answer from `kickstart.ini`.
 
 | | |
 |---|---|
-| What changed | New command with two subcommands: `ini` writes `kickstart.ini` from `kickstart.ini-dist`, `run` executes the wizard steps. `run` refuses the destructive `CreateSites` step without `--force`; `run --dry-run` tests the database connection and the package download without writing anything. In kickstart mode a site package that is already in `var/storage/packages/` is used as it is; only a missing one is downloaded from the remote repository. `eZPackage::import()` gains an optional fifth argument `$skipExisting`. |
+| What changed | New command with two subcommands: `ini` writes `kickstart.ini` from `kickstart.ini-dist`, `run` executes the wizard steps. `run` is a dry run unless `--apply` is given (since 28 October 2026; before, `--force` was the confirmation and a run without it stopped before `CreateSites`); `run` without `--apply` tests the database connection and the package download without writing anything. In kickstart mode a site package that is already in `var/storage/packages/` is used as it is; only a missing one is downloaded from the remote repository. `eZPackage::import()` gains an optional fifth argument `$skipExisting`. |
 | Who is affected | Anyone who installs sites. Existing callers of `eZPackage::import()` are unchanged (the new argument defaults to `false`). A `kickstart.ini` left in the project root is also read by the web setup wizard. |
 | How to check | `php bin/php/kickstarter.php run --list-steps` (changes nothing) |
 | How to fix | Nothing to fix. Remove or move `kickstart.ini` after a CLI install if the web wizard must not use it. Before an install onto another database engine, set `DatabaseImplementation` in `settings/override/site.ini.append.php` (see [`database_choice`](#database_choice)). |
@@ -35,11 +35,11 @@ You need:
 # Generate an interactive kickstart.ini
 php bin/php/console exp:kickstarter ini
 
-# Test the remote packages and configuration (safe, no --force)
+# Test the remote packages and configuration (a dry run, the default)
 php bin/php/console exp:kickstarter run --dry-run
 
-# Install the site (requires --force)
-php bin/php/console exp:kickstarter run --force
+# Install the site (requires --apply; --force is accepted with it)
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 For an unattended install with sensible defaults:
@@ -47,7 +47,7 @@ For an unattended install with sensible defaults:
 ```bash
 php bin/php/console exp:kickstarter ini --yes
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 
@@ -79,8 +79,8 @@ The `--yes` defaults are loaded from `kernel/classes/expkickstarterini.php`. The
 Executes the setup wizard steps from `welcome` through `final` using the values in `kickstart.ini`. A configured site package that is already in `var/storage/packages/` is used as it is; only a missing package (or a missing dependency) is downloaded from the remote repository. Delete the local copy first if you want a fresh download.
 
 ```bash
-php bin/php/console exp:kickstarter run
-php bin/php/kickstarter.php run
+php bin/php/console exp:kickstarter run --apply
+php bin/php/kickstarter.php run --apply
 ```
 
 #### Options
@@ -91,27 +91,28 @@ php bin/php/kickstarter.php run
 | `--stop-step=<step>` | Last step to run (default: `final`). |
 | `--dry-run` | Validate `kickstart.ini`, run `DatabaseChoice` through `SiteDetails` (database connection, package download), then stop. Writes no password, sends no mail, installs nothing. |
 | `--list-steps` | List setup steps and exit. |
-| `--force` | Required when the step range includes `CreateSites`, because `CreateSites` modifies the database and site settings. |
+| `--apply` | Install: without it every run is the dry run. It is the confirmation `CreateSites` needs, because `CreateSites` modifies the database and site settings. |
+| `--force` | Accepted together with `--apply` for scripts that passed it; on its own a usage error (exit 2) since 28 October 2026. |
 | `--help` | Show help. |
 
 The standard script options (`--allow-root-user`, `--no-colors`, `--quiet`, `--debug`, `--verbose`, `--siteaccess`, `--logfiles`) are accepted and ignored; the kickstarter always runs on the plain siteaccess.
 
-#### `CreateSites` and `--force`
+#### `CreateSites` and `--apply`
 
-`CreateSites` is the step that drops / inserts the database schema, installs the site package and required packages, and writes the `settings/siteaccess/` files. Because it is destructive, `exp:kickstarter run` will abort when this step is included and `--force` is not provided:
+`CreateSites` is the step that drops / inserts the database schema, installs the site package and required packages, and writes the `settings/siteaccess/` files. Because it is destructive, `exp:kickstarter run` installs only with `--apply`; without it the run is the dry run (`--force` alone is refused with exit code 2), which stops after `SiteDetails`. Before 28 October 2026 a run without `--force` stopped with this message; the message now names `--apply`:
 
 ```
 The CreateSites step will modify the database and site settings.
-Re-run with --force to confirm you want to install the site package.
+Re-run with --apply to confirm you want to install the site package.
 ```
 
-To run the configuration and package steps and stop before anything is installed, stop at the step before `CreateSites` (no `--force` needed):
+To run the configuration and package steps and stop before anything is installed, stop at the step before `CreateSites`:
 
 ```bash
-php bin/php/console exp:kickstarter run --stop-step=Registration
+php bin/php/console exp:kickstarter run --apply --stop-step=Registration
 ```
 
-`--stop-step=CreateSites` does the opposite: it includes `CreateSites`, so it installs (and needs `--force`), and only leaves out `Final`.
+`--stop-step=CreateSites` does the opposite: it includes `CreateSites`, so it installs (and needs `--apply`), and only leaves out `Final`.
 
 #### Resuming after a failure
 
@@ -124,7 +125,7 @@ A run cannot pick up where an earlier one stopped. The steps keep what they foun
 Any range that includes `CreateSites` must start at `Welcome`. After a failure, fix the cause in `kickstart.ini` and run the whole installation again:
 
 ```bash
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 ### Remote package handling
@@ -161,7 +162,7 @@ The dry-run path uses the same `downloadAndImportPackage()` and `downloadDependa
 php bin/php/console exp:kickstarter run --dry-run
 ```
 
-Because the stop step is `SiteDetails`, the `--force` guard is never triggered and `CreateSites` is never reached, so the database and site files are left untouched, and no password file is written and no mail sent.
+Because the stop step is `SiteDetails`, `CreateSites` is never reached, so the database and site files are left untouched, and no password file is written and no mail sent.
 
 
 ## Setup steps
@@ -430,7 +431,7 @@ A `Comments=` key, written by older versions of `exp:kickstarter ini`, is not re
 4. **Run the installer**:
 
    ```bash
-   php bin/php/console exp:kickstarter run --force
+   php bin/php/console exp:kickstarter run --apply --force
    ```
 
 5. **Verify the site is accessible** at the URL written in the summary.
@@ -443,14 +444,14 @@ A `Comments=` key, written by older versions of `exp:kickstarter ini`, is not re
 ```bash
 php bin/php/console exp:kickstarter ini --yes
 sed -i 's/^DatabaseAction=skip$/DatabaseAction=remove/' kickstart.ini
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 ### Regenerate only siteaccess and INI files
 
 ```bash
 # Adjust the relevant fields and keep DatabaseAction=skip
-php bin/php/console exp:kickstarter run --force --stop-step=CreateSites
+php bin/php/console exp:kickstarter run --apply --force --stop-step=CreateSites
 ```
 
 ### After a failed run
@@ -458,7 +459,7 @@ php bin/php/console exp:kickstarter run --force --stop-step=CreateSites
 A run cannot resume from a later step (see [Resuming after a failure](#resuming-after-a-failure)); `--start-step=SiteDetails` is refused with the step to start at. Fix `kickstart.ini` and run the installation again:
 
 ```bash
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 ### Dry-run to validate `kickstart.ini` and remote packages
@@ -483,18 +484,18 @@ php bin/php/console exp:kickstarter run --list-steps
 ```bash
 php bin/php/console exp:kickstarter ini --yes
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 The first line creates the config. The second line tests remote packages without changing anything. The third line installs.
 
 ### Do I need `--start-step` or `--stop-step` for normal use?
 
-No. They are for partial runs, and a later `--start-step` cannot resume an earlier run: it is refused when the steps before it are needed, which is always the case for a range that installs. The normal commands are `run --dry-run` and `run --force`.
+No. They are for partial runs, and a later `--start-step` cannot resume an earlier run: it is refused when the steps before it are needed, which is always the case for a range that installs. The normal commands are `run --dry-run` and `run --apply`.
 
-### Why does `run` need `--force`?
+### Why does `run` need `--apply`?
 
-`CreateSites` installs the database schema, data, and siteaccess files. `--force` confirms you want that to happen. Without it, the command stops safely.
+`CreateSites` installs the database schema, data, and siteaccess files. `--apply` confirms you want that to happen. Without it, the run is the dry run and changes nothing. Until 28 October 2026 `--force` was that confirmation; it is still accepted together with `--apply`.
 
 ### What does `--dry-run` actually do?
 
@@ -504,7 +505,7 @@ It validates `kickstart.ini`, lists the steps, then runs `DatabaseChoice` throug
 
 Nothing permanent. It downloads packages into `var/storage/packages/dryrun/` and removes that directory when `SiteTypes` finishes. It does not touch the database or `settings/siteaccess/`, writes no `var/log/initial-admin-password` and sends no mail.
 
-### What does `run --force` change?
+### What does `run --apply` change?
 
 It installs the site package and dependencies into `var/storage/packages/`, writes `settings/siteaccess/`, creates the database schema, and inserts the site data. Use `--dry-run` first to test.
 
@@ -546,7 +547,7 @@ A temporary package repository created only during `--dry-run`. `eZPackage::impo
 
 ### Is it safe for long-term use?
 
-Yes. The changes are additive. The `--dry-run` path is separate from the install path. The install path (`run --force`) still requires the `--force` guard. The `eZPackage` and `eZStepSiteTypes` APIs keep their old behavior unless the new optional flags are used.
+Yes. The changes are additive. The `--dry-run` path is separate from the install path. The install path needs `--apply` (it needed `--force` before 28 October 2026). The `eZPackage` and `eZStepSiteTypes` APIs keep their old behavior unless the new optional flags are used.
 
 ## Troubleshooting
 
@@ -560,10 +561,10 @@ php bin/php/console exp:kickstarter ini
 
 ### `The CreateSites step will modify the database and site settings`
 
-Add `--force` to confirm the database will be modified:
+Add `--apply` to confirm the database will be modified:
 
 ```bash
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 ### `eZINI` caches stale values
@@ -587,7 +588,7 @@ Languages[]=eng-US
 Then set `DatabaseAction=remove` and run the installer again:
 
 ```bash
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 ### `kickstart.ini` fields are not read

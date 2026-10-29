@@ -47,7 +47,7 @@ Konfigurationsdateien Vorrang haben.
 ## Nach einer Änderung
 
 ```bash
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 ```
 
 nach Änderungen an Templates, Stylesheets oder Einstellungen und nachdem der Inhalts-Cache geleert wurde.

@@ -574,6 +574,23 @@ CREATE INDEX IF NOT EXISTS expuser_session_user ON expuser_session ( user_id, en
 CREATE INDEX IF NOT EXISTS expuser_session_active ON expuser_session ( ended, last_active );
 
 --
+-- What a signed-in session adds to its row of expuser_session (doc/eng-us/features/6.0/user-sessions.md): the host
+-- the sign-in was made on, the country and place a local GeoIP database names (empty without one) and the second
+-- step of the sign-in (totp, email, recovery). One row per session, removed with it. Without the table the sessions
+-- are tracked as before, without these details; update/common/scripts/6.0/createusersessiontable.php creates it on
+-- any engine. Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS expuser_session_info (
+  auth_detail varchar(32) NOT NULL DEFAULT '',
+  country varchar(2) NOT NULL DEFAULT '',
+  host varchar(255) NOT NULL DEFAULT '',
+  location varchar(128) NOT NULL DEFAULT '',
+  session_id integer NOT NULL DEFAULT 0,
+  user_id integer NOT NULL DEFAULT 0,
+  PRIMARY KEY ( session_id )
+);
+CREATE INDEX IF NOT EXISTS expuser_session_info_user ON expuser_session_info ( user_id );
+
+--
 -- ezuser.login: one account per login.
 --
 -- A new installation has a unique index on ezuser.login from the kernel schema.

@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Nrụnye &gt; Ọrụ cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Ọ dịbeghị akụkụ cronjob ọ bụla gbaworo: ahịrị ọrụ, mbubata, ọkwa na ndepụta nchọ na-eche. Gbaa php bin/php/installcrontab.php --add --apply, ma ọ bụ tinye ahịrị --show na crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Nwụnye ahụ bụ ngosi ọha: onye ọ bụla nwere ike ịmara Okwuntughe onye nchịkwa ya, a pụghịkwa ịgbanwe ma ọ bụ ịtọgharịa Okwuntughe onye nchịkwa. Biko, tinye ihe nzuzo ọ bụla ebe a ọ bụghị.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akaụntụ ndị mmadụ anaghị eji ma ọ bụ ndị chọrọ nlele; gbanyụọ, meghe ma ọ bụ bupụ ha.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ndekọ nyocha ndị ọrụ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Onye gbanwere, banyere ma ọ bụ e jụrụ, n&apos;akaụntụ ọ bụla; nzacha na mbupụ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Akụkọ nbanye</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ndị banyere, nbanye na ọdịda kwa ụbọchị; wepụ onye ọrụ n&apos;ebe niile.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP n&apos;onwe ya na-ewepụ oge nnọdụ nke ihe nrụpụta PHP gafere oge (session.gc_maxlifetime), ọ bụghị ibe a ma ọ bụ akụkụ cronjob session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Akụkọ nbanye na-edepụta oge nnọdụ niile e banyere nke onye ọrụ ọ bụla ma na-ewepụ ha; ọ na-arụ ọrụ na onye njikwa oge nnọdụ ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Mepee akụkọ nbanye</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ akaụntụ gị rụọ ọrụ.</translation>
     <message>
         <source>None yet</source>
         <translation>Ọ dịbeghị</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Nbanye gị nso nso a, mgbalị dara ada na mgbanwe e mere n&apos;okwuntughe gị, adreesị ozi-e gị na mbanye nzọụkwụ abụọ.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Nbanye nso nso a, mgbalị dara ada na mgbanwe nchekwa nke akaụntụ a.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Nyochaa omume</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Nbanye dara ada: %count</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ Hụ ibe ihe ndị a chọrọ maka ozi ndị ọzọ.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Edeghị crontab ahụ (%reason). Tinye ahịrị ndị a na crontab nke onye ọrụ saịtị ahụ na-agba dịka ya, ma ọ bụghị ya ahịrị ọrụ, mbubata, ọkwa na ndepụta nchọ agaghị agba mgbe ọ bụla:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>A na-ewunyeghachi ya site na Kickstarter (%file, mgbe ahụ php bin/php/kickstarter.php run --apply) ma ọ bụ site na nwụnye ọhụrụ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Njem mel jụrụ ozi %count n&apos;ọgba ikpeazụ. Lelee Sava mel na site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ihe omume %count na-eche, a dekọghịkwa ọsọ ọ bụla nke cronjob ọkwa. Tinye akụkụ cronjob “frequent” na crontab, ma ọ bụ gbaa exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Choose another site or section with the node picker</source>
         <translation>Họrọ saịtị ma ọ bụ ngalaba ọzọ site na ihe nhọrọ Nọdụ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Naanị onye nchịkwa sistemụ nwere ike ịgbanwe onye nwe ya: gbaa ./console exp:content-check --fix-permissions --apply dị ka root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>empty</source>
         <translation>efu</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Isi mbinye aka karịrị otu afọ: gbanwee ya site na exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>not sent</source>
         <translation>ezigaghị</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob ọkwa na-edekọ ọsọ ya ọ bụla ebe a. Tinye akụkụ frequent na crontab, ma ọ bụ gbaa exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Jiri njikwa iwu: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>None.</source>
         <translation>Enweghị.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>site na ngwa authenticator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>site na koodu e zitere na ozi-e</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>site na koodu mgbake</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>site na igodo nbanye</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>site na akaụntụ mpụga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>E gosipụtara ya dị ka netwọk ya; a na-echekwa adreesị ahụ dị ka ntọala nchekwa data nke saịtị si kwuo.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Edeghị ya</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ebe</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ihe dị ka</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Manage devices</source>
         <translation>Jikwaa ngwaọrụ</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>site na ngwa authenticator</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>site na koodu e zitere na ozi-e</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>site na koodu mgbake</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>site na igodo nbanye</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>site na akaụntụ mpụga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Edeghị ya</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ebe</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ihe dị ka</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>View the sessions of this user</source>
         <translation>Lee oge nnọdụ nke onye ọrụ a</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>E jiri akaụntụ gị %login na %site banye ugbu a site n&apos;ebe ọ na-esiteghị banye n&apos;oge na-adịbeghị anya:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ebe dị ka</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser na %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Akụkọ nbanye</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Open the page</source>
         <translation>Mepee ibe ahụ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ruo %to n&apos;ime %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Aha nbanye ma ọ bụ ID onye ọrụ: akaụntụ ihe omume ahụ metụtara ma ọ bụ onye ọrụ mere ihe ahụ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaụntụ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Mgbe e mesịrị</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Nsonaazụ ọ bụla</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Tupu</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Onye mere ya</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Hichapụ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Emechara</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>A na-echekwa ihe omume ruo ụbọchị %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>A na-echekwa ihe omume ruo mgbe e ji aka wepụ ha.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ihe omume</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Omume ọ bụla</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ihe omume niile nke akaụntụ a</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Bupụ ndepụta ahụ dị ka CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Adaala</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Site na</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Mee ka ndepụta dị warara</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ọ dịghị ihe omume dabara.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>N&apos;otu ibe</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Agbanyụọla ndekọ na audit.ini ([UserAuditSettings] UserAudit); ndepụta ahụ na-egosi ihe e dekọrọ na mbụ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>E jụrụ ya</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nsonaazụ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Gosi</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tebụl nke ndekọ nyocha ndị ọrụ adịghị. Mepụta ya site na php update/common/scripts/6.0/createuseraudittable.php; ruo mgbe ahụ, faịlụ nyocha na-echekwa ihe omume ọ bụla.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ibe a chọrọ ebe nchekwa data SQL; ọ dịghị na MongoDB. Faịlụ nyocha na-echekwa ihe omume ọ bụla.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ruo</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ndekọ nyocha ndị ọrụ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Onye ọrụ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Mgbe</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ebe</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Onye gbanwere, mepụtara, kpọghere, gbanyụrụ, kpaghaara ma ọ bụ wepụrụ akaụntụ ọ bụla, onye banyere ma ọ bụ e jụrụ, na ọrụ ndị e kenyere: otu ahịrị maka ihe omume ọ bụla, ya na ubi ndị ahụ tupu na mgbe mgbanwe. A naghị edekọ okwuntughe na ihe nzuzo ma ọlị.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>otu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistemụ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>amaghị</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Chekwaa akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>E jiri koodu mgbake banye n&apos;akaụntụ gị %login na %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>E jiri koodu mgbake</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaụntụ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adreesị dị ka</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Rịọ okwuntughe ọhụrụ ka ị banyeghachi, ma ọ bụ kpọtụrụ ndị nchịkwa saịtị ahụ.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Rịọ okwuntughe ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Koodu mgbake ọ bụla na-arụ ọrụ otu ugboro. Ọ bụrụ na ekwentị gị furu efu, hazie ngwa authenticator gị ọzọ ma debe koodu mgbake ọhụrụ ahụ n&apos;ebe nchekwa.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Mgbalị nbanye dara ada n&apos;akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Site ugbu a gawa, nbanye ga-arịọ koodu tinyere okwuntughe gị. Ọ bụrụ na ọ bụ gị mere nke a, ọ dịghị ihe ị ga-eme.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ọ bụrụ na ọ bụ gị ma i chefuru okwuntughe gị, rịọ nke ọhụrụ. Ọ bụrụ na ọ bụghị gị, họrọ okwuntughe siri ike karị ma gbanye mbanye nzọụkwụ abụọ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ọ bụrụ na ọ bụghị gị mere nke a, mmadụ nwere ike ịma okwuntughe gị: gbanwee ya ugbu a ma lelee ebe akaụntụ gị banyere.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Koodu mgbake fọdụrụ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Nyochaa ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Ịdọ aka na ntị nchekwa</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Mmadụ nwara ịbanye n&apos;akaụntụ gị %login na %site jiri okwuntughe na-ezighị ezi ugboro %count n&apos;usoro.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Ihe omume nchekwa mere n&apos;akaụntụ gị %login na %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Nke a bụ ịdọ aka na ntị nchekwa gbasara akaụntụ gị. A na-eziga ya maka mgbanwe ọ bụla dị otu a, enweghịkwa ike ịgbanyụ ya.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oge</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Agbanyụrụ mbanye nzọụkwụ abụọ maka akaụntụ gị %login na %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Agbanyụrụ mbanye nzọụkwụ abụọ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Agbanyere mbanye nzọụkwụ abụọ maka akaụntụ gị %login na %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Agbanyere mbanye nzọụkwụ abụọ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Ekpochiri akaụntụ gị %login na %site mgbe ọtụtụ nbanye dara ada.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ugbu a, ọ bụ naanị okwuntughe gị na-echekwa akaụntụ gị. Ọ bụrụ na ọ bụghị gị mere nke a, gbanyeghachi mbanye nzọụkwụ abụọ mgbe i gbanwechara okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Ekpochiri akaụntụ gị</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Omume nchekwa nke %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Abanyela</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mgbalị nbanye dara ada</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Apụọla</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ewepụrụ oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Nbanye site na ngwaọrụ ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Nbanye site n&apos;ebe ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ekwenyela njirimara (“Kwenye na ọ bụ gị”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Nlele njirimara dara ada</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ejiri igodo nbanye banye</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Nbanye site na igodo nbanye dara ada</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ajụrụ nbanye: koodu nzọụkwụ abụọ adịghị ma ọ bụ ezighị ezi</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodu nzọụkwụ abụọ ezighị ezi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ekpochiri akaụntụ mgbe nbanye dara ada</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Emepere akaụntụ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Agbanwere okwuntughe</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Mgbanwe okwuntughe dara ada</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Edoghachiri okwuntughe</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Arịọrọ okwuntughe ọhụrụ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Agbanwere adreesị ozi-e</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Agbanwere aha onye ọrụ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Mbanye nzọụkwụ abụọ gbanyere</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Mbanye nzọụkwụ abụọ gbanyụrụ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Ejiri koodu mgbake</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodu mgbake ọhụrụ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Emepụtara okwuntughe ngwa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Akagburu okwuntughe ngwa</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Agbakwunyere igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ewepụrụ igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaụntụ kpọghere</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaụntụ gbanyụrụ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ha niile</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Nbanye na oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mgbanwe akaụntụ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Chọrọ nlebara anya</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>site n&apos;aka gị</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>site n&apos;aka onye ọrụ ahụ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>site n&apos;aka %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Usoro</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Nchọgharị</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistemụ arụmọrụ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ngwaọrụ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Ebe</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Obodo</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Nke ọ bụ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Ụzọ ozi</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mgbalị dara ada</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Koodu fọdụrụ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Onye njikwa nbanye</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Omume nchekwa nke %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Nbanye na mgbanwe na nchekwa akaụntụ gị. Ọ bụrụ na ị hụ ihe ị na-emeghị, gbanwee okwuntughe gị ma wepụ ngwaọrụ ị na-amataghị.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Nbanye na mgbanwe na nchekwa akaụntụ a.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Gbanwee okwuntughe</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Laghachi n&apos;akaụntụ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>A naghị edekọ omume nchekwa</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>A na-agụ ya site na ndekọ nyocha ndị ọrụ, nke tebụl ya expuser_audit na-adịghị ma ọ bụ na-akwadoghị na ebe nchekwa data a. Gbaa php update/common/scripts/6.0/createuseraudittable.php, ma ọ bụ mmelite ebe nchekwa data nke 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ụbọchị %days gara aga</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Nbanye n&apos;ime ụbọchị %days gara aga</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Omume nchekwa nso nso a</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Gosi</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>dara ada</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ajụrụ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Edebeghị omume nchekwa ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>A na-edebe ihe omume nchekwa ruo ụbọchị %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>A na-edebe ihe omume nchekwa ruo mgbe onye nchịkwa wepụrụ ha.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Budata data nbanye m</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Oge nnọdụ gị na ihe omume nchekwa gị dị ka faịlụ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Abanyela</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mgbalị nbanye dara ada</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Apụọla</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ewepụrụ oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Nbanye site na ngwaọrụ ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Nbanye site n&apos;ebe ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ekwenyela njirimara (“Kwenye na ọ bụ gị”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Nlele njirimara dara ada</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ejiri igodo nbanye banye</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Nbanye site na igodo nbanye dara ada</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ajụrụ nbanye: koodu nzọụkwụ abụọ adịghị ma ọ bụ ezighị ezi</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodu nzọụkwụ abụọ ezighị ezi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ekpochiri akaụntụ mgbe nbanye dara ada</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Emepere akaụntụ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Agbanwere okwuntughe</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Mgbanwe okwuntughe dara ada</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Edoghachiri okwuntughe</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Arịọrọ okwuntughe ọhụrụ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Agbanwere adreesị ozi-e</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Agbanwere aha onye ọrụ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Mbanye nzọụkwụ abụọ gbanyere</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Mbanye nzọụkwụ abụọ gbanyụrụ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Ejiri koodu mgbake</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodu mgbake ọhụrụ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Emepụtara okwuntughe ngwa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Akagburu okwuntughe ngwa</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Agbakwunyere igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ewepụrụ igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaụntụ kpọghere</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaụntụ gbanyụrụ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ha niile</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Nbanye na oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mgbanwe akaụntụ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Chọrọ nlebara anya</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Omume nchekwa</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Omume nchekwa nke %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Nbanye na mgbanwe na nchekwa akaụntụ gị. Ọ bụrụ na ị hụ ihe ị na-emeghị, gbanwee okwuntughe gị ma wepụ ngwaọrụ ị na-amataghị.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Gbanwee okwuntughe</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>A naghị edekọ omume nchekwa na saịtị a ugbu a.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Nbanye n&apos;ime ụbọchị %days gara aga</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mgbalị dara ada</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Edebeghị omume nchekwa ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Budata data nbanye m</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Oge nnọdụ gị na ihe omume nchekwa gị dị ka faịlụ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Okwuntughe</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Okwuntughe na koodu nzọụkwụ abụọ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ntanetị REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ntanetị SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Otu nbanye maka ihe niile (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Abanyela tupu a malite idekọ oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Akụkọ nbanye</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ndị banyere na saịtị, ugboro ole akaụntụ na-abanye ma na-ada, na iwepụ onye ọrụ n&apos;ebe niile. Ọ na-arụ ọrụ na onye njikwa oge nnọdụ ọ bụla.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Ewepụrụ oge nnọdụ ahụ. Ngwaọrụ ahụ ga-abanyeghachi.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Ewepụrụ %login n&apos;oge nnọdụ %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login enweghị oge nnọdụ na-aga n&apos;ihu.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ọ dịghị akaụntụ nwere ID ahụ, aha onye ọrụ ahụ ma ọ bụ adreesị ozi-e ahụ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Nke a bụ oge nnọdụ ị na-eji. Iji kwụsị ya, pụọ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Oge nnọdụ ahụ akwụsịlarị.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Oge ibe ahụ agafeela. Ọ dịghị ihe agbanwere; biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>A naghị edekọ oge nnọdụ na saịtị a (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tebụl expuser_session adịghị</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>A ga-edekọ oge nnọdụ ozugbo e mepụtara ya: php update/common/scripts/6.0/createusersessiontable.php, ma ọ bụ mmelite ebe nchekwa data nke 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Ugbu a na taa</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Oge nnọdụ na-aga n&apos;ihu</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Ndị ọrụ banyere</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Nbanye taa</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Mgbalị dara ada taa</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Wepụ onye ọrụ n&apos;ebe niile</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Oge nnọdụ ọ bụla nke akaụntụ ahụ na-akwụsị n&apos;arịrịọ ya na-esote, tinyere ndị “Cheta m” debere. Jiri ya mgbe akaụntụ nwere ike ịnọ n&apos;aka na-ezighị ezi; mgbe ahụ doghachi okwuntughe ya.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID onye ọrụ, aha onye ọrụ ma ọ bụ adreesị ozi-e</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Pụọ ebe niile</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Abanyela ugbu a</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>A na-egosi %limit ndị e jiri mee ihe n&apos;oge na-adịbeghị anya.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Onye ọrụ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ngwaọrụ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreesị</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Abanyela</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ọrụ ikpeazụ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ngwaọrụ a</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Edeghị ya</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Pụọ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ọ dịghị oge nnọdụ banyere.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ụbọchị %days gara aga</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>A na-agụ nbanye na mgbalị dara ada site na ndekọ nyocha ndị ọrụ, nke na-adịghị; a na-agụ oge nnọdụ ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ụbọchị</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Nbanye</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mgbalị dara ada</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Oge nnọdụ ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Onye njikwa oge nnọdụ: %handler. A na-agụ oge nnọdụ site na tebụl expuser_session, ya mere akụkọ ahụ na-arụ ọrụ na onye njikwa ọ bụla.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Ịdọ aka na ntị nchekwa maka akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Ihe omume nchekwa mere n&apos;akaụntụ gị %login: %event. Ọ bụrụ na ọ bụghị gị, chekwaa akaụntụ gị na %url.</translation>
     </message>
 </context>
 </TS>

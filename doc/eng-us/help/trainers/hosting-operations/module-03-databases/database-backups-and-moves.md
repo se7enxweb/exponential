@@ -106,7 +106,7 @@ the installation's `var/` for the exercise.
 
    ```bash
    php bin/php/ezcache.php --clear-all
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 9. Open the folder in the administration and check its name.

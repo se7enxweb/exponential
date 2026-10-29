@@ -274,8 +274,8 @@ eZOperationHandler::execute( 'content', 'updateobjectstate',
     array( 'object_id' => $objectID, 'state_id_list' => array( $stateID ) ) );
 ```
 
-`./console exp:adddefaultstates --allow-root-user` gibt jedem Objekt, dem in einer Gruppe ein Zustand fehlt, den
-Standard dieser Gruppe. Es ist ein Reparaturwerkzeug: für per SQL importierte Objekte oder eine Gruppe, deren
+`./console exp:adddefaultstates --allow-root-user` listet je Gruppe, wie vielen Objekten ein Zustand daraus fehlt (ein
+Probelauf); `./console exp:adddefaultstates --apply --allow-root-user` gibt jedem davon den Standard dieser Gruppe. Es ist ein Reparaturwerkzeug: für per SQL importierte Objekte oder eine Gruppe, deren
 Verknüpfungen von Hand gelöscht wurden.
 
 ## 8. Zustände in Rollen und Richtlinien
@@ -423,7 +423,7 @@ entfernenden Zustände mit ihren Objekten und sagt, was geschehen wird; dann ent
 - Objekte in einem entfernten Zustand wechseln in den **ersten Zustand, der bleibt**, in der Reihenfolge der Gruppe.
   Wenn Sie den Standard entfernen, wird der nächste Zustand zum Standard.
 - Das Entfernen aller Zustände lässt die Objekte ohne Zustand in der Gruppe, und neue Objekte erhalten keinen, bis
-  wieder ein Zustand hinzugefügt wird (`exp:adddefaultstates` füllt die Lücken danach).
+  wieder ein Zustand hinzugefügt wird (`exp:adddefaultstates --apply` füllt die Lücken danach).
 - Richtlinien, deren Limitierungen `StateGroup_...` oder `NewState` einen entfernten Zustand nennen, treffen ihn nicht
   mehr: Prüfen Sie vorher die Rollen, die auf der Seite der Gruppe aufgeführt sind.
 
@@ -452,7 +452,7 @@ Eine Gruppe, die keine Richtlinie verwendet, ändert nichts.
 | „Die Reihenfolge konnte nicht gespeichert werden“ | Seit dem Öffnen der Seite wurde ein Zustand hinzugefügt oder entfernt | Sehen Sie sich die Liste erneut an und speichern Sie noch einmal |
 | Ein Fetch mit `attribute_filter` `state` liefert nichts | Er braucht die **ID** des Zustands, nicht seinen Bezeichner | Nehmen Sie die ID von der Seite des Zustands |
 | Eine Richtlinie führt noch die Limitierung einer entfernten Gruppe | Sie wurde mit dieser Limitierung gespeichert und behält sie | Bearbeiten Sie die Richtlinie und entfernen Sie die Limitierung |
-| Durch einen Import angelegte Objekte haben in einer Gruppe keinen Zustand | Sie wurden am Kernel vorbei eingefügt | `./console exp:adddefaultstates --allow-root-user` |
+| Durch einen Import angelegte Objekte haben in einer Gruppe keinen Zustand | Sie wurden am Kernel vorbei eingefügt | `./console exp:adddefaultstates --apply --allow-root-user` |
 | Inhalte bleiben gesperrt | Der Zustand von `ez_lock` wurde nicht freigegeben | `./console cron:unlock --allow-root-user` |
 
 ## 15. Referenz
@@ -496,7 +496,7 @@ entfernt es, wie es die eigene Schaltfläche der Bestätigung tut.
 
 | Was | Wo |
 |---|---|
-| Objekten mit fehlenden Zuständen ihren Standard geben | `./console exp:adddefaultstates` |
+| Objekten mit fehlenden Zuständen ihren Standard geben | `./console exp:adddefaultstates --apply` |
 | Gesperrte Objekte freigeben | `./console cron:unlock`, Cronjob-Teil `unlock` |
 | Teilbaumgröße, die in der Anfrage erledigt wird | `content.ini [ContentJobSettings] NowLimit` |
 | Workflow-Trigger bei Zustandsänderungen | `workflow.ini [OperationSettings] AvailableOperationList[]=content_updateobjectstate` |

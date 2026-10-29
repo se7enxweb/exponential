@@ -76,10 +76,10 @@ class Frankenphp extends \Exponential\Runnable\Command
             array_slice( $_SERVER['argv'], 1 ),
             array( 'engine', 'from', 'keep-global', 'siteaccess', 'login', 'password' ),
             array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'allow-root-user', 'debug',
-                   'all', 'force', 'check', 'trust-github-digest', 'https', 'no-https' ) );
+                   'all', 'force', 'check', 'trust-github-digest', 'https', 'no-https', 'apply', 'dry-run' ) );
 
         $options = $this->options(
-            '[json][engine:][all][force][check][trust-github-digest][from:][keep-global:][https][no-https]',
+            '[json][engine:][all][force][check][trust-github-digest][from:][keep-global:][https][no-https][apply][dry-run]',
             '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',
                    'engine' => 'override the frankenphp default for this command only (php, qbix, or several)',
@@ -87,7 +87,10 @@ class Frankenphp extends \Exponential\Runnable\Command
                    'from' => 'install: take the binary from this file instead of downloading it',
                    'force' => 'install: download again even if the binary is already there',
                    'check' => 'install: re-hash the installed binary against its SHA-256',
-                   'trust-github-digest' => 'install: accept the digest GitHub publishes when no Sha256 is pinned' ),
+                   'trust-github-digest' => 'install: accept the digest GitHub publishes when no Sha256 is pinned',
+                   'apply' => 'the commands that write (config set|unset, cache clear, install ...): make the change; '
+                            . 'without it they are a dry run, as with exp:velocity',
+                   'dry-run' => 'the default of the commands that write; passed on to exp:velocity' ),
             $fpArgs );
         $options['arguments'] = array_merge( $options['arguments'], $fpTail );
         $script->initialize();
@@ -110,7 +113,8 @@ class Frankenphp extends \Exponential\Runnable\Command
             $forward[] = '--all';
         if ( $asJson )
             $forward[] = '--json';
-        foreach ( array( 'force', 'check', 'trust-github-digest', 'https', 'no-https' ) as $flag )
+        // --apply and --dry-run go to the controller, which refuses the two together (exit 2)
+        foreach ( array( 'force', 'check', 'trust-github-digest', 'https', 'no-https', 'apply', 'dry-run' ) as $flag )
             if ( !empty( $options[$flag] ) )
                 $forward[] = '--' . $flag;
         if ( !empty( $options['from'] ) )

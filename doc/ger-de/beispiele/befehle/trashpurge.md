@@ -2,14 +2,14 @@
 title: exp:trashpurge
 audience: developer, admin
 category: examples
-summary: Löscht alle Objekte im Papierkorb endgültig.
+summary: Löscht alle Objekte im Papierkorb endgültig (Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:trashpurge, trashpurge, console, command, CLI, trashpurge.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:trashpurge
 
-Löscht alle Objekte im Papierkorb endgültig.
+Löscht alle Objekte im Papierkorb endgültig (Probelauf, außer mit --apply).
 
 Skript `bin/php/trashpurge.php`, Code in `kernel/private/classes/commands/trashpurge.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -25,14 +25,20 @@ Was `--help` ausgibt, so wie der Befehl es schreibt:
 ```text
 Empty Exponential trash.
 Permanently deletes all objects in the trash.
+Without --apply nothing is deleted: the script counts and lists what it would purge. --dry-run
+means the same as no flag; --apply together with --dry-run is a usage error (exit 2). The cronjob
+part trashpurge purges as before.
 
 ./bin/php/trashpurge.php
+./bin/php/trashpurge.php --apply
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
+| `--apply` |  | Die Objekte löschen (Standard ist ein Probelauf, der sie auflistet und nichts löscht) |
+| `--dry-run` |  | Der Standard: zählen und auflisten, was gelöscht würde, nichts ändern |
 | `--iteration-sleep` | erforderlich | Sekunden Pause zwischen den Iterationen beim Löschen, auch als Dezimalzahl. Standard ist eine Sekunde. |
 | `--iteration-limit` | erforderlich | Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. Standard ist 100. |
 | `--memory-monitoring` |  | Wenn gesetzt, wird der Speicherverbrauch in var/log/trashpurge.log protokolliert. |

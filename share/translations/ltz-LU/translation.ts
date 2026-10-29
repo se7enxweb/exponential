@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Konfiguratioun &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Nach keen Cronjob-Deel ass gelaf: d&apos;Aufgabeschlaang, d&apos;Importer, d&apos;Notifikatiounen an de Sichindex waarden. Féiert php bin/php/installcrontab.php --add --apply aus, oder setzt d&apos;Zeile vun --show an d&apos;Crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Dës Installatioun ass eng ëffentlech Demo: Jiddereen dierf hiert Administrateurpasswuert kennen, an Administrateurpassweieren kënnen net geännert oder zréckgesat ginn. Gitt hei näischt Privates an.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Är Geräter</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konten, déi keen notzt oder déi Opmierksamkeet brauchen; desaktivéieren, entspären oder exportéieren.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit-Protokoll vun de Benotzer</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Wien geännert huet, sech ugemellt huet oder ofgewise gouf, pro Kont; filteren an exportéieren.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Umeldungsbericht</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Wien ugemellt ass, Umeldungen a Feeler pro Dag; e Benotzer iwwerall ofmellen.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Offgelaf Sessioune vum PHP-Handler hëlt PHP selwer ewech (session.gc_maxlifetime), net dës Säit oder den Cronjob-Deel session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Déi ugemellt Sessioune vun alle Benotzer ginn am Umeldungsbericht opgelëscht an ofgemellt; hie funktionéiert mat all Sessiouns-Handler.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Umeldungsbericht opmaachen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ E-Mail-Adress geschéckt. Follegt den Instruktiounen an där E-Mail, fir
     <message>
         <source>None yet</source>
         <translation>Nach keen</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Är lescht Umeldungen, net erfollegräich Versich an Ännerungen un Ärem Passwuert, Ärer E-Mail-Adress an der Umeldung a zwee Schrëtt.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Déi lescht Umeldungen, net erfollegräich Versich a Sécherheetsännerunge vun dësem Kont.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Aktivitéit kontrolléieren</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count net erfollegräich Umeldungen</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Weider Informatiounen fannt Dir op der Säit mat den Ufuerderungen.</translation
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>De Crontab gouf net geschriwwen (%reason). Setzt dës Zeilen am Crontab vum Benotzer derbäi, ënner deem de Site leeft, soss lafen d'Waardeschlaang, d'Importer, d'Notifikatiounen an de Sichindex ni:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Nei installéiert gëtt mam Kickstarter (%file, duerno php bin/php/kickstarter.php run --apply) oder mat enger frëscher Installatioun.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>De Mail-Transport huet am leschte Laf %count Messagen refuséiert. Préift de Mailserver an d'site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count Evenementer waarden an et ass kee Laf vum Notifikatiouns-Cronjob opgeholl. Setzt de Cronjob-Deel &quot;frequent&quot; an d&apos;Crontab, oder féiert exp:notification:run --apply aus.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Eng aner Websäit oder Sektioun mat der Knuetenauswiel wielen</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Nëmmen de Systemadministrateur kann de Besëtzer änneren: féiert ./console exp:content-check --fix-permissions --apply als root aus.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>empty</source>
         <translation>eidel</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>De Signatursschlëssel ass méi wéi ee Joer al: wiesselt en mat exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>not sent</source>
         <translation>net geschéckt</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>De Notifikatiouns-Cronjob hält hei all seng Läf fest. Setzt den Deel frequent an d&apos;Crontab, oder féiert exp:notification:run --apply aus.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Benotzt d&apos;Konsol: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>None.</source>
         <translation>Keng.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>mat enger Authenticator-App</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>mat engem Code per E-Mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>mat engem Recuperatiounscode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>mat engem Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>mat engem externe Kont</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Als säi Netz gewisen; d&apos;Adress gëtt esou gespäichert, wéi d&apos;Dateschutzastellunge vun der Websäit et virgesinn.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Net erfaasst</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Plaz</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ongeféier</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Manage devices</source>
         <translation>Apparater verwalten</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>mat enger Authenticator-App</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>mat engem Code per E-Mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>mat engem Recuperatiounscode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>mat engem Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>mat engem externe Kont</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Net erfaasst</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Plaz</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ongeféier</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>View the sessions of this user</source>
         <translation>D'Sessioune vun dësem Benotzer ukucken</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Mat Ärem Kont %login op %site huet sech elo grad een vun enger Plaz aus ugemellt, vun där en sech an der leschter Zäit net ugemellt huet:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ongeféier Plaz</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ënner %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Umeldungsbericht</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Open the page</source>
         <translation>D'Säit opmaachen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to vun %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>E Login oder eng Benotzer-ID: de Kont, ëm deen et beim Evenement gaangen ass, oder de Benotzer, deen gehandelt huet.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aktioun</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Duerno</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>All Resultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Virdrun</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Zrécksetzen</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Erleedegt</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Evenementer ginn %days Deeg gehalen.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Evenementer gi gehalen, bis se mat der Hand ewechgeholl ginn.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Evenementer</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>All Aktioun</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>All Evenementer vun dësem Kont</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lëscht als CSV exportéieren (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gescheitert</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lëscht agrenzen</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Keen Evenement passt.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Säit</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>D&apos;Opzeechnung ass an audit.ini ausgeschalt ([UserAuditSettings] UserAudit); d&apos;Lëscht weist, wat virdru opgezeechent gouf.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ofgewisen</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>D&apos;Tabell vum Audit-Protokoll vun de Benotzer feelt. Leet se mat php update/common/scripts/6.0/createuseraudittable.php un; bis dohin halen d&apos;Audit-Fichieren all Evenement.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Dës Säit brauch eng SQL-Datebank; mat MongoDB ass se net disponibel. D&apos;Audit-Fichieren halen all Evenement.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit-Protokoll vun de Benotzer</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benotzer</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wéini</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wou</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Wien e Kont geännert, ugeluecht, aktivéiert, desaktivéiert, verréckelt oder ewechgeholl huet, wien sech ugemellt huet oder ofgewise gouf, a wéi eng Rollen zougewise goufen: eng Zeil pro Evenement, mat de Felder virdrun an duerno. Passwierder a Geheimnisser ginn ni opgezeechent.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>Grupp</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>de System</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekannt</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kont ofsécheren</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Mat engem Recuperatiounscode gouf sech op Ärem Kont %login op %site ugemellt.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>E Recuperatiounscode gouf benotzt</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Ongeféier Adress</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Frot en neit Passwuert un, fir Iech erëm unzemellen, oder wend Iech un d&apos;Administrateuren vun der Websäit.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Neit Passwuert ufroen</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>All Recuperatiounscode funktionéiert eng Kéier. Wann Dir Ären Telefon verluer hutt, riicht Är Authenticator-App nei an a bewaart déi nei Recuperatiounscoden op enger sécherer Plaz.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Net erfollegräich Umeldungsversich op Ärem Kont</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Vun elo un freet d&apos;Umeldung nieft Ärem Passwuert no engem Code. Wann Dir dat waart, musst Dir näischt maachen.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Wann Dir et waart an Äert Passwuert vergiess hutt, frot en neit un. Wann net, wielt e méi staarkt Passwuert a schalt d&apos;Umeldung a zwee Schrëtt an.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Wann Dir dat net waart, kennt een vläicht Äert Passwuert: ännert et elo a kontrolléiert, wou Äre Kont ugemellt ass.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Verbleiwend Recuperatiounscoden</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Är Geräter kontrolléieren</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Sécherheetswarnung</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Een huet probéiert, sech %count Mol hannereneen mat engem falsche Passwuert op Ärem Kont %login op %site unzemellen.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Op Ärem Kont %login op %site gouf et e Sécherheetsevenement.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Dëst ass eng Sécherheetswarnung iwwer Äre Kont. Si gëtt bei all esou Ännerung geschéckt a kann net ausgeschalt ginn.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zäit</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>D&apos;Umeldung a zwee Schrëtt gouf fir Äre Kont %login op %site ausgeschalt.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>D&apos;Umeldung a zwee Schrëtt gouf ausgeschalt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>D&apos;Umeldung a zwee Schrëtt gouf fir Äre Kont %login op %site ageschalt.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>D&apos;Umeldung a zwee Schrëtt gouf ageschalt</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Äre Kont %login op %site gouf no ze vill net erfollegräiche Umeldunge gespaart.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Äre Kont ass elo nëmmen nach duerch Äert Passwuert geschützt. Wann Dir dat net waart, schalt d&apos;Umeldung a zwee Schrëtt erëm an, nodeems Dir Äert Passwuert geännert hutt.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Äre Kont gouf gespaart</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sécherheetsaktivitéit vun %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ugemellt</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Net erfollegräichen Umeldungsversuch</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ofgemellt</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiounen ofgemellt</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Umeldung vun engem neien Gerät</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Umeldung vun enger neier Plaz</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitéit bestätegt (&quot;Bestätegt, datt Dir et sidd&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitéitskontroll feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mat engem Passkey ugemellt</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Umeldung mat Passkey feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Umeldung refuséiert: Code vun der Umeldung a zwee Schrëtt feelt oder ass falsch</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Falsche Code vun der Umeldung a zwee Schrëtt</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont no net erfollegräiche Umeldunge gespaart</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont entspaart</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Passwuert geännert</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Passwuertännerung feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Passwuert zréckgesat</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Neit Passwuert ugefrot</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-Mail-Adress geännert</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Benotzernumm geännert</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Umeldung a zwee Schrëtt ageschalt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Umeldung a zwee Schrëtt ausgeschalt</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Recuperatiounscode benotzt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nei Recuperatiounscoden</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-Passwuert erstallt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-Passwuert widderruff</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey derbäigesat</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey ewechgeholl</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont aktivéiert</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont desaktivéiert</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Umeldungen a Sessiounen</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontännerungen</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Brauch Opmierksamkeet</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>vun Iech</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>vum Benotzer</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>vun %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Methode</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Webbrowser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Betribssystem</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gerät</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Uert</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiounen</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Wéi eng</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Net erfollegräich Versich</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Verbleiwend Coden</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Umeldungs-Handler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sécherheetsaktivitéit vun %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Umeldungen an Ännerungen un der Sécherheet vun Ärem Kont. Wann Dir eppes gesitt, wat Dir net gemaach hutt, ännert Äert Passwuert a mellt d&apos;Geräter of, déi Dir net erkennt.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Umeldungen an Ännerungen un der Sécherheet vun dësem Kont.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Är Geräter</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Passwuert änneren</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Zréck bei de Kont</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>D&apos;Sécherheetsaktivitéit gëtt net opgeholl</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Si gëtt aus dem Audit-Protokoll vun de Benotzer gelies, deem seng Tabell expuser_audit feelt oder op dëser Datebank net ënnerstëtzt gëtt. Féiert php update/common/scripts/6.0/createuseraudittable.php aus, oder den Datebank-Update vun 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Déi lescht %days Deeg</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Umeldungen an de leschten %days Deeg</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Rezent Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>feelgeschloen</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refuséiert</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nach keng Sécherheetsaktivitéit opgeholl.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Sécherheetsevenementer ginn %days Deeg laang gespäichert.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Sécherheetsevenementer ginn esou laang gespäichert, bis en Administrateur se ewechhëlt.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Meng Umeldungsdaten eroflueden</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Är Sessiounen a Sécherheetsevenementer als JSON-Fichier.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ugemellt</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Net erfollegräichen Umeldungsversuch</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ofgemellt</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiounen ofgemellt</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Umeldung vun engem neien Gerät</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Umeldung vun enger neier Plaz</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitéit bestätegt (&quot;Bestätegt, datt Dir et sidd&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitéitskontroll feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mat engem Passkey ugemellt</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Umeldung mat Passkey feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Umeldung refuséiert: Code vun der Umeldung a zwee Schrëtt feelt oder ass falsch</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Falsche Code vun der Umeldung a zwee Schrëtt</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont no net erfollegräiche Umeldunge gespaart</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont entspaart</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Passwuert geännert</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Passwuertännerung feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Passwuert zréckgesat</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Neit Passwuert ugefrot</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-Mail-Adress geännert</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Benotzernumm geännert</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Umeldung a zwee Schrëtt ageschalt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Umeldung a zwee Schrëtt ausgeschalt</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Recuperatiounscode benotzt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nei Recuperatiounscoden</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-Passwuert erstallt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-Passwuert widderruff</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey derbäigesat</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey ewechgeholl</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont aktivéiert</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont desaktivéiert</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Umeldungen a Sessiounen</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontännerungen</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Brauch Opmierksamkeet</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sécherheetsaktivitéit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sécherheetsaktivitéit vun %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Umeldungen an Ännerungen un der Sécherheet vun Ärem Kont. Wann Dir eppes gesitt, wat Dir net gemaach hutt, ännert Äert Passwuert a mellt d&apos;Geräter of, déi Dir net erkennt.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Är Geräter</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Passwuert änneren</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>D&apos;Sécherheetsaktivitéit gëtt op dëser Websäit nach net opgeholl.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Umeldungen an de leschten %days Deeg</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Net erfollegräich Versich</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nach keng Sécherheetsaktivitéit opgeholl.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Meng Umeldungsdaten eroflueden</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Är Sessiounen a Sécherheetsevenementer als JSON-Fichier.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Passwuert</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Passwuert a Code vun der Umeldung a zwee Schrëtt</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-Interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-Interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Eemol-Umeldung (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ugemellt, ier Sessiounen opgeholl goufen</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Umeldungsbericht</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Wien op der Websäit ugemellt ass, wéi dacks Konte sech umellen an dobäi scheiteren, an e Benotzer iwwerall ofmellen. Funktionéiert mat all Sessiouns-Handler.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>D&apos;Sessioun gouf ofgemellt. De Gerät muss sech nei umellen.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login gouf vun %count Sessiounen ofgemellt.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login hat keng lafend Sessioun.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Kee Kont huet dës ID, dësen Benotzernumm oder dës E-Mail-Adress.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dat ass d&apos;Sessioun, déi Dir elo grad benotzt. Fir se ze beenden, mellt Iech of.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Dës Sessioun war scho beendegt.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>D&apos;Säit war ofgelaf. Et gouf näischt geännert; probéiert w.e.g. nach eng Kéier.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Op dëser Websäit ginn keng Sessiounen opgeholl (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>D&apos;Tabell expuser_session feelt</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessioune ginn opgeholl, soubal se erstallt ass: php update/common/scripts/6.0/createusersessiontable.php oder den Datebank-Update vun 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Elo an haut</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Lafend Sessiounen</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Ugemellt Benotzer</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Umeldungen haut</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Net erfollegräich Versich haut</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>E Benotzer iwwerall ofmellen</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>All Sessioun vum Kont hält bei hirer nächster Ufro op, och déi, déi duerch &quot;Ugemellt bleiwen&quot; gehale ginn. Benotzt dat, wann e Kont an déi falsch Hänn geroden ass; setzt duerno säi Passwuert zréck.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Benotzer-ID, Benotzernumm oder E-Mail-Adress</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Iwwerall ofmellen</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Elo ugemellt</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Déi %limit zulescht benotzt ginn ugewisen.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benotzer</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gerät</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adress</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ugemellt</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Zulescht aktiv</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktiounen</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dëse Gerät</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Net erfaasst</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ofmellen</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Keng Sessioun ass ugemellt.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Déi lescht %days Deeg</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Umeldungen an net erfollegräich Versich ginn aus dem Audit-Protokoll vun de Benotzer gezielt, dat feelt; déi nei Sessioune ginn gezielt.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dag</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Umeldungen</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Net erfollegräich Versich</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nei Sessiounen</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sessiouns-Handler: %handler. D&apos;Sessioune ginn aus der Tabell expuser_session gelies, dofir funktionéiert de Bericht mat all Handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Sécherheetswarnung zu Ärem Kont</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Op Ärem Kont %login gouf et e Sécherheetsevenement: %event. Wann Dir dat net waart, sécheret Äre Kont ënner %url of.</translation>
     </message>
 </context>
 </TS>

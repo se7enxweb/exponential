@@ -46,7 +46,8 @@
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/ExtensionInlineScriptsTest.php",
-      "tests/tests/extension/ezflow/ezflowEditScriptTest.php"
+      "tests/tests/extension/ezflow/ezflowEditScriptTest.php",
+      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
     ],
     "kernel/classes/mail/expmailtemplatebody.php": [
       "tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php",
@@ -1701,6 +1702,9 @@
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
       "tests/tests/kernel/classes/help/expHelpContentsPageTest.php"
     ],
+    "kernel/private/classes/views/exphelp/asset.php": [
+      "tests/tests/kernel/classes/help/expHelpAssetRevalidationTest.php"
+    ],
     "kernel/classes/help/exphelpnavigation.php": [
       "tests/tests/kernel/classes/help/expHelpNavigationTest.php"
     ],
@@ -2058,6 +2062,39 @@
     "extension/expimageeditor/*": [
       "extension/expimageeditor/tests/phpunit/unit/expImageEditorStoreTest.php",
       "extension/expimageeditor/tests/phpunit/unit/expImageEditorDesignTest.php"
+    ],
+    "kernel/private/classes/commands/*.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php",
+      "tests/tests/kernel/private/classes/commands/expApplyFlagMaintenanceCommandsTest.php",
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php",
+      "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php",
+      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
+    ],
+    "kernel/private/classes/runnable/command.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php"
+    ],
+    "kernel/classes/expnotificationjob.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php"
+    ],
+    "doc/eng-us/examples/demo-mode/install-demo-sqlite.sh": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php",
+      "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php"
+    ],
+    "doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php",
+      "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php"
+    ],
+    "kernel/classes/expkickstarter.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php"
+    ],
+    "bin/php/install.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php"
+    ],
+    "bin/php/kickstarter.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php"
+    ],
+    "kernel/classes/expvelocitydeploy.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
     ]
   },
   "generated": {

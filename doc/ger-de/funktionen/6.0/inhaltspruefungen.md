@@ -392,7 +392,7 @@ fehlenden Richtlinie als `content.file.orphan.refused`).
 Eigentümer der Datei. Der Plan sagt für jede Datei, ob dieser Serverprozess es kann. Wo zwei Benutzer in den Speicher
 schreiben (ein Anwendungsserver, der als root läuft, und PHP-FPM als Benutzer der Website, sodass manche Dateien root
 gehören), führen Sie die Kommandozeile als root aus:
-`./console exp:content-check --storage --fix-permissions --dry-run`, dann ohne `--dry-run`.
+`./console exp:content-check --storage --fix-permissions` (ein Probelauf), dann mit `--apply`.
 ## Fehlende Dateien
 
 Kreuzen Sie unter **Ungültige Relationen** das Ziel **Fehlende Dateien in var/<site>/storage** an
@@ -646,7 +646,7 @@ Nur Bericht; nichts wird geändert oder verschoben:
 ./console exp:content-check --unreferenced --json    # the same as JSON
 ./console exp:content-check --storage                # scan the storage files: orphans and file problems (totals)
 ./console exp:content-check --storage --quarantine --dry-run        # which orphans would be quarantined
-./console exp:content-check --storage --quarantine                  # move them (each checked again)
+./console exp:content-check --apply --storage --quarantine                  # move them (each checked again)
 ./console exp:content-check --storage --fix-permissions --dry-run   # which owners and modes would be set
 ```
 
@@ -659,9 +659,9 @@ Fehlende Dateien und ihre Behebung; nur `--fix` ändert etwas, und `--dry-run` z
 ./console exp:content-check --missing-files --node=2                 # every missing file and alias problem below node 2
 ./console exp:content-check --missing-files --problems=missing --versions=published
 ./console exp:content-check --missing-files --fix=regenerate --dry-run  # what regenerating every finding would do
-./console exp:content-check --fix=restore --items=123-4,125-2       # restore two field versions (<attribute id>-<version>)
-./console exp:content-check --fix=replace --items=123-4 --replace-with=photo.jpg
-./console exp:content-check --fix=review --items=123-4             # mark for review
+./console exp:content-check --apply --fix=restore --items=123-4,125-2       # restore two field versions (<attribute id>-<version>)
+./console exp:content-check --apply --fix=replace --items=123-4 --replace-with=photo.jpg
+./console exp:content-check --apply --fix=review --items=123-4             # mark for review
 ```
 
 `--fix` nimmt `regenerate`, `restore`, `replace`, `remove` oder `review`; ohne `--items` nimmt es jeden Befund von

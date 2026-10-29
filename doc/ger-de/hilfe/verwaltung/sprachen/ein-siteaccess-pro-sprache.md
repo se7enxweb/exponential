@@ -53,7 +53,7 @@ zu haben.
 3. Fügen Sie in `settings/override/site.ini.append.php` `site_fr` zu `[SiteAccessSettings] AvailableSiteAccessList[]`
    und `RelatedSiteAccessList[]` hinzu und richten Sie die Zuordnung nach Pfad oder Host ein (siehe „Sprachadressen:
    Pfad oder Host“).
-4. Leeren Sie die Caches: `php bin/php/ezcache.php --clear-tag=ini,content`, und `./console exp:velocity cache clear`,
+4. Leeren Sie die Caches: `php bin/php/ezcache.php --clear-tag=ini,content`, und `./console exp:velocity cache clear --apply`,
    wenn Velocity die Website ausliefert.
 5. Übersetzen Sie, beginnend mit der Startseite und dem Menü.
 

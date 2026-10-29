@@ -23,7 +23,7 @@ touches and how it is cleared. The overview of every cache is [Caches](../../../
 | Content view cache | the full view of a node per user group, language and view parameters | the node (and related ones) is published | `--clear-tag=content` |
 | Template block cache | the output of `{cache-block}` | content is published (unless `ignore_content_expiry`), or its expiry passes | `--clear-id=template-block` |
 | INI cache | the merged settings | `exp:ini` and the settings page clear it | `--clear-tag=ini` |
-| HTTP and Velocity response caches | whole responses | publishing, deploys | `--clear-id=exphttpcache`, `./console exp:velocity cache clear` |
+| HTTP and Velocity response caches | whole responses | publishing, deploys | `--clear-id=exphttpcache`, `./console exp:velocity cache clear --apply` |
 
 All `--clear-...` options belong to `php bin/php/ezcache.php`; `--list-tags` and `--list-ids` print what exists.
 `./console exp:cache` is the console form with more targets (static, OPcache, APCu).

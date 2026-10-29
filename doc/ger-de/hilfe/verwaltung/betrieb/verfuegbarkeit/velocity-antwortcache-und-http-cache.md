@@ -87,7 +87,7 @@ dringenden inhaltlichen Korrektur:
 
 ```bash
 php bin/php/ezcache.php --clear-tag=content --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 php bin/php/cache.php httpcache clear --allow-root-user
 ```
 

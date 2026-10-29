@@ -24,7 +24,7 @@ mehreren Ebenen zwischen. Caches machen die Website schnell und sorgen dafür, d
 | Content-View-Cache | die Vollansicht eines Knotens je Benutzergruppe, Sprache und View-Parameter | der Knoten (und verwandte) veröffentlicht wird | `--clear-tag=content` |
 | Template-Block-Cache | die Ausgabe von `{cache-block}` | Inhalte veröffentlicht werden (außer mit `ignore_content_expiry`) oder seine Ablaufzeit vorbei ist | `--clear-id=template-block` |
 | INI-Cache | die zusammengeführten Einstellungen | `exp:ini` und die Einstellungsseite leeren ihn | `--clear-tag=ini` |
-| HTTP- und Velocity-Response-Caches | ganze Antworten | Veröffentlichen, Deployments | `--clear-id=exphttpcache`, `./console exp:velocity cache clear` |
+| HTTP- und Velocity-Response-Caches | ganze Antworten | Veröffentlichen, Deployments | `--clear-id=exphttpcache`, `./console exp:velocity cache clear --apply` |
 
 Alle `--clear-...`-Optionen gehören zu `php bin/php/ezcache.php`; `--list-tags` und `--list-ids` geben aus, was es
 gibt. `./console exp:cache` ist die Konsolenform mit weiteren Zielen (Static, OPcache, APCu).

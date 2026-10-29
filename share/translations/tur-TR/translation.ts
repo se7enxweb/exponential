@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Kurulum &gt; Cron işleri</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Henüz hiçbir cron işi bölümü çalışmadı: iş kuyruğu, içe aktarmalar, bildirimler ve arama dizini bekliyor. php bin/php/installcrontab.php --add --apply komutunu çalıştırın veya --show komutunun verdiği satırları crontab dosyasına ekleyin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Bu kurulum herkese açık bir demodur: Yönetici parolasını herkes bilebilir ve yönetici parolaları değiştirilemez veya sıfırlanamaz. Buraya özel hiçbir şey girmeyin.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kimsenin kullanmadığı veya incelenmesi gereken hesaplar; devre dışı bırakın, kilidini açın veya dışa aktarın.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kullanıcı denetim günlüğü</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hesap bazında kimin değişiklik yaptığı, oturum açtığı veya reddedildiği; filtreleyin ve dışa aktarın.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Oturum açma raporu</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kimin oturum açtığı, günlük oturum açmalar ve başarısız denemeler; bir kullanıcının oturumunu her yerde kapatma.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP işleyicisinin zaman aşımına uğramış oturumları bu sayfa veya session_gc cron işi parçası tarafından değil, PHP&apos;nin kendisi tarafından kaldırılır (session.gc_maxlifetime).</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Tüm kullanıcıların açık oturumları oturum açma raporunda listelenir ve orada kapatılabilir; rapor her oturum işleyicisiyle çalışır.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Oturum açma raporunu aç</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ o e-postadaki yönergeleri izleyin.</translation>
     <message>
         <source>None yet</source>
         <translation>Henüz yok</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Son oturum açmalarınız, başarısız denemeler ve parolanızda, e-posta adresinizde ve iki adımlı oturum açmada yapılan değişiklikler.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Bu hesabın son oturum açmaları, başarısız denemeleri ve güvenlik değişiklikleri.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Etkinliği incele</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Başarısız oturum açma sayısı: %count</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ Daha fazla bilgi için gereksinimler sayfasına bakın.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab yazılamadı (%reason). Bu satırları sitenin çalıştığı kullanıcının crontab&apos;ına ekleyin, aksi takdirde kuyruk, içe aktarmalar, bildirimler ve arama dizini hiçbir zaman çalışmaz:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Yeniden kurulum kickstarter ile (%file, ardından php bin/php/kickstarter.php run --apply) veya yeni bir kurulumla yapılır.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Posta aktarımı son çalıştırmada %count iletiyi reddetti. Posta sunucusunu ve site.ini MailSettings ayarlarını denetleyin.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Bekleyen olay sayısı: %count ve bildirim cron işinin hiçbir çalışması kaydedilmemiş. &quot;frequent&quot; cron işi bölümünü crontab dosyasına ekleyin veya exp:notification:run --apply komutunu çalıştırın.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Choose another site or section with the node picker</source>
         <translation>Düğüm seçiciyle başka bir site veya bölüm seçin</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Sahibi yalnızca sistem yöneticisi değiştirebilir: ./console exp:content-check --fix-permissions --apply komutunu root olarak çalıştırın.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>empty</source>
         <translation>boş</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>İmza anahtarı bir yıldan eski: exp:audit key rotate --apply komutuyla yenileyin.</translation>
     </message>
 </context>
 <context>
@@ -68852,6 +68924,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>not sent</source>
         <translation>gönderilmedi</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Bildirim cron işi her çalışmasını buraya kaydeder. frequent bölümünü crontab dosyasına ekleyin veya exp:notification:run --apply komutunu çalıştırın.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsolu kullanın: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76482,6 +76562,46 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>None.</source>
         <translation>Yok.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>kimlik doğrulama uygulamasıyla</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-postayla gelen bir kodla</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bir kurtarma koduyla</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>bir geçiş anahtarıyla</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>harici bir hesapla</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ağ olarak gösterilir; adres, sitenin veri koruma ayarlarının öngördüğü şekilde saklanır.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Kaydedilmemiş</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Konum</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>yaklaşık</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76725,6 +76845,42 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Manage devices</source>
         <translation>Cihazları yönet</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>kimlik doğrulama uygulamasıyla</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-postayla gelen bir kodla</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bir kurtarma koduyla</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>bir geçiş anahtarıyla</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>harici bir hesapla</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Kaydedilmemiş</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Konum</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>yaklaşık</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76804,6 +76960,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>View the sessions of this user</source>
         <translation>Bu kullanıcının oturumlarını görüntüle</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site sitesindeki %login hesabınızla, son zamanlarda oturum açılmamış bir yerden az önce oturum açıldı:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Yaklaşık konum</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76842,6 +77006,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os üzerinde %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Oturum açma raporu</translation>
     </message>
 </context>
 <context>
@@ -77341,6 +77509,935 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Open the page</source>
         <translation>Sayfayı aç</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, toplam %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Bir kullanıcı adı veya kullanıcı kimliği: olayın ilgili olduğu hesap ya da işlemi yapan kullanıcı.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesap</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Eylem</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sonra</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Tüm sonuçlar</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Önce</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Yapan</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Temizle</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Başarılı</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Olaylar %days gün saklanır.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Olaylar elle kaldırılana kadar saklanır.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Olaylar</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Tüm eylemler</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Bu hesabın tüm olayları</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Listeyi CSV olarak dışa aktar (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Başarısız</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Listeyi daralt</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Eşleşen olay yok.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sayfa başına</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kayıt, audit.ini dosyasında kapatılmış ([UserAuditSettings] UserAudit); liste daha önce kaydedilenleri gösteriyor.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Reddedildi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sonuç</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göster</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Kullanıcı denetim günlüğünün tablosu eksik. Tabloyu php update/common/scripts/6.0/createuseraudittable.php ile oluşturun; o zamana kadar denetim dosyaları her olayı saklar.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Bu sayfa bir SQL veritabanı gerektirir; MongoDB üzerinde kullanılamaz. Denetim dosyaları her olayı saklar.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kullanıcı denetim günlüğü</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kullanıcı</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ne zaman</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nerede</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Hangi hesabı kimin değiştirdiği, oluşturduğu, etkinleştirdiği, devre dışı bıraktığı, taşıdığı veya kaldırdığı, kimin oturum açtığı ya da reddedildiği ve hangi rollerin atandığı: olay başına bir satır, önceki ve sonraki alanlarla birlikte. Parolalar ve gizli bilgiler asla kaydedilmez.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>bilinmiyor</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabı güvenceye al</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site sitesindeki %login hesabınızda bir kurtarma koduyla oturum açıldı.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Bir kurtarma kodu kullanıldı</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesap</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Yaklaşık adres</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Yeniden oturum açmak için yeni bir parola isteyin veya sitenin yöneticilerine başvurun.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Yeni parola iste</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Her kurtarma kodu yalnızca bir kez çalışır. Telefonunuzu kaybettiyseniz, kimlik doğrulama uygulamanızı yeniden kurun ve yeni kurtarma kodlarını güvenli bir yerde saklayın.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Hesabınızda başarısız oturum açma denemeleri</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Bundan sonra oturum açarken parolanızın yanında bir kod da istenecek. Bunu siz yaptıysanız hiçbir şey yapmanız gerekmez.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Bu sizseniz ve parolanızı unuttuysanız, yeni bir parola isteyin. Değilseniz daha güçlü bir parola seçin ve iki adımlı oturum açmayı etkinleştirin.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Bu siz değilseniz, biri parolanızı biliyor olabilir: parolanızı hemen değiştirin ve hesabınızın nerelerde oturum açık olduğunu kontrol edin.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kalan kurtarma kodları</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Cihazları incele</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Güvenlik uyarısı</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Biri %site sitesindeki %login hesabınızda art arda %count kez yanlış bir parolayla oturum açmayı denedi.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site sitesindeki %login hesabınızda bir güvenlik olayı gerçekleşti.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Bu, hesabınızla ilgili bir güvenlik uyarısıdır. Bu tür her değişiklikte gönderilir ve kapatılamaz.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zaman</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site sitesindeki %login hesabınız için iki adımlı oturum açma devre dışı bırakıldı.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>İki adımlı oturum açma devre dışı bırakıldı</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site sitesindeki %login hesabınız için iki adımlı oturum açma etkinleştirildi.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>İki adımlı oturum açma etkinleştirildi</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site sitesindeki %login hesabınız çok fazla başarısız oturum açma denemesinden sonra kilitlendi.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Hesabınız artık yalnızca parolanızla korunuyor. Bunu siz yapmadıysanız, parolanızı değiştirdikten sonra iki adımlı oturum açmayı yeniden etkinleştirin.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Hesabınız kilitlendi</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Güvenlik etkinliği: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Başarısız oturum açma denemesi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Oturumlar kapatıldı</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Yeni bir cihazdan oturum açma</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Yeni bir konumdan oturum açma</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kimlik doğrulandı (&quot;Siz olduğunuzu doğrulayın&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kimlik doğrulaması başarısız oldu</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Geçiş anahtarıyla oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Geçiş anahtarıyla oturum açma başarısız oldu</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Oturum açma reddedildi: iki adımlı oturum açma kodu eksik veya yanlış</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Yanlış iki adımlı oturum açma kodu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hesap başarısız oturum açma denemelerinden sonra kilitlendi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hesabın kilidi açıldı</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parola değiştirildi</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Parola değiştirilemedi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parola sıfırlandı</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Yeni parola istendi</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-posta adresi değiştirildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kullanıcı adı değiştirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>İki adımlı oturum açma etkinleştirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>İki adımlı oturum açma devre dışı bırakıldı</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kurtarma kodu kullanıldı</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Yeni kurtarma kodları</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Uygulama parolası oluşturuldu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Uygulama parolası iptal edildi</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Geçiş anahtarı eklendi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Geçiş anahtarı kaldırıldı</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hesap etkinleştirildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hesap devre dışı bırakıldı</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tümü</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Oturum açmalar ve oturumlar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hesap değişiklikleri</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>İlgilenilmesi gerekenler</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>sizin tarafınızdan</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>kullanıcı tarafından</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login tarafından</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Yöntem</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Tarayıcı</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>İşletim sistemi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cihaz</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Yer</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ülke</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Oturumlar</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Hangileri</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Başarısız denemeler</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kalan kodlar</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Oturum açma işleyicisi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Güvenlik etkinliği: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hesabınızdaki oturum açmalar ve güvenlik değişiklikleri. Yapmadığınız bir şey görürseniz parolanızı değiştirin ve tanımadığınız cihazlardaki oturumları kapatın.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Bu hesaptaki oturum açmalar ve güvenlik değişiklikleri.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Parolayı değiştir</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Hesaba dön</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Güvenlik etkinliği kaydedilmiyor</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Etkinlik, kullanıcı denetim günlüğünden okunur; bu günlüğün expuser_audit tablosu eksik veya bu veritabanında desteklenmiyor. php update/common/scripts/6.0/createuseraudittable.php komutunu ya da 6.0.15 veritabanı güncellemesini çalıştırın.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Son %days gün</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Son %days gündeki oturum açmalar</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Son güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göster</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>başarısız</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>reddedildi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Henüz güvenlik etkinliği kaydedilmedi.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Güvenlik olayları %days gün saklanır.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Güvenlik olayları bir yönetici kaldırana kadar saklanır.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Oturum açma verilerimi indir</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Oturumlarınız ve güvenlik olaylarınız bir JSON dosyası olarak.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Başarısız oturum açma denemesi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Oturumlar kapatıldı</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Yeni bir cihazdan oturum açma</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Yeni bir konumdan oturum açma</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kimlik doğrulandı (&quot;Siz olduğunuzu doğrulayın&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kimlik doğrulaması başarısız oldu</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Geçiş anahtarıyla oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Geçiş anahtarıyla oturum açma başarısız oldu</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Oturum açma reddedildi: iki adımlı oturum açma kodu eksik veya yanlış</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Yanlış iki adımlı oturum açma kodu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hesap başarısız oturum açma denemelerinden sonra kilitlendi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hesabın kilidi açıldı</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parola değiştirildi</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Parola değiştirilemedi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parola sıfırlandı</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Yeni parola istendi</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-posta adresi değiştirildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kullanıcı adı değiştirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>İki adımlı oturum açma etkinleştirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>İki adımlı oturum açma devre dışı bırakıldı</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kurtarma kodu kullanıldı</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Yeni kurtarma kodları</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Uygulama parolası oluşturuldu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Uygulama parolası iptal edildi</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Geçiş anahtarı eklendi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Geçiş anahtarı kaldırıldı</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hesap etkinleştirildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hesap devre dışı bırakıldı</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tümü</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Oturum açmalar ve oturumlar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hesap değişiklikleri</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>İlgilenilmesi gerekenler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Güvenlik etkinliği</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Güvenlik etkinliği: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hesabınızdaki oturum açmalar ve güvenlik değişiklikleri. Yapmadığınız bir şey görürseniz parolanızı değiştirin ve tanımadığınız cihazlardaki oturumları kapatın.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Parolayı değiştir</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Bu sitede güvenlik etkinliği henüz kaydedilmiyor.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Son %days gündeki oturum açmalar</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Başarısız denemeler</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Henüz güvenlik etkinliği kaydedilmedi.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Oturum açma verilerimi indir</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Oturumlarınız ve güvenlik olaylarınız bir JSON dosyası olarak.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Parola</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parola ve iki adımlı oturum açma kodu</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST arayüzü</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP arayüzü</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Çoklu oturum açma (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Oturumlar kaydedilmeye başlamadan önce oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Oturum açma raporu</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Sitede kimin oturum açık olduğu, hesapların ne sıklıkla oturum açtığı ve açamadığı ve bir kullanıcının oturumunu her yerde kapatma. Her oturum işleyicisiyle çalışır.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Oturum kapatıldı. Cihazın yeniden oturum açması gerekiyor.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login kullanıcısının %count oturumu kapatıldı.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login kullanıcısının çalışan bir oturumu yoktu.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Bu kimliğe, kullanıcı adına veya e-posta adresine sahip bir hesap yok.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Bu, kullandığınız oturumdur. Sonlandırmak için oturumu kapatın.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Bu oturum zaten sona ermişti.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sayfanın süresi dolmuştu. Hiçbir şey değiştirilmedi; lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Bu sitede oturumlar kaydedilmiyor (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session tablosu eksik</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Tablo oluşturulduğunda oturumlar kaydedilir: php update/common/scripts/6.0/createusersessiontable.php ya da 6.0.15 veritabanı güncellemesi.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Şu an ve bugün</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Çalışan oturumlar</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Oturum açmış kullanıcılar</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Bugünkü oturum açmalar</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Bugünkü başarısız denemeler</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Bir kullanıcının oturumunu her yerde kapatma</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Hesabın her oturumu bir sonraki isteğinde sona erer; &quot;Beni hatırla&quot; ile tutulanlar da. Bir hesap yanlış ellerde olabilecekse bunu kullanın; ardından parolasını sıfırlayın.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Kullanıcı kimliği, kullanıcı adı veya e-posta adresi</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Her yerde oturumu kapat</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Şu an oturum açık</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>En son kullanılan %limit oturum gösteriliyor.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kullanıcı</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cihaz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Son etkinlik</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Eylemler</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Bu cihaz</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Kaydedilmemiş</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oturumu kapat</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Açık oturum yok.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Son %days gün</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Oturum açmalar ve başarısız denemeler kullanıcı denetim günlüğünden sayılır, ancak bu günlük yok; yeni oturumlar sayılır.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Gün</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Oturum açmalar</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Başarısız denemeler</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Yeni oturumlar</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Oturum işleyicisi: %handler. Oturumlar expuser_session tablosundan okunur, bu nedenle rapor her işleyiciyle çalışır.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Hesabınız için güvenlik uyarısı</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>%login hesabınızda bir güvenlik olayı gerçekleşti: %event. Bu siz değilseniz hesabınızı %url adresinde güvenceye alın.</translation>
     </message>
 </context>
 </TS>

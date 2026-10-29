@@ -276,7 +276,7 @@ class expSignInSecondFactorTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'expSignInSecondFactor::signInForRequest( $appUser );', $dav );
         $this->assertStringContainsString( 'header( expSignInSecondFactor::REFUSAL_HEADER', $dav );
 
-        $soap = self::file( 'soap.php' );
+        $soap = self::file( 'index_soap.php' );
         $app = strpos( $soap, 'expSignInSecondFactor::appPasswordUser( eZHTTPTool::username(), eZHTTPTool::password(), expSignInSecondFactor::CHANNEL_SOAP )' );
         $check = strpos( $soap, 'expSignInSecondFactor::check( $soapUser, expSignInSecondFactor::CHANNEL_SOAP' );
         $this->assertNotFalse( $app );

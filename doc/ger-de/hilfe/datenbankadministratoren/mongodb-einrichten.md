@@ -83,7 +83,7 @@ Auf MongoDB kann der Konfigurationsschritt des Einrichtungsassistenten ein bis d
 `request_terminate_timeout` von PHP-FPM, oder installieren Sie über die Konsole:
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mongodb \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mongodb \
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 

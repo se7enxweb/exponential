@@ -33,7 +33,7 @@ die späteren Module zu bestimmten Quellen darauf aufbauen können.
 
 ## Dieses Modul vorbereiten
 
-- [ ] Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install` (SQLite), mit
+- [ ] Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install --apply` (SQLite), mit
       Shell-Zugang ([Installation über die Kommandozeile](../../../../installation/07-installation-ueber-die-konsole.md)).
 - [ ] Das Kommandozeilenwerkzeug `sqlite3` auf den Schulungsrechnern (Lektion 1.2).
 - [ ] Der Migrations-Hub und die Checkliste einmal am Beamer geöffnet und die Produktversionen im Hub mit dem

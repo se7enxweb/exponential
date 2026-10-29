@@ -120,7 +120,7 @@ class expHelpContentPackage
                 $missing[] = $identifier;
         }
         if ( $missing )
-            throw new RuntimeException( 'Missing classes ' . implode( ', ', $missing ) . ': run ./console exp:help:content classes -s <siteaccess> first' );
+            throw new RuntimeException( 'Missing classes ' . implode( ', ', $missing ) . ': run ./console exp:help:content classes --apply -s <siteaccess> first' );
 
         if ( !is_dir( $dir ) && !eZDir::mkdir( $dir, false, true ) )
             throw new RuntimeException( "Cannot create the directory $dir" );

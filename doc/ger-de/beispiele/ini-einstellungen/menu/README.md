@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # menu.ini
 
-Die ausgelieferten Einstellungen von `settings/menu.ini`: 28 Blöcke, 220 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/menu.ini`: 28 Blöcke, 221 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -45,7 +45,7 @@ Die ausgelieferten Einstellungen von `settings/menu.ini`: 28 Blöcke, 220 Einste
 | [Leftmenu_audit](Leftmenu_audit.md) | 13 |
 | [Leftmenu_setup](Leftmenu_setup.md) | 63 |
 | [Leftmenu_shop](Leftmenu_shop.md) | 3 |
-| [Leftmenu_user](Leftmenu_user.md) | 8 |
+| [Leftmenu_user](Leftmenu_user.md) | 9 |
 | [Leftmenu_user_mega](Leftmenu_user_mega.md) | 12 |
 | [Leftmenu_my_mega](Leftmenu_my_mega.md) | 7 |
 | [LeftMenuSettings](LeftMenuSettings.md) | 1 |

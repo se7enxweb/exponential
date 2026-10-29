@@ -85,7 +85,7 @@ UsePersistentConnection=disabled
 ```
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mariadb \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mariadb \
     --db-host=127.0.0.1 --db-name=<customer> --db-user=<customer> --allow-root-user
 ```
 

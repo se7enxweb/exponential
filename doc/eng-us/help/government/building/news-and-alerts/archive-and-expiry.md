@@ -61,7 +61,7 @@ ClassList[]=<class identifier>
 
 The class needs an attribute with the identifier `unpublish_date`. Prefer `hide.php` for public-sector content:
 hidden content stays where it was, with its versions, and is easier to prove later; trashed content disappears for
-good when the trash is emptied (**Empty trash** or `./console exp:trashpurge`).
+good when the trash is emptied (**Empty trash** or `./console exp:trashpurge --apply`).
 
 ## Archives by year
 

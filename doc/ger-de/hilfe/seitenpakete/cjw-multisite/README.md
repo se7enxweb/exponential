@@ -72,7 +72,7 @@ es als `Site_package` in `kickstart.ini` für den [Kickstarter](../../../install
 [Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md). Die eigene Beschreibung des Pakets gibt diesen Befehl an:
 
 ```bash
-./console exp:install --package=cjw_multisite --languages=eng-US,ger-DE
+./console exp:install --apply --package=cjw_multisite --languages=eng-US,ger-DE
 ```
 
 Dieselbe Beschreibung rät, auch Deutsch zu wählen, weil die meisten Startinhalte deutsch sind. Von den 137 Startobjekten, die in

@@ -78,7 +78,7 @@ der Ursache die ganze Abfolge erneut aus. Mit `remove` ersetzt ein vollständige
 fehlgeschlagene hinterlassen hat.
 
 **Wie setze ich eine Übungsumgebung am schnellsten zurück?** Dieselbe `kickstart.ini` mit `DatabaseAction=remove` und
-`run --force` oder derselbe Befehl `exp:install --force`. Lektion 2.6 von Train the Trainer behandelt das
+`run --apply` oder derselbe Befehl `exp:install --force`. Lektion 2.6 von Train the Trainer behandelt das
 Zurücksetzen von Übungsumgebungen.
 
 **Ich habe die Datenbank-Engine gewechselt, und die Website spricht noch mit der alten.** Einstellungen in
@@ -113,13 +113,13 @@ haben.
 
 4. Legen Sie `kickstart.ini` zurück in das Wurzelverzeichnis der Installation und setzen Sie in `[site_details]`
    `DatabaseAction=remove`.
-5. Führen Sie `php bin/php/console exp:kickstarter run --dry-run` aus, dann `run --force`.
+5. Führen Sie `php bin/php/console exp:kickstarter run` aus (ein Probelauf), dann `run --apply`.
 6. Prüfen Sie den Inhaltsbaum: Der Ordner *Before reset* ist verschwunden; die Website ist wie frisch installiert.
    Notieren Sie das neue Administratorpasswort aus der Zusammenfassung.
 7. Fügen Sie eine von Hand vorgenommene Einstellung hinzu:
    `php bin/php/console exp:ini set site.ini/SiteSettings/SiteName "Hand-made name" global`.
 8. Erzeugen Sie die Einstellungen neu und behalten Sie die Daten: Setzen Sie `DatabaseAction=skip` und führen Sie
-   erneut `run --force` aus.
+   erneut `run --apply` aus.
 9. Führen Sie `exp:ini where site.ini/SiteSettings/SiteName` aus: Die von Hand geschriebene Zeile ist aus dem globalen
    Override verschwunden. Suchen Sie die Sicherung des Overrides aus Schritt 7 in `var/backup/ini/` und setzen Sie den
    Wert erneut von Hand.

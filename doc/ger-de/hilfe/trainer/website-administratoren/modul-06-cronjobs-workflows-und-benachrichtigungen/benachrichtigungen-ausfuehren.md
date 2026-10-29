@@ -111,7 +111,7 @@ alle Testkonten verwenden Adressen unter `example.invalid`.
 6. Proben Sie einen echten Lauf, der die E-Mails in Dateien schreibt, statt sie zu versenden:
 
    ```bash
-   php bin/php/console exp:notification:run --mail-file-dir=var/tmp/notification-mail
+   php bin/php/console exp:notification:run --apply --mail-file-dir=var/tmp/notification-mail
    ```
 
 7. Öffnen Sie das Verzeichnis `var/tmp/notification-mail` und lesen Sie eine Datei, falls eine Nachricht entstanden

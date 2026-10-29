@@ -70,7 +70,7 @@ Handel und Daten ein, sowie eine Webhook-Senke, die die Prüfpunkte, Bereinigung
 - Jeder `SigningKey[]` muss so lange aufbewahrt werden wie die Archive, die er signiert hat; ein Schlüsselwechsel fügt
   Schlüssel hinzu und entfernt nie welche.
 - Bewahren Sie die Sicherung von `settings/override/audit.ini.append.php` mit derselben Frist auf wie die Archive.
-- Wechseln Sie den Signaturschlüssel jährlich (`./console exp:audit key rotate --allow-root-user`).
+- Wechseln Sie den Signaturschlüssel jährlich (`./console exp:audit key rotate --apply --allow-root-user`).
 
 ## Routine
 

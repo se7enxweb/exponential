@@ -38,7 +38,8 @@ administration's functions as an API, each behind its policy.
 **Is there search over an API?** `expsearch::search`, `count`, `facets` and more in `expservices`; not in the REST API.
 
 **Is SOAP still there?** Yes, SOAP 1.1 without WSDL, off by default (`soap.ini EnableSOAP=false`)
-([WebDAV and SOAP](webdav-and-soap.md)).
+([WebDAV and SOAP](webdav-and-soap.md)). Its address is `/index_soap.php` since 6.0.15; `/soap.php` still answers as a
+forwarding shim ([the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md)).
 
 ## Authentication and identity
 

@@ -29,7 +29,7 @@ command does with passwords, how to test before installing, and how a script kno
 `exp:install` "is a front end to the kickstarter. It turns its options into a temporary `kickstart.ini`, runs
 `expKickstarter` in the same process, removes the temporary file and puts back any `kickstart.ini` that was there
 before" ([4.2](../../../install/04-choosing-an-install-method.md#the-console-install)). Every option has a default,
-so `php bin/php/console exp:install` alone installs the `sevenx_multisite` site package on SQLite with the
+so `php bin/php/console exp:install --apply` alone installs the `sevenx_multisite` site package on SQLite with the
 administrator `admin` and a generated password.
 
 ## The options a host sets
@@ -96,7 +96,7 @@ directory already holds an installation and neither `--force` nor `--dry-run` wa
 
 ```bash
 php bin/php/console exp:install --dry-run --db=pgsql --db-user=<db user> --url=https://www.example.com \
-  && php bin/php/console exp:install --db=pgsql --db-user=<db user> --url=https://www.example.com \
+  && php bin/php/console exp:install --apply --db=pgsql --db-user=<db user> --url=https://www.example.com \
   || echo "installation failed, see var/log/setup.log"
 ```
 
@@ -108,22 +108,22 @@ In the official order. Run each as the site's user, with `EXP_INSTALL_DB_PASSWOR
 
 ```bash
 # 1. SQLite 3 (the default): no database server
-php bin/php/console exp:install --url=https://www.example.com --email=<contact>
+php bin/php/console exp:install --apply --url=https://www.example.com --email=<contact>
 
 # 2. PostgreSQL
-php bin/php/console exp:install --db=pgsql --db-host=<db host> --db-name=<db> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=pgsql --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 
 # 3. MongoDB (a database user is required)
-php bin/php/console exp:install --db=mongodb --db-host=<db host> --db-name=<db> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=mongodb --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 
 # 4. MariaDB and 6. MySQL (same driver)
-php bin/php/console exp:install --db=mysql --db-host=<db host> --db-name=<db> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=mysql --db-host=<db host> --db-name=<db> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 
 # 5. Oracle (service name becomes host:port/service)
-php bin/php/console exp:install --db=oracle --db-host=<db host> --db-name=<service> --db-user=<db user> \
+php bin/php/console exp:install --apply --db=oracle --db-host=<db host> --db-name=<service> --db-user=<db user> \
   --url=https://www.example.com --email=<contact>
 ```
 
@@ -131,7 +131,7 @@ Engine-specific notes are in [7.9](../../../install/07-console-install.md#79-exa
 database pages of this section, from [SQLite for hosts](../basics/sqlite-for-hosts.md) to
 [MySQL for hosts](../basics/mysql-for-hosts.md).
 
-**Provisioning a public demo.** `EXP_DEMO_MODE=1 ./console exp:install --password=<the published password> ...` installs the published administrator password as given, also a well-known or short one (`publish`, `publishing`); without the variable it is replaced by a generated one in `var/log/initial-admin-password`, which a demo build should treat as a failure. Never provision a customer's site with the variable. [Recipe: run a public demo on LiteSpeed and Plesk](../servers/run-a-public-demo-on-litespeed-and-plesk.md).
+**Provisioning a public demo.** `EXP_DEMO_MODE=1 ./console exp:install --apply --password=<the published password> ...` installs the published administrator password as given, also a well-known or short one (`publish`, `publishing`); without the variable it is replaced by a generated one in `var/log/initial-admin-password`, which a demo build should treat as a failure. Never provision a customer's site with the variable. [Recipe: run a public demo on LiteSpeed and Plesk](../servers/run-a-public-demo-on-litespeed-and-plesk.md).
 
 ## Related pages
 

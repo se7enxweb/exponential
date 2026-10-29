@@ -34,7 +34,7 @@ Die hier angelegten Siteaccesses `site_b` und `site_b_ger` werden in den Modulen
 
 ## Dieses Modul vorbereiten
 
-- Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install` (URL-Zuordnung, die
+- Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install --apply` (URL-Zuordnung, die
   Voreinstellung), mit Shell-Zugang und einem Administratorkonto. Wie man eine solche Übungsumgebung aufbaut:
   [Lektion 2.3 von Train the Trainer](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md).
 - Die Teilnehmenden können `php bin/php/console` im Wurzelverzeichnis der Installation als der Benutzer ausführen,

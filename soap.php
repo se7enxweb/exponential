@@ -7,150 +7,36 @@
  * @package kernel
  */
 
-/*!
-  \brief The SOAP file will handle all eZ Publish soap requests.
-
-  SOAP functions are
-*/
-
-ob_start();
-
-ini_set( "display_errors" , "0" );
-
-// Set a default time zone if none is given. The time zone can be overriden
-// in config.php or php.ini.
-if ( !ini_get( "date.timezone" ) )
+/*
+ * Deprecated: the SOAP entry script is index_soap.php since Exponential 6.0.15.
+ *
+ * This file only forwards to it, so SOAP clients and web server rules that
+ * still name soap.php keep working for now. Change the rewrite rules, the
+ * virtual host and the clients (the syndication extension, middleware) to
+ * index_soap.php; this shim will be removed in a later major version.
+ * What to change and how to test it: doc/eng-us/bc/6.0/soap-entry-script-index-soap.md.
+ *
+ * Once a day a request that comes through here writes one notice to
+ * var/log/warning.log, so an administrator sees that something still calls
+ * soap.php. The day is kept as the date of var/log/soap-php-deprecated.stamp.
+ * No function is declared here: a persistent worker may include this file more
+ * than once.
+ */
+$expSoapShimStamp = __DIR__ . '/var/log/soap-php-deprecated.stamp';
+clearstatcache( true, $expSoapShimStamp );
+$expSoapShimLast = @filemtime( $expSoapShimStamp );
+if ( ( $expSoapShimLast === false || date( 'Ymd', $expSoapShimLast ) !== date( 'Ymd' ) )
+     && is_dir( __DIR__ . '/var/log' ) && @touch( $expSoapShimStamp ) )
 {
-    date_default_timezone_set( "UTC" );
+    @file_put_contents(
+        __DIR__ . '/var/log/warning.log',
+        '[ ' . date( 'M d Y H:i:s' ) . ' ] [' . ( isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : '' ) . '] soap.php:' . "\n"
+        . 'A request came through soap.php, the deprecated name of the SOAP entry script. It still answers, but '
+        . 'change the web server rules and the SOAP clients to index_soap.php (Exponential 6.0.15). '
+        . 'Requested URI: ' . preg_replace( '/[\x00-\x1f\x7f]/', '', isset( $_SERVER['REQUEST_URI'] ) ? (string)$_SERVER['REQUEST_URI'] : '' ) . "\n",
+        FILE_APPEND | LOCK_EX
+    );
 }
+unset( $expSoapShimStamp, $expSoapShimLast );
 
-require 'autoload.php';
-
-/*!
- Reads settings from site.ini and passes them to eZDebug.
-*/
-function eZUpdateDebugSettings()
-{
-    $ini = eZINI::instance();
-
-    list( $debugSettings['debug-enabled'], $debugSettings['debug-by-ip'], $debugSettings['debug-by-user'], $debugSettings['debug-ip-list'], $debugSettings['debug-user-list'] ) =
-        $ini->variableMulti( 'DebugSettings', array( 'DebugOutput', 'DebugByIP', 'DebugByUser', 'DebugIPList', 'DebugUserIDList' ), array ( 'enabled', 'enabled', 'enabled' ) );
-    eZDebug::updateSettings( $debugSettings );
-}
-
-$ini = eZINI::instance();
-
-// Initialize/set the index file.
-eZSys::init( 'soap.php', $ini->variable( 'SiteAccessSettings', 'ForceVirtualHost' ) === 'true' );
-$uri = eZURI::instance( eZSys::requestURI() );
-$GLOBALS['eZRequestedURI'] = $uri;
-
-// Check for extension
-eZExtension::activateExtensions( 'default' );
-// Extension check end
-
-// Activate correct siteaccess
-$soapINI = eZINI::instance( 'soap.ini' );
-if ( $soapINI->variable( 'GeneralSettings', 'UseDefaultAccess' ) === 'enabled' )
-{
-    $access = array( 'name' => $ini->variable( 'SiteSettings', 'DefaultAccess' ),
-                     'type' => eZSiteAccess::TYPE_DEFAULT );
-}
-else
-{
-    $access = eZSiteAccess::match( $uri,
-                          eZSys::hostname(),
-                          eZSys::serverPort(),
-                          eZSys::indexFile() );
-}
-$access = eZSiteAccess::change( $access );
-// Siteaccess activation end
-
-// Check for activating Debug by user ID (Final checking. The first was in eZDebug::updateSettings())
-eZDebug::checkDebugByUser();
-
-// Check for siteaccess extension
-eZExtension::activateExtensions( 'access' );
-// Siteaccess extension check end
-
-// Now that all extensions are activated and siteaccess has been changed, reset
-// all eZINI instances as they may not take into account siteaccess specific settings.
-eZINI::resetAllInstances( false );
-
-/*!
- Reads settings from i18n.ini and passes them to eZTextCodec.
-*/
-function eZUpdateTextCodecSettings()
-{
-    $ini = eZINI::instance( 'i18n.ini' );
-
-    list( $i18nSettings['internal-charset'], $i18nSettings['http-charset'], $i18nSettings['mbstring-extension'] ) =
-        $ini->variableMulti( 'CharacterSettings', array( 'Charset', 'HTTPCharset', 'MBStringExtension' ), array( false, false, 'enabled' ) );
-
-    eZTextCodec::updateSettings( $i18nSettings );
-}
-
-// Initialize text codec settings
-eZUpdateTextCodecSettings();
-
-// Initialize module loading
-$moduleRepositories = eZModule::activeModuleRepositories();
-eZModule::setGlobalPathList( $moduleRepositories );
-
-// Load soap extensions
-$enableSOAP = $soapINI->variable( 'GeneralSettings', 'EnableSOAP' );
-
-if ( $enableSOAP == 'true' )
-{
-    // Login if we have username and password.
-    // An app password of the account (two-step sign-in, expSignInSecondFactor) signs in for this request only
-    $soapAppUser = null;
-    if ( eZHTTPTool::username() and eZHTTPTool::password() and class_exists( 'expSignInSecondFactor' ) )
-    {
-        $soapAppUser = expSignInSecondFactor::appPasswordUser( eZHTTPTool::username(), eZHTTPTool::password(), expSignInSecondFactor::CHANNEL_SOAP );
-        // an account marked "change password at next sign-in" sets it in the web interface first
-        if ( $soapAppUser instanceof eZUser && !( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $soapAppUser, 'soap' ) ) )
-            expSignInSecondFactor::signInForRequest( $soapAppUser );
-    }
-    if ( !$soapAppUser instanceof eZUser and eZHTTPTool::username() and eZHTTPTool::password() )
-    {
-        $soapUser = eZUser::loginUser( eZHTTPTool::username(), eZHTTPTool::password() );
-        // a password alone is not enough for an account that needs a second sign-in step: 401 (403 when it has to
-        // set the step up first) with WWW-Authenticate and a SOAP fault that names the reason
-        $soapRefusal = class_exists( 'expSignInSecondFactor' )
-            ? expSignInSecondFactor::check( $soapUser, expSignInSecondFactor::CHANNEL_SOAP, expSignInSecondFactor::presentedCode() )
-            : null;
-        if ( $soapRefusal !== null )
-        {
-            eZUser::logoutCurrent();
-            expSignInSecondFactor::sendRefusalHeaders( $soapRefusal, 'Exponential SOAP' );
-            if ( !headers_sent() )
-                header( 'Content-Type: text/xml; charset=UTF-8' );
-            echo expSignInSecondFactor::soapFault( $soapRefusal );
-            ob_end_flush();
-            eZExecution::cleanExit();
-        }
-        // an account marked "change password at next sign-in" sets it in the web interface first
-        if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $soapUser, 'soap' ) )
-            eZUser::logoutCurrent();
-    }
-
-    $server = new eZSOAPServer();
-
-    foreach( $soapINI->variable( 'ExtensionSettings', 'SOAPExtensions' ) as $extension )
-    {
-        $extensionPath = eZExtension::extensionPath( $extension );
-        if ( $extensionPath !== false )
-        {
-            include_once( $extensionPath . '/soap/initialize.php' );
-        }
-    }
-
-    $server->processRequest();
-}
-
-ob_end_flush();
-
-eZExecution::cleanExit();
-
-?>
+require __DIR__ . '/index_soap.php';

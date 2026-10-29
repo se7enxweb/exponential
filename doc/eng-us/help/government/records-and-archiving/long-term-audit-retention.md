@@ -65,7 +65,7 @@ and a webhook sink that receives the checkpoints, purges and key rotations.
 
 - Every `SigningKey[]` must be kept for as long as the archives it signed; rotation adds keys and never removes them.
 - Store the backup of `settings/override/audit.ini.append.php` with the same retention as the archives.
-- Rotate the signing key yearly (`./console exp:audit key rotate --allow-root-user`).
+- Rotate the signing key yearly (`./console exp:audit key rotate --apply --allow-root-user`).
 
 ## Routine
 

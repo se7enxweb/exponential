@@ -76,11 +76,11 @@ The 6.0.15 line also brings, among much else (the full list is in the
 - **Packages end to end** on Setup > Packages: every upload validated, installs in the background or as drafts, a
   JSON package format next to the classic one ([packages guide](doc/eng-us/guides/packages.md),
   [JSON format](doc/eng-us/bc/6.0/package-json-format.md)).
-- **219 locales**, 170 of them new: content in Bengali, Urdu, Persian, Vietnamese, Swahili, Romanian, Tibetan,
-  Yiddish, Latin and nearly every other written language of the world, with their dates, numbers and currencies;
-  the administration in English and German complete and partly in 24 more, Hebrew, Latin and (for fun) Klingon as
-  first drafts ([languages](doc/eng-us/languages.md)); right-to-left languages get `dir="rtl"` in content and in the
-  administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
+- **More than 360 locales**, over 300 of them new: content in Bengali, Urdu, Persian, Vietnamese, Swahili, Romanian,
+  Tibetan, Yiddish, Latin and nearly every other written language of the world, with their dates, numbers and
+  currencies, for every inhabited country and territory; the administration in more than 150 languages, all of them
+  complete (the current totals are at the top of [languages](doc/eng-us/languages.md)); right-to-left languages get
+  `dir="rtl"` in content and in the administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
   application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.55`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
@@ -215,7 +215,7 @@ raises the ceiling further; it is not what makes the application quick.
 
 ```bash
 ./console exp:velocity deploy          --allow-root-user   # after a change: autoloads, settings, caches, PHP-FPM, Velocity
-./console exp:velocity cache clear     --allow-root-user   # empty Velocity's response cache
+./console exp:velocity cache clear --apply --allow-root-user   # empty Velocity's response cache
 ./bin/php/console exp:velocity start     --allow-root-user
 ./bin/php/console exp:velocity status    --allow-root-user
 ./bin/php/console exp:velocity restart   --allow-root-user
@@ -241,9 +241,9 @@ The same commands drive three servers, chosen with `[ServerSettings] Engine` in
   shipped default because it always works.
 
 ```bash
-./bin/php/console exp:velocity config set ServerSettings Engine qbix --allow-root-user   # every real site
+./bin/php/console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user   # every real site
 ./bin/php/console exp:velocity start   --allow-root-user
-./bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user   # the alternative
+./bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user   # the alternative
 ./bin/php/console exp:velocity install --allow-root-user   # fetch and verify the FrankenPHP binary
 ./bin/php/console exp:velocity start --all --allow-root-user   # all three side by side, for tests
 ```
@@ -583,7 +583,7 @@ The shortest path needs only PHP and Composer (SQLite, no database server):
 ```bash
 composer create-project se7enxweb/exponential exponential
 cd exponential
-php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
 

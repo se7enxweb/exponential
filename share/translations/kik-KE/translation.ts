@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Mwambĩrĩria &gt; Cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Gũtirĩ gĩcunjĩ kĩa cronjob kĩrĩ gĩatengeria: mũhari wa mawĩra, indo iria ciagĩrĩrwo, mĩmenyithia na indekisi ya gũcaria nĩ irĩetereire. Tengeria php bin/php/installcrontab.php --add --apply, kana wongerere mĩhari ya --show thĩinĩ wa crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Kũingĩria gũkũ nĩ gwa kũonania kwa andũ othe: mũndũ o wothe no amenye kiugo kĩa hitho kĩa mũrũgamĩrĩri, na ikiugo cia hitho cia arũgamĩrĩri itingĩgarũrũkio kana ciigwo rĩngĩ. Ndũkaandĩke kĩndũ kĩa kĩmũthĩ haha.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ikĩfaa ciaku</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akaunti iria itihũthagĩrwo nĩ mũndũ o wothe kana ciabataraga kũrorwo; ciinge, ciahũre kana ciatũme nja.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rekodi ya gũthingata ya ahũthiri</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ũrĩa wacenjirie, wegingĩrire kana akĩregwo, akaunti o akaunti; thuurania na gũtũma nja.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ripoti ya gũtoonya</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Nũũ ũtoonyete, gũtoonya na kũremwo o mũthenya; ruta mũhũthiri nja kũrĩa gũothe.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Ikĩhinda iria cihĩtũkĩte ihinda cia mũthingatĩri wa PHP nĩ ciehereragio nĩ PHP yayo yene (session.gc_maxlifetime), na ti nĩ ũrũa ũyũ kana gĩcunjĩ kĩa wĩra wa cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ihinda iria itoonyete cia ahũthiri othe nĩ ionanagio, na ikarutwo nja, thĩinĩ wa ripoti ya gũtoonya, ĩrĩa ĩrutaga wĩra na mũhũthĩrĩria o wothe wa ikĩhinda.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Hingũra ripoti ya gũtoonya</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ akaunti yaku.</translation>
     <message>
         <source>None yet</source>
         <translation>Gũtirĩ rĩu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Gũtoonya gwaku kwa ica ĩno, kũgeria kũrĩa kwaremirwo na mogarũrũku ma kiugo gĩaku kĩa hitho, anwani ya imeili na kũingĩra kwa ngũmbĩ igĩrĩ.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Gũtoonya kwa ica ĩno, kũgeria kũrĩa kwaremirwo na mogarũrũku ma ũgitĩri wa akaunti ĩno.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Thuthuria mawĩra</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Gũtoonya kũrĩa kwaremirwo: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Rora ũrũa wa ũhoro wa ũrĩa ũbataranagio nĩguo ũmenye ũhoro ũngĩ.</tra
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ndĩandĩkirwo (%reason). Ongerera mĩsarĩ ĩno crontab-inĩ ya mũhũthiri ũrĩa saiti ĩrutaga wĩra ta we, kana mũhari wa mawĩra, ũrehe thĩinĩ, mĩmenyithia na indekithi ya ũcaria itirĩ gũtengera o ũndũ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Gũcookia kũhanda gwĩkagwo na Kickstarter (%file, thuutha ũcio php bin/php/kickstarter.php run --apply) kana na ũhandi mwerũ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Ũtwarithia wa imeili nĩ wareganire ciugo gũtengeria-inĩ kwa mũthia, ũigana: %count. Thima sava ya imeili na site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Maũndũ %count nĩ marĩetereire na gũtirĩ gũtengeria kwa cronjob ya mĩmenyithia kwandĩkĩtwo. Ongerera gĩcunjĩ kĩa cronjob &quot;frequent&quot; thĩinĩ wa crontab, kana ũtengerie exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Choose another site or section with the node picker</source>
         <translation>Thuura wĩbusaiti kana gĩcunjĩ kĩngĩ na mũthuuri wa nodi</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>No mũrũgamĩrĩri wa mũhaka wiki ũngĩhota gũcenjia mwene: tengeria ./console exp:content-check --fix-permissions --apply ta root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>empty</source>
         <translation>ndũrĩ kĩndũ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Kĩhingũrio kĩa kũhũra thaini nĩ gĩkũrĩte gũkĩra mwaka ũmwe: gĩcenjie na exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>not sent</source>
         <translation>ndĩtũmĩtwo</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob ya mĩmenyithia yandĩkaga haha o rĩrĩa yatengeria. Ongerera gĩcunjĩ frequent thĩinĩ wa crontab, kana ũtengerie exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Hũthĩra console: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>None.</source>
         <translation>Gũtirĩ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>na app ya gũtĩkĩria</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>na kodi ĩrĩa yatũmirwo na imeili</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>na kodi ya gũcookia</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>na kĩhingũrio kĩa hitho (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>na akaunti ya nja</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ĩonanagio ta neti yayo; anwani ĩigagwo o ta ũrĩa mĩtaratara ya kũgitĩra data ya website yugĩte.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Gĩtiandĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Handũ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>hakuhĩ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Manage devices</source>
         <translation>Rũgamĩrĩra ikĩfaa</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>na app ya gũtĩkĩria</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>na kodi ĩrĩa yatũmirwo na imeili</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>na kodi ya gũcookia</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>na kĩhingũrio kĩa hitho (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>na akaunti ya nja</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Gĩtiandĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Handũ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>hakuhĩ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>View the sessions of this user</source>
         <translation>Rora ikĩhinda cia mũhũthiri ũyũ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Akaunti yaku %login kũrĩ %site rĩu ĩrahũthĩrwo gũtoonya kuuma handũ ĩtatoonyete kuuma mahinda maya:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Handũ hakuhĩ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser kũrĩ %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ripoti ya gũtoonya</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Open the page</source>
         <translation>Hingũra ũrũa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nginya %to harĩ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Rĩĩtwa rĩa kwingĩra kana ID ya mũhũthiri: akaunti ĩrĩa ũndũ ũcio ũgwatanĩte nayo kana mũhũthiri ũrĩa wĩkire ũndũ ũcio.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaunti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ũndũ ũgwĩkwo</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Thutha</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ũthiĩ o wothe</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Mbere</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wĩkĩte</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Theria</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Nĩ gwĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Maũndũ mamenyagĩrwo mĩthenya %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Maũndũ mamenyagĩrwo nginya maehererio na guoko.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Maũndũ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ũndũ o wothe</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Maũndũ mothe ma akaunti ĩno</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Tũma nja mũtaratara ta CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nĩ ĩoire</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuuma</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Nyihia mũtaratara</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Gũtirĩ ũndũ ũringaine.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ũrũa o ũrũa</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kwandĩka nĩ gũhingĩtwo thĩinĩ wa audit.ini ([UserAuditSettings] UserAudit); mũtaratara uonanagia kĩrĩa kĩandĩkĩtwo mbere.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nĩ kũregetwo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ũthiĩ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rora</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tebo ya rekodi ya gũthingata ya ahũthiri ndĩrĩ kuo. Mĩumbe na php update/common/scripts/6.0/createuseraudittable.php; nginya hĩndĩ ĩyo, mafaili ma gũthingata nĩ mamenyagĩrĩra ũndũ o wothe.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ũrũa rũrũ nĩ rũbataraga kĩigĩro kĩa data kĩa SQL; rũtirĩ kuo harĩ MongoDB. Mafaili ma gũthingata nĩ mamenyagĩrĩra ũndũ o wothe.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nginya</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rekodi ya gũthingata ya ahũthiri</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mũhũthiri</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Hĩndĩ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Handũ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ũrĩa wacenjirie, woombire, wahingũrire, wahingire, wathamirie kana weheririe akaunti ĩrĩkũ, ũrĩa wegingĩrire kana akĩregwo, na marolo marĩa maheirwo: mũhari ũmwe harĩ o ũndũ, hamwe na mĩhari ya mbere na ya thutha. Ciugo cia hitho na maũndũ ma hitho matiandĩkagwo o na rĩ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>gĩkundi</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>mũhaka</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>gĩtooĩkaine</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Gitĩra akaunti yaku</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Kodi ya gũcookia nĩ yahũthĩrirwo gũtoonya akaunti yaku %login kũrĩ %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Kodi ya gũcookia nĩ yahũthĩrirwo</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaunti</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Anwani ya hakuhĩ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Itia kiugo kĩa hitho kĩerũ nĩguo ũtoonye rĩngĩ, kana ũaranie na arũgamĩrĩri a website.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Itia kiugo kĩa hitho kĩerũ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>O kodi ya gũcookia ĩrutaga wĩra rĩmwe tu. Angĩkorwo nĩ wũrirwo nĩ thimu yaku, haarĩria rĩngĩ app yaku ya gũtĩkĩria na ũige kodi njerũ cia gũcookia handũ harĩ na ũgitĩri.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Kũgeria gũtoonya kũrĩa kwaremirwo akaunti-inĩ yaku</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Kuuma rĩu, gũtoonya nĩ kũkũũria kodi hamwe na kiugo gĩaku kĩa hitho. Angĩkorwo nĩ wee wekire ũguo, ndwagĩrĩirwo nĩ gwĩka ũndũ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Angĩkorwo nĩ wee na nĩ ũriganĩirwo nĩ kiugo gĩaku kĩa hitho, itia kĩerũ. Angĩkorwo ti wee, thuura kiugo kĩa hitho kĩrĩ na hinya makĩria na ũhingũre kũingĩra kwa ngũmbĩ igĩrĩ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Angĩkorwo ti wee, no gũkorwo kũrĩ mũndũ ũũĩ kiugo gĩaku kĩa hitho: gĩcenjie rĩu na ũrore kũrĩa akaunti yaku ĩtoonyete.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kodi cia gũcookia iria ciatigara</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Thuthuria ikĩfaa ciaku</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Ũmenyithia wa ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Mũndũ nĩ ageririe gũtoonya akaunti yaku %login kũrĩ %site na kiugo kĩa hitho gĩtarĩ kĩo maita %count marũmanĩrĩire.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Nĩ kwagĩire ũndũ wa ũgitĩri akaunti-inĩ yaku %login kũrĩ %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ũyũ nĩ ũmenyithia wa ũgitĩri ũkoniĩ akaunti yaku. Ũtũmagwo o rĩrĩa kwagĩa ũgarũrũku ta ũyũ na ndũngĩhingwo.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ihinda</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingirwo akaunti-inĩ yaku %login kũrĩ %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingirwo</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingũrirwo akaunti-inĩ yaku %login kũrĩ %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingũrirwo</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Akaunti yaku %login kũrĩ %site nĩ yahingirwo thuutha wa kũremwo nĩ gũtoonya maita maingĩ mũno.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Akaunti yaku rĩu ĩrĩgitĩirwo nĩ kiugo gĩaku kĩa hitho kiki. Angĩkorwo ti wee wekire ũguo, hingũra rĩngĩ kũingĩra kwa ngũmbĩ igĩrĩ thuutha wa gũcenjia kiugo gĩaku kĩa hitho.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Akaunti yaku nĩ yahingirwo</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Mawĩra ma ũgitĩri ma %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Nĩ atoonyire</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Kũgeria gũtoonya kũrĩa kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Nĩ oimire</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ihinda nĩ ciarutirwo nja</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Gũtoonya kuuma kĩfaa-inĩ kĩerũ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Gũtoonya kuuma handũ herũ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ũtũũro wa mũndũ nĩ watĩkĩrĩtio (&quot;Thibitisha atĩ nĩ wee&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Gũthuthuria ũtũũro wa mũndũ nĩ kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Nĩ atoonyire na kĩhingũrio kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Gũtoonya na kĩhingũrio kĩa hitho nĩ kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gũtoonya nĩ kwaregwo: kodi ya ngũmbĩ ya kerĩ ndĩrĩ kana ti yo</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kodi ya ngũmbĩ ya kerĩ ti yo</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaunti nĩ yahingirwo thuutha wa kũremwo nĩ gũtoonya</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akaunti nĩ yahingũrirwo</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kiugo kĩa hitho nĩ gĩacenjirio</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Gũcenjia kiugo kĩa hitho nĩ kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kiugo kĩa hitho nĩ gĩacookirio rĩngĩ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kiugo kĩa hitho kĩerũ nĩ kĩetirio</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Anwani ya imeili nĩ yacenjirio</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Rĩĩtwa rĩa mũhũthiri nĩ rĩacenjirio</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingũrirwo</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingirwo</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kodi ya gũcookia nĩ yahũthĩrirwo</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodi njerũ cia gũcookia</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kiugo kĩa hitho kĩa porogiramu nĩkĩathondekirwo</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kiugo kĩa hitho kĩa porogiramu nĩkĩacooriirwo</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kĩhingũrio kĩa hitho nĩ kĩongereirwo</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kĩhingũrio kĩa hitho nĩ kĩeheririo</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaunti nĩ yahingũrirwo ĩrute wĩra</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaunti nĩ yahingirwo ĩtige kũruta wĩra</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ciothe</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Gũtoonya na ihinda</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mogarũrũku ma akaunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Nĩ ĩbatarĩte kũroragwo</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>nĩ wee</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>nĩ mũhũthiri</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>nĩ %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Njĩra</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Kivinjari</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Mũhaka wa kĩfaa</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Kĩfaa</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Handũ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Bũrũri</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ihinda</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Iria</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Njĩra ya gũtũma</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Kũgeria kũrĩa kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kodi iria ciatigara</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Mũhũthĩrĩria wa gũtoonya</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Mawĩra ma ũgitĩri ma %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Gũtoonya na mogarũrũku ma ũgitĩri wa akaunti yaku. Ũngĩona ũndũ ũtekire, cenjia kiugo gĩaku kĩa hitho na ũrute nja ikĩfaa iria ũtooĩ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Gũtoonya na mogarũrũku ma ũgitĩri wa akaunti ĩno.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ikĩfaa ciaku</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Cenjia kiugo kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Cooka akaunti-inĩ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Mawĩra ma ũgitĩri matiandĩkagwo</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ĩthomagwo kuuma rekodi-inĩ ya ũkaguzi wa ahũthiri, ĩrĩa thanduku yayo ya data expuser_audit ĩtarĩ kana ĩtateithĩkagĩrwo kĩigĩro-inĩ kĩĩ kĩa data. Tengeria php update/common/scripts/6.0/createuseraudittable.php, kana gũcookerithia kĩigĩro kĩa data kwa 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Mĩthenya %days ĩrĩa ĩhĩtũku</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Gũtoonya mĩthenya-inĩ %days ĩrĩa ĩhĩtũku</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Mawĩra ma ũgitĩri ma ica ĩno</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rora</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nĩ kwaremirwo</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>nĩ kwaregwo</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Gũtirĩ mawĩra ma ũgitĩri marĩ mandĩke.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Maũndũ ma ũgitĩri maigagwo mĩthenya %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Maũndũ ma ũgitĩri maigagwo nginya mũrũgamĩrĩri amehererie.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Ikũrũkia data yakwa ya gũtoonya</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ihinda ciaku na maũndũ ma ũgitĩri ta faili ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Nĩ atoonyire</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Kũgeria gũtoonya kũrĩa kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Nĩ oimire</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ihinda nĩ ciarutirwo nja</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Gũtoonya kuuma kĩfaa-inĩ kĩerũ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Gũtoonya kuuma handũ herũ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ũtũũro wa mũndũ nĩ watĩkĩrĩtio (&quot;Thibitisha atĩ nĩ wee&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Gũthuthuria ũtũũro wa mũndũ nĩ kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Nĩ atoonyire na kĩhingũrio kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Gũtoonya na kĩhingũrio kĩa hitho nĩ kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gũtoonya nĩ kwaregwo: kodi ya ngũmbĩ ya kerĩ ndĩrĩ kana ti yo</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kodi ya ngũmbĩ ya kerĩ ti yo</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaunti nĩ yahingirwo thuutha wa kũremwo nĩ gũtoonya</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akaunti nĩ yahingũrirwo</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kiugo kĩa hitho nĩ gĩacenjirio</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Gũcenjia kiugo kĩa hitho nĩ kwaremirwo</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kiugo kĩa hitho nĩ gĩacookirio rĩngĩ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kiugo kĩa hitho kĩerũ nĩ kĩetirio</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Anwani ya imeili nĩ yacenjirio</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Rĩĩtwa rĩa mũhũthiri nĩ rĩacenjirio</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingũrirwo</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kũingĩra kwa ngũmbĩ igĩrĩ nĩ kwahingirwo</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kodi ya gũcookia nĩ yahũthĩrirwo</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodi njerũ cia gũcookia</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kiugo kĩa hitho kĩa porogiramu nĩkĩathondekirwo</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kiugo kĩa hitho kĩa porogiramu nĩkĩacooriirwo</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kĩhingũrio kĩa hitho nĩ kĩongereirwo</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kĩhingũrio kĩa hitho nĩ kĩeheririo</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akaunti nĩ yahingũrirwo ĩrute wĩra</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akaunti nĩ yahingirwo ĩtige kũruta wĩra</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ciothe</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Gũtoonya na ihinda</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mogarũrũku ma akaunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Nĩ ĩbatarĩte kũroragwo</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Mawĩra ma ũgitĩri</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Mawĩra ma ũgitĩri ma %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Gũtoonya na mogarũrũku ma ũgitĩri wa akaunti yaku. Ũngĩona ũndũ ũtekire, cenjia kiugo gĩaku kĩa hitho na ũrute nja ikĩfaa iria ũtooĩ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ikĩfaa ciaku</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Cenjia kiugo kĩa hitho</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Mawĩra ma ũgitĩri matirĩ mandĩkagwo website-inĩ ĩno.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Gũtoonya mĩthenya-inĩ %days ĩrĩa ĩhĩtũku</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Kũgeria kũrĩa kwaremirwo</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Gũtirĩ mawĩra ma ũgitĩri marĩ mandĩke.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Ikũrũkia data yakwa ya gũtoonya</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ihinda ciaku na maũndũ ma ũgitĩri ta faili ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Kiugo kĩa hitho</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Kiugo kĩa hitho na kodi ya ngũmbĩ ya kerĩ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interface ya REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interface ya SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Gũtoonya rĩmwe (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Nĩ atoonyire mbere ya ihinda kwambĩrĩria kwandĩkwo</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ripoti ya gũtoonya</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Nũũ ũtoonyete website-inĩ, akaunti itoonyaga na ikaremwo maita meigana atĩa, na kũruta mũhũthiri nja kũrĩa gũothe. Ĩrutaga wĩra na mũhũthĩrĩria o wothe wa ikĩhinda.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Kĩhinda nĩ kĩarutirwo nja. Kĩfaa nĩ kĩagĩrĩirwo gũtoonya rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login nĩ arutirwo nja ihinda-inĩ %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ndaarĩ na kĩhinda kĩrĩa kĩrathiĩ.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Gũtirĩ akaunti ĩrĩ na ID ĩyo, rĩĩtwa rĩu rĩa mũhũthiri kana anwani ĩyo ya imeili.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Gĩkĩ nĩkĩo kĩhinda kĩrĩa ũrahũthĩra. Nĩguo ũgĩthirie, uma.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Kĩhinda kĩu nĩ kĩarĩkĩtie gũthira.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ihinda rĩa ũrathi rĩrĩ rĩathira. Gũtirĩ ũndũ wacenjirio; ndagũthaitha geria rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ihinda itiandĩkagwo website-inĩ ĩno (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Thanduku ya data expuser_session ndĩrĩ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ihinda nĩ ciandĩkagwo o rĩrĩa ĩrathondekwo: php update/common/scripts/6.0/createusersessiontable.php, kana gũcookerithia kĩigĩro kĩa data kwa 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Rĩu na ũmũthĩ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ihinda iria irathiĩ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Ahũthiri arĩa matoonyete</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Gũtoonya kwa ũmũthĩ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Kũgeria kũrĩa kwaremirwo ũmũthĩ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Ruta mũhũthiri nja kũrĩa gũothe</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>O kĩhinda kĩa akaunti gĩthiraga hĩndĩ ya ũtiia ũrĩa ũrũmĩrĩire, o na iria iigĩtwo nĩ &quot;Ndũmenye&quot;. Hũthĩra ũndũ ũyũ rĩrĩa akaunti ĩngĩkorwo ĩrĩ moko-inĩ mataagĩrĩire; thuutha ũcio cookia kiugo kĩayo kĩa hitho rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ya mũhũthiri, rĩĩtwa rĩa mũhũthiri kana anwani ya imeili</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Ekia nja kũrĩa gũothe</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Atoonyete rĩu</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Ihinda %limit iria ihũthĩrĩtwo ica ĩno makĩria nĩcio ironanio.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mũhũthiri</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Kĩfaa</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Anwani</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Nĩ atoonyire</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Wĩra wa mũthia</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ciĩko</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kĩfaa gĩkĩ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Gĩtiandĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ekia nja</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Gũtirĩ kĩhinda gĩtoonyete.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Mĩthenya %days ĩrĩa ĩhĩtũku</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Gũtoonya na kũgeria kũrĩa kwaremirwo gũtaragwo kuuma rekodi-inĩ ya ũkaguzi wa ahũthiri, ĩrĩa ĩtarĩ; ihinda njerũ nĩcio itaragwo.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Mũthenya</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Gũtoonya</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Kũgeria kũrĩa kwaremirwo</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Ihinda njerũ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Mũhũthĩrĩria wa ikĩhinda: %handler. Ihinda ithomagwo kuuma thanduku-inĩ ya data expuser_session, nĩ ũndũ ũcio ripoti ĩrutaga wĩra na mũhũthĩrĩria o wothe.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Ũmenyithia wa ũgitĩri wa akaunti yaku</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Nĩ kwagĩire ũndũ wa ũgitĩri akaunti-inĩ yaku %login: %event. Angĩkorwo ti wee, gitĩra akaunti yaku kũrĩ %url.</translation>
     </message>
 </context>
 </TS>

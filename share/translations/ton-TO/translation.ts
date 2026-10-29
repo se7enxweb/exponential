@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Fokotuʻu &gt; Ngāue cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ʻOku teʻeki ai ke lele ha konga ʻo e ngāue cron: ʻoku tatali ʻa e laine tatali ngāue, ngaahi hū mai, ngaahi fanongonongo mo e fakahokohoko kumi. Fakalele ʻa e php bin/php/installcrontab.php --add --apply, pe tānaki ʻa e ngaahi laine ʻo e --show ki he crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ko e fokotuʻu ni ko ha fakahāhā ʻa e kakai kotoa: ʻe lava ke ʻiloʻi ʻe ha taha ʻa e lea fufū ʻo e tokotaha pule, pea ʻoku ʻikai lava ke liliu pe toe fokotuʻu ʻa e ngaahi lea fufū ʻo e kau pule. ʻOua ʻe hū ha meʻa fakatāutaha heni.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ho ngaahi meʻangāue</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ngaahi ʻakauni ʻoku ʻikai fakaʻaongaʻi ʻe ha taha pe ʻoku fie vakai ki ai; taʻofi, tatala pe ʻave atu kinautolu.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lēkooti ʻaotita ʻo e kau fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ko hai naʻe liliu, hū pe naʻe fakafisingaʻi, ʻi he ʻakauni taki taha; sivi mo ʻave atu.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Lipooti hū</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ko hai ʻoku hū, ngaahi hū mo e ngaahi taʻelavameʻa ʻi he ʻaho taki taha; ʻave ki tuʻa ha tokotaha fakaʻaongaʻi ʻi he potu kotoa.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>ʻOku toʻo ʻe he PHP ʻa e ngaahi sēsini ʻo e tokotaha fakahoko PHP kuo ʻosi taimi (session.gc_maxlifetime), ʻikai ʻe he peesi ni pe konga session_gc ʻo e ngāue cron.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ʻOku hokohoko ʻa e ngaahi sēsini kuo hū ʻa e tokotaha fakaʻaongaʻi kotoa pē, pea ʻe lava ke ʻave ki tuʻa, ʻi he lipooti hū, ʻa ia ʻoku ngāue mo e tokotaha fakahoko sēsini kotoa pē.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Fakaava ʻa e lipooti hū</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ fakaʻaongaʻi ho ʻakauni.</translation>
     <message>
         <source>None yet</source>
         <translation>ʻIkai ha taha ʻi he taimi ni</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ho ngaahi hū fakamuimui, ngaahi feinga kuo failʻaki mo e ngaahi liliu ki hoʻo lea fufū, tuʻasila ʻīmeili mo e hū ʻi he sitepu ʻe ua.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Ngaahi hū fakamuimui, ngaahi feinga kuo failʻaki mo e ngaahi liliu fakamalu ʻo e ʻakauni ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Vakaiʻi ʻa e ngāue</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Ngaahi hū kuo failʻaki: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Vakai ki he peesi ʻo e ngaahi fiemaʻu ki he fakamatala lahi ange.</translation
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Naʻe ʻikai tohi ʻa e crontab (%reason). Tānaki ʻa e ngaahi laine ni ki he crontab ʻo e tokotaha fakaʻaongaʻi ʻoku lele ʻaki ʻa e uepisaiti, ka ʻikai ʻe ʻikai teitei lele ʻa e laine tatali, ngaahi fakahū mai, ngaahi fanongonongo mo e tohi fakahā kumi:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ʻOku fai ʻa e toe fokotuʻu ʻaki ʻa e kickstarter (%file, pea toki php bin/php/kickstarter.php run --apply) pe ʻaki ha fokotuʻu foʻou.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Naʻe fakafisi ʻe he founga meili ʻa e ngaahi fekau ʻe %count ʻi he fakalele fakaʻosi. Sivi ʻa e sēva meili mo e site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ʻOku tatali ha meʻa hoko ʻe %count pea ʻoku ʻikai ha lēkooti ʻo ha lele ʻa e ngāue cron fanongonongo. Tānaki ʻa e konga ngāue cron &quot;frequent&quot; ki he crontab, pe fakalele ʻa e exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Fili ha uepisaiti pe konga kehe ʻaki ʻa e filifili noti</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Ko e tokotaha pule ʻo e founga ngāue pē ʻe lava ke liliu ʻa e tokotaha ʻoku ʻaʻana: fakalele ʻa e ./console exp:content-check --fix-permissions --apply ko e root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>hā maʻa</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Kuo laka hake ʻi he taʻu ʻe taha ʻa e kī fakamoʻoni: fetongi ia ʻaki ʻa e exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>naʻe ʻikai fekau</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ʻOku lēkooti heni ʻe he ngāue cron fanongonongo ʻa ʻene lele kotoa pē. Tānaki ʻa e konga frequent ki he crontab, pe fakalele ʻa e exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Fakaʻaongaʻi ʻa e konisolo: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ʻIkai ha meʻa.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ʻaki ha polokalama fakamoʻoni</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ʻaki ha koti ʻi he ʻīmeili</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ʻaki ha koti fakafoki</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ʻaki ha kī hū</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ʻaki ha ʻakauni mei tuʻa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ʻOku fakahā ko hono netiueka; ʻoku tauhi ʻa e tuʻasila ʻo fakatatau ki he ngaahi fokotuʻutuʻu maluʻi fakamatala ʻo e uepisaiti.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Taʻe lēkooti</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Feituʻu</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>fakafuofua</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Pule ʻa e ngaahi meʻangāue</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ʻaki ha polokalama fakamoʻoni</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ʻaki ha koti ʻi he ʻīmeili</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ʻaki ha koti fakafoki</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ʻaki ha kī hū</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ʻaki ha ʻakauni mei tuʻa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Taʻe lēkooti</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Feituʻu</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>fakafuofua</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Vakai ki he ngaahi sēsini ʻo e tokotaha fakaʻaongaʻi ni</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Kuo toki fakaʻaongaʻi hoʻo ʻakauni %login ʻi %site ke hū mei ha feituʻu naʻe ʻikai ke hū mei ai ʻi he ngaahi ʻaho fakamuimui ni:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Feituʻu fakafuofua</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ʻi he %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Lipooti hū</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Fakaava ʻa e peesi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki he %to ʻi he %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ko ha hingoa hū pe ID ʻo ha tokotaha fakaʻaongaʻi: ko e ʻakauni naʻe fekauʻaki mo e meʻa hoko pe ko e tokotaha fakaʻaongaʻi naʻá ne fai ʻa e ngāue.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ʻAkauni</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ngāue</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ʻAfiʻi</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ola kotoa pē</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ʻImuʻa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Fai ʻe</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Fakamaʻa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kuo lavaʻi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ʻOku tauhi ʻa e ngaahi meʻa hoko ʻi he ʻaho ʻe %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ʻOku tauhi ʻa e ngaahi meʻa hoko kae ʻoua kuo toʻo ʻaki ha nima.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngaahi meʻa hoko</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ngāue kotoa pē</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ngaahi meʻa hoko kotoa ʻo e ʻakauni ko ʻeni</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ʻAve atu ʻa e lisi ko e CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mei he</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Fakasiʻisiʻi ʻa e lisi</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ʻOku ʻikai ha meʻa hoko ʻoku tatau.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ʻI he peesi taki taha</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kuo taʻofi ʻa e lēkooti ʻi he audit.ini ([UserAuditSettings] UserAudit); ʻoku fakahā ʻe he lisi ʻa e meʻa naʻe lēkooti kimuʻa.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Kuo fakafisingaʻi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ola</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fakahā</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ʻOku ʻikai ha tēpile ʻo e lēkooti ʻaotita ʻo e kau fakaʻaongaʻi. Faʻu ia ʻaki ʻa e php update/common/scripts/6.0/createuseraudittable.php; kae ʻoua ke toki fai ia, ʻoku tauhi ʻe he ngaahi faile ʻaotita ʻa e meʻa hoko kotoa pē.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ʻOku fiemaʻu ʻe he peesi ko ʻeni ha pangikē fakamatala SQL; ʻoku ʻikai maʻu ia ʻi he MongoDB. ʻOku tauhi ʻe he ngaahi faile ʻaotita ʻa e meʻa hoko kotoa pē.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lēkooti ʻaotita ʻo e kau fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Tokotaha fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Taimi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Feituʻu</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ko hai naʻá ne liliu, faʻu, fakaʻaongaʻi, taʻofi, hiki pe toʻo ʻa e ʻakauni fē, ko hai naʻe hū pe naʻe fakafisingaʻi, pea ko e ngaahi fatongia fē naʻe vahe: laine ʻe taha ki he meʻa hoko taki taha, mo e ngaahi funga tohi kimuʻa mo e hili. ʻOku ʻikai teitei lēkooti ʻa e ngaahi lea fufū mo e ngaahi meʻa fufū.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>kulupu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>founga</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ʻikai ʻilo</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Fakamalu hoʻo ʻakauni</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Naʻe fakaʻaongaʻi ha koti fakafoki ke hū ki hoʻo ʻakauni %login ʻi %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Naʻe fakaʻaongaʻi ha koti fakafoki</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ʻAkauni</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Tuʻasila fakafuofua</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Kole ha lea fufū foʻou ke toe hū, pe fetuʻutaki ki he kau pule ʻo e uepisaiti.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Kole ha lea fufū foʻou</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ʻOku ngāue tuʻo taha pē ʻa e koti fakafoki taki taha. Kapau kuo mole hoʻo telefoni, toe fokotuʻu hoʻo polokalama fakamoʻoni pea tauhi ʻa e ngaahi koti fakafoki foʻou ʻi ha feituʻu malu.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Ngaahi feinga hū kuo failʻaki ki hoʻo ʻakauni</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Mei he taimi ni, ʻe kole ʻe he hū ha koti tānaki ki hoʻo lea fufū. Kapau ko koe naʻá ke fai ʻeni, ʻoku ʻikai ha meʻa ke ke fai.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Kapau ko koe ia pea kuó ke ngalo hoʻo lea fufū, kole ha foʻou. Kapau ʻoku ʻikai, fili ha lea fufū mālohi ange pea fakaʻaongaʻi ʻa e hū ʻi he sitepu ʻe ua.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Kapau naʻe ʻikai ko koe, mahalo ʻoku ʻilo ʻe ha taha hoʻo lea fufū: liliu ia he taimi ni pea vakai pe ʻoku hū hoʻo ʻakauni ʻi fē.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Ngaahi koti fakafoki ʻoku toe</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Vakaiʻi ho ngaahi meʻangāue</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Fakatokanga fakamalu</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Naʻe feinga ha taha ke hū ki hoʻo ʻakauni %login ʻi %site ʻaki ha lea fufū hala tuʻo %count hokohoko.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Naʻe ʻi ai ha meʻa hoko fakamalu ki hoʻo ʻakauni %login ʻi %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ko ha fakatokanga fakamalu ʻeni fekauʻaki mo hoʻo ʻakauni. ʻOku ʻave ia ki he liliu kotoa pē pehē ni pea ʻoku ʻikai lava ke taʻofi.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Taimi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Kuo taʻofi ʻa e hū ʻi he sitepu ʻe ua ki hoʻo ʻakauni %login ʻi %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Kuo taʻofi ʻa e hū ʻi he sitepu ʻe ua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kuo fakaʻaongaʻi ʻa e hū ʻi he sitepu ʻe ua ki hoʻo ʻakauni %login ʻi %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kuo fakaʻaongaʻi ʻa e hū ʻi he sitepu ʻe ua</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Kuo loka hoʻo ʻakauni %login ʻi %site hili ha ngaahi hū kuo failʻaki lahi fau.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ʻOku maluʻi hoʻo ʻakauni he taimi ni ʻe hoʻo lea fufū pē. Kapau naʻe ʻikai ko koe naʻá ke fai ʻeni, toe fakaʻaongaʻi ʻa e hū ʻi he sitepu ʻe ua hili hoʻo liliu hoʻo lea fufū.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Kuo loka hoʻo ʻakauni</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ngāue fakamalu ʻa %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kuo hū</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Feinga hū kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kuo ʻalu ki tuʻa</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Kuo ʻave ki tuʻa ʻa e ngaahi sēsini</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Hū mei ha meʻangāue foʻou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Hū mei ha feituʻu foʻou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kuo fakapapauʻi ʻa e kita («Fakapapauʻi ko koe ia»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kuo failʻaki ʻa e sivi ʻo e kita</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Naʻe hū ʻaki ha kī hū</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kuo failʻaki ʻa e hū ʻaki ʻa e kī hū</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kuo taliteʻi ʻa e hū: ʻoku ʻikai ha koti sitepu ʻe ua pe ʻoku hala</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koti sitepu ʻe ua ʻoku hala</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kuo loka ʻa e ʻakauni hili ha ngaahi hū kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kuo tatala ʻa e loka ʻo e ʻakauni</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kuo liliu ʻa e lea fufū</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Kuo failʻaki ʻa e liliu ʻo e lea fufū</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kuo toe fokotuʻu ʻa e lea fufū</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kuo kole ha lea fufū foʻou</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Kuo liliu ʻa e tuʻasila ʻīmeili</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kuo liliu ʻa e hingoa fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kuo fakaʻaongaʻi ʻa e hū ʻi he sitepu ʻe ua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kuo taʻofi ʻa e hū ʻi he sitepu ʻe ua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Naʻe fakaʻaongaʻi ha koti fakafoki</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ngaahi koti fakafoki foʻou</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kuo faʻu ha lea fufū polokalama</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kuo toʻo ha lea fufū polokalama</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kuo tānaki ha kī hū</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kuo toʻo ha kī hū</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kuo fakaʻaongaʻi ʻa e ʻakauni</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kuo taʻofi ʻa e ʻakauni</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kotoa</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ngaahi hū mo e ngaahi sēsini</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ngaahi liliu ʻakauni</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ʻOku fiemaʻu tokanga</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ʻe koe</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ʻe he tokotaha fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ʻe %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Founga</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Palausa</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Founga ngāue</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Meʻangāue</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Potu</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Fonua</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ngaahi sēsini</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ko fē</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Hala fetuʻutaki</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ngaahi feinga kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Ngaahi koti ʻoku toe</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Tokotaha fakahoko hū</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ngāue fakamalu ʻa %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ngaahi hū mo e ngaahi liliu ki he malu ʻo hoʻo ʻakauni. Kapau ʻokú ke sio ki ha meʻa naʻe ʻikai te ke fai, liliu hoʻo lea fufū pea ʻave ki tuʻa ʻa e ngaahi meʻangāue ʻoku ʻikai te ke ʻiloʻi.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Ngaahi hū mo e ngaahi liliu ki he malu ʻo e ʻakauni ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ho ngaahi meʻangāue</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Liliu ʻa e lea fufū</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Foki ki he ʻakauni</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ʻOku ʻikai lēkooti ʻa e ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ʻOku lau ia mei he lēkooti ʻaotita ʻo e kau fakaʻaongaʻi, ʻa ia ʻoku ʻikai ʻi ai hono tēpile expuser_audit pe ʻoku ʻikai poupouʻi ʻi he pangikē fakamatala ko ʻeni. Fakalele ʻa e php update/common/scripts/6.0/createuseraudittable.php, pe ko e fakafoʻou pangikē fakamatala ʻo e 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ʻAho fakamuimui ʻe %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ngaahi hū ʻi he ʻaho fakamuimui ʻe %days</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ngāue fakamalu fakamuimui</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fakahā</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>kuo taliteʻi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ʻOku teʻeki ai lēkooti ha ngāue fakamalu.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ʻOku tauhi ʻa e ngaahi meʻa hoko fakamalu ʻi he ʻaho ʻe %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ʻOku tauhi ʻa e ngaahi meʻa hoko fakamalu kae ʻoua kuo toʻo ʻe ha tokotaha pule.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Fakahifo ʻeku fakamatala hū</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ho ngaahi sēsini mo e ngaahi meʻa hoko fakamalu ko ha faile JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kuo hū</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Feinga hū kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kuo ʻalu ki tuʻa</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Kuo ʻave ki tuʻa ʻa e ngaahi sēsini</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Hū mei ha meʻangāue foʻou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Hū mei ha feituʻu foʻou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kuo fakapapauʻi ʻa e kita («Fakapapauʻi ko koe ia»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kuo failʻaki ʻa e sivi ʻo e kita</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Naʻe hū ʻaki ha kī hū</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kuo failʻaki ʻa e hū ʻaki ʻa e kī hū</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kuo taliteʻi ʻa e hū: ʻoku ʻikai ha koti sitepu ʻe ua pe ʻoku hala</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koti sitepu ʻe ua ʻoku hala</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kuo loka ʻa e ʻakauni hili ha ngaahi hū kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kuo tatala ʻa e loka ʻo e ʻakauni</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kuo liliu ʻa e lea fufū</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Kuo failʻaki ʻa e liliu ʻo e lea fufū</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kuo toe fokotuʻu ʻa e lea fufū</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kuo kole ha lea fufū foʻou</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Kuo liliu ʻa e tuʻasila ʻīmeili</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kuo liliu ʻa e hingoa fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kuo fakaʻaongaʻi ʻa e hū ʻi he sitepu ʻe ua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kuo taʻofi ʻa e hū ʻi he sitepu ʻe ua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Naʻe fakaʻaongaʻi ha koti fakafoki</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ngaahi koti fakafoki foʻou</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kuo faʻu ha lea fufū polokalama</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kuo toʻo ha lea fufū polokalama</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kuo tānaki ha kī hū</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kuo toʻo ha kī hū</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kuo fakaʻaongaʻi ʻa e ʻakauni</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kuo taʻofi ʻa e ʻakauni</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kotoa</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ngaahi hū mo e ngaahi sēsini</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ngaahi liliu ʻakauni</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ʻOku fiemaʻu tokanga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngāue fakamalu</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ngāue fakamalu ʻa %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ngaahi hū mo e ngaahi liliu ki he malu ʻo hoʻo ʻakauni. Kapau ʻokú ke sio ki ha meʻa naʻe ʻikai te ke fai, liliu hoʻo lea fufū pea ʻave ki tuʻa ʻa e ngaahi meʻangāue ʻoku ʻikai te ke ʻiloʻi.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ho ngaahi meʻangāue</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Liliu ʻa e lea fufū</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ʻOku teʻeki ai lēkooti ʻa e ngāue fakamalu ʻi he uepisaiti ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ngaahi hū ʻi he ʻaho fakamuimui ʻe %days</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ngaahi feinga kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ʻOku teʻeki ai lēkooti ha ngāue fakamalu.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Fakahifo ʻeku fakamatala hū</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ho ngaahi sēsini mo e ngaahi meʻa hoko fakamalu ko ha faile JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Lea fufū</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Lea fufū mo e koti sitepu ʻe ua</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Fehokotakiʻanga REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Fehokotakiʻanga SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Hū pē taha</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Naʻe hū kimuʻa pea lēkooti ʻa e ngaahi sēsini</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Lipooti hū</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ko hai ʻoku hū ki he uepisaiti, ko e hā hono tuʻo lahi ʻo e hū mo e failʻaki ʻa e ngaahi ʻakauni, pea mo hono ʻave ki tuʻa ha tokotaha fakaʻaongaʻi ʻi he potu kotoa. ʻOku ngāue ia mo e tokotaha fakahoko sēsini kotoa pē.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Kuo ʻave ki tuʻa ʻa e sēsini. Kuo pau ke toe hū ʻa e meʻangāue.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Kuo ʻave ki tuʻa ʻa %login mei he sēsini ʻe %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Naʻe ʻikai ha sēsini ʻoku lele ʻa %login.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ʻOku ʻikai ha ʻakauni ʻoku ʻi ai ʻa e ID, hingoa fakaʻaongaʻi pe tuʻasila ʻīmeili ko ia.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ko e sēsini ʻeni ʻokú ke fakaʻaongaʻi. Ke fakaʻosi ia, ʻalu ki tuʻa.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Kuo ʻosi kē ʻa e sēsini ko ia.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kuo ʻosi ʻa e taimi ʻo e peesi. Naʻe ʻikai liliu ha meʻa; kātaki ʻo toe feinga.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ʻOku ʻikai lēkooti ʻa e ngaahi sēsini ʻi he uepisaiti ko ʻeni (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ʻOku ʻikai ʻi ai ʻa e tēpile expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ʻE lēkooti ʻa e ngaahi sēsini ʻi he taimi ʻe faʻu ai ia: php update/common/scripts/6.0/createusersessiontable.php, pe ko e fakafoʻou pangikē fakamatala ʻo e 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Taimi ni mo e ʻaho ni</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ngaahi sēsini ʻoku lele</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Kau fakaʻaongaʻi kuo hū</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Ngaahi hū he ʻaho ni</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Ngaahi feinga kuo failʻaki he ʻaho ni</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ʻAve ki tuʻa ha tokotaha fakaʻaongaʻi ʻi he potu kotoa</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ʻOku ngata ʻa e sēsini kotoa pē ʻo e ʻakauni ʻi heʻene kole hoko, kau ai mo ia ʻoku tauhi ʻe «Manatuʻi au». Fakaʻaongaʻi ʻeni ʻo kapau ʻe ʻi ha nima hala ha ʻakauni; pea toki toe fokotuʻu hono lea fufū.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ʻo e tokotaha fakaʻaongaʻi, hingoa fakaʻaongaʻi pe tuʻasila ʻīmeili</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ʻAlu ki tuʻa ʻi he potu kotoa</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Kuo hū he taimi ni</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ʻOku fakahā ʻa e ngaahi sēsini ʻe %limit naʻe fakaʻaongaʻi fakamuimui taha.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Tokotaha fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Meʻangāue</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Tuʻasila</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kuo hū</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ngāue fakamuimui</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ngaahi ngāue</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Meʻangāue ko ʻeni</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Taʻe lēkooti</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ʻAlu ki tuʻa</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ʻOku ʻikai ha sēsini kuo hū.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ʻAho fakamuimui ʻe %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ʻOku lau ʻa e ngaahi hū mo e ngaahi feinga kuo failʻaki mei he lēkooti ʻaotita ʻo e kau fakaʻaongaʻi, ʻa ia ʻoku ʻikai ʻi ai; ʻoku kei lau pē ʻa e ngaahi sēsini foʻou.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ʻAho</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Ngaahi hū</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ngaahi feinga kuo failʻaki</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Ngaahi sēsini foʻou</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Tokotaha fakahoko sēsini: %handler. ʻOku lau ʻa e ngaahi sēsini mei he tēpile expuser_session, ko ia ʻoku ngāue ai ʻa e lipooti mo e tokotaha fakahoko kotoa pē.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Fakatokanga fakamalu ki hoʻo ʻakauni</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Naʻe ʻi ai ha meʻa hoko fakamalu ki hoʻo ʻakauni %login: %event. Kapau naʻe ʻikai ko koe, fakamalu hoʻo ʻakauni ʻi %url.</translation>
     </message>
 </context>
 </TS>

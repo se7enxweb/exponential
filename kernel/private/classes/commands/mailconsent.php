@@ -1,6 +1,6 @@
 <?php
 /**
- * @description The consent log of the e-mail preferences: list, export as CSV, retention cleanup
+ * @description The consent log of the e-mail preferences: list, export as CSV, retention cleanup (dry run unless --apply)
  * @alias exp:mail:consent
  *
  * File containing the exp:mail:consent command.
@@ -24,22 +24,34 @@ class Mailconsent extends \Exponential\Runnable\Command
                                  "  list                      the newest rows (time, person, category, action, old -> new, source)\n" .
                                  "  export                    the rows as CSV (--output, or the screen); the CSV holds addresses and IPs\n" .
                                  "  cleanup                   retention: remove the rows of people who are gone after RetentionDays, expired\n" .
-                                 "                            confirmations and old suppression entries (--dry-run counts)\n" .
+                                 "                            confirmations and old suppression entries; counts only, --apply removes\n" .
                                  "Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-DD).\n" .
+                                 "cleanup without --apply removes nothing: it counts what it would remove. --dry-run is still\n" .
+                                 "accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n" .
                                  "\n" .
                                  "./console exp:mail:consent list --category=newsletter --limit=20\n" .
                                  "./console exp:mail:consent export --from=2026-01-01 --output=var/tmp/consent.csv\n" .
-                                 "./console exp:mail:consent cleanup --dry-run",
+                                 "./console exp:mail:consent cleanup\n" .
+                                 "./console exp:mail:consent cleanup --apply",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[user:][email:][category:][action:][source:][from:][to:][limit:][offset:][output:][dry-run][addresses]', '',
+        $options = $this->startup( '[user:][email:][category:][action:][source:][from:][to:][limit:][offset:][output:][apply][dry-run][addresses]', '',
             array( 'user' => 'a login or user id', 'email' => 'an address', 'category' => 'a category identifier', 'action' => 'on, off, pending, confirm, ...',
                    'source' => 'page, link, admin, import, signup, bridge, confirm, system', 'from' => 'from this day', 'to' => 'up to this day',
                    'limit' => 'list: how many (default 50)', 'offset' => 'list: skip this many', 'output' => 'export: the file (mode 0600)',
-                   'dry-run' => 'cleanup: count only', 'addresses' => 'list: show addresses instead of hiding them' ) );
+                   'apply' => 'cleanup: remove the rows (the default counts them and removes nothing)',
+                   'dry-run' => 'cleanup: the default, kept for scripts that pass it: count only', 'addresses' => 'list: show addresses instead of hiding them' ) );
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $dryRun = !$apply;
         $args = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
         $action = $args ? strtolower( (string)$args[0] ) : 'list';
         try
@@ -91,9 +103,15 @@ class Mailconsent extends \Exponential\Runnable\Command
                         \expAudit::event( 'data.export.csv', array( 'object' => array( 'type' => 'consent_log', 'id' => 'expmail_consent_log' ), 'x' => array( 'filters' => array_keys( $filters ) ) ) );
                     break;
                 case 'cleanup':
-                    $r = \expConsentLog::cleanup( !empty( $options['dry-run'] ) );
-                    $cli->output( sprintf( '%s: %d consent log rows, %d expired confirmations%s', !empty( $options['dry-run'] ) ? 'Would remove' : 'Removed',
-                                           $r['consent'], $r['pending'], !empty( $options['dry-run'] ) ? '' : ', ' . $r['suppression'] . ' suppression entries' ) );
+                    $r = \expConsentLog::cleanup( $dryRun );
+                    $cli->output( sprintf( '%s: %d consent log rows, %d expired confirmations%s', $dryRun ? 'Would remove' : 'Removed',
+                                           $r['consent'], $r['pending'], $dryRun ? '' : ', ' . $r['suppression'] . ' suppression entries' ) );
+                    if ( $dryRun )
+                    {
+                        $cli->output( 'PASS: cleanup counted (dry run, nothing changed; --apply writes)' );
+                        $this->shutdown( 0 );
+                        return;
+                    }
                     break;
                 default:
                     throw new \InvalidArgumentException( "unknown action '$action' (list, export, cleanup)" );

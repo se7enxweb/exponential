@@ -26,7 +26,7 @@ language. The question is usually less the software than the translation capacit
 
 ## Is the locale there?
 
-`share/locale/` ships 359 locale files, among them many regional and minority languages, for example Welsh
+`share/locale/` ships 368 locale files, among them many regional and minority languages, for example Welsh
 (`cym-GB`), Basque (`eus-ES`), Galician (`glg-ES`), Irish (`gle-IE`), Scottish Gaelic (`gla-GB`), Breton (`bre-FR`),
 Occitan (`oci-FR`), Western Frisian (`fry-NL`), Northern Sami (`sme-NO`), Romansh (`roh-CH`), Luxembourgish
 (`ltz-LU`), Maori (`mri-NZ`), Hawaiian (`haw-US`) and Greenlandic (`kal-GL`). The complete list with native names is

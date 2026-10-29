@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Quraşdırma &gt; Cron tapşırıqları</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron tapşırıqlarının heç bir hissəsi hələ işə düşməyib: tapşırıq növbəsi, idxallar, bildirişlər və axtarış indeksi gözləyir. php bin/php/installcrontab.php --add --apply əmrini icra edin və ya --show əmrinin göstərdiyi sətirləri crontab faylına əlavə edin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Bu quraşdırma ictimai demodur: administrator şifrəsini hər kəs bilə bilər və administrator şifrələri dəyişdirilə və ya sıfırlana bilməz. Burada şəxsi heç nə daxil etməyin.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Heç kimin istifadə etmədiyi və ya nəzərdən keçirilməli hesablar; onları deaktivləşdirin, kilidini açın və ya ixrac edin.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>İstifadəçi audit jurnalı</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hər hesab üzrə kim dəyişdi, daxil oldu və ya rədd edildi; filtrləyin və ixrac edin.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Girişlər hesabatı</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kimin daxil olduğu, günlər üzrə girişlər və uğursuz cəhdlər; istifadəçini hər yerdən çıxarmaq.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP idarəedicisinin vaxtı bitmiş sessiyalarını bu səhifə və ya session_gc cron tapşırığı hissəsi deyil, PHP özü çıxarır (session.gc_maxlifetime).</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Bütün istifadəçilərin daxil olmuş sessiyaları girişlər hesabatında göstərilir və orada sonlandırılır; hesabat istənilən sessiya işləyicisi ilə işləyir.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Girişlər hesabatını aç</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ həmin məktubdakı göstərişlərə əməl edin.</translation>
     <message>
         <source>None yet</source>
         <translation>Hələ yoxdur</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Son girişləriniz, uğursuz cəhdlər və şifrənizdə, e-poçt ünvanınızda və iki addımlı girişdə edilən dəyişikliklər.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Bu hesabın son girişləri, uğursuz cəhdləri və təhlükəsizlik dəyişiklikləri.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Fəaliyyətə bax</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Uğursuz girişlər: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab yazılmadı (%reason). Bu sətirləri saytın işlədiyi istifadəçinin crontab faylına əlavə edin, əks halda növbə, idxallar, bildirişlər və axtarış indeksi heç vaxt işləməz:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Yenidən quraşdırma kickstarter ilə (%file, sonra php bin/php/kickstarter.php run --apply) və ya yeni quraşdırma ilə edilir.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Poçt nəqliyyatı son işə salmada %count məktubu rədd etdi. Poçt serverini və site.ini MailSettings parametrlərini yoxlayın.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Gözləyən hadisələr: %count, lakin bildirişlər cron tapşırığının heç bir işə düşməsi qeydə alınmayıb. &quot;frequent&quot; cron hissəsini crontab faylına əlavə edin və ya exp:notification:run --apply əmrini icra edin.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Choose another site or section with the node picker</source>
         <translation>Düyün seçici ilə başqa sayt və ya bölmə seçin</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Sahibi yalnız sistem administratoru dəyişə bilər: ./console exp:content-check --fix-permissions --apply əmrini root kimi icra edin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>empty</source>
         <translation>boş</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>İmza açarı bir ildən köhnədir: onu exp:audit key rotate --apply əmri ilə dəyişin.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>not sent</source>
         <translation>göndərilməyib</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Bildirişlər cron tapşırığı hər işə düşməsini burada qeydə alır. frequent hissəsini crontab faylına əlavə edin və ya exp:notification:run --apply əmrini icra edin.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsoldan istifadə edin: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>None.</source>
         <translation>Yoxdur.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikator tətbiqi ilə</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-poçtla gələn kodla</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bərpa kodu ilə</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>giriş açarı ilə</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>xarici hesabla</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Şəbəkə kimi göstərilir; ünvan saytın məlumatların qorunması parametrlərində nəzərdə tutulduğu kimi saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Qeyd edilməyib</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Məkan</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>təxmini</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Manage devices</source>
         <translation>Cihazları idarə et</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikator tətbiqi ilə</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-poçtla gələn kodla</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bərpa kodu ilə</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>giriş açarı ilə</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>xarici hesabla</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Qeyd edilməyib</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Məkan</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>təxmini</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>View the sessions of this user</source>
         <translation>Bu istifadəçinin sessiyalarına bax</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site saytındakı %login hesabınıza son vaxtlar giriş edilməmiş bir yerdən indicə daxil olundu:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Təxmini məkan</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os üzərində %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Girişlər hesabatı</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>Open the page</source>
         <translation>Səhifəni aç</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, cəmi %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Giriş adı və ya istifadəçi ID-si: hadisənin aid olduğu hesab və ya əməliyyatı icra edən istifadəçi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesab</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Əməliyyat</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sonra</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>İstənilən nəticə</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Əvvəl</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>İcra edən</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Təmizlə</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>İcra edildi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Hadisələr %days gün saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Hadisələr əl ilə silinənə qədər saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hadisələr</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Bütün əməliyyatlar</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Bu hesabın bütün hadisələri</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Siyahını CSV kimi ixrac et (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nə vaxtdan</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Siyahını daralt</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Uyğun hadisə yoxdur.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Hər səhifədə</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Qeydə alma audit.ini faylında söndürülüb ([UserAuditSettings] UserAudit); siyahı əvvəllər qeydə alınanları göstərir.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rədd edildi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nəticə</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göstər</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>İstifadəçi audit jurnalının cədvəli yoxdur. Onu php update/common/scripts/6.0/createuseraudittable.php ilə yaradın; o vaxta qədər audit faylları hər hadisəni saxlayır.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Bu səhifə SQL verilənlər bazası tələb edir; MongoDB ilə işləmir. Audit faylları hər hadisəni saxlayır.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nə vaxtadək</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>İstifadəçi audit jurnalı</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>İstifadəçi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Nə vaxt</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Harada</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kimin hansı hesabı dəyişdiyi, yaratdığı, aktivləşdirdiyi, deaktiv etdiyi, köçürdüyü və ya sildiyi, kimin daxil olduğu və ya rədd edildiyi və hansı rolların təyin edildiyi: hər hadisə üçün bir sətir, sahələrin əvvəlki və sonrakı dəyərləri ilə. Şifrələr və gizli məlumatlar heç vaxt qeydə alınmır.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>qrup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>naməlum</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hesabı qoru</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site saytındakı %login hesabınıza bərpa kodu ilə daxil olundu.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Bərpa kodu istifadə edildi</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesab</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Təxmini ünvan</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Yenidən daxil olmaq üçün yeni şifrə istəyin və ya saytın administratorları ilə əlaqə saxlayın.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Yeni şifrə istə</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Hər bərpa kodu yalnız bir dəfə işləyir. Telefonunuzu itirmisinizsə, autentifikator tətbiqini yenidən qurun və yeni bərpa kodlarını etibarlı yerdə saxlayın.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Hesabınıza uğursuz giriş cəhdləri</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Bundan sonra girişdə şifrənizdən əlavə kod da soruşulacaq. Bunu siz etmisinizsə, heç nə etməyinizə ehtiyac yoxdur.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Bu siz idinizsə və şifrənizi unutmusunuzsa, yenisini istəyin. Əks halda daha güclü şifrə seçin və iki addımlı girişi aktivləşdirin.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Bu siz deyildinizsə, kimsə şifrənizi bilə bilər: onu indi dəyişin və hesabınızın harada daxil olduğunu yoxlayın.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Qalan bərpa kodları</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Cihazları yoxla</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Təhlükəsizlik xəbərdarlığı</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kimsə %site saytındakı %login hesabınıza yanlış şifrə ilə ardıcıl %count dəfə daxil olmağa cəhd edib.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site saytındakı %login hesabınızda təhlükəsizlik hadisəsi baş verib.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Bu, hesabınız haqqında təhlükəsizlik xəbərdarlığıdır. O, hər belə dəyişiklikdə göndərilir və söndürülə bilməz.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Vaxt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site saytındakı %login hesabınız üçün iki addımlı giriş deaktivləşdirildi.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>İki addımlı giriş deaktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site saytındakı %login hesabınız üçün iki addımlı giriş aktivləşdirildi.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>İki addımlı giriş aktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site saytındakı %login hesabınız həddən artıq uğursuz girişdən sonra kilidləndi.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Hesabınız indi yalnız şifrə ilə qorunur. Bunu siz etməmisinizsə, şifrənizi dəyişdikdən sonra iki addımlı girişi yenidən aktivləşdirin.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Hesabınız kilidləndi</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Təhlükəsizlik fəaliyyəti: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Daxil olub</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Uğursuz giriş cəhdi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Çıxış edib</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiyalar sonlandırıldı</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Yeni cihazdan giriş</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Yeni məkandan giriş</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Şəxsiyyət təsdiqləndi (&quot;Sizin olduğunuzu təsdiq edin&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Şəxsiyyət yoxlaması uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Giriş açarı ilə daxil olub</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Giriş açarı ilə giriş uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Giriş rədd edildi: iki addımlı giriş kodu yoxdur və ya yanlışdır</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Yanlış iki addımlı giriş kodu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hesab uğursuz girişlərdən sonra kilidləndi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hesabın kilidi açıldı</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Şifrə dəyişdirilib</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Şifrə dəyişdirilə bilmədi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Şifrə sıfırlandı</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Yeni şifrə istənildi</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-poçt ünvanı dəyişdirildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>İstifadəçi adı dəyişdirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>İki addımlı giriş aktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>İki addımlı giriş deaktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Bərpa kodu istifadə edildi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Yeni bərpa kodları</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Tətbiq şifrəsi yaradıldı</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Tətbiq şifrəsi ləğv edildi</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Giriş açarı əlavə edildi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Giriş açarı çıxarıldı</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hesab aktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hesab deaktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hamısı</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Girişlər və sessiyalar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hesab dəyişiklikləri</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Diqqət tələb edir</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>siz tərəfindən</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>istifadəçi tərəfindən</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>istifadəçi tərəfindən: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Üsul</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Brauzer</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Əməliyyat sistemi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cihaz</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Yer</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ölkə</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiyalar</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Hansılar</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Uğursuz cəhdlər</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Qalan kodlar</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Giriş işləyicisi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Təhlükəsizlik fəaliyyəti: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hesabınıza girişlər və onun təhlükəsizliyində edilən dəyişikliklər. Etmədiyiniz bir şey görsəniz, şifrənizi dəyişin və tanımadığınız cihazları çıxış etdirin.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Bu hesaba girişlər və onun təhlükəsizliyində edilən dəyişikliklər.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Şifrəni dəyişdir</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Hesaba qayıt</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Təhlükəsizlik fəaliyyəti qeydə alınmır</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>O, istifadəçi audit jurnalından oxunur, lakin onun expuser_audit cədvəli yoxdur və ya bu verilənlər bazasında dəstəklənmir. php update/common/scripts/6.0/createuseraudittable.php əmrini və ya 6.0.15 verilənlər bazası yeniləməsini icra edin.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Son %days gün</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Son %days gündəki girişlər</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Son təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göstər</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>uğursuz</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rədd edildi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hələ heç bir təhlükəsizlik fəaliyyəti qeydə alınmayıb.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Təhlükəsizlik hadisələri %days gün saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Təhlükəsizlik hadisələri administrator onları çıxarana qədər saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Giriş məlumatlarımı endir</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessiyalarınız və təhlükəsizlik hadisələriniz JSON faylı kimi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Daxil olub</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Uğursuz giriş cəhdi</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Çıxış edib</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiyalar sonlandırıldı</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Yeni cihazdan giriş</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Yeni məkandan giriş</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Şəxsiyyət təsdiqləndi (&quot;Sizin olduğunuzu təsdiq edin&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Şəxsiyyət yoxlaması uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Giriş açarı ilə daxil olub</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Giriş açarı ilə giriş uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Giriş rədd edildi: iki addımlı giriş kodu yoxdur və ya yanlışdır</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Yanlış iki addımlı giriş kodu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hesab uğursuz girişlərdən sonra kilidləndi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hesabın kilidi açıldı</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Şifrə dəyişdirilib</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Şifrə dəyişdirilə bilmədi</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Şifrə sıfırlandı</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Yeni şifrə istənildi</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-poçt ünvanı dəyişdirildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>İstifadəçi adı dəyişdirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>İki addımlı giriş aktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>İki addımlı giriş deaktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Bərpa kodu istifadə edildi</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Yeni bərpa kodları</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Tətbiq şifrəsi yaradıldı</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Tətbiq şifrəsi ləğv edildi</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Giriş açarı əlavə edildi</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Giriş açarı çıxarıldı</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hesab aktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hesab deaktivləşdirildi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hamısı</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Girişlər və sessiyalar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hesab dəyişiklikləri</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Diqqət tələb edir</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Təhlükəsizlik fəaliyyəti</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Təhlükəsizlik fəaliyyəti: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hesabınıza girişlər və onun təhlükəsizliyində edilən dəyişikliklər. Etmədiyiniz bir şey görsəniz, şifrənizi dəyişin və tanımadığınız cihazları çıxış etdirin.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Şifrəni dəyişdir</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Bu saytda təhlükəsizlik fəaliyyəti hələ qeydə alınmır.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Son %days gündəki girişlər</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Uğursuz cəhdlər</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hələ heç bir təhlükəsizlik fəaliyyəti qeydə alınmayıb.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Giriş məlumatlarımı endir</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessiyalarınız və təhlükəsizlik hadisələriniz JSON faylı kimi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Şifrə</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Şifrə və iki addımlı giriş kodu</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interfeysi</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interfeysi</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Vahid giriş</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sessiyalar qeydə alınmazdan əvvəl daxil olub</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Girişlər hesabatı</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Sayta kimin daxil olduğu, hesabların nə qədər tez-tez daxil olduğu və daxil ola bilmədiyi, həmçinin istifadəçini hər yerdən çıxarmaq. İstənilən sessiya işləyicisi ilə işləyir.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessiya sonlandırıldı. Cihaz yenidən daxil olmalıdır.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login istifadəçisi %count sessiyadan çıxarıldı.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login istifadəçisinin işləyən sessiyası yox idi.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Bu ID, istifadəçi adı və ya e-poçt ünvanı ilə hesab yoxdur.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Bu, istifadə etdiyiniz sessiyadır. Onu sonlandırmaq üçün çıxış edin.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Həmin sessiya artıq bitmişdi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Səhifənin vaxtı keçmişdi. Heç nə dəyişdirilmədi; zəhmət olmasa, yenidən cəhd edin.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Bu saytda sessiyalar qeydə alınmır (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session cədvəli yoxdur</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>O yaradıldıqdan sonra sessiyalar qeydə alınır: php update/common/scripts/6.0/createusersessiontable.php və ya 6.0.15 verilənlər bazası yeniləməsi.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>İndi və bu gün</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>İşləyən sessiyalar</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Daxil olmuş istifadəçilər</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Bu günkü girişlər</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Bu günkü uğursuz cəhdlər</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>İstifadəçini hər yerdən çıxarmaq</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Hesabın hər sessiyası növbəti sorğuda bitir, &quot;Məni xatırla&quot; ilə saxlanılanlar da. Hesab yad əllərə keçmiş ola bilərsə, bundan istifadə edin; sonra onun şifrəsini sıfırlayın.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>İstifadəçi ID-si, istifadəçi adı və ya e-poçt ünvanı</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Hər yerdən çıxış et</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>İndi daxil olub</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Ən son istifadə edilən %limit sessiya göstərilir.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>İstifadəçi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cihaz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Ünvan</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Daxil olub</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Son fəaliyyət</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Əməliyyatlar</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Bu cihaz</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Qeyd edilməyib</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Çıxış et</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Daxil olmuş sessiya yoxdur.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Son %days gün</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Girişlər və uğursuz cəhdlər istifadəçi audit jurnalından sayılır, lakin o yoxdur; yeni sessiyalar sayılır.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Gün</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Girişlər</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Uğursuz cəhdlər</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Yeni sessiyalar</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sessiya işləyicisi: %handler. Sessiyalar expuser_session cədvəlindən oxunur, ona görə də hesabat istənilən işləyici ilə işləyir.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Hesabınız üçün təhlükəsizlik xəbərdarlığı</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>%login hesabınızda təhlükəsizlik hadisəsi baş verib: %event. Bu siz deyildinizsə, hesabınızı %url ünvanında qoruyun.</translation>
     </message>
 </context>
 </TS>

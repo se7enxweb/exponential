@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ຕັ້ງຄ່າລະບົບ &gt; ວຽກ cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ຍັງບໍ່ມີສ່ວນຂອງວຽກ cron ໃດເຮັດວຽກເທື່ອ: ຄິວວຽກ, ການນຳເຂົ້າ, ການແຈ້ງເຕືອນ ແລະ ດັດຊະນີການຄົ້ນຫາກຳລັງລໍຖ້າຢູ່. ກະລຸນາແລ່ນ php bin/php/installcrontab.php --add --apply ຫຼື ເພີ່ມແຖວຈາກ --show ເຂົ້າໃນ crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ການຕິດຕັ້ງນີ້ເປັນການສາທິດສາທາລະນະ: ໃຜກໍອາດຮູ້ລະຫັດຜ່ານຜູ້ເບິ່ງແຍງລະບົບ, ແລະບໍ່ສາມາດປ່ຽນ ຫຼືຣີເຊັດລະຫັດຜ່ານຜູ້ເບິ່ງແຍງລະບົບໄດ້. ກະລຸນາຢ່າປ້ອນຂໍ້ມູນສ່ວນຕົວໃດໆຢູ່ນີ້.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ອຸປະກອນຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ບັນຊີທີ່ບໍ່ມີໃຜໃຊ້ ຫຼືທີ່ຕ້ອງກວດເບິ່ງ; ປິດໃຊ້ງານ, ປົດລັອກ ຫຼືສົ່ງອອກ.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ບັນທຶກການກວດສອບຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ໃຜໄດ້ປ່ຽນແປງ, ເຂົ້າສູ່ລະບົບ ຫຼື ຖືກປະຕິເສດ ຕາມແຕ່ລະບັນຊີ; ກັ່ນຕອງ ແລະ ສົ່ງອອກ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ລາຍງານການເຂົ້າສູ່ລະບົບ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ໃຜເຂົ້າສູ່ລະບົບຢູ່, ຈຳນວນການເຂົ້າສູ່ລະບົບ ແລະ ຄວາມລົ້ມເຫຼວຕໍ່ມື້; ໃຫ້ຜູ້ໃຊ້ອອກຈາກລະບົບທຸກບ່ອນ.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>ເຊສຊັນທີ່ໝົດເວລາຂອງຕົວຈັດການ PHP ຖືກເອົາອອກໂດຍ PHP ເອງ (session.gc_maxlifetime) ບໍ່ແມ່ນໂດຍໜ້ານີ້ ຫຼືສ່ວນ cronjob session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ເຊສຊັນທີ່ເຂົ້າສູ່ລະບົບຢູ່ຂອງຜູ້ໃຊ້ທຸກຄົນສະແດງຢູ່ໃນລາຍງານການເຂົ້າສູ່ລະບົບ ແລະ ສາມາດອອກຈາກລະບົບໄດ້ຈາກບ່ອນນັ້ນ, ລາຍງານນີ້ເຮັດວຽກກັບຕົວຈັດການເຊສຊັນທຸກແບບ.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ເປີດລາຍງານການເຂົ້າສູ່ລະບົບ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ຍັງບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບຫຼ້າສຸດ, ຄວາມພະຍາຍາມທີ່ລົ້ມເຫຼວ ແລະ ການປ່ຽນແປງລະຫັດຜ່ານ, ທີ່ຢູ່ອີເມວ ແລະ ການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບຫຼ້າສຸດ, ຄວາມພະຍາຍາມທີ່ລົ້ມເຫຼວ ແລະ ການປ່ຽນແປງດ້ານຄວາມປອດໄພຂອງບັນຊີນີ້.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ກວດເບິ່ງກິດຈະກຳ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ເຂົ້າສູ່ລະບົບລົ້ມເຫຼວ %count ເທື່ອ</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ບໍ່ໄດ້ຖືກຂຽນ (%reason). ກະລຸນາເພີ່ມແຖວເຫຼົ່ານີ້ໃສ່ crontab ຂອງຜູ້ໃຊ້ທີ່ໄຊດຳເນີນການ ບໍ່ດັ່ງນັ້ນຄິວ, ການນຳເຂົ້າ, ການແຈ້ງເຕືອນ ແລະດັດຊະນີການຄົ້ນຫາຈະບໍ່ຖືກດຳເນີນການເລີຍ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ການຕິດຕັ້ງຄືນໃໝ່ເຮັດໄດ້ດ້ວຍ Kickstarter (%file ແລ້ວແລ່ນ php bin/php/kickstarter.php run --apply) ຫຼື ດ້ວຍການຕິດຕັ້ງໃໝ່ທັງໝົດ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>ລະບົບສົ່ງເມວປະຕິເສດ %count ຂໍ້ຄວາມໃນການດຳເນີນການຄັ້ງສຸດທ້າຍ. ກະລຸນາກວດສອບເຊີບເວີເມວ ແລະ site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ມີ %count ເຫດການທີ່ລໍຖ້າຢູ່ ແລະ ບໍ່ມີການບັນທຶກການເຮັດວຽກຂອງວຽກ cron ການແຈ້ງເຕືອນ. ກະລຸນາເພີ່ມສ່ວນຂອງວຽກ cron &quot;frequent&quot; ເຂົ້າໃນ crontab ຫຼື ແລ່ນ exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ເລືອກໄຊ ຫຼືພາກສ່ວນອື່ນດ້ວຍຕົວເລືອກໂນດ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ມີແຕ່ຜູ້ດູແລລະບົບເທົ່ານັ້ນທີ່ປ່ຽນເຈົ້າຂອງໄດ້: ກະລຸນາແລ່ນ ./console exp:content-check --fix-permissions --apply ໃນນາມ root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ຫວ່າງເປົ່າ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>ກະແຈສຳລັບລົງລາຍເຊັນມີອາຍຸເກີນໜຶ່ງປີແລ້ວ: ກະລຸນາໝູນວຽນກະແຈດ້ວຍ exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ບໍ່ໄດ້ສົ່ງ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ວຽກ cron ການແຈ້ງເຕືອນຈະບັນທຶກການເຮັດວຽກແຕ່ລະເທື່ອໄວ້ທີ່ນີ້. ກະລຸນາເພີ່ມສ່ວນ frequent ເຂົ້າໃນ crontab ຫຼື ແລ່ນ exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ໃຊ້ຄອນໂຊນ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ບໍ່ມີ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ດ້ວຍແອັບຢືນຢັນຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ດ້ວຍລະຫັດທາງອີເມວ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ດ້ວຍລະຫັດກູ້ຄືນ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ດ້ວຍພາສຄີ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ດ້ວຍບັນຊີພາຍນອກ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ສະແດງເປັນເຄືອຂ່າຍ; ທີ່ຢູ່ຈະຖືກເກັບໄວ້ຕາມການຕັ້ງຄ່າການປົກປ້ອງຂໍ້ມູນຂອງເວັບໄຊ.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ບໍ່ໄດ້ບັນທຶກໄວ້</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ສະຖານທີ່</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ໂດຍປະມານ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ຈັດການອຸປະກອນ</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ດ້ວຍແອັບຢືນຢັນຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ດ້ວຍລະຫັດທາງອີເມວ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ດ້ວຍລະຫັດກູ້ຄືນ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ດ້ວຍພາສຄີ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ດ້ວຍບັນຊີພາຍນອກ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ບໍ່ໄດ້ບັນທຶກໄວ້</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ສະຖານທີ່</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ໂດຍປະມານ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ເບິ່ງເຊສຊັນຂອງຜູ້ໃຊ້ນີ້</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>ບັນຊີ %login ຂອງທ່ານໃນ %site ຫາກໍຖືກໃຊ້ເຂົ້າສູ່ລະບົບຈາກສະຖານທີ່ທີ່ບໍ່ໄດ້ເຂົ້າສູ່ລະບົບມາໄລຍະໜຶ່ງແລ້ວ:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ສະຖານທີ່ໂດຍປະມານ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ເທິງ %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ລາຍງານການເຂົ້າສູ່ລະບົບ</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ເປີດໜ້າ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to ຈາກ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ຊື່ເຂົ້າສູ່ລະບົບ ຫຼື ID ຜູ້ໃຊ້: ບັນຊີທີ່ເຫດການກ່ຽວຂ້ອງ ຫຼື ຜູ້ໃຊ້ທີ່ໄດ້ດຳເນີນການ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ບັນຊີ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ການກະທຳ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ຫຼັງ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ທຸກຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ກ່ອນ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ໂດຍ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ລ້າງ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ສຳເລັດ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ເຫດການຈະຖືກເກັບໄວ້ %days ມື້.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ເຫດການຈະຖືກເກັບໄວ້ຈົນກວ່າຈະຖືກລຶບອອກດ້ວຍມື.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ເຫດການທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ທຸກການກະທຳ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ທຸກເຫດການຂອງບັນຊີນີ້</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ສົ່ງອອກລາຍການເປັນ CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ຈາກ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ຈຳກັດລາຍການ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ບໍ່ມີເຫດການທີ່ກົງກັນ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ຕໍ່ໜ້າ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ການບັນທຶກຖືກປິດຢູ່ໃນ audit.ini ([UserAuditSettings] UserAudit); ລາຍການສະແດງສິ່ງທີ່ໄດ້ບັນທຶກໄວ້ກ່ອນໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ຖືກປະຕິເສດ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ສະແດງ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ບໍ່ມີຕາຕະລາງຂອງບັນທຶກການກວດສອບຜູ້ໃຊ້. ສ້າງມັນດ້ວຍ php update/common/scripts/6.0/createuseraudittable.php ; ຈົນກວ່າຈະເຖິງຕອນນັ້ນ ໄຟລ໌ການກວດສອບຈະເກັບທຸກເຫດການໄວ້.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ໜ້ານີ້ຕ້ອງການຖານຂໍ້ມູນ SQL; ບໍ່ສາມາດໃຊ້ໄດ້ກັບ MongoDB. ໄຟລ໌ການກວດສອບຈະເກັບທຸກເຫດການໄວ້.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ເຖິງ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ບັນທຶກການກວດສອບຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ເວລາ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ສະຖານທີ່</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ໃຜໄດ້ປ່ຽນແປງ, ສ້າງ, ເປີດໃຊ້ງານ, ປິດໃຊ້ງານ, ຍ້າຍ ຫຼື ເອົາບັນຊີໃດອອກ, ໃຜໄດ້ເຂົ້າສູ່ລະບົບ ຫຼື ຖືກປະຕິເສດ, ແລະ ບົດບາດໃດໄດ້ຖືກມອບໝາຍ: ໜຶ່ງແຖວຕໍ່ເຫດການ, ພ້ອມກັບຊ່ອງຂໍ້ມູນກ່ອນ ແລະ ຫຼັງ. ລະຫັດຜ່ານ ແລະ ຂໍ້ມູນລັບຈະບໍ່ຖືກບັນທຶກເລີຍ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ກຸ່ມ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ລະບົບ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ບໍ່ຮູ້ຈັກ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ປົກປ້ອງບັນຊີຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>ມີການໃຊ້ລະຫັດກູ້ຄືນເພື່ອເຂົ້າສູ່ລະບົບບັນຊີ %login ຂອງທ່ານໃນ %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ມີການໃຊ້ລະຫັດກູ້ຄືນ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ບັນຊີ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ທີ່ຢູ່ໂດຍປະມານ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ກະລຸນາຂໍລະຫັດຜ່ານໃໝ່ເພື່ອເຂົ້າສູ່ລະບົບອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ດູແລເວັບໄຊ.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ຂໍລະຫັດຜ່ານໃໝ່</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ລະຫັດກູ້ຄືນແຕ່ລະລະຫັດໃຊ້ໄດ້ພຽງເທື່ອດຽວ. ຖ້າທ່ານເຮັດໂທລະສັບເສຍ, ກະລຸນາຕັ້ງຄ່າແອັບຢືນຢັນຕົວຕົນຄືນໃໝ່ ແລະ ເກັບລະຫັດກູ້ຄືນຊຸດໃໝ່ໄວ້ໃນບ່ອນທີ່ປອດໄພ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ມີຄວາມພະຍາຍາມເຂົ້າສູ່ລະບົບບັນຊີຂອງທ່ານທີ່ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ນັບແຕ່ນີ້ໄປ, ການເຂົ້າສູ່ລະບົບຈະຂໍລະຫັດເພີ່ມເຕີມຈາກລະຫັດຜ່ານຂອງທ່ານ. ຖ້າທ່ານເປັນຜູ້ດຳເນີນການເອງ, ທ່ານບໍ່ຈຳເປັນຕ້ອງເຮັດຫຍັງ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ຖ້າແມ່ນທ່ານ ແລະ ທ່ານລືມລະຫັດຜ່ານ, ກະລຸນາຂໍລະຫັດຜ່ານໃໝ່. ຖ້າບໍ່ແມ່ນ, ກະລຸນາເລືອກລະຫັດຜ່ານທີ່ແໜ້ນໜາກວ່າເກົ່າ ແລະ ເປີດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ຖ້າບໍ່ແມ່ນທ່ານ, ອາດມີຄົນຮູ້ລະຫັດຜ່ານຂອງທ່ານ: ກະລຸນາປ່ຽນລະຫັດຜ່ານທັນທີ ແລະ ກວດເບິ່ງວ່າບັນຊີຂອງທ່ານເຂົ້າສູ່ລະບົບຢູ່ໃສແດ່.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ລະຫັດກູ້ຄືນທີ່ເຫຼືອ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ກວດເບິ່ງອຸປະກອນຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>ການແຈ້ງເຕືອນດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>ມີຄົນພະຍາຍາມເຂົ້າສູ່ລະບົບບັນຊີ %login ຂອງທ່ານໃນ %site ດ້ວຍລະຫັດຜ່ານທີ່ບໍ່ຖືກຕ້ອງ %count ເທື່ອຕິດຕໍ່ກັນ.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>ເກີດເຫດການດ້ານຄວາມປອດໄພກັບບັນຊີ %login ຂອງທ່ານໃນ %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ນີ້ແມ່ນການແຈ້ງເຕືອນດ້ານຄວາມປອດໄພກ່ຽວກັບບັນຊີຂອງທ່ານ. ມັນຈະຖືກສົ່ງທຸກຄັ້ງທີ່ມີການປ່ຽນແປງແບບນີ້ ແລະ ບໍ່ສາມາດປິດໄດ້.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ເວລາ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>ປິດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນສຳລັບບັນຊີ %login ຂອງທ່ານໃນ %site ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ປິດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>ເປີດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນສຳລັບບັນຊີ %login ຂອງທ່ານໃນ %site ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ເປີດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>ບັນຊີ %login ຂອງທ່ານໃນ %site ຖືກລັອກຫຼັງຈາກເຂົ້າສູ່ລະບົບລົ້ມເຫຼວຫຼາຍເທື່ອເກີນໄປ.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ດຽວນີ້ບັນຊີຂອງທ່ານຖືກປົກປ້ອງດ້ວຍລະຫັດຜ່ານພຽງຢ່າງດຽວ. ຖ້າທ່ານບໍ່ໄດ້ດຳເນີນການນີ້, ກະລຸນາເປີດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນອີກຄັ້ງຫຼັງຈາກປ່ຽນລະຫັດຜ່ານແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ບັນຊີຂອງທ່ານຖືກລັອກ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພຂອງ %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ເຂົ້າສູ່ລະບົບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ຄວາມພະຍາຍາມເຂົ້າສູ່ລະບົບທີ່ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ອອກຈາກລະບົບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ອອກຈາກລະບົບເຊສຊັນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ເຂົ້າສູ່ລະບົບຈາກອຸປະກອນໃໝ່</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ເຂົ້າສູ່ລະບົບຈາກສະຖານທີ່ໃໝ່</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ຢືນຢັນຕົວຕົນແລ້ວ (&quot;ຢືນຢັນວ່າແມ່ນທ່ານ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ການກວດສອບຕົວຕົນລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ການເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ປະຕິເສດການເຂົ້າສູ່ລະບົບ: ບໍ່ມີລະຫັດສອງຂັ້ນຕອນ ຫຼື ລະຫັດບໍ່ຖືກຕ້ອງ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ລະຫັດສອງຂັ້ນຕອນບໍ່ຖືກຕ້ອງ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ບັນຊີຖືກລັອກຫຼັງຈາກເຂົ້າສູ່ລະບົບລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ປົດລັອກບັນຊີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ປ່ຽນລະຫັດຜ່ານແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ການປ່ຽນລະຫັດຜ່ານລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ຣີເຊັດລະຫັດຜ່ານແລ້ວ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ຂໍລະຫັດຜ່ານໃໝ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ປ່ຽນທີ່ຢູ່ອີເມວແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ປ່ຽນຊື່ຜູ້ໃຊ້ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ເປີດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ປິດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ໃຊ້ລະຫັດກູ້ຄືນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ລະຫັດກູ້ຄືນຊຸດໃໝ່</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ສ້າງລະຫັດຜ່ານແອັບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ຖອນລະຫັດຜ່ານແອັບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ເພີ່ມພາສຄີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ເອົາພາສຄີອອກແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ເປີດໃຊ້ງານບັນຊີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ປິດໃຊ້ງານບັນຊີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ການເຂົ້າສູ່ລະບົບ ແລະ ເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ການປ່ຽນແປງບັນຊີ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ຕ້ອງໃຫ້ຄວາມສົນໃຈ</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ໂດຍທ່ານ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ໂດຍຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ໂດຍ %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ວິທີການ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ໂປຣແກຣມທ່ອງເວັບ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ລະບົບປະຕິບັດການ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ອຸປະກອນ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ສະຖານທີ່</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ປະເທດ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ລາຍການໃດ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>ຊ່ອງທາງ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ຄວາມພະຍາຍາມທີ່ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ລະຫັດທີ່ເຫຼືອ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ຕົວຈັດການການເຂົ້າສູ່ລະບົບ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພຂອງ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບ ແລະ ການປ່ຽນແປງດ້ານຄວາມປອດໄພຂອງບັນຊີຂອງທ່ານ. ຖ້າທ່ານເຫັນສິ່ງທີ່ທ່ານບໍ່ໄດ້ເຮັດ, ກະລຸນາປ່ຽນລະຫັດຜ່ານ ແລະ ອອກຈາກລະບົບອຸປະກອນທີ່ທ່ານບໍ່ຮູ້ຈັກ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບ ແລະ ການປ່ຽນແປງດ້ານຄວາມປອດໄພຂອງບັນຊີນີ້.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ອຸປະກອນຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ປ່ຽນລະຫັດຜ່ານ</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ກັບໄປທີ່ບັນຊີ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ບໍ່ມີການບັນທຶກກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ກິດຈະກຳນີ້ອ່ານຈາກບັນທຶກການກວດສອບຜູ້ໃຊ້, ເຊິ່ງຕາຕະລາງ expuser_audit ຂອງມັນບໍ່ມີ ຫຼື ບໍ່ຮອງຮັບໃນຖານຂໍ້ມູນນີ້. ກະລຸນາແລ່ນ php update/common/scripts/6.0/createuseraudittable.php ຫຼື ການອັບເດດຖານຂໍ້ມູນຂອງ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ມື້ທີ່ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ການເຂົ້າສູ່ລະບົບໃນ %days ມື້ທີ່ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພຫຼ້າສຸດ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ສະແດງ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ຖືກປະຕິເສດ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ຍັງບໍ່ມີການບັນທຶກກິດຈະກຳດ້ານຄວາມປອດໄພ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ເຫດການດ້ານຄວາມປອດໄພຈະຖືກເກັບໄວ້ %days ມື້.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ເຫດການດ້ານຄວາມປອດໄພຈະຖືກເກັບໄວ້ຈົນກວ່າຜູ້ດູແລລະບົບຈະເອົາອອກ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ດາວໂຫຼດຂໍ້ມູນການເຂົ້າສູ່ລະບົບຂອງຂ້ອຍ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ເຊສຊັນ ແລະ ເຫດການດ້ານຄວາມປອດໄພຂອງທ່ານໃນຮູບແບບໄຟລ໌ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ເຂົ້າສູ່ລະບົບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ຄວາມພະຍາຍາມເຂົ້າສູ່ລະບົບທີ່ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ອອກຈາກລະບົບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ອອກຈາກລະບົບເຊສຊັນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ເຂົ້າສູ່ລະບົບຈາກອຸປະກອນໃໝ່</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ເຂົ້າສູ່ລະບົບຈາກສະຖານທີ່ໃໝ່</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ຢືນຢັນຕົວຕົນແລ້ວ (&quot;ຢືນຢັນວ່າແມ່ນທ່ານ&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ການກວດສອບຕົວຕົນລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ການເຂົ້າສູ່ລະບົບດ້ວຍພາສຄີລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ປະຕິເສດການເຂົ້າສູ່ລະບົບ: ບໍ່ມີລະຫັດສອງຂັ້ນຕອນ ຫຼື ລະຫັດບໍ່ຖືກຕ້ອງ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ລະຫັດສອງຂັ້ນຕອນບໍ່ຖືກຕ້ອງ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ບັນຊີຖືກລັອກຫຼັງຈາກເຂົ້າສູ່ລະບົບລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ປົດລັອກບັນຊີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>ປ່ຽນລະຫັດຜ່ານແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ການປ່ຽນລະຫັດຜ່ານລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>ຣີເຊັດລະຫັດຜ່ານແລ້ວ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ຂໍລະຫັດຜ່ານໃໝ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ປ່ຽນທີ່ຢູ່ອີເມວແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ປ່ຽນຊື່ຜູ້ໃຊ້ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ເປີດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ປິດການຢືນຢັນຕົວຕົນສອງຂັ້ນຕອນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ໃຊ້ລະຫັດກູ້ຄືນແລ້ວ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ລະຫັດກູ້ຄືນຊຸດໃໝ່</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ສ້າງລະຫັດຜ່ານແອັບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ຖອນລະຫັດຜ່ານແອັບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ເພີ່ມພາສຄີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ເອົາພາສຄີອອກແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ເປີດໃຊ້ງານບັນຊີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ປິດໃຊ້ງານບັນຊີແລ້ວ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ການເຂົ້າສູ່ລະບົບ ແລະ ເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ການປ່ຽນແປງບັນຊີ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ຕ້ອງໃຫ້ຄວາມສົນໃຈ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພຂອງ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບ ແລະ ການປ່ຽນແປງດ້ານຄວາມປອດໄພຂອງບັນຊີຂອງທ່ານ. ຖ້າທ່ານເຫັນສິ່ງທີ່ທ່ານບໍ່ໄດ້ເຮັດ, ກະລຸນາປ່ຽນລະຫັດຜ່ານ ແລະ ອອກຈາກລະບົບອຸປະກອນທີ່ທ່ານບໍ່ຮູ້ຈັກ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ອຸປະກອນຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>ປ່ຽນລະຫັດຜ່ານ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ເວັບໄຊນີ້ຍັງບໍ່ມີການບັນທຶກກິດຈະກຳດ້ານຄວາມປອດໄພ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ການເຂົ້າສູ່ລະບົບໃນ %days ມື້ທີ່ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ຄວາມພະຍາຍາມທີ່ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ຍັງບໍ່ມີການບັນທຶກກິດຈະກຳດ້ານຄວາມປອດໄພ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ດາວໂຫຼດຂໍ້ມູນການເຂົ້າສູ່ລະບົບຂອງຂ້ອຍ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ເຊສຊັນ ແລະ ເຫດການດ້ານຄວາມປອດໄພຂອງທ່ານໃນຮູບແບບໄຟລ໌ JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>ລະຫັດຜ່ານ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ລະຫັດຜ່ານ ແລະ ລະຫັດສອງຂັ້ນຕອນ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>ສ່ວນຕິດຕໍ່ REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>ສ່ວນຕິດຕໍ່ SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ການເຂົ້າສູ່ລະບົບຄັ້ງດຽວ (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ເຂົ້າສູ່ລະບົບກ່ອນເລີ່ມບັນທຶກເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ລາຍງານການເຂົ້າສູ່ລະບົບ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ໃຜເຂົ້າສູ່ລະບົບເວັບໄຊຢູ່, ບັນຊີເຂົ້າສູ່ລະບົບ ແລະ ລົ້ມເຫຼວເລື້ອຍປານໃດ, ແລະ ການໃຫ້ຜູ້ໃຊ້ອອກຈາກລະບົບທຸກບ່ອນ. ເຮັດວຽກກັບຕົວຈັດການເຊສຊັນທຸກແບບ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ອອກຈາກລະບົບເຊສຊັນແລ້ວ. ອຸປະກອນຕ້ອງເຂົ້າສູ່ລະບົບອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ຖືກອອກຈາກລະບົບຈາກ %count ເຊສຊັນ.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ບໍ່ມີເຊສຊັນທີ່ກຳລັງເຮັດວຽກຢູ່.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ບໍ່ມີບັນຊີທີ່ມີ ID, ຊື່ຜູ້ໃຊ້ ຫຼື ທີ່ຢູ່ອີເມວນັ້ນ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ນີ້ແມ່ນເຊສຊັນທີ່ທ່ານກຳລັງໃຊ້ຢູ່. ເພື່ອສິ້ນສຸດມັນ, ກະລຸນາອອກຈາກລະບົບ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ເຊສຊັນນັ້ນສິ້ນສຸດໄປແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ໜ້ານີ້ໝົດອາຍຸແລ້ວ. ບໍ່ມີຫຍັງຖືກປ່ຽນແປງ; ກະລຸນາລອງໃໝ່ອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ເວັບໄຊນີ້ບໍ່ບັນທຶກເຊສຊັນ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ບໍ່ມີຕາຕະລາງ expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ເຊສຊັນຈະຖືກບັນທຶກເມື່ອສ້າງຕາຕະລາງແລ້ວ: php update/common/scripts/6.0/createusersessiontable.php ຫຼື ການອັບເດດຖານຂໍ້ມູນຂອງ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ດຽວນີ້ ແລະ ມື້ນີ້</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>ເຊສຊັນທີ່ກຳລັງເຮັດວຽກ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ຜູ້ໃຊ້ທີ່ເຂົ້າສູ່ລະບົບຢູ່</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ການເຂົ້າສູ່ລະບົບມື້ນີ້</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ຄວາມພະຍາຍາມທີ່ລົ້ມເຫຼວມື້ນີ້</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ໃຫ້ຜູ້ໃຊ້ອອກຈາກລະບົບທຸກບ່ອນ</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ທຸກເຊສຊັນຂອງບັນຊີຈະສິ້ນສຸດເມື່ອມີຄຳຮ້ອງຂໍເທື່ອຕໍ່ໄປ, ລວມທັງເຊສຊັນທີ່ຄົງໄວ້ດ້ວຍ &quot;ຈື່ຂ້ອຍໄວ້&quot;. ໃຊ້ເມື່ອບັນຊີອາດຕົກຢູ່ໃນມືຄົນອື່ນ; ຈາກນັ້ນຣີເຊັດລະຫັດຜ່ານຂອງບັນຊີ.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ຜູ້ໃຊ້, ຊື່ຜູ້ໃຊ້ ຫຼື ທີ່ຢູ່ອີເມວ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ອອກຈາກລະບົບທຸກບ່ອນ</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ເຂົ້າສູ່ລະບົບຢູ່ດຽວນີ້</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ສະແດງ %limit ລາຍການທີ່ໃຊ້ຫຼ້າສຸດ.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ອຸປະກອນ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ທີ່ຢູ່</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ເຂົ້າສູ່ລະບົບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ໃຊ້ງານຫຼ້າສຸດ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ການດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ອຸປະກອນນີ້</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ບໍ່ໄດ້ບັນທຶກໄວ້</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ອອກຈາກລະບົບ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ບໍ່ມີເຊສຊັນທີ່ເຂົ້າສູ່ລະບົບຢູ່.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ມື້ທີ່ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບ ແລະ ຄວາມພະຍາຍາມທີ່ລົ້ມເຫຼວນັບຈາກບັນທຶກການກວດສອບຜູ້ໃຊ້, ເຊິ່ງບໍ່ມີ; ສ່ວນເຊສຊັນໃໝ່ຍັງນັບໄດ້.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>ວັນ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ການເຂົ້າສູ່ລະບົບ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ຄວາມພະຍາຍາມທີ່ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ເຊສຊັນໃໝ່</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ຕົວຈັດການເຊສຊັນ: %handler. ເຊສຊັນອ່ານຈາກຕາຕະລາງ expuser_session, ສະນັ້ນລາຍງານຈຶ່ງເຮັດວຽກກັບຕົວຈັດການທຸກແບບ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ການແຈ້ງເຕືອນດ້ານຄວາມປອດໄພສຳລັບບັນຊີຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ເກີດເຫດການດ້ານຄວາມປອດໄພກັບບັນຊີ %login ຂອງທ່ານ: %event. ຖ້າບໍ່ແມ່ນທ່ານ, ກະລຸນາປົກປ້ອງບັນຊີຂອງທ່ານທີ່ %url.</translation>
     </message>
 </context>
 </TS>
