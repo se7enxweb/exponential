@@ -13,8 +13,8 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 9454f46c8c1ff874ff4bb885d4df67f6  .github/workflows/phpunit.yml
 692e6ce024fd955a05c570ddd093b0f9  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-fe07d4527019a2f7527aba8b09d4634c  .htaccess_root
-35ec6a4f64582da7d8b9014f92e28d22  .htaccess_root_static
+0241d75b0cb6db7d04e4cb1aa768a989  .htaccess_root
+956e9040717b69dfe26f1db7e9a4a0ea  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 b7034e90e1a71f18582da6f6945a14d0  CODE_OF_CONDUCT.md
 7f633edbac0ce0ba02f84af70e552b85  CONTRIBUTING.md
@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6b46d9fc07327c0fe9cb81e5b1e79674  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-3f598c270c11f8a61232c9789099f246  autoload/ezp_kernel.php
+3309592536437e1a2db54dd2bc3b6994  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -22514,6 +22514,7 @@ e65182a8e462ca0d7bd99f6011003023  extension/ezoe/translations/zul-ZA/translation
 5254b19223a98222ccaf6ad6034ae185  index_cluster.php
 0a572c564715b36fba2fee75bdce44eb  index_rest.php
 746ef5d35fdf5c67bef32b18f91f49b2  index_treemenu.php
+0e92510d3b2c1bee64b8d0b7471ede8b  index_webdav.php
 cf11ee78adaa1d9d758eb5ebfaede75c  kernel/apikey/function_definition.php
 f5e15de77d3bd83723253dea5113f441  kernel/apikey/list.php
 ab6ef46e3387769f28c9cfe0c50e50d3  kernel/apikey/module.php
@@ -22944,7 +22945,7 @@ f305bb4e3607dc4a202b51a847db9af1  kernel/classes/ezsection.php
 fdfd9b8f7952710061316b8c7d7c4d4c  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
-db259eaa0bd7d33f5d216101986ad969  kernel/classes/ezsiteaccess.php
+dd1eea8ba566982406e0f09bd5edd5ae  kernel/classes/ezsiteaccess.php
 ebcba5714a295eef01ac74d076b1f321  kernel/classes/ezsitedata.php
 8500b77a23ed8d674edc1ef590fe56c1  kernel/classes/ezsiteinstaller.php
 d5472916c1f931c0dec703689a6e41ef  kernel/classes/ezsslzone.php
@@ -23248,7 +23249,7 @@ bc8d1f4ffb19f111bd4276f0bb08afc9  kernel/classes/user/expuserapproval.php
 885251530a15938c095c306fd0ce6715  kernel/classes/user/expuserdeactivation.php
 f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
 87d8847635396f1f4e351881b8e3bf89  kernel/classes/user/expusersession.php
-119a6fbb8ca7cf4487479f1f52c7e3d6  kernel/classes/user/expusersessiontracker.php
+9b9222dc7218ca18861f6865eaa06fb4  kernel/classes/user/expusersessiontracker.php
 194684543d849fdaf2e36ecb0e670180  kernel/classes/user/expusersettingrepair.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
 00603cb976aa7f1079309ce30c35d19a  kernel/classes/webauthn/expwebauthn.php
@@ -23976,8 +23977,9 @@ cbad7ff8cbff9c9526c8e5b03afc52d7  kernel/private/classes/views/workflow/processl
 07fc8f15e41acbe83186035ff726db16  kernel/private/classes/views/workflow/run.php
 db2a22f8e4fb77185b39ae42170e9fed  kernel/private/classes/views/workflow/view.php
 87156798d6fdd3cbc3e11b0eb02909ee  kernel/private/classes/views/workflow/workflowlist.php
-ac7f0afbf35787c24fb3bac4c8a49ac8  kernel/private/classes/webdav/expwebdavpathfactory.php
-552fd4bd5838688f9dfe59de3f950639  kernel/private/classes/webdav/ezwebdavcontentbackend.php
+63a7e73f60595facb87fa4f7459c6539  kernel/private/classes/webdav/expwebdaventryscript.php
+e59d4e91f4ec91266c2cdca2320e975c  kernel/private/classes/webdav/expwebdavpathfactory.php
+64a0f39fb3439de06c81656d3468c96b  kernel/private/classes/webdav/ezwebdavcontentbackend.php
 58bfa419ff9c37595d50cae0aa42015c  kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
 6d252912d19edc3b3120b059668fbe59  kernel/private/eztemplate/ezpattributeoperatorformatter.php
 b8448bbe375187aaa67945e723b56cbe  kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php
@@ -26474,7 +26476,7 @@ f54782a8f10898bc22d75eaf1c33d2de  tests/tests/kernel/classes/eZSectionTest.php
 4191385b59cae3b5ac73a6da4acbf405  tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php
 e3cae9e3155eb2630b26d1e4b63fadfb  tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php
 d2b2aa97184624a1b60cebe09319e82a  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
-d61e47486ee9a916d28189fd4e6aba6d  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
+49f8cb876a53ce0a418ed2d8496f5bd1  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
 d3640c0812da0b4776d03987703bf832  tests/tests/kernel/classes/eZSiteDataCreateNewLiveTest.php
 701e47e83c834e38a17999aa4c5e306e  tests/tests/kernel/classes/eZSiteDataCreateTest.php
 aec17c87e108b370bb8d629a55864026  tests/tests/kernel/classes/eZSiteDataTest.php
@@ -26813,7 +26815,7 @@ cd0df33127aea30289ff55824df77907  tests/tests/kernel/classes/runnable/fixtures/r
 fdb21b66365e5254b9daaa9d4a2dfec1  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
 0e5af3fe697e0efec0f52ff6c815982e  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
 83e5d0248cb3a7fdd605f728629f8214  tests/tests/kernel/classes/security/expIniPhpWrapperTest.php
-c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
+b66a32c3bba7705e9ba45b668127e62e  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
 01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php
 e0b9bf7b359936c21de518237b23374d  tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php
 7e6b4523a39875330fdd94382fd0f3d8  tests/tests/kernel/classes/setup/AutoloadGeneratorOptionsTest.php
@@ -27066,7 +27068,7 @@ ada54e8051171910973a08eeae662617  tests/tests/kernel/logviewer/expLogWebServerFo
 e981df770682f6c07e03c3f510b90f7a  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 60f8f3fb91c8a7da7e20ca1f9c518136  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
-0a2d91e4f143843749b34411356aecf3  tests/tests/kernel/private/classes/WebDAVPathsTest.php
+242cb40a271dfe7ef1d3db41d51f99b2  tests/tests/kernel/private/classes/WebDAVPathsTest.php
 d74dbdb50cbaeff996f841e63a2de9c8  tests/tests/kernel/private/classes/expContentSecurityPolicyReportTest.php
 1b02f4ed24a2eb1c795a5baeb4308753  tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php
 b6656c954acf5e5f6db1a2607a7564e4  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
@@ -27081,6 +27083,7 @@ ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpConte
 6b7f3234a135dd559ce03c87c04cd259  tests/tests/kernel/private/expAdminViewsDebugCleanTest.php
 851bc8e31554933c96549ffcfdb15a4b  tests/tests/kernel/private/expGlobalFunctionCollisionTest.php
 69ed472b64dcf9aa536c72dc727301ee  tests/tests/kernel/private/expTreeMenuErrorStatusTest.php
+42a6c2af8e3a71ad0f471007dc9c48cd  tests/tests/kernel/private/expWebDAVEntryScriptTest.php
 a78a4e2fe294915b07d65af9d98d599e  tests/tests/kernel/private/expWebdavAuthorizeTest.php
 57cc173e4d084a960d4643268599f3fd  tests/tests/kernel/private/expWebdavBackendRefusalTest.php
 701b4dc5244180f77166042f5ae0bb9e  tests/tests/kernel/private/expWebdavReadRefusalTest.php
@@ -27753,4 +27756,4 @@ ddb6153ee5723edf99ac46fe922fc2ff  update/database/postgresql/6.0/dbupdate-6.0.0-
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 66a0d2b6e876307c86b9c79237befb19  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
-1d8a3b4f06940a3e1c110786b909946f  webdav.php
+527b7319beae741072441505220f8738  webdav.php
