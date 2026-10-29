@@ -19,18 +19,24 @@ class expUpgradeCommandContractTest extends PHPUnit\Framework\TestCase
 
     /** The snapshot. Add, never change or remove. */
     const COMMANDS = array(
-        'exp:upgrade' => '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending]',
+        'exp:upgrade' => '[stages:][apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-deploy][url:*][to:][repos:*][update:*][composer:][no-audit][allow-vendor-changes]',
         'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending]',
         'exp:upgrade:steps' => '[stage:][engine:][format:]',
-        'exp:upgrade:database' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending]',
-        'exp:upgrade:scripts' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending]',
+        'exp:upgrade:code' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][to:][repos:*]',
+        'exp:upgrade:libraries' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][update:*][composer:][no-audit][allow-vendor-changes]',
+        'exp:upgrade:database' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup]',
+        'exp:upgrade:scripts' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup]',
         'exp:upgrade:verify' => '[stages:][format:]',
         'exp:upgrade:backup' => '[backup-dir:][format:]',
-        'exp:upgrade:finish' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][no-deploy][url:*]',
+        'exp:upgrade:finish' => '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup][no-deploy][url:*]',
+        'exp:upgrade:rollback' => '[apply][dry-run][parts:][backup-dir:][format:]',
     );
 
     /** command => entry point in bin/php */
     const ENTRY = array(
+        'exp:upgrade:code' => 'upgradecode',
+        'exp:upgrade:libraries' => 'upgradelibraries',
+        'exp:upgrade:rollback' => 'upgraderollback',
         'exp:upgrade:finish' => 'upgradefinish',
         'exp:upgrade' => 'upgrade',
         'exp:upgrade:status' => 'upgradestatus',

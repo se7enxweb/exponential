@@ -188,6 +188,10 @@ class expAuditTaxonomy
         // demo mode (EXP_DEMO_MODE=1, doc/eng-us/bc/6.0/demo-mode.md): once per process; it cannot be switched off
         'system.demo.mode' => array( 'severity' => 'warning', 'default' => 'always', 'channel' => 'system' ),
         'system.upgrade.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        // exp:upgrade (doc/eng-us/guides/upgrading-with-the-console.md): each step applied or failed, the backup, a rollback
+        'system.upgrade.step' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Upgrade step applied' ),
+        'system.upgrade.backup' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Upgrade backup made' ),
+        'system.upgrade.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Upgrade rolled back' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         // the Velocity watchdog (doc/eng-us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)

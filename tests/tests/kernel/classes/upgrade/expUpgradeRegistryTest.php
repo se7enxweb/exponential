@@ -196,7 +196,9 @@ class expUpgradeRegistryTest extends PHPUnit\Framework\TestCase
         $sorted = $list;
         sort( $sorted );
         $this->assertSame( $classes, $sorted, 'upgrade.ini StepList[] and kernel/classes/upgrade/steps' );
-        $this->assertSame( 'expUpgradeStepRecordTable', $list[0], 'step 0, the record table, comes first' );
+        $ini = file_get_contents( self::$root . '/settings/upgrade.ini' );
+        $this->assertSame( 1, preg_match( '/^# stage database[^\n]*\nStepList\[\]=(\w+)$/m', $ini, $m ) );
+        $this->assertSame( 'expUpgradeStepRecordTable', $m[1], 'step 0, the record table, is the first of the database stage' );
         $autoload = file_get_contents( self::$root . '/autoload/ezp_kernel.php' );
         foreach ( $classes as $class )
             $this->assertStringContainsString( "'$class'", $autoload, "$class in the kernel autoload array" );

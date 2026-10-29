@@ -33,7 +33,7 @@ class Upgradescripts extends UpgradeBase
                              "./console exp:upgrade:scripts --apply --skip=6.0.15-editor-policies\n" .
                              "Guide: doc/eng-us/guides/upgrading-with-the-console.md",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending]', '', array(
+        return (array)$this->startup( '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup]', '', array(
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
             'only' => 'Only these steps (step ids, a comma list or repeated); an optional step runs only when named here',
@@ -43,6 +43,7 @@ class Upgradescripts extends UpgradeBase
             'backup-dir' => 'Where the backup goes (default var/backup/upgrade); a directory <time> is made in it',
             'force-order' => 'Run a stage although an earlier stage has pending steps',
             'fail-on-pending' => 'Exit 1 when steps are still pending (for CI)',
+            'force-no-backup' => 'With --no-backup on a production installation: write without a backup all the same',
         ) );
     }
 

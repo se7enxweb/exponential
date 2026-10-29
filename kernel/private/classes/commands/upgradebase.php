@@ -21,7 +21,16 @@ namespace Exponential\Command\Kernel
 abstract class UpgradeBase extends \Exponential\Runnable\Command
 {
     /** Options shared by the commands that run stages. */
-    const RUN_OPTIONS = '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending]';
+    const RUN_OPTIONS = '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending][force-no-backup]';
+
+    /** Options of the code stage. */
+    const CODE_OPTIONS = '[to:][repos:*]';
+
+    /** Options of the libraries stage. */
+    const LIBRARIES_OPTIONS = '[update:*][composer:][no-audit][allow-vendor-changes]';
+
+    /** Options of the finish stage. */
+    const FINISH_OPTIONS = '[no-deploy][url:*]';
 
     /**
      * Every command with its option configuration (permanent: only additions).
@@ -31,14 +40,17 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
     public static function contract()
     {
         return array(
-            'exp:upgrade' => '[stages:]' . self::RUN_OPTIONS . '[no-deploy][url:*]',
+            'exp:upgrade' => '[stages:]' . self::RUN_OPTIONS . self::FINISH_OPTIONS . self::CODE_OPTIONS . self::LIBRARIES_OPTIONS,
             'exp:upgrade:status' => '[stages:][only:*][format:][fail-on-pending]',
             'exp:upgrade:steps' => '[stage:][engine:][format:]',
+            'exp:upgrade:code' => self::RUN_OPTIONS . self::CODE_OPTIONS,
+            'exp:upgrade:libraries' => self::RUN_OPTIONS . self::LIBRARIES_OPTIONS,
             'exp:upgrade:database' => self::RUN_OPTIONS,
             'exp:upgrade:scripts' => self::RUN_OPTIONS,
-            'exp:upgrade:finish' => self::RUN_OPTIONS . '[no-deploy][url:*]',
+            'exp:upgrade:finish' => self::RUN_OPTIONS . self::FINISH_OPTIONS,
             'exp:upgrade:verify' => '[stages:][format:]',
             'exp:upgrade:backup' => '[backup-dir:][format:]',
+            'exp:upgrade:rollback' => '[apply][dry-run][parts:][backup-dir:][format:]',
         );
     }
 
@@ -60,6 +72,14 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'engine' => 'Only the steps for this engine: mysql, postgresql, sqlite, oracle, mongodb',
             'no-deploy' => 'Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only',
             'url' => 'The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL',
+            'force-no-backup' => 'With --no-backup on a production installation: write without a backup all the same',
+            'to' => 'The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch)',
+            'repos' => 'More git checkouts the code stage moves, paths inside the installation (a comma list or repeated)',
+            'update' => 'composer update these packages, with their dependencies (a comma list or repeated)',
+            'composer' => 'The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root)',
+            'no-audit' => 'Skip the security audit of the libraries (composer audit) before and after',
+            'allow-vendor-changes' => 'Install the libraries although Composer reports local changes in vendor/',
+            'parts' => 'Only these parts, a comma list of database, settings, libraries, code (default: what the backup has)',
         );
     }
 
@@ -131,8 +151,15 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
             'backup-dir' => !empty( $options['backup-dir'] ) ? (string)$options['backup-dir'] : null,
             'force-order' => !empty( $options['force-order'] ),
             'fail-on-pending' => !empty( $options['fail-on-pending'] ),
+            'force-no-backup' => !empty( $options['force-no-backup'] ),
             'no-deploy' => !empty( $options['no-deploy'] ),
             'url' => isset( $options['url'] ) ? \expUpgrade::listOption( $options['url'] ) : array(),
+            'to' => isset( $options['to'] ) && $options['to'] ? (string)$options['to'] : '',
+            'repos' => isset( $options['repos'] ) ? \expUpgrade::listOption( $options['repos'] ) : array(),
+            'update' => isset( $options['update'] ) ? \expUpgrade::listOption( $options['update'] ) : array(),
+            'composer' => isset( $options['composer'] ) && $options['composer'] ? (string)$options['composer'] : '',
+            'no-audit' => !empty( $options['no-audit'] ),
+            'allow-vendor-changes' => !empty( $options['allow-vendor-changes'] ),
             'command' => $this->name(),
             'progress' => function ( $line ) use ( $cli, $quiet ) {
                 if ( !$quiet )

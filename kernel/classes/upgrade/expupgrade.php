@@ -220,7 +220,8 @@ class expUpgrade
             $registry = isset( $options['registry'] ) ? $options['registry'] : expUpgradeRegistry::fromSettings();
             foreach ( $registry->errors() as $error )
                 $report['warnings'][] = $error;
-            $context = new expUpgradeContext( $db, $apply, $options, isset( $options['schema-file'] ) ? $options['schema-file'] : null );
+            $context = new expUpgradeContext( $db, $apply, $options + array( 'mode' => $mode, 'root' => rtrim( eZSys::rootDir(), '/' ) ),
+                                              isset( $options['schema-file'] ) ? $options['schema-file'] : null );
             $engine = $context->engine();
             $report['installation']['engine'] = $engine;
             $report['installation']['database_version'] = $engine === 'mongodb' ? null : expUpgradeStepSiteVersion::stored( $db );
@@ -230,6 +231,10 @@ class expUpgrade
             foreach ( array_merge( $only, $skip ) as $id )
                 if ( !$registry->get( $id ) )
                     $report['errors'][] = "no step $id (./console exp:upgrade:steps lists them)";
+            // a production installation is never written without a backup, unless the operator insists
+            if ( $apply && !empty( $options['no-backup'] ) && empty( $options['force-no-backup'] ) && self::isProduction() )
+                $report['errors'][] = 'this installation is production ([AdminEnvironment] Level, EXP_ENV): --no-backup is refused, '
+                                    . 'make the backup or add --force-no-backup';
             if ( $report['errors'] )
             {
                 $report['exit'] = self::EXIT_USAGE;
@@ -335,8 +340,11 @@ class expUpgrade
                             {
                                 if ( $progress )
                                     $progress( 'backup ...' );
-                                $backup = expUpgradeBackup::create( $db, isset( $options['backup-dir'] ) ? $options['backup-dir'] : null );
+                                $backup = expUpgradeBackup::create( $db, isset( $options['backup-dir'] ) ? $options['backup-dir'] : null, $context->option( 'root' ) );
                                 $report['backup'] = array( 'dir' => $backup['dir'], 'ok' => $backup['ok'], 'files' => $backup['files'], 'messages' => $backup['messages'] );
+                                $context->setOption( 'backup-path', $backup['dir'] );
+                                self::audit( 'system.upgrade.backup', array( 'object' => array( 'type' => 'backup', 'id' => basename( $backup['dir'] ) ),
+                                                                             'result' => $backup['ok'] ? 'success' : 'failure', 'x' => array( 'files' => $backup['files'] ) ) );
                                 if ( !$backup['ok'] )
                                 {
                                     $report['errors'][] = 'the backup failed, nothing was changed: ' . implode( '; ', $backup['messages'] ) . ' (--no-backup runs without one)';
@@ -374,6 +382,10 @@ class expUpgrade
                             if ( !$written && $entry['state'] === 'done' && $id !== '6.0.15-upgrade-record-table' )
                                 $report['warnings'][] = "$id: not recorded (no table " . expUpgradeRecord::TABLE . ')';
                             self::log( $id, $entry, $engine );
+                            self::audit( 'system.upgrade.step', array( 'object' => array( 'type' => 'upgrade_step', 'id' => $id ),
+                                                                       'result' => $entry['state'] === 'done' ? 'success' : 'failure',
+                                                                       'reason' => $entry['state'] === 'done' ? '' : mb_substr( end( $entry['messages'] ), 0, 200 ),
+                                                                       'x' => array( 'stage' => $stageName, 'engine' => $engine, 'duration_ms' => $entry['duration_ms'] ) ) );
                             $outcome[$id] = $entry['state'];
                         }
                     }
@@ -397,6 +409,11 @@ class expUpgrade
                 $report['exit'] = self::EXIT_FAILED;
             else if ( !empty( $options['fail-on-pending'] ) && $report['summary']['pending'] > 0 )
                 $report['exit'] = self::EXIT_FAILED;
+            if ( $locked )
+                self::audit( 'system.upgrade.run', array( 'object' => array( 'type' => 'upgrade', 'id' => implode( ',', $stages ) ), 'verb' => 'run',
+                                                          'result' => $report['exit'] === self::EXIT_OK ? 'success' : 'failure',
+                                                          'x' => array( 'applied' => $report['summary']['applied'], 'failed' => $report['summary']['failed'],
+                                                                        'backup' => $report['backup'] ? basename( $report['backup']['dir'] ) : null ) ) );
         }
         catch ( Throwable $e )
         {
@@ -405,6 +422,63 @@ class expUpgrade
             $report['exit'] = self::EXIT_INTERNAL;
         }
         return $report;
+    }
+
+    /**
+     * One report of two runs that follow each other (the code stage in this process, the stages after it in a new
+     * one): the stages one after the other, the counts added, the worse exit code. Pure.
+     *
+     * @param array $first
+     * @param array $second
+     * @return array
+     */
+    public static function mergeReports( array $first, array $second )
+    {
+        $merged = $first;
+        $merged['stages'] = array_merge( $first['stages'], $second['stages'] );
+        foreach ( $second['summary'] as $state => $n )
+            $merged['summary'][$state] = ( isset( $merged['summary'][$state] ) ? $merged['summary'][$state] : 0 ) + $n;
+        $merged['errors'] = array_merge( $first['errors'], $second['errors'] );
+        $merged['warnings'] = array_values( array_unique( array_merge( $first['warnings'], $second['warnings'] ) ) );
+        $merged['backup'] = $first['backup'] ?: $second['backup'];
+        if ( !empty( $second['installation']['engine'] ) )
+            $merged['installation'] = $second['installation'];
+        $merged['exit'] = max( (int)$first['exit'], (int)$second['exit'] );
+        return $merged;
+    }
+
+    /**
+     * Whether the installation's settings call it production: site.ini [AdminEnvironment] Level=production, or
+     * Level=auto with EXP_ENV prod, production or live.
+     *
+     * @param eZINI|null $ini
+     * @return bool
+     */
+    public static function isProduction( $ini = null )
+    {
+        $ini = $ini ?: eZINI::instance();
+        $level = $ini->hasVariable( 'AdminEnvironment', 'Level' ) ? strtolower( trim( (string)$ini->variable( 'AdminEnvironment', 'Level' ) ) ) : '';
+        if ( $level === 'auto' )
+            $level = strtolower( trim( (string)getenv( 'EXP_ENV' ) ) );
+        return in_array( $level, array( 'production', 'prod', 'live' ), true );
+    }
+
+    /**
+     * Records an audit event of the upgrade (system.upgrade.*); never stops the upgrade.
+     *
+     * @param string $name
+     * @param array $data
+     */
+    public static function audit( $name, array $data )
+    {
+        try
+        {
+            if ( class_exists( 'expAudit' ) )
+                expAudit::event( $name, $data );
+        }
+        catch ( Throwable $e )
+        {
+        }
     }
 
     /**
