@@ -16,6 +16,16 @@ class expCommerceExport
         return is_numeric( $v ) ? round( (float)$v, 4 ) : null;
     }
 
+    /**
+     * The siteaccess (store or site) an order was placed in (ezorder.siteaccess, Exponential 6.0.15), null when it is
+     * not known: an order placed before it was recorded, or a kernel without the column.
+     */
+    public static function siteaccess( eZOrder $o )
+    {
+        $name = method_exists( $o, 'siteaccessName' ) ? (string)$o->siteaccessName() : '';
+        return $name !== '' ? $name : null;
+    }
+
     /** The price attribute (ezprice, ezmultiprice) of a product node as a price descriptor, null when it has none. */
     public static function price( $dataMapOrObject, $currency = false )
     {
@@ -174,7 +184,8 @@ class expCommerceExport
             'status_id' => (int)$o->attribute( 'status_id' ), 'status_name' => $o->attribute( 'status_name' ),
             'status_modified' => $o->attribute( 'status_modified' ) ? gmdate( 'c', (int)$o->attribute( 'status_modified' ) ) : null,
             'is_archived' => (bool)$o->attribute( 'is_archived' ), 'is_temporary' => (bool)$o->attribute( 'is_temporary' ),
-            'currency' => $o->currencyCode(), 'total_inc_vat' => self::num( $o->totalIncVAT() ), 'total_ex_vat' => self::num( $o->totalExVAT() ) );
+            'currency' => $o->currencyCode(), 'total_inc_vat' => self::num( $o->totalIncVAT() ), 'total_ex_vat' => self::num( $o->totalExVAT() ),
+            'siteaccess' => self::siteaccess( $o ) );
         if ( $detail )
         {
             $c = $o->productCollection();

@@ -26,6 +26,11 @@ class eZOrder extends eZPersistentObject
     public $StatusModified;
     public $StatusModifierID;
     public $AccountIdentifier;
+    public $Siteaccess;
+
+    /** @var bool|null whether ezorder has the column siteaccess; null until asked (hasSiteaccessColumn()) */
+    protected static $siteaccessColumn = null;
+
     const SHOW_NORMAL = 0;
     const SHOW_ARCHIVED = 1;
     const SHOW_ALL = 2;
@@ -36,7 +41,10 @@ class eZOrder extends eZPersistentObject
         $this->Status = null;
     }
 
-    static function definition()
+    /**
+     * Every column of ezorder, siteaccess included; definition() leaves out what the database does not have yet.
+     */
+    static function definitionWithAllColumns()
     {
         return array( "fields" => array( "id" => array( 'name' => 'ID',
                                                         'datatype' => 'integer',
@@ -109,7 +117,13 @@ class eZOrder extends eZPersistentObject
                                          "is_archived" => array( 'name' => "IsArchived",
                                                                         'datatype' => 'integer',
                                                                         'default' => 0,
-                                                                        'required' => true ) ),
+                                                                        'required' => true ),
+                                         // the siteaccess (store or site) the order was placed in, '' when not known
+                                         // (expOrderSiteaccess, doc/eng-us/features/6.0/order-siteaccess.md)
+                                         "siteaccess" => array( 'name' => "Siteaccess",
+                                                                'datatype' => 'string',
+                                                                'default' => '',
+                                                                'required' => false ) ),
                       'function_attributes' => array( 'status_name' => 'statusName',
                                                       'status' => 'statusObject',
                                                       'status_modification_list' => 'statusModificationList',
@@ -128,13 +142,107 @@ class eZOrder extends eZPersistentObject
                                                       'productcollection' => 'productCollection',
                                                       'order_info' => 'orderInfo',
                                                       'receipt_url' => 'receiptURL',
-                                                      'link_url' => 'linkURL' ),
+                                                      'link_url' => 'linkURL',
+                                                      'siteaccess_name' => 'siteaccessName',
+                                                      'store_name' => 'storeName' ),
                       "keys" => array( "id" ),
                       "increment_key" => "id",
                       "class_name" => "eZOrder",
                       "name" => "ezorder" );
     }
 
+    /**
+     * The definition of ezorder as the database has it: before the database update has added the column siteaccess
+     * (update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql) the order is stored and read without it, so the shop
+     * keeps working with the old table. The database is asked once a connection exists (hasSiteaccessColumn()).
+     */
+    static function definition()
+    {
+        $definition = self::definitionWithAllColumns();
+        if ( self::$siteaccessColumn === null && eZDB::hasInstance() )
+            self::hasSiteaccessColumn();
+        if ( self::$siteaccessColumn === false )
+            unset( $definition['fields']['siteaccess'] );
+        return $definition;
+    }
+
+    /**
+     * Whether ezorder has the column siteaccess, which the database update adds. Asked of the database's own
+     * catalogue, never by a query that could fail (a failed query inside a transaction stops the request). Once the
+     * column is there the answer is kept for the rest of the process; while it is missing it is asked again on the
+     * next call with $refresh, so the update takes effect without a restart.
+     *
+     * @param bool $refresh ask again even when an answer is kept
+     * @return bool
+     */
+    public static function hasSiteaccessColumn( $refresh = false )
+    {
+        if ( self::$siteaccessColumn !== null && !$refresh )
+            return self::$siteaccessColumn;
+        $found = true;
+        try
+        {
+            $db = eZDB::instance();
+            $rows = null;
+            switch ( $db->databaseName() )
+            {
+                case 'mysql':
+                    $rows = $db->arrayQuery( "SELECT COUNT(*) AS c FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() "
+                                           . "AND TABLE_NAME = 'ezorder' AND COLUMN_NAME = 'siteaccess'" );
+                    break;
+                case 'postgresql':
+                    $rows = $db->arrayQuery( "SELECT COUNT(*) AS c FROM information_schema.columns WHERE table_schema = current_schema() "
+                                           . "AND table_name = 'ezorder' AND column_name = 'siteaccess'" );
+                    break;
+                case 'oracle':
+                    $rows = $db->arrayQuery( "SELECT COUNT(*) AS c FROM user_tab_columns WHERE table_name = 'EZORDER' AND column_name = 'SITEACCESS'" );
+                    break;
+                case 'sqlite':
+                    $names = array();
+                    foreach ( (array)$db->arrayQuery( 'PRAGMA table_info(ezorder)' ) as $column )
+                        $names[] = isset( $column['name'] ) ? $column['name'] : '';
+                    $rows = array( array( 'c' => in_array( 'siteaccess', $names, true ) ? 1 : 0 ) );
+                    break;
+                case 'mongo':
+                    // a collection has no columns: only a schema that declares the table without it says no
+                    $declared = is_callable( array( $db, 'declaredColumns' ) ) ? (array)$db->declaredColumns( 'ezorder' ) : array();
+                    $rows = array( array( 'c' => ( !$declared || isset( $declared['siteaccess'] ) ) ? 1 : 0 ) );
+                    break;
+                // any other engine is taken to have it
+            }
+            if ( is_array( $rows ) )
+                $found = isset( $rows[0] ) && (int)reset( $rows[0] ) === 1;
+        }
+        catch ( \Throwable $e )
+        {
+            eZDebug::writeError( $e->getMessage(), __METHOD__ );
+        }
+        self::$siteaccessColumn = $found;
+        return $found;
+    }
+
+    /**
+     * The name the customer knows the store the order was placed in by (expOrderSiteaccess::storeName()), '' when
+     * the order has no siteaccess recorded.
+     *
+     * @return string
+     */
+    function storeName()
+    {
+        return expOrderSiteaccess::storeName( $this->siteaccessName() );
+    }
+
+    /**
+     * The siteaccess the order was placed in, '' when not known: also before the database update has added the
+     * column, so a template can always ask for it.
+     *
+     * @return string
+     */
+    function siteaccessName()
+    {
+        // the property, not attribute(): asking attribute() for a field the definition left out logs an error
+        return expOrderSiteaccess::normalize( $this->Siteaccess );
+    }
 
     /*!
      Makes a copy of the product collection it currently points to
@@ -220,8 +328,11 @@ class eZOrder extends eZPersistentObject
     /*!
      \return the active orders
     */
-    static function active( $asObject = true, $offset = 0, $limit = 100000, $sortField = "created", $sortOrder = "asc", $show = eZOrder::SHOW_NORMAL )
+    static function active( $asObject = true, $offset = 0, $limit = 100000, $sortField = "created", $sortOrder = "asc", $show = eZOrder::SHOW_NORMAL, $siteaccess = null )
     {
+        // $siteaccess: null for every order, '' for those without a siteaccess, else its name (expOrderSiteaccess)
+        if ( !eZOrder::hasSiteaccessColumn() )
+            $siteaccess = null;
         if ( $sortField == "user_name" )
         {
             $db = eZDB::instance();
@@ -238,7 +349,8 @@ class eZOrder extends eZPersistentObject
                       WHERE
                             ".eZOrder::getShowOrdersQuery( $show, "ezorder" )." AND
                             ezorder.is_temporary = '0' AND
-                            ezcontentobject.id = ezorder.user_id
+                            ezcontentobject.id = ezorder.user_id" .
+                            expOrderSiteaccess::sqlCondition( $siteaccess, $db, 'ezorder.siteaccess' ) . "
                       ORDER BY ezcontentobject.name $sortOrder";
             if ( $db->databaseName() === 'mongo' )
             {
@@ -250,7 +362,7 @@ class eZOrder extends eZPersistentObject
                     $isArchivedFilter = [ 'is_archived' => 1 ];
 
                 $pipeline = [
-                    [ '$match' => array_merge( [ 'is_temporary' => 0 ], $isArchivedFilter ) ],
+                    [ '$match' => array_merge( [ 'is_temporary' => 0 ], $isArchivedFilter, expOrderSiteaccess::conditions( $siteaccess ) ) ],
                     [ '$lookup' => [
                         'from'         => 'ezcontentobject',
                         'localField'   => 'user_id',
@@ -289,13 +401,21 @@ class eZOrder extends eZPersistentObject
             {
                 $where['is_archived'] = $show;
             }
+            // the document store matches the field; SQL gets the condition that also finds Oracle's NULL
+            $customConds = null;
+            $db = eZDB::instance();
+            if ( $db->databaseName() === 'mongo' )
+                $where = array_merge( $where, expOrderSiteaccess::conditions( $siteaccess ) );
+            else if ( $siteaccess !== null )
+                $customConds = expOrderSiteaccess::sqlCondition( $siteaccess, $db );
 
             return eZPersistentObject::fetchObjectList( eZOrder::definition(),
                                                         null,
                                                         $where ,
                                                         array( $sortField => $sortOrder ),
                                                         array( 'offset' => $offset,
-                                                               'length' => $limit ), $asObject );
+                                                               'length' => $limit ), $asObject,
+                                                        false, null, null, $customConds );
         }
     }
 
@@ -312,7 +432,8 @@ class eZOrder extends eZPersistentObject
                       'total_ex_vat'  => 'total excluding VAT',
                       'total_inc_vat' => 'total including VAT',
                       'created'       => 'time the order was placed',
-                      'status'        => 'status name' );
+                      'status'        => 'status name',
+                      'siteaccess'    => 'siteaccess the order was placed in' );
     }
 
     /**
@@ -331,14 +452,22 @@ class eZOrder extends eZPersistentObject
      * @param string $sortField a key of sortColumnsForList(); anything else sorts by time
      * @param string $sortOrder 'asc' or 'desc'
      * @param int $show eZOrder::SHOW_NORMAL, SHOW_ARCHIVED or SHOW_ALL
+     * @param string|null $siteaccess null for every order, '' for those without a siteaccess, else its name
      * @return eZOrder[]
      */
-    static function activeSorted( $offset = 0, $limit = 100000, $sortField = 'created', $sortOrder = 'asc', $show = eZOrder::SHOW_NORMAL )
+    static function activeSorted( $offset = 0, $limit = 100000, $sortField = 'created', $sortOrder = 'asc', $show = eZOrder::SHOW_NORMAL, $siteaccess = null )
     {
         $direction = strtolower( (string)$sortOrder ) === 'desc' ? 'DESC' : 'ASC';
         $columns = eZOrder::sortColumnsForList();
         if ( !isset( $columns[$sortField] ) )
             $sortField = 'created';
+        // before the database update there is no siteaccess to sort or filter by
+        if ( !eZOrder::hasSiteaccessColumn() )
+        {
+            $siteaccess = null;
+            if ( $sortField === 'siteaccess' )
+                $sortField = 'created';
+        }
 
         $db = eZDB::instance();
         if ( $db->databaseName() === 'mongo' )
@@ -346,8 +475,8 @@ class eZOrder extends eZPersistentObject
             // The document store has no joins for the computed columns: time and
             // customer as before, everything else by time.
             return eZOrder::active( true, $offset, $limit,
-                                    $sortField === 'customer' ? 'user_name' : ( $sortField === 'id' ? 'order_nr' : 'created' ),
-                                    strtolower( $direction ), $show );
+                                    $sortField === 'customer' ? 'user_name' : ( $sortField === 'id' ? 'order_nr' : ( $sortField === 'siteaccess' ? 'siteaccess' : 'created' ) ),
+                                    strtolower( $direction ), $show, $siteaccess );
         }
 
         $vat = "CASE WHEN o.ignore_vat = 1 THEN 0 ELSE i.vat_value END";
@@ -365,11 +494,13 @@ class eZOrder extends eZPersistentObject
                               'total_ex_vat'  => $total( $itemEx, $extraEx ),
                               'total_inc_vat' => $total( $itemInc, $extraInc ),
                               'created'       => 'o.created',
-                              'status'        => '( SELECT s.name FROM ezorder_status s WHERE s.status_id = o.status_id )' );
+                              'status'        => '( SELECT s.name FROM ezorder_status s WHERE s.status_id = o.status_id )',
+                              'siteaccess'    => 'o.siteaccess' );
 
         $where = 'o.is_temporary = 0';
         if ( $show != eZOrder::SHOW_ALL )
             $where .= ' AND o.is_archived = ' . (int)$show;
+        $where .= expOrderSiteaccess::sqlCondition( $siteaccess, $db, 'o.siteaccess' );
         $rows = $db->arrayQuery( "SELECT o.* FROM ezorder o WHERE $where" .
                                  " ORDER BY " . $expressions[$sortField] . " $direction, o.id $direction",
                                  array( 'offset' => (int)$offset, 'limit' => (int)$limit ) );
@@ -382,11 +513,14 @@ class eZOrder extends eZPersistentObject
     /*!
      \return the number of active orders
     */
-    static function activeCount( $show = eZOrder::SHOW_NORMAL )
+    static function activeCount( $show = eZOrder::SHOW_NORMAL, $siteaccess = null )
     {
         $db = eZDB::instance();
+        if ( !eZOrder::hasSiteaccessColumn() )
+            $siteaccess = null;
 
-        $query = 'SELECT count( * ) AS count FROM ezorder WHERE ' . eZOrder::getShowOrdersQuery( $show ) . ' AND is_temporary=\'0\'';
+        $query = 'SELECT count( * ) AS count FROM ezorder WHERE ' . eZOrder::getShowOrdersQuery( $show ) . ' AND is_temporary=\'0\'' .
+                 expOrderSiteaccess::sqlCondition( $siteaccess, $db );
         $countArray = $db->arrayQuery( $query );
         return isset( $countArray[0]['count'] ) ? $countArray[0]['count'] : 0;
     }
@@ -1431,6 +1565,10 @@ class eZOrder extends eZPersistentObject
 
             $nextID = $this->getNewID();
             $this->setAttribute( 'order_nr', $nextID );
+            // an order created before the siteaccess was recorded (a basket from before the update) gets the one it
+            // is completed in; one created through eZBasket::createOrder() has it already
+            if ( $this->hasAttribute( 'siteaccess' ) && (string)$this->attribute( 'siteaccess' ) === '' )
+                $this->setAttribute( 'siteaccess', expOrderSiteaccess::current() );
             $this->store();
 
             // Create an order status history element that matches the current status

@@ -2785,6 +2785,7 @@
     "funktionen/6.0/benutzersitzungen.md": "features/6.0/user-sessions.md",
     "funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md": "features/6.0/permission-checks-for-many-assignments.md",
     "funktionen/6.0/bestellbelege.md": "features/6.0/order-receipts.md",
+    "funktionen/6.0/bestellungen-nach-siteaccess.md": "features/6.0/order-siteaccess.md",
     "funktionen/6.0/cache-leeren-durch-umbenennen.md": "features/6.0/cache-clear-rename-aside.md",
     "funktionen/6.0/content-security-policy.md": "features/6.0/content-security-policy.md",
     "funktionen/6.0/cronjobs-in-der-konsole.md": "features/6.0/cronjobs-console.md",
