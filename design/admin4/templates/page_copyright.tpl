@@ -8,7 +8,7 @@
 <p>
 {'Powered by <span class="edition-info">%edition</span>. For more information see <a href=%about_link>ezinfo/about</a>.'|i18n( 'design/admin/page_copyright',, hash( '%edition', fetch( 'setup', 'edition' ), '%about_link', "/ezinfo/about"|ezurl ) )}</p>
 <p>
-{'<a href="%ezpublish_link">Exponential</a> Copyright &copy; 1998-2026 <a href="%foundation_link">Exponential Foundation</a> and <a href="%7x_link">7x</a>'|i18n( 'design/admin/page_copyright',, hash( '%ezpublish_link', 'https://se7enx.com/Exponential', '%foundation_link', 'https://foundation.exponential.earth', '%7x_link', 'https://se7enx.com' ) )}
+{'<a href="%ezpublish_link">Exponential</a> Copyright &copy; 1998-2026 <a href="%foundation_link">Exponential Foundation</a> and <a href="%7x_link">7x</a>'|i18n( 'design/admin/page_copyright',, hash( '%ezpublish_link', 'https://exponential.earth', '%foundation_link', 'https://foundation.exponential.earth', '%7x_link', 'https://se7enx.com' ) )}
 </p>
 {* The evaluate / community links: off by default in admin4. Shown when a template sets $show_community_links
    to true() before this one, or design.ini [AdminDesignSettings] ShowCommunityLinks=enabled. *}

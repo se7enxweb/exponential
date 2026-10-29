@@ -673,11 +673,23 @@ CREATE TABLE IF NOT EXISTS expuser_session_info (
 -- ezprest_authcode: PKCE (RFC 7636) for the OAuth authorization code flow.
 -- oauth/authorize stores the code_challenge and code_challenge_method of the request with the code; the token end
 -- point checks the code_verifier against them. Without these columns no authorization code can be issued.
--- Run once; a second run stops at "Duplicate column name", which means the columns are there.
+-- Added only when missing (both columns come together), so the lines can run again; a database without the
+-- REST tables gets nothing.
 --
-ALTER TABLE ezprest_authcode
-  ADD COLUMN code_challenge varchar(128) default NULL,
-  ADD COLUMN code_challenge_method varchar(10) default NULL;
+SET @exp_pkce_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.TABLES
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezprest_authcode' ) = 1
+    AND
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezprest_authcode'
+        AND COLUMN_NAME = 'code_challenge' ) = 0,
+    'ALTER TABLE ezprest_authcode ADD COLUMN code_challenge varchar(128) default NULL, ADD COLUMN code_challenge_method varchar(10) default NULL',
+    'DO 0' );
+PREPARE exp_pkce_stmt FROM @exp_pkce_sql;
+EXECUTE exp_pkce_stmt;
+DEALLOCATE PREPARE exp_pkce_stmt;
 
 -- Passkeys (doc/eng-us/guides/passkeys.md).
 --
@@ -707,6 +719,7 @@ CREATE TABLE IF NOT EXISTS exppasskey (
   PRIMARY KEY ( id ),
   UNIQUE KEY exppasskey_credential ( credential_hash ),
   KEY exppasskey_user ( user_id )
+) ENGINE=InnoDB;
 
 -- Help maintained as content (doc/eng-us/features/6.0/help-content.md): exphelp_help_id records every help_id that
 -- was Released and the object it belongs to, so the validator reports a help_id that was renamed or reused (clients
@@ -790,4 +803,25 @@ CREATE TABLE IF NOT EXISTS expuser_audit (
   KEY expuser_audit_actor ( actor_id, created ),
   KEY expuser_audit_name ( event_name, created ),
   KEY expuser_audit_created ( created )
+) ENGINE=InnoDB;
+
+-- expupgrade_step: the record of exp:upgrade (doc/eng-us/guides/upgrading-with-the-console.md). One
+-- row per upgrade step it applied or tried: the step id, its stage and version, done or failed, when,
+-- how long, by whom (the system user, never a password), on which engine, the checksum of the step's
+-- code and the last message. ./console exp:upgrade:status reads it to tell "done" (applied by
+-- exp:upgrade) from "not-needed" (in place without it); the steps themselves always look at the
+-- database. Written with IF NOT EXISTS, so running this statement again changes nothing.
+
+CREATE TABLE IF NOT EXISTS expupgrade_step (
+  applied_at int(11) NOT NULL DEFAULT '0',
+  applied_by varchar(150) NOT NULL DEFAULT '',
+  checksum varchar(64) NOT NULL DEFAULT '',
+  duration_ms int(11) NOT NULL DEFAULT '0',
+  engine varchar(30) NOT NULL DEFAULT '',
+  message varchar(1000) NOT NULL DEFAULT '',
+  stage varchar(20) NOT NULL DEFAULT '',
+  state varchar(20) NOT NULL DEFAULT '',
+  step_id varchar(150) NOT NULL DEFAULT '',
+  version varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY ( step_id )
 ) ENGINE=InnoDB;
