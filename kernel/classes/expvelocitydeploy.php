@@ -273,7 +273,7 @@ class expVelocityDeploy
                     $parts[] = $kind . ' changed (' . implode( ', ', $changed[$kind] ) . ( count( $changed[$kind] ) >= 3 ? ' ...' : '' ) . ')';
             return implode( '; ', $parts );
         };
-        $decide = function ( array $kinds, $keptWhat, array $extra = array() ) use ( $changes, $options, $changed, $since, $why ) {
+        $decide = function ( array $kinds, $keptWhat, array $extra = array() ) use ( $changes, $options, $since, $why ) {
             if ( !empty( $options['all-caches'] ) )
                 return array( true, 'cleared: --all-caches' );
             if ( empty( $changes['known'] ) )
