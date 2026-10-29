@@ -15293,6 +15293,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akaụntụ ndị mmadụ anaghị eji ma ọ bụ ndị chọrọ nlele; gbanyụọ, meghe ma ọ bụ bupụ ha.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ndekọ nyocha ndị ọrụ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Onye gbanwere, banyere ma ọ bụ e jụrụ, n&apos;akaụntụ ọ bụla; nzacha na mbupụ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Open the page</source>
         <translation>Mepee ibe ahụ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ruo %to n&apos;ime %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Aha nbanye ma ọ bụ ID onye ọrụ: akaụntụ ihe omume ahụ metụtara ma ọ bụ onye ọrụ mere ihe ahụ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaụntụ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Mgbe e mesịrị</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Nsonaazụ ọ bụla</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Tupu</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Onye mere ya</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Hichapụ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Emechara</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>A na-echekwa ihe omume ruo ụbọchị %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>A na-echekwa ihe omume ruo mgbe e ji aka wepụ ha.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ihe omume</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Omume ọ bụla</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ihe omume niile nke akaụntụ a</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Bupụ ndepụta ahụ dị ka CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Adaala</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Site na</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Mee ka ndepụta dị warara</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ọ dịghị ihe omume dabara.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>N&apos;otu ibe</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Agbanyụọla ndekọ na audit.ini ([UserAuditSettings] UserAudit); ndepụta ahụ na-egosi ihe e dekọrọ na mbụ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>E jụrụ ya</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nsonaazụ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Gosi</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tebụl nke ndekọ nyocha ndị ọrụ adịghị. Mepụta ya site na php update/common/scripts/6.0/createuseraudittable.php; ruo mgbe ahụ, faịlụ nyocha na-echekwa ihe omume ọ bụla.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ibe a chọrọ ebe nchekwa data SQL; ọ dịghị na MongoDB. Faịlụ nyocha na-echekwa ihe omume ọ bụla.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ruo</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ndekọ nyocha ndị ọrụ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Onye ọrụ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Mgbe</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ebe</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Onye gbanwere, mepụtara, kpọghere, gbanyụrụ, kpaghaara ma ọ bụ wepụrụ akaụntụ ọ bụla, onye banyere ma ọ bụ e jụrụ, na ọrụ ndị e kenyere: otu ahịrị maka ihe omume ọ bụla, ya na ubi ndị ahụ tupu na mgbe mgbanwe. A naghị edekọ okwuntughe na ihe nzuzo ma ọlị.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>otu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistemụ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>amaghị</translation>
     </message>
 </context>
 </TS>

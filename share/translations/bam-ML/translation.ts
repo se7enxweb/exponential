@@ -15295,6 +15295,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontiw mɔgɔ si tɛ minnu baara kɛ walima minnu ka kan ka lajɛ; u bɔ baara la, u da yɛlɛ walima u labɔ.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Baarakɛlaw sɛgɛsɛgɛli sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Jɔn ye fɛn yɛlɛma, jɔn donna walima jɔn ma sɔn, konti kelen kelen; sɛnsɛn ani labɔ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Open the page</source>
         <translation>ɲɛ in yɛlɛ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka taa %to, %count la</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Baarakɛla tɔgɔ walima baarakɛla ID: konti min ko kɛwale kɛra, walima baarakɛla min ye kɛwale kɛ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kɛwale</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Kɔfɛ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Jaabi bɛɛ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Sani</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kɛbaga</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Saniya</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>A kɛra</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Kɛwalew bɛ mara tile %days kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Kɛwalew bɛ mara fo u ka bɔsi ni bolo ye.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Kɛwalew</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kɛwale bɛɛ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Nin konti kɛwalew bɛɛ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lisi labɔ CSV la (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>A ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ka bɔ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lisi dɔgɔya</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Kɛwale si tɛ bɛn.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ɲɛ kelen na</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Sɛbɛnni lajɔlen don audit.ini kɔnɔ ([UserAuditSettings] UserAudit); lisi bɛ min sɛbɛnna fɔlɔ o jira.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A ma sɔn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Jaabi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Baarakɛlaw sɛgɛsɛgɛli sɛbɛn tabulo tɛ yen. I ka a dilan ni php update/common/scripts/6.0/createuseraudittable.php ye; fo o waati, sɛgɛsɛgɛli fisiyew bɛ kɛwale bɛɛ mara.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Nin ɲɛ mago bɛ kunnafoniso SQL la; a tɛ sɔrɔ MongoDB kan. Sɛgɛsɛgɛli fisiyew bɛ kɛwale bɛɛ mara.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka taa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Baarakɛlaw sɛgɛsɛgɛli sɛbɛn</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Baarakɛla</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Waati</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Yɔrɔ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Jɔn ye konti jumɛn yɛlɛma, ka a dilan, ka a bila baara la, ka a bɔ baara la, ka a yɔrɔ falen walima ka a bɔsi, jɔn donna walima jɔn ma sɔn, ani jɔyɔrɔ jumɛnw dira: sira kelen kɛwale kelen kelen bɛɛ ye, ni yɔrɔw cogo ye fɔlɔ ani kɔfɛ. Gundodaɲɛw ni gundow tɛ sɛbɛn abada.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>jɛkulu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistɛmu</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>a tɛ dɔn</translation>
     </message>
 </context>
 </TS>

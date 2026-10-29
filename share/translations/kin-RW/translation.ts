@@ -15295,6 +15295,14 @@ Icyitonderwa: Amapaki ntazakurwa muri sisitemu.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konti nta muntu uzikoresha cyangwa zikeneye kurebwa; kuzifunga, kuzifungura cyangwa kuzohereza hanze.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Igitabo cy&apos;igenzura ry&apos;abakoresha</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Uwahinduye, uwinjiye cyangwa uwangiwe, kuri buri konti; kuyungurura no kohereza hanze.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>Open the page</source>
         <translation>Gufungura urupapuro</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kugeza %to muri %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Izina ryo kwinjira cyangwa ID y&apos;umukoresha: konti igikorwa cyerekeyeho cyangwa umukoresha wagikoze.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Igikorwa</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Nyuma</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Igisubizo icyo ari cyo cyose</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Mbere</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Uwabikoze</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Gusiba</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Byagenze neza</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ibikorwa bibikwa iminsi %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ibikorwa bibikwa kugeza bisibwe n&apos;intoki.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ibikorwa</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Igikorwa icyo ari cyo cyose</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ibikorwa byose by&apos;iyi konti</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Kohereza hanze urutonde nka CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Byananiranye</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Iyungurura ry&apos;urutonde</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nta gikorwa gihuye.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Kuri buri rupapuro</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kwandika birafunze muri audit.ini ([UserAuditSettings] UserAudit); urutonde rwerekana ibyanditswe mbere.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Byanzwe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Igisubizo</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kwerekana</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Imbonerahamwe y&apos;igitabo cy&apos;igenzura ry&apos;abakoresha ntiboneka. Muyireme na php update/common/scripts/6.0/createuseraudittable.php; kugeza icyo gihe amafayili y&apos;igenzura abika buri gikorwa.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Uru rupapuro rukenera ububiko bw&apos;amakuru bwa SQL; ntiruboneka kuri MongoDB. Amafayili y&apos;igenzura abika buri gikorwa.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kugeza</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Igitabo cy&apos;igenzura ry&apos;abakoresha</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Umukoresha</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Igihe</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Aho</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Uwahinduye, uwaremye, uwafunguye, uwafunze, uwimuye cyangwa uwakuyeho konti iyihe, uwinjiye cyangwa uwangiwe, n&apos;uruhare rwatanzwe: umurongo umwe kuri buri gikorwa, hamwe n&apos;ibiranga mbere na nyuma. Amagambobanga n&apos;amabanga ntabwo yandikwa na rimwe.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>itsinda</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sisitemu</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ntibizwi</translation>
     </message>
 </context>
 </TS>

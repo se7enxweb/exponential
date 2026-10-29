@@ -15238,6 +15238,14 @@ Märkus: pakette ei desinstallita.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontod, mida keegi ei kasuta või mis vajavad ülevaatamist; keela, ava lukust või ekspordi need.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kasutajate auditilogi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kes muutis, logis sisse või lükati tagasi, konto kaupa; filtreeri ja ekspordi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Open the page</source>
         <translation>Ava leht</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kuni %to, kokku %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Kasutajanimi või kasutaja ID: konto, mida sündmus puudutas, või kasutaja, kes tegutses.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiming</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pärast</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Iga tulemus</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Enne</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Tegija</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Tühjenda</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tehtud</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Sündmusi säilitatakse %days päeva.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Sündmusi säilitatakse, kuni need käsitsi eemaldatakse.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Sündmused</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Iga toiming</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kõik selle konto sündmused</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Ekspordi loend vormingus CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ebaõnnestus</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alates</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Kitsenda loendit</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ükski sündmus ei sobi.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lehel</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Salvestamine on failis audit.ini välja lülitatud ([UserAuditSettings] UserAudit); loend näitab varem salvestatut.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Tagasi lükatud</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulemus</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Kasutajate auditilogi tabel puudub. Looge see käsuga php update/common/scripts/6.0/createuseraudittable.php; seni säilitavad auditifailid iga sündmuse.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>See leht vajab SQL-andmebaasi; andmebaasiga MongoDB pole see saadaval. Auditifailid säilitavad iga sündmuse.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuni</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kasutajate auditilogi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kasutaja</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Millal</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kus</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kes muutis, lõi, lubas, keelas, teisaldas või eemaldas millise konto, kes logis sisse või lükati tagasi ja millised rollid määrati: üks rida sündmuse kohta, väljadega enne ja pärast. Paroole ja saladusi ei salvestata kunagi.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>rühm</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>süsteem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tundmatu</translation>
     </message>
 </context>
 </TS>

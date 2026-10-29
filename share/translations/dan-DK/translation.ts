@@ -15503,6 +15503,14 @@ Navigeringsdel</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konti, som ingen bruger, eller som bør ses på; deaktiver, lås op eller eksporter dem.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Revisionslog for brugere</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hvem der har ændret, logget ind eller er blevet afvist, pr. konto; filtrer og eksporter.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -78016,6 +78024,153 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Open the page</source>
         <translation>Åbn siden</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to af %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Et login eller et bruger-id: den konto, hændelsen drejede sig om, eller den bruger, der handlede.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Handling</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Efter</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Alle resultater</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Før</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Udført af</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Ryd</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Udført</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Hændelser gemmes i %days dage.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Hændelser gemmes, indtil de fjernes manuelt.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hændelser</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Alle handlinger</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Alle hændelser for denne konto</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksporter listen som CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislykkedes</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fra</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Indsnævr listen</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ingen hændelser matcher.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pr. side</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registrering er slået fra i audit.ini ([UserAuditSettings] UserAudit); listen viser, hvad der blev registreret før.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Afvist</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabellen til brugernes revisionslog mangler. Opret den med php update/common/scripts/6.0/createuseraudittable.php; indtil da gemmer revisionsfilerne alle hændelser.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Denne side kræver en SQL-database; den er ikke tilgængelig med MongoDB. Revisionsfilerne gemmer alle hændelser.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Revisionslog for brugere</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bruger</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Hvornår</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hvor</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Hvem der har ændret, oprettet, aktiveret, deaktiveret, flyttet eller fjernet hvilken konto, hvem der har logget ind eller er blevet afvist, og hvilke roller der er blevet tildelt: én linje pr. hændelse med felterne før og efter. Adgangskoder og hemmeligheder registreres aldrig.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>gruppe</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systemet</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukendt</translation>
     </message>
 </context>
 </TS>

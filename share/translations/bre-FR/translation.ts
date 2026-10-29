@@ -15295,6 +15295,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontoù n'implij den pe a c'houlenn ur sell; o diweredekaat, o dibrennañ pe o ezporzhiañ.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Marilh aodit an implijerien</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Piv en deus kemmet, kevreet pe bet nac&apos;het, dre gont; silañ hag ezporzhiañ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Open the page</source>
         <translation>Digeriñ ar bajenn</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from da %to diwar %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Un anv kevreañ pe un ID implijer: ar gont a sell an darvoud outi pe an implijer en deus graet an obererezh.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Obererezh</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Goude</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Forzh peseurt disoc&apos;h</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>A-raok</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gant</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Goullonderiñ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Graet</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Miret e vez an darvoudoù e-pad %days devezh.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Miret e vez an darvoudoù betek ma vint lamet gant an dorn.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Darvoudoù</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Forzh peseurt obererezh</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>An holl zarvoudoù evit ar gont-mañ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Ezporzhiañ ar roll e CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>C&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Eus</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Strishaat ar roll</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Darvoud ebet ne glot.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Dre bajenn</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Diweredekaet eo an enrollañ e audit.ini ([UserAuditSettings] UserAudit); diskouez a ra ar roll ar pezh a oa bet enrollet a-raok.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nac&apos;het</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Disoc&apos;h</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Diskouez</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Mankout a ra taolenn marilh aodit an implijerien. Krouit anezhi gant php update/common/scripts/6.0/createuseraudittable.php; betek neuze e vir ar restroù aodit an holl zarvoudoù.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ezhomm en deus ar bajenn-mañ eus un diaz roadennoù SQL; n&apos;emañ ket hegerz gant MongoDB. Mirout a ra ar restroù aodit an holl zarvoudoù.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Marilh aodit an implijerien</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Implijer</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Pegoulz</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Pelec&apos;h</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Piv en deus kemmet, krouet, gweredekaet, diweredekaet, dilec&apos;hiet pe lamet peseurt kont, piv en deus kevreet pe a zo bet nac&apos;het ha peseurt rolloù a zo bet roet: ul linenn dre zarvoud, gant ar maeziennoù a-raok ha goude. Biskoazh ne vez enrollet ar gerioù-tremen hag ar sekredoù.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>strollad</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>reizhiad</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>dianav</translation>
     </message>
 </context>
 </TS>

@@ -15238,6 +15238,14 @@ Opomba: namestitev paketov ne bo odstranjena.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Računi, ki jih nihče ne uporablja ali jih je treba pregledati; onemogočite, odklenite ali izvozite jih.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Revizijski dnevnik uporabnikov</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kdo je spremenil, se prijavil ali bil zavrnjen, po računih; filtriranje in izvoz.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Open the page</source>
         <translation>Odpri stran</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Uporabniško ime ali ID uporabnika: račun, na katerega se je dogodek nanašal, ali uporabnik, ki je ukrepal.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Račun</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Dejanje</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Potem</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Vsak rezultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Prej</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Izvedel</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Počisti</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Uspešno</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Dogodki se hranijo %days dni.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Dogodki se hranijo, dokler jih ročno ne odstranite.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dogodki</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Vsako dejanje</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Vsi dogodki tega računa</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Izvozi seznam kot CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Zožite seznam</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Noben dogodek se ne ujema.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stran</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Beleženje je v audit.ini izklopljeno ([UserAuditSettings] UserAudit); seznam prikazuje, kar je bilo zabeleženo prej.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Zavrnjeno</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabela revizijskega dnevnika uporabnikov manjka. Ustvarite jo z ukazom php update/common/scripts/6.0/createuseraudittable.php; do takrat revizijske datoteke hranijo vsak dogodek.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ta stran potrebuje zbirko podatkov SQL; v MongoDB ni na voljo. Revizijske datoteke hranijo vsak dogodek.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Revizijski dnevnik uporabnikov</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Uporabnik</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kdaj</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kje</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kdo je spremenil, ustvaril, omogočil, onemogočil, premaknil ali odstranil kateri račun, kdo se je prijavil ali bil zavrnjen in katere vloge so bile dodeljene: ena vrstica na dogodek, s polji pred spremembo in po njej. Gesla in skrivnosti se nikoli ne beležijo.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>skupina</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznano</translation>
     </message>
 </context>
 </TS>

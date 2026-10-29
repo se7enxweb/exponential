@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>គណនីដែលគ្មានអ្នកប្រើ ឬត្រូវការពិនិត្យ បិទ ដោះសោ ឬនាំចេញពួកវា។</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>កំណត់ហេតុសវនកម្មអ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>អ្នកណាបានកែប្រែ ចូល ឬត្រូវបានបដិសេធ តាមគណនីនីមួយៗ ព្រមទាំងត្រង និងនាំចេញ។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>បើកទំព័រ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to នៃ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ឈ្មោះចូល ឬ ID អ្នកប្រើ៖ គណនីដែលព្រឹត្តិការណ៍ពាក់ព័ន្ធ ឬអ្នកប្រើដែលបានធ្វើសកម្មភាព។</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>គណនី</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>សកម្មភាព</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ក្រោយ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>លទ្ធផលទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>មុន</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ធ្វើដោយ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>សម្អាត</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>រួចរាល់</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ព្រឹត្តិការណ៍ត្រូវបានរក្សាទុករយៈពេល %days ថ្ងៃ។</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ព្រឹត្តិការណ៍ត្រូវបានរក្សាទុករហូតដល់ត្រូវបានលុបដោយដៃ។</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ព្រឹត្តិការណ៍</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>សកម្មភាពទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ព្រឹត្តិការណ៍ទាំងអស់របស់គណនីនេះ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>នាំចេញបញ្ជីជា CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ពី</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>បង្រួមបញ្ជី</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>គ្មានព្រឹត្តិការណ៍ដែលត្រូវគ្នាទេ។</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ក្នុងមួយទំព័រ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ការកត់ត្រាត្រូវបានបិទនៅក្នុង audit.ini ([UserAuditSettings] UserAudit) ហើយបញ្ជីបង្ហាញអ្វីដែលបានកត់ត្រាពីមុន។</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>បានបដិសេធ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>លទ្ធផល</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>បង្ហាញ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>តារាងនៃកំណត់ហេតុសវនកម្មអ្នកប្រើមិនមានទេ។ សូមបង្កើតវាដោយប្រើ php update/common/scripts/6.0/createuseraudittable.php ។ រហូតដល់ពេលនោះ ឯកសារសវនកម្មរក្សាទុកព្រឹត្តិការណ៍នីមួយៗ។</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ទំព័រនេះត្រូវការមូលដ្ឋានទិន្នន័យ SQL ហើយមិនអាចប្រើបាននៅលើ MongoDB ទេ។ ឯកសារសវនកម្មរក្សាទុកព្រឹត្តិការណ៍នីមួយៗ។</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ដល់</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>កំណត់ហេតុសវនកម្មអ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>អ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ពេលវេលា</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ទីតាំង</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>អ្នកណាបានកែប្រែ បង្កើត បើក បិទ ផ្លាស់ទី ឬដកចេញគណនីណា អ្នកណាបានចូល ឬត្រូវបានបដិសេធ និងតួនាទីណាខ្លះត្រូវបានផ្តល់៖ មួយជួរសម្រាប់ព្រឹត្តិការណ៍នីមួយៗ ជាមួយវាលមុន និងក្រោយ។ ពាក្យសម្ងាត់ និងព័ត៌មានសម្ងាត់មិនដែលត្រូវបានកត់ត្រាឡើយ។</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ក្រុម</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ប្រព័ន្ធ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>មិនស្គាល់</translation>
     </message>
 </context>
 </TS>

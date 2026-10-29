@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>هەژمارەکان کە کەس بەکاریان ناهێنێت یان پێویستیان بە سەیرکردنە؛ ناچالاکیان بکەن، قوفڵیان بکەنەوە یان هەناردەیان بکەن.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>تۆماری ئۆدیتی بەکارهێنەران</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>کێ گۆڕانکاری کرد، چووە ژوورەوە یان ڕەتکرایەوە، بەپێی هەر هەژمارێک؛ پاڵاوتن و هەناردەکردن.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>کردنەوەی پەڕەکە</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from بۆ %to لە %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ناوی چوونەژوورەوە یان ناسنامەی بەکارهێنەر: ئەو هەژمارەی ڕووداوەکە دەربارەی بوو یان ئەو بەکارهێنەرەی کردارەکەی کرد.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>هەژمار</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کردار</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>پاش</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>هەر ئەنجامێک</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پێش</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>لەلایەن</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>پاککردنەوە</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ئەنجامدرا</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ڕووداوەکان بۆ ماوەی %days ڕۆژ هەڵدەگیرێن.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ڕووداوەکان هەڵدەگیرێن تا بە دەست لادەبرێن.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ڕووداوەکان</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>هەر کردارێک</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>هەموو ڕووداوەکانی ئەم هەژمارە</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>هەناردەکردنی لیستەکە وەک CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>لە</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>تەسککردنەوەی لیستەکە</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>هیچ ڕووداوێک ناگونجێت.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>لە هەر پەڕەیەکدا</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>تۆمارکردن لە audit.ini ناچالاک کراوە ([UserAuditSettings] UserAudit)؛ لیستەکە ئەوە پیشان دەدات کە پێشتر تۆمار کراوە.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ڕەتکرایەوە</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ئەنجام</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>پیشاندان</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>خشتەی تۆماری ئۆدیتی بەکارهێنەران بوونی نییە. بە php update/common/scripts/6.0/createuseraudittable.php دروستی بکەن؛ تا ئەو کاتە فایلەکانی ئۆدیت هەموو ڕووداوێک هەڵدەگرن.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ئەم پەڕەیە پێویستی بە بنکەدراوەی SQL هەیە؛ لەسەر MongoDB بەردەست نییە. فایلەکانی ئۆدیت هەموو ڕووداوێک هەڵدەگرن.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>بۆ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>تۆماری ئۆدیتی بەکارهێنەران</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>بەکارهێنەر</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>کات</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>شوێن</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>کێ کام هەژماری گۆڕی، دروستکرد، چالاککرد، ناچالاککرد، گواستەوە یان لابرد، کێ چووە ژوورەوە یان ڕەتکرایەوە، و کام ڕۆڵ دیاری کران: یەک دێڕ بۆ هەر ڕووداوێک، لەگەڵ خانەکان پێش و پاش گۆڕانکاری. وشە نهێنییەکان و زانیارییە نهێنییەکان هەرگیز تۆمار ناکرێن.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>کۆمەڵە</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سیستەم</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نەناسراو</translation>
     </message>
 </context>
 </TS>

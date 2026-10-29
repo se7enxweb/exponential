@@ -15238,6 +15238,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontot kimilluunniit atorneqanngitsut imaluunniit misissorneqartariaqartut; atorunnaarsikkit, parnaarunnaarsikkit imaluunniit anitsikkit.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Atuisut misissuinermut nalunaarsuiffiat</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kina allanngortitsisimanersoq, iserfigisimanersoq imaluunniit itigartinneqarsimanersoq, kontomut ataatsimut; filterigit aamma anitsiguk.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Open the page</source>
         <translation>Qupperneq ammaruk</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, katillugit %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Iserfissaq imaluunniit atuisup ID-ia: konto pisup pineqartup imaluunniit atuisoq iliuuseqartoq.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iliuuseq</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Kingornagut</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Inernerit tamarmik</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Siornagut</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Iliuuseqartoq</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Saliguk</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Naammassineqarpoq</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Pisut ulluni %days toqqorneqartarput.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Pisut toqqorneqartarput assammik peerneqarnissamik tungaanut.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Pisut</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Iliuutsit tamarmik</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kontop matuma pisui tamarmik</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Allattorsimaffik CSV-mik anitsiguk (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Iluatsinngitsoq</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Pissarfia</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Allattorsimaffik killiliiguk</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Pisoqanngilaq naapertuuttumik.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Quppernermut ataatsimut</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Nalunaarsuineq audit.ini-mi matoqqavoq ([UserAuditSettings] UserAudit); allattorsimaffiup siusinnerusukkut nalunaarsorneqarsimasut takutippai.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Itigartitaq</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Inernera</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Takutiguk</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Atuisut misissuinermut nalunaarsuiffiata tabelia amigaatigineqarpoq. Pilersiguk php update/common/scripts/6.0/createuseraudittable.php atorlugu; tamatuma tungaanut misissuinermut fiilit pisut tamaasa toqqortarpaat.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Quppernerup matuma SQL-imik paasissutissaateqarfik pisariaqartippaa; MongoDB atorlugu atorneqarsinnaanngilaq. Misissuinermut fiilit pisut tamaasa toqqortarpaat.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Unga</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Atuisut misissuinermut nalunaarsuiffiat</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Atuisoq</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Qaqugu</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Sumi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kina konto sorleq allanngortissimaneraa, pilersissimaneraa, atortuulersissimaneraa, atortuujunnaarsissimaneraa, nuussimaneraa imaluunniit peersissimaneraa, kina iserfigisimanersoq imaluunniit itigartinneqarsimanersoq, aamma inissisimaffiit suut tunniunneqarsimanersut: pisoq ataaseq titarnermik ataatsimik, immersugassat siornagut kingornagullu. Isissutit isertuussallu nalunaarsorneqanngisaannartarput.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>eqimattaq</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systemi</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ilisimaneqanngitsoq</translation>
     </message>
 </context>
 </TS>

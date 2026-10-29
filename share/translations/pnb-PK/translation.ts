@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>اوہ کھاتے جنھاں نوں کوئی نہیں ورتدا یا جنھاں نوں ویکھݨ دی لوڑ اے؛ اوہناں نوں بند کرو، کھولو یا برآمد کرو۔</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ورتݨ والیاں دا آڈٹ لاگ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>کس نے بدلیا، لاگ ان کیتا یا رد ہویا، ہر کھاتے موجب؛ فلٹر تے برآمد کرو۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>صفحہ کھولو</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count وچوں %from توں %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>لاگ ان ناں یا ورتݨ والے دی ID: اوہ کھاتہ جیہدے بارے واقعہ سی یا اوہ ورتݨ والا جیہنے کارروائی کیتی۔</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>کھاتہ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کارروائی</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>بعد وچ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>کوئی وی نتیجہ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پہلاں</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>کرن والا</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>صاف کرو</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ہو گیا</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>واقعے %days دن تیکر رکھے جاندے نیں۔</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>واقعے اوس ویلے تیکر رکھے جاندے نیں جدوں تیکر ہتھ نال ہٹائے نہ جاݨ۔</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>واقعے</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ہر کارروائی</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ایس کھاتے دے سارے واقعے</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>لسٹ نوں CSV وجوں برآمد کرو (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>توں</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>لسٹ نوں سوڑا کرو</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>کوئی واقعہ نہیں رلدا۔</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ہر صفحے تے</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini وچ ریکارڈنگ بند اے ([UserAuditSettings] UserAudit)؛ لسٹ اوہ وکھاندی اے جو پہلاں ریکارڈ ہویا سی۔</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد ہویا</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وکھاؤ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ورتݨ والیاں دے آڈٹ لاگ دا ٹیبل موجود نہیں۔ ایہنوں php update/common/scripts/6.0/createuseraudittable.php نال بݨاؤ؛ اوس ویلے تیکر آڈٹ فائلاں ہر واقعہ سانبھ کے رکھدیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ایس صفحے نوں SQL ڈیٹابیس چاہیدا اے؛ ایہہ MongoDB تے دستیاب نہیں۔ آڈٹ فائلاں ہر واقعہ سانبھ کے رکھدیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تیکر</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ورتݨ والیاں دا آڈٹ لاگ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ورتݨ والا</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>کدوں</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>کتھے</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>کس نے کیہڑا کھاتہ بدلیا، بݨایا، چالو کیتا، بند کیتا، منتقل کیتا یا ہٹایا، کس نے لاگ ان کیتا یا رد ہویا، تے کیہڑے کردار دتے گئے: ہر واقعے دی اک سطر، فیلڈاں دیاں پہلاں تے بعد دیاں قدراں نال۔ پاس ورڈ تے راز کدی ریکارڈ نہیں کیتے جاندے۔</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>گروپ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سسٹم</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>اݨجاݨ</translation>
     </message>
 </context>
 </TS>

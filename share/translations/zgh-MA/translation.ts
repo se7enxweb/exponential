@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ⵉⵎⵉⴹⴰⵏⵏ ⵓⵔ ⵜⵜⵙⵙⵎⵔⴰⵙ ⵓⵍⴰ ⵢⴰⵏ ⵏⵖ ⵉⵅⵚⵚⴰⵏ ⴰⵎⵉⵍⵍⵉ; ⵙⵏⵙ ⵜⵏ, ⵙⵙⵓⵔⵔⵓ ⵜⵏ ⵏⵖ ⵙⵙⵉⴼⴹ ⵜⵏ.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ⴰⵖⵎⵉⵙ ⵏ ⵓⵙⵏⵇⴷ ⵏ ⵉⵏⵙⵙⵎⵔⵙⵏ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ⵡⵉ ⵢⵙⵏⴼⵍⵏ, ⵢⴽⵛⵎⵏ ⵏⵖ ⵢⵜⵜⵓⴳⴷⵍⵏ, ⵉ ⴽⵓ ⴰⵎⵉⴹⴰⵏ; ⴰⵙⵣⴷⴳ ⴷ ⵓⵙⵙⵉⴼⴹ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ⵔⵎⵙ ⵜⴰⵙⵏⴰ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ⴰⵔ %to ⵙⴳ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ⵉⵙⵎ ⵏ ⵓⴽⵛⴰⵎ ⵏⵖ ID ⵏ ⵓⵏⵙⵙⵎⵔⵙ: ⴰⵎⵉⴹⴰⵏ ⵏⵏⴰ ⵜⵇⵇⵏ ⵜⴷⵢⴰⵏⵜ ⵏⵖ ⴰⵏⵙⵙⵎⵔⵙ ⵍⵍⵉ ⵉⵙⴽⵔⵏ ⴰⵢⴷⴷⴰ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ⴰⵎⵉⴹⴰⵏ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ⴰⵢⴷⴷⴰ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ⴷⴼⴼⵉⵔ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ⴽⵓ ⴰⵢⵏⵏⴰⵢ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ⴷⴰⵜ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ⴰⵎⵙⴽⴰⵔ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ⵙⵙⴼⴹ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ⵉⵜⵜⵓⵙⴽⴰⵔ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ⵜⵉⴷⵢⴰⵏⵉⵏ ⵜⵜⵓⵃⴹⴰⵏⵜ %days ⵏ ⵡⵓⵙⵙⴰⵏ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ⵜⵉⴷⵢⴰⵏⵉⵏ ⵜⵜⵓⵃⴹⴰⵏⵜ ⴰⵔ ⴷ ⵜⵜⵓⴽⴽⵙⵏⵜ ⵙ ⵓⴼⵓⵙ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ⵜⵉⴷⵢⴰⵏⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ⴽⵓ ⴰⵢⴷⴷⴰ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ⴰⴽⴽⵡ ⵜⵉⴷⵢⴰⵏⵉⵏ ⵏ ⵓⵎⵉⴹⴰⵏ ⴰ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ⵙⵙⵉⴼⴹ ⵜⴰⵍⴳⴰⵎⵜ ⵙ CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ⵓⵔ ⵉⵙⵎⵏⵜⵉ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ⵙⴳ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ⴰⵙⵣⴷⴳ ⵏ ⵜⵍⴳⴰⵎⵜ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ⵓⵔ ⵜⵍⵍⵉ ⴽⵔⴰ ⵏ ⵜⴷⵢⴰⵏⵜ ⵉⵎⵙⴰⵙⴰⵏ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ⴳ ⵜⵙⵏⴰ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ⴰⵣⵎⵎⴻⵎ ⵉⵜⵜⵓⵙⵅⵙⵉ ⴳ audit.ini ([UserAuditSettings] UserAudit); ⵜⴰⵍⴳⴰⵎⵜ ⵜⵙⴽⴰⵏ ⵎⴰⵢⵏ ⵉⵜⵜⵓⵣⵎⵎⴻⵎⵏ ⵣⵉⴽ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ⵉⵜⵜⵓⴳⴷⵍ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ⴰⵢⵏⵏⴰⵢ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ⵙⴽⵏ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ⵜⴰⴼⵍⵡⵉⵜ ⵏ ⵓⵖⵎⵉⵙ ⵏ ⵓⵙⵏⵇⴷ ⵏ ⵉⵏⵙⵙⵎⵔⵙⵏ ⵓⵔ ⵜⵍⵍⵉ. ⵙⵏⵓⵍⴼⵓ ⵜⵜ ⵙ php update/common/scripts/6.0/createuseraudittable.php; ⴰⵔ ⵜⵉⵣⵉ ⵏⵏⴰ, ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵙⵏⵇⴷ ⵃⴹⴰⵏ ⴽⵓ ⵜⴰⴷⵢⴰⵏⵜ.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⴰ ⵜⵔⴰ ⵜⴰⵙⴰⵏⴷⵓⵇⵜ ⵏ ⵉⵙⴼⴽⴰ SQL; ⵓⵔ ⵜⵍⵍⵉ ⴳ MongoDB. ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵙⵏⵇⴷ ⵃⴹⴰⵏ ⴽⵓ ⵜⴰⴷⵢⴰⵏⵜ.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ⴰⵔ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ⴰⵖⵎⵉⵙ ⵏ ⵓⵙⵏⵇⴷ ⵏ ⵉⵏⵙⵙⵎⵔⵙⵏ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ⴰⵏⵙⵙⵎⵔⵙ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ⴰⴽⵓⴷ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ⴰⴷⵖⴰⵔ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ⵡⵉ ⵢⵙⵏⴼⵍⵏ, ⵢⵙⵏⵓⵍⴼⵓⵏ, ⵢⵙⵔⵎⴷⵏ, ⵢⵙⵏⵙⵏ, ⵢⵙⵎⵓⵜⵜⵉⵏ ⵏⵖ ⵢⴽⴽⵙⵏ ⵎⴰⵏ ⴰⵎⵉⴹⴰⵏ, ⵡⵉ ⵢⴽⵛⵎⵏ ⵏⵖ ⵢⵜⵜⵓⴳⴷⵍⵏ, ⴷ ⵎⴰⵏ ⵉⴷⵡⵡⵓⵔⵏ ⵉⵜⵜⵓⴼⴽⴰⵏ: ⵢⴰⵏ ⵓⵣⵔⵉⴳ ⵉ ⴽⵓ ⵜⴰⴷⵢⴰⵏⵜ, ⴷ ⵉⵏⵙⴰ ⴷⴰⵜ ⴷ ⴷⴼⴼⵉⵔ. ⵜⵉⴳⵓⵔⵉⵡⵉⵏ ⵏ ⵓⵣⵔⴰⵢ ⴷ ⵉⵏⴼⵓⵍⴰ ⵓⵔ ⵜⵜⵓⵣⵎⵎⴻⵎⵏⵜ ⵙⵔⵙ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ⵜⴰⵔⴰⴱⴱⵓⵜ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ⴰⵏⴰⵎⴽ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ⵓⵔ ⵉⵜⵜⵓⵙⵏ</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ܚܘܫ̈ܒܢܐ ܕܐܢܫ ܠܐ ܡܦܠܚ ܠܗܘܢ ܐܘ ܕܣܢܝܩܝܢ ܠܚܙܝܐ؛ ܡܒܛܠܐ، ܦܬܚܐ ܕܩܦܠܐ ܐܘ ܡܦܩܐ ܕܝܠܗܘܢ.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ܥܩܒܐ ܕܒܘܩܝܐ ܕܡܦܠܚܢ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ܡܢܘ ܫܚܠܦ، ܥܠ ܐܘ ܐܬܟܠܝ، ܠܟܠ ܚܘܫܒܢܐ؛ ܨܠܠܐ ܘܡܦܩܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77344,6 +77352,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ܦܬܚܐ ܕܦܐܬܐ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ܥܕ %to ܡܢ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ܫܡܐ ܕܡܦܠܚܢܐ ܐܘ ID ܕܡܦܠܚܢܐ: ܚܘܫܒܢܐ ܕܥܠܘܗܝ ܗܘܐ ܓܕܫܐ ܐܘ ܡܦܠܚܢܐ ܕܥܒܕ ܣܘܥܪܢܐ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ܚܘܫܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ܣܘܥܪܢܐ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ܒܬܪ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ܟܠ ܦܠܛܐ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ܩܕܡ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ܥܒܘܕܐ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ܣܪܩܐ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ܓܡܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ܓܕ̈ܫܐ ܡܬܢܛܪܝܢ %days ܝܘܡ̈ܬܐ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ܓܕ̈ܫܐ ܡܬܢܛܪܝܢ ܥܕܡܐ ܕܡܫܬܩܠܝܢ ܒܐܝܕܐ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ܓܕ̈ܫܐ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ܟܠ ܣܘܥܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ܟܠܗܘܢ ܓܕ̈ܫܐ ܕܗܢܐ ܚܘܫܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ܡܦܩܐ ܕܪܫܝܡܬܐ ܐܝܟ CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ܡܢ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ܨܠܠܐ ܕܪܫܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ܠܝܬ ܓܕܫܐ ܕܫܘܐ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ܒܟܠ ܦܐܬܐ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ܪܫܡܐ ܒܛܝܠܐ ܓܘ audit.ini ([UserAuditSettings] UserAudit)؛ ܪܫܝܡܬܐ ܡܚܘܝܐ ܡܕܡ ܕܐܬܪܫܡ ܡܢ ܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ܐܬܟܠܝ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ܦܠܛܐ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ܡܚܘܝܐ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ܠܘܚܐ ܕܥܩܒܐ ܕܒܘܩܝܐ ܕܡܦܠܚܢ̈ܐ ܠܝܬܘܗܝ. ܒܪܘܢ ܠܗ ܥܡ php update/common/scripts/6.0/createuseraudittable.php؛ ܥܕܡܐ ܠܗܝ ܥܕܢܐ ܦܢܩ̈ܝܬܐ ܕܒܘܩܝܐ ܢܛܪܢ ܟܠ ܓܕܫܐ.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ܗܕܐ ܦܐܬܐ ܣܢܝܩܐ ܠܒܝܬ ܝܕ̈ܥܬܐ ܕ SQL؛ ܠܐ ܡܬܡܨܝܐ ܥܠ MongoDB. ܦܢܩ̈ܝܬܐ ܕܒܘܩܝܐ ܢܛܪܢ ܟܠ ܓܕܫܐ.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ܥܕ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ܥܩܒܐ ܕܒܘܩܝܐ ܕܡܦܠܚܢ̈ܐ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ܡܦܠܚܢܐ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ܐܡܬܝ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ܐܝܟܐ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ܡܢܘ ܫܚܠܦ، ܒܪܐ، ܐܦܥܠ، ܐܒܛܠ، ܫܢܐ ܐܘ ܫܩܠ ܐܝܢܐ ܚܘܫܒܢܐ، ܡܢܘ ܥܠ ܐܘ ܐܬܟܠܝ، ܘܐܝܠܝܢ ܕܘܪ̈ܐ ܐܬܝܗܒܘ: ܣܛܪܐ ܚܕ ܠܟܠ ܓܕܫܐ، ܥܡ ܚܩܠ̈ܐ ܩܕܡ ܘܒܬܪ. ܡ̈ܠܐ ܕܥܒܪܐ ܘܐܪ̈ܙܐ ܡܡܬܘܡ ܠܐ ܡܬܪܫܡܝܢ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ܟܢܫܐ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ܡܛܟܣܬܐ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ܠܐ ܝܕܝܥܐ</translation>
     </message>
 </context>
 </TS>

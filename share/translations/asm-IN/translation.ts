@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>কোনেও ব্যৱহাৰ নকৰা বা চাব লগীয়া একাউণ্ট; সেইবোৰ অক্ষম কৰক, আনলক কৰক বা ৰপ্তানি কৰক।</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ব্যৱহাৰকাৰীৰ অডিট লগ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>প্ৰতিটো একাউণ্টৰ বাবে কোনে সলনি কৰিলে, লগ ইন কৰিলে বা প্ৰত্যাখ্যাত হ&apos;ল; ফিল্টাৰ আৰু ৰপ্তানি কৰক।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>পৃষ্ঠাটো খোলক</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ৰ পৰা %to লৈ (মুঠ %count)</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>এটা লগইন নাম বা ব্যৱহাৰকাৰী ID: ঘটনাটো যি একাউণ্টৰ বিষয়ে, বা যি ব্যৱহাৰকাৰীয়ে কাৰ্যটো কৰিছিল।</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>একাউণ্ট</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>কাৰ্য</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>পিছত</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>যিকোনো ফলাফল</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>আগতে</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>কৰোঁতা</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>পৰিষ্কাৰ কৰক</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>সম্পূৰ্ণ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ঘটনাসমূহ %days দিনলৈ ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>হাতেৰে আঁতৰোৱা নহয়মানে ঘটনাসমূহ ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ঘটনাসমূহ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>সকলো কাৰ্য</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>এই একাউণ্টৰ সকলো ঘটনা</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>তালিকাখন CSV হিচাপে ৰপ্তানি কৰক (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যৰ্থ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ৰ পৰা</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>তালিকাখন সংকুচিত কৰক</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>কোনো ঘটনা মিলা নাই।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>প্ৰতি পৃষ্ঠাত</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ত ৰেকৰ্ডিং বন্ধ কৰা আছে ([UserAuditSettings] UserAudit); তালিকাখনে আগতে ৰেকৰ্ড কৰা তথ্য দেখুৱায়।</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>প্ৰত্যাখ্যাত</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ফলাফল</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ব্যৱহাৰকাৰীৰ অডিট লগৰ টেবুলখন নাই। php update/common/scripts/6.0/createuseraudittable.php ৰে ইয়াক সৃষ্টি কৰক; তেতিয়ালৈকে অডিট ফাইলসমূহে প্ৰতিটো ঘটনা ৰাখে।</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>এই পৃষ্ঠাটোৰ বাবে এটা SQL ডাটাবেছ লাগে; MongoDB ত ই উপলব্ধ নহয়। অডিট ফাইলসমূহে প্ৰতিটো ঘটনা ৰাখে।</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>লৈ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ব্যৱহাৰকাৰীৰ অডিট লগ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ব্যৱহাৰকাৰী</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>কেতিয়া</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ক&apos;ত</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>কোনে কোন একাউণ্ট সলনি কৰিলে, সৃষ্টি কৰিলে, সক্ৰিয় কৰিলে, নিষ্ক্ৰিয় কৰিলে, স্থানান্তৰ কৰিলে বা আঁতৰালে, কোনে লগ ইন কৰিলে বা প্ৰত্যাখ্যাত হ&apos;ল, আৰু কোনবোৰ ভূমিকা অৰ্পণ কৰা হ&apos;ল: প্ৰতিটো ঘটনাৰ বাবে এটা শাৰী, আগৰ আৰু পিছৰ ক্ষেত্ৰসমূহৰ সৈতে। পাছৱৰ্ড আৰু গোপন তথ্য কেতিয়াও ৰেকৰ্ড কৰা নহয়।</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>গোট</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ছিষ্টেম</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>অজ্ঞাত</translation>
     </message>
 </context>
 </TS>

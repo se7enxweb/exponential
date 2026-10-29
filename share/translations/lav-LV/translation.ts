@@ -15238,6 +15238,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konti, ko neviens neizmanto vai kas jāpārbauda; atspējojiet, atbloķējiet vai eksportējiet tos.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lietotāju audita žurnāls</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kas mainīja, pierakstījās vai tika noraidīts, pa kontiem; filtrēt un eksportēt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Open the page</source>
         <translation>Atvērt lapu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from līdz %to no %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Pieteikšanās vārds vai lietotāja ID: konts, uz kuru attiecās notikums, vai lietotājs, kurš rīkojās.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konts</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Darbība</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pēc</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Jebkurš rezultāts</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pirms</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Izpildītājs</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Notīrīt</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Izdevās</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Notikumi tiek glabāti %days d.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Notikumi tiek glabāti, līdz tos noņem manuāli.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Notikumi</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Jebkura darbība</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Visi šī konta notikumi</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksportēt sarakstu kā CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neizdevās</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Sašaurināt sarakstu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Neviens notikums neatbilst.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lapā</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ierakstīšana ir izslēgta failā audit.ini ([UserAuditSettings] UserAudit); sarakstā redzams tas, kas tika ierakstīts iepriekš.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Noraidīts</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultāts</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rādīt</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Trūkst lietotāju audita žurnāla tabulas. Izveidojiet to ar php update/common/scripts/6.0/createuseraudittable.php; līdz tam audita faili glabā katru notikumu.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Šai lapai nepieciešama SQL datubāze; ar MongoDB tā nav pieejama. Audita faili glabā katru notikumu.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Līdz</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lietotāju audita žurnāls</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Lietotājs</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kad</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kas mainīja, izveidoja, iespējoja, atspējoja, pārvietoja vai noņēma kuru kontu, kas pierakstījās vai tika noraidīts un kādas lomas tika piešķirtas: viena rinda katram notikumam, ar laukiem pirms un pēc. Paroles un noslēpumi nekad netiek ierakstīti.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupa</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistēma</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nezināms</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konta, kotrež nichtó njewužiwa abo kotrež přepruwowanje trjebaja; znjemóžnić, wotewrěć abo eksportować.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditowy protokol wužiwarjow</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Štó je změnił, so přizjewił abo bu wotpokazany, po kontach; filtrować a eksportować.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>Open the page</source>
         <translation>Stronu wočinić</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hač %to z %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Přizjewjenske mjeno abo ID wužiwarja: konto, wo kotrež so w podawku jednaše, abo wužiwar, kotryž je jednał.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcija</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Po tym</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Kóždy wuslědk</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Prjedy</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wot</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wuprózdnić</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wuspěšny</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Podawki so %days dnjow chowaja.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Podawki so chowaja, doniž so z ruku njewotstronja.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Podawki</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kóžda akcija</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Wšě podawki tutoho konta</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lisćinu jako CSV eksportować (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njewuspěšny</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Wot</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lisćinu wobmjezować</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Žadyn podawk njepasuje.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stronu</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Zapisowanje je w audit.ini wupinjene ([UserAuditSettings] UserAudit); lisćina pokazuje, štož bu prjedy zapisane.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wotpokazany</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wuslědk</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabela auditoweho protokola wužiwarjow faluje. Wutworće ju z php update/common/scripts/6.0/createuseraudittable.php; hač do toho chowaja auditowe dataje kóždy podawk.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Tuta strona trjeba SQL-datowu banku; z MongoDB k dispoziciji njeje. Auditowe dataje chowaja kóždy podawk.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditowy protokol wužiwarjow</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Wužiwar</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hdźe</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Štó je kotre konto změnił, wutworił, zmóžnił, znjemóžnił, přesunył abo wotstronił, štó je so přizjewił abo bu wotpokazany a kotre róle buchu přirjadowane: jedna linka na podawk, z polemi prjedy a po tym. Hesła a potajnstwa so ženje njezapisuja.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>skupina</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>přez system</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>njeznaty</translation>
     </message>
 </context>
 </TS>

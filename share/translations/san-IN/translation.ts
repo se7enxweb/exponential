@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>खातानि यानि कोऽपि नोपयुङ्क्ते अथवा येषां निरीक्षणम् आवश्यकम्; तानि निष्क्रियीकरोतु, उद्घाटयतु निर्यातयतु वा।</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>उपयोक्तृलेखापरीक्षणाभिलेखः</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>प्रतिखातं कः परिवर्तितवान्, कः प्रविष्टवान्, कः वा निराकृतः; छाननं निर्यातः च।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>पृष्ठं उद्घाटयतु</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from इत्यस्मात् %to पर्यन्तम्, आहत्य %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>प्रवेशनाम उपयोक्तृ-ID वा: यस्य खातस्य विषये घटना आसीत्, यः उपयोक्ता वा क्रियाम् अकरोत्।</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>खातम्</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>क्रिया</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>पश्चात्</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>सर्वे परिणामाः</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>पूर्वम्</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>कर्ता</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>शुद्धिः</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>सम्पन्नम्</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>घटनाः %days दिनानि रक्ष्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>घटनाः हस्तेन अपसारणपर्यन्तं रक्ष्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>घटनाः</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>सर्वाः क्रियाः</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>अस्य खातस्य सर्वाः घटनाः</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>सूच्याः CSV रूपेण निर्यातः (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफलम्</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>आरभ्य</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>सूच्याः सङ्कोचनम्</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>काऽपि घटना न मेलति।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रतिपृष्ठम्</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ([UserAuditSettings] UserAudit) इत्यत्र अभिलेखनं निष्क्रियम् अस्ति; सूची पूर्वम् अभिलिखितं दर्शयति।</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>निराकृतम्</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणामः</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दर्शनम्</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>उपयोक्तृलेखापरीक्षणाभिलेखस्य सारणी नास्ति। php update/common/scripts/6.0/createuseraudittable.php द्वारा तां रचयतु; तावत् लेखापरीक्षणसञ्चिकाः प्रत्येकां घटनां रक्षन्ति।</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>अस्य पृष्ठस्य कृते SQL दत्तांशकोशः आवश्यकः; MongoDB इत्यत्र एतत् न उपलभ्यते। लेखापरीक्षणसञ्चिकाः प्रत्येकां घटनां रक्षन्ति।</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>पर्यन्तम्</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>उपयोक्तृलेखापरीक्षणाभिलेखः</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>उपयोक्ता</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>कदा</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>कुत्र</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>कः कस्य खातस्य परिवर्तनं, निर्माणं, सक्रियीकरणं, निष्क्रियीकरणं, स्थानान्तरणम् अपसारणं वा अकरोत्, कः प्रविष्टवान् कः वा निराकृतः, काः भूमिकाः च नियुक्ताः: प्रतिघटनम् एका पङ्क्तिः, पूर्वतनैः पश्चात्तनैः च क्षेत्रैः सह। गुप्तशब्दाः रहस्यानि च कदापि न अभिलिख्यन्ते।</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>समूहः</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>तन्त्रम्</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञातम्</translation>
     </message>
 </context>
 </TS>

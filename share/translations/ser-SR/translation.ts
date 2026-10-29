@@ -15238,6 +15238,14 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Nalozi koje niko ne koristi ili koje treba pogledati; onemogućite ih, otključajte ili izvezite.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Dnevnik revizije korisnika</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ko je menjao, prijavio se ili bio odbijen, po nalogu; filtriranje i izvoz.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>Open the page</source>
         <translation>Otvori stranicu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od ukupno %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Korisničko ime ili ID korisnika: nalog na koji se događaj odnosio ili korisnik koji je delovao.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Nalog</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Radnja</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Posle</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Svaki rezultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pre</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Izvršio</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Poništi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Izvršeno</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Događaji se čuvaju %days dana.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Događaji se čuvaju dok se ručno ne uklone.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Događaji</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Svaka radnja</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Svi događaji ovog naloga</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Izvezi listu kao CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Suzite listu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nijedan događaj se ne poklapa.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po stranici</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Beleženje je isključeno u audit.ini ([UserAuditSettings] UserAudit); lista prikazuje ono što je ranije zabeleženo.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odbijeno</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabela dnevnika revizije korisnika nedostaje. Napravite je pomoću php update/common/scripts/6.0/createuseraudittable.php; do tada datoteke revizije čuvaju svaki događaj.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ova stranica zahteva SQL bazu podataka; nije dostupna na MongoDB. Datoteke revizije čuvaju svaki događaj.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Dnevnik revizije korisnika</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Korisnik</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kada</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Gde</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ko je izmenio, napravio, omogućio, onemogućio, premestio ili uklonio koji nalog, ko se prijavio ili bio odbijen i koje su uloge dodeljene: jedan red po događaju, sa poljima pre i posle. Lozinke i tajni podaci se nikada ne beleže.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupa</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nepoznato</translation>
     </message>
 </context>
 </TS>

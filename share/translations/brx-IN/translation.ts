@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>जाहोन्बो बेबहार खालामाया नाया नायनो गोनां एकाउन्टफोर; बेफोरखौ बन्द खालाम, खुल नाया एक्सपोर्ट खालाम.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>बेबहार खालामग्रानि अडिट लग</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>एकाउन्ट फ्रामबोआव सोर सोलायदों, लगइन खालामदों एबा नेवसिजादों; फिल्टार आरो एक्सपोर्ट खालाम।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>फोथाखौ खुल</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from निफ्राय %to सिम, गासै %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>लगइन मुं एबा बेबहार खालामग्रा ID: घटनाया जाय एकाउन्टनि बागै जादोंमोन, एबा जाय बेबहार खालामग्राया खामानि मावदोंमोन।</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>एकाउन्ट</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>खामानि</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>उनि</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>जायखिजाया फलाफल</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>आगा</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>मावग्रा</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>सिन्द्राय</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>जोबोद</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>घटनाफोरखौ %days सान रैखाथि होयो।</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>घटनाफोरखौ आखायजों मेटानो सिम रैखाथि होयो।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>घटनाफोर</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>गासै खामानि</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>बे एकाउन्टनि गासै घटना</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>फारिखौ CSV महरै एक्सपोर्ट (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>फेल जादों</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>निफ्राय</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>फारिखौ गुसुं खालाम</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>मोनसेबो घटना गोरोबाखै।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>फोथा फोथा</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini आव रेकर्डिं बन्द खालामनाय जादों ([UserAuditSettings] UserAudit); फारिआ आगाव रेकर्ड खालामनायखौ दिन्थियो।</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>नेवसिजादों</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>फलाफल</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>नायनो हो</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>बेबहार खालामग्रानि अडिट लगनि टेबुलखौ मोनाखै। बेखौ php update/common/scripts/6.0/createuseraudittable.php जों सोरजि; बे समाव सिम अडिट फाइलफोरा गासै घटनाखौ रैखायो।</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>बे फोथाया SQL डेटाबेस नांगौ; MongoDB आव बेयो मोनाखै। अडिट फाइलफोरा गासै घटनाखौ रैखायो।</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>सिम</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>बेबहार खालामग्रानि अडिट लग</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>बेबहार खालामग्रा</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>समाव</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>जायगा</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>सोर बबे एकाउन्टखौ सोलायदों, सोरजिदों, सक्रिय खालामदों, निष्क्रिय खालामदों, लोरिहोदों एबा मेटादों, सोर लगइन खालामदों एबा नेवसिजादों, आरो बबे बाहागोफोर होनाय जादों: घटना फ्रामबोनि थाखाय सारि मोनसे, आगा आरो उनिनि फिल्डफोरजों। पासओयार्ड आरो गुप्त खौरांफोरखौ जेबो समाव रेकर्ड खालामजाया।</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>हुदा</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>सिस्टेम</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>सिन्हाखै</translation>
     </message>
 </context>
 </TS>

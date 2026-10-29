@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ओह् खाते जिʼनेंगी कोई इस्तेमाल नेईं करदा जां जिʼनें पर ध्यान देने दी लोड़ ऐ; उʼनेंगी बंद करो, खोलो जां एक्सपोर्ट करो।</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>प्रयोक्ता ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>हर खाते आस्तै कुसनै बदलेआ, कुसनै लॉगिन कीता जां कुसी रोकेआ गेआ; फिल्टर ते एक्सपोर्ट करो।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>सफा खोलो</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from थमां %to, कुल %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>लॉगिन नांऽ जां प्रयोक्ता ID: ओह् खाता जिसदे बारै घटना ही, जां ओह् प्रयोक्ता जिसनै कार्रवाई कीती।</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>खाता</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>कार्रवाई</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>बाद च</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>कोई बी नतीजा</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>पैह्लें</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>करने आह्ला</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>साफ करो</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>होई गेआ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>घटनाएं %days दिनें तगर रक्खियां जंदियां न।</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>घटनाएं तदूं तगर रक्खियां जंदियां न जदूं तगर उनेंगी हत्थें कन्नै नेईं कड्ढेआ जंदा।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>घटनाएं</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>हर कार्रवाई</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>इस खाते दियां सारियां घटनाएं</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>सूची गी CSV दे रूप च एक्सपोर्ट करो (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>नेईं होई सकेआ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>थमां</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>सूची गी छोटा करो</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>कोई घटना मेल नेईं खंदी।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रति सफा</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini च रिकार्डिंग बंद ऐ ([UserAuditSettings] UserAudit); सूची ओह् दसदी ऐ जो पैह्लें रिकार्ड कीता गेआ हा।</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>रोकेआ गेआ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>नतीजा</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दस्सो</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>प्रयोक्ता ऑडिट लॉग दी टेबल नेईं ऐ। इसगी php update/common/scripts/6.0/createuseraudittable.php कन्नै बनाओ; तदूं तगर ऑडिट फाइलां हर घटना गी रखदियां न।</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>इस सफे गी SQL डेटाबेस चाहिदा ऐ; MongoDB पर एह् उपलब्ध नेईं ऐ। ऑडिट फाइलां हर घटना गी रखदियां न।</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>तकर</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>प्रयोक्ता ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>प्रयोक्ता</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>कदूं</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>कुत्थें</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>कुसनै केह्ड़ा खाता बदलेआ, बनाया, चालू कीता, बंद कीता, थाह्र बदलेआ जां कड्ढेआ, कुसनै लॉगिन कीता जां कुसी रोकेआ गेआ, ते केह्ड़ियां भूमकाएं दित्तियां गेइयां: हर घटना आस्तै इक पंगती, पैह्लें ते बाद दे फील्डें समेत। पासवर्ड ते गुप्त जानकारी कदें बी रिकार्ड नेईं कीती जंदी।</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>समूह</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>सिस्टम</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अनजान</translation>
     </message>
 </context>
 </TS>

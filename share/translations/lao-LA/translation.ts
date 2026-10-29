@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ບັນຊີທີ່ບໍ່ມີໃຜໃຊ້ ຫຼືທີ່ຕ້ອງກວດເບິ່ງ; ປິດໃຊ້ງານ, ປົດລັອກ ຫຼືສົ່ງອອກ.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ບັນທຶກການກວດສອບຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ໃຜໄດ້ປ່ຽນແປງ, ເຂົ້າສູ່ລະບົບ ຫຼື ຖືກປະຕິເສດ ຕາມແຕ່ລະບັນຊີ; ກັ່ນຕອງ ແລະ ສົ່ງອອກ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ເປີດໜ້າ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to ຈາກ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ຊື່ເຂົ້າສູ່ລະບົບ ຫຼື ID ຜູ້ໃຊ້: ບັນຊີທີ່ເຫດການກ່ຽວຂ້ອງ ຫຼື ຜູ້ໃຊ້ທີ່ໄດ້ດຳເນີນການ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ບັນຊີ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ການກະທຳ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ຫຼັງ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ທຸກຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ກ່ອນ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ໂດຍ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ລ້າງ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ສຳເລັດ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ເຫດການຈະຖືກເກັບໄວ້ %days ມື້.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ເຫດການຈະຖືກເກັບໄວ້ຈົນກວ່າຈະຖືກລຶບອອກດ້ວຍມື.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ເຫດການທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ທຸກການກະທຳ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ທຸກເຫດການຂອງບັນຊີນີ້</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ສົ່ງອອກລາຍການເປັນ CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ຈາກ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ຈຳກັດລາຍການ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ບໍ່ມີເຫດການທີ່ກົງກັນ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ຕໍ່ໜ້າ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ການບັນທຶກຖືກປິດຢູ່ໃນ audit.ini ([UserAuditSettings] UserAudit); ລາຍການສະແດງສິ່ງທີ່ໄດ້ບັນທຶກໄວ້ກ່ອນໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ຖືກປະຕິເສດ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ສະແດງ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ບໍ່ມີຕາຕະລາງຂອງບັນທຶກການກວດສອບຜູ້ໃຊ້. ສ້າງມັນດ້ວຍ php update/common/scripts/6.0/createuseraudittable.php ; ຈົນກວ່າຈະເຖິງຕອນນັ້ນ ໄຟລ໌ການກວດສອບຈະເກັບທຸກເຫດການໄວ້.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ໜ້ານີ້ຕ້ອງການຖານຂໍ້ມູນ SQL; ບໍ່ສາມາດໃຊ້ໄດ້ກັບ MongoDB. ໄຟລ໌ການກວດສອບຈະເກັບທຸກເຫດການໄວ້.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ເຖິງ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ບັນທຶກການກວດສອບຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ເວລາ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ສະຖານທີ່</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ໃຜໄດ້ປ່ຽນແປງ, ສ້າງ, ເປີດໃຊ້ງານ, ປິດໃຊ້ງານ, ຍ້າຍ ຫຼື ເອົາບັນຊີໃດອອກ, ໃຜໄດ້ເຂົ້າສູ່ລະບົບ ຫຼື ຖືກປະຕິເສດ, ແລະ ບົດບາດໃດໄດ້ຖືກມອບໝາຍ: ໜຶ່ງແຖວຕໍ່ເຫດການ, ພ້ອມກັບຊ່ອງຂໍ້ມູນກ່ອນ ແລະ ຫຼັງ. ລະຫັດຜ່ານ ແລະ ຂໍ້ມູນລັບຈະບໍ່ຖືກບັນທຶກເລີຍ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ກຸ່ມ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ລະບົບ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ບໍ່ຮູ້ຈັກ</translation>
     </message>
 </context>
 </TS>

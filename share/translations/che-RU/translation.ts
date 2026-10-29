@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Цхьаъ а лелош доцу я хьажа оьшу аккаунташ; церан дӀасацо, схьадоьллийла я экспорт ян.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Декъашхойн талламан журнал</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Мила хийцина, мила чувелла я мила юхатоьхна, хӀора аккаунтехула; фильтр ян а, экспорт ян а.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>АгӀо схьаделла</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count чуьра %from – %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Декъашхочун цӀе я ID: хилларг лаьцна долу аккаунт я и дийриг дина декъашхо.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Аккаунт</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Некъ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ТӀаьхьа</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Муьлхха а жамӀ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Хьалха</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Мила</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ЦӀанъян</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Кхочушдина</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Хилларш Ӏалашдо %days дийнахь.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Хилларш Ӏалашдо куьйгаца дӀа ца даьхччалц.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Хилларш</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Муьлхха а некъ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ХӀокху аккаунтан массо а хилларш</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Могам CSV форматехь экспорт ян (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ца хилла</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Дуьйна</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Могам готдан</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Цхьа а хилларг ца догӀу.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ХӀора агӀонехь</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ДӀаяздар audit.ini чохь дӀадайина ([UserAuditSettings] UserAudit); могамехь гойту хьалха дӀаяздинарг.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Юхатоьхна</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ЖамӀ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Гайта</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Декъашхойн талламан журналан таблица яц. Иза кхолла php update/common/scripts/6.0/createuseraudittable.php гӀоьнца; цул хьалха талламан файлашкахь хӀора хилларг Ӏалашдо.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ХӀокху агӀонна SQL хаамийн база еза; MongoDB тӀехь иза болх ца бо. Талламан файлашкахь хӀора хилларг Ӏалашдо.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Кхаччалц</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Декъашхойн талламан журнал</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Декъашхо</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Маца</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Мичахь</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Мила муьлха аккаунт хийцина, кхоьллина, хьаллатийна, дӀаяйина, дехьаяьккхина я дӀаяьккхина, мила чувелла я юхатоьхна, а муьлха ролаш хӀиттийна: хӀора хилларгана цхьа могӀа, меттигийн хьалхара а, тӀаьхьара а маьӀнаш долуш. Паролаш а, къайленаш а цкъа а дӀа ца яздо.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>тоба</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>система</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>вовзийтина дац</translation>
     </message>
 </context>
 </TS>

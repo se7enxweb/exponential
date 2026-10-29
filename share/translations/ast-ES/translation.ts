@@ -15295,6 +15295,14 @@ Nota: los paquetes nun se desinstalarán.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Cuentes que naide usa o que convién revisar; desactivales, desbloquialas o esportales.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rexistru d&apos;auditoría d&apos;usuarios</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Quién camudó, anició sesión o foi refugáu, por cuenta; filtrar y esportar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>Open the page</source>
         <translation>Abrir la páxina</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Un nome d&apos;usuariu o un ID d&apos;usuariu: la cuenta a la que se refier l&apos;eventu o l&apos;usuariu qu&apos;actuó.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cuenta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aición</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Dempués</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Cualquier resultáu</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Enantes</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Por</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Llimpiar</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fecho</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Los eventos caltiénense %days díes.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Los eventos caltiénense hasta que se desanicien a mano.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventos</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Toles aiciones</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Tolos eventos d&apos;esta cuenta</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Esportar la llista como CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fallao</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dende</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Acotar la llista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nun hai nengún eventu que concase.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per páxina</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>El rexistru ta desactiváu en audit.ini ([UserAuditSettings] UserAudit); la llista amuesa lo que se rexistró enantes.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refugáu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultáu</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Amosar</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Falta la tabla del rexistru d&apos;auditoría d&apos;usuarios. Creala con php update/common/scripts/6.0/createuseraudittable.php; hasta entós los ficheros d&apos;auditoría guarden tolos eventos.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Esta páxina precisa una base de datos SQL; nun ta disponible con MongoDB. Los ficheros d&apos;auditoría guarden tolos eventos.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hasta</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rexistru d&apos;auditoría d&apos;usuarios</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usuariu</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cuándo</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ónde</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Quién camudó, creó, activó, desactivó, movió o desanició qué cuenta, quién anició sesión o foi refugáu y qué roles s&apos;asignaron: una llinia per eventu, colos campos enantes y dempués. Les contraseñes y los secretos enxamás se rexistren.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconocíu</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Accounts dy't net brûkt wurde of dy't omtinken nedich hawwe; ynaktivearje, ûntskoattelje of eksportearje.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditlochboek fan brûkers</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Wa&apos;t wizige, oanmelde of wegere waard, per account; filterje en eksportearje.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Open the page</source>
         <translation>De side iepenje</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from oant %to fan %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>In oanmeldnamme of in brûkers-id: it account dêr&apos;t it barren oer gie of de brûker dy&apos;t hannele.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Brûkersaccount</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksje</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Nei</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Elk resultaat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Foar</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Troch</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leegje</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Slagge</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Barrens wurde %days dagen bewarre.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Barrens wurde bewarre oant se mei de hân fuorthelle wurde.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Barrens</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Elke aksje</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Alle barrens fan dit account</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>List eksportearje as CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislearre</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>List ferfine</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Gjin inkeld barren komt oerien.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per side</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registraasje stiet út yn audit.ini ([UserAuditSettings] UserAudit); de list toant wat earder fêstlein is.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wegere</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Toane</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>De tabel fan it auditlochboek fan brûkers ûntbrekt. Meitsje him oan mei php update/common/scripts/6.0/createuseraudittable.php; oant dan bewarje de auditbestannen elk barren.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Dizze side hat in SQL-database nedich; se is net beskikber op MongoDB. De auditbestannen bewarje elk barren.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Oant</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditlochboek fan brûkers</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Brûker</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wannear</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wêr</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Wa&apos;t hokker account wizige, oanmakke, ynskeakele, útskeakele, ferpleatste of fuorthelle, wa&apos;t oanmelde of wegere waard en hokker rollen tawiisd waarden: ien rigel per barren, mei de fjilden derfoar en dernei. Wachtwurden en geheimen wurde nea fêstlein.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>groep</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systeem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ûnbekend</translation>
     </message>
 </context>
 </TS>

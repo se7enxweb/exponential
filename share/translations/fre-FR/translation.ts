@@ -15742,6 +15742,14 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Comptes que personne n&apos;utilise ou qui méritent un examen ; les désactiver, les débloquer ou les exporter.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Journal d&apos;audit des utilisateurs</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Qui a modifié, s&apos;est connecté ou a été refusé, par compte ; filtrer et exporter.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -78776,6 +78784,153 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Open the page</source>
         <translation>Ouvrir la page</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from à %to sur %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Un identifiant de connexion ou un ID utilisateur : le compte concerné par l&apos;évènement ou l&apos;utilisateur qui a agi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Compte</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Type d&apos;action</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Après</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Tous les résultats</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Avant</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Par</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Réinitialiser</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Réussi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Les évènements sont conservés %days jours.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Les évènements sont conservés jusqu&apos;à ce qu&apos;ils soient supprimés manuellement.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Évènements</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Toutes les actions</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Tous les évènements de ce compte</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exporter la liste au format CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Échec</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Du</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Affiner la liste</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Aucun évènement ne correspond.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Par page</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>L&apos;enregistrement est désactivé dans audit.ini ([UserAuditSettings] UserAudit) ; la liste affiche ce qui a été enregistré auparavant.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refusé</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Résultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Afficher</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>La table du journal d&apos;audit des utilisateurs est absente. Créez-la avec php update/common/scripts/6.0/createuseraudittable.php ; d&apos;ici là, les fichiers d&apos;audit conservent chaque évènement.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Cette page nécessite une base de données SQL ; elle n&apos;est pas disponible avec MongoDB. Les fichiers d&apos;audit conservent chaque évènement.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Au</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Journal d&apos;audit des utilisateurs</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utilisateur</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Quand</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Où</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Qui a modifié, créé, activé, désactivé, déplacé ou supprimé quel compte, qui s&apos;est connecté ou a été refusé, et quels rôles ont été attribués : une ligne par évènement, avec les champs avant et après. Les mots de passe et les secrets ne sont jamais enregistrés.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>groupe</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>système</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>inconnu</translation>
     </message>
 </context>
 </TS>

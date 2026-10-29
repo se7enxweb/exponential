@@ -15295,6 +15295,14 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Comptes que degun los utiliza o que meritan un examen; los desactivar, los desblocar o los exportar.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Jornal d&apos;audit dels utilizaires</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Qual a modificat, s&apos;es connectat o es estat refusat, per compte; filtrar e exportar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>Open the page</source>
         <translation>Dobrir la pagina</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to sus %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Un identificant o un ID d&apos;utilizaire: lo compte que l&apos;eveniment concernissiá o l&apos;utilizaire qu&apos;a agit.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Compte</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Accion</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Aprèp</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Tot resultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Abans</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Realizat per</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Escafar</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fach</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Los eveniments son gardats %days jorns.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Los eveniments son gardats fins que son suprimits a la man.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eveniments</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Tota accion</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Totes los eveniments d&apos;aqueste compte</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportar la lista en CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fracàs</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Afinar la lista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Cap d&apos;eveniment correspond pas.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>L&apos;enregistrament es desactivat dins audit.ini ([UserAuditSettings] UserAudit); la lista mòstra çò que foguèt enregistrat abans.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refusat</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>La taula del jornal d&apos;audit dels utilizaires manca. Creatz-la amb php update/common/scripts/6.0/createuseraudittable.php; fins alara, los fichièrs d&apos;audit gardan cada eveniment.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Aquesta pagina requerís una basa de donadas SQL; es pas disponibla amb MongoDB. Los fichièrs d&apos;audit gardan cada eveniment.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Fins a</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Jornal d&apos;audit dels utilizaires</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utilizaire</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Quand</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ont</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Qual a modificat, creat, activat, desactivat, desplaçat o suprimit quin compte, qual s&apos;es connectat o es estat refusat, e quins ròtles son estats assignats: una linha per eveniment, amb los camps abans e aprèp. Los senhals e los secrets son pas jamai enregistrats.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grop</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistèma</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconegut</translation>
     </message>
 </context>
 </TS>

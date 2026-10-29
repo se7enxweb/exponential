@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ఎవరూ ఉపయోగించని లేదా పరిశీలన అవసరమైన ఖాతాలు; వాటిని నిలిపివేయండి, అన్‌లాక్ చేయండి లేదా ఎగుమతి చేయండి.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>వినియోగదారు ఆడిట్ లాగ్</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ఖాతా వారీగా ఎవరు మార్చారు, సైన్ ఇన్ చేశారు లేదా తిరస్కరించబడ్డారు; ఫిల్టర్ చేసి ఎగుమతి చేయండి.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>పేజీని తెరవండి</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count లో %from నుండి %to వరకు</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>లాగిన్ పేరు లేదా వినియోగదారు ID: ఈవెంట్ సంబంధించిన ఖాతా లేదా చర్య తీసుకున్న వినియోగదారు.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ఖాతా</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>చర్య</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>తర్వాత</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ఏ ఫలితమైనా</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ముందు</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>చేసినవారు</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>క్లియర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>పూర్తయింది</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ఈవెంట్‌లు %days రోజులు ఉంచబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ఈవెంట్‌లు మాన్యువల్‌గా తీసివేసే వరకు ఉంచబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ఈవెంట్‌లు</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ప్రతి చర్య</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ఈ ఖాతా యొక్క అన్ని ఈవెంట్‌లు</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>జాబితాను CSV గా ఎగుమతి చేయండి (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>నుండి</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>జాబితాను కుదించండి</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ఏ ఈవెంట్ సరిపోలలేదు.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ప్రతి పేజీకి</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini లో ([UserAuditSettings] UserAudit) రికార్డింగ్ ఆఫ్ చేయబడింది; జాబితా ఇంతకు ముందు రికార్డ్ చేసిన వాటిని చూపిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ఫలితం</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>చూపించండి</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>వినియోగదారు ఆడిట్ లాగ్ పట్టిక లేదు. దీన్ని php update/common/scripts/6.0/createuseraudittable.php తో సృష్టించండి; అప్పటి వరకు ఆడిట్ ఫైల్‌లు ప్రతి ఈవెంట్‌ను ఉంచుతాయి.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ఈ పేజీకి SQL డేటాబేస్ అవసరం; ఇది MongoDB లో అందుబాటులో లేదు. ఆడిట్ ఫైల్‌లు ప్రతి ఈవెంట్‌ను ఉంచుతాయి.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>వరకు</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>వినియోగదారు ఆడిట్ లాగ్</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>వినియోగదారు</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ఎప్పుడు</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ఎక్కడ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ఎవరు ఏ ఖాతాను మార్చారు, సృష్టించారు, ప్రారంభించారు, నిలిపివేశారు, తరలించారు లేదా తీసివేశారు, ఎవరు సైన్ ఇన్ చేశారు లేదా తిరస్కరించబడ్డారు, ఏ పాత్రలు కేటాయించబడ్డాయి: ప్రతి ఈవెంట్‌కు ఒక పంక్తి, ముందు మరియు తర్వాత ఫీల్డ్‌లతో. పాస్‌వర్డ్‌లు మరియు రహస్యాలు ఎప్పుడూ రికార్డ్ చేయబడవు.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>సమూహం</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>సిస్టమ్</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>తెలియదు</translation>
     </message>
 </context>
 </TS>

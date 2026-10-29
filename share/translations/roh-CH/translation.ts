@@ -15295,6 +15295,14 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Contos che nagin n'utilisescha u che dovran in sguard; deactivar, debloccar u exportar els.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Protocol d&apos;audit dals utilisaders</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Tgi che ha midà, s&apos;ha annunzià u è vegnì refusà, per conto; filtrar ed exportar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Open the page</source>
         <translation>Avrir la pagina</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from fin %to da %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>In num d&apos;annunzia u in ID d&apos;utilisader: il conto che l&apos;eveniment pertutgava u l&apos;utilisader che ha agì.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Conto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acziun</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Suenter</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mintga resultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Avant</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Exequì da</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Svidar</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fatg</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ils eveniments vegnan conservads %days dis.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ils eveniments vegnan conservads fin ch&apos;els vegnan allontanads a maun.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eveniments</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Mintga acziun</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Tut ils eveniments da quest conto</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportar la glista sco CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Betg reussì</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Restrenscher la glista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nagin eveniment na correspunda.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>La registraziun è deactivada en audit.ini ([UserAuditSettings] UserAudit); la glista mussa quai che è vegnì registrà avant.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refusà</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mussar</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>La tabella dal protocol d&apos;audit dals utilisaders manca. Creai-la cun php update/common/scripts/6.0/createuseraudittable.php; fin lura tegnan las datotecas d&apos;audit mintga eveniment.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Questa pagina dovra ina banca da datas SQL; ella n&apos;è betg disponibla cun MongoDB. Las datotecas d&apos;audit tegnan mintga eveniment.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Protocol d&apos;audit dals utilisaders</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utilisader</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cura</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nua</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Tgi che ha midà, creà, activà, deactivà, spustà u allontanà tge conto, tgi che s&apos;ha annunzià u è vegnì refusà e tge rollas ch&apos;èn vegnidas attribuidas: ina lingia per eveniment, cun ils champs avant e suenter. Pleds-clav e secrets na vegnan mai registrads.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>gruppa</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nunenconuschent</translation>
     </message>
 </context>
 </TS>

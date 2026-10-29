@@ -15241,6 +15241,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Rationes quibus nemo utitur aut quae inspici debent; eas inactivare, reserare aut exportare.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Acta inspectionis usorum</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Quis mutaverit, intraverit vel repulsus sit, per rationes; filtrare et exportare.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77369,6 +77377,153 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Open the page</source>
         <translation>Paginam aperire</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ad %to ex %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Nomen accessus vel numerus usoris: ratio ad quam eventus pertinebat vel usor qui egit.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Ratio</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Actio</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Quilibet exitus</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ante</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Auctor</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Purgare</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Factum</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Eventus per %days dies servantur.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Eventus servantur donec manu removentur.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventus</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Quaelibet actio</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Omnes eventus huius rationis</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Indicem ut CSV exportare (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defecit</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ex</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Indicem angustare</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nullus eventus congruit.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>In singulis paginis</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Inscriptio in audit.ini exstincta est ([UserAuditSettings] UserAudit); index ostendit quae antea inscripta sunt.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Repulsum</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ostendere</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabula actorum inspectionis usorum deest. Crea eam per php update/common/scripts/6.0/createuseraudittable.php; interea fasciculi inspectionis omnes eventus servant.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Haec pagina basim datorum SQL requirit; apud MongoDB non praesto est. Fasciculi inspectionis omnes eventus servant.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Usque ad</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Acta inspectionis usorum</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usor</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Quando</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ubi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Quis quam rationem mutaverit, creaverit, activaverit, deactivaverit, moverit vel removerit, quis intraverit vel repulsus sit, et quae munera assignata sint: una linea pro quoque eventu, cum campis ante et post. Tesserae et arcana numquam inscribuntur.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grex</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ignotum</translation>
     </message>
 </context>
 </TS>

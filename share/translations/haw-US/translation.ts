@@ -15295,6 +15295,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Nā moʻokāki ʻaʻohe mea e hoʻohana a pono e nānā ʻia; e hoʻopio, e wehe i ka paʻa a e hoʻokuʻu iā lākou.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Moʻolelo nānā loiloi mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ʻO wai ka mea i hoʻololi, i komo, a i hōʻole ʻia paha, ma kēlā me kēia moʻokāki; kānana a hoʻokuʻu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Open the page</source>
         <translation>Wehe i ka ʻaoʻao</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a i %to o %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>He inoa komo a i ʻole he ID mea hoʻohana: ka moʻokāki i pili ai ka hanana a i ʻole ka mea hoʻohana nāna i hana.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Moʻokāki</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hana</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Ma hope</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Nā hopena a pau</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ma mua</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na wai</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Hoʻomaʻemaʻe</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ua pau</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Mālama ʻia nā hanana no %days lā.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Mālama ʻia nā hanana a hiki i ka wā e holoi lima ʻia ai.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Nā hanana</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Nā hana a pau</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Nā hanana a pau o kēia moʻokāki</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Hoʻokuʻu i ka papa inoa ma ke ʻano CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ua hāʻule</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Hōʻemi i ka papa inoa</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ʻAʻohe hanana i kūlike.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ma kēlā me kēia ʻaoʻao</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ua hoʻopio ʻia ka hoʻopaʻa ʻana ma audit.ini ([UserAuditSettings] UserAudit); hōʻike ka papa inoa i nā mea i hoʻopaʻa ʻia ma mua.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ua hōʻole ʻia</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hopena</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hōʻike</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Nalo ka papa o ka moʻolelo nānā loiloi mea hoʻohana. E hana iā ia me php update/common/scripts/6.0/createuseraudittable.php; a hiki i ia manawa, mālama nā faila nānā loiloi i kēlā me kēia hanana.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Pono kēia ʻaoʻao i kahi waihona ʻikepili SQL; ʻaʻole loaʻa ma MongoDB. Mālama nā faila nānā loiloi i kēlā me kēia hanana.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Moʻolelo nānā loiloi mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ka manawa</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ka wahi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ʻO wai ka mea i hoʻololi, hana, hoʻā, hoʻopio, hoʻoneʻe a holoi paha i kēlā a me kēia moʻokāki, ʻo wai ka mea i komo a i hōʻole ʻia paha, a me nā kuleana i hāʻawi ʻia: hoʻokahi laina no kēlā me kēia hanana, me nā kahua ma mua a ma hope. ʻAʻole loa e hoʻopaʻa ʻia nā ʻōlelo huna a me nā mea huna.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>pūʻulu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ʻōnaehana</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ʻike ʻole ʻia</translation>
     </message>
 </context>
 </TS>

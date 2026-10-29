@@ -15293,6 +15293,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Asusun da babu mai amfani da su ko masu buƙatar dubawa; a kashe, a buɗe ko a fitar da su.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Tarihin binciken masu amfani</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Wanda ya canza, ya shiga ko aka ƙi shi, a kowane asusu; tacewa da fitarwa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Open the page</source>
         <translation>Buɗe shafin</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from zuwa %to cikin %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Sunan shiga ko ID na mai amfani: asusun da abin ya shafa ko mai amfanin da ya yi aikin.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Asusu</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Bayan</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Kowane sakamako</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Kafin</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wanda ya yi</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Share</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>An gama</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ana ajiye abubuwan da suka faru na kwanaki %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ana ajiye abubuwan da suka faru har sai an cire su da hannu.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Abubuwan da suka faru</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kowane aiki</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Duk abubuwan da suka faru na wannan asusu</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Fitar da jerin a matsayin CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ya kasa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Taƙaita jerin</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Babu abin da ya dace.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>A kowane shafi</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>An kashe rikodi a audit.ini ([UserAuditSettings] UserAudit); jerin yana nuna abin da aka rubuta a baya.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>An ƙi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sakamako</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Teburin tarihin binciken masu amfani babu shi. Ƙirƙira shi da php update/common/scripts/6.0/createuseraudittable.php; kafin nan fayilolin bincike suna ajiye kowane abu da ya faru.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Wannan shafin yana buƙatar ma&apos;adanar bayanai ta SQL; ba ya samuwa a MongoDB. Fayilolin bincike suna ajiye kowane abu da ya faru.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Zuwa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Tarihin binciken masu amfani</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mai amfani</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Lokaci</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wuri</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Wanda ya canza, ya ƙirƙira, ya kunna, ya kashe, ya matsar ko ya cire wane asusu, wanda ya shiga ko aka ƙi shi, da waɗanne ayyuka aka bayar: layi ɗaya ga kowane abu da ya faru, tare da filaye kafin da bayan canji. Ba a taɓa rubuta kalmomin sirri da asirai ba.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ƙungiya</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>tsarin</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ba a sani ba</translation>
     </message>
 </context>
 </TS>

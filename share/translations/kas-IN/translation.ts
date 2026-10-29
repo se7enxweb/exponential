@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>اَکاوُنٹ یِم کانٛہہ ورتاوان چھُنہ یا یِمَن وُچھُن چھُ ضروری؛ تِم بَنٛد کٔرِو، اَن لاک کٔرِو یا بَرآمَد کٔرِو۔</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>صارِف آڈِٹ لاگ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ہر اَکاوُنٹس منٛز کٔمۍ کوٚر تبدیل، کٔمۍ کوٚر لاگ اِن یا کٔمِس آو انکار کرنہٕ؛ فِلٹَر تہٕ بَرآمَد کٔرِو۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>صَفحہ کھولِو</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count منٛزٕ %from پیٹھ %to تام</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>لاگ اِن ناو یا صارِف ID: سُہ اَکاوُنٹ یَتھ مُتعلِق واقعہٕ اوس، یا سُہ صارِف یَمۍ عَمَل کوٚر۔</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>اَکاوُنٹ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>عَمَل</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>پتہٕ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>کانٛہہ تہِ نتیجہ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پہلے</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>کرن وول</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>صاف کٔرِو</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مُکَمَل</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>واقعات چھِ %days دۄہ رَٹِتھ تھاونہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>واقعات چھِ تَمِ وَقتَس تام رَٹِتھ تھاونہٕ یِوان یُتھ تام نہٕ تِم اَتھٕ سٟتۍ ہٹاونہٕ یِن۔</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>واقعات</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>سٲری عَمَل</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>یَتھ اَکاوُنٹُک پرٛؠتھ واقعہٕ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>لِسٹ CSV صورتس منٛز بَرآمَد کٔرِو (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>پیٹھ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>لِسٹ مختصر کٔرِو</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>کانٛہہ واقعہٕ چھُنہٕ مَلان۔</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ہرِ صَفحس</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini منٛز چھےٚ ریکارڈِنگ بَنٛد ([UserAuditSettings] UserAudit)؛ لِسٹ چھےٚ تِہی ہاوان یُس گۄڈٕ ریکارڈ آو کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>انکار کوٚرمُت</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وُچھِو</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>صارِف آڈِٹ لاگُک جَدوَل چھُنہٕ۔ یہ بناوِو php update/common/scripts/6.0/createuseraudittable.php سٟتۍ؛ تَمِ وَقتَس تام چھےٚ آڈِٹ فایِل پرٛؠتھ واقعہٕ رَٹِتھ تھاوان۔</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>یَتھ صَفحس چھےٚ SQL ڈیٹابیس ضروٗرت؛ یہ چھُنہٕ MongoDB پیٹھ دٕستیاب۔ آڈِٹ فایِل چھےٚ پرٛؠتھ واقعہٕ رَٹِتھ تھاوان۔</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تام</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>صارِف آڈِٹ لاگ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>صارِف</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>وَقت</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>جاے</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>کٔمۍ کوٚر کُس اَکاوُنٹ تبدیل، بنوو، چالوٗ، بَنٛد، مُنتقِل یا ہٹوو، کٔمۍ کوٚر لاگ اِن یا کٔمِس آو انکار کرنہٕ، تہٕ کم کردار آیہِ دِنہٕ: پرٛؠتھ واقعس خٲطرٕ اکھ لٲن، پہلِم تہٕ پتِم فیلڈَن سٟتۍ۔ پاس ورڈ تہٕ راز چھِنہٕ زانٛہہ ریکارڈ کرنہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>گروپ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سِسٹَم</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
     </message>
 </context>
 </TS>

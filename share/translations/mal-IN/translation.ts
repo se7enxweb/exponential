@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ആരും ഉപയോഗിക്കാത്തതോ ശ്രദ്ധ ആവശ്യമുള്ളതോ ആയ അക്കൗണ്ടുകൾ; അവ പ്രവർത്തനരഹിതമാക്കുക, അൺലോക്ക് ചെയ്യുക, അല്ലെങ്കിൽ കയറ്റുമതി ചെയ്യുക.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ഉപയോക്തൃ ഓഡിറ്റ് ലോഗ്</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ഓരോ അക്കൗണ്ടിലും ആരാണ് മാറ്റം വരുത്തിയത്, സൈൻ ഇൻ ചെയ്തത് അല്ലെങ്കിൽ നിരസിക്കപ്പെട്ടത്; ഫിൽട്ടർ ചെയ്യുക, കയറ്റുമതി ചെയ്യുക.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>പേജ് തുറക്കുക</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, ആകെ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ഒരു ലോഗിൻ അല്ലെങ്കിൽ ഉപയോക്തൃ ID: ഇവന്റ് ബന്ധപ്പെട്ട അക്കൗണ്ട്, അല്ലെങ്കിൽ പ്രവർത്തനം നടത്തിയ ഉപയോക്താവ്.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>അക്കൗണ്ട്</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ശേഷം</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ഏത് ഫലവും</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>മുമ്പ്</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>മായ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>പൂർത്തിയായി</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ഇവന്റുകൾ %days ദിവസം സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>കൈകൊണ്ട് നീക്കം ചെയ്യുന്നതുവരെ ഇവന്റുകൾ സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ഇവന്റുകൾ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>എല്ലാ പ്രവർത്തനങ്ങളും</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ഈ അക്കൗണ്ടിന്റെ എല്ലാ ഇവന്റുകളും</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ലിസ്റ്റ് CSV ആയി കയറ്റുമതി ചെയ്യുക (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>മുതൽ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ലിസ്റ്റ് ചുരുക്കുക</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>പൊരുത്തപ്പെടുന്ന ഇവന്റുകളൊന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ഓരോ പേജിലും</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ൽ റെക്കോർഡിംഗ് ഓഫാണ് ([UserAuditSettings] UserAudit); മുമ്പ് റെക്കോർഡ് ചെയ്തവയാണ് ലിസ്റ്റ് കാണിക്കുന്നത്.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ഫലം</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ഉപയോക്തൃ ഓഡിറ്റ് ലോഗിന്റെ പട്ടിക നിലവിലില്ല. php update/common/scripts/6.0/createuseraudittable.php ഉപയോഗിച്ച് അത് സൃഷ്ടിക്കുക; അതുവരെ ഓഡിറ്റ് ഫയലുകൾ എല്ലാ ഇവന്റും സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ഈ പേജിന് ഒരു SQL ഡാറ്റാബേസ് ആവശ്യമാണ്; MongoDB ൽ ഇത് ലഭ്യമല്ല. ഓഡിറ്റ് ഫയലുകൾ എല്ലാ ഇവന്റും സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>വരെ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ഉപയോക്തൃ ഓഡിറ്റ് ലോഗ്</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ഉപയോക്താവ്</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>എപ്പോൾ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>എവിടെ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ആര് ഏത് അക്കൗണ്ട് മാറ്റി, സൃഷ്ടിച്ചു, പ്രവർത്തനക്ഷമമാക്കി, പ്രവർത്തനരഹിതമാക്കി, നീക്കി അല്ലെങ്കിൽ നീക്കം ചെയ്തു, ആര് സൈൻ ഇൻ ചെയ്തു അല്ലെങ്കിൽ നിരസിക്കപ്പെട്ടു, ഏതൊക്കെ റോളുകൾ നൽകി: ഓരോ ഇവന്റിനും ഒരു വരി, മുമ്പും ശേഷവുമുള്ള ഫീൽഡുകൾ സഹിതം. പാസ്‌വേഡുകളും രഹസ്യങ്ങളും ഒരിക്കലും റെക്കോർഡ് ചെയ്യില്ല.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ഗ്രൂപ്പ്</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>സിസ്റ്റം</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>അജ്ഞാതം</translation>
     </message>
 </context>
 </TS>

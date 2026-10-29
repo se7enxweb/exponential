@@ -15295,6 +15295,14 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontur, sum eingin brúkar, ella sum tørva eftirlit; óvirkja, lat upp ella útflyt tær.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Eftirlitsloggur hjá brúkarum</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hvør broytti, ritaði inn ella varð avvístur, fyri hvørja kontu; filtrera og útflyta.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>Open the page</source>
         <translation>Lat síðuna upp</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to av %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Eitt innritanarnavn ella eitt brúkara-ID: kontan, sum hendingin snúði seg um, ella brúkarin, sum gjørdi okkurt.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Atgerð</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Eftir</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Øll úrslit</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Áðrenn</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gjørt av</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Rudda</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gjørt</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Hendingar verða goymdar í %days dagar.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Hendingar verða goymdar, til tær verða tiknar burtur við hond.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hendingar</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Allar atgerðir</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Allar hendingar hjá hesi kontuni</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Útflyta listan sum CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Miseydnaðist</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Frá</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Avmarka listan</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Eingin hending samsvarar.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Á síðu</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Skráseting er sløkt í audit.ini ([UserAuditSettings] UserAudit); listin vísir tað, sum varð skrásett áðrenn.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Avvíst</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Úrslit</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vís</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Talvan til eftirlitsloggin hjá brúkarum manglar. Stovna hana við php update/common/scripts/6.0/createuseraudittable.php; inntil tá goyma eftirlitsfílurnar allar hendingar.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Henda síðan krevur ein SQL-dátugrunn; hon er ikki tøk við MongoDB. Eftirlitsfílurnar goyma allar hendingar.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Eftirlitsloggur hjá brúkarum</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Brúkari</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Nær</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hvar</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Hvør broytti, stovnaði, virkjaði, óvirkjaði, flutti ella tók burtur hvørja kontu, hvør ritaði inn ella varð avvístur, og hvørjir leiklutir vórðu tillutaðir: ein linja fyri hvørja hending, við teigunum áðrenn og eftir. Loyniorð og loyndarmál verða ongantíð skrásett.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>bólkur</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>skipanin</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ókent</translation>
     </message>
 </context>
 </TS>

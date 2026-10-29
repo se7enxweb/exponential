@@ -15238,6 +15238,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Акаунти, които никой не използва или които изискват внимание; забранете, отключете или експортирайте ги.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Одитен дневник на потребителите</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Кой е променял, влизал или е бил отказан, по акаунт; филтриране и експорт.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Отвори страницата</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from до %to от %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Потребителско име или ID на потребител: акаунтът, за който се отнася събитието, или потребителят, който е действал.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Акаунт</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Действие</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>След</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Всеки резултат</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Преди</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>От</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Нулирай</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Успешно</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Събитията се пазят %days дни.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Събитията се пазят, докато не бъдат премахнати ръчно.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Събития</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Всяко действие</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Всички събития на този акаунт</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Експортирай списъка като CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешно</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>От дата</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Стесни списъка</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Няма съвпадащи събития.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На страница</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Записването е изключено в audit.ini ([UserAuditSettings] UserAudit); списъкът показва записаното преди това.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Отказано</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Резултат</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Покажи</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Таблицата на одитния дневник на потребителите липсва. Създайте я с php update/common/scripts/6.0/createuseraudittable.php; дотогава одитните файлове пазят всяко събитие.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Тази страница изисква SQL база данни; не е достъпна при MongoDB. Одитните файлове пазят всяко събитие.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>До дата</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Одитен дневник на потребителите</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Потребител</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Кога</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Къде</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кой е променил, създал, активирал, деактивирал, преместил или премахнал кой акаунт, кой е влязъл или е бил отказан и кои роли са присвоени: по един ред за всяко събитие, с полетата преди и след. Паролите и тайните никога не се записват.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>група</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>система</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>неизвестен</translation>
     </message>
 </context>
 </TS>

@@ -15238,6 +15238,14 @@ Poznámka: Balíky sa neodinštalujú.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontá, ktoré nikto nepoužíva alebo ktoré treba skontrolovať; môžete ich zakázať, odomknúť alebo exportovať.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditný záznam používateľov</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kto zmenil, prihlásil sa alebo bol odmietnutý, podľa konta; filtrovanie a export.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Open the page</source>
         <translation>Otvoriť stránku</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from až %to z %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Prihlasovacie meno alebo ID používateľa: konto, ktorého sa udalosť týkala, alebo používateľ, ktorý konal.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcia</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Po zmene</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Akýkoľvek výsledok</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pred zmenou</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Vykonal</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Vymazať</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Vykonané</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Udalosti sa uchovávajú %days dní.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Udalosti sa uchovávajú, kým sa ručne neodstránia.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Udalosti</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Akákoľvek akcia</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Všetky udalosti tohto konta</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportovať zoznam ako CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zlyhané</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Zúžiť zoznam</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Žiadna udalosť nevyhovuje.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stránku</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Zaznamenávanie je v audit.ini vypnuté ([UserAuditSettings] UserAudit); zoznam zobrazuje, čo sa zaznamenalo predtým.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odmietnuté</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Výsledok</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobraziť</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabuľka auditného záznamu používateľov chýba. Vytvorte ju pomocou php update/common/scripts/6.0/createuseraudittable.php; dovtedy auditné súbory uchovávajú každú udalosť.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Táto stránka potrebuje databázu SQL; v MongoDB nie je dostupná. Auditné súbory uchovávajú každú udalosť.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditný záznam používateľov</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Používateľ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kedy</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kde</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kto zmenil, vytvoril, povolil, zakázal, presunul alebo odstránil ktoré konto, kto sa prihlásil alebo bol odmietnutý a ktoré roly boli priradené: jeden riadok na udalosť, s poliami pred zmenou a po nej. Heslá a tajné údaje sa nikdy nezaznamenávajú.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>skupina</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systém</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznáme</translation>
     </message>
 </context>
 </TS>

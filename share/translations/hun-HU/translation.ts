@@ -15238,6 +15238,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Fiókok, amelyeket senki sem használ, vagy amelyeket érdemes megnézni; letiltásuk, zárolásuk feloldása vagy exportálásuk.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Felhasználói auditnapló</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ki módosított, jelentkezett be vagy kapott elutasítást, fiókonként; szűrés és exportálás.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Open the page</source>
         <translation>Oldal megnyitása</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, összesen: %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Bejelentkezési név vagy felhasználói azonosító: a fiók, amelyre az esemény vonatkozott, vagy a felhasználó, aki a műveletet végezte.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Fiók</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Művelet</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Utána</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Bármely eredmény</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Előtte</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Végrehajtó</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Sikeres</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Az események megőrzési ideje %days nap.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Az események addig maradnak meg, amíg kézzel el nem távolítják őket.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Események</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Minden művelet</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>A fiók összes eseménye</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>A lista exportálása CSV formátumban (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sikertelen</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ettől</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>A lista szűkítése</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nincs egyező esemény.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Oldalanként</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>A rögzítés ki van kapcsolva az audit.ini fájlban ([UserAuditSettings] UserAudit); a lista a korábban rögzítetteket mutatja.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Elutasítva</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Eredmény</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Megjelenítés</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>A felhasználói auditnapló táblája hiányzik. Hozza létre a következő paranccsal: php update/common/scripts/6.0/createuseraudittable.php; addig az auditfájlok minden eseményt megőriznek.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ehhez az oldalhoz SQL-adatbázis szükséges; MongoDB esetén nem érhető el. Az auditfájlok minden eseményt megőriznek.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Eddig</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Felhasználói auditnapló</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Felhasználó</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Időpont</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ki melyik fiókot módosította, hozta létre, engedélyezte, tiltotta le, helyezte át vagy távolította el, ki jelentkezett be vagy kapott elutasítást, és milyen szerepköröket rendeltek hozzá: eseményenként egy sor, a mezők előtte és utána. A jelszavakat és a titkos adatokat a rendszer soha nem rögzíti.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>csoport</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>rendszer</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ismeretlen</translation>
     </message>
 </context>
 </TS>

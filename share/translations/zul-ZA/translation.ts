@@ -15293,6 +15293,14 @@ Isaziso: Amaphakheji ngeke akhishwe.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ama-akhawunti engekhoowasebenzisayo noma adinga ukubhekwa; wavimbele, wavule noma uwathumele.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Irekhodi lokucwaningwa kwabasebenzisi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ubani oshintshile, ongenile noma onqatshelwe, nge-akhawunti ngayinye; ukuhlunga nokuthumela.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>Open the page</source>
         <translation>Vula ikhasi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kuya ku %to kwezi %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Igama lokungena noma i-ID yomsebenzisi: i-akhawunti isehlakalo esiphathelene nayo noma umsebenzisi owenze isenzo.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>I-akhawunti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Isenzo</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Ngemuva</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Noma imuphi umphumela</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ngaphambi</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Umenzi</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Sula</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kwenziwe</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Izehlakalo zigcinwa izinsuku ezingu %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Izehlakalo zigcinwa zize zisuswe ngesandla.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Izehlakalo</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Noma yisiphi isenzo</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Zonke izehlakalo zale akhawunti</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Thumela uhlu njenge-CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuhlulekile</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kusuka</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Nciphisa uhlu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Asikho isehlakalo esifanayo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ekhasini ngalinye</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ukurekhoda kuvaliwe ku-audit.ini ([UserAuditSettings] UserAudit); uhlu lubonisa okurekhodwe ngaphambili.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Kwenqatshiwe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Umphumela</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Bonisa</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Ithebula lerekhodi lokucwaningwa kwabasebenzisi alikho. Lakheni nge php update/common/scripts/6.0/createuseraudittable.php; kuze kube yilapho amafayela okucwaninga egcina sonke isehlakalo.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Leli khasi lidinga idathabheyisi ye-SQL; alitholakali ku-MongoDB. Amafayela okucwaninga agcina sonke isehlakalo.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuya</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Irekhodi lokucwaningwa kwabasebenzisi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Umsebenzisi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Nini</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kuphi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ubani oshintshile, odalile, onike amandla, ovimbele, ohambisile noma osuse yiphi i-akhawunti, ubani ongenile noma onqatshelwe, nokuthi yiziphi izindima ezabelwe: umugqa owodwa ngesehlakalo ngasinye, nezinkambu ngaphambi nangemuva. Amaphasiwedi nezimfihlo akuze kurekhodwe.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>iqembu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>isistimu</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>akwaziwa</translation>
     </message>
 </context>
 </TS>

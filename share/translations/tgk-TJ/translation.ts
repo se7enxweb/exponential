@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ҳисобҳое, ки касе истифода намебарад ё ба аз назар гузаронӣ ниёз доранд; ғайрифаъол кардан, кушодан ё содир кардани онҳо.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Сабти аудити корбарон</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Кӣ тағйир дод, ворид шуд ё рад карда шуд, аз рӯи ҳар ҳисоб; филтр ва содир кардан.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Кушодани саҳифа</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from то %to аз %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Логин ё ID-и корбар: ҳисобе, ки ҳодиса ба он дахл дошт, ё корбаре, ки амал кард.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Ҳисоб</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Амал</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Баъд</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ҳар натиҷа</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Пеш</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Иҷрокунанда</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Тоза кардан</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Иҷро шуд</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ҳодисаҳо %days рӯз нигоҳ дошта мешаванд.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ҳодисаҳо то он даме нигоҳ дошта мешаванд, ки дастӣ хориҷ карда шаванд.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ҳодисаҳо</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ҳар амал</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ҳамаи ҳодисаҳои ин ҳисоб</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Содир кардани рӯйхат ҳамчун CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ноком</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Аз</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Маҳдуд кардани рӯйхат</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ягон ҳодиса мувофиқ нест.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Дар ҳар саҳифа</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Сабт дар audit.ini ([UserAuditSettings] UserAudit) хомӯш аст; рӯйхат он чиро нишон медиҳад, ки пештар сабт шуда буд.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Рад карда шуд</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Натиҷа</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Ҷадвали сабти аудити корбарон вуҷуд надорад. Онро бо php update/common/scripts/6.0/createuseraudittable.php эҷод кунед; то он вақт файлҳои аудит ҳар ҳодисаро нигоҳ медоранд.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ин саҳифа пойгоҳи додаҳои SQL-ро талаб мекунад; дар MongoDB дастрас нест. Файлҳои аудит ҳар ҳодисаро нигоҳ медоранд.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>То</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Сабти аудити корбарон</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Корбар</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Кай</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Дар куҷо</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кӣ кадом ҳисобро тағйир дод, эҷод кард, фаъол кард, ғайрифаъол кард, кӯчонд ё хориҷ кард, кӣ ворид шуд ё рад карда шуд ва кадом нақшҳо таъин шуданд: як сатр барои ҳар ҳодиса, бо майдонҳо пеш ва баъд аз тағйир. Паролҳо ва сирҳо ҳеҷ гоҳ сабт намешаванд.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>гурӯҳ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>система</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>номаълум</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>حساب‌هایی که کسی از آن‌ها استفاده نمی‌کند یا نیاز به بررسی دارند؛ غیرفعال کردن، بازگشایی یا برون‌بری آن‌ها.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>گزارش ممیزی کاربران</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>چه کسی تغییر داد، وارد شد یا رد شد، به تفکیک حساب؛ فیلتر و برون‌بری.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>باز کردن صفحه</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تا %to از %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>نام کاربری یا شناسهٔ کاربر: حسابی که رویداد دربارهٔ آن بود یا کاربری که اقدام کرد.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>حساب</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>اقدام</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>پس از</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>همهٔ نتایج</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پیش از</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>انجام‌دهنده</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>پاک کردن</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>انجام شد</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>رویدادها %days روز نگه داشته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>رویدادها تا زمانی که به‌صورت دستی حذف شوند نگه داشته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>رویدادها</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>همهٔ اقدام‌ها</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>همهٔ رویدادهای این حساب</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>برون‌بری فهرست به‌صورت CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>از</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>محدود کردن فهرست</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>هیچ رویدادی مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>در هر صفحه</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>ثبت رویدادها در audit.ini خاموش است ([UserAuditSettings] UserAudit)؛ فهرست آنچه را پیش‌تر ثبت شده است نشان می‌دهد.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ردشده</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجه</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>نمایش</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>جدول گزارش ممیزی کاربران وجود ندارد. آن را با php update/common/scripts/6.0/createuseraudittable.php بسازید؛ تا آن زمان فایل‌های ممیزی همهٔ رویدادها را نگه می‌دارند.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>این صفحه به پایگاه دادهٔ SQL نیاز دارد؛ روی MongoDB در دسترس نیست. فایل‌های ممیزی همهٔ رویدادها را نگه می‌دارند.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تا</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>گزارش ممیزی کاربران</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>کاربر</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>زمان</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>مکان</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>چه کسی کدام حساب را تغییر داد، ایجاد کرد، فعال کرد، غیرفعال کرد، جابه‌جا کرد یا حذف کرد، چه کسی وارد شد یا رد شد، و چه نقش‌هایی سپرده شد: یک سطر برای هر رویداد، با مقدار فیلدها پیش و پس از تغییر. رمزهای عبور و رازها هرگز ثبت نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>گروه</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سیستم</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامشخص</translation>
     </message>
 </context>
 </TS>

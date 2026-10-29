@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Àwọn àkọọ́lẹ̀ tí kò sí ẹni tí ń lò tàbí tí ó nílò àyẹ̀wò; ẹ mú wọn dúró, ṣí wọn sílẹ̀ tàbí gbé wọn jáde.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Àkọsílẹ̀ àyẹ̀wò olùlò</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ẹni tí ó ṣe àyípadà, tí ó wọlé tàbí tí a kọ̀, fún àkáǹtì kọ̀ọ̀kan; àlẹ̀mọ́ àti gbígbé jáde.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Ṣí ojú ìwé náà</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sí %to nínú %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Orúkọ ìwọlé tàbí ID olùlò: àkáǹtì tí ìṣẹ̀lẹ̀ náà kàn tàbí olùlò tí ó ṣe iṣẹ́ náà.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iṣẹ́</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Lẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Èsì èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ṣáájú</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ẹni tó ṣe é</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Parẹ́</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ó ṣàṣeyọrí</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>A máa ń tọ́jú àwọn ìṣẹ̀lẹ̀ fún ọjọ́ %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>A máa ń tọ́jú àwọn ìṣẹ̀lẹ̀ títí a ó fi pa wọ́n rẹ́ ní ọwọ́.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Àwọn ìṣẹ̀lẹ̀</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Iṣẹ́ èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Gbogbo ìṣẹ̀lẹ̀ àkáǹtì yìí</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Gbé àkójọ jáde bí CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ó kùnà</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Láti</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Dín àkójọ kù</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Kò sí ìṣẹ̀lẹ̀ tó bá a mu.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fún ojú ìwé kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>A ti pa àkọsílẹ̀ ní audit.ini ([UserAuditSettings] UserAudit); àkójọ náà ń fi ohun tí a ti kọ sílẹ̀ tẹ́lẹ̀ hàn.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A kọ̀ ọ́</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Èsì</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fihàn</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tábìlì àkọsílẹ̀ àyẹ̀wò olùlò kò sí. Ẹ ṣẹ̀dá rẹ̀ pẹ̀lú php update/common/scripts/6.0/createuseraudittable.php; títí di ìgbà náà, àwọn fáìlì àyẹ̀wò máa ń tọ́jú gbogbo ìṣẹ̀lẹ̀.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ojú ìwé yìí nílò ibùdó dátà SQL; kò sí lórí MongoDB. Àwọn fáìlì àyẹ̀wò máa ń tọ́jú gbogbo ìṣẹ̀lẹ̀.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Àkọsílẹ̀ àyẹ̀wò olùlò</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Olùlò</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ìgbà</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ibo</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ẹni tí ó yí àkáǹtì wo padà, tí ó ṣẹ̀dá rẹ̀, tí ó mú un ṣiṣẹ́, tí ó mú un dúró, tí ó gbé e lọ tàbí tí ó yọ ọ́ kúrò, ẹni tí ó wọlé tàbí tí a kọ̀, àti àwọn ipa tí a yàn: ìlà kan fún ìṣẹ̀lẹ̀ kọ̀ọ̀kan, pẹ̀lú àwọn pápá ṣáájú àti lẹ́yìn. A kì í kọ ọ̀rọ̀ aṣínà àti àṣírí sílẹ̀ rárá.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ẹgbẹ́</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>àìmọ̀</translation>
     </message>
 </context>
 </TS>

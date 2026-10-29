@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Сметки што никој не ги користи или што бараат поглед; оневозможете ги, отклучете ги или извезете ги.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ревизорски дневник на корисници</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Кој менувал, се најавил или бил одбиен, по сметка; филтрирање и извоз.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Отвори ја страницата</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from до %to од %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Корисничко име или ID на корисник: сметката на која се однесува настанот или корисникот што дејствувал.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Сметка</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дејство</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>По</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Секој резултат</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Пред</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Извршил</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Исчисти</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Извршено</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Настаните се чуваат %days дена.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Настаните се чуваат додека не се отстранат рачно.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Настани</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Секое дејство</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Сите настани на оваа сметка</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Извези ја листата како CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешно</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Од</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Стеснете ја листата</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ниту еден настан не одговара.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>По страница</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Снимањето е исклучено во audit.ini ([UserAuditSettings] UserAudit); листата го прикажува она што било снимено претходно.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Одбиено</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Резултат</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Прикажи</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Табелата на ревизорскиот дневник на корисници недостасува. Создајте ја со php update/common/scripts/6.0/createuseraudittable.php; дотогаш ревизорските датотеки го чуваат секој настан.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Оваа страница бара SQL база на податоци; не е достапна на MongoDB. Ревизорските датотеки го чуваат секој настан.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>До</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ревизорски дневник на корисници</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Корисник</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Кога</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Каде</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кој ја променил, создал, овозможил, оневозможил, преместил или отстранил која сметка, кој се најавил или бил одбиен и кои улоги биле доделени: по еден ред за секој настан, со полињата пред и по промената. Лозинките и тајните никогаш не се снимаат.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>група</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>систем</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>непознато</translation>
     </message>
 </context>
 </TS>
