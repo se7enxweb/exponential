@@ -11,7 +11,7 @@
  *  US-05 the rollback refuses an unknown backup or part (usage, exit 2) before it touches anything
  *  US-06 the audit events of the upgrade are in the taxonomy
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
