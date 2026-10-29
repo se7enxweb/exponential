@@ -32,7 +32,7 @@ class eZTemplateDebugCommentsTest extends PHPUnit\Framework\TestCase
     private const GLOBAL_NAMES = array(
         'eZTemplateCompilerSettings', 'eZSiteBasics', 'eZTemplateDebugInternalsEnabled',
         'eZTemplateDebugXHTMLCodeEnabled', 'eZTemplateShowTemplatePathComments', 'eZTemplateTemplatesWithoutDebugComments',
-        'eZCurrentAccess',
+        'eZCurrentAccess', 'eZTemplateDebugCommentsCompilationKey',
     );
 
     public static function setUpBeforeClass(): void
@@ -111,20 +111,7 @@ class eZTemplateDebugCommentsTest extends PHPUnit\Framework\TestCase
      */
     private function render( $kind, $compiled )
     {
-        if ( $compiled )
-        {
-            unset( $GLOBALS['eZSiteBasics'] );
-            $GLOBALS['eZTemplateCompilerSettings']['compile'] = true;
-            $GLOBALS['eZTemplateCompilerSettings']['compilation-directory'] = self::$dir . '/compiled';
-        }
-        else
-        {
-            $GLOBALS['eZTemplateCompilerSettings']['compile'] = false;
-            $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
-        }
-        $GLOBALS['eZTemplateDebugInternalsEnabled'] = ( $kind === 'debug' );
-        $GLOBALS['eZTemplateDebugXHTMLCodeEnabled'] = false;
-        $GLOBALS['eZTemplateShowTemplatePathComments'] = ( $kind === 'path-comments' );
+        $this->setUpRender( $kind, $compiled );
 
         $parts = self::$dir . '/design/test/templates/parts';
         $source = '<h1 class="title"{include uri="file:' . $parts . '/exp_content_direction.tpl"}>T</h1>'
@@ -184,5 +171,172 @@ class eZTemplateDebugCommentsTest extends PHPUnit\Framework\TestCase
         eZINI::instance()->removeSetting( 'TemplateSettings', 'TemplatesWithoutDebugComments' );
         unset( $GLOBALS['eZTemplateTemplatesWithoutDebugComments'] );
         $this->assertTrue( eZTemplate::templateAllowsDebugComments( 'design/standard/templates/parts/exp_content_direction.tpl' ) );
+    }
+
+    public function testTheVerdictIsAKeyLookupKeptPerPath()
+    {
+        $path = 'design/standard/templates/parts/exp_content_direction.tpl';
+        $this->assertFalse( eZTemplate::templateAllowsDebugComments( $path ) );
+        $lookup = $GLOBALS['eZTemplateTemplatesWithoutDebugComments'];
+        $this->assertSame( array( 'parts/exp_content_direction.tpl' => true ), $lookup['names'] );
+        $this->assertSame( false, $lookup['verdicts'][$path] );
+        // a templates/ directory deeper in the path is matched from each /templates/ on
+        $this->assertFalse( eZTemplate::templateAllowsDebugComments( 'extension/x/templates/design/y/templates/parts/exp_content_direction.tpl' ) );
+    }
+
+    /**
+     * The default of site.ini: the direction part; the other in-tag and captured parts need no entry.
+     */
+    public function testTheDefaultOfSiteIniNamesTheDirectionPart()
+    {
+        $ini = file_get_contents( dirname( __DIR__, 4 ) . '/settings/site.ini' );
+        $this->assertStringContainsString( "\nTemplatesWithoutDebugComments[]\nTemplatesWithoutDebugComments[]=parts/exp_content_direction.tpl\n", $ini );
+    }
+
+    private static function comment( $marker, $name )
+    {
+        return eZTemplate::templatePathComment( $marker, "design/test/templates/$name" );
+    }
+
+    public static function misplacedProvider()
+    {
+        return array(
+            'between attributes'    => array( '<a href="x"', ' class="y">t</a>' ),
+            'in an attribute value' => array( '<a title="', 'x">t</a>' ),
+            'in a single quoted one' => array( "<a title='", "x'>t</a>" ),
+            'in an end tag'          => array( '<p>t</p', '>' ),
+            'in a script'            => array( '<p>t</p><script>var a = "', '";</script>' ),
+            'in a style'             => array( '<style>.a { color: ', 'red }</style>' ),
+            'in a title'             => array( '<title>', 'T</title>' ),
+            'in a textarea'          => array( '<textarea name="a">', 'v</textarea>' ),
+            'in another comment'     => array( '<p>t</p><!-- note ', ' -->' ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('misplacedProvider')]
+    public function testAMisplacedCommentIsTakenOut( $before, $after )
+    {
+        $wrapped = '<div>' . self::comment( 'START', 'a.tpl' ) . 'a' . self::comment( 'STOP', 'a.tpl' ) . '</div>';
+        $text = $wrapped . $before . self::comment( 'START', 'b.tpl' ) . 'b' . self::comment( 'STOP', 'b.tpl' ) . $after . $wrapped;
+        $this->assertSame( $wrapped . $before . 'b' . $after . $wrapped, eZTemplate::removeMisplacedDebugComments( $text ) );
+    }
+
+    public function testCommentsBetweenElementsAndAfterAClosedScriptStay()
+    {
+        $text = '<script>if ( a > b ) x = "<p>";</script><p class="a>b">' . self::comment( 'START', 'a.tpl' ) . 'a' .
+                self::comment( 'STOP', 'a.tpl' ) . '</p><textarea></textarea>' . self::comment( 'START', 'b.tpl' );
+        $this->assertSame( $text, eZTemplate::removeMisplacedDebugComments( $text ) );
+    }
+
+    public static function notHTMLProvider()
+    {
+        return array(
+            'XML'        => array( '<?xml version="1.0"?><rss><channel>', '</channel></rss>' ),
+            'JSON'       => array( '{"a": "', '"}' ),
+            'plain text' => array( "Hello,\n\nyour order: ", "\nhttps://example.com/\n" ),
+            'iCal'       => array( "BEGIN:VCALENDAR\nSUMMARY:", "\nEND:VCALENDAR\n" ),
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('notHTMLProvider')]
+    public function testOutputThatIsNotHTMLHasNoComments( $before, $after )
+    {
+        $text = self::comment( 'START', 'page.tpl' ) . $before . self::comment( 'START', 'b.tpl' ) . 'b' . self::comment( 'STOP', 'b.tpl' ) .
+                $after . self::comment( 'STOP', 'page.tpl' );
+        $this->assertSame( $before . 'b' . $after, eZTemplate::removeMisplacedDebugComments( $text ) );
+    }
+
+    public function testOutputWithoutDebugCommentsIsReturnedAsItIs()
+    {
+        $text = "<p>a</p>\n<!-- a comment of the template -->\n<p title=\"<!-- x -->\">b</p>";
+        $this->assertSame( $text, eZTemplate::removeMisplacedDebugComments( $text ) );
+    }
+
+    /**
+     * A part printed into a start tag that is not in the list: the comments are taken out of the rendered page.
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('kindAndModeProvider')]
+    public function testAnUnlistedPartInAStartTagLosesItsCommentsInThePage( $kind, $compiled )
+    {
+        $parts = self::$dir . '/design/test/templates/parts';
+        file_put_contents( $parts . '/unlisted_attributes.tpl', ' data-x="1"' );
+        $this->setUpRender( $kind, $compiled );
+        $file = self::$dir . '/unlisted-' . $kind . '-' . ( $compiled ? 'compiled' : 'interpreted' ) . '.tpl';
+        file_put_contents( $file, '<p{include uri="file:' . $parts . '/unlisted_attributes.tpl"}>T</p>'
+                                . '<script>var a = "{include uri="file:' . $parts . '/other.tpl"}";</script>'
+                                . '{include uri="file:' . $parts . '/other.tpl"}' );
+        $tpl = new eZTemplate();
+        $tpl->autoload();
+        $output = $tpl->fetch( $file );
+        $this->assertStringContainsString( '<p data-x="1">T</p><script>var a = "other";</script>', $output );
+        $this->assertStringNotContainsString( 'unlisted_attributes.tpl', $output );
+        $this->assertMatchesRegularExpression( '#</script>\s*<!-- START[^>]*parts/other\.tpl#', $output );
+    }
+
+    /**
+     * A captured value (a name, a URL, nothing) loses its comments, so tests and uses of it work; captured HTML keeps
+     * them. Unlisted parts only: no list is needed for set-block.
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('kindAndModeProvider')]
+    public function testACapturedValueHasNoCommentsAndCapturedHTMLKeepsThem( $kind, $compiled )
+    {
+        $parts = self::$dir . '/design/test/templates/parts';
+        file_put_contents( $parts . '/value_name.tpl', 'ezcontentnavigationpart' );
+        file_put_contents( $parts . '/value_empty.tpl', "{* nothing *}\n" );
+        file_put_contents( $parts . '/value_html.tpl', '<li>item</li>' );
+        $this->setUpRender( $kind, $compiled );
+        $file = self::$dir . '/captured-' . $kind . '-' . ( $compiled ? 'compiled' : 'interpreted' ) . '.tpl';
+        file_put_contents( $file, '{set-block variable=name}{include uri="file:' . $parts . '/value_name.tpl"}{/set-block}'
+                                . '{set-block variable=empty}{include uri="file:' . $parts . '/value_empty.tpl"}{/set-block}'
+                                . '{set-block variable=html}{include uri="file:' . $parts . '/value_html.tpl"}{/set-block}'
+                                . '[{$name}][{if $empty|trim|eq( \'\' )}empty{else}not empty{/if}]<a href="/{$name|wash}">x</a>'
+                                . '<ul>{$html}</ul>' );
+        $tpl = new eZTemplate();
+        $tpl->autoload();
+        $output = $tpl->fetch( $file );
+        $this->assertSame( array(), $tpl->errorLog() );
+        $this->assertStringContainsString( '[ezcontentnavigationpart][empty]<a href="/ezcontentnavigationpart">x</a>', $output );
+        $this->assertMatchesRegularExpression( '#<ul>\s*<!-- START[^>]*value_html\.tpl.*<li>item</li>#s', $output );
+    }
+
+    public function testCapturedTextWithoutCommentsIsUnchanged()
+    {
+        $this->assertSame( ' lang="he" ', eZTemplate::capturedText( ' lang="he" ' ) );
+        $this->assertSame( ' lang="he" ', eZTemplate::capturedText( self::comment( 'START', 'a.tpl' ) . ' lang="he" ' . self::comment( 'STOP', 'a.tpl' ) ) );
+        $this->assertSame( '', eZTemplate::capturedText( self::comment( 'START', 'a.tpl' ) . self::comment( 'STOP', 'a.tpl' ) ) );
+    }
+
+    public function testDebugCompilesIntoFilesOfItsOwn()
+    {
+        $GLOBALS['eZTemplateDebugInternalsEnabled'] = false;
+        unset( $GLOBALS['eZTemplateDebugCommentsCompilationKey'] );
+        $this->assertSame( '', eZTemplate::debugCommentsCompilationKey() );
+        $GLOBALS['eZTemplateDebugInternalsEnabled'] = true;
+        $GLOBALS['eZTemplateDebugXHTMLCodeEnabled'] = false;
+        $key = eZTemplate::debugCommentsCompilationKey();
+        $this->assertMatchesRegularExpression( '#^-debug-[0-9a-f]{8}$#', $key );
+        unset( $GLOBALS['eZTemplateDebugCommentsCompilationKey'] );
+        eZINI::instance()->setVariable( 'TemplateSettings', 'TemplatesWithoutDebugComments', array( 'parts/other.tpl' ) );
+        $this->assertNotSame( $key, eZTemplate::debugCommentsCompilationKey() );
+        unset( $GLOBALS['eZTemplateDebugCommentsCompilationKey'] );
+    }
+
+    private function setUpRender( $kind, $compiled )
+    {
+        if ( $compiled )
+        {
+            unset( $GLOBALS['eZSiteBasics'] );
+            $GLOBALS['eZTemplateCompilerSettings']['compile'] = true;
+            $GLOBALS['eZTemplateCompilerSettings']['compilation-directory'] = self::$dir . '/compiled';
+        }
+        else
+        {
+            $GLOBALS['eZTemplateCompilerSettings']['compile'] = false;
+            $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
+        }
+        $GLOBALS['eZTemplateDebugInternalsEnabled'] = ( $kind === 'debug' );
+        $GLOBALS['eZTemplateDebugXHTMLCodeEnabled'] = false;
+        $GLOBALS['eZTemplateShowTemplatePathComments'] = ( $kind === 'path-comments' );
+        unset( $GLOBALS['eZTemplateDebugCommentsCompilationKey'] );
     }
 }

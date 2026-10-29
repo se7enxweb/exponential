@@ -585,6 +585,10 @@ class eZTemplate
             if ( self::templateAllowsDebugComments( $templatePath ) )
                 $text = self::wrapWithTemplatePathComment( $text, $templatePath, $templateBase );
         }
+        // No list needed for the places where a comment breaks the output: inside a tag, an attribute value,
+        // <script>, <style>, <title>, <textarea>, and in output that is not HTML (XML, JSON, plain-text mail)
+        if ( self::showTemplatePathComments() or self::isDebugEnabled() )
+            $text = self::removeMisplacedDebugComments( $text );
 
         if ( $returnResourceData )
         {
@@ -2707,6 +2711,16 @@ class eZTemplate
      * path below templates/; a file of the same path in another design or in an
      * extension is covered too.
      *
+     * The list is only needed where the output is used before it reaches the
+     * page (set-block captures tested or passed on) or where the comment would
+     * break the page in a way fetch() cannot see; a comment that merely lands in
+     * a start tag, an attribute value, <script>, <style>, <title>, <textarea> or
+     * a non-HTML output is taken out by removeMisplacedDebugComments() anyway.
+     *
+     * Asked on every include while comments are on, so the answer costs O(1):
+     * the setting is read once into a lookup array and every path's verdict is
+     * kept for the rest of the request.
+     *
      * @param string $path template file, e.g. design/standard/templates/parts/exp_content_direction.tpl
      * @return bool
      */
@@ -2715,9 +2729,10 @@ class eZTemplate
         if ( !is_string( $path ) or $path === '' )
             return true;
 
-        if ( !isset( $GLOBALS['eZTemplateTemplatesWithoutDebugComments'] ) )
+        $lookup =& $GLOBALS['eZTemplateTemplatesWithoutDebugComments'];
+        if ( !isset( $lookup['names'] ) )
         {
-            $suffixes = array();
+            $names = array();
             $ini = eZINI::instance();
             if ( $ini->hasVariable( 'TemplateSettings', 'TemplatesWithoutDebugComments' ) )
             {
@@ -2725,19 +2740,245 @@ class eZTemplate
                 {
                     $entry = trim( str_replace( '\\', '/', (string)$entry ), '/ ' );
                     if ( $entry !== '' )
-                        $suffixes[] = '/templates/' . $entry;
+                        $names[$entry] = true;
                 }
             }
-            $GLOBALS['eZTemplateTemplatesWithoutDebugComments'] = $suffixes;
+            $lookup = array( 'names' => $names, 'verdicts' => array() );
         }
+        if ( isset( $lookup['verdicts'][$path] ) )
+            return $lookup['verdicts'][$path];
 
-        $path = '/' . ltrim( str_replace( '\\', '/', $path ), '/' );
-        foreach ( $GLOBALS['eZTemplateTemplatesWithoutDebugComments'] as $suffix )
+        $allowed = true;
+        if ( $lookup['names'] )
         {
-            if ( substr( $path, -strlen( $suffix ) ) === $suffix )
+            // the part below each /templates/ of the path (normally one), looked up by key
+            $normalized = '/' . ltrim( str_replace( '\\', '/', $path ), '/' );
+            $offset = 0;
+            while ( ( $found = strpos( $normalized, '/templates/', $offset ) ) !== false )
+            {
+                $offset = $found + 11;
+                if ( isset( $lookup['names'][substr( $normalized, $offset )] ) )
+                {
+                    $allowed = false;
+                    break;
+                }
+            }
+        }
+        return $lookup['verdicts'][$path] = $allowed;
+    }
+
+    /**
+     * The part of a compiled template's file name that keeps the compiled
+     * templates of Debug apart: appendDebugNodes() writes its comments into the
+     * tree that is compiled, so a template compiled with Debug on (or with
+     * another TemplatesWithoutDebugComments list, or ShowXHTMLCode) is a
+     * different file from one compiled without. Empty with Debug off, so the
+     * names of production's compiled templates do not change.
+     *
+     * @return string
+     */
+    static function debugCommentsCompilationKey()
+    {
+        if ( !self::isDebugEnabled() )
+            return '';
+        if ( !isset( $GLOBALS['eZTemplateDebugCommentsCompilationKey'] ) )
+        {
+            $names = array();
+            $ini = eZINI::instance();
+            if ( $ini->hasVariable( 'TemplateSettings', 'TemplatesWithoutDebugComments' ) )
+                $names = (array)$ini->variable( 'TemplateSettings', 'TemplatesWithoutDebugComments' );
+            $GLOBALS['eZTemplateDebugCommentsCompilationKey'] = '-debug' . ( self::isXHTMLCodeIncluded() ? '-xhtml' : '' ) . '-' .
+                                                                substr( md5( implode( "\n", $names ) ), 0, 8 );
+        }
+        return $GLOBALS['eZTemplateDebugCommentsCompilationKey'];
+    }
+
+    /**
+     * The debug comments of Debug and ShowTemplatePathComments, with the
+     * template name paragraph of ShowXHTMLCode after a START.
+     */
+    const DEBUG_COMMENT_PATTERN = '#\n<!-- (?:START|STOP)(?:: including template:)? [^\n]*?\.tpl[^\n]*? -->\n(?:<p class="small">[^<\n]*</p><br/>\n)?#';
+
+    /**
+     * Takes the debug comments out of a rendered output where an HTML comment
+     * breaks it, so no list is needed for those places:
+     *
+     * - all of them when the output is not HTML: XML (a comment before
+     *   <?xml is an error), JSON, and text without any HTML tag (plain-text
+     *   mail, CSV, iCal, a URL)
+     * - in HTML, those inside a start or end tag (between attributes or in a
+     *   quoted attribute value), inside <script>, <style>, <title> and
+     *   <textarea> (their content is text: the comment shows or breaks the
+     *   code) and inside another comment (the inner one would end it)
+     *
+     * Runs once per fetch() and only while Debug or ShowTemplatePathComments
+     * is on; production never gets here.
+     *
+     * @param string $text
+     * @return string
+     */
+    static function removeMisplacedDebugComments( $text )
+    {
+        if ( !is_string( $text ) or strpos( $text, "\n<!-- " ) === false )
+            return $text;
+        if ( !preg_match_all( self::DEBUG_COMMENT_PATTERN, $text, $matches, PREG_OFFSET_CAPTURE ) )
+            return $text;
+
+        $withoutComments = preg_replace( self::DEBUG_COMMENT_PATTERN, '', $text );
+        if ( !self::isHTMLOutput( $withoutComments ) )
+            return $withoutComments;
+
+        $result = '';
+        $position = 0;
+        $state = array( 'mode' => 'text', 'quote' => null, 'raw' => null );
+        foreach ( $matches[0] as $match )
+        {
+            list( $comment, $offset ) = $match;
+            self::advanceHTMLState( $text, $position, $offset, $state );
+            $result .= substr( $text, $position, $offset - $position );
+            if ( $state['mode'] === 'text' )
+                $result .= $comment;
+            $position = $offset + strlen( $comment );
+        }
+        return $result . substr( $text, $position );
+    }
+
+    /**
+     * Whether Debug or ShowTemplatePathComments may have put comments into the output.
+     *
+     * @return bool
+     */
+    static function debugCommentsEnabled()
+    {
+        return self::showTemplatePathComments() or self::isDebugEnabled();
+    }
+
+    /**
+     * The text a set-block or append-block captured, as a template uses it: a captured value that is not HTML (a
+     * code, a name, a URL, attributes, plain text, nothing at all) loses every debug comment, so a test of it for ''
+     * and its use as a value, a template name or an attribute work as with the comments off; captured HTML keeps
+     * them except where they break it (removeMisplacedDebugComments()). Called by the set-block code, interpreted
+     * and compiled, only while the comments are on.
+     *
+     * @param string $text
+     * @return string
+     */
+    static function capturedText( $text )
+    {
+        if ( !is_string( $text ) or strpos( $text, "\n<!-- " ) === false )
+            return $text;
+        $withoutComments = preg_replace( self::DEBUG_COMMENT_PATTERN, '', $text );
+        if ( !self::isHTMLOutput( $withoutComments ) )
+            return $withoutComments;
+        return self::removeMisplacedDebugComments( $text );
+    }
+
+    /**
+     * Whether an output (without debug comments) is HTML: not XML, not JSON,
+     * and with at least one HTML tag, comment or doctype in it.
+     *
+     * @param string $text
+     * @return bool
+     */
+    static function isHTMLOutput( $text )
+    {
+        $head = ltrim( $text, "\xEF\xBB\xBF \t\r\n" );
+        if ( $head === '' )
+            return false;
+        if ( strncmp( $head, '<?xml', 5 ) === 0 )
+            return false;
+        if ( ( $head[0] === '{' or $head[0] === '[' ) )
+        {
+            json_decode( $head );
+            if ( json_last_error() === JSON_ERROR_NONE )
                 return false;
         }
-        return true;
+        return (bool)preg_match( '#<(?:[a-zA-Z][a-zA-Z0-9-]*[\s/>]|!--|!doctype)#i', $head );
+    }
+
+    /**
+     * Moves an HTML tokenizer state over $text from $from to $to: the mode is
+     * text, tag (inside a start or end tag, with the open quote of an attribute
+     * value), raw (the content of script, style, title or textarea) or comment.
+     *
+     * @param string $text
+     * @param int $from
+     * @param int $to
+     * @param array $state mode, quote, raw
+     */
+    private static function advanceHTMLState( $text, $from, $to, array &$state )
+    {
+        $i = $from;
+        while ( $i < $to )
+        {
+            switch ( $state['mode'] )
+            {
+                case 'text':
+                    $lt = strpos( $text, '<', $i );
+                    if ( $lt === false or $lt >= $to )
+                        return;
+                    $next = isset( $text[$lt + 1] ) ? $text[$lt + 1] : '';
+                    if ( substr( $text, $lt, 4 ) === '<!--' )
+                    {
+                        $state['mode'] = 'comment';
+                        $i = $lt + 4;
+                    }
+                    else if ( $next !== '' and ctype_alpha( $next ) )
+                    {
+                        $length = strspn( $text, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-', $lt + 1, 32 );
+                        $name = strtolower( substr( $text, $lt + 1, $length ) );
+                        $state['mode'] = 'tag';
+                        $state['raw'] = in_array( $name, array( 'script', 'style', 'title', 'textarea' ) ) ? $name : null;
+                        $i = $lt + 1 + $length;
+                    }
+                    else if ( $next === '/' or $next === '!' or $next === '?' )
+                    {
+                        $state['mode'] = 'tag';
+                        $state['raw'] = null;
+                        $i = $lt + 2;
+                    }
+                    else
+                        $i = $lt + 1;
+                    break;
+
+                case 'tag':
+                    if ( $state['quote'] !== null )
+                    {
+                        $close = strpos( $text, $state['quote'], $i );
+                        if ( $close === false or $close >= $to )
+                            return;
+                        $state['quote'] = null;
+                        $i = $close + 1;
+                        break;
+                    }
+                    $i += strcspn( $text, "\"'>", $i, $to - $i );
+                    if ( $i >= $to )
+                        return;
+                    if ( $text[$i] === '>' )
+                        $state['mode'] = $state['raw'] !== null ? 'raw' : 'text';
+                    else
+                        $state['quote'] = $text[$i];
+                    $i++;
+                    break;
+
+                case 'raw':
+                    $close = stripos( $text, '</' . $state['raw'], $i );
+                    if ( $close === false or $close >= $to )
+                        return;
+                    $state['mode'] = 'tag';
+                    $state['raw'] = null;
+                    $i = $close + 2;
+                    break;
+
+                case 'comment':
+                    $close = strpos( $text, '-->', $i );
+                    if ( $close === false or $close >= $to )
+                        return;
+                    $state['mode'] = 'text';
+                    $i = $close + 3;
+                    break;
+            }
+        }
     }
 
     /**

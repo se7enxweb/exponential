@@ -343,6 +343,9 @@ class eZTemplateCompiler
         // the signed-in user's interface choices (expUISwitch: another design, ...); only when one is applied
         if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
             $cacheFileKey .= '-' . $GLOBALS['expUISwitchVariantKey'];
+        // Debug compiles its comments into the template (eZTemplate::appendDebugNodes): its own files, so switching
+        // Debug or changing TemplatesWithoutDebugComments needs no template cache clear; empty with Debug off
+        $cacheFileKey .= eZTemplate::debugCommentsCompilationKey();
 
         $cacheFileName = $extraName . md5( $cacheFileKey ) . '.php';
         return $cacheFileName;
