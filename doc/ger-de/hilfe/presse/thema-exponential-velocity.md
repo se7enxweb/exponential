@@ -60,7 +60,7 @@ Velocity in Exponential gehört zur Entwicklungslinie 6.0.15, die nicht veröffe
 | Ein Befehl bringt eine PHP-Änderung in Betrieb: `./console exp:velocity deploy`. | [Velocity, Eine PHP-Änderung in Betrieb nehmen](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#eine-php-änderung-mit-einem-befehl-ausrollen) |
 | Das Behalten der Worker zwischen den Anfragen hat angemeldete Seiten der Administration von 256 bis 284 ms auf 73 bis 80 ms verkürzt, „in the measurement that led to the change“. | [Velocity, Einstellungen, die Sie zuerst kennen sollten](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#einstellungen-die-sie-zuerst-kennen-sollten) |
 | Ein Dashboard (`/Q/dashboard`) und ein passwortgeschütztes Control Panel (`/Q/panel`) sind eingebaut. | [Velocity Control Panel](../../funktionen/6.0/velocity-control-panel.md) |
-| Das README nennt ihn als erforderlich in `~0.0.4.55`. | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
+| Das README nennt ihn als erforderlich in `~0.0.4.57`. | [Exponential Velocity](../wer-ist-die-exponential-foundation.md#exponential-velocity) |
 
 ## Was Sie nicht behaupten sollten
 

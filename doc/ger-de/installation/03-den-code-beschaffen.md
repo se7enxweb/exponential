@@ -276,16 +276,16 @@ Website nicht gebraucht.
 
 Exponential Velocity, der empfohlene Anwendungsserver, ist ein eigenes Paket,
 [`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity). `composer.json`
-verlangt es als `~0.0.4.55`, sodass `composer install` es installiert. Seit dem Release 0.0.4.54 läuft die Engine unter PHP
+verlangt es als `~0.0.4.57`, sodass `composer install` es installiert. Seit dem Release 0.0.4.54 läuft die Engine unter PHP
 8.0 bis 8.5 (`"php": ">=8.0"`, dieselbe älteste Version wie beim Kernel) und braucht die Erweiterung `sockets`
 (`"ext-sockets": "*"`). Bis 0.0.4.54 brauchte die Engine PHP 8.1, und `composer.json` schlug sie nur vor; eine
 Installation aus dieser Zeit fügt sie so hinzu:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
-`~0.0.4.55` akzeptiert jede spätere Release `0.0.4.x` (`>=0.0.4.55 <0.0.5.0`), sodass Composer die neueste davon
+`~0.0.4.57` akzeptiert jede spätere Release `0.0.4.x` (`>=0.0.4.57 <0.0.5.0`), sodass Composer die neueste davon
 installiert. Die letzte Stelle einer Velocity-Version zählt über 9 hinaus weiter (`0.0.4.9`, `0.0.4.10`, ...), daher
 findet eine Versionssortierung die neueste, keine Namenssortierung.
 

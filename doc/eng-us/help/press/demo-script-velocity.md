@@ -36,7 +36,7 @@ php bin/php/console exp:velocity ext check                         # missing PHP
 php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 ```
 
-Read the version from the `require` block of the kernel's `composer.json`: on 25 October 2026 it was `~0.0.4.55`, as
+Read the version from the `require` block of the kernel's `composer.json`: on 29 October 2026 it was `~0.0.4.57`, as
 the README and the installation book show. The tilde accepts every later 0.0.4.x.
 
 The shipped default engine is `php` (PHP's built-in server, for development only); `qbix` is the recommended engine
