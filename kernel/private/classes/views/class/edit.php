@@ -15,7 +15,7 @@
  *
  */
 
-namespace Exponential\View\Kernel\Class
+namespace Exponential\View\Kernel\ContentClass
 {
 
 class Edit extends \Exponential\Runnable\ModuleView
@@ -1033,4 +1033,11 @@ class Edit extends \Exponential\Runnable\ModuleView
     }
 }
 
+}
+
+// The namespace was Exponential\View\Kernel\Class until 6.0.15. "Class" is a reserved word
+// before PHP 8.0, so it was renamed for PHP 7.4; the old name keeps working.
+namespace
+{
+    class_alias( 'Exponential\\View\\Kernel\\ContentClass\\Edit', 'Exponential\\View\\Kernel\\Class\\Edit' );
 }

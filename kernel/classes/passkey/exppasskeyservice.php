@@ -42,7 +42,7 @@ class expPasskeyService
     /** @var expPasskeySettings */
     protected $settings;
 
-    public function __construct( expPasskeySettings $settings = null )
+    public function __construct( ?expPasskeySettings $settings = null )
     {
         $this->settings = $settings ?: expPasskeySettings::read();
     }

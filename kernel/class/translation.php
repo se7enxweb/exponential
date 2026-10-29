@@ -8,4 +8,4 @@
  */
 
 // The code is in kernel/private/classes/views/class/translation.php (#207); this file is the entry point.
-return \Exponential\View\Kernel\Class\Translation::main( __FILE__, get_defined_vars() );
+return \Exponential\View\Kernel\ContentClass\Translation::main( __FILE__, get_defined_vars() );
