@@ -116,7 +116,11 @@ Binding for the kernel and every extension.
 | remove | ehereria | take out of a list or place |
 | delete | thiria | destroy; deleted: nĩ gĩthirĩtio |
 | edit | cenjia | |
-| editor | mũcenjia / kĩnyamũ kĩa gũcenjia | person / software |
+| editor | mũcenjia / porogiramu ya gũcenjia | person / software (image editor, text editor, Online Editor); plural porogiramu cia gũcenjia; never kĩnyamũ, see section 5 |
+| program, application, software | porogiramu | agrees in class 9/10: porogiramu ĩno, ya, njerũ, o yothe; plural porogiramu cia ... |
+| tool | kĩndũ kĩa wĩra | plural: indo cia wĩra (the Tools menu, the toolbar: rũgara rwa indo cia wĩra) |
+| browser | kĩrorero | in the browser: kĩrorero-inĩ |
+| interface | kĩonereria | administration interface: kĩonereria kĩa ũrũgamĩrĩri |
 | save / store | iga | the verb "Store" of the forms |
 | Store (shop tab) | nduka | the shop, as "Shop" |
 | cancel | tiga | |
@@ -182,6 +186,25 @@ Binding for the kernel and every extension.
   iga.
 - "Login" in the user, session and audit lists is the user's login name; the Login button of the error page is the act
   (Ingĩra).
+- The editor as software is **porogiramu ya gũcenjia** ("program for editing"), not kĩnyamũ kĩa gũcenjia (decision
+  of 29 October 2026). Kĩnyamũ means "animal" (wild animal, beast); the first translation had used it as a filler word
+  for anything mechanical, so it named the editor, tools, the browser, the administration interface, a processor and
+  the php binary with a word for an animal. The choice:
+  - **porogiramu** is the loan through Swahili (programu) that Kikuyu speakers use for a computer program, and the
+    catalogue already used it ("Application name": Rĩĩtwa rĩa porogiramu; the php command line binary: porogiramu ya
+    mũtara wa maathani ya php). Swahili, the reference for terminology, says programu ya kuhariri.
+  - **gũcenjia** is the verb already used for "edit" (Cenjia) and for the person (mũcenjia), so the person and the
+    software stay visibly related.
+  - **kĩndũ kĩa gũcenjia** was rejected: kĩndũ is the content object in this glossary, so "kĩndũ kĩa gũcenjia" reads
+    as "an object to edit". **gĩcenjio** (an instrument noun of cenjia) was rejected because macenjio already means
+    "changes", so gĩcenjio would read as "a change".
+  - Porogiramu is class 9/10, so its agreement differs from the old class 7 phrase: porogiramu-inĩ ya gũcenjia (in the
+    editor), porogiramu ĩno (this), njerũ (new), ya mbere (previous), o yothe (any), nĩ yaigwo (was saved), ndĩrĩ ho
+    (is not available).
+  - The other uses of kĩnyamũ were replaced by the glossary words: a tool is kĩndũ kĩa wĩra (as the Tools menu, indo
+    cia wĩra), the browser kĩrorero, the interface kĩonereria, software porogiramu, the processor purosesa, the static
+    cache kĩigĩro kĩa ihenya kĩa tũtũ (as in "Static cache handler"). Kĩnyamũ is not used for software
+    anywhere.
 - A text that is used in several contexts has one translation in all of them, unless its context gives it another
   meaning (the cases of the table in TRANSLATING.md, "Words that need their context").
 - Product names, codes and acronyms that stay as they are (Exponential, PHP, URL, ID, VAT ...) are listed with their
