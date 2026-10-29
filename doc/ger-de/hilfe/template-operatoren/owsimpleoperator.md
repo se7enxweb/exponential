@@ -3,7 +3,7 @@ title: OW Simple Operator - PHP-Funktionen als Template-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 900
-summary: Was die Erweiterung owsimpleoperator tut, wie ihre Operatoren aus owsimpleoperator.ini registriert werden, die fünf PHP-Funktionen, die sie in dieser Installation anbietet (time, mktime, getdate, str_replace, str_rot13), und wie Sie sie aufrufen, mit jedem Beispiel auf alpha ausgegeben.
+summary: Was die Erweiterung owsimpleoperator tut, wie ihre Operatoren aus owsimpleoperator.ini registriert werden, die fünf PHP-Funktionen, die sie in dieser Installation anbietet (time, mktime, getdate, str_replace, str_rot13), und wie Sie sie aufrufen, mit jedem Beispiel auf einer Entwicklungsinstallation ausgegeben.
 keywords: owsimpleoperator, OW Simple Operator, OWSimpleOperator, PHPFunctionOperator, PermittedFunctionList, PHP-Funktion als Operator, Template-Operator, time, mktime, getdate, str_replace, str_rot13, php function operator
 type: help
 ---
@@ -64,7 +64,7 @@ PermittedClassOperatorList[]
 #PermittedClassOperatorList[]=extension/owsimpleoperator/autoloads/exampleoperator.php;ExampleOperator;example_sum
 ```
 
-Auf alpha ist die Erweiterung in den Siteaccesses `site` und `admin` aktiv, und diese fünf Namen sind ihre Operatoren.
+Auf einer Entwicklungsinstallation ist die Erweiterung in den Siteaccesses `site` und `admin` aktiv, und diese fünf Namen sind ihre Operatoren.
 
 ## Die Operatoren, die sie hier anbietet
 
@@ -82,7 +82,7 @@ Jeder nimmt bis zu zehn Argumente (`$max_operator_parameter = 10` in `OWSimpleOp
 angeben, werden beim PHP-Aufruf weggelassen, sodass die Standardwerte der PHP-Funktion selbst gelten.
 
 `str_replace` hat denselben Namen wie ein Operator der Erweiterung swark. Die Registrierung von owsimpleoperator wird
-später gelesen, daher gewinnt sie auf alpha (siehe
+später gelesen, daher gewinnt sie auf einer Entwicklungsinstallation (siehe
 [Registrierungsreihenfolge und Überschreibungen](registrierungsreihenfolge-und-ueberschreibungen.md)). Die Datumsoperatoren des
 Kernels selbst (`currentdate`, `maketime`, `makedate`, `datetime`, `l10n`) decken die meisten Bedürfnisse rund ums Datum
 ohne diese Erweiterung ab: siehe [Locale-Operatoren](locale-operatoren.md).
@@ -98,7 +98,7 @@ Verwenden Sie die Aufrufform und geben Sie jedes Argument in der Reihenfolge der
 {'Exponential'|str_rot13}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 
@@ -120,7 +120,7 @@ mktime( 0, 0, 0, 1, 1, 2026 ) = {mktime( 0, 0, 0, 1, 1, 2026 )}
 {$parts.weekday} {$parts.mday} {$parts.month} {$parts.year}, {$parts.hours}:{$parts.minutes}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 time() returned a Unix timestamp: an integer
@@ -128,7 +128,7 @@ mktime( 0, 0, 0, 1, 1, 2026 ) = 1767254400
 Saturday 4 July 2026, 12:30
 ```
 
-`mktime()` verwendet die Zeitzone des PHP-Prozesses: Auf alpha ist das die pazifische Zeit, daher ist Mitternacht am
+`mktime()` verwendet die Zeitzone des PHP-Prozesses: Auf einer Entwicklungsinstallation ist das die pazifische Zeit, daher ist Mitternacht am
 1. Januar 2026 `1767254400` und nicht der UTC-Wert. Formatieren Sie Zeitstempel für Menschen mit den Kernel-Operatoren
 `l10n` oder `datetime`, die der Locale des Siteaccess folgen.
 
@@ -141,7 +141,7 @@ angegeben haben, sodass die PHP-Funktion ein Argument zu wenig erhält:
 {'This is a great example!'|str_replace( 'great', 'very good' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 (no output)
@@ -164,7 +164,7 @@ protokolliert eine Warnung:
 {strrev( 'abc' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 (no output)

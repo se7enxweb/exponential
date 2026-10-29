@@ -3,7 +3,7 @@ title: Text helper operators of the kernel
 audience: developer, designer, app-creator
 category: development
 order: 340
-summary: Five small kernel operators - alphabet, autolink, simpletags, eztoc and month_overview - with their parameters, the settings they read, what they escape and what they do not, and examples rendered on alpha.
+summary: Five small kernel operators - alphabet, autolink, simpletags, eztoc and month_overview - with their parameters, the settings they read, what they escape and what they do not, and examples rendered on a development installation.
 keywords: alphabet, autolink, simpletags, eztoc, month_overview, table of contents, calendar, archive, links, mailto, AlphabeticalFilterSettings, SimpleTagsOperator, AutoLinkOperator
 type: help
 ---
@@ -37,7 +37,7 @@ Generated page: [alphabet](../../examples/template-operators/alphabet.md).
 `eZAlphabetOperator::fetchAlphabet()` reads `content.ini` `[AlphabeticalFilterSettings]`: for each name in
 `ContentFilterList[]` it takes the ranges of `AlphabetList[<name>]` (Unicode code points such as `97-122`, or single
 letters, separated by commas), builds the letters and converts them to the charset of `i18n.ini`. An empty
-`ContentFilterList[]` returns `false`; a list whose names have no ranges falls back to `a` to `z`. On alpha the list is
+`ContentFilterList[]` returns `false`; a list whose names have no ranges falls back to `a` to `z`. On a development installation the list is
 empty:
 
 ```tpl
@@ -46,7 +46,7 @@ ContentFilterList: {ezini( 'AlphabeticalFilterSettings', 'ContentFilterList', 'c
 alphabet() gives {$letters|get_type}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ContentFilterList: 0 entries
@@ -75,7 +75,7 @@ escaped**: wash user input first (`|wash|autolink`), otherwise markup in it pass
 {$text|autolink( 30 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Mail <a href='mailto:info@example.com'>info@example.com</a> or read <a href="https://doc.exponential.earth/en/latest/guide/templates/operators/index.html" title="https://doc.exponential.earth/en/latest/guide/templates/operators/index.html">https://doc.exponential.earth/en/...guide/templates/operators/index.html</a> today.
@@ -115,7 +115,7 @@ called, so only trusted settings belong there.
 {$text|simpletags}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Plain &lt;b&gt;&amp;&lt;/b&gt; text<br />
@@ -145,7 +145,7 @@ for the links to work.
 {eztoc( $node.data_map.body )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 
@@ -249,7 +249,7 @@ week {$number}: {foreach $week as $d}{if $d}{$d.day}{if $d.link}*{/if}{if $d.hig
 a day with content links to {foreach $month.weeks as $week}{foreach $week as $d}{if and( $d, $d.link )}{$d.link} {/if}{/foreach}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 August 2018 (previous: July /content/view/archive/144/(year)/2018/(month)/7; next: false)

@@ -16,11 +16,15 @@
  * automatic same-language fallback; ger-AT to ger-DE), because the translator loads that one in its place. With
  * FallbackMode=merge it counts with every translation of the chain together.
  *
- * Each translation file is streamed on its own and kept only as a mask of the source messages it translates, so the
- * memory stays flat however many translations there are. Reading 125 translation files of 1 to 3 MB takes seconds, so
- * the result is cached: in memory for the process and in
+ * Each translation file is read on its own and kept only as a mask of the source messages it translates, so the
+ * memory stays flat however many translations there are. A well-formed file is read by string search
+ * (scanMessageKeys(), about a third of the time of a DOM node per message), any other streamed with XMLReader. The masks are
+ * kept per file in <cache directory>/uiswitch/translation-masks.json (cachedMask()), so a changed translation reads
+ * only itself again. The result is cached: in memory for the process and in
  * <cache directory>/uiswitch/language-catalogue.json, both keyed by a signature of the names, sizes and modification
  * times of the files read. A changed or added file builds the catalogue again on its next use; nothing needs clearing.
+ * The cache files get the installation's file mode (writeCacheFile()), so root (Velocity) and the site user (PHP-FPM)
+ * can both replace them.
  * Guide: doc/eng-us/features/6.0/ui-switch-languages.md
  */
 class expUISwitchLanguageCatalogue
@@ -266,7 +270,16 @@ class expUISwitchLanguageCatalogue
         // Every translation is read on its own and kept only as a mask of the source messages it translates (a byte
         // each, some 19 KB), never as its messages: with 125 complete translations of 19,000 messages their key
         // arrays took more than a gigabyte together.
-        $sourceIndex = array_flip( array_keys( $this->messageKeys( $this->path( 'share/translations/untranslated/translation.ts' ), false ) ) );
+        // The masks are kept per file (masks()), so a changed translation reads only that file again; the source
+        // catalogue is only read when a mask has to be built.
+        $sourceFile = $this->path( 'share/translations/untranslated/translation.ts' );
+        $sourceIndex = null;
+        $indexOf = function () use ( &$sourceIndex, $sourceFile ) {
+            if ( $sourceIndex === null )
+                $sourceIndex = array_flip( array_keys( $this->messageKeys( $sourceFile, false ) ) );
+            return $sourceIndex;
+        };
+        $sourceStamp = self::fileStamp( $sourceFile );
         $entries = array();
         $maskOf = array();
         $resolver = $this->resolver();
@@ -305,15 +318,17 @@ class expUISwitchLanguageCatalogue
                 {
                     // the translated source messages of the files together: the masks OR-ed, a byte per message
                     $mask = '';
+                    $count = 0;
                     $any = false;
                     foreach ( $files as $ts )
                     {
                         if ( !isset( $maskOf[$ts] ) )
-                            $maskOf[$ts] = $this->translatedMask( $ts, $sourceIndex );
+                            $maskOf[$ts] = $this->cachedMask( $ts, $sourceStamp, $indexOf );
                         $mask = $mask === '' ? $maskOf[$ts]['mask'] : ( $mask | $maskOf[$ts]['mask'] );
                         $any = $any || $maskOf[$ts]['any'];
+                        $count = $maskOf[$ts]['count'];
                     }
-                    $coverage = self::maskCoveragePercent( $mask, count( $sourceIndex ), $any );
+                    $coverage = self::maskCoveragePercent( $mask, $count, $any );
                 }
             }
             $entries[$code] = array( 'native' => $names['LanguageName'], 'english' => $names['InternationalLanguageName'],
@@ -321,7 +336,150 @@ class expUISwitchLanguageCatalogue
                                      'intl_native' => strpos( $code, '@' ) === false ? self::intlDisplayName( $names['ContentLanguage'], $names['ContentLanguage'] ) : '',
                                      'test' => strtolower( $names['TestLanguage'] ) === 'true' );
         }
+        $this->saveMasks();
         return $entries;
+    }
+
+    /** @var array|null the mask store: file => hash( stamp, source, count, any, mask ), see cachedMask() */
+    protected $maskStore = null;
+
+    /** @var bool whether the mask store changed since it was read or last saved */
+    protected $maskStoreChanged = false;
+
+    /** @var float when the mask store was last saved (or read) */
+    protected $maskStoreSaved = 0.0;
+
+    /**
+     * The size, modification time and inode of a file ('' when it is missing): a file replaced or changed has
+     * another stamp.
+     *
+     * @param string $file
+     * @return string
+     */
+    public static function fileStamp( $file )
+    {
+        clearstatcache( true, $file );
+        $stat = @stat( $file );
+        return $stat ? $stat['size'] . ':' . $stat['mtime'] . ':' . $stat['ino'] : '';
+    }
+
+    /**
+     * translatedMask() of a translation file against a source catalogue, with the number of source messages (count),
+     * kept per file in <cache directory>/uiswitch/translation-masks.json: read again only when the file's stamp
+     * (fileStamp()) or that of its source catalogue changed. One changed translation (a translation landing) builds
+     * only its own mask again. Used for the kernel's translations here and for the extensions' by
+     * expI18nFallbackReport.
+     *
+     * @param string $file
+     * @param string $sourceStamp what the source catalogue is: fileStamp() of it, or of every file it is made of
+     * @param callable $sourceIndex function(): key => position of the source messages, called only when needed
+     * @return array hash( mask, any, count )
+     */
+    public function cachedMask( $file, $sourceStamp, callable $sourceIndex )
+    {
+        $this->loadMasks();
+        $stamp = self::fileStamp( $file );
+        if ( isset( $this->maskStore[$file] ) )
+        {
+            $kept = $this->maskStore[$file];
+            if ( is_array( $kept ) && isset( $kept['stamp'], $kept['source'], $kept['count'], $kept['mask'] )
+                 && $kept['stamp'] === $stamp && $kept['source'] === (string)$sourceStamp )
+            {
+                $mask = self::decodeMask( (string)$kept['mask'] );
+                if ( $mask !== null && strlen( $mask ) === (int)$kept['count'] )
+                    return array( 'mask' => $mask, 'any' => !empty( $kept['any'] ), 'count' => (int)$kept['count'] );
+            }
+        }
+        $index = $sourceIndex();
+        $result = $this->translatedMask( $file, $index );
+        $result['count'] = count( $index );
+        if ( $stamp !== '' )
+        {
+            $this->maskStore[$file] = array( 'stamp' => $stamp, 'source' => (string)$sourceStamp, 'count' => $result['count'],
+                                             'any' => $result['any'], 'mask' => self::encodeMask( $result['mask'] ) );
+            $this->maskStoreChanged = true;
+            // a long build keeps what it has read so far: a request stopped by a time limit leaves the masks it built
+            if ( microtime( true ) - $this->maskStoreSaved > 5 )
+                $this->saveMasks();
+        }
+        return $result;
+    }
+
+    /**
+     * Writes the mask store when it changed, without the files that are gone.
+     */
+    public function saveMasks()
+    {
+        if ( !$this->maskStoreChanged || !is_array( $this->maskStore ) )
+            return;
+        $this->maskStoreChanged = false;
+        $this->maskStoreSaved = microtime( true );
+        $file = $this->maskFile();
+        if ( $file === '' )
+            return;
+        foreach ( array_keys( $this->maskStore ) as $path )
+        {
+            if ( !is_file( $path ) )
+                unset( $this->maskStore[$path] );
+        }
+        $this->store( $file, json_encode( array( 'format' => self::FORMAT, 'masks' => $this->maskStore ) ) );
+    }
+
+    protected function loadMasks()
+    {
+        if ( $this->maskStore !== null )
+            return;
+        $this->maskStore = array();
+        $this->maskStoreSaved = microtime( true );
+        $file = $this->maskFile();
+        if ( $file === '' || !is_file( $file ) )
+            return;
+        $data = json_decode( (string)@file_get_contents( $file ), true );
+        if ( is_array( $data ) && isset( $data['format'], $data['masks'] ) && $data['format'] === self::FORMAT && is_array( $data['masks'] ) )
+            $this->maskStore = $data['masks'];
+    }
+
+    /**
+     * The mask store's file, or '' when there is none.
+     *
+     * @return string
+     */
+    protected function maskFile()
+    {
+        $file = $this->cacheFile();
+        return $file === '' ? '' : dirname( $file ) . '/translation-masks.json';
+    }
+
+    /**
+     * A mask as text for the store: compressed (a mask is long runs of the same byte) and in base64.
+     *
+     * @param string $mask
+     * @return string
+     */
+    protected static function encodeMask( $mask )
+    {
+        if ( function_exists( 'gzdeflate' ) )
+            return 'z' . base64_encode( (string)gzdeflate( $mask, 6 ) );
+        return 'b' . base64_encode( $mask );
+    }
+
+    /**
+     * @param string $text encodeMask()
+     * @return string|null
+     */
+    protected static function decodeMask( $text )
+    {
+        $data = base64_decode( (string)substr( $text, 1 ), true );
+        if ( !is_string( $data ) )
+            return null;
+        if ( $text[0] === 'b' )
+            return $data;
+        if ( $text[0] === 'z' && function_exists( 'gzinflate' ) )
+        {
+            $mask = @gzinflate( $data );
+            return is_string( $mask ) ? $mask : null;
+        }
+        return null;
     }
 
     /**
@@ -434,7 +592,17 @@ class expUISwitchLanguageCatalogue
     {
         $mask = str_repeat( "\x00", count( $sourceIndex ) );
         $any = false;
-        $this->eachMessageKey( $file, true, function ( $key ) use ( &$mask, &$any, $sourceIndex ) {
+        $keys = $this->scannedKeys( $file, true );
+        if ( $keys !== null )
+        {
+            foreach ( $keys as $key )
+            {
+                if ( isset( $sourceIndex[$key] ) )
+                    $mask[$sourceIndex[$key]] = "\x01";
+            }
+            return array( 'mask' => $mask, 'any' => $keys !== array() );
+        }
+        $this->readMessageKeys( $file, true, function ( $key ) use ( &$mask, &$any, $sourceIndex ) {
             $any = true;
             if ( isset( $sourceIndex[$key] ) )
                 $mask[$sourceIndex[$key]] = "\x01";
@@ -452,11 +620,30 @@ class expUISwitchLanguageCatalogue
      */
     public function messageKeys( $file, $translatedOnly )
     {
+        $list = $this->scannedKeys( $file, $translatedOnly );
+        if ( $list !== null )
+            return array_fill_keys( $list, true );
         $keys = array();
-        $this->eachMessageKey( $file, $translatedOnly, function ( $key ) use ( &$keys ) {
+        $this->readMessageKeys( $file, $translatedOnly, function ( $key ) use ( &$keys ) {
             $keys[$key] = true;
         } );
         return $keys;
+    }
+
+    /**
+     * The keys of a translation file's messages by string search (scannableText(), scanMessageKeys()), in file
+     * order, or null when the file has to be streamed with XMLReader (readMessageKeys()) or is missing.
+     *
+     * @param string $file
+     * @param bool $translatedOnly
+     * @return string[]|null
+     */
+    protected function scannedKeys( $file, $translatedOnly )
+    {
+        if ( !is_file( $file ) )
+            return null;
+        $text = $this->scannableText( $file );
+        return $text === null ? null : $this->scanMessageKeys( $text, $translatedOnly );
     }
 
     /**
@@ -467,6 +654,224 @@ class expUISwitchLanguageCatalogue
      * @param callable $each function( string $key )
      */
     protected function eachMessageKey( $file, $translatedOnly, callable $each )
+    {
+        if ( !is_file( $file ) )
+            return;
+        $keys = $this->scannedKeys( $file, $translatedOnly );
+        if ( $keys === null )
+        {
+            $this->readMessageKeys( $file, $translatedOnly, $each );
+            return;
+        }
+        foreach ( $keys as $key )
+            $each( $key );
+    }
+
+    /**
+     * The text of a translation file when scanMessageKeys() reads it as the XML parser would, else null
+     * (readMessageKeys() then streams it): a complete UTF-8 file without CDATA sections, entity declarations or
+     * processing instructions after the declaration, with XML comments taken out and its line ends as the parser
+     * gives them (\n). A broken file (a merge in progress) is left to the streaming reader, which counts what it read
+     * before the error.
+     *
+     * @param string $file
+     * @return string|null
+     */
+    protected function scannableText( $file )
+    {
+        $text = @file_get_contents( $file );
+        if ( !is_string( $text ) || $text === '' )
+            return null;
+        if ( strpos( $text, '<![CDATA[' ) !== false || strpos( $text, '<!ENTITY' ) !== false || strpos( $text, '<?', 5 ) !== false )
+            return null;
+        if ( strpos( $text, '<!--' ) !== false )
+            $text = (string)preg_replace( '/<!--.*?-->/s', '', $text );
+        // only UTF-8 (the parser would convert another encoding; the scan reads the bytes as they are)
+        $end = strncmp( $text, '<?xml', 5 ) === 0 ? strpos( $text, '?>' ) : false;
+        if ( $end !== false && preg_match( '/encoding\s*=\s*["\']([^"\']*)/i', substr( $text, 0, $end ), $match ) && strcasecmp( $match[1], 'utf-8' ) !== 0 )
+            return null;
+        // Complete: it ends with </TS>, every message and context is closed (a <message/> is left to the reader too),
+        // and no merge is in progress. The translator does not load a broken file at all (eZTSTranslator).
+        // (scanMessageKeys() counts the messages)
+        if ( substr( rtrim( substr( $text, -256 ) ), -5 ) !== '</TS>' ||strpos( $text, "\n<<<<<<< " ) !== false || strpos( $text, "\n>>>>>>> " ) !== false )
+            return null;
+        if ( strpos( $text, "\r" ) !== false )
+            $text = str_replace( array( "\r\n", "\r" ), "\n", $text );
+        return $text;
+    }
+
+    /**
+     * Calls $each with the key of every message of the text of a well-formed Qt Linguist file (scannableText()),
+     * found by string search: the same keys readMessageKeys() streams, in a fraction of the time (a DOM node per
+     * message took a quarter of a second for each 3 MB translation; the administration has more than a hundred).
+     * The text of an element is its character data without the elements inside it (Qt's <byte/>, <numerusform>),
+     * with the entities resolved, as DOM's textContent.
+     *
+     * @param string $text
+     * @param bool $translatedOnly
+     * @return string[]|null the keys in file order, null when the text is not as expected (then streamed instead)
+     */
+    protected function scanMessageKeys( $text, $translatedOnly )
+    {
+        $keys = array();
+        $context = '';
+        // each piece ends where a message ends: what is before its <message is the end of the previous context and
+        // the start of a new one, if any
+        $pieces = explode( '</message>', $text );
+        array_pop( $pieces );
+        // every message closed (a <message/> or an unclosed one is left to the stream)
+        if ( count( $pieces ) !== substr_count( $text, '<message' ) )
+            return null;
+        foreach ( $pieces as $piece )
+        {
+            $start = strrpos( $piece, '<message' );
+            if ( $start === false )
+                return null;
+            if ( strpos( $piece, '<context' ) !== false )
+            {
+                $opened = strrpos( substr( $piece, 0, $start ), '<context' );
+                if ( $opened !== false )
+                {
+                    $context = '';
+                    $name = self::tagPosition( $piece, 'name', $opened );
+                    if ( $name !== false && $name < $start )
+                        $context = trim( (string)self::elementText( $piece, 'name', $name ) );
+                }
+            }
+            $body = substr( $piece, $start );
+
+            $type = '';
+            $translation = '';
+            $at = strpos( $body, '<translation' );
+            if ( $at !== false )
+            {
+                $tagEnd = strpos( $body, '>', $at );
+                if ( $tagEnd === false )
+                    return null;
+                if ( $tagEnd > $at + 12 )
+                {
+                    $attributes = substr( $body, $at + 12, $tagEnd - $at - 12 );
+                    if ( strpos( $attributes, 'type' ) !== false && preg_match( '/\btype\s*=\s*(["\'])(.*?)\1/', $attributes, $match ) )
+                        $type = $match[2];
+                }
+                if ( $body[$tagEnd - 1] !== '/' )
+                {
+                    $close = strpos( $body, '</translation>', $tagEnd );
+                    if ( $close === false )
+                        return null;
+                    $translation = substr( $body, $tagEnd + 1, $close - $tagEnd - 1 );
+                }
+            }
+            if ( $type === 'obsolete' )
+                continue;
+            if ( $translatedOnly )
+            {
+                if ( $type === 'unfinished' )
+                    continue;
+                if ( strpos( $translation, '<' ) !== false || strpos( $translation, '&' ) !== false )
+                    $translation = self::decodeText( $translation );
+                if ( trim( $translation ) === '' )
+                    continue;
+            }
+
+            $open = strpos( $body, '<source>' );
+            if ( $open !== false )
+            {
+                $close = strpos( $body, '</source>', $open );
+                if ( $close === false )
+                    return null;
+                $source = substr( $body, $open + 8, $close - $open - 8 );
+                if ( strpos( $source, '<' ) !== false || strpos( $source, '&' ) !== false )
+                    $source = self::decodeText( $source );
+            }
+            else
+                $source = self::childText( $body, 'source' );
+            $comment = strpos( $body, '<comment' ) !== false ? self::childText( $body, 'comment' ) : '';
+            $keys[] = $context . "\x1F" . $source . "\x1F" . $comment;
+        }
+        return $keys;
+    }
+
+    /**
+     * Character data as DOM's textContent gives it: the elements inside taken out, the entities resolved.
+     *
+     * @param string $inner
+     * @return string
+     */
+    protected static function decodeText( $inner )
+    {
+        if ( strpos( $inner, '<' ) !== false )
+            $inner = strip_tags( $inner );
+        if ( strpos( $inner, '&' ) !== false )
+            $inner = html_entity_decode( $inner, ENT_QUOTES | ENT_XML1, 'UTF-8' );
+        return $inner;
+    }
+
+    /**
+     * The position of the next start tag <$name> or <$name ...> in $text from $offset (not <$nameother>), or false.
+     *
+     * @param string $text
+     * @param string $name
+     * @param int $offset
+     * @return int|false
+     */
+    protected static function tagPosition( $text, $name, $offset )
+    {
+        $length = strlen( $name ) + 1;
+        while ( ( $at = strpos( $text, '<' . $name, $offset ) ) !== false )
+        {
+            $next = isset( $text[$at + $length] ) ? $text[$at + $length] : '';
+            if ( $next === '>' || $next === '/' || $next === ' ' || $next === "\n" || $next === "\t" || $next === "\r" )
+                return $at;
+            $offset = $at + $length;
+        }
+        return false;
+    }
+
+    /**
+     * The text of the first <$name> element directly in a message's body, '' without one.
+     *
+     * @param string $body
+     * @param string $name
+     * @return string
+     */
+    protected static function childText( $body, $name )
+    {
+        $at = self::tagPosition( $body, $name, 0 );
+        return $at === false ? '' : (string)self::elementText( $body, $name, $at );
+    }
+
+    /**
+     * The text of the element whose start tag is at $at: its character data with the elements inside it taken out
+     * and the entities resolved; '' for an empty element, null when it is not closed.
+     *
+     * @param string $text
+     * @param string $name
+     * @param int $at
+     * @return string|null
+     */
+    protected static function elementText( $text, $name, $at )
+    {
+        $open = strpos( $text, '>', $at );
+        if ( $open === false )
+            return null;
+        if ( $text[$open - 1] === '/' )
+            return '';
+        $close = strpos( $text, '</' . $name . '>', $open );
+        if ( $close === false )
+            return null;
+        return self::decodeText( substr( $text, $open + 1, $close - $open - 1 ) );
+    }
+
+    /**
+     * Calls $each with the key of every message of a Qt Linguist file, streamed with XMLReader: for the files
+     * scanMessageKeys() does not read (a broken file counts what was read before the error).
+     *
+     * @param string $file
+     * @param bool $translatedOnly
+     * @param callable $each function( string $key )
+     */
+    protected function readMessageKeys( $file, $translatedOnly, callable $each )
     {
         if ( !is_file( $file ) || !class_exists( 'XMLReader' ) )
             return;
@@ -480,8 +885,12 @@ class expUISwitchLanguageCatalogue
         $inName = false;
         try
         {
-            while ( @$reader->read() )
+            // after a message the reader stands on what follows it (next()), which may be the next message itself
+            // (</message><message> without a line between them): that node is looked at before reading on
+            $advance = true;
+            while ( !$advance || @$reader->read() )
             {
+                $advance = true;
                 if ( $reader->nodeType !== XMLReader::ELEMENT )
                     continue;
                 if ( $reader->name === 'context' )
@@ -509,11 +918,12 @@ class expUISwitchLanguageCatalogue
                             $type = $child->getAttribute( 'type' );
                         }
                     }
+                    // past the message and its children (at the end of the file next() fails and read() ends the loop)
+                    $advance = !@$reader->next();
                     if ( $translatedOnly && ( trim( $translation ) === '' || $type === 'unfinished' || $type === 'obsolete' ) )
                         continue;
                     if ( !$translatedOnly && $type === 'obsolete' )
                         continue;
-                    $reader->next();
                     $each( $context . "\x1F" . $source . "\x1F" . $comment );
                 }
             }
@@ -582,18 +992,38 @@ class expUISwitchLanguageCatalogue
      */
     protected function store( $file, $data )
     {
-        if ( !is_string( $data ) )
-            return;
+        self::writeCacheFile( $file, $data );
+    }
+
+    /**
+     * Writes a cache file atomically, its directory with the installation's directory mode (site.ini [FileSettings]
+     * StorageDirPermissions) and the file with its file mode (StorageFilePermissions, within the installation's
+     * limits): the other user that runs the installation (root for Velocity and the command line, the site user for
+     * PHP-FPM) can then replace it. A cache that cannot be written is no error: the result is kept in memory only.
+     *
+     * @param string $file
+     * @param string|false $data
+     * @return bool whether the file was written
+     */
+    public static function writeCacheFile( $file, $data )
+    {
+        if ( !is_string( $data ) || !class_exists( 'eZFile' ) || !class_exists( 'eZDir' ) )
+            return false;
         try
         {
-            // eZFile and eZDir use the installation's file and directory modes; without them (no kernel) the
-            // catalogue is kept in memory only
-            if ( class_exists( 'eZFile' ) && class_exists( 'eZDir' ) )
-                @eZFile::create( basename( $file ), dirname( $file ), $data, true );
+            if ( !@eZFile::create( basename( $file ), dirname( $file ), $data, true ) )
+                return false;
+            if ( class_exists( 'eZINI' ) )
+            {
+                $permissions = octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
+                if ( $permissions > 0 && ( @fileperms( $file ) & 0777 ) !== eZFile::fileMode( $permissions ) )
+                    @chmod( $file, eZFile::fileMode( $permissions ) );
+            }
+            return true;
         }
         catch ( Throwable $e )
         {
-            // kept in memory only
+            return false;
         }
     }
 

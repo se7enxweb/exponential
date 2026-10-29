@@ -3,7 +3,7 @@ title: "PHP string functions: encode and format"
 audience: developer, designer, app-creator
 category: development
 order: 180
-summary: The encoding and formatting operators of eZTemplateStringsOperator (bin2hex, hex2bin, convert_uuencode, convert_uudecode, quoted_printable_encode, quoted_printable_decode, htmlentities, html_entity_decode, htmlspecialchars_decode, sprintf, vsprintf, number_format) with their PHP argument mapping and defaults, and examples rendered on alpha.
+summary: The encoding and formatting operators of eZTemplateStringsOperator (bin2hex, hex2bin, convert_uuencode, convert_uudecode, quoted_printable_encode, quoted_printable_decode, htmlentities, html_entity_decode, htmlspecialchars_decode, sprintf, vsprintf, number_format) with their PHP argument mapping and defaults, and examples rendered on a development installation.
 keywords: bin2hex, hex2bin, convert_uuencode, convert_uudecode, quoted_printable_encode, quoted_printable_decode, htmlentities, html_entity_decode, htmlspecialchars_decode, sprintf, vsprintf, number_format, format, eZTemplateStringsOperator
 type: help
 ---
@@ -55,7 +55,7 @@ Generated references: [quoted_printable_encode](../../examples/template-operator
 'Gr=C3=BC=C3=9Fe'|quoted_printable_decode = {'Gr=C3=BC=C3=9Fe'|quoted_printable_decode}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'Fit'|bin2hex = 466974
@@ -112,7 +112,7 @@ Generated reference: [htmlspecialchars_decode](../../examples/template-operators
 'it&#039;s'|htmlspecialchars_decode( 0 ) = {'it&#039;s'|htmlspecialchars_decode( 0 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'Café & "Bar"'|htmlentities = Caf&eacute; &amp; &quot;Bar&quot;
@@ -146,7 +146,7 @@ The same with the arguments in one array (a non-array parameter is wrapped in on
 
 Generated reference: [vsprintf](../../examples/template-operators/vsprintf.md).
 
-The first line uses the Recipes category of alpha (node 144):
+The first line uses the Recipes category of a development installation (node 144):
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 144 ) )}
@@ -156,7 +156,7 @@ The first line uses the Recipes category of alpha (node 144):
 {'%s and %s'|vsprintf( array( 'fit', 'healthy' ) )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Recipes has 18 children
@@ -192,7 +192,7 @@ Returns a string. For numbers in the visitor's locale use `l10n( 'number' )` ins
 1234567.891|number_format( 2, '.', ' ' ) = {1234567.891|number_format( 2, '.', ' ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1234567.891|number_format = 1,234,568

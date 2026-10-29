@@ -46,7 +46,7 @@ sites built with Exponential, whether or not they write code. It explains what t
 |---|---|
 | Learn what a design and the design cascade are | [What a design is](../designers/theme-design/what-a-design-is.md), [The design cascade](../designers/theme-design/the-design-cascade.md) |
 | See which designs a siteaccess uses | [Designs and siteaccesses](../designers/theme-design/designs-and-siteaccesses.md) |
-| Look at the shipped themes | [The themes that ship with Exponential](../designers/theme-design/themes-on-alpha.md) |
+| Look at the shipped themes | [The themes that ship with Exponential](../designers/theme-design/themes-that-ship-with-exponential.md) |
 | Choose a starting theme | [Choosing a starting theme](../designers/theme-design/choosing-a-starting-theme.md) |
 | Find which template drew a part of a page | [Tools for theme designers](tools-for-theme-designers.md), [Template path comments](../designers/templates/template-path-comments.md) |
 

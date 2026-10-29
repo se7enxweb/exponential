@@ -3,14 +3,14 @@ title: Ein Template von Smarty umziehen
 audience: developer, designer, app-creator
 category: templates
 order: 50
-summary: Eine Anleitung zum Portieren - ein typisches Listen-Template aus Smarty in drei Schritten in die Template-Sprache übertragen (Variablen, Daten aus fetch, die Schleife mit Bedingungen, Links, Daten und Maskierung), jeder Schritt auf alpha gerendert, plus eine Checkliste der vorzunehmenden Ersetzungen.
+summary: Eine Anleitung zum Portieren - ein typisches Listen-Template aus Smarty in drei Schritten in die Template-Sprache übertragen (Variablen, Daten aus fetch, die Schleife mit Bedingungen, Links, Daten und Maskierung), jeder Schritt auf einer Entwicklungsinstallation gerendert, plus eine Checkliste der vorzunehmenden Ersetzungen.
 keywords: Smarty, portieren, migrieren, umwandeln, übertragen, Anleitung zum Portieren, Checkliste, fetch, foreach, sequence, cycle, ezurl, wash, datetime, port, migrate, convert, porting guide, checklist
 type: help
 ---
 # Ein Template von Smarty umziehen
 
 Diese Seite portiert ein kleines Template aus Smarty Schritt für Schritt in die Template-Sprache und endet mit einer Checkliste für Ihre
-eigenen Templates. Jeder Schritt wurde auf alpha gegen die Startseite „Fit & Healthy“ (Knoten 89) gerendert.
+eigenen Templates. Jeder Schritt wurde auf einer Entwicklungsinstallation gegen die Startseite „Fit & Healthy“ (Knoten 89) gerendert.
 
 ## Inhalt
 
@@ -52,7 +52,7 @@ holt das Template den Knoten selbst. Aus `escape` wird `wash`:
 <h2>{$site.name|wash}</h2>
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <h2>Fit &amp; Healthy</h2>
@@ -73,7 +73,7 @@ es gibt kein `@` und kein `==`:
 <p>{$pages|count} of {$site.children_count} pages</p>
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <h2>Fit &amp; Healthy</h2>
@@ -114,7 +114,7 @@ Das fertige Template. Was sich geändert hat:
 {undef $site $limit $pages}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <h2>Fit &amp; Healthy</h2><ul>  <li class="odd"><a href="/slash-quotes">Slash Quotes</a>
@@ -123,7 +123,7 @@ Ausgabe auf alpha:
       2026-08-31</li></ul>
 ```
 
-Die Liste zeigt, was auf alpha zuletzt veröffentlicht war, als diese Seite entstand; auf Ihrer Website werden die Namen also andere sein.
+Die Liste zeigt, was auf einer Entwicklungsinstallation zuletzt veröffentlicht war, als diese Seite entstand; auf Ihrer Website werden die Namen also andere sein.
 
 ## Checkliste
 

@@ -3,7 +3,7 @@ title: Layouts, expui and expai operators
 audience: developer, designer, app-creator
 category: development
 order: 460
-summary: The template operators of the Exponential layout extensions (expl_parse, expl_strip, expl_has, expl_first, explayouts_ui_has_template), of expui (exp_config) and of expai (expai_money, expai_tokens, expai_number, expai_retention, expai_json), with parameters, return values, escaping, and examples rendered on alpha, the expai ones on the admin siteaccess.
+summary: The template operators of the Exponential layout extensions (expl_parse, expl_strip, expl_has, expl_first, explayouts_ui_has_template), of expui (exp_config) and of expai (expai_money, expai_tokens, expai_number, expai_retention, expai_json), with parameters, return values, escaping, and examples rendered on a development installation, the expai ones on the admin siteaccess.
 keywords: explayouts, expl_parse, expl_strip, expl_has, expl_first, explblock, explayouts_ui_has_template, expui, exp_config, expai, expai_money, expai_tokens, expai_number, expai_retention, expai_json
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Three Exponential extension families add their own operators. Each exists only where its extension is active:
 explayouts, explayouts_ui and expui on the sites and the administration, expai only on the administration siteaccesses
-of alpha (its operators are not registered on `site`).
+of a development installation (its operators are not registered on `site`).
 
 | Extension | Class and file | Operators |
 |---|---|---|
@@ -81,7 +81,7 @@ it to include optional parts only when a design provides them.
 6 explayouts_ui_has_template: {explayouts_ui_has_template( 'pagelayout.tpl' )|choose( 'no', 'yes' )} / {explayouts_ui_has_template( 'no/such/template.tpl' )|choose( 'no', 'yes' )} / {explayouts_ui_has_template( '../settings/site.ini' )|choose( 'no', 'yes' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 expl_parse blocks: title (1), lead (1)
@@ -114,7 +114,7 @@ starts: {$script|extract_left( 48 )|wash}
 ends:   {$script|extract_right( 9 )|wash}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 starts: &lt;script type=&quot;application/json&quot; data-exp-config&gt;
@@ -157,7 +157,7 @@ cannot be encoded gives `null` and a warning in the debug log.
 5 expai_json: {hash( 'text', '</script><b>"x"</b>', 'n', 3 )|expai_json}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 expai_money: $0.06 / < $0.01 / ≈$0.06

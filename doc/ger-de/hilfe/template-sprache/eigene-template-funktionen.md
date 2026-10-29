@@ -3,7 +3,7 @@ title: Eigene Template-Funktionen
 audience: developer, app-creator
 category: development
 order: 500
-summary: Eine Template-Funktion (ein Tag in geschweiften Klammern mit benannten Parametern und wahlweise einem Rumpf) in einer Erweiterung schreiben - functionList, hasChildren, attributeList, process, Parameter auswerten, den Rumpf rendern, Registrierung in eztemplateautoload.php, Hinweise zur Kompilierzeit - und die Funktionen des Kernels erweitern oder überschreiben, mit einer Beispielfunktion auf alpha gerendert.
+summary: Eine Template-Funktion (ein Tag in geschweiften Klammern mit benannten Parametern und wahlweise einem Rumpf) in einer Erweiterung schreiben - functionList, hasChildren, attributeList, process, Parameter auswerten, den Rumpf rendern, Registrierung in eztemplateautoload.php, Hinweise zur Kompilierzeit - und die Funktionen des Kernels erweitern oder überschreiben, mit einer Beispielfunktion auf einer Entwicklungsinstallation gerendert.
 keywords: Template-Funktion, eigene Funktion, functionList, hasChildren, attributeList, process, processNode, elementValue, eZTemplateFunctionArray, function_names, function_attributes, functionTemplateHints, Funktion überschreiben, template function, custom function, override function
 type: help
 ---
@@ -120,7 +120,7 @@ behandelt.
 
 ## Sie nutzen
 
-Nicht als installierte Erweiterung auf alpha ausgeführt: Das Skript, das diese Beispiele renderte, registrierte den Eintrag oben im Speicher an
+Nicht als installierte Erweiterung auf einer Entwicklungsinstallation ausgeführt: Das Skript, das diese Beispiele renderte, registrierte den Eintrag oben im Speicher an
 der Template-Engine, mit der Klasse in einem Arbeitsordner. Interpretierte und kompilierte Ergebnisse waren gleich.
 
 ```tpl
@@ -129,7 +129,7 @@ der Template-Engine, mit der Klasse in einem Arbeitsordner. Interpretierte und k
 {c11_box title='Plain'}<p>Default class</p>{/c11_box}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <section class="teaser"><h2>Fit &amp; Healthy</h2><p>16 children</p></section><section class="box"><h2>Plain</h2><p>Default class</p></section>
@@ -141,7 +141,7 @@ Ein fehlender Parameter, von der eigenen Prüfung der Funktion behandelt:
 {c11_box}<p>no title</p>{/c11_box}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 (no output)
@@ -160,7 +160,7 @@ Namen antwortet), also wird auch der Rumpf verschluckt, und die Engine protokoll
 {c11_unknown title='x'}<p>body</p>{/c11_unknown}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 (no output)
@@ -185,7 +185,7 @@ hinzu, der interpretierte und kompilierte Ausgabe vergleicht; die Gründe sind d
 
 Funktionsnamen folgen genau den Regeln für Operatoren: Der letzte Eintrag in einer `eztemplateautoload.php` für einen Namen gewinnt, und eine
 Klasse registriert beim Laden alle Namen ihres `functionList()`
-([Reihenfolge der Registrierung und Overrides](../template-operatoren/registrierungsreihenfolge-und-ueberschreibungen.md)). Auf alpha ist kein Funktionsname
+([Reihenfolge der Registrierung und Overrides](../template-operatoren/registrierungsreihenfolge-und-ueberschreibungen.md)). Auf einer Entwicklungsinstallation ist kein Funktionsname
 doppelt registriert. Um eine Funktion des Kernels oder der Bibliothek aus einer Erweiterung zu ändern:
 
 - leiten Sie von der Klasse ab, der der Name gehört (zum Beispiel `eZTemplateBlockFunction`, der `set-block`, `append-block` und `run-once`
@@ -193,9 +193,9 @@ doppelt registriert. Um eine Funktion des Kernels oder der Bibliothek aus einer 
 - registrieren Sie die Unterklasse für **alle** Namen der Elternklasse, und halten Sie `function_attributes` und `hasChildren()` mit der
   Elternklasse übereinstimmend;
 - entfernen Sie den Eintrag in `functionTemplateHints()` der Elternklasse für den Namen, den Sie ändern, sonst behalten kompilierte Templates
-  den Code der Elternklasse ([der Fall bei Operatoren, auf alpha gezeigt](../template-operatoren/kernel-operatoren-ueberschreiben.md#den-code-zur-übersetzungszeit-entfernen-den-sie-ändern)).
+  den Code der Elternklasse ([der Fall bei Operatoren, auf einer Entwicklungsinstallation gezeigt](../template-operatoren/kernel-operatoren-ueberschreiben.md#den-code-zur-übersetzungszeit-entfernen-den-sie-ändern)).
 
-Nicht mit einer Funktion auf alpha vorgeführt: Das Überschreiben eines Funktionsnamens nutzt denselben Codepfad wie bei Operatoren
+Nicht mit einer Funktion auf einer Entwicklungsinstallation vorgeführt: Das Überschreiben eines Funktionsnamens nutzt denselben Codepfad wie bei Operatoren
 (`registerAutoloadFunctions()`, `registerFunctionsInternal()`), den [Operatoren des Kernels überschreiben](../template-operatoren/kernel-operatoren-ueberschreiben.md)
 gerendert zeigt. Das Überschreiben der eigenen Kontrollfunktionen der Sprache (`if`, `foreach`, `def`, `include`) ändert jedes Template auf dem
 Siteaccess; ziehen Sie einen neuen Funktionsnamen vor.

@@ -3,14 +3,14 @@ title: "Smarty and the template language: the differences in depth"
 audience: developer, designer, app-creator
 category: development
 order: 40
-summary: The differences that trip up Smarty users, each shown on alpha - no infix arithmetic or comparison, no PHP in templates, no automatic escaping, unknown operators that pass their input through, strict def and set, braces in CSS and JavaScript, operators as registered PHP classes, fetch and objects, overrides instead of inheritance, namespaces and whitespace.
+summary: The differences that trip up Smarty users, each shown on a development installation - no infix arithmetic or comparison, no PHP in templates, no automatic escaping, unknown operators that pass their input through, strict def and set, braces in CSS and JavaScript, operators as registered PHP classes, fetch and objects, overrides instead of inheritance, namespaces and whitespace.
 keywords: Smarty, differences, infix, operators, php tag, escaping, wash, def, set, warnings, braces, css, literal, override, inheritance, namespaces, whitespace
 type: help
 ---
 # Smarty and the template language: the differences in depth
 
 [The side-by-side table](smarty-side-by-side.md) shows where the two languages match. This page takes the places where
-they do not, explains each from the code of the template engine and shows what happens on alpha when a Smarty habit
+they do not, explains each from the code of the template engine and shows what happens on a development installation when a Smarty habit
 meets the template language.
 
 ## Contents
@@ -40,7 +40,7 @@ language. It reads the number `1`, finds characters it cannot use, logs a parser
 [{1+2}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1]
@@ -66,7 +66,7 @@ not greater than 1.
 [{if $a > 1}greater{else}not greater{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [not greater]
@@ -91,7 +91,7 @@ Every calculation and comparison is an operator, either called or piped: `sum`, 
 [{if and( $a|ge( 0 ), $a|lt( 10 ), not( $a|eq( 5 ) ) )}in range{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [3] [3] [12] [6]
@@ -110,7 +110,7 @@ raw:    {$text}
 washed: {$text|wash}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 raw:    <script>alert(1)</script> & "quotes"
@@ -131,7 +131,7 @@ page; it silently does nothing, so read the debug output:
 [{'unchanged'|nosuchoperator}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [unchanged]
@@ -155,7 +155,7 @@ and refuses to create one. Both write a warning, not an error, so the page rende
 [{$color}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [blue]
@@ -182,7 +182,7 @@ before
 after
 ```
 
-Output on alpha:
+Output:
 
 ```text
 before
@@ -208,7 +208,7 @@ before
 after
 ```
 
-Output on alpha:
+Output:
 
 ```text
 before
@@ -225,7 +225,7 @@ dropped with a warning:
 [{php}echo 1;{/php}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []

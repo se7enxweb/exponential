@@ -3,7 +3,7 @@ title: Fetch-Aliase
 audience: developer, designer, app-creator
 category: development
 order: 600
-summary: Was fetch_alias() tut, die Syntax der fetchalias.ini (Module, FunctionName, Parameter[], Constant[]), jeder auf alpha definierte Alias mit seinem Ziel und einem auf alpha gerenderten Beispiel, wie Parameter und Konstanten zusammenwirken und wie Sie aus einer Erweiterung heraus einen eigenen Alias anlegen oder einen vorhandenen ändern.
+summary: Was fetch_alias() tut, die Syntax der fetchalias.ini (Module, FunctionName, Parameter[], Constant[]), jeder auf einer Entwicklungsinstallation definierte Alias mit seinem Ziel und einem auf einer Entwicklungsinstallation gerenderten Beispiel, wie Parameter und Konstanten zusammenwirken und wie Sie aus einer Erweiterung heraus einen eigenen Alias anlegen oder einen vorhandenen ändern.
 keywords: Fetch-Alias, Fetch-Aliase, Fetch-Funktion, Alias anlegen, Alias ändern, Konstante, fetch_alias, fetchalias.ini, fetch alias, Module, FunctionName, Parameter, Constant, children, children_count, subtree, object, by_identifier, news_list, comments, reviews, xrowextract, eZFunctionHandler::executeAlias
 type: help
 ---
@@ -20,7 +20,7 @@ erledigt `eZFunctionHandler::executeAlias()` (`lib/ezutils/classes/ezfunctionhan
 1. [Syntax](#syntax)
 2. [fetchalias.ini](#fetchaliasini)
 3. [Wie Parameter und Konstanten zusammenwirken](#wie-parameter-und-konstanten-zusammenwirken)
-4. [Die Aliase auf alpha](#die-aliase-auf-alpha)
+4. [Die definierten Aliase](#die-definierten-aliase)
 5. [Einen eigenen Alias anlegen](#einen-eigenen-alias-anlegen)
 6. [Einen vorhandenen Alias ändern](#einen-vorhandenen-alias-ändern)
 7. [Wann sich ein Alias lohnt](#wann-sich-ein-alias-lohnt)
@@ -82,7 +82,7 @@ Konstanten überschreiben. Der Alias `subtree` sortiert nach `priority;0`; ein `
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 - Almond French Toast
@@ -92,13 +92,13 @@ Ausgabe auf alpha:
 
 Kompilierte Templates nehmen für `fetch_alias`-Aufrufe, deren Aliasname eine Konstante ist, einen anderen Weg
 (`eZTemplateExecuteOperator::fetchTransform()`): Der Aufruf wird beim Kompilieren anhand der Parameterliste der Funktion in PHP
-umgewandelt. Alle Beispiele auf dieser Seite lieferten auf alpha interpretiert und kompiliert dasselbe Ergebnis. Halten Sie sich an
+umgewandelt. Alle Beispiele auf dieser Seite lieferten auf einer Entwicklungsinstallation interpretiert und kompiliert dasselbe Ergebnis. Halten Sie sich an
 die dokumentierte Verwendung (Alias-Schlüssel aus `Parameter[]`, Namen der Funktionsparameter für alles andere), dann stimmen beide
 Wege überein.
 
-## Die Aliase auf alpha
+## Die definierten Aliase
 
-Der Siteaccess `site` von alpha hat die acht Aliase aus der `settings/fetchalias.ini` des Kernels und zwei aus der Erweiterung
+Der Siteaccess `site` einer Entwicklungsinstallation hat die acht Aliase aus der `settings/fetchalias.ini` des Kernels und zwei aus der Erweiterung
 xrowextract (`extension/xrowextract/settings/fetchalias.ini.append.php`).
 
 | Alias | Fetch-Funktion | Ihre Schlüssel | Fest vorgegeben |
@@ -125,7 +125,7 @@ dokumentiert.
 {$object.id}: {$object.name|wash} ({$object.class_identifier})
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 87: Fit &amp; Healthy (ng_frontpage)
@@ -144,7 +144,7 @@ Ausgabe auf alpha:
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 16 children, the first 5 by name:- Authors (ng_container)
@@ -166,7 +166,7 @@ Knoten 144 ist die Kategorie Recipes; `subtree` geht beliebig tief und sortiert 
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 - Gluten-Free Shrimp Pad Thai with Tofu (depth 4)
@@ -177,7 +177,7 @@ Ausgabe auf alpha:
 
 ### news_list
 
-Bei `news_list` ist die ganze Abfrage fest vorgegeben: Artikel der Klasse 2 unterhalb von Knoten 2. Auf alpha existiert die
+Bei `news_list` ist die ganze Abfrage fest vorgegeben: Artikel der Klasse 2 unterhalb von Knoten 2. Auf einer Entwicklungsinstallation existiert die
 Klasse 2, die Artikel der Website sind aber von der Klasse `ng_article`, daher findet der Alias nichts. Er ist ein Beispiel aus den
 ursprünglichen Kernel-Einstellungen, auf das Sie sich nicht verlassen sollten; definieren Sie stattdessen einen eigenen
 ([siehe unten](#einen-eigenen-alias-anlegen)).
@@ -192,7 +192,7 @@ Class 2 is "{$class.identifier}"; news_list returned {$news|count} item(s).
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Class 2 is "article"; news_list returned 0 item(s).
@@ -210,7 +210,7 @@ Sortierschlüssel dem Wert entspricht. Der Sortierschlüssel einer Textzeile ist
 Looked up "{$node.name|downcase|wash}": {if $found}object {$found.id}, {$found.name|wash}{else}nothing{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Looked up "privacy policy": object 72, Privacy policy
@@ -221,7 +221,7 @@ daher nur mit Werten, von denen Sie wissen, dass sie eindeutig sind.
 
 ### comments und reviews
 
-Beide listen die Unterelemente einer Klasse (`comment`, `review`), die neuesten zuerst. Auf alpha wird keine der beiden Klassen
+Beide listen die Unterelemente einer Klasse (`comment`, `review`), die neuesten zuerst. Auf einer Entwicklungsinstallation wird keine der beiden Klassen
 unterhalb von Knoten 89 verwendet:
 
 ```tpl
@@ -230,7 +230,7 @@ unterhalb von Knoten 89 verwendet:
 comments: {$comments|count}, reviews: {$reviews|count}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 comments: 0, reviews: 0
@@ -249,7 +249,7 @@ Erweiterung aktiv ist:
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 - Zucchini Zoodles with Ground Turkey Tomato Sauce
@@ -263,7 +263,7 @@ Ausgabe auf alpha:
 [{fetch_alias( 'latest_news', hash( 'parent_node_id', 89 ) )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []
@@ -304,14 +304,14 @@ Template-Cache (kompilierte Templates enthalten die aufgelösten Parameter des A
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 - Cookie Policy, published 01/25/2023
 - Privacy Policy, published 01/25/2023
 ```
 
-Auf alpha nicht mit einer Datei ausgeführt: Das Skript, das dieses Beispiel gerendert hat, fügte den obigen Abschnitt nur im
+Auf einer Entwicklungsinstallation nicht mit einer Datei ausgeführt: Das Skript, das dieses Beispiel gerendert hat, fügte den obigen Abschnitt nur im
 Speicher und nur für seinen eigenen Prozess zur `fetchalias.ini` hinzu.
 
 Versehen Sie Aliasnamen mit dem Präfix Ihrer Erweiterung: Aliasnamen teilen sich über alle Erweiterungen hinweg einen
@@ -338,7 +338,7 @@ aufsteigend, der Standard von `eZContentObjectTreeNode::createSortingSQLStrings(
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 - Privacy Policy
@@ -356,7 +356,7 @@ Mit der Änderung sortiert dasselbe Template nach Namen:
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 - Authors

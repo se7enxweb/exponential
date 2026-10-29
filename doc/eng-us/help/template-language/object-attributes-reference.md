@@ -3,7 +3,7 @@ title: Content object attributes reference
 audience: developer, designer, app-creator
 category: development
 order: 220
-summary: Every attribute a template can read from a content object (eZContentObject) - the 12 database fields and the 65 function attributes of its definition, the PHP method behind each, and the value each returned for a real article on alpha.
+summary: Every attribute a template can read from a content object (eZContentObject) - the 12 database fields and the 65 function attributes of its definition, the PHP method behind each, and the value each returned for a real article on a development installation.
 keywords: content object attributes, eZContentObject, definition, function_attributes, data_map, current, versions, main_node, assigned_nodes, related objects, states, languages, reference
 type: help
 ---
@@ -18,7 +18,7 @@ are `eZContentObject` objects (`kernel/classes/ezcontentobject.php`). The attrib
 1. [How this table was made](#how-this-table-was-made)
 2. [Database fields](#database-fields)
 3. [Function attributes](#function-attributes)
-4. [A sample on alpha](#a-sample-on-alpha)
+4. [A sample](#a-sample)
 5. [Notes](#notes)
 6. [Related pages](#related-pages)
 
@@ -30,7 +30,7 @@ user of the `site` siteaccess.
 
 ## Database fields
 
-| Attribute | Database column / member | Datatype | Value on alpha (node 96) |
+| Attribute | Database column / member | Datatype | Value on a development installation (node 96) |
 |---|---|---|---|
 | `id` | `ID` | integer | integer 94 |
 | `section_id` | `SectionID` | integer | integer 1 |
@@ -50,7 +50,7 @@ user of the `site` siteaccess.
 `name` and `remote_id` are in both lists; the function attributes (`name()`, `remoteID()`) are the ones a template
 reads. `name()` returns the name in the object's current language, the field `Name` the name stored on the object.
 
-| Function attribute | PHP method | Value on alpha (node 96) |
+| Function attribute | PHP method | Value on a development installation (node 96) |
 |---|---|---|
 | `current` | `eZContentObject::currentVersion()` | object eZContentObjectVersion |
 | `published_version` | `eZContentObject::publishedVersion()` | integer 1 |
@@ -118,7 +118,7 @@ reads. `name()` returns the name in the object's current language, the field `Na
 | `state_identifier_array` | `eZContentObject::stateIdentifierArray()` | array(2) of string |
 | `section_identifier` | `eZContentObject::sectionIdentifier()` | string "standard" |
 
-## A sample on alpha
+## A sample
 
 ```tpl
 {def $object = fetch( 'content', 'node', hash( 'node_id', 96 ) ).object}
@@ -133,7 +133,7 @@ related objects:     {$object.related_contentobject_count}, reverse related: {$o
 owner is a user:     {cond( $object.owner.class_identifier|eq( 'user' ), 'yes', 'no' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 id / class:          94 / ng_article (44)

@@ -3,7 +3,7 @@ title: Typ-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 140
-summary: Die 13 Operatoren von eZTemplateTypeOperator (is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null, is_class, is_set, is_unset, get_type, get_class) mit ihren Regeln für die Eingabe und Beispielen, die auf alpha ausgegeben wurden.
+summary: Die 13 Operatoren von eZTemplateTypeOperator (is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null, is_class, is_set, is_unset, get_type, get_class) mit ihren Regeln für die Eingabe und Beispielen, die auf einer Entwicklungsinstallation ausgegeben wurden.
 keywords: Typ, Typprüfung, Datentyp, Klasse, is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null, is_class, is_set, is_unset, get_type, get_class, eZTemplateTypeOperator, type operators
 type: help
 ---
@@ -42,7 +42,7 @@ Ohne Parameter prüfen sie die Eingabe über die Pipe. Im Interpreter prüfen si
 geben nur dann true zurück, wenn alle bestehen (`checkType()`); die Eingabe wird dann ignoriert. Sie geben einen
 booleschen Wert zurück.
 
-Die kompilierte Form (`isTransform()`) prüft nur den ersten Wert. Kompiliert war auf alpha `is_integer( 1, 2, 'three' )`
+Die kompilierte Form (`isTransform()`) prüft nur den ersten Wert. Kompiliert war auf einer Entwicklungsinstallation `is_integer( 1, 2, 'three' )`
 true, wo der Interpreter false sagt. Prüfen Sie einen Wert je Aufruf: `and( $a|is_integer, $b|is_integer )`.
 
 
@@ -67,7 +67,7 @@ $node.parent_node_id|is_null = {$node.parent_node_id|is_null|choose( 'false', 't
 is_integer( 1, 2, 'three' ) = {is_integer( 1, 2, 'three' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 array( 1 )|is_array = true
@@ -82,9 +82,9 @@ $node.parent_node_id|is_null = false
 is_integer( 1, 2, 'three' ) = false
 ```
 
-Dasselbe Template, auf alpha kompiliert; die letzte Zeile unterscheidet sich:
+Dasselbe Template, auf einer Entwicklungsinstallation kompiliert; die letzte Zeile unterscheidet sich:
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 array( 1 )|is_array = true
@@ -122,7 +122,7 @@ is_class( 'ezcontentobject', $node.object ) = {is_class( 'ezcontentobject', $nod
 'text'|is_class( 'eZContentObject' ) = {'text'|is_class( 'eZContentObject' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $node|is_class( 'eZContentObjectTreeNode' ) = true
@@ -131,9 +131,9 @@ is_class( 'ezcontentobject', $node.object ) = true
 ```
 
 Verwenden Sie die Form mit der Pipe. Der kompilierte Code behandelt den ersten Wert als Objekt und den zweiten als
-Klassennamen, daher war kompiliert auf alpha die Aufrufform `is_class( 'ezcontentobject', $node.object )` false.
+Klassennamen, daher war kompiliert auf einer Entwicklungsinstallation die Aufrufform `is_class( 'ezcontentobject', $node.object )` false.
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 $node|is_class( 'eZContentObjectTreeNode' ) = true
@@ -174,7 +174,7 @@ is_set( $not_defined ) = {is_set( $not_defined )|choose( 'false', 'true' )}
 is_unset( $not_defined ) = {is_unset( $not_defined )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 is_set( $settings.title ) = true
@@ -217,7 +217,7 @@ get_class( $node.object ) = {get_class( $node.object )}
 'text'|get_class = [{'text'|get_class}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 integer double string[3] boolean[true] array[2] object[eZContentObjectTreeNode] object[eZContentObjectAttribute] null 

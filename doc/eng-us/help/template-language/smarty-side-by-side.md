@@ -3,7 +3,7 @@ title: Smarty and the template language side by side
 audience: developer, designer, app-creator
 category: templates
 order: 30
-summary: A side-by-side table of Smarty syntax and the Exponential template language - output, modifiers and operators, assignment, defaults, conditions, loops, cycling, include, literal, delimiters, comments, capture, escaping, dates, caching and inheritance - with every template-language example rendered on alpha.
+summary: A side-by-side table of Smarty syntax and the Exponential template language - output, modifiers and operators, assignment, defaults, conditions, loops, cycling, include, literal, delimiters, comments, capture, escaping, dates, caching and inheritance - with every template-language example rendered on a development installation.
 keywords: Smarty, comparison, side by side, syntax, modifiers, operators, assign, def, capture, set-block, cycle, sequence, include, literal, ldelim, escape, wash, date_format, datetime
 type: help
 ---
@@ -12,7 +12,7 @@ type: help
 If you know Smarty you can read most templates of Exponential at once: the braces, the `$`, the pipe and the block tags
 are the same idea. The details differ, and the details are what break a template. This page puts the two next to each
 other. The Smarty column is there for comparison only and was not run here; every template-language example was
-rendered on alpha.
+rendered on a development installation.
 
 ## Contents
 
@@ -72,7 +72,7 @@ colons:
 [{'<b>bold</b> & more'|wash}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [  The Exponential template language  ]
@@ -97,7 +97,7 @@ Nickname: {first_set( $nickname, 'none given' )}
 Greeting: {cond( $visits|gt( 3 ), 'welcome back', 'hello' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Ada has visited 4 times.
@@ -119,7 +119,7 @@ written `for <first> to <last> as $var`:
 {for 1 to 3 as $i}[{$i}]{/for}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 2 items<li class="odd">a: apple</li><li class="even">b: banana</li><li class="odd">c: cherry</li>[1][2][3]
@@ -147,7 +147,7 @@ and the template that includes it, with a literal block, the two delimiter funct
 {ldelim}not a tag{rdelim}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <p>Hello, designer!</p>
@@ -165,7 +165,7 @@ can work on:
 Captured {$badge|count_chars} characters: {$badge}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Captured 30 characters: <span class="badge">NEW</span>
@@ -183,7 +183,7 @@ Short date: {$node.object.published|l10n( 'shortdate' )}
 Fields: {$node.data_map|count}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Published: 2023-01-25

@@ -3,14 +3,14 @@ title: Fehler und Fehlersuche
 audience: developer, designer, app-creator
 category: development
 order: 430
-summary: Die Meldungen, die die Template-Engine protokolliert - unbekannte Variable, unbekanntes Attribut, unbekannter Operator oder unbekannte Funktion, Parserfehler mit Zeile und Spalte, ein fehlendes Template, Fehlgebrauch von def/set/undef - jede auf alpha erzeugt, was die Engine in jedem Fall ausgibt, die Leerraumregel, die alle überrascht, und die Debug-Einstellungen (Debug, ShowXHTMLCode, ShowUsedTemplates, ShowTemplatePathComments, ShowMethodDebug, DisplayWarnings).
+summary: Die Meldungen, die die Template-Engine protokolliert - unbekannte Variable, unbekanntes Attribut, unbekannter Operator oder unbekannte Funktion, Parserfehler mit Zeile und Spalte, ein fehlendes Template, Fehlgebrauch von def/set/undef - jede auf einer Entwicklungsinstallation erzeugt, was die Engine in jedem Fall ausgibt, die Leerraumregel, die alle überrascht, und die Debug-Einstellungen (Debug, ShowXHTMLCode, ShowUsedTemplates, ShowTemplatePathComments, ShowMethodDebug, DisplayWarnings).
 keywords: Template-Fehler, Template-Warnungen, unbekannte Template-Variable, nicht registriert, Parserfehler, nicht abgeschlossenes Tag, kein Template geladen, bereits definiert, Fehlersuche, Debug, ShowXHTMLCode, ShowUsedTemplates, ShowTemplatePathComments, DisplayWarnings, Leerraum, template errors, template warnings, unknown template variable, not registered, parser error, unterminated tag, whitespace
 type: help
 ---
 # Fehler und Fehlersuche
 
 Die Template-Engine hält eine Seite nie wegen eines Fehlers im Template an. Sie protokolliert einen Fehler oder eine Warnung, gibt für den
-fehlerhaften Teil nichts (oder den Rest des Texts) aus und macht weiter. Diese Seite zeigt die Meldungen, die sie erzeugt, jede auf alpha von
+fehlerhaften Teil nichts (oder den Rest des Texts) aus und macht weiter. Diese Seite zeigt die Meldungen, die sie erzeugt, jede auf einer Entwicklungsinstallation von
 einem kleinen Template ausgelöst, damit Sie sie in der Debug-Ausgabe wiedererkennen, und die Einstellungen, die helfen, das Template hinter
 einem Stück HTML zu finden.
 
@@ -34,10 +34,10 @@ der Engine und geben sie mit Template-Datei, Zeile und Spalte an `eZDebug` weite
 - in der Debug-Ausgabe der Seite, wenn `[DebugSettings] DebugOutput=enabled` gesetzt ist und Ihre IP oder Ihr Benutzer zugelassen ist
   (`DebugByIP`, `DebugByUser`);
 - in `var/log/error.log` und `var/log/warning.log`, wenn das Debug-Log für diese Stufe eingeschaltet ist;
-- auf der Seite selbst nur mit `template.ini [ControlSettings] DisplayWarnings=enabled` (standardmäßig und auf alpha ausgeschaltet), was einen
+- auf der Seite selbst nur mit `template.ini [ControlSettings] DisplayWarnings=enabled` (standardmäßig und auf einer Entwicklungsinstallation ausgeschaltet), was einen
   Warnkasten für Template-Fehler hinzufügt.
 
-Die Beispiele unten liefen auf alpha durch die Engine; jedes zeigt die Ausgabe und dann, was die Engine protokolliert hat. Die Dateipfade in den
+Die Beispiele unten liefen auf einer Entwicklungsinstallation durch die Engine; jedes zeigt die Ausgabe und dann, was die Engine protokolliert hat. Die Dateipfade in den
 Parsermeldungen sind die Arbeitspfade, in denen die Beispiele lagen.
 
 ## Variablen und Attribute
@@ -48,7 +48,7 @@ Eine nicht vorhandene Variable gibt nichts aus und protokolliert einen Fehler mi
 before [{$no_such_variable}] after
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 before [] after
@@ -67,7 +67,7 @@ Ein Attribut, das ein Objekt oder Array nicht hat: Die Meldung nennt die Klasse 
 [{$list.5}] [{$list.first}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [] []
@@ -93,7 +93,7 @@ Ein auf diesem Siteaccess nicht registrierter Operator protokolliert eine Warnun
 before [{'text'|no_such_operator}] after
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 before [text] after
@@ -112,7 +112,7 @@ derselben Zeile nicht ausgegeben wurde:
 before {no_such_function param=1} after
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 before
@@ -138,7 +138,7 @@ line one
 line three
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 line one
@@ -163,7 +163,7 @@ wurde auf 1 gesetzt):
 [{$a}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1]
@@ -183,7 +183,7 @@ Ein Block, der nie geschlossen wird, wird überhaupt nicht gemeldet: Der Parser 
 open if, never closed
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 open if, never closed
@@ -197,7 +197,7 @@ Ein `include` (oder eine Ansichtsfunktion), dessen Template in keiner Design-Bas
 before [{include uri='design:no/such/template.tpl'}] after
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 before [] after
@@ -224,7 +224,7 @@ nicht mit `def` angelegte Variable warnt:
 [{$a}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [2]
@@ -257,7 +257,7 @@ Die Beispiele von [Data Map und Inhalt](data-map-und-inhalt.md) nutzen genau des
 
 ## Debug-Einstellungen
 
-Alle in `site.ini [TemplateSettings]`, wenn nicht anders vermerkt; Werte auf dem Siteaccess `site` von alpha:
+Alle in `site.ini [TemplateSettings]`, wenn nicht anders vermerkt; Werte auf dem Siteaccess `site` einer Entwicklungsinstallation:
 
 ```tpl
 Debug:                    {ezini( 'TemplateSettings', 'Debug' )}
@@ -268,7 +268,7 @@ DebugOutput:              {ezini( 'DebugSettings', 'DebugOutput' )}
 DisplayWarnings:          {ezini( 'ControlSettings', 'DisplayWarnings', 'template.ini' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Debug:                    disabled

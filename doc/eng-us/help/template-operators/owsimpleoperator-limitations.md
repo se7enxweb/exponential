@@ -3,7 +3,7 @@ title: "OW Simple Operator: limitations and risks"
 audience: developer, app-creator
 category: development
 order: 920
-summary: What OW Simple Operator does not do and where it bites - the pipe form that drops an argument, null arguments that are left out, no parameter checks, no compile-time optimization, name clashes, caching and the security rule for permitted PHP functions - with the failures rendered on alpha.
+summary: What OW Simple Operator does not do and where it bites - the pipe form that drops an argument, null arguments that are left out, no parameter checks, no compile-time optimization, name clashes, caching and the security rule for permitted PHP functions - with the failures rendered on a development installation.
 keywords: owsimpleoperator, limitations, risks, ArgumentCountError, pipe form, null, PermittedFunctionList, security, cache-block, operatorTemplateHints, name clash
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 OW Simple Operator saves code by giving every operator the same generic definition. That generic definition is
 also where its limits come from. Everything below is read from `extension/owsimpleoperator/autoloads/owsimpleoperator.php`
-and `autoloads/eztemplateautoload.php` and, where an example is shown, rendered on alpha.
+and `autoloads/eztemplateautoload.php` and, where an example is shown, rendered on a development installation.
 
 ## Contents
 
@@ -84,7 +84,7 @@ time, and the template engine does not catch PHP's errors:
 {str_rot13()}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 (no output)
@@ -114,7 +114,7 @@ page this does not matter; inside a loop over hundreds of items it can.
 
 ## Name clashes
 
-Every PHP function you permit and every method you register becomes a global operator name. On alpha,
+Every PHP function you permit and every method you register becomes a global operator name. On a development installation,
 `str_replace` is registered by both extension swark and owsimpleoperator; owsimpleoperator's
 `eztemplateautoload.php` is read later and wins. A permitted name that matches an operator of a class with several
 operators (for example `strlen` of `eZTemplateStringsOperator`) is worse: the template library's class registers

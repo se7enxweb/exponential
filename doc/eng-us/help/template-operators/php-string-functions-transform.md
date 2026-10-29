@@ -3,7 +3,7 @@ title: "PHP string functions: transform"
 audience: developer, designer, app-creator
 category: development
 order: 170
-summary: The transforming operators of eZTemplateStringsOperator (substr, substr_replace, ristring, rstring, strtr, str_split, str_word_count, str_getcsv, strtok, ltrim, rtrim, lcfirst, chunk_split, addslashes, stripslashes, addcslashes, stripcslashes, quotemeta, strip_tags, str_shuffle, hebrev, plus str_increment and str_decrement), the strip_tags registration trap, with examples rendered on alpha.
+summary: The transforming operators of eZTemplateStringsOperator (substr, substr_replace, ristring, rstring, strtr, str_split, str_word_count, str_getcsv, strtok, ltrim, rtrim, lcfirst, chunk_split, addslashes, stripslashes, addcslashes, stripcslashes, quotemeta, strip_tags, str_shuffle, hebrev, plus str_increment and str_decrement), the strip_tags registration trap, with examples rendered on a development installation.
 keywords: substr, substr_replace, ristring, rstring, str_replace, str_ireplace, strtr, str_split, str_word_count, str_getcsv, strtok, ltrim, rtrim, lcfirst, chunk_split, addslashes, stripslashes, addcslashes, stripcslashes, quotemeta, strip_tags, str_shuffle, hebrev, str_increment, str_decrement, eZTemplateStringsOperator
 type: help
 ---
@@ -63,7 +63,7 @@ substr_replace( 'Clean', 0, 7 ) = {$s|substr_replace( 'Clean', 0, 7 )}
 substr_replace( '!', 14 ) = {$s|substr_replace( '!', 14 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 substr( 8 ) = eating
@@ -93,7 +93,7 @@ PHP `str_ireplace()`: the **case-insensitive** replacement. Same parameters as `
 Generated reference: [rstring](../../examples/template-operators/rstring.md).
 
 The names are the opposite of what one would guess; the class comment documents them as `ristring: str_replace` and
-`rstring: str_ireplace`, and the example confirms it. On alpha the extension owsimpleoperator also offers a plain
+`rstring: str_ireplace`, and the example confirms it. On a development installation the extension owsimpleoperator also offers a plain
 `str_replace` operator ([owsimpleoperator](owsimpleoperator.md)).
 
 ### strtr
@@ -117,7 +117,7 @@ strtr( 'aeiou', 'AEIOU' ) = {$s|strtr( 'aeiou', 'AEIOU' )}
 strtr( hash( 'Fit', 'Strong', 'healthy', 'happy' ) ) = {$s|strtr( hash( 'Fit', 'Strong', 'healthy', 'happy' ) )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ristring( 'healthy', 'strong' ) = Fit and strong. Stay Healthy.
@@ -174,7 +174,7 @@ Generated reference: [strtok](../../examples/template-operators/strtok.md).
 'first second third'|strtok( ' ' ) = {'first second third'|strtok( ' ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'abcdefg'|str_split( 3 ) = abc | def | g
@@ -216,7 +216,7 @@ Generated reference: [chunk_split](../../examples/template-operators/chunk_split
 'abcdefgh'|chunk_split( 3, '-' ) = {'abcdefgh'|chunk_split( 3, '-' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [slug--] [--slug] [both  ]
@@ -250,7 +250,7 @@ In the template source, a quote inside a single-quoted string is written `\'` an
 '1+1=2?'|quotemeta = {'1+1=2?'|quotemeta}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'It\'s "fit"'|addslashes = It\'s \"fit\"
@@ -279,13 +279,13 @@ the result before you print it. Generated reference: [strip_tags](../../examples
 strip_tags = {$html|strip_tags}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 strip_tags = Fit and healthy
 ```
 
-**The registration trap.** On alpha the extension ezmultiupload adds `PHPOperatorList[strip_tags]=strip_tags` to
+**The registration trap.** On a development installation the extension ezmultiupload adds `PHPOperatorList[strip_tags]=strip_tags` to
 `template.ini` (`extension/ezmultiupload/settings/template.ini.append.php`). The kernel's
 `kernel/common/eztemplateautoload.php` registers the `PHPOperatorList` names through `eZTemplatePHPOperator`, which
 passes only one value to the PHP function, so that version ignores the allowed tags. Which of the two classes
@@ -302,7 +302,7 @@ first use: [{$html|strip_tags( '<b>' )}]
 after strlen: [{$html|strip_tags( '<b>' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 first use: [Fit and healthy]
@@ -330,7 +330,7 @@ str_shuffle keeps the letters: {$s|str_split( 1 )|unique|count} distinct letters
 hebrev of a Latin text returns it unchanged: {'plain text'|hebrev}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 str_shuffle keeps the letters: 6 distinct letters, length 6
@@ -347,7 +347,7 @@ only after some other operator of the class has loaded it. Alone, the engine rep
 [{'a9'|str_increment}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [a9]
@@ -367,7 +367,7 @@ After `strlen` has loaded the class:
 'Ab'|str_decrement = {'Ab'|str_decrement}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'a9'|str_increment = b0

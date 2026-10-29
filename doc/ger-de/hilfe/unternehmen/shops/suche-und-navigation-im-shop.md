@@ -61,7 +61,7 @@ Tag-Vokabular, bevor die Redakteure beginnen, sonst wächst die Tag-Liste schnel
 
 Die eingebaute Suchmaschine hält ihren Index in der Datenbank und genügt für die meisten Websites
 ([Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md)). Sie durchsucht die durchsuchbaren Felder
-der Produkte (auf alpha markiert die Produktklasse Name, Artikelnummer, Beschreibungen und technische Daten als
+der Produkte (auf einer Entwicklungsinstallation markiert die Produktklasse Name, Artikelnummer, Beschreibungen und technische Daten als
 durchsuchbar; den Preis nicht) und führt Suchstatistiken, sodass Sie sehen, wonach Kunden gesucht und was sie nicht
 gefunden haben.
 
@@ -88,8 +88,8 @@ sind Designarbeit.
 ## Bewertungen und technische Daten
 
 - Die Erweiterung `ezstarrating` fügt ein Feld für Sternebewertungen hinzu und lässt Templates nach Bewertung sortieren
-  und abrufen ([ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md)); auf alpha hat die Produktklasse eines.
-- Eine Tabelle mit technischen Daten (`ezmatrix` in der Produktklasse von alpha) lässt Kunden Produkte auf der Seite
+  und abrufen ([ezstarrating](../../../funktionen/6.0/erweiterungen/ezstarrating.md)); auf einer Entwicklungsinstallation hat die Produktklasse eines.
+- Eine Tabelle mit technischen Daten (`ezmatrix` in der Produktklasse einer Entwicklungsinstallation) lässt Kunden Produkte auf der Seite
   vergleichen.
 
 ## Checkliste

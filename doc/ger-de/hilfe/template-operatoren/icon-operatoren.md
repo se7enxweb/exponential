@@ -3,7 +3,7 @@ title: Icon-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 320
-summary: Die acht Operatoren von eZWordToImageOperator - class_icon, classgroup_icon, mimetype_icon, action_icon, icon, flag_icon, icon_info und wordtoimage - mit ihren Positionsparametern, der Suche nach Thema und Größe in icon.ini und Beispielen, auf alpha gerendert.
+summary: Die acht Operatoren von eZWordToImageOperator - class_icon, classgroup_icon, mimetype_icon, action_icon, icon, flag_icon, icon_info und wordtoimage - mit ihren Positionsparametern, der Suche nach Thema und Größe in icon.ini und Beispielen, auf einer Entwicklungsinstallation gerendert.
 keywords: Icons, Symbole, Icon-Thema, Flaggen, Smileys, class_icon, classgroup_icon, mimetype_icon, action_icon, icon, flag_icon, icon_info, wordtoimage, icon.ini, wordtoimage.ini, icon theme, crystal, bootstrap-icons, eZWordToImageOperator
 type: help
 ---
@@ -26,7 +26,7 @@ Ausweichthema (`StandardTheme`) und die Standardgröße (`Size=normal`). `eZWord
 der Themen auf, die versucht werden:
 
 1. das eigene `Theme` eines Typs (`[ClassIcons] Theme` usw.), wenn gesetzt, sonst das Thema des Designs aus
-   `DesignTheme[<SiteDesign>]` (auf alpha verwenden `admin4` und `admin4l` `bootstrap-icons`), sonst `Theme`;
+   `DesignTheme[<SiteDesign>]` (auf einer Entwicklungsinstallation verwenden `admin4` und `admin4l` `bootstrap-icons`), sonst `Theme`;
 2. dann `Theme`, wenn ein Designthema es ersetzt hat, dann `AdditionalThemeList[]`, dann `StandardTheme`.
 
 Für jedes Thema sucht der Operator im Ordner `icons/` jeder Erweiterung in `[ExtensionSettings] IconExtensions[]` und
@@ -88,7 +88,7 @@ Generierte Seite: [icon](../../beispiele/template-operatoren/icon.md). Eingabe: 
 9 {'role'|icon( 'small', 'Roles' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 <img src="/share/icons/crystal/16x16/filesystems/folder.png" width="16" height="16" alt="folder" title="folder" />
@@ -137,7 +137,7 @@ folder icon={$info.icons.folder}
 mapped classes={$info.icons|count}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 theme=crystal repository=share/icons
@@ -162,7 +162,7 @@ würde die Bild-Tags maskieren).
 {'Nice day :-)'|wordtoimage}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Nice day <img src="/share/icons/happy.gif" alt="happy"/>

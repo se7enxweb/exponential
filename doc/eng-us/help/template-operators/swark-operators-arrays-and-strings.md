@@ -3,14 +3,14 @@ title: "Swark operators: arrays, strings and URLs"
 audience: developer, designer, app-creator
 category: development
 order: 431
-summary: Every array, string and URL operator of the swark extension - sort, rsort, asort, arsort, ksort, krsort, shuffle, array_search, range, set_array_element, remove_array_element, split_by_length, shortenw, preg_match, preg_replace, strpos, strrpos, substr, ltrim, rtrim, str_replace, json_encode, uri_path_segment, add_view_parameters, modify_view_parameter - with parameters, return values and examples rendered on alpha.
+summary: Every array, string and URL operator of the swark extension - sort, rsort, asort, arsort, ksort, krsort, shuffle, array_search, range, set_array_element, remove_array_element, split_by_length, shortenw, preg_match, preg_replace, strpos, strrpos, substr, ltrim, rtrim, str_replace, json_encode, uri_path_segment, add_view_parameters, modify_view_parameter - with parameters, return values and examples rendered on a development installation.
 keywords: swark, sort, rsort, asort, arsort, ksort, krsort, shuffle, array_search, range, set_array_element, remove_array_element, split_by_length, shortenw, preg_match, preg_replace, uri_path_segment, add_view_parameters, modify_view_parameter
 type: help
 ---
 # Swark operators: arrays, strings and URLs
 
 The classes are in `extension/swark/autoloads/classes/`, one per operator; how they are registered and why some names
-behave differently on alpha is explained in [The swark operators](swark-operators.md). Parameter defaults are
+behave differently on a development installation is explained in [The swark operators](swark-operators.md). Parameter defaults are
 strings, as the base class reads them from `name=value`. All of these operators take their input from the value
 before `|` and return a new value; none of them changes anything outside the template.
 
@@ -75,7 +75,7 @@ krsort:  {foreach $h|krsort as $k => $v}{$k}={$v} {/foreach}
 shuffle keeps {$l|shuffle|count} items
 ```
 
-Output on alpha:
+Output:
 
 ```text
 sort:    apple fig pear
@@ -147,7 +147,7 @@ date-like string). The cut is by bytes (PHP `substr()`), so it can split a multi
 5 split_by_length: {'2026101912'|split_by_length( array( 4, 2, 2 ) )|implode( '-' )} / {'abcdef'|split_by_length( 2 )|implode( ' ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 array_search apple: 1, kiwi: -1, kiwi with default: none
@@ -196,7 +196,7 @@ PHP `preg_replace( search, replace, input )`. The pattern is used as given: neve
 6 modify_view_parameter: {'/recipes/(offset)/20/(tag)/vegan'|modify_view_parameter( 'offset', 40 )} / {'/recipes/(offset)/20'|modify_view_parameter( 'offset', false() )} / {'/recipes'|modify_view_parameter( 'tag', 'soup' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 shortenw: The quick brown... / The quick [more]
@@ -209,7 +209,7 @@ Output on alpha:
 
 ### strpos
 
-Parameters `needle` (required) and `offset` (default `0`). Returns the position, or **-1** when not found. On alpha
+Parameters `needle` (required) and `offset` (default `0`). Returns the position, or **-1** when not found. On a development installation
 the kernel's `strpos` (returning `false`) often answers instead; see
 [Ownership can change during a request](swark-operators.md#ownership-can-change-during-a-request).
 
@@ -231,13 +231,13 @@ Parameter `charlist` (default empty: whitespace). The same caveat.
 
 ### str_replace
 
-Parameters `search` and `replace`: PHP `str_replace()` on the input. On alpha the name belongs to owsimpleoperator,
+Parameters `search` and `replace`: PHP `str_replace()` on the input. On a development installation the name belongs to owsimpleoperator,
 which is registered later.
 
 ### json_encode
 
 Parameter `value`: the input, or `value` when there is no input, as JSON (PHP `json_encode()`, or an encoder of its
-own where that function is missing). On alpha the name belongs to ezjscore; see
+own where that function is missing). On a development installation the name belongs to ezjscore; see
 [ezjscore operators in depth](ezjscore-operators.md#json_encode).
 
 ## URLs and view parameters

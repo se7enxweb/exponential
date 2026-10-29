@@ -3,7 +3,7 @@ title: String operators
 audience: developer, designer, app-creator
 category: development
 order: 150
-summary: The 15 operators of eZTemplateStringOperator (upcase, downcase, upfirst, upword, count_words, count_chars, trim, simplify, pad, shorten, wrap, break, wash, ord, chr), every wash type (xhtml, email, javascript, pdf), and examples rendered on alpha.
+summary: The 15 operators of eZTemplateStringOperator (upcase, downcase, upfirst, upword, count_words, count_chars, trim, simplify, pad, shorten, wrap, break, wash, ord, chr), every wash type (xhtml, email, javascript, pdf), and examples rendered on a development installation.
 keywords: string, text, upcase, downcase, upfirst, upword, count_words, count_chars, trim, simplify, pad, shorten, wrap, break, wash, escaping, xhtml, email, javascript, pdf, ord, chr, eZTemplateStringOperator
 type: help
 ---
@@ -61,7 +61,7 @@ parameters. Generated reference: [upword](../../examples/template-operators/upwo
 'healthy eating for runners'|upword = {'healthy eating for runners'|upword}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'fit & healthy'|upcase = FIT &amp; HEALTHY
@@ -90,7 +90,7 @@ Generated reference: [count_chars](../../examples/template-operators/count_chars
 'Grüße'|count = {'Grüße'|count} (the arithmetic count: bytes)
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'Fit & Healthy recipes'|count_words = 3
@@ -142,7 +142,7 @@ Generated reference: [pad](../../examples/template-operators/pad.md).
 [{'already long'|pad( 4 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [padded]
@@ -172,7 +172,7 @@ enough is returned unchanged.
 Returns a string. `shorten` counts characters, not words, and can cut a word or an HTML tag in half: shorten plain text
 and `wash` it afterwards. Generated reference: [shorten](../../examples/template-operators/shorten.md).
 
-The first line uses the name of the Privacy Policy article on alpha (node 90):
+The first line uses the name of the Privacy Policy article on a development installation (node 90):
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 90 ) )}
@@ -183,7 +183,7 @@ The first line uses the name of the Privacy Policy article on alpha (node 90):
 {'Short'|shorten( 20 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Privacy...
@@ -223,7 +223,7 @@ PHP `nl2br()`: an HTML line break before every newline. No parameters. `break` d
 line two"|break}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 The quick brown
@@ -256,7 +256,7 @@ Makes text safe for one kind of output. The type is the only parameter.
 | `pdf` | for the PDF export: HTML entities decoded, then spaces, tabs and newlines turned into `<C:callSpace>`, `<C:callTab>` and `<C:callNewLine>` callbacks of the PDF library |
 
 Any other type returns the input **unchanged**, without escaping and without a warning, so a typo in the type is a
-security problem. On alpha `EmailAtText` is set to a `spamfilter` span, as the example shows.
+security problem. On a development installation `EmailAtText` is set to a `spamfilter` span, as the example shows.
 
 A compiled template turns `wash` with a constant type into inline PHP (`washTransformation()`); the compiled `pdf`
 branch only replaces whitespace and does not decode entities first.
@@ -270,7 +270,7 @@ pdf:        {'85 g&nbsp;spinach	end'|wash( 'pdf' )}
 unknown:    {'<b>raw</b>'|wash( 'no-such-type' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 xhtml:      &lt;b&gt;&quot;Fit&quot; &amp; &#039;Healthy&#039;&lt;/b&gt;
@@ -299,7 +299,7 @@ back with chr = {$codes|chr}
 array( 72, 105 )|chr = {array( 72, 105 )|chr}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'Añ€'|ord = 65, 241, 8364

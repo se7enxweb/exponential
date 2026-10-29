@@ -3,7 +3,7 @@ title: Operators of smaller extensions
 audience: developer, designer, app-creator
 category: development
 order: 440
-summary: The template operators of ezoe, ezwt, enhancedezbinaryfile, recaptcha, xrowmetadata and bcwebsitestatistics - ezoe_ini_section, ezcreateclasslistgroups, parsexml, recaptcha_get_html, metadata, the six xrowmetadata_license operators and the six bc_ga operators - with parameters, return values, pitfalls found on alpha (operator names with capital letters, a die() on a missing key) and examples rendered on alpha.
+summary: The template operators of ezoe, ezwt, enhancedezbinaryfile, recaptcha, xrowmetadata and bcwebsitestatistics - ezoe_ini_section, ezcreateclasslistgroups, parsexml, recaptcha_get_html, metadata, the six xrowmetadata_license operators and the six bc_ga operators - with parameters, return values, pitfalls found on a development installation (operator names with capital letters, a die() on a missing key) and examples rendered on a development installation.
 keywords: ezoe_ini_section, ezcreateclasslistgroups, parsexml, recaptcha_get_html, metadata, xrowmetadata_license, xrowmetadata_license_enabled, xrowmetadata_license_choices, xrowmetadata_license_info, xrowmetadata_license_inherited, xrowmetadata_license_class_settings, bc_ga_urchin, bc_ga_urchinOrder, bc_ga_jsEscapedString, bc_ga_formatNumericDecimal, bc_ga_xmlAttributeValue, bc_ga_script_url
 type: help
 ---
@@ -82,7 +82,7 @@ autoload file registers only `parsexml`, so `filecheck` cannot be called from a 
 3 parsexml: {'<binaryfile><Filename>report.pdf</Filename><Size value="1024"/></binaryfile>'|parsexml( 'Filename' )} / {'<binaryfile><Size value="1024"/></binaryfile>'|parsexml( 'Size' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 ezoe_ini_section: yes / no
@@ -127,7 +127,7 @@ fact that markup came back is printed, not the key:
 7 metadata node 90: {metadata( 90 )|get_type}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 recaptcha_get_html: markup returned
@@ -204,7 +204,7 @@ operator call only when the name matches `[a-z0-9_-]+(` (`eZTemplateMultiPassPar
 3 bc_ga_urchin: {bc_ga_urchin()|count_chars} characters
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 bc_ga_jsEscapedString: It\'s '+String.fromCharCode(34)+'quoted'+String.fromCharCode(34)+'
@@ -222,7 +222,7 @@ tracking script. Line 3 above prints only its length, not the account id.
 ### bc_ga_urchinOrder
 
 Parameter `order` (an order object). Builds the hidden order tracking form with the order number, totals, the
-customer's city, state and country and the product lines. Not run on alpha: it needs a real order and prints customer
+customer's city, state and country and the product lines. Not run on a development installation: it needs a real order and prints customer
 data.
 
 ### bc_ga_jsEscapedString
@@ -243,7 +243,7 @@ Parameters `name` and `data`. Returns the text of the first element `name` in th
 ### bc_ga_script_url
 
 Input: JavaScript code. Returns an address for it: through `ezjscPacker::generatedContentURL()` when ezjscore offers
-it, otherwise it **writes** `bcwebsitestatistics_<md5>.js` into the public cache folder. Not run on alpha because it
+it, otherwise it **writes** `bcwebsitestatistics_<md5>.js` into the public cache folder. Not run on a development installation because it
 writes a file.
 
 ## Related pages

@@ -3,7 +3,7 @@ title: Attribute and dump operators
 audience: developer, designer, app-creator
 category: development
 order: 220
-summary: attribute and dump from eZTemplateAttributeOperator - listing what an object, a hash or an array offers to templates, with or without values, to a depth, as an HTML table or as text, and why their output must never reach a public page; examples rendered on alpha.
+summary: attribute and dump from eZTemplateAttributeOperator - listing what an object, a hash or an array offers to templates, with or without values, to a depth, as an HTML table or as text, and why their output must never reach a public page; examples rendered on a development installation.
 keywords: attribute, dump, debug, inspect, object attributes, data_map, ezpAttributeOperatorManager, AttributeOperator, DefaultFormatter, eZTemplateAttributeOperator
 type: help
 ---
@@ -57,7 +57,7 @@ The fields of the Fit & Healthy front page (node 89), one level, as text:
 {$node.data_map|attribute( 'show', 1, 'text' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 title (object[eZContentObjectAttribute]=Object)
@@ -76,7 +76,7 @@ Without `show`, only names and types:
 {$hash|attribute( '', 2, 'text' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 title (string)
@@ -104,7 +104,7 @@ Generated reference: [dump](../../examples/template-operators/dump.md).
 {$hash|dump( 'show', 2, 'text' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 title (string='Fit & Healthy')
@@ -119,7 +119,7 @@ With the default formatter, `html`, the result is a table:
 {hash( 'node_id', 89, 'name', 'Fit & Healthy' )|dump}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <table><tr><th align="left">Attribute</th>
@@ -143,7 +143,7 @@ A scalar comes back as it was:
 [{'plain text'|dump( 'show', 1, 'text' )}] [{42|attribute( 'show', 1, 'text' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ['plain text'] [42]
@@ -159,7 +159,7 @@ Output on alpha:
 - Some attributes are computed when they are read. Listing them with values runs that code, so a `dump` can be slow
   even when the page is small.
 
-The examples were rendered by the interpreter and again with the template compiler on alpha; both gave the same output.
+The examples were rendered by the interpreter and again with the template compiler on a development installation; both gave the same output.
 
 ## Related pages
 

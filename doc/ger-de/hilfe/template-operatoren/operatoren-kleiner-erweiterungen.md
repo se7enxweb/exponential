@@ -3,7 +3,7 @@ title: Operatoren kleinerer Erweiterungen
 audience: developer, designer, app-creator
 category: development
 order: 440
-summary: Die Template-Operatoren von ezoe, ezwt, enhancedezbinaryfile, recaptcha, xrowmetadata und bcwebsitestatistics - ezoe_ini_section, ezcreateclasslistgroups, parsexml, recaptcha_get_html, metadata, die sechs xrowmetadata_license-Operatoren und die sechs bc_ga-Operatoren - mit Parametern, Rückgabewerten, auf alpha gefundenen Stolperfallen (Operatornamen mit Großbuchstaben, ein die() bei fehlendem Schlüssel) und auf alpha gerenderten Beispielen.
+summary: Die Template-Operatoren von ezoe, ezwt, enhancedezbinaryfile, recaptcha, xrowmetadata und bcwebsitestatistics - ezoe_ini_section, ezcreateclasslistgroups, parsexml, recaptcha_get_html, metadata, die sechs xrowmetadata_license-Operatoren und die sechs bc_ga-Operatoren - mit Parametern, Rückgabewerten, auf einer Entwicklungsinstallation gefundenen Stolperfallen (Operatornamen mit Großbuchstaben, ein die() bei fehlendem Schlüssel) und auf einer Entwicklungsinstallation gerenderten Beispielen.
 keywords: Erweiterungen, Operatoren, Lizenz, Metadaten, Captcha, Statistik, Stolperfallen, ezoe_ini_section, ezcreateclasslistgroups, parsexml, recaptcha_get_html, metadata, xrowmetadata_license, xrowmetadata_license_enabled, xrowmetadata_license_choices, xrowmetadata_license_info, xrowmetadata_license_inherited, xrowmetadata_license_class_settings, bc_ga_urchin, bc_ga_urchinOrder, bc_ga_jsEscapedString, bc_ga_formatNumericDecimal, bc_ga_xmlAttributeValue, bc_ga_script_url
 type: help
 ---
@@ -83,7 +83,7 @@ nicht aufrufen.
 3 parsexml: {'<binaryfile><Filename>report.pdf</Filename><Size value="1024"/></binaryfile>'|parsexml( 'Filename' )} / {'<binaryfile><Size value="1024"/></binaryfile>'|parsexml( 'Size' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 ezoe_ini_section: yes / no
@@ -128,7 +128,7 @@ nur ausgegeben, dass Markup zurückkam, nicht der Schlüssel:
 7 metadata node 90: {metadata( 90 )|get_type}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 recaptcha_get_html: markup returned
@@ -206,7 +206,7 @@ Innerhalb eines Ausdrucks (in einem `def`, einem Parameter, nach `|`) funktionie
 3 bc_ga_urchin: {bc_ga_urchin()|count_chars} characters
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 bc_ga_jsEscapedString: It\'s '+String.fromCharCode(34)+'quoted'+String.fromCharCode(34)+'
@@ -224,7 +224,7 @@ Bestellverfolgung. Zeile 3 oben gibt nur seine Länge aus, nicht die Konto-ID.
 ### bc_ga_urchinOrder
 
 Parameter `order` (ein Bestellobjekt). Baut das versteckte Formular zur Bestellverfolgung mit Bestellnummer, Summen, Stadt,
-Bundesland und Land des Kunden sowie den Produktzeilen. Auf alpha nicht ausgeführt: Er braucht eine echte Bestellung und gibt
+Bundesland und Land des Kunden sowie den Produktzeilen. Auf einer Entwicklungsinstallation nicht ausgeführt: Er braucht eine echte Bestellung und gibt
 Kundendaten aus.
 
 ### bc_ga_jsEscapedString
@@ -246,7 +246,7 @@ für die Bestelladresse verwendet; im Beispiel kommt er nicht vor.
 ### bc_ga_script_url
 
 Eingabe: JavaScript-Code. Gibt eine Adresse dafür zurück: über `ezjscPacker::generatedContentURL()`, wenn ezjscore diese Methode
-anbietet, andernfalls **schreibt** er `bcwebsitestatistics_<md5>.js` in den öffentlichen Cache-Ordner. Auf alpha nicht ausgeführt,
+anbietet, andernfalls **schreibt** er `bcwebsitestatistics_<md5>.js` in den öffentlichen Cache-Ordner. Auf einer Entwicklungsinstallation nicht ausgeführt,
 weil er eine Datei schreibt.
 
 ## Verwandte Seiten

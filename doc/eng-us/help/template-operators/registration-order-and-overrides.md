@@ -3,7 +3,7 @@ title: Registration order and overrides
 audience: developer, designer, app-creator
 category: development
 order: 500
-summary: How the template engine decides which class serves an operator name - the order it reads the eztemplateautoload.php files, "last registration wins", the 21 names two classes register on alpha, and the lazy loading rule that lets a class take a name back in the middle of a request - proven with examples rendered on alpha.
+summary: How the template engine decides which class serves an operator name - the order it reads the eztemplateautoload.php files, "last registration wins", the 21 names two classes register on a development installation, and the lazy loading rule that lets a class take a name back in the middle of a request - proven with examples rendered on a development installation.
 keywords: operator registration, override, eztemplateautoload.php, AutoloadPathList, ExtensionAutoloadPath, ActiveExtensions, last wins, lazy loading, operator clash, swark, ezurlmultisite, substr
 type: help
 ---
@@ -11,14 +11,14 @@ type: help
 
 Operator names are global: one name, one class, for every template of a siteaccess. When two autoload files
 register the same name, the template engine has rules for which one serves it, and one of those rules is
-surprising. This page explains them from `lib/eztemplate/classes/eztemplate.php` and shows them on alpha. For the
+surprising. This page explains them from `lib/eztemplate/classes/eztemplate.php` and shows them on a development installation. For the
 practical "how do I replace a kernel operator", see [Overriding kernel operators](overriding-kernel-operators.md).
 
 ## Contents
 
 1. [The order the files are read](#the-order-the-files-are-read)
 2. [The last registration wins](#the-last-registration-wins)
-3. [The names registered twice on alpha](#the-names-registered-twice-on-alpha)
+3. [The names registered twice](#the-names-registered-twice)
 4. [A loaded class takes its names back](#a-loaded-class-takes-its-names-back)
 5. [Compiled templates](#compiled-templates)
 6. [Functions and fetch functions](#functions-and-fetch-functions)
@@ -37,7 +37,7 @@ practical "how do I replace a kernel operator", see [Overriding kernel operators
    order is the order in which the INI system merges those files, which follows the order of
    `[ExtensionSettings] ActiveExtensions[]` (and of the siteaccess's `ActiveAccessExtensions[]`).
 
-On alpha's `site` siteaccess the engine reads 23 files: the four above, then
+On the `site` siteaccess the engine reads 23 files: the four above, then
 `bcwebsitestatistics, ezwt, ezwebin, ezoe, eztags, ezstarrating, ezurlmultisite, sevenx_themes_media, powercontent,
 recaptcha, explayouts_ui, explayouts, enhancedezbinaryfile, swark, owsimpleoperator, cjw_newsletter, xrowmetadata,
 ezjscore, expui` (bcwebsitestatistics adds its folder to `AutoloadPathList[]` itself, the others use
@@ -60,7 +60,7 @@ A later file that names the same operator simply overwrites the entry. Nothing w
 At this point nothing is loaded: the engine only knows which class to load for a name. The class file is included
 and the object created the first time a template uses one of its names (`loadAndRegisterOperators()`).
 
-## The names registered twice on alpha
+## The names registered twice
 
 This short script lists every name that more than one file registers, with the classes in reading order (save it
 anywhere and run it with `php bin/php/ezexec.php -s site <file>`):
@@ -88,7 +88,7 @@ foreach ( $owners as $name => $classes )
         echo str_pad( $name, 20 ), implode( ' -> ', $classes ), "\n";
 ```
 
-Its output on alpha's `site` siteaccess:
+Its output on the `site` siteaccess:
 
 ```text
 nl2br               eZTemplateNl2BrOperator -> eZPHPOperatorInit
@@ -142,13 +142,13 @@ foreach( $operatorObject->operatorList() as $operatorName )
 So if a class with many names is loaded after another class took one of those names, it takes the name back,
 whatever the autoload order said. Which class serves a clashing name therefore depends on which operators the
 request used before. With `substr`: swark's version treats a length of `0` as "to the end", the library's
-`eZTemplateStringsOperator` passes `0` to PHP, which returns an empty string. Rendered on alpha with a fresh engine:
+`eZTemplateStringsOperator` passes `0` to PHP, which returns an empty string. Rendered on a development installation with a fresh engine:
 
 ```tpl
 [{'abcdef'|substr( 2, 0 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [cdef]
@@ -162,7 +162,7 @@ The same expression in one template, before and after a use of `strlen` (an oper
 [{'abcdef'|substr( 2, 0 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [cdef]
@@ -186,7 +186,7 @@ same library class, has run:
 {'fit & healthy'|upcase}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [override] FIT & HEALTHY
@@ -199,7 +199,7 @@ answered.) Almost every page uses `wash`, so such an override would work in a te
 
 ## Compiled templates
 
-Alpha runs with `[TemplateSettings] TemplateCompile=enabled`, the default. When the compiler meets an operator it
+The development installation used here runs with `[TemplateSettings] TemplateCompile=enabled`, the default. When the compiler meets an operator it
 loads the operator's class at compile time to ask for its hints, and with hints it may write the operator's work
 straight into the generated PHP (see [The operator class interface](operator-class-reference.md#operatortemplatehints)).
 Two consequences:
@@ -214,7 +214,7 @@ Two consequences:
 ## Functions and fetch functions
 
 Template functions (`$eZTemplateFunctionArray`) are registered the same way, last registration wins, and a loaded
-function class registers all its `functionList()` names. On alpha no function name is registered twice.
+function class registers all its `functionList()` names. On a development installation no function name is registered twice.
 
 Fetch functions follow a different rule: `fetch( 'content', ... )` uses the first `content/function_definition.php`
 found in the module repositories, and extension repositories are searched before the kernel. See

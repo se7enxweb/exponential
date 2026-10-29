@@ -107,7 +107,7 @@ Another system (a shop, a CRM, a build pipeline) can start an import by calling 
 the data in the call. This is the import's **webhook / API trigger**. It is off for every import until you switch it
 on in the step **Schedule**, section **Started by another system (webhook or API)**:
 
-![The section Started by another system of the books import: The trigger is on, Run as user (ID), A call may bring the data, Signing secret by name, the address POST https://alpha.se7enx.com/admin/sqliimport/trigger/demo_books_datatable, and the forms for the signing secret and for a new API key](../images/sqli-import/sqli-import-editor-trigger.webp)
+![The section Started by another system of the books import: The trigger is on, Run as user (ID), A call may bring the data, Signing secret by name, the address POST https://www.example.com/admin/sqliimport/trigger/demo_books_datatable, and the forms for the signing secret and for a new API key](../images/sqli-import/sqli-import-editor-trigger.webp)
 
 1. Tick **The trigger is on** and enter the **Run as user (ID)**: a user with Run imports or Manage imports for this
    import. A triggered run never runs as anonymous.

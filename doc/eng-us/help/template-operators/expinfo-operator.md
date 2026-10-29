@@ -3,7 +3,7 @@ title: The expinfo operator
 audience: developer, designer, app-creator
 category: development
 order: 280
-summary: expinfo from eZTemplateExpInfoOperator - the active extensions, all available extensions, one extension's metadata from extension.xml and ezinfo.php, and the kernel information, which keys each mode returns, and which kernel values must never be printed on a public page; examples rendered on alpha.
+summary: expinfo from eZTemplateExpInfoOperator - the active extensions, all available extensions, one extension's metadata from extension.xml and ezinfo.php, and the kernel information, which keys each mode returns, and which kernel values must never be printed on a public page; examples rendered on a development installation.
 keywords: expinfo, extension info, ezinfo.php, extension.xml, expInfo, kernel info, version, eZTemplateExpInfoOperator
 type: help
 ---
@@ -56,7 +56,7 @@ ezjscore {$ext.version}, license: {$ext.license|wash}, active: {$ext.active|choo
 expinfo( 'no_such_extension' ) = [{expinfo( 'no_such_extension' )|choose( 'false', 'true' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 keys: name, version, copyright, license, info_url, Includes the following third-party software, Includes the following third-party software (2), Includes the following third-party software (3), mtime, mtime_formatted, extension_name, description, summary, author, meta, active
@@ -79,7 +79,7 @@ expinfo() returns {$active|count} active extensions; expinfo( 'all' ) returns {$
 'ezjscore'|expinfo works too: {$piped.name|wash}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 expinfo() returns 62 active extensions; expinfo( 'all' ) returns 87, of which 25 are not active.
@@ -103,7 +103,7 @@ version keys: {foreach $k.version as $key => $value}{$key}{delimiter}, {/delimit
 PHP sapi in this run: {$k.php.sapi}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 sections: version, php, memory, server, database, ini, user, extensions, cache, filesystem, timestamps, git, composer
@@ -118,7 +118,7 @@ replaced by `***`), and `git` and `composer` the state of the checkout. **Never 
 visitors can see**; they are for administration pages behind a login. The examples on this page print only section
 and key names, and the PHP SAPI of the command-line run.
 
-All examples gave the same output interpreted and compiled on alpha.
+All examples gave the same output interpreted and compiled on a development installation.
 
 ## Related pages
 

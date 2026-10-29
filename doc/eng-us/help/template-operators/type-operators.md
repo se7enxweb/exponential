@@ -3,7 +3,7 @@ title: Type operators
 audience: developer, designer, app-creator
 category: development
 order: 140
-summary: The 13 operators of eZTemplateTypeOperator (is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null, is_class, is_set, is_unset, get_type, get_class) with their input rules and examples rendered on alpha.
+summary: The 13 operators of eZTemplateTypeOperator (is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null, is_class, is_set, is_unset, get_type, get_class) with their input rules and examples rendered on a development installation.
 keywords: type, is_array, is_boolean, is_integer, is_float, is_numeric, is_string, is_object, is_null, is_class, is_set, is_unset, get_type, get_class, eZTemplateTypeOperator
 type: help
 ---
@@ -41,7 +41,7 @@ Eight operators map one to one to a PHP function (`$PHPNameMap` in the class):
 Without parameters they test the piped input. In the interpreter, with parameters they test every parameter and
 return true only when all pass (`checkType()`); the input is then ignored. They return a boolean.
 
-The compiled form (`isTransform()`) tests only the first value. Compiled on alpha, `is_integer( 1, 2, 'three' )` was
+The compiled form (`isTransform()`) tests only the first value. Compiled on a development installation, `is_integer( 1, 2, 'three' )` was
 true, where the interpreter says false. Test one value per call: `and( $a|is_integer, $b|is_integer )`.
 
 
@@ -66,7 +66,7 @@ $node.parent_node_id|is_null = {$node.parent_node_id|is_null|choose( 'false', 't
 is_integer( 1, 2, 'three' ) = {is_integer( 1, 2, 'three' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 array( 1 )|is_array = true
@@ -81,9 +81,9 @@ $node.parent_node_id|is_null = false
 is_integer( 1, 2, 'three' ) = false
 ```
 
-The same template compiled on alpha; the last line differs:
+The same template compiled on a development installation; the last line differs:
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 array( 1 )|is_array = true
@@ -121,7 +121,7 @@ is_class( 'ezcontentobject', $node.object ) = {is_class( 'ezcontentobject', $nod
 'text'|is_class( 'eZContentObject' ) = {'text'|is_class( 'eZContentObject' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $node|is_class( 'eZContentObjectTreeNode' ) = true
@@ -130,9 +130,9 @@ is_class( 'ezcontentobject', $node.object ) = true
 ```
 
 Use the piped form. The compiled code treats the first value as the object and the second as the class name, so
-compiled on alpha the call form `is_class( 'ezcontentobject', $node.object )` was false.
+compiled on a development installation the call form `is_class( 'ezcontentobject', $node.object )` was false.
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 $node|is_class( 'eZContentObjectTreeNode' ) = true
@@ -173,7 +173,7 @@ is_set( $not_defined ) = {is_set( $not_defined )|choose( 'false', 'true' )}
 is_unset( $not_defined ) = {is_unset( $not_defined )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 is_set( $settings.title ) = true
@@ -216,7 +216,7 @@ get_class( $node.object ) = {get_class( $node.object )}
 'text'|get_class = [{'text'|get_class}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 integer double string[3] boolean[true] array[2] object[eZContentObjectTreeNode] object[eZContentObjectAttribute] null 

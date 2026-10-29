@@ -3,7 +3,7 @@ title: Arithmetische Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 100
-summary: Die 18 Operatoren von eZTemplateArithmeticOperator (sum, sub, mul, div, mod, inc, dec, min, max, abs, ceil, floor, round, int, float, count, roman, rand) mit ihren Parametern, ihrer Eingabe, ihrem Rückgabewert und auf alpha ausgegebenen Beispielen.
+summary: Die 18 Operatoren von eZTemplateArithmeticOperator (sum, sub, mul, div, mod, inc, dec, min, max, abs, ceil, floor, round, int, float, count, roman, rand) mit ihren Parametern, ihrer Eingabe, ihrem Rückgabewert und auf einer Entwicklungsinstallation ausgegebenen Beispielen.
 keywords: Arithmetik, Rechnen, Mathematik, Rechenoperatoren, Runden, Zählen, Zufallszahl, römische Zahlen, arithmetic, math, sum, sub, mul, div, mod, inc, dec, min, max, abs, ceil, floor, round, int, float, count, roman, rand, eZTemplateArithmeticOperator
 type: help
 ---
@@ -14,7 +14,7 @@ Operatoraufruf. Alle 18 arithmetischen Operatoren registriert `eZTemplateArithme
 (`lib/eztemplate/classes/eztemplatearithmeticoperator.php`) über `lib/eztemplate/classes/eztemplateautoload.php`.
 
 Die meisten nehmen ihre Operanden entweder aus der Eingabe über die Pipe (`10|sum( 5 )`) oder aus den Parametern
-(`sum( 10, 5 )`). Wo sich ein Operator anders verhält, sagt es sein Abschnitt. Die Beispiele wurden auf alpha vom
+(`sum( 10, 5 )`). Wo sich ein Operator anders verhält, sagt es sein Abschnitt. Die Beispiele wurden auf einer Entwicklungsinstallation vom
 Template-Interpreter und anschließend noch einmal vom Template-Compiler ausgegeben; die kompilierte Form von `sum`,
 `sub`, `mul` und `div` ruft dasselbe `eZTemplateArithmeticOperator::calculate()` auf. Der einzige gefundene
 Unterschied, bei `min`, steht in dessen Abschnitt.
@@ -73,7 +73,7 @@ sub( 10, 3, 2 ) = {sub( 10, 3, 2 )}
 sum( 'abc', 2 ) = {sum( 'abc', 2 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 sum( 2, 3, 4 ) = 9
@@ -132,7 +132,7 @@ mod( 10, 4 ) = {mod( 10, 4 )}
 10|mod( 3 ) = {10|mod( 3 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 mul( 4, 2.5 ) = 10
@@ -173,7 +173,7 @@ inc( 9 ) = {inc( 9 )}
 dec( 1 ) = {dec( 1 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $i|inc = 6, $i|dec = 4, $i is still 5
@@ -214,7 +214,7 @@ min( 3, 9, 4 ) = {min( 3, 9, 4 )}
 7|min( 9, 8 ) = {7|min( 9, 8 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 max( 3, 9, 4 ) = 9
@@ -223,11 +223,11 @@ min( 3, 9, 4 ) = 3
 7|min( 9, 8 ) = 8
 ```
 
-Dasselbe Template, auf alpha kompiliert (das Kompilieren von Templates ist in `site.ini` eingeschaltet,
+Dasselbe Template, auf einer Entwicklungsinstallation kompiliert (das Kompilieren von Templates ist in `site.ini` eingeschaltet,
 `[TemplateSettings] TemplateCompile`), gab in der letzten Zeile `7|min( 9, 8 ) = 7` aus; die anderen Zeilen waren
 gleich:
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 max( 3, 9, 4 ) = 9
@@ -266,7 +266,7 @@ round( 2.4 ) = {round( 2.4 )}
 int( 9.99 ) = {int( 9.99 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 -4.6|abs = 4.6
@@ -309,7 +309,7 @@ $node|count (attributes of the node object) = {$node|count}
 42|count = {42|count}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 array( 1, 2, 3 )|count = 3
@@ -354,7 +354,7 @@ roman( 1999 ) = {roman( 1999 )}
 rand( 1, 6 ) is between 1 and 6: {and( $r|ge( 1 ), $r|le( 6 ) )|choose( 'no', 'yes' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 4|roman = IV
@@ -365,7 +365,7 @@ rand( 1, 6 ) is between 1 and 6: yes
 
 ## Ein durchgerechnetes Beispiel: die Anzahl der Seiten
 
-Die Kategorie Recipes auf alpha (Knoten 144), vier Einträge pro Seite:
+Die Kategorie Recipes auf einer Entwicklungsinstallation (Knoten 144), vier Einträge pro Seite:
 
 ```tpl
 {def $total = fetch( 'content', 'list_count', hash( 'parent_node_id', 144 ) )
@@ -374,7 +374,7 @@ Die Kategorie Recipes auf alpha (Knoten 144), vier Einträge pro Seite:
 {$total} items under Recipes, {$limit} per page: {$pages} pages
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 18 items under Recipes, 4 per page: 5 pages

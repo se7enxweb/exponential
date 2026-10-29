@@ -3,7 +3,7 @@ title: Menü- und Baum-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 330
-summary: Die Kernel-Operatoren, die Navigation aufbauen - treemenu (ein Menü, das sich entlang des aktuellen Pfads aufklappt), content_structure_tree (ein verschachtelter Baum von Knoten) und topmenu (die Reiter der Administration aus menu.ini) - mit jedem Parameter, der Form ihrer Rückgabe, ihren Kosten und auf alpha ausgegebenen Beispielen.
+summary: Die Kernel-Operatoren, die Navigation aufbauen - treemenu (ein Menü, das sich entlang des aktuellen Pfads aufklappt), content_structure_tree (ein verschachtelter Baum von Knoten) und topmenu (die Reiter der Administration aus menu.ini) - mit jedem Parameter, der Form ihrer Rückgabe, ihren Kosten und auf einer Entwicklungsinstallation ausgegebenen Beispielen.
 keywords: Menü, Navigation, Baum, Inhaltsstruktur, Reiter, Administration, treemenu, content_structure_tree, topmenu, menu, navigation, tree, menu.ini, TopAdminMenu, eZTreeMenuOperator, eZContentStructureTreeOperator, eZTopMenuOperator
 type: help
 ---
@@ -67,7 +67,7 @@ path: {foreach $path as $p}{$p.url} {/foreach}
 node_id is {$node.node_id|get_type}, the id taken from a URL is {'/content/view/full/144'|explode( '/' )|extract( 4, 1 )|implode( '' )|get_type}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 0 -15 92 Fitness /fitness
@@ -121,7 +121,7 @@ root: {$tree.parent_node.node.node_id} {$tree.parent_node.object.name} ({$tree.p
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 root: 89 Fit & Healthy (ng_frontpage), 16 children
@@ -170,7 +170,7 @@ Mit dem Siteaccess `admin` ausgegeben. Die Kommandozeile läuft als anonymer Ben
 shown to this user: {topmenu( 'content', true() )|count}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 first: Dashboard -> content/dashboard enabled=yes access=no part=ezmynavigationpart

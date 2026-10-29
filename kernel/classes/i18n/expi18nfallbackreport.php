@@ -16,7 +16,9 @@
  * directory (its own, else the first of the chain, or all of the chain with FallbackMode=merge) against the
  * extension's source messages: its untranslated/translation.ts, or every message of its files when it has none.
  * Reading the 500 extension files takes seconds, so that part is cached in <cache directory>/i18n/fallback-report.json,
- * keyed by a signature of the fallbacks and the names, sizes and times of the files.
+ * keyed by a signature of the fallbacks and the names, sizes and times of the files. Each file is counted as a mask of
+ * the source messages it translates, kept per file by the catalogue (expUISwitchLanguageCatalogue::cachedMask()), so a
+ * changed file is the only one read again when the report is built anew.
  *
  * @package kernel
  */
@@ -241,25 +243,23 @@ class expI18nFallbackReport
             if ( strpos( $locale, '@' ) === false )
                 $coverage[$locale] = $this->extensionCoverageOf( $locale );
         }
-        if ( $file !== '' && class_exists( 'eZFile' ) )
-        {
-            try
-            {
-                @eZFile::create( basename( $file ), dirname( $file ), json_encode( array( 'signature' => $signature, 'coverage' => $coverage ) ), true );
-            }
-            catch ( Throwable $e )
-            {
-                // kept in memory only
-            }
-        }
+        $this->catalogue->saveMasks();
+        if ( $file !== '' )
+            expUISwitchLanguageCatalogue::writeCacheFile( $file, json_encode( array( 'signature' => $signature, 'coverage' => $coverage ) ) );
         return $this->extensionCoverage = $coverage;
     }
 
     /** @var array root => source keys */
     private $sourceKeys = array();
 
-    /** @var array file => translated keys */
-    private $translatedKeys = array();
+    /** @var array root => source key => position */
+    private $sourceIndexes = array();
+
+    /** @var array root => stamp of its source messages, see sourceStampOf() */
+    private $sourceStamps = array();
+
+    /** @var array file => hash( mask, any, count ), see expUISwitchLanguageCatalogue::cachedMask() */
+    private $masks = array();
 
     /**
      * One locale's coverage of every extension, name => percentage or null (no file through the chain: the source
@@ -298,16 +298,61 @@ class expI18nFallbackReport
                 $result[$name] = null;
                 continue;
             }
-            $translated = array();
+            // the translated source messages of the files together, as masks (a byte per source message), each
+            // kept per file by the catalogue: a changed file is the only one read again
+            $sourceStamp = $this->sourceStampOf( $root );
+            $indexOf = function () use ( $root ) {
+                return $this->sourceIndexOf( $root );
+            };
+            $mask = '';
+            $any = false;
+            $count = 0;
             foreach ( $files as $path )
             {
-                if ( !isset( $this->translatedKeys[$path] ) )
-                    $this->translatedKeys[$path] = $this->catalogue->messageKeys( $path, true );
-                $translated += $this->translatedKeys[$path];
+                if ( !isset( $this->masks[$path] ) )
+                    $this->masks[$path] = $this->catalogue->cachedMask( $path, $sourceStamp, $indexOf );
+                $mask = $mask === '' ? $this->masks[$path]['mask'] : ( $mask | $this->masks[$path]['mask'] );
+                $any = $any || $this->masks[$path]['any'];
+                $count = $this->masks[$path]['count'];
             }
-            $result[$name] = expUISwitchLanguageCatalogue::coveragePercent( $this->sourceKeysOf( $root ), $translated );
+            $result[$name] = expUISwitchLanguageCatalogue::maskCoveragePercent( $mask, $count, $any );
         }
         return $result;
+    }
+
+    /**
+     * What an extension's source messages are made of, for the masks (expUISwitchLanguageCatalogue::cachedMask()):
+     * the stamp of its untranslated/translation.ts, or of every file of it when it has none.
+     *
+     * @param string $root
+     * @return string
+     */
+    protected function sourceStampOf( $root )
+    {
+        if ( isset( $this->sourceStamps[$root] ) )
+            return $this->sourceStamps[$root];
+        $untranslated = $root . '/untranslated/translation.ts';
+        if ( is_file( $untranslated ) )
+            return $this->sourceStamps[$root] = 'u:' . expUISwitchLanguageCatalogue::fileStamp( $untranslated );
+        $parts = array();
+        $files = (array)glob( $root . '/*/translation.ts' );
+        sort( $files, SORT_STRING );
+        foreach ( $files as $file )
+            $parts[] = $file . ':' . expUISwitchLanguageCatalogue::fileStamp( $file );
+        return $this->sourceStamps[$root] = 'a:' . md5( implode( "\n", $parts ) );
+    }
+
+    /**
+     * The source messages of an extension as key => position.
+     *
+     * @param string $root
+     * @return array
+     */
+    protected function sourceIndexOf( $root )
+    {
+        if ( !isset( $this->sourceIndexes[$root] ) )
+            $this->sourceIndexes[$root] = array_flip( array_keys( $this->sourceKeysOf( $root ) ) );
+        return $this->sourceIndexes[$root];
     }
 
     /**

@@ -3,7 +3,7 @@ title: Zeichenketten-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 150
-summary: Die 15 Operatoren von eZTemplateStringOperator (upcase, downcase, upfirst, upword, count_words, count_chars, trim, simplify, pad, shorten, wrap, break, wash, ord, chr), jeder wash-Typ (xhtml, email, javascript, pdf) und auf alpha ausgegebene Beispiele.
+summary: Die 15 Operatoren von eZTemplateStringOperator (upcase, downcase, upfirst, upword, count_words, count_chars, trim, simplify, pad, shorten, wrap, break, wash, ord, chr), jeder wash-Typ (xhtml, email, javascript, pdf) und auf einer Entwicklungsinstallation ausgegebene Beispiele.
 keywords: Zeichenkette, Text, Groß- und Kleinschreibung, Kürzen, Zeilenumbruch, Maskieren, Escaping, string, text, upcase, downcase, upfirst, upword, count_words, count_chars, trim, simplify, pad, shorten, wrap, break, wash, escaping, xhtml, email, javascript, pdf, ord, chr, eZTemplateStringOperator
 type: help
 ---
@@ -62,7 +62,7 @@ Parameter. Erzeugte Referenz: [upword](../../beispiele/template-operatoren/upwor
 'healthy eating for runners'|upword = {'healthy eating for runners'|upword}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'fit & healthy'|upcase = FIT &amp; HEALTHY
@@ -91,7 +91,7 @@ Erzeugte Referenz: [count_chars](../../beispiele/template-operatoren/count_chars
 'Grüße'|count = {'Grüße'|count} (the arithmetic count: bytes)
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'Fit & Healthy recipes'|count_words = 3
@@ -144,7 +144,7 @@ Erzeugte Referenz: [pad](../../beispiele/template-operatoren/pad.md).
 [{'already long'|pad( 4 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [padded]
@@ -175,7 +175,7 @@ Gibt eine Zeichenkette zurück. `shorten` zählt Zeichen, keine Wörter, und kan
 zerschneiden: Kürzen Sie reinen Text und wenden Sie danach `wash` an.
 Erzeugte Referenz: [shorten](../../beispiele/template-operatoren/shorten.md).
 
-Die erste Zeile verwendet den Namen des Artikels Privacy Policy auf alpha (Knoten 90):
+Die erste Zeile verwendet den Namen des Artikels Privacy Policy auf einer Entwicklungsinstallation (Knoten 90):
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 90 ) )}
@@ -186,7 +186,7 @@ Die erste Zeile verwendet den Namen des Artikels Privacy Policy auf alpha (Knote
 {'Short'|shorten( 20 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Privacy...
@@ -227,7 +227,7 @@ Erzeugte Referenz: [break](../../beispiele/template-operatoren/break.md).
 line two"|break}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 The quick brown
@@ -260,7 +260,7 @@ Macht Text für eine bestimmte Art von Ausgabe sicher. Der Typ ist der einzige P
 | `pdf` | für den PDF-Export: HTML-Entitäten werden dekodiert, dann werden Leerzeichen, Tabulatoren und Zeilenwechsel zu den Callbacks `<C:callSpace>`, `<C:callTab>` und `<C:callNewLine>` der PDF-Bibliothek |
 
 Jeder andere Typ gibt die Eingabe **unverändert** zurück, ohne Maskierung und ohne Warnung, ein Tippfehler im Typ ist
-also ein Sicherheitsproblem. Auf alpha ist `EmailAtText` auf ein `spamfilter`-Span gesetzt, wie das Beispiel zeigt.
+also ein Sicherheitsproblem. Auf einer Entwicklungsinstallation ist `EmailAtText` auf ein `spamfilter`-Span gesetzt, wie das Beispiel zeigt.
 
 Ein kompiliertes Template macht aus `wash` mit einem konstanten Typ Inline-PHP (`washTransformation()`); der
 kompilierte Zweig für `pdf` ersetzt nur Leerraum und dekodiert vorher keine Entitäten.
@@ -274,7 +274,7 @@ pdf:        {'85 g&nbsp;spinach	end'|wash( 'pdf' )}
 unknown:    {'<b>raw</b>'|wash( 'no-such-type' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 xhtml:      &lt;b&gt;&quot;Fit&quot; &amp; &#039;Healthy&#039;&lt;/b&gt;
@@ -303,7 +303,7 @@ back with chr = {$codes|chr}
 array( 72, 105 )|chr = {array( 72, 105 )|chr}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'Añ€'|ord = 65, 241, 8364

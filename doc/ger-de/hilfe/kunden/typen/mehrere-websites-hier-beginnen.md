@@ -33,7 +33,7 @@ auf. Sie beantwortet die meisten Fragen, die eine neue Leitung stellen wird.
 
 ## Ein Beispiel aus der Praxis
 
-Die Demo-Installation unter <https://alpha.se7enx.com> liefert mehrere Websites aus einem Inhaltsbaum aus: die Website
+Eine Demo-Installation liefert mehrere Websites aus einem Inhaltsbaum aus: die Website
 „Fit & Healthy“ unter `/site` oder `/` und die Website „Bold Agency“ unter `/bold`, mit ihren Übersetzungen
 (`doc/eng-us/features/6.0/multisite-cross-site-links.md`). Wenn eine Seite einer Website Inhalte einer anderen auflistet
 (eine Tag-Seite, ein Suchergebnis, ein verwandtes Element), müssen die Links in die richtige Website zeigen; das

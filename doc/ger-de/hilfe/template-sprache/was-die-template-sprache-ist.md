@@ -29,7 +29,7 @@ Template genutzt wird.
 
 ## Ein erster Blick
 
-Ein Template mischt Text mit Tags. Dieses holt die Startseite „Fit & Healthy“ von alpha (Knoten 89), gibt ihren Namen für HTML maskiert aus
+Ein Template mischt Text mit Tags. Dieses holt die Startseite „Fit & Healthy“ einer Entwicklungsinstallation (Knoten 89), gibt ihren Namen für HTML maskiert aus
 und führt ihre ersten vier Kinder auf:
 
 ```tpl
@@ -43,7 +43,7 @@ und führt ihre ersten vier Kinder auf:
 </ul>
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <h2>Fit &amp; Healthy</h2>
@@ -94,7 +94,7 @@ Ansichtsfunktionen wie `node_view_gui`.
 
 Was die Sprache ohne installierte Erweiterung bietet, mit der Seite, die es behandelt:
 
-- **Mehrere hundert registrierte Operatoren.** Auf dem Siteaccess `site` von alpha registriert die Engine 395 Operatoren und 48 Funktionen
+- **Mehrere hundert registrierte Operatoren.** Auf dem Siteaccess `site` einer Entwicklungsinstallation registriert die Engine 395 Operatoren und 48 Funktionen
   (gezählt durch Laden jedes Eintrags der Listen von Operatoren und Funktionen). Die Template-Bibliothek allein bringt Arithmetik, Arrays,
   Zeichenketten, die Zeichenkettenfunktionen von PHP, Logik, Typen, Locale, Digests und Rollen mit.
 - **Datenzugriff im Template.** `fetch( 'content', 'list', hash( ... ) )` liest Inhalte mit Filtern, Sortierung und Berechtigungen, und
@@ -120,7 +120,7 @@ URL: {$article.url_alias|ezurl( 'no', 'relative' )}
 Can the visitor read it: {if $article.can_read}yes{else}no{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Fields: 18
@@ -133,7 +133,7 @@ Can the visitor read it: yes
 
 ## Wie die Beispiele in diesem Abschnitt entstanden sind
 
-Jedes Beispiel auf den Seiten zur Template-Sprache wurde auf alpha, der Referenzinstallation, von der echten Engine gegen echte Inhalte
+Jedes Beispiel auf den Seiten zur Template-Sprache wurde auf einer Entwicklungsinstallation, von der echten Engine gegen echte Inhalte
 gerendert, und die Ausgabe darunter ist das, was die Engine ausgegeben hat. Die Beispiele liegen außerhalb des Designbaums und werden mit der
 Ressource `file:` gelesen; Kompilierung und Template-Caching waren für diese Läufe ausgeschaltet, und jedes Beispiel wurde ein zweites Mal
 durch den Compiler gerendert, um zu prüfen, dass beide dieselbe Ausgabe ergeben. Wo ein Beispiel absichtlich einen Fehler zeigt, zeigt die

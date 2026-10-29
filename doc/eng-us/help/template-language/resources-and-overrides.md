@@ -3,7 +3,7 @@ title: Template resources and overrides
 audience: developer, designer, app-creator
 category: development
 order: 420
-summary: How a template name becomes a file - the design: and file: resources, the ordered design bases of a siteaccess (site design, additional designs, standard design, each with its extension designs first), override.ini rules with their match keys and order, and how include and the view functions use them - with the real resolution on alpha's site siteaccess.
+summary: How a template name becomes a file - the design: and file: resources, the ordered design bases of a siteaccess (site design, additional designs, standard design, each with its extension designs first), override.ini rules with their match keys and order, and how include and the view functions use them - with the real resolution on the site siteaccess.
 keywords: template resource, design:, file:, eZTemplateDesignResource, design bases, SiteDesign, AdditionalSiteDesignList, StandardDesign, DesignExtensions, override.ini, match keys, override order, include, node_view_gui
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 A template is always named through a **resource**: `design:node/view/full.tpl`, `file:var/...`. The resource turns
 the name into a file. For `design:` that involves the designs of the siteaccess, the designs of every extension and
-the override rules of `override.ini`. This page shows how, with the resolution alpha's `site` siteaccess performs.
+the override rules of `override.ini`. This page shows how, with the resolution the installation's `site` siteaccess performs.
 
 ## Contents
 
@@ -45,7 +45,7 @@ folders; site code uses `design:` so that designs and overrides apply.
    DesignExtensions[]` (in that order), then the kernel's `design/<design>`; folders that do not exist are skipped.
 
 With `DesignLocationCache=enabled` the list is stored in a cache file (cleared with the `design_base` cache id). A
-read-only CLI script printed the list for alpha's `site` siteaccess (`eZTemplateDesignResource::allDesignBases()`):
+read-only CLI script printed the list for the installation's `site` siteaccess (`eZTemplateDesignResource::allDesignBases()`):
 
 ```text
 siteaccess:               site
@@ -134,7 +134,7 @@ Including a design template from a template uses the same walk. Here the standar
 [{include uri='design:content/datatype/view/ezstring.tpl' attribute=$node.data_map.title}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [
@@ -143,7 +143,7 @@ Why Should You Choose Strength Training?]
 
 ## Overrides
 
-`override.ini` (of the siteaccess and of every extension) has one group per rule. The rule for articles on alpha,
+`override.ini` (of the siteaccess and of every extension) has one group per rule. The rule for articles on a development installation,
 from `extension/sevenx_themes_media/settings/siteaccess/site/override.ini.append.php`:
 
 ```ini
@@ -163,7 +163,7 @@ starts with the given value; any other key must equal the key's value (or be one
 array, such as `class_group`). Rules are taken in the order of the merged `override.ini`, or by a numeric `Priority`
 in the group when one is given (lower first).
 
-On alpha, `node/view/full.tpl` has 57 rules; the first ones:
+On a development installation, `node/view/full.tpl` has 57 rules; the first ones:
 
 ```text
 override rules for design:node/view/full.tpl: 57 (default file extension/ezwebin/design/ezwebin/templates/node/view/full.tpl)

@@ -3,7 +3,7 @@ title: Node attributes reference
 audience: developer, designer, app-creator
 category: development
 order: 210
-summary: Every attribute a template can read from a node (eZContentObjectTreeNode) - the 16 database fields and the 35 function attributes of its definition, the PHP method behind each, and the value each returned for a real article on alpha.
+summary: Every attribute a template can read from a node (eZContentObjectTreeNode) - the 16 database fields and the 35 function attributes of its definition, the PHP method behind each, and the value each returned for a real article on a development installation.
 keywords: node attributes, eZContentObjectTreeNode, definition, function_attributes, name, data_map, children, path, url_alias, can_edit, class_identifier, reference
 type: help
 ---
@@ -19,15 +19,15 @@ template can read from it is exactly what `eZContentObjectTreeNode::definition()
 1. [How this table was made](#how-this-table-was-made)
 2. [Database fields](#database-fields)
 3. [Function attributes](#function-attributes)
-4. [A sample on alpha](#a-sample-on-alpha)
+4. [A sample](#a-sample)
 5. [Notes](#notes)
 6. [Related pages](#related-pages)
 
 ## How this table was made
 
-A read-only CLI script on alpha (run with `bin/php/ezexec.php -s site` as the web server's user) called
+A read-only CLI script on a development installation (run with `bin/php/ezexec.php -s site` as the web server's user) called
 `eZContentObjectTreeNode::definition()`, listed `fields` and `function_attributes`, and read each name with
-`$node->attribute( $name )` on node 96, an `ng_article`. The "Value on alpha" column is the PHP type and, for short
+`$node->attribute( $name )` on node 96, an `ng_article`. The "Value on a development installation" column is the PHP type and, for short
 values, the value it returned. The script runs as the anonymous user, so the `can_*` checks show what an anonymous
 visitor may do. The core of it:
 
@@ -42,7 +42,7 @@ foreach ( $def['function_attributes'] as $name => $method )
 
 ## Database fields
 
-| Attribute | Database column / member | Datatype | Value on alpha (node 96) |
+| Attribute | Database column / member | Datatype | Value on a development installation (node 96) |
 |---|---|---|---|
 | `node_id` | `NodeID` | integer | integer 96 |
 | `parent_node_id` | `ParentNodeID` | integer | integer 92 |
@@ -65,7 +65,7 @@ foreach ( $def['function_attributes'] as $name => $method )
 
 `remote_id` is in both lists; the function attribute (`remoteID()`) is the one a template reads.
 
-| Function attribute | PHP method | Value on alpha (node 96) |
+| Function attribute | PHP method | Value on a development installation (node 96) |
 |---|---|---|
 | `name` | `eZContentObjectTreeNode::getName()` | string "Why Should You Choose Strength Training?" |
 | `data_map` | `eZContentObjectTreeNode::dataMap()` | array(18) of eZContentObjectAttribute |
@@ -103,7 +103,7 @@ foreach ( $def['function_attributes'] as $name => $method )
 | `classes_js_array` | `eZContentObjectTreeNode::availableClassesJsArray()` | string (3218 bytes) |
 | `is_container` | `eZContentObjectTreeNode::classIsContainer()` | integer 1 |
 
-## A sample on alpha
+## A sample
 
 A few of these attributes on node 89, the "Fit & Healthy" front page:
 
@@ -122,7 +122,7 @@ can_read:        {cond( $node.can_read, 'yes', 'no' )}, can_edit: {cond( $node.c
 current user:    {fetch( 'user', 'current_user' ).login}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 name:            Fit &amp; Healthy
@@ -153,7 +153,7 @@ url_alias:       {$node.url_alias}
 url:             {$node.url}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 PathPrefix:      fit-healthy

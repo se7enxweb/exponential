@@ -3,7 +3,7 @@ title: The fetch and fetch_alias operators
 audience: developer, designer, app-creator
 category: development
 order: 250
-summary: fetch and fetch_alias from eZTemplateExecuteOperator - how a template reaches a module's function_definition.php through eZFunctionHandler and eZModuleFunctionInfo, parameters, results and failures, what the compiler does with a constant fetch, with examples rendered on alpha.
+summary: fetch and fetch_alias from eZTemplateExecuteOperator - how a template reaches a module's function_definition.php through eZFunctionHandler and eZModuleFunctionInfo, parameters, results and failures, what the compiler does with a constant fetch, with examples rendered on a development installation.
 keywords: fetch, fetch_alias, function_definition.php, eZFunctionHandler, eZModuleFunctionInfo, function collection, fetchalias.ini, eZTemplateExecuteOperator
 type: help
 ---
@@ -39,7 +39,7 @@ Calls one function of a module and returns its result.
 Input: none. Returns whatever the function puts in the `result` key of its answer: an object, a list, a number, or
 `null` when the call fails. Generated reference: [fetch](../../examples/template-operators/fetch.md).
 
-The Recipes category on alpha (node 144) and its children:
+The Recipes category on a development installation (node 144) and its children:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 144 ) )
@@ -55,7 +55,7 @@ The Recipes category on alpha (node 144) and its children:
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Recipes (node 144, class ng_category) has 18 children; the first three by name:
@@ -74,7 +74,7 @@ Current user in this CLI run: {$user.login|wash} (logged in: {$user.is_logged_in
 Classes: {foreach $classes as $c}{$c.identifier} {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Current user in this CLI run: anonymous (logged in: no)
@@ -88,7 +88,7 @@ The parameter hash may be a variable built earlier:
 {foreach fetch( 'content', 'list', $params ) as $k}{$k.name|wash}; {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Zucchini Zoodles with Ground Turkey Tomato Sauce; Vibrant Guacamole;
@@ -120,7 +120,7 @@ children_count: {$n}
 children: {foreach $kids as $k}{$k.name|wash}; {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 children_count: 18
@@ -156,7 +156,7 @@ unknown function: [{fetch( 'content', 'no_such_function' )|is_null|choose( 'not 
 missing parameter: [{fetch( 'content', 'node' )|is_null|choose( 'not null', 'null' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 unknown module: [null]
@@ -173,7 +173,7 @@ while compiling and writes code that calls the function collection's method dire
 declared order, instead of going through `eZFunctionHandler` at run time. The method call is guarded: if the class or
 method cannot be loaded by the running process, the result is `null` and an error is written to the debug output. A
 fetch with a variable module or function name stays a run-time call. All examples on this page gave the same output
-interpreted and compiled on alpha.
+interpreted and compiled on a development installation.
 
 ## Related pages
 

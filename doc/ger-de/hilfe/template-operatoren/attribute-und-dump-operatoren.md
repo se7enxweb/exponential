@@ -3,7 +3,7 @@ title: Die Operatoren attribute und dump
 audience: developer, designer, app-creator
 category: development
 order: 220
-summary: attribute und dump aus eZTemplateAttributeOperator - auflisten, was ein Objekt, ein Hash oder ein Array Templates anbietet, mit oder ohne Werte, bis zu einer Tiefe, als HTML-Tabelle oder als Text, und warum ihre Ausgabe nie eine öffentliche Seite erreichen darf; Beispiele, die auf alpha gerendert wurden.
+summary: attribute und dump aus eZTemplateAttributeOperator - auflisten, was ein Objekt, ein Hash oder ein Array Templates anbietet, mit oder ohne Werte, bis zu einer Tiefe, als HTML-Tabelle oder als Text, und warum ihre Ausgabe nie eine öffentliche Seite erreichen darf; Beispiele, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: attribute, dump, Fehlersuche, untersuchen, Objektattribute, Attribute auflisten, debug, inspect, object attributes, data_map, ezpAttributeOperatorManager, AttributeOperator, DefaultFormatter, eZTemplateAttributeOperator
 type: help
 ---
@@ -58,7 +58,7 @@ Die Felder der Startseite von Fit & Healthy (Knoten 89), eine Ebene, als Text:
 {$node.data_map|attribute( 'show', 1, 'text' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 title (object[eZContentObjectAttribute]=Object)
@@ -77,7 +77,7 @@ Ohne `show` nur Namen und Typen:
 {$hash|attribute( '', 2, 'text' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 title (string)
@@ -105,7 +105,7 @@ Generierte Referenz: [dump](../../beispiele/template-operatoren/dump.md).
 {$hash|dump( 'show', 2, 'text' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 title (string='Fit & Healthy')
@@ -120,7 +120,7 @@ Mit dem Standardformatierer `html` ist das Ergebnis eine Tabelle:
 {hash( 'node_id', 89, 'name', 'Fit & Healthy' )|dump}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <table><tr><th align="left">Attribute</th>
@@ -144,7 +144,7 @@ Ein Skalar kommt unverändert zurück:
 [{'plain text'|dump( 'show', 1, 'text' )}] [{42|attribute( 'show', 1, 'text' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ['plain text'] [42]
@@ -161,7 +161,7 @@ Ausgabe auf alpha:
 - Manche Attribute werden erst beim Lesen berechnet. Sie mit Werten aufzulisten führt diesen Code aus, sodass ein `dump`
   langsam sein kann, auch wenn die Seite klein ist.
 
-Die Beispiele wurden auf alpha vom Interpreter und noch einmal mit dem Template-Compiler gerendert; beide lieferten
+Die Beispiele wurden auf einer Entwicklungsinstallation vom Interpreter und noch einmal mit dem Template-Compiler gerendert; beide lieferten
 dieselbe Ausgabe.
 
 ## Verwandte Seiten

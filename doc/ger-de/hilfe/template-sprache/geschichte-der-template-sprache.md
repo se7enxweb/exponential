@@ -76,7 +76,7 @@ Fehlermeldungen gegen die neue Template-Syntax (#6629) und die neue Template-Sch
 
 ## Wie der ältere Stil heute aussieht
 
-Beide Stile laufen weiterhin nebeneinander. Dieselbe Liste, auf die alte und die neue Weise geschrieben, auf alpha gerendert:
+Beide Stile laufen weiterhin nebeneinander. Dieselbe Liste, auf die alte und die neue Weise geschrieben, auf einer Entwicklungsinstallation gerendert:
 
 ```tpl
 {* the older style: let ... /let and section *}
@@ -89,7 +89,7 @@ new: {foreach $items as $item}{$item}{delimiter}, {/delimiter}{/foreach}
 {undef $items}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 old: red, green, bluenew: red, green, blue

@@ -3,7 +3,7 @@ title: ezjscore operators in depth
 audience: developer, designer, app-creator
 category: development
 order: 400
-summary: Every operator of the ezjscore extension - the packer operators ezscript, ezscript_require, ezscript_load, ezscriptfiles, ezcss, ezcss_require, ezcss_load, ezcssfiles, the encoders json_encode, xml_encode, node_encode and has_access_to_limitation - with all parameters, the persistent-variable mechanism behind require and load, pack levels, and examples rendered on alpha.
+summary: Every operator of the ezjscore extension - the packer operators ezscript, ezscript_require, ezscript_load, ezscriptfiles, ezcss, ezcss_require, ezcss_load, ezcssfiles, the encoders json_encode, xml_encode, node_encode and has_access_to_limitation - with all parameters, the persistent-variable mechanism behind require and load, pack levels, and examples rendered on a development installation.
 keywords: ezjscore, ezscript, ezscript_require, ezscript_load, ezscriptfiles, ezcss, ezcss_require, ezcss_load, ezcssfiles, json_encode, xml_encode, node_encode, has_access_to_limitation, packer, pack_level, persistent_variable
 type: help
 ---
@@ -41,7 +41,7 @@ All packer operators hand their file list to `ezjscPacker` (`extension/ezjscore/
 - `pack_level` 0 links the files as they are. Above 0 the files are joined into one file in the cache folder
   (`var/<site>/cache/public/`), and higher levels also minify. `ezjscore.ini` `[eZJSCore] Packer=disabled` forces 0, a
   number there replaces every `pack_level`; when `Packer` is not set, `[TemplateSettings] DevelopmentMode=enabled`
-  forces 0. On alpha `Packer=enabled`, so the parameter decides.
+  forces 0. On a development installation `Packer=enabled`, so the parameter decides.
 - Packing writes the joined file the first time a list is used. The examples on this page use `pack_level` 0 so that
   they write nothing.
 - No version query is added to the links; a changed file gets a new packed name because the name includes the file
@@ -51,7 +51,7 @@ All packer operators hand their file list to `ezjscPacker` (`extension/ezjscore/
 Packer setting: [{ezini( 'eZJSCore', 'Packer', 'ezjscore.ini' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Packer setting: [enabled]
@@ -116,7 +116,7 @@ The same for stylesheets: `css_array`, `pack_level` (default 3), `ignore_loaded`
 4 {ezscript( array( 'ezjsc::jquery' ), 'text/javascript', '', 'utf-8', 0 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 /extension/ezwebin/design/ezwebin/stylesheets/core.css /design/standard/stylesheets/debug.css
@@ -169,7 +169,7 @@ an array". The order below shows the whole cycle in one template:
 5 again: [{ezcss_require( array( 'pagelayout.css' ), 'all', 'text/css', 'stylesheet', '', 0 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 require: []
@@ -236,7 +236,7 @@ only for aliases the images already have.
 4 node_encode as JSON: {node_encode( $node, hash(), 'json' )|count_chars} characters, starts {node_encode( $node, hash(), 'json' )|extract_left( 40 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 {"title":"Privacy Policy","children":0,"tags":["a","b"]}
@@ -263,7 +263,7 @@ Generated page: [has_access_to_limitation](../../examples/template-operators/has
 `hasAccessTo()` decides first: `yes` and `no` are returned as they are. For `limited` access, the values of every
 policy are merged per limitation key that you passed; the call is `true` when each value you passed is among the
 merged values (`Subtree` and `User_Subtree` match when your path string contains one of the allowed paths).
-Limitation keys of the policies that you did not pass are ignored (noted in the debug output with `debug`). On alpha
+Limitation keys of the policies that you did not pass are ignored (noted in the debug output with `debug`). On a development installation
 the anonymous role reads sections 1, 3 and 67, so section 2 is refused:
 
 ```tpl
@@ -275,7 +275,7 @@ anonymous content/read: {$access|choose( 'no', 'yes' )}
 4 content/edit: {has_access_to_limitation( 'content', 'edit', hash( 'Section', 1 ) )|choose( 'no', 'yes' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 anonymous content/read: yes
