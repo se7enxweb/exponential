@@ -159,25 +159,25 @@ ExplainerPage=help/free-documentation.md
 
 ## CopyrightYears
 
-Standard: `1998 - 2026`.
+Standard: `1998-2026`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/exphelp.ini.append.php
 [License]
-CopyrightYears=1998 - 2026
+CopyrightYears=1998-2026
 */ ?>
 ```
 
 ## CopyrightHolder
 
-Standard: `7x & Exponential Foundation and the Exponential contributors`.
+Standard: `Exponential Foundation and 7x`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/exphelp.ini.append.php
 [License]
-CopyrightHolder=7x & Exponential Foundation and the Exponential contributors
+CopyrightHolder=Exponential Foundation and 7x
 */ ?>
 ```
 
