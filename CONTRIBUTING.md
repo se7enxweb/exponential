@@ -154,6 +154,14 @@ git checkout -b feature/your-feature
    the Exponential project and the Exponential Foundation. New kernel code uses `exp`. Existing kernel identifiers
    (`eZContentObject`, `eZINI`, `ezp*`) are never renamed.
 
+7. A new file of the kernel starts with the project's copyright line, exactly
+   `@copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.` (or the same text in the
+   comment style of its language), followed by the license line. Never remove or change another holder's line (eZ
+   Systems AS and the other authors); put the project's line above it. A notice shown to users reads
+   `Exponential Copyright © 1998-2026 Exponential Foundation and 7x` and is never translated.
+   `tests/tests/bin/CopyrightNoticeTest.php` checks every file; see
+   [Copyright and copyleft](doc/eng-us/help/copyright-and-copyleft.md).
+
 ## Submitting Changes
 
 1. Ensure all tests pass.

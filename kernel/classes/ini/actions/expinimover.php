@@ -238,7 +238,7 @@ class expIniMover
     {
         return "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<software>\n    <metadata>\n        <name>$ext</name>\n"
              . "        <version>1.0.0</version>\n"
-             . "        <copyright>Copyright (C) 1998 - 2026 7x &amp; Exponential Foundation. All rights reserved.</copyright>\n"
+             . "        <copyright>Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.</copyright>\n"
              . "        <license>GNU General Public License v2.0 (or any later version)</license>\n"
              . "    </metadata>\n</software>\n";
     }
@@ -251,7 +251,7 @@ class expIniMover
              . " * @license GNU General Public License v2.0 (or any later version)\n * @package $ext\n */\n\n"
              . "class {$ext}Info\n{\n    public static function info()\n    {\n        return array(\n"
              . "            'Name' => \"$ext\",\n            'Version' => \"1.0.0\",\n"
-             . "            'Copyright' => \"Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.\",\n"
+             . "            'Copyright' => \"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.\",\n"
              . "            'License' => \"GNU General Public License v2.0 (or any later version)\"\n        );\n    }\n}\n";
     }
 

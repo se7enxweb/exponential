@@ -220,7 +220,7 @@ class IniMoveTest extends PHPUnit\Framework\TestCase
         $this->assertExit( 0, $this->ini( array( 'move', 'site.ini/DebugSettings', 'global', 'extension:newsite', '--create-extension', '--activate' ) ) );
         $info = $this->file( 'extension/newsite/ezinfo.php' );
         foreach ( array( 'class newsiteInfo', 'public static function info()', "'Version' => \"1.0.0\"",
-                         'GNU General Public License v2.0 (or any later version)', '7x & Exponential Foundation' ) as $t )
+                         'GNU General Public License v2.0 (or any later version)', 'Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.' ) as $t )
             $this->assertStringContainsString( $t, $info );
         exec( escapeshellarg( PHP_BINARY ) . ' -l ' . escapeshellarg( $this->root . '/extension/newsite/ezinfo.php' ), $o, $lint );
         $this->assertSame( 0, $lint );

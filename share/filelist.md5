@@ -17,12 +17,12 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 b7034e90e1a71f18582da6f6945a14d0  CODE_OF_CONDUCT.md
-7f633edbac0ce0ba02f84af70e552b85  CONTRIBUTING.md
-eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
-d34848eec00c077171187386a805c85b  LICENSE
-bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
+f8baecac6ae2794bd17d54fe4213b365  CONTRIBUTING.md
+eda6fb235e4bbc82955e58eabd8a543f  COPYRIGHT.md
+44854963a19e818ec0e1ca4e297e6d63  LICENSE
+9b91786bcaae960a4016307971068247  LICENSE.md
 78a4fdaf7d2479c8f3feee5f009ab321  Makefile
-834249a8aaee4915c2c13580fe013e9b  README.md
+6783cbba050f13fe87964eee620c0167  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 e4bf879d052df7b01d6889ee67f68038  autoload.php
 9f0142f888be50416f33ef9a1bf2c19a  autoload/ezp_kernel.php
@@ -201,7 +201,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-4d9e3b9319a661a1722975bfe459b3ff  composer.json
+7c4292db80d358350fa44c86ad048d1c  composer.json
 e9264ecfdf16598f8b69c0ec301251ac  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 b226014797143b612684b0aacc22d64c  config.php-RECOMMENDED
@@ -21531,8 +21531,8 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
 11aff5cc28fe69d7e6106a9efcf581d2  extension/exphelpsite/design/standard/override/templates/help/full_topic.tpl
 0e29752586896d8fa9cf8c35936b9a74  extension/exphelpsite/design/standard/override/templates/help/line.tpl
-93499c3010bb17eeb89357ec2c7a82cc  extension/exphelpsite/extension.xml
-89a3465378b628944059a06cc46abb86  extension/exphelpsite/ezinfo.php
+c10520e51584a43a528ccd9a201e5b3d  extension/exphelpsite/extension.xml
+c28eff0e9cd36468d7c50fc3ed4a8f7a  extension/exphelpsite/ezinfo.php
 e826afb3eb994f3ec2d0878d22874d69  extension/exphelpsite/settings/design.ini.append.php
 789084ae472765b53c9cb25ea78a55bf  extension/exphelpsite/settings/override.ini.append.php
 a6e729765e24fc3f09f4b01a28c89016  extension/expimageeditor/README.md
@@ -21893,8 +21893,8 @@ a5a0ded18d815bc2af21708c761fb135  extension/expservices/design/expportal_reactiv
 7257506e273b79a601bba8b9660180f2  extension/expservices/design/expportal_wireframe/javascript/wireframe.js
 b69d305204dd0459049af2ee6e264f8b  extension/expservices/design/expportal_wireframe/stylesheets/wireframe.css
 c7f40c2be79241d3bf9a5db1bbce34f1  extension/expservices/design/expportal_wireframe/templates/pagelayout.tpl
-8c6a8841a73ab23b6440f8e3fb778984  extension/expservices/extension.xml
-7870815fbb440d2fa2f09dc82c4b29fd  extension/expservices/ezinfo.php
+c90f44b16c547931620800f1e763fbed  extension/expservices/extension.xml
+1145993f250d79debf5f84c2e20016cb  extension/expservices/ezinfo.php
 510670a8cc278fe145df0788ad812015  extension/expservices/settings/audit.ini.append.php
 187c339ef03fd21551ea8df7363f2065  extension/expservices/settings/design.ini.append.php
 6323a70ff83d0ff383da2b77168aff18  extension/expservices/settings/expportal.ini
@@ -21908,7 +21908,7 @@ c68620496dee6ff6d0f89b0571dc7da5  extension/expservices/settings/expservices.ini
 d41d8cd98f00b204e9800998ecf8427e  extension/ezformtoken/README
 e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 7584b7c82fe4808f16975da9850eef88  extension/ezformtoken/event/ezxformtoken.php
-53322d752c21521e6736059158a8dd4b  extension/ezformtoken/extension.xml
+42ea162998c72daf52fdd7bd897a2166  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
 a675ce93fc4bd22a1ab1d3b78c7d372a  extension/ezjscore/CHANGELOG
@@ -21948,8 +21948,8 @@ a7bf61ace40268bc56e89998941eec49  extension/ezjscore/design/standard/templates/e
 a2a8b366e1eca7ce170c33b9eeed6135  extension/ezjscore/design/standard/templates/ezjsctemplate/test.tpl
 4f71f4fd05bd14ecadea3d748f370a5c  extension/ezjscore/doc/FAQ
 693f3589fef421f20391f7f19ee241fb  extension/ezjscore/doc/INSTALL
-b077e257cadb7127699ae5094ba6bc1a  extension/ezjscore/extension.xml
-ebb6cf98416f64461f805322b4456be8  extension/ezjscore/ezinfo.php
+dfabcf72be9a9443d2b31a541d2e3c85  extension/ezjscore/extension.xml
+0c75ce1420476712b40303f086891d2b  extension/ezjscore/ezinfo.php
 4864060f09ab9beae7b1761197a400ee  extension/ezjscore/modules/ezjscore/call.php
 67fb855578cd62d8e021b5ff7db1ed42  extension/ezjscore/modules/ezjscore/hello.php
 563fbe1fd62e6db633a5118301456507  extension/ezjscore/modules/ezjscore/module.php
@@ -22577,7 +22577,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 8607a7e3766c4aba3e75ab44f0b34020  extension/ezoe/doc/oe5_intro.odt
 432508f8b8c2b01e6ced699e524f4abe  extension/ezoe/doc/oe5_intro.pdf
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
-b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
+d68aef10c475f5d39441e5210cce2634  extension/ezoe/extension.xml
 0e59f547cb18032b1c3670271ff9d935  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
 34731dfbf828917f9a97e597cf0fcb36  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
@@ -23226,7 +23226,7 @@ f22db66f52ec82cc762b05accfcc6160  kernel/classes/ini/actions/expiniactionscopes.
 39929dde3737d36d04f43e66ad936f1f  kernel/classes/ini/actions/expiniactionwhere.php
 bed78bde0ba108d8d87c625762f9d05f  kernel/classes/ini/actions/expinicommand.php
 69ee361ff1c8858338023fe19edee261  kernel/classes/ini/actions/expinicommandcontext.php
-ad153fed9debd881ff713e2cb3e0fa2c  kernel/classes/ini/actions/expinimover.php
+f5fbbbbc8bdf87f4d767999dce8a92b0  kernel/classes/ini/actions/expinimover.php
 dc0bb5ff13d813a8a4e5527fda58bb8f  kernel/classes/ini/expinicorescopeprovider.php
 f0bb11ed3af44253ab01d40735174d5e  kernel/classes/ini/expinieditor.php
 a4200cc1ab6f028e30bbef6c6747a03b  kernel/classes/ini/expiniexception.php
@@ -26874,7 +26874,7 @@ c6da154d118eda72be683ca24cf4649e  tests/tests/kernel/classes/i18n/expI18nFallbac
 6b15e685e66da8dc419bbcfa6a81f0ff  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
 1d30d12166491cb8d2a7ca4085474fdd  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 e1fd2e33e80bb70bd0ea94fa20949410  tests/tests/kernel/classes/ini/command/IniCommandTest.php
-d537daff3e728855bb9184a7e3f21f56  tests/tests/kernel/classes/ini/command/IniMoveTest.php
+6cfe2a6548b2441c8fa37247d36c2c25  tests/tests/kernel/classes/ini/command/IniMoveTest.php
 92112d9e8107b10135d6e617547ae711  tests/tests/kernel/classes/ini/command/RadSurveyIniCommandTest.php
 d199f65c82394ab0a36003c701458eff  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/classes/iniactionfixture.php
 5221c75de5bbdcc09105177fb33c5bbd  tests/tests/kernel/classes/ini/command/fixtures/extension/iniactionfixture/settings/ini.ini.append.php
