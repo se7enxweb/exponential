@@ -69,8 +69,8 @@
   margin: 0 0 var(--a4-space-1);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-heading);
+  letter-spacing: var(--a4-tracking);
   text-transform: uppercase;
 }
 .a4-class-datatype label input[type="checkbox"],
@@ -128,7 +128,7 @@
   background-color: var(--a4-soft);
   color: var(--a4-ink);
   font-size: var(--a4-text-m);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   letter-spacing: 0;
   text-align: start;
   text-transform: none;
@@ -151,10 +151,10 @@
   text-align: end;
 }
 .a4-class-flags { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-4); margin: var(--a4-space-3) 0 0; }
-.a4-class-flags .a4-check { font-size: var(--a4-text-s); font-weight: 600; }
+.a4-class-flags .a4-check { font-size: var(--a4-text-s); font-weight: var(--a4-weight-strong); }
 .a4-class-flags .a4-check.is-off { color: var(--a4-muted); cursor: not-allowed; }
 .a4-class-move-status { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); }
-.a4-class-move-status.is-error { color: var(--a4-bad); font-weight: 650; }
+.a4-class-move-status.is-error { color: var(--a4-bad); font-weight: var(--a4-weight-heading); }
 a.a4-class-top {
   position: static;
   display: inline-block;
@@ -216,8 +216,8 @@ a.a4-class-top {
   cursor: pointer;
 }
 .a4-pdf-choice input { flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--a4-accent-strong); }
-.a4-pdf-choice > span { flex: 1 1 auto; min-width: 0; font-weight: 400; }
-.a4-pdf-choice strong { display: block; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-pdf-choice > span { flex: 1 1 auto; min-width: 0; font-weight: normal; }
+.a4-pdf-choice strong { display: block; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); }
 .a4-pdf-choice .a4-help { display: block; margin-top: 2px; }
 .a4-pdf-choice:has(input:checked) { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
 .a4-pdf-choice:has(input:focus-visible) { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
@@ -240,7 +240,7 @@ a.a4-class-top {
   min-height: 30px;
   color: var(--a4-ink);
   font-size: var(--a4-text-s);
-  font-weight: 400;
+  font-weight: normal;
   overflow-wrap: anywhere;
   cursor: pointer;
 }
@@ -306,7 +306,7 @@ a.a4-class-top {
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
 }
-.a4-rss-opml fieldset > legend { padding: 0 var(--a4-space-2); background: none; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-rss-opml fieldset > legend { padding: 0 var(--a4-space-2); background: none; color: var(--a4-ink); font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); }
 .a4-rss-opml .context-attributes p,
 .a4-rss-opml fieldset .block > p { max-width: 78ch; margin: 0 0 var(--a4-space-2); color: var(--a4-muted); }
 .a4-rss-opml fieldset .block { margin: 0 0 var(--a4-space-3); }
@@ -316,7 +316,7 @@ a.a4-class-top {
   margin: 0 0 var(--a4-space-1);
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
 .a4-rss-opml input[type="text"],
 .a4-rss-opml select,
@@ -346,8 +346,8 @@ a.a4-class-top {
   background-color: var(--a4-soft);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-heading);
+  letter-spacing: var(--a4-tracking);
   text-align: start;
   text-transform: uppercase;
 }
@@ -366,7 +366,7 @@ a.a4-class-top {
   background: none;
   color: var(--a4-muted);
   font: inherit;
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -385,8 +385,8 @@ a.a4-class-top {
   color: var(--a4-ink);
   font-family: inherit;
   font-size: var(--a4-text-s);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: var(--a4-weight-strong);
+  line-height: var(--a4-leading-tight);
   cursor: pointer;
 }
 .a4-rss-opml input.defaultbutton { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
@@ -418,7 +418,7 @@ a.a4-class-top {
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
-  font-weight: 700;
+  font-weight: var(--a4-weight-bold);
 }
 .a4-rss-opml-already td { opacity: .7; }
 .a4-rss-opml-outlines-wrap,
@@ -449,16 +449,16 @@ a.a4-class-top {
 }
 .a4-package-repo > a:hover { border-color: var(--a4-accent); }
 .a4-package-repo.is-current > a { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
-.a4-package-repo-name { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-package-repo-name { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); }
 .a4-package-repo-name code { color: var(--a4-ink); font-size: var(--a4-text-m); }
-.a4-package-repo-count { font-size: var(--a4-text-xl); font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.a4-package-repo-count span { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 400; }
+.a4-package-repo-count { font-size: var(--a4-text-xl); font-weight: var(--a4-weight-bold); line-height: var(--a4-leading-tight); font-variant-numeric: tabular-nums; }
+.a4-package-repo-count span { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: normal; }
 .a4-package-repo-lines { margin: 0; padding: 0; list-style: none; color: var(--a4-muted); font-size: var(--a4-text-xs); }
-.a4-package-repo-lines li.is-warn { color: var(--a4-warn); font-weight: 650; }
+.a4-package-repo-lines li.is-warn { color: var(--a4-warn); font-weight: var(--a4-weight-heading); }
 .a4-package-pkg-summary { margin: var(--a4-space-2) 0 0; color: var(--a4-ink); }
 .a4-package-deps { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
 .a4-package-deps li { margin: 0; }
-.a4-package-deps .is-missing { color: var(--a4-bad); font-weight: 650; }
+.a4-package-deps .is-missing { color: var(--a4-bad); font-weight: var(--a4-weight-heading); }
 .a4-package-pages { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-s); }
 .a4-package-pages a,
 .a4-package-pages span {
@@ -477,7 +477,7 @@ a.a4-class-top {
   border-color: var(--a4-accent-strong);
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
 .a4-package-pages span.is-disabled { border-style: dashed; color: var(--a4-muted); }
 .a4-package-goes { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-3); margin: 0 0 var(--a4-space-4); padding: 0; list-style: none; }
@@ -488,7 +488,7 @@ a.a4-class-top {
   gap: var(--a4-space-3);
   min-width: 0;
   margin: 0;
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   overflow-wrap: anywhere;
 }
 .a4-package-confirm-tick input { flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--a4-bad); }
@@ -571,7 +571,7 @@ a.a4-class-top {
 .a4-package-pick-table tr.is-disabled label { cursor: default; color: var(--a4-muted); }
 .a4-package-node-path,
 .a4-package-refusal { display: block; overflow-wrap: anywhere; }
-.a4-package-refusal { color: var(--a4-warn); font-weight: 650; }
+.a4-package-refusal { color: var(--a4-warn); font-weight: var(--a4-weight-heading); }
 .a4-package-ext-details { margin-top: var(--a4-space-1); }
 .a4-package-ext-details > summary { color: var(--a4-accent-text); font-size: var(--a4-text-s); cursor: pointer; }
 .a4-package-ext-details > p { margin: var(--a4-space-1) 0 0; max-width: 78ch; }
@@ -605,7 +605,7 @@ a.a4-class-top {
 .a4-package-creator-list label { align-items: flex-start; height: 100%; }
 .a4-package-creator-list input { margin-top: 2px; }
 .a4-package-creator-list label > span { display: flex; flex: 1 1 auto; flex-direction: column; gap: var(--a4-space-1); min-width: 0; }
-/* core.css draws every label bold and the checked choice is bolder: what a wizard exports reads as normal text */
+/* the base stylesheet draws every label bold and the checked choice is bolder: what a wizard exports reads as normal text */
 .a4-package-creator-list label .a4-help { display: block; font-weight: normal; }
 .a4-package-creator-list label:has(input:checked) { border-color: var(--a4-accent); box-shadow: inset 0 0 0 1px var(--a4-accent); }
 
