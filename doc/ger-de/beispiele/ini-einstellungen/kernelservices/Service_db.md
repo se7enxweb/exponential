@@ -11,28 +11,28 @@ generated: exp:help:examples
 
 Der Block `[Service_db]` von `settings/kernelservices.ini`, mit 5 Einstellung(en).
 
-> One block per service, \[Service\_<id>\]. The id is the name code asks for:  
+> Ein Block pro Service, \[Service\_<id>\]. Die id ist der Name, den der Code anfordert:  
 >   expKernelServices::get( '<id>' )  
 >
-> Class        the class (or interface) of the service  
-> Factory      Class::method to call; without it, "new Class( Arguments )"  
-> Arguments\[\]  @<id> another service, %ini:<file>/<Section>/<Variable>% a  
->              setting, anything else as written (@@ and %% for a leading @  
->              or % in a literal)  
-> Scope        worker: one per worker and siteaccess (kept across requests on  
->                      Velocity; it must hold nothing of a request)  
->              request: one per request (the default)  
->              prototype: a new one each time  
-> Lazy         true (the default): made when first asked for  
-> Tags\[\]       names that collect services for a consumer  
+> Class        die Klasse (oder Schnittstelle) des Services  
+> Factory      Class::method zum Aufrufen; ohne sie "new Class( Arguments )"  
+> Arguments\[\]  @<id> ein anderer Service, %ini:<file>/<Section>/<Variable>% eine  
+>              Einstellung, alles andere wie geschrieben (@@ und %% für ein führendes @  
+>              oder % in einem Literal)  
+> Scope        worker: einer pro Worker und Siteaccess (über Anfragen hinweg behalten bei  
+>                      Velocity; er darf nichts aus einer Anfrage halten)  
+>              request: einer pro Anfrage (der Standard)  
+>              prototype: jedes Mal ein neuer  
+> Lazy         true (der Standard): beim ersten Anfordern erzeugt  
+> Tags\[\]       Namen, die Services für einen Verbraucher sammeln  
 >              (expKernelServices::tagged( '<tag>' ))  
-> Description  one line for exp:services:list and exp:services:show  
-> Enabled      false switches a service off (an extension can switch off one  
->              of the kernel's)  
+> Description  eine Zeile für exp:services:list und exp:services:show  
+> Enabled      false schaltet einen Service ab (eine Erweiterung kann einen  
+>              des Kernels abschalten)  
 >
-> The ids ini.<name> need no block: expKernelServices::get( 'ini.site' ) is  
-> eZINI::instance( 'site.ini' ). The blocks for ini.site and ini.i18n below  
-> only document them.  
+> Die ids ini.<name> brauchen keinen Block: expKernelServices::get( 'ini.site' ) ist  
+> eZINI::instance( 'site.ini' ). Die Blöcke für ini.site und ini.i18n unten  
+> dokumentieren sie nur.  
 
 Bearbeiten Sie `settings/kernelservices.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -66,8 +66,8 @@ Factory=eZDB::instance
 
 ## Scope
 
-> the handle in $GLOBALS\['eZDBGlobalInstance'\] is per request; the connection  
-> underneath is persistent at driver level where the driver keeps one  
+> das Handle in $GLOBALS\['eZDBGlobalInstance'\] gilt pro Anfrage; die Verbindung  
+> darunter ist auf Treiberebene persistent, wo der Treiber eine hält  
 
 Standard: `request`.
 

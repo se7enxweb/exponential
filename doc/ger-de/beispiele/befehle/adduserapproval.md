@@ -2,14 +2,14 @@
 title: exp:adduserapproval
 audience: developer, admin
 category: examples
-summary: "Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first); --mode=section sets up the optional ..."
+summary: "Richtet die Freigabe neuer Konten in einer Benutzergruppe ein (Standard: neue Redakteure warten auf die Administrator users): das Workflow-Ereignis vor content/publish und die Rolle, mit der die Anfragenden solche Konten anlegen dürfen (--dry-run listet es zuerst auf) ..."
 keywords: Konsole, Befehl, exp:adduserapproval, adduserapproval, console, command, CLI, adduserapproval.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:adduserapproval
 
-Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first); --mode=section sets up the optional alternative, a section Staff with the plain approval event (a dry run unless --apply).
+Richtet die Freigabe neuer Konten in einer Benutzergruppe ein (Standard: neue Redakteure warten auf die Administrator users): das Workflow-Ereignis vor content/publish und die Rolle, mit der die Anfragenden solche Konten anlegen dürfen (--dry-run listet es zuerst auf); --mode=section richtet die optionale Alternative ein, eine Sektion Staff mit dem einfachen Freigabe-Ereignis (ein Probelauf, außer mit --apply).
 
 Skript `bin/php/adduserapproval.php`, Code in `kernel/private/classes/commands/adduserapproval.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -30,16 +30,16 @@ Set up the approval of new user accounts: the workflow "
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | List what would be created and changed; change nothing |
-| `--mode` | erforderlich | group (default: the event "Approve user accounts") or section (the section Staff and the plain approval event) |
-| `--apply` |  | --mode=section only: make the changes (without it the section setup is a dry run) |
-| `--staff` | erforderlich | --mode=section: a group whose accounts go into the section Staff (default Administrator users and Editors), may be repeated |
-| `--exempt` | erforderlich | --mode=section: a group whose members need no approval (default Administrator users), may be repeated |
-| `--required` | erforderlich | A group whose new accounts need approval (default Editors), may be repeated |
-| `--approvers` | erforderlich | A group whose members approve (default Administrator users), may be repeated |
-| `--requesters` | erforderlich | A group that may create accounts in the required groups and waits for approval (default Editors), may be repeated |
-| `--no-role` |  | Do not create or assign the requesters' role (the requesters have their policies already) |
-| `--admin-id` | erforderlich | The user the workflow is created by (default 14) |
+| `--dry-run` |  | Listet auf, was angelegt und geändert würde; ändert nichts |
+| `--mode` | erforderlich | group (Standard: das Ereignis "Approve user accounts") oder section (die Sektion Staff und das einfache Freigabe-Ereignis) |
+| `--apply` |  | Nur mit --mode=section: führt die Änderungen aus (ohne diese Option ist die Einrichtung der Sektion ein Probelauf) |
+| `--staff` | erforderlich | --mode=section: eine Gruppe, deren Konten in die Sektion Staff kommen (Standard Administrator users und Editors), darf wiederholt werden |
+| `--exempt` | erforderlich | --mode=section: eine Gruppe, deren Mitglieder keine Freigabe brauchen (Standard Administrator users), darf wiederholt werden |
+| `--required` | erforderlich | Eine Gruppe, deren neue Konten freigegeben werden müssen (Standard Editors), darf wiederholt werden |
+| `--approvers` | erforderlich | Eine Gruppe, deren Mitglieder freigeben (Standard Administrator users), darf wiederholt werden |
+| `--requesters` | erforderlich | Eine Gruppe, die Konten in den erforderlichen Gruppen anlegen darf und auf Freigabe wartet (Standard Editors), darf wiederholt werden |
+| `--no-role` |  | Legt die Rolle der Anfragenden nicht an und weist sie nicht zu (die Anfragenden haben ihre Richtlinien bereits) |
+| `--admin-id` | erforderlich | Der Benutzer, durch den der Workflow angelegt wird (Standard 14) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

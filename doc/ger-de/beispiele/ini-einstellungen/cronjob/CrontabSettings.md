@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Install
 
-> The cron job of the installation: the setup wizard, the kickstarter and exp:install write the  
-> crontab lines that run the parts below, in the crontab of the system user that owns the  
-> installation directory (never root's crontab), between the marker lines  
-> "# BEGIN Exponential cronjobs: <root>" and "# END Exponential cronjobs: <root>".  
-> bin/php/installcrontab.php --show, --add, --remove (with --dry-run) does the same on an  
-> installation that exists. Without a crontab (a container, no crontab command, another user)  
-> the installer prints the lines to add and carries on.  
-> Guide: doc/eng-us/bc/6.0/installer-crontab.md  
+> Der Cronjob der Installation: der Setup-Assistent, der Kickstarter und exp:install schreiben die  
+> Crontab-Zeilen, die die folgenden Teile ausführen, in die Crontab des Systembenutzers, dem das  
+> Installationsverzeichnis gehört (nie in die Crontab von root), zwischen die Markierungszeilen  
+> "# BEGIN Exponential cronjobs: <root>" und "# END Exponential cronjobs: <root>".  
+> bin/php/installcrontab.php --show, --add, --remove (mit --dry-run) tut dasselbe in einer  
+> bestehenden Installation. Ohne Crontab (ein Container, kein crontab-Befehl, ein anderer Benutzer)  
+> gibt der Installer die hinzuzufügenden Zeilen aus und macht weiter.  
+> Anleitung: doc/eng-us/bc/6.0/installer-crontab.md  
 >
-> disabled: the installers write nothing and print the lines instead (for one exp:install run:  
-> --no-crontab, or the environment variable EXP\_INSTALL\_CRONTAB=0).  
+> disabled: die Installer schreiben nichts und geben stattdessen die Zeilen aus (für einen exp:install-Lauf:  
+> --no-crontab oder die Umgebungsvariable EXP\_INSTALL\_CRONTAB=0).  
 
 Standard: `enabled`.
 
@@ -43,9 +43,9 @@ Install=enabled
 
 ## Parts
 
-> The parts the cron job runs, each only when the installation defines it with at least one  
-> script (an extension's part when the extension is active). An extension can add its own in its  
-> settings/cronjob.ini.append.php. The schedule is \[AdminSettings\] CrontabSchedule\_<part>.  
+> Die Teile, die der Cronjob ausführt, jeweils nur, wenn die Installation ihn mit mindestens einem  
+> Skript definiert (der Teil einer Erweiterung, wenn die Erweiterung aktiv ist). Eine Erweiterung kann in ihrer  
+> settings/cronjob.ini.append.php eigene hinzufügen. Der Zeitplan ist \[AdminSettings\] CrontabSchedule\_<part>.  
 
 Standard: eine Liste mit 6: `global`, `frequent`, `infrequent`, `expqueue`, `sqliimport`, `expai`.
 
@@ -66,8 +66,8 @@ Parts[]=expai
 
 ## AdminParts
 
-> The parts that run with the admin siteaccess (-s <admin>): their extensions are active there  
-> only, or their jobs need the administration's settings. The others run with the default siteaccess.  
+> Die Teile, die mit dem Admin-Siteaccess laufen (-s <admin>): ihre Erweiterungen sind nur dort aktiv,  
+> oder ihre Jobs brauchen die Einstellungen der Administration. Die anderen laufen mit dem Standard-Siteaccess.  
 
 Standard: eine Liste mit 3: `expqueue`, `sqliimport`, `expai`.
 
@@ -85,8 +85,8 @@ AdminParts[]=expai
 
 ## AdminSiteAccess
 
-> The admin siteaccess of AdminParts\[\] (set it in settings/override). Empty: admin when it exists,  
-> else the first siteaccess of AvailableSiteAccessList\[\] with "admin" in its name.  
+> Der Admin-Siteaccess von AdminParts\[\] (in settings/override setzen). Leer: admin, wenn er existiert,  
+> sonst der erste Siteaccess aus AvailableSiteAccessList\[\] mit "admin" im Namen.  
 
 Standard: leer.
 
@@ -100,7 +100,7 @@ AdminSiteAccess=
 
 ## CrontabCommand
 
-> The crontab command: a name on the PATH or a full path.  
+> Der Crontab-Befehl: ein Name im PATH oder ein vollständiger Pfad.  
 
 Standard: `crontab`.
 

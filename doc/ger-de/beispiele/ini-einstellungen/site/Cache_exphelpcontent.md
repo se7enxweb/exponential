@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[Cache_exphelpcontent]` von `settings/site.ini`, mit 5 Einstellung(en).
 
-> The rows of help maintained as content (var/<site>/cache/exphelp/content/repository-\*.cache).  
-> It checks itself against the help subtree on every request and reads again only  
-> the objects that changed, so it needs no clearing after a publish; clearing it  
-> makes the next help page read every help object (a few seconds).  
+> Die Zeilen der als Inhalt gepflegten Hilfe (var/<site>/cache/exphelp/content/repository-\*.cache).  
+> Er prüft sich bei jeder Anfrage gegen den Hilfe-Teilbaum und liest nur  
+> die geänderten Objekte erneut, braucht also nach einer Veröffentlichung kein Leeren;  
+> Leeren führt dazu, dass die nächste Hilfeseite jedes Hilfe-Objekt liest (einige Sekunden).  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

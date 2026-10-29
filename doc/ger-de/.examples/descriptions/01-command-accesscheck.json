@@ -792,8 +792,8 @@
         "de": "seed-glossary, seed-topics: die Datendatei (Standard share/help/seed-glossary.json, share/help/seed-topics.json)"
     },
     "command:exphelpcontent --fix": {
-        "en": "check: set the section of each topic, figure, chapter and manual from the audience",
-        "de": "check: die Sektion jedes Themas, jeder Abbildung, jedes Kapitels und Handbuchs aus der Zielgruppe setzen"
+        "en": "check: set the section of each topic, figure, chapter and manual from the audience, and record the help_ids of Released topics",
+        "de": "check: setzt die Sektion jedes Themas, jeder Abbildung, jedes Kapitels und jedes Handbuchs anhand der Zielgruppe und hält die help_ids der Released-Themen fest"
     },
     "command:exphelpcontent --format": {
         "en": "export: epub, pdf or dita",
@@ -804,16 +804,16 @@
         "de": "Der Benutzer, der die Klassen und Objekte anlegt (Standard admin)"
     },
     "command:exphelpcontent --manual": {
-        "en": "export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual",
-        "de": "export, dita, ebooks: die remote_id des Handbuchs (help-manual-...); dita und ebooks ohne sie: jedes Handbuch"
+        "en": "export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual; build-manuals: the key of one manual of [ManualSettings] Manuals[]",
+        "de": "export, dita, ebooks: die remote_id des Handbuchs (help-manual-...); dita und ebooks ohne diese Option: jedes Handbuch; build-manuals: der Schlüssel eines Handbuchs aus [ManualSettings] Manuals[]"
     },
     "command:exphelpcontent --output": {
         "en": "export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages)",
         "de": "export: die zu schreibende Datei (Standard <cache>/exphelp/ebooks/<remote_id>.<format>); dita: das Verzeichnis (Standard <cache>/exphelp/dita/all oder /<remote_id>); package: das Verzeichnis (Standard <cache>/exphelp/packages)"
     },
     "command:exphelpcontent --release": {
-        "en": "seed-topics: set new topics, chapters and manuals to Released",
-        "de": "seed-topics: neue Themen, Kapitel und Handbücher auf Released setzen"
+        "en": "seed-topics: set new topics, chapters and manuals to Released; build-manuals: set every generated one to Released",
+        "de": "seed-topics: setzt neue Themen, Kapitel und Handbücher auf Released; build-manuals: setzt jedes erzeugte auf Released"
     },
     "command:exphelpcontent --update": {
         "en": "seed-*: also update existing objects that differ from the file",

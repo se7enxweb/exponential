@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> Removing content (also to the trash) and publishing. Off by default; switched on setup/reauth.  
+> Inhalt entfernen (auch in den Papierkorb) und Veröffentlichen. Standardmäßig aus; eingeschaltet unter setup/reauth.  
 
 Standard: `false`.
 

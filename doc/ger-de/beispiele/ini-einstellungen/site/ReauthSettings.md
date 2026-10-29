@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Reauth
 
-> "Verify it's you": before a sensitive action the signed-in user confirms who they are  
-> again, with the password, a passkey or the code of a two-step sign-in app, and is not  
-> asked again for Minutes. Only the web pages ask (index.php and Velocity); REST, SOAP,  
-> WebDAV, the expservices login and the command line are never asked. Anonymous visitors  
-> are never asked. The groups and their switches are edited on setup/reauth.  
-> Guide: doc/eng-us/guides/verify-its-you.md  
+> "Bestätigen Sie, dass Sie es sind": vor einer sensiblen Aktion bestätigt der angemeldete Benutzer erneut, wer er ist,  
+> mit dem Passwort, einem Passkey oder dem Code einer App für die zweistufige Anmeldung, und wird für  
+> Minutes nicht erneut gefragt. Nur die Webseiten fragen (index.php und Velocity); REST, SOAP,  
+> WebDAV, die expservices-Anmeldung und die Kommandozeile werden nie gefragt. Anonyme Besucher  
+> werden nie gefragt. Die Gruppen und ihre Schalter werden unter setup/reauth bearbeitet.  
+> Anleitung: doc/eng-us/guides/verify-its-you.md  
 >
-> enabled or disabled (all groups).  
+> enabled oder disabled (alle Gruppen).  
 
 Standard: `enabled`.
 
@@ -40,7 +40,7 @@ Reauth=enabled
 
 ## Minutes
 
-> Minutes a confirmation counts.  
+> Minuten, die eine Bestätigung gilt.  
 
 Standard: `10`.
 
@@ -54,7 +54,7 @@ Minutes=10
 
 ## MaxFailures
 
-> Wrong answers in a row after which the user is signed out.  
+> Falsche Antworten in Folge, nach denen der Benutzer abgemeldet wird.  
 
 Standard: `5`.
 
@@ -68,7 +68,7 @@ MaxFailures=5
 
 ## Groups
 
-> The groups, each \[ReauthGroup\_<name>\] with Enabled=true|false and Rules\[\].  
+> Die Gruppen, jeweils \[ReauthGroup\_<name>\] mit Enabled=true|false und Rules\[\].  
 
 Standard: eine Liste mit 5: `account`, `users`, `system`, `export`, `content`.
 
@@ -88,8 +88,8 @@ Groups[]=content
 
 ## CodeHandlers
 
-> Classes implementing expReauthCodeHandler: they check the code of a two-step sign-in app.  
-> expReauthTotpCode reads the codes of sevenx\_authentication\_2fa when that extension is active.  
+> Klassen, die expReauthCodeHandler implementieren: sie prüfen den Code einer App für die zweistufige Anmeldung.  
+> expReauthTotpCode liest die Codes von sevenx\_authentication\_2fa, wenn diese Erweiterung aktiv ist.  
 
 Standard: eine Liste mit 1: `expReauthTotpCode`.
 

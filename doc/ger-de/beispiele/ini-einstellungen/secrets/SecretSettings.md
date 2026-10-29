@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/secrets.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## KeyFile
 
-> The key file, used when the environment variable EXP\_SECRET\_KEY is not set: made on first use (32 random bytes,  
-> base64, mode 0600). Relative to the installation, or absolute. It must not be in a path the web server serves.  
-> A backup of the database alone cannot decrypt the secrets: keep the key file (or EXP\_SECRET\_KEY) with it.  
+> Die Schlüsseldatei, verwendet, wenn die Umgebungsvariable EXP\_SECRET\_KEY nicht gesetzt ist: beim ersten Gebrauch erzeugt (32 Zufallsbytes,  
+> base64, Modus 0600). Relativ zur Installation oder absolut. Sie darf nicht in einem Pfad liegen, den der Webserver ausliefert.  
+> Ein Backup allein der Datenbank kann die Secrets nicht entschlüsseln: die Schlüsseldatei (oder EXP\_SECRET\_KEY) mit aufbewahren.  
 
 Standard: `var/secrets/exp_secret.key`.
 
@@ -35,7 +35,7 @@ KeyFile=var/secrets/exp_secret.key
 
 ## Secrets
 
-> Secrets set in the settings, by name (in the site's own settings, never in a repository), asked after the store:  
+> In den Einstellungen gesetzte Secrets, nach Namen (in den eigenen Einstellungen der Site, nie in einem Repository), nach dem Store abgefragt:  
 > Secrets\[<name>\]=<value>  
 
 Standard: eine leere Liste.

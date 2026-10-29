@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/kernelservices.ini` nie selbst: Ein Update ersetzt die 
 
 ## TagList
 
-> The tags services may carry. exp:services:check warns about a tag that is  
-> not listed here (an extension adds its own with TagList\[\]=<tag>).  
+> Die Tags, die Services tragen dürfen. exp:services:check warnt vor einem Tag, der  
+> hier nicht aufgeführt ist (eine Erweiterung fügt eigene mit TagList\[\]=<tag> hinzu).  
 
 Standard: eine Liste mit 9: `kernel.core`, `kernel.settings`, `template.operator`, `datatype`, `cronjob.part`, `syscard.provider`, `help.source`, `event.listener`, `transfer.tool`.
 

@@ -51,11 +51,11 @@ FrontendJavaScriptList[]
 
 ## BackendJavaScriptList
 
-> Same as above for backend (admin) designs. These scripts are on every admin page and run without jQuery: admin4  
-> and admin4l load no jQuery on every page. A template whose scripts need jQuery or Exponential UI (exp::\*) requests  
-> them itself with ezscript\_require, outside any cache-block (doc/eng-us/features/6.0/jquery4-and-yui-removal.md).  
-> leftmenu\_widthcontrol.js is the column grip of design/admin, whose page\_leftmenu.tpl loads it itself; admin4 has  
-> its own in ezadmin\_menubar.js and does not ship the file. Do not add it here.  
+> Wie oben für Backend-Designs (Admin). Diese Skripte sind auf jeder Admin-Seite und laufen ohne jQuery: admin4  
+> und admin4l laden auf keiner Seite jQuery. Ein Template, dessen Skripte jQuery oder Exponential UI (exp::\*) brauchen, fordert  
+> sie selbst mit ezscript\_require an, außerhalb jedes cache-block (doc/eng-us/features/6.0/jquery4-and-yui-removal.md).  
+> leftmenu\_widthcontrol.js ist der Spaltengriff von design/admin, dessen page\_leftmenu.tpl es selbst lädt; admin4 hat  
+> seinen eigenen in ezadmin\_menubar.js und liefert die Datei nicht mit. Hier nicht hinzufügen.  
 
 Standard: eine Liste mit 5: `tools/ezjsselection.js`, `lib/ezjslibimagepreloader.js`, `popupmenu/ezpopupmenu.js`, `contentstructuremenu_dynamic.js`, `ezadmin_menubar.js`.
 
@@ -75,10 +75,10 @@ BackendJavaScriptList[]=ezadmin_menubar.js
 
 ## ClassicBackendJavaScriptList
 
-> Scripts the older admin designs (admin and admin3, chosen with the UI switch) still expect on every page: their  
-> page\_head\_script.tpl loads them after jQuery and BackendJavaScriptList (adminui once its package reads it too);  
-> admin4 and admin4l do not read this list. An extension that used to put a jQuery script or an exp:: module into BackendJavaScriptList for those  
-> designs adds it here.  
+> Skripte, die die älteren Admin-Designs (admin und admin3, gewählt mit dem UI-Schalter) weiterhin auf jeder Seite erwarten: ihre  
+> page\_head\_script.tpl lädt sie nach jQuery und BackendJavaScriptList (adminui, sobald es diese Liste auch liest);  
+> admin4 und admin4l lesen diese Liste nicht. Eine Erweiterung, die für diese Designs bisher ein jQuery-Skript oder ein exp::-Modul in BackendJavaScriptList eingetragen hat,  
+> trägt es hier ein.  
 
 Standard: eine leere Liste.
 

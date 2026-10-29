@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-useraudit]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> The user audit log's retention on its own: php runcronjobs.php useraudit (doc/eng-us/features/6.0/user-audit.md)  
+> Die Aufbewahrung des Benutzer-Audit-Logs für sich: php runcronjobs.php useraudit (doc/eng-us/features/6.0/user-audit.md)  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

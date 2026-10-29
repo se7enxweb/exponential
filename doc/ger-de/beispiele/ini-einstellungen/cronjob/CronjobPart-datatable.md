@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-datatable]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> The data table synchronisations on their own: php runcronjobs.php datatable  
+> Die Synchronisationen der Datentabellen für sich: php runcronjobs.php datatable  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

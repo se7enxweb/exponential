@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/membermanagement.ini` nie selbst: Ein Update ersetzt di
 
 ## MemberManagement
 
-> enabled | disabled. Disabled: the setup step and the command change nothing; the guard below stays as set there.  
+> enabled | disabled. Disabled: der Setup-Schritt und der Befehl ändern nichts; die Prüfung unten bleibt, wie dort gesetzt.  
 
 Standard: `enabled`.
 
@@ -33,7 +33,7 @@ MemberManagement=enabled
 
 ## Rules
 
-> The rules in use: a \[MemberRule\_<name>\] block each.  
+> Die verwendeten Regeln: je ein Block \[MemberRule\_<name>\].  
 
 Standard: eine Liste mit 1: `editors_manage_members`.
 
@@ -49,8 +49,8 @@ Rules[]=editors_manage_members
 
 ## ProtectedGroups
 
-> Groups no rule may manage: a rule whose managed groups are, contain or lie below one of these is refused (the setup  
-> step skips it, the command fails). Default: Administrator users and Editors.  
+> Gruppen, die keine Regel verwalten darf: eine Regel, deren verwaltete Gruppen eine davon sind, sie enthalten oder unterhalb davon liegen, wird abgelehnt (der Setup-  
+> Schritt überspringt sie, der Befehl schlägt fehl). Standard: Administrator users und Editors.  
 
 Standard: eine Liste mit 2: `remote:9b47a45624b023b1a76c73b74d704acf`, `remote:3c160cca19fb135f83bd02d911f04db2`.
 

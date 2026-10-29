@@ -46,8 +46,8 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [clusterpurge.php](clusterpurge.md) | Löscht abgelaufene Einträge des Cluster-Speichers aus dem Datenbank-Backend | cluster_maintenance |
 | [contentcheck.php](contentcheck.md) | Baut den Referenzindex der Inhaltsprüfungen (ungenutzte Assets) für Installationen, in denen eine Seite ihn nicht bauen darf (contentcheck.ini BuildOnRequest=false) | contentcheck |
 | [contentjobs.php](contentjobs.md) | Setzt Inhaltsaufträge fort, deren Worker gestorben ist, und startet wartende Aufträge, die niemand gestartet hat | frequent, contentjobs |
-| [datatablesync.php](datatablesync.md) | Start the data table synchronisations that are due (scheduled and live, by their interval) | frequent, datatable |
-| [exphelp.php](exphelp.md) | Help maintained as content: removes old answers to "Was this helpful?" and records the DITA export of the help in git when exphelp.ini [ContentSettings] DitaHistoryDirectory is set | infrequent, exphelp |
+| [datatablesync.php](datatablesync.md) | Startet die fälligen Synchronisationen der Datentabellen (geplante und Live-Synchronisationen, nach ihrem Intervall) | frequent, datatable |
+| [exphelp.php](exphelp.md) | Als Inhalt gepflegte Hilfe: entfernt alte Antworten auf "War das hilfreich?" und hält den DITA-Export der Hilfe in Git fest, wenn exphelp.ini [ContentSettings] DitaHistoryDirectory gesetzt ist | infrequent, exphelp |
 | [explogrotate.php](explogrotate.md) | Logs: rotiert die Logs über ihrer MaxSize, bereinigt und komprimiert ihre Archive (aus, solange kein Teil ihn ausführt) | logs |
 | [hide.php](hide.md) | Führt geplante Aktionen zum Verbergen und Anzeigen von Inhaltsobjekten aus | (Standard) |
 | [httpcache_cleanup.php](httpcache_cleanup.md) | Entfernt abgelaufene, gelöschte und verwaiste Einträge aus dem rollenbewussten HTTP-Cache | cache_cleanup |
@@ -67,8 +67,8 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [unlock.php](unlock.md) | Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen | unlock |
 | [unpublish.php](unpublish.md) | Führt geplante Aktionen zum Zurückziehen von Inhaltsobjekten aus | (Standard) |
 | [updateviewcount.php](updateviewcount.md) | Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank |  |
-| [useraudit.php](useraudit.md) | User audit log: removes the rows of expuser_audit older than audit.ini [UserAuditSettings] RetentionDays | infrequent, useraudit |
-| [usersessions.php](usersessions.md) | Signed-in sessions ("Your devices"): ends the sessions not used for [Session] SessionTimeout, removes ended ones after [UserSessionSettings] RetentionDays | infrequent, usersessions |
+| [useraudit.php](useraudit.md) | Benutzer-Audit-Log: entfernt die Zeilen von expuser_audit, die älter sind als audit.ini [UserAuditSettings] RetentionDays | infrequent, useraudit |
+| [usersessions.php](usersessions.md) | Angemeldete Sitzungen ("Ihre Geräte"): beendet die Sitzungen, die für [Session] SessionTimeout nicht benutzt wurden, und entfernt beendete nach [UserSessionSettings] RetentionDays | infrequent, usersessions |
 | [workflow.php](workflow.md) | Verarbeitet anstehende Workflow-Ereignisse und bringt hängende Workflows weiter | frequent |
 
 - [Alle Beispiele](../README.md)

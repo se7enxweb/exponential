@@ -11,14 +11,14 @@ generated: exp:help:examples
 
 Der Block `[MemberRule_editors_manage_members]` von `settings/membermanagement.ini`, mit 5 Einstellung(en).
 
-> A rule: who manages whom, with which policy set, in which role.  
->   RoleName          the role the policies go into; created when missing, assigned to every manager group without a  
->                     limitation (each policy carries its own: the managed subtrees)  
->   ManagerGroups\[\]   the groups whose members manage  
->   ManagedGroups\[\]   the groups whose accounts (and sub-groups) they manage  
->   PolicySet         a \[MemberPolicySet\_<name>\] block  
->   EntryNodes\[\]      nodes the managers may read on their own (read limited to that node), so that the Users tab and  
->                     the user root open; "users" is content.ini \[NodeSettings\] UserRootNode  
+> Eine Regel: wer wen verwaltet, mit welchem Richtlinien-Satz, in welcher Rolle.  
+>   RoleName          die Rolle, in die die Richtlinien kommen; wird angelegt, wenn sie fehlt, und jeder Verwalter-Gruppe ohne  
+>                     Einschränkung zugewiesen (jede Richtlinie trägt ihre eigene: die verwalteten Teilbäume)  
+>   ManagerGroups\[\]   die Gruppen, deren Mitglieder verwalten  
+>   ManagedGroups\[\]   die Gruppen, deren Konten (und Untergruppen) sie verwalten  
+>   PolicySet         ein Block \[MemberPolicySet\_<name>\]  
+>   EntryNodes\[\]      Knoten, die die Verwalter für sich lesen dürfen (read auf diesen Knoten beschränkt), damit der Tab Benutzer und  
+>                     das Benutzer-Root sich öffnen; "users" ist content.ini \[NodeSettings\] UserRootNode  
 
 Bearbeiten Sie `settings/membermanagement.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

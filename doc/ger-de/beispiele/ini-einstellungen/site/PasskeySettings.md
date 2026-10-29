@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Passkeys
 
-> Passkeys (WebAuthn): a user registers passkeys on user/passkeys (My account > Passkeys)  
-> and signs in with one on the web sign-in form, next to the password; a passkey also  
-> answers "Verify it's you" (\[ReauthSettings\]). Only the web pages use passkeys: REST,  
-> SOAP, WebDAV and the expservices login do not change.  
-> Guide: doc/eng-us/guides/passkeys.md  
+> Passkeys (WebAuthn): ein Benutzer registriert Passkeys unter user/passkeys (Mein Konto > Passkeys)  
+> und meldet sich mit einem im Web-Anmeldeformular an, neben dem Passwort; ein Passkey  
+> beantwortet auch "Bestätigen Sie, dass Sie es sind" (\[ReauthSettings\]). Nur die Webseiten nutzen Passkeys: REST,  
+> SOAP, WebDAV und die expservices-Anmeldung ändern sich nicht.  
+> Anleitung: doc/eng-us/guides/passkeys.md  
 >
-> enabled or disabled. Disabled: no passkey can be added or used; the stored ones stay.  
+> enabled oder disabled. Disabled: kein Passkey kann hinzugefügt oder verwendet werden; die gespeicherten bleiben.  
 
 Standard: `enabled`.
 
@@ -39,7 +39,7 @@ Passkeys=enabled
 
 ## SignInForm
 
-> Offer "Sign in with a passkey" on the sign-in form (and the browser's passkey autofill).  
+> "Mit einem Passkey anmelden" im Anmeldeformular anbieten (und die Passkey-Autofill-Funktion des Browsers).  
 
 Standard: `enabled`.
 
@@ -53,9 +53,9 @@ SignInForm=enabled
 
 ## RelyingPartyID
 
-> The relying party id: a host name, the passkeys are bound to it. Empty: the host name of  
-> the request. A shared parent domain (example.com) lets the passkeys of www.example.com  
-> work on admin.example.com too; it must be the host or a parent of it.  
+> Die Relying-Party-ID: ein Hostname, an den die Passkeys gebunden sind. Leer: der Hostname der  
+> Anfrage. Eine gemeinsame übergeordnete Domain (example.com) lässt die Passkeys von www.example.com  
+> auch auf admin.example.com funktionieren; sie muss der Host oder eine übergeordnete Domain davon sein.  
 
 Standard: leer.
 
@@ -69,7 +69,7 @@ RelyingPartyID=
 
 ## RelyingPartyName
 
-> The name the browser shows. Empty: \[SiteSettings\] SiteName.  
+> Der Name, den der Browser anzeigt. Leer: \[SiteSettings\] SiteName.  
 
 Standard: leer.
 
@@ -83,8 +83,8 @@ RelyingPartyName=
 
 ## AllowedOrigins
 
-> The origins (scheme://host\[:port\]) answers may come from. Empty: the origin of the  
-> request. List every host the passkeys are used on when RelyingPartyID is a parent domain.  
+> Die Origins (scheme://host\[:port\]), von denen Antworten kommen dürfen. Leer: der Origin der  
+> Anfrage. Alle Hosts auflisten, auf denen die Passkeys genutzt werden, wenn RelyingPartyID eine übergeordnete Domain ist.  
 
 Standard: eine leere Liste.
 
@@ -99,8 +99,8 @@ AllowedOrigins[]
 
 ## UserVerification
 
-> required (default; the authenticator checks a PIN, fingerprint or face), preferred or  
-> discouraged. Signing in with a passkey always requires it; this applies to re-authentication.  
+> required (Standard; der Authenticator prüft eine PIN, einen Fingerabdruck oder ein Gesicht), preferred oder  
+> discouraged. Die Anmeldung mit einem Passkey verlangt es immer; dies gilt für die erneute Authentifizierung.  
 
 Standard: `required`.
 
@@ -114,8 +114,8 @@ UserVerification=required
 
 ## Algorithms
 
-> COSE algorithms offered, most preferred first: -7 ES256, -257 RS256, -8 Ed25519 (needs  
-> PHP's sodium extension), -35 ES384, -36 ES512.  
+> Angebotene COSE-Algorithmen, der bevorzugte zuerst: -7 ES256, -257 RS256, -8 Ed25519 (braucht  
+> die sodium-Erweiterung von PHP), -35 ES384, -36 ES512.  
 
 Standard: eine Liste mit 5: `-7`, `-257`, `-8`, `-35`, `-36`.
 
@@ -135,7 +135,7 @@ Algorithms[]=-36
 
 ## ChallengeSeconds
 
-> Seconds a challenge may be answered.  
+> Sekunden, in denen eine Challenge beantwortet werden darf.  
 
 Standard: `300`.
 
@@ -149,7 +149,7 @@ ChallengeSeconds=300
 
 ## MaxPerUser
 
-> Passkeys one account may have.  
+> Passkeys, die ein Konto haben darf.  
 
 Standard: `20`.
 

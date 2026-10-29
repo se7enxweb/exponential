@@ -2,18 +2,18 @@
 title: Cronjob exphelp.php
 audience: developer, admin
 category: examples
-summary: "Help maintained as content: removes old answers to 'Was this helpful?' and records the DITA export of the help in git when exphelp.ini [ContentSettings] DitaHistoryDirectory is set."
+summary: "Als Inhalt gepflegte Hilfe: entfernt alte Antworten auf 'War das hilfreich?' und hält den DITA-Export der Hilfe in Git fest, wenn exphelp.ini [ContentSettings] DitaHistoryDirectory gesetzt ist."
 keywords: Teil, exphelp.php, exphelp, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob exphelp.php
 
-Help maintained as content: removes old answers to "Was this helpful?" and records the DITA export of the help in git when exphelp.ini [ContentSettings] DitaHistoryDirectory is set.
+Als Inhalt gepflegte Hilfe: entfernt alte Antworten auf "War das hilfreich?" und hält den DITA-Export der Hilfe in Git fest, wenn exphelp.ini [ContentSettings] DitaHistoryDirectory gesetzt ist.
 
 Einstiegspunkt `cronjobs/exphelp.php`, Code in `kernel/private/classes/cronjobs/exphelp.php`.
 
-> The code of cronjobs/exphelp.php.  
+> Der Code von cronjobs/exphelp.php.  
 
 ## Wann er läuft
 

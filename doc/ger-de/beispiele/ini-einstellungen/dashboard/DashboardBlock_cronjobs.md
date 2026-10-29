@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[DashboardBlock_cronjobs]` von `settings/dashboard.ini`, mit 3 Einstellung(en).
 
-> When each cronjob part last ran, with a warning when none has run yet or one is late  
+> Wann jeder Cronjob-Teil zuletzt gelaufen ist, mit einer Warnung, wenn noch keiner gelaufen ist oder einer verspätet ist  
 > (doc/eng-us/bc/6.0/installer-crontab.md).  
 
 Bearbeiten Sie `settings/dashboard.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:

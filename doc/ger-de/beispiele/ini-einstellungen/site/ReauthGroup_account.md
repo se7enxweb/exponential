@@ -11,15 +11,15 @@ generated: exp:help:examples
 
 Der Block `[ReauthGroup_account]` von `settings/site.ini`, mit 2 Einstellung(en).
 
-> Rules, in every group: "module/view \[token ...\]"  
->   module/view    the view (view \* for every view of the module); a POST to it is asked  
->   \*              every request, GET too (a page that downloads, or a form with a file upload)  
->   Name           only a POST that carries this field (any of several names)  
->   self, other    only when the account addressed is the user's own / another user's  
->                  (content/edit of a user object, user/password, user/setting; the  
->                  pending account of an approval item of "Approve user accounts")  
->   credentials    only when the POST changes the login, e-mail or password of a user  
->   !module/view   never asked for this view (an exception to a module/\* rule)  
+> Regeln, in jeder Gruppe: "module/view \[token ...\]"  
+>   module/view    die Ansicht (view \* für jede Ansicht des Moduls); ein POST darauf wird abgefragt  
+>   \*              jede Anfrage, auch GET (eine Seite, die herunterlädt, oder ein Formular mit Datei-Upload)  
+>   Name           nur ein POST, der dieses Feld enthält (eines von mehreren Namen)  
+>   self, other    nur, wenn das angesprochene Konto das eigene des Benutzers / das eines anderen Benutzers ist  
+>                  (content/edit eines Benutzerobjekts, user/password, user/setting; das  
+>                  ausstehende Konto eines Freigabe-Elements von "Approve user accounts")  
+>   credentials    nur, wenn der POST das Login, die E-Mail oder das Passwort eines Benutzers ändert  
+>   !module/view   für diese Ansicht nie abgefragt (eine Ausnahme von einer module/\*-Regel)  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -29,7 +29,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> The security settings of one's own account.  
+> Die Sicherheitseinstellungen des eigenen Kontos.  
 
 Standard: `true`.
 
@@ -43,7 +43,7 @@ Enabled=true
 
 ## Rules
 
-> "Sign out all other sessions" asks first too: someone at an unattended screen must not lock the owner out  
+> "Alle anderen Sitzungen abmelden" fragt ebenfalls zuerst: jemand an einem unbeaufsichtigten Bildschirm darf den Eigentümer nicht aussperren  
 
 Standard: eine Liste mit 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton RevokeOthersButton`.
 

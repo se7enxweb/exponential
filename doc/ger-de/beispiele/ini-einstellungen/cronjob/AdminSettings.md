@@ -85,10 +85,10 @@ ErrorFile=cronjobs/error.log
 
 ## CrontabSchedule_expqueue
 
-> The schedule of a part in a crontab line, CrontabSchedule\_<part>=<five cron fields>: the line Setup >  
-> Cronjobs proposes and the line the installers and bin/php/installcrontab.php write. Without one:  
-> frequent \*/5 \* \* \* \*, the global part \*/15 \* \* \* \*, infrequent 17 \* \* \* \*, any other part 0 \* \* \* \*.  
-> The job queue and the imports' schedules run every minute, expai's queue every five minutes.  
+> Der Zeitplan eines Teils in einer Crontab-Zeile, CrontabSchedule\_<part>=<fünf Cron-Felder>: die Zeile, die Setup >  
+> Cronjobs vorschlägt, und die Zeile, die die Installer und bin/php/installcrontab.php schreiben. Ohne Angabe:  
+> frequent \*/5 \* \* \* \*, der globale Teil \*/15 \* \* \* \*, infrequent 17 \* \* \* \*, jeder andere Teil 0 \* \* \* \*.  
+> Die Job-Warteschlange und die Zeitpläne der Importe laufen jede Minute, die Warteschlange von expai alle fünf Minuten.  
 
 Standard: `* * * * *`.
 

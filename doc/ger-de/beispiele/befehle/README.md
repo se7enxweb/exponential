@@ -15,13 +15,13 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | Befehl | Aliase | Was er tut |
 |---|---|---|
 | [exp:accesscheck](accesscheck.md) | exp:access:check | Prüft, was ein Benutzer mit einem Knoten oder Objekt tun darf (content/read, edit, ...) und welche Einschränkung es verweigert |
-| [exp:addanonymouspublicpolicies](addanonymouspublicpolicies.md) |  | Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (--dry-run lists them first) |
+| [exp:addanonymouspublicpolicies](addanonymouspublicpolicies.md) |  | Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Ansichten des Newsletters (--dry-run listet sie zuerst auf) |
 | [exp:adddefaultstates](adddefaultstates.md) |  |  |
 | [exp:addeditorpolicies](addeditorpolicies.md) |  | Gibt der Rolle Editor die alltäglichen Richtlinien, die ihr fehlen: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, den Bildeditor, das eigene Konto (Probelauf, außer mit --apply) |
 | [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf) |
 | [exp:addmembermanagement](addmembermanagement.md) |  | Richtet die Mitgliederverwaltung nach membermanagement.ini ein: die Rolle, mit der eine Gruppe (Standard Editors) die Konten einer anderen (Standard Members) verwaltet, nie Administrator users oder Editors (Probelauf, außer mit --apply) |
 | [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf) |
-| [exp:adduserapproval](adduserapproval.md) |  | Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first); --mode=section sets up the optional alternative, a section Staff with the plain approval event (a dry run unless --apply) |
+| [exp:adduserapproval](adduserapproval.md) |  | Richtet die Freigabe neuer Konten in einer Benutzergruppe ein (Standard: neue Redakteure warten auf die Administrator users): das Workflow-Ereignis vor content/publish und die Rolle, mit der die Anfragenden solche Konten anlegen dürfen (--dry-run listet es zuerst auf); --mode=section richtet die optionale Alternative ein, eine Sektion Staff mit dem einfachen Freigabe-Ereignis (ein Probelauf, außer mit --apply) |
 | [exp:audit](audit.md) |  | Audit-Log: die letzten Einträge, ein Ereignis anzeigen, die Hash-Ketten prüfen, die Kanäle auflisten |
 | [exp:benchmark](benchmark.md) | exp:bench | Misst diese Installation: Seitenzeiten über HTTP, A/B zwischen Servern, Kernel-Messungen, Regressionsprüfung |
 | [exp:cache](cache.md) |  | Caches nach Tag, ID oder alle leeren und untersuchen: Inhalte, statisch, HTTP, Velocity, OPcache, APCu |
@@ -87,7 +87,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:i18n](i18n.md) |  | Die Übersetzungs-Fallbacks: pro Locale die Kette der Übersetzungen, auf die sie zurückfällt, und wie viel vom Kernel und von jeder Erweiterung übersetzt angezeigt wird; --check für CI |
 | [exp:ini](ini.md) |  | INI-Einstellungen in jedem Bereich lesen und ändern: get, set, add, rem, clear, toggle, copy, move, where, list, scopes |
 | [exp:install](install.md) | exp:names | Installation mit einem Befehl, standardmäßig mit SQLite, ohne kickstart.ini |
-| [exp:installcrontab](installcrontab.md) |  | Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change) |
+| [exp:installcrontab](installcrontab.md) |  | Zeigt den Cronjob der Installation an, fügt ihn hinzu oder entfernt ihn: die Crontab-Zeilen, die ihre cronjob-Teile ausführen (--dry-run sagt, was sich ändern würde) |
 | [exp:kickstarter](kickstarter.md) |  | Kickstarter-Runner. Unterstützt die Unterbefehle "ini" zum Erzeugen und "run" für die vollständige Einrichtung |
 | [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste |
 | [exp:mailconsent](mailconsent.md) | exp:mail:consent | Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen |
@@ -106,7 +106,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:preloadjob](preloadjob.md) |  |  |
 | [exp:publish_content](publish_content.md) |  |  |
 | [exp:resetuserpassword](resetuserpassword.md) |  | Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung |
-| [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Compile, list, show and check the kernel service container (verbs compile, list, show, check) |
+| [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Kompiliert, listet, zeigt und prüft den Service-Container des Kernels (Verben compile, list, show, check) |
 | [exp:solr](solr.md) | exp:search | Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist |
 | [exp:systeminfo](systeminfo.md) | exp:system:info | Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes) |
 | [exp:trashpurge](trashpurge.md) |  | Löscht alle Objekte im Papierkorb endgültig |
@@ -114,7 +114,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:updateniceurls](updateniceurls.md) |  | Importiert alte URL-Aliase und aktualisiert die URL-Aliase aller Knoten (--update-nodes) |
 | [exp:updatesearchindex](updatesearchindex.md) |  | Indiziert alle Inhaltsobjekte in der Suchmaschine neu |
 | [exp:userlogincheck](userlogincheck.md) | exp:user-login-check | Eindeutige Logins: listet die Logins auf, die mehr als ein Benutzerkonto hat; --fix-index fügt den eindeutigen Index auf ezuser.login hinzu, sobald es keine mehr gibt |
-| [exp:userpasswordchangerequired](userpasswordchangerequired.md) | exp:user-password-change-required | Change password at next sign-in: show, set or clear the mark of a user account |
+| [exp:userpasswordchangerequired](userpasswordchangerequired.md) | exp:user-password-change-required | Passwortänderung bei der nächsten Anmeldung: zeigt die Markierung eines Benutzerkontos an, setzt sie oder löscht sie |
 | [exp:velocity-router](velocity-router.md) |  |  |
 | [exp:velocity-warmup](velocity-warmup.md) |  |  |
 | [exp:velocity](velocity.md) | exp:vc |  |

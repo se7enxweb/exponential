@@ -12,21 +12,21 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/membermanagement.ini`: 4 Blöcke, 13 Einstellungen.
 
-> Member management: which user groups may manage the user accounts of which other groups, with which policies, and  
-> which groups nobody manages through such a rule. Read by the setup wizard's role step and the kickstarter (a new  
-> installation), by bin/php/addmembermanagement.php --apply (an installation that exists; without --apply it only  
-> shows what it would change), and by the access check that keeps the protected groups' accounts out of reach  
+> Mitgliederverwaltung: welche Benutzergruppen die Benutzerkonten welcher anderen Gruppen verwalten dürfen, mit welchen Richtlinien, und  
+> welche Gruppen niemand über eine solche Regel verwaltet. Gelesen vom Rollen-Schritt des Setup-Assistenten und vom Kickstarter (eine neue  
+> Installation), von bin/php/addmembermanagement.php --apply (eine bestehende Installation; ohne --apply zeigt es nur,  
+> was es ändern würde) und von der Zugriffsprüfung, die die Konten der geschützten Gruppen außer Reichweite hält  
 > (doc/eng-us/bc/6.0/member-management.md).  
 >
-> The defaults give the Editors group the role "Member management": create, edit (name, e-mail, password), enable and  
-> disable, move and remove the accounts below Members. The accounts of Administrator users and Editors stay with the  
-> administrators, and nobody gets roles, sections or setup from it.  
+> Die Standardwerte geben der Gruppe Editors die Rolle "Member management": die Konten unterhalb von Members anlegen, bearbeiten (Name, E-Mail, Passwort), aktivieren und  
+> deaktivieren, verschieben und entfernen. Die Konten von Administrator users und Editors bleiben bei den  
+> Administratoren, und niemand erhält dadurch Rollen, Sektionen oder Setup.  
 >
-> Groups are named in one of these forms, so the same file fits every installation:  
->   remote:<remote id>   the group object's or its main node's remote id (the stock groups keep theirs everywhere)  
->   node:<node id>       the group's node  
->   name:<name>          the top-level user group of that name below the user root  
-> Add or change rules in settings/override/membermanagement.ini.append.php or in an extension's settings.  
+> Gruppen werden in einer dieser Formen benannt, damit dieselbe Datei in jede Installation passt:  
+>   remote:<remote id>   die remote id des Gruppenobjekts oder seines Haupt-Knotens (die Standardgruppen behalten ihre überall)  
+>   node:<node id>       der Knoten der Gruppe  
+>   name:<name>          die Benutzergruppe der obersten Ebene mit diesem Namen unterhalb des Benutzer-Roots  
+> Regeln hinzufügen oder ändern in settings/override/membermanagement.ini.append.php oder in den Einstellungen einer Erweiterung.  
 
 | Block | Einstellungen |
 |---|---|

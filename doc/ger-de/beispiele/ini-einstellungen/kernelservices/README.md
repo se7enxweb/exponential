@@ -12,15 +12,15 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/kernelservices.ini`: 15 Blöcke, 148 Einstellungen.
 
-> The kernel service container: shared objects of the kernel by name, made on  
-> first use, in a scope, and the compiled boot of the web kernel.  
-> See doc/eng-us/bc/6.0/kernel-services.md.  
+> Der Service-Container des Kernels: gemeinsame Objekte des Kernels nach Namen, beim  
+> ersten Gebrauch erzeugt, in einem Scope, und der kompilierte Boot des Web-Kernels.  
+> Siehe doc/eng-us/bc/6.0/kernel-services.md.  
 >
-> Extensions add or replace services in  
-> extension/<name>/settings/kernelservices.ini.append.php (a later block of the  
-> same name wins, as everywhere in the settings). After a change:  
-> ./console exp:services:compile (the deploy and ezcache.php --clear-tag=ini do  
-> it too), ./console exp:services:check to check.  
+> Erweiterungen fügen Services hinzu oder ersetzen sie in  
+> extension/<name>/settings/kernelservices.ini.append.php (ein späterer Block desselben  
+> Namens gewinnt, wie überall in den Einstellungen). Nach einer Änderung:  
+> ./console exp:services:compile (der Deploy und ezcache.php --clear-tag=ini tun es  
+> auch), zur Prüfung ./console exp:services:check.  
 
 | Block | Einstellungen |
 |---|---|

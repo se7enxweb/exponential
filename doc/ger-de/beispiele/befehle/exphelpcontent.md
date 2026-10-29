@@ -69,22 +69,22 @@ Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--dry-run` |  | Zeigen, was sich ändern würde, nichts ändern |
-| `--check` |  | export: check the EPUB with epubcheck and Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); exit 1 when one fails |
-| `--prune` |  | feedback: remove the answers older than [ContentSettings] FeedbackKeepDays |
-| `--commit` |  | dita: commit the written files when the directory is a git repository (the history of delivery path 4) |
-| `--fix` |  | check: set the section of each topic, figure, chapter and manual from the audience, and record the help_ids of Released topics |
+| `--check` |  | export: prüft das EPUB mit epubcheck und Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); Exit-Code 1, wenn eine Prüfung fehlschlägt |
+| `--prune` |  | feedback: entfernt die Antworten, die älter sind als [ContentSettings] FeedbackKeepDays |
+| `--commit` |  | dita: committet die geschriebenen Dateien, wenn das Verzeichnis ein Git-Repository ist (die Historie von Auslieferungsweg 4) |
+| `--fix` |  | check: setzt die Sektion jedes Themas, jeder Abbildung, jedes Kapitels und jedes Handbuchs anhand der Zielgruppe und hält die help_ids der Released-Themen fest |
 | `--file` | erforderlich | seed-glossary, seed-topics: die Datendatei (Standard share/help/seed-glossary.json, share/help/seed-topics.json) |
 | `--update` |  | seed-*: auch vorhandene Objekte aktualisieren, die von der Datei abweichen |
-| `--release` |  | seed-topics: set new topics, chapters and manuals to Released; build-manuals: set every generated one to Released |
+| `--release` |  | seed-topics: setzt neue Themen, Kapitel und Handbücher auf Released; build-manuals: setzt jedes erzeugte auf Released |
 | `--with-content` |  | uninstall: auch den Hilfebaum (in den Papierkorb), die Klassen, die Zustandsgruppe und die Sektionen |
 | `--login` | erforderlich | Der Benutzer, der die Klassen und Objekte anlegt (Standard admin) |
 | `--json` |  | Ein JSON-Dokument statt des Textes ausgeben |
-| `--manual` | erforderlich | export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual; build-manuals: the key of one manual of [ManualSettings] Manuals[] |
+| `--manual` | erforderlich | export, dita, ebooks: die remote_id des Handbuchs (help-manual-...); dita und ebooks ohne diese Option: jedes Handbuch; build-manuals: der Schlüssel eines Handbuchs aus [ManualSettings] Manuals[] |
 | `--format` | erforderlich | export: epub, pdf oder dita |
 | `--output` | erforderlich | export: die zu schreibende Datei (Standard <cache>/exphelp/ebooks/<remote_id>.<format>); dita: das Verzeichnis (Standard <cache>/exphelp/dita/all oder /<remote_id>); package: das Verzeichnis (Standard <cache>/exphelp/packages) |
 | `--version` | erforderlich | package: das Release, MAJOR.MINOR.PATCH (Standard: die Version dieser Installation) |
-| `--language` | erforderlich | build-manuals: the translations to write (default [ManualSettings] Languages[]; "none" for none); ebooks, export: the language of the edition (default: the default language) |
-| `--queue` |  | build-manuals: queue the build as a background content job (helpmanuals) and return at once; nothing is queued while one runs |
+| `--language` | erforderlich | build-manuals: die zu schreibenden Übersetzungen (Standard [ManualSettings] Languages[]; "none" für keine); ebooks, export: die Sprache der Ausgabe (Standard: die Standardsprache) |
+| `--queue` |  | build-manuals: reiht den Build als Inhalts-Job im Hintergrund ein (helpmanuals) und kehrt sofort zurück; solange einer läuft, wird nichts eingereiht |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

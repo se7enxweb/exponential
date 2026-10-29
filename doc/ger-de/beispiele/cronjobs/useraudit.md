@@ -2,18 +2,18 @@
 title: Cronjob useraudit.php
 audience: developer, admin
 category: examples
-summary: "User audit log: removes the rows of expuser_audit older than audit.ini [UserAuditSettings] RetentionDays."
+summary: "Benutzer-Audit-Log: entfernt die Zeilen von expuser_audit, die älter sind als audit.ini [UserAuditSettings] RetentionDays."
 keywords: Teil, useraudit.php, useraudit, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob useraudit.php
 
-User audit log: removes the rows of expuser_audit older than audit.ini [UserAuditSettings] RetentionDays.
+Benutzer-Audit-Log: entfernt die Zeilen von expuser_audit, die älter sind als audit.ini [UserAuditSettings] RetentionDays.
 
 Einstiegspunkt `cronjobs/useraudit.php`, Code in `kernel/private/classes/cronjobs/useraudit.php`.
 
-> The code of cronjobs/useraudit.php.  
+> Der Code von cronjobs/useraudit.php.  
 
 ## Wann er läuft
 

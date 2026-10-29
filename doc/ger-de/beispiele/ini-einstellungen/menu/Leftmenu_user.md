@@ -31,10 +31,10 @@ Name=access_controll
 
 ## Links
 
-> Check user accounts (doc/eng-us/features/6.0/user-hygiene.md), also a tile of the Setup overview under the same key  
-> The user audit log (doc/eng-us/features/6.0/user-audit.md): who changed, signed in or was refused, per account  
-> The sign-in report (doc/eng-us/features/6.0/user-sessions.md): who is signed in, sign-ins and failures per day,  
-> signing a user out everywhere; works with every session handler  
+> Benutzerkonten prüfen (doc/eng-us/features/6.0/user-hygiene.md), auch eine Kachel der Setup-Übersicht unter demselben Schlüssel  
+> Das Benutzer-Audit-Log (doc/eng-us/features/6.0/user-audit.md): wer pro Konto etwas geändert hat, angemeldet war oder abgewiesen wurde  
+> Der Anmeldebericht (doc/eng-us/features/6.0/user-sessions.md): wer angemeldet ist, Anmeldungen und Fehlschläge pro Tag,  
+> Benutzer überall abmelden; funktioniert mit jedem Session-Handler  
 
 Standard: ein Hash mit 5: `roles_and_policies=role/list`, `unactivated=user/unactivated`, `user_hygiene=user/hygiene`, `user_audit=user/audit`, `session_report=user/sessionreport`.
 

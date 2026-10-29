@@ -11,30 +11,30 @@ generated: exp:help:examples
 
 Der Block `[Service_transfer.registry]` von `settings/kernelservices.ini`, mit 5 Einstellung(en).
 
-> The transfer registry (doc/eng-us/features/6.0/transfer-registry.md): every import and export tool declares itself  
-> in a block tagged transfer.tool, the kernel's below, an extension's in its own  
-> settings/kernelservices.ini.append.php. Every link to a tool reads the registry: the "Looking for…?" boxes, the  
-> entries of the content view's Import/Export menu and of the class pages, the "Import and export" list of the Setup  
-> menu and of the tools' left menus, the admin search's tool suggestions, and the context help. A tool whose  
-> extension is not active, whose module does not exist or that the user may not use is never shown.  
+> Die Transfer-Registry (doc/eng-us/features/6.0/transfer-registry.md): jedes Import- und Export-Werkzeug deklariert sich selbst in einem  
+> Block mit dem Tag transfer.tool, die des Kernels unten, die einer Erweiterung in ihrer eigenen  
+> settings/kernelservices.ini.append.php. Jeder Link zu einem Werkzeug liest die Registry: die "Suchen Sie …?"-Boxen, die  
+> Einträge des Import/Export-Menüs der Inhaltsansicht und der Klassenseiten, die Liste "Import und Export" des Setup-  
+> Menüs und der linken Menüs der Werkzeuge, die Werkzeugvorschläge der Admin-Suche und die Kontexthilfe. Ein Werkzeug, dessen  
+> Erweiterung nicht aktiv ist, dessen Modul nicht existiert oder das der Benutzer nicht nutzen darf, wird nie angezeigt.  
 >
-> Class=expKernelTransferTool, Factory=expKernelTransferTool::fromSettings, Arguments\[\]=<the block's id>,  
-> Scope=worker, Tags\[\]=transfer.tool, and:  
-> Description  one sentence: what it is for  
-> Name         its name in lists  
-> Direction    import, export or both  
-> Scopes\[\]     site, subtree, object, class, data (records that are not content: submissions, subscribers, logs)  
-> Formats\[\]    the file formats it reads or writes (CSV, XLSX, ezpkg ...)  
-> EntryURL     its main page; its first part is the tool's module  
-> Permission   module/function needed to use it; alternatives separated by "|"  
-> Modules\[\]    further modules whose pages belong to the tool  
-> HelpPage     its help page (a page id below doc/eng-us/, ext/<extension>/<path> for an extension's, #anchor allowed)  
-> RoundTrip\[\]  the ids of tools that read what it writes or write what it reads  
-> Keywords\[\]   task words the admin search finds it by (English and German)  
-> Actions\[\]    context|import or export|label|URL\[|module/function\]: an entry of a context. Contexts: node (any  
->              published item), container (an item below which the user may create), class (a class page),  
->              setup (the Setup pages); %nodeID%, %objectID%, %classID%, %classIdentifier% in the URL  
-> Weight       the order in lists (lower first, then by name; default 100)  
+> Class=expKernelTransferTool, Factory=expKernelTransferTool::fromSettings, Arguments\[\]=<die id des Blocks>,  
+> Scope=worker, Tags\[\]=transfer.tool, und:  
+> Description  ein Satz: wofür es ist  
+> Name         sein Name in Listen  
+> Direction    import, export oder both  
+> Scopes\[\]     site, subtree, object, class, data (Datensätze, die kein Inhalt sind: Einsendungen, Abonnenten, Logs)  
+> Formats\[\]    die Dateiformate, die es liest oder schreibt (CSV, XLSX, ezpkg ...)  
+> EntryURL     seine Hauptseite; ihr erster Teil ist das Modul des Werkzeugs  
+> Permission   module/function, die zur Nutzung nötig ist; Alternativen durch "|" getrennt  
+> Modules\[\]    weitere Module, deren Seiten zum Werkzeug gehören  
+> HelpPage     seine Hilfeseite (eine Seiten-ID unterhalb von doc/eng-us/, ext/<extension>/<path> für die einer Erweiterung, #anchor erlaubt)  
+> RoundTrip\[\]  die ids der Werkzeuge, die lesen, was es schreibt, oder schreiben, was es liest  
+> Keywords\[\]   Aufgabenwörter, unter denen die Admin-Suche es findet (Englisch und Deutsch)  
+> Actions\[\]    context|import oder export|label|URL\[|module/function\]: ein Eintrag eines Kontexts. Kontexte: node (jedes  
+>              veröffentlichte Element), container (ein Element, unterhalb dessen der Benutzer anlegen darf), class (eine Klassenseite),  
+>              setup (die Setup-Seiten); %nodeID%, %objectID%, %classID%, %classIdentifier% in der URL  
+> Weight       die Reihenfolge in Listen (niedrigere zuerst, dann nach Name; Standard 100)  
 
 Bearbeiten Sie `settings/kernelservices.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

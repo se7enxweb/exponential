@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Manuals
 
-> The manuals built from the Markdown help by ./console exp:help:content build-manuals (doc/eng-us/features/6.0/help-content.md,  
-> "Manuals from the Markdown help"). The Markdown stays the source: every run makes the manuals, chapters and topics  
-> match the pages again, and an edit made only in the admin is overwritten by the next run. Objects the command did not  
-> make (remote\_id not help-gen-...) are never touched.  
-> One line per manual, in the order of the manuals: <key>;<source>\[;<title>\]  
->   key     a-z, 0-9 and inner hyphens; the manual's remote\_id is help-gen-manual-<key>  
->   source  a folder below doc/eng-us/: its pages become topics, each subfolder a chapter (and theirs sub-chapters);  
->           <folder>/\*.md: only the pages directly in the folder, no chapters  
->   title   default: the title of the folder's README.md, else its start page ("Adopters: start here" gives  
->           "Adopters"), else the folder's name  
-> Changing the scope is an edit of this list. A line taken out removes its manual, chapters and topics at the next run.  
+> Die Handbücher, die aus der Markdown-Hilfe von ./console exp:help:content build-manuals gebaut werden (doc/eng-us/features/6.0/help-content.md,  
+> "Manuals from the Markdown help"). Das Markdown bleibt die Quelle: jeder Lauf bringt die Handbücher, Kapitel und Themen  
+> wieder in Übereinstimmung mit den Seiten, und eine nur in der Administration gemachte Änderung wird vom nächsten Lauf überschrieben. Objekte, die der Befehl nicht  
+> erzeugt hat (remote\_id nicht help-gen-...), werden nie angefasst.  
+> Eine Zeile pro Handbuch, in der Reihenfolge der Handbücher: <key>;<source>\[;<title>\]  
+>   key     a-z, 0-9 und innere Bindestriche; die remote\_id des Handbuchs ist help-gen-manual-<key>  
+>   source  ein Ordner unterhalb von doc/eng-us/: seine Seiten werden Themen, jeder Unterordner ein Kapitel (und deren Unterordner Unterkapitel);  
+>           <folder>/\*.md: nur die Seiten direkt im Ordner, keine Kapitel  
+>   title   Standard: der Titel der README.md des Ordners, sonst seine Startseite ("Adopters: start here" ergibt  
+>           "Adopters"), sonst der Name des Ordners  
+> Den Umfang zu ändern heißt, diese Liste zu bearbeiten. Eine entfernte Zeile entfernt ihr Handbuch, ihre Kapitel und Themen beim nächsten Lauf.  
 
 Standard: eine Liste mit 53: `getting-started;help/*.md;Getting started`, `manual;help/manual`, `book-learning;help/book-learning`, `book-building-a-site;help/book-building-a-site`, `extension-development;help/extension-development`, `adopters;help/adopters`, `advocates;help/advocates`, `ai-agents;help/ai-agents`, `build-two-ways;help/build-two-ways`, `bundlers;help/bundlers`, `business;help/business`, `businesses;help/businesses` ....
 
@@ -65,8 +65,8 @@ Manuals[]=e-commerce;help/e-commerce
 
 ## Languages
 
-> The content languages the manuals are translated into, from the help's pages in that language (doc/ger-de/ for  
-> ger-DE). A language the installation does not have is left out and reported, never created.  
+> Die Inhaltssprachen, in die die Handbücher übersetzt werden, aus den Seiten der Hilfe in dieser Sprache (doc/ger-de/ für  
+> ger-DE). Eine Sprache, die die Installation nicht hat, wird ausgelassen und gemeldet, nie angelegt.  
 
 Standard: eine Liste mit 1: `ger-DE`.
 
@@ -82,8 +82,8 @@ Languages[]=ger-DE
 
 ## TranslatedTitles
 
-> The title of a manual whose title Manuals\[\] gives, in a translation: <key>;<locale>;<title> (the others take the  
-> title of the translated README or start page)  
+> Der Titel eines Handbuchs, dessen Titel Manuals\[\] angibt, in einer Übersetzung: <key>;<locale>;<title> (die anderen übernehmen den  
+> Titel der übersetzten README oder Startseite)  
 
 Standard: eine Liste mit 2: `getting-started;ger-DE;Erste Schritte`, `contributor-notes;ger-DE;Hinweise für Mitwirkende`.
 
@@ -100,7 +100,7 @@ TranslatedTitles[]=contributor-notes;ger-DE;Hinweise für Mitwirkende
 
 ## License
 
-> The license of the manuals (the documentation's license, doc/eng-us/LICENSE-GFDL-1.3.txt)  
+> Die Lizenz der Handbücher (die Lizenz der Dokumentation, doc/eng-us/LICENSE-GFDL-1.3.txt)  
 
 Standard: `GNU Free Documentation License 1.3`.
 
@@ -114,10 +114,10 @@ License=GNU Free Documentation License 1.3
 
 ## BuildOnInstall
 
-> enabled: the kickstarter and ./console exp:install queue the build of the manuals after an installation  
-> ("exp:help:content build-manuals --queue" on the admin siteaccess): the content job helpmanuals installs the help as  
-> content and builds the manuals in the background, in about 20 to 30 minutes, while the site is already in use; the  
-> installation does not wait for it. disabled: leave it to the administrator  
+> enabled: der Kickstarter und ./console exp:install reihen nach einer Installation den Build der Handbücher ein  
+> ("exp:help:content build-manuals --queue" im Admin-Siteaccess): der Inhalts-Job helpmanuals installiert die Hilfe als  
+> Inhalt und baut die Handbücher im Hintergrund, in etwa 20 bis 30 Minuten, während die Website schon in Gebrauch ist; die  
+> Installation wartet nicht darauf. disabled: dem Administrator überlassen  
 
 Standard: `enabled`.
 
@@ -131,8 +131,8 @@ BuildOnInstall=enabled
 
 ## JobBatchSize
 
-> The background job (content job helpmanuals): objects per batch, each batch a transaction of its own, and the pause  
-> after each batch in milliseconds, so the site's own writes never wait long  
+> Der Hintergrund-Job (Inhalts-Job helpmanuals): Objekte pro Batch, jeder Batch eine eigene Transaktion, und die Pause  
+> nach jedem Batch in Millisekunden, damit die eigenen Schreibvorgänge der Website nie lange warten  
 
 Standard: `10`.
 
@@ -158,7 +158,7 @@ JobPause=200
 
 ## BatchSize
 
-> Objects created and updated per database transaction: more is faster, a failed object rolls back the whole batch  
+> Pro Datenbanktransaktion angelegte und aktualisierte Objekte: mehr ist schneller, ein fehlgeschlagenes Objekt macht den ganzen Batch rückgängig  
 
 Standard: `50`.
 

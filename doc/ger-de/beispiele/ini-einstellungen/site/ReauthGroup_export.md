@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> Exporting data.  
+> Daten exportieren.  
 
 Standard: `true`.
 

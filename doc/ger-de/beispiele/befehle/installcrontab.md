@@ -2,14 +2,14 @@
 title: exp:installcrontab
 audience: developer, admin
 category: examples
-summary: "Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change)."
+summary: "Zeigt den Cronjob der Installation an, fügt ihn hinzu oder entfernt ihn: die Crontab-Zeilen, die ihre cronjob-Teile ausführen (--dry-run sagt, was sich ändern würde)."
 keywords: Konsole, Befehl, exp:installcrontab, installcrontab, console, command, CLI, installcrontab.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:installcrontab
 
-Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change).
+Zeigt den Cronjob der Installation an, fügt ihn hinzu oder entfernt ihn: die Crontab-Zeilen, die ihre cronjob-Teile ausführen (--dry-run sagt, was sich ändern würde).
 
 Skript `bin/php/installcrontab.php`, Code in `kernel/private/classes/commands/installcrontab.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -43,11 +43,11 @@ Example: php bin/php/installcrontab.php --show
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--show` |  | The planned lines, the block in the crontab and the last runs (the default) |
-| `--add` |  | Add or update the block |
-| `--remove` |  | Remove the block |
-| `--dry-run` |  | With --add or --remove: show what would change, change nothing |
-| `--admin-siteaccess` | erforderlich | The siteaccess of the admin parts (default: [CrontabSettings] AdminSiteAccess, else admin) |
+| `--show` |  | Die geplanten Zeilen, der Block in der Crontab und die letzten Läufe (der Standard) |
+| `--add` |  | Fügt den Block hinzu oder aktualisiert ihn |
+| `--remove` |  | Entfernt den Block |
+| `--dry-run` |  | Mit --add oder --remove: zeigt, was sich ändern würde, ändert nichts |
+| `--admin-siteaccess` | erforderlich | Der Siteaccess der Admin-Teile (Standard: [CrontabSettings] AdminSiteAccess, sonst admin) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
