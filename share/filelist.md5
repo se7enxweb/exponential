@@ -121,9 +121,9 @@ aef5f587ba98095996266b403af6d77c  bin/php/ezwebinupgrade.php
 776d90775d3fe142bc18f7d48987b426  bin/php/frankenphp.php
 038994d40f5bd45e6d6f97ace5ba73f2  bin/php/i18n.php
 59c9fcb832a37194d1ea457b7793ae64  bin/php/ini.php
-b244cfe59c683bcb6c3c5a8fbd1634fe  bin/php/install.php
+eb0c63fda66d75de64b563ec1a7837ff  bin/php/install.php
 c9c673f063cd13b8f28d6054be7762e5  bin/php/installcrontab.php
-e4675b2c9840dcfeb3b515eb1fe87dd5  bin/php/kickstarter.php
+4a5af2a9dd462bb2d845efe476dad91a  bin/php/kickstarter.php
 363da3b296a1e0748fc886f949963fee  bin/php/mailbounces.php
 356aba7479f51e2bddae6268c89b47f9  bin/php/mailconsent.php
 d452f8b8452c10a7e8325913211f3df2  bin/php/mailgate.php
@@ -22802,7 +22802,7 @@ c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 b744014d45bbb8a080e82b39cec611c9  kernel/classes/expkernelservicecontainer.php
 734d185d9c5493c4f018eee4c442edce  kernel/classes/expkernelservices.php
 750bf024fbb3a0c6c885c32ea16bca2b  kernel/classes/expkernelservicescope.php
-80d7a6b619852f71450b282009e26b66  kernel/classes/expkickstarter.php
+d12921f2bf05b495bdbb26b99f829794  kernel/classes/expkickstarter.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 260fe378605929bcf0d4755cb2240c9c  kernel/classes/explinkcheck.php
 f4d6ecae469a38295a4d8c566f6ba3be  kernel/classes/explovestack.php
@@ -23566,9 +23566,9 @@ fd4e1af35d892872dea6d4780364afab  kernel/private/classes/commands/flatten.php
 6c84fcd54d7638ea30baa897c9eeeb25  kernel/private/classes/commands/frankenphp.php
 10a10fb9459a9635d6533b2ac79742a6  kernel/private/classes/commands/i18n.php
 64e2b0277f5e311994539d81cf55c378  kernel/private/classes/commands/ini.php
-97796012ff01b1c1263a437356ff1e0f  kernel/private/classes/commands/install.php
+fcfeee4f46e9fa7b4f6eaed87fc347ea  kernel/private/classes/commands/install.php
 c440d287fee9a7aff52960583d00720c  kernel/private/classes/commands/installcrontab.php
-7fa2d2c044f7afb785a98408cbaf64e0  kernel/private/classes/commands/kickstarter.php
+a7c639ef4bf6fa6aef98f57a55a144bb  kernel/private/classes/commands/kickstarter.php
 3ec799c20f5945b958301a9b0a59781e  kernel/private/classes/commands/mailbounces.php
 6d5664d542492eeaeb278f123d633e4c  kernel/private/classes/commands/mailconsent.php
 f6c3c7ac5244c9c3fbdf8ceb1e0dcf04  kernel/private/classes/commands/mailgate.php
@@ -27081,6 +27081,7 @@ aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSear
 0a2d91e4f143843749b34411356aecf3  tests/tests/kernel/private/classes/WebDAVPathsTest.php
 d31a8f355d558e4064fe9a1b6b2873da  tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php
 2bbd15ac01688af237fd3e80f07e8db2  tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php
+827811caa0ee17dba17497f14ee27818  tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php
 afe1e4020b8f21c7b8132a6166e7efc8  tests/tests/kernel/private/classes/commands/expApplyFlagMaintenanceCommandsTest.php
 d74dbdb50cbaeff996f841e63a2de9c8  tests/tests/kernel/private/classes/expContentSecurityPolicyReportTest.php
 1b02f4ed24a2eb1c795a5baeb4308753  tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php
