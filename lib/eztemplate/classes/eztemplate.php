@@ -582,7 +582,8 @@ class eZTemplate
             $templateBase = isset( $resourceData['template-source'] ) && $resourceData['template-source']
                 ? $resourceData['template-source']
                 : ( isset( $resourceData['template-name'] ) ? $resourceData['template-name'] : $template );
-            $text = self::wrapWithTemplatePathComment( $text, $templatePath, $templateBase );
+            if ( self::templateAllowsDebugComments( $templatePath ) )
+                $text = self::wrapWithTemplatePathComment( $text, $templatePath, $templateBase );
         }
 
         if ( $returnResourceData )
@@ -912,7 +913,8 @@ class eZTemplate
         // string, because the compiled path appends straight into $textElements.
         $pathCommentTemplate = false;
         $pathCommentBase = false;
-        if ( self::showTemplatePathComments() )
+        if ( self::showTemplatePathComments() &&
+             self::templateAllowsDebugComments( isset( $resourceData['template-filename'] ) ? $resourceData['template-filename'] : '' ) )
         {
             $pathCommentTemplate = isset( $resourceData['template-filename'] ) && $resourceData['template-filename']
                 ? $resourceData['template-filename']
@@ -1936,6 +1938,9 @@ class eZTemplate
         // browser quirks mode
         if ( isset( $root[1][0][2] ) && is_string( $root[1][0][2] ) && stripos( $root[1][0][2], '<!DOCTYPE' ) === 0 )
             return;
+        // Nor on templates that print into a start tag (TemplatesWithoutDebugComments)
+        if ( !self::templateAllowsDebugComments( $path ) )
+            return;
         $uri = $resourceData['uri'];
         $preText = "\n<!-- START: including template: $path ($uri) -->\n";
         if ( eZTemplate::isXHTMLCodeIncluded() )
@@ -2687,6 +2692,52 @@ class eZTemplate
             $GLOBALS['eZTemplateShowTemplatePathComments'] = $enabled;
         }
         return $GLOBALS['eZTemplateShowTemplatePathComments'];
+    }
+
+    /**
+     * Whether a template may be wrapped in debug comments, those of Debug and
+     * of ShowTemplatePathComments.
+     *
+     * A template that prints into a start tag, such as
+     * parts/exp_content_direction.tpl in <h1 class="context-title"{include ...}>,
+     * may not: a comment inside the tag ends it at its first ">" and the browser
+     * shows the rest of the comment as text, and set-block captures the comment
+     * so a test of the output for '' fails. Such templates are named in
+     * [TemplateSettings]TemplatesWithoutDebugComments[] of site.ini by their
+     * path below templates/; a file of the same path in another design or in an
+     * extension is covered too.
+     *
+     * @param string $path template file, e.g. design/standard/templates/parts/exp_content_direction.tpl
+     * @return bool
+     */
+    static function templateAllowsDebugComments( $path )
+    {
+        if ( !is_string( $path ) or $path === '' )
+            return true;
+
+        if ( !isset( $GLOBALS['eZTemplateTemplatesWithoutDebugComments'] ) )
+        {
+            $suffixes = array();
+            $ini = eZINI::instance();
+            if ( $ini->hasVariable( 'TemplateSettings', 'TemplatesWithoutDebugComments' ) )
+            {
+                foreach ( (array)$ini->variable( 'TemplateSettings', 'TemplatesWithoutDebugComments' ) as $entry )
+                {
+                    $entry = trim( str_replace( '\\', '/', (string)$entry ), '/ ' );
+                    if ( $entry !== '' )
+                        $suffixes[] = '/templates/' . $entry;
+                }
+            }
+            $GLOBALS['eZTemplateTemplatesWithoutDebugComments'] = $suffixes;
+        }
+
+        $path = '/' . ltrim( str_replace( '\\', '/', $path ), '/' );
+        foreach ( $GLOBALS['eZTemplateTemplatesWithoutDebugComments'] as $suffix )
+        {
+            if ( substr( $path, -strlen( $suffix ) ) === $suffix )
+                return false;
+        }
+        return true;
     }
 
     /**

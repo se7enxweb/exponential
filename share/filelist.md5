@@ -3301,7 +3301,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-fe72a7d59d130b4eb6b39f4ed8e3b4e7  doc/changelogs/6.0/6.0.15.md
+36f2c91eb9f913ce09c80b56de37dc4d  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6542,7 +6542,7 @@ ad0cbcb7b00ee64e8f462a1f8f672b7e  doc/eng-us/features/6.0/subitems-table-options
 474f9cd9234182a5694367ab5740ebc1  doc/eng-us/features/6.0/system-card.md
 dd6ffd0934859a25b68301e43d20d3b0  doc/eng-us/features/6.0/template-editor-overrides.md
 7b608591724a5589bf96bf7a2cc4d09e  doc/eng-us/features/6.0/template-override-ordering.md
-bfe652712727cd6ca24daa78a9ddc1f3  doc/eng-us/features/6.0/template-path-comments.md
+ddd50286efc798b660a2f300d289733b  doc/eng-us/features/6.0/template-path-comments.md
 c1d35c36ad8001ff08accbbb4dcb4b7f  doc/eng-us/features/6.0/transfer-registry.md
 80fae419ced337dd1d77773ae1695e64  doc/eng-us/features/6.0/transfer-runs.md
 57c4106059d194a44e5f1db41823a12d  doc/eng-us/features/6.0/translations-and-languages.md
@@ -15603,7 +15603,7 @@ a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
 1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
 13be67ed0258c4ebe40353d3ef07dafd  doc/ger-de/funktionen/6.0/template-operatoren-fuer-zeichenketten.md
-0caf6f8a83e6258e50740659d8b5ea4c  doc/ger-de/funktionen/6.0/template-pfad-kommentare.md
+fc614c3e515aa38050e963c614ef3eaa  doc/ger-de/funktionen/6.0/template-pfad-kommentare.md
 e24a7bd7bc416dfbe85b84c2aa2a29d9  doc/ger-de/funktionen/6.0/transfer-laeufe.md
 cf540cda5c81291d0b6b879de40bd2f7  doc/ger-de/funktionen/6.0/transfer-register.md
 d8811a6943bde3813b7afe286f9d2629  doc/ger-de/funktionen/6.0/uebersetzungen-und-sprachen.md
@@ -24575,7 +24575,7 @@ ea266670e6e5f63569f9d18da4b606a6  lib/ezsoap/classes/ezsoaprequest.php
 1363124736306172e87ffb7f404d5d77  lib/ezsoap/classes/ezsoapresponse.php
 c601d6064a273ab4ebcc4a030d74fd40  lib/ezsoap/classes/ezsoapserver.php
 fe326a7a2677d729c1080497a8310a94  lib/eztemplate/classes/exceptions/failedexecutingcompiledtemplate.php
-6041663e48a7201a0a810dcc40a79e13  lib/eztemplate/classes/eztemplate.php
+e7d1e9466a18c4e6bf5003bf8682d236  lib/eztemplate/classes/eztemplate.php
 9888e10199888f1819506a77bc4124da  lib/eztemplate/classes/eztemplatearithmeticoperator.php
 79f0ca210a49a9a42094d12601f8fc96  lib/eztemplate/classes/eztemplatearrayoperator.php
 a18e5f0d05eb1120d30dac9db87de72d  lib/eztemplate/classes/eztemplateattributeoperator.php
@@ -24584,7 +24584,7 @@ caf4abdaccd57ca1a17e570a203c35fa  lib/eztemplate/classes/eztemplateblockfunction
 c7aaea08f3cac04f3913c840567b59d4  lib/eztemplate/classes/eztemplatecacheblock.php
 6c41a19dbb37f77b12ff5553c5722895  lib/eztemplate/classes/eztemplatecachefunction.php
 1de5c8ba1af3927a905b2563cf5762c9  lib/eztemplate/classes/eztemplatecompiledloop.php
-2b4723ad5607d3fe0c3429bd5942d773  lib/eztemplate/classes/eztemplatecompiler.php
+3cce0567da47ae11dceb7968c6fc1fa7  lib/eztemplate/classes/eztemplatecompiler.php
 701797d5185506c8ddc8498fe696bc66  lib/eztemplate/classes/eztemplatecontroloperator.php
 af6b4bc145e3b0d743726c27eb564589  lib/eztemplate/classes/eztemplatedebugfunction.php
 a7d6268d56fba4a2d063f4115ba51492  lib/eztemplate/classes/eztemplatedeffunction.php
@@ -24743,7 +24743,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-e9abf4da3b190ac0aea14c1d6fbe6ed3  settings/site.ini
+b5dc6e4325be9d01d0230bfabbbb731d  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -27518,6 +27518,7 @@ cdbf2a84cc5a0c6f809eb70782ebb0e5  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 a42110e8e1698ffa85aa925d98b254b9  tests/tests/lib/ezsoap/suite.php
 a84fc93f98a2bfdd8348f87e049112bb  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
 c0be3d17b10801879ce3559488f18e5c  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
+cb7489a437da4b3d5e21993cc07bac84  tests/tests/lib/eztemplate/eZTemplateDebugCommentsTest.php
 689824a1e09db20647f20e8885210c69  tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php
 23b3ac51d931eee0d655c96e89b0dc8c  tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php
 34793015486d957f67086345ea371dd3  tests/tests/lib/eztemplate/eZTemplateFunctionsAndParserTest.php

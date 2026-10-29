@@ -63,6 +63,11 @@ welchem Template und in welcher Zeile das Problem steckt, nicht nur, dass es ein
   Siteaccess, der Feeds ausliefert, auf `disabled`.
 - Der Kommentartext ersetzt `--` durch `- -` und entfernt `>`, sodass ein Pfad den Kommentar nie vorzeitig beenden
   kann.
+- Ein Template, das in einen Start-Tag schreibt, etwa `parts/exp_content_direction.tpl` in
+  `<h1 class="context-title"{include ...}>`, bekommt keine Kommentare: Einer im Tag würde ihn vorzeitig beenden, und
+  die Seite zeigte ein einzelnes `>`. Solche Templates stehen in `site.ini [TemplateSettings]
+  TemplatesWithoutDebugComments[]` mit ihrem Pfad unterhalb von `templates/`; eigene tragen Sie dort ein. Die Liste
+  gilt auch für `Debug=enabled`. Leeren Sie nach einer Änderung der Liste die Template- und Inhalts-Caches.
 - Zwischengespeicherte Ausgabe behält die Kommentare, mit denen sie ausgegeben wurde. Leeren Sie die Inhalts- und
   Template-Caches, wenn Sie den Schlüssel umschalten.
 - Eine Anfrage an einen Siteaccess liest nicht mehr die Überschreibungsliste eines anderen Siteaccess (eine spätere
