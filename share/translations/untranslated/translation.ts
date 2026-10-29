@@ -76335,6 +76335,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76578,6 +76618,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76655,6 +76731,14 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>View the sessions of this user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -77340,6 +77424,13 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

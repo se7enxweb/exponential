@@ -83483,6 +83483,46 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>None.</source>
         <translation>Keine.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>mit einer Authentifizierungs-App</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>mit einem Code per E-Mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>mit einem Wiederherstellungscode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>mit einem Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>mit einem externen Konto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Als Netz angezeigt; die Adresse wird so gespeichert, wie es die Datenschutzeinstellungen der Website vorsehen.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nicht gespeichert</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ungefähr</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -83726,6 +83766,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Manage devices</source>
         <translation>Geräte verwalten</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>mit einer Authentifizierungs-App</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>mit einem Code per E-Mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>mit einem Wiederherstellungscode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>mit einem Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>mit einem externen Konto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nicht gespeichert</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ungefähr</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -83804,6 +83880,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>View the sessions of this user</source>
         <translation>Sitzungen dieses Benutzers anzeigen</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Mit Ihrem Konto %login auf %site hat sich soeben jemand von einem Ort aus angemeldet, von dem es sich in letzter Zeit nicht angemeldet hat:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ungefährer Ort</translation>
     </message>
 </context>
 <context>
@@ -84489,6 +84573,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>unknown</source>
         <translation>unbekannt</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto absichern</translation>
     </message>
 </context>
 </TS>

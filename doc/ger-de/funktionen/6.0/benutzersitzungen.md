@@ -15,9 +15,11 @@ Die Seite über den Session-Handler und die Sitzungstabelle der Administration i
 | Angezeigt | Woher es kommt |
 |---|---|
 | Browser und Version, System und Version, Geräteart (Computer, Telefon, Tablet, Programm oder App, automatischer Client) | Der Header `User-Agent` der Anmeldung, gelesen von `expUserAgent::parse()`; nichts wird anderswo nachgeschlagen |
-| Adresse | Die Adresse der letzten Anfrage (`eZSys::clientIP()`), als ihr Netz angezeigt: `203.0.113.x` bei IPv4, `2001:db8:85a3::/48` bei IPv6. Die Adresse der Anmeldung steht dabei, wenn sie abweicht. Die vollständige Adresse wird gespeichert, und die Seite des Administrators zeigt sie |
-| Angemeldet | Zeitpunkt der Anmeldung und ihre Methode: Passwort, Passwort und Code der Zwei-Schritt-Anmeldung (der zweite Schritt von `user2fa/verify`), REST, SOAP oder WebDAV (nach dem Einstiegsskript), Single Sign-on (ein Login-Handler, der auf einer anderen Seite anmeldet) oder „bevor Sitzungen aufgezeichnet wurden“ |
-| Zuletzt aktiv | Die letzte Anfrage, höchstens alle `TouchInterval` Sekunden geschrieben oder wenn die Adresse wechselt |
+| Adresse | Die Adresse der letzten Anfrage (`eZSys::clientIP()`), als ihr Netz angezeigt: `203.0.113.x` bei IPv4, `2001:db8:85a3::/48` bei IPv6. Die Adresse der Anmeldung steht dabei, wenn sie abweicht. Was gespeichert wird, bestimmt `RecordIP` (siehe [Adressen und Datenschutz](#adressen-und-datenschutz)); die Seite des Administrators zeigt die gespeicherte Adresse |
+| Ort | Der ungefähre Ort der Anmeldung („Berlin, Land Berlin, Deutschland“), nur mit einer lokalen GeoIP-Datenbank (`GeoIPDatabase`, siehe [Ort](#ort-aus-einer-lokalen-geoip-datenbank)) |
+| Angemeldet | Zeitpunkt der Anmeldung und ihre Methode: Passwort, Passwort und Code der Zwei-Schritt-Anmeldung (der zweite Schritt von `user2fa/verify`), REST, SOAP oder WebDAV (nach dem Einstiegsskript), Single Sign-on (ein Login-Handler, der auf einer anderen Seite anmeldet) oder „bevor Sitzungen aufgezeichnet wurden“; dazu der zweite Schritt, wenn einer benutzt wurde: eine Authentifizierungs-App, ein Code per E-Mail, ein Wiederherstellungscode, ein Passkey |
+| Angemeldet bei | Der Host, auf dem die Anmeldung geschah (`www.example.com`), und der Siteaccess |
+| Zuletzt aktiv | Die letzte Anfrage, höchstens alle `TouchInterval` Sekunden (60) geschrieben oder wenn die Adresse wechselt |
 | Bleibt angemeldet | „Angemeldet bleiben, bis <Datum>“, wenn bei der Anmeldung „Angemeldet bleiben“ angekreuzt war (`[Session] RememberMeTimeout`, 360 Tage, standardmäßig angekreuzt), sonst „bis der Browser geschlossen wird“ |
 | Dieses Gerät | Die Sitzung, mit der die Seite angesehen wird; sie kann in der Liste nicht abgemeldet werden (stattdessen abmelden) |
 
@@ -57,12 +59,39 @@ Nicht aufgezeichnet: eine REST-, WebDAV- oder SOAP-Anfrage, die sich nur für si
 App-Passwort, ein persönlicher API-Schlüssel): Sie hat kein Cookie, das abgemeldet werden könnte. Die Prüfung des
 zweiten Schritts auf diesen Kanälen bleibt, wie sie ist: Nur das Anmeldeformular im Web fragt nach dem zweiten Schritt.
 
+## Adressen und Datenschutz
+
+`RecordIP` bestimmt, wie die Adressen einer Sitzung gespeichert werden:
+
+| Wert | Gespeichert |
+|---|---|
+| `audit` (Standard) | Wie das Audit sie speichert: keine bei audit.ini `[UserAuditSettings] RecordIP=disabled` oder `[AuditPrivacySettings] Field[actor.ip]=off`, das Netz bei `truncate` (dort der Standard) oder `hash`, die vollständige Adresse bei `full` |
+| `full` | Die vollständige Adresse |
+| `truncated` | Nur das Netz: `203.0.113.x`, `2001:db8:85a3::/48` |
+| `disabled` | Keine Adresse; die Seite sagt „Nicht gespeichert“ |
+
+Der Ort (unten) wird aus der vollständigen Adresse im Speicher nachgeschlagen, bevor sie gekürzt wird; die
+vollständige Adresse wird dann nicht aufbewahrt.
+
+## Ort aus einer lokalen GeoIP-Datenbank
+
+Ist `GeoIPDatabase` auf eine Datenbankdatei im Format MaxMind DB gesetzt (`.mmdb`, etwa GeoLite2 City oder Country
+oder DB-IP Lite), relativ zur Installation oder absolut, und ist ein Leser installiert (die PHP-Erweiterung
+`maxminddb` oder das Composer-Paket `maxmind-db/reader`, beide liefern `MaxMind\Db\Reader`), behält jede Anmeldung ihr
+Land und einen ungefähren Ort. Kein anderer Server wird je gefragt, und Adressen privater und reservierter Netze werden
+nicht nachgeschlagen. `GeoIPLanguage` wählt die Sprache der Namen (Englisch, wenn ein Name darin fehlt). Ohne Datenbank
+wird nichts nachgeschlagen, und nichts ändert sich.
+
+Eine Anmeldung aus einem Land, aus dem sich das Konto innerhalb von `RetentionDays` nicht angemeldet hat, ist ein
+**neuer Ort**: das Audit-Ereignis `access.session.new_location` und dieselbe E-Mail wie bei einem neuen Gerät (eine
+E-Mail, wenn beides neu ist). Die erste Anmeldung mit einem Land ist nicht neu.
+
 ## E-Mail zu einer neuen Anmeldung
 
 Kommt eine Anmeldung von einer Kombination aus Browser, System und Geräteart, die das Konto innerhalb von
-`RetentionDays` nicht benutzt hat, bekommt der Benutzer **Neue Anmeldung bei Ihrem Konto** (Template
-`design:user/new_signin_mail.tpl`, Mail-Kategorie `security`): das Gerät, die Zeit, die ungefähre Adresse und den Link
-zu Ihre Geräte. Die allererste Anmeldung eines Kontos ist nicht neu: Es gibt nichts, womit sie verglichen werden könnte
+`RetentionDays` nicht benutzt hat, oder von einem neuen Ort, bekommt der Benutzer **Neue Anmeldung bei Ihrem Konto**
+(Template `design:user/new_signin_mail.tpl`, Mail-Kategorie `security`): das Gerät, die Zeit, den ungefähren Ort und
+die ungefähre Adresse und die Links zu Ihre Geräte und zur Sicherheitsaktivität („Konto absichern“). Die allererste Anmeldung eines Kontos ist nicht neu: Es gibt nichts, womit sie verglichen werden könnte
 (`FirstSignInMail=enabled` ändert das).
 
 - Standardmäßig an (`NewDeviceMail=enabled`). Jeder Benutzer schaltet sie mit dem Kästchen **Mir eine E-Mail schicken,
@@ -79,7 +108,10 @@ zu Ihre Geräte. Die allererste Anmeldung eines Kontos ist nicht neu: Es gibt ni
 | Einstellung | Standard | Bedeutung |
 |---|---|---|
 | `Tracking` | `enabled` | `disabled`: Es werden keine Zeilen geschrieben, keine Sitzung wird geprüft, die Seite sagt es |
-| `TouchInterval` | `300` | Sekunden zwischen zwei Schreibvorgängen der letzten Benutzung (oder wenn die Adresse wechselt) |
+| `TouchInterval` | `60` | Sekunden zwischen zwei Schreibvorgängen der letzten Benutzung (oder wenn die Adresse wechselt) |
+| `RecordIP` | `audit` | Wie Adressen gespeichert werden: `audit`, `full`, `truncated`, `disabled` |
+| `GeoIPDatabase` | (leer) | Eine lokale `.mmdb`-Datenbank für den Ort einer Anmeldung; leer: keine |
+| `GeoIPLanguage` | `en` | Die Sprache der Ortsnamen |
 | `RetentionDays` | `90` | Tage, die eine beendete Sitzung aufbewahrt wird (Kürzlich beendet, die Prüfung auf neue Geräte) |
 | `NewDeviceMail` | `enabled` | Die E-Mail an den Benutzer über eine Anmeldung von einem neuen Gerät |
 | `NewDeviceAdminMail` | `disabled` | Derselbe Hinweis an die Administratoren |
@@ -106,13 +138,15 @@ ezformtoken; danach leitet die Seite auf sich selbst um und zeigt das Ergebnis e
 | `access.session.logout` | Eine Abmeldung (wie bisher), mit `after.session` |
 | `access.session.revoke` | Eine auf der Seite abgemeldete Sitzung: `after.count`, `after.sessions` (Zeilen-IDs), `after.scope` (one, others, all), `after.by` (user, admin), `after.actor_id`; Grund `user_request` oder `admin` |
 | `access.session.new_device` | Eine Anmeldung von einem neuen Gerät (die E-Mail geht hinaus): Browser, System, Gerät, Methode |
+| `access.session.new_location` | Eine Anmeldung aus einem neuen Land (nur mit GeoIP-Datenbank): Land, Ort, Methode |
 
 ## Aufbewahrung: der Cronjob usersessions.php
 
 Im Teil `infrequent` und für sich (`php runcronjobs.php usersessions`):
 
 - eine Sitzung, die `[Session] SessionTimeout` lang nicht benutzt wurde, wird als **abgelaufen** beendet (auch der
-  Server hat sie vergessen);
+  Server hat sie vergessen), außer sie bleibt mit „Angemeldet bleiben“ erhalten: dann bleibt sie bis zu diesem Datum
+  (`[Session] RememberMeTimeout`, 360 Tage);
 - eine beendete Sitzung, die älter als `RetentionDays` ist, wird entfernt;
 - die Zeilen von Benutzern, die es nicht mehr gibt, werden entfernt.
 
@@ -129,11 +163,24 @@ Eine Zeile je Anmeldung: `id`, `user_id`, `token_hash` (eindeutig), `created`, `
 - Ohne die Tabelle wird nichts aufgezeichnet, und jede Seite arbeitet wie bisher; die Seite Ihre Geräte sagt, was
   auszuführen ist.
 
+## Die Tabelle expuser_session_info
+
+Eine Zeile je Sitzung, mit dem Schlüssel `session_id` (die Zeile von `expuser_session`): `user_id`, `host`, `country`
+(ISO-Code), `location`, `auth_detail` (`totp`, `email`, `recovery`, `passkey`, `oauth`); ein Index auf `user_id`. Eine
+eigene Tabelle, damit eine Installation, die `expuser_session` schon hat, weiter aufzeichnet, bis sie angelegt ist:
+dieselben Update-Dateien und dasselbe Skript (`createusersessiontable.php`) legen sie an. Ihre Zeilen werden mit ihren
+Sitzungen entfernt.
+
 ## Entwickler
 
 - `expUserSessionTracker::setMethodHint( 'single_sign_on' )` vor `eZUser::setCurrentlyLoggedInUser()` nennt die
-  Methode einer Anmeldung, die ein Login-Handler vornimmt.
+  Methode einer Anmeldung, die ein Login-Handler vornimmt; ein zweites Argument nennt den zweiten Schritt
+  (`setMethodHint( 'two_factor', 'totp' )`). Der Hinweis gilt nur in der Anfrage, die ihn gesetzt hat, so dass ein
+  dauerhafter Worker (Velocity) ihn nie weitergibt.
+- `expUserSessionTracker::exportForUser( $userID )` (jede Zeile mit ihren Details, ohne den Hash des Tokens) und
+  `eraseForUser( $userID )` dienen einem Datenexport und einer Löschung.
+- `expUserGeoIP::lookup( $ip )`, `fromRecord()`; `expUserGeoIP::setLookup()` ersetzt die Datenbank in Tests.
 - `expUserSessionTracker::revoke( $userID, $sessionID, $actorID )`, `revokeOthers()`, `revokeAll()`,
   `endOtherRows( $userID, $reason, $actorID )`, `listForUser( $userID )`, `cleanup()`.
 - `expUserAgent::parse()`, `label()`, `approximateIP()`: einfache Funktionen ohne Zustand.
-- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`.
+- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`, `expUserSessionInfoTest.php`.

@@ -76515,6 +76515,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>None.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>with an authenticator app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>with a code by e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>with a recovery code</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>with a passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>with an external account</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Security activity</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Shown as its network; the address is kept as the data protection settings of the site say.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Not recorded</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Location</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>approximate</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76758,6 +76798,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Manage devices</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>with an authenticator app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>with a code by e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>with a recovery code</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>with a passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>with an external account</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Security activity</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Not recorded</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Location</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>approximate</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76836,6 +76912,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>View the sessions of this user</source>
         <translation>View the sessions of this user</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Approximate location</translation>
     </message>
 </context>
 <context>
@@ -77521,6 +77605,13 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>unknown</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Secure your account</translation>
     </message>
 </context>
 </TS>
