@@ -34,6 +34,13 @@
             <directory suffix="Test.php">tests/tests/kernel/classes/security</directory>
         </testsuite>
 
+        <!-- run by the verification after an upgrade (exp:upgrade:verify with after): fast, no database, no network -->
+        <testsuite name="upgrade-smoke">
+            <directory suffix="Test.php">tests/tests/kernel/classes/upgrade</directory>
+            <file>tests/tests/kernel/classes/help/expHelpSearchContractTest.php</file>
+            <file>tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php</file>
+        </testsuite>
+
         <testsuite name="kernel-classes">
             <directory suffix="Test.php">tests/tests/kernel/classes</directory>
             <!-- the template operators of kernel/common, called directly; no database -->
