@@ -767,7 +767,7 @@ f38af634c038d19b2fd533865eb2cbbc  design/admin/templates/setup/sitedata.tpl
 78ea36a4c6e452e31ab14e6d204dbae9  design/admin/templates/setup/templateoperator.tpl
 8e7f2cf9048dc061db064c6fc9d224db  design/admin/templates/setup/workflowevent.tpl
 756ef05f714febdd730b0411918b333b  design/admin/templates/shop/accounthandlers/html/ez.tpl
-d4cd5a57d55c5c9d55566b7744d650d2  design/admin/templates/shop/archivelist.tpl
+fcf58583bd59c7c9c0f12aff17fe73a5  design/admin/templates/shop/archivelist.tpl
 39f8a9a926919eab3de430d743f652d4  design/admin/templates/shop/basket.tpl
 210907320335067e4ad23399b47a961b  design/admin/templates/shop/browse_discountcustomer.tpl
 973ed42413641cd99c9ebd85f0c3e702  design/admin/templates/shop/browse_discountproduct.tpl
@@ -782,7 +782,7 @@ c36ae5abac788856184a63d7ec74057e  design/admin/templates/shop/discountgroupmembe
 428d625914d4ae46107a79cd3e08c268  design/admin/templates/shop/discountruleedit.tpl
 ee0e79b4ce1b4b97d81e3027d8dfa471  design/admin/templates/shop/editcurrency.tpl
 05cbfd346b181a0e8f603afc1f1c88de  design/admin/templates/shop/editvatrule.tpl
-36e21c2810a7ee5d1316783ac0f80e21  design/admin/templates/shop/orderlist.tpl
+5ae5a80804024bdcae43410466661a6c  design/admin/templates/shop/orderlist.tpl
 559970854a040f502b37304906f5ace1  design/admin/templates/shop/orderstatistics.tpl
 e8e3773fec9e1feecaf24fd031b9348a  design/admin/templates/shop/orderview.tpl
 67319e4df0399a3de7fdc53f16ef475a  design/admin/templates/shop/productcategories.tpl
@@ -1576,7 +1576,7 @@ f38af634c038d19b2fd533865eb2cbbc  design/admin4/templates/setup/sitedata.tpl
 d9f6ebde34c3a9117900538cd5f8f6b8  design/admin4/templates/setup/templateoperator.tpl
 9a3fba5adb86f865341bdecb09b9a12a  design/admin4/templates/setup/workflowevent.tpl
 756ef05f714febdd730b0411918b333b  design/admin4/templates/shop/accounthandlers/html/ez.tpl
-0e007ff3e2916f44daec9f20a9538929  design/admin4/templates/shop/archivelist.tpl
+2e0eb8a8fad7286103980b568d9bed09  design/admin4/templates/shop/archivelist.tpl
 c3e7920b5a07729692e910eb3ca66de0  design/admin4/templates/shop/basket.tpl
 210907320335067e4ad23399b47a961b  design/admin4/templates/shop/browse_discountcustomer.tpl
 973ed42413641cd99c9ebd85f0c3e702  design/admin4/templates/shop/browse_discountproduct.tpl
@@ -1591,7 +1591,7 @@ b93e11154287ac254e5145bee3990c88  design/admin4/templates/shop/discountgroup.tpl
 212055f7c498ae444c2248791c45b8cc  design/admin4/templates/shop/discountruleedit.tpl
 045333e7c2e9b095c4300c599ba15f82  design/admin4/templates/shop/editcurrency.tpl
 8d91ad43162fe42bcf9fe87f8723603c  design/admin4/templates/shop/editvatrule.tpl
-76dc6577cb8b351eb5ada86d03973137  design/admin4/templates/shop/orderlist.tpl
+02af6f8838965dd18de01c49bc52a8c3  design/admin4/templates/shop/orderlist.tpl
 0f625fff7f6070eefe0aebe8ec7da8f6  design/admin4/templates/shop/orderstatistics.tpl
 4521f1a3eecb9b2cb3d17b3d73e6ac1d  design/admin4/templates/shop/orderview.tpl
 05c35591424ee14e7e9dc59251e78ee4  design/admin4/templates/shop/productcategories.tpl
@@ -12251,9 +12251,9 @@ b157c3ab90ba4fbce6c8fe089c88636b  doc/eng-us/history/velocity/2026-09d.md
 09fe66cfd7efc177b0979e16d00d9add  doc/eng-us/history/velocity/2026-10.md
 1b26aebfc51d07107cde582d6f105804  doc/eng-us/history/velocity/README.md
 6579cb3af6b13e98420cb492887ed497  doc/eng-us/history/velocity/installers-and-packages.md
-7a89e66896ab3159d4f9e449998f1b44  doc/eng-us/images/languages/coverage-map.svg
-8a12abcde020ecfb3271f8796820c935  doc/eng-us/images/languages/coverage-map.webp
-637835b26be6efc37035bcaa3f6eac01  doc/eng-us/images/languages/world-outline.svg
+7c68147ece96be0775ceaff08abec3e0  doc/eng-us/images/languages/coverage-map.svg
+7d57fd9a896f2c58faacaf33964f9c11  doc/eng-us/images/languages/coverage-map.webp
+6ccd8897deaf61af5fbf3624fef2a549  doc/eng-us/images/languages/world-outline.svg
 c2daac44615144bd3fdc43b77d02a7fb  doc/eng-us/install/01-introduction.md
 956503fceb5e35f318db4eb9f5388440  doc/eng-us/install/02-requirements.md
 eeed09f20f70df3689710abe9b8f4296  doc/eng-us/install/03-getting-the-code.md
@@ -15374,8 +15374,8 @@ a437b6de2cfeb8157ec0bd620cfe6f82  doc/ger-de/beispiele/workflow-ereignisse/ezfin
 010d0864d660a185840fd86c93621413  doc/ger-de/beispiele/workflow-ereignisse/ezpaymentgateway.md
 31755bce36887705ae2a3d02f2edd98f  doc/ger-de/beispiele/workflow-ereignisse/ezsimpleshipping.md
 65dddf148faeeed5b008171d5ecc92c8  doc/ger-de/beispiele/workflow-ereignisse/ezwaituntildate.md
-9db86790af7bdcf990e1ff315e6a97fd  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
-de7d3aa0d6d693ab16429ec5342deaea  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
+fb9057ebf2bbd3b63adb30efe4ab5f2b  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
+dc9da889cf75f46a0d5d0b0d1f3c2daa  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
 9f7389a3ca3afe0f68567c73bbdf3771  doc/ger-de/branch-uebersicht.md
 a5081b851a21e3aac6cb770c46462bbe  doc/ger-de/funktionen/4.7/cluster-ereignisse.md
 e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
