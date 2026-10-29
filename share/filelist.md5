@@ -213,7 +213,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-51a5baa419a3dd196c39174191cd2d51  composer.json
+1716a39c8a4fb5f17429257b19e1196d  composer.json
 e9264ecfdf16598f8b69c0ec301251ac  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 b226014797143b612684b0aacc22d64c  config.php-RECOMMENDED
@@ -3313,7 +3313,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-aed03ff561382aabbdff361b8ac29b30  doc/changelogs/6.0/6.0.15.md
+551f5a9b66c6054e1f442d1259b8a230  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -12377,7 +12377,7 @@ cd0b6a85e34fba589a0baf3632bf2fc6  doc/eng-us/images/languages/coverage-map.svg
 cff5e250d6fd7deb062328fd2fac4734  doc/eng-us/images/languages/coverage-map.webp
 fa3733d7d5fa00676ab2bc74eafca985  doc/eng-us/images/languages/world-outline.svg
 b16642eb46fdf6b0f66058e77ff6628d  doc/eng-us/install/01-introduction.md
-5e693be7824c6ca9b7a3d4f5a4d47984  doc/eng-us/install/02-requirements.md
+42603b337d29a687e7915749481ad109  doc/eng-us/install/02-requirements.md
 2c1c17115cebbfab9ce7c0f008fafb4a  doc/eng-us/install/03-getting-the-code.md
 d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-method.md
 41e38e2e21213671b990ab86470d8e5f  doc/eng-us/install/05-setup-wizard.md
@@ -21406,7 +21406,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 3b542781e7b9593616e5ebe02ac6493e  doc/ger-de/hilfe/zwei-wege-zum-bauen/zuordnung-block-zu-template.md
 7b4de1d134e1317c82fbce40572f8ae4  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
 523ad730334ca2fb2fad2726493b7a2d  doc/ger-de/installation/01-einfuehrung.md
-56e46e593b84f02645c3f2653437ac08  doc/ger-de/installation/02-voraussetzungen.md
+adf68029dc2115a75c1a51b931420a16  doc/ger-de/installation/02-voraussetzungen.md
 a782dab4d6d629460852d6fa2efe66c3  doc/ger-de/installation/03-den-code-beschaffen.md
 431f04f389a37c1bf84bfb1e948c4a97  doc/ger-de/installation/04-installationsweg-waehlen.md
 2838805747d32f7f02e12fc167de3c23  doc/ger-de/installation/05-setup-assistent.md

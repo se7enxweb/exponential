@@ -75,9 +75,9 @@ Jede Version bringt mehr Geschwindigkeit, und die älteren verlieren zuerst die 
 2022 keine Sicherheitskorrekturen des PHP-Projekts mehr; betreiben Sie es nur dort, wo Ihre Distribution oder Ihr
 Hoster es noch pflegt, und planen Sie den Umzug auf PHP 8.
 
-**Ein Metapaket pro PHP-Bereich.** Der Kernel verlangt außerdem `se7enxweb/exponential-php-floor` (`~1.0.2 || ~1.1.1 || ~1.2.1 || ~1.3.1`). Jede seiner
-Versionen gehört zu einem PHP-Bereich und verlangt die Erweiterungs-Releases, die dort laufen: 1.0.2 für PHP 7.4 (ohne Support nutzbar), 1.1.1
-für 8.0, 1.2.1 für 8.1 bis 8.3, 1.3.1 für 8.4 und neuer (die früheren 1.0.0, 1.0.1, 1.1.0, 1.2.0 und 1.3.0 erlaubten ältere Erweiterungs-Releases und sind ausgeschlossen). Composer installiert die Version, die zum PHP passt, mit dem es
+**Ein Metapaket pro PHP-Bereich.** Der Kernel verlangt außerdem `se7enxweb/exponential-php-floor` (`~1.0.2 || ~1.1.2 || ~1.2.2 || ~1.3.2`). Jede seiner
+Versionen gehört zu einem PHP-Bereich und verlangt die Erweiterungs-Releases, die dort laufen: 1.0.2 für PHP 7.4 (ohne Support nutzbar), 1.1.2
+für 8.0, 1.2.2 für 8.1 bis 8.3, 1.3.2 für 8.4 und neuer (die früheren 1.0.0, 1.0.1, 1.1.0, 1.1.1, 1.2.0, 1.2.1, 1.3.0 und 1.3.1 erlaubten ältere Erweiterungs-Releases und sind ausgeschlossen). Composer installiert die Version, die zum PHP passt, mit dem es
 läuft; dasselbe `composer require se7enxweb/exponential` ergibt so auf jedem unterstützten PHP eine vollständige
 Installation, mit eingeschalteten Sicherheitsprüfungen von Composer. Führen Sie Composer mit dem PHP aus, das die
 Website verwenden wird (siehe [PHP auf der Kommandozeile und im Web](#php-auf-der-kommandozeile-und-im-web)).
