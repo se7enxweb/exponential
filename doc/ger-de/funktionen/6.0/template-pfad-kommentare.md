@@ -63,6 +63,25 @@ welchem Template und in welcher Zeile das Problem steckt, nicht nur, dass es ein
   Siteaccess, der Feeds ausliefert, auf `disabled`.
 - Der Kommentartext ersetzt `--` durch `- -` und entfernt `>`, sodass ein Pfad den Kommentar nie vorzeitig beenden
   kann.
+- Ein Template, das in einen Start-Tag schreibt, etwa `parts/exp_content_direction.tpl` in
+  `<h1 class="context-title"{include ...}>`, bekommt keine Kommentare: Einer im Tag würde ihn vorzeitig beenden, und
+  die Seite zeigte ein einzelnes `>`. Solche Templates stehen in `site.ini [TemplateSettings]
+  TemplatesWithoutDebugComments[]` mit ihrem Pfad unterhalb von `templates/`; eigene tragen Sie dort ein. Die Liste
+  gilt auch für `Debug=enabled`. Leeren Sie nach einer Änderung der Liste den Inhalts-Cache.
+- Überall sonst braucht es keine Liste: Jede gerenderte Ausgabe (`eZTemplate::fetch()`) wird einmal geprüft, und ein
+  Kommentar, der in einem Start- oder End-Tag, einem Attributwert, `<script>`, `<style>`, `<title>`, `<textarea>` oder
+  einem anderen Kommentar gelandet ist, wird herausgenommen (`eZTemplate::removeMisplacedDebugComments()`). Eine
+  Ausgabe, die kein HTML ist (XML, JSON, Klartext wie eine Textmail, CSV oder iCal), bekommt keine. Ein `set-block`
+  oder `append-block`, der einen Wert statt HTML erfasst (einen Namen, eine URL, Attribute, Klartext, nichts),
+  bekommt ebenfalls keine (`eZTemplate::capturedText()`): Eine Prüfung auf `''`, ein daraus gebildeter Template-Name
+  und ein damit gefülltes Attribut funktionieren wie ohne Kommentare; erfasstes HTML behält seine Kommentare. Die
+  Liste braucht es nur noch für Ausgabe, die auf anderem Weg in die Seite gelangt; ihr Standard ist
+  `parts/exp_content_direction.tpl`.
+- Mit `Debug=enabled` werden die Kommentare in das Template kompiliert; solche Templates werden in eigene Dateien
+  kompiliert (der Dateiname trägt den Zustand von `Debug`, `ShowXHTMLCode` und der Liste), sodass das Umschalten von
+  `Debug` oder eine Änderung der Liste kein Leeren des Template-Caches braucht. Die Liste wird einmal pro Anfrage in
+  ein Nachschlage-Array gelesen, und das Ergebnis jedes Templates bleibt erhalten: Die Prüfung je Include kostet einen
+  Schlüsselzugriff.
 - Zwischengespeicherte Ausgabe behält die Kommentare, mit denen sie ausgegeben wurde. Leeren Sie die Inhalts- und
   Template-Caches, wenn Sie den Schlüssel umschalten.
 - Eine Anfrage an einen Siteaccess liest nicht mehr die Überschreibungsliste eines anderen Siteaccess (eine spätere

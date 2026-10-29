@@ -78,10 +78,11 @@
 /* ---- Tokens: dark (slate page, slate columns; the shared tokens switch in components.css) --------------------- */
 
 html[data-a4-theme="dark"] {
-  --a4-page-color: #161b25;
+  /* the page darker than until 2026-10 (#161b25, gradient #1d2431-#141922): the columns stand off it */
+  --a4-page-color: #0b0e14;
   --a4-page-image: radial-gradient(1100px 600px at 88% -12%, rgba(242, 106, 33, 0.26), transparent 60%),
                    radial-gradient(900px 560px at -12% 108%, rgba(64, 120, 192, 0.20), transparent 60%),
-                   linear-gradient(160deg, #1d2431 0%, #141922 100%);
+                   linear-gradient(160deg, #131821 0%, #0c0f15 100%);
   --a4-header-bg: rgba(20, 25, 34, 0.86);
   --a4-header-line: rgba(255, 255, 255, 0.06);
   --a4-header-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
@@ -89,8 +90,8 @@ html[data-a4-theme="dark"] {
   --a4-header-hover: rgba(255, 255, 255, 0.08);
   --a4-header-field: var(--a4-field);
   --a4-header-field-line: rgba(255, 255, 255, 0.18);
-  --a4-side-bg: var(--a4-card-bg);   /* dark mode: the columns stay alike */
-  --a4-card-edge: rgba(255, 255, 255, 0.04);
+  --a4-side-bg: #151a22;             /* dark mode: the side columns a shade darker than the middle */
+  --a4-card-edge: rgba(255, 255, 255, 0.09);
   --a4-explayouts-nav: #1f2937;
   --a4-explayouts-nav-edge: rgba(255, 255, 255, 0.04);
   --a4-pw-toggle-room: 98px;
@@ -2258,7 +2259,8 @@ div.context-information.a4-node-meta {
 }
 #window-controls.a4-node-tabs > * { min-width: 0; }   /* a wide table in a tab scrolls inside it, never widens the box */
 /* The tabs switch and its label on a row of their own above the tabs, at its end: beside the tab row they took it
-   some 170px, and a node's tabs (with Ordering, an extension's Layouts ...) wrapped onto a second line */
+   some 170px, and a node's tabs (with Ordering, an extension's Layouts ...) wrapped onto a second line. The node
+   view draws the switch in its meta line instead (parts/a4_tabs_switch.tpl); the row then stays empty, 0px high. */
 #window-controls.a4-node-tabs > ul.tabs { grid-column: 1 / -1; grid-row: 2; }
 #window-controls.a4-node-tabs > .button-left { grid-column: 2; grid-row: 1; align-self: center; margin-bottom: var(--a4-space-2); }
 #window-controls.a4-node-tabs > .a4-tabs-switch-label { grid-column: 3; grid-row: 1; align-self: center; margin-bottom: var(--a4-space-2); }
@@ -3027,6 +3029,7 @@ div#contentstructure ul#content_tree_menu a.nodeicon::after {
 :is(#leftmenu-design, #rightmenu-design) .box-header h4 {
   margin: var(--a4-space-3) 0 var(--a4-space-2);
   padding: 0;
+  padding-inline-start: 2px;   /* off the card's rounded edge: flush with it the title looked pinched */
   font-size: 1.25em;
   line-height: var(--a4-leading-tight);
   overflow-wrap: break-word;
@@ -3034,7 +3037,7 @@ div#contentstructure ul#content_tree_menu a.nodeicon::after {
   hyphens: auto;
 }
 :is(#leftmenu-design, #rightmenu-design) > :first-child .box-header:first-child h4,
-:is(#leftmenu-design, #rightmenu-design) > .box-header:first-child h4 { margin-top: 0; }
+:is(#leftmenu-design, #rightmenu-design) > .box-header:first-child h4 { margin-top: var(--a4-space-1); }   /* below the rounded top corner, not against it */
 
 /* The plain link lists of both side columns (an ini menu without groups, the inbox shortcuts, the current user's
    links): no bullets and no indent, as the grouped setup menu. The content tree draws its own lines. */
@@ -3305,12 +3308,16 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 .tab-block:has(> .button-left > .show-hide-tabs) > .tabs-content {
   clear: both;
 }
+/* the node view's switch after the languages of the meta line (parts/a4_tabs_switch.tpl): no dot before it, a
+   little room instead; the switch, then its label */
+.a4-node-meta > .a4-node-tabs-switch { display: inline-flex; align-items: center; gap: var(--a4-space-2); margin-inline-start: var(--a4-space-4); }
+.a4-node-meta > .a4-node-tabs-switch::before { content: none; }
 .a4-tabs-switch-label {
   color: var(--a4-muted);
   font-size: var(--a4-text-s);
   font-weight: var(--a4-weight-strong);
 }
-.tab-block .show-hide-tabs {
+:is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs {
   position: relative;
   box-sizing: border-box;
   display: inline-block;
@@ -3328,7 +3335,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   vertical-align: middle;
   cursor: pointer;
 }
-.tab-block .show-hide-tabs::before {   /* the track: the field edge (3:1) while off */
+:is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs::before {   /* the track: the field edge (3:1) while off */
   content: "";
   position: absolute;
   top: 2px;
@@ -3344,12 +3351,12 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   mask: none;
 }
 /* base.css draws the old icon through a#maincontent-hide::before (an id): no mask on the track */
-.tab-block #maincontent-show.show-hide-tabs::before,
-.tab-block #maincontent-hide.show-hide-tabs::before {
+:is(.tab-block, .a4-node-tabs-switch) #maincontent-show.show-hide-tabs::before,
+:is(.tab-block, .a4-node-tabs-switch) #maincontent-hide.show-hide-tabs::before {
   -webkit-mask: none;
   mask: none;
 }
-.tab-block .show-hide-tabs::after {    /* the knob */
+:is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs::after {    /* the knob */
   content: "";
   position: absolute;
   top: 6px;
@@ -3360,23 +3367,23 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   background-color: var(--a4-muted);
   transition: left var(--a4-duration) ease, background-color var(--a4-duration) ease;
 }
-.tab-block .show-hide-tabs[aria-pressed="true"]::before,
-.tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before {
+:is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs[aria-pressed="true"]::before,
+:is(.tab-block, .a4-node-tabs-switch) #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before {
   border-color: var(--a4-accent-text);   /* the edge keeps 5:1 on a dark card too */
   background-color: var(--a4-accent-strong);
 }
-.tab-block .show-hide-tabs[aria-pressed="true"]::after,
-.tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::after {
+:is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs[aria-pressed="true"]::after,
+:is(.tab-block, .a4-node-tabs-switch) #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::after {
   inset-inline-start: 20px;
   background-color: var(--a4-on-accent);
 }
 @media (forced-colors: active) {
-  .tab-block .show-hide-tabs::before { border-color: ButtonText; background-color: Canvas; }
-  .tab-block .show-hide-tabs::after { background-color: ButtonText; }
-  .tab-block .show-hide-tabs[aria-pressed="true"]::before,
-  .tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before { border-color: Highlight; background-color: Highlight; }
-  .tab-block .show-hide-tabs[aria-pressed="true"]::after,
-  .tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::after { background-color: HighlightText; }
+  :is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs::before { border-color: ButtonText; background-color: Canvas; }
+  :is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs::after { background-color: ButtonText; }
+  :is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs[aria-pressed="true"]::before,
+  :is(.tab-block, .a4-node-tabs-switch) #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before { border-color: Highlight; background-color: Highlight; }
+  :is(.tab-block, .a4-node-tabs-switch) .show-hide-tabs[aria-pressed="true"]::after,
+  :is(.tab-block, .a4-node-tabs-switch) #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::after { background-color: HighlightText; }
 }
 
 /* Visitors who ask for less motion get none: the frame's sidebar slides, the dashboard's lift and every fade end at

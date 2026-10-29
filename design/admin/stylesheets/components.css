@@ -257,15 +257,17 @@ html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
 
   --a4-ink: #e8ebf0;
   --a4-muted: #a3abb9;
-  --a4-line: #2e3644;
-  --a4-line-strong: #434d5f;
-  --a4-soft: #222936;
-  --a4-card: #1b212c;
-  --a4-surface: #171c25;
-  --a4-zebra: #212734;
-  --a4-head-bg: #283041;
+  /* the surfaces a step apart and the lines lighter than until 2026-10 (line #2e3644, line-strong #434d5f, soft
+     #222936, card #1b212c, surface #171c25, zebra #212734): the columns were as dark as the page (1.01:1) */
+  --a4-line: #3a4456;
+  --a4-line-strong: #55617a;
+  --a4-soft: #29313e;
+  --a4-card: #1e242f;      /* no lighter: expui's accent fill (white text 4.5:1) keeps 3:1 on it */
+  --a4-surface: #1a1f29;
+  --a4-zebra: #232a36;
+  --a4-head-bg: #323b4d;
   --a4-field: #121720;
-  --a4-field-line: #6f7a93;
+  --a4-field-line: #7a85a0;   /* 3:1 also on the table header (#6f7a93 until 2026-10) */
   --a4-disabled: #6b7486;
   --a4-overlay: rgba(0, 0, 0, 0.6);
   --a4-code-bg: #0e1218;

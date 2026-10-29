@@ -3,7 +3,7 @@ title: site.ini [TemplateSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [TemplateSettings] in site.ini: AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, NodeTreeCaching ..."
-keywords: site.ini, TemplateSettings, INI, setting, AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, NodeTreeCaching, TemplateCompile, ShareCompiledTemplates, SharedCompiledTemplatesDir, TemplateOptimization, UseFormatting, TemplateCache, DelayedCacheBlockCleanup, TemplateCompression, DevelopmentMode, CompileComments, CompileAccumulators, CompileTimingPoints, CompileResourceFallback, CompileNodePlacements, CompileExecution, CompileAlwaysGenerate, CompileIncludeNodeTree
+keywords: site.ini, TemplateSettings, INI, setting, AutoloadPathList, ExtensionAutoloadPath, Debug, ShowXHTMLCode, ShowMethodDebug, ShowUsedTemplates, ShowTemplatePathComments, TemplatesWithoutDebugComments, NodeTreeCaching, TemplateCompile, ShareCompiledTemplates, SharedCompiledTemplatesDir, TemplateOptimization, UseFormatting, TemplateCache, DelayedCacheBlockCleanup, TemplateCompression, DevelopmentMode, CompileComments, CompileAccumulators, CompileTimingPoints, CompileResourceFallback, CompileNodePlacements, CompileExecution, CompileAlwaysGenerate, CompileIncludeNodeTree
 type: generated
 generated: exp:help:examples
 ---
@@ -137,6 +137,27 @@ Default: `disabled`.
 # settings/override/site.ini.append.php
 [TemplateSettings]
 ShowTemplatePathComments=disabled
+*/ ?>
+```
+
+## TemplatesWithoutDebugComments
+
+> Templates that Debug and ShowTemplatePathComments never wrap in comments, by their path below templates/  
+> (a file of that path in any design or extension), like  
+> <h1 class="title"{include uri='design:parts/exp_content_direction.tpl' ...}>, which prints into a start tag.  
+> Most templates need no entry: the comments are taken out of every rendered output where they would break it  
+> (inside a tag or an attribute value, inside <script>, <style>, <title> and <textarea>, and everywhere in output  
+> that is not HTML: XML, JSON, plain text), and a set-block that captures a value rather than HTML (a name, a URL,  
+> attributes, nothing) gets no comments. List a template whose output reaches the page some other way, e.g. through  
+> an operator that changes it before it is printed.  
+
+Default: `parts/exp_content_direction.tpl`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[TemplateSettings]
+TemplatesWithoutDebugComments[]=parts/my_attributes.tpl
 */ ?>
 ```
 
