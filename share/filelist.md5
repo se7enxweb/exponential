@@ -26407,7 +26407,7 @@ aa54f1ee456cb6119bb13a9541929fdf  tests/tests/design/AdminViewParametersOnlyTest
 c97cd0c8299f7084e7869579598da9d2  tests/tests/design/AdminVisibilityStatusTest.php
 4c2c2ba46a5575b65f1b16422e83b414  tests/tests/design/AsynchronousPublishingLinkTest.php
 78e62d89e1a68e8217d79c35a9ece84e  tests/tests/design/ClassicAdminNarrowWindowTest.php
-427c9a5b233c7164327e7f6d89013f43  tests/tests/design/DemoModeUserTemplatesTest.php
+dcf57a58fc73371422059e8f3c5287f5  tests/tests/design/DemoModeUserTemplatesTest.php
 f49ffb34b9d0b45ed1940a7ce8b1bb43  tests/tests/design/ExtensionInlineScriptsTest.php
 6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
 d21601b03696560126cb8441faf9ba78  tests/tests/design/LogViewerCopyMessagesTest.php

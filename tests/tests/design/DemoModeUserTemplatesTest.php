@@ -38,9 +38,46 @@ class DemoModeUserTemplatesTest extends PHPUnit\Framework\TestCase
         'sevenx_themes_media' => array( 'se7enxweb/sevenx-themes-media', '1.5.71' ),
     );
 
+    /** The metapackage through which composer.json requires the packages that need PHP 8 */
+    const PHP_FLOOR = 'se7enxweb/exponential-php-floor';
+
     private static function root()
     {
         return realpath( __DIR__ . '/../../..' );
+    }
+
+    /** @return array decoded "require" of a composer.json, empty when the file is missing or invalid */
+    private static function readRequire( $file )
+    {
+        $json = is_file( $file ) ? json_decode( (string)file_get_contents( $file ), true ) : null;
+        return is_array( $json ) && isset( $json['require'] ) && is_array( $json['require'] ) ? $json['require'] : array();
+    }
+
+    /**
+     * @return array the packages composer.json requires: its own require, plus the require of the installed
+     *         se7enxweb/exponential-php-floor version when the root requires that metapackage (the root's own entry wins)
+     */
+    private static function composerRequires()
+    {
+        static $require = null;
+        if ( $require === null )
+        {
+            $require = self::readRequire( self::root() . '/composer.json' );
+            if ( isset( $require[self::PHP_FLOOR] ) )
+                $require += self::readRequire( self::root() . '/vendor/' . self::PHP_FLOOR . '/composer.json' );
+        }
+        return $require;
+    }
+
+    /**
+     * @return bool whether $package is required through se7enxweb/exponential-php-floor, which is not installed here,
+     *         so its version cannot be read in this tree (the metapackage's own releases carry it)
+     */
+    private static function onlyThroughUninstalledFloor( $package )
+    {
+        $require = self::composerRequires();
+        return isset( $require[self::PHP_FLOOR] ) && !isset( $require[$package] )
+            && !is_file( self::root() . '/vendor/' . self::PHP_FLOOR . '/composer.json' );
     }
 
     /**
@@ -49,12 +86,7 @@ class DemoModeUserTemplatesTest extends PHPUnit\Framework\TestCase
      */
     private static function requiredFloor( $package )
     {
-        static $require = null;
-        if ( $require === null )
-        {
-            $json = json_decode( (string)file_get_contents( self::root() . '/composer.json' ), true );
-            $require = is_array( $json ) && isset( $json['require'] ) ? $json['require'] : array();
-        }
+        $require = self::composerRequires();
         if ( !isset( $require[$package] ) )
             return null;
         if ( !preg_match( '/^\s*(?:~|\^|>=|=)?\s*v?(\d+(?:\.\d+)*)/', $require[$package], $m ) )
@@ -153,8 +185,15 @@ class DemoModeUserTemplatesTest extends PHPUnit\Framework\TestCase
     public function testComposerRequiresTheReleasesWithTheNotice()
     {
         foreach ( self::NOTICE_RELEASES as $extension => $release )
+        {
+            if ( self::onlyThroughUninstalledFloor( $release[0] ) )
+            {
+                $this->addToAssertionCount( 1 );
+                continue;
+            }
             $this->assertTrue( self::noticeRequired( $extension ),
                 "composer.json must require {$release[0]} at {$release[1]} or later (the first release with the notice)" );
+        }
     }
 
     // ------------------------------------------------------------------ DMT-03
