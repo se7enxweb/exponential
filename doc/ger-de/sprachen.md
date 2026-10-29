@@ -10,7 +10,7 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 | Was | Anzahl |
 |---|---:|
 | Sprachen der Administration: Übersetzungen in `share/translations` | **155**, davon 155 vollständig |
-| Locales: Dateien `share/locale/*.ini` | **355**: 348 Sprachen und Länder, 1 Testsprache, 6 Varianten |
+| Locales: Dateien `share/locale/*.ini` | **359**: 352 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
 | davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **150** |
 | davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **0** |
@@ -51,7 +51,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Bahrain | BH | `ara-BH` → `ara-SA` |
 | Bangladesch | BD | `ben-BD` |
 | Barbados | BB | `eng-BB` (Quelltexte) |
-| Belarus | BY | `bel-BY` |
+| Belarus | BY | `bel-BY`, `rus-BY` → `rus-RU` |
 | Belgien | BE | `dut-BE` → `dut-NL`, `fre-BE` → `fre-FR`, `ger-BE` → `ger-DE` |
 | Belize | BZ | `eng-BZ` (Quelltexte) |
 | Benin | BJ | `fre-BJ` → `fre-FR` |
@@ -129,10 +129,10 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Kamerun | CM | `fre-CM` → `fre-FR` |
 | Kanada | CA | `eng-CA` (Quelltexte), `fre-CA` → `fre-FR` |
 | Kap Verde | CV | `por-CV` → `por-PT` |
-| Kasachstan | KZ | `kaz-KZ` |
+| Kasachstan | KZ | `kaz-KZ`, `rus-KZ` → `rus-RU` |
 | Katar | QA | `ara-QA` → `ara-SA` |
 | Kenia | KE | `eng-KE` (Quelltexte), `kik-KE`, `swa-KE` |
-| Kirgistan | KG | `kir-KG` |
+| Kirgistan | KG | `kir-KG`, `rus-KG` → `rus-RU` |
 | Kiribati | KI | `eng-KI` (Quelltexte) |
 | Kolumbien | CO | `esl-CO` → `esl-ES` |
 | Komoren | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
@@ -165,7 +165,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Mauritius | MU | `fre-MU` → `fre-FR` |
 | Mexiko | MX | `esl-MX` |
 | Mikronesien | FM | `eng-FM` (Quelltexte) |
-| Moldau (Republik Moldau) | MD | `ron-MD` → `ron-RO` |
+| Moldau (Republik Moldau) | MD | `ron-MD` → `ron-RO`, `rus-MD` → `rus-RU` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mongolei | MN | `mon-MN` |
 | Montenegro | ME | `srp-ME` → `srp-RS` |
@@ -285,7 +285,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 26. Oktober 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-Kurz gefasst: **355 Locale-Dateien** (348 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
+Kurz gefasst: **359 Locale-Dateien** (352 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **155
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian
@@ -738,6 +738,10 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `ron-MD` | Romanian (Moldova) | Română (Republica Moldova) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ron-RO` zurück) |
 | `ron-RO` | Romanian | Română | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `run-BI` | Kirundi | Ikirundi | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `rus-BY` | Russian (Belarus) | Русский (Беларусь) | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % (fällt auf `rus-RU` zurück) |
+| `rus-KG` | Russian (Kyrgyzstan) | Русский (Киргизия) | Zentralasien und Kaukasus | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % (fällt auf `rus-RU` zurück) |
+| `rus-KZ` | Russian (Kazakhstan) | Русский (Казахстан) | Zentralasien und Kaukasus | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % (fällt auf `rus-RU` zurück) |
+| `rus-MD` | Russian (Moldova) | Русский (Молдова) | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % (fällt auf `rus-RU` zurück) |
 | `rus-RU` | Russian | Русский | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 100 % |
 | `san-IN` | Sanskrit | संस्कृत भाषा | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | 100 % |
 | `sat-IN` | Santali | ᱥᱟᱱᱛᱟᱲᱤ | Südasien | LTR | Ol Chiki (`Olck`) | CLDR 44 | 100 % |

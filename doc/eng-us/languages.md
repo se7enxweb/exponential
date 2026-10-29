@@ -10,7 +10,7 @@ and `settings/i18n.ini`, no extension) has:
 | What | How many |
 |---|---:|
 | Languages of the administration: translations in `share/translations` | **155**, 155 of them complete |
-| Locales: `share/locale/*.ini` files | **355**: 348 languages and countries, 1 test language, 6 variants |
+| Locales: `share/locale/*.ini` files | **359**: 352 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
 | of them shown translated by the administration (own translation, fallback or English) | **150** |
 | of them not translated ([list](#the-languages-not-translated-yet)) | **0** |
@@ -48,7 +48,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Bahrain | BH | `ara-BH` → `ara-SA` |
 | Bangladesh | BD | `ben-BD` |
 | Barbados | BB | `eng-BB` (source texts) |
-| Belarus | BY | `bel-BY` |
+| Belarus | BY | `bel-BY`, `rus-BY` → `rus-RU` |
 | Belgium | BE | `dut-BE` → `dut-NL`, `fre-BE` → `fre-FR`, `ger-BE` → `ger-DE` |
 | Belize | BZ | `eng-BZ` (source texts) |
 | Benin | BJ | `fre-BJ` → `fre-FR` |
@@ -138,13 +138,13 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Japan | JP | `jpn-JP` |
 | Jersey | JE | `eng-JE` (source texts) |
 | Jordan | JO | `ara-JO` → `ara-SA` |
-| Kazakhstan | KZ | `kaz-KZ` |
+| Kazakhstan | KZ | `kaz-KZ`, `rus-KZ` → `rus-RU` |
 | Kenya | KE | `eng-KE` (source texts), `kik-KE`, `swa-KE` |
 | Kiribati | KI | `eng-KI` (source texts) |
 | Korea, Democratic People's Republic of | KP | `kor-KP` |
 | Korea, Republic of | KR | `kor-KR` |
 | Kuwait | KW | `ara-KW` → `ara-SA` |
-| Kyrgyzstan | KG | `kir-KG` |
+| Kyrgyzstan | KG | `kir-KG`, `rus-KG` → `rus-RU` |
 | Lao People's Democratic Republic | LA | `lao-LA` |
 | Latvia | LV | `lav-LV` |
 | Lebanon | LB | `ara-LB` → `ara-SA` |
@@ -167,7 +167,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Mauritius | MU | `fre-MU` → `fre-FR` |
 | Mexico | MX | `esl-MX` |
 | Micronesia, Federated States of | FM | `eng-FM` (source texts) |
-| Moldova, Republic of | MD | `ron-MD` → `ron-RO` |
+| Moldova, Republic of | MD | `ron-MD` → `ron-RO`, `rus-MD` → `rus-RU` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mongolia | MN | `mon-MN` |
 | Montenegro | ME | `srp-ME` → `srp-RS` |
@@ -284,7 +284,7 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 26 October 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-In short: **355 locale files** (348 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
+In short: **359 locale files** (352 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
 them written right to left) can be chosen as content languages and siteaccess locales; **155 administration
 translations** exist, all of them complete: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian (`sqi-AL`), Amharic
 (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian (`ast-ES`),
@@ -734,6 +734,10 @@ The table is generated from the locale files; do not edit it by hand.
 | `ron-MD` | Romanian (Moldova) | Română (Republica Moldova) | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `ron-RO`) |
 | `ron-RO` | Romanian | Română | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `run-BI` | Kirundi | Ikirundi | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `rus-BY` | Russian (Belarus) | Русский (Беларусь) | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% (falls back to `rus-RU`) |
+| `rus-KG` | Russian (Kyrgyzstan) | Русский (Киргизия) | Central Asia and Caucasus | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% (falls back to `rus-RU`) |
+| `rus-KZ` | Russian (Kazakhstan) | Русский (Казахстан) | Central Asia and Caucasus | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% (falls back to `rus-RU`) |
+| `rus-MD` | Russian (Moldova) | Русский (Молдова) | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% (falls back to `rus-RU`) |
 | `rus-RU` | Russian | Русский | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made | 100% |
 | `san-IN` | Sanskrit | संस्कृत भाषा | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | 100% |
 | `sat-IN` | Santali | ᱥᱟᱱᱛᱟᱲᱤ | South Asia | LTR | Ol Chiki (`Olck`) | CLDR 44 | 100% |
