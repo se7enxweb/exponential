@@ -12576,7 +12576,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-3b7762f0c9c8a21a6bc2f1a51e5c2044  doc/eng-us/translation-waves.md
+fc46ac5e75f3229007e619dba4599d1d  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 f0c5d59a6f5587bc85853690b6843331  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 e4a54d3e1cddb8942c104eb777e90ad9  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -21442,7 +21442,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-3affeeca293c383843429f12dd8c6e6a  doc/ger-de/uebersetzungswellen.md
+882ffd2164a2d4dfde24ae0cd779ce02  doc/ger-de/uebersetzungswellen.md
 aafefe33be1a1d56beba6d5a7b7aacca  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
