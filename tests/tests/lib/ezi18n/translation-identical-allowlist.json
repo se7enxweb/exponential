@@ -10156,7 +10156,8 @@
         "Https": "protocol name",
         "Div": "HTML element name",
         "Literal": "technical term spelled the same in Javanese",
-        "Plugin": "word spelled the same in Javanese"
+        "Plugin": "word spelled the same in Javanese",
+        "Sepia": "spelled the same in Javanese (sepia, the photographic tone, as in Indonesian)"
     },
     "sun-ID": {
         "OK": "OK is kept in Sundanese (allowlisted)",
@@ -18598,7 +18599,9 @@
         "Div": "HTML element name",
         "Literal": "same word in Cebuano (loan)",
         "Plugin": "glossary-style loan, single word",
-        "Tel": "abbreviation of telephone"
+        "Tel": "abbreviation of telephone",
+        "Watermark": "loanword Cebuano writes like English (guide: loans written like English are allowlisted), as in fil-PH",
+        "Font": "loanword Cebuano writes like English (guide: loans written like English are allowlisted), as in fil-PH"
     },
     "ckb-IQ": {
         "ID %id": "acronym ID with placeholder",
