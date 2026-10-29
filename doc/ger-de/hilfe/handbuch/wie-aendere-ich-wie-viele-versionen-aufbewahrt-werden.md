@@ -59,7 +59,7 @@ Einstellungsdateien der Website ändern darf. Für das Bereinigungsskript brauch
 
 - [Wie kehre ich zu einer früheren Version zurück?](wie-kehre-ich-zu-einer-frueheren-version-zurueck.md)
 - [Inhaltsverlauf](../../anleitungen/inhaltsverlauf.md)
-- [Versionen, Entwürfe und Veröffentlichen](../../../eng-us/help/cms-developers/versions-drafts-and-publishing.md)
+- [Versionen, Entwürfe und Veröffentlichen](../cms-entwickler/versionen-entwuerfe-und-veroeffentlichen.md)
 - [Die Einstellungsseite](../../anleitungen/einstellungsseite.md)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -43,7 +43,7 @@ gehören zu mehr als einem.
 |---|---|---|
 | Partner | Exponential-Partner tragen finanziell zur dauerhaften Zukunft des Projekts bei, geben Code und mehr an das Projekt zurück und arbeiten direkt mit 7x und der Exponential Foundation zusammen. | [Partner: hier beginnen](../partner/partner-hier-beginnen.md) |
 | Community | Mitglieder der Exponential-Community nutzen Exponential weltweit, tragen dazu bei, werben dafür und entwickeln Software damit. | dieser Bereich |
-| Ökosystem | Das größere Ökosystem reicht über die Community hinaus und umfasst alle Bereiche der Exponential-Welt im PHP-Stack: ihre Nutzer und Ersteller. | [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md) |
+| Ökosystem | Das größere Ökosystem reicht über die Community hinaus und umfasst alle Bereiche der Exponential-Welt im PHP-Stack: ihre Nutzer und Ersteller. | [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md) |
 
 [Partner, Community und Ökosystem](partner-community-und-oekosystem.md) erklärt, wie die drei zusammenhängen, und
 [Was die Community ist](was-die-community-ist.md) beschreibt die Community genauer.
@@ -115,13 +115,13 @@ Bereich verweist auf sie, statt sie zu wiederholen.
 | [Unterstützer](../unterstuetzer/unterstuetzer-hier-beginnen.md) | Alle, die mit Zeit oder Geld helfen | Sie den Überblick über alle Wege zu helfen möchten |
 | [Sponsoren](../sponsoren/sponsoren-hier-beginnen.md) | Menschen und Unternehmen, die die Arbeit finanzieren | Sie Geld geben möchten |
 | [Partner](../partner/partner-hier-beginnen.md) | Unternehmen im Exponential-Partnerprogramm | Ihr Unternehmen direkt mit 7x und der Foundation arbeiten möchte |
-| [Ökosystem](../../../eng-us/help/ecosystem/ecosystem-start-here.md) | Die ganze Exponential-Welt im PHP-Stack | Sie die Übersicht über Produkte, Pakete und Organisationen möchten |
+| [Ökosystem](../oekosystem/oekosystem-hier-beginnen.md) | Die ganze Exponential-Welt im PHP-Stack | Sie die Übersicht über Produkte, Pakete und Organisationen möchten |
 
 ## Verwandte Seiten
 
 - [Was die Community ist](was-die-community-ist.md)
 - [Lesepfad für die Community](lesepfad-fuer-die-community.md)
-- [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md)
+- [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md)
 - [Fürsprecher: hier beginnen](../fuersprecher/fuersprecher-hier-beginnen.md)
 - [Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md)
 - [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md)

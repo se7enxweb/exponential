@@ -33,7 +33,7 @@ type: help
 | Kursmaterial im Bereich für Trainer | Kurse wie [Editors 101](../../trainer/redakteure-101/README.md), [Editors 201](../../trainer/redakteure-201/README.md), [Site administrators](../../trainer/website-administratoren/README.md), [Developers](../../trainer/entwickler/README.md) |
 | Schulungspartner | Partner, die unterrichten ([Schulungspartner](../../partner/schulungspartner.md)) |
 | Schulungsbücher | "three original developer training books (700+ pages combined)", drei originale Schulungsbücher für Entwickler mit zusammen über 700 Seiten ([Orte der Community](../../wer-ist-die-exponential-foundation.md#orte-der-community)) |
-| Die Community | Fragen und Antworten ([Wo sich Menschen treffen](../../../../eng-us/help/community/joining/where-people-meet.md)) |
+| Die Community | Fragen und Antworten ([Wo sich Menschen treffen](../../gemeinschaft/beitreten/wo-sich-menschen-treffen.md)) |
 
 Eine Zertifizierung ist nicht dokumentiert ([Die Kanäle der Community](../../fuersprecher/community-kanaele.md)).
 

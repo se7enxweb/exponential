@@ -52,7 +52,7 @@ als "A small, simple CMS to learn with" geführt, als kleines, einfaches CMS zum
 - [Produkte](README.md)
 - [Ein Produkt auswählen](ein-produkt-auswaehlen.md)
 - [Wer ist 7x?](../../wer-ist-7x.md)
-- [Die Community für Studierende und Neulinge](../../../../eng-us/help/community/paths/community-for-students-and-newcomers.md)
+- [Die Community für Studierende und Neulinge](../../gemeinschaft/lernpfade/community-fuer-lernende-und-neulinge.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

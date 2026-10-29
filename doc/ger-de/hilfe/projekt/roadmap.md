@@ -68,7 +68,7 @@ Außerdem lädt sie Unternehmen ein, [Partner zu werden](https://exponential.ear
 
 ## Was bereits geliefert wurde
 
-Die Roadmap nennt Exponential 6.0.10 als aktuelles stabiles Release. Das Repository ist seitdem weitergegangen:
+Die Roadmap nennt Exponential 6.0.10 als aktuelles stabiles Release. Das Repository hat sich seitdem weiterentwickelt:
 6.0.11 wurde am 30. Dezember 2025 getaggt, 6.0.12 am 10. Februar 2026, 6.0.13 am 18. April 2026 und 6.0.14 am
 7. Juni 2026 (`git tag`), und 6.0.15 ist in Entwicklung. Lesen Sie die Versionsnummern der Roadmap also als
 Momentaufnahme ihrer Entstehungszeit. Mehrere ihrer Punkte sind heute im Repository zu sehen:

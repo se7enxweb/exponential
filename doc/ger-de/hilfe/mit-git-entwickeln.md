@@ -227,10 +227,32 @@ stattdessen in Ihren Fork, sodass Sie keinen Schreibzugriff auf das Projekt brau
 zuerst `CONTRIBUTING.md` im Wurzelverzeichnis der Installation: Es erklärt den Commit-Hook (`make hooks`) und das
 Dateimanifest (`make manifest-fix`), die jeder Pull-Request für den Kernel aktuell hält.
 
-Nicht jeder vermeintliche Fehler ist einer: Manches Verhalten ist beabsichtigt oder Auslegungssache, und andere Sites
-verlassen sich darauf. Ein Pull-Request, der es ändert, braucht eine klare Begründung und oft mehrere Runden der
-Prüfung, bevor er übernommen wird; bieten Sie das neue Verhalten lieber als Option an als als neuen Standard
-([Negative Funktionen](projekt/unterstuetzung-erhalten.md#negative-funktionen)).
+**Rechnen Sie mit vielen Prüfrunden.** 7x prüft einen Commit oder Pull-Request in viel mehr Runden als üblich,
+manchmal in Hunderten von Überarbeitungen; seien Sie bereit, Ihre Änderung zu überarbeiten, bis sie sich einfach
+übernehmen lässt. Eine Korrektur für Verhalten, das sich als beabsichtigt herausstellt, eine
+[negative Funktion](projekt/unterstuetzung-erhalten.md#negative-funktionen), auf die sich andere Sites verlassen,
+braucht zusätzlich eine klare Begründung, und eine Option lässt sich leichter übernehmen als ein neuer Standard.
+Solange der Pull-Request offen ist, fassen Sie ihn zusammen (squash) und setzen ihn mit rebase auf `main` neu auf, wie
+die Prüfungen es verlangen; 7x setzt das voraus:
+
+```bash
+git fetch origin
+git rebase -i origin/main
+git push --force-with-lease
+```
+
+Pushen Sie mit Force nur in den Branch Ihres eigenen Pull-Requests. Nach dem Merge wird `main` nie umgeschrieben
+([Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
+
+**Übertragung des Urheberrechts (CLA).** 7x und die Exponential Foundation übernehmen einen Code-Beitrag zum
+Kernel (`se7enxweb/exponential`), gleich in welcher Form er kommt (Pull-Request, Patch, Issue oder Mail), erst, nachdem
+Sie das Contributor Licensing Agreement unterschrieben haben. **Mit Unterschrift und Einreichung übertragen Sie das
+Urheberrecht an Ihrem Beitrag auf 7x, das sein Eigentümer wird, und geben die Kontrolle darüber auf:** 7x darf ihn auf
+jede Weise verwenden, ändern, neu lizenzieren und verbreiten, auch unter anderen Lizenzen und in kommerziellen
+Produkten, ohne Sie zu fragen oder zu bezahlen, und Sie können ihn weder zurückziehen noch Bedingungen daran knüpfen.
+Ihre eigenen Erweiterungen und der Branch Ihrer eigenen Site sind davon nicht betroffen. Siehe
+[Copyright assignment (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)
+und die [Seite zum CLA](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla).
 
 Eine eigene Erweiterung gebaut? [Erweiterungen zurückgeben](erweiterungen-zurueckgeben.md) zeigt, wie Sie sie auf
 GitHub und Packagist veröffentlichen, damit jede Site sie installieren kann, und was die GPL verlangt, wenn Sie eine
@@ -358,6 +380,9 @@ Drei weitere wissenswerte Dinge:
 - [Freie Dokumentation](freie-dokumentation.md): Diese Seiten dürfen frei kopiert, übersetzt und verbessert werden.
 - Git selbst: das freie Buch [Pro Git](https://git-scm.com/book/en/v2) und die Anleitung von GitHub zu
   [Pull-Requests](https://docs.github.com/en/pull-requests).
+
+<!-- exp-see-also-645 -->
+**Siehe auch:** [Ökosystem](oekosystem/oekosystem-hier-beginnen.md), [PHP-Entwickler](php-entwickler/php-entwickler-hier-beginnen.md), [KI, Agenten und agentisch](ki-agenten/ki-und-agenten-hier-beginnen.md), [Software-Ingenieure](softwareingenieure/softwareingenieure-hier-beginnen.md), [Web-Framework-Entwickler](web-framework-entwickler/web-framework-entwickler-hier-beginnen.md), [CMS-Entwickler](cms-entwickler/cms-entwickler-hier-beginnen.md), [DXP-Entwickler](dxp-entwickler/dxp-entwickler-hier-beginnen.md), [Integratoren](integratoren/integratoren-hier-beginnen.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

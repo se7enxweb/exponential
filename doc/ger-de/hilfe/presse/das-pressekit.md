@@ -101,6 +101,23 @@ Repository Vorrang:
 | „stewarded by 7x (se7enxweb) since 1998“ | Der Urheberrechtsvermerk von 7x und der Foundation beginnt 1998; 7x wurde 2001 als Brookins Consulting gegründet; sein Projekt startete im Dezember 2023 | [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) |
 | „Founded 1998 (as eZ Publish steward)“ | eZ Systems entwickelte eZ Publish ab 1999; 7x übernahm die Leitung 2023 | [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md) |
 
+Das Kit ist älter als die Nachricht vom 20. Oktober 2026 und erwähnt sie deshalb nicht: **Seit 6.0.15 ist der
+Velocity Internet / Web Application Server Teil von Exponential.** Die `composer.json` im Wurzelverzeichnis verlangt
+`se7enxweb/exponential-velocity ~0.0.4.55` (bis dahin wurde es nur vorgeschlagen), und Velocity 0.0.4.54 läuft auf
+PHP 8.0 und neuer. Fakten, die Sie drucken können, jeweils mit Quelle:
+
+| Fakt | Quelle |
+|---|---|
+| Velocity ist seit 6.0.15 Teil von Exponential und wird mit jeder Kopie durch `composer install` installiert | [Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md); `composer.json` |
+| Velocity läuft auf PHP 8.0 bis 8.5, einschließlich des Standard-PHP 8.0 von Red Hat Enterprise Linux 9 | [Unterstützung für PHP 8.0](../../bc/6.0/php-8.0-unterstuetzung.md) |
+| Velocity ist die empfohlene Engine für jede Phase; FrankenPHP ist die produktionsreife Alternative; Apache und nginx funktionieren weiter | [Velocity-Engines](../../bc/6.0/velocity-engines.md) |
+| Das Projekt beschreibt es als Wendepunkt, Grundstein und Schlussstein: eine neue Stufe der Integration des Anwendungssystems, mit noch größerem Funktionsumfang von Haus aus im Kernprodukt | [Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md#warum-es-ein-wendepunkt-ist) |
+| Exponential ist ein funktionierender Stack, nicht nur ein Framework: Server, RAD-Plattform, CMS, Digital Experience und E-Commerce | [Ein Stack, nicht nur ein Framework](../velocity-ist-teil-von-exponential-6-0-15.md#ein-stack-nicht-nur-ein-framework) |
+
+Bezeichnen Sie Velocity oder FrankenPHP nicht als „experimentell“; keines von beiden ist es. Drucken Sie nur die
+Leistungszahlen, die die Dokumentation bereits nennt, mit ihrer Methode
+([Wie die Velocity-Zahlen gemessen werden](thema-wie-die-velocity-zahlen-gemessen-werden.md)).
+
 Die Tabelle mit den wichtigen Fakten im Kit enthält außerdem zwei Zählungen („Active Properties“ und „Forge Projects“),
 für die diese Dokumentation keine Quelle hat. Drucken Sie sie nicht, ohne zu fragen, wie gezählt wurde
 ([Zahlen prüfen](zahlen-pruefen.md)).

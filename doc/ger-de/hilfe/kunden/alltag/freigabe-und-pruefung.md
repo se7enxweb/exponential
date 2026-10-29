@@ -82,6 +82,8 @@ Veröffentlichungsvorgang aus, sodass die Freigabe sie zurückhält ([Exponentia
 4. Einmal pro Woche sieht sich die Chefredaktion **Setup > Workflow-Prozesse** an: Ein Prozess, der seit Tagen wartet,
    bedeutet meist, dass eine freigebende Person gegangen ist oder der Cronjob angehalten hat ([Workflows](../../../anleitungen/workflows.md)).
 
+   ![Setup, Workflow-Prozesse: die wartenden Prozesse, worauf sie warten, und eine Warnung, wenn der Workflow-Cronjob nicht eingeplant ist](../../bilder/creators/workflow-processes.webp)
+
 ## Leichtere Alternativen
 
 - **Vorschau vor dem Veröffentlichen**: Mit der Vorschau im Bearbeitungsformular und der Versionsvorschau kann ein

@@ -56,7 +56,7 @@ damit die About-Seite zeigt, welches Release installiert ist ([About- und Pakets
 
 - [Pakete](README.md)
 - [Regeln zur Versionierung](../../erweiterungsentwicklung/teil-7-veroeffentlichen/regeln-fuer-versionsnummern.md)
-- [Wie Releases entstehen](../../../../eng-us/help/community/how-it-works/how-releases-happen.md)
+- [Wie Releases entstehen](../../gemeinschaft/so-funktioniert-es/wie-releases-entstehen.md)
 - [Die nächste Version wählen](../../erweiterungsentwicklung/teil-7-veroeffentlichen/die-naechste-version-waehlen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 

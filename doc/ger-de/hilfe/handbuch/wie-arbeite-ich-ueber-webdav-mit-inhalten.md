@@ -59,7 +59,7 @@ entfernen dürfen.
 
 ## Verwandte Seiten
 
-- [WebDAV und SOAP](../../../eng-us/help/integrators/webdav-and-soap.md), wie man WebDAV einschaltet
+- [WebDAV und SOAP](../integratoren/webdav-und-soap.md), wie man WebDAV einschaltet
 - [Bilder, Medien und Uploads](../medien-und-uploads.md), die Upload-Seite im Browser
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

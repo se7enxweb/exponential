@@ -26,7 +26,7 @@ der Welt von Exponential innerhalb des PHP-Stacks, ihre Anwender und Ersteller (
 
 **Worin unterscheidet es sich von der Community?**
 Die Community sind Menschen, die mitmachen; das Ökosystem umfasst auch Produkte, Pakete, den Stack, Organisationen und
-Anwender, die nie mitmachen ([Partner, Community und Ökosystem](../../../eng-us/help/community/partners-community-and-ecosystem.md)).
+Anwender, die nie mitmachen ([Partner, Community und Ökosystem](../gemeinschaft/partner-community-und-oekosystem.md)).
 
 ## Produkte
 
@@ -78,14 +78,14 @@ Ibexa", also: Dieses Projekt ist weder mit der ursprünglichen Software eZ Publi
 Entwickler, eZ Systems oder Ibexa, verbunden (`README.md`).
 
 **Wie mache ich mit?**
-Beginnen Sie mit [Community: hier beginnen](../../../eng-us/help/community/community-start-here.md); Unternehmen mit
+Beginnen Sie mit [Community: hier beginnen](../gemeinschaft/community-hier-beginnen.md); Unternehmen mit
 [Partner: hier beginnen](../partner/partner-hier-beginnen.md).
 
 ## Verwandte Seiten
 
 - [Ökosystem: hier beginnen](oekosystem-hier-beginnen.md)
 - [Glossar zum Ökosystem](glossar-zum-oekosystem.md)
-- [FAQ für die Community](../../../eng-us/help/community/community-faq.md)
+- [FAQ für die Community](../gemeinschaft/faq-fuer-die-community.md)
 - [FAQ zum Projekt](../projekt/faq.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 

@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist für Wiederverkäufer, die Erweiterungen, Themes und Designs zu Angeboten paketieren: „das
 Intranet-Paket“, „das Newsroom-Paket“, „der Shop-Starter“. Wie Sie die Pakete selbst bauen, steht unter
-[Paketersteller: hier beginnen](../../../../eng-us/help/bundlers/bundlers-start-here.md); diese Seite handelt davon, sie zu verkaufen.
+[Paketersteller: hier beginnen](../../buendler/buendler-hier-beginnen.md); diese Seite handelt davon, sie zu verkaufen.
 
 ## Inhalt
 

@@ -53,7 +53,7 @@ lokales Modell auf demselben Server (`README.md`, "Requirements").
 ## Verwandte Seiten
 
 - [Produkte](README.md)
-- [Der Verhaltenskodex für Mitglieder der Community](../../../../eng-us/help/community/joining/the-code-of-conduct.md)
+- [Der Verhaltenskodex für Mitglieder der Community](../../gemeinschaft/beitreten/der-verhaltenskodex.md)
 - [Kunden: hier beginnen](../../kunden/kunden-hier-beginnen.md)
 - [Exponential Intelligence (Trainer)](../../trainer/exponential-intelligence/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.

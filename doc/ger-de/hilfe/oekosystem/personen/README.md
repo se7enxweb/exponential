@@ -38,8 +38,8 @@ Die Definition des Ökosystems nennt zwei Gruppen: "its users and creators", sei
 ## Verwandte Seiten
 
 - [Ökosystem: hier beginnen](../oekosystem-hier-beginnen.md)
-- [Community: hier beginnen](../../../../eng-us/help/community/community-start-here.md)
-- [Wege durch die Community](../../../../eng-us/help/community/paths/README.md)
+- [Community: hier beginnen](../../gemeinschaft/community-hier-beginnen.md)
+- [Wege durch die Community](../../gemeinschaft/lernpfade/README.md)
 - [Für wen Exponential ist](../../geschaeft/fuer-wen-exponential-ist.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 

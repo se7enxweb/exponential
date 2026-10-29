@@ -160,8 +160,8 @@ Den gesamten Abschnitt in Reihenfolge finden Sie unter [Der Lesepfad für PHP-En
 |---|---|
 | [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) | Vollständige Anwendungen bauen: Content-API, Warteschlangen, REST, Deployment, Skalierung |
 | [Das Buch für Erweiterungsentwickler](../erweiterungsentwicklung/README.md) | Das vollständige Buch für Entwickler von Erweiterungen, von den ersten Schritten bis zum Release, mit einer API-Referenz in Teil 8 |
-| [Software-Ingenieure: hier beginnen](../../../eng-us/help/software-engineers/software-engineers-start-here.md) | Architektur, Evaluierung und Engineering-Praxis rund um Exponential |
-| [Web-Framework-Entwickler: hier beginnen](../../../eng-us/help/web-framework-developers/web-framework-developers-start-here.md) | Exponential im Vergleich zu und in Verbindung mit anderen Web-Frameworks |
+| [Software-Ingenieure: hier beginnen](../softwareingenieure/softwareingenieure-hier-beginnen.md) | Architektur, Evaluierung und Engineering-Praxis rund um Exponential |
+| [Web-Framework-Entwickler: hier beginnen](../web-framework-entwickler/web-framework-entwickler-hier-beginnen.md) | Exponential im Vergleich zu und in Verbindung mit anderen Web-Frameworks |
 | [Die Template-Sprache](../template-sprache/README.md), [Template-Operatoren](../template-operatoren/README.md) | Die Templates, die Ihr PHP-Code mit Daten versorgt |
 | [Datenbankunterstützung](../datenbankunterstuetzung.md) | Die sechs Datenbanken, ihre Versionen, Einstellungen und Testabdeckung |
 | [Mit Git entwickeln](../mit-git-entwickeln.md) | Mit dem Repository arbeiten |

@@ -129,13 +129,13 @@ ein Design brauchen. Siehe [Ansichtsmodi gestalten](ansichtsmodi-gestalten.md#di
 ## Exponential Platform DXP
 
 **Design (DXP).** Eine geordnete Liste von Themes; das erste Theme, das ein Template hat, gewinnt. Siehe
-[Twig-Templates und die Design-Engine](../../../eng-us/help/dxp-developers/twig-templates-and-the-design-engine.md).
+[Twig-Templates und die Design-Engine](../dxp-entwickler/twig-templates-und-die-design-engine.md).
 
 **@ibexadesign.** Der Twig-Namensraum, über den DXP-Templates auf Theme-Templates verweisen, aufgelöst von der
 Design-Engine. Siehe [Themes für Exponential Platform](themes-fuer-exponential-platform.md).
 
 **Theme (DXP).** Ein Ordner mit Twig-Templates unter `templates/themes/<theme>/`. Siehe
-[Das Standarddesign und Ihr Theme](../../../eng-us/help/dxp-developers/the-standard-design-and-your-theme.md).
+[Das Standarddesign und Ihr Theme](../dxp-entwickler/das-standarddesign-und-ihr-theme.md).
 
 ## Verwandte Seiten
 

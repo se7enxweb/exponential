@@ -53,7 +53,7 @@ Stellen Sie sich drei Ringe vor, einer im anderen:
 - Zum Ökosystem gehören auch Menschen und Projekte, die nie ein Forum besuchen: ein Unternehmen, das eine Website
   betreibt, die ein Partner gebaut hat, die Autoren der PHP-Bibliotheken, von denen Exponential abhängt, ein
   Hosting-Unternehmen, das PHP-Hosting anbietet, auf dem zufällig eine Installation läuft
-  ([Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md)).
+  ([Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md)).
 
 ## Beispiele
 
@@ -82,13 +82,13 @@ Kein Schritt ist Pflicht. Viele Menschen bleiben jahrelang Nutzer, und das ist i
 |---|---|
 | Ein Unternehmen, das mit 7x und der Foundation arbeiten möchte | [Partner: hier beginnen](../partner/partner-hier-beginnen.md) |
 | Eine Person, die mitmachen möchte | [Community: hier beginnen](community-hier-beginnen.md) |
-| Jemand, der die Übersicht über Produkte, Pakete und Organisationen möchte | [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md) |
+| Jemand, der die Übersicht über Produkte, Pakete und Organisationen möchte | [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md) |
 
 ## Verwandte Seiten
 
 - [Was die Community ist](was-die-community-ist.md)
 - [Partner: hier beginnen](../partner/partner-hier-beginnen.md)
-- [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md)
+- [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md)
 - [Wer ist 7x?](../wer-ist-7x.md)
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

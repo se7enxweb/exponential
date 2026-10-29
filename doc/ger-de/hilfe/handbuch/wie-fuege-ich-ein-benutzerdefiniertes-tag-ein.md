@@ -48,7 +48,7 @@ Redakteure, die das Element bearbeiten dürfen.
 ## Verwandte Seiten
 
 - [Tags für formatierten Text](../buch-lernen/rich-text-tags.md#eigene-tags)
-- [Rich Text](../../../eng-us/help/cms-developers/rich-text.md), für Website-Entwickler, die Tags hinzufügen
+- [Rich Text](../cms-entwickler/rich-text.md), für Website-Entwickler, die Tags hinzufügen
 - [Templates für benutzerdefinierte Tags](../designer/vorlagen/templates-fuer-custom-tags.md)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

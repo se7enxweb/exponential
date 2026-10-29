@@ -228,6 +228,9 @@ Leitung aus.
 - [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
+<!-- exp-see-also-645 -->
+**Siehe auch:** [Anwender und Umsteiger](../anwender-umsteiger/einfuehrung-hier-beginnen.md).
+
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
 und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte

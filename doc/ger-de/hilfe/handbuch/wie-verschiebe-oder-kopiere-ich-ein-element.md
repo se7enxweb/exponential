@@ -61,7 +61,7 @@ Eine Schaltfläche, die Sie nicht verwenden dürfen, ist ausgegraut; zeigen Sie 
 - [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md#verschieben-kopieren-und-entfernen)
 - [Wie zeige ich ein Element an mehr als einer Stelle?](wie-zeige-ich-ein-element-an-mehr-als-einer-stelle.md)
 - [Wie tausche ich zwei Elemente im Baum?](wie-tausche-ich-zwei-elemente-im-baum.md)
-- [Objekte, Knoten und Orte](../../../eng-us/help/cms-developers/objects-nodes-and-locations.md)
+- [Objekte, Knoten und Orte](../cms-entwickler/objekte-knoten-und-platzierungen.md)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

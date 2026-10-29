@@ -112,7 +112,7 @@ Sprechen Sie diese Punkte früh im Projekt offen an, damit niemand danach sucht:
 ## Verwandte Seiten
 
 - [Glossar für Web-Framework-Entwickler](glossar-fuer-framework-entwickler.md)
-- [PHP-Entwickler: hier beginnen](../../../eng-us/help/php-developers/php-developers-start-here.md)
+- [PHP-Entwickler: hier beginnen](../php-entwickler/php-entwickler-hier-beginnen.md)
 - [Anwendungsersteller: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

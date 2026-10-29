@@ -30,6 +30,9 @@ was mit den Einsendungen geschieht, ist Ihre Routine.
 - **Setup > Gesammelte Informationen** listet die Elemente, die gesammelt haben, mit Zahlen, Suche, Sortierung und
   Seitenaufteilung; jedes verweist auf seine Sammlungen, auf das Element und auf einen **CSV-Export**
   ([Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md)).
+
+  ![Setup, Gesammelte Informationen: die Zahlen, eine Suche nach einem Objekt und jedes Formular mit seinen Sammlungen und dem CSV-Export](../../bilder/creators/collected-information.webp)
+
 - Drei Formulartypen sind bekannt: Formular, Feedback und Umfrage; eine Umfrage kann pro Benutzer einmal beantwortet
   werden, und Umfragen senden standardmäßig keine E-Mail (`settings/collect.ini`, siehe
   [Formulare mit dem Information Collector](../../ersteller/website-ersteller/formulare-mit-dem-informationssammler.md)).

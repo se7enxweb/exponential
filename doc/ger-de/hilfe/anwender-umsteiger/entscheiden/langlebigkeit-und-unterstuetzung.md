@@ -30,8 +30,8 @@ type: help
 
 | Möglichkeit | Was Sie bekommen | Seite |
 |---|---|---|
-| Die Hilfe in der Administration | Dokumentation für Ihre Version | [Schritt für Schritt Hilfe bekommen](../../../../eng-us/help/community/joining/getting-help-step-by-step.md) |
-| Die Community | Kostenlose Antworten, keine garantierte Antwortzeit | [Wo sich Menschen treffen](../../../../eng-us/help/community/joining/where-people-meet.md) |
+| Die Hilfe in der Administration | Dokumentation für Ihre Version | [Schritt für Schritt Hilfe bekommen](../../gemeinschaft/beitreten/schritt-fuer-schritt-hilfe-bekommen.md) |
+| Die Community | Kostenlose Antworten, keine garantierte Antwortzeit | [Wo sich Menschen treffen](../../gemeinschaft/beitreten/wo-sich-menschen-treffen.md) |
 | 7x | Bezahlter Support, Wartungsverträge, Hosting | [7x im Ökosystem](../../oekosystem/organisationen/7x-im-oekosystem.md) |
 | Partner | Support in Stufen mit Antwortzeiten | [Supportstufen und Antwortzeiten](../../partner/support-stufen-und-reaktionszeiten.md) |
 | Hosting-Unternehmen | Betrieb der Website; oft Aktualisierungen und Sicherungen | [Einen Hoster wählen](../../kunden/partner-und-hoster/einen-hoster-auswaehlen.md) |

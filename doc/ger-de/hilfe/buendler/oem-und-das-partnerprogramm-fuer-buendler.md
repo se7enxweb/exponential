@@ -89,7 +89,7 @@ Keine dieser Antworten ist veröffentlicht; fragen Sie das Partnerteam.
 
 - [OEM und Weiterverkauf](../partner/oem-und-wiederverkauf.md)
 - [Warum Partner werden](../partner/warum-partner-werden.md), [Partnervorteile](../partner/vorteile-fuer-partner.md)
-- [Wiederverkäufer: hier beginnen](../../../eng-us/help/resellers/resellers-start-here.md)
+- [Wiederverkäufer: hier beginnen](../wiederverkaeufer/wiederverkaeufer-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

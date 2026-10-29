@@ -54,7 +54,7 @@ hinzufügen**.
 
 - [Wie verschiebe oder kopiere ich ein Element?](wie-verschiebe-oder-kopiere-ich-ein-element.md), wenn Sie ein eigenständiges
   Element brauchen und nicht eine zweite Stelle für dasselbe
-- [Objekte, Knoten und Orte](../../../eng-us/help/cms-developers/objects-nodes-and-locations.md)
+- [Objekte, Knoten und Orte](../cms-entwickler/objekte-knoten-und-platzierungen.md)
 - [Inhalte erstellen und bearbeiten](../inhalte-bearbeiten.md#viele-objekte-auf-einmal)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

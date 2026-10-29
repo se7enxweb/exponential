@@ -37,6 +37,8 @@ Betreibers. Wenn eine ordentliche Übergabe noch möglich ist, verwenden Sie zue
 | Warnungen zum Zustand | Die Statusprüfungen oben auf **Setup > Systeminformationen** |
 | Eingeplante Jobs | **Setup > Cronjobs** |
 
+![Info, Über: die Erweiterungen, die die Installation lädt, in Ladereihenfolge, jede mit Version, Lizenz und Website](../../bilder/creators/about-extensions.webp)
+
 Vergleichen Sie die Version mit der gepflegten Linie ([Release-Linie und Support](../gesund-halten/release-linie-und-support.md)).
 Eine Website auf 5.x oder älter braucht ein Upgrade-Projekt ([Upgrade](../../../anleitungen/aktualisieren.md)).
 
@@ -44,6 +46,8 @@ Eine Website auf 5.x oder älter braucht ein Upgrade-Projekt ([Upgrade](../../..
 > **Bericht als Text kopieren** auf **Setup > Systeminformationen** liefert eine Zusammenfassung für eine
 > Support-Anfrage ohne Passwörter, Schlüssel, Tokens oder vollständige Serverpfade ([Systeminformationen](../../../anleitungen/systeminformationen.md)).
 > Sie ist ein gutes erstes Dokument für einen neuen Partner.
+
+![Setup, Systeminformationen: der Server, der geantwortet hat, Bericht als Text kopieren und Bericht herunterladen sowie die Statusprüfungen](../../bilder/help/bu-sysinfo.webp)
 
 ## Dritte Woche: Historie und Personen
 

@@ -49,6 +49,8 @@ durchschnittliche Zahl der Treffer. Die Seite filtert die Begriffe, die nichts g
 Häufigkeit, Begriff oder den wenigsten Treffern und führt einen Begriff mit einem Klick erneut aus. Wenn kein
 Siteaccess Suchen aufzeichnet, sagt die Seite das ([URL-Aliase, Wildcards und Suchstatistiken](../../../anleitungen/urls-und-aliase.md)).
 
+![Setup, Suchstatistiken: die Zahl der Begriffe und Suchen, die Begriffe ohne Treffer und die Liste nach Häufigkeit sortiert](../../bilder/creators/search-statistics.webp)
+
 ## Die Begriffe lesen
 
 | Was Sie sehen | Was es meist bedeutet | Was zu tun ist |

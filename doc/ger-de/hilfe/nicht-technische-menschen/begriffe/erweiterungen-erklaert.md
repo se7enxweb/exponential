@@ -36,7 +36,7 @@ technische Vorkenntnisse:
 | Newsletter (`cjw_newsletter`) | Listen von Abonnenten und das Versenden von Newslettern | [Newsletter](../../kunden/wachstum/newsletter.md) |
 | Zweistufige Anmeldung (`sevenx_authentication_2fa`) | Ein Code von Ihrem Telefon oder per E-Mail nach Ihrem Passwort | [Ihr Passwort und die zweistufige Anmeldung](../erste-schritte/ihr-passwort-und-die-zweistufige-anmeldung.md) |
 | Exponential Intelligence (`expai`) | Ein Schreibassistent, der Entwürfe vorschlägt | [Den Schreibassistenten nutzen](../erste-schritte/den-schreibassistenten-nutzen.md) |
-| Karten (`ezgmaplocation`) | Ein Feld für einen Kartenstandort bei einem Objekt | [Lokale Unternehmen](../../../../eng-us/help/local-businesses/local-businesses-start-here.md) |
+| Karten (`ezgmaplocation`) | Ein Feld für einen Kartenstandort bei einem Objekt | [Lokale Unternehmen](../../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md) |
 | Spamschutz (`hcaptcha`, `recaptcha`) | Eine Prüfung bei Formularen, ob ein Mensch und kein Roboter sie ausgefüllt hat | [Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md) |
 | Tags (`eztags`) | Schlagwörter, um Inhalte zu gruppieren | [Wie verschlagworte ich Inhalte?](../../handbuch/wie-verschlagworte-ich-inhalte.md) |
 | Sitemaps für Suchmaschinen (`bcgooglesitemaps`) | Eine Liste der Seiten für Suchmaschinen | [Sitemaps](../../ersteller/website-ersteller/sitemaps.md) |

@@ -171,8 +171,8 @@ Foundation betreibt und finanziert das Projekt ([Wer ist 7x?](../wer-ist-7x.md),
 |---|---|
 | [Erweiterungsentwicklung](../erweiterungsentwicklung/README.md) | der vollständige Kurs vom Benutzer zum Erweiterungsentwickler, mit einer API-Referenz |
 | [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) | Anwendungen auf Exponential bauen, mit Code |
-| [PHP-Entwickler: hier beginnen](../../../eng-us/help/php-developers/php-developers-start-here.md) | die PHP-Seite im Detail |
-| [Web-Framework-Entwickler: hier beginnen](../../../eng-us/help/web-framework-developers/web-framework-developers-start-here.md) | Exponential im Vergleich mit anderen Web-Frameworks |
+| [PHP-Entwickler: hier beginnen](../php-entwickler/php-entwickler-hier-beginnen.md) | die PHP-Seite im Detail |
+| [Web-Framework-Entwickler: hier beginnen](../web-framework-entwickler/web-framework-entwickler-hier-beginnen.md) | Exponential im Vergleich mit anderen Web-Frameworks |
 | [Hosting-Unternehmen: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md) | Server, Panels, Betrieb und Runbooks |
 | [Datenbankunterstützung](../datenbankunterstuetzung.md) | die Unterstützungsaussage für jede Datenbank |
 | [Mit Git entwickeln](../mit-git-entwickeln.md), [Mit Git aktualisieren](../mit-git-aktualisieren.md) | Arbeit mit Klonen des Kernels und der Erweiterungen |

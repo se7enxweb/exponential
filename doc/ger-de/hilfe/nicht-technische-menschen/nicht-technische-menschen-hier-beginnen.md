@@ -110,9 +110,9 @@ Der [Lesepfad](lesepfad-fuer-nicht-technische-menschen.md) bringt alle Seiten in
 | [Redakteure](../README.md) und [Erste Schritte](../erste-schritte.md) | Alle, die schreiben und veröffentlichen, mit jeder Schaltfläche erklärt |
 | [Benutzerhandbuch](../handbuch/README.md) | Antworten auf "Wie mache ich ...?", eine Frage pro Seite |
 | [Kunden](../kunden/kunden-hier-beginnen.md) | Betreiber einer Website, die einen Hoster oder Partner bezahlen |
-| [Privatpersonen](../../../eng-us/help/individuals/individuals-start-here.md) | Persönliche Websites, Portfolios, Blogs, Familien- und Vereinswebsites |
-| [Lokale Unternehmen](../../../eng-us/help/local-businesses/local-businesses-start-here.md) | Geschäfte, Handwerk und Praxen mit einem Standort |
-| [Gemeinnützige Organisationen](../../../eng-us/help/non-profits/non-profits-start-here.md) | Wohltätige Vereine, Stiftungen und Gruppen von Ehrenamtlichen |
+| [Privatpersonen](../privatpersonen/privatpersonen-hier-beginnen.md) | Persönliche Websites, Portfolios, Blogs, Familien- und Vereinswebsites |
+| [Lokale Unternehmen](../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md) | Geschäfte, Handwerk und Praxen mit einem Standort |
+| [Gemeinnützige Organisationen](../non-profit-organisationen/non-profit-organisationen-hier-beginnen.md) | Wohltätige Vereine, Stiftungen und Gruppen von Ehrenamtlichen |
 
 ![Das Dashboard der Administration von Exponential](../bilder/admin-dashboard.webp)
 

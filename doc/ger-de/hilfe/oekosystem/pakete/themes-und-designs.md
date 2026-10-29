@@ -57,7 +57,7 @@ Partner, die Themes veröffentlichen: [Ein Theme veröffentlichen](../../partner
 - [Pakete](README.md)
 - [Designer: hier beginnen](../../designer/designer-hier-beginnen.md)
 - [Ein Ausgangs-Theme wählen](../../designer/theme-design/ein-ausgangs-theme-waehlen.md)
-- [Die Community für Designer und Theme-Autoren](../../../../eng-us/help/community/paths/community-for-designers-and-themers.md)
+- [Die Community für Designer und Theme-Autoren](../../gemeinschaft/lernpfade/community-fuer-designer-und-theme-entwickler.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

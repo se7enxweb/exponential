@@ -88,7 +88,7 @@ dokumentierte Entscheidungsgremium für Verhaltensfragen ist die Exponential Fou
 - [Partner, Community und Ökosystem](partner-community-und-oekosystem.md)
 - [Wer ist 7x?](../wer-ist-7x.md)
 - [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
-- [Ökosystem: hier beginnen](../../../eng-us/help/ecosystem/ecosystem-start-here.md)
+- [Ökosystem: hier beginnen](../oekosystem/oekosystem-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -117,7 +117,7 @@ Datei, die über die Skriptliste des Designs geladen wird; sie braucht keine Non
 
 ### view_parameter
 
-Generierte Seite: [view_parameter](../../../eng-us/examples/template-operators/view_parameter.md).
+Generierte Seite: [view_parameter](../../beispiele/template-operatoren/view_parameter.md).
 
 - **Eingabe:** ein Text oder eine Zahl. **Parameter:** keine.
 - **Rückgabe:** der Wert als Wert eines View-Parameters, `/(name)/<wert>`, so geschrieben, wie jede Ansicht ihn

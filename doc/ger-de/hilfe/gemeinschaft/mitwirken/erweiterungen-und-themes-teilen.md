@@ -73,7 +73,7 @@ Kernel-Code unter das CLA (`CONTRIBUTING.md`, „What it does not cover“).
 - [Als Community-Mitglied mitwirken](README.md)
 - [Erweiterungen zurückgeben](../../erweiterungen-zurueckgeben.md)
 - [Eine Erweiterung veröffentlichen (Partner)](../../partner/eine-erweiterung-veroeffentlichen.md)
-- [Ökosystem: hier beginnen](../../../../eng-us/help/ecosystem/ecosystem-start-here.md)
+- [Ökosystem: hier beginnen](../../oekosystem/oekosystem-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

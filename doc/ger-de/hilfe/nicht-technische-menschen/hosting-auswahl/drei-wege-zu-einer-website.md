@@ -24,7 +24,7 @@ Sie könnten es, und nichts hält Sie vom Lernen ab. Aber Exponential zu install
 heißt, auf einem Server mit einer Kommandozeile zu arbeiten ([Was Sie nie tun müssen](../was-sie-nie-tun-muessen.md)).
 Für die meisten Menschen ohne technische Vorkenntnisse ist eine Stunde fachkundiger Zeit von jemand anderem günstiger
 als ein eigenes Wochenende, und sicherer. Wenn Sie es trotzdem versuchen möchten, zeigt der Bereich
-[Privatpersonen](../../../../eng-us/help/individuals/individuals-start-here.md), was es bedeutet, eine kleine Website allein zu betreiben.
+[Privatpersonen](../../privatpersonen/privatpersonen-hier-beginnen.md), was es bedeutet, eine kleine Website allein zu betreiben.
 
 ## Weg 1: Managed Hosting
 
@@ -88,7 +88,7 @@ Diese Hilfe nennt keine Preise; holen Sie Angebote ein und vergleichen Sie sie m
 - [Hosting-Auswahl](README.md)
 - [Was ein Hoster für Sie tut](was-ein-hoster-fuer-sie-tut.md)
 - [Hosting wählen](../../unternehmen/auswahl/hosting-auswaehlen.md)
-- [Lokale Unternehmen](../../../../eng-us/help/local-businesses/local-businesses-start-here.md) und [Gemeinnützige Organisationen](../../../../eng-us/help/non-profits/non-profits-start-here.md)
+- [Lokale Unternehmen](../../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md) und [Gemeinnützige Organisationen](../../non-profit-organisationen/non-profit-organisationen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

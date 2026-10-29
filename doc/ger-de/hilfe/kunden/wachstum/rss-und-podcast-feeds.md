@@ -34,6 +34,8 @@ Aus [RSS-Feeds](../../../anleitungen/rss-feeds.md):
 - Die Seite in der Administration (**Setup > RSS**) zeigt die Exporte und Importe mit einer Übersicht und einem Filter
   für jene, die Aufmerksamkeit brauchen.
 
+  ![Setup, RSS: die Zahlen der Exporte und Importe, der Filter mit Aufmerksamkeit nötig und ein Export mit seiner Feed-Adresse](../../bilder/creators/rss-list.webp)
+
 ## Pro Feed entscheiden
 
 | Frage | Beispielantwort |

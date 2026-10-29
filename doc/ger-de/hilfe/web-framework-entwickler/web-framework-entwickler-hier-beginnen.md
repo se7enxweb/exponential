@@ -182,8 +182,8 @@ als Exponential fortgeführt ([Wer ist 7x?](../wer-ist-7x.md)).
 |---|---|
 | [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md) | Die ausführlichen Leitfäden hinter den meisten Seiten hier: Module, Datentypen, Workflows, Warteschlangen, REST, Deployment |
 | [Erweiterungsentwicklung: das Buch](../erweiterungsentwicklung/README.md) | Jeder Erweiterungspunkt Schritt für Schritt, vom Benutzer bis zum Maintainer |
-| [PHP-Entwickler: hier beginnen](../../../eng-us/help/php-developers/php-developers-start-here.md) | Die PHP-Seite: Sprache, Konventionen und die Klassen des Kernels |
-| [Softwareingenieure: hier beginnen](../../../eng-us/help/software-engineers/software-engineers-start-here.md) | Architektur, Qualität und Ingenieurspraxis |
+| [PHP-Entwickler: hier beginnen](../php-entwickler/php-entwickler-hier-beginnen.md) | Die PHP-Seite: Sprache, Konventionen und die Klassen des Kernels |
+| [Softwareingenieure: hier beginnen](../softwareingenieure/softwareingenieure-hier-beginnen.md) | Architektur, Qualität und Ingenieurspraxis |
 | [Die Template-Sprache](../template-sprache/README.md) | Die Sprache im Detail, mit Vergleichen zu Smarty |
 | [Kernel-Architektur](../../standards/architektur/kernel-architektur.md) | Die maßgebliche Beschreibung der Schichten des Kernels |
 | [Erweiterungspunkte](../../bc/6.0/rad-erweiterungspunkte.md) | Der Katalog aller Erweiterungspunkte |

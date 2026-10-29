@@ -38,6 +38,8 @@ Die Bücher beschreiben ältere Releases. Lesen Sie sie für die Konzepte und ha
 | Beispiele für PHP 4 und PHP 5 | PHP 8.0 bis 8.5 | [Teil 4](../teil-4-aktualisieren/README.md) |
 | JavaScript in Templates | Nur Skriptdateien, unter einer Content Security Policy | [Content Security Policy für Erweiterungsautoren](../teil-3-erweiterungsentwickler/content-security-policy-fuer-erweiterungen.md) |
 
+Die Kapitel des Buchs Learning, für Exponential 6 neu geschrieben, finden Sie in [Exponential lernen](../../buch-lernen/README.md), und das Tutorial *Building a site* in [Eine Website Schritt für Schritt bauen](../../buch-eine-website-bauen/README.md).
+
 ## Ihren Text wiederverwenden
 
 Die beiden Bücher unter der GNU FDL 1.3 dürfen zitiert, übersetzt und bearbeitet werden, unter derselben Lizenz und mit

@@ -96,8 +96,8 @@ Einen Rundgang durch jedes Verzeichnis finden Sie unter [Ein Rundgang durch den 
 - [Kernel-Architektur](../../standards/architektur/kernel-architektur.md)
 - [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md),
   [das Buch für Erweiterungsentwickler](../erweiterungsentwicklung/README.md)
-- [Software-Ingenieure: hier beginnen](../../../eng-us/help/software-engineers/software-engineers-start-here.md),
-  [Web-Framework-Entwickler: hier beginnen](../../../eng-us/help/web-framework-developers/web-framework-developers-start-here.md)
+- [Software-Ingenieure: hier beginnen](../softwareingenieure/softwareingenieure-hier-beginnen.md),
+  [Web-Framework-Entwickler: hier beginnen](../web-framework-entwickler/web-framework-entwickler-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

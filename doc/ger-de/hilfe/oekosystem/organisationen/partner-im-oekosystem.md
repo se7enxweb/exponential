@@ -54,7 +54,7 @@ Kunden, die einen Anbieter wählen: [Einen Partner wählen](../../kunden/partner
 
 - [Organisationen](README.md)
 - [Partner: hier beginnen](../../partner/partner-hier-beginnen.md)
-- [Von der Community zum Partner](../../../../eng-us/help/community/paths/from-community-to-partner.md)
+- [Von der Community zum Partner](../../gemeinschaft/lernpfade/von-der-community-zum-partner.md)
 - [Das Partnerprogramm auf einen Blick](../../partner/partnerprogramm-auf-einen-blick.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 

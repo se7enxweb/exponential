@@ -25,7 +25,7 @@ type: help
 | Mitwirkende am Kernel | Korrekturen und Funktionen im Kernel | [Mit Git entwickeln](../../mit-git-entwickeln.md) |
 | Designer und Theme-Autoren | Themes, Designs | [Designer](../../designer/designer-hier-beginnen.md) |
 | Autoren von Seitenpaketen | Fertige Websites | [Seitenpakete](../../seitenpakete/README.md) |
-| Übersetzer und Autoren | Sprachen, Dokumentation, Tutorials | [Übersetzungen beitragen](../../../../eng-us/help/community/contributing/contributing-translations.md) |
+| Übersetzer und Autoren | Sprachen, Dokumentation, Tutorials | [Übersetzungen beitragen](../../gemeinschaft/mitwirken/uebersetzungen-beitragen.md) |
 | Hoster und Agenturen | Betriebsplattformen, Hosting-Angebote | [Hosting-Unternehmen](../../hosting/hosting-anbieter-hier-beginnen.md) |
 | Trainer | Kurse | [Trainer](../../trainer/trainer-hier-beginnen.md) |
 | Fürsprecher | Vorträge, Beiträge, Fallstudien | [Fürsprecher](../../fuersprecher/fuersprecher-hier-beginnen.md) |
@@ -33,7 +33,7 @@ type: help
 ## Was Ersteller teilen
 
 Ersteller entscheiden, was sie teilen. Code, den sie für sich oder ihre Kunden behalten, bleibt ihrer; die Bedingungen
-der GPL gelten, wenn sie ihn weitergeben ([Lizenzen in der Community](../../../../eng-us/help/community/how-it-works/licenses-in-the-community.md)).
+der GPL gelten, wenn sie ihn weitergeben ([Lizenzen in der Community](../../gemeinschaft/so-funktioniert-es/lizenzen-in-der-community.md)).
 Was sie veröffentlichen, wird Teil dessen, worauf andere aufbauen können
 ([Im Ökosystem veröffentlichen](im-oekosystem-veroeffentlichen.md)).
 
@@ -41,7 +41,7 @@ Was sie veröffentlichen, wird Teil dessen, worauf andere aufbauen können
 
 Ein Ersteller, der veröffentlicht, Fragen beantwortet oder etwas zurückgibt, ist auch Mitglied der Community; ein
 Unternehmen von Erstellern, das direkt mit 7x und der Foundation arbeitet, kann Partner werden
-([Partner, Community und Ökosystem](../../../../eng-us/help/community/partners-community-and-ecosystem.md)).
+([Partner, Community und Ökosystem](../../gemeinschaft/partner-community-und-oekosystem.md)).
 
 ## Verwandte Seiten
 

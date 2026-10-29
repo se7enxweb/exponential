@@ -125,7 +125,7 @@ veröffentlicht, die Antworten darunter. Wer ein Forum entfernt, entfernt alle s
 - [Datentypen wählen](datentypen-waehlen.md)
 - [Ein Inhaltsmodell entwerfen](ein-inhaltsmodell-entwerfen.md)
 - [Formulare und Informationssammlung](formulare-und-informationssammlung.md)
-- [Wie füge ich einer Inhaltsklasse ein Attribut hinzu?](../../../eng-us/help/manual/how-do-i-add-an-attribute-to-a-content-class.md)
+- [Wie füge ich einer Inhaltsklasse ein Attribut hinzu?](../handbuch/wie-fuege-ich-einer-inhaltsklasse-ein-attribut-hinzu.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
