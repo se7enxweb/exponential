@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6b46d9fc07327c0fe9cb81e5b1e79674  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-3f598c270c11f8a61232c9789099f246  autoload/ezp_kernel.php
+46f7a3e20680a25d6afc64afb5b0940b  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -1927,9 +1927,9 @@ c815c409bf1317aa4e155454260c2520  design/base/templates/menu/flat_top.tpl
 a7c6b95c591b36247214725df8ec8ca4  design/base/templates/menu/sub_left.tpl
 43682a37d4f1e1f4d05ff67d4d1556d4  design/base/templates/navigator/gallery.tpl
 5a7d4333057fa856752e66f991b4434a  design/base/templates/notification/handler/ezcollaboration/settings/edit.tpl
-bf56a94a61307e1422caa578c3401f39  design/base/templates/notification/handler/ezcollaboration/view/ezapprove/approve.tpl
-1a6c97fc3d8b2c2ae4db25a7da5f5022  design/base/templates/notification/handler/ezcollaboration/view/ezapprove/author.tpl
-632553243a2154579f6b7efde49954b8  design/base/templates/notification/handler/ezcollaboration/view/plain.tpl
+5a22f36122bdfd421b442394155b8b9e  design/base/templates/notification/handler/ezcollaboration/view/ezapprove/approve.tpl
+123006f57f61375de01f00ff3edcfe42  design/base/templates/notification/handler/ezcollaboration/view/ezapprove/author.tpl
+ce19e537ca8dbf48c680e9eaefb29679  design/base/templates/notification/handler/ezcollaboration/view/plain.tpl
 1d1b531e708384cee06da10a28368940  design/base/templates/notification/handler/ezgeneraldigest/settings/edit.tpl
 fd5514d5210c4726c82a48e4a4e21ebc  design/base/templates/notification/handler/ezgeneraldigest/view/plain.tpl
 f80333b1a3d5293499ab54bad145841e  design/base/templates/notification/handler/ezsimpledigest/settings/edit.tpl
@@ -2774,9 +2774,9 @@ d9cee9101a1d064fba4798ecf8708b6d  design/standard/templates/node/view/text.tpl
 f22ddf2d4e3da343b60822706b41ef56  design/standard/templates/notification/handler/ezcollaboration/settings/edit.tpl
 0635c0de9acece4502e3de3496235106  design/standard/templates/notification/handler/ezcollaboration/view/digest_element_plain.tpl
 0f0b68373388d881a8aa523320cca335  design/standard/templates/notification/handler/ezcollaboration/view/digest_plain.tpl
-bf56a94a61307e1422caa578c3401f39  design/standard/templates/notification/handler/ezcollaboration/view/ezapprove/approve.tpl
-1a6c97fc3d8b2c2ae4db25a7da5f5022  design/standard/templates/notification/handler/ezcollaboration/view/ezapprove/author.tpl
-1a66dfe5bf24322b45f7b55fab4d9dec  design/standard/templates/notification/handler/ezcollaboration/view/plain.tpl
+5a22f36122bdfd421b442394155b8b9e  design/standard/templates/notification/handler/ezcollaboration/view/ezapprove/approve.tpl
+123006f57f61375de01f00ff3edcfe42  design/standard/templates/notification/handler/ezcollaboration/view/ezapprove/author.tpl
+48defc4e048289207f29d855e4cf60a0  design/standard/templates/notification/handler/ezcollaboration/view/plain.tpl
 1d1b531e708384cee06da10a28368940  design/standard/templates/notification/handler/ezgeneraldigest/settings/edit.tpl
 fd5514d5210c4726c82a48e4a4e21ebc  design/standard/templates/notification/handler/ezgeneraldigest/view/plain.tpl
 f80333b1a3d5293499ab54bad145841e  design/standard/templates/notification/handler/ezsimpledigest/settings/edit.tpl
@@ -22846,7 +22846,7 @@ b755d73f6bf0e34f04abbcf67fdbcc69  kernel/classes/ezclusterfilefailure.php
 eff4a74fafc031a8bb3b4b5151ad8fdb  kernel/classes/ezclusterfilehandler.php
 3c5fb56810944894ac7ef955f1e50aaf  kernel/classes/ezcodetemplate.php
 d466e26a73141e07f2f9eaf7ab14be0e  kernel/classes/ezcollaborationgroup.php
-9db87cffca5b84ab90b33484fdcd5d45  kernel/classes/ezcollaborationitem.php
+d9fa4019e00836f1dc89190366f76863  kernel/classes/ezcollaborationitem.php
 b72844a5ba57c3d4c4f6c0f66bd6c36a  kernel/classes/ezcollaborationitemgrouplink.php
 c156fd03b46116be734d2914a7bb29a2  kernel/classes/ezcollaborationitemhandler.php
 d4e5641768c6d52afc4b76fd571f9f8c  kernel/classes/ezcollaborationitemmessagelink.php
@@ -23142,7 +23142,7 @@ aa09f022b74459a414678e90c8269f9b  kernel/classes/pdfexport/exppdfexportfile.php
 920886acb9f7d977ad659830ea7b6768  kernel/classes/pdfexport/exppdfexportform.php
 87a226885083db2cd6e271751f78d51f  kernel/classes/pdfexport/exppdfexportgenerator.php
 548985a9262bf7a561b129457e88f367  kernel/classes/pdfexport/exppdfexportinfo.php
-5e3b4e590dc1c3db5d566da82bafb04e  kernel/classes/reauth/expreauth.php
+f43e6bc39100018397fb5818738eeb04  kernel/classes/reauth/expreauth.php
 13c838a5288e289edb9923b15f349737  kernel/classes/reauth/expreauthcodehandler.php
 14320828f186481ec32703f32b8d2199  kernel/classes/reauth/expreauthrules.php
 b906808c148420c8098064603852cdc3  kernel/classes/reauth/expreauthsettings.php
@@ -23243,7 +23243,7 @@ f4fdba63ee29eebccf2e14d6e50285ff  kernel/classes/user/expsigninsecondfactorhandl
 d14e09a7f3bb40ffa6eaf0dd37dae59a  kernel/classes/user/expuseraccountstatus.php
 a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
 f54a7ee5b5b359afe464a291d6220ab2  kernel/classes/user/expuseragent.php
-bc8d1f4ffb19f111bd4276f0bb08afc9  kernel/classes/user/expuserapproval.php
+f805a286790715ca14cc7047b9b0d1d7  kernel/classes/user/expuserapproval.php
 4e5388e3e848288d567ad6083f1a8ea3  kernel/classes/user/expuseraudit.php
 885251530a15938c095c306fd0ce6715  kernel/classes/user/expuserdeactivation.php
 f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
@@ -23257,7 +23257,7 @@ f0bb8d4ea2e98212843fe5682c067018  kernel/classes/webauthn/expwebauthnchallenge.p
 e13142d6f81b46d8d4c14e5a82ea8eb9  kernel/classes/webauthn/expwebauthncose.php
 f3f09a1b9f8e7b344c065316df421263  kernel/classes/workflowtypes/event/expdatatablemirror/expdatatablemirrortype.php
 7e0dd01553c25e6f30727ca64d274687  kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php
-d083e9c0146d1fd5f8c0620718d2aec1  kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php
+8b858ed2a122c2dfa8268df354e8d94e  kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php
 349f6fbfecba427d0224cfccad47fdf0  kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php
 5c2178f2f7cdf34fb18f23bb8fef95e3  kernel/classes/workflowtypes/event/ezmultiplexer/ezmultiplexertype.php
 78d0d3e525b4269a8901c6d72d60dc94  kernel/classes/workflowtypes/event/ezpaymentgateway/ezpaymentgatewaytype.php
@@ -23492,7 +23492,7 @@ fa7c7cfa1d7781cb8bc20fb717001f86  kernel/private/classes/commands/addeditorpolic
 0557d1bc715f90b7705b9f2a94ba0ddb  kernel/private/classes/commands/addexphelpreadpolicy.php
 73c461b9768a64430af0105ac246d152  kernel/private/classes/commands/addmembermanagement.php
 496a9a93c1f6cdc29cfb505e9743d77c  kernel/private/classes/commands/addoauthauthorizepolicy.php
-639bb021b73fb1de2887f4b4e7454345  kernel/private/classes/commands/adduserapproval.php
+ad102f9e3817e433bbfa9f5f3c33e279  kernel/private/classes/commands/adduserapproval.php
 fd48c5e9ce5d0aff44ba778d817f6bc7  kernel/private/classes/commands/audit.php
 9943b2f0b7ad2498cfb4c0bbcbc27d8c  kernel/private/classes/commands/benchmark.php
 3ccaeefcf42c2501ccebc2d2045ba3c0  kernel/private/classes/commands/cache.php
@@ -24213,7 +24213,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-9d63970edfdb86e0cb2c04ba36687d4b  kernel/setup/steps/ezstep_create_sites.php
+1491ac95bfa8aab363ca34881b0316eb  kernel/setup/steps/ezstep_create_sites.php
 40b8cdc431decbff0728f58d0664a850  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -24664,7 +24664,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-4e6d34b7428e37c6e27317ac78191c02  settings/site.ini
+a864361ef7ed0ea1eb2459a362dc2c78  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
