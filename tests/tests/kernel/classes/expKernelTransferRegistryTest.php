@@ -19,7 +19,7 @@
  *  TR-09 - The help page (English and German) names every tool the kernel ships, and every round-trip partner exists
  *  TR-10 - The operators: tool hashes, translated actions, related with partner, transfer_tool with active
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

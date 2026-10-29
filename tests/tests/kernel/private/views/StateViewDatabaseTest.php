@@ -11,7 +11,7 @@
  * Run through the queue: bash ai/bin/one/run_alpha_db_heavy_command_one_at_a_time.sh <label>
  *     php vendor/bin/phpunit --testsuite kernel-private --filter StateViewDatabaseTest
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

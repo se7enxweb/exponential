@@ -16,7 +16,7 @@
  *         only to hosts that are online (GitHub), changelogs open in the help
  *  RR-10  doc/eng-us/branch-overview.md (Markdown) keeps every SVN branch of the old record file, title "Branch history"
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

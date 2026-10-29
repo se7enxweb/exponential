@@ -4,7 +4,7 @@
  * refused method), a message as a JSON body, a code without a phrase in the table, and a writer that is not an HTTP
  * writer. The response writer is ezpRestHttpResponseWriter, the one the REST kernel uses, on an ezcMvcResponse built by the test; nothing is sent.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

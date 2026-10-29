@@ -12,7 +12,7 @@
  *  VM-04 - No template of a kernel design turns &lt; and &gt; back before washing, and every validation message is
  *          printed with |wash
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

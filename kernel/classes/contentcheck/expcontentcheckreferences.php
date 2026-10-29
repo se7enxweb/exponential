@@ -29,7 +29,7 @@
  * Building the index reads all of these once; it is kept in the cache for IndexTTL seconds, or built by the CLI
  * script bin/php/contentcheck.php (also a cronjob part) on installations where BuildOnRequest is false.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

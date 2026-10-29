@@ -8,7 +8,7 @@
  *  HV-03  the help views read no $_GET and module.php declares lang, format and tracker as view parameters
  *  HV-04  every help search form is a POST (the view redirects it to the canonical address), never a GET
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

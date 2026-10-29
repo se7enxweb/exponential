@@ -4,7 +4,7 @@
  * settings (expAuditConfig::setOverride()), fixed test keys and a fixed request and actor context. No test writes
  * to the live audit log, reads the live settings for the audit, or touches the database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -2,7 +2,7 @@
 /**
  * File containing the eZLog class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit e39dde30ff), Copyright (C) Mugo Web, GPL v2
  * @license For full copyright and license information view LICENSE file distributed with this source code.

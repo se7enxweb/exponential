@@ -35,7 +35,7 @@
  *  CJ-26 a worker that cannot be started fails the job at once with the real reason and gives back its lock; resume takes it again
  *  CJ-27 a queued job no worker started within QueuedTimeout fails and stops blocking its subtree (not while a worker holds it)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group contentjob

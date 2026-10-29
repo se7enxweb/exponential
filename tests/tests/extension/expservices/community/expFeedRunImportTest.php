@@ -3,7 +3,7 @@
  * expfeed::runImport. The source is an RSS export of a test folder under the Media root, served by this site
  * itself; the import runs into a second test folder. Everything is removed again in tearDown.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -18,7 +18,7 @@
  *  TW-05  the generated part renders in the help viewer's renderer: tables, the collapsible lists, no marker or data
  *         comment shown
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

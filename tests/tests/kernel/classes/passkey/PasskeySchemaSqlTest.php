@@ -10,7 +10,7 @@
  *  PS-03 the update files create it only when it is missing (IF NOT EXISTS, a guarded DO block on PostgreSQL)
  *  PS-04 the SQLite update runs twice; a credential is stored once
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

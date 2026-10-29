@@ -10,7 +10,7 @@
  *  IP-05 - the file written by exp:install itself reads back the same, owner-only
  *  IP-06 - insertAfter puts the note right below the password row
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group runnable

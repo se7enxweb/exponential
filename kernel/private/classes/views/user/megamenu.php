@@ -29,7 +29,7 @@
  * private, no-store; Vary: Cookie), so no shared cache keeps one user's menu, or a refusal, for another.
  * Guide: doc/eng-us/features/6.0/admin4-design.md ("Mega menu").
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

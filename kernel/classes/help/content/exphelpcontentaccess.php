@@ -10,7 +10,7 @@
  * be sure (a Group limitation, an extension's limitation, the anonymous "own session" owner, an object that is not
  * published, the member management guard on the object's class), it answers null and the caller asks the object.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

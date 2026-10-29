@@ -9,7 +9,7 @@
  *  HT-04  a page without an entry keeps its own title; an empty entry or template result changes nothing
  *  HT-05  the shipped exphelp.ini gives every listed page a title and no title rule is malformed
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

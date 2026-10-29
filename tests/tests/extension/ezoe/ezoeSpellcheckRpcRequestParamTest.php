@@ -4,7 +4,7 @@
  * which was never defined, so a spell check posted as json_data stopped PHP
  * with "Call to undefined function formatParam() (now expModuleViewEzoeSpellcheckRpcFormatParam())".
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

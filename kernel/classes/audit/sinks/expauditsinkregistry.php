@@ -15,7 +15,7 @@
  * and system.audit.sink.failed is recorded, at most once per sink per hour. Records of critical severity or above
  * are also tried right after the response on PHP-FPM (fastcgi_finish_request()) and at the end of a command.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

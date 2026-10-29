@@ -16,7 +16,7 @@
  * pages), help_extension (the one extension shown, or false), help_folders (for one extension: list of array( 'name'
  * (folder below the extension, '' at its top), 'pages' => list of array( 'id', 'title', 'summary' ) )), help_i18n_json.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -3,7 +3,7 @@
  * Shared helpers of the media services (images, files, media): finding a node's attribute of one datatype,
  * absolute URLs, and the paged listing of the nodes of some classes below a parent.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

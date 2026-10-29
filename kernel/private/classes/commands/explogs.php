@@ -10,7 +10,7 @@
  * files (expLogManager, doc/eng-us/features/6.0/log-rotation.md), only with --apply (without it they print the plan), and
  * are recorded as system.log.rotate, system.log.delete and system.log.truncate.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

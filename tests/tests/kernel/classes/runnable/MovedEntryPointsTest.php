@@ -16,7 +16,7 @@
  *  MV-08 — The built-in server's router (bin/php/velocity-router.php) is the one stub that calls a static route()
  *          of a class file it requires itself (it runs before any autoloader); that file parses and declares route()
  *
- * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  * @group runnable

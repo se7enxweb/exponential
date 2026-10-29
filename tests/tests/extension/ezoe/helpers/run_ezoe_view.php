@@ -7,7 +7,7 @@
  * Usage: php tests/tests/extension/ezoe/helpers/run_ezoe_view.php <view> '<params json>' '<post json>' [user, default admin]
  * Needs the live installation; changes nothing unless the view does (ezoe/engine saves a preference).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

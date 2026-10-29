@@ -5,7 +5,7 @@
  * last /(days)/<n> days (14 by default) and under the console's filters. Needs the index (the files alone give no
  * charts). Policy audit/read with its Channel limitation. Recorded as system.audit.read.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

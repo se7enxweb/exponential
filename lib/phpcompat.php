@@ -14,7 +14,7 @@
  * A function that cannot (fsync(), memory_reset_peak_usage()) is guarded at the
  * call with function_exists() instead. See doc/eng-us/bc/6.0/php-8.0-support.md.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package lib
  */

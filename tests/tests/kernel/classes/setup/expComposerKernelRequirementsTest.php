@@ -13,7 +13,7 @@
  *  CR-05 - the setup wizard and the kickstarter activate expimageeditor, not ezie (only one of the two can draw the
  *          button in admin4)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

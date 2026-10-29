@@ -11,7 +11,7 @@
  * Page ids in the help are "content/<help_id>"; the topic view is exphelp/topic/<help_id>, the JSON
  * exphelp/context/<help_id> and exphelp/context/manual/<remote_id>.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

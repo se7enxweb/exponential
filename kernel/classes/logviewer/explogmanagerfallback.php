@@ -12,7 +12,7 @@
  * Limits per key: logviewer.ini [RotationSettings] MaxSize[<key>], Keep[<key>], Compress[<key>], MaxAgeDays[<key>];
  * else site.ini [FileSettings] LogFileMaxSize, LogFileRotateCount, LogFileCompress, LogFileMaxAge; else 2 MB, 3, no, 0.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

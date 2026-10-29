@@ -3,7 +3,7 @@
  * The options of "exp:kickstarter run": exp:install passes --allow-root-user on to the kickstarter, and the standard
  * options every eZScript takes must not stop a run with "invalid option". No database, no settings.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

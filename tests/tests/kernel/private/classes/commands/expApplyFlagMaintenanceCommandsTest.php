@@ -14,7 +14,7 @@
  *  AM-05 - The commands that hand the dry run to a class hand it the flag, and the class checks it before writing
  *  AM-06 - The callers that rely on writing pass --apply (kickstarter: build-manuals --queue)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

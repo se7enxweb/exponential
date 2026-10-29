@@ -11,7 +11,7 @@
  * On the sign-in form the browser's passkey autofill ("conditional mediation") is started when the browser offers it:
  * the user name field (autocomplete="username webauthn") then lists the site's passkeys, and choosing one signs in.
  *
- * Copyright (C) 1998 - 2026 7x & Exponential Foundation. GNU General Public License v2.0 (or any later version).
+ * Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. GNU General Public License v2.0 (or any later version).
  */
 ( function () {
     'use strict';

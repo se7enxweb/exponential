@@ -3,7 +3,7 @@
  * File containing the expSettingsPage class: what settings/view and settings/edit show, worked out from an
  * expSettingsChain and an expSettingsSecretRule.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

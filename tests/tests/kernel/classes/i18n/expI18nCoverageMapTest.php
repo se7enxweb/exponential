@@ -19,7 +19,7 @@
  *  CM-05  the generated part renders in the help viewer's renderer: the summary table, the image and the two
  *         collapsible lists, nothing of the markers shown
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

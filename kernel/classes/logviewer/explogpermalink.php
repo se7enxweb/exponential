@@ -17,7 +17,7 @@
  * regex, case, from, to, siteaccess, uri, ip, reference, scope, rotations, cursor, offset,
  * follow, wrap, unmask, done, ok. A value that is the default is left out. Pure: nothing here reads a file.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -7,7 +7,7 @@
  * help_environment_text, help_issue_urls (key => URL), help_community (label, url), help_security (email, policy_url,
  * advisory_url), help_can_logs, help_logs_url, help_logs_digest_url, help_report_url.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -9,7 +9,7 @@
  * and the tables a PDF viewer does not read for an embedded CID font (layout, kerning, bitmaps, glyph names) are
  * left out. Anything unexpected returns the font unchanged, so the worst case is the old, larger file.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

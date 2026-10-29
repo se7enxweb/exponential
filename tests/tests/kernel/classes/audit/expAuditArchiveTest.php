@@ -19,7 +19,7 @@
  *  AR-05 — key rotation: a new signing key becomes active, later manifests carry it, older ones still verify
  *  AR-06 — the daily run of the cronjob part: rotation, verification, archiving and the checkpoint in one go
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group audit

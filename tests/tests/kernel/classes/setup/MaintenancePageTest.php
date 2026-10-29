@@ -4,7 +4,7 @@
  * description of the state for the status banner, the live preview's template, and a change from the audit as
  * the page lists it. No database, no marker: nothing here switches maintenance on or off.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

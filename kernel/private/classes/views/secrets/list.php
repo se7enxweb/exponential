@@ -6,7 +6,7 @@
  * value (never shown again), changing a description, removing a secret, rotating the key (file key) or encrypting
  * every secret again with the current key (after EXP_SECRET_KEY was changed). Policy secrets/manage.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

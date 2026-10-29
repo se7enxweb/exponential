@@ -23,7 +23,7 @@
  *  CQ-13  the filter form of the broken relations takes its node without a redirect: the kernel carries the query
  *         of a request over every module redirect, so a redirect from the form's GET came back to itself forever
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

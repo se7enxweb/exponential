@@ -13,7 +13,7 @@
  *    EXP_TEST_MONGO_SCRATCH=<host>:<port>/<database whose name contains "scratch" or "test">, against a real server
  *    (the test fills the collection ezcontentobject_trash of that database and drops it).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

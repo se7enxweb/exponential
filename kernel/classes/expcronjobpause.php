@@ -19,7 +19,7 @@
  * user who did it and an optional note; the console shows who paused a part, since when and why, and the notice
  * runcronjobs.php prints says the same.
  *
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

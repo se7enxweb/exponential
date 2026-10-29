@@ -7,7 +7,7 @@
  * Policies: audit/read (limitation Channel: content, access, system, commerce, read) and audit/manage. No role but
  * Administrator (which holds every policy) has them in a new installation. Every view records system.audit.read.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

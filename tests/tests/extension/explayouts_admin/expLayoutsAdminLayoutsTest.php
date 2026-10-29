@@ -15,7 +15,7 @@
  * Live database and settings, as the kernel runs (admin siteaccess); the test changes nothing but the resolver's own
  * cache generation (clearCache()), and puts every setting and global it changes back.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group explayouts_admin

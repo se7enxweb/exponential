@@ -18,7 +18,7 @@
  * A compressed rotation (.gz) is never followed: lastBytesOfGzip() unpacks it once, as a stream, keeping only the
  * end of it, with a limit on what is unpacked.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

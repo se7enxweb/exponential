@@ -13,7 +13,7 @@
  *  PA-07 nothing reaches the siteaccess: the older prefix is kept, and the address is marked as not confirmed
  *  PA-08 the starting pages: root plus URLTranslationKeyword sections, or the paths asked for, one address each
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group kernel

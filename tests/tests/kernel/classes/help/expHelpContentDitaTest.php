@@ -18,7 +18,7 @@
  *  HCD-10  write(): a second run changes nothing; files of an earlier export that are gone are removed, others kept
  *  HCD-11  the help's markup: bold is a UI label, code, links, callouts as notes, headings in flat content
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

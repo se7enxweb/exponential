@@ -12,7 +12,7 @@
  * expHelpMarkdownRenderer, the context help endpoint delivers them as they are, and the validator can see the
  * numbered list of a task and the bold labels of a step.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

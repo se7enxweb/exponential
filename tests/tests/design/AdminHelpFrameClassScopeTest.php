@@ -6,7 +6,7 @@
  * measured 0px wide and showed one character per line. The help module's frame rules must name the frame
  * (.a4-help-frame), and every help page frame must carry data-exphelp. No database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

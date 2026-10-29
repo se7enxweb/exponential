@@ -3,7 +3,7 @@
  * expViewParameters: the options of an administration view as view parameters, /(name)/value, never GET query
  * parameters, and the one reversible encoding of their values (encode(), decode(): "~2F" for "/" ...). DB-less.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

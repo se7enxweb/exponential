@@ -10,7 +10,7 @@
  *  SCC-05 - The naming rule: "fetch" appears in the new code, settings, logos and tests only as the command's name
  *  SCC-06 - --list-providers shows every provider of syscard.ini
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

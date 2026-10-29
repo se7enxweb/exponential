@@ -17,7 +17,7 @@
  *  SV-11 - isSVGFile() recognises SVG behind a DOCTYPE or processing instruction with ">" and a prolog longer than 64 kB
  *  SV-12 - labels and titles (aria-*, title, xlink:title) keep ordinary text; only a script or data URL in them goes
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

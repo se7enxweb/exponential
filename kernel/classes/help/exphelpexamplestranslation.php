@@ -22,7 +22,7 @@
  * them). A description that has no entry of its own takes the translation of an entry with the same English text.
  * Code, INI keys and values, commands and identifiers are never translated: they are not in the tables.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

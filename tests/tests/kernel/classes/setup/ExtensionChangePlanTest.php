@@ -5,7 +5,7 @@
  * and deactivating, the diff, dependency warnings and risks, the order the kernel really loads in, and a file round
  * trip that keeps every other byte. No database, no disk.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

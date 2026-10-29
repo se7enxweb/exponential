@@ -18,7 +18,7 @@
  * With --kernel-services-record this script is the recording process that exp:services:compile starts: it boots
  * the web kernel once per siteaccess and writes var/cache/kernelservices/ (expKernelServiceCompiler::recordMain()).
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -3,7 +3,7 @@
  * The setup's registration step sends nothing unless asked, never to the old upstream address, and the
  * kickstarter's dry run stops before the steps that write a password or send mail. No database, no mail.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -8,7 +8,7 @@
  *  send-http  - send() over HTTP to 127.0.0.1:1
  *  options    - the cURL options of a call with the CA file
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

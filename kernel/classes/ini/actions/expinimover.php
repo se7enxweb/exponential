@@ -12,7 +12,7 @@
  * what was read before the write (a file the move created is moved aside to var/backup/ini/), unless --force.
  * The message names the file whose value now wins. Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
@@ -247,7 +247,7 @@ class expIniMover
     public static function ezinfo( $ext )
     {
         return "<?php\n/**\n * File containing the {$ext}Info class.\n *\n"
-             . " * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.\n"
+             . " * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.\n"
              . " * @license GNU General Public License v2.0 (or any later version)\n * @package $ext\n */\n\n"
              . "class {$ext}Info\n{\n    public static function info()\n    {\n        return array(\n"
              . "            'Name' => \"$ext\",\n            'Version' => \"1.0.0\",\n"

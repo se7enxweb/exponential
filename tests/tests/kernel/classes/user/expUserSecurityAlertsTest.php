@@ -10,7 +10,7 @@
  *  AL-03 - The wiring: the user audit log hands the rows it stored for the first time to notify(); the settings; the
  *          mail template in the shared mail layout with a "Secure your account" button and no way to turn it off
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

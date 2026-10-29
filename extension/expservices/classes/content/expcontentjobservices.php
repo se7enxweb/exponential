@@ -7,7 +7,7 @@
  * now or as a job, create jobs of every type, and cancel, resume or start them. A user sees and controls their own
  * jobs; the jobs of everybody need the setup/administrate policy.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

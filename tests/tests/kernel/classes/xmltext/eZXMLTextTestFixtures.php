@@ -8,7 +8,7 @@
  *    (custom tags, classes and custom attributes of this file, not of the installation's content.ini, which
  *    differs between sites and CI), and keeps the no-database guard of the datatype tests.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

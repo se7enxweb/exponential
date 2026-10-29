@@ -2,7 +2,7 @@
 /**
  * File containing the expDebugBarReport class
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit fbbd333a85), Copyright (C) Mugo Web, GPL v2
  * @license GNU General Public License v2.0 (or any later version)
  * @package lib

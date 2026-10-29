@@ -17,7 +17,7 @@
  * Ported from kernel/ezsitemanager/admin/preload.php in exponentialbasic, which
  * did the same thing against a hand rolled template engine.
  *
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  *

@@ -3,7 +3,7 @@
  * The classes of the fixture extension of IniCommandExtensionTest: an exp:ini action and a scope provider,
  * as an extension writes them (guide doc/eng-us/bc/6.0/console-exp-ini.md, "Adding an action" and "Adding a scope").
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

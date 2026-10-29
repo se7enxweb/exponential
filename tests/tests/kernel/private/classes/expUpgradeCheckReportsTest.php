@@ -27,7 +27,7 @@
  *  SC-08 - Such a table is listed as belonging to its extension, with no SQL and no DROP in the whole SQL or the
  *          download, and does not fail the check; a table no schema names is still dropped as before
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

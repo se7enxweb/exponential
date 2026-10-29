@@ -3,7 +3,7 @@
  * The VAT and currency services. Test VAT types, rules, categories and a test currency (code XTS) are created and
  * removed again in each test; the kernel audits the changes.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

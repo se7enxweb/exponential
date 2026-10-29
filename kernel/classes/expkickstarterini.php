@@ -2,7 +2,7 @@
 /**
  * @description Interactive kickstart.ini generator. Copies kickstart.ini-dist to kickstart.ini and populates all sections via modern CLI form input.
  * @package   kernel
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license   For full copyright and license information view LICENSE file.
  */
 

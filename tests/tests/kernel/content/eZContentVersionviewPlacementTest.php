@@ -10,7 +10,7 @@
  *  VP-03 - Every versionview template that reads $placement is one this frame renders (content/view/versionview.tpl)
  *  VP-04 - The value handed over is a positive integer or false, for everything the request can send
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

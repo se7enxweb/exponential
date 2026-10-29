@@ -16,7 +16,7 @@
  *          (generateSchemaFile()): the index ezuser_login is UNIQUE, reads back as unique, refuses a second
  *          account with the same login, and the check finds nothing to change on ezuser
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

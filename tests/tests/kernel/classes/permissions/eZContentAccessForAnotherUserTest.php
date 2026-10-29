@@ -15,7 +15,7 @@
  * The current user and the other users are stand-ins with the access arrays given to them; a database handler that
  * runs nothing stands in for the real one, so a user that was not given is not found.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

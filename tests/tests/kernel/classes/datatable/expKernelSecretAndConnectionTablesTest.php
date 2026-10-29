@@ -9,7 +9,7 @@
  *          PostgreSQL and SQLite (sequence, primary key, setval) and the 6.0.0 to 6.0.15 update files (guarded)
  *  ST-02 - The SQLite update runs twice and keeps the rows; the indexes exist, the unique ones refuse a duplicate
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

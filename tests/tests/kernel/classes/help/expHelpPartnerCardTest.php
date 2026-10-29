@@ -17,7 +17,7 @@
  *  PC-08  a German page shown to an English reader (/(lang)/ger-de) keeps its buttons: its links resolve in its own
  *         language's index; links that name no page leave the sentence as text
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

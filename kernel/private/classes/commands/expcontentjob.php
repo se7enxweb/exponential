@@ -18,7 +18,7 @@
  * Started as root (as Velocity does), the command becomes the site user before it reads a setting or opens the
  * database, so every file and job it writes belongs to that user.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  * @description Run, list, resume and cancel content jobs: large subtree removes and copies in batches

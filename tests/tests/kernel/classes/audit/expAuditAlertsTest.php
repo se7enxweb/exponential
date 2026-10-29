@@ -18,7 +18,7 @@
  *  AL-09 — the same records evaluated again (flush, then the cronjob pass) fire nothing more; the cronjob pass
  *          reads only what is new; replay runs a rule without recording anything
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group audit

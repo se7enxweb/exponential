@@ -7,7 +7,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * 6.0.0 to 6.0.15 file. A 5.x database has varchar(50); the bcrypt hash every user gets at the first sign-in is 60
  * characters. Reads the files only, plus an SQLite database in memory; needs no installation.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group updatesql

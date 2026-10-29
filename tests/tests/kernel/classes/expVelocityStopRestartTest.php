@@ -15,7 +15,7 @@
  * response cache off, their pid files and logs in a directory of their own.
  * EXP_VELOCITY_TEST_SCRIPT names another server script (an engine checkout).
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests

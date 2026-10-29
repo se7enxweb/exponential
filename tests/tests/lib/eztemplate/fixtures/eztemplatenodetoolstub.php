@@ -4,7 +4,7 @@
  * and they run in their own process: a stub declared while the test file is loaded would hide the real class
  * from every template test that runs after it in the same process.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  */

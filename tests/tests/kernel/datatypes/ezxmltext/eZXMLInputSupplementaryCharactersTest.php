@@ -5,7 +5,7 @@
  * MathML attribute became "<mi></mi>") and eZXMLInputParser::process() made each of them a space when the editor
  * posted ("a &#x1F600; b" was stored as "a b"). Characters XML does not allow are still removed. No database.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

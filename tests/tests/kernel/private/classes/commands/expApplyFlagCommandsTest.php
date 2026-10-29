@@ -9,7 +9,7 @@
  *  AF-03 - The dry run ends with "PASS: ... (dry run, nothing changed; --apply writes)"
  *  AF-04 - bin/php/<command>.php --apply --dry-run exits 2 with the usage error
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

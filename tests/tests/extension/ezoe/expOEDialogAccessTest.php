@@ -9,7 +9,7 @@
  * Each test creates its own user (never published, address at x1.example.invalid) with a role of its own and removes
  * both again; the object is the one of the content root, which is not changed.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

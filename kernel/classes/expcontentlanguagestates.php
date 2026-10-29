@@ -18,7 +18,7 @@
  * The rules (states(), isOutdated(), showMissingInList()) work on plain arrays, so they are tested without an
  * installation: tests/tests/design/AdminLanguageStatesTest.php. Guide: doc/eng-us/features/6.0/admin4-design.md.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

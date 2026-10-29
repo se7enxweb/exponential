@@ -2,7 +2,7 @@
 /**
  * @description Kickstarter setup runner — runs the eZ Publish/Exponential CMS setup wizard using kickstart.ini and eZStep classes.
  * @package   kernel
- * @copyright Copyright (C) 1998 - 2026 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license   For full copyright and license information view LICENSE file.
  */
 

@@ -6,7 +6,7 @@
  * The table in doc/eng-us/bc/6.0/view_full_security.md lists them with the facts
  * they read and examples.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package kernel
  */

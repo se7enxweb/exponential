@@ -4,7 +4,7 @@
  * on, the record itself (as written, so the privacy rules of the writer apply) and the lower-cased search text.
  * Also matches a row against console filters in PHP, for the records of the live files that are not indexed yet.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -24,7 +24,7 @@ require_once __DIR__ . '/cjwNewsletterTestCase.php';
  *  ST-12  The consent category: optional, off by default, its part on the preference page
  *  ST-13  SMS sends and sends with the site switch off are not tracked
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

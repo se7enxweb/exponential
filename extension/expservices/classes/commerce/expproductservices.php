@@ -3,7 +3,7 @@
  * ezjscore/call/expproduct::<method>: the products of the shop (content objects whose class has a price attribute):
  * lists, search, one product with its prices in a currency, variations and options.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package expservices
  */

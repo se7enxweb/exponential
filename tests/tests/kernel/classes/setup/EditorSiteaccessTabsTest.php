@@ -5,7 +5,7 @@
  * that the admin's access extensions declare (expai's Intelligence tabs) are written into the editor's list. No
  * database: the extensions are written into a throwaway directory under var/tmp.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

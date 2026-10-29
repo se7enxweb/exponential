@@ -7,7 +7,7 @@
  *  VL-02 - A negative version as well (it used to run on to the database)
  *  VL-03 - Both return without touching the database (a stand-in fails on every access)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

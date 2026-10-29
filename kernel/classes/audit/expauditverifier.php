@@ -14,7 +14,7 @@
  * A torn line followed by the writer's system.audit.chain.repair record naming its offset is "repaired", not a
  * break. Verification carries on after a break from the record's own hash, so every damaged stretch is listed.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

@@ -27,7 +27,7 @@
  * the run (ezpThrowawayDatabase: kernel schema and clean data), and when none can be made, they are skipped
  * with the siteaccess, the database and the reason. The database of a site is never written to.
  *
- * @copyright Copyright (C) 7x / Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file.
  * @package tests
  */

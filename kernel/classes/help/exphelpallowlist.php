@@ -29,7 +29,7 @@
  * and every view answers "not found" for it. safePath() repeats the file checks at the time a file is read, so a file
  * replaced by a symbolic link after the list was built is refused too.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

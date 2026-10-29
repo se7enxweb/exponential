@@ -5,7 +5,7 @@
  * /e, mysql_escape_string()) and bd4fa8600d. A call to one of them is a fatal "Call to undefined function" on
  * PHP 8; the scan reads the tokens of every file, so comments and strings do not count.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

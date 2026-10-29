@@ -4,7 +4,7 @@
  * gzip compressed tar archives written byte by byte (so an archive can carry what no well-behaved tool writes:
  * "../" paths, absolute paths, links, devices).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

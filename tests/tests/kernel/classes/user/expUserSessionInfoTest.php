@@ -16,7 +16,7 @@
  *  SI-07 - On a database: details recorded and read with the list, countries of a user, removed by the retention and
  *          with an erased user; the export leaves out the token's hash
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

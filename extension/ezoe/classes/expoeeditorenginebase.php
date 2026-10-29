@@ -6,7 +6,7 @@
  * version() and description() are optional for an engine (expOEEditor::details() asks for them when they are
  * there); the base answers them from the ini block, an engine that knows better overrides them.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package ezoe
  */

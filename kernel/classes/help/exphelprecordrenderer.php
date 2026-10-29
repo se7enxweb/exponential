@@ -28,7 +28,7 @@
  * (th[data-sort="none"] for a column that is not sorted, cells with data-sort-value); code.a4-help-records-url and
  * span.a4-tag.a4-help-records-dead for historical addresses.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

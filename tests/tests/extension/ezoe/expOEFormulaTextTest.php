@@ -8,7 +8,7 @@
  *  - a leading space in TeX source was stored as U+00A0.
  * No database: the handler and the parser run on in-memory settings, as the editor's save does.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

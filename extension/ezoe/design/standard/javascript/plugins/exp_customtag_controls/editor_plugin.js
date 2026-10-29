@@ -9,7 +9,7 @@
  * The bar lives in the page above the editor's frame, never in the edited document, so nothing of it can
  * reach the saved text. Uses TinyMCE 3's plugin API and ezjscore's jQuery; no YUI.
  *
- * Copyright (C) 1998 - 2026 7x & Exponential Foundation, GNU General Public License v2.0 (or any later version)
+ * Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved. GNU General Public License v2.0 (or any later version)
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 63334f1681), Copyright (C) Mugo Web, GPL v2:
  * the design of the custom_tags_controls plugin (@copyright Copyright 2014, Mugo Web) -- controls on the focused
  * custom tag to move it up and down and to edit it, and Backspace removing an empty custom tag -- with thanks to

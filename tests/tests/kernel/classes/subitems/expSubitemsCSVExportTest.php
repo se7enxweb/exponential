@@ -9,7 +9,7 @@
  *  CSV-05 — the file name comes from the node name, made safe
  *  CSV-06 — the view is registered in kernel/content/module.php with content/read
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  * @group subitems

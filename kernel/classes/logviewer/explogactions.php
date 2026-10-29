@@ -5,7 +5,7 @@
  * policy (setup/logs for download, setup/managelogs for the others), the POST, the form token and the confirmation,
  * and records the audit. Nothing here locks a file.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

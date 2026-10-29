@@ -24,7 +24,7 @@
  *  WA-12 COSE keys: wrong curve, short coordinates, short RSA keys and unknown algorithms are refused
  *  WA-13 recorded vectors of Chromium's virtual authenticator (ES256 and RS256 registration and sign-in) pass
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

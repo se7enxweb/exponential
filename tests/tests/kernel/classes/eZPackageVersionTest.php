@@ -7,7 +7,7 @@
  * packages were made with ("1.0", "1.0-1", "3.4.0beta1", four parts) mixed in, and the
  * strict check new packages from the creation wizards must pass. No database needed.
  *
- * @copyright Copyright (C) 7x. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package tests

@@ -21,7 +21,7 @@
  * No database, no kernel bootstrap. Every static is put back afterwards; the shutdown functions the tests register
  * belong to requests that are over when PHPUnit ends, so they do nothing then.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group lib

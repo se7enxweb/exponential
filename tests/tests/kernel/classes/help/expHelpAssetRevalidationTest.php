@@ -4,7 +4,7 @@
  * keeps its address and its links carry no version query, so the view sends Cache-Control: no-cache with an ETag and
  * answers 304 while the file is unchanged. No database and no siteaccess.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group help

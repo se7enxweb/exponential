@@ -7,7 +7,7 @@
  * No database. The kickstart file each test needs is written under var/tmp and handed to the step in place of the
  * installation's own (which is put back), so what is in the installation's kickstart.ini does not matter.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  * @group kernel

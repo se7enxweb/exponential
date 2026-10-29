@@ -7,7 +7,7 @@
  * longer be answered: older than MaxAge or from before the last clear. A lookup never answers them anyway; without
  * this run they stay on disk until the same statement is stored again.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

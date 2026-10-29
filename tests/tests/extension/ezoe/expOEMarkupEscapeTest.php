@@ -10,7 +10,7 @@
  *  ME-03 - The anchor of a header and its text are escaped too
  *  ME-04 - Nothing is escaped twice: opening the markup and saving it again gives the stored values back as they were
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

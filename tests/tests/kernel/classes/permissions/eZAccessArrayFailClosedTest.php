@@ -13,7 +13,7 @@
  *          left out, an unlimited policy that was read stays, and the build counts the failures once
  *  FC-07 - With every read answered, nothing is counted and the policy is built as before
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

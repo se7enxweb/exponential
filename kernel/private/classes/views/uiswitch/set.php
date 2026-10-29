@@ -9,7 +9,7 @@
  * allow-list (400) and a siteaccess without the switch (404). RedirectURI is followed only when it is a local path.
  * A change is recorded in the audit (access.uiswitch.change).
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

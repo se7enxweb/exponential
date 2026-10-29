@@ -8,7 +8,7 @@
  *  WR-02 - A node the user may not read: refused (false), and nothing about it is read (no fetchNodeInfo())
  *  WR-03 - getResourceContents() of a refused or missing resource is false, without reading an offset of false
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

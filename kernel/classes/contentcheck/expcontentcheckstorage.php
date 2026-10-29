@@ -20,7 +20,7 @@
  * directory (lastScan()). With a cluster file handler other than the file system the files are read from its table
  * (ezdfsfile, ezdbfile), the owner and mode are not checked and nothing can be moved: report only.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

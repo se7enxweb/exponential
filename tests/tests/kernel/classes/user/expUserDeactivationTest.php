@@ -23,7 +23,7 @@
  *          the sessions; the list of Check user accounts survives a process that has not loaded the class; the
  *          translations stay valid for the translator's schema
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

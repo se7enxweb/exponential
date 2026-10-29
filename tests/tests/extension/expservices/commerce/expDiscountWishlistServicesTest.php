@@ -3,7 +3,7 @@
  * The discount and wish list services. A test discount group with rules and members is created and removed in
  * each test; the wish list test adds a product of the test folder to the wish list of the admin user and takes it off.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

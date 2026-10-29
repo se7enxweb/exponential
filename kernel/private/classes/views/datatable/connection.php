@@ -6,7 +6,7 @@
  * test only, or stored in the secret store under a name the connection then keeps (never in the connection).
  * Policy datatable/connections; storing a secret also needs secrets/manage.
  *
- * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

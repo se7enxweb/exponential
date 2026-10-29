@@ -10,7 +10,7 @@
  *  LV-06  error references, the message without the header fields, the cut at MAX_ENTRY_BYTES
  *  LV-07  parts(): every link type, masked values never linked, overlapping matches, the most links
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

@@ -16,7 +16,7 @@
  * Without the development tools (make devtools) the check is skipped with a hint.
  * Exit code 0 when no change adds violations, 1 otherwise.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package bin
  */

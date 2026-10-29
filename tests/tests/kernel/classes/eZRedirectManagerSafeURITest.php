@@ -24,7 +24,7 @@
  *           state/group_edit, role/edit, class/edit and class/groupedit: the form's page, else their old default
  *  VIEW-02  The same with an unsafe page in the form: their old default
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @package tests
  */

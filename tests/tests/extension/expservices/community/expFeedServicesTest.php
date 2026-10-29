@@ -3,7 +3,7 @@
  * The feed services. The subtree feeds are produced from articles created in a test folder under the Media root;
  * the export management creates a test export and removes it again. The RSS imports are only read (and never run).
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

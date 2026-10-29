@@ -19,7 +19,7 @@
  * save() writes both into settings/override/mailpreferences.ini.append.php, the file that also holds the site
  * secret (which it leaves as it is), owner and group of the directory, mode 0640. That file is never committed.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

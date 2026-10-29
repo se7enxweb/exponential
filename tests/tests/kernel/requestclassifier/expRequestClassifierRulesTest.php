@@ -11,7 +11,7 @@
  *  RC-05  false positives: admin pages, ezjscore, the mega menu, the layouts API, searches with quotes and SQL words,
  *         downloads, stored images, packed scripts, robots.txt and sitemap.xml, our own clients (curl, Playwright)
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */

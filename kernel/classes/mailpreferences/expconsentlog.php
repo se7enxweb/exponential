@@ -14,7 +14,7 @@
  * Retention (cleanup(), the mailpreferences cronjob part): rows of a person whose account (or, without account, whose
  * last preference) is gone are removed RetentionDays after they were written; expired pending double opt-ins too.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

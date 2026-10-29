@@ -8,7 +8,7 @@
  * last 16 KB and kept). The samples are kept in one small file in <cache dir>/logviewer, replaced (temporary file
  * and rename) at most every MinInterval seconds, never locked. A file that shrank (rotated or emptied) starts again.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

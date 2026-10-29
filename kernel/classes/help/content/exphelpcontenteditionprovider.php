@@ -8,7 +8,7 @@
  * Public means: a topic in the section help_public whose audience is public (both, so a section that has not been set
  * from the audience yet keeps a topic out), a chapter or figure in the section help_public.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */

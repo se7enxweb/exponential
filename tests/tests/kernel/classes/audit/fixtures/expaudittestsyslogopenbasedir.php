@@ -5,7 +5,7 @@
  * "old" repeats the checks the sink made before it knew open_basedir (file_exists() on the sockets), to prove
  * that they do warn there.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
