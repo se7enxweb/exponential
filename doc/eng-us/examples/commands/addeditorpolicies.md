@@ -2,14 +2,14 @@
 title: exp:addeditorpolicies
 audience: developer, admin
 category: examples
-summary: "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (--dry-run lists them first)."
+summary: "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply)."
 keywords: exp:addeditorpolicies, addeditorpolicies, console, command, CLI, addeditorpolicies.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addeditorpolicies
 
-Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (--dry-run lists them first).
+Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply).
 
 Script `bin/php/addeditorpolicies.php`, code in `kernel/private/classes/commands/addeditorpolicies.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -34,17 +34,21 @@ versionread, versionremove, remove, translate, bookmark, pendinglist, dashboard,
 restore, reverserelatedlist): it also grants emptying everybody's trash, the languages, the URL
 aliases and everybody's content jobs. --keep-content-wildcard leaves it. Lists what the role still
 holds that an editor role should not (WARN lines). Prints PASS or FAIL at the end.
+Without --apply nothing is written: the script lists what it would remove and add. --dry-run is
+still accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
-Example: php bin/php/addeditorpolicies.php --dry-run
-         php bin/php/addeditorpolicies.php --only=content/restore
-         php bin/php/addeditorpolicies.php --skip=ezmultiupload/* --role=Redakteur
+Example: php bin/php/addeditorpolicies.php
+         php bin/php/addeditorpolicies.php --apply
+         php bin/php/addeditorpolicies.php --apply --only=content/restore
+         php bin/php/addeditorpolicies.php --apply --skip=ezmultiupload/* --role=Redakteur
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | List what would be removed and added, change nothing |
+| `--apply` |  | Write the changes (the default is a dry run that lists them and changes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list what would be removed and added, change nothing |
 | `--role` | required | The role to complete (ID or name); default Editor |
 | `--only` | required | Only this policy (module/function), may be repeated |
 | `--skip` | required | Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed |
