@@ -155,13 +155,18 @@ administrator approves it. See [Approval of new user accounts](user-account-appr
 ## What to do on an installation that exists
 
 ```bash
-php bin/php/addmembermanagement.php --dry-run     # what it would create, add and assign
-php bin/php/addmembermanagement.php               # do it; checks the result, prints PASS or FAIL
-php bin/php/addmembermanagement.php --rule=editors_manage_members
+php bin/php/addmembermanagement.php               # what it would create, add and assign; changes nothing
+php bin/php/addmembermanagement.php --apply       # do it; checks the result, prints PASS or FAIL
+php bin/php/addmembermanagement.php --apply --rule=editors_manage_members
 ```
 
-The script creates the role when it is missing, adds the planned policies the role does not have in exactly that form
-(a second run adds nothing), assigns the role to the manager groups and expires the role and user caches. It never
+Without `--apply` the script changes nothing (since 28 October 2026; before, it wrote by default and took `--dry-run`,
+which is still accepted and means the same as no option). The dry run ends with
+`PASS: 0 change(s) would be made (dry run, nothing changed; --apply writes)` when the installation is complete.
+`--apply` together with `--dry-run` is refused (exit 2).
+
+With `--apply` the script creates the role when it is missing, adds the planned policies the role does not have in
+exactly that form (a second run adds nothing), assigns the role to the manager groups and expires the role and user caches. It never
 removes a policy. After the kernel files are in place, clear the INI cache (`--clear-tag=ini`) so that
 `membermanagement.ini` is read, and on Velocity restart the workers (`exp:velocity deploy --kernel`): the guard is in
 the kernel's access check.
