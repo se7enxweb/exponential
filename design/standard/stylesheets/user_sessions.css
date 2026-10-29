@@ -64,3 +64,7 @@
 .us-events li.is-bad strong { color: var(--us-bad); }
 .us-events li.is-warn strong { color: var(--us-accent); }
 .us-events li.is-ok strong { color: var(--us-ok); }
+/* The pages draw their own background, so their colors keep their contrast on a theme of either brightness, also when
+   the system is dark and the site's theme is not */
+.us-page { padding: 1em; border-radius: 10px; background-color: var(--us-card); }
+.us-page a { color: var(--us-accent); }
