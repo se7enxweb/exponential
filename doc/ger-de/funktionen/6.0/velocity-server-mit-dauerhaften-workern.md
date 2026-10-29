@@ -8,6 +8,13 @@ und einen Pool von Workern am Leben hält. Das Ergebnis ist eine Website, die zw
 unter einer Millisekunde CPU-Zeit beantwortet und nicht zwischengespeicherte Seiten mit einer warmen
 Datenbankverbindung, warmen Datei-Caches und einem warmen Opcode-Cache rendert.
 
+**Ab 6.0.15 ist Velocity Teil von Exponential.** `composer.json` verlangt `se7enxweb/exponential-velocity
+~0.0.4.55`, sodass `composer install` den Server mit dem übrigen Produkt installiert, unter PHP 8.0 und neuer. Vor dem
+ersten Start muss nichts hinzugefügt werden, und nichts wechselt die Engine von selbst: Die mitgelieferte
+`velocity.ini` startet den eingebauten Server von PHP, bis `[ServerSettings] Engine=qbix` gesetzt ist. Warum das ein
+Wendepunkt, ein Grundstein und ein Schlussstein für das Projekt ist und was es für jede Art von Leser bedeutet:
+[Velocity ist Teil von Exponential 6.0.15](../../hilfe/velocity-ist-teil-von-exponential-6-0-15.md).
+
 Im Folgenden: was zwischen dem 22. und 30. September 2026 hinzukam, wie Sie es starten, welche Einstellungen zuerst
 wichtig sind und wo die ausführlichen Anleitungen stehen.
 

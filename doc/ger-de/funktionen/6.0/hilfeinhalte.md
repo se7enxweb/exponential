@@ -392,6 +392,60 @@ oder ein neues Thema anlegen und beim alten `version_to` und einen Verweis setze
   `[ContentSettings] ContextHelpIds[<module>/<view>]=<help_id>`, aufgeführt in `[ContextHelp] Providers[]`). Sie werden
   mit der zweiten Welle des Hilfesystems in Suche, Dashboard und Einstellungen der Hilfe eingebunden.
 
+### Wie die Hilfe bei Tausenden von Themen schnell bleibt
+
+Die Hilfeobjekte werden einmal aus der Datenbank gelesen und als einfache Zeilen im Cache gehalten, nicht bei jeder
+Anfrage:
+
+- **Die Zeilen** (`var/<site>/cache/exphelp/content/repository-<key>.cache`, eine Datei je Hilfewurzel, Sprachliste
+  und Datenbank). Jede Anfrage fragt die Datenbank zuerst nach einem Stempel des Hilfe-Teilbaums: ein paar Summen über
+  die Orte, die Objekte (Änderungs- und Veröffentlichungszeiten, Versionen, Sektionen, Besitzer, Klassen, Status,
+  Sprachmasken, Eltern, Hauptknoten) und ihre Zustände, dazu die Hilfeklassen und die Sektionen. Solange der Stempel
+  gleich bleibt, kommen die Zeilen aus der Datei. Ändert er sich (ein Veröffentlichen, eine hinzugefügte oder entfernte
+  Übersetzung, ein Verschieben, ein neuer oder entfernter Ort, ein Entfernen, eine Änderung von Zustand oder Sektion),
+  werden nur die Objekte neu gelesen, deren eigene Signatur sich geändert hat; die anderen werden aus der Datei
+  übernommen. Eine Änderung einer Hilfeklasse oder einer Sektion liest jedes Objekt neu. Ein Prozess liest, während
+  die anderen auf seine Datei warten (eine Sperre daneben).
+- **Wer was sieht**, wird aus den Zeilen entschieden (`expHelpContentAccess`): Klasse, Sektion, Besitzer, Zustände und
+  Orte des Objekts gegen die Richtlinien `content/read` und `content/edit` des Benutzers, so wie
+  `eZContentObject::checkAccess()` sie vergleicht (Class, ParentClass, ParentDepth, Section, User_Section, Language,
+  Owner, ParentOwner, State, StateGroup_*, Node, Subtree, User_Subtree). Wo nur das Objekt es sagen kann (eine
+  Group-Einschränkung, eine Einschränkung einer Extension, der anonyme Besitzer "eigene Sitzung", der Schutz der
+  Mitgliederverwaltung), wird das Objekt geladen und gefragt, wie bisher. Die Antwort ist für jeden Benutzer dieselbe
+  wie bisher.
+- **Die Texte** der Themen sind ein zweiter Teil derselben Datei: Dashboard, Listen und Zählungen lesen die Zeilen ohne
+  sie; die Themenansicht und die Suche lesen sie mit.
+- **Die Suchwörter** jedes Themas (jedes Wort und sein Stamm, je Feld) stehen in `search-<key>.cache` daneben und
+  werden nur für die Themen neu berechnet, deren Texte sich geändert haben.
+
+Das Dashboard liest die Zeilen, entscheidet daraus die Sichtbarkeit und wählt die sechs neuesten Themen: etwa eine
+Sekunde auf einer Site mit 5.700 Hilfeobjekten, wo es früher jedes Objekt lud (10 bis 30 Sekunden, mehr als die
+Grenze von 30 Sekunden von Velocity). Jedes Objekt neu zu lesen (ein leerer Cache) dauert ein paar Sekunden, die
+Suchwörter aller Themen länger; füllen Sie den Cache darum nach einem Deployment oder nach dem Leeren, einmal je
+Siteaccess, der die Hilfe zeigt (der Cache gilt je Sprachliste):
+
+```
+./console exp:help:content cache -s admin
+```
+
+Nach einer Änderung muss der Cache nicht geleert werden. `php bin/php/ezcache.php --clear-id=exphelpcontent` (Tag
+`exphelp`, `site.ini [Cache_exphelpcontent]`, und `--clear-all`) entfernt ihn.
+
+**Eine Web-Anfrage liest nie jedes Hilfeobjekt.** Fehlt der Cache oder lässt er sich nicht dadurch aktualisieren, dass
+nur das Geänderte gelesen wird (ein geleerter Cache, eine geänderte Hilfeklasse oder Sektion, mehr als 300 geänderte
+Objekte), startet die Anfrage `php bin/php/exphelpcontent.php cache -s <ihr Siteaccess>` im Hintergrund (mit `setsid`
+abgekoppelt, einmal: eine Markierungsdatei `<Cache-Datei>.building` verhindert 15 Minuten lang einen zweiten Start)
+und läuft ohne Hilfeinhalte weiter: Das Dashboard lässt seinen Teil mit Hilfeinhalten weg, die Suche findet keine
+Hilfethemen, ein Thema oder Handbuch wird nicht gefunden, und die Kontexthilfe behält ihre letzte Liste. Sobald der
+Befehl die Datei geschrieben hat, hat die nächste Anfrage wieder alles. Das Kommandozeilen-PHP, das er benutzt, wird
+neben dem laufenden PHP gefunden (`exphelp.ini [ContentSettings] CachePhpBinary` legt es fest). Eine Suche, die die
+Suchwörter aller Themen berechnen müsste, tut dasselbe.
+
+`exp:velocity deploy` füllt den Cache, nachdem es die Caches geleert hat, mit einem Schritt je Siteaccess, der die
+Hilfe zeigt: die aus `exphelp.ini [ContentSettings] CacheSiteAccessList[]` und die, die den Cache benutzt haben
+(festgehalten in `var/<site>/cache/exphelp/content/siteaccesses.json`). Wo keine Hilfeinhalte installiert sind, ist
+der Schritt ein SKIP.
+
 ## Kontexthilfe per help_id (JSON)
 
 ```

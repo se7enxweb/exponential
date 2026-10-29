@@ -34,16 +34,18 @@ requests           Editors (node 14, object 13)
 PASS: 7 change(s) would be made (dry run, nothing changed)
 ```
 
-Auf einer, die sie hat: `has everything: ...` und `PASS: 0 change(s)`. Führt content/publish (vorher) schon einen anderen
-Workflow aus, sagt die Zeile das, und das Ereignis kommt an die erste Stelle dieses Workflows. Ohne `--dry-run`
-ausführen; die letzte Zeile ist `PASS: the approval of new accounts is set up`. Danach:
+Auf einer, die sie hat: `has everything: workflow, trigger, event, role, policies, assignments` und
+`PASS: 0 change(s)`. Führt content/publish (vorher) schon einen anderen Workflow aus, sagt die Zeile das, und das
+Ereignis kommt an die erste Stelle dieses Workflows. Ohne `--dry-run` ausführen, um die Änderungen vorzunehmen; die
+letzte Zeile ist `PASS: the approval of new accounts is set up`. Danach den INI-Cache leeren und, auf Velocity, den
+Kernel ausrollen:
 
 ```bash
 php bin/php/ezcache.php --clear-tag=ini --allow-root-user
 ./console exp:velocity deploy --kernel --allow-root-user     # nur auf Velocity
 ```
 
-**Setup > Workflows > Approve new editor accounts** zeigt das Ereignis mit *Accounts that need approval: Editors*,
+Öffnen Sie **Setup > Workflows > Approve new editor accounts**. Das Ereignis *Approve user accounts* nennt *Accounts that need approval: Editors*,
 *Approver groups: Administrator users*, *E-mail to the approvers: Yes*. **Setup > Trigger** zeigt content / publish /
 before mit diesem Workflow.
 
@@ -51,8 +53,8 @@ before mit diesem Workflow.
 
 Für einen Test Mails in Dateien schreiben: in `settings/override/site.ini.append.php` `[MailSettings] Transport=file`,
 dann den INI-Cache leeren. Jede Mail ist eine Datei in `var/log/mail/`. Testbenutzer mit Adressen in `example.invalid`
-verwenden. `[UserSettings] RegistrationAdminBaseURL` auf die Adresse Ihrer Administration setzen, damit der Link in der
-Mail dorthin zeigt.
+verwenden. `[UserSettings] RegistrationAdminBaseURL` auf die Adresse Ihrer Administration setzen (zum Beispiel
+`https://admin.example.com` oder `https://www.example.com/admin`), damit der Link in der Mail dorthin zeigt.
 
 ## 3. Der Redakteur fragt an
 
@@ -60,9 +62,9 @@ Als Test-Redakteur anmelden. **Benutzer > Editors** öffnen, unter *Hier anlegen
 Nachname, Benutzername, eine E-Mail-Adresse in `example.invalid` und ein Passwort eintragen, **Zur Veröffentlichung
 senden** drücken.
 
-Erwartet: zurück auf Editors; das neue Konto steht nicht in der Liste. *Meine ausstehenden Elemente* listet es, die
-Kollaboration hat die Freigabe unter *Ihre Elemente, die auf andere warten*. Die Anmeldung mit dem neuen Konto scheitert
-(ein wartendes Konto ist nicht veröffentlicht).
+Erwartet: zurück auf Editors; das neue Konto steht nicht in der Liste. Dashboard > *Meine ausstehenden Elemente* listet
+es, und Kollaboration > *Ihre Elemente, die auf andere warten* hat die Freigabe. Die Anmeldung mit dem neuen Konto
+scheitert: *Der Benutzername oder das Passwort ist nicht richtig* (ein wartendes Konto ist nicht veröffentlicht).
 
 ## 4. Die Mail
 
@@ -73,14 +75,16 @@ Der Text nennt das Konto, den Benutzernamen, die Gruppe (*Editors*) und wer gefr
 ## 5. Der Administrator entscheidet
 
 Den Link in einem Browser öffnen, in dem Sie nicht angemeldet sind. Die Administration verlangt die Anmeldung; dann
-öffnet sich die Freigabeseite mit der Vorschau des Kontos und den Beteiligten.
+öffnet sich die Freigabeseite: *Freigabe*, *Entscheidung* mit der Vorschau des Kontos, *Beteiligte* (die Freigebenden
+und der Redakteur).
 
 ![Das Freigabeelement eines neuen Redakteurskontos: die Entscheidung mit Freigeben und Ablehnen, die Vorschau des Kontos und die Beteiligten](bilder/account-approval/approval-item.png)
 
-- **Freigeben** drücken und bestätigen. Die Meldung sagt, dass das Konto freigegeben und veröffentlicht ist. Es steht in
-  Benutzer > Editors und meldet sich mit dem Passwort an, das der Redakteur gesetzt hat.
-- Oder **Ablehnen** drücken und bestätigen. Das Konto ist nicht veröffentlicht und kann sich nicht anmelden; der
-  Redakteur findet es in *Meine Entwürfe*.
+- **Freigeben** drücken und bestätigen. Erwartete Meldung: *Das Konto „<Name>“ wurde freigegeben und veröffentlicht:
+  es kann sich jetzt anmelden.* Das Konto steht in Benutzer > Editors und meldet sich mit dem Passwort an, das der
+  Redakteur gesetzt hat.
+- Oder **Ablehnen** drücken und bestätigen. Erwartet: *Das Konto „<Name>“ wurde abgelehnt. Es ist nicht veröffentlicht
+  und kann sich nicht anmelden; es ist wieder ein Entwurf seines Autors.* Der Redakteur findet es in *Meine Entwürfe*.
 
 Bevor die Entscheidung ausgeführt wird, fragt **Identität bestätigen** (die Gruppe *users*, standardmäßig an): das
 Passwort eingeben (oder einen Passkey oder den Code der Authenticator-App verwenden) und **Bestätigen** drücken. Ein
@@ -97,7 +101,8 @@ Die Entscheidung wirkt sofort; der Workflow-Cronjob wird dafür nicht gebraucht.
 ## 6. Was verweigert wird
 
 Als Redakteur ein Mitglied nach Editors verschieben (Benutzer > Members > das Mitglied > Verschieben > Editors). Erwartet:
-*Zugriff verweigert*; das Mitglied bleibt in Members. Einen Ort in Editors hinzuzufügen wird genauso verweigert.
+*Zugriff verweigert*; das Mitglied bleibt in Members. Einen Ort in Editors hinzuzufügen wird genauso verweigert. Beides
+würde ein Konto ohne Freigabe dort platzieren.
 
 Als Administrator ein Konto in Editors anlegen: es wird sofort veröffentlicht. Freigebende warten nie.
 
@@ -109,8 +114,9 @@ Redakteur, das Konto, das Freigabeelement), `access.user.approval.approve` oder 
 
 ## 8. Ändern, wer was freigibt
 
-Setup > Workflows > *Approve new editor accounts* > **Bearbeiten**: das Formular des Ereignisses hat vier Listen mit
-*Hinzufügen* und *Ausgewählte entfernen* und das Kästchen für die E-Mail. Den Workflow speichern. Für eine andere Gruppe
+Unter Setup > Workflows > *Approve new editor accounts* > **Bearbeiten** hat das Formular des Ereignisses vier Listen,
+jede mit *Hinzufügen* und *Ausgewählte entfernen*: die Gruppen, deren neue Konten eine Freigabe brauchen, die Benutzer
+und die Gruppen, die freigeben, und die Gruppen, die keine Freigabe brauchen; dazu das Kästchen für die E-Mail. Den Workflow speichern. Für eine andere Gruppe
 als Editors brauchen die Anfragenden dort auch `content/create`: geben Sie ihrer Rolle eine Richtlinie wie die Rolle
 *Editor account requests*, oder führen Sie `adduserapproval.php --required=... --approvers=... --requesters=...` aus.
 
@@ -164,14 +170,14 @@ Weg nicht.
 
 | Was Sie sehen | Warum, und was zu tun ist |
 | --- | --- |
-| Der Redakteur kann in Editors keinen Benutzer anlegen | Die Rolle *Editor account requests* fehlt oder ist Editors nicht zugewiesen: `adduserapproval.php` ausführen |
+| Der Redakteur kann in Editors keinen Benutzer anlegen (*Zugriff verweigert*) | Die Rolle *Editor account requests* fehlt oder ist Editors nicht zugewiesen: `adduserapproval.php` ausführen |
 | Das Konto wurde ohne Freigabe veröffentlicht | Der Redakteur gibt selbst frei oder ist in einer Gruppe ohne Freigabe, oder das Ereignis steht nicht im Workflow, den content/publish (vorher) ausführt: Setup > Trigger und das Ereignis prüfen |
-| Keine Mail | Freigebende ohne E-Mail-Adresse bekommen keine; der Transport in `[MailSettings]`; ist die E-Mail aus, gibt es keine. Das Freigabeelement ist trotzdem da |
+| Keine Mail | Freigebende ohne E-Mail-Adresse bekommen keine; der Transport in `[MailSettings]`; ist *E-Mail an die Freigebenden* aus, gibt es keine. Das Freigabeelement ist trotzdem da (Kollaboration) |
 | Der Link zeigt auf den falschen Host | `[UserSettings] RegistrationAdminBaseURL` setzen |
 | Die Freigebenden werden für ein Konto zweimal gefragt | Beide Wege sind eingerichtet: behalten Sie im Workflow entweder das Ereignis *Benutzerkonten freigeben* oder das Freigabe-Ereignis des Abschnitts Staff, nicht beide |
 | `--mode=section` endet mit FAIL und ändert nichts | Das Ereignis *Benutzerkonten freigeben* läuft noch an content/publish (vorher): zuerst entfernen (Schritt 9) |
 | Nach *Freigeben* oder *Ablehnen* erscheint *Identität bestätigen* | So gewollt: Die Gruppe users fragt, bevor ein Konto freigegeben oder abgelehnt wird. Bestätigen, dann wird die Entscheidung ausgeführt. Ein Administrator kann die Gruppe unter Setup > Verify it's you ausschalten |
-| Nach *Freigeben* wartet es weiter | Ein anderes Ereignis des Workflows wartet (zum Beispiel eine Inhaltsfreigabe); der Workflow-Cronjob setzt fort |
+| Nach *Freigeben* wartet die Freigabe weiter | Die Meldung sagte, es sei freigegeben, aber nicht veröffentlicht: Ein anderes Ereignis des Workflows wartet (zum Beispiel eine Inhaltsfreigabe). Der Workflow-Cronjob setzt es fort |
 
 Mehr: [Freigabe neuer Benutzerkonten](../bc/6.0/freigabe-von-benutzerkonten.md) (die technische Notiz),
 [die Funktionsseite](../funktionen/6.0/freigabe-von-redakteurskonten.md), [Workflows](workflows.md),

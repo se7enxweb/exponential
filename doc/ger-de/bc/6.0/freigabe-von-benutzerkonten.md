@@ -1,6 +1,6 @@
 # Freigabe neuer Benutzerkonten: Administratoren geben neue Redakteure frei
 
-Redakteure verwalten die Mitglieder der Website (englisch: [member-management.md](../../../eng-us/bc/6.0/member-management.md)).
+Redakteure verwalten die Mitglieder der Website ([mitgliederverwaltung.md](mitgliederverwaltung.md)).
 Seit 6.0.15 dürfen sie auch das Konto eines neuen **Redakteurs** anlegen, aber dieses Konto wird erst veröffentlicht,
 wenn ein **Administrator** es freigibt. Bis dahin kann es sich nicht anmelden. Die Freigabe läuft über das
 Workflow-System und das Kollaborationssystem, so wie die Freigabe von Inhalten (das Workflow-Ereignis *Freigabe*,
@@ -142,6 +142,8 @@ Beide Wege sind gewöhnliche Workflow-Ereignisse; andere Gruppen und Fälle rich
 
 ## Die Einstellungen des Ereignisses
 
+Unter Setup > Workflows > *Approve new editor accounts* > Bearbeiten zeigt das Ereignis:
+
 | Einstellung | Feld | Bedeutung |
 | --- | --- | --- |
 | Benutzergruppen, deren neue Konten eine Freigabe brauchen | `data_text1` | ein Konto, das in eine dieser Gruppen oder darunter veröffentlicht wird, wartet |
@@ -156,7 +158,8 @@ sie speichert das Formular das Ereignis nicht.
 **Welche Platzierungen eine Freigabe brauchen.** Die der veröffentlichten Version, die das Konto noch nicht hat und die
 in einer Gruppe mit Freigabepflicht liegen: ein neues Konto in Editors, ein bestehendes Konto, das im Bearbeitungsformular
 einen Ort in Editors bekommt, eine Kopie eines Kontos nach Editors. Das Bearbeiten eines Kontos, das schon in Editors
-ist (Name, Passwort), braucht keine. Benutzergruppen zählen wie Konten.
+ist (Name, Passwort), braucht keine. Benutzergruppen zählen wie Konten: Eine Gruppe, die nach Editors verschoben oder
+kopiert wird, bringt ihre Benutzer mit.
 
 **Wer keine braucht.** Die freigebenden Benutzer, jedes Mitglied einer freigebenden Gruppe und die Mitglieder der Gruppen
 ohne Freigabe. Alle anderen warten, auch eine anonyme Registrierung, deren Platzierung in einer solchen Gruppe liegt.
@@ -167,7 +170,8 @@ Ein Konto (oder eine Benutzergruppe) in eine Gruppe mit Freigabepflicht zu versc
 hinzuzufügen, veröffentlicht nichts und kann darum nicht auf eine Freigabe warten. Es wird jedem verweigert, der beim
 Veröffentlichen derselben Platzierung warten müsste (`expUserApproval::placementAllowed()`, gefragt von content/move,
 `eZContentObjectTreeNodeOperations::move()` und `eZContentOperationCollection::addAssignment()`). Die Verweigerung wird
-als `access.user.approval.refused` protokolliert.
+als `access.user.approval.refused` protokolliert. Ein Redakteur, der ein Mitglied zum Redakteur machen möchte, fragt
+einen Administrator oder legt ein neues Konto an und wartet auf die Freigabe.
 
 ## Die Mail
 
@@ -198,7 +202,9 @@ das den Link selbst baut, funktioniert wie bisher.
 
 Alle vier sind standardmäßig an, im Kanal `access`, für beide Wege (die Anfrage nach Abschnitt trägt `mode: section`).
 Als `access.user.*`-Ereignisse zu einem Konto stehen sie auch im Benutzer-Auditprotokoll (Benutzer > das Konto >
-Audit, [benutzer-auditprotokoll.md](../../funktionen/6.0/benutzer-auditprotokoll.md)).
+Audit, [benutzer-auditprotokoll.md](../../funktionen/6.0/benutzer-auditprotokoll.md)). `access.user.create` wird
+aufgezeichnet, wenn der Entwurf des Kontos gespeichert wird, `access.user.change` und die anderen aus
+[mitgliederverwaltung.md](mitgliederverwaltung.md) wie bisher.
 
 ## Auf einer bestehenden Installation
 
@@ -210,24 +216,44 @@ php bin/php/adduserapproval.php                  # ausführen; prüft das Ergebn
 Der Befehl legt Workflow, Ereignis und Trigger an, wenn sie fehlen. Führt content/publish (vorher) schon einen anderen
 Workflow aus (je Trigger läuft nur ein Workflow), kommt das Ereignis an die **erste** Stelle dieses Workflows, damit ein
 wartendes Konto die anderen Ereignisse nicht startet. Er legt die Rolle *Editor account requests* an und weist sie den
-anfragenden Gruppen zu. Ein zweiter Lauf ändert nichts. Optionen: `--required=<Gruppe>` (Standard Editors),
-`--approvers=<Gruppe>` (Standard Administrator users), `--requesters=<Gruppe>` (Standard Editors), `--no-role`,
-`--admin-id=<id>`; Gruppen als `remote:<Remote-ID>`, `node:<Knoten-ID>` oder `name:<Name einer obersten Gruppe>`.
-Danach `--clear-tag=ini` und auf Velocity `exp:velocity deploy --kernel`.
+anfragenden Gruppen zu. Ein zweiter Lauf ändert nichts. Optionen:
+
+| Option | Standard | |
+| --- | --- | --- |
+| `--required=<Gruppe>` | Editors | eine Gruppe, deren neue Konten eine Freigabe brauchen, wiederholbar |
+| `--approvers=<Gruppe>` | Administrator users | eine freigebende Gruppe, wiederholbar |
+| `--requesters=<Gruppe>` | Editors | eine Gruppe, die die Rolle bekommt, wiederholbar |
+| `--no-role` | | keine Rolle: die Anfragenden haben ihre Richtlinien schon |
+| `--admin-id=<id>` | 14 | wer den Workflow anlegt |
+
+Gruppen werden als `remote:<Remote-ID>`, `node:<Knoten-ID>` oder `name:<Name einer obersten Gruppe>` benannt, wie in
+`membermanagement.ini`. Ein Ereignis, das schon da ist, bekommt die Gruppen mit Freigabepflicht und die freigebenden
+Gruppen hinzugefügt, nie entfernt. Sobald die Kernel-Dateien da sind: `--clear-tag=ini` (workflow.ini führt den neuen
+Ereignistyp auf) und auf Velocity `exp:velocity deploy --kernel`.
+
+Andere Gruppen: Führen Sie den Befehl mit anderen Optionen aus (zum Beispiel `--required=name:Partners
+--approvers=name:Partner\ desk --requesters=name:Partner\ desk`), oder fügen Sie dem Ereignis unter Setup > Workflows
+eine Gruppe hinzu. Ohne Freigabe: Entfernen Sie das Ereignis aus dem Workflow, oder entziehen Sie Editors die Rolle
+(dann können sie in Editors überhaupt keine Konten mehr anlegen).
 
 ## Einzelheiten
 
-- Das Element ist ein gewöhnliches Element des Handlers `ezapprove`; die Tabelle `ezapprove_items` verbindet es mit dem
-  Workflow-Prozess.
+- Das Element ist ein gewöhnliches Element des Kollaborations-Handlers `ezapprove`; die Zähler des Posteingangs, die
+  Benachrichtigungsregeln für Kollaborationselemente und die Seite des Elements funktionieren wie bei
+  Inhaltsfreigaben. Die Tabelle `ezapprove_items` verbindet das Element mit dem Workflow-Prozess.
 - Nach *Freigeben* oder *Ablehnen* führt `expUserApproval::decided()` den wartenden Prozess einmal aus, wie
   `cronjobs/workflow.php`. Schlägt das fehl, bleibt der Prozess und der Workflow-Cronjob beendet ihn.
 - Niemand zum Freigeben (eine leere freigebende Gruppe): die Veröffentlichung wird verweigert (die Version ist wieder ein
-  Entwurf), das Fehlerprotokoll nennt das Ereignis.
+  Entwurf), und das Fehlerprotokoll nennt das Ereignis, sodass ein Konto nie ewig wartet.
+- Wird ein Benutzer oder eine Gruppe entfernt, verschwindet er oder sie aus den Listen jedes solchen Ereignisses.
 
-Code: `kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php`, `kernel/classes/user/expuserapproval.php`,
+Code: `kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php` (das Ereignis),
+`kernel/classes/user/expuserapproval.php` (Einstellungen, Schutz, Mail, Entscheidung, Einrichtung),
 `kernel/classes/user/expuserapprovalsection.php` (die Einrichtung nach Abschnitt), die Haken in
 `kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php` und
 `kernel/classes/collaborationhandlers/ezapprove/ezapprovecollaborationhandler.php`, der Befehl
-`kernel/private/classes/commands/adduserapproval.php`. Test ohne Datenbank:
+`kernel/private/classes/commands/adduserapproval.php`, die Templates
+`design/standard/templates/workflow/eventtype/{edit,view}/event_expuserapprove.tpl` und
+`design/standard/templates/workflow/eventtype/expuserapprove_mail.tpl`. Test ohne Datenbank:
 `tests/tests/kernel/classes/expUserApprovalTest.php`. Anleitung:
 [Neue Redakteurskonten freigeben](../../anleitungen/neue-redakteurskonten-freigeben.md).

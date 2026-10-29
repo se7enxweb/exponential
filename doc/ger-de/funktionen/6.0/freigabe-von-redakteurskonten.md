@@ -26,7 +26,7 @@ zur Freigabe; sie melden sich an und geben in der Administration frei oder lehne
 
 1. **Benutzer > Editors** öffnen und unter **Hier anlegen** *Benutzerkonto* wählen.
 2. Name, Benutzername, E-Mail-Adresse und Passwort eintragen und **Zur Veröffentlichung senden** drücken.
-3. Das Konto steht in Ihrer *Kollaboration* unter *Ihre Elemente, die auf andere warten* und unter *Meine ausstehenden
+3. Die Seite sagt, dass das Objekt auf Freigabe wartet. Das Konto steht in Ihrer *Kollaboration* unter *Ihre Elemente, die auf andere warten* und unter *Meine ausstehenden
    Elemente*.
 4. Nach der Freigabe meldet sich der neue Redakteur mit dem Benutzernamen und Passwort an, die Sie gesetzt haben. Nach
    einer Ablehnung ist das Konto wieder in Ihren Entwürfen: ändern und erneut senden, oder den Entwurf entfernen.
@@ -40,7 +40,8 @@ Die Konten der anderen Redakteure sehen und ändern Sie nicht; Editors zeigt nur
 2. **Open the approval** drücken (oder Dashboard > Kollaboration > *Wartet auf Ihre Entscheidung*). Bei Bedarf anmelden.
 3. Die Freigabeseite zeigt das Konto. Optional einen Kommentar schreiben, dann **Freigeben** oder **Ablehnen** drücken
    und bestätigen.
-4. Die Meldung sagt, was geschehen ist: das Konto wurde freigegeben und veröffentlicht, oder abgelehnt.
+4. Die Meldung sagt, was geschehen ist: *Das Konto ... wurde freigegeben und veröffentlicht: es kann sich jetzt
+   anmelden*, oder *... wurde abgelehnt*.
 
 Die Freigabe sehen alle Administratoren; die erste Entscheidung gilt, danach zeigt das Element für alle *Freigegeben*
 oder *Abgelehnt*.
@@ -69,4 +70,5 @@ verweigert der Befehl, solange das Ereignis *Benutzerkonten freigeben* läuft. W
 [Zwei Wege](../../bc/6.0/freigabe-von-benutzerkonten.md#zwei-wege-nach-gruppe-standard-oder-nach-abschnitt).
 
 Mehr: die technische Notiz [Freigabe neuer Benutzerkonten](../../bc/6.0/freigabe-von-benutzerkonten.md), die Anleitung
-[Neue Redakteurskonten freigeben](../../anleitungen/neue-redakteurskonten-freigeben.md).
+[Neue Redakteurskonten freigeben](../../anleitungen/neue-redakteurskonten-freigeben.md) und die
+[Mitgliederverwaltung](../../bc/6.0/mitgliederverwaltung.md), mit der Redakteure die Mitglieder der Website verwalten.

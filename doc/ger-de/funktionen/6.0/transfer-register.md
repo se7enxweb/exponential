@@ -28,12 +28,18 @@ Tags[]=transfer.tool
 Description=Download the items of a class, a folder or the whole site as CSV, XML or JSON, and import them back.
 Name=Export (xrowextract)
 Direction=both
+Scopes[]=site
 Scopes[]=subtree
+Scopes[]=class
 Formats[]=CSV
+Formats[]=XML
+Formats[]=JSON
 EntryURL=xrowextract/csv
 Permission=xrowextract/csv|xrowextract/import
 HelpPage=ext/xrowextract/README.md
+RoundTrip[]=transfer.xrowextract
 RoundTrip[]=transfer.sqliimport
+Keywords[]=spreadsheet
 Keywords[]=Tabelle
 Actions[]=class|export|Export the items of this class…|xrowextract/csv/(class)/%classID%
 Weight=20
@@ -50,7 +56,7 @@ Weight=20
 | `Permission` | `modul/funktion`, die zum Benutzen nötig ist; Alternativen durch `\|` getrennt; ohne sie genügt eine Richtlinie des Moduls |
 | `Modules[]` | Weitere Module, deren Seiten zum Werkzeug gehören |
 | `HelpPage` | Eine Hilfeseite (unter `doc/eng-us/`, `ext/<extension>/<pfad>` für die einer Extension), `#anker` erlaubt |
-| `RoundTrip[]` | Die Werkzeuge, die lesen, was es schreibt, oder schreiben, was es liest (eine Seite genügt) |
+| `RoundTrip[]` | Die Werkzeuge, die lesen, was es schreibt, oder schreiben, was es liest (jede Seite darf die andere nennen) |
 | `Keywords[]` | Aufgabenwörter, nach denen die Suche im Kopf es findet, auf Englisch und Deutsch |
 | `Actions[]` | `kontext\|import oder export\|beschriftung\|URL[\|modul/funktion]`, ein Eintrag in einem Kontext: `node` (jedes veröffentlichte Objekt), `container` (ein Objekt, unter dem der Benutzer anlegen darf), `class` (eine Klassenseite), `setup` (die Setup-Seiten). Die URL darf `%nodeID%`, `%objectID%`, `%classID%`, `%classIdentifier%` enthalten; ein Eintrag, dessen Platzhalter der Kontext nicht liefert, entfällt. Die optionale Richtlinie ersetzt die des Werkzeugs. |
 | `Weight` | Reihenfolge in Listen (kleiner zuerst, dann nach Name; Standard 100) |
@@ -78,11 +84,11 @@ PHP:
 
 ```php
 $registry = expKernelTransferRegistry::instance();
-$registry->available();
+$registry->available();                                           // id => expKernelTransferTool
 $registry->select( array( 'direction' => 'import', 'scope' => 'subtree', 'format' => 'csv' ) );
-$registry->actions( 'container', array( '%nodeID%' => 42 ) );
-$registry->related( 'transfer.xrowextract' );
-$registry->search( 'csv importieren' );
+$registry->actions( 'container', array( '%nodeID%' => 42 ) );     // context entries
+$registry->related( 'transfer.xrowextract' );                     // for a "Looking for…?" box
+$registry->search( 'import csv' );                                // by task words, best first
 ```
 
 Templates (Operatoren des Kernels, jeder gibt nur die verfügbaren Werkzeuge als Hashes zurück):
@@ -91,8 +97,12 @@ Templates (Operatoren des Kernels, jeder gibt nur die verfügbaren Werkzeuge als
 {def $import_tools = transfer_tools( hash( 'direction', 'import', 'scope', 'subtree' ) )}
 {def $entries = transfer_actions( 'container', hash( '%nodeID%', $node.node_id ), 'import' )}
 {def $others = transfer_related( 'transfer.bccie' )}
-{def $tool = transfer_tool( 'xrowextract' )}
+{def $tool = transfer_tool( 'xrowextract' )}   {* also an inactive one: $tool.active *}
 ```
+
+Ein Werkzeug-Hash hat `id`, `name`, `description`, `direction`, `scopes`, `formats`, `url`, `module`, `help_page`,
+`help_url`, `round_trip`, `keywords` (dazu `partner` aus `transfer_related` und `active` aus `transfer_tool`). Ein
+Eintrags-Hash hat `tool`, `name`, `context`, `direction`, `label`, `url`.
 
 ## Die gemeinsamen Template-Teile
 
@@ -100,12 +110,29 @@ Der Kernel liefert sie in `design/standard/templates/transfer/`, so finden jedes
 
 | Template | Verwendung | Parameter |
 |---|---|---|
-| `transfer/looking_for.tpl` | Der Kasten „Suchen Sie …?" auf der Hauptseite eines Werkzeugs | `tool` (seine Id) |
-| `transfer/left_menu.tpl` | Die Liste **Import und Export** für ein linkes Menü | `current` (die Id des Werkzeugs, optional) |
+| `transfer/looking_for.tpl` | Der Kasten „Suchen Sie …?" oben oder unten auf der Hauptseite eines Werkzeugs | `tool` (seine Id) |
+| `transfer/left_menu.tpl` | Die Liste **Import und Export** für ein linkes Menü (das Setup-Menü hat sie; das linke Menü einer Extension bindet sie nach den eigenen Links ein) | `current` (die Id des Werkzeugs, optional) |
 | `transfer/actions.tpl` | Die Einträge eines Kontexts als Liste (die Klassenseite) | `context`, `values`, `direction` (optional) |
 | `transfer/search_suggestions.tpl` | Die Werkzeuge zu den Suchwörtern, über den Suchergebnissen | `query` |
 
-Sie benutzen die gemeinsamen Komponenten der Administration und kein eigenes CSS.
+Sie benutzen die gemeinsamen Komponenten der Administration (`a4-notice`, `leftmenu-items`, `a4-plain`) und kein
+eigenes CSS. Eine Extension bindet sie so ein:
+
+```
+{include uri='design:transfer/looking_for.tpl' tool='transfer.bccie'}
+```
+
+## Wo der Kernel es benutzt
+
+- **Menü Import/Export eines Objekts** (`popupmenu/popup_export_items.tpl`): nach den Paket-Einträgen und den
+  Menü-Templates der Extensions die Einträge für `node`, auf einem Container, in dem der Benutzer anlegen darf, die
+  Einträge für `container`, und als letzten Eintrag **Welches Werkzeug brauche ich?**.
+- **Klassenseite** (`class/view.tpl`): die Einträge für `class`.
+- **Setup-Menü** (`parts/setup/menu.tpl`): die Liste **Import und Export**.
+- **Suchergebnisse** (`content/search.tpl`): bis zu drei Werkzeuge, die zu den Suchwörtern passen, über den
+  Ergebnissen.
+- **Hilfemenü** (`expHelpContextRegistry::menu()`): auf der Seite eines Werkzeugs gehören die Seite „Welches Werkzeug“
+  und die Hilfeseite des Werkzeugs zu den verwandten Themen.
 
 ## Die Werkzeuge des Kernels
 
@@ -123,4 +150,7 @@ Schlüssel seines Blocks sagen wie: `Engine=`, `QueueJobType=` und `HistoryAllPe
 
 ## Tests
 
-`tests/tests/kernel/classes/expKernelTransferRegistryTest.php` (ohne Datenbank, Testsuite kernel-classes).
+`tests/tests/kernel/classes/expKernelTransferRegistryTest.php` (ohne Datenbank, Testsuite kernel-classes): Die
+mitgelieferten Blöcke sind gültig und ihre Hilfeseiten existieren, dazu das Einlesen, die Verfügbarkeit, die Filter,
+die Einträge, die Reihenfolge der Hin- und Rückwege, die Suche, die Themen des Hilfemenüs, die Operatoren und dass die
+Hilfeseite jedes Werkzeug des Kernels auf Englisch und Deutsch aufführt.

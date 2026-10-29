@@ -143,6 +143,24 @@ dass das Document Root nicht das Installationsverzeichnis ist.
 
 ## 8.3 Exponential Velocity, der empfohlene Weg
 
+**Velocity ist seit 6.0.15 Teil von Exponential.** Die `composer.json` im Wurzelverzeichnis verlangt
+`se7enxweb/exponential-velocity ~0.0.4.55`, also hat das `composer install` aus
+[Kapitel 3](03-den-code-beschaffen.md#34-das-velocity-paket) es schon installiert, auf demselben PHP wie den Kernel
+(8.0 und höher, das mitgelieferte PHP 8.0 von Red Hat Enterprise Linux 9 eingeschlossen). Vor dem ersten
+`exp:velocity start` ist nichts zusätzlich herunterzuladen. Das ist der Wendepunkt der Linie 6.0: Der Internet / Web
+Application Server ist ein Grundstein des Kernprodukts, sodass Ausliefern, Cachen, HTTPS und Deployment ab Werk und
+standardmäßig aus derselben Quelle kommen wie die Anwendung. Der Hintergrund:
+[Velocity ist Teil von Exponential 6.0.15](../hilfe/velocity-ist-teil-von-exponential-6-0-15.md).
+
+Die vier Befehle der täglichen Arbeit:
+
+```bash
+./console exp:velocity deploy --allow-root-user       # after a change: autoloads, settings, caches, PHP-FPM, Velocity
+./console exp:velocity start --allow-root-user
+./console exp:velocity restart --allow-root-user      # workers load changed classes and settings
+./console exp:velocity cache clear --allow-root-user  # empty the response cache
+```
+
 Velocity ist ein Anwendungsserver, der für Exponential geschrieben wurde. Ein Elternprozess lädt die Anwendung einmal
 und forkt **Worker**, die eine Anfrage nach der anderen beantworten; zwischen den Anfragen wird jeder Worker in den
 Zustand zurückversetzt, den er beim Forken hatte. Der Elternprozess nimmt jede Verbindung selbst an, beantwortet
@@ -389,7 +407,10 @@ Modus Header und Shutdown-Funktionen mitführt (Header und Shutdown-Funktionen a
 Zwischen den Anfragen setzt der Worker statische Klasseneigenschaften, Superglobals, eigene Globals, Ausgabepuffer,
 Handler und Antwort-Header auf den Zustand zurück, mit dem er geforkt wurde. Einige Registries im Kernel werden mit
 `include_once` gefüllt und könnten nach dem Leeren nie wieder gefüllt werden; sie müssen daher **behalten** werden: die
-Registries für Datentypen, Workflow-Ereignisse, Benachrichtigungsereignisse und Payment-Gateways. Diese Namen sind
+Registries für Datentypen, Workflow-Ereignisse, Benachrichtigungsereignisse und Payment-Gateways. Auch der
+Worker-Bereich des Kernel-Service-Containers (`expKernelServicesWorker`) wird behalten: Er hält die Einstellungsdateien
+jedes Siteaccess, einmal pro Worker statt bei jeder Anfrage gebaut
+([der Kernel-Service-Container](../bc/6.0/kernel-dienste.md)). Diese Namen sind
 eingebaut (`expVelocity::DEFAULT_KEEP_GLOBALS`) und brauchen keine Einstellung.
 
 ```ini

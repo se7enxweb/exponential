@@ -4,7 +4,8 @@ Diese Seite ist für Template-Autoren und Entwickler von Extensions, die Skripte
 aufrufen. `ezjscore` („eZ JS Core“) ist die JavaScript-Grundlage von Exponential. Es:
 
 - **packt** Skripte und Stylesheets in eine zwischengespeicherte Datei pro Seite;
-- lädt **jQuery** und **jQuery UI**;
+- lädt **jQuery** und **jQuery UI** (`ezjsc::jquery`, `ezjsc::jqueryUI`) für die Seiten, die sie anfordern; admin4 und
+  admin4l laden auf keiner eigenen Seite jQuery;
 - stellt **Serveraufrufe** bereit: eine Ajax-Schnittstelle zu PHP-Klassen, geschützt durch Rollenrichtlinien;
 - stellt Template-Operatoren zum Kodieren und Laden von Ressourcen bereit und die Funktionsbibliothek, auf die mehrere
   Extensions bauen ([ezstarrating](ezstarrating.md), [ezautosave](ezautosave.md), [ezwt](ezwt.md) und andere).
