@@ -9302,7 +9302,8 @@
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
         "Literal": "word spelled the same in Indonesian, XML tag name",
-        "Plugin": "loan word used in Indonesian software"
+        "Plugin": "loan word used in Indonesian software",
+        "Sepia": "spelled the same in Indonesian (KBBI: sepia)"
     },
     "tha-TH": {
         "ID %id": "acronym and placeholder",
@@ -9987,7 +9988,8 @@
         "%Y-%m-%d": "date format code",
         "%H:%M:%S": "time format code",
         "Div": "HTML element name",
-        "Literal": "same word in Malay"
+        "Literal": "same word in Malay",
+        "Sepia": "spelled the same in Malay (DBP: sepia)"
     },
     "jav-ID": {
         "OK": "kept as in the guide (allowlisted)",
@@ -16026,7 +16028,9 @@
         "ridge": "term or name kept in English in Filipino interfaces",
         "inset": "term or name kept in English in Filipino interfaces",
         "outset": "term or name kept in English in Filipino interfaces",
-        "Tel": "term or name kept in English in Filipino interfaces"
+        "Tel": "term or name kept in English in Filipino interfaces",
+        "Watermark": "loanword kept in English by Filipino interfaces",
+        "Font": "loanword kept in English by Filipino interfaces"
     },
     "che-RU": {
         "ID %id": "acronym and placeholder",
