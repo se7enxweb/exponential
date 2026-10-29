@@ -3,7 +3,7 @@ title: Template-Ressourcen und Overrides
 audience: developer, designer, app-creator
 category: development
 order: 420
-summary: Wie aus einem Template-Namen eine Datei wird - die Ressourcen design: und file:, die geordneten Design-Basen eines Siteaccess (Website-Design, zusätzliche Designs, Standard-Design, jedes zuerst mit seinen Designs von Erweiterungen), Regeln in override.ini mit ihren Match-Schlüsseln und ihrer Reihenfolge und wie include und die Ansichtsfunktionen sie nutzen - mit der echten Auflösung auf dem Siteaccess site von alpha.
+summary: Wie aus einem Template-Namen eine Datei wird - die Ressourcen design: und file:, die geordneten Design-Basen eines Siteaccess (Website-Design, zusätzliche Designs, Standard-Design, jedes zuerst mit seinen Designs von Erweiterungen), Regeln in override.ini mit ihren Match-Schlüsseln und ihrer Reihenfolge und wie include und die Ansichtsfunktionen sie nutzen - mit der echten Auflösung auf dem Siteaccess site einer Entwicklungsinstallation.
 keywords: Template-Ressource, design:, file:, eZTemplateDesignResource, Design-Basen, SiteDesign, AdditionalSiteDesignList, StandardDesign, DesignExtensions, override.ini, Match-Schlüssel, Reihenfolge der Overrides, include, node_view_gui, template resource, design bases, match keys, override order
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Ein Template wird immer über eine **Ressource** benannt: `design:node/view/full.tpl`, `file:var/...`. Die Ressource macht aus dem Namen eine
 Datei. Bei `design:` gehören dazu die Designs des Siteaccess, die Designs jeder Erweiterung und die Override-Regeln von `override.ini`. Diese
-Seite zeigt, wie, mit der Auflösung, die der Siteaccess `site` von alpha vornimmt.
+Seite zeigt, wie, mit der Auflösung, die der Siteaccess `site` einer Entwicklungsinstallation vornimmt.
 
 ## Inhalt
 
@@ -43,7 +43,7 @@ Dateipfad gelesen. Die Beispiele dieser Seiten nutzen `file:`, um Templates auß
    dieser Reihenfolge), dann das `design/<design>` des Kernels; nicht vorhandene Ordner werden übersprungen.
 
 Mit `DesignLocationCache=enabled` wird die Liste in einer Cache-Datei gespeichert (geleert mit der Cache-ID `design_base`). Ein nur lesendes
-CLI-Skript gab die Liste für den Siteaccess `site` von alpha aus (`eZTemplateDesignResource::allDesignBases()`):
+CLI-Skript gab die Liste für den Siteaccess `site` einer Entwicklungsinstallation aus (`eZTemplateDesignResource::allDesignBases()`):
 
 ```text
 siteaccess:               site
@@ -132,7 +132,7 @@ Datentyp `ezstring`, in der 47. Basis gefunden:
 [{include uri='design:content/datatype/view/ezstring.tpl' attribute=$node.data_map.title}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [
@@ -141,7 +141,7 @@ Why Should You Choose Strength Training?]
 
 ## Overrides
 
-`override.ini` (des Siteaccess und jeder Erweiterung) hat eine Gruppe pro Regel. Die Regel für Artikel auf alpha, aus
+`override.ini` (des Siteaccess und jeder Erweiterung) hat eine Gruppe pro Regel. Die Regel für Artikel auf einer Entwicklungsinstallation, aus
 `extension/sevenx_themes_media/settings/siteaccess/site/override.ini.append.php`:
 
 ```ini
@@ -161,7 +161,7 @@ beginnt; jeder andere Schlüssel muss dem Wert des Schlüssels gleichen (oder ei
 `class_group`). Regeln werden in der Reihenfolge der zusammengeführten `override.ini` genommen, oder nach einer numerischen `Priority` in der
 Gruppe, wenn eine angegeben ist (niedrigere zuerst).
 
-Auf alpha hat `node/view/full.tpl` 57 Regeln; die ersten:
+Auf einer Entwicklungsinstallation hat `node/view/full.tpl` 57 Regeln; die ersten:
 
 ```text
 override rules for design:node/view/full.tpl: 57 (default file extension/ezwebin/design/ezwebin/templates/node/view/full.tpl)

@@ -3,7 +3,7 @@ title: Kernel-Operatoren überschreiben
 audience: developer, app-creator
 category: development
 order: 510
-summary: Wie Sie aus einer Erweiterung heraus ändern, was ein Operator des Kernels oder der Template-Bibliothek tut, so wie es die Erweiterung ezurlmultisite für ezurl macht - die Klasse ableiten, der der Name gehört, die Unterklasse für alle ihre Namen registrieren, den Code zur Übersetzungszeit für das Geänderte entfernen - mit jedem Fehler und dem funktionierenden Muster, auf alpha interpretiert und kompiliert ausgegeben.
+summary: Wie Sie aus einer Erweiterung heraus ändern, was ein Operator des Kernels oder der Template-Bibliothek tut, so wie es die Erweiterung ezurlmultisite für ezurl macht - die Klasse ableiten, der der Name gehört, die Unterklasse für alle ihre Namen registrieren, den Code zur Übersetzungszeit für das Geänderte entfernen - mit jedem Fehler und dem funktionierenden Muster, auf einer Entwicklungsinstallation interpretiert und kompiliert ausgegeben.
 keywords: Operator überschreiben, Kernel-Operator, Operator erweitern, Unterklasse, Ableitung, Template-Compiler, override operator, kernel operator, extend operator, eZURLOperator, ezurlmultisite, eZTemplateStringOperator, subclass, operatorTemplateHints, element-transformation, ExtensionAutoloadPath, ActiveExtensions
 type: help
 ---
@@ -43,7 +43,7 @@ daher auch keinen Namen zurückholen.
 
 ## Ein echter Fall: ezurlmultisite
 
-Die Erweiterung ezurlmultisite (auf alpha aktiv) sorgt dafür, dass `ezurl` Links auf die richtige Website erzeugt,
+Die Erweiterung ezurlmultisite (auf einer Entwicklungsinstallation aktiv) sorgt dafür, dass `ezurl` Links auf die richtige Website erzeugt,
 wenn Inhalte zu einem anderen beteiligten Siteaccess gehören. Ihre `autoloads/eztemplateautoload.php`:
 
 ```php
@@ -149,7 +149,7 @@ ExtensionAutoloadPath[]=myextension
 */ ?>
 ```
 
-Auf alpha nicht als installierte Erweiterung ausgeführt: Die folgenden Ausgaben hat ein Skript erzeugt, das
+Auf einer Entwicklungsinstallation nicht als installierte Erweiterung ausgeführt: Die folgenden Ausgaben hat ein Skript erzeugt, das
 denselben Eintrag nur im Speicher und nur für diesen Prozess bei der Template-Engine registriert hat, mit der Klasse
 in einem Arbeitsordner (die Arbeitskopie hat einen zusätzlichen statischen Schalter, der die Hints behält und im
 Abschnitt über den Code zur Übersetzungszeit verwendet wird). Das Template verwendet `upcase`, dann `wash`, dann
@@ -161,7 +161,7 @@ noch einmal `upcase`:
 {'fit & healthy'|upcase}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [override] FIT & HEALTHY
@@ -169,7 +169,7 @@ Fit &amp; Healthy
 [override] FIT & HEALTHY
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 [override] FIT & HEALTHY
@@ -189,7 +189,7 @@ einem schnellen Test:
 {'fit & healthy'|upcase}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [override] FIT & HEALTHY
@@ -204,7 +204,7 @@ verwendet. Das Laden dieser Klasse registriert sie wieder für alle fünfzehn Na
 {'fit & healthy'|upcase}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [override] FIT & HEALTHY
@@ -212,7 +212,7 @@ Fit &amp; Healthy
 FIT & HEALTHY
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 FIT & HEALTHY
@@ -238,7 +238,7 @@ Namen registriert:
 {'fit & healthy'|upcase}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [override] FIT & HEALTHY
@@ -246,7 +246,7 @@ Fit &amp; Healthy
 [override] FIT & HEALTHY
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 FIT & HEALTHY
@@ -254,7 +254,7 @@ Fit &amp; Healthy
 FIT & HEALTHY
 ```
 
-Alpha kompiliert wie jede Standardinstallation Templates (`[TemplateSettings] TemplateCompile=enabled` in
+Die hier verwendete Entwicklungsinstallation kompiliert wie jede Standardinstallation Templates (`[TemplateSettings] TemplateCompile=enabled` in
 `settings/site.ini`), daher bekommen Besucher das kompilierte Ergebnis. Entfernen Sie den Hint-Eintrag jedes
 Operators, den Sie ändern (`unset( $hints['upcase'] )`), oder setzen Sie `element-transformation` auf `false`, wie
 es ezurlmultisite tut. Behalten Sie die Hints der Namen, die Sie nur an die Elternklasse weiterreichen.
@@ -271,7 +271,7 @@ es ezurlmultisite tut. Behalten Sie die Hints der Namen, die Sie nur an die Elte
   Vorschau von Inhalten zeigt.
 - Leeren Sie nach dem Hinzufügen der Registrierung die INI- und Template-Caches (kompilierte Templates behalten den
   alten Inline-Code, bis sie neu kompiliert werden): `php bin/php/ezcache.php --clear-tag=ini,template --allow-root-user`.
-  Unter Velocity behalten die Worker die Operatorregistrierungen ihres Warm-ups: Führen Sie auf alpha
+  Unter Velocity behalten die Worker die Operatorregistrierungen ihres Warm-ups: Führen Sie auf einer Entwicklungsinstallation
   `./console exp:velocity deploy --allow-root-user` aus, das diese Caches leert und Velocity neu startet.
 
 ## Risiken und wie Sie sie klein halten

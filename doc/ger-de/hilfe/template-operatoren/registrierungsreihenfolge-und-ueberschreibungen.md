@@ -3,7 +3,7 @@ title: Registrierungsreihenfolge und Überschreibungen
 audience: developer, designer, app-creator
 category: development
 order: 500
-summary: Wie die Template-Engine entscheidet, welche Klasse einen Operatornamen bedient - die Reihenfolge, in der sie die Dateien eztemplateautoload.php liest, "die letzte Registrierung gewinnt", die 21 Namen, die auf alpha zwei Klassen registrieren, und die Regel des verzögerten Ladens, nach der eine Klasse mitten in einer Anfrage einen Namen zurückholen kann - belegt mit auf alpha ausgegebenen Beispielen.
+summary: Wie die Template-Engine entscheidet, welche Klasse einen Operatornamen bedient - die Reihenfolge, in der sie die Dateien eztemplateautoload.php liest, "die letzte Registrierung gewinnt", die 21 Namen, die auf einer Entwicklungsinstallation zwei Klassen registrieren, und die Regel des verzögerten Ladens, nach der eine Klasse mitten in einer Anfrage einen Namen zurückholen kann - belegt mit auf einer Entwicklungsinstallation ausgegebenen Beispielen.
 keywords: Operatorregistrierung, Überschreibung, Reihenfolge, letzte gewinnt, verzögertes Laden, Namenskonflikt, operator registration, override, eztemplateautoload.php, AutoloadPathList, ExtensionAutoloadPath, ActiveExtensions, last wins, lazy loading, operator clash, swark, ezurlmultisite, substr
 type: help
 ---
@@ -11,14 +11,14 @@ type: help
 
 Operatornamen sind global: ein Name, eine Klasse, für jedes Template eines Siteaccess. Wenn zwei Autoload-Dateien
 denselben Namen registrieren, hat die Template-Engine Regeln dafür, welche ihn bedient, und eine dieser Regeln
-überrascht. Diese Seite erklärt sie anhand von `lib/eztemplate/classes/eztemplate.php` und zeigt sie auf alpha. Für
+überrascht. Diese Seite erklärt sie anhand von `lib/eztemplate/classes/eztemplate.php` und zeigt sie auf einer Entwicklungsinstallation. Für
 die praktische Frage, wie Sie einen Kernel-Operator ersetzen, siehe [Kernel-Operatoren überschreiben](kernel-operatoren-ueberschreiben.md).
 
 ## Inhalt
 
 1. [Die Reihenfolge, in der die Dateien gelesen werden](#die-reihenfolge-in-der-die-dateien-gelesen-werden)
 2. [Die letzte Registrierung gewinnt](#die-letzte-registrierung-gewinnt)
-3. [Die auf alpha doppelt registrierten Namen](#die-auf-alpha-doppelt-registrierten-namen)
+3. [Die doppelt registrierten Namen](#die-doppelt-registrierten-namen)
 4. [Eine geladene Klasse holt sich ihre Namen zurück](#eine-geladene-klasse-holt-sich-ihre-namen-zurück)
 5. [Kompilierte Templates](#kompilierte-templates)
 6. [Funktionen und Fetch-Funktionen](#funktionen-und-fetch-funktionen)
@@ -37,7 +37,7 @@ die praktische Frage, wie Sie einen Kernel-Operator ersetzen, siehe [Kernel-Oper
    hinzu, die Reihenfolge ist also die, in der das INI-System diese Dateien zusammenführt, und die folgt der
    Reihenfolge von `[ExtensionSettings] ActiveExtensions[]` (und der `ActiveAccessExtensions[]` des Siteaccess).
 
-Auf dem Siteaccess `site` von alpha liest die Engine 23 Dateien: die vier oben genannten, dann
+Auf dem Siteaccess `site` einer Entwicklungsinstallation liest die Engine 23 Dateien: die vier oben genannten, dann
 `bcwebsitestatistics, ezwt, ezwebin, ezoe, eztags, ezstarrating, ezurlmultisite, sevenx_themes_media, powercontent,
 recaptcha, explayouts_ui, explayouts, enhancedezbinaryfile, swark, owsimpleoperator, cjw_newsletter, xrowmetadata,
 ezjscore, expui` (bcwebsitestatistics fügt seinen Ordner selbst zu `AutoloadPathList[]` hinzu, die anderen nutzen
@@ -61,7 +61,7 @@ Zu diesem Zeitpunkt ist noch nichts geladen: Die Engine weiß nur, welche Klasse
 Die Klassendatei wird eingebunden und das Objekt angelegt, wenn ein Template zum ersten Mal einen ihrer Namen
 verwendet (`loadAndRegisterOperators()`).
 
-## Die auf alpha doppelt registrierten Namen
+## Die doppelt registrierten Namen
 
 Dieses kurze Skript listet jeden Namen auf, den mehr als eine Datei registriert, mit den Klassen in Lesereihenfolge
 (speichern Sie es an beliebiger Stelle und führen Sie es mit `php bin/php/ezexec.php -s site <file>` aus):
@@ -89,7 +89,7 @@ foreach ( $owners as $name => $classes )
         echo str_pad( $name, 20 ), implode( ' -> ', $classes ), "\n";
 ```
 
-Seine Ausgabe auf dem Siteaccess `site` von alpha:
+Seine Ausgabe auf dem Siteaccess `site` einer Entwicklungsinstallation:
 
 ```text
 nl2br               eZTemplateNl2BrOperator -> eZPHPOperatorInit
@@ -145,13 +145,13 @@ Wird also eine Klasse mit vielen Namen geladen, nachdem eine andere Klasse einen
 sie sich den Namen zurück, ganz gleich, was die Autoload-Reihenfolge besagte. Welche Klasse einen konfliktbehafteten
 Namen bedient, hängt daher davon ab, welche Operatoren die Anfrage vorher verwendet hat. Bei `substr`: Die Version
 von swark behandelt eine Länge von `0` als "bis zum Ende", der `eZTemplateStringsOperator` der Bibliothek gibt `0`
-an PHP weiter, das eine leere Zeichenkette zurückgibt. Auf alpha mit einer frischen Engine ausgegeben:
+an PHP weiter, das eine leere Zeichenkette zurückgibt. Auf einer Entwicklungsinstallation mit einer frischen Engine ausgegeben:
 
 ```tpl
 [{'abcdef'|substr( 2, 0 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [cdef]
@@ -166,7 +166,7 @@ Derselbe Ausdruck in einem Template, vor und nach einer Verwendung von `strlen` 
 [{'abcdef'|substr( 2, 0 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [cdef]
@@ -190,7 +190,7 @@ nachdem `wash` gelaufen ist, ein Operator derselben Bibliotheksklasse:
 {'fit & healthy'|upcase}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [override] FIT & HEALTHY
@@ -204,7 +204,7 @@ Test-Template funktionieren und auf echten Seiten scheitern.
 
 ## Kompilierte Templates
 
-Alpha läuft mit `[TemplateSettings] TemplateCompile=enabled`, der Standardeinstellung. Trifft der Compiler auf einen
+Die hier verwendete Entwicklungsinstallation läuft mit `[TemplateSettings] TemplateCompile=enabled`, der Standardeinstellung. Trifft der Compiler auf einen
 Operator, lädt er zur Übersetzungszeit die Klasse des Operators, um nach ihren Hints zu fragen, und mit Hints kann er
 die Arbeit des Operators direkt in das erzeugte PHP schreiben (siehe
 [Die Schnittstelle der Operatorklasse](referenz-der-operatorklassen.md#operatortemplatehints)). Zwei Folgen:
@@ -219,7 +219,7 @@ die Arbeit des Operators direkt in das erzeugte PHP schreiben (siehe
 ## Funktionen und Fetch-Funktionen
 
 Template-Funktionen (`$eZTemplateFunctionArray`) werden genauso registriert, die letzte Registrierung gewinnt, und
-eine geladene Funktionsklasse registriert alle Namen ihrer `functionList()`. Auf alpha ist kein Funktionsname doppelt
+eine geladene Funktionsklasse registriert alle Namen ihrer `functionList()`. Auf einer Entwicklungsinstallation ist kein Funktionsname doppelt
 registriert.
 
 Fetch-Funktionen folgen einer anderen Regel: `fetch( 'content', ... )` verwendet die erste

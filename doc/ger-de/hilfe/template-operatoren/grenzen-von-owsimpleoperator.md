@@ -3,7 +3,7 @@ title: "OW Simple Operator: Grenzen und Risiken"
 audience: developer, app-creator
 category: development
 order: 920
-summary: Was OW Simple Operator nicht tut und wo es Probleme macht - die Pipe-Form, die ein Argument verliert, null-Argumente, die weggelassen werden, keine Parameterprüfung, keine Optimierung beim Kompilieren, Namenskonflikte, Caching und die Sicherheitsregel für erlaubte PHP-Funktionen - mit den Fehlern, auf alpha gerendert.
+summary: Was OW Simple Operator nicht tut und wo es Probleme macht - die Pipe-Form, die ein Argument verliert, null-Argumente, die weggelassen werden, keine Parameterprüfung, keine Optimierung beim Kompilieren, Namenskonflikte, Caching und die Sicherheitsregel für erlaubte PHP-Funktionen - mit den Fehlern, auf einer Entwicklungsinstallation gerendert.
 keywords: Grenzen, Risiken, Pipe-Form, Namenskonflikt, Sicherheit, Parameterprüfung, owsimpleoperator, limitations, risks, ArgumentCountError, pipe form, null, PermittedFunctionList, security, cache-block, operatorTemplateHints, name clash
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 OW Simple Operator spart Code, indem es jedem Operator dieselbe generische Definition gibt. Aus dieser generischen
 Definition kommen auch seine Grenzen. Alles Folgende ist aus `extension/owsimpleoperator/autoloads/owsimpleoperator.php`
-und `autoloads/eztemplateautoload.php` gelesen und, wo ein Beispiel gezeigt wird, auf alpha gerendert.
+und `autoloads/eztemplateautoload.php` gelesen und, wo ein Beispiel gezeigt wird, auf einer Entwicklungsinstallation gerendert.
 
 ## Inhalt
 
@@ -84,7 +84,7 @@ und die Template-Engine fängt die Fehler von PHP nicht ab:
 {str_rot13()}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 (no output)
@@ -115,7 +115,7 @@ aufgerufen wird, spielt das keine Rolle; in einer Schleife über Hunderte von Ei
 ## Namenskonflikte
 
 Jede PHP-Funktion, die Sie erlauben, und jede Methode, die Sie registrieren, wird zu einem globalen Operatornamen. Auf
-alpha wird `str_replace` sowohl von der Erweiterung swark als auch von owsimpleoperator registriert; die
+einer Entwicklungsinstallation wird `str_replace` sowohl von der Erweiterung swark als auch von owsimpleoperator registriert; die
 `eztemplateautoload.php` von owsimpleoperator wird später gelesen und gewinnt. Schlimmer ist ein erlaubter Name, der einem
 Operator einer Klasse mit mehreren Operatoren entspricht (zum Beispiel `strlen` von `eZTemplateStringsOperator`): Die
 Klasse der Template-Bibliothek registriert beim Laden alle ihre Namen erneut und holt sich den Namen mitten in einer

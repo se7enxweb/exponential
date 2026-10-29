@@ -3,7 +3,7 @@ title: Die swark-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 430
-summary: Wie die Erweiterung swark ihre 37 Template-Operatoren mit je einer Klasse pro Operator registriert, die Basisklasse SwarkOperator mit Parameterzeichenketten der Form name=default und kompilierten execute()-Aufrufen, welche ihrer Namen andere Erweiterungen oder der Kernel auf alpha übernehmen, und ein belegter Fall, in dem der Besitzer eines Operators mitten in einer Anfrage wechselt.
+summary: Wie die Erweiterung swark ihre 37 Template-Operatoren mit je einer Klasse pro Operator registriert, die Basisklasse SwarkOperator mit Parameterzeichenketten der Form name=default und kompilierten execute()-Aufrufen, welche ihrer Namen andere Erweiterungen oder der Kernel auf einer Entwicklungsinstallation übernehmen, und ein belegter Fall, in dem der Besitzer eines Operators mitten in einer Anfrage wechselt.
 keywords: swark, SwarkOperator, SwarkOperators, Namenskonflikt, Operatorkonflikt, Registrierungsreihenfolge, operator collision, strpos, substr, ltrim, rtrim, str_replace, json_encode, registration order, ExtensionAutoloadPath
 type: help
 ---
@@ -20,7 +20,7 @@ erklärt, wie sie aufgebaut und registriert werden; die beiden folgenden Seiten 
 
 1. [Registrierung](#registrierung)
 2. [Die Basisklasse](#die-basisklasse)
-3. [Namen, die auf alpha kollidieren](#namen-die-auf-alpha-kollidieren)
+3. [Namen, die kollidieren](#namen-die-kollidieren)
 4. [Der Besitzer kann während einer Anfrage wechseln](#der-besitzer-kann-während-einer-anfrage-wechseln)
 
 ## Registrierung
@@ -50,12 +50,12 @@ direkten Aufruf von `<Class>::execute()` in das kompilierte Template und füllt 
 Standardwerten. Nur `variable_names` schaltet das ab (seine `transformation()` gibt `false` zurück), weil er das
 Template-Objekt braucht.
 
-## Namen, die auf alpha kollidieren
+## Namen, die kollidieren
 
-Sieben swark-Namen werden auch anderswo registriert. Auf alpha steht `swark` in `ExtensionAutoloadPath[]` vor
+Sieben swark-Namen werden auch anderswo registriert. Auf einer Entwicklungsinstallation steht `swark` in `ExtensionAutoloadPath[]` vor
 `owsimpleoperator` und `ezjscore`, und eine spätere Definition eines Namens ersetzt eine frühere:
 
-| Name | Verhalten in swark | Zuletzt registriert von | Ergebnis auf alpha |
+| Name | Verhalten in swark | Zuletzt registriert von | Ergebnis auf einer Entwicklungsinstallation |
 |---|---|---|---|
 | `json_encode` | `$value|json_encode` oder `json_encode( $value )` | ezjscore (`json_encode( $hash )`) | der Operator von ezjscore |
 | `str_replace` | `$text|str_replace( search, replace )` | owsimpleoperator (PHP `str_replace`) | der Operator von owsimpleoperator |
@@ -63,7 +63,7 @@ Sieben swark-Namen werden auch anderswo registriert. Auf alpha steht `swark` in 
 | `substr` | `length` 0 bedeutet "bis zum Ende" | Kernel `eZTemplateStringsOperator` | hängt von der ersten Verwendung ab |
 | `ltrim`, `rtrim` | optionale `charlist` | Kernel `eZTemplateStringsOperator` | hängt von der ersten Verwendung ab |
 
-Die swark-Klassen für diese Namen sind zusammen mit den anderen dokumentiert; auf alpha kann sich ein Template nicht
+Die swark-Klassen für diese Namen sind zusammen mit den anderen dokumentiert; auf einer Entwicklungsinstallation kann sich ein Template nicht
 darauf verlassen, sie zu erreichen.
 
 ## Der Besitzer kann während einer Anfrage wechseln
@@ -82,7 +82,7 @@ Template:
 3 strpos after:   [{'abc'|strpos( 'z' )}] {'abc'|strpos( 'z' )|get_type}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 strpos before:  [-1] integer

@@ -113,7 +113,7 @@ Website aufruft, und die Daten im Aufruf mitschicken. Das ist der **Webhook- / A
 jeden Import aus, bis Sie ihn im Schritt **Schedule**, Abschnitt **Started by another system (webhook or API)**,
 einschalten:
 
-![Der Abschnitt Started by another system des Bücher-Imports: The trigger is on, Run as user (ID), A call may bring the data, Signing secret by name, die Adresse POST https://alpha.se7enx.com/admin/sqliimport/trigger/demo_books_datatable und die Formulare für das Signiergeheimnis und einen neuen API-Schlüssel](../bilder/sqli-import/sqli-import-editor-trigger.webp)
+![Der Abschnitt Started by another system des Bücher-Imports: The trigger is on, Run as user (ID), A call may bring the data, Signing secret by name, die Adresse POST https://www.example.com/admin/sqliimport/trigger/demo_books_datatable und die Formulare für das Signiergeheimnis und einen neuen API-Schlüssel](../bilder/sqli-import/sqli-import-editor-trigger.webp)
 
 1. Haken Sie **The trigger is on** an und tragen Sie **Run as user (ID)** ein: einen Benutzer mit Run imports oder
    Manage imports für diesen Import. Ein ausgelöster Lauf läuft nie als anonymer Benutzer.

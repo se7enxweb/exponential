@@ -3,7 +3,7 @@ title: Rollen-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 260
-summary: Die 7 Operatoren von eZTemplateRoleOperator (has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user) - was sie prüfen, warum die gepipte Eingabe ignoriert wird, warum sie keine Zugriffsprüfung sind, mit nur lesenden Beispielen, auf alpha als anonymer Benutzer gerendert.
+summary: Die 7 Operatoren von eZTemplateRoleOperator (has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user) - was sie prüfen, warum die gepipte Eingabe ignoriert wird, warum sie keine Zugriffsprüfung sind, mit nur lesenden Beispielen, auf einer Entwicklungsinstallation als anonymer Benutzer gerendert.
 keywords: Rolle, Richtlinie, Berechtigung, Zugriffsprüfung, anonymer Benutzer, has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user, role, policy, permission, eZRole, eZTemplateRoleOperator
 type: help
 ---
@@ -16,14 +16,14 @@ Alle geben einen booleschen Wert zurück und lesen die Rollen mit `eZUser::roles
 der Benutzer über Benutzergruppen erhält.
 
 Die Beispiele wurden von einem Kommandozeilenlauf gerendert, der nicht angemeldet ist; der aktuelle Benutzer ist also der
-anonyme Benutzer (auf alpha die ID 10) mit der Rolle "Anonymous" (ID 1). Es wurde nichts verändert.
+anonyme Benutzer (auf einer Entwicklungsinstallation die ID 10) mit der Rolle "Anonymous" (ID 1). Es wurde nichts verändert.
 
 ```tpl
 {def $me = fetch( 'user', 'current_user' )}
 current user: id {$me.contentobject_id}, roles: {foreach $me.roles as $r}{$r.id} {$r.name}{delimiter}, {/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 current user: id 10, roles: 1 Anonymous
@@ -48,7 +48,7 @@ antwortet also stillschweigend für den Besucher, nicht für `$someone`:
 'any value'|has_role( 'Anonymous' ) = {'any value'|has_role( 'Anonymous' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'any value'|has_role( 'Anonymous' ) = true
@@ -108,7 +108,7 @@ has_any_role( array( 'Editor', 1 ) ) = {has_any_role( array( 'Editor', 1 ) )|cho
 has_any_role( array( 'Anonymous', 'Editor' ), 0, true() ) = {has_any_role( array( 'Anonymous', 'Editor' ), 0, true() )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 has_role( 'Anonymous' ) = true
@@ -149,7 +149,7 @@ has_role_by_user( $me, 1 ) = {has_role_by_user( $me, 1 )|choose( 'false', 'true'
 has_role_by_user_id( $me.contentobject_id, 1 ) = {has_role_by_user_id( $me.contentobject_id, 1 )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 has_role_by_user( $me, 1 ) = true
@@ -192,7 +192,7 @@ has_policy( 'content', 'edit' ) = {has_policy( 'content', 'edit' )|choose( 'fals
 has_policy_by_user( $me, 'user', 'login' ) = {has_policy_by_user( $me, 'user', 'login' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 has_policy( 'content', 'read' ) = true
@@ -200,7 +200,7 @@ has_policy( 'content', 'edit' ) = false
 has_policy_by_user( $me, 'user', 'login' ) = true
 ```
 
-Alle Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe.
+Alle Beispiele lieferten auf einer Entwicklungsinstallation interpretiert und kompiliert dieselbe Ausgabe.
 
 ## Verwandte Seiten
 

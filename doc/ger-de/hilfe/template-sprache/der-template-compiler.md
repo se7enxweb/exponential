@@ -3,15 +3,15 @@ title: Der Template-Compiler
 audience: developer, designer, app-creator
 category: development
 order: 400
-summary: Wie eZTemplateCompiler ein gelesenes Template in PHP umwandelt - die Pipeline (Transformation der Knoten, statische Optimierungen, Zusammenfassen, Erzeugen von PHP), Name und Ordner der kompilierten Datei, die Hinweise von Operatoren und Funktionen, mit denen ein Operator zu Inline-PHP wird, der Rückfall processOperator, DevelopmentMode, die Einstellungen - mit erzeugtem Code von alpha und einem echten Unterschied zwischen kompilierter und interpretierter Ausgabe.
+summary: Wie eZTemplateCompiler ein gelesenes Template in PHP umwandelt - die Pipeline (Transformation der Knoten, statische Optimierungen, Zusammenfassen, Erzeugen von PHP), Name und Ordner der kompilierten Datei, die Hinweise von Operatoren und Funktionen, mit denen ein Operator zu Inline-PHP wird, der Rückfall processOperator, DevelopmentMode, die Einstellungen - mit erzeugtem Code einer Entwicklungsinstallation und einem echten Unterschied zwischen kompilierter und interpretierter Ausgabe.
 keywords: Template-Compiler, eZTemplateCompiler, TemplateCompile, kompilierte Templates, var/cache/template/compiled, operatorTemplateHints, functionTemplateHints, element-transformation, processOperator, DevelopmentMode, eztc, CompileComments, choose, template compiler, compiled templates
 type: help
 ---
 # Der Template-Compiler
 
-Mit `[TemplateSettings] TemplateCompile=enabled` (der Standard in `settings/site.ini` und der Wert auf alpha) wird ein Template nicht bei
+Mit `[TemplateSettings] TemplateCompile=enabled` (der Standard in `settings/site.ini` und der Wert auf einer Entwicklungsinstallation) wird ein Template nicht bei
 jeder Anfrage interpretiert. Beim ersten Gebrauch wandelt `eZTemplateCompiler` (`lib/eztemplate/classes/eztemplatecompiler.php`) seinen
-gelesenen Baum in eine PHP-Datei um, und spätere Anfragen binden diese Datei ein. Diese Seite zeigt, wie, mit Code, den der Compiler auf alpha
+gelesenen Baum in eine PHP-Datei um, und spätere Anfragen binden diese Datei ein. Diese Seite zeigt, wie, mit Code, den der Compiler auf einer Entwicklungsinstallation
 erzeugt hat.
 
 ## Inhalt
@@ -54,7 +54,7 @@ Arbeit am Compiler selbst.
 
 ## Wie das erzeugte PHP aussieht
 
-Dieses kleine Template wurde auf alpha in einen Arbeitsordner kompiliert (die Einstellung `compilation-directory` des Compilers zeigte
+Dieses kleine Template wurde auf einer Entwicklungsinstallation in einen Arbeitsordner kompiliert (die Einstellung `compilation-directory` des Compilers zeigte
 woandershin, der Cache der Website blieb also unberührt) und auf beide Arten ausgeführt:
 
 ```tpl
@@ -65,7 +65,7 @@ woandershin, der Cache der Website blieb also unberührt) und auf beide Arten au
 {'compiled'|upcase}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <h1>Why Should You Choose Strength Training?</h1>no children
@@ -149,7 +149,7 @@ Mechanismus in `functionTemplateHints()` und `templateNodeTransformation()`; `ca
 ## Kompiliert und interpretiert sind nicht immer gleich
 
 Der Transformationscode ist eine zweite Umsetzung jedes Operators, die beiden können also voneinander abweichen. Das Ausführen jedes Beispiels
-dieses Abschnitts auf beide Arten auf alpha fand einen Fall: `choose` mit einer leeren Zeichenkette als Index.
+dieses Abschnitts auf beide Arten auf einer Entwicklungsinstallation fand einen Fall: `choose` mit einer leeren Zeichenkette als Index.
 
 ```tpl
 {def $empty_image = fetch( 'content', 'node', hash( 'node_id', 96 ) ).data_map.additional_image}
@@ -158,7 +158,7 @@ choose: [{$empty_image.has_content|choose( 'no', 'yes' )}]
 cond:   [{cond( $empty_image.has_content, 'yes', 'no' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 has_content returns string[0]
@@ -183,7 +183,7 @@ zeigt.
   haben, eine pro Siteaccess und Sprache. Mit `ShareCompiledTemplates` zählen nur der Schlüssel und die Locale.
 - Neu gebaut, wenn die Template-Datei neuer ist als die kompilierte Datei. Aus einem kompilierten Template eingebundene Templates werden nur
   auf ihr Vorhandensein geprüft, außer `DevelopmentMode=enabled` fügt auch dort eine Prüfung der Änderungszeit hinzu (der erzeugte Code zum
-  Einbinden vergleicht `filemtime()` beider Dateien). Mit `DevelopmentMode=disabled`, wie auf alpha, leeren Sie den Template-Cache, nachdem Sie
+  Einbinden vergleicht `filemtime()` beider Dateien). Mit `DevelopmentMode=disabled`, wie auf einer Entwicklungsinstallation, leeren Sie den Template-Cache, nachdem Sie
   ein eingebundenes Template geändert haben.
 - Geleert mit `php bin/php/ezcache.php --clear-id=template` oder der Schaltfläche **Template-Cache** der Cache-Seite; siehe
   [Template-Caches](template-caches.md).
@@ -192,7 +192,7 @@ zeigt.
 
 ## Einstellungen
 
-Alle in `site.ini [TemplateSettings]`, Werte auf dem Siteaccess `site` von alpha:
+Alle in `site.ini [TemplateSettings]`, Werte auf dem Siteaccess `site` einer Entwicklungsinstallation:
 
 ```tpl
 TemplateCompile:  {ezini( 'TemplateSettings', 'TemplateCompile' )}
@@ -203,7 +203,7 @@ ViewCaching:      {ezini( 'ContentSettings', 'ViewCaching' )}
 CachedViewModes:  {ezini( 'ContentSettings', 'CachedViewModes' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 TemplateCompile:  enabled

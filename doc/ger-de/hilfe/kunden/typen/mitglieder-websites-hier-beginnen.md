@@ -30,7 +30,7 @@ und die Ehrenamtlichen, die helfen. Die Planung einer Mitglieder-Website behande
 | Veranstaltungen, Foren | Klassen für Veranstaltungskalender und Foren in der Demo-Installation | [Veranstaltungen und Kalender](../../unternehmen/mitglieder/veranstaltungen-und-kalender.md) |
 | Alte und doppelte Konten finden | **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) | [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) |
 
-Die Demo-Installation unter <https://alpha.se7enx.com> hat die Klassen Event calendar, Event, Forums, Forum, Forum topic
+Eine Demo-Installation hat die Klassen Event calendar, Event, Forums, Forum, Forum topic
 und Forum reply; ob Ihre Website sie verwendet, hängt davon ab, wie sie gebaut wurde.
 
 ## Die Routinen der Mitgliederverwaltung

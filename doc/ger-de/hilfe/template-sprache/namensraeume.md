@@ -63,7 +63,7 @@ Ohne Namen sieht sie `$node` des Aufrufers:
 {include uri='file:var/tmp/examples/tl-ns/parts/show.tpl' title='A'}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 title=[A] local=[Fit & Healthy] global=[Fit & Healthy] relative=[A]
@@ -78,7 +78,7 @@ wieder entfernt:
 after: [{if is_set( $title )}title leaked{else}no $title here{/if}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 title=[B] local=[no $node] global=[Fit & Healthy] relative=[B]
@@ -97,7 +97,7 @@ eigenständig.
 {section name=Outer loop=array( 'x', 'y' )}{section name=Inner loop=array( 1, 2 )}[{$Outer:item}{$Outer:Inner:item}|{$:item}]{/section}{/section}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [x1|1][x2|2][y1|1][y2|2]
@@ -109,7 +109,7 @@ Ausgabe auf alpha:
 {let name=Box width=3}[{$Box:width}] [{$:width}]{/let}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [3] [3]
@@ -126,7 +126,7 @@ Ein fehlgeschlagener Zugriff nennt den durchsuchten Namensraum; daran sehen Sie,
 [{$Box:title}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []

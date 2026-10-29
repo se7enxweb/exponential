@@ -3,7 +3,7 @@ title: Smarty und die Template-Sprache nebeneinander
 audience: developer, designer, app-creator
 category: templates
 order: 30
-summary: Eine Tabelle, die die Syntax von Smarty und die Template-Sprache von Exponential nebeneinanderstellt - Ausgabe, Modifikatoren und Operatoren, Zuweisung, Standardwerte, Bedingungen, Schleifen, Wechsel, include, literal, Begrenzer, Kommentare, capture, Maskierung, Daten, Caching und Vererbung - mit jedem Beispiel der Template-Sprache auf alpha gerendert.
+summary: Eine Tabelle, die die Syntax von Smarty und die Template-Sprache von Exponential nebeneinanderstellt - Ausgabe, Modifikatoren und Operatoren, Zuweisung, Standardwerte, Bedingungen, Schleifen, Wechsel, include, literal, Begrenzer, Kommentare, capture, Maskierung, Daten, Caching und Vererbung - mit jedem Beispiel der Template-Sprache auf einer Entwicklungsinstallation gerendert.
 keywords: Smarty, Vergleich, nebeneinander, Syntax, Modifikatoren, Operatoren, Zuweisung, assign, def, capture, set-block, cycle, sequence, include, literal, ldelim, escape, wash, date_format, datetime, comparison, side by side, modifiers
 type: help
 ---
@@ -12,7 +12,7 @@ type: help
 Wenn Sie Smarty kennen, können Sie die meisten Templates von Exponential sofort lesen: Die geschweiften Klammern, das `$`, die Pipe und die
 Block-Tags folgen derselben Idee. Die Einzelheiten unterscheiden sich, und an den Einzelheiten scheitert ein Template. Diese Seite stellt beide
 nebeneinander. Die Spalte zu Smarty dient nur dem Vergleich und wurde hier nicht ausgeführt; jedes Beispiel der Template-Sprache wurde auf
-alpha gerendert.
+einer Entwicklungsinstallation gerendert.
 
 ## Inhalt
 
@@ -72,7 +72,7 @@ Doppelpunkten:
 [{'<b>bold</b> & more'|wash}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [  The Exponential template language  ]
@@ -97,7 +97,7 @@ Nickname: {first_set( $nickname, 'none given' )}
 Greeting: {cond( $visits|gt( 3 ), 'welcome back', 'hello' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Ada has visited 4 times.
@@ -119,7 +119,7 @@ Greeting: welcome back
 {for 1 to 3 as $i}[{$i}]{/for}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 2 items<li class="odd">a: apple</li><li class="even">b: banana</li><li class="odd">c: cherry</li>[1][2][3]
@@ -146,7 +146,7 @@ und das Template, das sie einbindet, mit einem literal-Block, den beiden Begrenz
 {ldelim}not a tag{rdelim}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <p>Hello, designer!</p>
@@ -164,7 +164,7 @@ Operatoren arbeiten können:
 Captured {$badge|count_chars} characters: {$badge}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Captured 30 characters: <span class="badge">NEW</span>
@@ -182,7 +182,7 @@ Short date: {$node.object.published|l10n( 'shortdate' )}
 Fields: {$node.data_map|count}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Published: 2023-01-25

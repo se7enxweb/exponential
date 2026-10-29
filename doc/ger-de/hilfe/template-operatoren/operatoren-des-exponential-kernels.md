@@ -3,7 +3,7 @@ title: Operatoren für Installation, Umgebung, Audit und CSP
 audience: developer, designer, app-creator
 category: development
 order: 370
-summary: Sieben Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce und view_parameter - mit den Einstellungen, die sie lesen, ihren Rückgabewerten, der Caching-Regel für csp_nonce und Beispielen, die auf alpha gerendert wurden.
+summary: Sieben Operatoren, die der Exponential-Kernel hinzugefügt hat - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce und view_parameter - mit den Einstellungen, die sie lesen, ihren Rückgabewerten, der Caching-Regel für csp_nonce und Beispielen, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, view_parameter, View-Parameter, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, Nonce, Audit, Installationsname, Produktivsystem, Umgebung, Umgebungsabzeichen, environment, badge
 type: help
 ---
@@ -147,7 +147,7 @@ Auf dem Siteaccess `site`, der keinen Installationsnamen, kein `EXP_ENV` und kei
 6 audit_label: {'content.node.move'|audit_label} / {'no.such.event'|audit_label}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 installation_name: []
@@ -158,7 +158,7 @@ Ausgabe auf alpha:
 6 audit_label: Node move / Such event
 ```
 
-Auf dem Siteaccess `admin`, dessen Policy eine Nonce enthält (auf alpha ist keine Abzeichenstufe gesetzt):
+Auf dem Siteaccess `admin`, dessen Policy eine Nonce enthält (auf einer Entwicklungsinstallation ist keine Abzeichenstufe gesetzt):
 
 ```tpl
 {def $badge = exp_environment_badge()}
@@ -166,7 +166,7 @@ level=[{$badge.level}] name=[{$badge.name}] short=[{$badge.short}] display={$bad
 csp_nonce on admin: length {csp_nonce()|count_chars}, same on the second call: {eq( csp_nonce(), csp_nonce() )|choose( 'no', 'yes' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 level=[] name=[] short=[] display= title=no

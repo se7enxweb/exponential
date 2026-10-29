@@ -3,7 +3,7 @@ title: Bild-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 270
-summary: texttoimage, image und imagefile aus eZTemplateImageOperator - Text mit einer TrueType-Schrift aus texttoimage.ini als Bild rendern, Ebenen zusammensetzen und die Größe einer Bilddatei lesen - welche davon Dateien unter var/cache/texttoimage schreiben, und Beispiele von alpha.
+summary: texttoimage, image und imagefile aus eZTemplateImageOperator - Text mit einer TrueType-Schrift aus texttoimage.ini als Bild rendern, Ebenen zusammensetzen und die Größe einer Bilddatei lesen - welche davon Dateien unter var/cache/texttoimage schreiben, und Beispiele einer Entwicklungsinstallation.
 keywords: texttoimage, image, imagefile, GD, Schrift, Schriftart, Bild, Ebene, font, texttoimage.ini, eZImageLayer, eZImageTextLayer, eZImageObject, eZTemplateImageOperator
 type: help
 ---
@@ -35,7 +35,7 @@ ausgegeben wird und die Attribute `filepath`, `filename`, `width`, `height`, `al
 
 `settings/texttoimage.ini` enthält die Pfade und die Schriftklassen:
 
-| Einstellung | Wert auf alpha | Bedeutung |
+| Einstellung | Wert auf einer Entwicklungsinstallation | Bedeutung |
 |---|---|---|
 | `[ImageSettings] UseCache` | `enabled` | ein bereits mit demselben Text und denselben Einstellungen gerendertes Bild wiederverwenden |
 | `[PathSettings] FontDir[]` | `design/standard/fonts` | wo nach den `.ttf`-Schriften gesucht wird |
@@ -67,7 +67,7 @@ Eingabe: der Text, über die Pipe. Gibt ein `eZImageTextLayer` zurück. Wird die
 Operator nichts zurück; kann die Schrift nicht geöffnet werden, protokolliert er "Could not open font". Generierte
 Referenz: [texttoimage](../../beispiele/template-operatoren/texttoimage.md).
 
-**Er schreibt Dateien.** Das folgende Template wurde beim Vorbereiten dieser Seite einmal auf alpha gerendert und hat
+**Er schreibt Dateien.** Das folgende Template wurde beim Vorbereiten dieser Seite einmal auf einer Entwicklungsinstallation gerendert und hat
 das Verzeichnis `var/cache/texttoimage/imagetext/` mit der PNG-Datei angelegt (ein Cache-Verzeichnis: Es kann geleert
 werden, und das Bild wird bei der nächsten Anfrage neu erzeugt):
 
@@ -75,7 +75,7 @@ werden, und das Bild wird bei der nächsten Anfrage neu erzeugt):
 {'Fit & Healthy'|texttoimage( '1942' )}
 ```
 
-Seine Ausgabe auf alpha:
+Seine Ausgabe:
 
 ```text
 
@@ -102,14 +102,14 @@ geschrieben (mit `UseCache` wiederverwendet).
 
 Eingabe: keine. Gibt ein `eZImageObject` zurück. Generierte Referenz: [image](../../beispiele/template-operatoren/image.md).
 
-**Er schreibt Dateien**, wie `texttoimage`. Dieses Template, ebenfalls einmal auf alpha gerendert, hat
+**Er schreibt Dateien**, wie `texttoimage`. Dieses Template, ebenfalls einmal auf einer Entwicklungsinstallation gerendert, hat
 `var/cache/texttoimage/imageobject/` angelegt:
 
 ```tpl
 {image( array( 'Fit & Healthy'|texttoimage( '1942' ), hash( 'halign', 'center', 'valign', 'center' ) ), 'Fit and Healthy' )}
 ```
 
-Seine Ausgabe auf alpha:
+Seine Ausgabe:
 
 ```text
 
@@ -140,7 +140,7 @@ size: {$img.width} x {$img.height} (has_size: {$img.has_size|choose( 'no', 'yes'
 alternative_text: {$img.alternative_text}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 filepath: design/standard/images
@@ -149,7 +149,7 @@ size: 16 x 16 (has_size: yes)
 alternative_text: add
 ```
 
-Das Beispiel für `imagefile` lieferte kompiliert auf alpha dieselbe Ausgabe. Die beiden schreibenden Beispiele wurden
+Das Beispiel für `imagefile` lieferte kompiliert auf einer Entwicklungsinstallation dieselbe Ausgabe. Die beiden schreibenden Beispiele wurden
 kein zweites Mal ausgeführt, weder interpretiert noch kompiliert.
 
 ## Verwandte Seiten

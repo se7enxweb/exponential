@@ -3,7 +3,7 @@ title: Operatoren von Layouts, expui und expai
 audience: developer, designer, app-creator
 category: development
 order: 460
-summary: Die Template-Operatoren der Exponential-Layout-Erweiterungen (expl_parse, expl_strip, expl_has, expl_first, explayouts_ui_has_template), von expui (exp_config) und von expai (expai_money, expai_tokens, expai_number, expai_retention, expai_json), mit Parametern, Rückgabewerten, Maskierung und Beispielen, auf alpha gerendert, die von expai auf dem Siteaccess admin.
+summary: Die Template-Operatoren der Exponential-Layout-Erweiterungen (expl_parse, expl_strip, expl_has, expl_first, explayouts_ui_has_template), von expui (exp_config) und von expai (expai_money, expai_tokens, expai_number, expai_retention, expai_json), mit Parametern, Rückgabewerten, Maskierung und Beispielen, auf einer Entwicklungsinstallation gerendert, die von expai auf dem Siteaccess admin.
 keywords: Blockmarkierungen, Layouts, Konfigurationsblock, KI-Nutzung, Maskierung, explayouts, expl_parse, expl_strip, expl_has, expl_first, explblock, explayouts_ui_has_template, expui, exp_config, expai, expai_money, expai_tokens, expai_number, expai_retention, expai_json
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 Drei Familien von Exponential-Erweiterungen bringen eigene Operatoren mit. Jeder existiert nur dort, wo seine Erweiterung
 aktiv ist: explayouts, explayouts_ui und expui auf den Websites und in der Administration, expai nur auf den
-Administrations-Siteaccesses von alpha (seine Operatoren sind auf `site` nicht registriert).
+Administrations-Siteaccesses einer Entwicklungsinstallation (seine Operatoren sind auf `site` nicht registriert).
 
 | Erweiterung | Klasse und Datei | Operatoren |
 |---|---|---|
@@ -81,7 +81,7 @@ Layouts-Oberfläche verwendet den Operator, um optionale Teile nur dann einzubin
 6 explayouts_ui_has_template: {explayouts_ui_has_template( 'pagelayout.tpl' )|choose( 'no', 'yes' )} / {explayouts_ui_has_template( 'no/such/template.tpl' )|choose( 'no', 'yes' )} / {explayouts_ui_has_template( '../settings/site.ini' )|choose( 'no', 'yes' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 expl_parse blocks: title (1), lead (1)
@@ -115,7 +115,7 @@ starts: {$script|extract_left( 48 )|wash}
 ends:   {$script|extract_right( 9 )|wash}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 starts: &lt;script type=&quot;application/json&quot; data-exp-config&gt;
@@ -158,7 +158,7 @@ sich nicht kodieren lässt, ergibt `null` und eine Warnung im Debug-Log.
 5 expai_json: {hash( 'text', '</script><b>"x"</b>', 'n', 3 )|expai_json}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 expai_money: $0.06 / < $0.01 / ≈$0.06

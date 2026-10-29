@@ -3,7 +3,7 @@ title: Die Operatoren fetch und fetch_alias
 audience: developer, designer, app-creator
 category: development
 order: 250
-summary: fetch und fetch_alias aus eZTemplateExecuteOperator - wie ein Template über eZFunctionHandler und eZModuleFunctionInfo die function_definition.php eines Moduls erreicht, Parameter, Ergebnisse und Fehlschläge, was der Compiler mit einem konstanten fetch macht, mit Beispielen, die auf alpha ausgegeben wurden.
+summary: fetch und fetch_alias aus eZTemplateExecuteOperator - wie ein Template über eZFunctionHandler und eZModuleFunctionInfo die function_definition.php eines Moduls erreicht, Parameter, Ergebnisse und Fehlschläge, was der Compiler mit einem konstanten fetch macht, mit Beispielen, die auf einer Entwicklungsinstallation ausgegeben wurden.
 keywords: fetch, fetch_alias, Fetch-Funktion, Fetch-Alias, Daten lesen, Modul, function_definition.php, eZFunctionHandler, eZModuleFunctionInfo, function collection, fetchalias.ini, eZTemplateExecuteOperator, fetch function
 type: help
 ---
@@ -40,7 +40,7 @@ Ruft eine Funktion eines Moduls auf und gibt ihr Ergebnis zurück.
 Eingabe: keine. Gibt zurück, was die Funktion in den Schlüssel `result` ihrer Antwort legt: ein Objekt, eine Liste,
 eine Zahl, oder `null`, wenn der Aufruf fehlschlägt. Generierte Referenz: [fetch](../../beispiele/template-operatoren/fetch.md).
 
-Die Kategorie Recipes auf alpha (Knoten 144) und ihre Unterknoten:
+Die Kategorie Recipes auf einer Entwicklungsinstallation (Knoten 144) und ihre Unterknoten:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 144 ) )
@@ -56,7 +56,7 @@ Die Kategorie Recipes auf alpha (Knoten 144) und ihre Unterknoten:
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Recipes (node 144, class ng_category) has 18 children; the first three by name:
@@ -75,7 +75,7 @@ Current user in this CLI run: {$user.login|wash} (logged in: {$user.is_logged_in
 Classes: {foreach $classes as $c}{$c.identifier} {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Current user in this CLI run: anonymous (logged in: no)
@@ -89,7 +89,7 @@ Der Parameter-Hash kann eine vorher gebaute Variable sein:
 {foreach fetch( 'content', 'list', $params ) as $k}{$k.name|wash}; {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Zucchini Zoodles with Ground Turkey Tomato Sauce; Vibrant Guacamole;
@@ -121,7 +121,7 @@ children_count: {$n}
 children: {foreach $kids as $k}{$k.name|wash}; {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 children_count: 18
@@ -158,7 +158,7 @@ unknown function: [{fetch( 'content', 'no_such_function' )|is_null|choose( 'not 
 missing parameter: [{fetch( 'content', 'node' )|is_null|choose( 'not null', 'null' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 unknown module: [null]
@@ -176,7 +176,7 @@ Kompilieren auf und schreibt Code, der die Methode der Function Collection direk
 deklarierten Reihenfolge, statt zur Laufzeit über `eZFunctionHandler` zu gehen. Der Methodenaufruf ist abgesichert:
 Kann der laufende Prozess die Klasse oder Methode nicht laden, ist das Ergebnis `null`, und ein Fehler wird in die
 Debug-Ausgabe geschrieben. Ein fetch mit variablem Modul- oder Funktionsnamen bleibt ein Aufruf zur Laufzeit. Alle
-Beispiele auf dieser Seite ergaben auf alpha interpretiert und kompiliert dieselbe Ausgabe.
+Beispiele auf dieser Seite ergaben auf einer Entwicklungsinstallation interpretiert und kompiliert dieselbe Ausgabe.
 
 ## Verwandte Seiten
 

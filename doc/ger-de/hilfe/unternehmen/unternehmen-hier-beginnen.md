@@ -21,8 +21,8 @@ was ein Unternehmen bekommt und was es tun muss, und verweist dann auf die techn
 Arbeit machen: einen Entwickler, einen Hoster oder einen Partner.
 
 > **Hinweis**
-> Jede Tatsache in diesem Bereich stammt aus dem Exponential-Repository, aus der Live-Demonstrationsinstallation unter
-> <https://alpha.se7enx.com> oder von <https://exponential.earth>, und die Seite, aus der sie stammt, ist verlinkt.
+> Jede Tatsache in diesem Bereich stammt aus dem Exponential-Repository, aus einer Live-Demonstrationsinstallation
+> oder von <https://exponential.earth>, und die Seite, aus der sie stammt, ist verlinkt.
 > Der Bereich nennt keine Kunden und zitiert keine Marktstatistiken. Wo eine Seite Kosten berechnet, ist jede Eingabe
 > als Beispielannahme gekennzeichnet, die Sie durch Ihre eigenen Zahlen ersetzen.
 

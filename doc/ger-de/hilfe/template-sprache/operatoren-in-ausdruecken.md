@@ -41,7 +41,7 @@ nichts. `sum` addiert die Eingabe zu seinen Parametern, wenn es eine gibt. `conc
 [{'a'|concat( 'b', 'c' )}] [{concat( 'a', 'b', 'c' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [ABC] []
@@ -56,7 +56,7 @@ wäre:
 [{'ignored'|sum( 1, 2 )}] [{5|sum( 1, 2 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [3] [8]
@@ -74,7 +74,7 @@ Jedes `|` gibt das Ergebnis des vorigen Operators an den nächsten weiter, von l
 [{array( 3, 1, 2 )|count|mul( 10 )|sum( 5 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [Hello tem...]
@@ -93,7 +93,7 @@ werden so gebaut, weil es keine Operatoren in Infixschreibweise gibt:
 [{cond( $a|gt( $b ), 'a wins', 'b wins' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [sum=6, product=8]
@@ -111,7 +111,7 @@ Ein Punkt oder eckige Klammern können auf einen Operatoraufruf folgen. Das Attr
 [{array( 'x', 'y', 'z' )|reverse.0}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [Fit & Healthy]
@@ -128,7 +128,7 @@ Parameter von Funktionen sind ebenfalls Ausdrücke; ein Operator kann also das A
 {def $label = concat( 'Item ', 3|inc )}[{$label}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 CAB[Item 4]
@@ -141,7 +141,7 @@ Operator namens `if` gesucht, den es nicht gibt:
 [{concat( 'a', if( true() ) )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [a]
@@ -177,7 +177,7 @@ gerendert, was Tippfehler verbirgt:
 [{'kept as it is'|nosuchoperator( 1 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [kept as it is]
@@ -196,7 +196,7 @@ Parameter; ohne sie wird der Zeitstempel unformatiert ausgegeben, und zwei Meldu
 [{1674667522|datetime}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1674667522]

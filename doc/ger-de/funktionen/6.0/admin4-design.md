@@ -1014,7 +1014,7 @@ Die Fetch-Funktion `fetch( 'content', 'language_states', hash( 'object', $object
 `state_main_name`, optional `state_object_id`, `state_href`, `state_current`). Bei erzwungenen Farben werden Füllung
 und Punkt in Systemfarben gezeichnet. `tests/tests/design/AdminLanguageStatesTest.php`.
 
-Aufwand, gemessen auf alpha mit einem Ordner von 50 Artikeln: Die Anfrage der Unterelemente (`ezjscnode::subtree`,
+Aufwand, gemessen auf einer Entwicklungsinstallation mit einem Ordner von 50 Artikeln: Die Anfrage der Unterelemente (`ezjscnode::subtree`,
 50 Zeilen) braucht vor und nach den Zuständen gleich viele Abfragen (357 für 50 Zeilen, 42 für 5, beide Male gleich:
 je Zeile kommt nichts hinzu); die Knotenansicht ergänzt die eine gruppierte Abfrage von `lastEdited()`, die der
 SQL-Abfrage-Cache bei der

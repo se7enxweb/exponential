@@ -53,7 +53,7 @@ Jede Art in einem Template:
 text | {$who} | {'literal string'} | {42} | {$who|upcase} | {concat( 'a', 'b' )} | {if true()}block{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 text | world | literal string | 42 | WORLD | ab | block
@@ -71,7 +71,7 @@ line 1
 line 3 {* inline *} still line 3
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 line 1
@@ -96,7 +96,7 @@ die Zeichenkette abgeschnitten, das Tag endet zu früh und der Rest wird als Tex
 [{'a}b'}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [a}b]
@@ -120,7 +120,7 @@ C
 D
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ABC
@@ -143,7 +143,7 @@ B
 C
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 A
@@ -166,7 +166,7 @@ die Variable behält ihren Wert:
 {def $n = 1}[{set $n = 2 /}{$n}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1]
@@ -186,7 +186,7 @@ etwa `include`:
 [{include uri='file:var/tmp/examples/tl-smarty/parts/greeting.tpl' who='single tag' /}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [<p>Hello, single tag!</p>
@@ -202,7 +202,7 @@ first line
 second {$broken
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 first line
@@ -230,7 +230,7 @@ geht mit ihm verloren:
 [before {nosuchfunction param=1} after]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [before

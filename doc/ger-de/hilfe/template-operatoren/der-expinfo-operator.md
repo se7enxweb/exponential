@@ -3,7 +3,7 @@ title: Der Operator expinfo
 audience: developer, designer, app-creator
 category: development
 order: 280
-summary: expinfo aus eZTemplateExpInfoOperator - die aktiven Erweiterungen, alle verfügbaren Erweiterungen, die Metadaten einer Erweiterung aus extension.xml und ezinfo.php und die Kernel-Informationen, welche Schlüssel jeder Modus zurückgibt und welche Kernel-Werte nie auf einer öffentlichen Seite ausgegeben werden dürfen; Beispiele, die auf alpha gerendert wurden.
+summary: expinfo aus eZTemplateExpInfoOperator - die aktiven Erweiterungen, alle verfügbaren Erweiterungen, die Metadaten einer Erweiterung aus extension.xml und ezinfo.php und die Kernel-Informationen, welche Schlüssel jeder Modus zurückgibt und welche Kernel-Werte nie auf einer öffentlichen Seite ausgegeben werden dürfen; Beispiele, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: expinfo, Erweiterungsinformationen, Erweiterungen, Kernel-Informationen, Version, extension info, ezinfo.php, extension.xml, expInfo, kernel info, version, eZTemplateExpInfoOperator
 type: help
 ---
@@ -56,7 +56,7 @@ ezjscore {$ext.version}, license: {$ext.license|wash}, active: {$ext.active|choo
 expinfo( 'no_such_extension' ) = [{expinfo( 'no_such_extension' )|choose( 'false', 'true' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 keys: name, version, copyright, license, info_url, Includes the following third-party software, Includes the following third-party software (2), Includes the following third-party software (3), mtime, mtime_formatted, extension_name, description, summary, author, meta, active
@@ -79,7 +79,7 @@ expinfo() returns {$active|count} active extensions; expinfo( 'all' ) returns {$
 'ezjscore'|expinfo works too: {$piped.name|wash}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 expinfo() returns 62 active extensions; expinfo( 'all' ) returns 87, of which 25 are not active.
@@ -103,7 +103,7 @@ version keys: {foreach $k.version as $key => $value}{$key}{delimiter}, {/delimit
 PHP sapi in this run: {$k.php.sapi}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 sections: version, php, memory, server, database, ini, user, extensions, cache, filesystem, timestamps, git, composer
@@ -118,7 +118,7 @@ wird durch `***` ersetzt), und `git` und `composer` den Zustand des Checkouts. *
 einer Seite aus, die Besucher sehen können**; sie sind für Verwaltungsseiten hinter einer Anmeldung bestimmt. Die
 Beispiele auf dieser Seite geben nur Abschnitts- und Schlüsselnamen sowie die PHP-SAPI des Kommandozeilenlaufs aus.
 
-Alle Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe.
+Alle Beispiele lieferten auf einer Entwicklungsinstallation interpretiert und kompiliert dieselbe Ausgabe.
 
 ## Verwandte Seiten
 

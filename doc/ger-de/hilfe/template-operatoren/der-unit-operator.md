@@ -3,7 +3,7 @@ title: Der Einheitenoperator si
 audience: developer, designer, app-creator
 category: development
 order: 240
-summary: si aus eZTemplateUnitOperator - eine Zahl mit einer Einheit und einem dezimalen oder binären Präfix formatieren (Dateigrößen, Längen, Gewichte) anhand von units.ini, mit jedem Parameter, der Regel für das Präfix auto und Beispielen, die auf alpha gerendert wurden.
+summary: si aus eZTemplateUnitOperator - eine Zahl mit einer Einheit und einem dezimalen oder binären Präfix formatieren (Dateigrößen, Längen, Gewichte) anhand von units.ini, mit jedem Parameter, der Regel für das Präfix auto und Beispielen, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: si, Einheit, Dateigröße, Bytes, Präfix, Binärpräfix, unit, file size, bytes, kB, MB, prefix, kibi, units.ini, UnitSettings, BinaryUnits, UseSIUnits, eZTemplateUnitOperator
 type: help
 ---
@@ -42,13 +42,13 @@ Präfix protokolliert "Prefix ... not found". Generierte Referenz: [si](../../be
 `[Base]` in `units.ini` ordnet Einheitennamen Symbole zu: `meter` m, `gram` g, `second` s, `ampere` A, `kelvin` K,
 `mole` mol, `candela` cd, `byte` B und `bit` b.
 
-Das Präfix `auto` wählt `binary` für die Einheiten in `[UnitSettings] BinaryUnits` (`byte;bit` auf alpha) und
+Das Präfix `auto` wählt `binary` für die Einheiten in `[UnitSettings] BinaryUnits` (`byte;bit` auf einer Entwicklungsinstallation) und
 `decimal` für alle anderen. Danach gilt:
 
 - **decimal** verwendet `[DecimalPrefixes]` (Zehnerpotenzen von yocto bis yotta, **einschließlich hecto und deca**) und
   nimmt das größte Präfix, das nicht größer als die Zahl ist. Deshalb ergibt `150|si( 'meter' )` den Wert `1.50 hm`:
   Nennen Sie ein Präfix, wenn Sie ein vertrautes wollen.
-- **binary** verwendet Zweierpotenzen. Mit `[UnitSettings] UseSIUnits=false`, wie auf alpha, verwendet es
+- **binary** verwendet Zweierpotenzen. Mit `[UnitSettings] UseSIUnits=false`, wie auf einer Entwicklungsinstallation, verwendet es
   `[FakeBinaryPrefixes]`, die durch 1024 teilen, aber die vertrauten `k`, `M`, `G` ausgeben; mit `true` verwendet es
   `[BinaryPrefixes]` und gibt `Ki`, `Mi`, `Gi` aus.
 - Zahlen, deren Betrag kleiner als 10 ist, erhalten kein Präfix und werden so ausgegeben, wie sie sind.
@@ -71,7 +71,7 @@ Dateigrößen:
 5242880|si( 'byte', 'auto', 1 ) = {5242880|si( 'byte', 'auto', 1 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 5|si( 'byte' ) = 5 B
@@ -93,7 +93,7 @@ Dezimale Einheiten, ein festes Präfix und ein eigenes Dezimalzeichen:
 -2000|si( 'second' ) = {-2000|si( 'second' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1500|si( 'meter' ) = 1.50 km
@@ -109,7 +109,7 @@ Eine unbekannte Einheit:
 [{100|si( 'furlong' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [100]
@@ -121,7 +121,7 @@ Von der Template-Engine protokolliert:
 WARNING eZTemplateUnitOperator: No such unit 'furlong'
 ```
 
-Die Beispiele lieferten auf alpha interpretiert und kompiliert dieselbe Ausgabe.
+Die Beispiele lieferten auf einer Entwicklungsinstallation interpretiert und kompiliert dieselbe Ausgabe.
 
 ## Verwandte Seiten
 

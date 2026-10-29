@@ -3,14 +3,14 @@ title: Operatoren von eztags und ezstarrating
 audience: developer, designer, app-creator
 category: development
 order: 420
-summary: Die fünf Operatoren der Erweiterung eztags (eztagscloud, latest_tags, eztags_parent_string, tag_icon, user_limitations) und die drei von ezstarrating (fetch_starrating_stats, fetch_starrating_data, fetch_by_starrating), mit Parametern, der Form der Rückgabewerte, dem Solr-Weg der Tag-Wolke, einem zu vermeidenden Absturz und Beispielen, die auf alpha ausgegeben wurden.
+summary: Die fünf Operatoren der Erweiterung eztags (eztagscloud, latest_tags, eztags_parent_string, tag_icon, user_limitations) und die drei von ezstarrating (fetch_starrating_stats, fetch_starrating_data, fetch_by_starrating), mit Parametern, der Form der Rückgabewerte, dem Solr-Weg der Tag-Wolke, einem zu vermeidenden Absturz und Beispielen, die auf einer Entwicklungsinstallation ausgegeben wurden.
 keywords: eztags, Tags, Tag-Wolke, Schlagwörter, Bewertung, Sternebewertung, eztagscloud, latest_tags, eztags_parent_string, tag_icon, user_limitations, ezstarrating, fetch_starrating_stats, fetch_starrating_data, fetch_by_starrating, tag cloud, rating
 type: help
 ---
 # Operatoren von eztags und ezstarrating
 
 Zwei Erweiterungen, jede mit ihrer eigenen `autoloads/eztemplateautoload.php`; die Operatoren gibt es nur, solange die
-Erweiterung aktiv ist (auf alpha stehen beide in `ActiveExtensions[]`).
+Erweiterung aktiv ist (auf einer Entwicklungsinstallation stehen beide in `ActiveExtensions[]`).
 
 | Erweiterung | Klasse und Datei | Operatoren |
 |---|---|---|
@@ -49,7 +49,7 @@ häufigsten verwendeten Tags unterhalb von Knoten 89, danach nach Schlagwort sor
 {eztagscloud( hash( 'parent_node_id', 89, 'sort_by', array( 'count', false() ), 'limit', 5, 'post_sort_by', 'keyword' ) )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
     <a href="/tags/view/Topics/Eating" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="118.75" title="27 objects tagged with 'Eating'">Eating</a>    <a href="/tags/view/Topics/HIIT" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="100" title="21 objects tagged with 'HIIT'">HIIT</a>    <a href="/tags/view/Topics/Health" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="200" title="53 objects tagged with 'Health'">Health</a>    <a href="/tags/view/Topics/Running" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="109.375" title="24 objects tagged with 'Running'">Running</a>    <a href="/tags/view/Topics/Workout" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="146.875" title="36 objects tagged with 'Workout'">Workout</a>
@@ -84,7 +84,7 @@ Ausgabe auf alpha:
 
 - **Eingabe:** der Dateiname des Icons. **Rückgabe:** die Adresse von `tag_icons/<size>/<icon>` in den Bildern des
   Designs, über `eZURLOperator::eZImage()`. Mit der Pipe ist `first` die Größe (Standard `small`).
-- Ohne Eingabe liest der Code `first` als Icon und `second` als Größe. Auf alpha endete die Funktionsform
+- Ohne Eingabe liest der Code `first` als Icon und `second` als Größe. Auf einer Entwicklungsinstallation endete die Funktionsform
   `tag_icon( 'people.png' )` mit einem PHP-Fehler („Call to a member function warning() on null“): Der Operator ruft
   `eZImage()` ohne Template-Objekt auf, und die Suche, die er dabei ausführte, schlug fehl. Verwenden Sie die Form mit
   der Pipe, hier im Siteaccess `admin` ausgegeben:
@@ -94,7 +94,7 @@ Ausgabe auf alpha:
 2 {'places.png'|tag_icon( 'normal' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 /extension/eztags/design/standard/images/tag_icons/small/people.png
@@ -124,7 +124,7 @@ Ausgabe auf alpha:
 4 user_limitations tags/read: accessWord={$access.accessWord} simplified={$access.simplifiedLimitations|count}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 latest_tags: Starter (id 243), Angebote (id 244), Urlaub (id 245)
@@ -170,7 +170,7 @@ Ausgabe auf alpha:
   `owner_parent_node_path`, `group_by_owner`, `class_filter_type` und `class_filter_array`, `include_not_rated`,
   `main_node_only`, `ignore_visibility`, `load_data_map`, `as_object`, `limit`, `offset`, `sort_by`.
 
-Auf alpha wurde noch kein Inhalt bewertet, daher gibt nur `include_not_rated` Knoten zurück:
+Auf einer Entwicklungsinstallation wurde noch kein Inhalt bewertet, daher gibt nur `include_not_rated` Knoten zurück:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 90 ) )
@@ -182,7 +182,7 @@ Auf alpha wurde noch kein Inhalt bewertet, daher gibt nur `include_not_rated` Kn
 4 with include_not_rated: {foreach fetch_by_starrating( hash( 'parent_node_id', 89, 'limit', 3, 'include_not_rated', true() ) ) as $n}{$n.name|wash}{delimiter}, {/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 stats for an object without ratings: array[1], first row: rating_count=[] rating_average=[] 

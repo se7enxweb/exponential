@@ -3,7 +3,7 @@ title: Newsletter-Operatoren von cjw_newsletter
 audience: developer, designer, app-creator
 category: development
 order: 450
-summary: Die dreizehn Template-Operatoren der Erweiterung cjw_newsletter - drei allgemeine (cjw_newsletter_str_replace, cjw_newsletter_preg_replace, cjw_newsletter_variable) und zehn Operatoren für die Ausgabe (Bedingungen, Umwandlung in Klartext und Rich Text, Interessenblock, absolute URLs, Unterstreichen, Umbrechen, Ausgabedaten) - mit Parametern, Rückgabewerten, wann die Bedingungsmarken erscheinen, und Beispielen, die auf alpha ausgegeben wurden.
+summary: Die dreizehn Template-Operatoren der Erweiterung cjw_newsletter - drei allgemeine (cjw_newsletter_str_replace, cjw_newsletter_preg_replace, cjw_newsletter_variable) und zehn Operatoren für die Ausgabe (Bedingungen, Umwandlung in Klartext und Rich Text, Interessenblock, absolute URLs, Unterstreichen, Umbrechen, Ausgabedaten) - mit Parametern, Rückgabewerten, wann die Bedingungsmarken erscheinen, und Beispielen, die auf einer Entwicklungsinstallation ausgegeben wurden.
 keywords: cjw_newsletter, Newsletter, Newsletter-Operatoren, Klartext, Bedingungen, Interessen, absolute URL, Textumbruch, cjw_newsletter_str_replace, cjw_newsletter_preg_replace, cjw_newsletter_variable, cjwnl_condition_open, cjwnl_condition_else, cjwnl_condition_close, cjwnl_plaintext, cjwnl_richtext, cjwnl_interests_block, cjwnl_abs_url, cjwnl_text_underline, cjwnl_text_wrap, cjwnl_rendering_data, newsletter operators, plain text
 type: help
 ---
@@ -102,7 +102,7 @@ werden unverändert zurückgegeben.
 8 cjwnl_plaintext of node 90 body: {$node.data_map.body|cjwnl_plaintext|extract_left( 160 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 
@@ -115,7 +115,7 @@ Ausgabe auf alpha:
 5 cjwnl_text_wrap 30: Exponential sends newsletters
 as HTML and as plain text,
 wrapped for mail clients.
-6 cjwnl_abs_url: http://alpha.se7enx.com/privacy-policy / mailto:info@example.com
+6 cjwnl_abs_url: http://www.example.com/privacy-policy / mailto:info@example.com
 7 cjwnl_richtext text: Hello *world*
 
 - one
@@ -196,7 +196,7 @@ ergeben `false`.
 7 subscription statuses: {foreach cjw_newsletter_variable( 'available_subscription_status_id_name_array' ) as $id => $name}{$id}={$name}{delimiter}, {/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 condition: AB

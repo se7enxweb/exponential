@@ -3,7 +3,7 @@ title: Sections und foreach
 audience: developer, designer, app-creator
 category: templates
 order: 140
-summary: Die Funktion section vollständig - Schleifen über Arrays, Zahlen und Zeichenketten, name und der Namensraum, den sie anlegt, var und der Iterator mit last-value, sequence, offset, max, reverse, show mit section-else, die Filter section-exclude und section-include und delimiter mit modulo - jede neben ihrer Entsprechung mit foreach, for oder if, alles auf alpha gerendert, plus der eine gefundene Unterschied im kompilierten Modus.
+summary: Die Funktion section vollständig - Schleifen über Arrays, Zahlen und Zeichenketten, name und der Namensraum, den sie anlegt, var und der Iterator mit last-value, sequence, offset, max, reverse, show mit section-else, die Filter section-exclude und section-include und delimiter mit modulo - jede neben ihrer Entsprechung mit foreach, for oder if, alles auf einer Entwicklungsinstallation gerendert, plus der eine gefundene Unterschied im kompilierten Modus.
 keywords: section, foreach, veraltet, Schleife, show, section-else, section-exclude, section-include, var, last-value, sequence, offset, max, reverse, delimiter, modulo, Namensraum, umstellen, Migration, legacy, loop, namespace, convert, migration
 type: help
 ---
@@ -55,7 +55,7 @@ aktuellen Namensraum als `$item`, `$key` und so weiter und werden nach der Schle
 {section name=Loop loop=array( 'a', 'b', 'c' ) sequence=array( 'odd', 'even' )}[{$Loop:item}/{$Loop:key}/{$Loop:index}/{$Loop:number}/{$Loop:sequence}]{delimiter},{/delimiter}{/section}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [a/0/0/1/odd],[b/1/1/2/even],[c/2/2/3/odd]
@@ -67,7 +67,7 @@ Dasselbe mit `foreach`:
 {foreach array( 'a', 'b', 'c' ) as $key => $item sequence array( 'odd', 'even' ) as $seq}[{$item}/{$key}/{$key}/{$key|inc}/{$seq}]{delimiter},{/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [a/0/0/1/odd],[b/1/1/2/even],[c/2/2/3/odd]
@@ -83,7 +83,7 @@ durchlaufen werden. `foreach` kann beides nicht: Nutzen Sie `for`, oder teilen S
 [{for 1 to 3 as $i}{$i}{/for}] [{foreach 'abc'|str_split|reverse as $c}{$c}{/foreach}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [123] [-1-2-3] [cba]
@@ -102,7 +102,7 @@ angewendet wird:
 [{section name=R loop=array( 1, 2, 3 ) reverse=true()}{$R:item}{/section}] [{foreach array( 1, 2, 3 ) as $v reverse}{$v}{/foreach}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [234]
@@ -121,7 +121,7 @@ nach `{section-else}` laufen dann stattdessen. Ohne `loop` ist `section show=...
 [{if $results|count}results{else}nothing found{/if}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [nothing found]
@@ -133,7 +133,7 @@ Ausgabe auf alpha:
 [{section show=$user.name}Hello {$user.name}{/section}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [Hello Ada]
@@ -146,7 +146,7 @@ Ausgabe auf alpha:
 [{section loop=array() show=array()}x{section-else}else part{/section}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []
@@ -165,7 +165,7 @@ nicht für `max` und bekommt keinen Delimiter. Die Form mit `foreach` nutzt `{sk
 [{foreach array( 1, 2, 3, 4, 5, 6 ) as $v}{if $v|mod( 2 )|eq( 0 )}{skip}{/if}{$v}{/foreach}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [135]
@@ -184,7 +184,7 @@ Attribut `last` den Iterator des vorigen Durchlaufs:
 [{section var=it loop=array( 'a', 'b' )}{$it.item}/{$it.key}/{$it.index}/{$it.number} {/section}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [a; b (after a); c (after b); ]
@@ -201,7 +201,7 @@ Delimiter von `section` akzeptiert außerdem `match=<condition>`:
 [{foreach array( 1, 2, 3, 4 ) as $v}{$v}{delimiter modulo=2}|{/delimiter}{/foreach}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [12|34]
@@ -219,14 +219,14 @@ während die Form mit `foreach` auf beide Arten `cba` ergibt:
 [{for 1 to 3 as $i}{$i}{/for}] [{foreach 'abc'|str_split|reverse as $c}{$c}{/foreach}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [123] [-1-2-3] [cba]
 [123] [cba]
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 [123] [-1-2-3] [c]
