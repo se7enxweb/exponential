@@ -23,7 +23,7 @@ requests"** (`README.md`, "Exponential Velocity — the fast option").
 ## Its place in the ecosystem
 
 - "As of 6.0.15 Velocity is part of Exponential itself. `composer.json` requires
-  `se7enxweb/exponential-velocity ~0.0.4.57`, so `composer install` installs the server with the rest of the product"
+  `se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so `composer install` installs the server with the rest of the product"
   (`README.md`).
 - It "is based on the Qbix server and is developed alongside Exponential, so the two are tuned against each other"
   (same).

@@ -145,7 +145,7 @@ test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`) are in
 ## 8.3 Exponential Velocity, the recommended way
 
 **Velocity is part of Exponential as of 6.0.15.** The root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.57`, so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
+`se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later), so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
 has already installed it, on the same PHP as the kernel (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
 included). There is nothing extra to download before the first `exp:velocity start`. This is the turning point of the
 6.0 line: the Internet / Web Application Server is a cornerstone of the core product, so serving, caching, HTTPS and

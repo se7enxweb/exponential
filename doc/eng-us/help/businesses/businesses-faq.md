@@ -43,7 +43,7 @@ Exponential sold to your own customers. Details, and the questions to settle wit
 ## Running it
 
 **What does a server need?**
-PHP 8.0 or later on almost any operating system; a web server (Apache, Nginx and the others, or the bundled
+PHP 8.0 or later (PHP 7.4 usable without support) on almost any operating system; a web server (Apache, Nginx and the others, or the bundled
 Velocity); and a database, where SQLite 3, the default, needs no database server (`README.md`, "Requirements";
 [Requirements at a glance](../hosting/basics/requirements-at-a-glance.md)).
 

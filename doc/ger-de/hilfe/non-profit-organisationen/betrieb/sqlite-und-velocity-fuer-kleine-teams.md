@@ -78,7 +78,7 @@ Was er einem kleinen Team bietet:
 
 - Auf Shared Hosting läuft er meist **nicht** (Vergleichstabelle in `README.md`: „Shared hosting ... usually not“). Er
   passt zu einem kleinen virtuellen Server.
-- PHP 8.0 oder neuer.
+- PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar).
 - Windows kennt kein `fork()`, dort gibt es daher keinen Pool geforkter Worker.
 - Jemand muss ihn beim Hochfahren starten und nach Änderungen neu starten ([Der Webserver Velocity, Grenzen](../../../funktionen/6.0/velocity-webserver.md#grenzen)).
 

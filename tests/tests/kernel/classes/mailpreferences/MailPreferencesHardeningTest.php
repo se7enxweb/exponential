@@ -241,7 +241,7 @@ class MailPreferencesHardeningTest extends PHPUnit\Framework\TestCase
     {
         // in a process of its own: a buffer that cannot be removed stays until the process ends
         $fixture = __DIR__ . '/fixtures/discard_output_worker_buffer.php';
-        $process = proc_open( array( PHP_BINARY, '-n', '-d', 'display_errors=stderr', $fixture ), array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
+        $process = proc_open( array( ...expTestBarePhpCommand(), '-d', 'display_errors=stderr', $fixture ), array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );
         stream_set_blocking( $pipes[1], false );
         $out = '';

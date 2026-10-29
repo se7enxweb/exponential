@@ -27,7 +27,7 @@ einer zu kommen, damit Sie in fünf Minuten den richtigen wählen. Alle sind dok
 | Weg | Braucht | Gut für | Grenzen | Seite |
 |---|---|---|---|---|
 | **Die öffentliche Demo** | Einen Browser | Einen ersten Blick auf die Website und die Administrationsoberfläche | Mit allen geteilt, regelmäßig zurückgesetzt, Administratorpasswörter können nicht geändert werden; kein Terminal | [Die öffentliche Demo ausprobieren](die-oeffentliche-demo-ausprobieren.md) |
-| **Ein Befehl** (`exp:install`) | PHP 8.0 oder neuer, Composer | Jeden Lernpfad; schnell neu aufzubauen | Läuft auf Ihrem Rechner, Sie richten es also selbst ein | [Eine Lernwebsite mit einem Befehl installieren](eine-lernwebsite-mit-einem-befehl-installieren.md) |
+| **Ein Befehl** (`exp:install`) | PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar), Composer | Jeden Lernpfad; schnell neu aufzubauen | Läuft auf Ihrem Rechner, Sie richten es also selbst ein | [Eine Lernwebsite mit einem Befehl installieren](eine-lernwebsite-mit-einem-befehl-installieren.md) |
 | **Der Setup-Assistent** | PHP, Composer, einen Browser | Lernende, die lieber klicken als Befehle eingeben | Langsamer zu wiederholen als ein Befehl | [Mit dem Setup-Assistenten installieren](mit-dem-setup-assistenten-installieren.md) |
 | **Git-Klone** | Das oben Genannte, dazu Git | Den Entwicklerpfad und das Beitragen | Ein größerer Download (der Kernel hat seine vollständige Historie) | [Aus Git-Klonen zum Lernen installieren](aus-git-klonen-zum-lernen-installieren.md) |
 

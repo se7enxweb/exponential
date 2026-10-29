@@ -73,7 +73,7 @@ keep backups away from that machine.
 
 | Question | Why |
 |---|---|
-| Which PHP versions, and can I choose 8.x per site? | PHP 8.0 or later is required |
+| Which PHP versions, and can I choose 8.x per site? | PHP 8.0 or later (PHP 7.4 usable without support) is required |
 | Are `intl`, `mbstring`, `xsl`, `gd` or ImageMagick, `sqlite3` available? | Required or needed extensions ([PHP versions and extensions](../../hosting/basics/php-versions-and-extensions.md)) |
 | Can I run cron every few minutes? | Newsletters, scheduled publishing |
 | Can the site send mail, and from my domain? | Registration, password reset, forms, newsletters |

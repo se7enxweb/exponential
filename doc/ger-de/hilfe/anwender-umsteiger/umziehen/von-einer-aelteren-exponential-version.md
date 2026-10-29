@@ -23,7 +23,7 @@ fortführt. Sie auf 6.0 zu bringen erhält den größten Teil von Inhaltsmodell 
 ## Warum jetzt wechseln
 
 - "5.x, 4.x, 3.x and older" erhalten keine Sicherheitskorrekturen; 6.0 ist die gepflegte Linie (`SECURITY.md`).
-- Exponential unterstützt PHP 8.0 bis 8.5 (`README.md`), die Website kann also auch auf ein unterstütztes PHP wechseln.
+- Exponential unterstützt PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) (`README.md`), die Website kann also auch auf ein unterstütztes PHP wechseln.
 - Nach dem Wechsel keine Lizenzgebühr (`README.md`).
 
 ## Ihr Ausgangspunkt

@@ -44,7 +44,7 @@ verkaufen. Einzelheiten und die Fragen, die Sie mit einem Rechtsberater klären 
 ## Betrieb
 
 **Was braucht ein Server?**
-PHP 8.0 oder neuer auf fast jedem Betriebssystem; einen Webserver (Apache, Nginx und die anderen oder das
+PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) auf fast jedem Betriebssystem; einen Webserver (Apache, Nginx und die anderen oder das
 mitgelieferte Velocity); und eine Datenbank, wobei SQLite 3, die Standardwahl, keinen Datenbankserver braucht
 (`README.md`, „Requirements“; [Anforderungen auf einen Blick](../hosting/grundlagen/anforderungen-auf-einen-blick.md)).
 

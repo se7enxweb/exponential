@@ -28,7 +28,7 @@ Aus [2.1 Die Checkliste](../../../installation/02-voraussetzungen.md#21-die-chec
 
 | Bedarf | Minimum | Empfohlen |
 |---|---|---|
-| PHP | 8.0 | das neueste 8.x, das das System anbietet (8.5 wird unterstützt) |
+| PHP | 8.0 unterstützt (7.4 ohne Support nutzbar; 8.1 für Layouts) | das neueste 8.x, das das System anbietet (8.5 wird unterstützt) |
 | PHP für Velocity | 8.0 mit `sockets` (ab Velocity 0.0.4.54) | zusätzlich `pcntl` und `openssl` |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | |
 | Datenbank | SQLite 3 (kein Server) | in der offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |

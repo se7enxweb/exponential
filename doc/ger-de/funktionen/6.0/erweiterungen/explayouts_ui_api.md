@@ -21,7 +21,7 @@ prüfen Sie das mit `grep Version extension/explayouts_ui_api/ezinfo.php`.
 
 ## Voraussetzungen
 
-- Exponential 6 (PHP 8.1 oder neuer).
+- Exponential 6 (PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar)).
 - Die Schwester-Extensions `explayouts` (Wertobjekte, Tabellen, Layout- und Blocktypen in `explayouts.ini`),
   `explayouts_core` (Dienste) und `ezformtoken` (Formular-Token).
 - Aktivieren Sie sie für den Admin-Siteaccess, nach ihren Abhängigkeiten, und erzeugen Sie dann die Autoloads neu und

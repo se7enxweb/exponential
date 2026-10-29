@@ -26,7 +26,7 @@ training installation with an administrator account before anything else happens
 | Duration | 30 minutes (10 presenting, 20 exercise) |
 | Level | Intermediate |
 | Audience | New site administrators, intranet administrators, support staff |
-| Prerequisites | Editors 101 or equivalent editing experience; a terminal on a machine with PHP 8.1 or later |
+| Prerequisites | Editors 101 or equivalent editing experience; a terminal on a machine with PHP 8.0 or later (PHP 7.4 usable without support) |
 
 ## Learning objectives
 

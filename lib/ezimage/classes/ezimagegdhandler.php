@@ -149,8 +149,8 @@ class eZImageGDHandler extends eZImageHandler
         $currentImage = $inputFunction( $inputFile );
 
 
-        // ###PHP8PATCH check if imagefile could be loaded if not write error
-        if ( !is_object( $currentImage )  )
+        // a GdImage object from PHP 8.0 on, a resource before; false when the file could not be loaded
+        if ( !is_object( $currentImage ) && !is_resource( $currentImage ) )
         {
             eZDebug::writeError( "Source image $inputFile can not be load with function:  $inputFunction ( inputFile )", __METHOD__ );
             return false;

@@ -623,11 +623,11 @@ class eZSiteAccess
             case 'strict':
                 return $matchHost === $host;
             case 'start':
-                return strpos( $host, $matchHost ) === 0;
+                return str_starts_with( $host, $matchHost ); // PHP 8 semantics on 7.4 too (polyfill): an empty host matches
             case 'end':
                 return $matchHost !== '' && str_ends_with( $host, $matchHost );
             case 'part':
-                return strpos( $host, $matchHost ) !== false;
+                return str_contains( $host, $matchHost ); // PHP 8 semantics on 7.4 too (polyfill): an empty host matches
         }
         eZDebug::writeError( "Unknown host match: $method", 'access' );
         return false;

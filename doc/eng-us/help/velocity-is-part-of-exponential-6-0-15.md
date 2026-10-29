@@ -44,7 +44,7 @@ the core product provides even greater features out of the box, by default.
 | Before 6.0.15 | As of 6.0.15 |
 |---|---|
 | Exponential was a PHP application that needed a web server of someone else's choosing in front of it. | Exponential ships its own Internet and web application server, and still runs behind any other one. |
-| Velocity was a separate package, listed in `composer.json` under `suggest`, to be added by hand. | `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.57`; `composer install` installs it. |
+| Velocity was a separate package, listed in `composer.json` under `suggest`, to be added by hand. | `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.55` (through `se7enxweb/exponential-php-floor`, on PHP 8.0 and later); `composer install` installs it. |
 | Velocity needed PHP 8.1, so installations on PHP 8.0 (Red Hat Enterprise Linux 9) had to leave it out. | Velocity 0.0.4.54 runs on PHP 8.0 to 8.5, the same range as the Exponential kernel. |
 | Serving, caching and deploying were separate jobs with separate tools. | `./console exp:velocity deploy` refreshes autoloads, settings, caches, the PHP processes and the server in one ordered run. |
 
@@ -95,7 +95,7 @@ Symfony digital experience platform line; it is a separate product with its own 
 Because every one of those layers comes from one source, with one installer, one console and one set of
 documentation, adopting Exponential anywhere in the world comes without the usual integration work: there is no
 server to choose before the first page, no second vendor's documentation to reconcile, and no PHP version where half
-of the stack is missing. Exponential runs on almost any operating system that has PHP 8.0 or later
+of the stack is missing. Exponential runs on almost any operating system that has PHP 8.0 or later (PHP 7.4 usable without support)
 ([Operating system support](os-support.md)).
 
 ## What Velocity brings out of the box

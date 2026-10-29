@@ -23,7 +23,7 @@ and [7. The console install](../../../../install/07-console-install.md).
 
 ## Before you start
 
-- A test machine (not production) with PHP 8.0 or later, Composer 2 and Git ([2. Requirements](../../../../install/02-requirements.md#21-the-checklist)).
+- A test machine (not production) with PHP 8.0 or later (PHP 7.4 usable without support), Composer 2 and Git ([2. Requirements](../../../../install/02-requirements.md#21-the-checklist)).
 - The code, cloned and with its Composer packages installed ([3. Getting the code](../../../../install/03-getting-the-code.md)).
 - No database server is needed: SQLite is the default.
 

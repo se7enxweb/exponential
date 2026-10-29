@@ -42,7 +42,7 @@ Quellen: [Eine Installationsmethode wählen](../../ersteller/website-ersteller/e
 
 ## Was Sie vor dem Start brauchen
 
-- [ ] PHP 8.0 oder neuer mit den erforderlichen Erweiterungen, oder einen Hoster, der es anbietet
+- [ ] PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar) mit den erforderlichen Erweiterungen, oder einen Hoster, der es anbietet
   ([Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md)).
 - [ ] Für eine Installation über die Konsole: eine Shell und Composer. Für den Assistenten: einen Browser und FTP.
 - [ ] Eine echte E-Mail-Adresse für den Administrator.

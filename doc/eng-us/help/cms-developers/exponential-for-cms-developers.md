@@ -25,7 +25,7 @@ following pages go deep on each part.
 
 ## What Exponential is
 
-Exponential 6 is a content management system written in PHP, for PHP 8.0 to 8.5, licensed GPL 2.0 or later (root
+Exponential 6 is a content management system written in PHP, for PHP 8.0 to 8.5 (PHP 7.4 usable without support), licensed GPL 2.0 or later (root
 `composer.json`). Its core ideas:
 
 - a **content model you define**: classes with typed attributes; every item is an object with versions and

@@ -404,7 +404,7 @@ class expAuditSinksTest extends PHPUnit\Framework\TestCase
         $script = __DIR__ . '/fixtures/expaudittestsyslogopenbasedir.php';
         $run = function ( array $args ) use ( $root, $script )
         {
-            $cmd = array_merge( array( PHP_BINARY, '-n', '-d', 'open_basedir=' . $root, '-d', 'display_errors=0', $script ), $args );
+            $cmd = array_merge( array( ...expTestBarePhpCommand(), '-d', 'open_basedir=' . $root, '-d', 'display_errors=0', $script ), $args );
             $p = proc_open( $cmd, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
             $out = stream_get_contents( $pipes[1] );
             $err = stream_get_contents( $pipes[2] );

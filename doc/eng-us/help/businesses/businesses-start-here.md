@@ -66,7 +66,7 @@ The short version, explained in [Why businesses rely on Exponential](why-busines
   [Who is 7x?](../who-is-7x.md#in-short)). Content and investment made years ago still run.
 - **Published versions never change.** A fix arrives as the next release, never as a silently corrected copy
   (`SECURITY.md`, quoted in [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment)).
-- **Few moving parts.** SQLite needs no database server, PHP 8.0 or later on almost any operating system is enough,
+- **Few moving parts.** SQLite needs no database server, PHP 8.0 or later (PHP 7.4 usable without support) on almost any operating system is enough,
   and any common web server works ([Requirements](../hosting/basics/requirements-at-a-glance.md)).
 - **Fast under load.** The cache fixes of the 6.0.15 line make the application fast on Apache or Nginx too, and
   Velocity raises the ceiling further (`README.md`, "The part that matters even if you never run Velocity").

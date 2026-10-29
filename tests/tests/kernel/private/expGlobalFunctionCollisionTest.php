@@ -105,8 +105,10 @@ class expGlobalFunctionCollisionTest extends PHPUnit\Framework\TestCase
                 {
                     if ( in_array( $tokens[$j][0], $skip, true ) )
                         continue;
-                    if ( $tokens[$j][0] === T_NS_SEPARATOR )
-                        break; // namespace\foo(): an expression, not a declaration
+                    // namespace\foo(): an expression, not a declaration. Before PHP 8.0 a qualified name is
+                    // T_STRING T_NS_SEPARATOR T_STRING, so only a separator right after the keyword means that.
+                    if ( $tokens[$j][0] === T_NS_SEPARATOR && $name === '' )
+                        break;
                     $name .= $tokens[$j][1];
                 }
                 if ( $j < $count && ( $tokens[$j] === '{' || $tokens[$j] === ';' ) )

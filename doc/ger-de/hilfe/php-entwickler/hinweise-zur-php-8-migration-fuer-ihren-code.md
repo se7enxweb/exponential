@@ -3,7 +3,7 @@ title: Hinweise zur PHP-8-Migration für Ihren Code
 audience: php-developer, developer
 category: php-development
 order: 70
-summary: Was Sie an älterem PHP-Code ändern müssen, damit er unter Exponential 6 sauber unter PHP 8.0 bis 8.5 läuft - dynamische Eigenschaften, count() auf Nicht-Arrays, null an String-Funktionen, SPL-Rückgabetypen, nullbare Parameter, entfernte Funktionen - und wie Sie jedes davon finden.
+summary: Was Sie an älterem PHP-Code ändern müssen, damit er unter Exponential 6 sauber unter PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) läuft - dynamische Eigenschaften, count() auf Nicht-Arrays, null an String-Funktionen, SPL-Rückgabetypen, nullbare Parameter, entfernte Funktionen - und wie Sie jedes davon finden.
 keywords: PHP-8-Migration, Deprecations, dynamische Eigenschaften, nullbare Typen, Aktualisierung, PHP 8 migration, deprecations, dynamic properties, AllowDynamicProperties, count, is_countable, null to string functions, ReturnTypeWillChange, nullable types, implicit nullable, E_STRICT, utf8_decode, eZPersistentObject, eZDataType, upgrade
 type: help
 ---

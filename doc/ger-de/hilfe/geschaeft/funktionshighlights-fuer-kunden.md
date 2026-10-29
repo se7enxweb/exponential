@@ -80,7 +80,7 @@ eine Seite sagt, lautet die ehrliche Antwort „Die Dokumentation macht dazu kei
 | Ein Onlineshop | Der eingebaute Shop mit Dashboard und Bestellstatus | Tab **Shop** | [Shop-Dashboard](../../funktionen/6.0/shop-dashboard.md) |
 | Inhalte für Apps und andere Systeme | REST-API v1 und v2 | (eine Anfrage im Terminal zeigen) | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
 | Die bevorzugte Datenbank | SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | **Setup > Systeminformationen**, Karte „Datenbank“ | [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
-| Das bevorzugte Hosting | Fast jedes Betriebssystem mit PHP 8.0 oder später; viele Webserver | (ein Dokument) | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
+| Das bevorzugte Hosting | Fast jedes Betriebssystem mit PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar); viele Webserver | (ein Dokument) | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Weniger Überraschungen im Betrieb | Log-Viewer, Fehlerreferenzen, Inhaltsprüfungen, Upgrade-Prüfung | **Setup > Logdateien**, **Setup > Upgrade-Prüfung** | [Log-Viewer](../../funktionen/6.0/log-betrachter.md), [Inhaltsprüfungen](../../funktionen/6.0/inhaltspruefungen.md), [Upgrade-Prüfung](../../anleitungen/upgrade-pruefung.md) |
 | Große Änderungen ohne Zeitüberschreitung | Inhaltsaufträge im Hintergrund | Einen großen Teilbaum entfernen oder verschieben | [Inhaltsaufträge](../../funktionen/6.0/inhaltsauftraege.md) |
 
@@ -284,7 +284,7 @@ Projektumfang ([Aufwand schätzen und Umfang festlegen mit Erweiterungen](../fue
 
 **Was Sie sagen.** Sechs Datenbanken werden unterstützt, „in der Reihenfolge der Präferenz: 1. SQLite 3 (Standard) ·
 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL“ ([Unterstützte Datenbanken](../datenbankunterstuetzung.md)).
-Das Betriebssystem kann „fast jedes sein, auf dem PHP 8.0 oder später läuft“, eingeteilt in vier ehrliche Stufen
+Das Betriebssystem kann „fast jedes sein, auf dem PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) läuft“, eingeteilt in vier ehrliche Stufen
 ([Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md)). Eine Site kann mit dokumentierten Werkzeugen in eine andere
 Datenbank umziehen ([Eine Site in eine andere Datenbank verschieben](../datenbankunterstuetzung.md#eine-site-auf-eine-andere-datenbank-umziehen)).
 

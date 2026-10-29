@@ -124,7 +124,7 @@ Serverversionen, die der Assistent prüft, stehen in `kernel/setup/ezsetupcommon
 SQLite 3.0.1, MongoDB 4.0, Oracle 19); die praktischen Mindestversionen, die die aktuellen Treiber brauchen, liegen
 höher (SQLite 3.33, PostgreSQL 13, MongoDB 6.0), siehe
 [Datenbankunterstützung](hilfe/datenbankunterstuetzung.md#versionen-am-code-überprüft). Exponential läuft auf fast jedem
-Betriebssystem mit PHP 8.0 oder neuer: siehe [Unterstützung von Betriebssystemen](hilfe/betriebssystemunterstuetzung.md).
+Betriebssystem mit PHP 8.0 oder neuer (PHP 7.4 ohne Support nutzbar): siehe [Unterstützung von Betriebssystemen](hilfe/betriebssystemunterstuetzung.md).
 
 ### Webserver
 

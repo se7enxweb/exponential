@@ -21,7 +21,7 @@ Benutzerverwaltung, einem Berechtigungssystem aus Rollen und Richtlinien, mehrsp
 Template-Sprache für die Ausgabe.
 
 Exponential 6 setzt eine langlebige Codebasis fort (ihre Copyright-Zeilen beginnen 1998). Die aktuelle 6.0-Linie
-läuft auf PHP 8.0 bis 8.5, wird mit Composer installiert und speichert ihre Inhalte in SQLite, MySQL oder MariaDB,
+läuft auf PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar), wird mit Composer installiert und speichert ihre Inhalte in SQLite, MySQL oder MariaDB,
 PostgreSQL, MongoDB oder Oracle. Seit 6.0.15 bringt sie außerdem ihren eigenen Anwendungsserver mit, **Exponential
 Velocity**, der in jeder Phase der empfohlene Weg ist, sie auszuliefern, vom Laptop eines Entwicklers bis zur
 Produktion. Apache oder nginx mit PHP-FPM werden weiterhin vollständig unterstützt, und FrankenPHP ist eine

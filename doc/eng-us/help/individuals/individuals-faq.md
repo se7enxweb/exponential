@@ -28,7 +28,7 @@ No license fee. It is free software under the GNU General Public License, versio
 want them, outside services such as a mail provider or an AI provider.
 
 **What is the smallest setup that works?**
-PHP 8.0 or later, SQLite 3 (no database server) and either a common web server or no web server at all with
+PHP 8.0 or later (PHP 7.4 usable without support), SQLite 3 (no database server) and either a common web server or no web server at all with
 Velocity ([Requirements at a glance](../hosting/basics/requirements-at-a-glance.md),
 [Running on a small budget](setup/running-on-a-small-budget.md)).
 

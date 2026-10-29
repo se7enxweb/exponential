@@ -66,7 +66,7 @@ Produkt sollte er nie eine stärkere Antwort geben als dessen Dokumentation.
 
 | Frage | Was die Dokumentation stützt |
 |---|---|
-| Welche Datenbanken und PHP-Versionen? | PHP 8.0 bis 8.5; SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Anforderungen](../../../../installation/02-voraussetzungen.md)) |
+| Welche Datenbanken und PHP-Versionen? | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar); SQLite, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([Anforderungen](../../../../installation/02-voraussetzungen.md)) |
 | Können wir es selbst hosten? | ja; die Software ist frei und läuft auf Ihren eigenen Servern ([Ein Hosting-Modell wählen](../../../hosting/modelle/ein-hosting-modell-waehlen.md)) |
 | Wie werden Sicherungen erstellt? | Datenbank und Dateien zusammen, mit dem Wartungsmodus ([Sicherungen: was zu sichern ist](../../../hosting/betrieb/backups-was-gesichert-werden-muss.md)) |
 | Wie prüfen wir ein Upgrade? | **Setup > Upgrade-Prüfung** ([Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md)) |

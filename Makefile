@@ -7,7 +7,7 @@
 BASE ?= origin/main
 DEVTOOLS = .devtools/vendor/bin
 
-.PHONY: devtools hooks check lint lint80 lint80-all manifest-check manifest-fix phpcs phpstan phpstan-baseline
+.PHONY: devtools hooks check lint lint74 lint74-all lint80 lint80-all manifest-check manifest-fix phpcs phpstan phpstan-baseline
 
 # PHP_CodeSniffer and PHPStan from composer.dev.json, never into vendor/
 devtools:
@@ -39,6 +39,19 @@ lint80:
 lint80-all:
 	@git ls-files -z '*.php' | xargs -0 -n 1 -P 8 $(PHP80) -l 2>&1 | grep -v '^No syntax errors' | \
 		{ if grep .; then exit 1; else echo "lint80-all: every PHP file is valid PHP 8.0"; fi; }
+
+# PHP 7.4 syntax: PHP 7.4 is usable without support from 6.0.15, PHP 8.0 to 8.5 are supported (doc/eng-us/help/why-exponential-supports-php-7-4.md);
+# PHP74 names the binary. lint74 checks the files changed since $(BASE), lint74-all every PHP file in git,
+# one php -l per file, 8 at a time; what CI runs.
+PHP74 ?= $(or $(EXP_PHP74),$(shell command -v php7.4 2>/dev/null || command -v php74 2>/dev/null || ls /opt/plesk/php/7.4/bin/php 2>/dev/null),php7.4)
+lint74:
+	@for file in $$(git diff --name-only --diff-filter=ACMR $$(git merge-base $(BASE) HEAD) -- '*.php'); do \
+		$(PHP74) -l "$$file" >/dev/null || exit 1; \
+	done; echo "lint74: no PHP 7.4 syntax errors"
+
+lint74-all:
+	@git ls-files -z '*.php' | xargs -0 -n 1 -P 8 $(PHP74) -l 2>&1 | grep -v '^No syntax errors' | \
+		{ if grep .; then exit 1; else echo "lint74-all: every PHP file is valid PHP 7.4"; fi; }
 
 # share/filelist.md5 against the files
 manifest-check:

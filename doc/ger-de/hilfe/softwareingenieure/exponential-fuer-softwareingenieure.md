@@ -25,7 +25,7 @@ vielleicht kennen, sagt die Seite das. Jede Zeile nennt die Datei oder das Dokum
 
 | Thema | Was Exponential verwendet | Quelle |
 |---|---|---|
-| Sprache | PHP 8.0 bis 8.5 (`"php": "^8.0 \|\| ... \|\| ^8.8"`) | `composer.json` |
+| Sprache | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) (`"php": "^7.4 \|\| ... \|\| ^8.8"`) | `composer.json` |
 | Pakete | Composer; das Hauptpaket ist `se7enxweb/exponential`, Typ `ezpublish-legacy` | `composer.json` |
 | Lizenz | GNU GPL, Version 2 oder später | `LICENSE`, `composer.json` |
 | Datenbanken | SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Datenbankunterstützung](../datenbankunterstuetzung.md) |

@@ -35,7 +35,7 @@ Die Bücher beschreiben ältere Releases. Lesen Sie sie für die Konzepte und ha
 | `settings/override/site.ini.append.php` von Hand bearbeiten | Weiterhin möglich; `./console exp:ini` tut es mit einer Sicherung und einem Diff | [Einstellungen mit exp:ini ändern](../teil-2-builder/der-befehl-exp-ini.md) |
 | Die Ordner `design/`, das Override-System | Im Prinzip unverändert; mehr Designs (admin4, admin4l) | [Teil 2](../teil-2-builder/README.md) |
 | Erweiterungen mit `include_once()` von Kernel-Dateien | Autoloading | [Autoloads und Klassenbenennung](../teil-3-erweiterungsentwickler/autoloads-und-klassennamen.md) |
-| Beispiele für PHP 4 und PHP 5 | PHP 8.0 bis 8.5 | [Teil 4](../teil-4-aktualisieren/README.md) |
+| Beispiele für PHP 4 und PHP 5 | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) | [Teil 4](../teil-4-aktualisieren/README.md) |
 | JavaScript in Templates | Nur Skriptdateien, unter einer Content Security Policy | [Content Security Policy für Erweiterungsautoren](../teil-3-erweiterungsentwickler/content-security-policy-fuer-erweiterungen.md) |
 
 Die Kapitel des Buchs Learning, für Exponential 6 neu geschrieben, finden Sie in [Exponential lernen](../../buch-lernen/README.md), und das Tutorial *Building a site* in [Eine Website Schritt für Schritt bauen](../../buch-eine-website-bauen/README.md).

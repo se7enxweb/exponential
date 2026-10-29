@@ -43,7 +43,7 @@ Plesk (tier 1 on the development server), cPanel and DirectAdmin (tier 3)
 
 The reasoning that places cPanel and DirectAdmin in tier 3 is that Exponential needs nothing from a panel itself:
 "It is plain PHP files plus a database; it has no compiled code of its own" and "runs on almost any operating system
-that has PHP 8.0 or later and a web server" ([Operating system support](../../os-support.md)). Any server whose panel
+that has PHP 8.0 or later (PHP 7.4 usable without support) and a web server" ([Operating system support](../../os-support.md)). Any server whose panel
 can provide the items below, on a supported operating system, meets the requirements. That is an inference, not a
 test result: treat ISPConfig as at most tier 3 until you have tested it.
 

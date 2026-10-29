@@ -379,7 +379,7 @@ tail -n 20 var/log/setup.log
 
 ## 4.7 Bevor Sie beginnen, gleich mit welcher Methode
 
-- Der Code ist vorhanden und die Abhängigkeiten sind installiert ([Kapitel 3](03-den-code-beschaffen.md)), und PHP 8.0
+- Der Code ist vorhanden und die Abhängigkeiten sind installiert ([Kapitel 3](03-den-code-beschaffen.md)), und PHP 7.4
   oder neuer mit den Erweiterungen aus [Kapitel 2](02-voraussetzungen.md) steht zur Verfügung.
 - Bei einem Datenbankserver: Die Datenbank und ihr Benutzer existieren, und der Benutzer darf Tabellen anlegen
   ([Kapitel 9](09-datenbanken.md)). SQLite braucht nur ein beschreibbares `var/storage/sqlite3/`.

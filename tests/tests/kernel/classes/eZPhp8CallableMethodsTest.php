@@ -93,6 +93,8 @@ class eZPhp8CallableMethodsTest extends PHPUnit\Framework\TestCase
 
     public function testDfsFilterIteratorKeepsItsReturnTypesQuiet()
     {
+        if ( PHP_VERSION_ID < 80000 )
+            $this->markTestSkipped( 'attributes exist from PHP 8.0 on; on 7.4 #[...] is a comment' );
         foreach ( array( 'accept', 'current' ) as $name )
             $this->assertNotEmpty( ( new ReflectionMethod( 'eZDFSFileHandlerDFSBackendFilterIterator', $name ) )
                 ->getAttributes( 'ReturnTypeWillChange' ), "$name() carries #[\\ReturnTypeWillChange]" );

@@ -134,7 +134,7 @@ for ( $i = 0; $i < (int)$argv[3]; $i++ )
         $processes = array();
         for ( $p = 0; $p < 3; $p++ )
         {
-            $cmd = array( PHP_BINARY, '-n', $script, $this->dir . '/cache/counter', $key, '40' );
+            $cmd = array( ...expTestBarePhpCommand(), $script, $this->dir . '/cache/counter', $key, '40' );
             $processes[] = proc_open( $cmd, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
             $this->assertIsResource( end( $processes ) );
         }

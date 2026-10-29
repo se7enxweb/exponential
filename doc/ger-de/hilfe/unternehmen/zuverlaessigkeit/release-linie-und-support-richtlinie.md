@@ -50,7 +50,7 @@ Releases, die für die Planung wichtig sind, aus
 
 | Release | Warum es wichtig ist |
 |---|---|
-| 6.0.7 | Das letzte Release für PHP 7.4 |
+| 6.0.7 | Das letzte Release für PHP 7.4 bis 6.0.15 |
 | 6.0.8 | Braucht PHP 8.1 |
 | 6.0.10 | Das erste Release mit dem Namen Exponential |
 | 6.0.13 | Sicherheitskorrekturen und Prüfungen der Sortierspalten |
@@ -85,8 +85,8 @@ Aus der [README, „What version of PHP is required“](https://github.com/se7en
 
 | PHP | Exponential 6 |
 |---|---|
-| 7.4 | Nur bis 6.0.7, veraltet |
-| 8.0 | Die älteste unterstützte Version, sodass das Standard-PHP von Red Hat Enterprise Linux 9 es unter Apache, PHP-FPM oder Exponential Velocity (ab dessen Release 0.0.4.54) ausführt |
+| 7.4 | Ab 6.0.15 ohne Support nutzbar, als Brücke (6.0.8 bis 6.0.14: nein) |
+| 8.0 | Unterstützt, sodass das Standard-PHP von Red Hat Enterprise Linux 9 es unter Apache, PHP-FPM oder Exponential Velocity (ab dessen Release 0.0.4.54) ausführt |
 | 8.1 bis 8.5 | Unterstützt, Exponential Velocity eingeschlossen |
 | 8.6 und neuer | Durch die Anforderung `php` in `composer.json` zugelassen; die README nennt „PHP 8.2, 8.3, 8.4, 8.5, 8.6 and beyond php9“ als Ziel |
 

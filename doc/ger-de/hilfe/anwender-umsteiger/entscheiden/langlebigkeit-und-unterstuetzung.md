@@ -24,7 +24,7 @@ type: help
 | 7x übernahm 2023 die Führung; die Linie 6.0 erscheint seit dem 1. Januar 2024 | [Wer ist 7x?](../../wer-ist-7x.md#die-releases-60x) |
 | Die gemeinnützige Exponential Foundation betreibt das Projekt seit 2026 | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#kurz-gesagt) |
 | 6.0 ist die gepflegte Linie; Sicherheitskorrekturen kommen im nächsten Release 6.0.x | `SECURITY.md` |
-| PHP 8.0 bis 8.5 werden unterstützt, und das Projekt zielt auf 8.6 und darüber hinaus | `README.md` |
+| PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) werden unterstützt, und das Projekt zielt auf 8.6 und darüber hinaus | `README.md` |
 
 ## Möglichkeiten der Unterstützung
 

@@ -101,7 +101,7 @@ RootDelay=0
 
 - **Console output:** every `bin/php/console` entry shows a description; `ezpm` is a console command
   ([ezpm](../../features/6.0/ezpm-package-manager-cli.md)).
-- **PHP 7.4 to 8.5:** string offsets with curly braces (ISBN13 datatype, WebDAV backend);
+- **PHP 8.0 to 8.5 (PHP 7.4 usable without support):** string offsets with curly braces (ISBN13 datatype, WebDAV backend);
   `#[AllowDynamicProperties]` on `eZINI`, `eZPersistentObject` and `eZWorkflowProcess` (PHP 8.2); nullable array type
   hints (`generateUrl`, `fetchRelatedObjects`); an integer cast for the next order number (PHP 8.4); the removed
   `imagedestroy()` call (PHP 8.5); guards for null values in `eZSiteAccess::load`, `eZCharsetInfo`, `eZMail`, the GD

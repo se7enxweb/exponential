@@ -27,7 +27,7 @@ class ezjscServerFunctionsPublishingQueueStatusTest extends PHPUnit\Framework\Te
     {
         $case += array( 'args' => array( '7', '1' ), 'version' => array( 'creator_id' => 14 ), 'canRead' => false,
                         'user' => self::ANONYMOUS, 'process' => null );
-        $line = array( PHP_BINARY, '-n', '-d', 'display_errors=stderr', __DIR__ . '/fixtures/publishingqueue_harness.php',
+        $line = array( ...expTestBarePhpCommand(), '-d', 'display_errors=stderr', __DIR__ . '/fixtures/publishingqueue_harness.php',
                        json_encode( $case ) );
         $process = proc_open( $line, array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes );
         $this->assertIsResource( $process );

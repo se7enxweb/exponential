@@ -142,7 +142,7 @@ If you prefer to keep your own extensions outside `extension/`, the kernel can s
 
 | Symptom | What to check |
 |---|---|
-| `composer install` stops with a PHP version error | `php -v`; the kernel needs PHP 8.0 or later |
+| `composer install` stops with a PHP version error | `php -v`; the kernel needs PHP 8.0 or later (PHP 7.4 usable without support) |
 | `exp:install` stops before the summary | its own message names the check that failed; the log is in `var/log/` |
 | The site shows a blank page | `var/log/error.log`, and the PHP error log of your web server |
 | A change to a template has no effect | template compilation: clear the template cache, or set `TemplateCompile=disabled` while developing |

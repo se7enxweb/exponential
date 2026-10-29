@@ -46,7 +46,7 @@ Das ist alles, was die Quellen speziell über cPanel sagen.
 Die Anforderungen von Exponential hängen nicht vom Panel ab. Ein cPanel-Konto, das Folgendes bietet, führt Exponential aus, nach
 derselben Überlegung, die cPanel in Stufe 3 einordnet:
 
-- PHP 8.0 oder später für das Konto, mit den erforderlichen Erweiterungen: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`,
+- PHP 8.0 oder später (PHP 7.4 ohne Support nutzbar) für das Konto, mit den erforderlichen Erweiterungen: `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`,
   `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick
   ([2.3 PHP-Erweiterungen](../../../installation/02-voraussetzungen.md#23-php-extensions)). `xsl` und `intl` sind kritische Tests des
   Setup-Assistenten und fehlen am häufigsten in einem Standard-Build von PHP.

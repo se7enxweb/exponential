@@ -14,7 +14,7 @@ In a hurry? [The short installation guide](../INSTALL.md) has the quick start an
 | Chapter | What it covers |
 |---|---|
 | [1. Introduction: what you are installing](01-introduction.md) | The kernel, extensions, siteaccesses (site, admin, editor) and designs; the three install methods; conventions and glossary |
-| [2. Requirements](02-requirements.md) | PHP 8.0 to 8.5, every extension and why, the php.ini settings the setup checks, databases, Composer, web server, operating systems, sizing; the overviews [Database support](../help/database-support.md) and [Operating system support](../help/os-support.md) |
+| [2. Requirements](02-requirements.md) | PHP 8.0 to 8.5 (PHP 7.4 usable without support), every extension and why, the php.ini settings the setup checks, databases, Composer, web server, operating systems, sizing; the overviews [Database support](../help/database-support.md) and [Operating system support](../help/os-support.md) |
 | [3. Getting the code](03-getting-the-code.md) | Versions and tags, Git clones with history (recommended), `composer create-project`, installing on PHP 8.0 to 8.3, the Velocity package (required as of 6.0.15), extensions as packages, a tour of the installation root |
 
 ### Part II: Installing
