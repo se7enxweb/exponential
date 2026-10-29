@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+/**
+ * File containing the upgradelibraries.php script.
+ *
+ * Upgrade stage 2, libraries: Composer install from composer.lock (or update of named packages) with a security audit (dry run unless --apply).
+ *
+ * @alias exp:upgrade:libraries
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
+ */
+
+require_once 'autoload.php';
+
+// The code is in kernel/private/classes/commands/upgradelibraries.php; this file is the entry point.
+\Exponential\Command\Kernel\Upgradelibraries::main( __FILE__ );

@@ -113,6 +113,18 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:updateisbn13](updateisbn13.md) |  | Update the ISBN range data in the database from an XML file (--url is required) |
 | [exp:updateniceurls](updateniceurls.md) |  | Import old URL aliases and update the URL aliases of all nodes (--update-nodes) |
 | [exp:updatesearchindex](updatesearchindex.md) |  | Reindex all content objects in the search engine |
+| [exp:upgrade](upgrade.md) |  | Upgrade the installation in one call: every stage in order (dry run unless --apply) |
+| [exp:upgradebackup](upgradebackup.md) | exp:upgrade:backup | Upgrade backup: the backup exp:upgrade makes before it writes, on its own (database dump and settings overrides) |
+| [exp:upgradecaptions](upgradecaptions.md) | exp:upgrade:captions | Upgrade captions: the safe points to roll back to (git_manager's and exp:upgrade's), checked with --verify, pruned with --prune |
+| [exp:upgradecode](upgradecode.md) | exp:upgrade:code | Upgrade stage 1, code: the git checkouts moved to the target release, fast-forward only, through git_manager (dry run unless --apply) |
+| [exp:upgradedatabase](upgradedatabase.md) | exp:upgrade:database | Upgrade stage 3, database: the schema and data steps on every engine (dry run unless --apply) |
+| [exp:upgradefinish](upgradefinish.md) | exp:upgrade:finish | Upgrade stage 5, finish: deploy the changes (exp:velocity deploy --kernel) and check the site answers (dry run unless --apply) |
+| [exp:upgradelibraries](upgradelibraries.md) | exp:upgrade:libraries | Upgrade stage 2, libraries: Composer install from composer.lock (or update of named packages) with a security audit (dry run unless --apply) |
+| [exp:upgraderollback](upgraderollback.md) | exp:upgrade:rollback | Upgrade rollback: put the database, storage, settings, libraries and code back to a caption (dry run unless --apply) |
+| [exp:upgradescripts](upgradescripts.md) | exp:upgrade:scripts | Upgrade stage 4, scripts: the PHP upgrade steps, policies and repairs (dry run unless --apply) |
+| [exp:upgradestatus](upgradestatus.md) | exp:upgrade:status | Upgrade status: every upgrade step with its state (done, pending, not-needed, failed, unknown) |
+| [exp:upgradesteps](upgradesteps.md) | exp:upgrade:steps | Upgrade steps: the registered steps with id, stage, version, engines and description |
+| [exp:upgradeverify](upgradeverify.md) | exp:upgrade:verify | Upgrade verify: re-detect every step and report drift; --after: the full check after an upgrade (steps, smoke addresses, tests, error log, autoloads) |
 | [exp:userlogincheck](userlogincheck.md) | exp:user-login-check | Unique logins: list the logins more than one user account has; --fix-index adds the unique index on ezuser.login once there are none |
 | [exp:userpasswordchangerequired](userpasswordchangerequired.md) | exp:user-password-change-required | Change password at next sign-in: show, set or clear the mark of a user account |
 | [exp:velocity-router](velocity-router.md) |  |  |

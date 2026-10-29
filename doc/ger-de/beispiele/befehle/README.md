@@ -113,6 +113,18 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:updateisbn13](updateisbn13.md) |  | Aktualisiert die ISBN-Bereichsdaten in der Datenbank aus einer XML-Datei (--url ist erforderlich) |
 | [exp:updateniceurls](updateniceurls.md) |  | Importiert alte URL-Aliase und aktualisiert die URL-Aliase aller Knoten (--update-nodes) |
 | [exp:updatesearchindex](updatesearchindex.md) |  | Indiziert alle Inhaltsobjekte in der Suchmaschine neu |
+| [exp:upgrade](upgrade.md) |  | Aktualisiert die Installation in einem Aufruf: jede Stufe der Reihe nach (Probelauf ohne --apply) |
+| [exp:upgradebackup](upgradebackup.md) | exp:upgrade:backup | Upgrade-Sicherung: die Sicherung, die exp:upgrade vor dem ersten Schreiben macht, für sich allein (Datenbankabzug und Einstellungs-Overrides) |
+| [exp:upgradecaptions](upgradecaptions.md) | exp:upgrade:captions | Upgrade-Sicherungspunkte: die sicheren Punkte zum Zurückrollen (von git_manager und von exp:upgrade), geprüft mit --verify, aufgeräumt mit --prune |
+| [exp:upgradecode](upgradecode.md) | exp:upgrade:code | Upgrade-Stufe 1, Code: die Git-Checkouts auf das Ziel-Release gebracht, nur Fast-Forward, über git_manager (Probelauf ohne --apply) |
+| [exp:upgradedatabase](upgradedatabase.md) | exp:upgrade:database | Upgrade-Stufe 3, Datenbank: die Schema- und Datenschritte auf jeder Datenbank-Engine (Probelauf ohne --apply) |
+| [exp:upgradefinish](upgradefinish.md) | exp:upgrade:finish | Upgrade-Stufe 5, Abschluss: die Änderungen bereitstellen (exp:velocity deploy --kernel) und prüfen, dass die Site antwortet (Probelauf ohne --apply) |
+| [exp:upgradelibraries](upgradelibraries.md) | exp:upgrade:libraries | Upgrade-Stufe 2, Bibliotheken: composer install aus composer.lock (oder ein Update benannter Pakete) mit Sicherheitsprüfung (Probelauf ohne --apply) |
+| [exp:upgraderollback](upgraderollback.md) | exp:upgrade:rollback | Upgrade zurückrollen: Datenbank, Speicher, Einstellungen, Bibliotheken und Code auf einen Sicherungspunkt zurücksetzen (Probelauf ohne --apply) |
+| [exp:upgradescripts](upgradescripts.md) | exp:upgrade:scripts | Upgrade-Stufe 4, Skripte: die PHP-Upgrade-Schritte, Richtlinien und Reparaturen (Probelauf ohne --apply) |
+| [exp:upgradestatus](upgradestatus.md) | exp:upgrade:status | Upgrade-Status: jeder Upgrade-Schritt mit seinem Zustand (done, pending, not-needed, failed, unknown) |
+| [exp:upgradesteps](upgradesteps.md) | exp:upgrade:steps | Upgrade-Schritte: die registrierten Schritte mit ID, Stufe, Version, Engines und Beschreibung |
+| [exp:upgradeverify](upgradeverify.md) | exp:upgrade:verify | Upgrade prüfen: jeden Schritt neu erkennen und Abweichungen melden; --after: die ganze Prüfung nach einem Upgrade (Schritte, Rauchprobe-Adressen, Tests, Fehlerprotokoll, Autoloads) |
 | [exp:userlogincheck](userlogincheck.md) | exp:user-login-check | Eindeutige Logins: listet die Logins auf, die mehr als ein Benutzerkonto hat; --fix-index fügt den eindeutigen Index auf ezuser.login hinzu, sobald es keine mehr gibt |
 | [exp:userpasswordchangerequired](userpasswordchangerequired.md) | exp:user-password-change-required | Passwortänderung bei der nächsten Anmeldung: zeigt die Markierung eines Benutzerkontos an, setzt sie oder löscht sie |
 | [exp:velocity-router](velocity-router.md) |  |  |
