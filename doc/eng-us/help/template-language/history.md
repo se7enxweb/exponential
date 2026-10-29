@@ -77,7 +77,7 @@ and the 3.8 changelog the fix that `{undef}` "was able to destroy template varia
 
 ## What the older style looks like today
 
-Both styles still run side by side. The same list, written the old way and the new way, rendered on alpha:
+Both styles still run side by side. The same list, written the old way and the new way, rendered on a development installation:
 
 ```tpl
 {* the older style: let ... /let and section *}
@@ -90,7 +90,7 @@ new: {foreach $items as $item}{$item}{delimiter}, {/delimiter}{/foreach}
 {undef $items}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 old: red, green, bluenew: red, green, blue

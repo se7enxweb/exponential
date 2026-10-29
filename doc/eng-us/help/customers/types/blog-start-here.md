@@ -28,7 +28,7 @@ This page is for the blog's owner: the author, the communications lead or the pe
 | Reader comments | A *Comment* class on the demonstration installation; comment handling depends on how your site was built | Ask your partner; [Spam protection for forms](../../creators/website-creators/spam-protection-for-forms.md) |
 | Help with a first draft | Exponential Intelligence (drafts only) | [Using AI drafts responsibly](../growth/using-ai-drafts-responsibly.md) |
 
-The class names are those of <https://alpha.se7enx.com>; the features are listed in the repository's `README.md`
+The class names are those of a demonstration installation; the features are listed in the repository's `README.md`
 ("Main Exponential features").
 
 ## A blog's rhythm

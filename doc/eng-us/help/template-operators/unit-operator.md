@@ -3,7 +3,7 @@ title: The si unit operator
 audience: developer, designer, app-creator
 category: development
 order: 240
-summary: si from eZTemplateUnitOperator - formatting a number with a unit and a decimal or binary prefix (file sizes, lengths, weights) from units.ini, with every parameter, the auto prefix rule and examples rendered on alpha.
+summary: si from eZTemplateUnitOperator - formatting a number with a unit and a decimal or binary prefix (file sizes, lengths, weights) from units.ini, with every parameter, the auto prefix rule and examples rendered on a development installation.
 keywords: si, unit, file size, bytes, kB, MB, prefix, kibi, units.ini, UnitSettings, BinaryUnits, UseSIUnits, eZTemplateUnitOperator
 type: help
 ---
@@ -42,13 +42,13 @@ Generated reference: [si](../../examples/template-operators/si.md).
 `[Base]` in `units.ini` maps unit names to symbols: `meter` m, `gram` g, `second` s, `ampere` A, `kelvin` K,
 `mole` mol, `candela` cd, `byte` B and `bit` b.
 
-The prefix `auto` picks `binary` for the units in `[UnitSettings] BinaryUnits` (`byte;bit` on alpha) and `decimal` for
+The prefix `auto` picks `binary` for the units in `[UnitSettings] BinaryUnits` (`byte;bit` on a development installation) and `decimal` for
 all others. Then:
 
 - **decimal** uses `[DecimalPrefixes]` (powers of 10, from yocto to yotta, **including hecto and deca**) and takes the
   largest prefix not bigger than the number. That is why `150|si( 'meter' )` is `1.50 hm`: name a prefix when you want
   a familiar one.
-- **binary** uses powers of 2. With `[UnitSettings] UseSIUnits=false`, as on alpha, it uses `[FakeBinaryPrefixes]`,
+- **binary** uses powers of 2. With `[UnitSettings] UseSIUnits=false`, as on a development installation, it uses `[FakeBinaryPrefixes]`,
   which divide by 1024 but print the familiar `k`, `M`, `G`; with `true` it uses `[BinaryPrefixes]` and prints `Ki`,
   `Mi`, `Gi`.
 - Numbers whose absolute value is below 10 get no prefix and are printed as they are.
@@ -71,7 +71,7 @@ File sizes:
 5242880|si( 'byte', 'auto', 1 ) = {5242880|si( 'byte', 'auto', 1 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 5|si( 'byte' ) = 5 B
@@ -93,7 +93,7 @@ Decimal units, a fixed prefix and a decimal symbol of your own:
 -2000|si( 'second' ) = {-2000|si( 'second' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1500|si( 'meter' ) = 1.50 km
@@ -109,7 +109,7 @@ An unknown unit:
 [{100|si( 'furlong' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [100]
@@ -121,7 +121,7 @@ Logged by the template engine:
 WARNING eZTemplateUnitOperator: No such unit 'furlong'
 ```
 
-The examples gave the same output interpreted and compiled on alpha.
+The examples gave the same output interpreted and compiled on a development installation.
 
 ## Related pages
 

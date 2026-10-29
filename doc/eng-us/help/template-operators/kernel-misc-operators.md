@@ -3,7 +3,7 @@ title: Preference, module, package and PDF operators
 audience: developer, designer, app-creator
 category: development
 order: 350
-summary: The kernel operators ezpreference, ezmodule, module_params and ezpackage and the library operator pdf - what each reads, its parameters, what it returns, which of them have side effects - with examples rendered on alpha.
+summary: The kernel operators ezpreference, ezmodule, module_params and ezpackage and the library operator pdf - what each reads, its parameters, what it returns, which of them have side effects - with examples rendered on a development installation.
 keywords: ezpreference, ezmodule, module_params, ezpackage, pdf, eZPreferences, eZModule::accessAllowed, SiteAccessRules, package, PDF export, eZPDF
 type: help
 ---
@@ -50,7 +50,7 @@ switches), not by templates. The compiler turns the call into a direct `eZPrefer
 2 {ezpreference( 'admin_list_limit' )|get_type}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 []
@@ -90,7 +90,7 @@ Generated page: [module_params](../../examples/template-operators/module_params.
 5 module_params: {module_params()|get_type}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 content/view: yes
@@ -130,7 +130,7 @@ Any other `class` is the error "Unknown package operator name". The paths are re
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 slash_quotes: thumbnail= dir=var/storage/packages/local/slash_quotes
@@ -160,7 +160,7 @@ which the template collects as text; a few act on the PDF object:
 | `stream` | sends the PDF to the browser |
 | `close` | writes the PDF to the file name given as the second parameter, through the cluster file handler |
 
-Not run on alpha: `execute`, `stream` and `close` (they render a document, send output or write a file). The
+Not run on a development installation: `execute`, `stream` and `close` (they render a document, send output or write a file). The
 operations below only build command strings:
 
 ```tpl
@@ -172,7 +172,7 @@ operations below only build command strings:
 6 {pdf( 'toc', hash( 'size', array( 12, 10 ), 'dots', 'true' ) )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 <C:callNewLine>

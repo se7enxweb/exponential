@@ -3,7 +3,7 @@ title: Sections versus foreach
 audience: developer, designer, app-creator
 category: templates
 order: 140
-summary: The section function in full - loop over arrays, numbers and strings, name and the namespace it creates, var and the iterator with last-value, sequence, offset, max, reverse, show with section-else, the section-exclude and section-include filters and delimiter with modulo - each next to its foreach, for or if equivalent, all rendered on alpha, plus the one compiled-mode difference found.
+summary: The section function in full - loop over arrays, numbers and strings, name and the namespace it creates, var and the iterator with last-value, sequence, offset, max, reverse, show with section-else, the section-exclude and section-include filters and delimiter with modulo - each next to its foreach, for or if equivalent, all rendered on a development installation, plus the one compiled-mode difference found.
 keywords: section, foreach, legacy, loop, show, section-else, section-exclude, section-include, var, last-value, sequence, offset, max, reverse, delimiter, modulo, namespace, convert, migration
 type: help
 ---
@@ -56,7 +56,7 @@ removed after the loop.
 {section name=Loop loop=array( 'a', 'b', 'c' ) sequence=array( 'odd', 'even' )}[{$Loop:item}/{$Loop:key}/{$Loop:index}/{$Loop:number}/{$Loop:sequence}]{delimiter},{/delimiter}{/section}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [a/0/0/1/odd],[b/1/1/2/even],[c/2/2/3/odd]
@@ -68,7 +68,7 @@ The same with `foreach`:
 {foreach array( 'a', 'b', 'c' ) as $key => $item sequence array( 'odd', 'even' ) as $seq}[{$item}/{$key}/{$key}/{$key|inc}/{$seq}]{delimiter},{/delimiter}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [a/0/0/1/odd],[b/1/1/2/even],[c/2/2/3/odd]
@@ -84,7 +84,7 @@ its characters. `foreach` does neither: use `for`, or split the string with `str
 [{for 1 to 3 as $i}{$i}{/for}] [{foreach 'abc'|str_split|reverse as $c}{$c}{/foreach}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [123] [-1-2-3] [cba]
@@ -103,7 +103,7 @@ applied:
 [{section name=R loop=array( 1, 2, 3 ) reverse=true()}{$R:item}{/section}] [{foreach array( 1, 2, 3 ) as $v reverse}{$v}{/foreach}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [234]
@@ -122,7 +122,7 @@ children after `{section-else}` run instead. Without `loop`, `section show=...` 
 [{if $results|count}results{else}nothing found{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [nothing found]
@@ -134,7 +134,7 @@ Output on alpha:
 [{section show=$user.name}Hello {$user.name}{/section}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [Hello Ada]
@@ -147,7 +147,7 @@ Output on alpha:
 [{section loop=array() show=array()}x{section-else}else part{/section}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []
@@ -166,7 +166,7 @@ item does not count for `max` and gets no delimiter. The `foreach` form uses `{s
 [{foreach array( 1, 2, 3, 4, 5, 6 ) as $v}{if $v|mod( 2 )|eq( 0 )}{skip}{/if}{$v}{/foreach}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [135]
@@ -185,7 +185,7 @@ item; its attributes are `item`, `key`, `index`, `number`, `sequence`, and the i
 [{section var=it loop=array( 'a', 'b' )}{$it.item}/{$it.key}/{$it.index}/{$it.number} {/section}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [a; b (after a); c (after b); ]
@@ -202,7 +202,7 @@ As with the newer loops, `delimiter` is printed between processed items, and `mo
 [{foreach array( 1, 2, 3, 4 ) as $v}{$v}{delimiter modulo=2}|{/delimiter}{/foreach}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [12|34]
@@ -220,14 +220,14 @@ while the `foreach` form gives `cba` both ways:
 [{for 1 to 3 as $i}{$i}{/for}] [{foreach 'abc'|str_split|reverse as $c}{$c}{/foreach}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [123] [-1-2-3] [cba]
 [123] [cba]
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 [123] [-1-2-3] [c]

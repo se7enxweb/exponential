@@ -3,7 +3,7 @@ title: The persistent variable, inside
 audience: developer, designer, app-creator
 category: development
 order: 330
-summary: How $persistent_variable travels from a node view template to the pagelayout - the kernel sets it to false, reads it back from the root namespace after rendering, stores it in content_info and in the content view cache, and makes it an override key - and why scope='global' matters, proven with namespaces on alpha.
+summary: How $persistent_variable travels from a node view template to the pagelayout - the kernel sets it to false, reads it back from the root namespace after rendering, stores it in content_info and in the content view cache, and makes it an override key - and why scope='global' matters, proven with namespaces on a development installation.
 keywords: persistent_variable, scope global, content_info, view cache, pagelayout, namespace, set, override key, eZNodeviewfunctions, ezpagedata
 type: help
 ---
@@ -54,7 +54,7 @@ step 1 does), include a template that sets it with `scope='global'`, then read i
 after the view template: body_class={$persistent_variable.body_class}, hide_sidebar={$persistent_variable.hide_sidebar|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <article>...</article>
@@ -91,7 +91,7 @@ included with name=part, without scope: {if $persistent_variable}set{else}still 
 included with name=part, with scope='global': {$persistent_variable.body_class}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 

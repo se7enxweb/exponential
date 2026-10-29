@@ -3,7 +3,7 @@ title: Arithmetic operators
 audience: developer, designer, app-creator
 category: development
 order: 100
-summary: The 18 operators of eZTemplateArithmeticOperator (sum, sub, mul, div, mod, inc, dec, min, max, abs, ceil, floor, round, int, float, count, roman, rand) with their parameters, input, return value and examples rendered on alpha.
+summary: The 18 operators of eZTemplateArithmeticOperator (sum, sub, mul, div, mod, inc, dec, min, max, abs, ceil, floor, round, int, float, count, roman, rand) with their parameters, input, return value and examples rendered on a development installation.
 keywords: arithmetic, math, sum, sub, mul, div, mod, inc, dec, min, max, abs, ceil, floor, round, int, float, count, roman, rand, eZTemplateArithmeticOperator
 type: help
 ---
@@ -14,7 +14,7 @@ All 18 arithmetic operators are registered by `eZTemplateArithmeticOperator`
 (`lib/eztemplate/classes/eztemplatearithmeticoperator.php`) through `lib/eztemplate/classes/eztemplateautoload.php`.
 
 Most of them take their operands either from the piped input (`10|sum( 5 )`) or from the parameters
-(`sum( 10, 5 )`). Where an operator behaves differently, its section says so. The examples were rendered on alpha by
+(`sum( 10, 5 )`). Where an operator behaves differently, its section says so. The examples were rendered on a development installation by
 the template interpreter and then again by the template compiler; the compiled form of `sum`, `sub`, `mul` and `div`
 calls the same `eZTemplateArithmeticOperator::calculate()`. The one difference found, in `min`, is shown in its
 section.
@@ -73,7 +73,7 @@ sub( 10, 3, 2 ) = {sub( 10, 3, 2 )}
 sum( 'abc', 2 ) = {sum( 'abc', 2 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 sum( 2, 3, 4 ) = 9
@@ -132,7 +132,7 @@ mod( 10, 4 ) = {mod( 10, 4 )}
 10|mod( 3 ) = {10|mod( 3 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 mul( 4, 2.5 ) = 10
@@ -173,7 +173,7 @@ inc( 9 ) = {inc( 9 )}
 dec( 1 ) = {dec( 1 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $i|inc = 6, $i|dec = 4, $i is still 5
@@ -213,7 +213,7 @@ min( 3, 9, 4 ) = {min( 3, 9, 4 )}
 7|min( 9, 8 ) = {7|min( 9, 8 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 max( 3, 9, 4 ) = 9
@@ -222,10 +222,10 @@ min( 3, 9, 4 ) = 3
 7|min( 9, 8 ) = 8
 ```
 
-The same template compiled on alpha (template compiling is enabled in `site.ini`, `[TemplateSettings] TemplateCompile`)
+The same template compiled on a development installation (template compiling is enabled in `site.ini`, `[TemplateSettings] TemplateCompile`)
 printed `7|min( 9, 8 ) = 7` on the last line; the other lines were identical:
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 max( 3, 9, 4 ) = 9
@@ -264,7 +264,7 @@ round( 2.4 ) = {round( 2.4 )}
 int( 9.99 ) = {int( 9.99 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 -4.6|abs = 4.6
@@ -307,7 +307,7 @@ $node|count (attributes of the node object) = {$node|count}
 42|count = {42|count}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 array( 1, 2, 3 )|count = 3
@@ -352,7 +352,7 @@ roman( 1999 ) = {roman( 1999 )}
 rand( 1, 6 ) is between 1 and 6: {and( $r|ge( 1 ), $r|le( 6 ) )|choose( 'no', 'yes' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 4|roman = IV
@@ -363,7 +363,7 @@ rand( 1, 6 ) is between 1 and 6: yes
 
 ## A worked example: number of pages
 
-The Recipes category on alpha (node 144), four items per page:
+The Recipes category on a development installation (node 144), four items per page:
 
 ```tpl
 {def $total = fetch( 'content', 'list_count', hash( 'parent_node_id', 144 ) )
@@ -372,7 +372,7 @@ The Recipes category on alpha (node 144), four items per page:
 {$total} items under Recipes, {$limit} per page: {$pages} pages
 ```
 
-Output on alpha:
+Output:
 
 ```text
 18 items under Recipes, 4 per page: 5 pages

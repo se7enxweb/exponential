@@ -58,7 +58,7 @@ before editors start, or the tag list will grow faster than the catalog.
 ## Built-in search
 
 The built-in search engine keeps its index in the database and is enough for most sites
-([Site search](../../creators/website-creators/site-search.md)). It searches the searchable fields of products (on alpha
+([Site search](../../creators/website-creators/site-search.md)). It searches the searchable fields of products (on a development installation
 the product class marks name, product number, descriptions and specifications as searchable; the price is not), and
 records search statistics, so you can see what customers looked for and did not find.
 
@@ -84,8 +84,8 @@ Large catalogs, and customers who want to filter, call for Solr through the `ezf
 ## Ratings and specifications
 
 - The `ezstarrating` extension adds a star rating field, and lets templates sort and fetch by rating
-  ([ezstarrating](../../../features/6.0/extensions/ezstarrating.md)); on alpha the product class has one.
-- A specifications table (`ezmatrix` on alpha's product class) lets customers compare products on the page.
+  ([ezstarrating](../../../features/6.0/extensions/ezstarrating.md)); on a development installation the product class has one.
+- A specifications table (`ezmatrix` on the product class) lets customers compare products on the page.
 
 ## Checklist
 

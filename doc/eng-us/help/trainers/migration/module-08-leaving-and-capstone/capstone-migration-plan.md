@@ -69,7 +69,7 @@ it; for example the static HTML guide or another system guide of the migration h
 ### Pitfalls
 
 - **Plans without a rollback.** The rubric gives no points for a plan that cannot go back.
-- **Proofs on alpha or any shared site.** Proofs run only on the team's own training installation.
+- **Proofs on a public demonstration installation or any shared site.** Proofs run only on the team's own training installation.
 - **Invented numbers.** "The import takes three hours" without a rehearsal is a guess; write "to be measured in
   rehearsal 1".
 
@@ -118,7 +118,7 @@ The trainer scores each plan with this rubric (three levels per criterion, maxim
 1. What is the first thing a team does with its scenario?
 2. Which three things must the rollback section contain?
 3. Where may a team run its proof?
-   A. On alpha B. On any shared site C. Only on its own training installation D. On production
+   A. On a public demonstration installation B. On any shared site C. Only on its own training installation D. On production
 4. How does a plan treat a duration the documentation does not give?
 5. True or false: a team that completes the capstone holds an official Exponential certification.
 

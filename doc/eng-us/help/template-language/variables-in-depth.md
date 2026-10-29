@@ -11,7 +11,7 @@ type: help
 
 [Variables and def](../designers/templates/variables-and-def.md) shows how to use variables. This page gives the exact
 rules, read from `lib/eztemplate/classes/eztemplatedeffunction.php` and `lib/eztemplate/classes/eztemplatesetfunction.php`,
-and shows each case on alpha, including the warnings the engine writes.
+and shows each case on a development installation, including the warnings the engine writes.
 
 ## Contents
 
@@ -50,7 +50,7 @@ Several variables can be handled in one tag:
 [{if is_set( $label )}label still set{else}label removed{/if}] [{$count}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1 items][2 things][label removed] [2]
@@ -67,7 +67,7 @@ defined." and assigns the new value anyway:
 [{$color}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [blue]
@@ -92,7 +92,7 @@ nothing:
 [{if is_set( $size )}size exists{else}size was not created{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [size was not created]
@@ -117,7 +117,7 @@ every variable the current file defined with `def` (`unsetLocalVariables()`):
 [{if is_set( $a )}a{/if}{if is_set( $b )}b{/if}{if is_set( $c )}c{/if}] all removed
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [] all removed
@@ -128,7 +128,7 @@ Output on alpha:
 done
 ```
 
-Output on alpha:
+Output:
 
 ```text
 done
@@ -154,7 +154,7 @@ after let: [{if is_set( $greeting )}still set{else}gone{/if}]
 {default size='fallback' color='fallback'}[{$size}] [{$color}]{/default}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 inside let: [hi]after let: [gone][given] [fallback]
@@ -176,7 +176,7 @@ part: [{$inner}]
 after: [{if is_set( $inner )}inner visible{else}inner gone after the include{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 part: [made in the part]
@@ -213,7 +213,7 @@ part sees: [{if is_set( $total )}{$total}{else}no $total{/if}]
 after include: [{$total}] [{if is_set( $inner )}inner visible{else}inner not visible{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 part sees: [no $total]after include: [10] [inner not visible]

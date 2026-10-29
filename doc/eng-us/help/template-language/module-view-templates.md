@@ -3,7 +3,7 @@ title: Module view templates
 audience: developer, designer, app-creator
 category: development
 order: 300
-summary: How a module view renders its templates - the PHP side (eZTemplate::factory(), setVariable(), fetch( 'design:...' )), the $Result array a view returns, and how the kernel hands it to the pagelayout as $module_result together with the other pagelayout variables - proven by running content/view on alpha read-only.
+summary: How a module view renders its templates - the PHP side (eZTemplate::factory(), setVariable(), fetch( 'design:...' )), the $Result array a view returns, and how the kernel hands it to the pagelayout as $module_result together with the other pagelayout variables - proven by running content/view on a development installation read-only.
 keywords: module view, $Result, $module_result, pagelayout, eZTemplate::factory, setVariable, fetch design, ezpKernelWeb, view template, module.php, kernel
 type: help
 ---
@@ -18,7 +18,7 @@ step.
 
 1. [The two templates of a page](#the-two-templates-of-a-page)
 2. [The PHP side of a view](#the-php-side-of-a-view)
-3. [What content/view returns on alpha](#what-contentview-returns-on-alpha)
+3. [What content/view returns](#what-contentview-returns)
 4. [From $Result to $module_result](#from-result-to-module_result)
 5. [Choosing the pagelayout](#choosing-the-pagelayout)
 6. [Variables a node view template gets](#variables-a-node-view-template-gets)
@@ -75,9 +75,9 @@ $Result['path'] = array( array( 'url' => 'section/list',
 A view of your own in an extension follows the same pattern; the walk-through is in
 [Custom modules and views](../creators/app-creators/custom-modules-and-views.md).
 
-## What content/view returns on alpha
+## What content/view returns
 
-To see a real `$Result`, a read-only CLI script on alpha ran the view the way the kernel does, with the content view
+To see a real `$Result`, a read-only CLI script on a development installation ran the view the way the kernel does, with the content view
 cache and template compiling switched off in memory for that process (no cache file was written), and printed the
 structure of the returned array:
 
@@ -88,7 +88,7 @@ $module = eZModule::findModule( 'content' );
 $result = $module->run( 'view', array( 'full', 96 ), false, array() );
 ```
 
-Output on alpha (the `path` and `title_path` lists are shortened to their first and last entry here):
+Output on a development installation (the `path` and `title_path` lists are shortened to their first and last entry here):
 
 ```text
 exit status: 1 (STATUS_OK)

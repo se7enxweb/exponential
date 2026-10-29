@@ -29,7 +29,7 @@ volunteers who help. Planning a member site is covered in [Member sites for busi
 | Events, forums | Event calendar and forum classes on the demonstration installation | [Events and calendars](../../businesses/members/events-and-calendars.md) |
 | Old and duplicate accounts found | **Users > Check user accounts** (`user/hygiene`) | [Check user accounts](../../../features/6.0/user-hygiene.md) |
 
-The demonstration installation at <https://alpha.se7enx.com> has the classes Event calendar, Event, Forums, Forum,
+A demonstration installation has the classes Event calendar, Event, Forums, Forum,
 Forum topic and Forum reply; whether your site uses them depends on how it was built.
 
 ## The membership manager's routines

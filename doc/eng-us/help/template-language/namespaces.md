@@ -63,7 +63,7 @@ Without a name it sees `$node` of the caller:
 {include uri='file:var/tmp/examples/tl-ns/parts/show.tpl' title='A'}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 title=[A] local=[Fit & Healthy] global=[Fit & Healthy] relative=[A]
@@ -78,7 +78,7 @@ removed again after the include:
 after: [{if is_set( $title )}title leaked{else}no $title here{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 title=[B] local=[no $node] global=[Fit & Healthy] relative=[B]
@@ -98,7 +98,7 @@ always means the innermost:
 {section name=Outer loop=array( 'x', 'y' )}{section name=Inner loop=array( 1, 2 )}[{$Outer:item}{$Outer:Inner:item}|{$:item}]{/section}{/section}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [x1|1][x2|2][y1|1][y2|2]
@@ -110,7 +110,7 @@ Output on alpha:
 {let name=Box width=3}[{$Box:width}] [{$:width}]{/let}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [3] [3]
@@ -128,7 +128,7 @@ reach:
 [{$Box:title}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []

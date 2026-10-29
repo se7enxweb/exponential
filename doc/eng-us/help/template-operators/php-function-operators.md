@@ -3,7 +3,7 @@ title: PHP function operators
 audience: developer, designer, app-creator
 category: development
 order: 190
-summary: How template.ini [PHP] PHPOperatorList turns one-argument PHP functions into template operators through eZTemplatePHPOperator, the operators it gives on alpha (urlencode, urldecode, rawurlencode, rawurldecode, nl2br, serialize, unserialize, getenv, strip_tags), which extension adds which, the risks, and examples rendered on alpha.
+summary: How template.ini [PHP] PHPOperatorList turns one-argument PHP functions into template operators through eZTemplatePHPOperator, the operators it gives on a development installation (urlencode, urldecode, rawurlencode, rawurldecode, nl2br, serialize, unserialize, getenv, strip_tags), which extension adds which, the risks, and examples rendered on a development installation.
 keywords: PHPOperatorList, template.ini, PHP, eZTemplatePHPOperator, eZTemplateNl2BrOperator, urlencode, urldecode, rawurlencode, rawurldecode, nl2br, serialize, unserialize, getenv, strip_tags
 type: help
 ---
@@ -24,7 +24,7 @@ Every entry becomes an operator implemented by `eZTemplatePHPOperator`
 ## Contents
 
 1. [How an entry behaves](#how-an-entry-behaves)
-2. [The entries on alpha](#the-entries-on-alpha)
+2. [The registered entries](#the-registered-entries)
 3. [The operators](#the-operators)
 4. [Order and conflicts](#order-and-conflicts)
 5. [Risks](#risks)
@@ -40,9 +40,9 @@ The comment in `settings/template.ini` recommends giving the operator a name of 
 the function behind it can change later without template changes, and states the limits: one parameter, and the
 function must return its result by value.
 
-## The entries on alpha
+## The registered entries
 
-The kernel's `settings/template.ini` lists four. The extensions active on alpha add more through their
+The kernel's `settings/template.ini` lists four. The extensions active on a development installation add more through their
 `settings/template.ini.append.php`:
 
 | Operator | PHP function | Declared in |
@@ -58,7 +58,7 @@ The kernel's `settings/template.ini` lists four. The extensions active on alpha 
 | `strip_tags` | `strip_tags()` | `extension/ezmultiupload` |
 
 The extension ezfind adds `array_merge_recursive` and `array_keys` in its settings, but it is not an active extension on
-alpha, so those two are not registered here. INI arrays are merged, so the same entry in two places is harmless.
+a development installation, so those two are not registered here. INI arrays are merged, so the same entry in two places is harmless.
 
 ## The operators
 
@@ -79,7 +79,7 @@ rawurldecode( 'fit%20%26%20healthy' ) = {'fit%20%26%20healthy'|rawurldecode}
 call form: {urlencode( 'a b' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 urlencode = fit+%26+healthy+recipes
@@ -92,7 +92,7 @@ call form: a+b
 ### nl2br
 
 The library has its own `nl2br` operator, `eZTemplateNl2BrOperator`
-(`lib/eztemplate/classes/eztemplatenl2broperator.php`), which also works element by element on an array. On alpha the
+(`lib/eztemplate/classes/eztemplatenl2broperator.php`), which also works element by element on an array. On a development installation the
 `PHPOperatorList` entry from cjw_newsletter replaces it, because `kernel/common/` is loaded after
 `lib/eztemplate/classes/` in `[TemplateSettings] AutoloadPathList` of `site.ini`, and a later registration of a name
 wins. For a string both give the same result: PHP `nl2br()`, which does not escape, so wash first
@@ -104,7 +104,7 @@ Generated reference: [nl2br](../../examples/template-operators/nl2br.md).
 second line"|nl2br}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 first line<br />
@@ -123,7 +123,7 @@ serialize = {$s}
 unserialize = {$s|unserialize|get_type}, tags: {$s|unserialize.tags|implode( ', ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 serialize = a:2:{s:7:"node_id";i:89;s:4:"tags";a:2:{i:0;s:3:"fit";i:1;s:7:"healthy";}}
@@ -140,7 +140,7 @@ It comes from an extension setting and has no generated page.
 'NO_SUCH_VARIABLE_C11'|getenv = [{'NO_SUCH_VARIABLE_C11'|getenv|choose( 'false', 'true' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'NO_SUCH_VARIABLE_C11'|getenv = [false]

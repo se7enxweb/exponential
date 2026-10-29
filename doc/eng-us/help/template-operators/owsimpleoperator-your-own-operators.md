@@ -3,7 +3,7 @@ title: Your own operators with OW Simple Operator
 audience: developer, app-creator
 category: development
 order: 910
-summary: Writing template operators as plain public methods of a class that extends OWSimpleOperator, registering each method in owsimpleoperator.ini, optional arguments, the pipe form, and what happens when the class is registered the usual way instead; every example rendered on alpha.
+summary: Writing template operators as plain public methods of a class that extends OWSimpleOperator, registering each method in owsimpleoperator.ini, optional arguments, the pipe form, and what happens when the class is registered the usual way instead; every example rendered on a development installation.
 keywords: owsimpleoperator, OWSimpleOperator, PermittedClassOperatorList, ClassOperators, ExampleOperator, example_sum, custom operator, template operator class, extension
 type: help
 ---
@@ -96,13 +96,13 @@ the list collected so far and removes the operators other extensions registered.
 `extension/owsimpleoperator/autoloads/eztemplateautoload.php` turns these lines into one
 `$eZTemplateOperatorArray` entry per class (`script`, `class`, `operator_names`). Clear the INI and template
 caches after a change (`php bin/php/ezcache.php --clear-tag=ini --clear-tag=template --allow-root-user`, or
-`./console exp:velocity deploy --allow-root-user` on alpha). Your class needs no entry in the autoload arrays: the
+`./console exp:velocity deploy --allow-root-user` on a development installation). Your class needs no entry in the autoload arrays: the
 `script` path loads it. `OWSimpleOperator` itself does, and the extension's installation step
 (`php bin/php/ezpgenerateautoloads.php -e`) provides it.
 
 ## Using them
 
-Not run on alpha with a file: the examples on this page were rendered by a script that put the two lines above
+Not run on a development installation with a file: the examples on this page were rendered by a script that put the two lines above
 (and the line for the shipped `ExampleOperator`) into `owsimpleoperator.ini` in memory only, for that one process,
 with the class file in a scratch folder. Nothing was written to the installation's settings.
 
@@ -117,7 +117,7 @@ Both call forms work for class operators:
 {$node.name|wash} -> {$node.name|initials}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 3
@@ -143,7 +143,7 @@ the body, as `reading_minutes()` does:
 {reading_minutes( $text )} {reading_minutes( $text, 4 )} {$text|reading_minutes( 4 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 3 3
@@ -168,7 +168,7 @@ Registered the usual way, with an `$eZTemplateOperatorArray` entry in another ex
 {'Bold Agency'|initials}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 

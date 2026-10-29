@@ -3,7 +3,7 @@ title: Content attribute and version reference
 audience: developer, designer, app-creator
 category: development
 order: 230
-summary: Every attribute a template can read from a content object attribute (eZContentObjectAttribute, the items of data_map) and from a version (eZContentObjectVersion), with the PHP method behind each, values from alpha, and what .content returns for each datatype found in alpha's content.
+summary: Every attribute a template can read from a content object attribute (eZContentObjectAttribute, the items of data_map) and from a version (eZContentObjectVersion), with the PHP method behind each, values from a development installation, and what .content returns for each datatype found in the installation's content.
 keywords: eZContentObjectAttribute, eZContentObjectVersion, data_map item, content, has_content, data_text, data_int, sort_key_string, view_template, datatype content, version, translation_list, reference
 type: help
 ---
@@ -25,11 +25,11 @@ lists what templates can read from both, and what `content` is for each datatype
 7. [Related pages](#related-pages)
 
 The tables were made like the [node attributes](node-attributes-reference.md) table: `definition()` listed and every
-name read on alpha, here on the `title` attribute and the current version of node 96 (object 94, an `ng_article`).
+name read on a development installation, here on the `title` attribute and the current version of node 96 (object 94, an `ng_article`).
 
 ## Content object attribute: database fields
 
-| Attribute | Database column / member | Datatype | Value on alpha (node 96) |
+| Attribute | Database column / member | Datatype | Value on a development installation (node 96) |
 |---|---|---|---|
 | `id` | `ID` | integer | integer 580 |
 | `contentobject_id` | `ContentObjectID` | integer | integer 94 |
@@ -51,7 +51,7 @@ datatype's business: `ezstring` keeps its text in `data_text` and leaves `data_i
 
 ## Content object attribute: function attributes
 
-| Function attribute | PHP method | Value on alpha (node 96) |
+| Function attribute | PHP method | Value on a development installation (node 96) |
 |---|---|---|
 | `contentclass_attribute` | `eZContentObjectAttribute::contentClassAttribute()` | object eZContentClassAttribute |
 | `contentclass_attribute_identifier` | `eZContentObjectAttribute::contentClassAttributeIdentifier()` | string "title" |
@@ -89,7 +89,7 @@ templates:               view {$attribute.view_template}, edit {$attribute.edit_
 stored:                  data_text "{$attribute.data_text|wash}", sort_key_string "{$attribute.sort_key_string|wash}"
 ```
 
-Output on alpha:
+Output:
 
 ```text
 id / version / language: 580 / 1 / eng-US
@@ -104,7 +104,7 @@ stored:                  data_text "Why Should You Choose Strength Training?", s
 
 `content` calls `eZContentObjectAttribute::content()`, which asks the datatype's `objectAttributeContent()` once and
 keeps the result on the attribute. This template walked the first 150 nodes below the Fit & Healthy front page on
-alpha and printed, for each datatype the first time it had content, what `content` returned:
+a development installation and printed, for each datatype the first time it had content, what `content` returned:
 
 ```tpl
 {def $seen = array()}
@@ -113,7 +113,7 @@ alpha and printed, for each datatype the first time it had content, what `conten
 {/if}{/foreach}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ezstring: string (ng_article.title)
@@ -136,7 +136,7 @@ ezsrrating: object ezsrratingobject (product.rating)
 ezmatrix: object ezmatrix (product.specifications)
 ```
 
-| Datatype | `content` on alpha | Datatype page |
+| Datatype | `content` on a development installation | Datatype page |
 |---|---|---|
 | `ezstring`, `eztext`, `ezemail`, `ezurl` | string (for `ezurl` the URL) | [ezstring](../../examples/datatypes/ezstring.md), [eztext](../../examples/datatypes/eztext.md), [ezemail](../../examples/datatypes/ezemail.md), [ezurl](../../examples/datatypes/ezurl.md) |
 | `ezinteger`, `ezboolean` | integer | [ezinteger](../../examples/datatypes/ezinteger.md), [ezboolean](../../examples/datatypes/ezboolean.md) |
@@ -158,7 +158,7 @@ ezmatrix: object ezmatrix (product.specifications)
 
 ## Version: database fields
 
-| Attribute | Database column / member | Datatype | Value on alpha (node 96) |
+| Attribute | Database column / member | Datatype | Value on a development installation (node 96) |
 |---|---|---|---|
 | `id` | `ID` | integer | integer 544 |
 | `contentobject_id` | `ContentObjectID` | integer | integer 94 |
@@ -178,7 +178,7 @@ ezmatrix: object ezmatrix (product.specifications)
 
 ## Version: function attributes
 
-| Function attribute | PHP method | Value on alpha (node 96) |
+| Function attribute | PHP method | Value on a development installation (node 96) |
 |---|---|---|
 | `creator` | `eZContentObjectVersion::creator()` | object eZContentObject |
 | `name` | `eZContentObjectVersion::name()` | string "Why Should You Choose Strength Training?" |
@@ -211,7 +211,7 @@ translations: {foreach $version.translation_list as $t}{$t.language_code}{delimi
 creator object id: {$version.creator_id}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 version 1, status 1, created 2020-09-24
@@ -229,7 +229,7 @@ creator object id: 14
   collector attribute `view_template` returns the collector template instead.
 - `class_content` is the content of the class attribute (the field's settings, such as a selection's options).
 - `has_content` comes from the datatype's `hasObjectAttributeContent()`. Most datatypes return a boolean; the
-  `ezimage` datatype returned an empty string for an image field without an image on alpha (see
+  `ezimage` datatype returned an empty string for an image field without an image on a development installation (see
   [The template compiler](template-compiler.md) for why that matters with `choose`).
 - The `can_read` and `can_remove` of a version check the current user's `content/versionread` and
   `content/versionremove` policies; as the anonymous user both were false.

@@ -29,7 +29,7 @@ override system instead of template inheritance.
 
 ## A first look
 
-A template mixes text with tags. This one fetches the "Fit & Healthy" front page of alpha (node 89), prints its name
+A template mixes text with tags. This one fetches the "Fit & Healthy" front page of a development installation (node 89), prints its name
 escaped for HTML and lists its first four children:
 
 ```tpl
@@ -43,7 +43,7 @@ escaped for HTML and lists its first four children:
 </ul>
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <h2>Fit &amp; Healthy</h2>
@@ -93,7 +93,7 @@ of each module, and the view functions such as `node_view_gui`.
 
 What the language offers without any extension installed, with the page that covers it:
 
-- **Several hundred registered operators.** On alpha's `site` siteaccess the engine registers 395 operators and 48
+- **Several hundred registered operators.** On the `site` siteaccess the engine registers 395 operators and 48
   functions (counted by loading every entry of the operator and function lists). The template library alone brings
   arithmetic, arrays, strings, the PHP string functions, logic, types, locale, digests and roles.
 - **Data access in the template.** `fetch( 'content', 'list', hash( ... ) )` reads content with filters, sorting and
@@ -119,7 +119,7 @@ URL: {$article.url_alias|ezurl( 'no', 'relative' )}
 Can the visitor read it: {if $article.can_read}yes{else}no{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Fields: 18
@@ -132,7 +132,7 @@ Can the visitor read it: yes
 
 ## How the examples in this section were made
 
-Every example in the template language pages was rendered on alpha, the reference installation, by the real engine
+Every example in the template language pages was rendered on a development installation, by the real engine
 against real content, and the output under it is what the engine printed. The examples are kept outside the design tree
 and read with the `file:` resource; compiling and template caching were switched off for those runs, and each example
 was rendered a second time through the compiler to check that both give the same output. Where an example shows an
