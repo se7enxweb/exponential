@@ -23279,7 +23279,7 @@ d8eddd3d60167892b1698c1ab30fedbc  kernel/classes/upgrade/steps/expupgradesteppas
 705541b1859aca5001241a7024939443  kernel/classes/upgrade/steps/expupgradesteptransferruntable.php
 4b63fe25e8a8f34a9765b88d9bbf8f02  kernel/classes/upgrade/steps/expupgradesteptrashcolumns.php
 3cda512319c4794ac1d7202a473b9cca  kernel/classes/upgrade/steps/expupgradesteptrashrecordstocolumns.php
-4da96d5c16ff4d4f3198e2ad4ffed9ea  kernel/classes/upgrade/steps/expupgradestepuserapproval.php
+0f6078b72033351b5150390c12347544  kernel/classes/upgrade/steps/expupgradestepuserapproval.php
 d59ff7abe53b33126a6b916158fbc23a  kernel/classes/upgrade/steps/expupgradestepuseraudittable.php
 df5c5a7a690a4b62a32199d1e7b9e1c2  kernel/classes/upgrade/steps/expupgradestepuserloginuniqueindex.php
 e61f6cfd5984124cc9eed6ffd5e68133  kernel/classes/upgrade/steps/expupgradestepusersessiontable.php

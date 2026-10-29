@@ -46,8 +46,10 @@ class expUpgradeStepUserApproval extends expUpgradeScriptStep
         $lines = array();
         if ( $changes['workflow'] === 'create' )
             $lines[] = 'create workflow "' . expUserApproval::WORKFLOW_NAME . '"';
-        if ( $changes['trigger'] === 'create' || $changes['trigger'] === 'add_event' )
-            $lines[] = 'trigger content/publish/before runs the approval';
+        // 'add_event' only says the trigger runs another workflow, which the event goes into: the event line below
+        // tells whether that is still to do (the command does not count it either)
+        if ( $changes['trigger'] === 'create' )
+            $lines[] = 'create trigger content/publish/before';
         if ( $changes['event'] === 'create' || $changes['event'] === 'update' )
             $lines[] = $changes['event'] . ' the event "Approve user accounts"';
         if ( $changes['role'] === 'create' )
