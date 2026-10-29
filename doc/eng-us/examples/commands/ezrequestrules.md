@@ -43,7 +43,7 @@ Lists and checks the rules of a siteaccess and explains their decision for an ad
 | `--host` | required | Host name the visitor used |
 | `--ip` | required | Client address |
 | `--scheme` | required | http or https (default https) |
-| `--header:*` |  |  |
+| `--header` | required | A request header, Name:Value; may be given more than once |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

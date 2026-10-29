@@ -13,6 +13,8 @@
  * never candidates; they are decided as the siteaccess menu decides them (splitAdministrations()). Optional, off by
  * default: "prefer the deepest root", for public sites with nested roots (a shop inside another site's tree): of
  * several siteaccesses that serve every product the one whose root is deepest wins when it is the only one that deep.
+ * Siteaccesses named with --exclude (parseExclude()) are never chosen: they are dropped from the candidates, so the
+ * next candidate can win, and an order that only excluded siteaccesses serve stays unknown.
  *
  * The inference (infer()) works on path strings only, so it needs no database.
  *
@@ -75,9 +77,12 @@ class expOrderSiteaccessBackfill
      * @param array $roots siteaccess => root path string
      * @param bool $preferDeepestRoot of several siteaccesses that serve every product, take the one with the deepest
      *                                root when it is the only one that deep
-     * @return array( 'siteaccess' => name or '', 'reason' => why )
+     * @param string[] $exclude siteaccesses never to choose (--exclude); they are dropped from the candidates, so
+     *                          the next candidate can win
+     * @return array( 'siteaccess' => name or '', 'reason' => why, 'excluded' => true when only excluded
+     *                siteaccesses served its products )
      */
-    public static function infer( array $itemPaths, array $roots, $preferDeepestRoot = false )
+    public static function infer( array $itemPaths, array $roots, $preferDeepestRoot = false, array $exclude = array() )
     {
         if ( !$itemPaths )
             return array( 'siteaccess' => '', 'reason' => 'the order has no product items' );
@@ -95,6 +100,21 @@ class expOrderSiteaccessBackfill
 
         if ( !$candidates )
             return array( 'siteaccess' => '', 'reason' => 'no siteaccess serves every product of the order' );
+        $dropped = array();
+        foreach ( $exclude as $name )
+        {
+            $name = (string)$name;
+            if ( array_key_exists( $name, $candidates ) )
+            {
+                $dropped[] = $name;
+                unset( $candidates[$name] );
+            }
+        }
+        if ( !$candidates )
+        {
+            sort( $dropped );
+            return array( 'siteaccess' => '', 'reason' => 'only excluded siteaccesses serve its products: ' . implode( ', ', $dropped ), 'excluded' => true );
+        }
         if ( count( $candidates ) === 1 )
             return array( 'siteaccess' => (string)key( $candidates ), 'reason' => 'the only siteaccess that serves its products' );
 
@@ -108,6 +128,40 @@ class expOrderSiteaccessBackfill
             return array( 'siteaccess' => '', 'reason' => 'several siteaccesses with the same root serve its products: ' . implode( ', ', $top ) );
         }
         return array( 'siteaccess' => '', 'reason' => 'several siteaccesses serve its products: ' . implode( ', ', array_keys( $candidates ) ) );
+    }
+
+    /**
+     * The siteaccesses named with --exclude: each value may be a comma list and the option may be repeated. Names are
+     * trimmed, empty ones dropped and duplicates kept once, in the order given. A name that is not in
+     * AvailableSiteAccessList is still excluded (it matches nothing) and named in $unknown, for a warning.
+     *
+     * @param mixed $values the option's value: null, a string, or an array of strings
+     * @param string[] $available AvailableSiteAccessList[]
+     * @param array $unknown filled with the names not in $available
+     * @return string[]
+     */
+    public static function parseExclude( $values, array $available, &$unknown = array() )
+    {
+        $unknown = array();
+        $names = array();
+        foreach ( (array)$values as $value )
+        {
+            if ( !is_string( $value ) )
+                continue;
+            foreach ( explode( ',', $value ) as $name )
+            {
+                $name = expOrderSiteaccess::normalize( $name );
+                if ( $name !== '' && !in_array( $name, $names, true ) )
+                    $names[] = $name;
+            }
+        }
+        $available = array_map( array( 'expOrderSiteaccess', 'normalize' ), $available );
+        foreach ( $names as $name )
+        {
+            if ( !in_array( $name, $available, true ) )
+                $unknown[] = $name;
+        }
+        return $names;
     }
 
     /**

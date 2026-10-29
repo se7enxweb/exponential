@@ -50,12 +50,22 @@ AdminSiteAccessList[]`, or, when that list is empty, those with an administratio
 ```bash
 php bin/php/expbackfillordersiteaccess.php                        # dry run: lists every order and the counts
 php bin/php/expbackfillordersiteaccess.php --prefer-deepest-root  # see below
+php bin/php/expbackfillordersiteaccess.php --exclude=site_mobile,site_preview  # see below
 php bin/php/expbackfillordersiteaccess.php --apply                # writes
 ```
 
-Without `--apply` nothing is written: the siteaccesses considered (with the root each serves) and those left out as
-administrations are listed, then each order with the siteaccess it would get, or why it stays unknown, followed by
-the counts. Read the dry run first.
+Without `--apply` nothing is written: the siteaccesses considered (with the root each serves), those excluded with
+`--exclude` and those left out as administrations are listed, then each order with the siteaccess it would get, or
+why it stays unknown, followed by the counts and the excluded siteaccesses. Read the dry run first.
+
+`--exclude=<siteaccess>[,<siteaccess>...]` names siteaccesses that are never chosen, such as a mobile twin or a
+preview siteaccess that serves the same tree as the shop but never took an order. Give a comma list, repeat the
+option (`--exclude=site_mobile --exclude=site_preview`), or both. An excluded siteaccess is dropped from an order's
+candidates, so the next candidate can win: with a shop nested in a whole-tree site, excluding the shop gives its
+orders to the site. An order that only excluded siteaccesses serve stays unknown, reported as
+`stays unknown, only excluded siteaccesses serve its products: ...`, and is counted in the summary. A name that is
+not in `site.ini [SiteAccessSettings] AvailableSiteAccessList[]` (a typo, a siteaccess since removed) is a warning
+line, not an error; the run goes on.
 
 `--prefer-deepest-root` is off by default and only for public sites with nested roots, such as a shop inside
 another site's tree: of several sites that serve every product, the one whose root is deepest wins, when it is the

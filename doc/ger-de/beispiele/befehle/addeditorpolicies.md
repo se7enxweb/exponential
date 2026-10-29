@@ -48,8 +48,8 @@ Example: php bin/php/addeditorpolicies.php --dry-run
 |---|---|---|
 | `--dry-run` |  | List what would be removed and added, change nothing |
 | `--role` | erforderlich | The role to complete (ID or name); default Editor |
-| `--only:*` |  |  |
-| `--skip:*` |  |  |
+| `--only` | erforderlich | Only this policy (module/function), may be repeated |
+| `--skip` | erforderlich | Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed |
 | `--keep-content-wildcard` |  | Leave a content/* of the role as it is (not replaced by single functions) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

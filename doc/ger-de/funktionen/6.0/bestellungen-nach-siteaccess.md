@@ -54,12 +54,25 @@ zurückfällt) oder mit einem `[SiteSettings] FrontSiteAccess`.
 ```bash
 php bin/php/expbackfillordersiteaccess.php                        # Probelauf: listet jede Bestellung und die Summen
 php bin/php/expbackfillordersiteaccess.php --prefer-deepest-root  # siehe unten
+php bin/php/expbackfillordersiteaccess.php --exclude=site_mobile,site_preview  # siehe unten
 php bin/php/expbackfillordersiteaccess.php --apply                # schreibt
 ```
 
 Ohne `--apply` wird nichts geschrieben: Aufgeführt werden die berücksichtigten Siteaccesses (mit der Wurzel, die jeder
-ausliefert) und die als Administration ausgelassenen, dann jede Bestellung mit dem Siteaccess, den sie erhielte, oder
-mit dem Grund, warum sie unbekannt bleibt, danach die Summen. Lesen Sie zuerst den Probelauf.
+ausliefert), die mit `--exclude` ausgeschlossenen und die als Administration ausgelassenen, dann jede Bestellung mit
+dem Siteaccess, den sie erhielte, oder mit dem Grund, warum sie unbekannt bleibt, danach die Summen und die
+ausgeschlossenen Siteaccesses. Lesen Sie zuerst den Probelauf.
+
+`--exclude=<siteaccess>[,<siteaccess>...]` nennt Siteaccesses, die nie gewählt werden, etwa einen mobilen Zwilling
+oder einen Vorschau-Siteaccess, der denselben Baum wie der Shop ausliefert, aber nie eine Bestellung angenommen hat.
+Geben Sie eine durch Kommas getrennte Liste an, wiederholen Sie die Option (`--exclude=site_mobile
+--exclude=site_preview`) oder beides. Ein ausgeschlossener Siteaccess fällt aus den Kandidaten einer Bestellung
+heraus, so dass der nächste Kandidat gewinnen kann: Liegt ein Shop im Baum einer Site, die den ganzen Baum ausliefert,
+erhält die Site seine Bestellungen, wenn der Shop ausgeschlossen ist. Eine Bestellung, die nur ausgeschlossene
+Siteaccesses ausliefern, bleibt unbekannt, wird als
+`stays unknown, only excluded siteaccesses serve its products: ...` gemeldet und in den Summen gezählt. Ein Name, der
+nicht in `site.ini [SiteAccessSettings] AvailableSiteAccessList[]` steht (ein Tippfehler, ein inzwischen entfernter
+Siteaccess), ergibt eine Warnzeile, keinen Fehler; der Lauf geht weiter.
 
 `--prefer-deepest-root` ist standardmäßig aus und nur für öffentliche Sites mit verschachtelten Wurzeln gedacht, etwa
 einen Shop im Baum einer anderen Site: Von mehreren Sites, die jedes Produkt ausliefern, gewinnt die mit der tiefsten

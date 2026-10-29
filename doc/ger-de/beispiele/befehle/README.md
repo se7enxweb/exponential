@@ -40,6 +40,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:convertezenumtoezselection](convertezenumtoezselection.md) |  |  |
 | [exp:convertprice2multiprice](convertprice2multiprice.md) |  | Wandelt Inhaltsobjekte mit Attributen vom Datentyp 'price' in 'multiprice' um |
 | [exp:dfscleanup](dfscleanup.md) |  | Gleicht Datenbank und DFS-Dateien miteinander ab (-S, -B) und löscht nicht vorhandene (-D) |
+| [exp:expbackfillordersiteaccess](expbackfillordersiteaccess.md) |  | Leitet den Siteaccess von Bestellungen ab, die vor der Erfassung von ezorder.siteaccess aufgegeben wurden (Probelauf ohne --apply) |
 | [exp:expcontentjob](expcontentjob.md) |  | Inhaltsaufträge ausführen, auflisten, fortsetzen und abbrechen: große Teilbäume stapelweise entfernen und kopieren |
 | [exp:expfetch](expfetch.md) | exp:info, exp:about | Die Systemkarte: das Exponential-„e“ neben den Fakten dieser Installation, ihrer Engine und ihres Rechners, mit Hinweisen zum Zustand (exp:info ergänzt ein Inventar, exp:about das Projekt) |
 | [exp:exphelp](exphelp.md) | exp:help | Das Hilfesystem auf der Kommandozeile: den Index von doc/ aufbauen und beschreiben, darin suchen, die Metadaten einer Seite zeigen, ihre Links und Bilder prüfen |

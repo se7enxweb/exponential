@@ -38,7 +38,7 @@ Example: php bin/php/addexphelpreadpolicy.php --dry-run
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--dry-run` |  | Auflisten, was gewährt würde, nichts ändern |
-| `--role:*` |  |  |
+| `--role` | erforderlich | Diese Rolle (ID oder Name), kann wiederholt werden; die Rolle Editor, wenn keine genannt ist |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -46,8 +46,8 @@ Example: php bin/php/addeditorpolicies.php --dry-run
 |---|---|---|
 | `--dry-run` |  | List what would be removed and added, change nothing |
 | `--role` | required | The role to complete (ID or name); default Editor |
-| `--only:*` |  |  |
-| `--skip:*` |  |  |
+| `--only` | required | Only this policy (module/function), may be repeated |
+| `--skip` | required | Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed |
 | `--keep-content-wildcard` |  | Leave a content/* of the role as it is (not replaced by single functions) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

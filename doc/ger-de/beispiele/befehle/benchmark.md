@@ -25,7 +25,7 @@ php bin/php/benchmark.php --help
 |---|---|---|
 | `--base` | erforderlich | Der zu messende Server (Standard: https:// und die SiteURL des Siteaccess) |
 | `--compare` | erforderlich | Zwei oder mehr Server, durch Kommas getrennt, direkt nacheinander gemessen (A/B) |
-| `--url:*` |  |  |
+| `--url` | erforderlich | Eine zu messende URL oder ein Pfad; für weitere wiederholen |
 | `--urls-file` | erforderlich | Eine Datei mit einer URL oder einem Pfad pro Zeile (# beginnt einen Kommentar) |
 | `--pages` | erforderlich | Wie viele Seiten des Menüs die Standardliste nimmt (Standard 3) |
 | `--no-admin` |  | Die Anmeldeseite der Administration aus der Standardliste weglassen |
@@ -42,9 +42,9 @@ php bin/php/benchmark.php --help
 | `--cold-clear` |  | Vor dem Lauf einmal den View-Cache der Inhalte leeren (nur diese Installation) |
 | `--insecure` |  | TLS-Zertifikate nicht prüfen (selbstsignierte Server) |
 | `--auth` | erforderlich | HTTP-Basic-Auth, benutzer:passwort (oder die Variable EXP_BENCHMARK_AUTH) |
-| `--header:*` |  |  |
+| `--header` | erforderlich | Ein zusätzlicher Request-Header, "Name: Wert"; für weitere wiederholen |
 | `--cookie` | erforderlich | Ein zu sendender Cookie-Header, z. B. um eine Seite im angemeldeten Zustand zu messen |
-| `--resolve:*` |  |  |
+| `--resolve` | erforderlich | host:port:adresse, wie curl --resolve, um einen Host unter einer anderen Adresse zu erreichen |
 | `--http` | erforderlich | HTTP-Version: 1.1 oder 2 (Standard: was curl aushandelt) |
 | `--encoding` | erforderlich | Das zu sendende Accept-Encoding (Standard gzip; "none" für keines) |
 | `--timeout` | erforderlich | Sekunden pro Anfrage (Standard 30) |
@@ -54,7 +54,7 @@ php bin/php/benchmark.php --help
 | `--repeat` | erforderlich | kernel: Läufe jeder Messung (Standard 20); micro: gemessene Iterationen jeder Messung (Standard 30) |
 | `--boot-repeat` | erforderlich | kernel: neue Prozesse für den Start und das kalte Rendern (Standard 5) |
 | `--node` | erforderlich | kernel: der zu rendernde und abzurufende Knoten (Standard: die Startseite) |
-| `--probe:*` |  |  |
+| `--probe` | erforderlich | kernel, micro: nur diese Messungen; für weitere wiederholen |
 | `--json` |  | Den Lauf als JSON ausgeben |
 | `--csv` |  | Die Zeilen als CSV ausgeben |
 | `--save` | erforderlich | Den Lauf als JSON in diese Datei schreiben |
