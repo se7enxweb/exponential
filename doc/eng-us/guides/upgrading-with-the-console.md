@@ -97,12 +97,16 @@ Stage database     pending (1 pending)
 ```
 
 1. The lock `var/<site>/upgrade.lock` is taken: a second run at the same time stops with exit 1.
-2. Before the first write the backup is made (below); if it fails, nothing is changed.
+2. Before the first write a caption is taken (below), the point to roll back to; if it fails, nothing is changed.
 3. The pending steps run in order. After each one the step looks at the installation again; only when its effect
    is there now is it recorded as `done`.
 4. The first step that fails stops the run (exit 1). The steps after it are listed as not run. Fix the cause and
    run the command again: what is done is not done twice, and a half-applied step is completed.
 5. The finish stage deploys the changes and requests the front page of `[SiteSettings] SiteURL` (or every `--url`).
+6. The installation is verified (below). When the run or the verification fails, the command ends with exit 1 and
+   lists the captions, newest first, each with the command that rolls back to it; with `--rollback-on-fail` it
+   rolls back to the caption of step 2 at once. When it passes, `--post-caption` takes a caption of the verified
+   state, the "last known good" for the next upgrade.
 
 Choose what runs with `--stages=database,scripts`, `--only=<step id>` and `--skip=<step id>` (comma lists or
 repeated). `--no-deploy` finishes with the extension autoloads and the INI, template and content caches only, when
@@ -130,9 +134,8 @@ upstream or `--to`. A checkout is refused when:
 - the process is not its owner (run the upgrade as the user that owns the files, `sudo -u <owner>`).
 
 `exp:upgrade:status` reads the remote-tracking refs as the last fetch left them. A dry run and a run fetch first, the
-refs only, never the working tree, and only as the owner. Before the first move, git_manager makes its own backup on
-MySQL and MariaDB (on the other engines the upgrade's backup holds the database), and the commits every checkout was
-on are written to `code.json` in the upgrade's backup. Without git_manager, or when the installation is not a git
+refs only, never the working tree, and only as the owner. The caption taken before the first write holds the
+commits every checkout was on (`code.json`). Without git_manager, or when the installation is not a git
 checkout, the stage does not apply: update the code as [Upgrading](upgrading.md), part C, says.
 
 ## The libraries stage
@@ -159,46 +162,91 @@ The install is refused, and nothing is installed, when:
 
 `--allow-vendor-changes` installs over the first two.
 
+## Captions
+
+A caption is a safe point in time: git_manager's full backup (`extension/git_manager`, the database dump and the
+`var/` storage) in git_manager's backup folder, with what `exp:upgrade` adds in its `upgrade/` folder:
+
+| In the caption | What it is |
+|---|---|
+| `sql_<caption>.tar.gz`, `dump.json` | the database: MySQL and MariaDB `mysqldump`, PostgreSQL `pg_dump --clean`, SQLite a consistent copy (`VACUUM INTO`), MongoDB `mongodump`; Oracle has none (export with `expdp`) |
+| `var_<caption>.tar.gz` | the storage under `var/` (without git_manager's `VarExcludeDirs`) |
+| `upgrade/settings/override` | the settings overrides |
+| `upgrade/libraries/` | `composer.json`, `composer.lock`, `vendor/composer/installed.json` |
+| `upgrade/code.json` | the commit of the installation's checkout and of every `--repos` checkout |
+| `upgrade/caption.json` | the label, the kind (`pre`, `post`, `safety`, `manual`), the versions (database, code, extensions), the engine, the tables |
+| `upgrade/checksums.json` | the SHA-256 of every file of the caption |
+
+`exp:upgrade --apply` takes a `pre` caption, labelled `upgrade <from>→<to> <time> pre`, before it writes anything, and
+records it in the report and in `expupgrade_step`. Without git_manager, or with a git_manager that cannot dump the
+engine (an older one dumps MySQL only), `exp:upgrade` makes the caption itself in `var/backup/upgrade/<time>/` (the
+database, no storage) and says why. `--no-caption` (the same as `--no-backup`) writes without one; on an installation
+whose settings call it production (`site.ini [AdminEnvironment] Level=production`, or `Level=auto` with `EXP_ENV` set
+to `prod`, `production` or `live`) it is refused with exit 2 unless `--force-no-caption` is given too.
+
+```bash
+./console exp:upgrade:captions                                  # every caption, newest first, with its rollback command
+./console exp:upgrade:captions --verify=2026-10-29_10-15-00     # checksums, and the dump restored into a throwaway database
+./console exp:upgrade:captions --prune                          # what the retention settings let go
+./console exp:upgrade:captions --prune --apply
+```
+
+The list shows git_manager's own captions too. `--verify` checks every checksum and restores the database dump into a
+throwaway database (SQLite: a copy and `PRAGMA integrity_check`; MySQL, MariaDB and PostgreSQL: a database
+`<name>_capverify_<pid>` made with the installation's account, loaded, counted and dropped; a MySQL dump made with
+`--databases` is loaded without its `CREATE DATABASE` and `USE`, so it never reaches the live database). `--prune`
+keeps the newest `CaptionKeep` (10), every caption younger than `CaptionKeepDays` (90) and the `pre` and `post`
+captions of the last `CaptionKeepUpgrades` (3) upgrades, all in `upgrade.ini [UpgradeSettings]`; it removes captions
+of `exp:upgrade` only, git_manager's own keep to its `MaxBackups`.
+
+The password of the connection reaches a dump tool in a file only its owner can read (MySQL, MongoDB) or in its
+environment (PostgreSQL), never on a command line, and every file of a caption is readable by its owner only.
+`./console exp:upgrade:backup` still makes the database backup of `exp:upgrade` on its own, without a caption.
+
+## The verification after the upgrade
+
+```bash
+./console exp:upgrade:verify --after
+./console exp:upgrade:verify --after --url=https://www.example.com/,https://www.example.com:8080/ --no-tests
+```
+
+At the end of `exp:upgrade --apply` the installation is checked, in a new process so that it is the new code that is
+checked (`--no-verify` skips it):
+
+| Check | Passes when |
+|---|---|
+| steps | no step drifted (recorded as done, effect missing) and none failed |
+| urls | every smoke address answers 200 to 399: `upgrade.ini [UpgradeSettings] SmokeURL[]`, else `velocity.ini [DeploySettings] WarmUpURL[]` (the addresses of Apache and of Velocity), else the front page and the sign-in page of `SiteURL`; `--url` overrides |
+| tests | the PHPUnit test suite `upgrade-smoke` passes (fast, no database); skipped where PHPUnit is not installed, or with `--no-tests` |
+| errorlog | no new fatal line in `var/log/error.log` and the site's own error log since the run started |
+| autoload | every registered step class loads, and the autoload arrays are readable |
+
+A check that cannot run says why and does not fail the verification.
+
 ## Rolling back
 
 ```bash
-./console exp:upgrade:rollback                                      # the backups
-./console exp:upgrade:rollback 20261029-101500                      # what a rollback to it restores
-./console exp:upgrade:rollback 20261029-101500 --apply
-./console exp:upgrade:rollback 20261029-101500 --apply --parts=database,settings
-./console exp:upgrade:finish --apply                                # make it live
+./console exp:upgrade:rollback                                          # the captions
+./console exp:upgrade:rollback 2026-10-29_10-15-00                      # what a rollback to it restores
+./console exp:upgrade:rollback 2026-10-29_10-15-00 --apply
+./console exp:upgrade:rollback 2026-10-29_10-15-00 --apply --parts=database,settings
+./console exp:upgrade:finish --apply                                    # make it live
 ```
 
-A rollback is never automatic and never runs without `--apply`. It restores the parts the backup has, in this order:
+A rollback is never automatic (except with `--rollback-on-fail`) and never runs without `--apply`. With `--apply` it
+first takes a `safety` caption of the current state, so the rollback itself can be undone by rolling back to that one
+(`--no-caption` skips it, refused on production without `--force-no-caption`). Then it restores the parts the caption
+has, in this order, and runs the verification again (`--no-verify` skips it):
 
 | Part | Restores |
 |---|---|
-| database | SQLite: the copy written back through SQLite's backup API; MySQL and MariaDB: `database.sql` through `mysql`; PostgreSQL: `database.sql` through `psql`. Tables made after the backup are dropped. MongoDB and Oracle: by hand (`mongorestore --drop`, `impdp`) |
+| database | SQLite: the copy written back through SQLite's backup API; MySQL and MariaDB: the dump through `mysql`; PostgreSQL: the dump through `psql`. Tables made after the caption are dropped. MongoDB and Oracle: by hand (`mongorestore --drop`, `impdp`) |
+| storage | `var/` unpacked from git_manager's archive over the installation's (files added since stay) |
 | settings | `settings/override` copied back over the installation's (files added since stay) |
-| libraries | `composer.json` and `composer.lock` copied back, then `composer install` |
+| libraries | `composer.json` and `composer.lock` copied back, then `composer install` (refused over packages kept as git checkouts, as the libraries stage refuses them) |
 | code | every checkout of `code.json` moved back to its commit (`git reset --keep`, refused over local changes in the files it would move) |
 
-## The backup
-
-`./console exp:upgrade:backup` makes the same backup on its own. It goes into `var/backup/upgrade/<time>/`
-(`--backup-dir=` for another place):
-
-| Engine | Backup |
-|---|---|
-| SQLite | `database.sqlite`, a consistent copy made with `VACUUM INTO` while the site runs |
-| MySQL, MariaDB | `database.sql` from `mysqldump --single-transaction` |
-| PostgreSQL | `database.sql` from `pg_dump` |
-| MongoDB | `mongodb/` from `mongodump` |
-| Oracle | none: make one with `expdp` and run with `--no-backup` |
-
-`settings/override`, `composer.json`, `composer.lock` and `vendor/composer/installed.json` are copied next to it, and
-`manifest.json` says what is there, with the tables the database had (a rollback drops the ones made later). On an
-installation whose settings call it production (`site.ini [AdminEnvironment] Level=production`, or `Level=auto` with
-`EXP_ENV` set to `prod`, `production` or `live`), `--no-backup` is refused with exit 2 unless `--force-no-backup` is
-given too. The password of the connection
-reaches the dump tool in a file only its owner can read (MySQL, MongoDB) or in its environment (PostgreSQL), never
-on a command line. The files are readable by their owner only. The backup is the way back: no step can be
-undone on its own.
+An encrypted caption (git_manager's GPG option) has to be decrypted with git_manager first.
 
 ## Engines
 
@@ -226,7 +274,7 @@ restore, or from monitoring.
 
 Every applied step is also written to `var/log/upgrade.log`, and to the audit log: `system.upgrade.step` for each
 step applied or failed, `system.upgrade.backup` for the backup, `system.upgrade.run` at the end of a run with
-`--apply`, `system.upgrade.rollback` for a rollback ([the audit](../bc/6.0/audit.md)).
+`--apply`, `system.upgrade.rollback` for a rollback, `system.upgrade.caption` for a caption taken, checked or pruned, `system.upgrade.verify` for the verification ([the audit](../bc/6.0/audit.md)).
 
 ## In a pipeline
 
@@ -242,8 +290,8 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | Exit code | Means |
 |---|---|
 | 0 | nothing pending, or everything applied |
-| 1 | a step failed, the lock or the backup was refused, a stage was out of order, or steps are pending with `--fail-on-pending`; `exp:upgrade:verify`: drift |
-| 2 | usage error (an unknown option value, stage, step, backup or part; `--apply` with `--dry-run`; `--no-backup` on production without `--force-no-backup`) |
+| 1 | a step failed, the verification after the upgrade failed, the lock or the caption was refused, a stage was out of order, or steps are pending with `--fail-on-pending`; `exp:upgrade:verify`: drift or a failed check; `exp:upgrade:captions --verify`: a changed file or a dump that does not restore |
+| 2 | usage error (an unknown option value, stage, step, caption or part; `--apply` with `--dry-run`; `--no-caption` or `--no-backup` on production without `--force-no-caption`) |
 | 3 | the database is not reachable |
 | 4 | internal error |
 

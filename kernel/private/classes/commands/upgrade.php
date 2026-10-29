@@ -156,7 +156,7 @@ class Upgrade extends UpgradeBase
                                                                               'backup-dir' => !empty( $options['backup-dir'] ) ? $options['backup-dir'] : null ) );
             $to = !empty( $options['to'] ) ? (string)$options['to'] : \expUpgrade::kernelVersion();
             $context->setOption( 'caption-to', $to );
-            $post = \expUpgradeCaption::take( 'post', 'upgrade ' . ( isset( $report['caption']['label'] ) ? preg_replace( '/ \S+ pre$/', '', $report['caption']['label'] ) : "→$to" )
+            $post = \expUpgradeCaption::take( 'post', ( isset( $report['caption']['label'] ) ? preg_replace( '/ \S+ pre$/', '', $report['caption']['label'] ) : "upgrade →{$to}" )
                                                       . ' ' . date( 'Ymd-His' ) . ' post', $context );
             $report['post_caption'] = array( 'id' => $post['id'], 'ok' => $post['ok'], 'source' => $post['source'], 'messages' => $post['messages'] );
         }

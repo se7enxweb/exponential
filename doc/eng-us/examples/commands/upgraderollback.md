@@ -2,14 +2,14 @@
 title: exp:upgraderollback
 audience: developer, admin
 category: examples
-summary: "Upgrade rollback: put the database, settings, libraries and code back to a backup of exp:upgrade (dry run unless --apply)."
+summary: "Upgrade rollback: put the database, storage, settings, libraries and code back to a caption (dry run unless --apply)."
 keywords: exp:upgraderollback, upgraderollback, console, command, CLI, upgraderollback.php, exp:upgrade:rollback
 type: generated
 generated: exp:help:examples
 ---
 # exp:upgraderollback
 
-Upgrade rollback: put the database, settings, libraries and code back to a backup of exp:upgrade (dry run unless --apply).
+Upgrade rollback: put the database, storage, settings, libraries and code back to a caption (dry run unless --apply).
 
 Script `bin/php/upgraderollback.php`, code in `kernel/private/classes/commands/upgraderollback.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -23,15 +23,16 @@ php bin/php/upgraderollback.php --help
 
 ```text
 Upgrade rollback
-Without a backup name: the backups exp:upgrade made (var/backup/upgrade/). With one: what a
-rollback to it restores, and with --apply restores it: the database (SQLite copy, MySQL/MariaDB
-and PostgreSQL dump; tables made later are dropped), settings/override, composer.lock with
-composer install, and the git checkouts moved back to their commits (git reset --keep).
-Never automatic. Afterwards run ./console exp:upgrade:finish --apply.
+Without a caption id: the captions, newest first (as exp:upgrade:captions). With one: what a
+rollback to it restores, and with --apply: a safety caption of the current state first (so the
+rollback can be undone), then the parts: the database (tables made later are dropped), the
+storage (var/), settings/override, composer.lock with composer install, the git checkouts
+(git reset --keep), then the verification of exp:upgrade:verify --after. Never automatic.
+Afterwards run ./console exp:upgrade:finish --apply.
 
 ./console exp:upgrade:rollback
-./console exp:upgrade:rollback 20261029-101500
-./console exp:upgrade:rollback 20261029-101500 --apply --parts=database,settings
+./console exp:upgrade:rollback 2026-10-29_10-15-00
+./console exp:upgrade:rollback 2026-10-29_10-15-00 --apply --parts=database,settings
 ```
 
 ## Options
@@ -40,13 +41,19 @@ Never automatic. Afterwards run ./console exp:upgrade:finish --apply.
 |---|---|---|
 | `--apply` |  | Make the changes (the default is a dry run that lists them and changes nothing) |
 | `--dry-run` |  | The default, accepted for scripts that pass it: list what would change, change nothing |
-| `--parts` | required | Only these parts, a comma list of database, settings, libraries, code (default: what the backup has) |
+| `--parts` | required | Only these parts, a comma list of database, storage, settings, libraries, code (default: what the caption has) |
 | `--backup-dir` | required | Where the backup goes (default var/backup/upgrade); a directory <time> is made in it |
 | `--format` | required | text (default) or json (the machine output exp-upgrade/1) |
+| `--no-caption` |  | Write without taking a caption first (the same as --no-backup); refused on production without --force-no-caption |
+| `--force-no-caption` |  | With --no-caption on a production installation: write without a caption all the same |
+| `--no-verify` |  | Skip the verification after the upgrade (exp:upgrade:verify --after) |
+| `--url` | required | The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL |
+| `--no-tests` |  | Leave the test suite upgrade-smoke out of the verification |
+| `--allow-vendor-changes` |  | Install the libraries although Composer reports local changes in vendor/ |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
-Arguments: `[BACKUP]`.
+Arguments: `[CAPTION]`.
 
 ## Related
 

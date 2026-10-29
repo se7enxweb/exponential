@@ -49,6 +49,8 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--force-order` |  | Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat |
 | `--fail-on-pending` |  | Exit-Code 1, wenn noch Schritte offen sind (für CI) |
 | `--force-no-backup` |  | Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben |
+| `--no-caption` |  | Schreiben, ohne vorher einen Sicherungspunkt anzulegen (dasselbe wie --no-backup); auf Produktion ohne --force-no-caption verweigert |
+| `--force-no-caption` |  | Mit --no-caption auf einer Produktions-Installation: trotzdem ohne Sicherungspunkt schreiben |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

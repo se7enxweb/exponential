@@ -100,7 +100,8 @@ Stage database     pending (1 pending)
 ```
 
 1. Die Sperre `var/<site>/upgrade.lock` wird genommen: Ein zweiter Lauf zur selben Zeit endet mit Exit-Code 1.
-2. Vor dem ersten Schreiben wird die Sicherung gemacht (siehe unten); scheitert sie, wird nichts geändert.
+2. Vor dem ersten Schreiben wird ein Sicherungspunkt angelegt (siehe unten), der Punkt zum Zurückrollen; scheitert
+   er, wird nichts geändert.
 3. Die offenen Schritte laufen der Reihe nach. Nach jedem sieht der Schritt erneut in der Installation nach; nur wenn
    seine Wirkung jetzt da ist, wird er als `done` aufgezeichnet.
 4. Der erste Schritt, der scheitert, beendet den Lauf (Exit-Code 1). Die Schritte danach werden als nicht ausgeführt
@@ -108,6 +109,10 @@ Stage database     pending (1 pending)
    erledigt, und ein halb ausgeführter Schritt wird vervollständigt.
 5. Die Abschluss-Stufe stellt die Änderungen bereit und ruft die Startseite von `[SiteSettings] SiteURL` (oder jede
    `--url`) ab.
+6. Die Installation wird geprüft (siehe unten). Scheitert der Lauf oder die Prüfung, endet der Befehl mit Exit-Code 1
+   und listet die Sicherungspunkte, die neuesten zuerst, jeden mit dem Befehl, der darauf zurückrollt; mit
+   `--rollback-on-fail` rollt er sofort auf den Sicherungspunkt aus Schritt 2 zurück. Besteht sie, legt
+   `--post-caption` einen Sicherungspunkt des geprüften Stands an, den „letzten guten“ für das nächste Upgrade.
 
 Was läuft, wählen Sie mit `--stages=database,scripts`, `--only=<Schritt-ID>` und `--skip=<Schritt-ID>` (als
 Komma-Liste oder wiederholt). `--no-deploy` schließt nur mit den Autoloads der Erweiterungen und den INI-, Template-
@@ -136,10 +141,9 @@ geht auf seinen eigenen Upstream oder `--to`. Ein Checkout wird verweigert, wenn
   `sudo -u <Eigentümer>`).
 
 `exp:upgrade:status` liest die Remote-Tracking-Refs, wie der letzte Fetch sie hinterlassen hat. Probelauf und Lauf
-holen zuerst, nur die Refs, nie das Arbeitsverzeichnis, und nur als Eigentümer. Vor der ersten Bewegung macht
-git_manager auf MySQL und MariaDB seine eigene Sicherung (auf den anderen Engines enthält die Sicherung des Upgrades
-die Datenbank), und die Commits, auf denen jeder Checkout stand, werden in `code.json` der Upgrade-Sicherung
-geschrieben. Ohne git_manager, oder wenn die Installation kein Git-Checkout ist, gilt die Stufe nicht: Aktualisieren
+holen zuerst, nur die Refs, nie das Arbeitsverzeichnis, und nur als Eigentümer. Der Sicherungspunkt vor dem ersten
+Schreiben enthält die Commits, auf denen jeder Checkout stand (`code.json`). Ohne git_manager, oder wenn die
+Installation kein Git-Checkout ist, gilt die Stufe nicht: Aktualisieren
 Sie den Code, wie es [Upgrade](aktualisieren.md), Teil C, beschreibt.
 
 ## Die Bibliotheken-Stufe
@@ -166,47 +170,96 @@ Die Installation wird verweigert, und nichts wird installiert, wenn:
 
 `--allow-vendor-changes` installiert über die ersten beiden hinweg.
 
+## Sicherungspunkte
+
+Ein Sicherungspunkt (Caption) ist ein sicherer Zeitpunkt: die vollständige Sicherung von git_manager
+(`extension/git_manager`, der Datenbankabzug und der Speicher unter `var/`) im Sicherungsordner von git_manager, mit
+dem, was `exp:upgrade` in seinem Ordner `upgrade/` hinzufügt:
+
+| Im Sicherungspunkt | Was es ist |
+|---|---|
+| `sql_<Sicherungspunkt>.tar.gz`, `dump.json` | die Datenbank: MySQL und MariaDB `mysqldump`, PostgreSQL `pg_dump --clean`, SQLite eine konsistente Kopie (`VACUUM INTO`), MongoDB `mongodump`; Oracle hat keinen (Export mit `expdp`) |
+| `var_<Sicherungspunkt>.tar.gz` | der Speicher unter `var/` (ohne die `VarExcludeDirs` von git_manager) |
+| `upgrade/settings/override` | die Einstellungs-Overrides |
+| `upgrade/libraries/` | `composer.json`, `composer.lock`, `vendor/composer/installed.json` |
+| `upgrade/code.json` | der Commit des Checkouts der Installation und jedes `--repos`-Checkouts |
+| `upgrade/caption.json` | die Bezeichnung, die Art (`pre`, `post`, `safety`, `manual`), die Versionen (Datenbank, Code, Erweiterungen), die Engine, die Tabellen |
+| `upgrade/checksums.json` | die SHA-256-Prüfsumme jeder Datei des Sicherungspunkts |
+
+`exp:upgrade --apply` legt einen Sicherungspunkt `pre` mit der Bezeichnung `upgrade <von>→<nach> <Zeit> pre` an,
+bevor es irgendetwas schreibt, und zeichnet ihn im Bericht und in `expupgrade_step` auf. Ohne git_manager, oder mit
+einem git_manager, der die Engine nicht sichern kann (ein älterer sichert nur MySQL), legt `exp:upgrade` den
+Sicherungspunkt selbst in `var/backup/upgrade/<Zeit>/` an (die Datenbank, kein Speicher) und sagt warum.
+`--no-caption` (dasselbe wie `--no-backup`) schreibt ohne einen; auf einer Installation, deren Einstellungen sie als
+Produktion ausweisen (`site.ini [AdminEnvironment] Level=production`, oder `Level=auto` mit `EXP_ENV` gleich `prod`,
+`production` oder `live`), wird das mit Exit-Code 2 verweigert, außer zusätzlich ist `--force-no-caption` angegeben.
+
+```bash
+./console exp:upgrade:captions                                  # jeder Sicherungspunkt, neueste zuerst, mit dem Befehl zum Zurückrollen
+./console exp:upgrade:captions --verify=2026-10-29_10-15-00     # Prüfsummen, und der Abzug in eine Wegwerf-Datenbank eingespielt
+./console exp:upgrade:captions --prune                          # was die Aufbewahrungs-Einstellungen freigeben
+./console exp:upgrade:captions --prune --apply
+```
+
+Die Liste zeigt auch die eigenen Sicherungspunkte von git_manager. `--verify` prüft jede Prüfsumme und spielt den
+Datenbankabzug in eine Wegwerf-Datenbank ein (SQLite: eine Kopie und `PRAGMA integrity_check`; MySQL, MariaDB und
+PostgreSQL: eine Datenbank `<Name>_capverify_<pid>`, mit dem Konto der Installation angelegt, geladen, gezählt und
+gelöscht; ein MySQL-Abzug mit `--databases` wird ohne sein `CREATE DATABASE` und `USE` geladen, damit er nie die
+laufende Datenbank erreicht). `--prune` behält die neuesten `CaptionKeep` (10), jeden Sicherungspunkt, der jünger als
+`CaptionKeepDays` (90) ist, und die Sicherungspunkte `pre` und `post` der letzten `CaptionKeepUpgrades` (3) Upgrades,
+alles in `upgrade.ini [UpgradeSettings]`; es entfernt nur Sicherungspunkte von `exp:upgrade`, die eigenen von
+git_manager folgen dessen `MaxBackups`.
+
+Das Passwort der Verbindung erreicht ein Dump-Werkzeug in einer Datei, die nur ihr Eigentümer lesen kann (MySQL,
+MongoDB), oder in seiner Umgebung (PostgreSQL), nie auf einer Befehlszeile, und jede Datei eines Sicherungspunkts kann
+nur ihr Eigentümer lesen. `./console exp:upgrade:backup` macht weiterhin die Datenbanksicherung von `exp:upgrade` für
+sich allein, ohne Sicherungspunkt.
+
+## Die Prüfung nach dem Upgrade
+
+```bash
+./console exp:upgrade:verify --after
+./console exp:upgrade:verify --after --url=https://www.example.com/,https://www.example.com:8080/ --no-tests
+```
+
+Am Ende von `exp:upgrade --apply` wird die Installation geprüft, in einem neuen Prozess, damit der neue Code geprüft
+wird (`--no-verify` überspringt das):
+
+| Prüfung | Besteht, wenn |
+|---|---|
+| steps | kein Schritt abweicht (als erledigt aufgezeichnet, Wirkung fehlt) und keiner gescheitert ist |
+| urls | jede Rauchprobe-Adresse mit 200 bis 399 antwortet: `upgrade.ini [UpgradeSettings] SmokeURL[]`, sonst `velocity.ini [DeploySettings] WarmUpURL[]` (die Adressen von Apache und Velocity), sonst die Startseite und die Anmeldeseite von `SiteURL`; `--url` hat Vorrang |
+| tests | die PHPUnit-Testsuite `upgrade-smoke` besteht (schnell, ohne Datenbank); übersprungen, wo PHPUnit nicht installiert ist, oder mit `--no-tests` |
+| errorlog | keine neue Zeile eines fatalen Fehlers in `var/log/error.log` und dem Fehlerprotokoll der Site seit dem Start des Laufs |
+| autoload | jede registrierte Schritt-Klasse lädt, und die Autoload-Arrays sind lesbar |
+
+Eine Prüfung, die nicht laufen kann, sagt warum und lässt die Prüfung nicht scheitern.
+
 ## Zurückrollen
 
 ```bash
-./console exp:upgrade:rollback                                      # die Sicherungen
-./console exp:upgrade:rollback 20261029-101500                      # was ein Zurückrollen darauf wiederherstellt
-./console exp:upgrade:rollback 20261029-101500 --apply
-./console exp:upgrade:rollback 20261029-101500 --apply --parts=database,settings
-./console exp:upgrade:finish --apply                                # live machen
+./console exp:upgrade:rollback                                          # die Sicherungspunkte
+./console exp:upgrade:rollback 2026-10-29_10-15-00                      # was ein Zurückrollen darauf wiederherstellt
+./console exp:upgrade:rollback 2026-10-29_10-15-00 --apply
+./console exp:upgrade:rollback 2026-10-29_10-15-00 --apply --parts=database,settings
+./console exp:upgrade:finish --apply                                    # live machen
 ```
 
-Ein Zurückrollen ist nie automatisch und läuft nie ohne `--apply`. Es stellt die Teile wieder her, die die Sicherung
-enthält, in dieser Reihenfolge:
+Ein Zurückrollen ist nie automatisch (außer mit `--rollback-on-fail`) und läuft nie ohne `--apply`. Mit `--apply`
+legt es zuerst einen Sicherungspunkt `safety` des aktuellen Stands an, damit sich das Zurückrollen selbst rückgängig
+machen lässt, indem man auf diesen zurückrollt (`--no-caption` überspringt ihn, auf Produktion ohne
+`--force-no-caption` verweigert). Dann stellt es die Teile wieder her, die der Sicherungspunkt enthält, in dieser
+Reihenfolge, und prüft danach erneut (`--no-verify` überspringt das):
 
 | Teil | Stellt wieder her |
 |---|---|
-| database | SQLite: die Kopie über die Backup-API von SQLite zurückgeschrieben; MySQL und MariaDB: `database.sql` über `mysql`; PostgreSQL: `database.sql` über `psql`. Tabellen, die nach der Sicherung entstanden, werden gelöscht. MongoDB und Oracle: von Hand (`mongorestore --drop`, `impdp`) |
+| database | SQLite: die Kopie über die Backup-API von SQLite zurückgeschrieben; MySQL und MariaDB: der Abzug über `mysql`; PostgreSQL: der Abzug über `psql`. Tabellen, die nach dem Sicherungspunkt entstanden, werden gelöscht. MongoDB und Oracle: von Hand (`mongorestore --drop`, `impdp`) |
+| storage | `var/` aus dem Archiv von git_manager über das der Installation entpackt (später hinzugekommene Dateien bleiben) |
 | settings | `settings/override` über das der Installation zurückkopiert (später hinzugekommene Dateien bleiben) |
-| libraries | `composer.json` und `composer.lock` zurückkopiert, dann `composer install` |
+| libraries | `composer.json` und `composer.lock` zurückkopiert, dann `composer install` (verweigert bei Paketen, die eigene Git-Checkouts sind, wie in der Bibliotheken-Stufe) |
 | code | jeder Checkout aus `code.json` zurück auf seinen Commit (`git reset --keep`, verweigert bei lokalen Änderungen in den Dateien, die es zurückbewegen würde) |
 
-## Die Sicherung
-
-`./console exp:upgrade:backup` macht dieselbe Sicherung für sich allein. Sie landet in `var/backup/upgrade/<Zeit>/`
-(`--backup-dir=` für einen anderen Ort):
-
-| Engine | Sicherung |
-|---|---|
-| SQLite | `database.sqlite`, eine konsistente Kopie, mit `VACUUM INTO` gemacht, während die Site läuft |
-| MySQL, MariaDB | `database.sql` aus `mysqldump --single-transaction` |
-| PostgreSQL | `database.sql` aus `pg_dump` |
-| MongoDB | `mongodb/` aus `mongodump` |
-| Oracle | keine: machen Sie eine mit `expdp` und starten Sie mit `--no-backup` |
-
-`settings/override`, `composer.json`, `composer.lock` und `vendor/composer/installed.json` werden daneben kopiert,
-und `manifest.json` sagt, was vorhanden ist, mit den Tabellen, die die Datenbank hatte (ein Zurückrollen löscht die
-später entstandenen). Auf einer Installation, deren Einstellungen sie als Produktion ausweisen
-(`site.ini [AdminEnvironment] Level=production`, oder `Level=auto` mit `EXP_ENV` gleich `prod`, `production` oder
-`live`), wird `--no-backup` mit Exit-Code 2 verweigert, außer zusätzlich ist `--force-no-backup` angegeben. Das Passwort der Verbindung
-erreicht das Dump-Werkzeug in einer Datei, die nur ihr Eigentümer lesen kann (MySQL, MongoDB), oder in seiner
-Umgebung (PostgreSQL), nie auf einer Befehlszeile. Die Dateien kann nur ihr Eigentümer lesen. Die Sicherung ist der
-Weg zurück: Kein Schritt lässt sich für sich allein rückgängig machen.
+Ein verschlüsselter Sicherungspunkt (die GPG-Option von git_manager) muss zuerst mit git_manager entschlüsselt werden.
 
 ## Engines
 
@@ -237,8 +290,9 @@ entfernt). Findet er welche, endet er mit Exit-Code 1. Führen Sie ihn nach eine
 
 Jeder ausgeführte Schritt wird außerdem in `var/log/upgrade.log` geschrieben, und in das Auditprotokoll:
 `system.upgrade.step` für jeden ausgeführten oder gescheiterten Schritt, `system.upgrade.backup` für die Sicherung,
-`system.upgrade.run` am Ende eines Laufs mit `--apply`, `system.upgrade.rollback` für ein Zurückrollen
-([das Audit](../bc/6.0/audit.md)).
+`system.upgrade.run` am Ende eines Laufs mit `--apply`, `system.upgrade.rollback` für ein Zurückrollen,
+`system.upgrade.caption` für einen angelegten, geprüften oder aufgeräumten Sicherungspunkt, `system.upgrade.verify`
+für die Prüfung nach dem Upgrade ([das Audit](../bc/6.0/audit.md)).
 
 ## In einer Pipeline
 
@@ -254,8 +308,8 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | Exit-Code | Bedeutet |
 |---|---|
 | 0 | nichts offen, oder alles ausgeführt |
-| 1 | ein Schritt ist gescheitert, die Sperre oder die Sicherung wurde verweigert, eine Stufe kam außer der Reihe, oder mit `--fail-on-pending` sind Schritte offen; `exp:upgrade:verify`: Abweichungen |
-| 2 | Bedienfehler (ein unbekannter Optionswert, eine unbekannte Stufe, ein unbekannter Schritt, eine unbekannte Sicherung oder ein unbekannter Teil; `--apply` mit `--dry-run`; `--no-backup` auf Produktion ohne `--force-no-backup`) |
+| 1 | ein Schritt ist gescheitert, die Prüfung nach dem Upgrade ist gescheitert, die Sperre oder der Sicherungspunkt wurde verweigert, eine Stufe kam außer der Reihe, oder mit `--fail-on-pending` sind Schritte offen; `exp:upgrade:verify`: Abweichungen oder eine gescheiterte Prüfung; `exp:upgrade:captions --verify`: eine geänderte Datei oder ein Abzug, der sich nicht einspielen lässt |
+| 2 | Bedienfehler (ein unbekannter Optionswert, eine unbekannte Stufe, ein unbekannter Schritt, ein unbekannter Sicherungspunkt oder ein unbekannter Teil; `--apply` mit `--dry-run`; `--no-caption` oder `--no-backup` auf Produktion ohne `--force-no-caption`) |
 | 3 | die Datenbank ist nicht erreichbar |
 | 4 | interner Fehler |
 

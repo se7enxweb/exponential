@@ -48,6 +48,8 @@ something. Dry run unless --apply.
 | `--force-order` |  | Run a stage although an earlier stage has pending steps |
 | `--fail-on-pending` |  | Exit 1 when steps are still pending (for CI) |
 | `--force-no-backup` |  | With --no-backup on a production installation: write without a backup all the same |
+| `--no-caption` |  | Write without taking a caption first (the same as --no-backup); refused on production without --force-no-caption |
+| `--force-no-caption` |  | With --no-caption on a production installation: write without a caption all the same |
 | `--no-deploy` |  | Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only |
 | `--url` | required | The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL |
 

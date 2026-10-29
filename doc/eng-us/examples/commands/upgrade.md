@@ -52,6 +52,8 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--force-order` |  | Run a stage although an earlier stage has pending steps |
 | `--fail-on-pending` |  | Exit 1 when steps are still pending (for CI) |
 | `--force-no-backup` |  | With --no-backup on a production installation: write without a backup all the same |
+| `--no-caption` |  | Write without taking a caption first (the same as --no-backup); refused on production without --force-no-caption |
+| `--force-no-caption` |  | With --no-caption on a production installation: write without a caption all the same |
 | `--no-deploy` |  | Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only |
 | `--url` | required | The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL |
 | `--to` | required | The code stage moves the checkouts to this tag, branch or commit (default: the upstream of the branch) |
@@ -60,6 +62,10 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--composer` | required | The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root) |
 | `--no-audit` |  | Skip the security audit of the libraries (composer audit) before and after |
 | `--allow-vendor-changes` |  | Install the libraries although Composer reports local changes in vendor/ |
+| `--no-verify` |  | Skip the verification after the upgrade (exp:upgrade:verify --after) |
+| `--rollback-on-fail` |  | When the upgrade or its verification fails, roll back to the pre-upgrade caption at once |
+| `--post-caption` |  | After a passed verification, take a post caption: the last known good state |
+| `--no-tests` |  | Leave the test suite upgrade-smoke out of the verification |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

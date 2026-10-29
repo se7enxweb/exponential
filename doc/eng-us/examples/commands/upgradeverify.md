@@ -2,14 +2,14 @@
 title: exp:upgradeverify
 audience: developer, admin
 category: examples
-summary: "Upgrade verify: re-detect every step and report drift (a step recorded as done whose effect is missing)."
+summary: "Upgrade verify: re-detect every step and report drift; --after: the full check after an upgrade (steps, smoke addresses, tests, error log, autoloads)."
 keywords: exp:upgradeverify, upgradeverify, console, command, CLI, upgradeverify.php, exp:upgrade:verify
 type: generated
 generated: exp:help:examples
 ---
 # exp:upgradeverify
 
-Upgrade verify: re-detect every step and report drift (a step recorded as done whose effect is missing).
+Upgrade verify: re-detect every step and report drift; --after: the full check after an upgrade (steps, smoke addresses, tests, error log, autoloads).
 
 Script `bin/php/upgradeverify.php`, code in `kernel/private/classes/commands/upgradeverify.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -25,9 +25,14 @@ php bin/php/upgradeverify.php --help
 Upgrade verify
 Looks at every step again and lists drift: a step exp:upgrade recorded as done whose effect is
 missing now (a table dropped, a policy removed). Exit 1 when there is drift. Changes nothing.
+With --after, the check exp:upgrade --apply runs at its end: the steps (no drift, none failed),
+the smoke addresses ([UpgradeSettings] SmokeURL[], else velocity.ini WarmUpURL[], else the front
+page and the sign-in page: Apache and Velocity), the test suite upgrade-smoke, no new fatal line in
+the error logs since --since, and the autoloads. Exit 1 when a check fails.
 
 ./console exp:upgrade:verify
-./console exp:upgrade:verify --format=json
+./console exp:upgrade:verify --after
+./console exp:upgrade:verify --after --url=https://www.example.com/ --no-tests --format=json
 ```
 
 ## Options
@@ -36,6 +41,10 @@ missing now (a table dropped, a policy removed). Exit 1 when there is drift. Cha
 |---|---|---|
 | `--stages` | required | Only these stages, a comma list of code, libraries, database, scripts, finish (in that order) |
 | `--format` | required | text (default) or json (the machine output exp-upgrade/1) |
+| `--after` |  | The verification after an upgrade: steps, smoke addresses, tests, error log, autoloads |
+| `--url` | required | The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL |
+| `--no-tests` |  | Leave the test suite upgrade-smoke out of the verification |
+| `--since` | required | The error log is read from this moment on: a Unix time (default an hour ago) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -54,6 +54,8 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--force-order` |  | Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat |
 | `--fail-on-pending` |  | Exit-Code 1, wenn noch Schritte offen sind (für CI) |
 | `--force-no-backup` |  | Mit --no-backup auf einer Produktions-Installation: trotzdem ohne Sicherung schreiben |
+| `--no-caption` |  | Schreiben, ohne vorher einen Sicherungspunkt anzulegen (dasselbe wie --no-backup); auf Produktion ohne --force-no-caption verweigert |
+| `--force-no-caption` |  | Mit --no-caption auf einer Produktions-Installation: trotzdem ohne Sicherungspunkt schreiben |
 | `--no-deploy` |  | Ohne exp:velocity deploy abschließen: nur die Autoloads der Erweiterungen und die INI-, Template- und Inhalts-Caches |
 | `--url` | erforderlich | Die Adressen, die die Rauchprobe nach dem Deploy abruft (Komma-Liste oder wiederholt); Standard die Startseite von SiteURL |
 | `--to` | erforderlich | Die Code-Stufe bringt die Checkouts auf diesen Tag, Branch oder Commit (Standard: den Upstream des Branches) |
@@ -62,6 +64,10 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--composer` | erforderlich | Das Composer-Programm oder composer.phar (Standard: composer im PATH, sonst composer.phar in der Wurzel) |
 | `--no-audit` |  | Die Sicherheitsprüfung der Bibliotheken (composer audit) vorher und nachher überspringen |
 | `--allow-vendor-changes` |  | Die Bibliotheken installieren, obwohl Composer lokale Änderungen in vendor/ meldet |
+| `--no-verify` |  | Die Prüfung nach dem Upgrade überspringen (exp:upgrade:verify --after) |
+| `--rollback-on-fail` |  | Scheitert das Upgrade oder seine Prüfung, sofort auf den Sicherungspunkt vor dem Upgrade zurückrollen |
+| `--post-caption` |  | Nach einer bestandenen Prüfung einen Sicherungspunkt post anlegen: den letzten guten Stand |
+| `--no-tests` |  | Die Testsuite upgrade-smoke aus der Prüfung weglassen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

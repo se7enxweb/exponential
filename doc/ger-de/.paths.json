@@ -278,6 +278,7 @@
     "beispiele/befehle/updatesearchindex.md": "examples/commands/updatesearchindex.md",
     "beispiele/befehle/upgrade.md": "examples/commands/upgrade.md",
     "beispiele/befehle/upgradebackup.md": "examples/commands/upgradebackup.md",
+    "beispiele/befehle/upgradecaptions.md": "examples/commands/upgradecaptions.md",
     "beispiele/befehle/upgradecode.md": "examples/commands/upgradecode.md",
     "beispiele/befehle/upgradedatabase.md": "examples/commands/upgradedatabase.md",
     "beispiele/befehle/upgradefinish.md": "examples/commands/upgradefinish.md",

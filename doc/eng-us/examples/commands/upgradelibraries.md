@@ -49,6 +49,8 @@ Guide: doc/eng-us/guides/upgrading-with-the-console.md
 | `--force-order` |  | Run a stage although an earlier stage has pending steps |
 | `--fail-on-pending` |  | Exit 1 when steps are still pending (for CI) |
 | `--force-no-backup` |  | With --no-backup on a production installation: write without a backup all the same |
+| `--no-caption` |  | Write without taking a caption first (the same as --no-backup); refused on production without --force-no-caption |
+| `--force-no-caption` |  | With --no-caption on a production installation: write without a caption all the same |
 | `--update` | required | composer update these packages, with their dependencies (a comma list or repeated) |
 | `--composer` | required | The Composer binary or composer.phar (default: composer on the PATH, else composer.phar in the root) |
 | `--no-audit` |  | Skip the security audit of the libraries (composer audit) before and after |
