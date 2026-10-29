@@ -11,7 +11,7 @@ type: help
 
 This page is for integrators whose landscape has **several Exponential installations** that must share content: a
 group site and its member sites, a portal network, a central product catalog published on several shops. The
-`syndication` extension (required by the root `composer.json` as `~1.3.10`) exports part of one installation's
+`syndication` extension (required by the root `composer.json` as `~1.3.14`) exports part of one installation's
 content tree as a feed and lets another installation import it, kept in step by cron. The feature page is
 [syndication](../../features/6.0/extensions/syndication.md); every option is in the
 [specification](../../specifications/6.0/syndication.md).

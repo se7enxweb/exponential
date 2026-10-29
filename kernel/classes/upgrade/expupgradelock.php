@@ -37,7 +37,7 @@ class expUpgradeLock
             return true;
         $file = $file ?: self::file();
         if ( !is_dir( dirname( $file ) ) )
-            @mkdir( dirname( $file ), 0775, true );
+            @mkdir( dirname( $file ), eZDir::dirMode( 0775 ), true );
         $handle = @fopen( $file, 'c' );
         if ( !$handle )
             return false;

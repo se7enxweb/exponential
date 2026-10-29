@@ -54,7 +54,7 @@ class expUpgradeBackup
         while ( file_exists( $target ) )
             $target = $parent . '/' . date( 'Ymd-His' ) . '-' . ( ++$n );
         $result = array( 'ok' => false, 'dir' => $target, 'files' => array(), 'messages' => array() );
-        if ( !@mkdir( $target, 0700, true ) && !is_dir( $target ) )
+        if ( !@mkdir( $target, eZDir::dirMode( 0700 ), true ) && !is_dir( $target ) )
         {
             $result['messages'][] = "cannot create $target";
             return $result;
@@ -114,7 +114,7 @@ class expUpgradeBackup
             'files' => $result['files'],
             'complete' => $ok,
         ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" );
-        @chmod( $target . '/manifest.json', 0600 );
+        @chmod( $target . '/manifest.json', eZFile::fileMode( 0600 ) );
         $result['ok'] = $ok;
         return $result;
     }
@@ -143,7 +143,7 @@ class expUpgradeBackup
             $result['messages'][] = 'VACUUM INTO is not supported by this SQLite; the file was copied';
         }
         $db->setErrorHandling( $before );
-        @chmod( $file, 0600 );
+        @chmod( $file, eZFile::fileMode( 0600 ) );
         $result['files'][] = 'database.sqlite';
         return is_file( $file ) && filesize( $file ) > 0;
     }
@@ -181,7 +181,7 @@ class expUpgradeBackup
         if ( $db->Port )
             $lines[] = 'port=' . (int)$db->Port;
         file_put_contents( $path, '' );
-        chmod( $path, 0600 );
+        chmod( $path, eZFile::fileMode( 0600 ) );
         file_put_contents( $path, implode( "\n", $lines ) . "\n" );
         return $path;
     }
@@ -241,7 +241,7 @@ class expUpgradeBackup
              . ( $db->Server ?: 'localhost' ) . ( $db->Port ? ':' . (int)$db->Port : '' ) . '/' . rawurlencode( (string)$db->DB );
         $cnf = $target . '/.mongo.yaml';
         file_put_contents( $cnf, '' );
-        chmod( $cnf, 0600 );
+        chmod( $cnf, eZFile::fileMode( 0600 ) );
         file_put_contents( $cnf, 'uri: "' . str_replace( '"', '\\"', $uri ) . "\"\n" );
         exec( 'mongodump --config=' . escapeshellarg( $cnf ) . ' --out=' . escapeshellarg( $dir ) . ' 2>&1', $out, $code );
         @unlink( $cnf );
@@ -256,7 +256,7 @@ class expUpgradeBackup
 
     protected static function finish( $file, $code, $tool, array &$result )
     {
-        @chmod( $file, 0600 );
+        @chmod( $file, eZFile::fileMode( 0600 ) );
         if ( $code !== 0 || !is_file( $file ) || filesize( $file ) === 0 )
         {
             $tail = is_file( $file ) ? trim( (string)file_get_contents( $file, false, null, max( 0, filesize( $file ) - 400 ) ) ) : '';

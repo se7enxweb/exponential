@@ -126,7 +126,7 @@ class expUpgradeCaption
         $dir = $caption['dir'];
         $root = rtrim( (string)$context->option( 'root' ), '/' );
         $up = "$dir/upgrade";
-        $old = umask( 0077 );
+        $old = umask( eZFile::creationUmask( 0077 ) );
         try
         {
             eZDir::mkdir( $up, 0700, true );
@@ -415,7 +415,7 @@ class expUpgradeCaption
             throw new RuntimeException( 'no archive ' . basename( $archive ) );
         if ( !preg_match( '#^[A-Za-z0-9_./-]+$#', $inner ) || strpos( $inner, '..' ) !== false )
             throw new RuntimeException( "not a path inside the archive: $inner" );
-        @mkdir( $tmp, 0700, true );
+        @mkdir( $tmp, eZDir::dirMode( 0700 ), true );
         exec( 'tar -xzf ' . escapeshellarg( $archive ) . ' -C ' . escapeshellarg( $tmp ) . ' ' . escapeshellarg( $inner ) . ' 2>&1', $out, $code );
         if ( $code !== 0 || !file_exists( "$tmp/$inner" ) )
             throw new RuntimeException( 'cannot unpack ' . basename( $archive ) . ': ' . implode( ' ', $out ) );

@@ -10,7 +10,7 @@ type: help
 # Velocity in a bundle
 
 This page is for bundlers who serve the bundled site with Exponential Velocity. "As of 6.0.15 the root `composer.json`
-**requires** `se7enxweb/exponential-velocity ~0.0.4.55`", so every installation built with Composer already has it
+**requires** `se7enxweb/exponential-velocity ~0.0.4.57`", so every installation built with Composer already has it
 ([Velocity engines](../../bc/6.0/velocity-engines.md#velocity-is-part-of-exponential-as-of-6015)).
 
 ## Contents
