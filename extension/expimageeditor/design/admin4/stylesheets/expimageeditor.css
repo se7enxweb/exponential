@@ -60,7 +60,7 @@ dialog.expimageeditor::backdrop { background: var(--a4-overlay, rgba(16, 24, 40,
     background: none;
     color: var(--a4-ink, #1d2b3a);
     font-size: var(--a4-text-l, 1.05rem);
-    font-weight: 650;
+    font-weight: var(--a4-weight-heading);
     line-height: 1.3;
     overflow-wrap: anywhere;
 }
@@ -71,7 +71,7 @@ dialog.expimageeditor::backdrop { background: var(--a4-overlay, rgba(16, 24, 40,
     color: var(--a4-muted, #66768a);
     font-size: var(--a4-text-s, .875rem);
 }
-.expimageeditor-status.is-error { color: var(--a4-bad, #9a1f1f); font-weight: 650; }
+.expimageeditor-status.is-error { color: var(--a4-bad, #9a1f1f); font-weight: var(--a4-weight-heading); }
 
 /* toolbar: groups of icon buttons in admin4's icon-button manner, the chosen tool in the accent */
 .expimageeditor-toolbar {
@@ -157,7 +157,7 @@ dialog.expimageeditor::backdrop { background: var(--a4-overlay, rgba(16, 24, 40,
     overflow-y: auto;
 }
 .expimageeditor-panel[hidden] { display: none; }
-.expimageeditor-panel-title { margin: 0; color: var(--a4-ink, #1d2b3a); font-size: var(--a4-text-m, .95rem); font-weight: 650; }
+.expimageeditor-panel-title { margin: 0; color: var(--a4-ink, #1d2b3a); font-size: var(--a4-text-m, .95rem); font-weight: var(--a4-weight-heading); }
 .expimageeditor-panel p { margin: 0; color: var(--a4-muted, #66768a); font-size: var(--a4-text-s, .875rem); line-height: var(--a4-leading, 1.45); }
 .expimageeditor-panel p[hidden] { display: none; }
 /* the fields: .a4-field draws label and control; ranges, radios and checkboxes in the accent */
@@ -169,9 +169,9 @@ dialog.expimageeditor::backdrop { background: var(--a4-overlay, rgba(16, 24, 40,
 .expimageeditor-field-range input[type="range"] { width: 100%; margin: 0; }
 .expimageeditor-field-range output { text-align: end; font-variant-numeric: tabular-nums; font-size: var(--a4-text-s, .875rem); }
 .expimageeditor-radio { display: flex; align-items: center; gap: var(--a4-space-2, .5rem); min-height: 1.75rem; }
-.expimageeditor-radio label { font-size: var(--a4-text-s, .875rem); font-weight: 400; }
+.expimageeditor-radio label { font-size: var(--a4-text-s, .875rem); font-weight: normal; }
 .expimageeditor-field-checkbox { flex-direction: row; align-items: center; gap: var(--a4-space-2, .5rem); }
-.expimageeditor-field-checkbox label { font-size: var(--a4-text-s, .875rem); font-weight: 400; }
+.expimageeditor-field-checkbox label { font-size: var(--a4-text-s, .875rem); font-weight: normal; }
 .expimageeditor-field input[type="color"] {
     width: 3rem;
     height: var(--a4-control-h, 2.25rem);
@@ -193,7 +193,7 @@ dialog.expimageeditor::backdrop { background: var(--a4-overlay, rgba(16, 24, 40,
     background: var(--a4-soft, #f5f7fa);
 }
 .expimageeditor-foot > .a4-btn[hidden] { display: none; }
-.expimageeditor-confirm { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2, .5rem); font-weight: 650; }
+.expimageeditor-confirm { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2, .5rem); font-weight: var(--a4-weight-heading); }
 .expimageeditor-confirm[hidden] { display: none; }
 /* an option of saving (ctx.foot), at the start of the footer */
 .expimageeditor-foot .expimageeditor-foot-option { margin: 0 auto 0 0; }
@@ -262,7 +262,7 @@ dialog.expimageeditor::backdrop { background: var(--a4-overlay, rgba(16, 24, 40,
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .expimageeditor-tool { transition: background-color .12s, border-color .12s; }
+    .expimageeditor-tool { transition: background-color var(--a4-duration), border-color var(--a4-duration); }
 }
 
 /* the icons */

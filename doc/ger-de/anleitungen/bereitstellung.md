@@ -2,6 +2,20 @@
 
 Diese Anleitung richtet sich an die Person, die eine Site auf einen Server bringt: einen Betreiber oder einen Entwickler, der seinen eigenen Server betreibt. Sie führt eine frisch installierte Exponential-Site auf einen Server, den Besucher über HTTPS erreichen. Danach zeigt sie, wie Sie eine Codeänderung sicher ausliefern und die Site schnell halten. Lesen Sie sie von oben nach unten. Jeder Befehl ist in der Installation vorhanden; wo ein Ergebnis gezeigt wird, ist es das, was der Befehl ausgibt.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 Sie benötigen einen Linux-Server, Shell-Zugang im Installationsverzeichnis (dem Ordner, der `index.php` und `console` enthält) und eine Site, die bereits läuft. Wenn Sie noch keine Site haben, führen Sie zuerst `./console exp:install --apply` aus ([Erste Schritte](erste-schritte.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 Die Befehle verwenden `./console`, die Kurzform für `bin/php/console`. Die Beispiele fügen `--allow-root-user` an, weil sie als root ausgeführt werden; lassen Sie es weg, wenn Sie als Benutzer der Site arbeiten.

@@ -5,7 +5,7 @@
 span.vertical-seperator {
     height: 100%;
     width: 4px;
-    border-right: 1px solid #bbb;
+    border-right: 1px solid var(--a4-line);
     margin-left: 12px;
     margin-right: 16px;
 }
@@ -176,7 +176,7 @@ a {
     -moz-transition: color 300ms ease;
     -ms-transition: color 300ms ease;
     -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    transition: color var(--a4-duration-slow) ease;
 }
 
 #header-topmenu ul,
@@ -210,7 +210,7 @@ ul.tabs li {
 ul.tabs li a,
 ul.tabs li span.disabled {
     display: block;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
     text-decoration: none;
     padding: 2px 15px;
     margin: 2px 0 5px 1px;
@@ -318,7 +318,7 @@ div.tabs-content.disabled div.tab-content {
 }
 
 #path span {
-    color: #333;
+    color: var(--a4-ink);
 }
 
 /* COLUMNS */
@@ -403,8 +403,8 @@ ul.leftmenu-items li a:hover {
 }
 
 ul.leftmenu-items li.current a {
-    color: #E24602;
-    font-weight: bold;
+    color: var(--a4-accent-text);
+    font-weight: var(--a4-weight-bold);
 }
 
 /* WIDTH CONTROL */
@@ -510,7 +510,7 @@ div#contentstructure li a.image-text span.node-name-hiddenbyparent,
 div#contentstructure li.currentnode li a.image-text span.node-name-hiddenbyparent {
     font-weight: normal;
     font-style: normal;
-    background-color: #eee;
+    background-color: var(--a4-soft);
     padding: 0 0.2em 0 0.2em;
 }
 
@@ -567,18 +567,18 @@ div#contentstructure ul#content_tree_menu div.loaded {
 
 div#contentstructure ul#content_tree_menu div.error {
     white-space: normal;
-    color: grey;
+    color: var(--a4-muted);
     margin: 10px 0;
     padding: 4px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
 }
 
 div#contentstructure ul#content_tree_menu div.error>span {
     display: inline-block;
     height: 9px;
     width: 9px;
-    border-radius: 9px;
+    border-radius: var(--a4-radius-s);
     margin-right: 6px;
     background: Red;
 }
@@ -595,7 +595,7 @@ div.popupmenu {
     background-color: #fff;
     border: 1px solid #999;
     box-shadow: 3px 3px 3px 0px #bbb;
-    border-radius: 3px;
+    border-radius: var(--a4-radius-s);
     font-size: 0.90em;
     color: #333;
 
@@ -606,9 +606,9 @@ div.popupmenu {
 }
 
 div.popupmenu div.popupmenuheader {
-    background-color: #6f6e6b;
-    color: #eee;
-    border-bottom: 1px solid #bbb;
+    background-color: var(--a4-head-bg);
+    color: var(--a4-ink);
+    border-bottom: 1px solid var(--a4-line);
 }
 
 div.popupmenu#EditSubmenu {
@@ -628,17 +628,17 @@ div.popupmenu div.window-close {
 
 div.popupmenu div.window-close p {
     margin: 0;
-    color: #000000;
-    font-weight: bold;
-    background-color: #ecece4;
+    color: var(--a4-ink);
+    font-weight: var(--a4-weight-bold);
+    background-color: var(--a4-soft);
     padding: 0.1em 0.3em 0.1em 0.3em;
-    border: 1px solid #ffffff;
-    border-bottom-color: #bfbeb6;
-    border-right-color: #bfbeb6;
+    border: 1px solid var(--a4-card);
+    border-bottom-color: var(--a4-line);
+    border-right-color: var(--a4-line);
 }
 
 div.popupmenu a {
-    color: #000000;
+    color: var(--a4-ink);
     padding: 0.2em 0.3em 0.2em 0.3em;
     text-decoration: none;
     cursor: default;
@@ -652,7 +652,7 @@ div.popupmenu a.more {
 }
 
 div.popupmenu a.menu-item-disabled {
-    color: #CECECE;
+    color: var(--a4-muted);
 }
 
 div.popupmenu a {
@@ -671,7 +671,7 @@ div.popupmenu a:hover {
 
 div.popupmenu hr {
     border: none;
-    border-top: 1px solid #c0c0c0;
+    border-top: 1px solid var(--a4-line);
 }
 
 /* BOX MODEL */
@@ -712,7 +712,7 @@ h2.context-title {
 
 div.context-information,
 span.classattribute-description {
-    color: #333;
+    color: var(--a4-ink);
     font-size: 0.8em;
     padding: 0 0.5em 0 0.5em;
     margin-bottom: 1.5em;
@@ -729,7 +729,7 @@ p.class-description {
 span.classattribute-description:hover,
 p.class-description:hover,
 div.context-information p:hover {
-    color: #111;
+    color: var(--a4-ink);
 }
 
 div.context-information p.left {
@@ -793,7 +793,7 @@ div.context-block h2.context-title img {
     margin-left: 4px;
     text-decoration: none;
     display: block;
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
 }
 
 .menu-block li:first-child a {
@@ -801,7 +801,7 @@ div.context-block h2.context-title img {
 }
 
 .menu-block li.disabled a {
-    background-color: #f3f3f3;
+    background-color: var(--a4-soft);
 }
 
 
@@ -817,7 +817,7 @@ p.table-preferences {
 
 p.table-preferences .current {
     padding: 1px 10px;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
 }
 
 p.table-preferences a {
@@ -834,7 +834,7 @@ input.button-disabled {
 }
 
 input.button:hover {
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
 }
 
 /* SEARCH: design:page_search.tpl, in the header and in the narrow screen menu (classes, not ids: two copies) */
@@ -852,7 +852,7 @@ input.button:hover {
 .searchtextwrapper {
     position: relative;
     border: 4px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+    border-radius: var(--a4-radius-s);
 }
 
 .searchblock input.searchtext {
@@ -860,7 +860,7 @@ input.button:hover {
     width: 230px;
     padding: 0 8px 0 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--a4-radius-s);
     line-height: 18px !important;
     font-size: 1.1em;
     box-shadow: -1px -1px 1px #464a4b;
@@ -870,7 +870,7 @@ input.button:hover {
 }
 
 .searchblock input.searchtext::placeholder {
-    color: #3d4142;
+    color: var(--a4-ink);
     font-style: italic;
 }
 
@@ -885,7 +885,7 @@ input.button:hover {
     width: 43px;
     padding: 0;
     border: 4px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+    border-radius: var(--a4-radius-s);
     background: transparent url(../images/3/sprite.png) no-repeat 9px -578px;
     cursor: pointer;
 }
@@ -906,7 +906,7 @@ input.button:hover {
     margin-top: -10px;
     padding: 0;
     border: 0;
-    border-radius: 4px;
+    border-radius: var(--a4-radius-s);
     background: transparent url(../images/3/sprite.png) no-repeat 3px -865px;
     cursor: pointer;
     z-index: 1;
@@ -926,10 +926,10 @@ input.button:hover {
     width: 300px;
     z-index: 60;
     text-align: left;
-    color: #222;
-    background: #fff;
-    border: 1px solid #c1c1c1;
-    border-radius: 6px;
+    color: var(--a4-ink);
+    background: var(--a4-card);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
@@ -942,12 +942,12 @@ input.button:hover {
     align-items: center;
     justify-content: space-between;
     padding: 9px 10px 8px 12px;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
     font-size: 13px;
-    color: #111;
-    background: #f5f5f5;
-    border-bottom: 1px solid #e3e3e3;
-    border-radius: 6px 6px 0 0;
+    color: var(--a4-ink);
+    background: var(--a4-soft);
+    border-bottom: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
 }
 
 .searchscope-pane .close {
@@ -955,7 +955,7 @@ input.button:hover {
     height: 20px;
     padding: 0;
     border: 0;
-    border-radius: 4px;
+    border-radius: var(--a4-radius-s);
     background: transparent url(../images/3/sprite.png) no-repeat -26px -866px;
     cursor: pointer;
 }
@@ -979,7 +979,7 @@ input.button:hover {
 
 .searchscope-body .searchscope-section {
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
 }
 
 .searchscope-body .searchscope-section select {
@@ -1001,7 +1001,7 @@ input.button:hover {
     margin-bottom: 4px;
     padding: 0;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
 }
 
 .searchscope-body fieldset label {
@@ -1018,14 +1018,14 @@ input.button:hover {
 }
 
 .searchscope-body label.disabled {
-    color: #999;
+    color: var(--a4-muted);
     cursor: default;
 }
 
 .searchscope-advanced {
     margin: 10px 0 0;
     padding-top: 8px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--a4-line);
     font-size: 13px;
 }
 
@@ -1062,18 +1062,18 @@ input.button:hover {
 }
 
 input::-webkit-input-placeholder {
-    color: #a2a2a2;
+    color: var(--a4-muted);
     font-style: italic;
 }
 
 input:-moz-placeholder {
-    color: #a2a2a2;
+    color: var(--a4-muted);
     font-style: italic;
 }
 
 .login-input-wrapper {
     border: 4px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px 5px 5px 5px;
+    border-radius: var(--a4-radius-s) var(--a4-radius-s) var(--a4-radius-s) var(--a4-radius-s);
     text-align: left;
     display: table;
     margin: 0 auto;
@@ -1110,10 +1110,10 @@ input:-moz-placeholder {
     line-height: 35px;
     padding: 4px 5px 4px 45px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--a4-radius-s);
     line-height: 18px !important;
     font-size: 1.6em;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
     box-shadow: -1px -1px 1px #464a4b;
     background: #d5d6d6;
     width: 250px;
@@ -1156,14 +1156,14 @@ input:-moz-placeholder {
 #loginbutton {
     background: none;
     color: #b7b7b7;
-    border-radius: 5px;
+    border-radius: var(--a4-radius-s);
     border: 1px solid #3a3d41;
     -moz-box-shadow: inset 1px 1px #6f6e6b, 1px 1px #6f6e6b;
     -webkit-box-shadow: inset 1px 1px #6f6e6b, 1px 1px #6f6e6b;
     box-shadow: inset 1px 1px #6f6e6b, 1px 1px #6f6e6b;
     line-height: 30px;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
     margin: 0;
     text-shadow: none;
 }
@@ -1185,7 +1185,7 @@ input:-moz-placeholder {
     background: #000;
     opacity: 0;
     padding: 0.5em;
-    border-top-left-radius: 5px;
+    border-top-left-radius: var(--a4-radius-s);
     color: #fff;
     text-decoration: none;
     display: none;
@@ -1220,7 +1220,7 @@ input:-moz-placeholder {
 #mainteinance-text #ez-version,
 #mainteinance-text .edition-info,
 #footer-design .edition-info {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
     color: #ff8300;
 }
 
@@ -1337,7 +1337,7 @@ html[data-a4-left-size="large"] {
     border: none;
     background-color: #919191;
     color: white;
-    transition: background-color 300ms ease;
+    transition: background-color var(--a4-duration-slow) ease;
 }
 
 .sidebar-control:hover {
@@ -1345,17 +1345,17 @@ html[data-a4-left-size="large"] {
 }
 
 .sidebar-control.left {
-    border-radius: 50rem;
+    border-radius: var(--a4-radius);
 }
 
 .sidebar-control.right {
-    border-radius: 50rem;
+    border-radius: var(--a4-radius);
 }
 
 .sidebar-control svg {
     width: 0.75rem;
     height: 0.751rem;
-    transition: transform 300ms ease;
+    transition: transform var(--a4-duration-slow) ease;
     fill: white
 }
 
@@ -1386,12 +1386,12 @@ html[data-a4-left-size="large"] {
     }
 
     .sidebar-control.left {
-        border-radius: 0 0.75rem 0.75rem 0;
+        border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;
         left: 0;
     }
 
     .sidebar-control.right {
-        border-radius: 0.75rem 0 0 0.75rem;
+        border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s);
         right: 0;
     }
 }
@@ -1399,12 +1399,12 @@ html[data-a4-left-size="large"] {
 .content-wrapper {
     flex: 1;
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: var(--a4-card);
     border-image-source: url(../images/3/textile.png);
     border-image-slice: 30;
     border-image-width: 1.25rem;
     border-image-repeat: repeat;
-    transition: width 300ms ease;
+    transition: width var(--a4-duration-slow) ease;
     min-width: 260px !important;
 }
 
@@ -1517,7 +1517,7 @@ html[data-a4-left-size="large"] {
     padding-top: 6rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms ease;
+    transition: max-height var(--a4-duration-slow) ease;
 }
 
 .navbar-bar {
@@ -1542,11 +1542,11 @@ html[data-a4-left-size="large"] {
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    border-radius: 0.25rem;
+    border-radius: var(--a4-radius-s);
     font-size: 0.875rem;
     text-decoration: none;
     white-space: nowrap;
-    transition: background-color 300ms ease, color 300ms ease;
+    transition: background-color var(--a4-duration-slow) ease, color var(--a4-duration-slow) ease;
 }
 
 .navbar-menu li a:hover {
@@ -1640,17 +1640,17 @@ div:has(> table) {
 
 .draft-list {
     margin-block: 1.5rem;
-    font-weight: 500;
+    font-weight: var(--a4-weight-medium);
     font-size: 0.875rem;
 }
 
 .draft-list-head {
     display: none;
-    font-weight: 600;
+    font-weight: var(--a4-weight-strong);
 }
 
 .draft-list-head .draft-list-cell {
-    border-top: 1px solid #acabab;
+    border-top: 1px solid var(--a4-line-strong);
 }
 
 .draft-list-cell {
@@ -1659,9 +1659,9 @@ div:has(> table) {
     align-items: center;
     gap: 1rem;
     padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid #acabab;
-    border-right: 1px solid #acabab;
-    border-left: 1px solid #acabab;
+    border-bottom: 1px solid var(--a4-line-strong);
+    border-right: 1px solid var(--a4-line-strong);
+    border-left: 1px solid var(--a4-line-strong);
 }
 
 .draft-list-cell-inner {
@@ -1673,7 +1673,7 @@ div:has(> table) {
 }
 
 .draft-list-body .draft-list-row:first-of-type .draft-list-cell:first-of-type {
-    border-top: 1px solid #acabab;
+    border-top: 1px solid var(--a4-line-strong);
 }
 
 @media screen and (min-width: 1024px) {
@@ -1704,7 +1704,7 @@ div:has(> table) {
 
     .draft-list-row .draft-list-cell:first-of-type {
         width: 1.5rem;
-        border-left: 1px solid #acabab;
+        border-left: 1px solid var(--a4-line-strong);
     }
 
     .draft-list-body .draft-list-row:first-of-type .draft-list-cell:first-of-type {
@@ -1725,7 +1725,7 @@ div.message-error {
 }
 
 .form-control::placeholder {
-    color: #333;
+    color: var(--a4-ink);
 }
 
 body {
@@ -1801,3 +1801,15 @@ div#contentstructure ul#content_tree_menu li > a.image-text {
     align-items: baseline;
     gap: 0.3em;
 }
+
+/* expui's tables (the sub-items, the trash ...) in the shape of the list tables (theme/rounded.css) and of admin4's
+   (admin4.css): the header row on --a4-head-bg with ink text in place of expui's own grey bar with #eee text (4.4:1),
+   separators between the columns, none before the first, the top corners rounded; zebra and hover rows from the tokens */
+html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
+    --exp-dt-head: var(--a4-head-bg); --exp-dt-head-sortable: var(--a4-head-bg); --exp-dt-head-sorted: var(--a4-accent-soft);
+    --exp-dt-head-ink: var(--a4-ink); --exp-dt-head-line: var(--a4-line-strong); --exp-dt-row: var(--a4-surface);
+    --exp-dt-row-alt: var(--a4-zebra); --exp-dt-row-hover: var(--a4-info-bg); --exp-dt-line: var(--a4-line);
+}
+html .exp-dt-table thead th { border-left: 0; border-inline-start: 1px solid var(--exp-dt-head-line); }
+html .exp-dt-table thead th:first-child { border-inline-start: 0; border-start-start-radius: var(--a4-radius-s); }
+html .exp-dt-table thead th:last-child { border-start-end-radius: var(--a4-radius-s); }

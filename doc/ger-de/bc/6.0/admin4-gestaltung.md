@@ -445,6 +445,68 @@ dorthin, wenn der Editor bereit ist und wenn sich der Modus ändert, sodass Text
 Einbettungen in beiden Modi die Tokens übernehmen. Jede Regel von `editor_content.css` ist auf `html[data-a4-theme]`
 beschränkt und tut ohne das Skript nichts. Die Werkzeugleiste des Editors (der TinyMCE-Skin) gehört nicht dazu.
 
+## Jedes Admin-Design
+
+Die Regeln und Tokens dieser Seite gelten für jedes Design der Administration, nicht nur für admin4:
+
+| Design | Eigene Stylesheets | Tokens | Dunkler Modus |
+|---|---|---|---|
+| `admin4` | `base.css`, `admin4.css`, `components.css`, `modules/*.css` (dazu `core.css` und `theme/modalwindow.css` für die Ketten anderer Designs) | `components.css` | ja |
+| `admin4l` (das von Layouts gesteuerte admin4) | keine: nur Templates, es lädt die Stylesheets von admin4 | die von admin4 | ja |
+| `editor` (der Siteaccess für Redakteure) | keine: `design/editor` fällt auf admin4l oder admin3 zurück, je nachdem, was der Siteaccess danach nennt | die dieses Designs | wie dieses Design |
+| `admin` (klassisch) | `core.css`, `pagelayout.css`, `content.css`, `theme/rounded.css`, `theme/admin_datatable.css`, `theme/modalwindow.css`, `ezinfo.css`, `packagecompare.css`, `visual-templateview.css`; `components.css` und `modules/*.css` sind Kopien der Dateien von admin4 | `components.css` (die Kopie) | nein: nur hell |
+| `admin3` | `pagelayout.css`, `theme/rounded.css`, `responsive.css`; der Rest aus design/admin | die von design/admin | nein: nur hell |
+
+**Überall dieselben Kontrastwerte.** Das klassische Admin und admin3 lesen dieselben Tokens wie der helle Modus von
+admin4, ein Wert gilt also überall:
+
+| Token | Hell | Dunkel (admin4) | Erreicht |
+|---|---|---|---|
+| `--a4-ink` | `#1f2430` | `#e8ebf0` | 4,5:1 auf jeder Fläche |
+| `--a4-muted` | `#545c6a` | `#a3abb9` | 4,5:1 auf Karte, Soft, Zebra, Tabellenkopf und jeder Zustandstönung |
+| `--a4-line` | `#c9cfd8` | `#2e3644` | Trennlinie, ohne Kontrastanforderung |
+| `--a4-line-strong` | `#aab2bd` | `#434d5f` | Spaltentrenner |
+| `--a4-soft` | `#eaedf1` | `#222936` | weiche Flächen |
+| `--a4-zebra` | `#eceff3` | `#212734` | die geraden Datenzeilen |
+| `--a4-head-bg` | `#dce1e8` | `#283041` | die Kopfzeile von Datentabellen |
+| `--a4-field-line` | `#6e7588` | `#6f7a93` | 3:1 auf jeder Fläche und auf der Seitenfarbe von admin4 |
+| `--a4-accent-text` | `#ad3809` | `#ff9a5c` | 4,5:1 als Text, auch auf einer Zeile unter dem Zeiger |
+
+Im klassischen Admin und in admin3 nimmt der Inhaltsbereich diese Tokens; der dunkle Rahmen dieser Designs (Kopf,
+Menüleiste, Fuß, die strukturierte Seite und die Anmeldeseite) behält seine eigenen Farben, sie gehören zu ihrem Bild.
+
+- **Listentabellen** in jedem Design: die Kopfzeile auf `--a4-head-bg` mit Text in `--a4-ink` (der graue Balken des
+  klassischen Designs mit Text `#eee` hatte 4,4:1), Trenner in `--a4-line-strong` zwischen den Spalten, keiner vor
+  der ersten, gerundete obere Ecken (`--a4-radius-s`), gerade Datenzeilen auf `--a4-zebra`, die Zeile unter dem
+  Zeiger auf `--a4-info-bg`. Ebenso das Datatable-Theme (`.admin-dt`) und die Tabellen von expui (`--exp-dt-*`, im
+  Rahmen-Stylesheet jedes Designs zugeordnet).
+- **Abschnittsüberschriften**: Der `.box-header` eines `div.context-block` hat eine durchgehende Linie in `--a4-line`.
+- **Grautöne**: Textgrau ist `--a4-ink` oder `--a4-muted`, Linien `--a4-line` oder `--a4-line-strong`, helle Flächen
+  `--a4-card` oder `--a4-soft`. Eine verbliebene feste Textfarbe im Inhaltsbereich der klassischen Designs (ein
+  Markenblau, eine Zustandsfarbe auf eigener Füllung) erreicht 4,5:1 auf ihrem Hintergrund.
+- **Schriftstärken, Dauern, Laufweite, Radien** kommen in den Stylesheets jedes Designs aus den Tokens
+  (`--a4-weight-medium/-strong/-heading/-bold`, `--a4-duration`, `--a4-duration-slow`, `--a4-tracking`,
+  `--a4-leading-none`, `--a4-radius-s`), wie in admin4. Eine Datei, die auch ohne `components.css` geladen wird
+  (`core.css`: die Standard-Layouts für Popup, Druck und Setup finden sie über die Design-Kette), nennt den alten Wert
+  als Ausweichwert: `var(--a4-weight-bold, bold)`.
+- **Die zwei Layout-Korrekturen** haben das klassische Admin erreicht, wo seine Templates dasselbe Markup haben: Die
+  Tabelle Orte der Bearbeitungsseite scrollt in ihrer Spalte (`.a4-content-locations-scroll`, `modules/content.css`).
+  Der Tabs-Schalter der Knotenansicht von admin4 (eine eigene Rasterzeile) hat im klassischen Design kein Gegenstück;
+  dort ist der Schalter das kleine Dreieck vor den Tabs.
+
+**Ein Basis-Stylesheet** ist die Regel von admin4: Ein Design, das seinen eigenen Rahmen zeichnet, hält seine
+Grundstile in einer `base.css` (in admin4 seit Oktober 2026 die früheren sechs Dateien `core.css`, `pagelayout.css`,
+`content.css`, `theme/rounded.css`, `theme/admin_datatable.css` und `theme/modalwindow.css`, in derselben Reihenfolge).
+Das klassische Admin und admin3 behalten ihre getrennten Dateien: Sie werden entlang der Design-Ketten geteilt (admin3,
+admin2 und der Editor finden `core.css`, `content.css`, `theme/admin_datatable.css` und `theme/modalwindow.css` von
+design/admin einzeln, die Einstellung `admin_theme` nennt eine Theme-Datei, die Popup- und Drucklayouts von
+design/standard laden `core.css`); eine Zusammenführung würde dieselben Regeln in mehrere Dateien kopieren oder diese
+Ketten brechen. Der Packer bündelt sie ohnehin zu einer Anfrage.
+
+`AdminTokenUsageTest` prüft die Tokens in allen diesen Stylesheets und in den Admin-Stylesheets der Erweiterungen in
+diesem Repository; `AdminTokenContrastTest` prüft die Kontrastpaare, die gleichen Tokens im klassischen Admin, die
+Kopfzeilen der Listentabellen jedes Designs und die festen Textfarben der klassischen Designs.
+
 ## Dunkler Modus
 
 Der Modus von admin4 ist `html[data-a4-theme="light"|"dark"]`, gesetzt, bevor die Seite gezeichnet wird, durch das

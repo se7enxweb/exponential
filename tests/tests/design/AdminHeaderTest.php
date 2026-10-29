@@ -86,7 +86,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '0', $phone['.navbar-menu.show']['padding'] );
 
         // one value for everything that keeps clear of the header: on the root, not on .dashboard-flex
-        $this->assertDoesNotMatchRegularExpression( '/\.dashboard-flex\s*\{[^}]*--header-height\s*:/', self::css( 'pagelayout.css' ) );
+        $this->assertDoesNotMatchRegularExpression( '/\.dashboard-flex\s*\{[^}]*--header-height\s*:/', self::css( 'base.css' ) );
         $js = self::file( 'design/admin4/javascript/admin4.js' );
         $this->assertStringContainsString( "var root = document.documentElement;", $js );
         $this->assertStringContainsString( "root.style.setProperty('--header-height', px + 'px');", $js );
@@ -334,7 +334,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $rules = AdminBaseStylesheetsTest::rules( $css );
         $this->assertSame( 'flex', $rules['.header-site, .header-help, .header-user']['display'] );
         $this->assertDoesNotMatchRegularExpression( '/\.site-preview\s*\{/', $css, 'the link takes .a4-header-btn as it is' );
-        $this->assertDoesNotMatchRegularExpression( '/\.site-preview\b/', self::css( 'pagelayout.css' ), 'no rules for the old place beside the logo' );
+        $this->assertDoesNotMatchRegularExpression( '/\.site-preview\b/', self::css( 'base.css' ), 'no rules for the old place beside the logo' );
     }
 
     public function testTheSlashKeyFocusesTheHeaderSearch()
