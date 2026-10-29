@@ -60,6 +60,11 @@ and at which line the problem sits, not only that one exists.
   anything that parses the HTML strictly. Keep the key `disabled` in production and on any siteaccess that serves
   feeds.
 - The comment text replaces `--` by `- -` and removes `>`, so a path can never end the comment early.
+- A template that prints into a start tag, such as `parts/exp_content_direction.tpl` in
+  `<h1 class="context-title"{include ...}>`, gets no comments: one inside the tag would end it early and show a stray
+  `>` in the page. Such templates are listed in `site.ini [TemplateSettings] TemplatesWithoutDebugComments[]` by their
+  path below `templates/`; add your own there. The list applies to `Debug=enabled` too. Clear the template and
+  content caches after changing the list.
 - Cached output keeps the comments it was rendered with. Clear the content and template caches when you switch the
   key.
 - A request from one siteaccess no longer reads another siteaccess's override list (a later fix, see the
