@@ -1,0 +1,8 @@
+{* Included by demo_full.stpl with Smarty's own {include}, found in the design's templates directories. *}
+<ul class="smarty-demo-children" data-smarty-children="{$children|count}">
+{foreach $children as $child}
+    <li class="smarty-demo-child">{node_view_gui view='line' content_node=$child}</li>
+{foreachelse}
+    <li>No children.</li>
+{/foreach}
+</ul>
