@@ -31,13 +31,57 @@ class Asset extends \Exponential\Runnable\ModuleView
         if ( $file === null || $type === null || !is_file( $file ) )
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
 
+        // a regenerated image (the language map) keeps its address, and its links never carry a version query: the
+        // browser keeps its copy but asks again on every use, and gets a 304 while the file is the same
+        clearstatcache( true, $file );
+        $etag = self::etag( $file );
+        header( 'Cache-Control: private, no-cache' );
+        header( 'ETag: ' . $etag );
+        header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s', (int)filemtime( $file ) ) . ' GMT' );
+        header( 'X-Content-Type-Options: nosniff' );
+        header( "Content-Security-Policy: default-src 'none'" );
+        if ( self::notModified( $etag, isset( $_SERVER['HTTP_IF_NONE_MATCH'] ) ? (string)$_SERVER['HTTP_IF_NONE_MATCH'] : '' ) )
+        {
+            header( 'HTTP/1.1 304 Not Modified', true, 304 );
+            \eZExecution::cleanExit();
+        }
         header( 'Content-Type: ' . $type );
         header( 'Content-Length: ' . filesize( $file ) );
-        header( 'X-Content-Type-Options: nosniff' );
-        header( 'Cache-Control: private, max-age=3600' );
-        header( "Content-Security-Policy: default-src 'none'" );
         readfile( $file );
         \eZExecution::cleanExit();
+    }
+
+    /**
+     * The validator of a file: its modification time, size and content hash, so a rewrite with the same size in the
+     * same second is still a new version.
+     *
+     * @param string $file
+     * @return string a quoted entity tag
+     */
+    public static function etag( $file )
+    {
+        return '"' . dechex( (int)filemtime( $file ) ) . '-' . dechex( (int)filesize( $file ) ) . '-' .
+               substr( (string)md5_file( $file ), 0, 16 ) . '"';
+    }
+
+    /**
+     * Whether the browser's If-None-Match header names $etag (a list, weak tags or "*").
+     *
+     * @param string $etag
+     * @param string $ifNoneMatch
+     * @return bool
+     */
+    public static function notModified( $etag, $ifNoneMatch )
+    {
+        if ( trim( $ifNoneMatch ) === '' )
+            return false;
+        foreach ( explode( ',', $ifNoneMatch ) as $tag )
+        {
+            $tag = trim( $tag );
+            if ( $tag === '*' || $tag === $etag || $tag === 'W/' . $etag )
+                return true;
+        }
+        return false;
     }
 
     /**

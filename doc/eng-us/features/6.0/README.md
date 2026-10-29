@@ -165,6 +165,7 @@ nginx with PHP-FPM keep working as before.
 - [Second step on the other sign-in paths: REST, WebDAV, SOAP, expservices; app passwords](second-factor-on-other-sign-in-paths.md)
 - [Reset a user password from the command line](reset-user-password.md)
 - [Check user accounts](user-hygiene.md)
+- [User audit log: who changed, signed in or was refused, per account](user-audit.md)
 - [Your devices: signed-in sessions per user, signed out for good, an e-mail about a new device](user-sessions.md)
 - [Signed links in the "New user registered" mail](registration-admin-links.md)
 - [Administrators approve new editor accounts](editor-account-approval.md)

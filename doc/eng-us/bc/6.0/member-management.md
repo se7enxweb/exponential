@@ -143,6 +143,11 @@ add their own names and sinks (`[AuditSinkSettings] SinkClasses[]`: syslog, webh
 The events are generic: per user, typed by name, with the actor, the target and before/after. Session tracking,
 workflow and collaboration events go into the same log as further names, not into another table.
 
+Per account, the same events are also kept in the user audit log, the table `expuser_audit`: **Users > User audit
+log** (`user/audit`, policy `user/audit`) shows what happened to one member and what one editor did, with the fields
+before and after, refused attempts included, and exports it as CSV. See
+[User audit log](../../features/6.0/user-audit.md).
+
 ## Accounts in protected groups
 
 The protected groups stay outside every rule: moving a user into Administrator users or Editors and editing their
