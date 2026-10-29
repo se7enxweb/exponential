@@ -660,7 +660,7 @@
 
         var current = saved, timer = null, drag = null;
 
-        // the box's em: the default is 20em (pagelayout.css; the layouts tab draws 22em), the range 10em to 60em and
+        // the box's em: the default is 20em (base.css; the layouts tab draws 22em), the range 10em to 60em and
         // at most 85% of the window, as in admin4.css. A height equal to the 20em default is no height of the user's
         // own on any tab; shown is what the box draws without one on the open tab.
         function limits() {

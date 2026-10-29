@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>सिस्टम पृष्ठेही बुकमार्क करता येतात: पृष्ठ उघडा (सेटअप, ऑडिट ट्रेल, वापरकर्त्यांची सूची ...) आणि त्याच्या वर “हे पृष्ठ बुकमार्क करा” निवडा. अशा बुकमार्कना गिअरचे चिन्ह असते.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>आपण हे पृष्ठ आता येथे उघडू शकत नाही. बुकमार्क काढून टाका, किंवा प्रवेशासाठी प्रशासकाला विचारा.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13883,32 +13887,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential Enterprise Edition चे मूल्यमापन करा&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential समुदायाचे सदस्य व्हा, देवाणघेवाण करा आणि योगदान द्या&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; आणि इतर.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt; द्वारे संचालित. अधिक माहितीसाठी &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; पहा.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; आणि इतर.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> अधिक माहितीसाठी &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; पहा.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; आणि इतर.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential समुदायाचे सदस्य व्हा, सहाय्य मिळवा आणि योगदान द्या&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; आणि इतर.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56391,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>बुकमार्कचे नाव बदलून “%name” केले.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>हे पृष्ठ या साइटअॅक्सेसमध्ये (%siteaccess) बंद केलेले आहे. ज्या साइटअॅक्सेसमध्ये हे पृष्ठ आहे त्यात बुकमार्क उघडा.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>या पृष्ठाचे मॉड्यूल येथे स्थापित केलेले नाही किंवा सक्षम केलेले नाही.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>हे पृष्ठ आता अस्तित्वात नाही: त्याच्या मॉड्यूलमध्ये असे दृश्य नाही.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>आपली कोणतीही भूमिका आपल्याला हे पृष्ठ उघडण्याची परवानगी देत नाही.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>आपल्याला हा साइटअॅक्सेस वापरण्याची परवानगी नाही.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>हे पृष्ठ दाखवत असलेला आशय वाचण्याची आपल्याला परवानगी नाही.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>या प्रकारचे पृष्ठ बुकमार्क करता येत नाही: ते केवळ एखाद्या फॉर्मवर क्रिया करते, किंवा ते क्षणिक पृष्ठ आहे.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>या पृष्ठाचा पत्ता उपलब्ध नाही.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>हे पृष्ठ आत्ता उघडता येत नाही.</translation>
     </message>
 </context>
 <context>

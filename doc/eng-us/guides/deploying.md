@@ -2,6 +2,19 @@
 
 This guide is for the person who puts a site on a server: an operator, or a developer who runs their own. It takes a freshly installed Exponential site to a server that visitors reach over HTTPS. Then it shows how to ship a code change safely and how to keep the site fast. Read it top to bottom. Every command exists in the installation; where a result is shown, it is what the command prints.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 You need a Linux server, shell access in the installation directory (the folder that holds `index.php` and `console`), and a site that already runs. If you have no site yet, run `./console exp:install --apply` first ([Getting started](getting-started.md), [Installing in one command](../features/6.0/install-in-one-command.md)).
 
 Commands use `./console`, the shortcut for `bin/php/console`. The examples add `--allow-root-user` because they are run as root; leave it off when you run as the site user.
@@ -34,8 +47,15 @@ The first line shows the PHP version (8.0 or newer, for Velocity too). The secon
 The document root is the installation directory itself. Exponential keeps its own rewrite rules in a file you enable by copying:
 
 ```bash
-cp .htaccess_root .htaccess
+./console exp:setup:htaccess --apply      # or by hand: cp .htaccess_root .htaccess
 ```
+
+The command shows what it would do without `--apply`, copies with the template's mode (and, run as root with
+`--allow-root-user`, its owner), and refuses with a diff when a `.htaccess` that differs is already there; `--force
+--apply` then replaces it after a backup to `var/backup/setup/<time>/`. `./console exp:setup:config --apply` puts
+`config.php` into place the same way, and `./console exp:config:set <NAME> <value> --apply` changes one of its
+settings. See [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md), which also has a
+provisioning script for containers and CI.
 
 The copy turns on `.htaccess` based virtual host mode: dot files, `.git` and scripts below the front controllers answer 404, `/api/` goes to `index_rest.php`, static design files are served directly and everything else goes to `index.php`. Do not edit security rules out of it to make something work ([security defaults](../specifications/6.0/security-defaults-2026-09.md)).
 
@@ -246,6 +266,9 @@ Run it three times: the first request fills the caches, the others show the cach
 - The browser shows the padlock on the HTTPS address.
 - `./console exp:velocity deploy --dry-run --allow-root-user` lists a `reload PHP-FPM` step with the right service.
 - `./console exp:cache status --allow-root-user` shows the layers you expect.
+- Apache: `./console exp:setup:status --allow-root-user` says `.htaccess` is a copy of `.htaccess_root` (or of
+  `.htaccess_root_static`), and `./console exp:config:list --only-set --allow-root-user` shows the `config.php`
+  settings you expect.
 
 ## Settings used in this guide
 
@@ -272,7 +295,8 @@ All are in `settings/velocity.ini` (shipped defaults). `exp:velocity config set`
 
 ## Related pages
 
-- Features: [Velocity web server](../features/6.0/velocity-web-server.md), [Velocity HTTPS and certificates](../features/6.0/velocity-https-certificates.md), [Installing in one command](../features/6.0/install-in-one-command.md).
+- Features: [Velocity web server](../features/6.0/velocity-web-server.md), [Velocity HTTPS and certificates](../features/6.0/velocity-https-certificates.md), [Installing in one command](../features/6.0/install-in-one-command.md), [Console commands for .htaccess and config.php](../features/6.0/setup-files-and-config-php-commands.md).
+- Guide: [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md), with a provisioning script for containers and CI.
 - Specifications: [Velocity engine settings](../specifications/6.0/velocity-engine-settings.md), [worker pool](../specifications/6.0/velocity-worker-pool.md), [HTTP/2 and security](../specifications/6.0/velocity-http2-and-security.md).
 - Measuring the result: [Benchmarking Exponential](benchmarking.md) (Apache against Velocity, a deploy checked for regressions).
 - Upgrade notes: [Velocity engines](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md), [Velocity engine upgrade notes](../bc/6.0/velocity-engine-upgrade-notes.md), [cache console](../bc/6.0/cache-console.md).

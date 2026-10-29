@@ -15,6 +15,20 @@ Datenbank, gemeinsame Dateien, Sitzungen, Cron, der Proxy davor und das Ausrolle
 Quellen liefern keine mit, und jeder Cluster ist anders. Betrachten Sie sie als Liste der Entscheidungen, die Ihre Manifeste
 abbilden müssen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Was die Quellen sagen](#was-die-quellen-sagen)
@@ -146,6 +160,12 @@ Quellen:
 - Leeren Sie nach dem Ausrollen die Caches, die sich die Replikate teilen
   ([Caches leeren und vorwärmen](../leistung/caches-leeren-und-vorwaermen.md)).
 
+Jeder Pod braucht dieselbe `config.php`, zum Beispiel die `CLUSTER_*`-Konstanten eines gemeinsamen Cluster-Speichers.
+Erzeugen Sie sie im Image oder im Entry Point mit `exp:setup:config --apply` und `exp:config:set ... --apply`, mit
+Passwörtern aus den Secrets des Pods (`--value="$CLUSTER_DB_PASS"`), nie im Image. `exp:config:list --only-set
+--format=json`, in jedem Pod ausgeführt, zeigt, ob sie übereinstimmen
+([.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md#11-in-skripten-containern-und-ci)).
+
 ## Checkliste
 
 - [ ] Ein Replikat mit SQLite, oder mehrere mit einem Datenbankserver (zuerst PostgreSQL).
@@ -161,6 +181,7 @@ Quellen:
 - [Container: Docker und Podman](container-docker-und-podman.md)
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md), [Clustering und gemeinsamer Speicher](../betrieb/clustering-und-gemeinsamer-speicher.md)
 - [Varnish und Reverse Proxys](../leistung/varnish-und-reverse-proxys.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

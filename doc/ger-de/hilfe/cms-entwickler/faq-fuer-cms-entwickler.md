@@ -12,6 +12,20 @@ type: help
 Diese Seite richtet sich an Entwickler, die neu bei Exponential sind und schnelle Antworten möchten. Jede Antwort ist
 kurz und verweist auf die Seite mit der ganzen Geschichte.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hosting/control-panels/plesk.md), [cPanel](../hosting/control-panels/cpanel.md), [DirectAdmin](../hosting/control-panels/directadmin.md), [ISPConfig](../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Das Modell](#das-modell)
@@ -101,6 +115,18 @@ PHP-FPM funktionieren ebenfalls. [Eine Website bereitstellen](eine-website-berei
 PHP 8.0 bis 8.5 laut `composer.json` im Hauptverzeichnis. Datenbanken in der Reihenfolge der Präferenz des Projekts:
 SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL. [Datenbankunterstützung](../datenbankunterstuetzung.md),
 [Anforderungen](../../installation/02-voraussetzungen.md).
+
+**Wie lege ich .htaccess und config.php an?**
+`./console exp:setup:htaccess --apply` kopiert `.htaccess_root` (mit `--static`: `.htaccess_root_static`), und
+`./console exp:setup:config --apply` kopiert `config.php-RECOMMENDED`. Ohne `--apply` zeigen sie nur, was sie tun
+würden, und eine vorhandene, abweichende Datei wird als Diff gezeigt und behalten, solange Sie nicht `--force`
+angeben. [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
+**Wie ändere ich eine Einstellung in config.php ohne Editor?**
+`./console exp:config:set EZP_INI_FILEMTIME_CHECK false --apply`: Die Datei wird gesichert, mit `php -l` geprüft und
+in einem Schritt geschrieben. `exp:config:list` zeigt jede dokumentierte Einstellung, `exp:config:get <NAME>` einen
+Wert, und `exp:config:unset <NAME> --apply` kommentiert sie wieder aus.
+[.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
 
 **Wie starte ich ein Projekt schnell?**
 `exp:install` mit dem Standardpaket `sevenx_multisite` auf SQLite, dann Ihre eigene Erweiterung.

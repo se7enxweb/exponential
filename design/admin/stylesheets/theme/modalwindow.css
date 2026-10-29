@@ -16,8 +16,8 @@
 
 .modal-window
 {
-    background:#fff;
-    border:1px solid #bbb;
+    background: var(--a4-card);
+    border: 1px solid var(--a4-line);
     padding:2px;
 }
 
@@ -29,11 +29,11 @@
 
 .modal-window h2
 {
-    background-color: #6f6e68;
+    background-color: var(--a4-head-bg);
     margin-top:0;
     font-size:1.1em;
     padding:4px 3px 4px 6px;
-    color:#eee;
+    color: var(--a4-ink);
 }
 
 .modal-window fieldset
@@ -50,9 +50,9 @@ div.box-content .modal-window div.message-error
 {
     margin:1em;
     padding:1em;
-    background:#f3dfdf;
-    border:2px solid #c11b17;
-    border-radius:3px;
+    background: #f3dfdf;
+    border: 2px solid #c11b17;
+    border-radius:var(--a4-radius-s);
 }
 
 .window-close
@@ -64,7 +64,7 @@ div.box-content .modal-window div.message-error
     margin-top:-1px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13'%3E%3Cpath d='M3.5 3.5l6 6M9.5 3.5l-6 6' stroke='%236d6d6d' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E") no-repeat 0 0;
     text-indent:-1000em;
-    border:1px solid #aaa;
+    border: 1px solid var(--a4-line-strong);
     font-size:1px;
 }
 
@@ -84,17 +84,17 @@ div.box-content .modal-window div.message-error
 
 .ajaxuploader-error
 {
-    color:maroon;
-    font-weight:bold;
+    color: maroon;
+    font-weight:var(--a4-weight-bold);
     padding-left:1em;
 }
 
 .ajaxuploader-preview h3
 {
     padding-bottom:2px;
-    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid var(--a4-line);
     margin-bottom:1em;
-    color:#333;
+    color: var(--a4-ink);
 }
 .ajaxuploader-preview dt
 {
@@ -108,10 +108,10 @@ div.box-content .modal-window div.message-error
 
 .ajaxuploader-browse .pagination span
 {
-    color:#888;
+    color: var(--a4-muted);
 }
 
 .has-default-value
 {
-    color:#888;
+    color: var(--a4-muted);
 }

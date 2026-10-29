@@ -11,6 +11,20 @@ Ersatzzertifikats und Let's Encrypt. Anschließend behandelt das Kapitel die kla
 auch unter Plesk; nginx; FrankenPHP), die Dateiberechtigungen, die jedes Setup braucht, und den Betrieb hinter einem
 Reverse Proxy.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 [Inhalt](README.md) · Zurück: [7. Die Installation über die Konsole](07-installation-ueber-die-konsole.md) · Weiter: [9. Datenbanken](09-datenbanken.md)
 
 ---
@@ -941,11 +955,16 @@ dauerhaft laufenden Prozess.
    zu verschieben, damit ein Update eine neue Version mitbringen kann:
 
    ```bash
-   cp .htaccess_root .htaccess
+   ./console exp:setup:htaccess --apply      # oder von Hand: cp .htaccess_root .htaccess
    ```
 
    Verwenden Sie stattdessen `.htaccess_root_static` nur, wenn Sie einen generierten statischen Cache ausliefern (es
-   ist `.htaccess_root` mit zusätzlichen Regeln zum Ausliefern des statischen Caches).
+   ist `.htaccess_root` mit zusätzlichen Regeln zum Ausliefern des statischen Caches):
+   `./console exp:setup:htaccess --static --apply`. Der Befehl kopiert mit dem Modus der Vorlage (und, als root mit
+   `--allow-root-user`, mit ihrem Eigentümer), zeigt einen Diff und lehnt ab, wenn bereits eine abweichende
+   `.htaccess` vorhanden ist, und sichert die alte Datei nach `var/backup/setup/<time>/`, bevor `--force --apply` sie
+   ersetzt. `./console exp:setup:status` zeigt, von welcher Vorlage die aktuelle `.htaccess` eine Kopie ist. Siehe
+   [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
 
 2. **Die Module laden.** `mod_rewrite`, `mod_proxy` und `mod_proxy_fcgi` (Debian: `a2enmod rewrite proxy_fcgi`);
    für HTTPS `mod_ssl`, für HTTP/2 `mod_http2`.
@@ -1031,7 +1050,8 @@ Plesk erzeugt den virtuellen Host selbst; bearbeiten Sie seine Dateien nicht. In
 
 - richten Sie das Document Root der Domain auf das Installationsverzeichnis (das Verzeichnis mit `index.php`);
 - wählen Sie in den PHP-Einstellungen „FPM-Anwendung, bereitgestellt von Apache“ und die PHP-Version;
-- behalten Sie `.htaccess` (kopiert aus `.htaccess_root`); das Apache von Plesk liest sie;
+- behalten Sie `.htaccess` (kopiert aus `.htaccess_root`, zum Beispiel mit `./console exp:setup:htaccess --apply`);
+  das Apache von Plesk liest sie;
 - installieren Sie das Zertifikat in Plesk (über seine Let's-Encrypt-Erweiterung oder ein eigenes) und schalten Sie
   die Weiterleitung auf HTTPS ein.
 
@@ -1386,7 +1406,8 @@ Was hinter einem Proxy schiefgehen kann:
 - [ ] `[DeploySettings] PhpFpmService=disabled`, wenn Velocity die Website allein ausliefert;
       `exp:velocity deploy --dry-run` zeigt die erwarteten Schritte.
 - [ ] Apache oder nginx: `.htaccess` aus `.htaccess_root` kopiert (oder der abgeleitete nginx-Block), Front-Controller
-      und Asset-Pfade getestet, eine `.php` unterhalb des Wurzelverzeichnisses antwortet mit 404.
+      und Asset-Pfade getestet, eine `.php` unterhalb des Wurzelverzeichnisses antwortet mit 404;
+      `./console exp:setup:status` nennt die Vorlage.
 - [ ] `var/` und `settings/` beschreibbar für den einen Benutzer (oder die eine Gruppe), der PHP ausführt; keine
       Dateien in `var/`, die root gehören.
 - [ ] Hinter einem Proxy: Dem Proxy wird vertraut (`TrustedProxies[]` bzw. für Velocity `Q.webserver.proxy.trusted`),

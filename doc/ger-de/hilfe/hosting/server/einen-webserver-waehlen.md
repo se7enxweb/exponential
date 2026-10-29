@@ -16,6 +16,20 @@ für den Betrieb bedeutet und wie Sie die Entscheidung festhalten. Die Fakten st
 [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md), [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
 und der `README.md` des Repositorys.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Die Wahl in einer Tabelle](#die-wahl-in-einer-tabelle)
@@ -39,7 +53,7 @@ Aus [Kapitel 8, Die Wahl in einer Tabelle](../../../installation/08-die-website-
 | Eigenes Werkzeug für HTTPS oder Zertifikate nötig | nein: eigene Zertifikate, selbstsignierter Rückfall, ACME | nein: Ihr Zertifikat oder ein selbstsigniertes | ja (`mod_ssl` plus certbot oder ein Panel) | ja |
 | Anwendung zwischen Anfragen im Speicher gehalten | ja (persistente Worker) | nein (sauberer Zustand pro Anfrage) | nein | nein |
 | Antwort-Cache vor PHP | ja | noch nicht | nein (nur die eigenen Caches des Kernels) | nein |
-| Rewrite-Regeln | eingebaut | erzeugtes Caddyfile | `.htaccess_root` | von Ihnen geschrieben |
+| Rewrite-Regeln | eingebaut | erzeugtes Caddyfile | `.htaccess_root` (`exp:setup:htaccess --apply`) | von Ihnen geschrieben |
 | Passt zu Shared Hosting | meist nicht | meist nicht | ja | selten |
 
 Andere Server, die eine URL auf `index.php` umschreiben können, funktionieren ebenfalls. Das README nennt LiteSpeed und OpenLiteSpeed,
@@ -142,6 +156,7 @@ Tested on staging on:           <date>, by <role>
 - [Apache mit PHP-FPM](apache-mit-php-fpm.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
 - [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md): welche Server `.htaccess` lesen
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

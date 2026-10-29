@@ -17,6 +17,20 @@ verweist für jede auf die ausführliche Seite. Die beiden Quellen des Projekts 
 Einstellung für Einstellung. Seit September 2026 ist eine Standardinstallation ohne zusätzlichen Aufwand sicher; Härten
 bedeutet, diese Standardwerte beizubehalten und zu schließen, was dem Betreiber überlassen bleibt.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hosting/control-panels/plesk.md), [cPanel](../../hosting/control-panels/cpanel.md), [DirectAdmin](../../hosting/control-panels/directadmin.md), [ISPConfig](../../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Die Grundsätze](#die-grundsätze)
@@ -35,8 +49,8 @@ bedeutet das praktisch: Lockern Sie keinen Standardwert, damit etwas funktionier
 
 | Schicht | Tun | Seite in diesem Bereich |
 |---|---|---|
-| 1. Webserver | aktuelle Umschreiberegeln (`.htaccess_root` oder der abgeleitete nginx-Block); unterhalb des Wurzelverzeichnisses wird nichts ausgeführt; Punktdateien ergeben 404 | Datei-Uploads und SVG; HTTPS und HSTS |
-| 2. Geheimnisse | `settings/override/` nie in der Versionsverwaltung, Modus 0640, als Geheimnis gesichert | Geheimnisse in settings/override |
+| 1. Webserver | aktuelle Umschreiberegeln (`.htaccess_root` oder der abgeleitete nginx-Block; `./console exp:setup:htaccess` endet mit 1, wenn `.htaccess` abgewichen ist); unterhalb des Wurzelverzeichnisses wird nichts ausgeführt; Punktdateien ergeben 404 | Datei-Uploads und SVG; HTTPS und HSTS |
+| 2. Geheimnisse | `settings/override/` und `config.php` nie in der Versionsverwaltung, Modus 0640, als Geheimnis gesichert; alte Kopien in `var/backup/` entfernt | Geheimnisse in settings/override; [config.php von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
 | 3. Administration | eigener Hostname, eingeschränkt per Netzwerk oder zweiter Authentifizierung, `RequireUserLogin=true`, Einrichtungsassistent geschlossen | Die Administration abtrennen |
 | 4. Konten | ein persönliches Konto je Person, `admin` stillgelegt, Rollen mit minimalen Rechten | Rollen und minimale Rechte |
 | 5. Anmeldung | zweistufige Anmeldung, Passwortrichtlinie, Entscheidung zur Kontosperre | Zweistufige Anmeldung; Passwortrichtlinie; Kontosperre |
@@ -68,6 +82,7 @@ bedeutet das praktisch: Lockern Sie keinen Standardwert, damit etwas funktionier
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../../../installation/13-sicherheitshaertung.md)
 - [Sicherheit und Audit: absichern und sehen, wer was getan hat](../../../anleitungen/sicherheit-und-audit.md)
 - [Sicherheit für Hoster](../../hosting/sicherheit/README.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -11,11 +11,28 @@ type: example
 
 **LiteSpeed Web Server (Enterprise)** is a drop-in replacement for Apache: it reads Apache's configuration and
 `.htaccess` files, including `mod_rewrite` rules. Serve Exponential exactly as with Apache: `cp .htaccess_root
-.htaccess` ([Apache .htaccess](apache-htaccess.md)), PHP through LiteSpeed's LSAPI. Nothing on this page is needed.
+.htaccess` or `./console exp:setup:htaccess --apply` ([Apache .htaccess](apache-htaccess.md),
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)), PHP through
+LiteSpeed's LSAPI. Nothing on this page is needed.
+
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
+> [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
 
 **OpenLiteSpeed**, the open source edition, reads only the rewrite rules of a `.htaccess`, only when
 `autoLoadHtaccess` is on, and only after a restart when the file changes. The example below puts the rules in the
-virtual host instead, where they are read once.
+virtual host instead, where they are read once. `./console exp:setup:htaccess --apply` still copies the file, but on
+OpenLiteSpeed that alone does not protect the site; after an upgrade, `./console exp:setup:htaccess` shows the diff
+between your copy and the new `.htaccess_root`, which tells you which rules of this virtual host to update.
 
 > **Note:** This example is derived, not tested on OpenLiteSpeed: there is no OpenLiteSpeed on the machine the
 > examples are verified on. Its rewrite rules use Apache's `mod_rewrite` syntax, which OpenLiteSpeed implements, and
@@ -208,6 +225,7 @@ curl -sI https://example.com/design/admin4/stylesheets/components.css | head -1 
 ## Related pages
 
 - [Apache .htaccess](apache-htaccess.md): the rules explained one by one; LiteSpeed Enterprise uses this file.
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:setup:htaccess` and which servers read the file.
 - [Chapter 13, section 13.2: What the web server must never hand out](../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out).
 - [Operating system support](../../help/os-support.md): web servers and PHP SAPIs by platform.
 - [Web server examples](README.md) and [all examples](../README.md).

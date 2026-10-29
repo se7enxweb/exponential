@@ -2315,6 +2315,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>സിസ്റ്റം പേജുകളും ബുക്ക്മാർക്ക് ചെയ്യാം: പേജ് തുറന്ന് (സജ്ജീകരണം, ഓഡിറ്റ് ട്രെയിൽ, ഉപയോക്താക്കളുടെ ലിസ്റ്റ് ...) അതിന് മുകളിലുള്ള “ഈ പേജ് ബുക്ക്മാർക്ക് ചെയ്യുക” തിരഞ്ഞെടുക്കുക. അത്തരം ബുക്ക്മാർക്കുകൾക്ക് ഒരു ഗിയർ ഐക്കൺ ഉണ്ടാകും.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>നിങ്ങൾക്ക് ഇനി ഈ പേജ് ഇവിടെ തുറക്കാൻ അനുമതിയില്ല. ബുക്ക്മാർക്ക് നീക്കം ചെയ്യുക, അല്ലെങ്കിൽ ആക്സസിനായി ഒരു അഡ്മിനിസ്ട്രേറ്ററോട് ആവശ്യപ്പെടുക.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13883,32 +13887,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential Enterprise Edition വിലയിരുത്തുക&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential കമ്മ്യൂണിറ്റിയിൽ അംഗമാകുക, കൈമാറ്റം ചെയ്യുക, സംഭാവന ചെയ്യുക&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; പകർപ്പവകാശം &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; മറ്റുള്ളവരും.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt; ആണ് പ്രവർത്തിപ്പിക്കുന്നത്. കൂടുതൽ വിവരങ്ങൾക്ക് &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; കാണുക.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; പകർപ്പവകാശം &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; മറ്റുള്ളവരും.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> കൂടുതൽ വിവരങ്ങൾക്ക് &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; കാണുക.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; പകർപ്പവകാശം &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; മറ്റുള്ളവരും.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential (From 7x) വിലയിരുത്തുക&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential കമ്മ്യൂണിറ്റിയിൽ അംഗമാകുക, പിന്തുണ നേടുക, സംഭാവന ചെയ്യുക&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; പകർപ്പവകാശം &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; മറ്റുള്ളവരും.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56391,6 +56383,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to &quot;%name&quot;.</source>
         <translation>ബുക്ക്മാർക്കിന്റെ പേര് “%name” എന്നാക്കി മാറ്റി.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ഈ സൈറ്റ്ആക്സസിൽ (%siteaccess) ഈ പേജ് ഓഫ് ചെയ്തിരിക്കുന്നു. ഈ പേജ് ഉള്ള ഒരു സൈറ്റ്ആക്സസിൽ ബുക്ക്മാർക്ക് തുറക്കുക.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ഈ പേജിന്റെ മോഡ്യൂൾ ഇവിടെ ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല അല്ലെങ്കിൽ പ്രവർത്തനക്ഷമമാക്കിയിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ഈ പേജ് ഇനി നിലവിലില്ല: അതിന്റെ മോഡ്യൂളിൽ അത്തരമൊരു വ്യൂ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>നിങ്ങളുടെ റോളുകളിൽ ഒന്നും ഈ പേജ് തുറക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ഈ സൈറ്റ്ആക്സസ് ഉപയോഗിക്കാൻ നിങ്ങൾക്ക് അനുമതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ഈ പേജ് കാണിക്കുന്ന ഉള്ളടക്കം വായിക്കാൻ നിങ്ങൾക്ക് അനുമതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ഇത്തരം പേജ് ബുക്ക്മാർക്ക് ചെയ്യാനാവില്ല: ഇത് ഒരു ഫോമിൽ മാത്രം പ്രവർത്തിക്കുന്നു, അല്ലെങ്കിൽ ഒരു നിമിഷത്തേക്കുള്ള പേജാണ്.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ഈ പേജിന്റെ വിലാസം ലഭ്യമല്ല.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ഈ പേജ് ഇപ്പോൾ തുറക്കാനാവില്ല.</translation>
     </message>
 </context>
 <context>

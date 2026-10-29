@@ -13,6 +13,20 @@ Diese Seite ist für Hosting-Anbieter, die Exponential auf Shared Hosting anbiet
 Maschine, über ein Panel verwaltet, meist mit FTP und ohne Shell für den Kunden. Sie beantwortet, was dort laut den Quellen
 des Projekts funktioniert, was meist nicht, wie eine Website ohne Shell installiert wird und was pro Konto zu konfigurieren ist.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Was die Quellen sagen](#was-die-quellen-sagen)
@@ -46,9 +60,17 @@ kopiert sie, sodass ein Update eine neue Version bringen kann:
 
 ```bash
 cp .htaccess_root .htaccess
+# oder, wo das Konto eine Shell hat, als Benutzer des Kontos:
+php bin/php/console exp:setup:htaccess --apply
 ```
 
-Nutzen Sie stattdessen `.htaccess_root_static` nur, wenn die Website einen erzeugten statischen Cache ausliefert. Für Apache
+Der Konsolenbefehl übernimmt den Modus der Vorlage, weigert sich, eine abweichende `.htaccess` zu überschreiben (er
+zeigt den Diff; `--force --apply` ersetzt sie nach einer Sicherung in `var/backup/setup/<zeit>/`) und sagt ohne
+`--apply`, was er tun würde. `php bin/php/console exp:setup:config --apply` bringt `config.php` auf dieselbe Weise an
+ihren Platz. Ohne Shell legt der Dateimanager oder der FTP-Client die Kopie an. Siehe
+[.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md).
+
+Nutzen Sie stattdessen `.htaccess_root_static` (`exp:setup:htaccess --static --apply`) nur, wenn die Website einen erzeugten statischen Cache ausliefert. Für Apache
 muss der virtuelle Host `.htaccess` wirken lassen (`AllowOverride All` auf dem Document Root), und `mod_rewrite` muss an
 sein; ein 404 für jede Seite bedeutet, dass `.htaccess` nicht gelesen wird (`AllowOverride`) oder `mod_rewrite` aus ist
 ([8.5 Apache mit PHP-FPM](../../../installation/08-die-website-ausliefern.md#85-apache-mit-php-fpm)). LiteSpeed liest die
@@ -167,6 +189,7 @@ des Kunden), als dieser eine Benutzer laufen
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md)
 - [Control Panels: Überblick](../control-panels/README.md)
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

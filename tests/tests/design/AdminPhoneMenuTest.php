@@ -173,7 +173,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'var(--a4-accent-strong)', $phone['.navbar-menu .navbar-bar > li > a.selected']['border-color'] );
         $this->assertArrayNotHasKey( 'background-color', $tile, 'the tile rule leaves the current tab its fill' );
         // the rule it overrides is still admin3's
-        $this->assertStringContainsString( 'padding-block: 0.5rem 7rem;', self::css( 'pagelayout.css' ) );
+        $this->assertStringContainsString( 'padding-block: 0.5rem 7rem;', self::css( 'base.css' ) );
     }
 
     /** PM-03 */
@@ -285,7 +285,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
     {
         $closed = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'hidden', $closed['.navbar-menu:not(.show)']['visibility'] );
-        $this->assertSame( 'max-height 300ms ease, visibility 0s linear 300ms', $closed['.navbar-menu:not(.show)']['transition'], 'hidden after its slide' );
+        $this->assertSame( 'max-height var(--a4-duration-slow) ease, visibility 0s linear var(--a4-duration-slow)', $closed['.navbar-menu:not(.show)']['transition'], 'hidden after its slide' );
         $this->assertSame( 'visible', $closed['.navbar-menu.show']['visibility'] );
         // the button shows Bootstrap Icons list, and x-lg while the menu is open
         $this->assertSame( 'none', $closed['#header .navbar-icon > .a4-bi-x-lg, #header .navbar-icon[aria-expanded="true"] > .a4-bi-list']['display'] );

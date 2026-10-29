@@ -15,11 +15,18 @@
  * gave it), its folder and its place in the folder like a node bookmark, so the folders, the order, moving and removing
  * work for both kinds without a second code path. This table, expbookmark_view, holds what only a system page has: its
  * address (module_uri), keyed by the bookmark's id. The address is the module, the view and the view's parameters,
- * without the siteaccess and without a query string, so the same bookmark opens in every administration siteaccess.
+ * without the host and the siteaccess, so the same bookmark opens on every host and in every administration
+ * siteaccess. A query string is kept only for the keys its kind of bookmark keeps (expBookmarkType, bookmark.ini
+ * [ViewBookmarkSettings] QueryParameters[], e.g. the search text of content/search), sorted.
+ *
+ * What can be bookmarked is set in bookmark.ini: [ViewBookmarkSettings] NonBookmarkableViews[] (and 'bookmarkable' =>
+ * false in a module definition) excludes views that only act on a posted form, log in or out, or edit; the kinds of
+ * bookmark ([BookmarkTypeSettings], expBookmarkType) give each bookmark its icon and its label.
  *
  * Whether the user may still open the page is decided when the bookmark is shown (expViewAccess, the rules a request
- * meets): a page the user may no longer open is shown without a link, marked "No access", and can still be renamed,
- * moved or removed.
+ * meets): a page the user may no longer open is shown without a link, greyed, with the reason (reasonText(): not
+ * available in this siteaccess, no role allows it, the view no longer exists ...), and can still be renamed, moved
+ * or removed.
  *
  * The table is created by the installer from share/db_schema.dba, by the update SQL of MySQL, PostgreSQL and SQLite,
  * and on every engine (Oracle and MongoDB included) by update/common/scripts/6.0/createbookmarkviewtable.php. Until it
@@ -51,6 +58,9 @@ class expBookmarkView extends eZPersistentObject
 
     /** @var array address => access check, for one request and user */
     protected static $access = array();
+
+    /** @var expBookmarkType[]|null the kinds of bookmark, see types() */
+    protected static $types = null;
 
     static function definition()
     {
@@ -140,6 +150,7 @@ class expBookmarkView extends eZPersistentObject
         self::$known = array();
         self::$uris = array();
         self::$access = array();
+        self::$types = null;
     }
 
     /**
@@ -237,7 +248,8 @@ class expBookmarkView extends eZPersistentObject
     /**
      * The address of a module view, from what a page posts: normalized (normalizeURI()), a leading siteaccess name
      * that is not a module removed (an address copied with /admin/ in front), and the first step must be a module of
-     * this installation. A URL alias (the address of a node) is not a module view: false.
+     * this installation. A URL alias (the address of a node) is not a module view: false. The query string keeps the
+     * keys the view's kind keeps (canonicalQuery()), everything else of it is dropped.
      *
      * @param mixed $uri
      * @param string[]|null $siteAccesses the siteaccess names; null reads site.ini [SiteAccessSettings] AvailableSiteAccessList
@@ -245,6 +257,7 @@ class expBookmarkView extends eZPersistentObject
      */
     public static function moduleURI( $uri, $siteAccesses = null )
     {
+        $query = is_string( $uri ) ? self::queryOf( $uri ) : '';
         $uri = self::normalizeURI( $uri );
         if ( $uri === false )
             return false;
@@ -255,7 +268,245 @@ class expBookmarkView extends eZPersistentObject
             array_shift( $parts );
         if ( !preg_match( '/^[A-Za-z0-9_]+$/', $parts[0] ) || !eZModule::exists( $parts[0] ) )
             return false;
-        return implode( '/', $parts );
+        $path = implode( '/', $parts );
+        $query = self::canonicalQuery( $parts[0], isset( $parts[1] ) ? $parts[1] : '', $query );
+        return $query === '' ? $path : $path . '?' . $query;
+    }
+
+    /**
+     * The query string of an address (after "?", without a fragment), '' when there is none.
+     *
+     * @param string $uri
+     * @return string
+     */
+    public static function queryOf( $uri )
+    {
+        $uri = preg_replace( '/#.*$/s', '', (string)$uri );
+        $at = strpos( $uri, '?' );
+        return $at === false ? '' : (string)substr( $uri, $at + 1 );
+    }
+
+    /**
+     * An address without its query string.
+     *
+     * @param string $uri
+     * @return string
+     */
+    public static function pathOf( $uri )
+    {
+        return (string)preg_replace( '/[?#].*$/s', '', (string)$uri );
+    }
+
+    /**
+     * The query string a bookmark of a view keeps: only the keys of its kind (expBookmarkType::queryParameters()), a
+     * single value of at most 255 characters each, no control characters, sorted by key and encoded (RFC 3986), so
+     * the same search is one bookmark however the form ordered its fields. '' when nothing is kept.
+     *
+     * @param string $module
+     * @param string $view
+     * @param string|array $query a query string or its parsed array
+     * @param string[]|null $keys the keys to keep; null asks the view's kind
+     * @return string
+     */
+    public static function canonicalQuery( $module, $view, $query, $keys = null )
+    {
+        if ( $keys === null )
+            $keys = self::typeFor( $module, $view )->queryParameters( $module, $view );
+        if ( !$keys || $query === '' || $query === array() || $query === null )
+            return '';
+        if ( !is_array( $query ) )
+        {
+            $parsed = array();
+            parse_str( (string)$query, $parsed );
+            $query = $parsed;
+        }
+        $kept = array();
+        foreach ( $keys as $key )
+        {
+            if ( !isset( $query[$key] ) || !is_scalar( $query[$key] ) )
+                continue;
+            $value = trim( (string)$query[$key] );
+            if ( $value === '' || strlen( $value ) > 255 || preg_match( '/[\x00-\x1F\x7F]/', $value ) )
+                continue;
+            $kept[$key] = $value;
+        }
+        ksort( $kept, SORT_STRING );
+        return http_build_query( $kept, '', '&', PHP_QUERY_RFC3986 );
+    }
+
+    // ------------------------------------------------------------------ settings and kinds (bookmark.ini)
+
+    /**
+     * bookmark.ini, or null when the installation has none (an older settings tree).
+     *
+     * @return eZINI|null
+     */
+    protected static function ini()
+    {
+        return eZINI::exists( 'bookmark.ini' ) ? eZINI::instance( 'bookmark.ini' ) : null;
+    }
+
+    /**
+     * A list setting of bookmark.ini, empty when it is missing.
+     *
+     * @param string $group
+     * @param string $name
+     * @return array
+     */
+    protected static function setting( $group, $name )
+    {
+        $ini = self::ini();
+        return $ini && $ini->hasVariable( $group, $name ) ? (array)$ini->variable( $group, $name ) : array();
+    }
+
+    /**
+     * The query string keys bookmark.ini [ViewBookmarkSettings] QueryParameters[module/view] lists for a view.
+     *
+     * @param string $module
+     * @param string $view
+     * @return string[]
+     */
+    public static function configuredQueryParameters( $module, $view )
+    {
+        $list = self::setting( 'ViewBookmarkSettings', 'QueryParameters' );
+        $key = $module . '/' . $view;
+        if ( !isset( $list[$key] ) )
+            return array();
+        $keys = array();
+        foreach ( explode( ';', (string)$list[$key] ) as $name )
+        {
+            $name = trim( $name );
+            if ( preg_match( '/^[A-Za-z0-9_]+$/', $name ) )
+                $keys[] = $name;
+        }
+        return $keys;
+    }
+
+    /**
+     * The icon of a module's system pages: bookmark.ini [ViewBookmarkSettings] ModuleIcons[module], else DefaultIcon,
+     * else gear (an icon name of the administration designs, a4-bi-<name>).
+     *
+     * @param string $module
+     * @return string
+     */
+    public static function moduleIcon( $module )
+    {
+        $icons = self::setting( 'ViewBookmarkSettings', 'ModuleIcons' );
+        $icon = isset( $icons[$module] ) ? (string)$icons[$module] : '';
+        if ( $icon === '' )
+        {
+            $ini = self::ini();
+            $icon = $ini && $ini->hasVariable( 'ViewBookmarkSettings', 'DefaultIcon' ) ? (string)$ini->variable( 'ViewBookmarkSettings', 'DefaultIcon' ) : '';
+        }
+        return preg_match( '/^[a-z0-9-]+$/', $icon ) ? $icon : 'gear';
+    }
+
+    /**
+     * The kinds of bookmark of bookmark.ini [BookmarkTypeSettings] TypeList[] (classes of TypeClass[] extending
+     * expBookmarkType), in their order, followed by the system page kind that takes every view.
+     *
+     * @return expBookmarkType[]
+     */
+    public static function types()
+    {
+        if ( self::$types !== null )
+            return self::$types;
+        $types = array();
+        $classes = self::setting( 'BookmarkTypeSettings', 'TypeClass' );
+        foreach ( self::setting( 'BookmarkTypeSettings', 'TypeList' ) as $identifier )
+        {
+            $class = isset( $classes[$identifier] ) ? (string)$classes[$identifier] : '';
+            if ( $class === '' || !class_exists( $class ) || !is_subclass_of( $class, 'expBookmarkType' ) )
+            {
+                eZDebug::writeWarning( "bookmark.ini: the kind of bookmark '$identifier' has no class extending expBookmarkType ('$class')", __METHOD__ );
+                continue;
+            }
+            $types[] = new $class();
+        }
+        $types[] = new expBookmarkTypeSystemPage();
+        return self::$types = $types;
+    }
+
+    /**
+     * The kind of bookmark of a module view: the first of types() that accepts it.
+     *
+     * @param string $module
+     * @param string $view
+     * @return expBookmarkType
+     */
+    public static function typeFor( $module, $view )
+    {
+        foreach ( self::types() as $type )
+        {
+            if ( $type->accepts( (string)$module, (string)$view ) )
+                return $type;
+        }
+        return new expBookmarkTypeSystemPage();
+    }
+
+    /**
+     * Whether a module view may be bookmarked at all (whoever asks): not when bookmark.ini [ViewBookmarkSettings]
+     * NonBookmarkableViews[] lists it (module/view or module/*), nor when its module definition says
+     * 'bookmarkable' => false. Whether the user may open it is access().
+     *
+     * @param string $uri a stored address
+     * @param string[]|null $excluded the list; null reads NonBookmarkableViews[]
+     * @return array( 'result' => bool, 'reason' => 'bookmarkable'|'not-bookmarkable' )
+     */
+    public static function bookmarkable( $uri, $excluded = null )
+    {
+        $parts = self::parts( $uri );
+        if ( $excluded === null )
+            $excluded = self::setting( 'ViewBookmarkSettings', 'NonBookmarkableViews' );
+        foreach ( $excluded as $entry )
+        {
+            $entry = trim( (string)$entry, " /" );
+            if ( $entry === $parts['module'] . '/' . $parts['view'] || $entry === $parts['module'] . '/*' )
+                return array( 'result' => false, 'reason' => 'not-bookmarkable' );
+        }
+        if ( $parts['view'] !== '' && $parts['module'] !== '' )
+        {
+            $module = eZModule::exists( $parts['module'] );
+            if ( $module instanceof eZModule && isset( $module->Functions[$parts['view']]['bookmarkable'] )
+                 && !$module->Functions[$parts['view']]['bookmarkable'] )
+                return array( 'result' => false, 'reason' => 'not-bookmarkable' );
+        }
+        return array( 'result' => true, 'reason' => 'bookmarkable' );
+    }
+
+    /**
+     * Why a bookmark of a system page cannot be opened, as the lists say it (translated). $reason is one of
+     * expViewAccess::check() or 'not-bookmarkable'.
+     *
+     * @param string $reason
+     * @return string
+     */
+    public static function reasonText( $reason )
+    {
+        $tr = function ( $text, $args = null ) { return ezpI18n::tr( 'kernel/content', $text, null, $args ); };
+        switch ( (string)$reason )
+        {
+            case 'siteaccess-rules':
+                $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : '';
+                return $tr( 'This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.',
+                            array( '%siteaccess' => $access ) );
+            case 'no-module':
+                return $tr( 'The module of this page is not installed or not enabled here.' );
+            case 'no-view':
+                return $tr( 'This page no longer exists: its module has no such view.' );
+            case 'policy':
+                return $tr( 'None of your roles allows you to open this page.' );
+            case 'login':
+                return $tr( 'You may not use this siteaccess.' );
+            case 'node':
+            case 'object':
+                return $tr( 'You may not read the content this page shows.' );
+            case 'not-bookmarkable':
+                return $tr( 'This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.' );
+            case 'empty':
+                return $tr( 'The address of this page is missing.' );
+        }
+        return $tr( 'This page cannot be opened now.' );
     }
 
     /**
@@ -318,7 +569,7 @@ class expBookmarkView extends eZPersistentObject
      */
     public static function parts( $uri )
     {
-        $parts = explode( '/', trim( (string)$uri, '/' ) );
+        $parts = explode( '/', trim( self::pathOf( $uri ), '/' ) );
         return array( 'module' => (string)$parts[0], 'view' => isset( $parts[1] ) ? (string)$parts[1] : '' );
     }
 
@@ -398,8 +649,9 @@ class expBookmarkView extends eZPersistentObject
 
     /**
      * The rows of eZContentBrowseBookmarkFolder::fetchRowsForUser() with what the lists show of each bookmark:
-     * 'kind' ('node' or 'view'); for a system page 'uri' (its address, '' when it is missing), 'module', 'view'
-     * and 'can_open' (the current user may open it now). Folder rows are left as they are.
+     * 'kind' ('node' or 'view'); for a system page 'uri' (its address, '' when it is missing), 'module', 'view',
+     * 'can_open' (the current user may open it now), 'reason' and 'reason_text' (why not, reasonText()), 'bookmark_type' and
+     * 'type_label' (its kind, expBookmarkType) and 'icon'. Folder rows are left as they are.
      *
      * @param array $rows
      * @param int|null $userID the owner of the rows (the current user when null)
@@ -429,13 +681,25 @@ class expBookmarkView extends eZPersistentObject
             $rows[$i]['uri'] = $uri;
             $rows[$i]['module'] = $parts['module'];
             $rows[$i]['view'] = $parts['view'];
+            $type = self::typeFor( $parts['module'], $parts['view'] );
+            $rows[$i]['bookmark_type'] = $type->identifier();
+            $rows[$i]['type_label'] = $type->label();
+            $rows[$i]['icon'] = $uri === '' ? self::moduleIcon( '' ) : $type->icon( $uri );
             if ( $uri === '' )
-                $rows[$i]['can_open'] = false;
+                $access = array( 'result' => false, 'reason' => 'empty' );
             else
             {
-                $access = $checkAccess ? self::access( $uri ) : array( 'result' => true );
-                $rows[$i]['can_open'] = (bool)$access['result'];
+                $access = $checkAccess ? self::access( $uri ) : array( 'result' => true, 'reason' => 'open' );
+                if ( $access['result'] )
+                {
+                    $bookmarkable = self::bookmarkable( $uri );
+                    if ( !$bookmarkable['result'] )
+                        $access = array( 'result' => false, 'reason' => $bookmarkable['reason'] );
+                }
             }
+            $rows[$i]['can_open'] = (bool)$access['result'];
+            $rows[$i]['reason'] = $access['result'] ? 'open' : (string)$access['reason'];
+            $rows[$i]['reason_text'] = $access['result'] ? '' : self::reasonText( $access['reason'] );
         }
         return $rows;
     }
@@ -456,9 +720,15 @@ class expBookmarkView extends eZPersistentObject
     public static function createNew( $userID, $uri, $name, $folderID = false )
     {
         $userID = (int)$userID;
+        // the path normalized, the query string reduced to the keys the view's kind keeps
+        $query = is_string( $uri ) ? self::queryOf( $uri ) : '';
         $uri = self::normalizeURI( $uri );
         if ( $uri === false || !self::isAvailable() )
             return false;
+        $parts = self::parts( $uri );
+        $query = self::canonicalQuery( $parts['module'], $parts['view'], $query );
+        if ( $query !== '' )
+            $uri .= '?' . $query;
         $name = eZContentBrowseBookmarkFolder::cleanName( $name );
         if ( $name === '' )
             $name = eZContentBrowseBookmarkFolder::cleanName( '/' . $uri );
@@ -568,6 +838,9 @@ class expBookmarkView extends eZPersistentObject
                 $uri = self::moduleURI( $post( 'BookmarkViewURI' ) );
                 if ( $uri === false )
                     return array( 'level' => 'error', 'bookmark_id' => 0, 'text' => $tr( 'This page cannot be bookmarked: it is not a page of a module view.' ) );
+                $bookmarkable = self::bookmarkable( $uri );
+                if ( !$bookmarkable['result'] )
+                    return array( 'level' => 'error', 'bookmark_id' => 0, 'text' => self::reasonText( $bookmarkable['reason'] ) );
                 $access = self::access( $uri );
                 if ( !$access['result'] )
                     return array( 'level' => 'error', 'bookmark_id' => 0, 'text' => $tr( 'This page cannot be bookmarked: you may not open it.' ) );
@@ -592,7 +865,7 @@ class expBookmarkView extends eZPersistentObject
      * What the "Bookmark this page" action of the administration needs to know about the page shown
      * (fetch( 'content', 'view_bookmark', hash( 'uri', $requested_uri_string, 'path', $module_result.path ) )):
      *   'available' - system pages can be bookmarked here (the table exists, the user may use bookmarks, the address
-     *                 is a module view)
+     *                 is a module view that may be bookmarked, see bookmarkable())
      *   'uri'       - the address that is stored
      *   'name'      - the name a new bookmark gets (defaultName()), or the name of the existing bookmark
      *   'bookmark'  - the id of the user's bookmark of this page, 0 when there is none
@@ -600,9 +873,10 @@ class expBookmarkView extends eZPersistentObject
      *
      * @param string $uri
      * @param array $path
+     * @param string|null $query the request's query string; null reads $_SERVER['QUERY_STRING']
      * @return array
      */
-    public static function pageState( $uri, array $path = array() )
+    public static function pageState( $uri, array $path = array(), $query = null )
     {
         $state = array( 'available' => false, 'uri' => '', 'name' => '', 'bookmark' => 0, 'folder_id' => 0 );
         $user = eZUser::currentUser();
@@ -611,8 +885,11 @@ class expBookmarkView extends eZPersistentObject
         $access = $user->hasAccessTo( 'content', 'bookmark' );
         if ( $access['accessWord'] === 'no' )
             return $state;
-        $moduleURI = self::moduleURI( self::withRequestParameters( $uri ) );
-        if ( $moduleURI === false )
+        if ( $query === null )
+            $query = isset( $_SERVER['QUERY_STRING'] ) ? (string)$_SERVER['QUERY_STRING'] : '';
+        $address = self::withRequestParameters( self::pathOf( $uri ) );
+        $moduleURI = self::moduleURI( $query !== '' ? $address . '?' . $query : $address );
+        if ( $moduleURI === false || !self::bookmarkable( $moduleURI )['result'] )
             return $state;
         $state['available'] = true;
         $state['uri'] = $moduleURI;

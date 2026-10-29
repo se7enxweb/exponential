@@ -14,6 +14,20 @@ was die Quellen von Exponential über cPanel sagen, was das in der Praxis bedeut
 Das Projekt hat Exponential nicht auf cPanel laufen sehen; diese Seite trennt daher sorgfältig, was die Quellen sagen, von
 allgemeinen Ratschlägen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+
 > **Hinweis**
 > Die Quellen von Exponential beschreiben keine Bildschirme oder Menüs von cPanel. Wo diese Seite eine Funktion des Panels nennt,
 > tut sie es allgemein („die PHP-Auswahl des Panels“, „die Cron-Seite des Panels“); lesen Sie die Namen und Schritte Ihrer
@@ -65,7 +79,11 @@ Das Folgende ist ein allgemeiner Ratschlag, abgeleitet aus den Anforderungen von
    Einstellungen für Erweiterungen des Panels. Nutzen Sie dieselbe Version für die Kommandozeile, wenn das Konto eine Shell hat.
 2. **Richten Sie den Document Root der Domain auf das Wurzelverzeichnis der Installation** (das Verzeichnis mit `index.php`).
 3. **Kopieren Sie die Rewrite-Regeln**: `cp .htaccess_root .htaccess` (oder laden Sie `.htaccess_root` als `.htaccess` hoch)
-   ([8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt)).
+   ([8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt)). Mit dem **Terminal** von cPanel
+   (oder SSH) erledigt das die Konsole, als Benutzer des Kontos: `php bin/php/console exp:setup:htaccess --apply`, und
+   `php bin/php/console exp:setup:config --apply` für `config.php`. Ohne Shell kopieren Sie die Dateien im
+   **File Manager** (er blendet Punktdateien aus, bis Sie „Show Hidden Files“ einschalten)
+   ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 4. **Legen Sie die Datenbank und ihren Benutzer** im Panel an, wenn nicht SQLite. Für MariaDB oder MySQL nutzen Sie `utf8mb4`
    ([9.3](../../../installation/09-datenbanken.md#93-mysql-und-mariadb)). Seit 6.0.15 braucht der Assistent nur Rechte auf diese
    Datenbank ([Eine saubere Installation, die zu Shared Hosting passt](../../../funktionen/6.0/standardwerte-einer-sauberen-installation.md)).
@@ -131,6 +149,7 @@ Projekt mit, und die Zeile rückt auf ([Die vier Stufen](../../betriebssystemunt
 - [Control Panels: Überblick](README.md), [DirectAdmin](directadmin.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Der Setup-Assistent auf Shared Hosting](../bereitstellung/der-setup-assistent-auf-shared-hosting.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

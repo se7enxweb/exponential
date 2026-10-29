@@ -10,6 +10,20 @@ Passwortregeln, Cookies nur über HTTPS, Dateiberechtigungen, Einwilligungen fü
 Installation. Es ist als Checkliste geschrieben, die Sie von oben nach unten abarbeiten können; eine einseitige
 Zusammenfassung steht am Ende.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 Für die Sicht des Angreifers, Bedrohung für Bedrohung, mit dem vorgeschalteten Request-Shield und dem, was Sie
 beobachten sollten, lesen Sie [Sicherheitshärtung](../hilfe/sicherheitshaertung.md) in der Hilfe; für das
 Administratorkonto [Das Administratorpasswort ändern](../hilfe/administratorpasswort-aendern.md) und
@@ -106,10 +120,12 @@ Was die mitgelieferten Regeln garantieren (`.htaccess_root` und
 
 Was Sie tun:
 
-1. **Apache:** `cp .htaccess_root .htaccess` und die Sicherheitsregeln darin belassen. Löschen Sie keine Regeln, damit
-   etwas funktioniert; suchen Sie stattdessen die Ursache. Wenn Sie eine eigene `.htaccess` oder eigene
-   Virtual-Host-Regeln pflegen, vergleichen Sie sie nach jedem Upgrade mit `.htaccess_root` und übernehmen Sie neue
-   Regeln.
+1. **Apache:** `./console exp:setup:htaccess --apply` (oder `cp .htaccess_root .htaccess`) und die Sicherheitsregeln
+   darin belassen. Löschen Sie keine Regeln, damit etwas funktioniert; suchen Sie stattdessen die Ursache. Wenn Sie
+   eine eigene `.htaccess` oder eigene Virtual-Host-Regeln pflegen, vergleichen Sie sie nach jedem Upgrade mit
+   `.htaccess_root` und übernehmen Sie neue Regeln: `./console exp:setup:htaccess` zeigt den Diff zwischen Ihrer
+   `.htaccess` und der Vorlage und endet mit 1, wenn sie abweichen, sodass eine Überwachung oder die CI eine
+   Abweichung bemerkt ([.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md)).
 2. **nginx:** Verwenden Sie den abgeleiteten Server-Block aus
    [Kapitel 8, Abschnitt 8.6](08-die-website-ausliefern.md#86-nginx-mit-php-fpm) oder eine gleichwertige Konfiguration,
    die die ersten beiden Regeln (Punktdateien, Skripte unterhalb des Wurzelverzeichnisses) vor jede statische
@@ -833,6 +849,10 @@ Vollständige Anleitung: [Audit](../bc/6.0/audit.md).
 
 - [ ] Rewrite-Regeln: `.htaccess` ist eine aktuelle Kopie von `.htaccess_root` (oder der abgeleitete nginx-Block,
       oder Velocity); `/.git/config`, `/settings/site.ini`, `/composer.json` liefern nicht die Datei aus.
+      `./console exp:setup:status` nennt die Vorlage.
+- [ ] `config.php` nicht in der Versionsverwaltung; Modus `0640` mit der Gruppe des Webservers, wenn sie ein
+      Passwort enthält (`exp:config:set` warnt, wenn nicht); `var/backup/` (frühere Kopien von `config.php`)
+      geschützt und aufgeräumt.
 - [ ] `settings/override/` nicht in der Versionsverwaltung, als Geheimnis gesichert, Modus `0640` oder strenger.
 - [ ] Das erzeugte Administratorpasswort geändert; `var/log/initial-admin-password` gelöscht.
 - [ ] Ein persönliches Administratorkonto pro Person; `admin` als Anmeldung stillgelegt; ein getestetes

@@ -14,6 +14,19 @@ without shell access, and for the support staff who help them. It answers: what 
 customer sees, and how the wizard protects the site while it runs. The page-by-page reference is
 [Chapter 5](../../../install/05-setup-wizard.md).
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [When the wizard is the right choice](#when-the-wizard-is-the-right-choice)
@@ -46,6 +59,18 @@ only method that shows each decision on a page with an explanation". When you ca
 > "If you do not have shell access, you will have to copy the file using an FTP client or ask your hosting provider
 > to do this for you" ([5.3.13](../../../install/05-setup-wizard.md#5313-site-security)). Put it there in advance and
 > the page is skipped.
+
+The host's provisioning can do that with the console, before the customer opens the wizard. As root, the copy needs
+`--allow-root-user` and should be given to the account's user:
+
+```bash
+cd /path/to/the/installation
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=<account-user>:<account-group>
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=<account-user>:<account-group>   # optional
+```
+
+Without `--owner`, a new file gets the owner of the template it is copied from, never root. Details:
+[Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md).
 
 ## What the customer does
 
@@ -93,6 +118,7 @@ file after the install; it holds passwords in clear text.
 - [One-click installers](one-click-installers.md)
 - [Shared hosting](../models/shared-hosting.md)
 - [Apache with PHP-FPM](../servers/apache-with-php-fpm.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

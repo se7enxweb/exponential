@@ -14,6 +14,19 @@ project's sources say about Kubernetes, and what changes when a site runs in mor
 shared files, sessions, cron, the proxy in front and code deploys. It does not give manifests: the sources ship none,
 and every cluster differs. Treat it as the list of decisions your manifests must encode.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [What the sources say](#what-the-sources-say)
@@ -137,6 +150,12 @@ the natural unit is a new image rolled out to new pods. Two cautions from the so
 - After the rollout, clear the caches that the replicas share
   ([Cache clearing and warming](../performance/cache-clearing-and-warming.md)).
 
+Every pod needs the same `config.php`, for example the `CLUSTER_*` constants of a shared cluster storage. Make it in
+the image or in the entry point with `exp:setup:config --apply` and `exp:config:set ... --apply`, with passwords from
+the pod's secrets (`--value="$CLUSTER_DB_PASS"`), never in the image. `exp:config:list --only-set --format=json`, run
+in each pod, shows whether they agree
+([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
+
 ## Checklist
 
 - [ ] One replica with SQLite, or several with a database server (PostgreSQL first).
@@ -152,6 +171,7 @@ the natural unit is a new image rolled out to new pods. Two cautions from the so
 - [Containers: Docker and Podman](containers-docker-and-podman.md)
 - [Several web nodes](../operations/several-web-nodes.md), [Clustering and shared storage](../operations/clustering-and-shared-storage.md)
 - [Varnish and reverse proxies](../performance/varnish-and-reverse-proxies.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

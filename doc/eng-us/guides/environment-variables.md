@@ -3,6 +3,19 @@
 This page lists the environment variables Exponential 6 reads, what each one does and who sets it. It is for
 administrators, hosts and developers who configure a server, a container or a deployment pipeline.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 Exponential is configured through its INI files (`settings/`) and, for a few things that must be known before the
 settings are read, through constants in `config.php` and `config.env.php` (`EXP_ENV`, `EZP_INI_FILEMTIME_CHECK` and
 the like). Environment variables are used where the setting must belong to **one server process** and must never
@@ -55,6 +68,14 @@ PHP constants, defined in those files. Setting an environment variable of the sa
 holds for `EXP_DEMO_MODE`: defining a constant of that name in `config.php` does nothing; demo mode comes only from the
 environment.
 
+The two files have different jobs. `config.env.php` holds only what differs per machine, the environment name
+`EXP_ENV`; it is copied from `config.env.php.example` by hand and is not touched by the console. `config.php` holds the
+constants of the installation (file modes, INI checks, cluster storage, log rotation); it is put into place with
+`./console exp:setup:config --apply` and read and changed with `./console exp:config:list`, `exp:config:get`,
+`exp:config:set` and `exp:config:unset`. To take a value from an environment variable into `config.php`, set it at
+deploy or container start: `./console exp:config:set CLUSTER_STORAGE_HOST "$CLUSTER_DB_HOST" --apply`. See
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md).
+
 ## Where to set an environment variable
 
 | Where PHP runs | How |
@@ -75,6 +96,7 @@ Examples for demo mode, one per place: [Demo mode examples](../examples/demo-mod
 - [Demo mode](../bc/6.0/demo-mode.md), [Demo mode FAQ](../help/demo-mode-faq.md)
 - [Chapter 2: Requirements](../install/02-requirements.md), [Chapter 13: Security hardening](../install/13-security-hardening.md)
 - [Velocity engines](../bc/6.0/velocity-engines.md)
+- [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md): `config.php` from the command line
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

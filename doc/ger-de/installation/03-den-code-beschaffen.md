@@ -9,6 +9,20 @@ Sie eine auswählen, wie die Extensions als Composer-Pakete ankommen, wie das Pa
 ankommt und was unter PHP 8.0 bis 8.3 anders ist, und schließt mit einem Rundgang durch jeden Eintrag der obersten
 Ebene des Installationsverzeichnisses und den Rechten, die Sie vor der Installation setzen müssen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 [Inhalt](README.md) · Zurück: [2. Voraussetzungen](02-voraussetzungen.md) · Weiter: [4. Eine Installationsmethode wählen](04-installationsweg-waehlen.md)
 
 ## 3.1 Versionen, Tags und Branches
@@ -414,9 +428,9 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `autoload.php` | Lädt den Autoloader von Composer und den des Kernels; jeder Einstiegspunkt beginnt damit. |
 | `ezpm.php` | Der Paketmanager auf der Kommandozeile. |
 | `composer.json` | Die Anforderungen: PHP, Extensions, Zeta Components. `composer.dev.json` enthält die Entwicklungswerkzeuge von `make devtools` (installiert nach `.devtools/`); `composer.json.dist` ist ein älteres Upstream-Manifest, das zur Referenz aufbewahrt wird. |
-| `.htaccess_root` | Apache-Rewrite-Regeln; kopieren Sie die Datei nach `.htaccess` (`cp .htaccess_root .htaccess`). `.htaccess_root_static` ist dieselbe Datei mit den Regeln, die den statischen Cache vor der Anwendung ausliefern. |
+| `.htaccess_root` | Apache-Rewrite-Regeln; kopieren Sie die Datei mit `./console exp:setup:htaccess --apply` nach `.htaccess` (oder mit `cp .htaccess_root .htaccess`). `.htaccess_root_static` ist dieselbe Datei mit den Regeln, die den statischen Cache vor der Anwendung ausliefern (`exp:setup:htaccess --static --apply`). |
 | `kickstart.ini-dist` | Die kommentierte Vorlage für `kickstart.ini`; `kickstart.ini--example` ist ein Beispiel. |
-| `config.php-RECOMMENDED` | Eine dokumentierte Liste der Einstellungen, die `config.php` vornehmen kann; benennen Sie die Datei in `config.php` um und entfernen Sie die Kommentarzeichen vor den Einstellungen, die Sie brauchen. |
+| `config.php-RECOMMENDED` | Eine dokumentierte Liste der Einstellungen, die `config.php` vornehmen kann. Kopieren Sie die Datei mit `./console exp:setup:config --apply` nach `config.php` (oder mit `cp config.php-RECOMMENDED config.php`), listen Sie die Einstellungen mit `./console exp:config:list` auf und setzen Sie eine mit `./console exp:config:set <NAME> <value> --apply`, statt in einem Editor die Kommentarzeichen zu entfernen. Siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md). |
 | `config.env.php.example` | Kopieren Sie die Datei nach `config.env.php`, um die Umgebung des Rechners zu benennen (`EXP_ENV`); siehe [Einstellungen pro Umgebung](../funktionen/6.0/umgebungseinstellungen.md). |
 | `exponential.cron`, `ezpublish.cron` | Beispiel-Crontabs für die Cronjobs (`crontab exponential.cron`, nachdem Sie die beiden Variablen `EXPONENTIALROOT` und `PHP` gesetzt haben). |
 | `sw.js`, `index.js` | Der Service Worker der Website. |

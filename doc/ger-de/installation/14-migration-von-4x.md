@@ -11,6 +11,20 @@ die anschließende Prüfung der Inhalte, die Probleme, auf die man tatsächlich 
 Checkliste. Jeder Befehl, jeder Pfad und jede Einstellung darin wurde am Code dieses Repositorys geprüft; wo die
 eigenen Upgrade-Seiten des Herstellers für 4.0 bis 4.7 etwas anderes sagen, wird auf den Unterschied hingewiesen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 [Inhalt](README.md) · Zurück: [13. Sicherheitshärtung für den Produktivbetrieb](13-sicherheitshaertung.md) · Weiter: [15. Migration vom 5.x-Legacy-Stack](15-migration-von-5x-legacy.md)
 
 ## 14.1 Was sich ändert und was nicht
@@ -451,6 +465,21 @@ und gehen Sie sie anschließend mit der folgenden Liste durch. Kopieren Sie niem
 über die neuen: Die neuen Standardwerte sind Teil des Codes. Die Seiten des Herstellers sagten dasselbe in ihrem
 Schritt 1 (`settings/siteaccess`, `settings/override` und die eigenen `design/<site>`-Verzeichnisse der Website in die
 entpackte neue Release kopieren).
+
+Um eine übernommene `config.php` ohne Editor mit der Vorlage zu vergleichen, führen Sie im neuen
+Wurzelverzeichnis aus:
+
+```bash
+./console exp:setup:status                 # config.php: wie viele Einstellungen sie setzt, oder dass sie nicht kompiliert
+./console exp:setup:config                 # der Diff zwischen config.php und config.php-RECOMMENDED (ändert nichts)
+./console exp:config:list                  # jede dokumentierte Einstellung: der Wert in config.php, oder (not set)
+./console exp:config:set CLUSTER_STORAGE_BACKEND dfsmysqli --apply    # einen Wert setzen oder korrigieren, vorher Sicherung
+```
+
+Eine Einstellung, die die alte Datei innerhalb eines `if` definiert, wird als `conditional` gemeldet und Ihnen
+überlassen. Ohne alte `config.php` legt `./console exp:setup:config --apply` eine aus der Vorlage an; für `.htaccess`
+nehmen Sie die neue `.htaccess_root` mit `./console exp:setup:htaccess --apply` statt der Kopie der alten Website.
+Siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
 
 ### Zu ändernde Einstellungen
 

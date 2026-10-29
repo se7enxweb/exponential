@@ -2,6 +2,20 @@
 
 Diese Anleitung richtet sich an die Person, die eine Site auf einen Server bringt: einen Betreiber oder einen Entwickler, der seinen eigenen Server betreibt. Sie führt eine frisch installierte Exponential-Site auf einen Server, den Besucher über HTTPS erreichen. Danach zeigt sie, wie Sie eine Codeänderung sicher ausliefern und die Site schnell halten. Lesen Sie sie von oben nach unten. Jeder Befehl ist in der Installation vorhanden; wo ein Ergebnis gezeigt wird, ist es das, was der Befehl ausgibt.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 Sie benötigen einen Linux-Server, Shell-Zugang im Installationsverzeichnis (dem Ordner, der `index.php` und `console` enthält) und eine Site, die bereits läuft. Wenn Sie noch keine Site haben, führen Sie zuerst `./console exp:install --apply` aus ([Erste Schritte](erste-schritte.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 Die Befehle verwenden `./console`, die Kurzform für `bin/php/console`. Die Beispiele fügen `--allow-root-user` an, weil sie als root ausgeführt werden; lassen Sie es weg, wenn Sie als Benutzer der Site arbeiten.
@@ -34,8 +48,16 @@ Die erste Zeile zeigt die PHP-Version (8.0 oder neuer, auch für Velocity). Die 
 Das Document Root ist das Installationsverzeichnis selbst. Exponential führt seine eigenen Rewrite-Regeln in einer Datei, die Sie durch Kopieren aktivieren:
 
 ```bash
-cp .htaccess_root .htaccess
+./console exp:setup:htaccess --apply      # oder von Hand: cp .htaccess_root .htaccess
 ```
+
+Der Befehl zeigt ohne `--apply`, was er tun würde, kopiert mit dem Modus der Vorlage (und, als root mit
+`--allow-root-user`, mit ihrem Eigentümer) und lehnt mit einem Diff ab, wenn bereits eine abweichende `.htaccess`
+vorhanden ist; `--force --apply` ersetzt sie dann nach einer Sicherung in `var/backup/setup/<time>/`.
+`./console exp:setup:config --apply` legt `config.php` auf dieselbe Weise an, und
+`./console exp:config:set <NAME> <value> --apply` ändert eine ihrer Einstellungen. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md), mit einem
+Bereitstellungsskript für Container und CI.
 
 Die Kopie schaltet den auf `.htaccess` basierenden Virtual-Host-Modus ein: Punktdateien, `.git` und Skripte unterhalb der Front-Controller antworten mit 404, `/api/` geht an `index_rest.php`, statische Design-Dateien werden direkt ausgeliefert und alles andere geht an `index.php`. Entfernen Sie keine Sicherheitsregeln daraus, um etwas zum Laufen zu bringen ([Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)).
 
@@ -246,6 +268,9 @@ Führen Sie ihn dreimal aus: Die erste Anfrage füllt die Caches, die anderen ze
 - Der Browser zeigt das Schloss auf der HTTPS-Adresse.
 - `./console exp:velocity deploy --dry-run --allow-root-user` listet einen Schritt `reload PHP-FPM` mit dem richtigen Dienst auf.
 - `./console exp:cache status --allow-root-user` zeigt die Ebenen, die Sie erwarten.
+- Apache: `./console exp:setup:status --allow-root-user` meldet `.htaccess` als Kopie von `.htaccess_root` (oder von
+  `.htaccess_root_static`), und `./console exp:config:list --only-set --allow-root-user` zeigt die Einstellungen in
+  `config.php`, die Sie erwarten.
 
 ## In dieser Anleitung verwendete Einstellungen
 
@@ -272,7 +297,8 @@ Alle stehen in `settings/velocity.ini` (ausgelieferte Standardwerte). `exp:veloc
 
 ## Verwandte Seiten
 
-- Funktionen: [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md), [Velocity HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md).
+- Funktionen: [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md), [Velocity HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md), [Befehle für .htaccess und config.php](../funktionen/6.0/befehle-fuer-htaccess-und-config-php.md).
+- Anleitung: [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md), mit einem Bereitstellungsskript für Container und CI.
 - Spezifikationen: [Engine-Einstellungen von Velocity](../spezifikationen/6.0/velocity-engine-einstellungen.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md).
 - Das Ergebnis messen: [Benchmarks für Exponential](benchmarking.md) (Apache gegen Velocity, eine Bereitstellung auf Regressionen geprüft).
 - Upgrade-Hinweise: [Velocity-Engines](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md), [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md), [Cache-Konsole](../bc/6.0/cache-konsole.md).

@@ -2318,6 +2318,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>pat navmey DaqawlaH je: nav yIpoSmoH (SeHlaw, 'olghach He, lo'wI'pu' tetlh ...) 'ej Dung "navvam yIqaw" yIwIv. qawmeH Daqmeyvetlh ghajlu' rutlh Degh.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>naDev navvam DapoSmoHmeH chaw' Daghajbe'choH. qawmeH Daq yIteq, qoj loHwI'vaD 'el chaw' yItlhob.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13827,32 +13831,20 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential Enterprise Edition yInuD&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential Community yImuv, De&apos; yItam &apos;ej yInob&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; qonmeH chaw&apos; &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; latlhpu&apos; je.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt; lo&apos;lu&apos;. De&apos; latlh DaneHchugh, &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; yIlegh.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; qonmeH chaw&apos; &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; latlhpu&apos; je.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> De&apos; latlh DaneHchugh, &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; yIlegh.</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; qonmeH chaw&apos; &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; latlhpu&apos; je.</translation>
+        <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%foundation_link&quot;&gt;Exponential Foundation&lt;/a&gt; and &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential yInuD (7x Hal)&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Exponential Community yImuv, QaH yISuq &apos;ej yInob&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; qonmeH chaw&apos; &amp;copy; 1998-2026 &lt;a href=&quot;%7x_link&quot;&gt;7x&lt;/a&gt; latlhpu&apos; je.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56335,6 +56327,42 @@ yIlob.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>qawmeH Daq pong chu': "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>yoS lojmItvamDaq (%siteaccess) navvam chu'Ha'lu'ta'. navvam ghajbogh yoS lojmItDaq qawmeH Daq yIpoSmoH.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>naDev navvam ngoq 'ay' jomlu'be' qoj chu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>navvam tu'lu'be'choH: HaStavetlh Hutlh ngoq 'ay'Daj.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>navvam DapoSmoHmeH chaw' Dunobbe' patlhmeylIj.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>yoS lojmItvam Dalo'meH chaw' Daghajbe'.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>De' cha'bogh navvam DalaDmeH chaw' Daghajbe'.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>navmey Seghvam qawmeH DaqmeyDaq chellu'laHbe': ghItlh neH ruch, qoj poH ngajDaq neH taH.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>navvam Daq tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>DaH navvam poSmoHlu'laHbe'.</translation>
     </message>
 </context>
 <context>

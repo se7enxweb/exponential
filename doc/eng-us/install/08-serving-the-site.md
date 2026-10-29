@@ -9,6 +9,19 @@ workers, answers repeat pages from its own response cache and manages its own ce
 stand-in and Let's Encrypt. The chapter then covers the traditional setups (Apache with PHP-FPM, including on Plesk;
 nginx; FrankenPHP), the file permissions every setup needs, and running behind a reverse proxy.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 [Contents](README.md) · Previous: [7. The console install](07-console-install.md) · Next: [9. Databases](09-databases.md)
 
 ---
@@ -907,11 +920,15 @@ process of its own.
    version:
 
    ```bash
-   cp .htaccess_root .htaccess
+   ./console exp:setup:htaccess --apply      # or by hand: cp .htaccess_root .htaccess
    ```
 
    Use `.htaccess_root_static` instead only when you serve a generated static cache (it is `.htaccess_root` with the
-   static cache offload rules added).
+   static cache offload rules added): `./console exp:setup:htaccess --static --apply`. The command copies with the
+   template's mode (and, run as root with `--allow-root-user`, its owner), shows a diff and refuses when a different
+   `.htaccess` is already there, and backs the old one up to `var/backup/setup/<time>/` before `--force --apply`
+   replaces it. `./console exp:setup:status` says which template the current `.htaccess` is a copy of. See
+   [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
 
 2. **Load the modules.** `mod_rewrite`, `mod_proxy` and `mod_proxy_fcgi` (Debian: `a2enmod rewrite proxy_fcgi`);
    for HTTPS `mod_ssl`, for HTTP/2 `mod_http2`.
@@ -995,7 +1012,8 @@ Plesk generates the virtual host itself; do not edit its files. In Plesk:
 
 - point the domain's document root at the installation root (the directory with `index.php`);
 - choose "FPM application served by Apache" in the PHP settings, and the PHP version;
-- keep `.htaccess` (copied from `.htaccess_root`); Plesk's Apache reads it;
+- keep `.htaccess` (copied from `.htaccess_root`, for example with `./console exp:setup:htaccess --apply`); Plesk's
+  Apache reads it;
 - install the certificate in Plesk (its Let's Encrypt extension or your own) and switch on the redirect to HTTPS.
 
 Plesk names each pool after the domain in `/opt/plesk/php/<version>/etc/php-fpm.d/<domain>.conf`, served by the systemd
@@ -1329,7 +1347,7 @@ What can go wrong behind a proxy:
 - [ ] `[DeploySettings] PhpFpmService=disabled` when Velocity serves the site alone; `exp:velocity deploy --dry-run`
       shows the steps you expect.
 - [ ] Apache or nginx: `.htaccess` copied from `.htaccess_root` (or the derived nginx block), front controllers and
-      asset paths tested, a `.php` below the root answers 404.
+      asset paths tested, a `.php` below the root answers 404; `./console exp:setup:status` names the template.
 - [ ] `var/` and `settings/` writable by the one user (or group) that runs PHP; no root-owned files in `var/`.
 - [ ] Behind a proxy: the proxy is trusted (`TrustedProxies[]`, or for Velocity `Q.webserver.proxy.trusted`), it sets
       `X-Forwarded-Proto` and appends to or sets `X-Forwarded-For`; `ClientIpByCustomHTTPHeader` set only under Apache

@@ -14,6 +14,19 @@ whether Exponential runs there, which rules to use, what the code knows about Li
 plan goes on sale. LiteSpeed's own menus and settings are not described here; check your LiteSpeed documentation for
 them.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [What the sources say](#what-the-sources-say)
@@ -46,7 +59,12 @@ your own LiteSpeed version.
    cp .htaccess_root .htaccess
    ```
 
-   Use `.htaccess_root_static` instead only when the site serves a generated static cache
+   or, as the site's user, `./console exp:setup:htaccess --apply`
+   ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
+   LiteSpeed Enterprise reads it on the next request. OpenLiteSpeed reads only the rewrite rules, only with
+   `autoLoadHtaccess` on and only after a restart; put the rules in its virtual host instead
+   ([LiteSpeed example](../../../examples/web-servers/litespeed.md)).
+   Use `.htaccess_root_static` instead (`--static`) only when the site serves a generated static cache
    ([Static cache](../performance/static-cache.md)).
 3. **PHP:** 8.0 or later with the required extensions ([Chapter 2](../../../install/02-requirements.md#23-php-extensions)),
    `memory_limit` at least 64M (the setup wizard's floor; give production more), `date.timezone` set, `file_uploads`
@@ -95,7 +113,7 @@ must be trusted and must set `X-Forwarded-Proto` ([Chapter 8, Behind a reverse p
 - [ ] Web and CLI PHP are the same version with the same extensions.
 - [ ] The routing checks and the tests above pass on a staging account.
 - [ ] `open_basedir` effects on preload and other background runs are known and documented for support.
-- [ ] After each upgrade, `.htaccess` is refreshed from the new `.htaccess_root`.
+- [ ] After each upgrade, `.htaccess` is refreshed from the new `.htaccess_root` (`./console exp:setup:htaccess` shows the diff; `--force --apply` copies after a backup).
 
 **Demo mode on LiteSpeed.** LiteSpeed reads `SetEnv` in `.htaccess` like Apache and passes it to `lsphp`: `SetEnv EXP_DEMO_MODE 1` in a public demo's `.htaccess` switches demo mode on for its web requests, and `security.log` then shows `demo/mode on ... sapi=litespeed`. [Recipe: run a public demo on LiteSpeed and Plesk](run-a-public-demo-on-litespeed-and-plesk.md).
 
@@ -105,6 +123,7 @@ must be trusted and must set `X-Forwarded-Proto` ([Chapter 8, Behind a reverse p
 - [Shared hosting](../models/shared-hosting.md)
 - [Choosing a web server](choosing-a-web-server.md)
 - [Operating system support](../../os-support.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

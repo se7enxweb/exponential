@@ -16,6 +16,19 @@ them, what each choice means for operations, and how to write the decision down.
 [Chapter 8: Serving the site](../../../install/08-serving-the-site.md), [Operating system support](../../os-support.md)
 and the repository's `README.md`.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [The choice in one table](#the-choice-in-one-table)
@@ -39,7 +52,7 @@ Taken from [Chapter 8, The choice in one table](../../../install/08-serving-the-
 | Separate HTTPS or certificate tool needed | no: own certificates, self-signed fallback, ACME | no: your certificate or a self-signed one | yes (`mod_ssl` plus certbot or a panel) | yes |
 | Application kept in memory between requests | yes (persistent workers) | no (clean state per request) | no | no |
 | Response cache in front of PHP | yes | not yet | no (the kernel's own caches only) | no |
-| Rewrite rules | built in | generated Caddyfile | `.htaccess_root` | written by you |
+| Rewrite rules | built in | generated Caddyfile | `.htaccess_root` (`exp:setup:htaccess --apply`) | written by you |
 | Suits shared hosting | usually not | usually not | yes | rarely |
 
 Other servers that can rewrite a URL to `index.php` work as well. The README lists LiteSpeed and OpenLiteSpeed,
@@ -143,6 +156,7 @@ Tested on staging on:           <date>, by <role>
 - [Apache with PHP-FPM](apache-with-php-fpm.md)
 - [Choosing a hosting model](../models/choosing-a-hosting-model.md)
 - [Choosing hosting, database and operating system](../../leadership/choosing-hosting-database-and-os.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md): which servers read `.htaccess`
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

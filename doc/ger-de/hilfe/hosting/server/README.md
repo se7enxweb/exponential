@@ -13,6 +13,20 @@ Dieser Abschnitt ist für Systemadministratoren und Produktmanager bei Hosting-U
 Exponential-Website auf ihren Maschinen ausliefert, und es einrichten. Er beantwortet: hinter welchen Webservern und Engines Exponential
 läuft, welche das Projekt empfiehlt, welche zu welchem Hosting-Modell passt und wo die genauen Einstellungen stehen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 Zurück zu [Hosting-Unternehmen: hier beginnen](../hosting-anbieter-hier-beginnen.md).
 
 ## Inhalt
@@ -80,7 +94,10 @@ Was auch immer die Website ausliefert, es gelten dieselben Regeln
 
 - Der **Document Root ist das Wurzelverzeichnis der Installation**, das Verzeichnis, das `index.php` enthält.
 - Das Routing ist einmal aufgeschrieben, in `.htaccess_root`. Die Engines von Velocity und die erzeugte Konfiguration von FrankenPHP
-  setzen dieselbe Liste Regel für Regel um.
+  setzen dieselbe Liste Regel für Regel um. Apache (mit `AllowOverride All`) und LiteSpeed Enterprise lesen sie als
+  `.htaccess`, die `./console exp:setup:htaccess --apply` an ihren Platz kopiert; OpenLiteSpeed liest nur ihre
+  Rewrite-Regeln (mit `autoLoadHtaccess`, nach einem Neustart); nginx, Caddy und IIS lesen sie nie
+  ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 - Keine PHP-Datei läuft, weil ihr Pfad angefragt wurde, außer den Front-Controllern in der Wurzel (`index.php`, `index_rest.php`,
   `index_treemenu.php` und, wenn SOAP an ist, `index_soap.php`; vor 6.0.15 hieß es `soap.php`, siehe
   [Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../../bc/6.0/soap-einstiegsskript-index-soap.md)).
@@ -112,6 +129,7 @@ die Website von außen erreichbar ist.
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
 - [Velocity-Engines](../../../bc/6.0/velocity-engines.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

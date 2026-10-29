@@ -13,6 +13,19 @@ This page is for hosting companies that run DirectAdmin servers and want to offe
 the Exponential sources say about DirectAdmin, which panel tasks an Exponential site needs, and how to test the
 combination before you sell it.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+
 > **Note**
 > The Exponential sources describe no DirectAdmin screens, menus or file locations. This page refers to panel features
 > generically; check DirectAdmin's documentation for how your version does each task.
@@ -63,7 +76,8 @@ Answer these for your own server build before writing a product description:
 | PHP version | 8.0 or later for web and command line, the same extensions in both | [PHP selection and FPM pools](php-selection-and-fpm-pools.md) |
 | PHP settings | `memory_limit` 64M or more, `max_execution_time` 30 or more, `date.timezone`, `file_uploads`, `allow_url_fopen`; upload sizes for the editors' files | [2.5](../../../install/02-requirements.md#25-phpini-settings) |
 | Document root | the installation root, where `index.php` is | [8.5.1](../../../install/08-serving-the-site.md#851-step-by-step) |
-| Rewrite rules | `.htaccess` copied from `.htaccess_root` | [13.2](../../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out) |
+| Rewrite rules | `.htaccess` copied from `.htaccess_root`; with a shell, as the account's user: `php bin/php/console exp:setup:htaccess --apply` | [13.2](../../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out), [from the console](../../../guides/setup-files-from-the-console.md) |
+| `config.php` (optional) | `config.php-RECOMMENDED` copied to `config.php`: `php bin/php/console exp:setup:config --apply`, values with `exp:config:set` | [from the console](../../../guides/setup-files-from-the-console.md#4-put-configphp-into-place) |
 | Database | in the official order: 1. SQLite 3 (no server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server is known to be possible with additional work at this time | [Databases and users](databases-and-users.md) |
 | Cron | `runcronjobs.php` with the account's PHP, every few minutes for `frequent` | [Cron and shell access](cron-and-shell-access.md) |
 | Certificate | HTTPS for every name of the site, redirect from HTTP | [TLS certificates in panels](tls-certificates-in-panels.md) |
@@ -108,6 +122,7 @@ Report a successful run to the project so the tier can move up ([The four tiers]
 - [Control panels: overview](README.md), [cPanel](cpanel.md)
 - [Shared hosting](../models/shared-hosting.md), [Multi-tenant isolation](../security/multi-tenant-isolation.md)
 - [Operating system support](../../os-support.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

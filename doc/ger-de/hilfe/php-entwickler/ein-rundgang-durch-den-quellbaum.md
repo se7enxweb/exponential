@@ -13,6 +13,20 @@ Diese Seite richtet sich an PHP-Entwickler, die zum ersten Mal einen Exponential
 Verzeichnisse und Einstiegspunkte im Wurzelverzeichnis durch, sagt, was wo liegt und welche Orte generiert werden oder
 zur Installation statt zum Code gehören.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hosting/control-panels/plesk.md), [cPanel](../hosting/control-panels/cpanel.md), [DirectAdmin](../hosting/control-panels/directadmin.md), [ISPConfig](../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Die Einstiegspunkte](#die-einstiegspunkte)
@@ -38,6 +52,18 @@ zur Installation statt zum Code gehören.
 Jeder PHP-Einstiegspunkt beginnt mit `autoload.php`. Es definiert `EXP_ROOT_DIR` (das Wurzelverzeichnis der Installation,
 ein absoluter Pfad), lädt unter PHP älter als 8.1 `lib/phpcompat.php`, entscheidet über das Engine-Archiv und registriert
 den Klassen-Map-Autoloader ([Wie eine Anfrage in PHP abläuft](wie-eine-anfrage-in-php-ablaeuft.md)).
+
+Ein Beispiel dafür, wie ein Konsolenbefehl aus diesen Teilen gebaut ist: die Befehle, die `.htaccess` und `config.php`
+an ihren Platz bringen ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
+| Datei | Rolle |
+|---|---|
+| `bin/php/setupfiles.php`, `bin/php/configphp.php` | die Skripte hinter `exp:setupfiles` (`exp:setup:status`, `exp:setup:htaccess`, `exp:setup:config`) und `exp:configphp` (`exp:config:list`, `get`, `set`, `unset`); sie laufen auch ohne die Konsole |
+| `kernel/private/classes/commands/setupfiles.php`, `configphp.php` | die Klassen der Konsolenbefehle |
+| `kernel/classes/expsetupfilecopy.php` | das sichere Kopieren: Probelauf, Diff, Sicherung nach `var/backup/`, atomares Schreiben, Modus und Eigentümer |
+| `kernel/classes/expconfigphpeditor.php` | liest `config.php` als PHP-Tokens und ändert ein `define()` nach dem anderen, geprüft mit `php -l` |
+| `kernel/classes/expconfigphpcatalogue.php` | die Liste der beschriebenen Einstellungen, gelesen aus den Kommentaren von `config.php-RECOMMENDED` |
+| `tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php` | ihre Tests |
 
 ## Code-Verzeichnisse
 
@@ -85,7 +111,9 @@ Views und oft eine `function_definition.php` für Fetch-Funktionen. Zwei Verzeic
 |---|---|---|
 | `settings/*.ini` | die Standardeinstellungen des Kernels | ja |
 | `settings/override/`, `settings/siteaccess/` | die eigenen Einstellungen der Installation; können Geheimnisse enthalten | nein (Installation) |
-| `config.php` | Konstanten für diese Installation (aus `config.php-RECOMMENDED`) | nein |
+| `config.php` | Konstanten für diese Installation (aus `config.php-RECOMMENDED`; `exp:setup:config` kopiert sie, `exp:config:*` bearbeitet sie) | nein |
+| `.htaccess` | die Regeln für Apache und LiteSpeed (aus `.htaccess_root` oder `.htaccess_root_static`; `exp:setup:htaccess` kopiert sie) | nein (Installation) |
+| `var/backup/setup/`, `var/backup/config/` | die Kopien, die `exp:setup:*` und `exp:config:*` von jeder Datei aufbewahren, die sie ersetzen oder bearbeiten | nein |
 | `config.env.php` | `EXP_ENV`, der Umgebungsname dieser Maschine (aus `config.env.php.example`) | nein |
 | `autoload/ezp_kernel.php` | die Klassen-Map des Kernels | ja |
 | `var/autoload/ezp_extension.php`, `ezp_override.php`, `ezp_tests.php` | generierte Klassen-Maps | nein |
@@ -111,7 +139,9 @@ Views und oft eine `function_definition.php` für Fetch-Funktionen. Zwei Verzeic
 - **Ihre Arbeit gehört in fast jedem Fall in eine Erweiterung.** Der Kernel wird nur für Kernel-Korrekturen und
   Funktionen geändert, die Sie zurückgeben ([PHP-Änderungen beitragen](php-aenderungen-beitragen.md)).
 - **Bearbeiten Sie niemals generierte Dateien** (`var/autoload/*`, Caches); generieren Sie sie neu.
-- **Committen Sie niemals Installationsdateien**: `settings/override/`, `config.php`, `config.env.php`, `var/`.
+- **Committen Sie niemals Installationsdateien**: `settings/override/`, `config.php`, `config.env.php`, `var/`. Tragen
+  Sie in einem eigenen Projekt-Repository `/config.php` in dessen `.gitignore` ein: Die Datei kann das Passwort der
+  Cluster-Datenbank enthalten.
 - **Bearbeiten Sie niemals `vendor/`**; von Composer installierte Erweiterungen können in manchen Installationen
   lebendige Git-Checkouts sein, und Composer würde sie ersetzen.
 
@@ -121,6 +151,7 @@ Views und oft eine `function_definition.php` für Fetch-Funktionen. Zwei Verzeic
 - [Projektdateien](../projektdateien.md)
 - [Verzeichnisaufbau einer Erweiterung](../erweiterungsentwicklung/teil-3-erweiterungsentwickler/verzeichnisaufbau-einer-erweiterung.md)
 - [Verzeichnisse unter var/](../erweiterungsentwicklung/teil-8-referenz/verzeichnisse-unter-var.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

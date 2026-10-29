@@ -14,6 +14,19 @@ for product managers who need to know what such an offer requires. It answers: h
 files and caches, what the DFS cluster needs (a shared mount and a metadata database), how files are served, which
 commands maintain the cluster, and where the limits are.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 The facts come from `settings/file.ini`, `config.php-RECOMMENDED`, the cluster documents in `doc/eng-us/features/` and the
 migration chapters of the installation book. The other half of a multi-server setup (sessions, caches in front of
 PHP, proxies) is on [Several web nodes](several-web-nodes.md).
@@ -116,6 +129,27 @@ Since 4.7 one file in the document root, `index_cluster.php`, serves cluster fil
 `CLUSTER_STORAGE_USER`, `CLUSTER_STORAGE_PASS`, `CLUSTER_STORAGE_DB` and `CLUSTER_MOUNT_POINT_PATH`, plus optional
 flags such as `CLUSTER_ENABLE_HTTP_CACHE` and `CLUSTER_EXPIRY_TIMEOUT`.
 
+Set them from the console on every web server, with the same values as `[eZDFSClusteringSettings]`. Each command
+shows the change as a diff, writes only with `--apply`, backs `config.php` up to `var/backup/config/<time>/` first and
+checks the new file with `php -l`:
+
+```bash
+./console exp:setup:config --apply                           # once, when there is no config.php yet
+./console exp:config:set CLUSTER_STORAGE_BACKEND dfsmysqli --apply
+./console exp:config:set CLUSTER_STORAGE_HOST db1.example.com --apply
+./console exp:config:set CLUSTER_STORAGE_PORT 3306 --apply
+./console exp:config:set CLUSTER_STORAGE_USER <user> --apply
+./console exp:config:set CLUSTER_STORAGE_PASS --value="$CLUSTER_DB_PASS" --apply
+./console exp:config:set CLUSTER_STORAGE_DB <cluster database> --apply
+./console exp:config:set CLUSTER_MOUNT_POINT_PATH /path/to/nfs --apply
+./console exp:config:list --only-set                         # the password shows as ********
+chmod 0640 config.php                                        # with the web server's group
+```
+
+The password is masked in every output; the command warns when it lands in a `config.php` every user can read.
+`./console exp:config:list --only-set --format=json`, run on each server, gives documents you can compare to see
+that all web nodes agree. See [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md).
+
 The web server sends it only the paths its rewrite rules name. With per-site caches in `CacheVarDir`, add their public
 caches as well ([Cluster (DFS)](../../../features/6.0/multi-site-log-and-cache-paths.md#cluster-dfs)):
 
@@ -124,8 +158,9 @@ RewriteRule ^/var_cache/([^/]+/)?cache/(texttoimage|public)/.* /index_cluster.ph
 ```
 
 > **Warning**
-> `config.cluster.php` and `settings/override/file.ini.append.php` hold database credentials. Keep them out of
-> version control and out of any file a customer can download.
+> `config.php`, `config.cluster.php` and `settings/override/file.ini.append.php` hold database credentials. Keep them
+> out of version control and out of any file a customer can download; the backups in `var/backup/config/` hold earlier
+> copies of `config.php` and need the same care.
 
 ## Maintenance commands
 
@@ -171,6 +206,7 @@ Run `dfscleanup.php` with `-S` and `-B` first and read the result before you add
 - [Backups: what to back up](backups-what-to-back-up.md)
 - [Databases in the official order](../basics/databases-in-the-official-order.md)
 - [Choosing a hosting model](../models/choosing-a-hosting-model.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md): `exp:config:set` for the `CLUSTER_*` constants
 - [Database support](../../database-support.md), [Operating system support](../../os-support.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 

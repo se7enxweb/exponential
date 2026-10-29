@@ -13,6 +13,19 @@ This section is for the security lead, the system administrators and the product
 runs Exponential sites for customers. It answers two questions: what does Exponential already do by itself, and what
 is the host's part of the work on the server, in the panel and in the contract.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 Exponential 6 is built to be secure by default: a fresh installation serves only a fixed list of files, sends
 security headers, keeps debug output off, protects forms with tokens, hashes passwords with bcrypt, keeps a
 tamper-evident audit trail and refuses to run its setup wizard on an installed site. The reasoning behind each
@@ -55,7 +68,8 @@ the other covers.
 
 | Area | Exponential provides | The host provides | The customer decides |
 |---|---|---|---|
-| Served files | the rewrite rules of `.htaccess_root` and Velocity's list | a web server configuration that keeps them | nothing, unless they bring their own rules |
+| Served files | the rewrite rules of `.htaccess_root` and Velocity's list; `exp:setup:htaccess` to copy them and to show drift | a web server configuration that keeps them | nothing, unless they bring their own rules |
+| `config.php` | `exp:config:*` with masked secrets, backups and a `php -l` check | mode `0640`, out of version control, `var/backup/` protected and cleaned | the values their site needs |
 | Transport | HSTS and certificate handling in Velocity; secure cookies | certificates, renewal, redirects, the TLS terminator | which host names exist |
 | Accounts | bcrypt hashes, password rules, the weak password check, two-step sign-in | a provisioning flow that never leaves a known password | who gets which role |
 | Isolation | nothing between installations: that is the operating system's job | one user, one pool, one database user per customer | nothing |
@@ -88,6 +102,7 @@ open.
 - [Chapter 13: Security hardening for production](../../../install/13-security-hardening.md)
 - [Security review checklist](../checklists/security-review.md)
 - [Compromised site](../runbooks/compromised-site.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

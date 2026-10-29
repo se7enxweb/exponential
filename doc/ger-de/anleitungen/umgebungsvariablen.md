@@ -4,6 +4,20 @@ Diese Seite listet die Umgebungsvariablen auf, die Exponential 6 liest, was jede
 richtet sich an Administratoren, Hoster und Entwickler, die einen Server, einen Container oder eine
 Deployment-Pipeline konfigurieren.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 Exponential wird über seine INI-Dateien (`settings/`) konfiguriert und, für einige Dinge, die bekannt sein müssen,
 bevor die Einstellungen gelesen werden, über Konstanten in `config.php` und `config.env.php` (`EXP_ENV`,
 `EZP_INI_FILEMTIME_CHECK` und ähnliche). Umgebungsvariablen werden dort verwendet, wo die Einstellung zu **einem
@@ -57,6 +71,15 @@ sind PHP-Konstanten, die in diesen Dateien definiert werden. Eine gleichnamige U
 nichts. Umgekehrt gilt für `EXP_DEMO_MODE`: Eine gleichnamige Konstante in `config.php` zu definieren, bewirkt nichts;
 der Demo-Modus kommt nur aus der Umgebung.
 
+Die beiden Dateien haben unterschiedliche Aufgaben. `config.env.php` enthält nur, was sich je Maschine unterscheidet,
+den Namen der Umgebung `EXP_ENV`; sie wird von Hand aus `config.env.php.example` kopiert und von der Konsole nicht
+angefasst. `config.php` enthält die Konstanten der Installation (Dateimodi, INI-Prüfungen, Cluster-Speicher,
+Log-Rotation); sie wird mit `./console exp:setup:config --apply` an ihren Platz gebracht und mit
+`./console exp:config:list`, `exp:config:get`, `exp:config:set` und `exp:config:unset` gelesen und geändert. Um einen
+Wert aus einer Umgebungsvariablen in `config.php` zu übernehmen, setzen Sie ihn beim Deployment oder beim Start des
+Containers: `./console exp:config:set CLUSTER_STORAGE_HOST "$CLUSTER_DB_HOST" --apply`. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md).
+
 ## Wo eine Umgebungsvariable gesetzt wird
 
 | Wo PHP läuft | Wie |
@@ -77,6 +100,7 @@ Beispiele für den Demo-Modus, eines pro Ort: [Beispiele zum Demo-Modus](../beis
 - [Demo-Modus](../bc/6.0/demomodus.md), [FAQ zum Demo-Modus](../hilfe/demomodus-faq.md)
 - [Kapitel 2: Voraussetzungen](../installation/02-voraussetzungen.md), [Kapitel 13: Sicherheitshärtung](../installation/13-sicherheitshaertung.md)
 - [Velocity-Engines](../bc/6.0/velocity-engines.md)
+- [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md): `config.php` von der Kommandozeile
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

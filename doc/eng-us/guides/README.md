@@ -3,6 +3,19 @@
 This page is the table of contents of the guides. Read it if you are new to Exponential, or if you know the system
 and want the shortest way to one result.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 A guide is a tutorial. You follow it from top to bottom and need no prior knowledge. At the end you have a working
 result: an installed site, a published page, a changed template, a site behind a real web server, a cache cleared on
 purpose. Every step is a command or a click path, with the output to expect. Where a topic needs more depth, the
@@ -63,6 +76,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Extensions](extensions.md) | An extension found, installed, switched on and configured; one of your own built and released | 45 minutes |
 | [The Extensions page](extensions-page.md) | Extensions activated, deactivated and put in order in one list, the changes reviewed with their risks and applied, the written and the real loading order told apart | 10 minutes |
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
+| [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md) | `.htaccess` and `config.php` copied from their templates with a backup and no silent overwrite, a `config.php` setting read, set and removed without an editor, the files compared with the new templates after an upgrade | 10 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
 | [System information](system-information.md) | Which server answered and how it runs PHP, the health checks read and acted on, the overview cards understood, a masked report downloaded for support, the same from the command line | 15 minutes |
 | [Caches](caches.md) | Every cache read in its group with what it holds, its size and when it was last cleared, one cache, a group or all cleared with the confirmation that names what goes, Velocity's response cache and restart understood, the same from a shell | 15 minutes |
@@ -168,7 +182,7 @@ You write extensions, templates with logic, commands and integrations.
 You run the installation: servers, caches, backups, upgrades, security.
 
 1. [Getting started](getting-started.md), then [Deploying](deploying.md) and [Operating a site](operating-a-site.md).
-2. Install on purpose: [Install in one command](../features/6.0/install-in-one-command.md), [Kickstarter](../features/6.0/kickstarter-cli.md) for repeatable installs, [SQLite](../features/6.0/sqlite-database.md), [MongoDB](../features/6.0/mongodb-database-support.md).
+2. Install on purpose: [Install in one command](../features/6.0/install-in-one-command.md), [Kickstarter](../features/6.0/kickstarter-cli.md) for repeatable installs, [.htaccess and config.php from the console](setup-files-from-the-console.md), [SQLite](../features/6.0/sqlite-database.md), [MongoDB](../features/6.0/mongodb-database-support.md).
 3. The web server: [Velocity web server](../features/6.0/velocity-web-server.md), [its control panel](../features/6.0/velocity-control-panel.md), [HTTPS certificates](../features/6.0/velocity-https-certificates.md), [engines compared](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md).
 4. Caches and speed: [cache control](../bc/6.0/cache-console.md), [HTTP caching](../bc/6.0/http-caching.md), [SQL query cache](../bc/6.0/sql-query-cache.md), [static cache](../features/6.0/static-cache-generator.md), [preload](../features/6.0/preload-sites-view.md), [benchmark](../features/6.0/benchmark.md) and the guide [Benchmarking](benchmarking.md).
 5. Keep it healthy: [notifications](notifications-administrator.md) (the cronjob, the status page, troubleshooting), [e-mail preferences](mail-preferences-administrator.md) (the footer, consent, suppression, retention), [maintenance mode](../features/6.0/maintenance-mode.md), [repair from the browser](../features/6.0/repair-from-the-browser.md), [file consistency check](../features/6.0/file-consistency-check.md), [missing files and image aliases](missing-files.md), [cronjobs](../features/6.0/cronjobs-console.md), [the log viewer](../features/6.0/log-viewer.md) and [finding an error by its reference](finding-an-error-by-its-reference.md), [workflows and their waiting processes](workflows.md), [audit trail](../features/6.0/audit-trail.md).

@@ -10,6 +10,19 @@ covers how a `kickstart.ini` pre-fills or skips pages, what the wizard writes, a
 stopped half-way. Keep it open beside the browser during your first install: every page below lists what it asks,
 what it checks and what it means when it refuses an answer.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 [Contents](README.md) · Previous: [4. Choosing an install method](04-choosing-an-install-method.md) · Next: [6. The kickstarter](06-kickstarter.md)
 
 ## 5.1 How the wizard starts
@@ -547,7 +560,9 @@ cp .htaccess_root .htaccess
 ```
 
 and "If you do not have shell access, you will have to copy the file using an FTP client or ask your hosting provider
-to do this for you." Nothing is written by this page. Web server configuration is in
+to do this for you." Nothing is written by this page. With shell access, `./console exp:setup:htaccess --apply` does
+the same copy with the template's mode and owner, and refuses (with a diff) to replace a `.htaccess` that differs; see
+[Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md). Web server configuration is in
 [chapter 8](08-serving-the-site.md) and hardening in [chapter 13](13-security-hardening.md).
 
 ### 5.3.14 Registration
@@ -651,7 +666,8 @@ Two cautions:
 - The settings cache keeps a compiled copy of `kickstart.ini` in `var/cache/ini/kickstart-*.php`. When `config.php`
   switches off the INI modification-time check (`define( 'EZP_INI_FILEMTIME_CHECK', false );`, offered in
   `config.php-RECOMMENDED` for speed), an edited `kickstart.ini` is not noticed. After editing `kickstart.ini` by hand
-  for the browser wizard, delete those files. (The kickstarter deletes them itself.)
+  for the browser wizard, delete those files. (The kickstarter deletes them itself.) `./console exp:config:get
+  EZP_INI_FILEMTIME_CHECK` says whether the check is off.
 
 To answer every page yourself, move `kickstart.ini` away before starting the wizard.
 

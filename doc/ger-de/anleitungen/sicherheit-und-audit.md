@@ -2,6 +2,20 @@
 
 Diese Anleitung richtet sich an Administratoren und Betreiber, die für die Sicherheit einer Site verantwortlich sind. In etwa 30 Minuten prüfen Sie, ob eine frische Exponential-Installation gehärtet ist, vergeben Zugriffe über Rollen und Richtlinien, lesen das Audit-Protokoll, schalten die Debug-Ausgabe nur für Ihre eigene Adresse ein und fügen (optional) eine Zwei-Faktor-Anmeldung hinzu. Jeder Schritt ist ein Befehl oder ein Klickpfad, den es in 6.0.15 gibt. Befehle werden im Wurzelverzeichnis des Projekts ausgeführt; die Beispiele verwenden `https://example.com` für Ihre Site.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 Sie benötigen: Shell-Zugang zur Installation, eine Administrator-Anmeldung und `curl`.
 
 ## 1. Die bereits aktive Härtung prüfen (5 Minuten)
@@ -40,7 +54,7 @@ for p in .env .git/config extension/expservices/ezinfo.php; do
 done
 ```
 
-Erwartet: dreimal `404`. Wenn Sie eine eigene Kopie von `.htaccess` pflegen, übernehmen Sie die Regeln aus `.htaccess_root` und `.htaccess_root_static`.
+Erwartet: dreimal `404`. Wenn Sie eine eigene Kopie von `.htaccess` pflegen, übernehmen Sie die Regeln aus `.htaccess_root` und `.htaccess_root_static`. `./console exp:setup:htaccess` (oder `--static`) zeigt den Unterschied Ihrer Kopie zu den mitgelieferten Regeln und endet mit Exit-Code 1, solange es einen gibt; steht nichts Eigenes darin, übernimmt `--force --apply` die mitgelieferten Regeln, nachdem Ihre gesichert wurden ([.htaccess und config.php von der Konsole einrichten](setup-dateien-von-der-konsole.md)).
 
 **Das Sitzungs-Cookie.** Melden Sie sich in der Administration an und öffnen Sie in den Entwicklerwerkzeugen des Browsers Anwendung (oder Speicher), Cookies: Das Sitzungs-Cookie muss `HttpOnly`, `SameSite=Lax` und, unter HTTPS, `Secure` zeigen. Das sind die Voreinstellungen im Code (die Schlüssel `CookieSecure=auto`, `CookieHttponly=true`, `CookieSameSite=Lax` in `site.ini [Session]`; die Datei führt sie nur als Kommentare auf). Das Cookie `is_logged_in` für HTTP-Caches trägt denselben Pfad, dieselbe Domain, dieselbe Lebensdauer, `Secure` und `SameSite`, nicht aber `HttpOnly`. Hinter einem Load Balancer, der einen Benutzer anhand des Sitzungs-Cookies auf einem Server hält, sendet `CookieAlwaysAddToHttpResponse=enabled` das Sitzungs-Cookie mit jeder Antwort einer laufenden Sitzung (nie an einen Besucher ohne Sitzung), und eine solche Antwort meldet `Cache-Control: private`, sodass kein gemeinsamer Cache sie speichert: Prüfen Sie mit `curl -sI -b <session cookie> <page>`, dass sie `Set-Cookie` zusammen mit `private` zeigt.
 
@@ -48,7 +62,9 @@ Erwartet: dreimal `404`. Wenn Sie eine eigene Kopie von `.htaccess` pflegen, üb
 
 **Abmelden.** Das Abmelden beendet die Sitzung endgültig: Was die Sitzung enthielt, wird gelöscht, der Browser wird angewiesen, das Sitzungs-Cookie zu verwerfen (es wird abgelaufen gesendet, mit demselben Pfad, derselben Domain, `Secure`, `HttpOnly` und `SameSite`, mit denen es gesetzt wurde, sodass der Browser genau dieses Cookie entfernt), und die Sitzungs-ID, die der Browser hatte, meldet niemanden mehr an, auch wenn sie vorher kopiert wurde. Eine Sitzung, die die Site später in derselben Anfrage startet, erhält eine neue ID. Das gilt für jeden Session-Handler (den eigenen von PHP, `ezpSessionHandlerDB`, einen eigenen Handler, den von Symfony) und unter Velocity. Frühere Versionen gaben der Sitzung eine neue ID und behielten ihren Inhalt. Es muss nichts eingeschaltet werden. Zur Prüfung: Melden Sie sich in der Administration an und notieren Sie den Wert des Sitzungs-Cookies, melden Sie sich ab und senden Sie dann eine Anfrage mit dem alten Wert, z. B. `curl -s -b '<cookie name>=<old value>' https://<site>/admin/content/dashboard`: Die Antwort ist das Anmeldeformular, nicht das Dashboard. Mit `[UserSettings] RedirectOnLogoutWithLastAccessURI=enabled` führt das Abmelden weiterhin zurück zur zuletzt besuchten Seite.
 
-**Dateien und Verzeichnisse, die die Site schreibt.** Logs, Caches und Speicher werden so offen angelegt, wie es `site.ini [FileSettings]` und der Code verlangen (standardmäßig 0777/0666). Setzen Sie auf einem Live-Server die Grenzen in `config.php`, `define( 'EZP_DIR_MODE_MAX', 0750 );` und `define( 'EZP_FILE_MODE_MAX', 0640 );`, damit nichts Neues für andere Konten lesbar oder schreibbar ist, und schränken Sie das Bestehende einmalig ein: [Grenzen für die Modi neuer Dateien und Verzeichnisse](../bc/6.0/dateimodi.md).
+**Dateien und Verzeichnisse, die die Site schreibt.** Logs, Caches und Speicher werden so offen angelegt, wie es `site.ini [FileSettings]` und der Code verlangen (standardmäßig 0777/0666). Setzen Sie auf einem Live-Server die Grenzen in `config.php`, `define( 'EZP_DIR_MODE_MAX', 0750 );` und `define( 'EZP_FILE_MODE_MAX', 0640 );`, damit nichts Neues für andere Konten lesbar oder schreibbar ist, und schränken Sie das Bestehende einmalig ein: [Grenzen für die Modi neuer Dateien und Verzeichnisse](../bc/6.0/dateimodi.md). Von der Konsole: `./console exp:config:set EZP_DIR_MODE_MAX 0750 --apply` und `./console exp:config:set EZP_FILE_MODE_MAX 0640 --apply`.
+
+**`config.php` selbst.** Sie kann das Passwort der Cluster-Datenbank enthalten. Halten Sie sie aus der Versionsverwaltung heraus (tragen Sie `/config.php` in die `.gitignore` Ihres Projekts ein; das Repository von Exponential enthält nur `config.php-RECOMMENDED`) und geben Sie ihr den Modus `0640` mit der Gruppe des Webservers. `./console exp:config:list` und `exp:config:get` zeigen die Werte von Namen mit `PASS`, `SECRET`, `KEY`, `TOKEN`, `CREDENTIAL` oder `PWD` als `********`, außer Sie geben `--show-secrets` an; `exp:config:set` warnt, wenn es ein Geheimnis in eine für alle Benutzer lesbare Datei schreibt. Jede Änderung hinterlässt eine Kopie der alten Datei in `var/backup/config/<zeit>/` (Verzeichnisse mit Modus `0700`): Schützen Sie `var/backup/` wie `config.php` und löschen Sie alte Kopien ([.htaccess und config.php von der Konsole einrichten](setup-dateien-von-der-konsole.md)).
 
 **Hochgeladene Bilder.** Ein Bild wird anhand dessen akzeptiert, was die Datei enthält, nicht anhand ihres Namens: fileinfo von PHP liest den Typ, und er muss in `image.ini [ImageUploadSettings] AllowedMIMETypes[]` stehen (im Auslieferungszustand JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP und SVG; ein SVG wird nur bereinigt gespeichert, siehe [SVG-Bilder](../bc/6.0/svg-bilder.md)). Das gilt für das Bearbeitungsformular, die Upload-Dialoge, den AJAX-Uploader und die Vorschaubilder des Paket-Assistenten, und eine abgelehnte Datei wird nicht gespeichert. Prüfen Sie, ob fileinfo im PHP des Webservers wie auch auf der Kommandozeile geladen ist (`php -m | grep fileinfo`); ohne fileinfo gilt die ältere Prüfung mit getimagesize(), und das Log weist einmal darauf hin. Lesen Sie die Liste mit:
 
@@ -285,6 +301,7 @@ Die Idee und die Behandlung der Entwürfe stammen aus LoveStack (Mugo Web, Commi
 ## Checkliste
 
 - [ ] Fünf Sicherheits-Header vorhanden, Punktdateien und PHP-Dateien antworten mit 404
+- [ ] `config.php` mit Modus `0640`, nicht committet; alte Sicherungen in `var/backup/` entfernt
 - [ ] Erstes Administrator-Passwort geändert
 - [ ] Rollen enthalten nur, was Personen brauchen; wenige Administratoren
 - [ ] `exp:audit status` zeigt jede Kette intakt, der Cronjob `frequent` läuft, die Alarmempfänger stimmen
@@ -298,6 +315,7 @@ Die Idee und die Behandlung der Entwürfe stammen aus LoveStack (Mugo Web, Commi
 
 - Die Bedrohungen einzeln, und request-shield davor: [Sicherheitshärtung](../hilfe/sicherheitshaertung.md); das Administratorkonto: [Das Administrator-Passwort ändern](../hilfe/administratorpasswort-aendern.md), [Das Standard-Administrator-Passwort](../hilfe/standard-administratorpasswort.md).
 - Eine Site mit Tokens aus Skripten und Apps steuern: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md).
+- `.htaccess` und `config.php` von der Konsole, mit maskierten Geheimnissen und Sicherungen: [.htaccess und config.php von der Konsole einrichten](setup-dateien-von-der-konsole.md).
 - Auswirkungen der Sicherheitsänderungen auf ein Upgrade: [Verhaltensänderungen vom 1. und 2. Oktober 2026](../bc/6.0/verhaltensaenderungen-2026-10.md), [Sicherheitshärtung vom August 2026](../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md).
 - Wie es dazu kam: [Chronik Oktober 2026](../geschichte/2026/2026-10.md), [September 2026, zweite Hälfte](../geschichte/2026/2026-09b.md).
 - Weitere Anleitungen: [Betrieb einer Site](betrieb-einer-website.md) (Logs, Sicherungen, Reparaturen), [Extensions](extensions.md) (Zwei-Faktor-Anmeldung und andere Extensions), [Glossar](../glossar.md).

@@ -48,7 +48,13 @@ define( 'EXP_CONSOLE_NAME',    'Exponential Console' );
 
 $rootDir = dirname( dirname( __DIR__ ) );
 chdir( $rootDir );
+// The console only dispatches: it runs with a config.php that does not compile (autoload.php leaves it unread), so
+// exp:setup:config and exp:config:* can show and repair it; every command it starts reads config.php itself.
+define( 'EXP_CONFIG_PHP_TOLERATE', true );
 require_once 'autoload.php';
+if ( defined( 'EXP_CONFIG_PHP_SKIP' ) )
+    fwrite( STDERR, 'Warning: ' . EXP_CONFIG_PHP_SKIP . ". Commands other than exp:setup:* and exp:config:* stop on it;\n"
+                  . "./console exp:setup:status shows it, ./console exp:setup:config --force --apply replaces it (backup first).\n" );
 
 // ══════════════════════════════════════════════════════════════════════════════
 //  eZCLI / eZScript — declare the Exponential legacy CLI environment.
@@ -898,7 +904,7 @@ if ( array_intersect( $aboutFlags, $leading ) )
        . $row( 'System', php_uname( 's' ) . ' ' . php_uname( 'r' ) . ' ' . php_uname( 'm' ) )
        . $row( 'Home page', 'https://github.com/se7enxweb/exponential' )
        . "\n"
-       . "Copyright (C) 1998-2026 7x / Exponential Foundation.\n"
+       . "Exponential Copyright © 1998-2026 Exponential Foundation and 7x\n"
        . "Originally developed by eZ Systems AS, 1999-2014 (http://ez.no).\n"
        . "License GPLv2: GNU GPL version 2 <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>;\n"
        . "the full text is in the LICENSE file of the installation.\n"

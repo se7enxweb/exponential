@@ -1,3 +1,6 @@
+/* admin4 itself loads base.css, which holds these rules (restyled). This file stays because the standard popup,
+   print, redirect and setup layouts name core.css and resolve it through the design chain into admin4. */
+
 /* CORE CSS 20100126 */
 
 /* BODY */
@@ -280,7 +283,7 @@ dt, dd
 
 dt
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
 }
 
 dd
@@ -300,7 +303,7 @@ form
 
 label
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     padding-inline-end: 0.5em;
     display: block;
     white-space: nowrap;
@@ -326,7 +329,7 @@ textarea
 
 optgroup
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     font-style: normal;
 }
 
@@ -344,7 +347,7 @@ input.button, button, input.defaultbutton, input.button-disabled
 
 input.defaultbutton
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     padding-inline-start: 0.45em;
     padding-inline-end: 0.45em;
     color: var(--a4-on-accent);
@@ -392,7 +395,7 @@ fieldset.block
 
 legend
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     color: var(--a4-ink);
     padding: 0 0.35em 0 0.35em;
     font-size:1.1em;
@@ -767,7 +770,7 @@ table.multioption input.box
 
 .multioption label
 {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold, bold);
     padding: 0.5em 0;
 }
 

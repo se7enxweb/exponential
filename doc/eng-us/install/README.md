@@ -5,6 +5,19 @@ getting the code, choosing and running an installer, serving the site, choosing 
 healthy afterwards, through to upgrades, troubleshooting and hardening. Each chapter stands on its own and ends with
 references to the supporting documentation in this repository and to the official sources outside it.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 In a hurry? [The short installation guide](../INSTALL.md) has the quick start and links back into the chapters here.
 
 ## Contents
@@ -74,6 +87,7 @@ Each one goes through the vendor's own migration pages point by point and says w
 | Moving a site from eZ Publish 5.x | Chapters [15](15-migrating-from-5x-legacy.md), [17](17-migration-reference.md) |
 | Moving a site from eZ Platform or Ibexa | Chapters [16](16-migrating-from-ez-platform-and-ibexa.md), [17](17-migration-reference.md) |
 | Moving between Exponential products, from another CMS or site builder, or away from Exponential | [The migration hub](migration/README.md) |
+| Putting `.htaccess` and `config.php` into place, changing a `config.php` setting | [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md), chapters [3](03-getting-the-code.md) and [8](08-serving-the-site.md) |
 | Something does not work | Chapter [12](12-troubleshooting.md) |
 
 ## Other documentation

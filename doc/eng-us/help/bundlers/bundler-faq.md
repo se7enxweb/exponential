@@ -12,6 +12,19 @@ type: help
 This page is for bundlers who want a quick answer first. Every answer links to the page with the details. Licensing
 answers are not legal advice.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
+> [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+
 ## Contents
 
 1. [Licensing](#licensing)
@@ -51,6 +64,8 @@ answers are not legal advice.
 | Can we use `publish` as in old guides? | Only in a public demo with `EXP_DEMO_MODE=1` ([Demo mode in bundles](demo-mode-in-bundles.md)). |
 | Does it install offline? | Yes, when every package is imported first ([Offline bundles](offline-bundles.md)). |
 | The site shows 503 during first boot. | Maintenance mode is on while the installer works, and stays on after a failure ([The three installers](the-three-installers.md#maintenance-mode-during-the-install)). |
+| How do we create `.htaccess` and `config.php`? | `./console exp:setup:htaccess --apply` and `./console exp:setup:config --apply` copy them from `.htaccess_root` and `config.php-RECOMMENDED`, with the template's mode and, run as root with `--allow-root-user`, its owner (`--owner=www-data:www-data` names another); a second run changes nothing ([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)). |
+| How do we change a `config.php` setting without an editor? | `./console exp:config:set <NAME> <value> --apply` (backup first, `php -l` before it lands), `exp:config:get` to read one, `exp:config:list --only-set` to review them ([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#6-set-a-value)). |
 
 ## After release
 

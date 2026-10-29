@@ -13,6 +13,19 @@ This page is for packagers who want Exponential installable with `apt` or `dnf`.
 packagers must decide themselves. The project publishes **no deb or rpm package of the Exponential CMS**; it does
 publish deb and rpm packages of **Velocity**, its web server.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
+> [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+
 ## Contents
 
 1. [What the project publishes](#what-the-project-publishes)
@@ -57,6 +70,11 @@ What this means for a package:
   ([Additional extension directories](../../bc/6.0/AdditionalExtensionDirectories.md)). Those are the settings a
   layout can lean on.
 - The web server configuration you ship must keep the routing of `.htaccess_root`.
+- `.htaccess` and `config.php` are installation files, not package files: ship the templates (`.htaccess_root`,
+  `.htaccess_root_static`, `config.php-RECOMMENDED`) and let the administrator, or your post-install step, copy them
+  with `exp:setup:htaccess` and `exp:setup:config`. An update then never overwrites a changed copy: the commands show
+  the diff and refuse unless given `--force`
+  ([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
 
 ## Composer and distribution policy
 
@@ -74,7 +92,14 @@ policy, and note:
 A distribution package should not install a site by itself:
 
 - **Do:** create the system user, set ownership of the writable directories, install a disabled web server and cron
-  configuration, regenerate autoloads, print where the documentation and the install command are.
+  configuration, regenerate autoloads, print where the documentation and the install command are. Putting `.htaccess`
+  and `config.php` into place is safe here, because both commands leave an existing file alone and change nothing on
+  a second run; run as root they need `--allow-root-user` and `--owner=<user>:<group>` for the site's user:
+
+  ```bash
+  php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=www-data:www-data
+  php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data
+  ```
 - **Do not:** create a database, run `exp:install` with defaults, or start a web server. The administrator runs the
   install once, with their own URL, database and e-mail ([Unattended install with exp:install](unattended-install-with-exp-install.md)).
 
@@ -84,6 +109,9 @@ A package update replaces code; Exponential updates have a second half, the data
 of each period ([Chapter 11.6](../../install/11-upgrading.md#116-from-any-60x-to-today)). The package can:
 
 - clear caches and regenerate autoloads after the update ([Caches and autoloads](caches-and-autoloads-after-building.md));
+- tell the administrator when `.htaccess` no longer matches the new `.htaccess_root`: `exp:setup:htaccess` without
+  `--apply` exits 1 and prints the diff, and `exp:config:list` shows settings new in `config.php-RECOMMENDED` as
+  `(not set)`;
 - tell the administrator that a database update may be due, with the link;
 - never run database updates unattended on a site it does not know.
 

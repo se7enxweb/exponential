@@ -15,6 +15,19 @@ that explains them and three optional blocks after them. Use it where you cannot
 host. With access to the virtual host, the [Apache virtual host](apache-virtual-host.md) example puts the same rules in
 server context and saves Apache a file lookup per directory on every request.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
+> [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 ## Install it
 
 ```bash
@@ -23,6 +36,11 @@ cp .htaccess_root .htaccess      # copy, do not move: an update can bring a new 
 apachectl configtest             # Syntax OK
 systemctl reload httpd           # apache2 on Debian and Ubuntu
 ```
+
+Or let the console make the copy: `./console exp:setup:htaccess --apply` copies `.htaccess_root` to `.htaccess`
+(`--static` takes `.htaccess_root_static`), keeps the template's mode and owner, backs up a file that is already there
+and refuses to replace one that differs unless you add `--force`. Without `--apply` it only shows what it would do.
+See [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#3-put-htaccess-into-place).
 
 Apache needs `mod_rewrite` (Debian: `a2enmod rewrite`), and the virtual host must let it read the file:
 
@@ -38,7 +56,9 @@ Apache needs `mod_rewrite` (Debian: `a2enmod rewrite`), and the virtual host mus
 caching block `Indexes`; with neither allowed, Apache answers 500 for every request, and its error log names the line.
 
 To use the optional blocks, copy `doc/eng-us/examples/htaccess` instead of `.htaccess_root` and enable what you need. After
-every upgrade, compare your `.htaccess` with the new `.htaccess_root` and take over new rules.
+every upgrade, compare your `.htaccess` with the new `.htaccess_root` and take over new rules. `./console
+exp:setup:htaccess` shows that difference as a diff and exits 1 while the two differ; `./console exp:setup:status`
+says which template `.htaccess` is a copy of.
 
 ## The file
 
@@ -305,4 +325,5 @@ used it as `.htaccess` for a test document root and answered every request of th
 - [Chapter 8, section 8.5: Apache with PHP-FPM](../../install/08-serving-the-site.md#85-apache-with-php-fpm).
 - [Chapter 13, section 13.2: What the web server must never hand out](../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out).
 - [LiteSpeed](litespeed.md): LiteSpeed Enterprise reads this file as Apache does.
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:setup:htaccess`, `exp:setup:status`.
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

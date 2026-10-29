@@ -16,6 +16,19 @@ keeps `settings/`, `var/`, `vendor/`, `kernel/`, `composer.json` and the SQLite 
 the document root. The list is written down once, in `.htaccess_root`, and Velocity implements it rule for rule
 (`expVelocity::STATIC_PATHS`, `FRONT_CONTROLLERS` and `ENTRY_SCRIPTS` in `kernel/classes/expvelocity.php`).
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
+> [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 Every example on these pages is a complete file you can copy, with `example.com` and `/var/www/example.com` to
 replace. Each one implements the same list, in this order:
 
@@ -61,6 +74,13 @@ Run the same requests against your own server with the commands in
   plain-HTTP host to serve them, as the port 80 hosts of the Apache and nginx examples do; Caddy, FrankenPHP and
   Velocity's `qbix` engine answer ACME challenges themselves.
 
+**Which servers read `.htaccess`.** Apache (with `AllowOverride All`) and LiteSpeed Enterprise read it on the next
+request: there, `./console exp:setup:htaccess --apply` copies `.htaccess_root` into place (`--static` copies
+`.htaccess_root_static`) and nothing else is needed. OpenLiteSpeed reads only its rewrite rules, only with
+`autoLoadHtaccess` on and only after a restart. nginx, Caddy, FrankenPHP and IIS never read it: their rules are in the
+configurations on these pages. Velocity has the rules of `.htaccess_root` built in; copy the file anyway when Apache may
+serve the same tree. See [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 **WebDAV** is not routed by any of these examples: it is off by default. Since 6.0.15 its entry script is
 `index_webdav.php` (`webdav.php` only forwards to it until a later major version). To serve it, add a rule for
 `index_webdav.php` on Apache, nginx or IIS, or a WebDAV host of its own; Velocity, Caddy and FrankenPHP do not run it.
@@ -80,4 +100,5 @@ Before/after rules for every server, and how to test them:
 - [Chapter 8, Serving the site](../../install/08-serving-the-site.md): Velocity, Apache, nginx and FrankenPHP step by step.
 - [Chapter 13, Security hardening](../../install/13-security-hardening.md): what the web server must never hand out, headers, HTTPS.
 - [Velocity engines](../../bc/6.0/velocity-engines.md) and [FrankenPHP](../../bc/6.0/frankenphp.md).
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:setup:htaccess`, `exp:setup:config`, `exp:config:*`.
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

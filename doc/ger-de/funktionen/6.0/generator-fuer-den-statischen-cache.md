@@ -6,6 +6,20 @@ einfache Dateien, die der Webserver senden kann, ohne Exponential überhaupt zu 
 Ihre Website so, wie es ein Besucher täte, zeigt während der Arbeit den Fortschritt, und die mitgelieferten Standards
 erzeugen jetzt einen funktionierenden Cache, statt still nichts zu erzeugen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+
 ## Was Sie bekommen
 
 - **Setup > Cache > Statischer Inhalts-Cache**: Wählen Sie eine Website, setzen Sie ein Seitenlimit und eine Link-Tiefe,
@@ -62,6 +76,10 @@ Dateien zu erzeugen ist die halbe Arbeit. Die andere Hälfte ist, dem Webserver 
 
 - **Apache mit `.htaccess`**: Kopieren Sie `.htaccess_root_static` statt `.htaccess_root` nach `.htaccess`. Es ist
   `.htaccess_root` plus die Regeln zum Entlasten, sodass das Zurückwechseln das Kopieren der anderen Datei darüber ist.
+  Von der Konsole aus: `./console exp:setup:htaccess --static` zeigt den Unterschied zu Ihrer jetzigen `.htaccess`,
+  `--static --force --apply` wechselt (die alte Datei wird vorher nach `var/backup/setup/<Zeit>/` gesichert), und
+  `./console exp:setup:htaccess --force --apply` wechselt zurück
+  ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md#auf-die-regeln-für-den-statischen-cache-umstellen)).
   Prüfen Sie die eine Zeile `RewriteRule ^ - [E=EZ_VAR_SITE:site]`: Der Wert ist `site.ini` `[FileSettings] VarDir` ohne
   das führende `var/`; eine Standardinstallation (`var/site`) braucht keine Änderung.
 - **Apache oder ein anderer virtueller Host**: Ein vhost liest keine `.htaccess`; verwenden Sie dieselben Regeln aus
@@ -118,6 +136,7 @@ Die Standards haben sich geändert; siehe [bc: Standards des statischen Caches](
 - [Cache aus der Konsole](../../bc/6.0/cache-konsole.md) (Gruppe statischer Cache von `exp:cache`), [HTTP-Caching](../../bc/6.0/http-caching.md)
 - [Velocity und der Opcode-Cache](velocity-opcode-cache-und-profil.md), [Leeren von Caches, das Verzeichnisse beiseiteschiebt](cache-leeren-durch-umbenennen.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:setup:htaccess --static`
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [September 2026, erste Hälfte: Caches, die Sie sehen können](../../geschichte/2026/2026-09a.md#13-september-caches-die-sie-sehen-cronjobs-die-sie-ausführen-können), [Oktober 2026](../../geschichte/2026/2026-10.md)
 

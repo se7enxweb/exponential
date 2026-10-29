@@ -7,6 +7,19 @@ upgrade safe (back up, then never run the installer over an existing site), the 
 console commands that check the result, and the release notes to read for each period you pass. It summarises and
 extends the [Upgrading guide](../guides/upgrading.md), which remains the step-by-step procedure.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 [Contents](README.md) · Previous: [10. After installing](10-after-installing.md) · Next: [12. Troubleshooting](12-troubleshooting.md)
 
 ## 11.1 Before you start
@@ -327,6 +340,19 @@ of rendered pages cleared before PHP runs the new code fills up again with pages
 [chapter 8](08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy) and
 [Velocity engines](../bc/6.0/velocity-engines.md).
 
+**Compare your files with the new templates.** A release can change `.htaccess_root`, `.htaccess_root_static` and
+`config.php-RECOMMENDED`; your `.htaccess` and `config.php` stay as they are:
+
+```bash
+php bin/php/console exp:setup:status                     # is .htaccess still a copy of a template?
+php bin/php/console exp:setup:htaccess                   # the diff between your .htaccess and the new template
+php bin/php/console exp:setup:htaccess --force --apply   # take the new rules (backup first), when the diff holds nothing of yours
+php bin/php/console exp:config:list                      # settings new in config.php-RECOMMENDED show up as (not set)
+```
+
+Set the new settings you want with `exp:config:set <NAME> <value> --apply`; the settings you had keep their values.
+See [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md#12-after-an-upgrade).
+
 ### Step 2: apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, for MySQL, PostgreSQL and SQLite.
@@ -505,6 +531,7 @@ changelog: [6.0.0 to 6.0.15](../../changelogs/6.0/6.0.15.md).
 In this repository:
 
 - [Upgrading](../guides/upgrading.md): the step-by-step guide this chapter extends.
+- [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md): compare both files with the new templates.
 - Release notes: [changelogs of 6.0](../../changelogs/6.0/6.0.15.md) ([6.0.0](../../changelogs/6.0/6.0.0.md) to
   [6.0.14](../../changelogs/6.0/6.0.14.md)), the [extensions' release notes](../../changelogs/extensions/README.md),
   [all changelogs](../../changelogs/README.md).

@@ -15,6 +15,20 @@ den Teilnehmenden die Landkarte, die sie für den ganzen Kurs brauchen: die vier
 eine Liste von Routing-Regeln, die sie alle teilen, und eine schnelle Prüfung, die zeigt, ob ein Server sie wirklich
 anwendet.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../../beispiele/webserver/litespeed.md), [Caddy](../../../../beispiele/webserver/caddy.md), [IIS](../../../../beispiele/webserver/iis.md),
+> [Velocity](../../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../../hosting/control-panels/plesk.md), [cPanel](../../../hosting/control-panels/cpanel.md), [DirectAdmin](../../../hosting/control-panels/directadmin.md), [ISPConfig](../../../hosting/control-panels/ispconfig.md).
+
 > **Hinweis**
 > Jede Übung dieses Kurses läuft auf der eigenen Schulungsinstallation oder virtuellen Maschine der Person, nie auf
 > einer Live-Website eines Kunden.
@@ -86,7 +100,9 @@ Regel für Regel aus `.htaccess_root` übersetzt (Lektion 1.2).
 
 - **Ein `200` für `/.git/config`.** Die Regeln sind nicht aktiv: Apache ohne `.htaccess` oder `AllowOverride`, oder ein
   nginx-Block, der nicht der aus dem Kapitel ist. Halten Sie an und beheben Sie das vor allem anderen; das ist das
-  wichtigste Ergebnis der Lektion.
+  wichtigste Ergebnis der Lektion. Unter Apache zeigt `./console exp:setup:status` sofort, ob `.htaccess` existiert und
+  von welcher Vorlage sie eine Kopie ist
+  ([.htaccess und config.php von der Konsole einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)).
 - **Falscher Port.** Die Teilnehmenden kopieren `127.0.0.1:8088` aus dem Buch, während ihre Website woanders läuft.
   Lassen Sie sie zuerst `php bin/php/console exp:velocity status` ausführen; es listet jede Adresse als vollständige
   URL auf.
@@ -166,6 +182,8 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert auf Ihrem Rechner 
   Bild für Hosting-Mitarbeitende.
 - [Anforderungen auf einen Blick](../../../hosting/grundlagen/anforderungen-auf-einen-blick.md): Anforderungen an PHP und
   Erweiterungen.
+- [.htaccess und config.php von der Konsole einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md): welche
+  Server `.htaccess` lesen, und die Befehle, die sie an ihren Platz bringen.
 
 ## Verwandte Seiten
 

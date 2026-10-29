@@ -13,6 +13,19 @@ the database steps per engine, verification, rollback, a timeline and a checklis
 Symfony side, read [chapter 14](14-migrating-from-4x.md) instead; for the version-by-version update files, see
 [chapter 11](11-upgrading.md).
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 [Contents](README.md) · Previous: [14. Migrating from the 4.x line](14-migrating-from-4x.md) · Next: [16. Migrating from eZ Platform and Ibexa](16-migrating-from-ez-platform-and-ibexa.md)
 
 ## 15.1 What changes, and what the vendor's guide says
@@ -721,6 +734,13 @@ to serve it in [chapter 8](08-serving-the-site.md): Exponential Velocity
 ([8.3](08-serving-the-site.md#83-exponential-velocity-the-recommended-way)), FrankenPHP, or Apache or nginx with
 PHP-FPM using the rewrite rules of `.htaccess_root` ([8.5](08-serving-the-site.md#85-apache-with-php-fpm)). Do not
 reuse the 5.x virtual host: its rewrite rules point at `web/` and at Symfony's front controller.
+
+The rewrite rules are put into place with `./console exp:setup:htaccess --apply` (a copy of `.htaccess_root`, or
+`cp .htaccess_root .htaccess`). Compare the `config.php` you copied from `ezpublish_legacy/` with the new template the
+same way: `./console exp:setup:status`, `./console exp:setup:config` (the diff, nothing changed) and
+`./console exp:config:list` (settings new in `config.php-RECOMMENDED` show up as `(not set)`); set one with
+`./console exp:config:set <NAME> <value> --apply`. See
+[Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
 
 ## 15.19 Verify
 

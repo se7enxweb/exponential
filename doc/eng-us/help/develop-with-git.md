@@ -15,6 +15,19 @@ page helps you take the next step: working on the code of your site the way the 
 The tool for that is **Git**, and the most useful single decision you can make is to install Exponential **as Git
 clones with their full history**, the kernel and every extension, instead of as release archives.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](hosting/panels/plesk.md), [cPanel](hosting/panels/cpanel.md), [DirectAdmin](hosting/panels/directadmin.md), [ISPConfig](hosting/panels/ispconfig.md).
+
 Nothing here needs you to be an expert. Each step shows the command to type and what you should see, and every
 command on this page was tried on a fresh machine before it was written down.
 
@@ -92,6 +105,22 @@ composer install
 
 Then install the site as usual: [Choosing an install method](../install/04-choosing-an-install-method.md) or the
 one command `php bin/php/console exp:install --apply` from [the console install](../install/07-console-install.md).
+
+For a local development site under Apache, put the rules and the constants into place from the console. A copy of
+`config.php-RECOMMENDED` sets nothing, so the built-in defaults apply, which suit development (INI changes are seen at
+once); `exp:config:list` shows what could be set:
+
+```bash
+php bin/php/console exp:setup:status
+php bin/php/console exp:setup:htaccess --apply
+php bin/php/console exp:setup:config --apply
+php bin/php/console exp:config:list
+```
+
+The clone tracks only the templates (`.htaccess_root`, `.htaccess_root_static`, `config.php-RECOMMENDED`); the copies
+show up as untracked files in `git status`. Never commit `config.php`: it can hold a password. In a repository of
+your own site, add `/config.php` to its `.gitignore`. Details:
+[Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
 
 **Prefer `composer create-project`?** It can make clones too, but you need two options together:
 
@@ -351,6 +380,8 @@ Three more things worth knowing:
 - [Getting the code](../install/03-getting-the-code.md): every way to install, versions and tags, extensions as
   Composer packages.
 - [Extensions](../guides/extensions.md) and the [extension pages](../features/6.0/extensions/README.md).
+- [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md): the local
+  `.htaccess` and `config.php`.
 - [git_manager](../features/6.0/extensions/git_manager.md): see and change the state of a Git checkout from the
   administration, and make backups before you change anything.
 - [When something goes wrong](when-something-goes-wrong.md#filing-a-bug-in-exponential): which issue tracker to use

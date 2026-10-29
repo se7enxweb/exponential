@@ -15,6 +15,19 @@ application sees may be read-only or lost at every restart. The page answers wha
 such platforms, which directories Exponential writes and how they can be moved, and which questions to ask a platform
 before you offer Exponential on it.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [What the sources say](#what-the-sources-say)
@@ -112,6 +125,12 @@ platform's managed database, **2. PostgreSQL** first if it offers several
   (`EXP_INSTALL_DB_PASSWORD`) ([4.6](../../../install/04-choosing-an-install-method.md#46-unattended-installs-ci-and-containers)).
 - Every later release: new code, the same persistent `var/` and database, the schema update files when an upgrade
   calls for them, then a cache clear ([Deploying changes](../operations/deploying-changes.md)).
+- `.htaccess` and `config.php` in the build or at start, unattended: `./console exp:setup:htaccess --apply`,
+  `./console exp:setup:config --apply`, then `./console exp:config:set <NAME> <value> --apply` with values from the
+  platform's environment variables (`--value="$CLUSTER_DB_PASS"` for a secret). Each command asks nothing, ends with
+  `PASS:` or `FAIL:`, exits 0, 1 or 2 and changes nothing on a second run. A build step that runs as root needs
+  `--allow-root-user` and, so the files do not belong to root, `--owner=www-data:www-data`
+  ([In scripts, containers and CI](../../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
 
 ## Questions to ask a platform
 
@@ -131,6 +150,7 @@ platform's managed database, **2. PostgreSQL** first if it offers several
 - [Choosing a hosting model](choosing-a-hosting-model.md), [Containers: Docker and Podman](containers-docker-and-podman.md)
 - [Writable directories and permissions](../basics/writable-directories-and-permissions.md)
 - [Storage layout](../operations/storage-layout.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

@@ -14,6 +14,19 @@ machine, managed through a panel, usually with FTP and without a shell for the c
 there according to the project's sources, what usually does not, how a site gets installed without a shell, and
 what to configure per account.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [What the sources say](#what-the-sources-say)
@@ -46,9 +59,17 @@ so that an update can bring a new version:
 
 ```bash
 cp .htaccess_root .htaccess
+# or, where the account has a shell, as the account's user:
+php bin/php/console exp:setup:htaccess --apply
 ```
 
-Use `.htaccess_root_static` instead only when the site serves a generated static cache. For Apache, the virtual
+The console command keeps the template's mode, refuses to overwrite a `.htaccess` that differs (it shows the diff;
+`--force --apply` replaces it after a backup to `var/backup/setup/<time>/`) and says what it would do when `--apply`
+is left out. `php bin/php/console exp:setup:config --apply` puts `config.php` into place the same way. Without a
+shell, the file manager or FTP client makes the copy. See
+[Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md).
+
+Use `.htaccess_root_static` instead (`exp:setup:htaccess --static --apply`) only when the site serves a generated static cache. For Apache, the virtual
 host must let `.htaccess` work (`AllowOverride All` on the document root) and `mod_rewrite` must be on; "A 404 for
 every page means `.htaccess` is not read (`AllowOverride`) or `mod_rewrite` is off"
 ([8.5 Apache with PHP-FPM](../../../install/08-serving-the-site.md#85-apache-with-php-fpm)). LiteSpeed "reads Apache's
@@ -163,6 +184,7 @@ See [Multi-tenant isolation](../security/multi-tenant-isolation.md).
 - [Choosing a hosting model](choosing-a-hosting-model.md)
 - [Control panels: overview](../panels/README.md)
 - [Setup wizard on shared hosting](../provisioning/setup-wizard-on-shared-hosting.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Chapter 8: Serving the site](../../../install/08-serving-the-site.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 

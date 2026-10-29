@@ -9,6 +9,20 @@ und die Release Notes, die Sie für jeden durchlaufenen Zeitraum lesen sollten. 
 [Anleitung zum Upgrade](../anleitungen/aktualisieren.md) zusammen und erweitert sie; diese bleibt das Verfahren Schritt für
 Schritt.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 [Inhalt](README.md) · Zurück: [10. Nach der Installation](10-nach-der-installation.md) · Weiter: [12. Fehlerbehebung](12-fehlerbehebung.md)
 
 ## 11.1 Bevor Sie beginnen
@@ -349,6 +363,20 @@ Seiten, der geleert wird, bevor PHP den neuen Code ausführt, füllt sich wieder
 [Kapitel 8](08-die-website-ausliefern.md#8314-eine-änderung-bereitstellen-expvelocity-deploy) und
 [Velocity-Engines](../bc/6.0/velocity-engines.md).
 
+**Vergleichen Sie Ihre Dateien mit den neuen Vorlagen.** Eine Release kann `.htaccess_root`,
+`.htaccess_root_static` und `config.php-RECOMMENDED` ändern; Ihre `.htaccess` und `config.php` bleiben, wie sie sind:
+
+```bash
+php bin/php/console exp:setup:status                     # ist .htaccess noch eine Kopie einer Vorlage?
+php bin/php/console exp:setup:htaccess                   # der Diff zwischen Ihrer .htaccess und der neuen Vorlage
+php bin/php/console exp:setup:htaccess --force --apply   # die neuen Regeln übernehmen (vorher Sicherung), wenn der Diff nichts Eigenes enthält
+php bin/php/console exp:config:list                      # Einstellungen, die neu in config.php-RECOMMENDED sind, erscheinen als (not set)
+```
+
+Setzen Sie die neuen Einstellungen, die Sie möchten, mit `exp:config:set <NAME> <value> --apply`; die Einstellungen,
+die Sie hatten, behalten ihre Werte. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+
 ### Schritt 2: das Datenbank-Update anwenden
 
 Die Datei für die Linie ist `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, für MySQL, PostgreSQL und
@@ -530,6 +558,7 @@ Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](../../changelogs
 In diesem Repository:
 
 - [Upgrade](../anleitungen/aktualisieren.md): die Schritt-für-Schritt-Anleitung, die dieses Kapitel erweitert.
+- [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md): beide Dateien mit den neuen Vorlagen vergleichen.
 - Release Notes: [Changelogs von 6.0](../../changelogs/6.0/6.0.15.md) ([6.0.0](../../changelogs/6.0/6.0.0.md) bis
   [6.0.14](../../changelogs/6.0/6.0.14.md)), die [Release Notes der Extensions](../../changelogs/extensions/README.md),
   [alle Changelogs](../../changelogs/README.md).

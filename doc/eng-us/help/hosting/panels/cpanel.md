@@ -14,6 +14,19 @@ Exponential sources say about cPanel, what that means in practice, and how to te
 has not watched Exponential run on cPanel; this page is therefore careful to separate what the sources state from
 general advice.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+
 > **Note**
 > The Exponential sources describe no cPanel screens or menus. Where this page refers to a panel feature, it does so
 > generically ("the panel's PHP selector", "the panel's cron page"); check cPanel's documentation for the names and
@@ -65,7 +78,11 @@ The following is general advice derived from the Exponential requirements, not f
    extension settings. Use the same version for the command line if the account has a shell.
 2. **Point the domain's document root at the installation root** (the directory with `index.php`).
 3. **Copy the rewrite rules**: `cp .htaccess_root .htaccess` (or upload `.htaccess_root` as `.htaccess`)
-   ([8.5.1](../../../install/08-serving-the-site.md#851-step-by-step)).
+   ([8.5.1](../../../install/08-serving-the-site.md#851-step-by-step)). With cPanel's **Terminal** (or SSH) the console
+   does it for you, as the account's user: `php bin/php/console exp:setup:htaccess --apply`, and
+   `php bin/php/console exp:setup:config --apply` for `config.php`. Without a shell, copy the files in the
+   **File Manager** (it hides dot files until you switch on "Show Hidden Files")
+   ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
 4. **Create the database and its user** in the panel, if not SQLite. For MariaDB or MySQL use `utf8mb4`
    ([9.3](../../../install/09-databases.md#93-mysql-and-mariadb)). Since 6.0.15 the wizard needs privileges on that
    database only ([A clean installation that fits shared hosting](../../../features/6.0/clean-install-defaults.md)).
@@ -133,6 +150,7 @@ project ... and the row moves up" ([The four tiers](../../os-support.md#the-four
 - [Control panels: overview](README.md), [DirectAdmin](directadmin.md)
 - [Shared hosting](../models/shared-hosting.md)
 - [Setup wizard on shared hosting](../provisioning/setup-wizard-on-shared-hosting.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

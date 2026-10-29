@@ -14,6 +14,19 @@ Podman. It answers what the project's sources say about containers, what must li
 containers may write a SQLite database, how an entry point installs a site once and keeps the server running, and
 how to keep secrets out of images.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [What the sources say](#what-the-sources-say)
@@ -136,6 +149,11 @@ What the chapter explains about it:
   ([First sign-in and default passwords](../security/first-sign-in-and-default-passwords.md)).
 - Never bake `settings/override` into an image: it holds the database credentials
   ([13.3 Secrets in settings/override](../../../install/13-security-hardening.md#133-secrets-in-settingsoverride)).
+- `config.php` can be made in the image (`exp:setup:config --apply --allow-root-user --owner=www-data:www-data` in the
+  build step), but a password in it, such as `CLUSTER_STORAGE_PASS`, is set at start from the environment:
+  `php bin/php/console exp:config:set CLUSTER_STORAGE_PASS --value="$CLUSTER_DB_PASS" --apply --allow-root-user`. The
+  output shows it as `********`. In CI, `exp:config:list --only-set --format=json` shows what an image or a running
+  container sets ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
 
 ## Operations inside containers
 
@@ -164,6 +182,7 @@ What the chapter explains about it:
 - [Kubernetes](kubernetes.md), [Platform as a service](platform-as-a-service.md)
 - [exp:install](../provisioning/exp-install.md), [Automating provisioning](../provisioning/automating-provisioning.md)
 - [Installing in one command](../../../features/6.0/install-in-one-command.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

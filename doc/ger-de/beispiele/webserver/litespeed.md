@@ -11,12 +11,30 @@ type: example
 
 **LiteSpeed Web Server (Enterprise)** ist ein direkter Ersatz für Apache: Er liest die Konfiguration von Apache und
 `.htaccess`-Dateien, einschließlich der Regeln von `mod_rewrite`. Liefern Sie Exponential genauso aus wie mit Apache:
-`cp .htaccess_root .htaccess` ([Apache .htaccess](apache-htaccess.md)), PHP über LSAPI von LiteSpeed. Nichts auf dieser
-Seite wird dafür gebraucht.
+`cp .htaccess_root .htaccess` oder `./console exp:setup:htaccess --apply` ([Apache .htaccess](apache-htaccess.md),
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)), PHP über
+LSAPI von LiteSpeed. Nichts auf dieser Seite wird dafür gebraucht.
+
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](nginx.md), [LiteSpeed](litespeed.md), [Caddy](caddy.md), [IIS](iis.md),
+> [Velocity](velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
 
 **OpenLiteSpeed**, die Open-Source-Ausgabe, liest von einer `.htaccess` nur die Umschreiberegeln, nur wenn
 `autoLoadHtaccess` eingeschaltet ist, und nach einer Änderung der Datei erst nach einem Neustart. Das Beispiel unten
-legt die Regeln stattdessen in den virtuellen Host, wo sie einmal gelesen werden.
+legt die Regeln stattdessen in den virtuellen Host, wo sie einmal gelesen werden. `./console exp:setup:htaccess --apply`
+kopiert die Datei zwar weiterhin, unter OpenLiteSpeed schützt das allein die Site aber nicht; nach einem Upgrade zeigt
+`./console exp:setup:htaccess` den Diff zwischen Ihrer Kopie und der neuen `.htaccess_root` und damit, welche Regeln
+dieses virtuellen Hosts Sie anpassen müssen.
 
 > **Hinweis:** Dieses Beispiel ist abgeleitet, nicht unter OpenLiteSpeed getestet: Auf dem Rechner, auf dem die
 > Beispiele geprüft werden, gibt es kein OpenLiteSpeed. Seine Umschreiberegeln verwenden die Syntax von `mod_rewrite`
@@ -210,6 +228,7 @@ curl -sI https://example.com/design/admin4/stylesheets/components.css | head -1 
 ## Verwandte Seiten
 
 - [Apache .htaccess](apache-htaccess.md): die Regeln, eine nach der anderen erklärt; LiteSpeed Enterprise verwendet diese Datei.
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:setup:htaccess` und welche Server die Datei lesen.
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).
 - [Betriebssystemunterstützung](../../hilfe/betriebssystemunterstuetzung.md): Webserver und PHP-SAPIs nach Plattform.
 - [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).

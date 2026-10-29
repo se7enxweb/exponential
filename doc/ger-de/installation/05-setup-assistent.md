@@ -12,6 +12,20 @@ Assistenten neu starten, der auf halbem Weg stehen geblieben ist. Halten Sie es 
 Browser geöffnet: Jede der folgenden Seiten führt auf, was sie abfragt, was sie prüft und was es bedeutet, wenn sie
 eine Antwort ablehnt.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 [Inhalt](README.md) · Zurück: [4. Eine Installationsmethode wählen](04-installationsweg-waehlen.md) · Weiter: [6. Der Kickstarter](06-kickstarter.md)
 
 ## 5.1 Wie der Assistent startet
@@ -586,7 +600,10 @@ cp .htaccess_root .htaccess
 ```
 
 und „Falls Sie keinen Zugriff auf eine Shell haben, müssen Sie die Datei per FTP kopieren oder Ihren Webhoster fragen,
-dies für Sie zu tun.“ Diese Seite schreibt nichts. Die Konfiguration des Webservers steht in
+dies für Sie zu tun.“ Diese Seite schreibt nichts. Mit Shell-Zugang erledigt `./console exp:setup:htaccess --apply`
+dieselbe Kopie mit Modus und Eigentümer der Vorlage und lehnt es ab (mit einem Diff), eine abweichende `.htaccess` zu
+ersetzen; siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+Die Konfiguration des Webservers steht in
 [Kapitel 8](08-die-website-ausliefern.md), die Härtung in [Kapitel 13](13-sicherheitshaertung.md).
 
 ### 5.3.14 Registrierung
@@ -699,7 +716,8 @@ Zwei Vorsichtshinweise:
   `config.php` die Prüfung der Änderungszeit von INI-Dateien abschaltet (`define( 'EZP_INI_FILEMTIME_CHECK', false );`,
   aus Geschwindigkeitsgründen in `config.php-RECOMMENDED` angeboten), wird eine bearbeitete `kickstart.ini` nicht
   bemerkt. Löschen Sie diese Dateien, nachdem Sie `kickstart.ini` für den Browser-Assistenten von Hand bearbeitet haben.
-  (Der Kickstarter löscht sie selbst.)
+  (Der Kickstarter löscht sie selbst.) `./console exp:config:get EZP_INI_FILEMTIME_CHECK` zeigt, ob die Prüfung
+  abgeschaltet ist.
 
 Wenn Sie jede Seite selbst beantworten möchten, verschieben Sie `kickstart.ini`, bevor Sie den Assistenten starten.
 

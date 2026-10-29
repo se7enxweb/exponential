@@ -5,6 +5,20 @@ wählen oder PHP-Änderungen auf einer Website bereitstellen, die Velocity ausli
 Webservern mit denselben Verben (`start`, `stop`, `graceful`, `restart`, `kill`, `status`, `deploy`, `command`,
 `config`, `install`) und derselben `velocity.ini`.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+
 ## Velocity ist seit 6.0.15 Teil von Exponential
 
 Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.57`; vorher
@@ -83,6 +97,12 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 | 8 | Caches content, exphttpcache, ezjscore-packer (nur mit `--packer`) und template-block | `--clear-id=content`, `--clear-id=exphttpcache`, `--clear-id=ezjscore-packer`, `--clear-id=template-block` |
 | 9 | der Antwort-Cache von Velocity | `exp:velocity cache clear` |
 | 10 | Vorwärmen: `[DeploySettings] WarmUpURL[]`, jede einmal von einem Hintergrundprozess angefragt | `curl URL...` |
+
+**`config.php` zählt als PHP-Änderung.** Die persistenten Worker der qbix-Engine lesen sie einmal, wenn sie starten.
+Führen Sie nach `./console exp:config:set <NAME> <Wert> --apply` (oder `exp:setup:config --force --apply`)
+`exp:velocity restart` aus, oder `deploy`, das in Schritt 7 neu startet. FrankenPHP im klassischen Modus und PHP-FPM
+lesen sie bei jeder Anfrage, sobald OPcache die neue Datei sieht; bei `opcache.validate_timestamps=0` laden Sie PHP-FPM
+neu ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 **Auf die Reihenfolge kommt es an.** Die Caches mit gerenderter Ausgabe (8 und 9) werden erst geleert, wenn PHP-FPM
 und Velocity den neuen Code ausführen. Werden sie vorher geleert, wird jede in der Zwischenzeit angefragte Seite vom
@@ -686,6 +706,10 @@ Die drei Qbix-Schlüssel brauchen einen qbix-webserver, der sie kennt; ein älte
 Namen angefragte `.php`-Datei aus und sendet jede Datei mit einer ausgelieferten Endung — `.htaccess` wird auf seinem
 Pool-Pfad nicht gelesen.
 
+Keine der drei Engines liest `.htaccess`. Kopieren Sie die Datei trotzdem (`./console exp:setup:htaccess --apply`),
+wenn Apache denselben Baum ausliefern kann, zum Beispiel neben Velocity oder während eines Umzugs
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ## Symbolische Links aus dem Document Root heraus
 
 `[ServerSettings] FollowSymlinks=disabled` (der Standard) lehnt eine Datei ab, zu der ein Link innerhalb des Document
@@ -824,4 +848,5 @@ Site-envvars nicht. [Demomodus](demomodus.md#velocity-nur-eine-installation).
 - [FrankenPHP](frankenphp.md)
 - [Engine-Archiv (phar)](phar.md)
 - [Anleitung zum Bereitstellen](../../anleitungen/bereitstellung.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Anleitung zum Benchmarking](../../anleitungen/benchmarking.md): die Engines gegeneinander messen

@@ -8,6 +8,19 @@ should still decide before a site goes live: secrets in `settings/override`, the
 rules, HTTPS-only cookies, file permissions, mail consent and keeping the installation up to date. It is written as a
 checklist you can work through from top to bottom; a one-page summary is at the end.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 For the attacker's view, threat by threat, with the request-shield in front and what to watch, read
 [Security hardening](../help/security-hardening.md) in the help; for the administrator account,
 [Change the administrator password](../help/change-the-admin-password.md) and
@@ -102,9 +115,11 @@ section 4):
 
 What you do:
 
-1. **Apache:** `cp .htaccess_root .htaccess` and leave the security rules in it. Do not delete rules to make
-   something work; find the cause instead. If you keep your own `.htaccess` or virtual host rules, compare them with
-   `.htaccess_root` after every upgrade and merge new rules.
+1. **Apache:** `./console exp:setup:htaccess --apply` (or `cp .htaccess_root .htaccess`) and leave the security rules
+   in it. Do not delete rules to make something work; find the cause instead. If you keep your own `.htaccess` or
+   virtual host rules, compare them with `.htaccess_root` after every upgrade and merge new rules:
+   `./console exp:setup:htaccess` shows the diff between your `.htaccess` and the template and exits 1 when they
+   differ, so a monitoring job or CI can catch drift ([Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md)).
 2. **nginx:** use the derived server block of [chapter 8, section 8.6](08-serving-the-site.md#86-nginx-with-php-fpm)
    or an equivalent that keeps the first two rules (dot files, scripts below the root) ahead of every static location.
 3. **Velocity:** nothing to do; `FollowSymlinks=disabled` (the default) also refuses files reached through a symbolic
@@ -774,7 +789,10 @@ Full guide: [Audit](../bc/6.0/audit.md).
 ## 13.16 Go-live checklist
 
 - [ ] Rewrite rules: `.htaccess` is a current copy of `.htaccess_root` (or the derived nginx block, or Velocity);
-      `/.git/config`, `/settings/site.ini`, `/composer.json` do not return the file.
+      `/.git/config`, `/settings/site.ini`, `/composer.json` do not return the file. `./console exp:setup:status`
+      names the template.
+- [ ] `config.php` not in version control; mode `0640` with the web server's group when it holds a password
+      (`exp:config:set` warns when it does not); `var/backup/` (earlier copies of `config.php`) protected and cleaned up.
 - [ ] `settings/override/` not in version control, backed up as a secret, mode `0640` or stricter.
 - [ ] The generated administrator password changed; `var/log/initial-admin-password` deleted.
 - [ ] A personal administrator account per person; `admin` retired as a sign-in; a tested break-glass procedure

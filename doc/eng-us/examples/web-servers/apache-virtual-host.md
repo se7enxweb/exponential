@@ -14,6 +14,19 @@ to HTTPS (and serves certificate challenge files), port 443 serves the site over
 rules of `.htaccess_root` sit in the virtual host itself. Apache then reads no `.htaccess` at all
 (`AllowOverride None`), which saves a file lookup per directory on every request. The file keeps its historical name.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](nginx.md), [LiteSpeed](litespeed.md),
+> [Caddy](caddy.md), [IIS](iis.md), [Velocity](velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 ## Install it
 
 1. Load the modules: `rewrite`, `proxy`, `proxy_fcgi`, `ssl`, `headers`, `expires`, and `http2` for HTTP/2
@@ -35,6 +48,13 @@ rules of `.htaccess_root` sit in the virtual host itself. Apache then reads no `
 
 Using a hosting panel such as Plesk? It writes the virtual host itself: do not edit its files; keep `.htaccess` instead
 ([Apache .htaccess](apache-htaccess.md)) and see [chapter 8, section 8.5.3](../../install/08-serving-the-site.md#853-plesk).
+There, `./console exp:setup:htaccess --apply` puts `.htaccess_root` into place as `.htaccess`
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
+With this virtual host (`AllowOverride None`) a `.htaccess` in the root is not read, but copying it does no harm and
+keeps the rules in force should the tree ever be served with `AllowOverride All`. After an upgrade, `./console
+exp:setup:htaccess` shows the diff between your `.htaccess` and the new `.htaccess_root`, which is also the list of
+rules to carry over into this virtual host.
 
 ## The file
 

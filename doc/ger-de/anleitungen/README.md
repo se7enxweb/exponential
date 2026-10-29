@@ -3,6 +3,20 @@
 Diese Seite ist das Inhaltsverzeichnis der Anleitungen. Lesen Sie sie, wenn Sie neu bei Exponential sind oder wenn Sie das System
 kennen und den kürzesten Weg zu einem bestimmten Ergebnis suchen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 Eine Anleitung ist ein Tutorial. Sie arbeiten sie von oben nach unten durch und brauchen kein Vorwissen. Am Ende haben Sie ein funktionierendes
 Ergebnis: eine installierte Site, eine veröffentlichte Seite, ein geändertes Template, eine Site hinter einem echten Webserver, einen gezielt
 geleerten Cache. Jeder Schritt ist ein Befehl oder ein Klickpfad, mit der zu erwartenden Ausgabe. Wo ein Thema mehr Tiefe braucht, verweist die
@@ -63,6 +77,7 @@ Lesen Sie sie beim ersten Mal in dieser Reihenfolge. Jede steht aber auch für s
 | [Extensions](extensions.md) | Eine Extension gefunden, installiert, eingeschaltet und konfiguriert; eine eigene gebaut und veröffentlicht | 45 Minuten |
 | [Die Seite „Extensions“](extensions-seite.md) | Extensions in einer einzigen Liste aktiviert, deaktiviert und sortiert, die Änderungen mit ihren Risiken geprüft und angewendet, die geschriebene und die tatsächliche Ladereihenfolge auseinandergehalten | 10 Minuten |
 | [Bereitstellung](bereitstellung.md) | Die Site ausgeliefert von Apache mit PHP-FPM, von Velocity oder von FrankenPHP, mit HTTPS | 30 Minuten |
+| [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md) | `.htaccess` und `config.php` aus ihren Vorlagen kopiert, mit Sicherung und ohne stilles Überschreiben, eine Einstellung in `config.php` ohne Editor gelesen, gesetzt und entfernt, die Dateien nach einem Upgrade mit den neuen Vorlagen verglichen | 10 Minuten |
 | [Betrieb einer Site](betrieb-einer-website.md) | Die richtigen Caches geleert, Cronjobs in Betrieb genommen, den statischen Cache und Preload eingeschaltet, eine Sicherung, eine Checkliste | 30 Minuten |
 | [Systeminformationen](systeminformationen.md) | Welcher Server geantwortet hat und wie er PHP ausführt, die Zustandsprüfungen gelesen und umgesetzt, die Übersichtskarten verstanden, einen maskierten Bericht für den Support heruntergeladen, dasselbe über die Kommandozeile | 15 Minuten |
 | [Caches](caches.md) | Jeden Cache in seiner Gruppe gelesen, mit seinem Inhalt, seiner Größe und dem Zeitpunkt der letzten Leerung, ein Cache, eine Gruppe oder alle geleert mit der Bestätigung, die nennt, was wegfällt, Velocitys Antwort-Cache und Neustart verstanden, dasselbe aus einer Shell | 15 Minuten |
@@ -168,7 +183,7 @@ Sie schreiben Extensions, Templates mit Logik, Befehle und Integrationen.
 Sie betreiben die Installation: Server, Caches, Sicherungen, Upgrades, Sicherheit.
 
 1. [Erste Schritte](erste-schritte.md), dann [Bereitstellung](bereitstellung.md) und [Betrieb einer Site](betrieb-einer-website.md).
-2. Gezielt installieren: [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md), [Kickstarter](../funktionen/6.0/kickstarter-cli.md) für wiederholbare Installationen, [SQLite](../funktionen/6.0/sqlite-datenbank.md), [MongoDB](../funktionen/6.0/mongodb-datenbankunterstuetzung.md).
+2. Gezielt installieren: [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md), [Kickstarter](../funktionen/6.0/kickstarter-cli.md) für wiederholbare Installationen, [.htaccess und config.php von der Konsole](setup-dateien-von-der-konsole.md), [SQLite](../funktionen/6.0/sqlite-datenbank.md), [MongoDB](../funktionen/6.0/mongodb-datenbankunterstuetzung.md).
 3. Der Webserver: [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md), [sein Control Panel](../funktionen/6.0/velocity-control-panel.md), [HTTPS-Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md), [Engines im Vergleich](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md).
 4. Caches und Geschwindigkeit: [Cache-Steuerung](../bc/6.0/cache-konsole.md), [HTTP-Caching](../bc/6.0/http-caching.md), [SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md), [statischer Cache](../funktionen/6.0/generator-fuer-den-statischen-cache.md), [Preload](../funktionen/6.0/ansicht-websites-vorladen.md), [Benchmark](../funktionen/6.0/benchmark.md) und die Anleitung [Benchmarks](benchmarking.md).
 5. Gesund halten: [Benachrichtigungen](benachrichtigungen-administrator.md) (der Cronjob, die Statusseite, Fehlerbehebung), [E-Mail-Einstellungen](mail-einstellungen-administrator.md) (die Fußzeile, Einwilligung, Sperrliste, Aufbewahrung), [Wartungsmodus](../funktionen/6.0/wartungsmodus.md), [Reparatur aus dem Browser](../funktionen/6.0/reparatur-im-browser.md), [Prüfung der Dateikonsistenz](../funktionen/6.0/dateikonsistenzpruefung.md), [fehlende Dateien und Bild-Aliase](fehlende-dateien.md), [Cronjobs](../funktionen/6.0/cronjobs-in-der-konsole.md), [der Log-Viewer](../funktionen/6.0/log-betrachter.md) und [einen Fehler anhand seiner Referenz finden](fehler-anhand-der-referenz-finden.md), [Workflows und ihre wartenden Prozesse](workflows.md), [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md).

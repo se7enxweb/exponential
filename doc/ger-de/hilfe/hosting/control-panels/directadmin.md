@@ -13,6 +13,20 @@ Diese Seite ist für Hosting-Anbieter, die Server mit DirectAdmin betreiben und 
 was die Quellen von Exponential über DirectAdmin sagen, welche Aufgaben im Panel eine Exponential-Website braucht und wie Sie die
 Kombination testen, bevor Sie sie verkaufen.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+
 > **Hinweis**
 > Die Quellen von Exponential beschreiben keine Bildschirme, Menüs oder Dateiorte von DirectAdmin. Diese Seite nennt Funktionen des
 > Panels allgemein; lesen Sie in der Dokumentation von DirectAdmin nach, wie Ihre Version jede Aufgabe erledigt.
@@ -61,7 +75,8 @@ Beantworten Sie diese für Ihren eigenen Server-Aufbau, bevor Sie eine Produktbe
 | PHP-Version | 8.0 oder später für Web und Kommandozeile, in beiden dieselben Erweiterungen | [PHP-Auswahl und FPM-Pools](php-auswahl-und-fpm-pools.md) |
 | PHP-Einstellungen | `memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`, `file_uploads`, `allow_url_fopen`; Upload-Größen für die Dateien der Redakteure | [2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini) |
 | Document Root | das Wurzelverzeichnis der Installation, wo `index.php` liegt | [8.5.1](../../../installation/08-die-website-ausliefern.md#851-schritt-für-schritt) |
-| Rewrite-Regeln | `.htaccess` aus `.htaccess_root` kopiert | [13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf) |
+| Rewrite-Regeln | `.htaccess` aus `.htaccess_root` kopiert; mit Shell, als Benutzer des Kontos: `php bin/php/console exp:setup:htaccess --apply` | [13.2](../../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf), [von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
+| `config.php` (optional) | `config.php-RECOMMENDED` nach `config.php` kopiert: `php bin/php/console exp:setup:config --apply`, Werte mit `exp:config:set` | [von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
 | Datenbank | in der offiziellen Reihenfolge: 1. SQLite 3 (kein Server) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL; Microsoft SQL Server ist derzeit bekanntermaßen mit zusätzlicher Arbeit möglich | [Datenbanken und Benutzer](datenbanken-und-benutzer.md) |
 | Cron | `runcronjobs.php` mit dem PHP des Kontos, alle paar Minuten für `frequent` | [Cron und Shell-Zugang](cron-und-shell-zugang.md) |
 | Zertifikat | HTTPS für jeden Namen der Website, Umleitung von HTTP | [TLS-Zertifikate in Panels](tls-zertifikate-in-panels.md) |
@@ -106,6 +121,7 @@ Melden Sie einen erfolgreichen Lauf dem Projekt, damit die Stufe aufrücken kann
 - [Control Panels: Überblick](README.md), [cPanel](cpanel.md)
 - [Shared Hosting](../modelle/shared-hosting.md), [Trennung von Mandanten](../sicherheit/trennung-von-mandanten.md)
 - [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

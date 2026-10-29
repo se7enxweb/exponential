@@ -37,7 +37,7 @@ class AdminSidebarDrawerTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'const narrow = window.matchMedia("(max-width: 1023.98px)");', $js );
         $this->assertStringContainsString( 'right: window.matchMedia("(max-width: 1279.98px)")', $js );
         // the left column takes room from 1024px (pagelayout.css), the right one from 1280px (admin4.css)
-        $this->assertStringContainsString( '@media screen and (min-width: 1024px) {', self::read( 'design/admin4/stylesheets/pagelayout.css' ) );
+        $this->assertStringContainsString( '@media screen and (min-width: 1024px) {', self::read( 'design/admin4/stylesheets/base.css' ) );
         $this->assertStringContainsString( '@media screen and (min-width: 1024px) and (max-width: 1279.98px) {', self::read( 'design/admin4/stylesheets/admin4.css' ) );
     }
 

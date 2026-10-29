@@ -5,6 +5,19 @@ That line is 6.0.15, still in development; the newest release tag at the time of
 [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)). Find your version, follow the part for it, and finish with the
 checks at the end. They tell you that the result is good.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 Plan for twenty minutes for a small site. The risky step is the database. That is why step 1 is a backup.
 
 ## Which part do I read?
@@ -181,6 +194,20 @@ Do not use `-k` on an installation that keeps extra working copies of the code i
 Then reload the PHP-FPM that serves the site (`systemctl reload <your-php-fpm-service>`), and, if you run Velocity,
 `./console exp:velocity deploy --dry-run --allow-root-user` shows every step the real command would run.
 
+Then compare `.htaccess` and `config.php` with the new templates. A release can change `.htaccess_root`,
+`.htaccess_root_static` and `config.php-RECOMMENDED`, and your copies stay as they are:
+
+```bash
+./console exp:setup:status                     # is .htaccess still a copy of a template?
+./console exp:setup:htaccess                   # the diff between your .htaccess and the new template
+./console exp:setup:htaccess --force --apply   # take the new rules (backup first), when the diff holds nothing of yours
+./console exp:config:list                      # settings new in config.php-RECOMMENDED show up as (not set)
+```
+
+Set the new settings you want with `./console exp:config:set <NAME> <value> --apply`; the settings you had keep their
+values. The same applies after Parts A and B. See
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md#12-after-an-upgrade).
+
 ### C2. Apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` (MySQL, PostgreSQL and SQLite
@@ -313,6 +340,7 @@ and test an order before going live. [Changelog 6.0.15](../../changelogs/6.0/6.0
 - [Operating a site](operating-a-site.md): backups, caches and repairs after the upgrade.
 - [Deploying](deploying.md) and [Velocity engines](../bc/6.0/velocity-engines.md): reload the right PHP-FPM, or move to a faster server.
 - [Extensions](extensions.md): versions, loading order and releases of your own extensions.
+- [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md): compare both files with the new templates.
 - Release notes: [Exponential 6.0 changelogs](../../changelogs/6.0/6.0.15.md) and [the extensions' release notes](../../changelogs/extensions/README.md).
 
 <!-- exp-partner-block:start -->

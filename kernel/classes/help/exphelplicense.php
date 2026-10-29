@@ -32,8 +32,8 @@ class expHelpLicense
         'TextPage' => 'LICENSE-GFDL-1.3.txt',
         'NoticePage' => 'README-LICENSE.md',
         'ExplainerPage' => 'help/free-documentation.md',
-        'CopyrightYears' => '1998 - 2026',
-        'CopyrightHolder' => '7x & Exponential Foundation and the Exponential contributors',
+        'CopyrightYears' => '1998-2026',
+        'CopyrightHolder' => 'Exponential Foundation and 7x',
         // the same list as the shipped exphelp.ini
         'OtherLicensePathRules' => array( 'doc/eng-us/features/[2-5].*', 'doc/eng-us/bc/[2-5].*', 'doc/eng-us/specifications/[2-5].*',
                                           'doc/eng-us/specifications/trunk/*', 'doc/changelogs/[2-5].*', 'doc/changelogs/README.md',
@@ -79,7 +79,9 @@ class expHelpLicense
         $orLater = self::setting( 'OrLater' ) !== 'false';
         $holder = (string)self::setting( 'CopyrightHolder' );
         $years = (string)self::setting( 'CopyrightYears' );
-        $copyright = 'Copyright (C) ' . ( $years !== '' ? $years . ' ' : '' ) . $holder . '.';
+        // The approved visible notice (#284, owner 2026-10-29): "Exponential Copyright © 1998-2026 Exponential
+        // Foundation and 7x", never translated; the Foundation is named first on purpose.
+        $copyright = 'Exponential Copyright © ' . ( $years !== '' ? $years . ' ' : '' ) . $holder;
         $notice = 'Permission is granted to copy, distribute and/or modify this document under the terms of the '
                 . $name . ', Version ' . $version . ( $orLater ? ' or any later version' : '' )
                 . ' published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no'

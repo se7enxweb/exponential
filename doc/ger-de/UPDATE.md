@@ -7,6 +7,20 @@ Vorgehen für Entwickler und Administratoren. Eine Installation, die älter als 
 LoveStack), folgt [Upgrade](anleitungen/aktualisieren.md); dort gibt es für jede einen eigenen Teil, der mit denselben
 Schritten endet wie diese Seite.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](beispiele/webserver/nginx.md), [LiteSpeed](beispiele/webserver/litespeed.md), [Caddy](beispiele/webserver/caddy.md), [IIS](beispiele/webserver/iis.md),
+> [Velocity](beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](hilfe/hosting/control-panels/plesk.md), [cPanel](hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](hilfe/hosting/control-panels/directadmin.md), [ISPConfig](hilfe/hosting/control-panels/ispconfig.md).
+
 Jeder Befehl wird im Wurzelverzeichnis der Installation ausgeführt (dem Verzeichnis mit `index.php`, `autoload.php`,
 `bin/` und `settings/`), als der Benutzer, unter dem die Website läuft. Wenn Sie ein Skript als `root` ausführen,
 ergänzen Sie `--allow-root-user`. `./console` ist eine Verknüpfung auf `php bin/php/console` (siehe
@@ -120,6 +134,22 @@ composer install
 **Exponential Velocity** ist ein eigenes Composer-Paket (`se7enxweb/exponential-velocity`) und wird mit dem Rest
 aktualisiert. Nachdem sich der Code geändert hat, müssen `composer.json` und `composer.lock` zusammenpassen: ein
 `composer install`, das ohne Fehler endet, beweist es.
+
+**Vergleichen Sie Ihre Dateien mit den neuen Vorlagen.** Eine Release kann `.htaccess_root`,
+`.htaccess_root_static` und `config.php-RECOMMENDED` ändern; Ihre `.htaccess` und `config.php` bleiben, wie sie sind.
+Prüfen Sie sie (ohne `--apply` wird nichts geschrieben):
+
+```bash
+./console exp:setup:status                     # ist .htaccess noch eine Kopie einer Vorlage?
+./console exp:setup:htaccess                   # der Diff zwischen Ihrer .htaccess und der neuen Vorlage
+./console exp:setup:htaccess --force --apply   # die neuen Regeln übernehmen (vorher Sicherung), wenn der Diff nichts Eigenes enthält
+./console exp:config:list                      # Einstellungen, die neu in config.php-RECOMMENDED sind, erscheinen als (not set)
+```
+
+Setzen Sie die neuen Einstellungen, die Sie möchten, mit `./console exp:config:set <NAME> <value> --apply`; die
+Einstellungen, die Sie hatten, behalten ihre Werte. Verwenden Sie `--static` mit `exp:setup:htaccess`, wenn die
+Website den statischen Cache ausliefert. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](anleitungen/setup-dateien-von-der-konsole.md).
 
 ## 5. Die Datenbank aktualisieren
 
@@ -239,6 +269,7 @@ das nächste Release, nicht über eine geflickte Kopie dieses Releases.
 - [Upgrade](anleitungen/aktualisieren.md): von 4.x, 5.x, 5.90 oder LoveStack, und jede Checkliste je Zeitraum von 6.0.
 - [Exponential 6.0 deinstallieren](UNINSTALL.md): der vollständige Datenexport, dann das Entfernen.
 - [Die Upgrade-Prüfung](anleitungen/upgrade-pruefung.md) und [das Datei-Manifest](funktionen/6.0/dateikonsistenzpruefung.md).
+- [.htaccess und config.php von der Konsole aus einrichten](anleitungen/setup-dateien-von-der-konsole.md): beide Dateien mit den neuen Vorlagen vergleichen.
 - [Betrieb einer Website](anleitungen/betrieb-einer-website.md): Sicherungen, Caches, Cronjobs und Reparaturen.
 - [Bereitstellung](anleitungen/bereitstellung.md) und [Velocity-Engines](bc/6.0/velocity-engines.md): das richtige PHP-FPM neu laden.
 - Das Installationsbuch: [Aktualisieren](installation/11-aktualisieren.md).

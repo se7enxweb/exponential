@@ -13,6 +13,19 @@ This page is for PHP developers who open an Exponential checkout for the first t
 and entry points at the root, says what lives where, and which places are generated or belong to the installation
 rather than to the code.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
+> [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+
 ## Contents
 
 1. [The entry points](#the-entry-points)
@@ -38,6 +51,18 @@ rather than to the code.
 Every PHP entry point starts with `autoload.php`. It defines `EXP_ROOT_DIR` (the installation root, an absolute path),
 loads `lib/phpcompat.php` on PHP older than 8.1, decides about the engine archive and registers the class map
 autoloader ([How a request runs in PHP](how-a-request-runs-in-php.md)).
+
+An example of how a console command is built from these parts: the commands that put `.htaccess` and `config.php`
+into place ([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
+| File | Role |
+|---|---|
+| `bin/php/setupfiles.php`, `bin/php/configphp.php` | the scripts behind `exp:setupfiles` (`exp:setup:status`, `exp:setup:htaccess`, `exp:setup:config`) and `exp:configphp` (`exp:config:list`, `get`, `set`, `unset`); they run without the console too |
+| `kernel/private/classes/commands/setupfiles.php`, `configphp.php` | the console command classes |
+| `kernel/classes/expsetupfilecopy.php` | the safe copy: dry run, diff, backup to `var/backup/`, atomic write, mode and owner |
+| `kernel/classes/expconfigphpeditor.php` | reads `config.php` as PHP tokens and changes one `define()` at a time, checked with `php -l` |
+| `kernel/classes/expconfigphpcatalogue.php` | the list of documented settings, read from the comments of `config.php-RECOMMENDED` |
+| `tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php` | their tests |
 
 ## Code directories
 
@@ -85,7 +110,9 @@ Most top-level directories of `kernel/` are **modules**: `kernel/content/`, `ker
 |---|---|---|
 | `settings/*.ini` | the kernel's default settings | yes |
 | `settings/override/`, `settings/siteaccess/` | the installation's own settings; may hold secrets | no (installation) |
-| `config.php` | constants for this installation (from `config.php-RECOMMENDED`) | no |
+| `config.php` | constants for this installation (from `config.php-RECOMMENDED`; `exp:setup:config` copies it, `exp:config:*` edits it) | no |
+| `.htaccess` | the Apache and LiteSpeed rules (from `.htaccess_root` or `.htaccess_root_static`; `exp:setup:htaccess` copies it) | no (installation) |
+| `var/backup/setup/`, `var/backup/config/` | the copies `exp:setup:*` and `exp:config:*` keep of every file they replace or edit | no |
 | `config.env.php` | `EXP_ENV`, the environment name of this machine (from `config.env.php.example`) | no |
 | `autoload/ezp_kernel.php` | the kernel class map | yes |
 | `var/autoload/ezp_extension.php`, `ezp_override.php`, `ezp_tests.php` | generated class maps | no |
@@ -111,7 +138,8 @@ Most top-level directories of `kernel/` are **modules**: `kernel/content/`, `ker
 - **Your work goes into an extension** in nearly every case. The kernel is changed only for kernel fixes and features
   you contribute back ([Contributing PHP changes](contributing-php-changes.md)).
 - **Never edit generated files** (`var/autoload/*`, caches); regenerate them.
-- **Never commit installation files**: `settings/override/`, `config.php`, `config.env.php`, `var/`.
+- **Never commit installation files**: `settings/override/`, `config.php`, `config.env.php`, `var/`. In a project
+  repository of your own, add `/config.php` to its `.gitignore`: it can hold the cluster database password.
 - **Never edit `vendor/`**; extensions installed by Composer can be live git checkouts in some installations, and
   Composer would replace them.
 
@@ -121,6 +149,7 @@ Most top-level directories of `kernel/` are **modules**: `kernel/content/`, `ker
 - [Project files](../project-files.md)
 - [Extension directory layout](../extension-development/part-3-extension-developer/extension-directory-layout.md)
 - [Directories under var/](../extension-development/part-8-reference/directories-under-var.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

@@ -9,6 +9,20 @@ und ihre Reihenfolge verwalten und Sprachen hinzufügen. Jeder Teil erklärt, wa
 mit den Einstellungen, die sie lesen, und endet mit einer Möglichkeit, das Ergebnis zu prüfen. Arbeiten Sie das
 Kapitel nach der Installation einmal der Reihe nach durch; danach dient es als Nachschlagewerk.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hilfe/hosting/control-panels/plesk.md), [cPanel](../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../hilfe/hosting/control-panels/ispconfig.md).
+
 [Inhalt](README.md) · Zurück: [9. Datenbanken](09-datenbanken.md) · Weiter: [11. Upgrade](11-aktualisieren.md)
 
 ## Inhalt
@@ -708,6 +722,18 @@ define( 'CUSTOM_LOG_MAX_FILE_SIZE', 10485760 );       // logs written through eZ
 define( 'CUSTOM_LOG_ROTATE_FILES', 10 );
 ```
 
+Ohne Editor schreibt die Konsole dieselben Zeilen (vorher eine Sicherung von `config.php`, eine Prüfung mit `php -l`,
+bevor die Datei ersetzt wird); `./console exp:setup:config --apply` legt `config.php` aus der Vorlage an, wenn es
+noch keine gibt:
+
+```bash
+./console exp:config:set EZPUBLISH_LOG_MAX_FILE_SIZE 10485760 --apply
+./console exp:config:set EZPUBLISH_LOG_ROTATE_FILES 10 --apply
+./console exp:config:list --only-set
+```
+
+Siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+
 **System-Rotation.** Dateien, die der Kernel nicht selbst schreibt (Ihre Dateien `cron-*.log`), brauchen logrotate
 des Systems. Wenn Sie die eingebaute Rotation ausschalten, übernimmt logrotate auch die Logs des Kernels:
 
@@ -956,7 +982,7 @@ eine ist, und nach einer Änderung an einer `.ts`-Datei leeren Sie `--clear-tag=
 5. Eine Sicherung wurde erstellt **und** auf einem anderen Rechner **wiederhergestellt**.
 6. `var/log/error.log` enthält nichts, was Sie nicht erklären können.
 7. Eine Benchmark-Baseline ist in `var/benchmark/` gespeichert.
-8. Die Logs rotieren (eingebaute Grenzen in `config.php`, logrotate für Cron-Logs).
+8. Die Logs rotieren (eingebaute Grenzen in `config.php`, siehe `./console exp:config:list --only-set`; logrotate für Cron-Logs).
 9. Hinter einem Proxy auf einem anderen Rechner: Seine Adresse steht in `TrustedProxies[]`, und HTTPS-Seiten verlinken
    auf `https://`.
 
@@ -1010,7 +1036,7 @@ In diesem Repository:
 - [Benchmark](../funktionen/6.0/benchmark.md), [Wartungsmodus](../funktionen/6.0/wartungsmodus.md),
   [Ein Benutzerpasswort zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md), [Ihr Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md),
   [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md).
-- [Vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md), [exp:ini](../funktionen/6.0/exp-ini-befehl.md), [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md),
+- [Vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md), [exp:ini](../funktionen/6.0/exp-ini-befehl.md), [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md), [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md),
   [Zusätzliche Extension-Verzeichnisse](../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md),
   [Einstellungen je Site innerhalb von Extensions](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md),
   [Übersetzungen und Sprachen](../funktionen/6.0/uebersetzungen-und-sprachen.md).

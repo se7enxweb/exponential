@@ -12,6 +12,20 @@ type: help
 Diese Seite richtet sich an Bündler, die entscheiden, was die Website in ihrem Bundle ausliefert. Sie beschreibt nur,
 was die Dokumentation und die Beispiele des Projekts zeigen; die Beispiele liegen in `doc/eng-us/examples/web-servers/`.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hosting/control-panels/plesk.md), [cPanel](../hosting/control-panels/cpanel.md), [DirectAdmin](../hosting/control-panels/directadmin.md), [ISPConfig](../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Die Regel, der jeder Server folgt](#die-regel-der-jeder-server-folgt)
@@ -30,6 +44,12 @@ Document-Root liegen" ([Webserver-Beispiele](../../beispiele/webserver/README.md
 
 Die Liste steht einmal in `.htaccess_root`, und Velocity setzt sie Regel für Regel um. Ein Bundle, das seine eigene
 Webserver-Konfiguration schreibt, muss dieselbe Liste in derselben Reihenfolge umsetzen; die Beispiele tun das.
+
+Nur Apache (mit `AllowOverride All`) und LiteSpeed Enterprise lesen `.htaccess` so, wie sie ausgeliefert wird; für sie
+kopiert ein Bundle die Vorlage mit `php bin/php/console exp:setup:htaccess --apply` (`--static` für
+`.htaccess_root_static`). OpenLiteSpeed liest nur ihre Rewrite-Regeln, mit `autoLoadHtaccess` und erst nach einem
+Neustart; nginx, Caddy, FrankenPHP und IIS lesen sie nie; Velocity hat die Regeln eingebaut
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 ## Die Auswahl
 
@@ -77,7 +97,8 @@ Der Hosting-Bereich vergleicht sie ausführlicher: [Einen Webserver wählen](../
 ## Bevor Sie eine Serverkonfiguration ausliefern
 
 - [ ] Sie leitet genau so weiter wie `.htaccess_root`; die Testanfragen der Beispielseite (`/.git/config`, `/.env`,
-      Skripte unterhalb des Wurzelverzeichnisses) liefern in Ihrem Bundle 404.
+      Skripte unterhalb des Wurzelverzeichnisses) liefern in Ihrem Bundle 404. Für ein Apache-Bundle endet
+      `exp:setup:htaccess` mit Exit-Code 0 (die `.htaccess` ist eine Kopie der Vorlage).
 - [ ] Das Document-Root ist das Wurzelverzeichnis der Installation.
 - [ ] HTTPS ist konfiguriert oder ausdrücklich dem Empfänger überlassen.
 - [ ] Das PHP, das die Website ausliefert, hat die Erweiterungen, nach denen `exp:velocity ext check` fragt.
@@ -89,6 +110,7 @@ Der Hosting-Bereich vergleicht sie ausführlicher: [Einen Webserver wählen](../
 - [Kapitel 8: Die Website ausliefern](../../installation/08-die-website-ausliefern.md)
 - [Velocity in einem Bundle](velocity-in-einem-bundle.md)
 - [Velocity für Hoster](../hosting/server/velocity-fuer-hoster.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

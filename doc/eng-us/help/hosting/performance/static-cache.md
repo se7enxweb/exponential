@@ -16,6 +16,19 @@ generate and serve it if a customer needs it. The sources are
 [Static cache defaults](../../../bc/6.0/static-cache-defaults.md) and
 [Chapter 10, section 10.12](../../../install/10-after-installing.md#1012-performance-tuning).
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [What it is](#what-it-is)
@@ -77,7 +90,7 @@ site's user so the files stay writable for the web server.
 
 | Setup | What to use |
 |---|---|
-| Apache with `.htaccess` | copy `.htaccess_root_static` to `.htaccess` instead of `.htaccess_root`; it is `.htaccess_root` plus the offload rules |
+| Apache with `.htaccess` | copy `.htaccess_root_static` to `.htaccess` instead of `.htaccess_root`; it is `.htaccess_root` plus the offload rules. From the console: `./console exp:setup:htaccess --static --apply` (add `--force` to replace an existing `.htaccess`; it is backed up first) |
 | Apache virtual host | the rules of [doc/eng-us/examples/staticcache_offload.conf](../../../examples/staticcache_offload.conf) in the `<Directory>` section of the **public** site's vhost |
 | other servers | reproduce the same conditions (method, empty query string, no session cookie, file exists) |
 
@@ -121,6 +134,7 @@ Installations upgraded from older releases may have overrides that relied on the
 - [Velocity response cache](velocity-response-cache.md)
 - [Apache with PHP-FPM](../servers/apache-with-php-fpm.md)
 - [Static cache generator](../../../features/6.0/static-cache-generator.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

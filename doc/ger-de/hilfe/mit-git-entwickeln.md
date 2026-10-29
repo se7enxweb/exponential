@@ -16,6 +16,20 @@ Exponential entwickeln. Das Werkzeug dafür ist **Git**, und die nützlichste Ei
 ist, Exponential **als Git-Klone mit ihrer vollständigen History** zu installieren, den Kernel und jede Erweiterung,
 statt als Release-Archive.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../beispiele/webserver/nginx.md), [LiteSpeed](../beispiele/webserver/litespeed.md), [Caddy](../beispiele/webserver/caddy.md), [IIS](../beispiele/webserver/iis.md),
+> [Velocity](../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](hosting/control-panels/plesk.md), [cPanel](hosting/control-panels/cpanel.md), [DirectAdmin](hosting/control-panels/directadmin.md), [ISPConfig](hosting/control-panels/ispconfig.md).
+
 Nichts hier setzt voraus, dass Sie Experte sind. Jeder Schritt zeigt den einzugebenden Befehl und was Sie sehen
 sollten, und jeder Befehl auf dieser Seite wurde auf einem frischen Rechner ausprobiert, bevor er aufgeschrieben wurde.
 
@@ -97,6 +111,22 @@ composer install
 
 Installieren Sie die Site dann wie gewohnt: [Eine Installationsmethode wählen](../installation/04-installationsweg-waehlen.md)
 oder der eine Befehl `php bin/php/console exp:install --apply` aus [der Konsoleninstallation](../installation/07-installation-ueber-die-konsole.md).
+
+Für eine lokale Entwicklungs-Site unter Apache bringen Sie die Regeln und die Konstanten von der Konsole aus an ihren
+Platz. Eine Kopie von `config.php-RECOMMENDED` setzt nichts, es gelten also die eingebauten Vorgaben, und die passen zur
+Entwicklung (Änderungen an INI-Dateien werden sofort gesehen); `exp:config:list` zeigt, was sich setzen ließe:
+
+```bash
+php bin/php/console exp:setup:status
+php bin/php/console exp:setup:htaccess --apply
+php bin/php/console exp:setup:config --apply
+php bin/php/console exp:config:list
+```
+
+Der Klon verfolgt nur die Vorlagen (`.htaccess_root`, `.htaccess_root_static`, `config.php-RECOMMENDED`); die Kopien
+erscheinen in `git status` als nicht verfolgte Dateien. Committen Sie `config.php` nie: Sie kann ein Passwort enthalten.
+Tragen Sie in einem Repository Ihrer eigenen Site `/config.php` in dessen `.gitignore` ein. Einzelheiten:
+[.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
 
 **Lieber `composer create-project`?** Auch das kann Klone erzeugen, aber Sie brauchen zwei Optionen zusammen:
 
@@ -348,6 +378,8 @@ Drei weitere wissenswerte Dinge:
 - [Den Code beziehen](../installation/03-den-code-beschaffen.md): jeder Installationsweg, Versionen und Tags, Erweiterungen als
   Composer-Pakete.
 - [Erweiterungen](../anleitungen/extensions.md) und die [Seiten zu den Erweiterungen](../funktionen/6.0/erweiterungen/README.md).
+- [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md): die
+  lokale `.htaccess` und `config.php`.
 - [git_manager](../funktionen/6.0/erweiterungen/git_manager.md): den Zustand eines Git-Checkouts in der Administration
   ansehen und ändern und Backups erstellen, bevor Sie etwas ändern.
 - [Wenn etwas schiefgeht](wenn-etwas-schiefgeht.md#einen-fehler-in-exponential-melden): welcher Issue-Tracker zu verwenden

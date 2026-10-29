@@ -14,6 +14,19 @@ ways to serve a site and one shared routing list), then teaches the traditional 
 PHP-FPM, the PHP values and timeouts of a pool, and the opcode cache that makes PHP fast. Velocity, the recommended
 server, has its own module next.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../../examples/web-servers/nginx.md), [LiteSpeed](../../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../../examples/web-servers/caddy.md), [IIS](../../../../examples/web-servers/iis.md), [Velocity](../../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../../hosting/panels/plesk.md), [cPanel](../../../hosting/panels/cpanel.md), [DirectAdmin](../../../hosting/panels/directadmin.md), [ISPConfig](../../../hosting/panels/ispconfig.md).
+
 ## At a glance
 
 | | |
@@ -40,6 +53,8 @@ server, has its own module next.
 - Both command lists ready for Debian style (`apache2`, `a2enmod`) and Red Hat style (`httpd`) systems if the class
   mixes them.
 - Rehearse every exercise on the same operating system and PHP version the learners use.
+- Check that `./console exp:setup:status` runs on each training installation: lesson 1.2 copies `.htaccess` with
+  `exp:setup:htaccess` ([Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md)).
 - Print the routing diagram of [Chapter 8, section 8.2](../../../../install/08-serving-the-site.md#82-how-a-request-is-served)
   as a handout.
 

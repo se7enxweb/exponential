@@ -13,6 +13,19 @@ Many hosts already run Apache or nginx with PHP-FPM, and many customers expect i
 traditional setup the way chapter 8 describes it: the rewrite rules, the virtual host, the PHP-FPM handler, the
 derived nginx block and the file ownership rule that prevents most permission trouble.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../../examples/web-servers/nginx.md), [LiteSpeed](../../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../../examples/web-servers/caddy.md), [IIS](../../../../examples/web-servers/iis.md), [Velocity](../../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../../hosting/panels/plesk.md), [cPanel](../../../hosting/panels/cpanel.md), [DirectAdmin](../../../hosting/panels/directadmin.md), [ISPConfig](../../../hosting/panels/ispconfig.md).
+
 > **Note**
 > The exercise needs root on the learner's own virtual machine. Never practise on a server that hosts other sites.
 
@@ -46,7 +59,10 @@ Source: [Chapter 8, Apache with PHP-FPM](../../../../install/08-serving-the-site
 [File permissions and ownership](../../../../install/08-serving-the-site.md#87-file-permissions-and-ownership).
 
 1. **The rewrite rules** (3 minutes). `cp .htaccess_root .htaccess`: copy, do not move, so an update can bring a new
-   version. `.htaccess_root_static` is only for a generated static cache.
+   version. `.htaccess_root_static` is only for a generated static cache. Show the console way as well:
+   `./console exp:setup:htaccess` (a dry run that says what it would do), then `--apply`. It refuses to replace a
+   `.htaccess` that differs and prints the diff, which is also how learners see what an upgrade changed
+   ([Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md)).
 2. **The virtual host** (4 minutes). Show the `<VirtualHost *:80>` example of section 8.5.1: `DocumentRoot`,
    `AllowOverride All` so the `.htaccess` is read, and the `<FilesMatch \.php$>` handler that sends scripts to the
    PHP-FPM socket. Modules: `mod_rewrite`, `mod_proxy`, `mod_proxy_fcgi`; for HTTPS `mod_ssl`, for HTTP/2
@@ -90,7 +106,8 @@ look.
 Use your own Linux virtual machine with Apache, PHP-FPM and a training installation in, for example,
 `/var/www/training`.
 
-1. Change to the installation root and run `cp .htaccess_root .htaccess`.
+1. Change to the installation root and run `cp .htaccess_root .htaccess`, or `./console exp:setup:htaccess --apply`
+   as the site's user. Run `./console exp:setup:status` afterwards: it names `.htaccess_root` as the template.
 2. Enable the modules (Debian: `a2enmod rewrite proxy_fcgi`), or check they are loaded on your system.
 3. Find your PHP-FPM pool's socket path in its pool file (the `listen` line) and note the pool's `user`.
 4. Create a virtual host file with the example of section 8.5.1, using your document root, a training host name
@@ -145,6 +162,8 @@ Use your own Linux virtual machine with Apache, PHP-FPM and a training installat
 - [Apache with PHP-FPM](../../../hosting/servers/apache-with-php-fpm.md): the host's view of the setup.
 - [nginx with PHP-FPM](../../../hosting/servers/nginx-with-php-fpm.md): the derived block and its caveats.
 - [Plesk](../../../hosting/panels/plesk.md): Exponential on a Plesk server.
+- [Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md):
+  `exp:setup:htaccess`, `exp:setup:status` and which servers read `.htaccess`.
 - [Writable directories and permissions](../../../hosting/basics/writable-directories-and-permissions.md): ownership
   in detail.
 

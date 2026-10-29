@@ -5,6 +5,19 @@ logs of each site in its own directory, the cache of a site on another file syst
 site cleared on its own. It describes the settings, how they behave under Velocity and on the command line, and what
 to do when an installation moves from a setup of its own to them.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
+> [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 ## In short
 
 | | |
@@ -54,8 +67,11 @@ tmpfs  /srv/www/exponential/var_cache  tmpfs  size=8g,mode=0775,uid=www-data,gid
   in `ini/`), `expiry.php` in `var/example/expiry/`. The storage stays in `var/example/storage`.
 - Velocity serves the public caches below `var_cache/` (packed scripts and style sheets, text to image) and nothing
   else there: `expVelocity::staticPaths()` adds them to the paths of all three engines when `CacheVarDir` is set. For
-  Apache, enable the commented `var_cache` rule in `.htaccess_root`; for nginx the commented `location` in
-  [serving the site](../../install/08-serving-the-site.md).
+  Apache, enable the commented `var_cache` rule of `.htaccess_root` in your copy, `.htaccess` (copied with
+  `./console exp:setup:htaccess --apply`; after an upgrade that command shows the rule among the differences and
+  copies only with `--force`, so enable it again afterwards); for nginx the commented `location` in
+  [serving the site](../../install/08-serving-the-site.md). See
+  [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
 - With a cluster file handler, see [cluster](#cluster-dfs) below.
 - Set the settings where every siteaccess of every site reads them (the global override). Velocity writes its list of
   served paths when it starts, without a siteaccess: it reads `CacheVarDir` from the global settings and from the

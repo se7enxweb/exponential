@@ -27,7 +27,7 @@ require_once __DIR__ . '/AdminFiles.php';
 
 class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 {
-    const BASE = array( 'core.css', 'content.css', 'pagelayout.css', 'theme/rounded.css', 'theme/admin_datatable.css', 'theme/modalwindow.css' );
+    const BASE = array( 'base.css' );
 
     private static function root()
     {
@@ -76,11 +76,13 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 
     public function testLinksTakeTheAccentTextToken()
     {
-        $core = self::rules( self::css( 'core.css' ) );
+        $core = self::rules( self::css( 'base.css' ) );
         $this->assertSame( 'var(--a4-accent-text)', $core['a']['color'] );
         $this->assertSame( 'var(--a4-ink)', $core['a:hover']['color'] );
-        $rounded = self::rules( self::css( 'theme/rounded.css' ) );
-        $this->assertSame( 'var(--a4-accent-text)', $rounded['ul.tabs li a, ul.tabs li span.disabled']['color'] );
+        // base.css's own tab colours were dead (admin4.css sets them again for the same selectors): the effective rules
+        $frame = self::rules( self::css( 'admin4.css' ) );
+        $this->assertSame( 'var(--a4-muted)', $frame['ul.tabs li a, ul.tabs li span.disabled, ul.tabs li span.current']['color'] );
+        $this->assertSame( 'var(--a4-accent-text)', $frame['ul.tabs li.selected a, ul.tabs li.selected span.disabled, ul.tabs li.selected span.current']['color'] );
     }
 
     /**
@@ -89,7 +91,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
      */
     public function testIconFontGlyphsReserveTheirBox()
     {
-        $css = self::css( 'core.css' );
+        $css = self::css( 'base.css' );
         $core = self::rules( $css );
         $this->assertSame( 'inline-block', $core['[data-icon]:before']['display'] );
         $this->assertSame( '1em', $core['[data-icon]:before']['inline-size'] );
@@ -98,7 +100,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 
     public function testDiffMarksTakeTheStateTokens()
     {
-        $content = self::rules( self::css( 'content.css' ) );
+        $content = self::rules( self::css( 'base.css' ) );
         $this->assertSame( 'var(--a4-ok)', $content['ins']['color'] );
         $this->assertSame( '1px solid var(--a4-ok)', $content['ins']['border-bottom'] );
         $this->assertSame( 'var(--a4-bad)', $content['del']['color'] );
@@ -187,8 +189,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 
     public function testAFocusedButtonLooksHovered()
     {
-        $rounded = self::rules( self::css( 'theme/rounded.css' ) );
-        $this->assertSame( 'var(--a4-soft)', $rounded['input.button:hover, input.button:focus']['background-color'] );
+        // base.css's hover colour was dead (admin4.css sets it again for the same selector); the effective rule is below
         $frame = self::rules( self::css( 'admin4.css' ) );
         $this->assertSame( 'var(--a4-soft)', $frame['input.button:hover, input.button:focus']['background-color'] );
         $this->assertSame( 'var(--a4-field-line)', $frame['input.button:hover, input.button:focus']['border-color'] );
@@ -196,7 +197,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 
     public function testTheContextMenuRingIsOneTokenInBothModes()
     {
-        $pagelayout = self::css( 'pagelayout.css' );
+        $pagelayout = self::css( 'base.css' );
         $rules = self::rules( $pagelayout );
         $this->assertSame( '2px solid var(--a4-ring)', $rules['div.popupmenu a:focus-visible']['outline'] );
         // the tokens switch for the dark mode; a base stylesheet has no dark-mode rule of its own
@@ -208,7 +209,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
 
     public function testHeaderPartsTakeTheTokens()
     {
-        $rules = self::rules( self::css( 'pagelayout.css' ) );
+        $rules = self::rules( self::css( 'base.css' ) );
         $this->assertSame( 'min(300px, calc(100vw - 2 * var(--a4-space-4)))', $rules['.searchscope-pane']['width'],
             'the pane fits a 320px window' );
         $this->assertSame( '1px solid var(--a4-line)', $rules['.searchscope-pane > .searchscope-title']['border-bottom'] );
@@ -234,7 +235,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
         $this->assertFileExists( "$root/design/admin3/stylesheets/responsive.css" );
         $this->assertSame( 2, substr_count( AdminFiles::read( "$root/design/admin3/templates/page_head_style.tpl" ), "'responsive.css'" ) );
         // the one live rule of admin4's responsive.css moved to pagelayout.css
-        $rules = self::rules( self::css( 'pagelayout.css' ) );
+        $rules = self::rules( self::css( 'base.css' ) );
         $this->assertSame( '0.5rem', $rules['.message-confirmation, .message-feedback, .message-warning, .message-error']['padding'] ?? null );
     }
 

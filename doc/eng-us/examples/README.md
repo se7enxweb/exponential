@@ -12,6 +12,19 @@ type: example
 
 This section has examples you can copy into a real installation. There are three kinds:
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](web-servers/nginx.md), [LiteSpeed](web-servers/litespeed.md),
+> [Caddy](web-servers/caddy.md), [IIS](web-servers/iis.md), [Velocity](web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 - **[Web server examples](web-servers/README.md)**: complete configurations for Exponential Velocity, Apache
   (`.htaccess` and virtual host), nginx, Caddy, FrankenPHP, LiteSpeed, IIS and PHP-FPM. Each one routes requests
   the same way as the shipped `.htaccess_root`. Each was syntax-checked, and most were also tested on a scratch
@@ -43,6 +56,11 @@ The rules for writing code (naming, file layout, security, templates without inl
 
 `staticcache_offload.conf` adds rules that serve pages from the static cache directly. See
 [Apache .htaccess](web-servers/apache-htaccess.md).
+
+The shipped `.htaccess_root` (or `.htaccess_root_static`) and `config.php-RECOMMENDED` are put into place with
+`./console exp:setup:htaccess --apply` and `./console exp:setup:config --apply`, and `config.php` is edited with
+`./console exp:config:set`: see [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md)
+and the generated pages [exp:setupfiles](commands/setupfiles.md) and [exp:configphp](commands/configphp.md).
 
 ## Reference examples generated from the code
 

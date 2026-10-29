@@ -12,6 +12,20 @@ type: example
 FrankenPHP ist der Webserver Caddy mit eingebautem PHP, als eine einzige Binärdatei. Es gibt zwei Wege, Exponential
 darauf zu betreiben:
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](nginx.md), [LiteSpeed](litespeed.md), [Caddy](caddy.md), [IIS](iis.md),
+> [Velocity](velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+
 - **Über Velocity** (empfohlen): `exp:velocity` lädt die Binärdatei herunter und prüft sie, schreibt bei jedem Start das
   Caddyfile aus `velocity.ini`, validiert es vor der Verwendung und steuert den Server mit denselben Befehlen wie seine
   anderen Engines. Sie schreiben kein Caddyfile.
@@ -21,6 +35,13 @@ darauf zu betreiben:
 > **Warnung:** Verwenden Sie für Exponential niemals die Direktive `php_server` von FrankenPHP. Sie liefert jede
 > vorhandene Datei aus, `settings/*.ini` und die SQLite-Datenbank eingeschlossen. Beide Wege unten routen stattdessen
 > wie `.htaccess_root`.
+
+FrankenPHP liest `.htaccess` nie, deshalb ändert `exp:setup:htaccess` nichts an seinem Routing. `config.php` wird wie
+auf jedem Server mit `./console exp:setup:config --apply` und `./console exp:config:set ... --apply` an ihren Platz
+gebracht und bearbeitet. Im klassischen Modus (dem einzigen, den Exponential nutzt) liest jede Anfrage sie erneut,
+sobald OPcache die neue Datei bemerkt; zeigt sich eine Änderung nicht, starten Sie den Server neu (über Velocity:
+`exp:velocity restart`). Siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
 
 ## Über Velocity
 
@@ -228,4 +249,5 @@ erzeugte Konfiguration, der es folgt, ist die, die Velocity mit seiner Engine `f
   [FrankenPHP als Web-Engine von Exponential](../../bc/6.0/frankenphp.md) und
   [Velocity-Engines](../../bc/6.0/velocity-engines.md) (auf Englisch).
 - [Velocity](velocity.md), [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

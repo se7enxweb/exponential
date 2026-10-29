@@ -13,6 +13,20 @@ Diese Seite richtet sich an Paketbetreuer, die Exponential mit `apt` oder `dnf` 
 was es gibt und was Paketbetreuer selbst entscheiden müssen. Das Projekt veröffentlicht **kein deb- oder rpm-Paket des
 Exponential-CMS**; es veröffentlicht aber deb- und rpm-Pakete von **Velocity**, seinem Webserver.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hosting/control-panels/plesk.md), [cPanel](../hosting/control-panels/cpanel.md), [DirectAdmin](../hosting/control-panels/directadmin.md), [ISPConfig](../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Was das Projekt veröffentlicht](#was-das-projekt-veröffentlicht)
@@ -57,6 +71,11 @@ Was das für ein Paket bedeutet:
   hinzufügen ([Zusätzliche Erweiterungsverzeichnisse](../../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md)). Auf diese
   Einstellungen kann sich ein Aufbau stützen.
 - Die Webserver-Konfiguration, die Sie ausliefern, muss das Routing von `.htaccess_root` beibehalten.
+- `.htaccess` und `config.php` sind Dateien der Installation, nicht des Pakets: Liefern Sie die Vorlagen aus
+  (`.htaccess_root`, `.htaccess_root_static`, `config.php-RECOMMENDED`) und lassen Sie den Administrator oder Ihren
+  Post-Install-Schritt sie mit `exp:setup:htaccess` und `exp:setup:config` kopieren. Ein Update überschreibt dann nie
+  eine geänderte Kopie: Die Befehle zeigen den Diff und verweigern ohne `--force`
+  ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 ## Composer und die Richtlinien der Distribution
 
@@ -75,7 +94,14 @@ Ein Distributionspaket sollte nicht von sich aus eine Website installieren:
 
 - **Tun Sie:** den Systembenutzer anlegen, die Besitzrechte der beschreibbaren Verzeichnisse setzen, eine deaktivierte
   Webserver- und Cron-Konfiguration installieren, die Autoloads neu erzeugen, ausgeben, wo die Dokumentation und der
-  Installationsbefehl zu finden sind.
+  Installationsbefehl zu finden sind. `.htaccess` und `config.php` an ihren Platz zu bringen ist hier unbedenklich,
+  denn beide Befehle lassen eine vorhandene Datei in Ruhe und ändern bei einem zweiten Lauf nichts; als root brauchen
+  sie `--allow-root-user` und `--owner=<benutzer>:<gruppe>` für den Benutzer der Website:
+
+  ```bash
+  php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=www-data:www-data
+  php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data
+  ```
 - **Tun Sie nicht:** eine Datenbank anlegen, `exp:install` mit Standardwerten ausführen oder einen Webserver starten.
   Der Administrator führt die Installation einmal aus, mit seiner eigenen URL, Datenbank und E-Mail
   ([Unbeaufsichtigte Installation mit exp:install](unbeaufsichtigte-installation-mit-exp-install.md)).
@@ -87,6 +113,9 @@ Checkliste jedes Zeitraums ([Kapitel 11.6](../../installation/11-aktualisieren.m
 
 - nach dem Update die Caches leeren und die Autoloads neu erzeugen
   ([Caches und Autoloads](caches-und-autoloads-nach-dem-bauen.md));
+- dem Administrator mitteilen, wenn `.htaccess` nicht mehr zur neuen `.htaccess_root` passt: `exp:setup:htaccess`
+  ohne `--apply` endet mit Exit-Code 1 und gibt den Diff aus, und `exp:config:list` zeigt Einstellungen, die neu in
+  `config.php-RECOMMENDED` sind, als `(not set)`;
 - dem Administrator mitteilen, dass ein Datenbank-Update fällig sein könnte, mit dem Link;
 - nie Datenbank-Updates unbeaufsichtigt auf einer Website ausführen, die es nicht kennt.
 
@@ -104,6 +133,7 @@ Checkliste jedes Zeitraums ([Kapitel 11.6](../../installation/11-aktualisieren.m
 - [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md)
 - [Velocity-Pakete, Docker-Images und Binärdateien](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)
 - [GPL-Pflichten beim Weitergeben](gpl-pflichten-beim-weitergeben.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

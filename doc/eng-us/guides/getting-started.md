@@ -5,6 +5,19 @@ You need no prior knowledge. At the end you have an installed site, you are logg
 interface, you have published a first piece of content, and you have changed a template and seen the change on the
 site. Allow ten to fifteen minutes. The install itself takes about a minute on SQLite.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 Every command is run from the root of the installation (the directory that holds `console`, `index.php` and
 `settings/`). Commands that start with `./console` are the same programs as `php bin/php/<name>.php`.
 
@@ -145,6 +158,9 @@ the installed site. Stop it again with `./console exp:velocity stop --engine=php
 If you ran step 3 with another `--url`, use the Site address that the installer printed.
 
 For production use Apache with PHP-FPM, or Velocity's own `qbix` or `frankenphp` engines: [Velocity engines](../bc/6.0/velocity-engines.md).
+Apache needs the shipped rewrite rules as `.htaccess`: `./console exp:setup:htaccess --apply` copies them, and
+`./console exp:setup:status` shows where `.htaccess` and `config.php` stand
+([Setting up .htaccess and config.php from the console](setup-files-from-the-console.md)).
 If a page is an error, nothing is hidden by the cache yet; read `var/log/error.log` and see
 [Repairing an installation](../bc/6.0/repair.md).
 
@@ -232,6 +248,7 @@ and [Extension loading order](../features/6.0/extension-loading-order.md).
 | Keep the site healthy | [Operating a site](operating-a-site.md), [Security and audit](security-and-audit.md) |
 | Move to a newer release | [Upgrading](upgrading.md) |
 | Change settings from the command line | [exp:ini](../features/6.0/exp-ini-command.md) |
+| Put `.htaccess` and `config.php` into place, change a `config.php` setting | [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md) |
 | Keep an eye on changes made in the admin | [Audit trail](../features/6.0/audit-trail.md) |
 | Run recurring jobs | [Cronjobs console](../features/6.0/cronjobs-console.md) |
 | See what changed and when | [Chronicle by month](../history/README.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |

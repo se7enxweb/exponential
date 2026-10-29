@@ -16,6 +16,20 @@ verloren. Die Seite beantwortet, was die Quellen des Projekts über solche Platt
 schreibt und wie sie verlegt werden können, und welche Fragen Sie einer Plattform stellen, bevor Sie Exponential darauf
 anbieten.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Was die Quellen sagen](#was-die-quellen-sagen)
@@ -115,6 +129,13 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
   (`EXP_INSTALL_DB_PASSWORD`) ([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)).
 - Jedes spätere Release: neuer Code, dasselbe persistente `var/` und dieselbe Datenbank, die Schema-Update-Dateien, wenn ein
   Upgrade sie verlangt, dann ein Leeren des Caches ([Änderungen ausrollen](../betrieb/aenderungen-ausrollen.md)).
+- `.htaccess` und `config.php` im Build oder beim Start, unbeaufsichtigt: `./console exp:setup:htaccess --apply`,
+  `./console exp:setup:config --apply`, dann `./console exp:config:set <NAME> <Wert> --apply` mit Werten aus den
+  Umgebungsvariablen der Plattform (`--value="$CLUSTER_DB_PASS"` für ein Geheimnis). Jeder Befehl fragt nichts, endet
+  mit `PASS:` oder `FAIL:`, beendet sich mit 0, 1 oder 2 und ändert bei einem zweiten Lauf nichts. Ein Build-Schritt,
+  der als root läuft, braucht `--allow-root-user` und, damit die Dateien nicht root gehören,
+  `--owner=www-data:www-data`
+  ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 ## Fragen an eine Plattform
 
@@ -134,6 +155,7 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md), [Container: Docker und Podman](container-docker-und-podman.md)
 - [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

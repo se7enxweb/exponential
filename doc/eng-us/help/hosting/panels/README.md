@@ -14,6 +14,19 @@ for their support staff. It answers which panels the project's sources know, how
 everyday panel tasks (choosing PHP, setting up cron, creating databases, installing certificates) apply to an
 Exponential site.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](plesk.md), [cPanel](cpanel.md), [DirectAdmin](directadmin.md), [ISPConfig](ispconfig.md).
+
 Back to [Hosting companies: start here](../hosting-companies-start-here.md).
 
 > **Note**
@@ -71,6 +84,12 @@ Whatever the panel, an Exponential site needs ([Chapter 2](../../../install/02-r
 | Scheduled `runcronjobs.php` | the panel's cron page |
 | HTTPS | the panel's certificate management |
 
+With a shell (the panel's terminal or SSH), run as the site's own system user, the console puts the shipped templates
+into place: `php bin/php/console exp:setup:htaccess --apply` (`.htaccess_root` to `.htaccess`) and `php bin/php/console
+exp:setup:config --apply` (`config.php-RECOMMENDED` to `config.php`). As root, add `--allow-root-user`, and
+`--owner=<user>:<group>` when the files must belong to the site's user. Without a shell, the panel's file manager does
+the same copy. See [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md).
+
 ## Velocity on a panel server
 
 Panels manage Apache or nginx and their PHP-FPM pools. Velocity is a separate long-running process, so on a panel
@@ -88,6 +107,7 @@ See [Velocity beside Apache or nginx](../servers/velocity-beside-apache-or-nginx
 
 - [Hosting companies: start here](../hosting-companies-start-here.md)
 - [Shared hosting](../models/shared-hosting.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Operating system support](../../os-support.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 

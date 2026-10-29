@@ -16,6 +16,20 @@ wie Sie ihn erzeugen und ausliefern, wenn ein Kunde ihn braucht. Die Quellen sin
 [Standardwerte des statischen Caches](../../../bc/6.0/standardwerte-des-statischen-caches.md) und
 [Kapitel 10, Abschnitt 10.12](../../../installation/10-nach-der-installation.md#1012-performance-tuning).
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Was er ist](#was-er-ist)
@@ -78,7 +92,7 @@ Führen Sie ihn als Benutzer der Website aus, damit die Dateien für den Webserv
 
 | Einrichtung | Was Sie nutzen |
 |---|---|
-| Apache mit `.htaccess` | kopieren Sie `.htaccess_root_static` statt `.htaccess_root` nach `.htaccess`; es ist `.htaccess_root` plus die Regeln zur Auslagerung |
+| Apache mit `.htaccess` | kopieren Sie `.htaccess_root_static` statt `.htaccess_root` nach `.htaccess`; es ist `.htaccess_root` plus die Regeln zur Auslagerung. Von der Konsole aus: `./console exp:setup:htaccess --static --apply` (mit `--force`, um eine vorhandene `.htaccess` zu ersetzen; sie wird vorher gesichert) |
 | Virtueller Host für Apache | die Regeln aus [doc/eng-us/examples/staticcache_offload.conf](../../../../eng-us/examples/staticcache_offload.conf) im Abschnitt `<Directory>` des vhost der **öffentlichen** Website |
 | andere Server | bilden Sie dieselben Bedingungen nach (Methode, leerer Query-String, kein Sitzungscookie, Datei existiert) |
 
@@ -122,6 +136,7 @@ verließen; siehe [Standardwerte des statischen Caches](../../../bc/6.0/standard
 - [Antwort-Cache von Velocity](antwort-cache-von-velocity.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
 - [Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

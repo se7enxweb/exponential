@@ -6,6 +6,19 @@ starting Exponential at all. In 6.0 the generator crawls your site the
 way a visitor would, shows progress while it works, and the shipped defaults
 now produce a working cache instead of silently producing nothing.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
+> [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 ## What you get
 
 - **Setup > Cache > Static content cache**: choose a site, set a page limit and
@@ -66,7 +79,13 @@ use them.
 
 - **Apache with `.htaccess`**: copy `.htaccess_root_static` to `.htaccess`
   instead of `.htaccess_root`. It is `.htaccess_root` plus the offload rules,
-  so switching back is copying the other file over it. Check the one line
+  so switching back is copying the other file over it. From the console:
+  `./console exp:setup:htaccess --static` shows the difference to your current
+  `.htaccess`, `--static --force --apply` switches (the old file is backed up
+  to `var/backup/setup/<time>/` first), and `./console exp:setup:htaccess
+  --force --apply` switches back
+  ([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#switching-to-the-static-cache-rules)).
+  Check the one line
   `RewriteRule ^ - [E=EZ_VAR_SITE:site]`: the value is `site.ini`
   `[FileSettings] VarDir` without the leading `var/`; a default installation
   (`var/site`) needs no change.
@@ -124,6 +143,7 @@ The defaults changed; see [bc: static cache defaults](../../bc/6.0/static-cache-
 - [Cache from the console](../../bc/6.0/cache-console.md) (`exp:cache` static cache group), [HTTP caching](../../bc/6.0/http-caching.md)
 - [Velocity and the opcode cache](velocity-opcode-cache-and-profile.md), [cache clears that move directories aside](cache-clear-rename-aside.md)
 - [Upgrade checklist of 1-2 October 2026](../../bc/6.0/behaviour-changes-2026-10.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:setup:htaccess --static`
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - History: [September 2026, first half: caches you can see](../../history/2026/2026-09a.md#13-september-caches-you-can-see-cronjobs-you-can-run), [October 2026](../../history/2026/2026-10.md)
 

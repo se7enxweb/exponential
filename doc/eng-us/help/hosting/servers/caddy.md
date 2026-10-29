@@ -13,6 +13,19 @@ This page is for system administrators at hosting companies who use Caddy, or wa
 to Exponential, which of the two Caddy routes the project supports best, what routing a Caddy configuration must
 implement, and what the sources do and do not provide.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../../examples/web-servers/nginx.md), [LiteSpeed](../../../examples/web-servers/litespeed.md),
+> [Caddy](../../../examples/web-servers/caddy.md), [IIS](../../../examples/web-servers/iis.md), [Velocity](../../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../panels/plesk.md), [cPanel](../panels/cpanel.md), [DirectAdmin](../panels/directadmin.md), [ISPConfig](../panels/ispconfig.md).
+
 ## Contents
 
 1. [Two ways to use Caddy](#two-ways-to-use-caddy)
@@ -67,6 +80,8 @@ A practical way to start: generate the FrankenPHP Caddyfile on a test machine wi
 
 ## The routing every Caddy configuration needs
 
+Caddy never reads `.htaccess`, so `./console exp:setup:htaccess --apply` changes nothing for it; the routing lives in
+the Caddyfile ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
 The generated Caddyfile implements `.htaccess_root` like this
 ([FrankenPHP, What it contains](../../../bc/6.0/frankenphp.md#what-it-contains-verified-output)):
 
@@ -106,6 +121,7 @@ own; follow its documentation. Whoever terminates TLS, Exponential must learn th
 - [nginx with PHP-FPM](nginx-with-php-fpm.md)
 - [Choosing a web server](choosing-a-web-server.md)
 - [Velocity engines](../../../bc/6.0/velocity-engines.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

@@ -14,6 +14,20 @@ enthält **kein Dockerfile und keine Compose-Datei**; die Hinweise unten sind al
 Dokumentation sagt. Velocity, der Webserver, der Teil von Exponential ist, veröffentlicht durchaus Images, auf denen
 Sie aufbauen können.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hosting/control-panels/plesk.md), [cPanel](../hosting/control-panels/cpanel.md), [DirectAdmin](../hosting/control-panels/directadmin.md), [ISPConfig](../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Was die Quellen sagen](#was-die-quellen-sagen)
@@ -54,6 +68,26 @@ Ein allgemeiner Build, in Worten statt als Dockerfile:
 4. Erzeugen Sie die Autoloads neu ([Caches und Autoloads nach dem Bauen](caches-und-autoloads-nach-dem-bauen.md)).
 5. Setzen Sie die Besitzrechte der beschreibbaren Verzeichnisse ([Dateirechte](dateirechte-und-besitz-von-var.md)).
 6. Fügen Sie den Einstiegspunkt unten hinzu; führen Sie den Installer nicht während des Builds aus.
+
+Die Schritte 4 und 5 sind auch der Ort für `.htaccess` (wenn das Image Apache ausführt) und `config.php`. Die Befehle
+fragen nichts, enden mit `PASS:` oder `FAIL:` und ändern bei einem zweiten Lauf nichts; ein Build-Schritt läuft
+meist als root, geben Sie also `--allow-root-user` und den Benutzer der Site an:
+
+```bash
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=www-data:www-data
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data
+php bin/php/console exp:config:set EZP_INI_FILEMTIME_CHECK false --apply --allow-root-user
+```
+
+Backen Sie nie ein Passwort in die `config.php` des Images ein. Setzen Sie solche Werte beim Start, im Einstiegspunkt,
+aus der Umgebung des Containers:
+
+```bash
+php bin/php/console exp:config:set CLUSTER_STORAGE_HOST "$CLUSTER_DB_HOST" --apply --allow-root-user
+php bin/php/console exp:config:set CLUSTER_STORAGE_PASS --value="$CLUSTER_DB_PASS" --apply --allow-root-user
+```
+
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md#11-in-skripten-containern-und-ci)).
 
 ## Image oder Volume
 
@@ -109,6 +143,7 @@ exit 1
 - [ ] Basis-Image per Tag oder Digest festgelegt; Composer aus der Lock-Datei; `--no-dev`.
 - [ ] `exp:velocity ext check` läuft im Image fehlerfrei durch.
 - [ ] Keine `settings/override`, `settings/siteaccess`, `kickstart.ini`, Protokolle oder Caches aus dem Build im Image.
+- [ ] `config.php` im Image enthält kein Geheimnis (beim Start mit `exp:config:set` gesetzt); `exp:config:list --only-set --format=json` in der CI geprüft.
 - [ ] Volumes dokumentiert: `var/`, `settings/override`, `settings/siteaccess`.
 - [ ] Der Einstiegspunkt installiert einmal und hält den Hauptprozess am Leben.
 - [ ] Der Quellcode jeder GPL-Komponente wird angeboten ([GPL-Pflichten](gpl-pflichten-beim-weitergeben.md)).
@@ -119,6 +154,7 @@ exit 1
 - [Container: Docker und Podman](../hosting/modelle/container-docker-und-podman.md)
 - [Erster Start und einmalige Installation](erster-start-und-einmalige-installation.md)
 - [Velocity in einem Bundle](velocity-in-einem-bundle.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

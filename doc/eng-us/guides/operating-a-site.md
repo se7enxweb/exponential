@@ -2,6 +2,19 @@
 
 This guide is for the person who keeps an Exponential site running, day to day. It takes you through the routine work of keeping it healthy: looking at the caches and clearing the right one, running cronjobs, switching on the static cache, warming the site, taking a backup, knowing which database you run on, reading the logs, and repairing a site that will not start. Follow it top to bottom. Each part takes a few minutes and ends in something you can check.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 Every command is run from the installation root, the directory that contains `index.php`. When you are logged in as `root`, add `--allow-root-user` to the PHP scripts; the scripts refuse to run as root otherwise. In the examples the flag is written out so you can copy them as they are.
 
 Where a topic needs more than a few minutes, the part ends with links to the feature, specification and upgrade pages.
@@ -313,7 +326,9 @@ Every log file (error.log, warning.log, deprecated.log, storage.log, the cronjob
 larger than `site.ini [FileSettings] LogFileMaxSize` (default 2097152 bytes, 2 MB) into `.1`, `.2`, `.3`;
 `LogFileRotateCount` (default 3) is how many are kept, 0 turns the rotation off. With the defaults a log takes at
 most 8 MB on disk. The constants `EZPUBLISH_LOG_MAX_FILE_SIZE`, `CUSTOM_LOG_MAX_FILE_SIZE` and their `*_ROTATE_FILES`
-in `config.php` still win over these settings.
+in `config.php` still win over these settings; `./console exp:config:list --only-set` shows whether `config.php` sets
+them, and `./console exp:config:unset EZPUBLISH_LOG_MAX_FILE_SIZE --apply` hands the size back to `site.ini` (see
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md)).
 
 Upgrading: both are on after the upgrade. Log files are rotated at 2 MB instead of 200 KB (set
 `LogFileMaxSize=204800` for the old size), and deprecations no longer appear in `warning.log` or the debug list
@@ -349,7 +364,17 @@ php bin/php/ezpgenerateautoloads.php -e --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
 ```
 
-Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [repair (upgrade page)](../bc/6.0/repair.md).
+When every page fails with a PHP parse error in `config.php`, the console still starts and says so ("Warning:
+config.php does not compile: ..."). Fix the line it names, copy back the last backup from `var/backup/config/` or
+`var/backup/setup/`, or start again from the template:
+
+```bash
+./console exp:setup:status                       # names the syntax error
+./console exp:setup:config --force --apply       # replaces config.php with config.php-RECOMMENDED, backup first
+```
+
+Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [repair (upgrade page)](../bc/6.0/repair.md),
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md#9-when-something-goes-wrong).
 
 ## 10. A weekly checklist
 
@@ -363,6 +388,7 @@ Depth: [Repair from the browser](../features/6.0/repair-from-the-browser.md), [r
 
 - Running on the Velocity server: [Velocity persistent-worker server](../features/6.0/velocity-persistent-worker-server.md) and [Velocity engines](../bc/6.0/velocity-engines.md).
 - Installing a new site: [Installing in one command](../features/6.0/install-in-one-command.md) and [Kickstarter](../features/6.0/kickstarter-cli.md).
+- `.htaccess` and `config.php`: [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md).
 - What changed, month by month: the [Velocity chronicle](../history/velocity/README.md).
 - Other guides: [Deploying](deploying.md) (servers, HTTPS, shipping a change), [Security and audit](security-and-audit.md) (hardening, roles, the audit trail), [Upgrading](upgrading.md).
 - Words used here: [Glossary](../glossary.md).

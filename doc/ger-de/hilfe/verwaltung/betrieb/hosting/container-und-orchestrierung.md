@@ -17,6 +17,20 @@ von Änderungen zusammenpassen. Die technischen Einzelheiten stehen auf den Host
 [Kubernetes](../../../hosting/modelle/kubernetes.md); diese Seite fasst sie zusammen und ergänzt die Sicht des
 öffentlichen Sektors.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../../beispiele/webserver/litespeed.md), [Caddy](../../../../beispiele/webserver/caddy.md), [IIS](../../../../beispiele/webserver/iis.md),
+> [Velocity](../../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../../hosting/control-panels/plesk.md), [cPanel](../../../hosting/control-panels/cpanel.md), [DirectAdmin](../../../hosting/control-panels/directadmin.md), [ISPConfig](../../../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Was die Quellen sagen](#was-die-quellen-sagen)
@@ -73,6 +87,13 @@ Benutzer-ID einmal für Image und Volume fest
 ([Container: Docker und Podman](../../../hosting/modelle/container-docker-und-podman.md)). Halten Sie Zugangsdaten aus
 dem Image selbst heraus.
 
+`config.php` gehört zum Code, solange sie kein Geheimnis enthält: Bringen Sie sie im Build des Images mit
+`php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data` an ihren Platz und setzen
+Sie Werte mit `exp:config:set`. Ein Passwort (`CLUSTER_STORAGE_PASS`) wird beim Start aus den Secrets der Plattform
+gesetzt. Für den Änderungsantrag dokumentiert `php bin/php/console exp:config:list --only-set --format=json`, was ein
+Image setzt, mit maskierten Geheimnissen
+([.htaccess und config.php von der Konsole aus einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ## Ein Container oder mehrere
 
 | | Ein Container | Mehrere Replikate |
@@ -117,6 +138,7 @@ Container erleichtern manche Pflichten des öffentlichen Sektors, wenn Sie sie d
 - [Hosting](README.md): Übersicht dieses Ordners
 - [Container: Docker und Podman](../../../hosting/modelle/container-docker-und-podman.md), [Kubernetes](../../../hosting/modelle/kubernetes.md)
 - [Hosting in der Behörden- und souveränen Cloud](verwaltungs-und-souveraene-cloud.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

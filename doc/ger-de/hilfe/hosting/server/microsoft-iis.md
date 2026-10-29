@@ -14,6 +14,20 @@ beantwortet: was die Quellen über IIS sagen, was unter Windows anders funktioni
 was Sie testen. Die eigenen Verwaltungswerkzeuge von IIS werden hier nicht beschrieben; sehen Sie dafür in der Dokumentation von Microsoft
 nach.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Status](#status)
@@ -66,6 +80,8 @@ PHP 8. Testen Sie Ihren eigenen Stack.
 
 ## Nachzubildendes Routing
 
+IIS liest `.htaccess` nie, `exp:setup:htaccess` schützt eine IIS-Website also nicht
+([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 Welchen Regelsatz Sie für IIS auch schreiben, er muss tun, was `.htaccess_root` tut
 ([Kapitel 8, Wie eine Anfrage ausgeliefert wird](../../../installation/08-die-website-ausliefern.md#82-wie-eine-anfrage-beantwortet-wird)):
 
@@ -100,7 +116,8 @@ Führen Sie die vier Prüfungen des Routings aus [Webserver und Engines](README.
 
 ## Alternativen auf Windows-Maschinen
 
-- **Apache mit FastCGI-PHP** unter Windows: Die mitgelieferte `.htaccess_root` gilt direkt.
+- **Apache mit FastCGI-PHP** unter Windows: Die mitgelieferte `.htaccess_root` gilt direkt (kopiert mit
+  `php bin/php/console exp:setup:htaccess --apply`).
 - **WSL2** führt die Linux-Stufen aus und ist der einfachere Weg für die Entwicklung unter Windows.
 - **Eine virtuelle Linux-Maschine oder ein Container** auf dem Windows-Host, wenn sich der Tarif so bauen lässt
   ([Container, Docker und Podman](../modelle/container-docker-und-podman.md)).
@@ -119,6 +136,7 @@ Führen Sie die vier Prüfungen des Routings aus [Webserver und Engines](README.
 - [Betriebssysteme für Hoster](../grundlagen/betriebssysteme-fuer-hoster.md)
 - [Unterstützung von Betriebssystemen](../../betriebssystemunterstuetzung.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

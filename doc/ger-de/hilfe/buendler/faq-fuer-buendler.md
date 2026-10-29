@@ -12,6 +12,20 @@ type: help
 Diese Seite richtet sich an Bündler, die zuerst eine schnelle Antwort möchten. Jede Antwort verlinkt die Seite mit den
 Einzelheiten. Antworten zur Lizenzierung sind keine Rechtsberatung.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../hosting/control-panels/plesk.md), [cPanel](../hosting/control-panels/cpanel.md), [DirectAdmin](../hosting/control-panels/directadmin.md), [ISPConfig](../hosting/control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Lizenzierung](#lizenzierung)
@@ -51,6 +65,8 @@ Einzelheiten. Antworten zur Lizenzierung sind keine Rechtsberatung.
 | Können wir `publish` wie in alten Anleitungen verwenden? | Nur in einer öffentlichen Demo mit `EXP_DEMO_MODE=1` ([Demo-Modus in Bundles](demomodus-in-bundles.md)). |
 | Lässt es sich offline installieren? | Ja, wenn zuvor jedes Paket importiert wurde ([Offline-Bundles](offline-bundles.md)). |
 | Die Website zeigt beim ersten Start 503. | Der Wartungsmodus ist aktiv, solange der Installer arbeitet, und bleibt nach einem Fehler aktiv ([Die drei Installer](die-drei-installer.md#wartungsmodus-während-der-installation)). |
+| Wie legen wir `.htaccess` und `config.php` an? | `./console exp:setup:htaccess --apply` und `./console exp:setup:config --apply` kopieren sie aus `.htaccess_root` und `config.php-RECOMMENDED`, mit dem Modus der Vorlage und, als root mit `--allow-root-user`, mit ihrem Eigentümer (`--owner=www-data:www-data` nennt einen anderen); ein zweiter Lauf ändert nichts ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)). |
+| Wie ändern wir eine Einstellung in `config.php` ohne Editor? | `./console exp:config:set <NAME> <value> --apply` (vorher Sicherung, `php -l`, bevor die Datei ersetzt wird), `exp:config:get` liest eine, `exp:config:list --only-set` zeigt alle gesetzten ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)). |
 
 ## Nach dem Release
 

@@ -16,6 +16,20 @@ tut, und nennt die Einstellung oder den Befehl, die der Hoster setzt oder prüft
 [Kapitel 13 des Installationsbuchs](../../../installation/13-sicherheitshaertung.md), das jedes Detail enthält, und der Sicht Bedrohung für
 Bedrohung von [Sicherheitshärtung](../../sicherheitshaertung.md).
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 > **Hinweis**
 > Einstellungen werden in Überschreibungen geändert, nie in den mitgelieferten Dateien: `settings/override/<file>.ini.append.php` für die
 > ganze Installation, `settings/siteaccess/<siteaccess>/<file>.ini.append.php` für einen Siteaccess. Leeren Sie nach einer Änderung den
@@ -51,7 +65,7 @@ alles andere geht an `index.php` ([13.2](../../../installation/13-sicherheitshae
 
 | Webserver | Was der Hoster tut |
 |---|---|
-| Apache, LiteSpeed mit `.htaccess` | `cp .htaccess_root .htaccess`; nach jedem Upgrade vergleichen und neue Regeln einfügen |
+| Apache, LiteSpeed mit `.htaccess` | `cp .htaccess_root .htaccess` oder `./console exp:setup:htaccess --apply`; nach jedem Upgrade vergleichen und neue Regeln einfügen (`./console exp:setup:htaccess` gibt den Diff aus und endet mit Exit-Code 1, solange die Datei abweicht, eine Abweichungsprüfung für das Monitoring) |
 | nginx | der abgeleitete Server-Block aus [8.6](../../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm), mit den Regeln für Dateien mit Punkt und für Skripte vor jeder statischen Location |
 | Velocity | nichts; `FollowSymlinks=disabled` (der Standard) verweigert auch Links aus der Wurzel hinaus |
 | jeder | nie eine allgemeine Konfiguration „Datei ausliefern, wenn sie existiert“ |
@@ -80,6 +94,20 @@ Passwort-Stempel der Sitzung schlüsselt) und, wenn gesetzt, das Token des Dashb
   Alte Abmeldelinks passen nicht mehr, und jeder Benutzer wird einmal abgemeldet.
 - Entfernen Sie `kickstart.ini` und `var/log/initial-admin-password` nach der Bereitstellung
   ([Erste Anmeldung und Standardpasswörter](erste-anmeldung-und-standardpasswoerter.md)).
+
+`config.php` im Wurzelverzeichnis der Installation kann das Passwort der Cluster-Datenbank enthalten
+(`CLUSTER_STORAGE_PASS`). Behandeln Sie sie wie `settings/override/`:
+
+- Modus `0640` mit der Gruppe des Webservers (`chmod 0640 config.php`); spätere Änderungen mit `exp:config:set`
+  behalten diesen Modus. Ein Geheimnis in einer für alle Benutzer lesbaren `config.php` erzeugt eine `WARN:`-Zeile.
+- Nie in der Versionsverwaltung: `/config.php` gehört in die `.gitignore` des Projekts (das Repository von
+  Exponential enthält nur `config.php-RECOMMENDED`).
+- Die Konsole maskiert die Werte von Namen mit `PASS`, `SECRET`, `KEY`, `TOKEN`, `CREDENTIAL` oder `PWD` als
+  `********`; `--show-secrets` zeigt sie, fügen Sie solche Ausgaben also nicht in ein Ticket ein.
+- `exp:setup:*` und `exp:config:*` sichern jede Datei, die sie ersetzen oder ändern, nach `var/backup/setup/<zeit>/`
+  oder `var/backup/config/<zeit>/` (Verzeichnisse `0700`, von den Befehlen nie gelöscht). Schützen Sie `var/backup/`
+  mit und räumen Sie es auf
+  ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 ## Debug-Ausgabe
 
@@ -191,6 +219,7 @@ Betriebssystem und die Engine von Velocity aktuell: [Sicherheitsupdates und Offe
       Adressen der Aufrufer beschränkt; `soap.php` abgelehnt, sobald es niemand mehr aufruft
       ([Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../../bc/6.0/soap-einstiegsskript-index-soap.md)).
 - [ ] `settings/override/` mit Modus `0640` oder strenger, außerhalb der Versionsverwaltung, verschlüsselt gesichert.
+- [ ] `config.php` mit Modus `0640`, außerhalb der Versionsverwaltung; `var/backup/` geschützt und aufgeräumt.
 - [ ] Die Bereitstellung entfernt `kickstart.ini` und `var/log/initial-admin-password` und hinterlässt nie ein bekanntes Passwort.
 - [ ] `DebugOutput=disabled`; PHP `display_errors=Off`, `expose_php=Off`.
 - [ ] Administration auf einem eigenen Hostnamen, eingeschränkt durch Netzwerk, VPN oder die Browserprüfung des Schutzes.
@@ -215,6 +244,7 @@ wiederkehrende Prüfung ist die [Checkliste für die Sicherheitsprüfung](../che
 - [Kapitel 13: Sicherheitshärtung für die Produktion](../../../installation/13-sicherheitshaertung.md)
 - [Checkliste für einen neuen Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
 - [Kompromittierte Website](../runbooks/kompromittierte-website.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

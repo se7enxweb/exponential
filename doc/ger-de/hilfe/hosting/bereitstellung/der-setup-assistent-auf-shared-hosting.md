@@ -14,6 +14,20 @@ Shell-Zugang, und für die Support-Mitarbeitenden, die ihnen helfen. Sie beantwo
 sieht und wie der Assistent die Website schützt, während er läuft. Die Referenz Seite für Seite ist
 [Kapitel 5](../../../installation/05-setup-assistent.md).
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 ## Inhalt
 
 1. [Wann der Assistent die richtige Wahl ist](#wann-der-assistent-die-richtige-wahl-ist)
@@ -45,6 +59,18 @@ jede Entscheidung auf einer Seite mit einer Erklärung zeigt. Wenn Sie für den 
 > Wenn `.htaccess` fehlt, verlangt die Seite **Seitensicherheit** des Assistenten sie mit `cp .htaccess_root .htaccess` und dem Hinweis,
 > dass Sie die Datei ohne Shell-Zugang mit einem FTP-Client kopieren oder Ihren Hosting-Anbieter darum bitten müssen
 > ([5.3.13](../../../installation/05-setup-assistent.md#5313-seitensicherheit)). Legen Sie sie vorab an, dann wird die Seite übersprungen.
+
+Die Bereitstellung des Hosters kann das mit der Konsole erledigen, bevor der Kunde den Assistenten öffnet. Als root
+braucht die Kopie `--allow-root-user` und sollte dem Benutzer des Kontos gegeben werden:
+
+```bash
+cd /path/to/the/installation
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=<konto-benutzer>:<konto-gruppe>
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=<konto-benutzer>:<konto-gruppe>   # optional
+```
+
+Ohne `--owner` erhält eine neue Datei den Eigentümer der Vorlage, aus der sie kopiert wird, niemals root. Einzelheiten:
+[.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md).
 
 ## Was der Kunde tut
 
@@ -93,6 +119,7 @@ Installation; sie enthält Passwörter im Klartext.
 - [Ein-Klick-Installer](ein-klick-installer-fuer-exponential.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

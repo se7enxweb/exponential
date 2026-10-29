@@ -6,6 +6,19 @@ site and what to do afterwards. For what Exponential is and how it is served, re
 [README](../../README.md) first. For a guided first hour after the install, read
 [Getting started](guides/getting-started.md).
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](examples/web-servers/nginx.md), [LiteSpeed](examples/web-servers/litespeed.md),
+> [Caddy](examples/web-servers/caddy.md), [IIS](examples/web-servers/iis.md), [Velocity](examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](help/hosting/panels/plesk.md), [cPanel](help/hosting/panels/cpanel.md), [DirectAdmin](help/hosting/panels/directadmin.md), [ISPConfig](help/hosting/panels/ispconfig.md).
+
 Every command is run from the installation root: the directory that holds `index.php`, `autoload.php`, `bin/`
 and `settings/`. The command console is `bin/php/console`. Many installations add a shortcut to it in the root
 (`ln -s bin/php/console console`), so `./console` and `php bin/php/console` are the same program. When you run
@@ -254,7 +267,7 @@ The order is the step table in `kernel/setup/steps/ezstep_data.php`.
 | 10 | Site access configuration | How the siteaccesses are told apart: by URL path, by port, or by host name. |
 | 11 | Site details | Title, URL, the match values of `site`, `admin` and `editor` (URL paths are prefilled with the package identifier, *identifier*`_admin` and `editor`; ports `8080`, `8081`, `8082`; host names *identifier*`.`*host*, *identifier*`-admin.`*host*, `edit.`*host*). The wizard refuses `admin` and `user` as values. Also the sender of the site's optional e-mail, and what to do with a database that already holds data. |
 | 12 | Site administrator | First name, last name, e-mail and password of the `admin` user. The password must be at least 10 characters (`site.ini [UserSettings] MinPasswordLength`); an empty one is refused. |
-| 13 | Site security | Advice when the site does not run in virtual host mode: copy the rules with `cp .htaccess_root .htaccess`. |
+| 13 | Site security | Advice when the site does not run in virtual host mode: copy the rules with `./console exp:setup:htaccess --apply` (or `cp .htaccess_root .htaccess`). |
 | 14 | Registration | Nothing to enter: a page about the community. The wizard sends no registration e-mail. |
 | — | Create sites | Not a page: the database schema and data, the packages and the `settings/siteaccess/` files are written here. |
 | 15 | Finished | The addresses of the public, admin and editor sites. |
@@ -545,8 +558,14 @@ Certificate` and `Key`, or a self-signed certificate it makes and renews itself.
 Enable the shipped rewrite rules:
 
 ```bash
-cp .htaccess_root .htaccess
+./console exp:setup:htaccess --apply      # or by hand: cp .htaccess_root .htaccess
 ```
+
+The command copies `.htaccess_root` to `.htaccess` with the template's mode (and, run as root with
+`--allow-root-user`, its owner), shows a diff and refuses when a `.htaccess` that differs is already there, and backs
+up the old file before `--force --apply` replaces it. `--static` copies `.htaccess_root_static` instead. The same way,
+`./console exp:setup:config --apply` puts `config.php-RECOMMENDED` into place as `config.php`; see
+[Setting up .htaccess and config.php from the console](guides/setup-files-from-the-console.md).
 
 They turn on `.htaccess` based virtual host mode: dot files, `.git` and scripts below the front controllers answer
 404, `/api/` goes to `index_rest.php`, static design files are served directly and everything else goes to
@@ -764,7 +783,9 @@ Then continue with the guides:
 
 Do not run the installer over an existing site. Follow [Upgrading](guides/upgrading.md): from 4.x, 5.x or an
 earlier 6.0.x to the current line, with the database update and the checklists per release. A 6.0 installation is
-brought up to date with the short procedure of [Updating Exponential 6.0](UPDATE.md); to move a site elsewhere or
+brought up to date with the short procedure of [Updating Exponential 6.0](UPDATE.md). After any upgrade, compare
+`.htaccess` and `config.php` with the new templates: `./console exp:setup:status`, `./console exp:setup:htaccess`
+(the diff) and `./console exp:config:list` (settings new in `config.php-RECOMMENDED` show up as `(not set)`). To move a site elsewhere or
 remove it, export everything first with [Uninstalling Exponential 6.0](UNINSTALL.md).
 
 The online manual has further installation notes:
@@ -787,7 +808,9 @@ https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Insta
 | Kickstarter: "The database file name is not valid" | A `kickstart.ini` written by `ini --yes` before 5 October 2026 has `Database=ezp`, and SQLite needs a name ending in `.db`, `.db3`, `.sqlite` or `.sqlite3`. Set `[database_init] Database` and `[site_details] Database` to, for example, `exponential.db`, and `DatabaseAction` to `ignore` for a new database. |
 | Kickstarter: "--start-step=... cannot work" | A run cannot resume an earlier one. Fix the cause and run from `Welcome` (the default). |
 | SQLite: "database is busy: the transaction could not start within N s" | Another write held the lock for the whole `SQLiteTransactionWait`. Nothing was written; retry, or raise the setting (below the request timeout). |
-| 404 for every page under Apache | `.htaccess` is not read (`AllowOverride All`) or `mod_rewrite` is off; did you `cp .htaccess_root .htaccess`? |
+| 404 for every page under Apache | `.htaccess` is not read (`AllowOverride All`) or `mod_rewrite` is off; is there a `.htaccess` at all? `./console exp:setup:status` says, `./console exp:setup:htaccess --apply` copies it. |
+| `FAIL: .htaccess exists and differs ...` or `FAIL: config.php exists and differs ...` | The file has changes of its own. Read the diff (`-v` shows all of it); `--force --apply` replaces it after a backup to `var/backup/setup/<time>/`. See [Setting up .htaccess and config.php from the console](guides/setup-files-from-the-console.md#9-when-something-goes-wrong). |
+| `Warning: config.php does not compile` | Fix the line it names, or `./console exp:setup:config --force --apply` (the broken file is backed up first). |
 | A white page or 500 | Read `var/log/error.log`; check `php -v` and that `vendor/` exists (`composer install`). |
 | A change does not show under Velocity | Workers keep the old code: `exp:velocity restart` (or `deploy`), then `exp:velocity cache clear`. |
 | The administrator password is lost | As root: `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`; otherwise authorize with another administrator (`-a <login> -ap <password>`). See [Reset a user password](features/6.0/reset-user-password.md). |

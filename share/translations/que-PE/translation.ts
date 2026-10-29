@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Ruranap raphinkunatapas yuyarinaman yapayta atinki: raphita kichay (Wakichiy, chiqaqchay qillqa, apaykachaqkunap sinrun...) hinaspa hawanpi «Kay raphita yuyarinaman yapay» nisqata akllay. Chhayna yuyarinakunaqa t'ullu muyu siq'ayuq.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Kay raphitaqa manañam kaypi kichayta atinkichu. Yuyarinata hurquy, icha huk kamachiqman yaykunapaq saqillayta mañakuy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition nisqata llamk'ay&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential Community nisqap huñunman yaykuy, yachayta tikray, yanapaytaq&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; chaymanta wakin.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; nisqawan llamk'an. Astawan willayta munaspaykiqa &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; nisqata qhaway.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; chaymanta wakin.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Astawan willayta munaspaykiqa &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; nisqata qhaway.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; chaymanta wakin.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential nisqata llamk'ay (7x nisqamanta)&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential Community nisqap huñunman yaykuy, yanapayta chaskiy, yanapaytaq&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; chaymanta wakin.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ llamk'achinaykipaq.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Yuyarinap sutinqa «%name» nisqaman hukchasqa karqan.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Kay raphiqa kay web yaykunapi (%siteaccess) wañuchisqa kachkan. Yuyarinata kichay kay raphiyuq web yaykunapi.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Kay raphip mudulunqa manam kaypi churasqachu icha manam llamk'achisqachu.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Kay raphiqa manañam kanchu: mudulunpiqa manam chay hina qhawana kanchu.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Mana mayqin ruwanaykipas kay raphita kichanaykipaq saqisunkichu.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Mana saqillayniyki kanchu kay web yaykunata llamk'achinaykipaq.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Mana saqillayniyki kanchu kay raphi rikuchisqan ukhunta ñawinchanaykipaq.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Kay hina raphitaqa mana yuyarinaman yapakuyta atikunchu: huk formulariollapim ruwan, icha huk ratillapaq raphim.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Kay raphip riqsichiqnin mana kanchu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Kay raphitaqa kunanqa mana kichakuyta atikunchu.</translation>
     </message>
 </context>
 <context>

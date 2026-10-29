@@ -2,6 +2,19 @@
 
 This guide is for administrators and operators who answer for the safety of a site. In about 30 minutes you check that a fresh Exponential installation is hardened, hand out access with roles and policies, read the audit trail, switch debug output on for your own address only, and (optionally) add two-factor sign-in. Every step is a command or a click path that exists in 6.0.15. Commands run from the project root; the examples use `https://example.com` for your site.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../examples/web-servers/nginx.md), [LiteSpeed](../examples/web-servers/litespeed.md),
+> [Caddy](../examples/web-servers/caddy.md), [IIS](../examples/web-servers/iis.md), [Velocity](../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../help/hosting/panels/plesk.md), [cPanel](../help/hosting/panels/cpanel.md), [DirectAdmin](../help/hosting/panels/directadmin.md), [ISPConfig](../help/hosting/panels/ispconfig.md).
+
 You need: shell access to the installation, an administrator login, and `curl`.
 
 ## 1. Check the hardening that is already on (5 minutes)
@@ -40,7 +53,7 @@ for p in .env .git/config extension/expservices/ezinfo.php; do
 done
 ```
 
-Expected: `404` three times. If you keep your own copy of `.htaccess`, merge the rules from `.htaccess_root` and `.htaccess_root_static`.
+Expected: `404` three times. If you keep your own copy of `.htaccess`, merge the rules from `.htaccess_root` and `.htaccess_root_static`. `./console exp:setup:htaccess` (or `--static`) shows your copy's difference from the shipped rules and exits 1 while there is one; with nothing of your own in it, `--force --apply` takes the shipped rules after backing yours up ([Setting up .htaccess and config.php from the console](setup-files-from-the-console.md)).
 
 **The session cookie.** Sign in to the admin, open the browser developer tools, Application (or Storage), Cookies: the session cookie must show `HttpOnly`, `SameSite=Lax` and, on HTTPS, `Secure`. These are the code defaults (`site.ini [Session]` keys `CookieSecure=auto`, `CookieHttponly=true`, `CookieSameSite=Lax`; the file only lists them as comments). The `is_logged_in` cookie for HTTP caches carries the same path, domain, lifetime, `Secure` and `SameSite`, not `HttpOnly`. Behind a load balancer that keeps a user on one server by the session cookie, `CookieAlwaysAddToHttpResponse=enabled` sends the session cookie with every response of a running session (never to a visitor without one), and such a response says `Cache-Control: private`, so no shared cache keeps it: check with `curl -sI -b <session cookie> <page>` that it shows `Set-Cookie` together with `private`.
 
@@ -48,7 +61,9 @@ Expected: `404` three times. If you keep your own copy of `.htaccess`, merge the
 
 **Logging out.** Logging out ends the session for good: what the session held is deleted, the browser is told to drop the session cookie (it is sent expired, with the same path, domain, `Secure`, `HttpOnly` and `SameSite` it was set with, so the browser removes exactly that cookie), and the session id the browser had no longer signs anyone in, even when it was copied before. A session the site starts later in the same request gets a new id. This holds for every session handler (PHP's own, `ezpSessionHandlerDB`, a handler of your own, the Symfony one) and under Velocity. Earlier versions gave the session a new id and kept its contents. Nothing has to be switched on. To check: sign in to the admin and note the value of the session cookie, log out, then send a request with the old value, e.g. `curl -s -b '<cookie name>=<old value>' https://<site>/admin/content/dashboard`: the answer is the login form, not the dashboard. With `[UserSettings] RedirectOnLogoutWithLastAccessURI=enabled` the logout still leads back to the last page visited.
 
-**Files and directories the site writes.** Logs, caches and storage are created as open as `site.ini [FileSettings]` and the code ask (0777/0666 by default). On a live server set the limits in `config.php`, `define( 'EZP_DIR_MODE_MAX', 0750 );` and `define( 'EZP_FILE_MODE_MAX', 0640 );`, so nothing new is readable or writable by other accounts, and narrow what exists once: [limits for the modes of new files and directories](../bc/6.0/file-modes.md).
+**Files and directories the site writes.** Logs, caches and storage are created as open as `site.ini [FileSettings]` and the code ask (0777/0666 by default). On a live server set the limits in `config.php`, `define( 'EZP_DIR_MODE_MAX', 0750 );` and `define( 'EZP_FILE_MODE_MAX', 0640 );`, so nothing new is readable or writable by other accounts, and narrow what exists once: [limits for the modes of new files and directories](../bc/6.0/file-modes.md). From the console: `./console exp:config:set EZP_DIR_MODE_MAX 0750 --apply` and `./console exp:config:set EZP_FILE_MODE_MAX 0640 --apply`.
+
+**`config.php` itself.** It can hold the cluster database password. Keep it out of version control (add `/config.php` to your project's `.gitignore`; the Exponential repository tracks only `config.php-RECOMMENDED`) and give it mode `0640` with the web server's group. `./console exp:config:list` and `exp:config:get` show the values of names with `PASS`, `SECRET`, `KEY`, `TOKEN`, `CREDENTIAL` or `PWD` as `********` unless you add `--show-secrets`; `exp:config:set` warns when it writes a secret into a file every user can read. Every edit leaves a copy of the old file in `var/backup/config/<time>/` (mode `0700` directories): protect `var/backup/` like `config.php` and delete old copies ([Security](setup-files-from-the-console.md#10-security)).
 
 **Uploaded images.** An image is accepted by what the file contains, not by its name: PHP's fileinfo reads the type and it must be on `image.ini [ImageUploadSettings] AllowedMIMETypes[]` (JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP and SVG as shipped; an SVG is stored only sanitized, see [SVG images](../bc/6.0/svg-images.md)). This applies to the edit form, the upload dialogs, the AJAX uploader and the package wizard's thumbnails, and a refused file is not stored. Check that fileinfo is loaded in the web server's PHP as well as on the command line (`php -m | grep fileinfo`); without it the older getimagesize() check applies and the log says so once. Read the list with:
 
@@ -284,6 +299,7 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 ## Checklist
 
 - [ ] Five security headers present, dot files and PHP files answer 404
+- [ ] `config.php` mode `0640`, not committed; old backups in `var/backup/` removed
 - [ ] Initial administrator password changed
 - [ ] Roles hold only what people need; few administrators
 - [ ] `exp:audit status` shows every chain intact, `frequent` cronjob runs, alert recipients are right
@@ -297,6 +313,7 @@ The idea and the draft handling come from LoveStack (Mugo Web, commit 826e1d4647
 
 - The threats one by one, and request-shield in front: [Security hardening](../help/security-hardening.md); the administrator account: [Change the administrator password](../help/change-the-admin-password.md), [The default administrator password](../help/default-administrator-password.md).
 - Control a site from scripts and apps with tokens: [remote services and apps](remote-services-and-apps.md).
+- `.htaccess` and `config.php` from the console, with masked secrets and backups: [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md).
 - Upgrade impact of the security changes: [behaviour changes of 1-2 October 2026](../bc/6.0/behaviour-changes-2026-10.md), [security hardening of August 2026](../specifications/6.0/security-hardening-2026-08.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md).
 - How it came about: [October 2026 chronicle](../history/2026/2026-10.md), [September 2026, second half](../history/2026/2026-09b.md).
 - Other guides: [Operating a site](operating-a-site.md) (logs, backups, repairs), [Extensions](extensions.md) (two-factor and other extensions), [Glossary](../glossary.md).

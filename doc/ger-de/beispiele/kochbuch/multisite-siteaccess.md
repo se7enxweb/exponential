@@ -13,6 +13,20 @@ Ein **Siteaccess** ist ein benannter Satz von Einstellungen, der für eine Anfra
 des Inhaltsbaums, welche Sprache, ob Besucher sich anmelden müssen. Eine Installation, eine Datenbank, viele
 Siteaccesses. Sie richten ein:
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../webserver/nginx.md), [LiteSpeed](../webserver/litespeed.md), [Caddy](../webserver/caddy.md), [IIS](../webserver/iis.md),
+> [Velocity](../webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+
 | Siteaccess | Host | Was er ist |
 |---|---|---|
 | `site_a` | `www.example.com` | die erste öffentliche Website, der Teilbaum *Site A* |
@@ -133,6 +147,11 @@ einer Zeile in eigene Verzeichnisbäume zu legen, verwenden Sie `LogVarDir`, `Ca
 globalen Override: [Logs, INI-Cache und Ablaufzeitstempel je Website](../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
 Mit `CacheVarDir` muss der Webserver auch die öffentlichen Caches darunter ausliefern: Aktivieren Sie die
 auskommentierte Regel `var_cache` in `.htaccess_root` (oder die entsprechende Regel im Beispiel für Ihren Server).
+Tun Sie das in Ihrer Kopie, `.htaccess` (an ihren Platz gebracht mit `./console exp:setup:htaccess --apply`), nie in der
+Vorlage. Von da an unterscheidet sich Ihre `.htaccess` von `.htaccess_root`: Nach einem Upgrade zeigt
+`./console exp:setup:htaccess` diese Zeile unter den Unterschieden und weigert sich ohne `--force` zu kopieren; nach
+`--force --apply` aktivieren Sie die Regel wieder
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 **Einstellungen in einer Erweiterung.** Eine Website-Erweiterung kann stattdessen
 `extension/<ext>/settings/siteaccess/<name>/` mitbringen, sodass die Einstellungen unter Versionskontrolle stehen;

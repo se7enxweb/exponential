@@ -12,6 +12,19 @@ type: help
 This page is for bundlers who decide what serves the site inside their bundle. It describes only what the project's
 documentation and examples show; the examples are in `doc/eng-us/examples/web-servers/`.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
+> [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../hosting/panels/plesk.md), [cPanel](../hosting/panels/cpanel.md), [DirectAdmin](../hosting/panels/directadmin.md), [ISPConfig](../hosting/panels/ispconfig.md).
+
 ## Contents
 
 1. [The rule every server follows](#the-rule-every-server-follows)
@@ -30,6 +43,12 @@ is answered by `index.php`**, which never hands out a file. That is what keeps `
 
 The list is written once in `.htaccess_root`, and Velocity implements it rule for rule. A bundle that writes its own
 web server configuration must implement the same list, in the same order; the examples do.
+
+Only Apache (with `AllowOverride All`) and LiteSpeed Enterprise read `.htaccess` as it ships; for them a bundle copies
+the template with `php bin/php/console exp:setup:htaccess --apply` (`--static` for `.htaccess_root_static`). OpenLiteSpeed
+reads only its rewrite rules, with `autoLoadHtaccess` and after a restart; nginx, Caddy, FrankenPHP and IIS never read
+it; Velocity has the rules built in
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
 
 ## The choices
 
@@ -77,7 +96,8 @@ The hosting section compares them in more depth: [Choosing a web server](../host
 ## Before you ship a server configuration
 
 - [ ] It routes exactly as `.htaccess_root` does; the test requests of the examples page (`/.git/config`, `/.env`,
-      scripts below the root) return 404 in your bundle.
+      scripts below the root) return 404 in your bundle. For an Apache bundle, `exp:setup:htaccess` exits 0 (the
+      `.htaccess` is a copy of the template).
 - [ ] The document root is the installation root.
 - [ ] HTTPS is configured or clearly left to the recipient.
 - [ ] The PHP that serves the site has the extensions `exp:velocity ext check` asks for.
@@ -88,6 +108,7 @@ The hosting section compares them in more depth: [Choosing a web server](../host
 - [Chapter 8: Serving the site](../../install/08-serving-the-site.md)
 - [Velocity in a bundle](velocity-in-a-bundle.md)
 - [Velocity for hosts](../hosting/servers/velocity-for-hosts.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Hiki ke kaha hoʻomanaʻo ʻia nā ʻaoʻao ʻōnaehana pū kekahi: e wehe i ka ʻaoʻao (Hoʻonohonoho, ke ala nānā, papa helu o nā mea hoʻohana ...) a koho i Kaha hoʻomanaʻo i kēia ʻaoʻao ma luna ona. He hōʻailona ʻōmaʻomaʻo kaʻa ko ia mau kaha hoʻomanaʻo.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ʻAʻole hiki hou iā ʻoe ke wehe i kēia ʻaoʻao ma ʻaneʻi. E wehe i ke kaha hoʻomanaʻo, a i ʻole e noi i luna hoʻomalu no ke komo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;E hoʻāʻo i Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;E lilo i lālā o ke Kaiāulu Exponential, e hoʻololi a e hāʻawi&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; a me nā mea ʻē aʻe.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Hoʻohana ʻia me &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. No ka ʻike hou aku e nānā iā &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; a me nā mea ʻē aʻe.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> No ka ʻike hou aku e nānā iā &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; a me nā mea ʻē aʻe.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;E hoʻāʻo i Exponential (mai 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;E lilo i lālā o ke Kaiāulu Exponential, e loaʻa ke kōkua a e hāʻawi&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; a me nā mea ʻē aʻe.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ kēia hewa. Mai hoʻāʻo e hoʻouna hou i ka uku.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Ua hoʻololi ʻia ka inoa o ke kaha hoʻomanaʻo i "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Ua hoʻopio ʻia kēia ʻaoʻao ma kēia siteaccess (%siteaccess). E wehe i ke kaha hoʻomanaʻo ma kekahi siteaccess i loaʻa ai kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ʻAʻole i hoʻokomo ʻia a ʻaʻole i hoʻā ʻia ka mōkule o kēia ʻaoʻao ma ʻaneʻi.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ʻAʻole i loaʻa hou kēia ʻaoʻao: ʻaʻohe hiʻona pēlā o kona mōkule.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ʻAʻohe o kou mau kuleana e ʻae iā ʻoe e wehe i kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hoʻohana i kēia siteaccess.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e heluhelu i ka ʻike i hōʻike ʻia e kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ʻAʻole hiki ke kaha hoʻomanaʻo ʻia kēia ʻano ʻaoʻao: hana wale nō ia ma luna o kekahi palapala hoʻopiha, a i ʻole he ʻaoʻao ia no ka manawa pōkole wale nō.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Ua nalo ka helu ʻaoʻao o kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ʻAʻole hiki ke wehe ʻia kēia ʻaoʻao i kēia manawa.</translation>
     </message>
 </context>
 <context>

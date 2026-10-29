@@ -3,6 +3,19 @@
 Read this page if you run Exponential on a server where other accounts must not read or change what the site writes
 (a shared host, a hardened live server), or if you write code that creates files or directories.
 
+> **Warning**
+> **`.htaccess` slows down every request.** When `.htaccess` files are enabled (`AllowOverride` anything but `None`), let alone
+> used, Apache looks for them and reads and evaluates them on every request, in every directory of the path, and
+> page loading times go up drastically ([measured](../../guides/setup-files-from-the-console.md#measured-htaccess-against-rules-in-the-virtual-host)). The only real fix is to switch the feature off for
+> the virtual host: `AllowOverride None` in the HTTPS virtual host, and the rules in the virtual host's own
+> configuration as mod_rewrite rules. That is far faster in production speed tests and well worth the time it takes
+> to optimize a production configuration. Switch over right away: copy the rules of the
+> [example HTTPS virtual host](../../examples/web-servers/apache-virtual-host.md) into your virtual host (with the static cache, also
+> [`staticcache_offload.conf`](../../examples/staticcache_offload.conf)), set `AllowOverride None`, run `apachectl configtest`, reload Apache and
+> test the site. The same rules for other servers: [nginx](../../examples/web-servers/nginx.md), [LiteSpeed](../../examples/web-servers/litespeed.md),
+> [Caddy](../../examples/web-servers/caddy.md), [IIS](../../examples/web-servers/iis.md), [Velocity](../../examples/web-servers/velocity.md) (built in); where virtual host rules go in a control
+> panel: [Plesk](../../help/hosting/panels/plesk.md), [cPanel](../../help/hosting/panels/cpanel.md), [DirectAdmin](../../help/hosting/panels/directadmin.md), [ISPConfig](../../help/hosting/panels/ispconfig.md).
+
 ## In short
 
 - Two constants in `config.php` set the widest mode any file and any directory the installation creates may get:
@@ -30,6 +43,20 @@ the places that use a fixed mode or none.
 define( 'EZP_DIR_MODE_MAX', 0750 );   // directories: owner rwx, group r-x, others nothing
 define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothing
 ```
+
+From the console, without an editor (each command shows the change first and writes only with `--apply`, after a
+backup to `var/backup/config/<time>/` and a `php -l` check):
+
+```bash
+./console exp:setup:config --apply                     # once, when there is no config.php yet
+./console exp:config:set EZP_DIR_MODE_MAX 0750 --apply
+./console exp:config:set EZP_FILE_MODE_MAX 0640 --apply
+./console exp:config:get EZP_FILE_MODE_MAX             # 0640
+```
+
+`exp:config:set` writes the value as an octal mode (`750` and `0o750` are accepted and written as `0750`) on the line
+`config.php-RECOMMENDED` documents. See
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
 
 - Write them as octal numbers with the leading 0 (`0750`) or as strings (`'0750'`, `'750'`). An integer above 0777
   written without the 0 (`750`) is read as 0750 too, but a smaller one cannot be told from an octal number: `440` is
@@ -147,3 +174,4 @@ set-group-ID directories the result is the same as without limits; without the s
 
 - [Security and audit guide](../../guides/security-and-audit.md)
 - [Settings files saved through the admin](ini-save-file-permissions.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:config:set` for these constants

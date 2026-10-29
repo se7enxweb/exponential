@@ -13,6 +13,20 @@ Dieser Bereich ist für die Sicherheitsverantwortlichen, die Systemadministrator
 Exponential-Websites für Kunden betreibt. Er beantwortet zwei Fragen: was Exponential bereits von selbst tut, und was der Teil der Arbeit
 des Hosters auf dem Server, im Panel und im Vertrag ist.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../../beispiele/webserver/nginx.md), [LiteSpeed](../../../beispiele/webserver/litespeed.md), [Caddy](../../../beispiele/webserver/caddy.md), [IIS](../../../beispiele/webserver/iis.md),
+> [Velocity](../../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../control-panels/plesk.md), [cPanel](../control-panels/cpanel.md), [DirectAdmin](../control-panels/directadmin.md), [ISPConfig](../control-panels/ispconfig.md).
+
 Exponential 6 ist so gebaut, dass es standardmäßig sicher ist: Eine frische Installation liefert nur eine feste Liste von Dateien aus,
 sendet Sicherheitsheader, hält die Debug-Ausgabe aus, schützt Formulare mit Tokens, hasht Passwörter mit bcrypt, führt ein
 manipulationssichtbares Prüfprotokoll und weigert sich, seinen Setup-Assistenten auf einer installierten Website auszuführen. Die
@@ -55,7 +69,8 @@ annimmt, die andere decke sie ab.
 
 | Bereich | Exponential stellt bereit | Der Hoster stellt bereit | Der Kunde entscheidet |
 |---|---|---|---|
-| Ausgelieferte Dateien | die Rewrite-Regeln aus `.htaccess_root` und die Liste von Velocity | eine Konfiguration des Webservers, die sie einhält | nichts, es sei denn, er bringt eigene Regeln mit |
+| Ausgelieferte Dateien | die Rewrite-Regeln aus `.htaccess_root` und die Liste von Velocity; `exp:setup:htaccess`, um sie zu kopieren und Abweichungen zu zeigen | eine Konfiguration des Webservers, die sie einhält | nichts, es sei denn, er bringt eigene Regeln mit |
+| `config.php` | `exp:config:*` mit maskierten Geheimnissen, Sicherungen und einer Prüfung mit `php -l` | Modus `0640`, außerhalb der Versionsverwaltung, `var/backup/` geschützt und aufgeräumt | die Werte, die seine Website braucht |
 | Transport | HSTS und Zertifikatsverwaltung in Velocity; sichere Cookies | Zertifikate, Erneuerung, Umleitungen, die Stelle, die TLS beendet | welche Hostnamen es gibt |
 | Konten | bcrypt-Hashes, Passwortregeln, die Prüfung auf schwache Passwörter, zweistufige Anmeldung | einen Ablauf der Bereitstellung, der nie ein bekanntes Passwort hinterlässt | wer welche Rolle bekommt |
 | Abschottung | nichts zwischen Installationen: das ist Aufgabe des Betriebssystems | ein Benutzer, ein Pool, ein Datenbankbenutzer pro Kunde | nichts |
@@ -87,6 +102,7 @@ Wenn bereits etwas schiefgegangen ist, ist das Runbook [Kompromittierte Website]
 - [Kapitel 13: Sicherheitshärtung für die Produktion](../../../installation/13-sicherheitshaertung.md)
 - [Checkliste für die Sicherheitsprüfung](../checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Kompromittierte Website](../runbooks/kompromittierte-website.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -4,6 +4,20 @@ Lesen Sie diese Seite, wenn Sie Exponential auf einem Server betreiben, auf dem 
 dürfen, was die Website schreibt (ein Shared Host, ein gehärteter Live-Server), oder wenn Sie Code schreiben, der
 Dateien oder Verzeichnisse anlegt.
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](../../anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](../../beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](../../beispiele/webserver/nginx.md), [LiteSpeed](../../beispiele/webserver/litespeed.md), [Caddy](../../beispiele/webserver/caddy.md), [IIS](../../beispiele/webserver/iis.md),
+> [Velocity](../../beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](../../hilfe/hosting/control-panels/plesk.md), [cPanel](../../hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](../../hilfe/hosting/control-panels/directadmin.md), [ISPConfig](../../hilfe/hosting/control-panels/ispconfig.md).
+
 ## Kurz gesagt
 
 - Zwei Konstanten in `config.php` legen den weitesten Modus fest, den eine von der Installation angelegte Datei und
@@ -35,6 +49,20 @@ gar keinen Modus verwenden.
 define( 'EZP_DIR_MODE_MAX', 0750 );   // directories: owner rwx, group r-x, others nothing
 define( 'EZP_FILE_MODE_MAX', 0640 );  // files: owner rw, group r, others nothing
 ```
+
+Von der Konsole aus, ohne Editor (jeder Befehl zeigt die Änderung zuerst und schreibt erst mit `--apply`, nach einer
+Sicherung nach `var/backup/config/<Zeit>/` und einer Prüfung mit `php -l`):
+
+```bash
+./console exp:setup:config --apply                     # once, when there is no config.php yet
+./console exp:config:set EZP_DIR_MODE_MAX 0750 --apply
+./console exp:config:set EZP_FILE_MODE_MAX 0640 --apply
+./console exp:config:get EZP_FILE_MODE_MAX             # 0640
+```
+
+`exp:config:set` schreibt den Wert als oktalen Modus (`750` und `0o750` werden angenommen und als `0750` geschrieben),
+und zwar in die Zeile, die `config.php-RECOMMENDED` dokumentiert. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
 
 - Schreiben Sie sie als Oktalzahlen mit führender 0 (`0750`) oder als Zeichenketten (`'0750'`, `'750'`). Eine Ganzzahl
   über 0777 ohne die 0 (`750`) wird ebenfalls als 0750 gelesen, eine kleinere lässt sich aber nicht von einer Oktalzahl
@@ -161,3 +189,4 @@ hat.
 
 - [Anleitung zu Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md)
 - [Über die Administration gespeicherte Einstellungsdateien](dateirechte-beim-speichern-von-ini-dateien.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:config:set` für diese Konstanten

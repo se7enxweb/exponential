@@ -6,6 +6,20 @@ mit einem einzigen Konsolenbefehl), wie Sie die Website ausliefern und was danac
 wie es ausgeliefert wird, lesen Sie zuerst in der [README](../../README.md) des Projekts. Eine geführte erste Stunde
 nach der Installation finden Sie unter [Erste Schritte](anleitungen/erste-schritte.md).
 
+> **Warnung**
+> **`.htaccess` bremst jede Anfrage.** Sind `.htaccess`-Dateien erlaubt (`AllowOverride` alles außer `None`), geschweige
+> denn genutzt, sucht Apache sie bei jeder Anfrage in jedem Verzeichnis des Pfads und liest und wertet sie aus, und
+> die Ladezeiten der Seiten steigen drastisch ([gemessen](anleitungen/setup-dateien-von-der-konsole.md#gemessen-htaccess-gegen-regeln-im-virtuellen-host)). Die einzige wirkliche Abhilfe ist, die
+> Funktion für den virtuellen Host abzuschalten: `AllowOverride None` im virtuellen HTTPS-Host, und die Regeln in
+> der Konfiguration des virtuellen Hosts selbst als mod_rewrite-Regeln. Das ist in Geschwindigkeitstests im
+> Produktivbetrieb weit schneller und die Zeit für die Optimierung einer Produktivkonfiguration unbedingt wert.
+> Stellen Sie sofort um: Übernehmen Sie die Regeln des [Beispiels für einen virtuellen HTTPS-Host](beispiele/webserver/apache-virtueller-host.md) in
+> Ihren virtuellen Host (mit dem statischen Cache auch [`staticcache_offload.conf`](../eng-us/examples/staticcache_offload.conf)), setzen Sie
+> `AllowOverride None`, führen Sie `apachectl configtest` aus, laden Sie Apache neu und testen Sie die Website.
+> Dieselben Regeln für andere Server: [nginx](beispiele/webserver/nginx.md), [LiteSpeed](beispiele/webserver/litespeed.md), [Caddy](beispiele/webserver/caddy.md), [IIS](beispiele/webserver/iis.md),
+> [Velocity](beispiele/webserver/velocity.md) (eingebaut); wohin Regeln für virtuelle Hosts in einem Control Panel gehören:
+> [Plesk](hilfe/hosting/control-panels/plesk.md), [cPanel](hilfe/hosting/control-panels/cpanel.md), [DirectAdmin](hilfe/hosting/control-panels/directadmin.md), [ISPConfig](hilfe/hosting/control-panels/ispconfig.md).
+
 Jeder Befehl wird im Wurzelverzeichnis der Installation ausgeführt: dem Verzeichnis, das `index.php`, `autoload.php`,
 `bin/` und `settings/` enthält. Die Befehlskonsole ist `bin/php/console`. Viele Installationen legen im Wurzelverzeichnis
 eine Verknüpfung darauf an (`ln -s bin/php/console console`), sodass `./console` und `php bin/php/console` dasselbe
@@ -261,7 +275,7 @@ Die Reihenfolge ist die Schritttabelle in `kernel/setup/steps/ezstep_data.php`.
 | 10 | Konfiguration der Siteaccesses | Wie die Siteaccesses unterschieden werden: nach URL-Pfad, nach Port oder nach Hostname. |
 | 11 | Seitendetails | Titel, URL, die Match-Werte von `site`, `admin` und `editor` (URL-Pfade sind mit dem Paketbezeichner, *identifier*`_admin` und `editor` vorausgefüllt; Ports `8080`, `8081`, `8082`; Hostnamen *identifier*`.`*host*, *identifier*`-admin.`*host*, `edit.`*host*). Der Assistent lehnt `admin` und `user` als Werte ab. Außerdem der Absender der optionalen E-Mails der Website und was mit einer Datenbank geschehen soll, die bereits Daten enthält. |
 | 12 | Administrator der Seite | Vorname, Nachname, E-Mail-Adresse und Passwort des Benutzers `admin`. Das Passwort muss mindestens 10 Zeichen lang sein (`site.ini [UserSettings] MinPasswordLength`); ein leeres wird abgelehnt. |
-| 13 | Seitensicherheit | Hinweise, wenn die Website nicht im Virtual-Host-Modus läuft: Kopieren Sie die Regeln mit `cp .htaccess_root .htaccess`. |
+| 13 | Seitensicherheit | Hinweise, wenn die Website nicht im Virtual-Host-Modus läuft: Kopieren Sie die Regeln mit `./console exp:setup:htaccess --apply` (oder `cp .htaccess_root .htaccess`). |
 | 14 | Registrierung | Nichts einzugeben: eine Seite über die Community. Der Assistent sendet keine Registrierungs-E-Mail. |
 | — | Sites anlegen | Keine Seite: Hier werden das Datenbankschema und die Daten, die Pakete und die Dateien in `settings/siteaccess/` geschrieben. |
 | 15 | Abgeschlossen | Die Adressen der öffentlichen, der Admin- und der Redakteurs-Website. |
@@ -563,8 +577,14 @@ Certificate` und `Key` oder einem selbstsignierten Zertifikat, das sie selbst er
 Aktivieren Sie die mitgelieferten Rewrite-Regeln:
 
 ```bash
-cp .htaccess_root .htaccess
+./console exp:setup:htaccess --apply      # oder von Hand: cp .htaccess_root .htaccess
 ```
+
+Der Befehl kopiert `.htaccess_root` nach `.htaccess` mit dem Modus der Vorlage (und, als root mit
+`--allow-root-user`, mit ihrem Eigentümer), zeigt einen Diff und lehnt ab, wenn bereits eine abweichende `.htaccess`
+vorhanden ist, und sichert die alte Datei, bevor `--force --apply` sie ersetzt. `--static` kopiert stattdessen
+`.htaccess_root_static`. Ebenso legt `./console exp:setup:config --apply` die Datei `config.php-RECOMMENDED` als
+`config.php` an; siehe [.htaccess und config.php von der Konsole aus einrichten](anleitungen/setup-dateien-von-der-konsole.md).
 
 Sie schalten den Virtual-Host-Modus auf Basis von `.htaccess` ein: Punktdateien, `.git` und Skripte unterhalb der
 Front-Controller antworten mit 404, `/api/` geht an `index_rest.php`, statische Design-Dateien werden direkt
@@ -793,7 +813,10 @@ Fahren Sie dann mit den Anleitungen fort:
 Führen Sie den Installer nicht über einer bestehenden Website aus. Folgen Sie [Aktualisieren](anleitungen/aktualisieren.md): von
 4.x, 5.x oder einer früheren 6.0.x auf die aktuelle Linie, mit der Datenbankaktualisierung und den Checklisten pro
 Release. Eine Installation von 6.0 bringen Sie mit dem kurzen Vorgehen von
-[Exponential 6.0 aktualisieren](UPDATE.md) auf den aktuellen Stand; um eine Website umzuziehen oder zu entfernen,
+[Exponential 6.0 aktualisieren](UPDATE.md) auf den aktuellen Stand. Vergleichen Sie nach jeder Aktualisierung
+`.htaccess` und `config.php` mit den neuen Vorlagen: `./console exp:setup:status`, `./console exp:setup:htaccess`
+(der Diff) und `./console exp:config:list` (Einstellungen, die neu in `config.php-RECOMMENDED` sind, erscheinen als
+`(not set)`). Um eine Website umzuziehen oder zu entfernen,
 exportieren Sie zuerst alles mit [Exponential 6.0 deinstallieren](UNINSTALL.md).
 
 Das Online-Handbuch enthält weitere Hinweise zur Installation:
@@ -816,7 +839,9 @@ https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Insta
 | Kickstarter: „The database file name is not valid" | Eine vor dem 5. Oktober 2026 mit `ini --yes` geschriebene `kickstart.ini` enthält `Database=ezp`, und SQLite braucht einen Namen, der auf `.db`, `.db3`, `.sqlite` oder `.sqlite3` endet. Setzen Sie `[database_init] Database` und `[site_details] Database` zum Beispiel auf `exponential.db` und `DatabaseAction` für eine neue Datenbank auf `ignore`. |
 | Kickstarter: „--start-step=... cannot work" | Ein Lauf kann einen früheren nicht fortsetzen. Beheben Sie die Ursache und führen Sie ab `Welcome` aus (der Standard). |
 | SQLite: „database is busy: the transaction could not start within N s" | Ein anderer Schreibzugriff hielt die Sperre während der gesamten `SQLiteTransactionWait`. Es wurde nichts geschrieben; versuchen Sie es erneut oder erhöhen Sie die Einstellung (unterhalb der Zeitüberschreitung für Anfragen). |
-| 404 für jede Seite unter Apache | `.htaccess` wird nicht gelesen (`AllowOverride All`) oder `mod_rewrite` ist aus; haben Sie `cp .htaccess_root .htaccess` ausgeführt? |
+| 404 für jede Seite unter Apache | `.htaccess` wird nicht gelesen (`AllowOverride All`) oder `mod_rewrite` ist aus; gibt es überhaupt eine `.htaccess`? `./console exp:setup:status` sagt es, `./console exp:setup:htaccess --apply` kopiert sie. |
+| `FAIL: .htaccess exists and differs ...` oder `FAIL: config.php exists and differs ...` | Die Datei enthält eigene Änderungen. Lesen Sie den Diff (`-v` zeigt ihn vollständig); `--force --apply` ersetzt sie nach einer Sicherung in `var/backup/setup/<time>/`. Siehe [.htaccess und config.php von der Konsole aus einrichten](anleitungen/setup-dateien-von-der-konsole.md). |
+| `Warning: config.php does not compile` | Korrigieren Sie die genannte Zeile, oder `./console exp:setup:config --force --apply` (die defekte Datei wird vorher gesichert). |
 | Eine weiße Seite oder 500 | Lesen Sie `var/log/error.log`; prüfen Sie `php -v` und ob `vendor/` existiert (`composer install`). |
 | Eine Änderung erscheint unter Velocity nicht | Die Worker halten den alten Code: `exp:velocity restart` (oder `deploy`), dann `exp:velocity cache clear`. |
 | Das Administratorpasswort ist verloren | Als root: `php bin/php/resetuserpassword.php --allow-root-user -u admin -g`; andernfalls autorisieren Sie sich mit einem anderen Administrator (`-a <login> -ap <password>`). Siehe [Ein Benutzerpasswort zurücksetzen](funktionen/6.0/benutzerpasswort-zuruecksetzen.md). |
