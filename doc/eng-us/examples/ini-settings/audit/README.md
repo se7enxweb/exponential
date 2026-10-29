@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # audit.ini
 
-The shipped settings of `settings/audit.ini`: 33 blocks, 161 settings.
+The shipped settings of `settings/audit.ini`: 34 blocks, 166 settings.
 
 > Audit: what happens in Exponential, recorded as JSON lines per channel, hash chained,  
 > rotated, archived and signed. Guide: doc/eng-us/bc/6.0/audit.md  
@@ -52,6 +52,7 @@ The shipped settings of `settings/audit.ini`: 33 blocks, 161 settings.
 | [AuditArchiveSettings](AuditArchiveSettings.md) | 5 |
 | [AuditIndexSettings](AuditIndexSettings.md) | 5 |
 | [AuditConsoleSettings](AuditConsoleSettings.md) | 5 |
+| [UserAuditSettings](UserAuditSettings.md) | 5 |
 | [AuditCompatSettings](AuditCompatSettings.md) | 3 |
 | [AuditBridgeSettings](AuditBridgeSettings.md) | 1 |
 

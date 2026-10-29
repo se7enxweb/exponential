@@ -400,8 +400,9 @@ class expReauth
      * The account a request addresses, for the rules "self" and "other": the user object edited (content/edit, a
      * class with a user account field), the account of user/password, user/setting, user/edit, user/sessions, and the
      * pending account of an approval item of the event "Approve user accounts" (collaboration/action, the approve and
-     * deny of a new editor account, expUserApproval); null for none. An ordinary content approval addresses no account,
-     * even when the content is a user object.
+     * deny of a new editor account, expUserApproval), or of the plain approval event when its item holds a user account
+     * or group (the section based setup, a Staff section); null for none. An ordinary content approval addresses no
+     * account.
      *
      * @param string $module
      * @param string $view
@@ -416,7 +417,7 @@ class expReauth
         $itemID = self::approvalItemID( $module, $view, $post );
         if ( $itemID > 0 )
         {
-            if ( !class_exists( 'expUserApproval' ) || expUserApproval::processOfItem( $itemID ) === null )
+            if ( !class_exists( 'expUserApproval' ) || expUserApproval::modeOfItem( $itemID ) === null )
                 return null;
             $item = eZCollaborationItem::fetch( $itemID );
             return $item instanceof eZCollaborationItem && (int)$item->attribute( 'data_int1' ) > 0 ? (int)$item->attribute( 'data_int1' ) : null;

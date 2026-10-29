@@ -20,7 +20,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [ezoe.ini](ezoe-ezoe/README.md) | ezoe | 6 |
 | [ezoe_attributes.ini](ezoe-ezoe_attributes/README.md) | ezoe | 0 |
 | [admininterface.ini](admininterface/README.md) | kernel | 10 |
-| [audit.ini](audit/README.md) | kernel | 33 |
+| [audit.ini](audit/README.md) | kernel | 34 |
 | [binaryfile.ini](binaryfile/README.md) | kernel | 3 |
 | [browse.ini](browse/README.md) | kernel | 34 |
 | [codetemplate.ini](codetemplate/README.md) | kernel | 1 |
@@ -32,7 +32,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | kernel | 1 |
 | [country.ini](country/README.md) | kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | kernel | 1 |
-| [cronjob.ini](cronjob/README.md) | kernel | 23 |
+| [cronjob.ini](cronjob/README.md) | kernel | 24 |
 | [dashboard.ini](dashboard/README.md) | kernel | 8 |
 | [datatable.ini](datatable/README.md) | kernel | 3 |
 | [datatype.ini](datatype/README.md) | kernel | 5 |

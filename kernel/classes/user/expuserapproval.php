@@ -486,7 +486,114 @@ class expUserApproval
     }
 
     /**
+     * The process an approval item of the plain approval event (ezapprove) belongs to when the item holds a user
+     * account or user group: the section based setup (expUserApprovalSection, a Staff section on the approval
+     * event), or any approval event whose sections cover accounts. Null otherwise.
+     *
+     * @param int $collaborationID
+     * @return eZWorkflowProcess|null
+     */
+    public static function sectionProcessOfItem( $collaborationID )
+    {
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT workflow_process_id FROM ezapprove_items WHERE collaboration_id = ' . (int)$collaborationID );
+        foreach ( $rows as $row )
+        {
+            $process = eZWorkflowProcess::fetch( (int)$row['workflow_process_id'] );
+            if ( !$process instanceof eZWorkflowProcess )
+                continue;
+            $event = eZWorkflowEvent::fetch( (int)$process->attribute( 'event_id' ) );
+            if ( !$event instanceof eZWorkflowEvent || $event->attribute( 'workflow_type_string' ) !== 'event_ezapprove' )
+                continue;
+            $parameters = $process->attribute( 'parameter_list' );
+            $objectID = isset( $parameters['object_id'] ) ? (int)$parameters['object_id'] : 0;
+            if ( $objectID && self::isAccountOrGroup( eZContentObject::fetch( $objectID ) ) )
+                return $process;
+        }
+        return null;
+    }
+
+    /**
+     * Which approval of accounts an item belongs to: group (the event "Approve user accounts"), section (the plain
+     * approval event holding a user account or group), or null (any other item).
+     *
+     * @param int $collaborationID
+     * @return string|null
+     */
+    public static function modeOfItem( $collaborationID )
+    {
+        if ( self::processOfItem( $collaborationID ) !== null )
+            return 'group';
+        if ( self::sectionProcessOfItem( $collaborationID ) !== null )
+            return 'section';
+        return null;
+    }
+
+    /**
+     * After the plain approval event (ezapprove) created an item for a user account or user group (the section based
+     * setup): the mail with the link to the item in the administration to every approver, whether or not they
+     * subscribed to collaboration notifications, and the audit record, as for the event "Approve user accounts".
+     *
+     * @param eZWorkflowProcess $process
+     * @param eZWorkflowEvent $event the approval event
+     * @param eZContentObject $object the account or group
+     * @param int $versionID
+     * @param eZUser $requester who published
+     * @param int[] $approverIDs the users the event asks
+     * @param callable|null $sender sendMail()'s sender (tests)
+     * @return int the number of mails sent
+     */
+    public static function sectionRequested( $process, $event, $object, $versionID, $requester, array $approverIDs, $sender = null )
+    {
+        $db = eZDB::instance();
+        $rows = $db->arrayQuery( 'SELECT collaboration_id FROM ezapprove_items WHERE workflow_process_id = ' . (int)$process->attribute( 'id' ) );
+        $collaborationID = $rows ? (int)$rows[0]['collaboration_id'] : 0;
+        // the groups the version places the account in
+        $placements = array();
+        $version = $object->version( (int)$versionID );
+        if ( $version instanceof eZContentObjectVersion )
+        {
+            foreach ( (array)$version->attribute( 'node_assignments' ) as $assignment )
+            {
+                $parent = eZContentObjectTreeNode::fetch( (int)$assignment->attribute( 'parent_node' ) );
+                if ( $parent instanceof eZContentObjectTreeNode )
+                    $placements[] = $parent;
+            }
+        }
+        $approverIDs = array_values( array_unique( array_map( 'intval', $approverIDs ) ) );
+        $sent = 0;
+        if ( $collaborationID )
+        {
+            try
+            {
+                $sent = self::sendMail( $object, $requester, $placements, $approverIDs, $collaborationID, $sender, (int)$versionID );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeError( 'The approval mail could not be sent: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
+        if ( class_exists( 'expAuditHook' ) )
+        {
+            $objectID = (int)$object->attribute( 'id' );
+            $groups = array();
+            foreach ( $placements as $parent )
+                $groups[] = array( 'node' => (int)$parent->attribute( 'node_id' ), 'name' => (string)$parent->attribute( 'name' ) );
+            $workflowID = (int)$event->attribute( 'workflow_id' );
+            expAuditHook::emit( 'access.user.approval.request', function () use ( $objectID, $versionID, $groups, $approverIDs, $collaborationID, $sent, $workflowID, $process ) {
+                return array( 'object' => expAuditHook::userOrGroup( $objectID ),
+                              'target' => array( 'type' => 'collaboration', 'id' => (int)$collaborationID ),
+                              'after' => array( 'version' => (int)$versionID, 'groups' => $groups, 'approvers' => count( $approverIDs ),
+                                                'mails' => $sent, 'workflow' => $workflowID,
+                                                'process' => (int)$process->attribute( 'id' ), 'mode' => 'section' ) );
+            } );
+        }
+        return $sent;
+    }
+
+    /**
      * After an approver accepted or denied an item (eZApproveCollaborationHandler): when the item is one of this event,
+     * or one of the plain approval event that holds a user account or group (modeOfItem()),
      * the audit record, then the workflow continues at once (accepted: the account is published and can sign in;
      * denied: the version is a draft of its author again), as the workflow cronjob would at its next run.
      *
@@ -497,19 +604,20 @@ class expUserApproval
     public static function decided( $item, $accepted )
     {
         $collaborationID = (int)$item->attribute( 'id' );
-        $process = self::processOfItem( $collaborationID );
-        if ( $process === null )
+        $mode = self::modeOfItem( $collaborationID );
+        if ( $mode === null )
             return null;
+        $process = $mode === 'group' ? self::processOfItem( $collaborationID ) : self::sectionProcessOfItem( $collaborationID );
         $objectID = (int)$item->attribute( 'data_int1' );
         $versionID = (int)$item->attribute( 'data_int2' );
         if ( class_exists( 'expAuditHook' ) )
         {
             $name = $accepted ? 'access.user.approval.approve' : 'access.user.approval.deny';
-            expAuditHook::emit( $name, function () use ( $objectID, $versionID, $collaborationID, $process ) {
+            expAuditHook::emit( $name, function () use ( $objectID, $versionID, $collaborationID, $process, $mode ) {
                 return array( 'object' => expAuditHook::userOrGroup( $objectID ),
                               'target' => array( 'type' => 'collaboration', 'id' => $collaborationID ),
                               'after' => array( 'version' => $versionID, 'process' => (int)$process->attribute( 'id' ),
-                                                'requested_by' => (int)$process->attribute( 'user_id' ) ) );
+                                                'requested_by' => (int)$process->attribute( 'user_id' ), 'mode' => $mode ) );
             } );
         }
         return self::resume( (int)$process->attribute( 'id' ) );

@@ -192,7 +192,7 @@ LinkDescriptions[sessions]=Who is signed in; end sessions.
 
 ## MegaMenuLinks
 
-Default: a list of 9: `accounts`, `sessions`, `access-roles_and_policies`, `access-unactivated`, `access-user_hygiene`, `account-edit_profile`, `account-change_password`, `account-my_notifications`, `account-my_mail`.
+Default: a list of 10: `accounts`, `sessions`, `access-roles_and_policies`, `access-unactivated`, `access-user_hygiene`, `access-user_audit`, `account-edit_profile`, `account-change_password`, `account-my_notifications`, `account-my_mail`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -205,6 +205,7 @@ MegaMenuLinks[]=sessions
 MegaMenuLinks[]=access-roles_and_policies
 MegaMenuLinks[]=access-unactivated
 MegaMenuLinks[]=access-user_hygiene
+MegaMenuLinks[]=access-user_audit
 MegaMenuLinks[]=account-edit_profile
 MegaMenuLinks[]=account-change_password
 MegaMenuLinks[]=account-my_notifications
