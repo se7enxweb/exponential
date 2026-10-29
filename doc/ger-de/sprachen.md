@@ -10,22 +10,22 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 | Was | Anzahl |
 |---|---:|
 | Sprachen der Administration: Übersetzungen in `share/translations` | **155**, davon 155 vollständig |
-| Locales: Dateien `share/locale/*.ini` | **359**: 352 Sprachen und Länder, 1 Testsprache, 6 Varianten |
+| Locales: Dateien `share/locale/*.ini` | **368**: 361 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
 | davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **150** |
 | davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **0** |
-| Länder und Gebiete der Locales | **238** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **238** |
+| Länder und Gebiete der Locales | **247** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **247** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
 
-![Weltkarte: 238 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 247 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 238 Länder und Gebiete in Grün</summary>
+<details><summary>Die 247 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -34,6 +34,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Alandinseln | AX | `swe-AX` → `swe-SE` |
 | Albanien | AL | `sqi-AL` |
 | Algerien | DZ | `ara-DZ` → `ara-SA`, `fre-DZ` → `fre-FR`, `kab-DZ` |
+| Amerikanisch-Ozeanien | UM | `eng-UM` (Quelltexte) |
 | Amerikanisch-Samoa | AS | `eng-AS` (Quelltexte) |
 | Amerikanische Jungferninseln | VI | `eng-VI` (Quelltexte) |
 | Andorra | AD | `cat-AD` → `cat-ES` |
@@ -90,6 +91,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Fidschi | FJ | `eng-FJ` (Quelltexte) |
 | Finnland | FI | `fin-FI` |
 | Frankreich | FR | `bre-FR`, `fre-FR`, `oci-FR` |
+| Französisch-Guayana | GF | `fre-GF` → `fre-FR` |
 | Französisch-Polynesien | PF | `fre-PF` → `fre-FR` |
 | Französische Süd- und Antarktisgebiete | TF | `fre-TF` → `fre-FR` |
 | Gabun | GA | `fre-GA` → `fre-FR` |
@@ -134,6 +136,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Kenia | KE | `eng-KE` (Quelltexte), `kik-KE`, `swa-KE` |
 | Kirgistan | KG | `kir-KG`, `rus-KG` → `rus-RU` |
 | Kiribati | KI | `eng-KI` (Quelltexte) |
+| Kokosinseln | CC | `eng-CC` (Quelltexte) |
 | Kolumbien | CO | `esl-CO` → `esl-ES` |
 | Komoren | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Kongo (Republik Kongo) | CG | `fre-CG` → `fre-FR` |
@@ -163,12 +166,14 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Martinique | MQ | `fre-MQ` → `fre-FR` |
 | Mauretanien | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
 | Mauritius | MU | `fre-MU` → `fre-FR` |
+| Mayotte | YT | `fre-YT` → `fre-FR` |
 | Mexiko | MX | `esl-MX` |
 | Mikronesien | FM | `eng-FM` (Quelltexte) |
 | Moldau (Republik Moldau) | MD | `ron-MD` → `ron-RO`, `rus-MD` → `rus-RU` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Mongolei | MN | `mon-MN` |
 | Montenegro | ME | `srp-ME` → `srp-RS` |
+| Montserrat | MS | `eng-MS` (Quelltexte) |
 | Mosambik | MZ | `por-MZ` → `por-PT` |
 | Namibia | NA | `eng-NA` (Quelltexte) |
 | Nauru | NR | `eng-NR` (Quelltexte) |
@@ -182,6 +187,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Niue | NU | `eng-NU` (Quelltexte) |
 | Nordkorea | KP | `kor-KP` |
 | Nördliche Marianen | MP | `eng-MP` (Quelltexte) |
+| Norfolkinsel | NF | `eng-NF` (Quelltexte) |
 | Norwegen | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` |
 | Oman | OM | `ara-OM` → `ara-SA` |
 | Österreich | AT | `ger-AT` → `ger-DE` |
@@ -198,6 +204,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Portugal | PT | `por-PT` |
 | Puerto Rico | PR | `esl-PR` → `esl-ES` |
 | Republik Südafrika | ZA | `afr-ZA`, `eng-ZA` (Quelltexte), `xho-ZA`, `zul-ZA` |
+| Réunion | RE | `fre-RE` → `fre-FR` |
 | Ruanda | RW | `fre-RW` → `fre-FR`, `kin-RW` |
 | Rumänien | RO | `ron-RO` |
 | Russland | RU | `che-RU`, `rus-RU`, `tat-RU` |
@@ -233,6 +240,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Südkorea | KR | `kor-KR` |
 | Südsudan | SS | `eng-SS` (Quelltexte) |
 | Suriname | SR | `dut-SR` → `dut-NL` |
+| Svalbard und Jan Mayen | SJ | `nor-SJ` → `nor-NO` |
 | Swasiland | SZ | `eng-SZ` (Quelltexte) |
 | Syrien | SY | `ara-SY` → `ara-SA`, `syr-SY` → `syr-IQ` |
 | Tadschikistan | TJ | `tgk-TJ` |
@@ -263,6 +271,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Vereinigtes Königreich | GB | `cym-GB`, `eng-GB` (Quelltexte), `gla-GB` |
 | Vietnam | VN | `vie-VN` |
 | Wallis und Futuna | WF | `fre-WF` → `fre-FR` |
+| Weihnachtsinsel | CX | `eng-CX` (Quelltexte) |
 | Westsahara | EH | `ara-EH` → `ara-SA` |
 | Zaire | CD | `fre-CD` → `fre-FR`, `lin-CD` |
 | Zentralafrikanische Republik | CF | `fre-CF` → `fre-FR` |
@@ -285,7 +294,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 26. Oktober 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-Kurz gefasst: **359 Locale-Dateien** (352 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
+Kurz gefasst: **368 Locale-Dateien** (361 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **155
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian
@@ -510,7 +519,9 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-BW` | English (Botswana) | English (Botswana) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-BZ` | English (Belize) | English (Belize) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-CA` | English (Canada) | English (Canada) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `eng-CC` | English (Cocos (Keeling) Islands) | English (Cocos (Keeling) Islands) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-CK` | English (Cook Islands) | English (Cook Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-CX` | English (Christmas Island) | English (Christmas Island) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-DM` | English (Dominica) | English (Dominica) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-FJ` | English (Fiji) | English (Fiji) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-FK` | English (Falkland Islands) | English (Falkland Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -540,8 +551,10 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-LS` | English (Lesotho) | English (Lesotho) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MH` | English (Marshall Islands) | English (Marshall Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MP` | English (Northern Mariana Islands) | English (Northern Mariana Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-MS` | English (Montserrat) | English (Montserrat) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MW` | English (Malawi) | English (Malawi) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NA` | English (Namibia) | English (Namibia) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-NF` | English (Norfolk Island) | English (Norfolk Island) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NG` | English (Nigeria) | English (Nigeria) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NR` | English (Nauru) | English (Nauru) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NU` | English (Niue) | English (Niue) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -563,6 +576,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-TT` | English (Trinidad & Tobago) | English (Trinidad & Tobago) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-TV` | English (Tuvalu) | English (Tuvalu) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-UG` | English (Uganda) | English (Uganda) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `eng-UM` | English (U.S. Outlying Islands) | English (U.S. Outlying Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-US` | English (United States) | English (United States) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `eng-VC` | English (St. Vincent & Grenadines) | English (St Vincent & the Grenadines) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-VG` | English (British Virgin Islands) | English (British Virgin Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -618,6 +632,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-DZ` | French (Algeria) | Français (Algérie) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-FR` | French (France) | Français (France) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `fre-GA` | French (Gabon) | Français (Gabon) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-GF` | French (French Guiana) | Français (Guyane française) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GN` | French (Guinea) | Français (Guinée) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GP` | French (Guadeloupe) | Français (Guadeloupe) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GQ` | French (Equatorial Guinea) | Français (Guinée équatoriale) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
@@ -636,6 +651,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-NE` | French (Niger) | Français (Niger) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-PF` | French (French Polynesia) | Français (Polynésie française) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-PM` | French (St. Pierre & Miquelon) | Français (Saint-Pierre-et-Miquelon) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-RE` | French (Réunion) | Français (La Réunion) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-RW` | French (Rwanda) | Français (Rwanda) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-SC` | French (Seychelles) | Français (Seychelles) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-SN` | French (Senegal) | Français (Sénégal) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
@@ -645,6 +661,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-TN` | French (Tunisia) | Français (Tunisie) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-VU` | French (Vanuatu) | Français (Vanuatu) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-WF` | French (Wallis & Futuna) | Français (Wallis-et-Futuna) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
+| `fre-YT` | French (Mayotte) | Français (Mayotte) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fry-NL` | Western Frisian | Frysk | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ful-SN` | Fula | Pulaar | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ger-AT` | German (Austria) | Deutsch (Österreich) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ger-DE` zurück) |
@@ -714,6 +731,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `nor-NO` | Norwegian Bokmål | Norsk (Bokmål) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `nor-NO@intl` | Variant of `nor-NO`: Internasjonalt Format |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | 100 % (fällt auf `nor-NO` zurück) |
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | 100 % (fällt auf `nor-NO` zurück) |
+| `nor-SJ` | Norwegian Bokmål (Svalbard & Jan Mayen) | Norsk bokmål (Svalbard og Jan Mayen) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `nor-NO` zurück) |
 | `nqo-GN` | N’Ko | ߒߞߏ | Afrika | RTL | N’Ko (`Nkoo`) | CLDR 44 | 100 % |
 | `oci-FR` | Occitan | Occitan | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ori-IN` | Odia | ଓଡ଼ିଆ | Südasien | LTR | Oriya (Odia) (`Orya`) | CLDR 44 | 100 % |
