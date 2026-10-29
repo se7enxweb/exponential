@@ -680,8 +680,8 @@ hat keine 6.0-Datei: Führen Sie die Anweisungen für `password_hash` und `trash
 | `updateniceurls.php` | Importiert URL-Aliase aus der Zeit vor 4.0 und erzeugt die Aliase der Knoten neu | `--import`, `--no-import`, `--import-nodes`, `--import-aliases`, `--import-redirections`, `--import-wildcards`, `--update-nodes`, `--no-update-nodes`, `--verify-data`, `--interactive`, `--backup-tables`, `--column-width`, `--fetch-limit`, `--db-*`, `--sql` |
 | `verify_aliases.php` | Prüft `ezurlalias_ml` | `--fix`, `--verbose`, `--sql` |
 | `updatesearchindex.php` | Baut den Suchindex neu auf | `--clean`, `--db-*`, `--sql` |
-| `adddefaultstates.php` | Gibt jedem Objekt die Standard-Objektzustände | keine |
-| `cleanuppolicies.php` | Entfernt Richtlinien von Modulen, die es nicht mehr gibt | `--dry-run`, `-n` |
+| `adddefaultstates.php` | Gibt jedem Objekt die Standard-Objektzustände (Probelauf, außer mit `--apply`) | `--apply` |
+| `cleanuppolicies.php` | Entfernt Richtlinien von Modulen, die es nicht mehr gibt (Probelauf, außer mit `--apply`) | `--apply`, `-n` |
 | `cleanupversions.php` | Entfernt archivierte Versionen, die über die Grenzen hinausgehen | `-n` |
 | `flatten.php` | Entfernt ungenutzte Daten: `contentobject`, `contentclass`, `workflow`, `role`, `all` | `--db-*`, `--sql`, Name |
 | `trashpurge.php` | Leert den Papierkorb | `--iteration-sleep`, `--iteration-limit`, `--memory-monitoring`, `--trashed-days` |

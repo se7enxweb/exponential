@@ -32,7 +32,7 @@ verlinkten Seiten dokumentiert; testen Sie jedes auf Ihrer eigenen Installation,
 |---|---|---|---|
 | Ansichts-Cache | speichert dargestellte Inhaltsseiten | Veröffentlichen (das Objekt und verwandte Seiten), **Cache leeren** an einem Knoten | [Caches](../../../../anleitungen/caches.md) |
 | Statischer Cache | Seiten als einfache Dateien gespeichert, die der Webserver sendet, ohne Exponential zu starten | Veröffentlichen frischt berührte Seiten auf; **Setup > Cache-Verwaltung**, *Statischer Inhalts-Cache* | [Generator für den statischen Cache](../../../../funktionen/6.0/generator-fuer-den-statischen-cache.md) |
-| Antwort-Cache von Velocity | vom Webserver Velocity gehaltene Antworten | `./console exp:velocity cache clear` | [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md) |
+| Antwort-Cache von Velocity | vom Webserver Velocity gehaltene Antworten | `./console exp:velocity cache clear --apply` | [Antwort-Cache von Velocity](../../../../funktionen/6.0/velocity-antwort-cache.md) |
 | CDN oder Reverse Proxy | Kopien am Netzrand | das Purge des CDN | [HTTP-Caching und CDNs](../../../ersteller/website-ersteller/http-caching-und-cdns.md) |
 
 ## Der statische Cache
@@ -57,7 +57,7 @@ jede Einsatzmeldung sie auffrischt.
 | Die Einsatzmeldung veröffentlichen | die veröffentlichende Person in Bereitschaft |
 | Ansichts-Cache des Objekts und verwandter Seiten geleert | automatisch |
 | Vom Veröffentlichen berührte statische Seiten und die Seiten aus `AlwaysUpdateArray[]` aufgefrischt | automatisch, während des Veröffentlichens (sofern nicht `CronjobCacheClear=enabled` es auf den Cronjob-Teil `staticcache_cleanup` verschiebt) |
-| Antwort-Cache von Velocity | läuft nach seiner Lebensdauer ab, oder leeren Sie ihn: `./console exp:velocity cache clear` |
+| Antwort-Cache von Velocity | läuft nach seiner Lebensdauer ab, oder leeren Sie ihn: `./console exp:velocity cache clear --apply` |
 | CDN | läuft nach seiner Lebensdauer ab, oder Purge |
 | Abgemeldet prüfen, auf einem Telefon, mit einem frischen Browser | die veröffentlichende oder eine zweite Person |
 

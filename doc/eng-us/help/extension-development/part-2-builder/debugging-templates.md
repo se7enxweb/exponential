@@ -77,7 +77,7 @@ If your change does not show up:
 2. Is the page in the view cache? Clear it: `php bin/php/ezcache.php --clear-tag=content`.
 3. Is it a **new** file? Clear the template override cache: `--clear-id=template-override`.
 4. Is the part inside a `{cache-block}`? Clear `--clear-id=template-block`.
-5. Velocity keeps a response cache: `./console exp:velocity cache clear`.
+5. Velocity keeps a response cache: `./console exp:velocity cache clear --apply`.
 
 While you work, `TemplateCompile=disabled` avoids step 1 entirely.
 

@@ -61,7 +61,7 @@ Use a test installation, never practise removal on a language your content uses.
 ## Caches
 
 After settings changes clear the INI and content caches (`php bin/php/ezcache.php --clear-tag=ini,content`) and
-Velocity's response cache (`./console exp:velocity cache clear`) when Velocity serves the site; otherwise a test may
+Velocity's response cache (`./console exp:velocity cache clear --apply`) when Velocity serves the site; otherwise a test may
 show an old state ([Content languages, section 10](../../../guides/content-languages.md#10-commands-for-the-shell)).
 
 ## Remove the test language

@@ -128,7 +128,7 @@ After a clear or a deploy "the first visitor pays for the render". Warm the page
 ([Operating a site, warm the site](../../../guides/operating-a-site.md#5-warm-the-site-preload)):
 
 ```bash
-php bin/php/preload.php --siteaccess=site --allow-root-user
+php bin/php/preload.php --apply --siteaccess=site --allow-root-user
 ```
 
 Use the name of your own public siteaccess. The same is available in the administration as **Preload Sites**

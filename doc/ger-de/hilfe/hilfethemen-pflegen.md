@@ -99,8 +99,8 @@ wird. Deshalb gilt:
 - Auf einer neuen Site werden die Handbücher in der ersten halben Stunde im Hintergrund erstellt. Währenddessen zeigt
   die Liste der Handbücher **Handbücher werden erstellt (n von 52)**.
 
-Ihr Administrator führt die Aktualisierung mit `./console exp:help:content build-manuals -s admin --release` aus und
-erstellt die E-Books mit `./console exp:help:content ebooks -s admin` (mit `--language=ger-DE` die deutsche Ausgabe).
+Ihr Administrator führt die Aktualisierung mit `./console exp:help:content build-manuals --apply -s admin --release` aus und
+erstellt die E-Books mit `./console exp:help:content ebooks --apply -s admin` (mit `--language=ger-DE` die deutsche Ausgabe).
 Siehe [Hilfe als Inhalt gepflegt](../funktionen/6.0/hilfeinhalte.md).
 
 ## Die Hilfe als DITA

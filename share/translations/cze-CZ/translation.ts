@@ -7710,6 +7710,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Nastavení &gt; Úlohy cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Zatím neproběhla žádná část úloh cron: fronta úloh, importy, oznámení a vyhledávací index čekají. Spusťte php bin/php/installcrontab.php --add --apply, nebo přidejte řádky z --show do crontabu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14796,6 +14800,14 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Tato instalace je veřejná ukázka: heslo správce může znát kdokoli a hesla správců nelze změnit ani obnovit. Nezadávejte sem nic soukromého.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15724,6 +15736,14 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Kdo měnil, přihlásil se nebo byl odmítnut, podle účtu; filtrování a export.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Přehled přihlášení</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kdo je přihlášen, přihlášení a neúspěchy za den; odhlášení uživatele všude.</translation>
     </message>
 </context>
 <context>
@@ -27497,6 +27517,14 @@ Exponential verze</translation>
     <message>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Vypršelé relace obsluhy PHP odstraňuje samo PHP (session.gc_maxlifetime), ne tato stránka ani část úloh cron session_gc.</translation>
+    </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Přihlášené relace všech uživatelů vypisuje a odhlašuje přehled přihlášení, který funguje s každou obsluhou relací.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Otevřít přehled přihlášení</translation>
     </message>
 </context>
 <context>
@@ -44064,6 +44092,10 @@ Další informace najdete na stránce požadavků.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab nebyl zapsán (%reason). Přidejte tyto řádky do crontabu uživatele, pod kterým web běží, jinak fronta, importy, oznámení a vyhledávací index nikdy nepoběží:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Přeinstalace se provádí pomocí kickstarteru (%file, poté php bin/php/kickstarter.php run --apply) nebo novou instalací.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -49737,6 +49769,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Poštovní přenos při posledním běhu odmítl zprávy: %count. Zkontrolujte poštovní server a site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Čekající události: %count, a není zaznamenán žádný běh úlohy cron pro oznámení. Přidejte část úloh cron &quot;frequent&quot; do crontabu, nebo spusťte exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -59175,6 +59211,26 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>None yet</source>
         <translation>Zatím žádné</translation>
     </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Vaše nedávná přihlášení, neúspěšné pokusy a změny hesla, e-mailové adresy a dvoustupňového přihlášení.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Nedávná přihlášení, neúspěšné pokusy a změny zabezpečení tohoto účtu.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Zkontrolovat aktivitu</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Neúspěšná přihlášení: %count</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
@@ -64344,6 +64400,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Vybrat jiný web nebo sekci pomocí výběru uzlů</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Vlastníka může změnit pouze správce systému: spusťte ./console exp:content-check --fix-permissions --apply jako root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -65877,6 +65937,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>empty</source>
         <translation>prázdné</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Podpisový klíč je starší než jeden rok: vyměňte ho pomocí exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70137,6 +70201,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>not sent</source>
         <translation>neodesláno</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Úloha cron pro oznámení zde zaznamenává každý svůj běh. Přidejte část frequent do crontabu, nebo spusťte exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Použijte konzoli: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -77771,6 +77843,46 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>None.</source>
         <translation>Žádné.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>pomocí ověřovací aplikace</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>pomocí kódu zaslaného e-mailem</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>pomocí kódu pro obnovení</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pomocí přístupového klíče</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>pomocí externího účtu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Zobrazeno jako síť; adresa se uchovává podle nastavení ochrany údajů tohoto webu.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nezaznamenáno</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Poloha</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>přibližně</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -78014,6 +78126,42 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Manage devices</source>
         <translation>Spravovat zařízení</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>pomocí ověřovací aplikace</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>pomocí kódu zaslaného e-mailem</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>pomocí kódu pro obnovení</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pomocí přístupového klíče</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>pomocí externího účtu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nezaznamenáno</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Poloha</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>přibližně</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -78093,6 +78241,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>View the sessions of this user</source>
         <translation>Zobrazit relace tohoto uživatele</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Váš účet %login na webu %site byl právě použit k přihlášení z místa, ze kterého se v poslední době nepřihlašoval:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Přibližná poloha</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78131,6 +78287,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser v systému %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Přehled přihlášení</translation>
     </message>
 </context>
 <context>
@@ -78777,6 +78937,788 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>unknown</source>
         <translation>neznámý</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpečit účet</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>K přihlášení k vašemu účtu %login na webu %site byl použit kód pro obnovení.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Byl použit kód pro obnovení</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Účet</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Přibližná adresa</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Požádejte o nové heslo, abyste se mohli znovu přihlásit, nebo se obraťte na správce webu.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Požádat o nové heslo</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Každý kód pro obnovení funguje jen jednou. Pokud jste ztratili telefon, nastavte ověřovací aplikaci znovu a nové kódy pro obnovení uložte na bezpečné místo.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Neúspěšné pokusy o přihlášení k vašemu účtu</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Od této chvíle přihlášení vyžaduje kromě hesla i kód. Pokud jste to byli vy, nemusíte nic dělat.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Pokud jste to byli vy a zapomněli jste heslo, požádejte o nové. Pokud ne, zvolte silnější heslo a zapněte dvoustupňové přihlášení.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Pokud jste to nebyli vy, někdo možná zná vaše heslo: ihned ho změňte a zkontrolujte, kde je váš účet přihlášen.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Zbývající kódy pro obnovení</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Zkontrolovat zařízení</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Upozornění zabezpečení</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Někdo se %count× po sobě pokusil přihlásit k vašemu účtu %login na webu %site s nesprávným heslem.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>U vašeho účtu %login na webu %site došlo k události zabezpečení.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Toto je upozornění zabezpečení týkající se vašeho účtu. Zasílá se při každé takové změně a nelze ho vypnout.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Dvoustupňové přihlášení bylo pro váš účet %login na webu %site vypnuto.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Dvoustupňové přihlášení bylo vypnuto</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Dvoustupňové přihlášení bylo pro váš účet %login na webu %site zapnuto.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Dvoustupňové přihlášení bylo zapnuto</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Váš účet %login na webu %site byl po příliš mnoha neúspěšných přihlášeních zablokován.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Váš účet je nyní chráněn pouze heslem. Pokud jste to nebyli vy, změňte heslo a poté dvoustupňové přihlášení znovu zapněte.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Váš účet byl zablokován</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivita zabezpečení: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Přihlášeno</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Neúspěšný pokus o přihlášení</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Odhlášeno</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Relace odhlášeny</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Přihlášení z nového zařízení</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Přihlášení z nového místa</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Totožnost potvrzena („Ověřte, že jste to vy“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ověření totožnosti se nezdařilo</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Přihlášeno přístupovým klíčem</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Přihlášení přístupovým klíčem se nezdařilo</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Přihlášení odmítnuto: kód dvoustupňového přihlášení chybí nebo je nesprávný</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Nesprávný kód dvoustupňového přihlášení</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Účet zablokován po neúspěšných přihlášeních</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Účet odblokován</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Heslo změněno</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Změna hesla se nezdařila</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Heslo obnoveno</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Vyžádáno nové heslo</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mailová adresa změněna</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Uživatelské jméno změněno</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dvoustupňové přihlášení zapnuto</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dvoustupňové přihlášení vypnuto</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Použit kód pro obnovení</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nové kódy pro obnovení</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Heslo aplikace vytvořeno</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Heslo aplikace odvoláno</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Přístupový klíč přidán</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Přístupový klíč odebrán</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Účet povolen</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Účet zakázán</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vše</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Přihlášení a relace</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Změny účtu</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vyžaduje pozornost</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>vámi</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>uživatelem</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>uživatelem %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metoda</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Prohlížeč</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operační systém</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Zařízení</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Místo</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Země</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Relace</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Které</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanál</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Neúspěšné pokusy</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Zbývající kódy</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Obsluha přihlášení</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivita zabezpečení: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Přihlášení a změny zabezpečení vašeho účtu. Pokud vidíte něco, co jste neudělali, změňte heslo a odhlaste zařízení, která nepoznáváte.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Přihlášení a změny zabezpečení tohoto účtu.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Změnit heslo</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Zpět na účet</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Aktivita zabezpečení se nezaznamenává</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Načítá se z auditního protokolu uživatelů, jehož tabulka expuser_audit chybí nebo není v této databázi podporována. Spusťte php update/common/scripts/6.0/createuseraudittable.php nebo aktualizaci databáze na verzi 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Posledních dnů: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Přihlášení za posledních %days dnů</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Nedávná aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobrazit</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>neúspěšné</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>odmítnuté</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Zatím nebyla zaznamenána žádná aktivita zabezpečení.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Události zabezpečení se uchovávají po dobu %days dnů.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Události zabezpečení se uchovávají, dokud je správce neodstraní.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Stáhnout moje údaje o přihlášení</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Vaše relace a události zabezpečení jako soubor JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Přihlášeno</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Neúspěšný pokus o přihlášení</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Odhlášeno</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Relace odhlášeny</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Přihlášení z nového zařízení</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Přihlášení z nového místa</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Totožnost potvrzena („Ověřte, že jste to vy“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ověření totožnosti se nezdařilo</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Přihlášeno přístupovým klíčem</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Přihlášení přístupovým klíčem se nezdařilo</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Přihlášení odmítnuto: kód dvoustupňového přihlášení chybí nebo je nesprávný</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Nesprávný kód dvoustupňového přihlášení</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Účet zablokován po neúspěšných přihlášeních</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Účet odblokován</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Heslo změněno</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Změna hesla se nezdařila</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Heslo obnoveno</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Vyžádáno nové heslo</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mailová adresa změněna</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Uživatelské jméno změněno</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dvoustupňové přihlášení zapnuto</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dvoustupňové přihlášení vypnuto</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Použit kód pro obnovení</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nové kódy pro obnovení</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Heslo aplikace vytvořeno</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Heslo aplikace odvoláno</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Přístupový klíč přidán</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Přístupový klíč odebrán</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Účet povolen</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Účet zakázán</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vše</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Přihlášení a relace</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Změny účtu</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vyžaduje pozornost</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečení</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Aktivita zabezpečení: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Přihlášení a změny zabezpečení vašeho účtu. Pokud vidíte něco, co jste neudělali, změňte heslo a odhlaste zařízení, která nepoznáváte.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Změnit heslo</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Aktivita zabezpečení se na tomto webu zatím nezaznamenává.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Přihlášení za posledních %days dnů</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Neúspěšné pokusy</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Zatím nebyla zaznamenána žádná aktivita zabezpečení.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Stáhnout moje údaje o přihlášení</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Vaše relace a události zabezpečení jako soubor JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Heslo</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Heslo a kód dvoustupňového přihlášení</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Rozhraní REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Rozhraní SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Jednotné přihlášení (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Přihlášeno před zahájením záznamu relací</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Přehled přihlášení</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kdo je přihlášen na webu, jak často se účty přihlašují a jak často neúspěšně, a odhlášení uživatele všude. Funguje s každou obsluhou relací.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Relace byla odhlášena. Zařízení se musí znovu přihlásit.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Uživatel %login byl odhlášen z relací. Počet relací: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Uživatel %login neměl žádnou spuštěnou relaci.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Žádný účet nemá toto ID, uživatelské jméno ani e-mailovou adresu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Toto je relace, kterou používáte. Chcete-li ji ukončit, odhlaste se.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tato relace již byla ukončena.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Platnost stránky vypršela. Nic nebylo změněno; zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Relace se na tomto webu nezaznamenávají (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Chybí tabulka expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Relace se začnou zaznamenávat, jakmile bude vytvořena: php update/common/scripts/6.0/createusersessiontable.php nebo aktualizace databáze na verzi 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nyní a dnes</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Spuštěné relace</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Přihlášení uživatelé</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Přihlášení dnes</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Neúspěšné pokusy dnes</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Odhlášení uživatele všude</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Každá relace účtu skončí při svém dalším požadavku, i ty udržované funkcí „Zapamatovat si mě“. Použijte to, pokud se účet mohl dostat do nesprávných rukou; poté obnovte jeho heslo.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID uživatele, uživatelské jméno nebo e-mailová adresa</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Odhlásit všude</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nyní přihlášeno</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Zobrazují se naposledy použité (nejvýše %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Uživatel</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Zařízení</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Přihlášeno</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Naposledy aktivní</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Toto zařízení</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nezaznamenáno</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Odhlásit</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Není přihlášena žádná relace.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Posledních dnů: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Přihlášení a neúspěšné pokusy se počítají z auditního protokolu uživatelů, který chybí; nové relace se počítají.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Den</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Přihlášení</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Neúspěšné pokusy</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nové relace</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Obsluha relací: %handler. Relace se načítají z tabulky expuser_session, proto přehled funguje s každou obsluhou.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Upozornění zabezpečení k vašemu účtu</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>U vašeho účtu %login došlo k události zabezpečení: %event. Pokud jste to nebyli vy, zabezpečte svůj účet na adrese %url.</translation>
     </message>
 </context>
 </TS>

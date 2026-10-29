@@ -2,7 +2,7 @@
 
 Diese Anleitung richtet sich an die Person, die eine Site auf einen Server bringt: einen Betreiber oder einen Entwickler, der seinen eigenen Server betreibt. Sie führt eine frisch installierte Exponential-Site auf einen Server, den Besucher über HTTPS erreichen. Danach zeigt sie, wie Sie eine Codeänderung sicher ausliefern und die Site schnell halten. Lesen Sie sie von oben nach unten. Jeder Befehl ist in der Installation vorhanden; wo ein Ergebnis gezeigt wird, ist es das, was der Befehl ausgibt.
 
-Sie benötigen einen Linux-Server, Shell-Zugang im Installationsverzeichnis (dem Ordner, der `index.php` und `console` enthält) und eine Site, die bereits läuft. Wenn Sie noch keine Site haben, führen Sie zuerst `./console exp:install` aus ([Erste Schritte](erste-schritte.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md)).
+Sie benötigen einen Linux-Server, Shell-Zugang im Installationsverzeichnis (dem Ordner, der `index.php` und `console` enthält) und eine Site, die bereits läuft. Wenn Sie noch keine Site haben, führen Sie zuerst `./console exp:install --apply` aus ([Erste Schritte](erste-schritte.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 Die Befehle verwenden `./console`, die Kurzform für `bin/php/console`. Die Beispiele fügen `--allow-root-user` an, weil sie als root ausgeführt werden; lassen Sie es weg, wenn Sie als Benutzer der Site arbeiten.
 
@@ -95,7 +95,7 @@ Velocity ist ein PHP-Anwendungsserver, der mit Exponential ausgeliefert wird. Er
 ### 4.1 Wählen Sie die Engine aus und starten Sie sie
 
 ```bash
-./console exp:velocity config set ServerSettings Engine qbix --allow-root-user
+./console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user
 ./console exp:velocity start --allow-root-user
 ./console exp:velocity status --allow-root-user
 ```
@@ -112,7 +112,7 @@ Errors     var/vc/qbix/log/site-error.log
 Einfaches HTTP liegt auf `Port` (ausgeliefert 8088), HTTPS auf `HTTPSPort` (ausgeliefert 8080), beide gebunden an `Host` (ausgeliefert `127.0.0.1`). Öffnen Sie `http://127.0.0.1:8088/` auf derselben Maschine. Um das Netzwerk zu bedienen, setzen Sie `Host`:
 
 ```bash
-./console exp:velocity config set ServerSettings Host 0.0.0.0 --allow-root-user
+./console exp:velocity config set --apply ServerSettings Host 0.0.0.0 --allow-root-user
 ./console exp:velocity restart --allow-root-user
 ```
 
@@ -133,7 +133,7 @@ Ports unter 1024 erfordern root; die übliche Konfiguration ist Velocity auf eig
 ./console exp:velocity config list ServerSettings --allow-root-user
 ```
 
-`layout` zeigt den Konfigurationsbaum im Stil von Apache unter Debian (`/etc/vc` mit `sites-available`, `sites-enabled`, `conf-available` und so weiter). Sites, Snippets und Module werden wie mit `a2ensite` ein- und ausgeschaltet: `./console exp:velocity site enable <name> --allow-root-user` ([Aufbau auf der Festplatte](../bc/6.0/velocity-verzeichnisstruktur.md)). Der Server hat außerdem ein Control Panel ([Velocity Control Panel](../funktionen/6.0/velocity-control-panel.md)).
+`layout` zeigt den Konfigurationsbaum im Stil von Apache unter Debian (`/etc/vc` mit `sites-available`, `sites-enabled`, `conf-available` und so weiter). Sites, Snippets und Module werden wie mit `a2ensite` ein- und ausgeschaltet: `./console exp:velocity site enable --apply <name> --allow-root-user` ([Aufbau auf der Festplatte](../bc/6.0/velocity-verzeichnisstruktur.md)). Der Server hat außerdem ein Control Panel ([Velocity Control Panel](../funktionen/6.0/velocity-control-panel.md)).
 
 Vertiefung: [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md), [persistente Worker](../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [Engine-Einstellungen](../spezifikationen/6.0/velocity-engine-einstellungen.md).
 
@@ -169,9 +169,9 @@ Um alle drei Engines nebeneinander zu betreiben, geben Sie jeder ihren eigenen P
 Für Velocity mit einem Zertifikat, das Sie bereits haben (eine PEM-Datei mit Zertifikat und Schlüssel; beide Einstellungen dürfen dieselbe Datei nennen):
 
 ```bash
-./console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
-./console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
-./console exp:velocity config set HTTPSSettings Enabled true --allow-root-user
+./console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
+./console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
+./console exp:velocity config set --apply HTTPSSettings Enabled true --allow-root-user
 ./console exp:velocity restart --allow-root-user
 curl -skI https://127.0.0.1:8080/ | head -1
 ```
@@ -209,7 +209,7 @@ Ein echter Lauf gibt für jeden Schritt PASS, FAIL oder SKIP und die Dauer aus u
 
 ```bash
 ./console exp:cache clear --id=template --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 ```
 
 Führen Sie nie nur `exp:cache clear --all` aus und vergessen dann den Webserver: FPM und Velocity behalten die alten Klassen im Speicher, bis sie neu geladen werden.
@@ -225,7 +225,7 @@ Arbeiten Sie diese Liste von oben nach unten ab; jeder Punkt ist ein Schalter od
 Er gibt eine Zeile pro Ebene aus, zum Beispiel `httpcache  the HTTP cache is on: ... entries`, `querycache  the SQL query cache is on`, `velocity  response cache ...: N files` und `php  OPcache not enabled for this server`, wenn der Opcode-Cache für die Kommandozeile ausgeschaltet ist (normal; entscheidend ist er für den Webprozess).
 
 1. **Opcode-Cache.** Lassen Sie unter PHP-FPM `opcache.enable=1` in der PHP-Konfiguration des Pools. Velocity übergibt dem Serverprozess eigene Optionen für den Opcode-Cache; die ausgelieferten Werte stehen in `[PHPSettings]` von `settings/velocity.ini`. Gemessene Wirkung und wie Sie ein Profil erstellen: [Velocity und der Opcode-Cache](../funktionen/6.0/velocity-opcode-cache-und-profil.md).
-2. **Antwort-Cache (Velocity).** `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` Sekunden. Eine daraus ausgelieferte Seite erreicht PHP nie. Leeren Sie ihn nach einer Template-Änderung mit `./console exp:velocity cache clear --allow-root-user`. Siehe [Antwort-Cache von Velocity](../funktionen/6.0/velocity-antwort-cache.md).
+2. **Antwort-Cache (Velocity).** `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` Sekunden. Eine daraus ausgelieferte Seite erreicht PHP nie. Leeren Sie ihn nach einer Template-Änderung mit `./console exp:velocity cache clear --apply --allow-root-user`. Siehe [Antwort-Cache von Velocity](../funktionen/6.0/velocity-antwort-cache.md).
 3. **HTTP-Cache.** Der rollenbewusste Seiten-Cache für jede Engine: `./console exp:cache httpcache status --allow-root-user` ([HTTP-Cache](../bc/6.0/httpcache.md)).
 4. **SQL-Abfrage-Cache.** Standardmäßig eingeschaltet; `./console exp:cache querycache status --allow-root-user` ([SQL-Abfrage-Cache](../bc/6.0/sql-abfrage-cache.md)).
 5. **Statische Dateien.** Velocity liefert sie mit einem langen `StaticMaxAge` aus und kann sie vorab komprimieren (`[ServerSettings] StaticMaxAge`, `PrecompressStatic`) ([statische Dateien und Bilder](../funktionen/6.0/velocity-statische-dateien-und-bilder.md)).

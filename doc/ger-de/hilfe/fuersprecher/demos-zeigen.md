@@ -38,7 +38,7 @@ Ein Befehl installiert eine vollständige Website auf SQLite
 
 ```bash
 ./console exp:install --dry-run
-./console exp:install
+./console exp:install --apply
 ```
 
 Dann:
@@ -110,7 +110,7 @@ TEN MINUTES BEFORE
 Schließen Sie mit drei Dingen auf einer Folie oder Karte:
 
 ```text
-Try it:          ./console exp:install        (one command, SQLite)
+Try it:          ./console exp:install --apply        (one command, SQLite)
 Learn:           the help in the admin ("?"), doc.exponential.earth
 Ask and share:   share.exponential.earth/forums   t.me/exponentialcms
 ```

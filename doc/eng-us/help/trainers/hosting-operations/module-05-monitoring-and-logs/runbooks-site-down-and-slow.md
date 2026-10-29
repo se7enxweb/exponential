@@ -94,7 +94,7 @@ off in an override. Each pair diagnoses its own installation.
 6. Check maintenance mode: `php bin/php/maintenance.php status`.
 7. Match what you saw to a row of the table *Which page does the visitor see?* in the site-down runbook and name the
    cause.
-8. Fix it with the runbook's action, then clear the response cache: `php bin/php/console exp:velocity cache clear`.
+8. Fix it with the runbook's action, then clear the response cache: `php bin/php/console exp:velocity cache clear --apply`.
 9. Measure the site: `php bin/php/console exp:benchmark --requests=20`. Note median and p90.
 10. Verify: front page, administration sign-in, and a test publish in your course area.
 11. Write a five-line incident note: start, detection, cause, fix, end and what prevents a repeat.

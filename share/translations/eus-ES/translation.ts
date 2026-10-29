@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Konfigurazioa &gt; Cron lanak</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron lanen zatirik ez da oraindik exekutatu: lanen ilara, inportazioak, jakinarazpenak eta bilaketa-indizea zain daude. Exekutatu php bin/php/installcrontab.php --add --apply, edo gehitu --show aukerak erakusten dituen lerroak crontab fitxategira.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Instalazio hau demo publikoa da: edonork jakin dezake bere administratzailearen pasahitza, eta administratzaileen pasahitzak ezin dira aldatu edo berrezarri. Ez sartu hemen ezer pribaturik.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Zure gailuak</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Nork aldatu duen, saioa hasi duen edo baztertua izan den, kontuka; iragazi eta esportatu.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Saio-hasieren txostena</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Nork duen saioa hasita, saio-hasierak eta hutsegiteak egunez egun; erabiltzaile baten saioa nonahi amaitzea.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP kudeatzailearen iraungitako saioak PHPk berak kentzen ditu (session.gc_maxlifetime), ez orri honek ezta session_gc cron-lanaren zatiak ere.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Erabiltzaile guztien saio irekiak saio-hasieren txostenean zerrendatzen dira, eta bertan amai daitezke; txostenak edozein saio-kudeatzailerekin funtzionatzen du.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Ireki saio-hasieren txostena</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ aktibatzeko.</translation>
     <message>
         <source>None yet</source>
         <translation>Oraindik bat ere ez</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Zure azken saio-hasierak, huts egindako saiakerak eta pasahitzean, helbide elektronikoan eta bi urratseko saio-hasieran egindako aldaketak.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Kontu honen azken saio-hasierak, huts egindako saiakerak eta segurtasun-aldaketak.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Berrikusi jarduera</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Huts egindako saio-hasierak: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Xehetasun gehiagorako, ikusi eskakizunen orria.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ez da idatzi (%reason). Gehitu lerro hauek gunea exekutatzen duen erabiltzailearen crontab-ean; bestela, ilara, inportazioak, jakinarazpenak eta bilaketa-indizea ez dira inoiz exekutatuko:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Berriro instalatzeko, erabili kickstarter-a (%file, gero php bin/php/kickstarter.php run --apply) edo egin instalazio berri bat.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Posta-garraioak %count mezu errefusatu ditu azken exekuzioan. Egiaztatu posta-zerbitzaria eta site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Zain dauden gertaerak: %count, eta ez dago jakinarazpenen cron lanaren exekuziorik erregistratuta. Gehitu &quot;frequent&quot; cron lan-zatia crontab fitxategira, edo exekutatu exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Hautatu beste gune edo atal bat nodo-hautatzailearekin</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Sistemaren administratzaileak soilik alda dezake jabea: exekutatu ./console exp:content-check --fix-permissions --apply root gisa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>empty</source>
         <translation>hutsik</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Sinadura-gakoak urte bat baino gehiago du: aldatu exp:audit key rotate --apply komandoarekin.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>not sent</source>
         <translation>bidali gabe</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Jakinarazpenen cron lanak hemen erregistratzen du bere exekuzio bakoitza. Gehitu frequent zatia crontab fitxategira, edo exekutatu exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Erabili kontsola: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>None.</source>
         <translation>Bat ere ez.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikazio-aplikazio batekin</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>posta elektronikoz bidalitako kode batekin</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>berreskuratze-kode batekin</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>sarbide-gako batekin</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>kanpoko kontu batekin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Bere sare gisa erakusten da; helbidea gunearen datuen babeserako ezarpenek diotenaren arabera gordetzen da.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Erregistratu gabe</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Kokapena</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>gutxi gorabehera</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Manage devices</source>
         <translation>Kudeatu gailuak</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikazio-aplikazio batekin</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>posta elektronikoz bidalitako kode batekin</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>berreskuratze-kode batekin</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>sarbide-gako batekin</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>kanpoko kontu batekin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Erregistratu gabe</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Kokapena</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>gutxi gorabehera</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>View the sessions of this user</source>
         <translation>Ikusi erabiltzaile honen saioak</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Zure %login kontua, %site gunean, azkenaldian saioa hasi ez duen leku batetik saioa hasteko erabili berri da:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Gutxi gorabeherako kokapena</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser, %os sisteman</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Saio-hasieren txostena</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>unknown</source>
         <translation>ezezaguna</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Babestu zure kontua</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Berreskuratze-kode bat erabili da zure %login kontuan saioa hasteko, %site gunean.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Berreskuratze-kode bat erabili da</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kontua</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Gutxi gorabeherako helbidea</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Eskatu pasahitz berri bat berriro saioa hasteko, edo jarri harremanetan gunearen administratzaileekin.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Eskatu pasahitz berria</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Berreskuratze-kode bakoitzak behin bakarrik balio du. Telefonoa galdu baduzu, konfiguratu berriro autentifikazio-aplikazioa eta gorde berreskuratze-kode berriak leku seguru batean.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Huts egindako saio-hasiera saiakerak zure kontuan</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Hemendik aurrera, saioa hasteko kode bat eskatuko da pasahitzaz gain. Zuk egin baduzu, ez duzu ezer egin beharrik.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Zu izan bazara eta pasahitza ahaztu baduzu, eskatu berri bat. Bestela, aukeratu pasahitz sendoagoa eta aktibatu bi urratseko saio-hasiera.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Zu izan ez bazara, baliteke norbaitek zure pasahitza jakitea: aldatu orain eta egiaztatu non dagoen zure kontuaren saioa hasita.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Geratzen diren berreskuratze-kodeak</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Berrikusi zure gailuak</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Segurtasun-alerta</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Norbait zure %login kontuan saioa hasten saiatu da %site gunean, pasahitz okerrarekin, jarraian hainbat aldiz (saiakera kopurua: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Segurtasun-gertaera bat izan da zure %login kontuan, %site gunean.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Zure kontuari buruzko segurtasun-alerta bat da hau. Horrelako aldaketa bakoitzean bidaltzen da, eta ezin da desaktibatu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ordua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Bi urratseko saio-hasiera desaktibatu da zure %login kontuan, %site gunean.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Bi urratseko saio-hasiera desaktibatu da</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Bi urratseko saio-hasiera aktibatu da zure %login kontuan, %site gunean.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Bi urratseko saio-hasiera aktibatu da</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Zure %login kontua, %site gunean, blokeatu egin da huts egindako saio-hasiera gehiegiren ondoren.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Zure kontua pasahitzak bakarrik babesten du orain. Zuk egin ez baduzu, aktibatu berriro bi urratseko saio-hasiera pasahitza aldatu ondoren.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Zure kontua blokeatu da</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Segurtasun-jarduera, erabiltzailea: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Saioa hasita</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Huts egindako saio-hasiera saiakera</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Saioa amaituta</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Saioak amaituta</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Saio-hasiera gailu berri batetik</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Saio-hasiera kokapen berri batetik</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitatea berretsita (&quot;Egiaztatu zu zarela&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitate-egiaztapenak huts egin du</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Saioa sarbide-gako batekin hasita</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sarbide-gakoarekin saioa hasteak huts egin du</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Saio-hasiera ukatuta: bi urratseko kodea falta da edo okerra da</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Bi urratseko kode okerra</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kontua blokeatuta huts egindako saio-hasieren ondoren</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kontua desblokeatuta</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pasahitza aldatuta</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Pasahitza aldatzeak huts egin du</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pasahitza berrezarrita</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Pasahitz berria eskatuta</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Helbide elektronikoa aldatuta</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Erabiltzaile-izena aldatuta</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Bi urratseko saio-hasiera aktibatuta</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Bi urratseko saio-hasiera desaktibatuta</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Berreskuratze-kodea erabilita</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Berreskuratze-kode berriak</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Aplikazio-pasahitza sortua</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Aplikazio-pasahitza baliogabetua</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Sarbide-gakoa gehituta</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Sarbide-gakoa kenduta</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kontua gaituta</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kontua desgaituta</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Guztiak</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Saio-hasierak eta saioak</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontuaren aldaketak</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Arreta behar dute</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>zuk egina</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>erabiltzaileak egina</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>egilea: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metodoa</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Nabigatzailea</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema eragilea</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gailua</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Lekua</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Herrialdea</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Saioak</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Zeintzuk</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Bidea</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Huts egindako saiakerak</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Geratzen diren kodeak</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Saio-hasieraren kudeatzailea</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Segurtasun-jarduera, erabiltzailea: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Saio-hasierak eta zure kontuaren segurtasunean egindako aldaketak. Zuk egin ez duzun zerbait ikusten baduzu, aldatu pasahitza eta amaitu ezagutzen ez dituzun gailuetako saioak.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Saio-hasierak eta kontu honen segurtasunean egindako aldaketak.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Zure gailuak</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Aldatu pasahitza</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Itzuli kontura</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Segurtasun-jarduera ez da erregistratzen</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Erabiltzaileen auditoretza-erregistrotik irakurtzen da, eta haren expuser_audit taula falta da edo datu-base honek ez du onartzen. Exekutatu php update/common/scripts/6.0/createuseraudittable.php, edo 6.0.15 bertsioaren datu-basearen eguneratzea.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Azken egunak: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Azken egunetako saio-hasierak (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Azken segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>huts egin du</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ukatuta</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ez da segurtasun-jarduerarik erregistratu oraindik.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Segurtasun-gertaerak egun hauetan gordetzen dira: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Segurtasun-gertaerak administratzaile batek kendu arte gordetzen dira.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Deskargatu nire saio-hasieren datuak</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Zure saioak eta segurtasun-gertaerak JSON fitxategi gisa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Saioa hasita</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Huts egindako saio-hasiera saiakera</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Saioa amaituta</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Saioak amaituta</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Saio-hasiera gailu berri batetik</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Saio-hasiera kokapen berri batetik</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitatea berretsita (&quot;Egiaztatu zu zarela&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitate-egiaztapenak huts egin du</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Saioa sarbide-gako batekin hasita</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sarbide-gakoarekin saioa hasteak huts egin du</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Saio-hasiera ukatuta: bi urratseko kodea falta da edo okerra da</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Bi urratseko kode okerra</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kontua blokeatuta huts egindako saio-hasieren ondoren</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kontua desblokeatuta</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pasahitza aldatuta</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Pasahitza aldatzeak huts egin du</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pasahitza berrezarrita</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Pasahitz berria eskatuta</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Helbide elektronikoa aldatuta</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Erabiltzaile-izena aldatuta</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Bi urratseko saio-hasiera aktibatuta</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Bi urratseko saio-hasiera desaktibatuta</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Berreskuratze-kodea erabilita</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Berreskuratze-kode berriak</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Aplikazio-pasahitza sortua</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Aplikazio-pasahitza baliogabetua</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Sarbide-gakoa gehituta</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Sarbide-gakoa kenduta</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kontua gaituta</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kontua desgaituta</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Guztiak</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Saio-hasierak eta saioak</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontuaren aldaketak</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Arreta behar dute</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Segurtasun-jarduera</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Segurtasun-jarduera, erabiltzailea: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Saio-hasierak eta zure kontuaren segurtasunean egindako aldaketak. Zuk egin ez duzun zerbait ikusten baduzu, aldatu pasahitza eta amaitu ezagutzen ez dituzun gailuetako saioak.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Zure gailuak</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Aldatu pasahitza</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Gune honetan ez da segurtasun-jarduera erregistratzen oraindik.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Azken egunetako saio-hasierak (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Huts egindako saiakerak</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ez da segurtasun-jarduerarik erregistratu oraindik.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Deskargatu nire saio-hasieren datuak</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Zure saioak eta segurtasun-gertaerak JSON fitxategi gisa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Pasahitza</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Pasahitza eta bi urratseko kodea</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interfazea</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interfazea</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Saio-hasiera bakarra</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Saioak erregistratzen hasi aurretik hasitako saioa</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Saio-hasieren txostena</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Nork duen saioa hasita gunean, kontuek zenbatetan hasten duten saioa eta zenbatetan huts egiten duten, eta erabiltzaile baten saioa nonahi amaitzea. Edozein saio-kudeatzailerekin funtzionatzen du.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Saioa amaitu da. Gailuak berriro hasi behar du saioa.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login erabiltzailearen saioak amaitu dira (saio kopurua: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login erabiltzaileak ez zuen saio irekirik.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ez dago ID, erabiltzaile-izen edo helbide elektroniko hori duen konturik.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Hau erabiltzen ari zaren saioa da. Amaitzeko, amaitu saioa.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Saio hori amaituta zegoen jada.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Orria iraungita zegoen. Ez da ezer aldatu; saiatu berriro.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Gune honetan ez dira saioak erregistratzen (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session taula falta da</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Saioak erregistratuko dira taula sortu bezain laster: php update/common/scripts/6.0/createusersessiontable.php, edo 6.0.15 bertsioaren datu-basearen eguneratzea.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Orain eta gaur</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Saio irekiak</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Saioa hasita duten erabiltzaileak</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Gaurko saio-hasierak</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Gaur huts egindako saiakerak</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Amaitu erabiltzaile baten saioa nonahi</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kontuaren saio bakoitza hurrengo eskaeran amaitzen da, &quot;Gogoratu nazazu&quot; aukerak mantendutakoak ere bai. Erabili kontu bat esku okerretan egon daitekeenean; ondoren, berrezarri haren pasahitza.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Erabiltzailearen IDa, erabiltzaile-izena edo helbide elektronikoa</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Amaitu saioa nonahi</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Saioa hasita orain</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Azken aldian erabilitakoak erakusten dira, gehienez %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Erabiltzailea</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gailua</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Helbidea</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Saioa hasita</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Azken jarduera</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ekintzak</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Gailu hau</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Erregistratu gabe</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Amaitu saioa</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ez dago saio irekirik.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Azken egunak: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Saio-hasierak eta huts egindako saiakerak erabiltzaileen auditoretza-erregistrotik zenbatzen dira, eta hori ez dago; saio berriak zenbatzen dira.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Eguna</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Saio-hasierak</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Huts egindako saiakerak</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Saio berriak</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Saio-kudeatzailea: %handler. Saioak expuser_session taulatik irakurtzen dira; beraz, txostenak edozein kudeatzailerekin funtzionatzen du.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Zure kontuari buruzko segurtasun-alerta</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Segurtasun-gertaera bat izan da zure %login kontuan: %event. Zu izan ez bazara, babestu zure kontua helbide honetan: %url.</translation>
     </message>
 </context>
 </TS>

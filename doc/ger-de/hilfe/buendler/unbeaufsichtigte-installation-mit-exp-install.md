@@ -10,7 +10,7 @@ type: help
 # Unbeaufsichtigte Installation mit exp:install
 
 Diese Seite richtet sich an Bündler, die die Website aus einem Skript installieren: beim ersten Start eines Images, aus
-einem Panel-Installer, in einem CI-Job. `exp:install` (auch `php bin/php/install.php`) "schreibt aus seinen Optionen
+einem Panel-Installer, in einem CI-Job. `exp:install` (auch `php bin/php/install.php --apply`) "schreibt aus seinen Optionen
 eine `kickstart.ini` und führt den Kickstarter aus"
 ([Das Standard-Administratorpasswort](../standard-administratorpasswort.md#die-konsoleninstallation-expinstall)). Die
 vollständige Referenz ist [Kapitel 7: Die Konsoleninstallation](../../installation/07-installation-ueber-die-konsole.md).
@@ -27,7 +27,7 @@ vollständige Referenz ist [Kapitel 7: Die Konsoleninstallation](../../installat
 ## Die kürzeste Installation
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 "Das installiert das Multisite-Paket auf **SQLite**, in `eng-US`, mit den Siteaccesses `site` und `admin`, erreichbar
@@ -98,14 +98,14 @@ set -euo pipefail
 export EXP_INSTALL_DB_PASSWORD="$(cat /run/secrets/db_password)"
 php bin/php/console exp:install --dry-run --db=pgsql --db-host=db --db-name=site --db-user=site \
     --url=https://www.example.com --email=webmaster@example.com
-php bin/php/console exp:install --db=pgsql --db-host=db --db-name=site --db-user=site \
+php bin/php/console exp:install --apply --db=pgsql --db-host=db --db-name=site --db-user=site \
     --url=https://www.example.com --email=webmaster@example.com
 ```
 
 Getrennte Hosts für die Website und die Administration:
 
 ```bash
-php bin/php/console exp:install --access=host --host=www.example.com --admin-host=admin.example.com
+php bin/php/console exp:install --apply --access=host --host=www.example.com --admin-host=admin.example.com
 ```
 
 Führen Sie es als Benutzer der Website aus, nie als root: "Von `root` angelegte Dateien kann der Webserver später nicht

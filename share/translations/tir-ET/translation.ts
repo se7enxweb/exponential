@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ምድላው &gt; ስራሓት cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ክሳብ ሕጂ ዝኾነ ክፋል cronjob ኣይተኻየደን: መስርዕ ስራሕቲ፣ ምእታዋት ካብ ደገ፣ መፍለጥታትን መዝገብ ምድላይን ይጽበዩ ኣለዉ። php bin/php/installcrontab.php --add --apply ኣካይዱ፣ ወይ ነቶም መስመራት ናይ --show ናብ crontab ወስኹ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>እዚ ምጽዓን እዚ ህዝባዊ ምርኢት እዩ፦ ዝኾነ ሰብ መሕለፊ ቃል ኣመሓዳሪኡ ክፈልጥ ይኽእል፣ መሕለፊ ቃላት ኣመሓደርቲ ድማ ክቕየሩ ወይ ክምለሱ ኣይክእሉን። ኣብዚ ዝኾነ ውልቃዊ ነገር ኣይተእትዉ።</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሳርሒታትኩም</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>መን ከም ዝቐየረ፣ ዝኣተወ ወይ ዝተኣገደ፣ ብነፍሲ ወከፍ ሕሳብ፤ ምጽራይን ናብ ወጻኢ ምስዳድን።</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ጸብጻብ ምእታው</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>መን ከም ዝኣተወ፣ ምእታዋትን ውድቀታትን ብመዓልቲ፤ ንተጠቃሚ ካብ ኩሉ ቦታ ኣውጽእ።</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>ዝሓለፎም ክፍለ ግዜታት ናይ PHP ተቖጻጻሪ ብPHP ባዕሉ (session.gc_maxlifetime) ይወጹ ፣ ብዚ ገጽ ወይ ብክፋል cronjob session_gc ኣይኮነን።</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ዝኣተዉ ክፍለ ግዜታት ናይ ኩሎም ተጠቀምቲ ኣብ ጸብጻብ ምእታው ይዝርዘሩ፣ ይወጹውን፤ እዚ ጸብጻብ ምስ ዝኾነ ኣሰራሒ ክፍለ ግዜ ይሰርሕ።</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ጸብጻብ ምእታው ክፈት</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ገና ዋላ ሓደ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>ናይ ቀረባ ግዜ ምእታዋትኩም፣ ዘይተዓወቱ ፈተነታትን ኣብ መሕለፊ ቃልኩም፣ ኣድራሻ ኢመይልን ክልተ ደረጃ ምእታውን ዝተገብሩ ለውጥታትን።</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ናይ ቀረባ ግዜ ምእታዋት፣ ዘይተዓወቱ ፈተነታትን ለውጥታት ድሕንነትን ናይዚ ሕሳብ።</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ንጥፈታት ገምግም</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ዘይተዓወቱ ምእታዋት: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>እቲ crontab ኣይተጻሕፈን (%reason)። እዘን መስመራት ኣብ crontab ናይቲ መርበብ ዝሰርሓሉ ተጠቃሚ ወስኹ፣ እንተዘይኮነ እቲ መስርዕ፣ እተን ምእታዋት፣ እተን መፍለጥታትን እቲ መዘርዝር ምድላይን ፈጺሙ ኣይሰርሑን:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>ዳግማይ ምትካል ብ Kickstarter (%file፣ ድሕሪኡ php bin/php/kickstarter.php run --apply) ወይ ብሓድሽ ምትካል ይግበር።</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>እቲ መሕለፊ ፖስታ ኣብቲ ዝሓለፈ ምክያድ %count መልእኽትታት ነጺጉ። ሰርቨር ፖስታን site.ini MailSettings ን ፈትሹ።</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ፍጻመታት ይጽበዩ ኣለዉ፣ ዝኾነ ምክያድ ናይ cronjob መፍለጢ ድማ ኣይተመዝገበን። ነቲ ክፋል cronjob &quot;frequent&quot; ናብ crontab ወስኹ፣ ወይ exp:notification:run --apply ኣካይዱ።</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>ብመራጺ መስቀለኛ ካልእ መርበብ ወይ ክፋል ምረጹ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ንዋናኡ ክቕይር ዝኽእል ኣመሓዳሪ ስርዓት ጥራይ እዩ: ./console exp:content-check --fix-permissions --apply ከም root ኣካይዱ።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ባዶ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>መፍረሚ ቁልፊ ካብ ሓደ ዓመት ንላዕሊ ጸኒሑ እዩ: ብ exp:audit key rotate --apply ቀይርዎ።</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ዘይተለኣኸ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>cronjob መፍለጢ ነፍሲ ወከፍ ምክያዱ ኣብዚ ይምዝግብ። ነቲ ክፋል frequent ናብ crontab ወስኹ፣ ወይ exp:notification:run --apply ኣካይዱ።</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>ኮንሶል ተጠቐሙ: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ዋላ ሓደ።</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ብመተግበሪ ምርግጋጽ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ብኢመይል ብዝተላእከ ኮድ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ብኮድ ምምላስ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ብፓስኪ (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ብናይ ደገ ሕሳብ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>ከም መርበቡ ይርአ፤ እቲ ኣድራሻ ከምቲ ቅጥዕታት ሓለዋ ዳታ ናይቲ መርበብ ሓበሬታ ዝብልዎ ይዕቀብ።</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ኣይተመዝገበን</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ቦታ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ብግምት</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>መሳርሒታት ኣመሓድር</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ብመተግበሪ ምርግጋጽ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ብኢመይል ብዝተላእከ ኮድ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ብኮድ ምምላስ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ብፓስኪ (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ብናይ ደገ ሕሳብ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ኣይተመዝገበን</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ቦታ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ብግምት</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ክፍለ ግዜታት ናይዚ ተጠቃሚ ርኣዩ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>ሕሳብኩም %login ኣብ %site ሕጂ ካብ ቀረባ ግዜ ዘይኣተወሉ ቦታ ንምእታው ተጠቒሙ:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>ግምታዊ ቦታ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ኣብ %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ጸብጻብ ምእታው</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>ዘይፍለጥ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>ሕሳብኩም ኣውሕሱ</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>ናብ ሕሳብኩም %login ኣብ %site ንምእታው ኮድ ምምላስ ተጠቒሙ።</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ኮድ ምምላስ ተጠቒሙ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ሕሳብ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ግምታዊ ኣድራሻ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>ዳግማይ ንምእታው ሓድሽ መሕለፊ ቃል ሕተቱ፣ ወይ ንኣመሓደርቲ እቲ መርበብ ሓበሬታ ተወከሱ።</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>ሓድሽ መሕለፊ ቃል ሕተት</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ነፍሲ ወከፍ ኮድ ምምላስ ሓንሳብ ጥራይ ይሰርሕ። ተሌፎንኩም እንተ ጠፊኡኩም፣ መተግበሪ ምርግጋጽኩም ዳግማይ ኣዳልዉ፣ ነቶም ሓደስቲ ኮዳት ምምላስ ድማ ኣብ ውሑስ ቦታ ዕቀብዎም።</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>ኣብ ሕሳብኩም ዘይተዓወቱ ፈተነታት ምእታው</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ካብ ሕጂ ንደሓር፣ ምእታው ብተወሳኺ መሕለፊ ቃልኩም ኮድ ይሓትት። እዚ ዝገበርኩም ንስኹም እንተ ኾንኩም፣ ዝኾነ ክትገብሩ ኣየድልየኩምን።</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>ንስኹም እንተ ኾንኩምን መሕለፊ ቃልኩም እንተ ረሲዕኩምን፣ ሓድሽ ሕተቱ። እንተ ዘይኮይኑ፣ ዝበለጸ ሓያል መሕለፊ ቃል ምረጹ፣ ክልተ ደረጃ ምእታው ድማ ወልዑ።</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>እዚ ንስኹም እንተ ዘይኮንኩም፣ ሓደ ሰብ መሕለፊ ቃልኩም ክፈልጥ ይኽእል: ሕጂ ቀይርዎ፣ ሕሳብኩም ኣበይ ከም ዝኣተወ ድማ ፈትሹ።</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>ዝተረፉ ኮዳት ምምላስ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>መሳርሒታትኩም ገምግም</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>መጠንቀቕታ ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>ሓደ ሰብ ናብ ሕሳብኩም %login ኣብ %site ብጌጋ መሕለፊ ቃል %count ግዜ ተኸታቲሉ ክኣቱ ፈቲኑ።</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>ኣብ ሕሳብኩም %login ኣብ %site ፍጻመ ድሕንነት ኣጋጢሙ።</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>እዚ ብዛዕባ ሕሳብኩም መጠንቀቕታ ድሕንነት እዩ። ንነፍሲ ወከፍ ከምዚ ዝበለ ለውጢ ይለኣኽ፣ ክጠፍእ ድማ ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ግዜ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>ክልተ ደረጃ ምእታው ንሕሳብኩም %login ኣብ %site ጠፊኡ።</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>ክልተ ደረጃ ምእታው ጠፊኡ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>ክልተ ደረጃ ምእታው ንሕሳብኩም %login ኣብ %site ተወሊዑ።</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>ክልተ ደረጃ ምእታው ተወሊዑ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>ሕሳብኩም %login ኣብ %site ድሕሪ ብዙሓት ዘይተዓወቱ ምእታዋት ተዓጽዩ።</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ሕሳብኩም ሕጂ ብመሕለፊ ቃልኩም ጥራይ እዩ ዝሕሎ። እዚ ዝገበርኩም ንስኹም እንተ ዘይኮንኩም፣ መሕለፊ ቃልኩም ምስ ቀየርኩም ክልተ ደረጃ ምእታው ዳግማይ ወልዑ።</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>ሕሳብኩም ተዓጽዩ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ንጥፈታት ድሕንነት ናይ %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ኣትዩ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ዘይተዓወተ ፈተነ ምእታው</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ወጺኡ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ክፍለ ግዜታት ወጺኦም</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ካብ ሓድሽ መሳርሒ ምእታው</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ካብ ሓድሽ ቦታ ምእታው</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>መንነት ተረጋጊጹ («ንስኹም ምዃንኩም ኣረጋግጹ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ምርግጋጽ መንነት ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ብፓስኪ ኣትዩ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ብፓስኪ ምእታው ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ምእታው ተነጺጉ: ኮድ ካልኣይ ደረጃ የለን ወይ ጌጋ እዩ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ጌጋ ኮድ ካልኣይ ደረጃ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ድሕሪ ዘይተዓወቱ ምእታዋት ሕሳብ ተዓጽዩ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ሕሳብ ተኸፊቱ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>መሕለፊ ቃል ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ምቕያር መሕለፊ ቃል ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>መሕለፊ ቃል ዳግማይ ተዳልዩ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ሓድሽ መሕለፊ ቃል ተሓቲቱ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ኣድራሻ ኢመይል ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ስም ተጠቃሚ ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ክልተ ደረጃ ምእታው ተወሊዑ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ክልተ ደረጃ ምእታው ጠፊኡ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ኮድ ምምላስ ተጠቒሙ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ሓደስቲ ኮዳት ምምላስ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>መሕለፊ ቃል መተግበሪ ተፈጢሩ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>መሕለፊ ቃል መተግበሪ ተብጺሉ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ፓስኪ ተወሲኹ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ፓስኪ ተኣልዩ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ሕሳብ ነቒሑ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ሕሳብ ደው ኢሉ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ኩሉ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ምእታዋትን ክፍለ ግዜታትን</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ለውጥታት ሕሳብ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ኣቓልቦ የድልዮ</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ብኣኹም</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ብተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ብ %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>ኣገባብ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>መርበብ ሓበሬታ መርኣዪ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ስርዓተ ክወና</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>መሳርሒ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ቦታ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ሃገር</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ክፍለ ግዜታት</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ኣየኖት</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>መንገዲ ምልኣኽ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ዘይተዓወቱ ፈተነታት</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ዝተረፉ ኮዳት</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ኣሰራሒ ምእታው</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ንጥፈታት ድሕንነት ናይ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ምእታዋትን ለውጥታት ድሕንነት ሕሳብኩምን። ዘይገበርኩምዎ ነገር እንተ ረኣኹም፣ መሕለፊ ቃልኩም ቀይሩ፣ ነቶም ዘይትፈልጥዎም መሳርሒታት ድማ ኣውጽኡ።</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ምእታዋትን ለውጥታት ድሕንነት ናይዚ ሕሳብን።</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሳርሒታትኩም</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>መሕለፊ ቃል ቀይር</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ናብ ሕሳብ ተመለስ</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>ንጥፈታት ድሕንነት ኣይምዝገብን</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ካብ መዝገብ ኦዲት ተጠቀምቲ እዩ ዝንበብ፤ ሰሌዳኡ expuser_audit የለን ወይ ኣብዚ ዳታቤዝ ኣይድገፍን። php update/common/scripts/6.0/createuseraudittable.php ወይ ምምሕያሽ ዳታቤዝ ናይ 6.0.15 ኣካይዱ።</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ዝሓለፉ %days መዓልታት</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ኣብ ዝሓለፉ %days መዓልታት ዝተገብሩ ምእታዋት</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ናይ ቀረባ ግዜ ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ኣርኢ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ተነጺጉ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ክሳብ ሕጂ ዝተመዝገበ ንጥፈታት ድሕንነት የለን።</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>ፍጻመታት ድሕንነት ን %days መዓልታት ይዕቀቡ።</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ፍጻመታት ድሕንነት ሓደ ኣመሓዳሪ ክሳብ ዘእልዮም ይዕቀቡ።</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ዳታ ምእታወይ ኣውርድ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ክፍለ ግዜታትኩምን ፍጻመታት ድሕንነትኩምን ከም ፋይል JSON።</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ኣትዩ</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>ዘይተዓወተ ፈተነ ምእታው</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ወጺኡ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>ክፍለ ግዜታት ወጺኦም</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>ካብ ሓድሽ መሳርሒ ምእታው</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>ካብ ሓድሽ ቦታ ምእታው</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>መንነት ተረጋጊጹ («ንስኹም ምዃንኩም ኣረጋግጹ»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ምርግጋጽ መንነት ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ብፓስኪ ኣትዩ</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ብፓስኪ ምእታው ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ምእታው ተነጺጉ: ኮድ ካልኣይ ደረጃ የለን ወይ ጌጋ እዩ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>ጌጋ ኮድ ካልኣይ ደረጃ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ድሕሪ ዘይተዓወቱ ምእታዋት ሕሳብ ተዓጽዩ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ሕሳብ ተኸፊቱ</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>መሕለፊ ቃል ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>ምቕያር መሕለፊ ቃል ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>መሕለፊ ቃል ዳግማይ ተዳልዩ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>ሓድሽ መሕለፊ ቃል ተሓቲቱ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ኣድራሻ ኢመይል ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ስም ተጠቃሚ ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>ክልተ ደረጃ ምእታው ተወሊዑ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>ክልተ ደረጃ ምእታው ጠፊኡ</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>ኮድ ምምላስ ተጠቒሙ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>ሓደስቲ ኮዳት ምምላስ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>መሕለፊ ቃል መተግበሪ ተፈጢሩ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>መሕለፊ ቃል መተግበሪ ተብጺሉ</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ፓስኪ ተወሲኹ</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ፓስኪ ተኣልዩ</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ሕሳብ ነቒሑ</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ሕሳብ ደው ኢሉ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ኩሉ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ምእታዋትን ክፍለ ግዜታትን</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ለውጥታት ሕሳብ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ኣቓልቦ የድልዮ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>ንጥፈታት ድሕንነት ናይ %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>ምእታዋትን ለውጥታት ድሕንነት ሕሳብኩምን። ዘይገበርኩምዎ ነገር እንተ ረኣኹም፣ መሕለፊ ቃልኩም ቀይሩ፣ ነቶም ዘይትፈልጥዎም መሳርሒታት ድማ ኣውጽኡ።</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሳርሒታትኩም</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>መሕለፊ ቃል ቀይር</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ንጥፈታት ድሕንነት ኣብዚ መርበብ ሓበሬታ ገና ኣይምዝገብን።</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ኣብ ዝሓለፉ %days መዓልታት ዝተገብሩ ምእታዋት</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ዘይተዓወቱ ፈተነታት</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ክሳብ ሕጂ ዝተመዝገበ ንጥፈታት ድሕንነት የለን።</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ዳታ ምእታወይ ኣውርድ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>ክፍለ ግዜታትኩምን ፍጻመታት ድሕንነትኩምን ከም ፋይል JSON።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>መሕለፊ ቃል</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>መሕለፊ ቃልን ኮድ ካልኣይ ደረጃን</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>መተኣሳሰሪ REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>መተኣሳሰሪ SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ሓደ ግዜ ምእታው (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ክፍለ ግዜታት ቅድሚ ምምዝጋቦም ኣትዩ</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ጸብጻብ ምእታው</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>ኣብቲ መርበብ ሓበሬታ መን ከም ዝኣተወ፣ ሕሳባት ክንደይ ግዜ ከም ዝኣትዉን ከም ዝፈሽሉን፣ ንተጠቃሚ ድማ ካብ ኩሉ ቦታ ምውጻእ። ምስ ዝኾነ ኣሰራሒ ክፍለ ግዜ ይሰርሕ።</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>እቲ ክፍለ ግዜ ወጺኡ። እቲ መሳርሒ ዳግማይ ክኣቱ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ካብ %count ክፍለ ግዜታት ወጺኡ።</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ዝሰርሕ ክፍለ ግዜ ኣይነበሮን።</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>እዚ ID፣ ስም ተጠቃሚ ወይ ኣድራሻ ኢመይል ዘለዎ ሕሳብ የለን።</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>እዚ እትጥቀሙሉ ዘለኹም ክፍለ ግዜ እዩ። ንምውዳኡ፣ ውጹ።</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>እቲ ክፍለ ግዜ ድሮ ተወዲኡ ነይሩ።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ግዜ ናይቲ ገጽ ሓሊፉ ነይሩ። ዝተቐየረ የለን፤ በጃኹም ደጊምኩም ፈትኑ።</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ኣብዚ መርበብ ሓበሬታ ክፍለ ግዜታት ኣይምዝገቡን (site.ini [UserSessionSettings] Tracking=disabled)።</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ሰሌዳ expuser_session የለን</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>እቲ ሰሌዳ ምስ ተፈጥረ ክፍለ ግዜታት ይምዝገቡ: php update/common/scripts/6.0/createusersessiontable.php ወይ ምምሕያሽ ዳታቤዝ ናይ 6.0.15።</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ሕጂን ሎምን</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>ዝሰርሑ ዘለዉ ክፍለ ግዜታት</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ዝኣተዉ ተጠቀምቲ</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ናይ ሎሚ ምእታዋት</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ናይ ሎሚ ዘይተዓወቱ ፈተነታት</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ንተጠቃሚ ካብ ኩሉ ቦታ ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ነፍሲ ወከፍ ክፍለ ግዜ ናይቲ ሕሳብ ኣብ ዝቕጽል ሕቶኡ ይውዳእ፣ እቶም ብ«ዘክረኒ» ዝተታሕዙ እውን። ሕሳብ ኣብ ጌጋ ኢድ ክህሉ ምስ ዝኽእል እዚ ተጠቐሙ፤ ድሕሪኡ መሕለፊ ቃሉ ዳግማይ ኣዳልዉ።</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ተጠቃሚ፣ ስም ተጠቃሚ ወይ ኣድራሻ ኢመይል</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ካብ ኩሉ ቦታ ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ሕጂ ኣትዩ</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>እቶም ብቐረባ ዝተጠቕሙ %limit ይርኣዩ ኣለዉ።</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>መሳርሒ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ኣድራሻ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ኣትዩ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ናይ መወዳእታ ንጥፈት</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ተግባራት</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>እዚ መሳርሒ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ኣይተመዝገበን</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ዝኣተወ ክፍለ ግዜ የለን።</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ዝሓለፉ %days መዓልታት</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ምእታዋትን ዘይተዓወቱ ፈተነታትን ካብ መዝገብ ኦዲት ተጠቀምቲ እዮም ዝቑጸሩ፣ እዚ ድማ የለን፤ እቶም ሓደስቲ ክፍለ ግዜታት ይቑጸሩ።</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>መዓልቲ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ምእታዋት</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ዘይተዓወቱ ፈተነታት</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>ሓደስቲ ክፍለ ግዜታት</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>ኣሰራሒ ክፍለ ግዜ: %handler። ክፍለ ግዜታት ካብ ሰሌዳ expuser_session ስለ ዝንበቡ፣ እቲ ጸብጻብ ምስ ዝኾነ ኣሰራሒ ይሰርሕ።</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>ንሕሳብኩም መጠንቀቕታ ድሕንነት</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>ኣብ ሕሳብኩም %login ፍጻመ ድሕንነት ኣጋጢሙ: %event። እዚ ንስኹም እንተ ዘይኮንኩም፣ ሕሳብኩም ኣብ %url ኣውሕሱ።</translation>
     </message>
 </context>
 </TS>

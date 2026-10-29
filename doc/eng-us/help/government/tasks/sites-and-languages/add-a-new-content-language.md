@@ -24,7 +24,7 @@ and [Content languages](../../../../guides/content-languages.md#4-adding-a-langu
 3. The overview confirms the language was added; its card says it is not used and in no `SiteLanguageList`.
 4. Make it visible: add the locale to the `SiteLanguageList[]` of a siteaccess, or create a siteaccess for it (see
    "Give a language its own address").
-5. Clear caches: `php bin/php/ezcache.php --clear-tag=ini,content`, and `./console exp:velocity cache clear` with
+5. Clear caches: `php bin/php/ezcache.php --clear-tag=ini,content`, and `./console exp:velocity cache clear --apply` with
    Velocity.
 6. Give translators a role limited to the language (see "Limit a translator to one language").
 

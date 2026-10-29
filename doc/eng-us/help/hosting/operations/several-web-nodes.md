@@ -90,7 +90,7 @@ reaches the others:
 - **With the DFS cluster**, cache files and `expiry.php` (the timestamps that invalidate caches) are cluster files, so
   a clear on one node is seen by all ([Cluster (DFS)](../../../features/6.0/multi-site-log-and-cache-paths.md#cluster-dfs)).
 - **The caches in front of PHP** are local: the HTTP cache in `var/<site>/cache/exphttpcache` and Velocity's response
-  cache. Clear them on every node after a change (`./console exp:velocity cache clear` for Velocity;
+  cache. Clear them on every node after a change (`./console exp:velocity cache clear --apply` for Velocity;
   [Caches](../../../guides/caches.md)).
 - **A shared cache backend.** The extension `sevenx_valkey_cache` keeps template blocks, the content view cache and the
   compiled INI cache in Redis or Valkey, which "makes INI caches safe for clusters"

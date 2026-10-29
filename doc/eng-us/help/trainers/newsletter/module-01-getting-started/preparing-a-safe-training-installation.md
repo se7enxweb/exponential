@@ -95,7 +95,7 @@ message ([10.4](../../../../install/10-after-installing.md#104-mail-the-file-tra
 
 ## Hands-on exercise
 
-Use your own training installation, for example one installed with `php bin/php/console exp:install`
+Use your own training installation, for example one installed with `php bin/php/console exp:install --apply`
 ([chapter 7](../../../../install/07-console-install.md)), with `cjw_newsletter` active. Work from the installation's
 root directory.
 

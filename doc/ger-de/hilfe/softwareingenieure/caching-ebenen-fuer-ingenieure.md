@@ -49,7 +49,7 @@ oder nginx hat keinen eigenen ([Anwendungsserver](anwendungsserver.md)).
 
 | Ebene | Schlüssel (kurz) | Invalidiert durch |
 |---|---|---|
-| Antwort-Cache von Velocity | die Anfrage eines anonymen Besuchers; Lebensdauer `[CacheSettings] DefaultTtl` (mitgeliefert 30 Sekunden), sofern `Cache-Control` der Seite nichts anderes sagt | Lebensdauer, `./console exp:velocity cache clear` |
+| Antwort-Cache von Velocity | die Anfrage eines anonymen Besuchers; Lebensdauer `[CacheSettings] DefaultTtl` (mitgeliefert 30 Sekunden), sofern `Cache-Control` der Seite nichts anderes sagt | Lebensdauer, `./console exp:velocity cache clear --apply` |
 | Rollenbewusster HTTP-Cache | die Inhaltsansicht und der Berechtigungskontext (anonym, ein gemeinsamer Rollenkontext oder privat) | Purges bei Inhaltsänderungen (standardmäßig `ContentChangePurges=all`), `--clear-id=exphttpcache` |
 | View-Cache für Inhalte | der Knoten, die Ansicht und ihre Parameter und der Zugriffskontext des Benutzers | `eZContentCacheManager` beim Veröffentlichen, `--clear-tag=content` |
 | Cache für Template-Blöcke | die in `{cache-block}` geschriebenen Schlüssel und sein Ablauf | Ablauf, `--clear-id=template-block` |

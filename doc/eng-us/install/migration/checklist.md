@@ -134,7 +134,7 @@ The detail per concept is in [Mapping content to Exponential](content-model-mapp
 - [ ] Announce the freeze to editors; stop changes on the old site.
 - [ ] Final export, final import, counts, redirects test.
 - [ ] Lower the DNS time to live a day before; switch DNS or the proxy.
-- [ ] Clear caches and warm the most visited pages (`./console exp:warm`, `./console exp:preload`).
+- [ ] Clear caches and warm the most visited pages (`./console exp:warm`, `./console exp:preload --apply`).
 - [ ] Watch the logs (`./console exp:explogs`) and the 404 list for the first hours; add redirects for what appears.
 - [ ] Submit the sitemap; check the search console of each search engine for crawl errors.
 

@@ -70,7 +70,7 @@ Schritte:
 
 Checkliste:
 
-- [ ] Es gibt eine Demonstrationsinstallation, die sich das Team ansehen kann (`./console exp:install`,
+- [ ] Es gibt eine Demonstrationsinstallation, die sich das Team ansehen kann (`./console exp:install --apply`,
       [Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - [ ] Der Auftraggeber hat die Administration gesehen, nicht nur Folien.
 - [ ] Produkt, Datenbank, Webserver und Installationsmethode stehen im Projektauftrag.

@@ -27,7 +27,7 @@ concrete before any site is added.
 | Duration | 45 minutes (20 presenting, 25 exercise) |
 | Level | Intermediate |
 | Audience | Administrators and developers who will run several sites on one installation |
-| Prerequisites | A training installation of their own with shell access (installed with `php bin/php/console exp:install`); basic use of a terminal |
+| Prerequisites | A training installation of their own with shell access (installed with `php bin/php/console exp:install --apply`); basic use of a terminal |
 
 ## Learning objectives
 
@@ -90,7 +90,7 @@ installation writes its own value into the override. Always read the value in ef
 
 ## Hands-on exercise
 
-Use your own training installation, installed with `php bin/php/console exp:install` as in
+Use your own training installation, installed with `php bin/php/console exp:install --apply` as in
 [7. The console install](../../../../install/07-console-install.md). Work in its root directory (the one that holds
 `index.php`).
 

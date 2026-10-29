@@ -30,8 +30,8 @@ the answers come from" ([One-click installers](../hosting/provisioning/one-click
 | Front end | Started by | Answers from |
 |---|---|---|
 | Setup wizard | opening the site in a browser while `[SiteAccessSettings] CheckValidity=true` | browser forms (pre-filled by `kickstart.ini` if present) |
-| Kickstarter | `php bin/php/console exp:kickstarter run` or `php bin/php/kickstarter.php run` | `kickstart.ini` in the installation root |
-| Console install | `php bin/php/console exp:install` or `php bin/php/install.php` | command-line options, each with a default |
+| Kickstarter | `php bin/php/console exp:kickstarter run --apply` or `php bin/php/kickstarter.php run --apply` | `kickstart.ini` in the installation root |
+| Console install | `php bin/php/console exp:install --apply` or `php bin/php/install.php --apply` | command-line options, each with a default |
 
 ## Side by side
 

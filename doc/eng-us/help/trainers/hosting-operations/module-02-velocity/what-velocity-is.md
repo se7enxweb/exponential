@@ -101,7 +101,7 @@ Use your own training installation. Run every command from the installation root
    ```
 
 4. If the engine is not `qbix`, set it:
-   `php bin/php/console exp:velocity config set ServerSettings Engine qbix`.
+   `php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix`.
 5. Show which file was written: `php bin/php/console exp:velocity config paths`.
 6. Start the server: `php bin/php/console exp:velocity start`.
 7. Read the status: `php bin/php/console exp:velocity status`. Note the site address, the administration address and

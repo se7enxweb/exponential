@@ -31,7 +31,7 @@ Seite, die ihn erklärt.
 
 ## Eine Entwicklungsumgebung einrichten
 
-- [ ] Eine lokale Installation: `./console exp:install` (SQLite) ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
+- [ ] Eine lokale Installation: `./console exp:install --apply` (SQLite) ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - [ ] `config.env.php` mit `EXP_ENV=dev`; Debug-Ausgabe und der Mail-Transport `file` in der Variante `dev`
       ([Umgebungen und Geheimnisse](umgebungen-und-geheimnisse.md)).
 - [ ] Velocity mit `Engine=qbix` oder Apache bzw. nginx mit PHP-FPM ([Server und Deployment](server-und-deployment.md)).

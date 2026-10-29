@@ -29,7 +29,7 @@ ihnen gestört werden.
 | Cache-Blöcke | Teile von Templates, die Sie in `{cache-block}` einschließen | wenn sich Schlüssel ändern, beim Ablauf, beim Veröffentlichen von Inhalten (sofern nicht anders angegeben) |
 | Kompilierte Templates | in PHP umgewandelte Templates | wenn sich die Template-Datei ändert (mit Entwicklungsprüfungen) oder beim Leeren |
 | Gepackte Assets | zusammengeführtes CSS und JS | eine neue Datei pro Änderung einer Quelle |
-| Antwort-Cache von Velocity | ganze Antworten, auf Installationen mit dem Server Velocity | `./console exp:velocity cache clear` |
+| Antwort-Cache von Velocity | ganze Antworten, auf Installationen mit dem Server Velocity | `./console exp:velocity cache clear --apply` |
 
 ## Der View-Cache
 

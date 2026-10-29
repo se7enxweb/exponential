@@ -137,7 +137,7 @@ each as its own operating-system user. The details are in [Velocity engines](../
 ./console exp:velocity deploy --allow-root-user       # after a change: autoloads, settings, caches, PHP-FPM, Velocity
 ./console exp:velocity start --allow-root-user        # start the configured engine
 ./console exp:velocity restart --allow-root-user      # restart it, so workers load changed classes
-./console exp:velocity cache clear --allow-root-user  # empty Velocity's response cache
+./console exp:velocity cache clear --apply --allow-root-user  # empty Velocity's response cache
 ```
 
 `deploy --dry-run` lists what it would do and does nothing else; `deploy --kernel` also rebuilds the kernel autoloads

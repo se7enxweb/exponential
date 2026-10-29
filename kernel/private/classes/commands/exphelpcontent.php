@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall
+ * @description Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall (the changing actions are a dry run unless --apply)
  * @alias exp:help:content
  *
  * File containing the exp:help:content command (doc/eng-us/features/6.0/help-content.md, doc/eng-us/specifications/6.0/help-system.md).
@@ -15,6 +15,9 @@ namespace Exponential\Command\Kernel
 
 class Exphelpcontent extends \Exponential\Runnable\Command
 {
+    /** The actions that change the installation: a dry run unless --apply (check --fix and feedback --prune too) */
+    const WRITING_ACTIONS = array( 'install', 'tables', 'classes', 'tree', 'roles', 'seed-glossary', 'seed-topics', 'build-manuals', 'ebooks', 'uninstall' );
+
     public function run()
     {
         $cli = $this->cli();
@@ -22,16 +25,16 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             array(
                 'description' => "Help maintained as content (topics, manuals, glossary in the content tree)\n" .
                                  "\n" .
-                                 "./console exp:help:content install -s <admin siteaccess> [--dry-run]   tables, classes, tree and roles (all four steps)\n" .
+                                 "./console exp:help:content install -s <admin siteaccess> [--apply]   tables, classes, tree and roles (all four steps)\n" .
                                  "./console exp:help:content tables -s ...     the tables exphelp_help_id (released help_ids) and exphelp_feedback\n" .
                                  "                                              (\"Was this helpful?\"), when an older installation lacks them\n" .
                                  "./console exp:help:content classes -s ...    the eight help_* classes in the class group Help (create_classes.php)\n" .
                                  "./console exp:help:content tree -s ...       sections, the state group help_status, the folder tree (create_tree.php)\n" .
                                  "./console exp:help:content roles -s ...      the roles Help editor, Help release and the Anonymous policy (create_roles.php)\n" .
-                                 "./console exp:help:content check -s ... [--fix]   the validator (check_help.php); --fix sets the sections from the audience\n" .
+                                 "./console exp:help:content check -s ... [--fix --apply]   the validator (check_help.php); --fix sets the sections from the audience\n" .
                                  "./console exp:help:content seed-glossary -s ... [--file=] [--update]   the glossary (seed_glossary.php)\n" .
                                  "./console exp:help:content seed-topics -s ... [--file=] [--update] [--release]   topics and manuals (seed_topics.php)\n" .
-                                 "./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--dry-run] [--queue]\n" .
+                                 "./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--queue] [--apply]\n" .
                                  "                                              the manuals of the Markdown help (exphelp.ini [ManualSettings]):\n" .
                                  "                                              made, updated and removed so they match the pages (help-gen-...)\n" .
                                  "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
@@ -42,8 +45,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "                                              the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a\n" .
                                  "                                              directory, checked after writing (also: export --format=dita);\n" .
                                  "                                              --commit records it in git (the cronjob part exphelp does it regularly)\n" .
-                                 "./console exp:help:content feedback -s ... [--prune] [--json]   the answers to \"Was this helpful?\" per topic\n" .
-                                 "./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--dry-run]   build the e-books of the\n" .
+                                 "./console exp:help:content feedback -s ... [--prune --apply] [--json]   the answers to \"Was this helpful?\" per topic\n" .
+                                 "./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--apply]   build the e-books of the\n" .
                                  "                                              Released manuals and store them as file objects under E-books\n" .
                                  "./console exp:help:content review -s ... [--json]   the topics whose review is overdue\n" .
                                  "./console exp:help:content cache -s ... [--json]   fill the cache of the help rows and search words of the\n" .
@@ -52,20 +55,25 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "                                              class package exp_help_classes (a directory and an .ezpkg)\n" .
                                  "./console exp:help:content verify-package -s ... --file=<.ezpkg or directory>   compare a package with the\n" .
                                  "                                              classes of this release (no database)\n" .
-                                 "./console exp:help:content uninstall -s ... [--with-content] [--dry-run]   take the roles away (and the tree, classes,\n" .
+                                 "./console exp:help:content uninstall -s ... [--with-content] [--apply]   take the roles away (and the tree, classes,\n" .
                                  "                                              state group and sections with --with-content)\n" .
                                  "\n" .
                                  "-s (--siteaccess) is required: one tree may serve several installations with different databases. Every\n" .
-                                 "step is idempotent: a second run prints \"No change.\". --dry-run shows what would change and changes nothing.\n" .
+                                 "step is idempotent: a second run prints \"No change.\". The actions that change the installation (install,\n" .
+                                 "tables, classes, tree, roles, check --fix, seed-glossary, seed-topics, build-manuals, ebooks, feedback --prune,\n" .
+                                 "uninstall) only show what would change unless --apply is given; --dry-run means the same as no --apply, both\n" .
+                                 "together are a usage error (exit 2). export, dita, package and cache write their files as before (--dry-run\n" .
+                                 "still shows the plan of export and dita); report, review and verify-package only read.\n" .
                                  "Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error.",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[dry-run][check][prune][commit][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:][language:][queue]', '', array(
+        $options = $this->startup( '[apply][dry-run][check][prune][commit][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:][language:][queue]', '', array(
             'queue'        => 'build-manuals: queue the build as a background content job (helpmanuals) and return at once; nothing is queued while one runs',
-            'dry-run'      => 'Show what would change, change nothing',
+            'apply'        => 'install, tables, classes, tree, roles, check --fix, seed-*, build-manuals, ebooks, feedback --prune, uninstall: make the changes (the default is a dry run)',
+            'dry-run'      => 'Show what would change, change nothing (the default of the changing actions; export and dita: their plan)',
             'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience, and record the help_ids of Released topics',
             'file'         => 'seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)',
             'update'       => 'seed-*: also update existing objects that differ from the file',
@@ -86,7 +94,20 @@ class Exphelpcontent extends \Exponential\Runnable\Command
         $arguments = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
         $action = $arguments ? strtolower( (string)array_shift( $arguments ) ) : '';
         $json = !empty( $options['json'] );
-        $dryRun = !empty( $options['dry-run'] );
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $dryRun = !$apply;
+        // the actions that change the installation write only with --apply; export, dita, package and cache write the
+        // files they are asked for as before (--dry-run still plans export and dita), report, review, verify-package read
+        $writing = in_array( $action, self::WRITING_ACTIONS, true ) || ( $action === 'check' && !empty( $options['fix'] ) )
+                   || ( $action === 'feedback' && !empty( $options['prune'] ) );
+        if ( !$writing )
+            $dryRun = !empty( $options['dry-run'] );
 
         if ( empty( $options['siteaccess'] ) )
         {
@@ -203,6 +224,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             }
             if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks', 'review', 'feedback', 'package', 'verify-package', 'cache' ), true ) )
                 \expHelpContentProvider::clearCache();
+            if ( $writing && $dryRun && $code !== 2 && !$json )
+                $cli->output( "PASS: $action (dry run, nothing changed; --apply writes)" );
         }
         catch ( \Exception $e )
         {

@@ -4,14 +4,14 @@ Diese Seite richtet sich an alle, die in wenigen Minuten eine funktionierende Ex
 `kickstart.ini` zu schreiben und ohne Datenbankserver.
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 Das installiert das Multisite-Paket auf **SQLite**, in `eng-US`, mit den
 Siteaccesses `site` und `admin`, die über die URL erreicht werden, und gibt eine Zusammenfassung mit den
 Anmeldeadressen von Site und Administrationsoberfläche, dem Benutzernamen, der E-Mail-Adresse, Datenbank,
 Paket und Siteaccesses aus, dazu einen kurzen Block, den Sie kopieren und einfügen können. `exp:install`
-ist dasselbe wie `php bin/php/install.php`.
+ist dasselbe wie `php bin/php/install.php --apply`.
 
 ## Eine Datenbank wählen
 
@@ -34,9 +34,9 @@ setzt sie in den `ActiveExtensions` der neuen Site an die erste Stelle und spric
 UTF-8 mit Oracle.
 
 ```bash
-./console exp:install --db=mysql --db-host=127.0.0.1 --db-name=mysite \
+./console exp:install --apply --db=mysql --db-host=127.0.0.1 --db-name=mysite \
                       --db-user=root --db-action=remove
-EXP_INSTALL_DB_PASSWORD='...' ./console exp:install --db=pgsql
+EXP_INSTALL_DB_PASSWORD='...' ./console exp:install --apply --db=pgsql
 ```
 
 Übergeben Sie das Datenbankpasswort mit `--db-password` oder, besser, mit der
@@ -130,7 +130,7 @@ abgebrochen hat (`eZSiteInstaller::abortedStep()`).
   erhalten bleibt.
 - **Der Wartungsmodus** umschließt jeden Lauf: siehe [Wartungsmodus](wartungsmodus.md).
 
-**Öffentliche Demos.** `EXP_DEMO_MODE=1 ./console exp:install --password=publishing` installiert das veröffentlichte Demo-Passwort so, wie es angegeben ist; im Demo-Modus wird ein allgemein bekanntes oder kurzes Administratorpasswort (auch `publish`) beibehalten, ein leeres wird weiterhin abgelehnt. Behalten Sie die Variable für die laufende Site bei. [Demo-Modus](../../bc/6.0/demomodus.md), [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../../hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
+**Öffentliche Demos.** `EXP_DEMO_MODE=1 ./console exp:install --apply --password=publishing` installiert das veröffentlichte Demo-Passwort so, wie es angegeben ist; im Demo-Modus wird ein allgemein bekanntes oder kurzes Administratorpasswort (auch `publish`) beibehalten, ein leeres wird weiterhin abgelehnt. Behalten Sie die Variable für die laufende Site bei. [Demo-Modus](../../bc/6.0/demomodus.md), [Rezept: eine öffentliche Demo auf LiteSpeed und Plesk betreiben](../../hilfe/hosting/server/rezept-eine-oeffentliche-demo-auf-litespeed-und-plesk-betreiben.md).
 
 ## Verwandte Seiten
 

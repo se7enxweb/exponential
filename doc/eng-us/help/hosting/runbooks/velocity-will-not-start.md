@@ -80,7 +80,7 @@ does not leave the server down". If a restart does not finish:
 
 ## After the incident
 
-- [ ] Clear Velocity's response cache after the start: `php bin/php/console exp:velocity cache clear --allow-root-user`.
+- [ ] Clear Velocity's response cache after the start: `php bin/php/console exp:velocity cache clear --apply --allow-root-user`.
 - [ ] If the cause was a crash, consider the watchdog (`exp:velocity watchdog install`, as root)
       ([Velocity for hosts](../servers/velocity-for-hosts.md)).
 - [ ] If the cause was a change (a deploy, a settings change), note it and fix the procedure

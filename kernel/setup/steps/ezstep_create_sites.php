@@ -2157,8 +2157,15 @@ language_locale='eng-GB'";
             eZDebug::writeNotice( expMemberManagement::ensure(), __METHOD__ );
         }
         // Approval of new editor accounts: an editor who creates an account in Editors waits for the Administrator
-        // users (doc/eng-us/bc/6.0/user-account-approval.md)
-        if ( class_exists( 'expUserApproval' ) )
+        // users (doc/eng-us/bc/6.0/user-account-approval.md). site.ini [UserSettings] AccountApprovalMode chooses how:
+        // group (the default, the event "Approve user accounts"), section (opt-in: the section Staff and the plain
+        // approval event, expUserApprovalSection) or none. Never both: an account would be asked for twice.
+        $approvalMode = class_exists( 'expUserApprovalSection' ) ? expUserApprovalSection::mode() : 'group';
+        if ( $approvalMode === 'section' )
+        {
+            eZDebug::writeNotice( expUserApprovalSection::ensure(), __METHOD__ );
+        }
+        else if ( $approvalMode === 'group' && class_exists( 'expUserApproval' ) )
         {
             eZDebug::writeNotice( expUserApproval::ensure(), __METHOD__ );
         }

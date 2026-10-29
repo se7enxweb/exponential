@@ -89,7 +89,7 @@ What that means for an intranet:
 ## What must be running
 
 Nothing is sent until a notification **run** happens. The run is started by the cronjob group `frequent`, by the
-**Run now** button on the status page, or by `./console exp:notification:run`
+**Run now** button on the status page, or by `./console exp:notification:run --apply`
 ([How it works in one minute](../../../guides/notifications-administrator.md#1-how-it-works-in-one-minute)).
 
 **Setup > Notification** (`/notification/status`, policy `notification/administrate`) shows events waiting, messages

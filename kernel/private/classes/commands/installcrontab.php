@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/installcrontab.php.
- * @description Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change)
+ * @description Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--add and --remove: dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/installer-crontab.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -27,27 +27,39 @@ class Installcrontab extends \Exponential\Runnable\Command
                     . "when it is active), the schedules [AdminSettings] CrontabSchedule_<part>. --add replaces the block\n"
                     . "or appends it and keeps every other line; a part another line of the crontab runs already is left\n"
                     . "out. Run it as the owner of the installation or as root (crontab -u <owner>); otherwise, or without a\n"
-                    . "crontab command, it prints the lines to add by hand. Prints PASS or FAIL at the end.\n\n"
+                    . "crontab command, it prints the lines to add by hand. Prints PASS or FAIL at the end.\n"
+                    . "--add and --remove change nothing without --apply: they show the block and the lines of the crontab\n"
+                    . "that would change. --dry-run is still accepted and means the same as no flag; --apply together with\n"
+                    . "--dry-run is a usage error (exit 2).\n\n"
                     . "Example: php bin/php/installcrontab.php --show\n"
-                    . "         php bin/php/installcrontab.php --add --dry-run\n"
                     . "         php bin/php/installcrontab.php --add\n"
-                    . "         php bin/php/installcrontab.php --remove",
+                    . "         php bin/php/installcrontab.php --add --apply\n"
+                    . "         php bin/php/installcrontab.php --remove --apply",
                 'use-session' => false,
                 'use-modules' => false,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            "[show][add][remove][dry-run][admin-siteaccess:]",
+            "[apply][dry-run][show][add][remove][admin-siteaccess:]",
             '',
             array(
                 'show' => "The planned lines, the block in the crontab and the last runs (the default)",
                 'add' => "Add or update the block",
                 'remove' => "Remove the block",
-                'dry-run' => "With --add or --remove: show what would change, change nothing",
+                'apply' => "With --add or --remove: write the crontab (the default shows what would change)",
+                'dry-run' => "The default, kept for scripts that pass it: show what would change, change nothing",
                 'admin-siteaccess' => "The siteaccess of the admin parts (default: [CrontabSettings] AdminSiteAccess, else admin)"
             )
         );
+
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
 
         $actions = array_filter( array( 'add' => $options['add'], 'remove' => $options['remove'], 'show' => $options['show'] ) );
         if ( count( $actions ) > 1 )
@@ -56,7 +68,6 @@ class Installcrontab extends \Exponential\Runnable\Command
             $script->shutdown( 1 );
         }
         $action = $actions ? key( $actions ) : 'show';
-        $dryRun = (bool)$options['dry-run'];
 
         $root = \expCrontabSetup::root();
         $description = \expCrontabSetup::describe( $root, $options['admin-siteaccess'] ? (string)$options['admin-siteaccess'] : null );
@@ -99,16 +110,29 @@ class Installcrontab extends \Exponential\Runnable\Command
             $script->shutdown( 0 );
         }
 
-        $result = $action === 'add' ? $setup->add( $description, $dryRun ) : $setup->remove( $description, $dryRun );
-        if ( $dryRun && $result['status'] === 'dry-run' )
+        // the plan (nothing written), then with --apply the write
+        $result = $action === 'add' ? $setup->add( $description, true ) : $setup->remove( $description, true );
+        if ( !$dryRun )
+            $result = $action === 'add' ? $setup->add( $description, false ) : $setup->remove( $description, false );
+        if ( $dryRun && $result['status'] !== 'fallback' )
         {
-            $cli->output( 'The crontab of ' . $result['user'] . ' would change:' );
-            foreach ( self::difference( $result['before'], $result['after'] ) as $line )
-                $cli->output( '  ' . $line );
+            if ( $action === 'add' && $result['block'] )
+            {
+                $cli->output( 'The block of this installation:' );
+                foreach ( $result['block'] as $line )
+                    $cli->output( '  ' . $line );
+                $cli->output();
+            }
+            if ( $result['status'] === 'dry-run' )
+            {
+                $cli->output( 'The crontab of ' . $result['user'] . ' would change:' );
+                foreach ( self::difference( $result['before'], $result['after'] ) as $line )
+                    $cli->output( '  ' . $line );
+            }
             foreach ( $result['skipped'] as $part => $line )
                 $cli->output( "  part $part left out, an existing line runs it: $line" );
             $cli->output();
-            $cli->output( 'PASS: dry run, nothing changed' );
+            $cli->output( 'PASS: ' . $result['message'] . ' (dry run, nothing changed; --apply writes)' );
             $script->shutdown( 0 );
         }
         if ( $result['status'] === 'fallback' )
@@ -118,6 +142,17 @@ class Installcrontab extends \Exponential\Runnable\Command
             $cli->output();
             $cli->error( 'FAIL: the crontab was not changed: ' . $result['message'] );
             $script->shutdown( 1 );
+        }
+        // Check what was stored: the block is in the crontab after --add, gone after --remove.
+        if ( $result['status'] === 'written' || $result['status'] === 'removed' )
+        {
+            $state = $setup->show( $description );
+            $has = $state['ok'] ? (bool)$state['block'] : null;
+            if ( $has === null || $has !== ( $action === 'add' ) )
+            {
+                $cli->error( 'FAIL: the crontab of ' . $result['user'] . ( $action === 'add' ? ' has no block of this installation after writing it' : ' still has the block' ) );
+                $script->shutdown( 1 );
+            }
         }
         if ( $action === 'add' )
         {

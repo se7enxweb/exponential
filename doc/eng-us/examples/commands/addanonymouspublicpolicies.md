@@ -2,14 +2,14 @@
 title: exp:addanonymouspublicpolicies
 audience: developer, admin
 category: examples
-summary: "Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (--dry-run lists them first)."
+summary: "Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (dry run unless --apply)."
 keywords: exp:addanonymouspublicpolicies, addanonymouspublicpolicies, console, command, CLI, addanonymouspublicpolicies.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addanonymouspublicpolicies
 
-Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (--dry-run lists them first).
+Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (dry run unless --apply).
 
 Script `bin/php/addanonymouspublicpolicies.php`, code in `kernel/private/classes/commands/addanonymouspublicpolicies.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -26,17 +26,21 @@ it lacks: user/register (a new installation takes it out of PolicyOmitList[]), r
 the module exists tags/view (eztags) and newsletter subscribe, configure, unsubscribe and archive
 (cjw_newsletter). A policy the role has in any form (also limited, or module/*) is left alone, so
 the script can run again. Prints PASS or FAIL at the end.
+Without --apply nothing is written: the script lists what it would add. --dry-run is still accepted
+and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
-Example: php bin/php/addanonymouspublicpolicies.php --dry-run
-         php bin/php/addanonymouspublicpolicies.php --only=user/register
-         php bin/php/addanonymouspublicpolicies.php --skip=user/register --role=Visitors
+Example: php bin/php/addanonymouspublicpolicies.php
+         php bin/php/addanonymouspublicpolicies.php --apply
+         php bin/php/addanonymouspublicpolicies.php --apply --only=user/register
+         php bin/php/addanonymouspublicpolicies.php --apply --skip=user/register --role=Visitors
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | List what would be added, change nothing |
+| `--apply` |  | Write the changes (the default is a dry run that lists them and changes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list what would be added, change nothing |
 | `--role` | required | The role to complete (ID or name); default Anonymous |
 | `--only` | required | Only this policy (module/function), may be repeated |
 | `--skip` | required | Never this policy (module/function), may be repeated; e.g. --skip=user/register keeps registration closed |

@@ -52,7 +52,7 @@ installieren, neu installieren und neu erzeugen.
 ## Übungsumgebung
 
 - **Eine Installation pro Person**, niemals eine gemeinsame: Die Module 2 bis 4 ändern die globalen
-  Zuordnungseinstellungen. Installieren Sie jede mit `php bin/php/console exp:install` (Standard-Seitenpaket, SQLite,
+  Zuordnungseinstellungen. Installieren Sie jede mit `php bin/php/console exp:install --apply` (Standard-Seitenpaket, SQLite,
   URL-Zuordnung), wie in [Lektion 2.3 von Train the Trainer](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/eine-installation-pro-teilnehmer.md),
   und liefern Sie sie aus wie in [Lektion 2.4](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/die-websites-der-uebungsumgebung-bereitstellen.md).
 - Shell-Zugang als der Benutzer, der die Website ausliefert, `curl` und `sqlite3` (Lektion 6.4).

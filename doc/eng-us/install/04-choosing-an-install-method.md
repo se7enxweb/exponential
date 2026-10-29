@@ -76,7 +76,7 @@ Two consequences follow:
 
 | | Setup wizard | Kickstarter | Console install |
 |---|---|---|---|
-| Entry point | any page of the site while `[SiteAccessSettings] CheckValidity=true` | `php bin/php/console exp:kickstarter run --force` (also `php bin/php/kickstarter.php run --force`) | `php bin/php/console exp:install` (also `php bin/php/install.php`) |
+| Entry point | any page of the site while `[SiteAccessSettings] CheckValidity=true` | `php bin/php/console exp:kickstarter run --apply --force` (also `php bin/php/kickstarter.php run --apply --force`) | `php bin/php/console exp:install --apply` (also `php bin/php/install.php --apply`) |
 | Answers come from | the forms, one page per step | `kickstart.ini` in the installation root, one section per step | command-line options, every one with a default |
 | Needs a web server during the install | yes | no | no |
 | Needs a file written first | no (`kickstart.ini` optional) | yes: `kickstart.ini` (`exp:kickstarter ini` writes it) | no |
@@ -121,7 +121,7 @@ are applied, or when the site package comes from a local package repository. It 
 `kickstart.ini` that was there before. Every option has a default, so
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 alone installs the `sevenx_multisite` site package on SQLite (`var/storage/sqlite3/exponential.db`) with the
@@ -280,13 +280,13 @@ answer every request with `share/maintenance.html` (or the active theme's `error
 | Several environments that differ only in host names and credentials | the kickstarter with one `kickstart.ini` per environment, or `exp:install` with per-environment options | both are deterministic |
 | No internet access on the server | the kickstarter or the wizard with the packages already in `var/storage/packages/` | the site package is taken from the local repository when the index cannot be reached |
 | Regenerate the settings for an existing database | the kickstarter with `DatabaseAction=skip`, or `exp:install --db-action=skip --force` | `skip` writes the settings and leaves the data alone |
-| Reinstall over an existing installation | `exp:kickstarter run --force` or `exp:install --force`, after a backup | both say plainly that they replace the database |
+| Reinstall over an existing installation | `exp:kickstarter run --apply` or `exp:install --force`, after a backup | both say plainly that they replace the database |
 
 ### Decision guide
 
 1. **Do you have shell access?** No: use the wizard. Yes: go on.
 2. **Must a person review every answer before anything happens?** Yes: write `kickstart.ini` with
-   `exp:kickstarter ini`, review it, then `exp:kickstarter run --dry-run` and `run --force`.
+   `exp:kickstarter ini`, review it, then `exp:kickstarter run --dry-run` and `run --apply`.
 3. **Is the install part of a script, a pipeline or a container start-up?** Yes: use `exp:install` with explicit
    options, the password in `EXP_INSTALL_DB_PASSWORD`, and check the exit status.
 4. **Otherwise** `exp:install` is the shortest path, and the wizard the most explained one.
@@ -331,7 +331,7 @@ runs):
 set -euo pipefail
 cd /srv/exponential
 if ! grep -q '^\[DatabaseSettings\]' settings/override/site.ini.append.php 2>/dev/null; then
-    php bin/php/console exp:install \
+    php bin/php/console exp:install --apply \
         --db=mysql --db-host="${DB_HOST}" --db-name="${DB_NAME}" --db-user="${DB_USER}" \
         --url="${SITE_URL}" --email="${ADMIN_EMAIL}" --password="${ADMIN_PASSWORD}"
 fi
@@ -355,7 +355,7 @@ ends the container when it stops, so the container runtime can restart it. If th
 
 ```bash
 php bin/php/console exp:install --dry-run          # configuration and packages, nothing written
-php bin/php/console exp:install --force --title="CI build ${CI_PIPELINE_ID:-local}"
+php bin/php/console exp:install --apply --force --title="CI build ${CI_PIPELINE_ID:-local}"
 test -f settings/siteaccess/site/site.ini.append.php
 tail -n 20 var/log/setup.log
 ```

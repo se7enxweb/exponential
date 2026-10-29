@@ -251,7 +251,7 @@ anything. An export you have not restored is only a hope.
 
    ```bash
    php bin/php/installcrontab.php --remove --dry-run --allow-root-user
-   php bin/php/installcrontab.php --remove --allow-root-user
+   php bin/php/installcrontab.php --remove --apply --allow-root-user
    crontab -l | grep -n "$(pwd)"
    ```
 
@@ -274,7 +274,7 @@ anything. An export you have not restored is only a hope.
   (`./console exp:velocity layout --allow-root-user` shows every file it uses):
 
   ```bash
-  ./console exp:velocity site disable <name> --allow-root-user
+  ./console exp:velocity site disable --apply <name> --allow-root-user
   ```
 
 - **Apache, nginx or a hosting panel:** remove the virtual host or the server block of the site, its PHP-FPM pool,
@@ -313,7 +313,7 @@ To remove one extension and keep the installation:
    packages for classes, the newsletter's CSV exports).
 2. Remove it from `ActiveExtensions[]` or `ActiveAccessExtensions[]` in `settings/override/site.ini.append.php` and
    the siteaccesses.
-3. Remove its tables if it has an uninstall command (for example `./console exp:help:content uninstall` for help
+3. Remove its tables if it has an uninstall command (for example `./console exp:help:content uninstall --apply` for help
    maintained as content); read its own documentation for the tables it created.
 4. Remove its code: `composer remove se7enxweb/<package>` when Composer installed it, or remove its directory under
    `extension/`.

@@ -2,14 +2,14 @@
 title: exp:notificationsubscriptions
 audience: developer, admin
 category: examples
-summary: List the subtree notification subscriptions per user and subtree, or remove those whose content is gone.
+summary: List the subtree notification subscriptions per user and subtree, or remove those whose content is gone (dry run unless --apply).
 keywords: exp:notificationsubscriptions, notificationsubscriptions, console, command, CLI, notificationsubscriptions.php, exp:notification:subscriptions, exp:notify:subscriptions
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationsubscriptions
 
-List the subtree notification subscriptions per user and subtree, or remove those whose content is gone.
+List the subtree notification subscriptions per user and subtree, or remove those whose content is gone (dry run unless --apply).
 
 Script `bin/php/notificationsubscriptions.php`, code in `kernel/private/classes/commands/notificationsubscriptions.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -25,11 +25,15 @@ php bin/php/notificationsubscriptions.php --help
 ```text
 Notification subscriptions
   list                      the subtree subscriptions: user, node, path, class, last change below the node
-  remove-missing            remove the subscriptions whose node no longer exists (--dry-run counts)
+  remove-missing            remove the subscriptions whose node no longer exists (lists them; --apply removes)
+
+remove-missing without --apply removes nothing: it lists what it would remove. --dry-run is still
+accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
 ./console exp:notification:subscriptions list --user=editor --limit=20
 ./console exp:notification:subscriptions list --missing
-./console exp:notification:subscriptions remove-missing --dry-run
+./console exp:notification:subscriptions remove-missing
+./console exp:notification:subscriptions remove-missing --apply
 ```
 
 ## Options
@@ -43,7 +47,8 @@ Notification subscriptions
 | `--limit` | required | how many (default 50) |
 | `--offset` | required | skip this many |
 | `--addresses` |  | also show the user's e-mail address (hidden by default) |
-| `--dry-run` |  | remove-missing: count, remove nothing |
+| `--apply` |  | remove-missing: remove the subscriptions (the default lists them and removes nothing) |
+| `--dry-run` |  | remove-missing: the default, kept for scripts that pass it: list, remove nothing |
 | `--json` |  | list: JSON |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

@@ -75,7 +75,7 @@ Standby-Server ersetzt das nicht.
    wird.
 2. Leeren Sie die Caches, die Fehlerzustände enthalten könnten, sobald PHP und Velocity wieder normal laufen:
    `php bin/php/ezcache.php --clear-tag=content --allow-root-user`; unter Velocity
-   `./console exp:velocity cache clear --allow-root-user`.
+   `./console exp:velocity cache clear --apply --allow-root-user`.
 3. Prüfen Sie, dass die Cronjobs wieder laufen (sie sind während des Ausfalls gescheitert), und führen Sie den häufigen
    Teil einmal von Hand aus.
 4. Dokumentieren Sie die Ursache; wenn Daten verloren gegangen sein könnten (ein Failover auf einen nachhinkenden

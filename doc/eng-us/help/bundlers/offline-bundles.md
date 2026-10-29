@@ -39,7 +39,7 @@ The documented way: "the reliable way to install offline is to **import every pa
 ```bash
 for f in var/tmp/packages/*.ezpkg; do php ezpm.php import "$f"; done
 ls var/storage/packages/7x/
-php bin/php/console exp:install --package=sevenx_multisite_clean
+php bin/php/console exp:install --apply --package=sevenx_multisite_clean
 ```
 
 For `sevenx_multisite` the required packages are `sevenx_classes` and `sevenx_multisite_democontent`; the requirements

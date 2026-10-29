@@ -48,7 +48,7 @@ bis das echte wieder nutzbar ist ([HTTPS und Zertifikate in Velocity](../../../f
 2. Erneuern Sie:
 
    ```bash
-   php bin/php/console exp:velocity ssl renew www.example.com --allow-root-user
+   php bin/php/console exp:velocity ssl renew --apply www.example.com --allow-root-user
    ```
 
    Der laufende Server übernimmt eine Erneuerung innerhalb einer Minute, ohne Neustart (`exp:velocity --help`).

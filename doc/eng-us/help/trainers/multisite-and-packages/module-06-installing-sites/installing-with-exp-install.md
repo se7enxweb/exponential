@@ -32,7 +32,7 @@ what the command reports.
 
 After this lesson, learners can:
 
-- install with `php bin/php/console exp:install` and the options for host matching;
+- install with `php bin/php/console exp:install --apply` and the options for host matching;
 - check the configuration with `--print` and the whole run with `--dry-run`;
 - read the summary, find the generated password and remove the password file after the first login;
 - explain the guard against overwriting an installation, `--force` and `--db-action`.

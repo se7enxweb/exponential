@@ -72,7 +72,7 @@ small virtual server. What a site needs from any host is listed in
 
 ## Getting started cheaply
 
-`./console exp:install` "installs the multisite package on **SQLite**, in `eng-US`", with a site and an
+`./console exp:install --apply` "installs the multisite package on **SQLite**, in `eng-US`", with a site and an
 administration, and prints the login addresses
 ([Installing Exponential in one command](../../../features/6.0/install-in-one-command.md)). A volunteer can try the
 whole product on a laptop this way before anything is bought.

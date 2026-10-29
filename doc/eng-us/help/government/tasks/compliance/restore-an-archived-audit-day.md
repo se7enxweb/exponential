@@ -35,7 +35,7 @@ console's index keeps two years of rows. To read the records of an archived day 
 2. Restore:
 
    ```bash
-   ./console exp:audit restore --channel=access --date=<YYYY-MM-DD> --allow-root-user
+   ./console exp:audit restore --apply --channel=access --date=<YYYY-MM-DD> --allow-root-user
    ```
 
    The day is decompressed into `<LogDir>/restored/` and checked against the manifest's sha256. `--to=<dir>` writes it

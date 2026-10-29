@@ -126,8 +126,8 @@ zwischen den verglichenen Servern ab, statt sie nacheinander zu messen.
 ```bash
 ./console exp:velocity config list ServerSettings
 ./console exp:velocity config get ServerSettings Workers
-./console exp:velocity config set ServerSettings Workers 8
-./console exp:velocity config unset ServerSettings Workers
+./console exp:velocity config set --apply ServerSettings Workers 8
+./console exp:velocity config unset --apply ServerSettings Workers
 ./console exp:velocity config paths      # which of the three look-alike files is the real one
 ```
 
@@ -159,7 +159,7 @@ September nahm das Ausschalten des Antwort-Cache den beiden anderen stillschweig
 Leeren Sie nach einer Änderung an einem Template oder Stylesheet jeden Cache:
 
 ```bash
-./console exp:velocity cache clear
+./console exp:velocity cache clear --apply
 ```
 
 Für die Schaltflächen unter **Setup > Caches** auf der Kommandozeile siehe

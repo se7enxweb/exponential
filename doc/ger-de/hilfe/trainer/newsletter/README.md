@@ -56,7 +56,7 @@ Testgruppen nutzen und einen Skin schreiben.
 
 ## Übungsumgebung
 
-- Eine Schulungsinstallation, zum Beispiel installiert mit `php bin/php/console exp:install`
+- Eine Schulungsinstallation, zum Beispiel installiert mit `php bin/php/console exp:install --apply`
   ([7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md)), mit aktiver Erweiterung
   `cjw_newsletter`, angelegten Tabellen, dem Newsletter-Baum mit seiner Sektion und dem Anmeldeformular, das im
   öffentlichen Siteaccess erreichbar ist. Wie man eine Übungsumgebung aufbaut und zurücksetzt:

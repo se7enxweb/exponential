@@ -14326,6 +14326,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Αυτή η εγκατάσταση είναι δημόσια επίδειξη: ο κωδικός πρόσβασης διαχειριστή μπορεί να είναι γνωστός σε οποιονδήποτε και οι κωδικοί πρόσβασης διαχειριστών δεν μπορούν να αλλάξουν ή να επαναφερθούν. Μην εισαγάγετε εδώ τίποτα ιδιωτικό.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15245,6 +15253,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Ποιος έκανε αλλαγές, συνδέθηκε ή απορρίφθηκε, ανά λογαριασμό· φιλτράρισμα και εξαγωγή.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Αναφορά συνδέσεων</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ποιος είναι συνδεδεμένος, συνδέσεις και αποτυχίες ανά ημέρα· αποσύνδεση ενός χρήστη από παντού.</translation>
     </message>
 </context>
 <context>
@@ -33550,6 +33566,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Οι ληγμένες περίοδοι λειτουργίας του χειριστή της PHP αφαιρούνται από την ίδια την PHP (session.gc_maxlifetime), όχι από αυτή τη σελίδα ή από το τμήμα εργασίας cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Οι ενεργές περίοδοι λειτουργίας όλων των χρηστών εμφανίζονται, και αποσυνδέονται, στην αναφορά συνδέσεων, η οποία λειτουργεί με κάθε χειριστή περιόδων λειτουργίας.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Άνοιγμα αναφοράς συνδέσεων</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37874,6 +37898,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Κανένα ακόμη</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Οι πρόσφατες συνδέσεις σας, οι αποτυχημένες προσπάθειες και οι αλλαγές στον κωδικό πρόσβασης, στη διεύθυνση e-mail και στη σύνδεση σε δύο βήματα.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Οι πρόσφατες συνδέσεις, οι αποτυχημένες προσπάθειες και οι αλλαγές ασφαλείας αυτού του λογαριασμού.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Έλεγχος δραστηριότητας</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Αποτυχημένες συνδέσεις: %count</translation>
     </message>
 </context>
 <context>
@@ -50964,6 +51008,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Το crontab δεν γράφτηκε (%reason). Προσθέστε αυτές τις γραμμές στο crontab του χρήστη με τον οποίο εκτελείται ο ιστότοπος, αλλιώς η ουρά, οι εισαγωγές, οι ειδοποιήσεις και το ευρετήριο αναζήτησης δεν θα εκτελεστούν ποτέ:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Η επανεγκατάσταση γίνεται με τον kickstarter (%file, έπειτα php bin/php/kickstarter.php run --apply) ή με μια νέα εγκατάσταση.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56756,6 +56804,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Η μεταφορά e-mail απέρριψε μηνύματα στην τελευταία εκτέλεση: %count. Ελέγξτε τον διακομιστή e-mail και τη ρύθμιση site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Περιμένουν %count συμβάντα και δεν έχει καταγραφεί καμία εκτέλεση της εργασίας cron ειδοποιήσεων. Προσθέστε το τμήμα εργασιών cron «frequent» στο crontab ή εκτελέστε exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63012,6 +63064,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Επιλογή άλλου ιστότοπου ή ενότητας με το εργαλείο επιλογής κόμβων</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Μόνο ο διαχειριστής του συστήματος μπορεί να αλλάξει τον κάτοχο: εκτελέστε ./console exp:content-check --fix-permissions --apply ως root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64545,6 +64601,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>κενό</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Το κλειδί υπογραφής είναι παλαιότερο από ένα έτος: αντικαταστήστε το με exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70255,6 +70315,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>δεν στάλθηκε</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Η εργασία cron ειδοποιήσεων καταγράφει εδώ κάθε εκτέλεσή της. Προσθέστε το τμήμα frequent στο crontab ή εκτελέστε exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Χρησιμοποιήστε την κονσόλα: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76213,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Setup &gt; Cronjobs</source>
         <translation>Ρυθμίσεις συστήματος &gt; Εργασίες cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Δεν έχει εκτελεστεί ακόμη κανένα τμήμα εργασιών cron: η ουρά εργασιών, οι εισαγωγές, οι ειδοποιήσεις και το ευρετήριο αναζήτησης περιμένουν. Εκτελέστε php bin/php/installcrontab.php --add --apply ή προσθέστε τις γραμμές του --show στο crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76483,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Καμία.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>με εφαρμογή ελέγχου ταυτότητας</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>με κωδικό μέσω e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>με κωδικό ανάκτησης</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>με κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>με εξωτερικό λογαριασμό</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Εμφανίζεται ως το δίκτυό της· η διεύθυνση διατηρείται όπως ορίζουν οι ρυθμίσεις προστασίας δεδομένων του ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Δεν καταγράφηκε</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Τοποθεσία</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>κατά προσέγγιση</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76726,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Διαχείριση συσκευών</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>με εφαρμογή ελέγχου ταυτότητας</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>με κωδικό μέσω e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>με κωδικό ανάκτησης</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>με κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>με εξωτερικό λογαριασμό</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Δεν καταγράφηκε</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Τοποθεσία</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>κατά προσέγγιση</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76805,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Προβολή των περιόδων λειτουργίας αυτού του χρήστη</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Ο λογαριασμός σας %login στο %site χρησιμοποιήθηκε μόλις για σύνδεση από ένα μέρος από το οποίο δεν έχει συνδεθεί πρόσφατα:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Τοποθεσία κατά προσέγγιση</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76843,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser σε %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Αναφορά συνδέσεων</translation>
     </message>
 </context>
 <context>
@@ -77521,6 +77681,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>άγνωστο</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ασφάλιση του λογαριασμού σας</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Χρησιμοποιήθηκε ένας κωδικός ανάκτησης για σύνδεση στον λογαριασμό σας %login στο %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Χρησιμοποιήθηκε ένας κωδικός ανάκτησης</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Λογαριασμός</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Διεύθυνση κατά προσέγγιση</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Ζητήστε νέο κωδικό πρόσβασης για να συνδεθείτε ξανά ή επικοινωνήστε με τους διαχειριστές του ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Αίτημα νέου κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Κάθε κωδικός ανάκτησης λειτουργεί μία φορά. Αν χάσατε το τηλέφωνό σας, ρυθμίστε ξανά την εφαρμογή ελέγχου ταυτότητας και φυλάξτε τους νέους κωδικούς ανάκτησης σε ασφαλές μέρος.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Αποτυχημένες προσπάθειες σύνδεσης στον λογαριασμό σας</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Από εδώ και πέρα, η σύνδεση ζητά έναν κωδικό επιπλέον του κωδικού πρόσβασής σας. Αν το κάνατε εσείς, δεν χρειάζεται να κάνετε τίποτα.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Αν ήσασταν εσείς και ξεχάσατε τον κωδικό πρόσβασής σας, ζητήστε νέο. Αν όχι, επιλέξτε ισχυρότερο κωδικό πρόσβασης και ενεργοποιήστε τη σύνδεση σε δύο βήματα.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Αν δεν ήσασταν εσείς, κάποιος μπορεί να γνωρίζει τον κωδικό πρόσβασής σας: αλλάξτε τον τώρα και ελέγξτε πού είναι συνδεδεμένος ο λογαριασμός σας.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Υπόλοιποι κωδικοί ανάκτησης</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Έλεγχος των συσκευών σας</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Ειδοποίηση ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Κάποιος προσπάθησε να συνδεθεί στον λογαριασμό σας %login στο %site με λάθος κωδικό πρόσβασης, συνεχόμενες φορές: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Σημειώθηκε ένα συμβάν ασφαλείας στον λογαριασμό σας %login στο %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Αυτή είναι μια ειδοποίηση ασφαλείας για τον λογαριασμό σας. Αποστέλλεται για κάθε τέτοια αλλαγή και δεν μπορεί να απενεργοποιηθεί.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ώρα</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Η σύνδεση σε δύο βήματα απενεργοποιήθηκε για τον λογαριασμό σας %login στο %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Η σύνδεση σε δύο βήματα απενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Η σύνδεση σε δύο βήματα ενεργοποιήθηκε για τον λογαριασμό σας %login στο %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Η σύνδεση σε δύο βήματα ενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Ο λογαριασμός σας %login στο %site κλειδώθηκε μετά από πάρα πολλές αποτυχημένες συνδέσεις.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ο λογαριασμός σας προστατεύεται πλέον μόνο από τον κωδικό πρόσβασής σας. Αν δεν το κάνατε εσείς, ενεργοποιήστε ξανά τη σύνδεση σε δύο βήματα αφού αλλάξετε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Ο λογαριασμός σας κλειδώθηκε</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Δραστηριότητα ασφαλείας του χρήστη %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Σύνδεση</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Αποτυχημένη προσπάθεια σύνδεσης</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Αποσύνδεση</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Αποσύνδεση περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Σύνδεση από νέα συσκευή</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Σύνδεση από νέα τοποθεσία</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Η ταυτότητα επιβεβαιώθηκε («Επιβεβαίωση ταυτότητας»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ο έλεγχος ταυτότητας απέτυχε</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Σύνδεση με κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Η σύνδεση με κλειδί πρόσβασης απέτυχε</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Η σύνδεση απορρίφθηκε: ο κωδικός της σύνδεσης σε δύο βήματα λείπει ή είναι λάθος</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Λάθος κωδικός σύνδεσης σε δύο βήματα</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ο λογαριασμός κλειδώθηκε μετά από αποτυχημένες συνδέσεις</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ο λογαριασμός ξεκλειδώθηκε</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ο κωδικός πρόσβασης άλλαξε</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Η αλλαγή κωδικού πρόσβασης απέτυχε</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Επαναφορά κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ζητήθηκε νέος κωδικός πρόσβασης</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Η διεύθυνση e-mail άλλαξε</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Το όνομα χρήστη άλλαξε</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Η σύνδεση σε δύο βήματα ενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Η σύνδεση σε δύο βήματα απενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Χρησιμοποιήθηκε κωδικός ανάκτησης</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Νέοι κωδικοί ανάκτησης</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Δημιουργήθηκε κωδικός πρόσβασης εφαρμογής</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ανακλήθηκε κωδικός πρόσβασης εφαρμογής</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Προστέθηκε κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Αφαιρέθηκε κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ο λογαριασμός ενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ο λογαριασμός απενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Όλα</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Συνδέσεις και περίοδοι λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Αλλαγές λογαριασμού</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Χρειάζονται προσοχή</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>από εσάς</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>από τον χρήστη</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>από τον χρήστη %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Μέθοδος</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Πρόγραμμα περιήγησης</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Λειτουργικό σύστημα</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Συσκευή</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Μέρος</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Χώρα</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Περίοδοι λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ποιες</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Κανάλι</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Αποτυχημένες προσπάθειες</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Υπόλοιποι κωδικοί</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Χειριστής σύνδεσης</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Δραστηριότητα ασφαλείας του χρήστη %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Συνδέσεις και αλλαγές στην ασφάλεια του λογαριασμού σας. Αν δείτε κάτι που δεν κάνατε, αλλάξτε τον κωδικό πρόσβασής σας και αποσυνδέστε τις συσκευές που δεν αναγνωρίζετε.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Συνδέσεις και αλλαγές στην ασφάλεια αυτού του λογαριασμού.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Αλλαγή κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Επιστροφή στον λογαριασμό</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Η δραστηριότητα ασφαλείας δεν καταγράφεται</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Διαβάζεται από το αρχείο καταγραφής ελέγχου χρηστών, του οποίου ο πίνακας expuser_audit λείπει ή δεν υποστηρίζεται σε αυτή τη βάση δεδομένων. Εκτελέστε php update/common/scripts/6.0/createuseraudittable.php ή την ενημέρωση της βάσης δεδομένων της έκδοσης 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Τελευταίες ημέρες: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Συνδέσεις των τελευταίων ημερών (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Πρόσφατη δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>απέτυχε</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>απορρίφθηκε</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Δεν έχει καταγραφεί ακόμη δραστηριότητα ασφαλείας.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Τα συμβάντα ασφαλείας διατηρούνται για %days ημέρες.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Τα συμβάντα ασφαλείας διατηρούνται μέχρι να τα αφαιρέσει ένας διαχειριστής.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Λήψη των δεδομένων σύνδεσής μου</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Οι περίοδοι λειτουργίας και τα συμβάντα ασφαλείας σας ως αρχείο JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Σύνδεση</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Αποτυχημένη προσπάθεια σύνδεσης</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Αποσύνδεση</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Αποσύνδεση περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Σύνδεση από νέα συσκευή</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Σύνδεση από νέα τοποθεσία</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Η ταυτότητα επιβεβαιώθηκε («Επιβεβαίωση ταυτότητας»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ο έλεγχος ταυτότητας απέτυχε</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Σύνδεση με κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Η σύνδεση με κλειδί πρόσβασης απέτυχε</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Η σύνδεση απορρίφθηκε: ο κωδικός της σύνδεσης σε δύο βήματα λείπει ή είναι λάθος</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Λάθος κωδικός σύνδεσης σε δύο βήματα</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ο λογαριασμός κλειδώθηκε μετά από αποτυχημένες συνδέσεις</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ο λογαριασμός ξεκλειδώθηκε</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ο κωδικός πρόσβασης άλλαξε</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Η αλλαγή κωδικού πρόσβασης απέτυχε</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Επαναφορά κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ζητήθηκε νέος κωδικός πρόσβασης</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Η διεύθυνση e-mail άλλαξε</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Το όνομα χρήστη άλλαξε</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Η σύνδεση σε δύο βήματα ενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Η σύνδεση σε δύο βήματα απενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Χρησιμοποιήθηκε κωδικός ανάκτησης</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Νέοι κωδικοί ανάκτησης</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Δημιουργήθηκε κωδικός πρόσβασης εφαρμογής</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ανακλήθηκε κωδικός πρόσβασης εφαρμογής</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Προστέθηκε κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Αφαιρέθηκε κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ο λογαριασμός ενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ο λογαριασμός απενεργοποιήθηκε</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Όλα</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Συνδέσεις και περίοδοι λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Αλλαγές λογαριασμού</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Χρειάζονται προσοχή</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Δραστηριότητα ασφαλείας του χρήστη %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Συνδέσεις και αλλαγές στην ασφάλεια του λογαριασμού σας. Αν δείτε κάτι που δεν κάνατε, αλλάξτε τον κωδικό πρόσβασής σας και αποσυνδέστε τις συσκευές που δεν αναγνωρίζετε.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Αλλαγή κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Η δραστηριότητα ασφαλείας δεν καταγράφεται ακόμη σε αυτόν τον ιστότοπο.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Συνδέσεις των τελευταίων ημερών (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Αποτυχημένες προσπάθειες</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Δεν έχει καταγραφεί ακόμη δραστηριότητα ασφαλείας.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Λήψη των δεδομένων σύνδεσής μου</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Οι περίοδοι λειτουργίας και τα συμβάντα ασφαλείας σας ως αρχείο JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Κωδικός πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Κωδικός πρόσβασης και κωδικός σύνδεσης σε δύο βήματα</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Διεπαφή REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Διεπαφή SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ενιαία σύνδεση (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Συνδέθηκε πριν από την καταγραφή των περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Αναφορά συνδέσεων</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ποιος είναι συνδεδεμένος στον ιστότοπο, πόσο συχνά οι λογαριασμοί συνδέονται ή αποτυγχάνουν να συνδεθούν, και αποσύνδεση ενός χρήστη από παντού. Λειτουργεί με κάθε χειριστή περιόδων λειτουργίας.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Η περίοδος λειτουργίας αποσυνδέθηκε. Η συσκευή πρέπει να συνδεθεί ξανά.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Ο χρήστης %login αποσυνδέθηκε από περιόδους λειτουργίας: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Ο χρήστης %login δεν είχε καμία ενεργή περίοδο λειτουργίας.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Κανένας λογαριασμός δεν έχει αυτό το ID, όνομα χρήστη ή διεύθυνση e-mail.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Αυτή είναι η περίοδος λειτουργίας που χρησιμοποιείτε. Για να την τερματίσετε, αποσυνδεθείτε.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Αυτή η περίοδος λειτουργίας είχε ήδη τερματιστεί.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Η σελίδα είχε λήξει. Δεν άλλαξε τίποτα· δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Οι περίοδοι λειτουργίας δεν καταγράφονται σε αυτόν τον ιστότοπο (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Ο πίνακας expuser_session λείπει</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Οι περίοδοι λειτουργίας καταγράφονται μόλις δημιουργηθεί: php update/common/scripts/6.0/createusersessiontable.php ή η ενημέρωση της βάσης δεδομένων της έκδοσης 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Τώρα και σήμερα</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ενεργές περίοδοι λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Συνδεδεμένοι χρήστες</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Συνδέσεις σήμερα</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Αποτυχημένες προσπάθειες σήμερα</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Αποσύνδεση ενός χρήστη από παντού</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Κάθε περίοδος λειτουργίας του λογαριασμού τερματίζεται στο επόμενο αίτημά της, και όσες διατηρούνται με την «Απομνημόνευση στοιχείων». Χρησιμοποιήστε το όταν ένας λογαριασμός μπορεί να βρίσκεται σε λάθος χέρια· έπειτα επαναφέρετε τον κωδικό πρόσβασής του.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID χρήστη, όνομα χρήστη ή διεύθυνση e-mail</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Αποσύνδεση από παντού</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Συνδεδεμένοι τώρα</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Εμφανίζονται οι πιο πρόσφατα χρησιμοποιημένες, έως %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Χρήστης</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Συσκευή</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Σύνδεση</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Τελευταία δραστηριότητα</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ενέργειες</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Αυτή η συσκευή</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Δεν καταγράφηκε</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Αποσύνδεση</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Καμία περίοδος λειτουργίας δεν είναι συνδεδεμένη.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Τελευταίες ημέρες: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Οι συνδέσεις και οι αποτυχημένες προσπάθειες μετρώνται από το αρχείο καταγραφής ελέγχου χρηστών, το οποίο δεν υπάρχει· οι νέες περίοδοι λειτουργίας μετρώνται.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ημέρα</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Συνδέσεις</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Αποτυχημένες προσπάθειες</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Νέες περίοδοι λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Χειριστής περιόδων λειτουργίας: %handler. Οι περίοδοι λειτουργίας διαβάζονται από τον πίνακα expuser_session, οπότε η αναφορά λειτουργεί με κάθε χειριστή.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Ειδοποίηση ασφαλείας για τον λογαριασμό σας</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Σημειώθηκε ένα συμβάν ασφαλείας στον λογαριασμό σας %login: %event. Αν δεν ήσασταν εσείς, ασφαλίστε τον λογαριασμό σας στη διεύθυνση %url.</translation>
     </message>
 </context>
 </TS>

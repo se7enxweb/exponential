@@ -50,7 +50,7 @@ import and install packages in the administration and with `ezpm`; and install, 
 ## Lab setup
 
 - **One installation per learner**, never a shared one: modules 2 to 4 change the global matching settings. Install
-  each with `php bin/php/console exp:install` (default site package, SQLite, URL matching), as in
+  each with `php bin/php/console exp:install --apply` (default site package, SQLite, URL matching), as in
   [Lesson 2.3 of Train the trainer](../train-the-trainer/module-02-building-the-lab/one-install-per-learner.md), and
   serve it as in [Lesson 2.4](../train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md).
 - Shell access as the user that serves the site, `curl`, and `sqlite3` (lesson 6.4).

@@ -33,7 +33,7 @@ Ergebnisse fehlen.
 | Form | Präsenz oder online; praxisorientiert |
 | Niveau | Fortgeschrittene; Modul 4 für Experten |
 | Voraussetzungen | [Website-Administration](../website-administratoren/README.md) (mindestens die Module zu Caches und Cronjobs); ein Terminal |
-| Übungsumgebung | Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install` und ausgeliefert mit `exp:velocity start`; für Modul 4 eine Installation auf MySQL oder PostgreSQL, eine Java-Laufzeitumgebung und das Paket ezfind (siehe die Vorbereitungsliste des Moduls) |
+| Übungsumgebung | Eine Schulungsinstallation pro Person, installiert mit `php bin/php/console exp:install --apply` und ausgeliefert mit `exp:velocity start`; für Modul 4 eine Installation auf MySQL oder PostgreSQL, eine Java-Laufzeitumgebung und das Paket ezfind (siehe die Vorbereitungsliste des Moduls) |
 
 ## Module
 

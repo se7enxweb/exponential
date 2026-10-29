@@ -31,7 +31,7 @@ selected, verified and handed over ([Audit](../../../bc/6.0/audit.md)).
 ## Before you start
 
 - Check that the period is still within retention (90 days live, 730 archived by default); restore archived days first:
-  `./console exp:audit restore --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
+  `./console exp:audit restore --apply --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
 - Involve your legal counsel and, for staff cases, the people your procedures name.
 
 ## Selecting the records

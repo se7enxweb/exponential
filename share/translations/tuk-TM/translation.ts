@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Sazlama &gt; Cron tabşyryklary</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron tabşyryklarynyň hiç bir bölegi entek işledilmedi: tabşyryklaryň nobaty, importlar, habarnamalar we gözleg indeksi garaşýar. php bin/php/installcrontab.php --add --apply buýrugyny işlediň ýa-da --show görkezýän setirleri crontab faýlyna goşuň.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Bu gurnama ähli adamlara açyk demodyr: administrator açar sözüni islendik adam bilip biler we administrator açar sözleri üýtgedilip ýa-da täzeden bellenip bilinmeýär. Bu ýere hiç hili şahsy zat girizmäň.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Enjamlaryňyz</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Her hasap boýunça kim üýtgetdi, girdi ýa-da ret edildi; süzüň we eksport ediň.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Girişler hasabaty</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kim girdi, günler boýunça girişler we şowsuzlyklar; ulanyjyny ähli ýerden çykarmak.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP işleýjisiniň wagty geçen sessiýalaryny bu sahypa ýa-da session_gc cron tabşyrygynyň bölegi däl-de, PHP-niň özi aýyrýar (session.gc_maxlifetime).</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ähli ulanyjylaryň girilen sessiýalary girişler hasabatynda görkezilýär we şol ýerde tamamlanýar; hasabat islendik sessiýa işleýjisi bilen işleýär.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Girişler hasabatyny aç</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ salgysyna hat iberiler. Hasabyňyzy işjeňleşdirmek üçin
     <message>
         <source>None yet</source>
         <translation>Entek ýok</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Soňky girişleriňiz, şowsuz synanyşyklar we açar sözüňize, e-poçta salgyňyza we iki ädimli girişe girizilen üýtgeşmeler.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Bu hasabyň soňky girişleri, şowsuz synanyşyklary we howpsuzlyk üýtgeşmeleri.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Işjeňligi gözden geçir</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Şowsuz girişler: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Goşmaça maglumat üçin talaplar sahypasyna serediň.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ýazylmady (%reason). Bu setirleri saýtyň işleýän ulanyjysynyň crontab faýlyna goşuň, ýogsam nobat, importlar, habarnamalar we gözleg indeksi hiç wagt işlemez:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Gaýtadan gurnamak kickstarter bilen (%file, soňra php bin/php/kickstarter.php run --apply) ýa-da täze gurnama bilen ýerine ýetirilýär.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Poçta ibermek serişdesi soňky işledilişde %count habary ret etdi. Poçta serwerini we site.ini MailSettings sazlamalaryny barlaň.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Garaşýan wakalar: %count, emma habarnamalar cron tabşyrygynyň hiç bir işledilişi hasaba alynmady. «frequent» cron bölegini crontab faýlyna goşuň ýa-da exp:notification:run --apply buýrugyny işlediň.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Choose another site or section with the node picker</source>
         <translation>Düwün saýlaýjy bilen başga saýt ýa-da bölüm saýlaň</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Eýesini diňe ulgam administratory üýtgedip biler: ./console exp:content-check --fix-permissions --apply buýrugyny root hökmünde işlediň.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>empty</source>
         <translation>boş</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Gol açary bir ýyldan köne: ony exp:audit key rotate --apply buýrugy bilen çalşyň.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>not sent</source>
         <translation>iberilmedi</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Habarnamalar cron tabşyrygy her işledilişini şu ýerde hasaba alýar. frequent bölegini crontab faýlyna goşuň ýa-da exp:notification:run --apply buýrugyny işlediň.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsoly ulanyň: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>None.</source>
         <translation>Ýok.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikator programmasy bilen</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-poçta arkaly gelen kod bilen</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>dikeldiş kody bilen</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>giriş açary bilen</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>daşarky hasap bilen</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Tor hökmünde görkezilýär; salgy saýtyň maglumatlary goramak sazlamalarynda bellenişi ýaly saklanýar.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Hasaba alynmady</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ýerleşýän ýeri</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>takmynan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Manage devices</source>
         <translation>Enjamlary dolandyr</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentifikator programmasy bilen</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-poçta arkaly gelen kod bilen</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>dikeldiş kody bilen</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>giriş açary bilen</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>daşarky hasap bilen</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Hasaba alynmady</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ýerleşýän ýeri</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>takmynan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>View the sessions of this user</source>
         <translation>Bu ulanyjynyň sessiýalaryny gör</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site saýtyndaky %login hasabyňyza soňky döwürde girilmedik ýerden ýaňy girildi:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Takmyny ýerleşýän ýeri</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser, %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Girişler hasabaty</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>unknown</source>
         <translation>näbelli</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Hasaby gora</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site saýtyndaky %login hasabyňyza dikeldiş kody bilen girildi.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Dikeldiş kody ulanyldy</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hasap</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Takmyny salgy</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Gaýtadan girmek üçin täze açar sözi soraň ýa-da saýtyň administratorlaryna ýüz tutuň.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Täze açar sözi sora</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Her dikeldiş kody diňe bir gezek işleýär. Telefonyňyzy ýitiren bolsaňyz, autentifikator programmasyny täzeden sazlaň we täze dikeldiş kodlaryny ygtybarly ýerde saklaň.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Hasabyňyza şowsuz giriş synanyşyklary</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Mundan beýläk girişde açar sözüňizden başga kod hem soralar. Muny Siz eden bolsaňyz, hiç zat etmegiňiz gerek däl.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Eger bu Siz bolsaňyz we açar sözüňizi ýatdan çykaran bolsaňyz, täzesini soraň. Ýogsa has berk açar söz saýlaň we iki ädimli girişi işjeňleşdiriň.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Eger bu Siz bolmasaňyz, açar sözüňizi kimdir biri bilýän bolmagy mümkin: ony häzir üýtgediň we hasabyňyzyň nirelerde girilendigini barlaň.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Galan dikeldiş kodlary</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Enjamlaryňyzy barla</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Howpsuzlyk duýduryşy</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kimdir biri %site saýtyndaky %login hasabyňyza nädogry açar sözi bilen yzly-yzyna birnäçe gezek girmäge synanyşdy (synanyşyklar: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site saýtyndaky %login hasabyňyzda howpsuzlyk wakasy boldy.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Bu hasabyňyz barada howpsuzlyk duýduryşydyr. Ol her şeýle üýtgeşmede iberilýär we ony öçürip bolmaýar.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wagt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site saýtyndaky %login hasabyňyz üçin iki ädimli giriş öçürildi.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Iki ädimli giriş öçürildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site saýtyndaky %login hasabyňyz üçin iki ädimli giriş işjeňleşdirildi.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Iki ädimli giriş işjeňleşdirildi</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site saýtyndaky %login hasabyňyz gaty köp şowsuz girişden soň gulplandy.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Indi hasabyňyz diňe açar sözi bilen goralýar. Muny Siz etmedik bolsaňyz, açar sözüňizi üýtgedeniňizden soň iki ädimli girişi täzeden işjeňleşdiriň.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Hasabyňyz gulplandy</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Howpsuzlyk işjeňligi: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Girilen</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Şowsuz giriş synanyşygy</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Çykylan</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiýalar tamamlandy</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Täze enjamdan giriş</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Täze ýerden giriş</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Şahsyýet tassyklandy («Siziň bolandygyňyzy tassyklaň»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Şahsyýeti barlamak şowsuz boldy</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Giriş açary bilen girildi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Giriş açary bilen giriş şowsuz boldy</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Giriş ret edildi: iki ädimli giriş kody ýok ýa-da nädogry</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Iki ädimli girişiň nädogry kody</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hasap şowsuz girişlerden soň gulplandy</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hasabyň gulpy açyldy</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Açar sözi üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Açar sözüni üýtgetmek şowsuz boldy</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Açar sözi täzeden düzüldi</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Täze açar sözi soraldy</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-poçta salgysy üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ulanyjy ady üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Iki ädimli giriş işjeňleşdirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Iki ädimli giriş öçürildi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Dikeldiş kody ulanyldy</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Täze dikeldiş kodlary</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Programma açar sözi döredildi</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Programma açar sözi ýatyryldy</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Giriş açary goşuldy</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Giriş açary aýryldy</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hasap işjeňleşdirildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hasap öçürildi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ählisi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Girişler we sessiýalar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hasap üýtgeşmeleri</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Üns talap edýär</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>Siz tarapyndan</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ulanyjy tarapyndan</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ulanyjy tarapyndan: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Usul</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Brauzer</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operasion ulgam</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enjam</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Ýer</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ýurt</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiýalar</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Haýsylary</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Şowsuz synanyşyklar</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Galan kodlar</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Giriş işleýjisi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Howpsuzlyk işjeňligi: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hasabyňyza girişler we onuň howpsuzlygyna girizilen üýtgeşmeler. Eger özüňiz etmedik bir zady görseňiz, açar sözüňizi üýtgediň we tanamaýan enjamlaryňyzy çykaryň.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Bu hasaba girişler we onuň howpsuzlygyna girizilen üýtgeşmeler.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Enjamlaryňyz</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Açar sözi üýtget</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Hasaba dolan</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Howpsuzlyk işjeňligi hasaba alynmaýar</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ol ulanyjylaryň audit žurnalyndan okalýar, emma onuň expuser_audit tablisasy ýok ýa-da bu maglumatlar binýadynda goldanmaýar. php update/common/scripts/6.0/createuseraudittable.php buýrugyny ýa-da 6.0.15 maglumatlar binýadynyň täzelenmesini işlediň.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Soňky günler: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Soňky günlerdäki girişler (günler: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Soňky howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Görkez</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>şowsuz</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ret edildi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Häzirlikçe howpsuzlyk işjeňligi hasaba alynmady.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Howpsuzlyk wakalary saklanýar (günler: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Howpsuzlyk wakalary administrator olary aýyrýança saklanýar.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Girişlerim baradaky maglumatlary göçürip al</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessiýalaryňyz we howpsuzlyk wakalary JSON faýly görnüşinde.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Girilen</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Şowsuz giriş synanyşygy</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Çykylan</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessiýalar tamamlandy</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Täze enjamdan giriş</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Täze ýerden giriş</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Şahsyýet tassyklandy («Siziň bolandygyňyzy tassyklaň»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Şahsyýeti barlamak şowsuz boldy</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Giriş açary bilen girildi</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Giriş açary bilen giriş şowsuz boldy</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Giriş ret edildi: iki ädimli giriş kody ýok ýa-da nädogry</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Iki ädimli girişiň nädogry kody</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Hasap şowsuz girişlerden soň gulplandy</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Hasabyň gulpy açyldy</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Açar sözi üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Açar sözüni üýtgetmek şowsuz boldy</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Açar sözi täzeden düzüldi</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Täze açar sözi soraldy</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-poçta salgysy üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ulanyjy ady üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Iki ädimli giriş işjeňleşdirildi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Iki ädimli giriş öçürildi</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Dikeldiş kody ulanyldy</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Täze dikeldiş kodlary</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Programma açar sözi döredildi</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Programma açar sözi ýatyryldy</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Giriş açary goşuldy</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Giriş açary aýryldy</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Hasap işjeňleşdirildi</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Hasap öçürildi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ählisi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Girişler we sessiýalar</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Hasap üýtgeşmeleri</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Üns talap edýär</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Howpsuzlyk işjeňligi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Howpsuzlyk işjeňligi: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Hasabyňyza girişler we onuň howpsuzlygyna girizilen üýtgeşmeler. Eger özüňiz etmedik bir zady görseňiz, açar sözüňizi üýtgediň we tanamaýan enjamlaryňyzy çykaryň.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Enjamlaryňyz</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Açar sözi üýtget</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Bu saýtda howpsuzlyk işjeňligi entek hasaba alynmaýar.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Soňky günlerdäki girişler (günler: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Şowsuz synanyşyklar</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Häzirlikçe howpsuzlyk işjeňligi hasaba alynmady.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Girişlerim baradaky maglumatlary göçürip al</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sessiýalaryňyz we howpsuzlyk wakalary JSON faýly görnüşinde.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Açar sözi</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Açar sözi we iki ädimli giriş kody</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interfeýsi</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interfeýsi</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ýeke-täk giriş</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sessiýalar hasaba alnyp başlamazdan öň girilen</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Girişler hasabaty</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Saýta kim girdi, hasaplar näçe ýygy girýär we girip bilmeýär, şeýle hem ulanyjyny ähli ýerden çykarmak. Islendik sessiýa işleýjisi bilen işleýär.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessiýa tamamlandy. Enjam täzeden girmeli.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ulanyjysy çykaryldy, tamamlanan sessiýalar: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ulanyjysynyň işleýän sessiýasy ýokdy.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Şeýle ID, ulanyjy ady ýa-da e-poçta salgysy bolan hasap ýok.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Bu Siziň ulanýan sessiýaňyz. Ony tamamlamak üçin ulgamdan çykyň.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ol sessiýa eýýäm tamamlanypdy.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sahypanyň möhleti geçipdi. Hiç zat üýtgedilmedi; gaýtadan synanyşyň.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Bu saýtda sessiýalar hasaba alynmaýar (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session tablisasy ýok</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ol döredilenden soň sessiýalar hasaba alnyp başlanar: php update/common/scripts/6.0/createusersessiontable.php ýa-da 6.0.15 maglumatlar binýadynyň täzelenmesi.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Häzir we şu gün</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Işleýän sessiýalar</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Giren ulanyjylar</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Şu günki girişler</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Şu günki şowsuz synanyşyklar</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Ulanyjyny ähli ýerden çykarmak</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Hasabyň her sessiýasy indiki haýyşda tamamlanýar, «Meni ýatda sakla» arkaly saklananlary hem. Hasap ýat ellere düşen bolmagy mümkin bolsa, muny ulanyň; soňra onuň açar sözüni täzeden düzüň.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Ulanyjy ID, ulanyjy ady ýa-da e-poçta salgysy</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Ähli ýerden çyk</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Häzir giren</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Iň soňky ulanylanlar görkezilýär (iň köp %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Ulanyjy</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enjam</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Salgy</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Girilen</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Soňky işjeňlik</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Hereketler</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Bu enjam</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Hasaba alynmady</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Çyk</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Girilen sessiýa ýok.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Soňky günler: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Girişler we şowsuz synanyşyklar ulanyjylaryň audit žurnalyndan sanalýar, emma ol ýok; täze sessiýalar sanalýar.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Gün</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Girişler</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Şowsuz synanyşyklar</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Täze sessiýalar</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sessiýa işleýjisi: %handler. Sessiýalar expuser_session tablisasyndan okalýar, şonuň üçin hasabat islendik işleýji bilen işleýär.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Hasabyňyz üçin howpsuzlyk duýduryşy</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>%login hasabyňyzda howpsuzlyk wakasy boldy: %event. Eger bu Siz bolmasaňyz, hasabyňyzy %url salgysynda goraň.</translation>
     </message>
 </context>
 </TS>

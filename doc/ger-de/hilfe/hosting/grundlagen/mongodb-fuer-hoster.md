@@ -83,7 +83,7 @@ Database=<customer>
    MongoDB ein bis drei Minuten, erhöhen Sie also zuerst `request_terminate_timeout` von PHP-FPM.
 
    ```bash
-   EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mongodb \
+   EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mongodb \
        --db-host=127.0.0.1 --db-name=<customer> --db-user=<customer> --allow-root-user
    ```
 

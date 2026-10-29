@@ -46,7 +46,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### Die Konten vorbereiten
 
 Melden Sie sich vor dem Kurs auf der Schulungsinstallation (zum Beispiel einer, die mit
-`php bin/php/console exp:install` installiert wurde, siehe [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md))
+`php bin/php/console exp:install --apply` installiert wurde, siehe [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md))
 als der Administrator an, dessen Passwort das Installationsprogramm ausgegeben hat, und legen Sie unter **Benutzer**
 einen Benutzer pro Teilnehmer an, in der Benutzergruppe der Redakteure, mit der Rolle **Editor**. Geben Sie jedem einen
 Namen wie `learner01` und eine E-Mail-Adresse wie `learner01@example.invalid`. Schreiben Sie Benutzernamen und

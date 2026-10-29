@@ -113,7 +113,7 @@ FallbackMode=first
 
 ## FallbackLanguages
 
-Default: a hash of 105: `ger-CH=ger-DE`, `ger-AT=ger-DE`, `eng-US=eng-GB`, `eng-CA=eng-GB`, `fre-CA=fre-FR`, `fre-BE=fre-FR`, `hin-IN=untranslated`, `hun-HU=untranslated`, `kor-KR=untranslated`, `por-MZ=por-PT`, `slk-SK=untranslated`, `tur-TR=untranslated` ....
+Default: a hash of 146: `ger-CH=ger-DE`, `ger-AT=ger-DE`, `eng-US=eng-GB`, `eng-CA=eng-GB`, `fre-CA=fre-FR`, `fre-BE=fre-FR`, `hin-IN=untranslated`, `hun-HU=untranslated`, `kor-KR=untranslated`, `por-MZ=por-PT`, `slk-SK=untranslated`, `tur-TR=untranslated` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -141,7 +141,7 @@ FallbackLanguages[fre-CM]=fre-FR
 FallbackLanguages[fre-MA]=fre-FR
 FallbackLanguages[fre-SN]=fre-FR
 FallbackLanguages[esl-AR]=esl-ES
-# ... 85 more in the shipped file
+# ... 126 more in the shipped file
 */ ?>
 ```
 

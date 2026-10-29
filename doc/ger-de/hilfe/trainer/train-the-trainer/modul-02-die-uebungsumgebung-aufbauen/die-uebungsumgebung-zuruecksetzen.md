@@ -83,7 +83,7 @@ Auf der Schulungsinstallation aus Lektion 2.3:
 6. Starten Sie den Server und prüfen Sie, dass der Testartikel weg ist.
 7. Testen Sie jetzt eine vollständige Neuinstallation: `pwd` (prüfen Sie das Verzeichnis!), dann
    `php bin/php/console exp:install --dry-run --url=http://127.0.0.1:8087`.
-8. Wenn der Probelauf erfolgreich ist: `php bin/php/console exp:install --force --url=http://127.0.0.1:8087` und
+8. Wenn der Probelauf erfolgreich ist: `php bin/php/console exp:install --apply --force --url=http://127.0.0.1:8087` und
    notieren Sie das neue erzeugte Passwort.
 
 ## Erwartetes Ergebnis

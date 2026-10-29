@@ -29,7 +29,7 @@ auf.
 - **Bieter**: Nennen Sie Seite und Abschnitt und zitieren Sie den Status wie geschrieben. Wo der Status „Teilweise
   erfüllt“ oder „Nicht geprüft“ lautet, sagen Sie, was Sie für diesen Kunden gegen die Lücke tun.
 - **Bewertende**: Öffnen Sie den Link und prüfen Sie, ob er sagt, was das Angebot behauptet. Einstellungen lassen sich
-  in einer mit `./console exp:install` erstellten Testinstallation prüfen ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
+  in einer mit `./console exp:install --apply` erstellten Testinstallation prüfen ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ## Barrierefreiheit
 

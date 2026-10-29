@@ -17,16 +17,16 @@ administration like any other content, and delivered into the help of the admini
 
 | Part | Where |
 |---|---|
-| The eight classes `help_manual`, `help_section` (chapter), `help_concept`, `help_task`, `help_reference`, `help_troubleshooting`, `help_screenshot`, `help_glossary_entry` in the class group "Help" | `./console exp:help:content classes` |
-| The sections `help_public` and `help_internal`, the object state group `help_status` (Draft, Review, Released), the folder tree (`help-root`, `help-pool` ..., found by remote_id) | `./console exp:help:content tree` |
-| The roles "Help editor" and "Help release" and the one additional policy of Anonymous | `./console exp:help:content roles` |
+| The eight classes `help_manual`, `help_section` (chapter), `help_concept`, `help_task`, `help_reference`, `help_troubleshooting`, `help_screenshot`, `help_glossary_entry` in the class group "Help" | `./console exp:help:content classes --apply` |
+| The sections `help_public` and `help_internal`, the object state group `help_status` (Draft, Review, Released), the folder tree (`help-root`, `help-pool` ..., found by remote_id) | `./console exp:help:content tree --apply` |
+| The roles "Help editor" and "Help release" and the one additional policy of Anonymous | `./console exp:help:content roles --apply` |
 | The validator of the style guide, `--fix` sets the sections from the audience | `./console exp:help:content check` |
-| The initial glossary and topics (the templates of the style guide, one manual) | `./console exp:help:content seed-glossary`, `seed-topics` |
-| The manuals made from the Markdown help: one per folder of `doc/eng-us/help/` and per reference area, rebuilt on each release, with the German translation | `./console exp:help:content build-manuals` ([below](#manuals-from-the-markdown-help)) |
+| The initial glossary and topics (the templates of the style guide, one manual) | `./console exp:help:content seed-glossary --apply`, `seed-topics` |
+| The manuals made from the Markdown help: one per folder of `doc/eng-us/help/` and per reference area, rebuilt on each release, with the German translation | `./console exp:help:content build-manuals --apply` ([below](#manuals-from-the-markdown-help)) |
 | What is installed, uninstall | `./console exp:help:content report`, `uninstall` |
 | An e-book (EPUB, PDF) of a manual | `./console exp:help:content export`, **Download EPUB/PDF** on the manual's page |
 | The DITA 1.3 export (bookmaps, DITAVAL, topics, glossary), checked after writing | `./console exp:help:content dita`, **Download DITA** on the manual's page and the list of manuals |
-| The e-books stored as file objects under E-books, versioned, rebuilt on release | `./console exp:help:content ebooks`, and each release of a topic |
+| The e-books stored as file objects under E-books, versioned, rebuilt on release | `./console exp:help:content ebooks --apply`, and each release of a topic |
 | The topics overdue for review (review date passed, too long in Review) | the help's dashboard, `./console exp:help:content review` |
 | The eight classes as the content class package `exp_help_classes` (.ezpkg), and its check | `./console exp:help:content package`, `verify-package` ([the package](../../specifications/6.0/help-content-package.md)) |
 | A topic in the help: `exphelp/topic/<help_id>`; a manual: `exphelp/manual/<remote_id>`; the list of manuals: `exphelp/manual` | admin, policy `exphelp/read` |
@@ -35,7 +35,7 @@ administration like any other content, and delivered into the help of the admini
 | Context help as JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | policy `exphelp/context` |
 | Context help for clients with a token (OAuth or a personal API key): `/api/help/v1/topic/<help_id>`, `/api/help/v1/manual/<remote_id>` ([below](#context-help-for-clients-with-a-token)) | REST, scope `help` |
 | The help on the site's own pages: the full and line views of the help classes ([below](#help-on-the-sites-pages)) | extension `exphelpsite` |
-| The tables `exphelp_help_id` (released help_ids) and `exphelp_feedback` on an installation made before them | `./console exp:help:content tables` (a step of `install`) |
+| The tables `exphelp_help_id` (released help_ids) and `exphelp_feedback` on an installation made before them | `./console exp:help:content tables --apply` (a step of `install`) |
 
 The plan names the scripts `create_classes.php`, `create_tree.php`, `create_roles.php`, `check_help.php`,
 `seed_glossary.php` and `seed_topics.php`. They are the actions `classes`, `tree`, `roles`, `check`, `seed-glossary`
@@ -49,11 +49,11 @@ plan says:
 
 ```
 ./console exp:help:content install -s admin --dry-run      # the plan
-./console exp:help:content install -s admin                # tables, classes, tree, roles
-./console exp:help:content install -s admin                # No change.
-./console exp:help:content seed-glossary -s admin
-./console exp:help:content seed-topics -s admin --release  # the style guide's templates, Released
-./console exp:help:content check -s admin --fix
+./console exp:help:content install --apply -s admin                # tables, classes, tree, roles
+./console exp:help:content install --apply -s admin                # No change.
+./console exp:help:content seed-glossary --apply -s admin
+./console exp:help:content seed-topics --apply -s admin --release  # the style guide's templates, Released
+./console exp:help:content check --apply -s admin --fix
 ./console exp:help:content report -s admin
 ```
 
@@ -63,14 +63,14 @@ editors left them unless `--update` is given.
 
 ### On a new installation
 
-The kickstarter and `./console exp:install` queue the build of the manuals at the end of an installation
-(`./console exp:help:content build-manuals -s admin --queue`, from `expKickstarter::installHelpManuals()`) and do not
+The kickstarter and `./console exp:install --apply` queue the build of the manuals at the end of an installation
+(`./console exp:help:content build-manuals --apply -s admin --queue`, from `expKickstarter::installHelpManuals()`) and do not
 wait for it: the installation takes a few seconds longer, no more. The content job `helpmanuals` installs the help
 as content (classes, tree, roles) and then builds the manuals in the background over the next 20 to 30 minutes,
 while the site is already in use ([the background job](#the-background-job)). `exphelp.ini [ManualSettings]
 BuildOnInstall=disabled` leaves it out. A queue that fails is reported and the installation stands: the site works
 without the manuals, and the command can be run at any time. The setup wizard in the browser does not queue it:
-after a wizard installation, run `./console exp:help:content build-manuals -s admin --queue` once. `seed-glossary`
+after a wizard installation, run `./console exp:help:content build-manuals --apply -s admin --queue` once. `seed-glossary`
 and `seed-topics` are run by hand when the starting content is wanted.
 
 The same commands that extend an existing site create everything on a new one, and find what is already there by
@@ -92,14 +92,14 @@ topics, the glossary and anything editors wrote stay as they are.
 
 ```
 ./console exp:help:content build-manuals -s admin --dry-run    # what would change
-./console exp:help:content build-manuals -s admin --release    # make, update, remove; set Released
-./console exp:help:content build-manuals -s admin --release    # No change.
-./console exp:help:content build-manuals -s admin --manual=press --release   # one manual
-./console exp:help:content build-manuals -s admin --language=none            # without the translations
-./console exp:help:content build-manuals -s admin --queue                    # the same in the background (content job)
+./console exp:help:content build-manuals --apply -s admin --release    # make, update, remove; set Released
+./console exp:help:content build-manuals --apply -s admin --release    # No change.
+./console exp:help:content build-manuals --apply -s admin --manual=press --release   # one manual
+./console exp:help:content build-manuals --apply -s admin --language=none            # without the translations
+./console exp:help:content build-manuals --apply -s admin --queue                    # the same in the background (content job)
 ./console exp:help:content report -s admin                     # "Manuals are being built (n of 52)" while it runs
-./console exp:help:content ebooks -s admin                     # the e-books of every Released manual
-./console exp:help:content ebooks -s admin --language=ger-DE   # and their German edition
+./console exp:help:content ebooks --apply -s admin                     # the e-books of every Released manual
+./console exp:help:content ebooks --apply -s admin --language=ger-DE   # and their German edition
 ```
 
 ### What becomes what
@@ -204,10 +204,10 @@ content jobs: a detached worker (`bin/php/expcontentjob.php run <id>`), its log 
 The Markdown changes with every release, so the manuals are rebuilt with it. After the release is deployed:
 
 ```
-./console exp:help:content install -s admin                    # new audience options, roles (usually No change.)
-./console exp:help:content build-manuals -s admin --release
-./console exp:help:content ebooks -s admin
-./console exp:help:content ebooks -s admin --language=ger-DE
+./console exp:help:content install --apply -s admin                    # new audience options, roles (usually No change.)
+./console exp:help:content build-manuals --apply -s admin --release
+./console exp:help:content ebooks --apply -s admin
+./console exp:help:content ebooks --apply -s admin --language=ger-DE
 ```
 
 `--release` releases what the build made or changed: the pages were reviewed in the repository before the release.
@@ -295,7 +295,7 @@ help can answer "Was this helpful?".
 
 ## The validator
 
-`./console exp:help:content check -s <siteaccess> [--fix] [--json]` checks every topic, figure, chapter, manual and
+`./console exp:help:content check --apply -s <siteaccess> [--fix] [--json]` checks every topic, figure, chapter, manual and
 glossary entry below `help-root` (`expHelpContentValidator`, no database in the rules themselves):
 
 | Level | Code | Rule (style guide section) |
@@ -498,7 +498,7 @@ answers are kept, and what that means for the readers' privacy. Exponential deci
 - **One answer per topic and session** is counted; the session remembers which topics it answered (at most 50), the
   table does not. A second answer is thanked for and not stored.
 - **How long**: `FeedbackKeepDays` (730 days). The cronjob part `exphelp` (part of `infrequent`, or on its own:
-  `php runcronjobs.php exphelp`) removes older answers; `./console exp:help:content feedback --prune` does it by hand.
+  `php runcronjobs.php exphelp`) removes older answers; `./console exp:help:content feedback --apply --prune` does it by hand.
 - **Who may answer**: whoever may see a Released topic and holds `exphelp/read` (the readers of the help in the
   administration) or the new policy function `exphelp/feedback` (the readers of a site's public help). Anonymous gets
   `exphelp/feedback` only with `AnonymousFeedback=enabled` and the roles step. A preview cannot be answered.

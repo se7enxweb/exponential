@@ -61,7 +61,7 @@ it, leave it. Back up before you choose.
 
 ## Skipping the wizard
 
-- `./console exp:install` installs from the command line, with the database given as options
+- `./console exp:install --apply` installs from the command line, with the database given as options
   ([Console install](../../install/07-console-install.md)).
 - The kickstarter reads `kickstart.ini` and answers the wizard's pages for you
   ([Kickstarter](../../install/06-kickstarter.md)).

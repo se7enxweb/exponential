@@ -96,7 +96,7 @@ VersionHistoryClass[distribution]=200
 ```
 
 Leeren Sie danach den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`). Eine spätere Senkung der Grenze entfernt
-Versionen nicht von selbst; `php bin/php/cleanupversions.php` entfernt die archivierten Versionen jenseits der Grenze.
+Versionen nicht von selbst; `php bin/php/cleanupversions.php --apply` entfernt die archivierten Versionen jenseits der Grenze.
 Mehr Versionen brauchen mehr Platz in Datenbank und Speicher; sprechen Sie mit Ihrer Administration.
 
 ## Verwandte Seiten

@@ -108,7 +108,7 @@ server process. The control panel's **Cache** tab shows the live hit rate and ca
 ## Clearing it
 
 ```bash
-php bin/php/console exp:velocity cache clear     # every cached page is rendered again on its next request
+php bin/php/console exp:velocity cache clear --apply     # every cached page is rendered again on its next request
 ```
 
 - After a template or stylesheet change: clear the template caches, then `exp:velocity cache clear`; no restart is

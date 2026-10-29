@@ -38,7 +38,7 @@ Site: <domain>        Customer: <customer>        Go-live: <date>        Checked
 
 - [ ] The view cache and template cache are on for the public siteaccesses ([Caching layers](../performance/caching-layers.md)).
 - [ ] With Velocity: the response cache is on and cleared after the last deploy
-      (`php bin/php/console exp:velocity cache clear --allow-root-user`).
+      (`php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 - [ ] The front page and the main section pages answer from a warm cache within your plan's target; measured with
       the benchmark command ([Benchmarking a hosted site](../performance/benchmarking-a-hosted-site.md)).
 

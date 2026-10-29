@@ -52,7 +52,7 @@ git clone https://github.com/se7enxweb/exponential.git exponential
 cd exponential
 git switch -c my-site
 composer install
-php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
 

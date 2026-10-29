@@ -33,7 +33,7 @@ einmal um den Bildschirm herum.
 ## Dieses Modul vorbereiten
 
 - Eine Schulungsinstallation, die alle Teilnehmenden vom Kursraum aus erreichen, zum Beispiel eine, die mit
-  `php bin/php/console exp:install` installiert wurde ([7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md)).
+  `php bin/php/console exp:install --apply` installiert wurde ([7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md)).
 - Ein Konto pro Teilnehmer mit der Rolle **Editor**, E-Mail-Adressen unter `example.invalid`, auf Karten
   geschrieben; ein zusätzliches Konto mit derselben Rolle für Sie selbst, für den Projektor.
 - Die Adresse der Administration (und des Editors, wenn die Installation einen hat) an der Tafel.

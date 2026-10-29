@@ -20,7 +20,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [ezoe.ini](ezoe-ezoe/README.md) | ezoe | 6 |
 | [ezoe_attributes.ini](ezoe-ezoe_attributes/README.md) | ezoe | 0 |
 | [admininterface.ini](admininterface/README.md) | Kernel | 10 |
-| [audit.ini](audit/README.md) | Kernel | 33 |
+| [audit.ini](audit/README.md) | Kernel | 34 |
 | [binaryfile.ini](binaryfile/README.md) | Kernel | 3 |
 | [browse.ini](browse/README.md) | Kernel | 34 |
 | [codetemplate.ini](codetemplate/README.md) | Kernel | 1 |
@@ -32,7 +32,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | Kernel | 1 |
 | [country.ini](country/README.md) | Kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | Kernel | 1 |
-| [cronjob.ini](cronjob/README.md) | Kernel | 23 |
+| [cronjob.ini](cronjob/README.md) | Kernel | 24 |
 | [dashboard.ini](dashboard/README.md) | Kernel | 8 |
 | [datatable.ini](datatable/README.md) | Kernel | 3 |
 | [datatype.ini](datatype/README.md) | Kernel | 5 |

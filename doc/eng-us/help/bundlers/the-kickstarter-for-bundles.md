@@ -43,7 +43,7 @@ Checked with the command's help on 6.0.15 (`kernel/private/classes/commands/kick
 | Command | Options |
 |---|---|
 | `php bin/php/console exp:kickstarter ini` | `--yes` (built-in defaults), `--defaults` (copy `kickstart.ini-dist`), `--from-installed` (take the database server, name and user, not the password, of an installed siteaccess) |
-| `php bin/php/console exp:kickstarter run` | `--dry-run`, `--list-steps`, `--start-step`, `--stop-step`, `--force` |
+| `php bin/php/console exp:kickstarter run --apply` | `--dry-run`, `--list-steps`, `--start-step`, `--stop-step`, `--force` |
 
 `bin/php/kickstarter.php` is the same program without the console. `--force` "is required whenever the range of steps
 includes `CreateSites`". A call without a command shows the help and exits `0`, "so a script that forgot the subcommand
@@ -86,9 +86,9 @@ the values without asking. The keys are on [6.4.2 Sections and keys](../../insta
 
 ## Re-runs and clean-up
 
-- "The same `kickstart.ini` with `DatabaseAction=remove` and `run --force` replaces the database and the settings
+- "The same `kickstart.ini` with `DatabaseAction=remove` and `run --apply` replaces the database and the settings
   again. Use it to reset a test or training site." That is how a classroom bundle resets.
-- `DatabaseAction=skip` with `run --force` "rewrite[s] `settings/siteaccess/` and `settings/override/` from the file
+- `DatabaseAction=skip` with `run --apply` "rewrite[s] `settings/siteaccess/` and `settings/override/` from the file
   and leave[s] the database alone".
 - After the install: "Move `kickstart.ini` out of the installation root, or delete it", and deliver and remove
   `var/log/initial-admin-password`.

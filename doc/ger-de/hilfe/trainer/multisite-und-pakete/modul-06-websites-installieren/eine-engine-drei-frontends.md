@@ -50,7 +50,7 @@ Quelle: [4. Eine Installationsmethode wählen](../../../../installation/04-insta
 
    | | Einrichtungsassistent | Kickstarter | Installation über die Konsole |
    |---|---|---|---|
-   | Einstiegspunkt | jede Seite, solange `CheckValidity=true` | `php bin/php/console exp:kickstarter run --force` | `php bin/php/console exp:install` |
+   | Einstiegspunkt | jede Seite, solange `CheckValidity=true` | `php bin/php/console exp:kickstarter run --apply --force` | `php bin/php/console exp:install --apply` |
    | Antworten aus | den Formularen | `kickstart.ini` | Kommandozeilenoptionen mit Voreinstellungen |
    | Probelauf | nein | `run --dry-run` | `--dry-run` und `--print` |
    | Schutz | startet nur, solange `CheckValidity=true` | `--force` für `CreateSites` nötig | verweigert über einer Installation, sofern nicht `--force` |

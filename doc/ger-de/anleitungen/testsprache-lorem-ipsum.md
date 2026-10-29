@@ -55,8 +55,8 @@ erhalten immer denselben Text.
 
 ```bash
 php bin/php/exploremipsumfill.php 123 --dry-run              # what would be written, nothing changes
-php bin/php/exploremipsumfill.php 123,124                    # two objects
-php bin/php/exploremipsumfill.php --subtree=2 --limit=20     # a node and the objects below it, at most 20
+php bin/php/exploremipsumfill.php --apply 123,124                    # two objects
+php bin/php/exploremipsumfill.php --apply --subtree=2 --limit=20     # a node and the objects below it, at most 20
 ./console exp:loremipsum 123 --from=ger-DE                   # copy the other attributes from German
 ```
 
@@ -81,7 +81,7 @@ abgelehnt oder fehlgeschlagen, 2: Aufruffehler.
 3. **Setup > Sprachen**: Wählen Sie *Lorem Ipsum* und klicken Sie auf *Ausgewählte entfernen*. Ihr Platz ist wieder
    frei.
 4. Leeren Sie den Inhalts-Cache (`php bin/php/ezcache.php --clear-tag=content`) und, unter Velocity,
-   `./console exp:velocity cache clear`.
+   `./console exp:velocity cache clear --apply`.
 
 Vergleichen Sie die Liste der Inhaltssprachen vorher und nachher: Sie sollte dieselbe sein wie vor Beginn Ihres Tests.
 Siehe [Übersetzungen und Sprachen sicher entfernen](inhaltssprachen.md#9-übersetzungen-und-sprachen-sicher-entfernen).

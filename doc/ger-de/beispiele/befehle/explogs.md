@@ -2,14 +2,14 @@
 title: exp:explogs
 audience: developer, admin
 category: examples
-summary: "Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen."
+summary: "Der Log-Viewer auf der Kommandozeile: die Log-Dateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive aufräumen (Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:explogs, explogs, console, command, CLI, explogs.php, exp:logs
 type: generated
 generated: exp:help:examples
 ---
 # exp:explogs
 
-Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen.
+Der Log-Viewer auf der Kommandozeile: die Log-Dateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive aufräumen (Probelauf, außer mit --apply).
 
 Skript `bin/php/explogs.php`, Code in `kernel/private/classes/commands/explogs.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -36,12 +36,15 @@ The log viewer on the command line (read only; e-mail and IP addresses and secre
 
 Log management (doc/eng-us/features/6.0/log-rotation.md):
 ./console exp:logs --archives                              each log with its archives and their sizes
-./console exp:logs --rotate=error,debug                    rotate these logs now (keys as in --archives, or ids)
-./console exp:logs --rotate-all                            rotate every log that is not empty
-./console exp:logs --prune --dry-run                       the archives beyond site.ini [FileSettings] limits
-./console exp:logs --prune=error                           remove them (all logs, or these)
-./console exp:logs --compress                              compress the archives from .2 on
-./console exp:logs --truncate=debug [--in-place]           empty a log (rotated, or in place)
+./console exp:logs --rotate=error,debug --apply            rotate these logs now (keys as in --archives, or ids)
+./console exp:logs --rotate-all --apply                    rotate every log that is not empty
+./console exp:logs --prune                                 the archives beyond site.ini [FileSettings] limits
+./console exp:logs --prune=error --apply                   remove them (all logs, or these)
+./console exp:logs --compress --apply                      compress the archives from .2 on
+./console exp:logs --truncate=debug [--in-place] --apply   empty a log (rotated, or in place)
+--rotate, --rotate-all, --prune, --compress and --truncate change files only with --apply; without it
+they print the plan. --dry-run means the same as no --apply; --apply together with --dry-run is a usage
+error (exit 2).
 
 Exit code: 0 something listed or found, 1 nothing found, 2 error.
 ```
@@ -60,7 +63,8 @@ Exit code: 0 something listed or found, 1 nothing found, 2 error.
 | `--compress` | optional | Die unkomprimierten Archive ab .2 komprimieren: von jedem Log oder von diesen Schlüsseln |
 | `--truncate` | erforderlich | Diese Logs leeren: sie rotieren (der Inhalt bleibt in .1) oder mit --in-place die Datei selbst leeren |
 | `--in-place` |  | Mit --truncate: die Datei an Ort und Stelle leeren, ohne Kopie |
-| `--dry-run` |  | Mit --rotate, --rotate-all, --prune, --compress oder --truncate: nur den Plan ausgeben |
+| `--apply` |  | Mit --rotate, --rotate-all, --prune, --compress oder --truncate: die Dateien ändern (Standard ist ein Probelauf, der den Plan ausgibt) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: nur den Plan ausgeben |
 | `--tail` | erforderlich | Die letzten Einträge einer Datei (ihr Pfad relativ zum Wurzelverzeichnis, z. B. var/log/error.log) |
 | `--lines` | erforderlich | Mit --tail: wie viele Einträge (Standard 20) |
 | `--follow` |  | Mit --tail: weiter ausgeben, was zur Datei hinzukommt, mit zunehmendem Abfrageintervall (Strg-C beendet) |

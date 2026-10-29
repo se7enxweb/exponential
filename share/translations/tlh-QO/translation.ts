@@ -14329,6 +14329,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Nothing new</source>
         <translation>chu&apos; pagh</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta&apos;mey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15248,6 +15256,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Hoch lo&apos;wI&apos; De&apos;vaD: &apos;Iv choHpu&apos;, &apos;Iv &apos;elpu&apos;, &apos;Iv Qo&apos;lu&apos;pu&apos;; yISay&apos;moH &apos;ej yIlel.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>&apos;elghach ja&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>&apos;eltaHbogh lo&apos;wI&apos;pu&apos;, jajvaD &apos;elghachmey Qapbe&apos;ghachmey je; Dat lo&apos;wI&apos; mejmoHghach.</translation>
     </message>
 </context>
 <context>
@@ -33553,6 +33569,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP vangwI&apos; Dorta&apos;bogh poHmey teq PHP nIteb (session.gc_maxlifetime); navvam pagh session_gc poH Qu&apos; &apos;ay&apos; teqbe&apos;.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>&apos;elghach ja&apos;ghachDaq Hoch lo&apos;wI&apos; poHmey &apos;eltaHbogh tetlhmeH ngu&apos;lu&apos;, mejmoHlu&apos; je; Hoch poH SeHwI&apos; lo&apos;taHvIS Qap ja&apos;ghach.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>&apos;elghach ja&apos;ghach yIpoSmoH</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37877,6 +37901,26 @@ yIlob.</translation>
     <message>
         <source>None yet</source>
         <translation>wej pagh</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>&apos;elghachmeylIj chu&apos;, &apos;elnIS Qapbe&apos;ghachmey, pegh mu&apos;lIj De&apos;wI&apos; QIn DaqlIj cha&apos; mIw &apos;elghachlIj je choHmey.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>lo&apos;wI&apos; De&apos;vam &apos;elghachmey chu&apos;, &apos;elnIS Qapbe&apos;ghachmey, Hung choHmey je.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ta&apos;mey yIbej</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>&apos;elghach Qapbe&apos;: %count</translation>
     </message>
 </context>
 <context>
@@ -50967,6 +51011,10 @@ latlh De&apos; DaneHchugh, poQghachmey nav yIlegh.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ghItlh ghItlhlu'pu'be' (%reason). yoS QapmoHbogh lo'wI' crontab ghItlhDaq tlheghmeyvam tIchel; ghobe'chugh, not Qap loSwI' tetlh, qemghachmey, ghuH QInmey, nejmeH tetlh je:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>kickstarter lo&apos;lu&apos;DI&apos; (%file, ghIq php bin/php/kickstarter.php run --apply) pagh chu&apos; jomlu&apos;DI&apos;, jomqa&apos;lu&apos;.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56759,6 +56807,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Qav QapmoHghachDaq %count QIn Qo&apos; De&apos;wI&apos; QIn ngeHwI&apos;. De&apos;wI&apos; QIn jabwI&apos; site.ini MailSettings je yInuD.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count wanI&apos; loStaH &apos;ej ghuH QIn poH Qu&apos; Qapghach qonlu&apos;be&apos;. poH Qu&apos; &apos;ay&apos; &quot;frequent&quot; crontab ghItlhDaq yIchel, pagh exp:notification:run --apply yIQapmoH.</translation>
     </message>
 </context>
 <context>
@@ -63015,6 +63067,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Sor Daq wIvwI&apos; yIlo&apos;; latlh yoS pagh &apos;ay&apos; yIwIv</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>ghajwI&apos; choHlaH pat loHwI&apos; neH: root DaghajtaHvIS ./console exp:content-check --fix-permissions --apply yIQapmoH.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64548,6 +64604,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>empty</source>
         <translation>chIm</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>qan qI&apos;meH ngaQHa&apos;moHwI&apos; (wa&apos; DIS ret law&apos; chenmoHlu&apos;): exp:audit key rotate --apply lo&apos;taHvIS yIchoH.</translation>
     </message>
 </context>
 <context>
@@ -68808,6 +68868,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>not sent</source>
         <translation>ngeHlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>naDev Qapghach Hoch qon ghuH QIn poH Qu&apos;. &apos;ay&apos; frequent crontab ghItlhDaq yIchel, pagh exp:notification:run --apply yIQapmoH.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>SeHlaw yIlo&apos;: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76148,6 +76216,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>SeHlaw &gt; poH Qu'mey</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>wej Qappu&apos; poH Qu&apos; &apos;ay&apos;mey: loStaH Qu&apos; loSwI&apos; tetlh, qemmey, ghuH QInmey, nejmeH tetlh je. php bin/php/installcrontab.php --add --apply yIQapmoH, pagh --show tlheghmey crontab ghItlhDaq tIchel.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76486,6 +76558,46 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>None.</source>
         <translation>pagh.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>&apos;olwI&apos; ghun lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>De&apos;wI&apos; QIn ngoq lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cheghmoHmeH ngoq lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>Hur lo&apos;wI&apos; De&apos; lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>rarmeH De&apos;wI&apos; ghom &apos;anglu&apos;; yoS De&apos; Hung DuHmey ja&apos;bogh rur Daq pollu&apos;.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>qonlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>chaq</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76729,6 +76841,42 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Manage devices</source>
         <translation>janmey tIloH</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>&apos;olwI&apos; ghun lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>De&apos;wI&apos; QIn ngoq lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cheghmoHmeH ngoq lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>Hur lo&apos;wI&apos; De&apos; lo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>qonlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>chaq</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76808,6 +76956,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>View the sessions of this user</source>
         <translation>lo'wI'vam poHmey tIlegh</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>DaH %site Daq lo&apos;wI&apos; De&apos;lIj %login lo&apos;lu&apos;pu&apos; &apos;elmeH; Daq qanbe&apos; &apos;elpu&apos; Daqvo&apos;:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Daq chaq</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76846,6 +77002,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os Daq %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>&apos;elghach ja&apos;ghach</translation>
     </message>
 </context>
 <context>
@@ -77524,6 +77684,788 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>unknown</source>
         <translation>Sovlu&apos;be&apos;</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>lo&apos;wI&apos; De&apos;lIj yIQan</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site Daq lo&apos;wI&apos; De&apos;lIj %login &apos;elmeH cheghmoHmeH ngoq lo&apos;lu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>cheghmoHmeH ngoq lo&apos;lu&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>lo&apos;wI&apos; De&apos;</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Daq chaq</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>pegh mu&apos; chu&apos; yItlhob &apos;elqa&apos;meH, pagh yoS loHwI&apos;pu&apos; tIrI&apos;.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>pegh mu&apos; chu&apos; yItlhob</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>wa&apos;logh neH Qap Hoch cheghmoHmeH ngoq. ghogh HablIj Dachiljaj, &apos;olwI&apos; ghunlIj yIcherqa&apos; &apos;ej cheghmoHmeH ngoqmey chu&apos; Daq QaDDaq tIpol.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>lo&apos;wI&apos; De&apos;lIjDaq &apos;elnIS Qapbe&apos;ghachmey</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>DaH pegh mu&apos;lIj ngoq je poQ &apos;elghach. DaghaHDI&apos; vay&apos; Dara&apos;nISbe&apos;.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>SoH DaghaHta&apos; &apos;ej pegh mu&apos;lIj DalijDI&apos;, chu&apos; yItlhob. SoHbe&apos;chugh, pegh mu&apos; HoSqu&apos; yIwIv &apos;ej cha&apos; mIw &apos;elghach yIchu&apos;.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>SoHbe&apos;chugh, chaq pegh mu&apos;lIj Sov vay&apos;: DaH yIchoH &apos;ej nuqDaq &apos;eltaH lo&apos;wI&apos; De&apos;lIj yInej.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>cheghmoHmeH ngoqmey ratlhbogh</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>janmeylIj tIbej</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Hung ghuHmoHghach</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>%site Daq lo&apos;wI&apos; De&apos;lIj %login &apos;elnIS vay&apos; pegh mu&apos; muj lo&apos;taHvIS, ghIq qa&apos;logh: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site Daq lo&apos;wI&apos; De&apos;lIj %login Hung wanI&apos; qaS.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>lo&apos;wI&apos; De&apos;lIj Hung ghuHmoHghach &apos;oH. Hoch choH rurbogh vaD ngeHlu&apos; &apos;ej chu&apos;Ha&apos;laHbe&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site Daq lo&apos;wI&apos; De&apos;lIj %login vaD cha&apos; mIw &apos;elghach chu&apos;Ha&apos;lu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>cha&apos; mIw &apos;elghach chu&apos;Ha&apos;lu&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site Daq lo&apos;wI&apos; De&apos;lIj %login vaD cha&apos; mIw &apos;elghach chu&apos;lu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>cha&apos; mIw &apos;elghach chu&apos;lu&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site Daq lo&apos;wI&apos; De&apos;lIj %login ngaQmoHlu&apos;pu&apos; &apos;elghach Qapbe&apos; law&apos;qu&apos;pu&apos; &apos;ellu&apos;DI&apos;.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>DaH pegh mu&apos;lIj neH lo&apos;wI&apos; De&apos;lIj Qan. SoH Dara&apos;be&apos;chugh, pegh mu&apos;lIj DachoHpu&apos;DI&apos; cha&apos; mIw &apos;elghach yIchu&apos;qa&apos;.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>lo&apos;wI&apos; De&apos;lIj ngaQmoHlu&apos;pu&apos;</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name lo&apos;wI&apos; Hung ta&apos;mey</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>&apos;ellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>&apos;elnIS Qapbe&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>mejlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>poHmey mejmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>jan chu&apos;vo&apos; &apos;elghach</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Daq chu&apos;vo&apos; &apos;elghach</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ngu&apos;lu&apos;ta&apos; ghot (&quot;SoH &apos;e&apos; yI&apos;ol&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ghot &apos;olghach Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; lo&apos;taHvIS &apos;ellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; &apos;elghach Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>&apos;elghach Qo&apos;lu&apos;ta&apos;: cha&apos; mIw ngoq Hutlh pagh muj</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>cha&apos; mIw ngoq muj</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>&apos;elghach Qapbe&apos;mo&apos; lo&apos;wI&apos; De&apos; ngaQmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>lo&apos;wI&apos; De&apos; ngaQHa&apos;moHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>pegh mu&apos; choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>pegh mu&apos; choHghach Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>pegh mu&apos; cherqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>pegh mu&apos; chu&apos; tlhoblu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>De&apos;wI&apos; QIn Daq choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>lo&apos;wI&apos; pong choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>cha&apos; mIw &apos;elghach chu&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>cha&apos; mIw &apos;elghach chu&apos;Ha&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>cheghmoHmeH ngoq lo&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>cheghmoHmeH ngoqmey chu&apos;</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ghun mu&apos;ngaq chenmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ghun mu&apos;ngaq nge&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; chellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; teqlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>lo&apos;wI&apos; De&apos; chu&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>lo&apos;wI&apos; De&apos; chu&apos;Ha&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>&apos;elghachmey poHmey je</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>lo&apos;wI&apos; De&apos; choHmey</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>qImHa&apos;be&apos;nIS</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ta&apos;wI&apos;: SoH</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ta&apos;wI&apos;: lo&apos;wI&apos;</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ta&apos;wI&apos;: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>mIw</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>De&apos; leghwI&apos;</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>De&apos;wI&apos; pat</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>jan</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Sep</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>poHmey</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>nuq</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>He</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>&apos;elnIS Qapbe&apos;ghachmey</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>ngoqmey ratlhbogh</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>&apos;elghach SeHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name lo&apos;wI&apos; Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>&apos;elghachmey lo&apos;wI&apos; De&apos;lIj Hung choHmey je. vay&apos; Dara&apos;be&apos;bogh Daleghchugh, pegh mu&apos;lIj yIchoH &apos;ej janmey DaghovlaHbe&apos;bogh tImejmoH.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>&apos;elghachmey lo&apos;wI&apos; De&apos;vam Hung choHmey je.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>pegh mu&apos; yIchoH</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>lo&apos;wI&apos; De&apos;Daq yIchegh</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Hung ta&apos;mey qonlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>lo&apos;wI&apos; &apos;olghach wanI&apos; tetlhvo&apos; laDlu&apos;; De&apos; pa&apos;vamDaq expuser_audit SomraD Hutlh pagh QaHlu&apos;be&apos;. php update/common/scripts/6.0/createuseraudittable.php yIQapmoH, pagh 6.0.15 De&apos; pa&apos; choHghach yIQapmoH.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Hopbe&apos;bogh jajmey: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Hopbe&apos;bogh jajmey &apos;elghachmey (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Hung ta&apos;mey chu&apos;</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>Qo&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>wej Hung ta&apos; qonlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>%days jaj pollu&apos; Hung wanI&apos;mey.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Hung wanI&apos;mey teqpa&apos; loHwI&apos;, pollu&apos;.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>&apos;elghach De&apos;wIj yIHev</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>poHmeylIj Hung wanI&apos;meylIj je, JSON ghItlh mol.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>&apos;ellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>&apos;elnIS Qapbe&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>mejlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>poHmey mejmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>jan chu&apos;vo&apos; &apos;elghach</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Daq chu&apos;vo&apos; &apos;elghach</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>ngu&apos;lu&apos;ta&apos; ghot (&quot;SoH &apos;e&apos; yI&apos;ol&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>ghot &apos;olghach Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; lo&apos;taHvIS &apos;ellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; &apos;elghach Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>&apos;elghach Qo&apos;lu&apos;ta&apos;: cha&apos; mIw ngoq Hutlh pagh muj</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>cha&apos; mIw ngoq muj</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>&apos;elghach Qapbe&apos;mo&apos; lo&apos;wI&apos; De&apos; ngaQmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>lo&apos;wI&apos; De&apos; ngaQHa&apos;moHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>pegh mu&apos; choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>pegh mu&apos; choHghach Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>pegh mu&apos; cherqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>pegh mu&apos; chu&apos; tlhoblu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>De&apos;wI&apos; QIn Daq choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>lo&apos;wI&apos; pong choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>cha&apos; mIw &apos;elghach chu&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>cha&apos; mIw &apos;elghach chu&apos;Ha&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>cheghmoHmeH ngoq lo&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>cheghmoHmeH ngoqmey chu&apos;</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ghun mu&apos;ngaq chenmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ghun mu&apos;ngaq nge&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; chellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>&apos;elmeH ngaQHa&apos;moHwI&apos; teqlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>lo&apos;wI&apos; De&apos; chu&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>lo&apos;wI&apos; De&apos; chu&apos;Ha&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>&apos;elghachmey poHmey je</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>lo&apos;wI&apos; De&apos; choHmey</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>qImHa&apos;be&apos;nIS</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name lo&apos;wI&apos; Hung ta&apos;mey</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>&apos;elghachmey lo&apos;wI&apos; De&apos;lIj Hung choHmey je. vay&apos; Dara&apos;be&apos;bogh Daleghchugh, pegh mu&apos;lIj yIchoH &apos;ej janmey DaghovlaHbe&apos;bogh tImejmoH.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>pegh mu&apos; yIchoH</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>wej yoSvamDaq Hung ta&apos;mey qonlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Hopbe&apos;bogh jajmey &apos;elghachmey (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>&apos;elnIS Qapbe&apos;ghachmey</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>wej Hung ta&apos; qonlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>&apos;elghach De&apos;wIj yIHev</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>poHmeylIj Hung wanI&apos;meylIj je, JSON ghItlh mol.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>pegh mu&apos;</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>pegh mu&apos; cha&apos; mIw ngoq je</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST rarwI&apos;</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP rarwI&apos;</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>wa&apos; &apos;elghach</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>poHmey qonlu&apos;pa&apos; &apos;ellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>&apos;elghach ja&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>yoSDaq &apos;eltaHbogh lo&apos;wI&apos;pu&apos;, &apos;elghachmey Qapbe&apos;ghachmey je mI&apos;, Dat lo&apos;wI&apos; mejmoHghach je. Hoch poH SeHwI&apos; lo&apos;taHvIS Qap.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>poH mejmoHlu&apos;ta&apos;. &apos;elqa&apos;nIS jan.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login poHmey mejmoHlu&apos;ta&apos;: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login poH QaptaHbogh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>lo&apos;wI&apos; De&apos; ghajbogh ngu&apos;meH mI&apos;vam, lo&apos;wI&apos; pongvam, De&apos;wI&apos; QIn Daqvam ghap tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>poH Dalo&apos;taHbogh &apos;oH. DarInmoHmeH, yImej.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>rInpu&apos;ta&apos; poHvetlh.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>nav poH rInpu&apos;ta&apos;. pagh choHlu&apos;pu&apos;; yInIDqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>yoSvamDaq poHmey qonlu&apos;be&apos; (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session SomraD Hutlh</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>chenmoHlu&apos;DI&apos; poHmey qonlu&apos;: php update/common/scripts/6.0/createusersessiontable.php, pagh 6.0.15 De&apos; pa&apos; choHghach.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>DaH DaHjaj je</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>poHmey QaptaHbogh</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>lo&apos;wI&apos;pu&apos; &apos;eltaHbogh</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>DaHjaj &apos;elghachmey</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>DaHjaj &apos;elnIS Qapbe&apos;ghachmey</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Dat lo&apos;wI&apos; yImejmoH</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>lo&apos;wI&apos; De&apos; poH Hoch rIn tlhobghach veb, &quot;HIqaw&quot; pollu&apos;bogh poHmey je. lo&apos;wI&apos; De&apos; ghaj ghot muj net Har, yIlo&apos;; ghIq pegh mu&apos;Daj yIcherqa&apos;.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>lo&apos;wI&apos; ngu&apos;meH mI&apos;, lo&apos;wI&apos; pong, pagh De&apos;wI&apos; QIn Daq</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Dat yImejmoH</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>DaH &apos;eltaH</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Hopbe&apos;bogh lo&apos;lu&apos;pu&apos;bogh &apos;anglu&apos; (%limit law&apos;be&apos;).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>lo&apos;wI&apos;</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>jan</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>&apos;ellu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Hopbe&apos;bogh Qap poH</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>janvam</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>qonlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>yImejmoH</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>pagh poH &apos;eltaH.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Hopbe&apos;bogh jajmey: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>lo&apos;wI&apos; &apos;olghach wanI&apos; tetlhvo&apos; &apos;elghachmey &apos;elnIS Qapbe&apos;ghachmey je toghlu&apos;, &apos;ach tu&apos;lu&apos;be&apos;; poHmey chu&apos; toghlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>jaj</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>&apos;elghachmey</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>&apos;elnIS Qapbe&apos;ghachmey</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>poHmey chu&apos;</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>poH SeHwI&apos;: %handler. expuser_session SomraDvo&apos; poHmey laDlu&apos;, vaj Hoch SeHwI&apos; lo&apos;taHvIS Qap ja&apos;ghach.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>lo&apos;wI&apos; De&apos;lIj Hung ghuHmoHghach</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>lo&apos;wI&apos; De&apos;lIj %login Hung wanI&apos; qaS: %event. SoHbe&apos;chugh, %url Daq lo&apos;wI&apos; De&apos;lIj yIQan.</translation>
     </message>
 </context>
 </TS>

@@ -55,7 +55,7 @@ funktioniert. Für den Entwicklerpfad holen Sie die Dateien stattdessen als Git-
 ## Installieren
 
 ```bash
-php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 ```
 
 Was das bewirkt, wie die [Anleitung für die ersten Schritte](../../anleitungen/erste-schritte.md#31-der-eine-befehl) es

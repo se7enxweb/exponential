@@ -1,32 +1,7 @@
 ---
-summary: Welche Sprachen Exponential 6.0.15 unterstützt und wie gut, von den Übersetzungen der Administration und den Locales bis zu Schriften von rechts nach links, Fallbacks und den Sprachen der Hilfe. Mit den Zahlen einer Standardinstallation, einer Weltkarte, der Wahl, dem Wechsel und dem Hinzufügen einer Sprache, dem Melden eines Übersetzungsfehlers und den Referenztabellen.
+summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, auf welcher Stufe, und wie Sie weitere hinzufügen, mit den Zahlen einer Standardinstallation und einer Weltkarte der Länder, deren Sprache die Administration zeigt.
 ---
 # Sprachen in Exponential
-
-Diese Seite fasst zusammen, mit welchen Sprachen Exponential 6.0.15 ausgeliefert wird: was unterstützt wird und wie
-gut, die Zahlen einer Standardinstallation und eine Karte der Länder und Gebiete, deren Sprache die Administration
-spricht. Sie erklärt, wie Sie eine Sprache wählen, wechseln und hinzufügen und wie Sie einen Übersetzungsfehler
-melden, und sie enthält die Referenztabellen aller Locales und aller Übersetzungen der Administrationsoberfläche.
-
-## Was Exponential unterstützt
-
-| Bereich | Was mit 6.0.15 ausgeliefert wird | Mehr |
-|---|---|---|
-| **Übersetzungen der Administration** | Ein Katalog je Sprache in `share/translations/<code>/`, für den Kernel und seine Designs, dazu die Kataloge der mitgelieferten Extensions ezoe und ezjscore. Jeder übersetzt mindestens 99 % der aktuellen Texte. `eng-US` ist die Sprache der Quelltexte, `ger-DE` wurde von Hand übersetzt; alle anderen Übersetzungen sind maschinell unterstützt entstanden und offen für eine Durchsicht. | [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche) |
-| **Locales** | Eine `share/locale/<code>.ini` je Sprache und Land mit den Namen, Datums- und Zeitformaten, Zahlen, Währung, dem ersten Tag der Woche und der Schreibrichtung. Jede Locale lässt sich als Inhaltssprache und als Locale eines Siteaccess wählen. Locales sind reine INI-Dateien und brauchen zur Laufzeit keine PHP-Extension. | [Abschnitte 3](#3-alle-locales), [7](#7-eine-locale-hinzufügen), [10](#10-keine-php-extension-zur-laufzeit) |
-| **Von rechts nach links** | Die Locales für Arabisch, Hebräisch, Persisch, Urdu, Paschtu, Sindhi, Kaschmiri, Uigurisch, Zentralkurdisch, Syrisch, Jiddisch, N’Ko, Dhivehi und weitere sind als rechts nach links markiert. Die Administration wechselt in diesen Sprachen auf rechts nach links, und Inhalte in ihnen erscheinen auf jeder Seite von rechts nach links. | [Abschnitt 9](#9-sprachen-die-von-rechts-nach-links-geschrieben-werden) |
-| **Fallbacks** | Eine Locale ohne eigenen Katalog zeigt den ihrer Sprache, für den Kernel und für jede Extension getrennt: `fre-CA` zeigt `fre-FR`, jedes arabische Land `ara-SA`. Einstellbar in `i18n.ini`. | [Abschnitt 13](#13-übersetzungs-fallbacks) |
-| **Inhaltssprachen** | Inhalte lassen sich in der Sprache jeder Locale schreiben. Eine Installation fasst bis zu 62 Inhaltssprachen (30 mit 32-Bit-PHP). | [Abschnitt 11](#11-die-grenze-von-62-inhaltssprachen), [Inhaltssprachen](anleitungen/inhaltssprachen.md) |
-| **Hilfe und Dokumentation** | Englisch ist das Original, Deutsch die erste Übersetzung. Die Hilfe folgt der Oberflächensprache und zeigt die englische Seite, wo eine Übersetzung fehlt. | [Die Hilfe in Ihrer Sprache lesen](hilfe/hilfe-in-anderen-sprachen-lesen.md) |
-| **Testsprache** | Lorem Ipsum (`qlo-ZZ`), zum Testen von Inhaltsübersetzungen. Sie wird nie von selbst hinzugefügt. | [Abschnitt 12](#12-testsprachen-lorem-ipsum) |
-
-Es gibt drei Stufen der Unterstützung (Einzelheiten in [Abschnitt 2](#2-unterstützungsstufen)). Auf der ersten
-zeigt die Administration eine Sprache aus einer eigenen Übersetzung. Auf der zweiten zeigt sie die Übersetzung
-derselben Sprache über einen Fallback. Auf der dritten, nur Inhalt, bleibt die Oberfläche englisch, während Inhalte,
-Datumsangaben, Zahlen und Währung der Locale folgen. In einer Standardinstallation von 6.0.15 erreicht jede
-mitgelieferte Sprache die erste oder die zweite Stufe; die Tabelle unten zählt sie.
-
-## Die Zahlen einer Standardinstallation
 
 <!-- generated: exp:i18n coverage 2026-10-29 (start) -->
 **Auf einen Blick, Stand 29. Oktober 2026.** Eine Standardinstallation (die mitgelieferten `share/locale`,
@@ -329,23 +304,9 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 Erzeugt mit `./console exp:i18n coverage` aus den mitgelieferten Dateien; `./console exp:i18n coverage --check` und der Test `expI18nCoverageMapTest` schlagen fehl, sobald Zahlen oder Karte veraltet sind.
 <!-- generated: exp:i18n coverage (end) -->
 
-### Die Karte lesen
-
-- **Grün** ist ein Land oder Gebiet, für das Exponential eine Locale mitliefert, deren Sprache die Administration
-  übersetzt zeigt. Das kann eine eigene Übersetzung der Locale sein, die erste Übersetzung ihrer Fallback-Kette oder
-  Englisch, die Sprache der Quelltexte. Die Tabelle „Länder und Gebiete in Grün“ unter der Karte nennt für jedes
-  Land seine Locales und die Übersetzung, die jede zeigt: `→` markiert einen Fallback, „(Quelltexte)“ Englisch.
-- **Grün mit Absicht** sind drei unbewohnte Gebiete: die Antarktis (`AQ`), die Bouvetinsel (`BV`) sowie die Heard-
-  und McDonaldinseln (`HM`). CLDR definiert für sie keine Locale, deshalb liefert Exponential keine mit. Sie sind
-  grün, weil es keine lokalen Konventionen gibt, die eine Locale ergänzen könnte: Jede Sprache bedient sie.
-- **Grau** wäre ein Land, dessen Locale die Administration mangels Übersetzung auf Englisch zeigt, oder ein Code aus
-  ISO 3166-1 ohne Locale und ohne Grund mit Absicht. In 6.0.15 ist kein Land grau. Die Legende behält die Farbe,
-  damit eine Locale, die ohne Übersetzung hinzukommt, auffällt.
-- Die Niederländischen Antillen (`AN`) fehlen auf der Karte ganz. Ihr Code wurde 2010 zurückgezogen, und jeder
-  ihrer Nachfolger (`BQ`, `CW`, `SX`) hat eine eigene Locale.
-
-Tabelle und Karte zeigen eine Standardinstallation: die mitgelieferten Dateien ohne Erweiterungen und ohne
-überschriebene Einstellungen. Eigene Locales, Übersetzungen und `i18n.ini`-Einstellungen einer Site zählen nicht mit.
+Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, auf welcher Stufe, und wie Sie weitere
+hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzungen der Administrationsoberfläche am
+26. Oktober 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
 Kurz gefasst: **368 Locale-Dateien** (361 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
@@ -383,16 +344,9 @@ Tigrinya (`tir-ET`), Tongan (`ton-TO`), Traditional Chinese (Taiwan) (`chi-TW`),
 (`pnb-PK`), Wolof (`wol-SN`), Xhosa (`xho-ZA`), Yiddish (`yid-US`), Yoruba (`yor-NG`), Zulu (`zul-ZA`). Die Namen sind
 die englischen der Locale-Dateien.
 <!-- generated: exp:i18n coverage translations (end) -->
+Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
 ## Inhalt
-
-- [Was Exponential unterstützt](#was-exponential-unterstützt)
-- [Die Zahlen einer Standardinstallation](#die-zahlen-einer-standardinstallation)
-- [Eine Sprache wählen und wechseln](#eine-sprache-wählen-und-wechseln)
-- [Eine Sprache oder eine Locale hinzufügen](#eine-sprache-oder-eine-locale-hinzufügen)
-- [Einen Übersetzungsfehler melden](#einen-übersetzungsfehler-melden)
-
-Referenz:
 
 1. [Locales, Übersetzungen, Inhaltssprachen und Siteaccesses](#1-locales-übersetzungen-inhaltssprachen-und-siteaccesses)
 2. [Unterstützungsstufen](#2-unterstützungsstufen)
@@ -408,64 +362,23 @@ Referenz:
 12. [Testsprachen: Lorem Ipsum](#12-testsprachen-lorem-ipsum)
 13. [Übersetzungs-Fallbacks](#13-übersetzungs-fallbacks)
 
-- [Wie die Übersetzungen entstanden sind](#wie-die-übersetzungen-entstanden-sind)
-- [Die noch nicht übersetzten Sprachen](#die-noch-nicht-übersetzten-sprachen)
+<!-- generated: exp:i18n coverage languages (start) -->
+## Die noch nicht übersetzten Sprachen
 
-## Eine Sprache wählen und wechseln
+Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **150** davon
+zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
+Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
+übrigen **0** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+(siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-Drei Einstellungen entscheiden, welche Sprache jemand sieht:
+<details><summary>Die 0 nicht übersetzten Sprachen</summary>
 
-1. **Die Oberflächensprache der Administration.** Jeder Benutzer wählt sie in der Wahl der Oberflächensprache der
-   Administration (dem Auswahlfeld in der rechten Werkzeugleiste). Die meistgebrauchten Sprachen stehen vorn, dann
-   folgen alle Sprachen von A bis Z, jede mit der Angabe, wie vollständig ihre Übersetzung ist. Die Wahl gilt für
-   die Sitzung. Mit `uiswitch.ini [UISwitch_language] RememberPreference=enabled` wird sie auch in den Einstellungen
-   des Benutzers gespeichert und gilt bei der nächsten Anmeldung wieder. Welche Sprachen die Liste anbietet und in
-   welcher Reihenfolge: [Die Liste der Oberflächensprachen](funktionen/6.0/ui-umschalter-sprachen.md) und
-   [Einstellungen der UI-Umschalter](anleitungen/ui-umschalter-einstellungen.md#uiswitch_language).
-2. **Die Locale eines Siteaccess.** `site.ini [RegionalSettings] Locale` legt die Sprache der Oberflächentexte eines
-   Siteaccess und seine Datums-, Zahlen- und Währungsformate fest. `SiteLanguageList[]` legt fest, welche
-   Inhaltssprachen er zeigt und in welcher Reihenfolge. Üblich ist ein Siteaccess je Sprache:
-   [Eine Sprache anzeigen](anleitungen/inhaltssprachen.md#5-eine-sprache-anzeigen-sitelanguagelist-und-siteaccesses).
-3. **Die Inhaltssprachen.** Unter Setup > Sprachen kommen die Sprachen hinzu, in denen Inhalte geschrieben werden
-   können, und Redakteure übersetzen jedes Element in sie: [Inhaltssprachen](anleitungen/inhaltssprachen.md).
+| Sprache | Eigener Name | Code | Locales (Länder) |
+|---|---|---|---|
 
-Die Hilfe folgt der Oberflächensprache: [Die Hilfe in Ihrer Sprache lesen](hilfe/hilfe-in-anderen-sprachen-lesen.md).
-
-## Eine Sprache oder eine Locale hinzufügen
-
-- **Eine Sprache, die schon eine Locale hat,** braucht keine Dateien. Fügen Sie sie unter Setup > Sprachen als
-  Inhaltssprache hinzu ([Eine Sprache hinzufügen](anleitungen/inhaltssprachen.md#4-eine-sprache-hinzufügen)), oder
-  wählen Sie sie als Oberflächensprache. Die Administration zeigt dann die eigene Übersetzung der Sprache, die
-  Übersetzung, auf die sie zurückfällt, oder Englisch.
-- **Eine Sprache oder ein Land ohne Locale** braucht eine Locale-Datei: [Abschnitt 7](#7-eine-locale-hinzufügen).
-- **Eine neue oder bessere Übersetzung der Administration**:
-  [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen), mit den
-  gemeinsamen Regeln in `share/translations/TRANSLATING.md` und der eigenen `GUIDE.md` der Sprache.
-- **Ein Fallback** für eine Locale ohne eigene Übersetzung: `i18n.ini [TranslationSettings] FallbackLanguages[]`
-  ([Abschnitt 13](#13-übersetzungs-fallbacks)).
-- **Eine Sprache der Hilfe**: [Übersetzte Dokumentation](bc/6.0/uebersetzte-dokumentation.md).
-
-## Einen Übersetzungsfehler melden
-
-Alle Übersetzungen außer `eng-US` und `ger-DE` sind maschinell unterstützt entstanden. Ein falscher Begriff, eine
-falsche Anrede oder ein holpriger Satz steckt deshalb wahrscheinlich irgendwo, und jede Meldung hilft. So melden Sie
-einen Fehler:
-
-1. Notieren Sie den Sprachcode (die Wahl der Oberflächensprache zeigt ihn, zum Beispiel `fre-FR`), die Seite (ihre
-   Adresse ohne den Hostnamen) und den Text, wie er erscheint.
-2. Schreiben Sie, wie der Text lauten sollte, und warum, wenn das nicht offensichtlich ist: ein Begriff aus dem
-   Glossar, die Anrede oder ein Wort, das seinen Kontext braucht („Store“ als Reiter des Shops oder als Speichern).
-3. Eröffnen Sie ein Issue unter
-   [github.com/se7enxweb/exponential/issues](https://github.com/se7enxweb/exponential/issues) für den Kernel, seine
-   Designs, ezoe, ezjscore und die Dokumentation. Ein Text einer anderen Extension gehört in das Repository dieser
-   Extension.
-
-Eine Korrektur ist als Pull Request willkommen. Ändern Sie den Katalog `share/translations/<code>/translation.ts`
-und, bei einem Begriff, zuerst die `GUIDE.md` der Sprache
-([Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Wie Sie eine
-ganze Übersetzung durchsehen, steht in
-[Eine maschinell unterstützte Übersetzung gegenlesen](hilfe/fuersprecher/maschinell-unterstuetzte-uebersetzung-gegenlesen.md);
-wie gute Meldungen allgemein aussehen, in [Fehler gut melden](hilfe/fuersprecher/fehler-gut-melden.md).
+</details>
+<!-- generated: exp:i18n coverage languages (end) -->
 
 ## 1. Locales, Übersetzungen, Inhaltssprachen und Siteaccesses
 
@@ -494,33 +407,31 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 ## 2. Unterstützungsstufen
 
-| Stufe | Was funktioniert | Locales |
+| Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Eigene Übersetzung** | Die Administration spricht die Sprache aus einem eigenen Katalog, der mindestens 99 % der aktuellen Texte übersetzt. Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | Jeder Code in der Tabelle von [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche). Alle außer `eng-US` und `ger-DE` sind maschinell unterstützt entstanden. |
-| **Über einen Fallback** | Dasselbe, aus dem Katalog einer anderen Locale der Sprache oder einer eng verwandten. | Die Locales mit `→` in der Ländertabelle unter der Karte, etwa `fre-CA` → `fre-FR`, `ara-EG` → `ara-SA` und `nno-NO` → `nor-NO`. Die englischen Locales ohne eigenen Katalog (`eng-GB`, `eng-IN` ...) zeigen die Quelltexte, die englisch sind. |
-| **Nur Inhalt** | Weder Übersetzung noch Fallback, die Oberfläche bleibt also englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | Keine in einer Standardinstallation. Eine später hinzugefügte Locale bleibt auf dieser Stufe, bis sie eine Übersetzung oder einen Fallback bekommt. |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (und `syr-SY`, das darauf zurückfällt), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `lin-CD`, `ful-SN`, `orm-ET`, `eng-AU` (und `eng-NZ`, das darauf zurückfällt), `hye-AM`, `uzb-UZ`, `snd-PK`, `pnb-PK`, `mya-MM`, `haw-US`, `aze-AZ`, `aka-GH`, `sin-LK`, `asm-IN`, `kin-RW`, `mlg-MG`, `uig-CN`, `khm-KH`, `ceb-PH`, `ckb-IQ`, `tir-ET`, `kik-KE`, `run-BI`, `tgk-TJ`, `bod-CN`, `bel-BY`, `mon-MN`, `glg-ES`, `kir-KG`, `eus-ES`, `tat-RU`, `cym-GB`, `tuk-TM`, `mkd-MK`, `lug-UG`, `ltz-LU`, `wol-SN`, `kor-KP`, `ast-ES`, `bam-ML`, `dzo-BT`, `bre-FR`, `ewe-GH`, `oci-FR`, `kab-DZ`, `div-MV`, `kok-IN`, `roh-CH`, `zgh-MA`, `hsb-DE`, `mni-IN`, `fry-NL`, `doi-IN`, `fao-FO`, `nqo-GN`, `kas-IN`, `sme-NO`, `que-PE`, `epo-EO`, `brx-IN`, `ton-TO`, `sat-IN`, `san-IN`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
+| **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 237, die in 6.0.15 hinzukamen |
 
-Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]`
-nennt, auf derselben Stufe. Jedes deutsch-, französisch- und spanischsprachige Land fällt auf `ger-DE`, `fre-FR` oder
-`esl-ES` zurück, Lateinamerika eingeschlossen (`esl-MX` nimmt `esl-ES` für die Extensions, für die es keinen eigenen
-Katalog hat). Die arabischen Länder fallen auf `ara-SA` zurück, und die anderen Sprachen funktionieren genauso
-(`por-MZ` auf `por-PT`, `ita-CH` auf `ita-IT`). Der Übersetzer schlägt den Fallback für den Kernel und für jede
-Extension getrennt nach. `expUISwitchLanguageProviderTest` schlägt fehl, wenn ein Land einer übersetzten Sprache
-weder eine Übersetzung noch einen Fallback hat. Die Spalte „Übersetzungsabdeckung“ in
-[Abschnitt 3](#3-alle-locales) nennt die Locale, zu der ein Fallback führt. Ketten, der automatische Fallback
-innerhalb derselben Sprache, Regeln von Extensions, `./console exp:i18n` und Setup > Oberflächensprachen erklärt
+Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]` nennt,
+auf derselben Stufe: Jedes deutsch-, französisch- und spanischsprachige Land fällt auf `ger-DE`, `fre-FR` und `esl-ES`
+zurück (auch Lateinamerika: `esl-ES` ist die vollständige, `esl-MX` fehlen einige Kernel-Texte und vier Extensions;
+`esl-MX` selbst nimmt für diese Extensions `esl-ES`), die arabischen Länder auf `ara-SA`,
+und die anderen Sprachen ebenso (`por-MZ` auf `por-PT`, `ita-CH` auf `ita-IT`). Der Übersetzer schlägt den Fallback
+für den Kernel und für jede Extension getrennt nach. `expUISwitchLanguageProviderTest` schlägt fehl, wenn ein Land
+einer übersetzten Sprache keines von beiden hat. Die Spalte „Übersetzungsabdeckung“ unten zählt nur die eigene
+Übersetzung einer Locale; die Wahl der Oberflächensprache zeigt die des Fallbacks. Ketten, der automatische Fallback
+innerhalb derselben Sprache, Regeln von Extensions, `./console exp:i18n` und Setup > Oberflächensprachen:
 [Abschnitt 13](#13-übersetzungs-fallbacks).
 
 ## 3. Alle Locales
 
-`share/locale` enthält eine Datei je Sprache und Land (die Anzahl steht in der Tabelle oben auf dieser Seite), die
-Testsprache `qlo-ZZ` ([Abschnitt 12](#12-testsprachen-lorem-ipsum)) und einige Varianten. Eine Variante wie
-`ger-DE@euro` überschreibt nur einige Schlüssel ihrer Basisdatei und wird in `site.ini` gewählt. Das Formular zum
-Hinzufügen unter Setup > Sprachen bietet jede Datei außer den Varianten an, sortiert nach englischem Namen. Jeder
-Eintrag zeigt seinen Eigennamen, sein Land (sofern der Name es nicht schon nennt) und seinen Code, und ein Suchfeld
-passt auf jedes davon: `bengali`, `বাংলা`, `ben` und `bangladesh` finden alle `ben-BD`. Die Wahl der
-Oberflächensprache bietet dieselben Locales in ihrer A–Z-Liste an, einem nativen Auswahlfeld mit Schnellsuche beim
-Tippen (die Eingabe „Kis“ springt zu Kiswahili).
+`share/locale` enthält am 18. Oktober 2026 268 Dateien: 49, die es schon vor 6.0.15 gab, 170, die in 6.0.15
+hinzukamen, die Testsprache `qlo-ZZ` ([Abschnitt 12](#12-testsprachen-lorem-ipsum)) und 48, die am 18. Oktober 2026 hinzukamen (die übrigen Länder des Spanischen, Französischen, Arabischen und Deutschen, auf dieselbe Weise
+aus CLDR 48 erzeugt). Das Formular zum Hinzufügen unter Setup > Sprachen bietet die 280 ohne Variante an (eine Variante wie `ger-DE@euro` überschreibt nur einige
+Schlüssel ihrer Basisdatei und wird in `site.ini` gewählt), sortiert nach englischem Namen, jeweils mit Eigennamen,
+Land (sofern der Name es nicht schon nennt) und Code, und ein Suchfeld, das auf jedes davon passt: `bengali`, `বাংলা`,
+`ben`, `bangladesh` finden alle `ben-BD`. Die Wahl der Oberflächensprache bietet dieselben Locales in ihrer A–Z-Liste
+an, einem nativen Auswahlfeld mit Schnellsuche beim Tippen (die Eingabe „Kis“ springt zu Kiswahili).
 
 Die Spalten:
 
@@ -528,16 +439,16 @@ Die Spalten:
 - **Schrift**: die Schrift nach ISO 15924, in der die Namen der Datei geschrieben sind: die wahrscheinliche Schrift der
   Sprache laut ICU, geprüft an den Buchstaben des eigenen Eigennamens und der Monatsnamen der Datei (die Datei hat
   Vorrang: `ser-SR` ist Serbisch in lateinischer Schrift).
-- **Quelle**: `CLDR 44` oder `CLDR 48` für eine Datei, die in 6.0.15 aus dieser Version von Unicode CLDR erzeugt
-  wurde; `älter, neu erzeugt aus CLDR 44` (oder `48`) für eine ältere Datei, die fehlerhaft war und neu erzeugt wurde; `Namen von Hand, Konventionen aus CLDR 44`,
+- **Quelle**: `CLDR 44` für eine Datei, die in 6.0.15 aus Unicode CLDR 44 erzeugt wurde; `älter, neu erzeugt aus
+  CLDR 44` für eine ältere Datei, die fehlerhaft war und neu erzeugt wurde; `Namen von Hand, Konventionen aus CLDR 44`,
   wo CLDR keine Daten für die Sprache hat und die Namen von Hand geschrieben wurden; `von Hand erstellt` für eine
   vollständig von Hand geschriebene Datei; `älter, von Hand erstellt, korrigiert in 6.0.15` für eine ältere Datei mit
   einzelnen von Hand korrigierten Werten; `älter, von Hand erstellt` für die Dateien, die mit früheren Releases kamen,
   unverändert.
-- **Übersetzungsabdeckung**: der Anteil der aktuellen Oberflächentexte, den die Übersetzung übersetzt, die die
-  Locale zeigt, so wie ihn die Wahl der Oberflächensprache anzeigt (`expUISwitchLanguageCatalogue::coveragePercent()`,
-  abgerundet; Englisch ist die Quellsprache und immer 100 %). „Fällt auf ... zurück“ nennt den Katalog einer anderen
-  Locale; `—` steht für eine Locale ohne Übersetzung.
+- **Übersetzungsabdeckung**: der Anteil der heutigen Oberflächentexte, den die eigene Übersetzung der
+  Administrationsoberfläche der Locale übersetzt, so wie ihn die Wahl der Oberflächensprache anzeigt
+  (`expUISwitchLanguageCatalogue::coveragePercent()`, abgerundet; Englisch ist die Quellsprache und immer 100 %); `—`
+  ohne Übersetzung.
 
 Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Hand.
 
@@ -623,9 +534,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-BW` | English (Botswana) | English (Botswana) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-BZ` | English (Belize) | English (Belize) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-CA` | English (Canada) | English (Canada) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
-| `eng-CC` | English (Cocos (Keeling) Islands) | English (Cocos (Keeling) Islands) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `eng-AU` zurück) |
 | `eng-CK` | English (Cook Islands) | English (Cook Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `eng-CX` | English (Christmas Island) | English (Christmas Island) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `eng-AU` zurück) |
 | `eng-DM` | English (Dominica) | English (Dominica) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-FJ` | English (Fiji) | English (Fiji) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-FK` | English (Falkland Islands) | English (Falkland Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -655,10 +564,8 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-LS` | English (Lesotho) | English (Lesotho) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MH` | English (Marshall Islands) | English (Marshall Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MP` | English (Northern Mariana Islands) | English (Northern Mariana Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `eng-MS` | English (Montserrat) | English (Montserrat) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-MW` | English (Malawi) | English (Malawi) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NA` | English (Namibia) | English (Namibia) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `eng-NF` | English (Norfolk Island) | English (Norfolk Island) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `eng-AU` zurück) |
 | `eng-NG` | English (Nigeria) | English (Nigeria) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NR` | English (Nauru) | English (Nauru) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NU` | English (Niue) | English (Niue) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -680,7 +587,6 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-TT` | English (Trinidad & Tobago) | English (Trinidad & Tobago) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-TV` | English (Tuvalu) | English (Tuvalu) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-UG` | English (Uganda) | English (Uganda) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `eng-UM` | English (U.S. Outlying Islands) | English (U.S. Outlying Islands) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-US` | English (United States) | English (United States) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `eng-VC` | English (St. Vincent & Grenadines) | English (St Vincent & the Grenadines) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-VG` | English (British Virgin Islands) | English (British Virgin Islands) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -736,7 +642,6 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-DZ` | French (Algeria) | Français (Algérie) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-FR` | French (France) | Français (France) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `fre-GA` | French (Gabon) | Français (Gabon) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
-| `fre-GF` | French (French Guiana) | Français (Guyane française) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GN` | French (Guinea) | Français (Guinée) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GP` | French (Guadeloupe) | Français (Guadeloupe) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-GQ` | French (Equatorial Guinea) | Français (Guinée équatoriale) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
@@ -755,7 +660,6 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-NE` | French (Niger) | Français (Niger) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-PF` | French (French Polynesia) | Français (Polynésie française) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-PM` | French (St. Pierre & Miquelon) | Français (Saint-Pierre-et-Miquelon) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
-| `fre-RE` | French (Réunion) | Français (La Réunion) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-RW` | French (Rwanda) | Français (Rwanda) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-SC` | French (Seychelles) | Français (Seychelles) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-SN` | French (Senegal) | Français (Sénégal) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
@@ -765,7 +669,6 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `fre-TN` | French (Tunisia) | Français (Tunisie) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-VU` | French (Vanuatu) | Français (Vanuatu) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 48 | 100 % (fällt auf `fre-FR` zurück) |
 | `fre-WF` | French (Wallis & Futuna) | Français (Wallis-et-Futuna) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
-| `fre-YT` | French (Mayotte) | Français (Mayotte) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `fre-FR` zurück) |
 | `fry-NL` | Western Frisian | Frysk | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ful-SN` | Fula | Pulaar | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ger-AT` | German (Austria) | Deutsch (Österreich) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ger-DE` zurück) |
@@ -835,7 +738,6 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `nor-NO` | Norwegian Bokmål | Norsk (Bokmål) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `nor-NO@intl` | Variant of `nor-NO`: Internasjonalt Format |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | 100 % (fällt auf `nor-NO` zurück) |
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | 100 % (fällt auf `nor-NO` zurück) |
-| `nor-SJ` | Norwegian Bokmål (Svalbard & Jan Mayen) | Norsk bokmål (Svalbard og Jan Mayen) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `nor-NO` zurück) |
 | `nqo-GN` | N’Ko | ߒߞߏ | Afrika | RTL | N’Ko (`Nkoo`) | CLDR 44 | 100 % |
 | `oci-FR` | Occitan | Occitan | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ori-IN` | Odia | ଓଡ଼ିଆ | Südasien | LTR | Oriya (Odia) (`Orya`) | CLDR 44 | 100 % |
@@ -931,7 +833,7 @@ Hinweise zu einzelnen Locales:
   `Ελληνικά` statt „Greek (Hellenic)“), `ukr-UA` (`Українська` statt „Ukrainian“; Monatsnamen in der Form innerhalb
   eines Datums, `15 жовтня` statt `15 Жовтень`, mit der alleinstehenden Form daneben). `kat-GE` verlor einen
   Großbuchstaben, den sein Generator ihm gegeben hatte (Georgisch kennt im fortlaufenden Text keine: `ქართული`).
-- **Bekannte Grenzen** älterer Dateien: `ser-SR` und `srp-RS` mischen Englisch und Eigensprache („Serbian (Српски)“, und `srp-RS`
+- **Noch zu verbessern** in älteren Dateien: `ser-SR` und `srp-RS` mischen Englisch und Eigensprache („Serbian (Српски)“, und `srp-RS`
   schreibt seine Tagesnamen groß), `chi-CN` und `chi-TW` behalten ihre alten Datumsmuster (`2025年 十月 15日`,
   lesbar, aber nicht das `2025年10月15日` von CLDR). Die kurzen Monatsnamen von `rus-RU` (`Янв`, `Май`)
   sind keine der beiden Formen von CLDR, und `som-SO` benennt die Monate auf die
@@ -1004,18 +906,20 @@ klingonische Schrift pIqaD wird nie verwendet (siehe Klingonisch oben).
 
 ## 4. Alle Übersetzungen der Administrationsoberfläche
 
-Jede Übersetzung wurde für das Release 6.0.15 auf zwei Arten gemessen, beide abgerundet:
+Gemessen am 16. Oktober 2026 (die zehn am 18. Oktober 2026 hinzugekommenen Übersetzungen gegen die 17.763 Texte jenes Tages, die drei am 19. Oktober 2026 hinzugekommenen gegen die 17.834 Texte jenes Tages, Suaheli, am 23. Oktober 2026 hinzugekommen, gegen die 18.404 Texte jenes Tages), auf zwei Arten (beide abgerundet). Am 26. Oktober 2026 wurde jede Übersetzung erneut gegen die 18.811 aktuellen Texte gemessen: Alle 73 übersetzen mindestens 99 % davon, 38 jeden einzelnen (Jiddisch, Vietnamesisch und Indonesisch, am selben Tag hinzugekommen, gegen 18.812); den übrigen 35 fehlen nur die 22 Texte des Moduls für Datentabellen (`kernel/datatable/module`), und `kal-GL` lässt zusätzlich 25 längere Sätze unfertig:
 
 - **Eigene Datei fertig**: fertige Meldungen der Datei geteilt durch alle ihre Meldungen, veraltete nicht
   mitgerechnet, jede Kombination aus Kontext, Quelle und Kommentar einmal gezählt.
   `php bin/php/ezchecktranslation.php <code>` gibt einen ähnlichen Wert „Percent finished“ aus.
-- **Aktuelle Texte übersetzt**: wie viele der 18.839 Texte, die `share/translations/untranslated/translation.ts` zum
-  Zeitpunkt der Messung enthielt (jeder Text, den der Kernel und seine Designs anfordern), die Datei übersetzt, mit
-  gleichem Kontext, gleicher Quelle und gleichem Kommentar, fertig und nicht leer. Das ist es, was ein Administrator
-  sieht. Der Rest erscheint auf Englisch.
+- **Aktuelle Texte übersetzt**: wie viele der 18.839 Texte in `share/translations/untranslated/translation.ts` (jeder
+  Text, den der Kernel und seine Designs heute anfordern) die Datei übersetzt, mit gleichem Kontext, gleicher Quelle
+  und gleichem Kommentar, fertig und nicht leer. Das ist es, was ein Administrator sieht und was die Wahl der
+  Oberflächensprache als Abdeckung anzeigt: Der Rest erscheint auf Englisch.
 
-Die Wahl der Oberflächensprache berechnet ihre Abdeckung beim Anzeigen aus den installierten Dateien, deshalb
-stimmt sie auch, wenn später Texte hinzukommen. Englisch ist die Quellsprache und zählt dort als 100 %.
+Die meisten Übersetzungen waren für die Texte älterer Releases vollständig; 6.0 hat etwa 10.000 Texte hinzugefügt
+(admin4, die neuen Setup-Seiten, Audit, Pakete, Jobs und mehr), die bisher nur `eng-US`, `ger-DE` und die sechs
+maschinell unterstützten Übersetzungen übersetzen. Englisch ist die Quellsprache: Die zwei Texte, die `eng-US` fehlen,
+zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt Englisch als 100 %.
 
 | Übersetzung | Eigene Datei fertig | Aktuelle Texte übersetzt |
 |---|---:|---:|
@@ -1177,33 +1081,423 @@ stimmt sie auch, wenn später Texte hinzukommen. Englisch ist die Quellsprache u
 
 Hinweise:
 
-- **Wie sie entstanden sind.** `eng-US` ist das Englisch der Quelltexte, und `ger-DE` wurde von Hand übersetzt und
-  durchgesehen. Alle anderen Übersetzungen sind maschinell unterstützt entstanden: mit einem Glossar und einem
-  Stilleitfaden je Sprache, danach geprüft von den Qualitätstests aus
-  [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen). Die
-  `share/translations/<code>/GUIDE.md` jeder Sprache hält ihre Entscheidungen fest: die Anrede, Schrift und
-  Typografie, die Formulierung von Schaltflächen und die Begriffe, die für den Kernel und jede Extension gelten. Eine
-  Durchsicht durch Muttersprachler ist bei allen willkommen
-  ([Einen Übersetzungsfehler melden](#einen-übersetzungsfehler-melden)).
-- **Aus einer anderen Übersetzung angepasst.** `fas-AF` (Dari) ist der persische Katalog, Zeile für Zeile an den
-  afghanischen Sprachgebrauch angepasst, und `kor-KP` der südkoreanische Katalog, angepasst an die nordkoreanische
-  Norm (문화어). Keine von beiden fällt auf ihre Vorlage zurück. `jav-ID` und `sun-ID` teilen ihre Fachbegriffe mit
-  `ind-ID`. `eng-AU` sind die Quelltexte mit einer geprüften Wortliste (australische Schreibung, GST statt VAT).
-- **Transliteriert.** `ser-SR` ist `srp-RS`, Buchstabe für Buchstabe in lateinische Schrift übertragen. `arc-IQ` und
-  `huy-IL` sind `syr-IQ`, in hebräische Quadratschrift übertragen; ihre `GUIDE.md` nennt die Zuordnung. Serbisch hat
-  deshalb zwei Verzeichnisse: `ser-SR` (lateinisch) und `srp-RS` (kyrillisch), und beide Locale-Dateien gibt es.
-- **Über einen Fallback gezeigt.** Einige Locales haben keinen eigenen Katalog und zeigen den ihrer Sprache:
-  `chi-HK` zeigt `chi-TW`, `chi-SG` zeigt `chi-CN`, `nno-NO` zeigt `nor-NO`, `eng-NZ` zeigt `eng-AU`, `swa-TZ`
-  zeigt `swa-KE`, `syr-SY` zeigt `syr-IQ`, und jedes arabische Land zeigt `ara-SA`. Siehe
-  [Abschnitt 13](#13-übersetzungs-fallbacks).
-- **Bekannte Grenzen.** Der Übersetzer kennt keine Pluralformen, deshalb liest sich eine Anzahl in Sprachen mit mehr
-  als zwei Formen holprig (im Ukrainischen für 2 bis 4); die meisten solchen Texte lauten „Bezeichnung: %count“. In
-  einigen Sprachen bleiben ein paar Texte ohne verlässlichen Begriff auf Englisch, bis ein Muttersprachler sie
-  durchgesehen hat. Die Ausnahmeliste des Qualitätstests nennt jeden mit seinem Grund.
-- **Extensions.** Jede Extension veröffentlicht ihre eigenen Kataloge in ihrem Verzeichnis `translations/`; sie
-  zählen hier nicht mit. Die mitgelieferten ezoe und ezjscore bringen für jede Übersetzung oben einen vollständigen
-  Katalog mit. Eine andere Extension zeigt ihre Texte in einer Sprache, für die sie keinen Katalog hat, auf Englisch
-  oder in ihrem Fallback.
+- **Sanskrit** (`san-IN`, संस्कृत भाषा) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in modernem
+  Standard-Sanskrit in Devanagari, wie es Sanskrit-Lokalisierungen verwenden, mit Handlungsnomen auf Schaltflächen
+  (संरक्षणम्, रद्दीकरणम्, निरसनम्, सम्पादनम्), dem höflichen Imperativ mit कृपया in Anleitungen, dem Danda als Satzende und
+  Sandhi, das Platzhalter und lateinische Wörter frei lässt, wobei Hindi (`hin-IN`) nur zur Prüfung moderner Begriffe
+  diente, mit einem Glossar (`share/translations/san-IN/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind
+  vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Santali** (`sat-IN`, ᱥᱟᱱᱛᱟᱲᱤ) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Santali in Ol-Chiki-Schrift mit ᱾ als Satzende und lateinischen Ziffern, Santali-Grammatik, dem bloßen Verb
+  auf Schaltflächen (ᱨᱟᱠᱷᱟᱣ, ᱵᱟᱛᱟᱞ, ᱢᱮᱴᱟᱣ, ᱥᱟᱯᱲᱟᱣ) und frei stehenden Platzhaltern, wobei Bengalisch (`ben-BD`) und
+  Hindi (`hin-IN`) nur zur Prüfung der Begriffe dienten, mit einem Glossar (`share/translations/sat-IN/GUIDE.md`); die
+  Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Tongaisch** (`ton-TO`, lea fakatonga) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, im amtlichen
+  tongaischen Alphabet mit dem Fakauʻa ʻ und den Makron-Vokalen ā, ē, ī, ō und ū, im höflichen Alltagsregister, mit der
+  Anrede *koe*, dem bloßen Verb auf Schaltflächen (Tauhi, Tamateʻi, Fakatonutonu) und Lehnwörtern der Informatik aus
+  dem Englischen in tongaischer Schreibung (faile, sēva, kēsi), mit einem Glossar
+  (`share/translations/ton-TO/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Bodo** (`brx-IN`, बर’) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Bodo in Devanagari mit Bodo-Grammatik statt assamesischer oder Hindi-Formen, dem bloßen Verbstamm auf
+  Schaltflächen (रैखा, बन्द, मेटा, सोलोंथाय), der höflichen Bitte mit नाजा und dem Punkt als Satzende, wobei Assamesisch
+  (`asm-IN`) und Hindi (`hin-IN`) nur zur Prüfung der Begriffe dienten, mit einem Glossar
+  (`share/translations/brx-IN/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Esperanto** (`epo-EO`) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, nach dem Fundamento mit dem
+  etablierten Computerwortschatz der Esperanto-Übersetzungen, der Anrede *vi*, dem Infinitiv auf Schaltflächen
+  (Konservi, Nuligi, Forigi, Redakti), den Buchstaben ĉ ĝ ĥ ĵ ŝ ŭ und Platzhaltern ohne Endung, mit einem Glossar
+  (`share/translations/epo-EO/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Quechua** (`que-PE`, Runasimi) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, im südlichen Quechua
+  und dem amtlichen Drei-Vokal-Alphabet Perus, der Anrede *qam* mit dem Possessiv *-yki*, dem Imperativ auf
+  Schaltflächen (Waqaychay, Chinkachiy, Hukchay), spanischen Lehnwörtern in Quechua-Schreibung, wo dem Quechua ein Wort
+  fehlt, und mit Bindestrich an Platzhalter gefügten Suffixen, mit einem Glossar (`share/translations/que-PE/GUIDE.md`);
+  die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Nordsamisch** (`sme-NO`, davvisámegiella) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  gemeinsamen Schriftsprache mit den Fachwörtern der samischen Übersetzungen, der Anrede *don*, dem Infinitiv auf
+  Schaltflächen (Vurket, Gaskkalduhttit, Sihkkut, Rievdadit), samischen statt norwegischen oder finnischen Wörtern und
+  Platzhaltern ohne Kasusendung, mit einem Glossar (`share/translations/sme-NO/GUIDE.md`); die Kataloge von Kernel,
+  ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Kaschmiri** (`kas-IN`, کٲشُر) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Kaschmiri in persisch-arabischer Schrift von rechts nach links, mit den Vokalbuchstaben der
+  Standardorthographie, kaschmirischer statt urdischer Grammatik, dem höflichen Imperativ auf Schaltflächen
+  (محفوظ کٔرِو, منسوٗخ کٔرِو, مٹٲوِو, تَرمیم کٔرِو) und frei stehenden Platzhaltern, wobei Urdu (`urd-PK`) nur zur Prüfung
+  der Begriffe diente, mit einem Glossar (`share/translations/kas-IN/GUIDE.md`); „Login“ ist in den Listen der
+  Benutzer, Sitzungen und des Audits der Anmeldename. Die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine
+  Prüfung durch Muttersprachler ist willkommen.
+- **N’Ko** (`nqo-GN`, ߒߞߏ) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt: die gemeinsame
+  Manding-Sprache in der N’Ko-Schrift, von rechts nach links, ohne Tonzeichen, mit den Begriffen des Bambara-Glossars in
+  N’Ko-Buchstaben, der Anrede *ߌ* und dem bloßen Verb auf Schaltflächen (ߡߊߙߊ, ߘߊߓߌߟߊ, ߖߐߛߌ), mit einem Leitfaden
+  (`share/translations/nqo-GN/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Färöisch** (`fao-FO`, føroyskt) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in der färöischen
+  Standardschriftsprache mit den Fachwörtern der färöischen Terminologiearbeit, der Anrede *tú*, dem Infinitiv auf
+  Schaltflächen (Goyma, Ógilda, Strika, Rætta), färöischen statt dänischen oder isländischen Formen und Platzhaltern
+  ohne Kasusendung, mit einem Glossar (`share/translations/fao-FO/GUIDE.md`); die Kataloge von Kernel, ezoe und
+  ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Dogri** (`doi-IN`, डोगरी) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Dogri in Devanagari mit Dogri-Grammatik und -Postpositionen statt Hindi-Formen, der höflichen Anrede *tus*,
+  dem höflichen Imperativ auf Schaltflächen (सहेजो, रद्द करो, मेटो, संपादन करो) und dem Danda als Satzende, wobei Hindi
+  (`hin-IN`) und Westpunjabi (`pnb-PK`) nur zur Prüfung der Begriffe dienten, mit einem Glossar
+  (`share/translations/doi-IN/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Westfriesisch** (`fry-NL`, Frysk) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in der amtlichen
+  Rechtschreibung von 2015 mit den Fachwörtern der friesischen Übersetzungen, der höflichen Anrede *jo*, dem
+  Infinitiv auf Schaltflächen (Bewarje, Annulearje, Fuortsmite, Bewurkje) und friesischen statt niederländischen
+  Wörtern, mit einem Glossar (`share/translations/fry-NL/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind
+  vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Manipuri** (`mni-IN`, মৈতৈলোন্) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Meiteilon in bengalischer Schrift, wie die Locale sie führt, mit Meitei-Grammatik und -Suffixen, der
+  höflichen Bitte in Anleitungen, dem Verbalnomen auf Schaltflächen (থম্বা, কেন্সেল তৌবা, ফাহনবা, এডিট তৌবা) und
+  Platzhaltern, an die nie ein Suffix tritt, wobei Bengalisch (`ben-BD`) und Assamesisch (`asm-IN`) nur zur Prüfung der
+  Begriffe dienten, mit einem Glossar (`share/translations/mni-IN/GUIDE.md`); die Kataloge von Kernel, ezoe und
+  ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Obersorbisch** (`hsb-DE`, hornjoserbšćina) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, im
+  obersorbischen Standard mit dem Wortschatz der obersorbischen Wörterbücher und Übersetzungen, der großgeschriebenen
+  Höflichkeitsform *Wy*, dem Infinitiv auf Schaltflächen (Składować, Přetorhnyć, Zhašeć, Wobdźěłać), obersorbischen
+  statt niedersorbischen Formen und Platzhaltern, die nie dekliniert werden, mit einem Glossar
+  (`share/translations/hsb-DE/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Marokkanisches Standard-Tamazight** (`zgh-MA`, ⵜⴰⵎⴰⵣⵉⵖⵜ) ist am 28. Oktober 2026 hinzugekommen, maschinell
+  unterstützt, im Tifinagh-Alphabet des IRCAM und mit seinem Standardwortschatz, der Anrede in der zweiten Person
+  Singular, dem Imperativ auf Schaltflächen (ⵃⴹⵓ, ⵙⵔ, ⵙⵙⴼⴹ, ⵙⵏⴼⵍ) und Produktnamen, Codes und Abkürzungen in
+  lateinischer Schrift, mit einem Glossar (`share/translations/zgh-MA/GUIDE.md`); die Kataloge von Kernel, ezoe und
+  ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Konkani** (`kok-IN`, कोंकणी) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Konkani in Devanagari, der amtlichen Schrift Goas, mit der höflichen Anrede *tumi*, dem höflichen Imperativ
+  auf Schaltflächen (जतन करात, रद्द करात, मेटयात, संपादन करात) und Konkani- statt Marathi-Formen, wobei Marathi
+  (`mar-IN`) nur zur Prüfung der Begriffe diente, mit einem Glossar (`share/translations/kok-IN/GUIDE.md`); die Kataloge
+  von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Dhivehi** (`div-MV`, ދިވެހި) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Dhivehi in Thaana-Schrift von rechts nach links, im höflichen Ton maledivischer Behördentexte, mit
+  Schaltflächen im höflichen Imperativ (ރައްކާކުރޭ, ކެންސަލްކުރޭ, ފޮހެލާ, އެޑިޓްކުރޭ), arabischen Lehnwörtern, wo
+  Dhivehi sie verwendet, und frei stehenden Platzhaltern, mit einem Glossar (`share/translations/div-MV/GUIDE.md`);
+  „Login“ ist in den Listen der Benutzer, Sitzungen und des Audits der Anmeldename. Die Kataloge von Kernel, ezoe und
+  ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Kabylisch** (`kab-DZ`, Taqbaylit) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, im
+  berberisch-lateinischen Alphabet des Kabylischen mit den Buchstaben č, ḍ, ǧ, ḥ, ɣ, ṛ, ṣ, ṭ, ẓ und ɛ, der Anrede in
+  der zweiten Person Singular, dem Imperativ auf Schaltflächen (Sekles, Sefsex, Kkes, Ẓreg) und den Fachwörtern der
+  kabylischen Übersetzungen von Mozilla und LibreOffice (afaylu, aqeddac, tazarkatut), mit einem Glossar
+  (`share/translations/kab-DZ/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Rätoromanisch** (`roh-CH`, rumantsch) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  gemeinsamen Schriftsprache Rumantsch Grischun mit den Fachwörtern des Pledari Grond und der rätoromanischen
+  Übersetzungen, der höflichen Anrede *Vus*, dem Infinitiv auf Schaltflächen (Memorisar, Interrumper, Stizzar,
+  Modifitgar) und rätoromanischen statt deutschen oder italienischen Wörtern, mit einem Glossar
+  (`share/translations/roh-CH/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Okzitanisch** (`oci-FR`, occitan) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  languedokischen Form und der klassischen Schreibung des Conselh de la Lenga Occitana mit den Fachwörtern der
+  okzitanischen Übersetzungen, der höflichen Anrede *vos*, dem Infinitiv auf Schaltflächen (Enregistrar, Anullar,
+  Suprimir, Modificar) und okzitanischen statt französischen oder katalanischen Wörtern, mit einem Glossar
+  (`share/translations/oci-FR/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Ewe** (`ewe-GH`, Eʋegbe) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, im Ewe-Alphabet mit den
+  Buchstaben ɖ, ɛ, ƒ, ɣ, ŋ, ɔ und ʋ, der Anrede *wò*, dem bloßen Verb auf Schaltflächen (Dzra ɖo, Tutu ɖa, Trɔ asi le
+  eŋu) und Lehnwörtern der Informatik aus dem Englischen in Ewe-Schreibung (faɛl, sɛva, kase), mit einem Glossar
+  (`share/translations/ewe-GH/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Bretonisch** (`bre-FR`, brezhoneg) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  Einheitsschreibung (peurunvan) mit den Fachwörtern des Ofis Publik ar Brezhoneg und der bretonischen Übersetzungen,
+  der höflichen Anrede *c'hwi*, Verbalnomen auf Schaltflächen (Enrollañ, Nullañ, Dilemel, Kemmañ), den Mutationen
+  der Grammatik und Platzhaltern, die nie mutiert werden, mit einem Glossar (`share/translations/bre-FR/GUIDE.md`);
+  die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Dzongkha** (`dzo-BT`, རྫོང་ཁ) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in geschriebenem
+  Standard-Dzongkha in tibetischer Schrift mit Tsheg und Shad, im höflich-neutralen Ton bhutanischer Behördentexte, mit
+  dem bloßen Verb auf Schaltflächen (སྲུང་བཞག, ཆ་མེད་གཏང་།, བཏོན་གཏང་།, ཞུན་དག) und Fachwörtern des Dzongkha, wobei
+  Tibetisch (`bod-CN`) nur zur Prüfung der Begriffe diente, mit einem Glossar (`share/translations/dzo-BT/GUIDE.md`);
+  die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Bambara** (`bam-ML`, Bamanankan) ist am 28. Oktober 2026 hinzugekommen, maschinell unterstützt, im amtlichen
+  lateinischen Alphabet Malis mit den Buchstaben ɛ, ɔ, ɲ und ŋ, der Anrede *i*, dem bloßen Verb auf Schaltflächen
+  (Mara, Dabila, Jɔsi, Yɛlɛma) und Lehnwörtern der Informatik aus dem Französischen in Bambara-Schreibung (fisiye,
+  dosiye, sɛriwɛri), mit einem Glossar (`share/translations/bam-ML/GUIDE.md`), das die N'Ko-Übersetzung mitbenutzt;
+  die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Dari** (`fas-AF`, دری) hat seit dem 27. Oktober 2026 einen eigenen Katalog, maschinell unterstützt, Zeile für Zeile
+  aus dem vollständigen iranisch-persischen Katalog an den afghanischen Sprachgebrauch angepasst: معلومات für
+  Information, بلی und نخیر, die afghanische Schreibung von Lehnwörtern (ویب، انترنت، کمپیوتر، تیلفون) und die Wörter
+  des afghanischen Schreibgebrauchs, wo das iranische Persisch eigene hat (فولدر، لینک، آدرس، رمز عبور، فرمایش für
+  eine Bestellung im Shop, تخلص, ولایت), in arabischer Schrift, von rechts nach links, mit einem Glossar
+  (`share/translations/fas-AF/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig, und die Locale
+  fällt nicht mehr auf `fas-IR` zurück. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Asturisch** (`ast-ES`, asturianu) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, im Standard der
+  Academia de la Llingua Asturiana mit den Fachwörtern der asturischen Übersetzungen, der Anrede *tu*, dem Infinitiv
+  auf Schaltflächen (Guardar, Encaboxar, Desaniciar, Editar) und asturischen statt spanischen Wörtern, mit einem
+  Glossar (`share/translations/ast-ES/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine
+  Prüfung durch Muttersprachler ist willkommen.
+- **Koreanisch (Nord)** (`kor-KP`, 조선말) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, Zeile für
+  Zeile aus dem vollständigen südkoreanischen Katalog an die Kultursprache der DVRK (문화어) angepasst: das anlautende
+  ㄹ und ㄴ sinokoreanischer Wörter bleibt (리용, 련결, 렬), ‑였‑ nach ㅣ und ㅐ (되였습니다), kein Sai-Siot (수자),
+  abhängige Nomen und Hilfsverben werden angehängt (할수 있습니다, 확인해주십시오), Anführungszeichen 《》 und die
+  nordkoreanischen Fachwörter, wo sie abweichen (화일, 클라스, 그루빠, 페지, 자료기지, 차림표, 봉사기, 오유, 찰칵), mit
+  einem Glossar (`share/translations/kor-KP/GUIDE.md`), das die aus `kor-KR` übernommenen Fachwörter nennt, deren
+  nordkoreanische Form unsicher ist; die Kataloge von Kernel, ezoe und ezjscore sind vollständig, die Locale ist aus
+  CLDR (`ko_KP`) erzeugt. `kor-KP` fällt nicht auf `kor-KR` zurück. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Wolof** (`wol-SN`) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der amtlichen lateinischen
+  Rechtschreibung Senegals mit den Buchstaben à, é, ë, ó, ñ und ŋ, der Anrede *yow*, dem kurzen Imperativ auf
+  Schaltflächen (Denc, Neenal, Far, Soppi) und Lehnwörtern der Informatik aus dem Französischen in Wolof-Schreibung
+  (fisie, dosie, serwëer), mit einem Glossar (`share/translations/wol-SN/GUIDE.md`); die Kataloge von Kernel, ezoe und
+  ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Luxemburgisch** (`ltz-LU`, Lëtzebuergesch) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  amtlichen Rechtschreibung von 2019 mit der n-Regel, großgeschriebenen Substantiven, der höflichen Anrede *Dir*, dem
+  Infinitiv auf Schaltflächen (Späicheren, Ofbriechen, Läschen, Änneren) und luxemburgischen, oft aus dem Französischen
+  stammenden statt der deutschen Wörter von `ger-DE`, mit einem Glossar (`share/translations/ltz-LU/GUIDE.md`); die
+  Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Luganda** (`lug-UG`, Ganda) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  Standardrechtschreibung des Luganda mit doppelten Vokalen und Konsonanten und dem Buchstaben ŋ, der Anrede *ggwe*,
+  dem kurzen Imperativ auf Schaltflächen (Tereka, Sazaamu, Sangula, Longoosa) und Lehnwörtern der Informatik in
+  Luganda-Schreibung (seeva, fayiro, kiraasi), mit einem Glossar (`share/translations/lug-UG/GUIDE.md`); die Kataloge
+  von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Mazedonisch** (`mkd-MK`, македонски) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  Standardsprache im mazedonischen kyrillischen Alphabet (ѓ, ќ, ѕ, џ, љ, њ, ј), der höflichen Anrede *Вие*, dem
+  Imperativ auf Schaltflächen (Зачувај, Откажи, Избриши, Уреди) und mazedonischen statt der bulgarischen oder
+  serbischen Wörter von `bul-BG` und `srp-RS`, mit einem Glossar (`share/translations/mkd-MK/GUIDE.md`); die Kataloge
+  von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Turkmenisch** (`tuk-TM`, Türkmen dili) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in
+  turkmenischer Schriftsprache im lateinischen Alphabet Turkmenistans mit den Buchstaben ç, ä, ž, ň, ö, ş, ü und ý,
+  der höflichen Anrede *Siz*, dem kurzen Imperativ auf Schaltflächen (Ýatda sakla, Ýatyr, Poz, Redaktirle) und dem
+  höflichen Imperativ auf -yň/-iň in Anleitungen, mit einem Glossar (`share/translations/tuk-TM/GUIDE.md`); die
+  Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Walisisch** (`cym-GB`, Cymraeg) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der walisischen
+  Standardschriftsprache mit den Fachwörtern der Terminologiedatenbank der walisischen Regierung, der höflichen
+  Anrede *chi*, Verbalnomen auf Schaltflächen (Cadw, Canslo, Dileu, Golygu), den Mutationen der Grammatik und
+  Platzhaltern, die nie mutiert werden, mit einem Glossar (`share/translations/cym-GB/GUIDE.md`); die Kataloge von
+  Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Tatarisch** (`tat-RU`, Татар теле) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in tatarischer
+  Schriftsprache in kyrillischer Schrift mit den Buchstaben ә, ө, ү, җ, ң und һ, der höflichen Anrede *Сез*, dem
+  Verbalnomen auf Schaltflächen (Саклау, Баш тарту, Бетерү, Төзәтү) und dem höflichen Imperativ auf -гыз/-гез in
+  Anleitungen, mit einem Glossar (`share/translations/tat-RU/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore
+  sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Baskisch** (`eus-ES`, euskara) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  Einheitssprache (euskara batua) mit den Fachwörtern der baskischen Übersetzungen, der Anrede *zu*, der
+  Wörterbuchform des Verbs auf Schaltflächen (Gorde, Utzi, Ezabatu, Editatu), Platzhaltern ohne angehängte
+  Kasusendungen und baskischen statt der spanischen Wörter von `esl-ES`, mit einem Glossar
+  (`share/translations/eus-ES/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Kirgisisch** (`kir-KG`, Кыргызча) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in
+  kirgisischer Schriftsprache in kyrillischer Schrift mit den Buchstaben ң, ө und ү, der höflichen Anrede *Сиз*, dem
+  Verbalnomen auf Schaltflächen (Сактоо, Жокко чыгаруу, Жок кылуу, Түзөтүү) und dem höflichen Imperativ auf -ңыз in
+  Anleitungen, mit einem Glossar (`share/translations/kir-KG/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore
+  sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Galicisch** (`glg-ES`, galego) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der Norm der
+  Real Academia Galega mit den Fachwörtern der galicischen Freie-Software-Übersetzungen (ficheiro, contrasinal,
+  cartafol, ligazón), der Anrede *vostede*, dem Infinitiv auf Schaltflächen (Gardar, Cancelar, Eliminar, Editar) und
+  galicischen statt der spanischen oder portugiesischen Wörter von `esl-ES` und `por-PT`, mit einem Glossar
+  (`share/translations/glg-ES/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Mongolisch** (`mon-MN`, Монгол хэл) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in
+  Chalcha-Mongolisch in kyrillischer Schrift mit den Buchstaben ө und ү, der höflichen Anrede *Та*, dem Verb auf -х
+  auf Schaltflächen (Хадгалах, Цуцлах, Устгах, Засах) und der Bitte auf -на уу / -нэ үү, mit einem Glossar
+  (`share/translations/mon-MN/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Belarussisch** (`bel-BY`, беларуская) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  amtlichen Rechtschreibung von 2008 mit і, ў und dem Apostroph, der höflichen Anrede *вы*, dem Infinitiv auf
+  Schaltflächen (Захаваць, Скасаваць, Выдаліць, Рэдагаваць) und belarussischen statt der russischen Wörter von
+  `rus-RU`, mit einem Glossar (`share/translations/bel-BY/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind
+  vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Tibetisch** (`bod-CN`, བོད་སྐད་) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in modernem
+  geschriebenem Standardtibetisch nahe dem Lhasa-Standard, in tibetischer Schrift mit dem Tsheg zwischen den Silben und
+  dem Shad als Satzende, den eingeführten tibetischen Computerbegriffen und bloßen Verben auf Schaltflächen, mit einem
+  Glossar (`share/translations/bod-CN/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine
+  Prüfung durch Muttersprachler ist willkommen.
+- **Kikuyu** (`kik-KE`, Gĩkũyũ) ist am 27. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  Standardrechtschreibung mit den Buchstaben ĩ und ũ, der Anrede *wee*, dem kurzen Imperativ auf Schaltflächen (Iga,
+  Tiga, Thiria, Cenjia) und Lehnwörtern in Kikuyu-Schreibung, meist über Suaheli (`swa-KE`), mit einem Glossar
+  (`share/translations/kik-KE/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Hawaiianisch** (`haw-US`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in der modernen
+  Rechtschreibung mit ʻokina und kahakō, mit den Computerwörtern des Hawaiian Lexicon Committee, wo es sie gibt
+  (Begriffe ohne eines wurden aus hawaiianischen Wurzeln gebildet und im Glossar als „coined“ markiert), der Anrede
+  ʻoe, bloßen Verben auf Schaltflächen und einem Glossar (`share/translations/haw-US/GUIDE.md`); die Kataloge von
+  Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen, vor allem für die
+  gebildeten Begriffe.
+- **Usbekisch** (`uzb-UZ`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in der usbekischen
+  Standardsprache im lateinischen Alphabet von 1995 mit der Höflichkeitsform *Siz*, Verbalnomen auf -sh auf
+  Schaltflächen und usbekischen statt der türkischen Wörter ihrer Verwandten `tur-TR`, mit einem Glossar
+  (`share/translations/uzb-UZ/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Sindhi** (`snd-PK`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in Standard-Sindhi in
+  persisch-arabischer Schrift (von rechts nach links) mit der Höflichkeitsform توهان, nur für gemeinsame Begriffe
+  nach dem Urdu-Katalog (`urd-PK`) angepasst und in sindhischer Grammatik geschrieben, mit einem Glossar
+  (`share/translations/snd-PK/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung
+  durch Muttersprachler ist willkommen.
+- **Westpunjabi** (`pnb-PK`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in Punjabi, wie es in
+  Pakistan geschrieben wird, in Shahmukhi-Schrift (von rechts nach links): Der Punjabi-Katalog in Gurmukhi (`pan-IN`)
+  wurde umgeschrieben und dem pakistanischen Wortschatz angepasst, mit dem Urdu-Katalog (`urd-PK`) als Vorlage für
+  persisch-arabische Begriffe, und einem Glossar (`share/translations/pnb-PK/GUIDE.md`); die Kataloge von Kernel,
+  ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Birmanisch** (`mya-MM`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, im förmlichen
+  Schriftstil (Satzenden သည် und ပါသည်, nicht das gesprochene တယ်), der Anrede သင်, Verben auf -ရန် auf
+  Schaltflächen und einem Glossar (`share/translations/mya-MM/GUIDE.md`); die Kataloge von Kernel, ezoe und ezjscore
+  sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Ful** (`ful-SN`, Pulaar des Senegal), **Lingala** (`lin-CD`) und **Oromo** (`orm-ET`) sind am 26. Oktober 2026
+  hinzugekommen, maschinell unterstützt, jeweils mit einem Glossar (`share/translations/ful-SN/GUIDE.md`,
+  `lin-CD/GUIDE.md`, `orm-ET/GUIDE.md`): Pulaar in der amtlichen lateinischen Rechtschreibung des Senegal, mit
+  französischen Lehnwörtern in französischer Schreibung für Fachbegriffe ohne Pulaar-Wort; Lingala aus Kinshasa mit
+  derselben Regel für französische Begriffe; Oromo im lateinischen Qubee-Alphabet. Die Kataloge von Kernel, ezoe und
+  ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist besonders willkommen, vor allem für Pulaar, das
+  wenig gebräuchlichen Software-Wortschatz hat.
+- **Bhojpuri** (`bho-IN`), **Maithili** (`mai-IN`) und **Nepali** (`nep-NP`) sind am 26. Oktober 2026 hinzugekommen,
+  maschinell unterstützt, in Devanagari-Schrift, jeweils mit einem Glossar (`share/translations/bho-IN/GUIDE.md`,
+  `mai-IN/GUIDE.md`, `nep-NP/GUIDE.md`). Bhojpuri und Maithili wurden für gemeinsame Fachbegriffe nach dem
+  Hindi-Katalog (`hin-IN`) angepasst und in eigener Grammatik geschrieben; Nepali verwendet nepalische, keine
+  Hindi-Formen. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Nigerianisches Pidgin** (`pcm-NG`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in der
+  englisch gestützten Schreibung des BBC-News-Pidgin-Dienstes mit Pidgin-Grammatik (*dey*, *don*, *go*, *na*) statt
+  Englisch mit ein paar anderen Wörtern, mit einem Glossar (`share/translations/pcm-NG/GUIDE.md`); die Kataloge von
+  Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Javanisch** (`jav-ID`) und **Sundanesisch** (`sun-ID`) sind am 26. Oktober 2026 hinzugekommen, maschinell
+  unterstützt und für gemeinsame Fachbegriffe nach dem indonesischen Katalog (`ind-ID`) angepasst, jeweils mit einem
+  Glossar (`share/translations/jav-ID/GUIDE.md`, `sun-ID/GUIDE.md`): Javanisch in *ngoko alus* (die alltäglichen Formen
+  mit respektvollen Wörtern für den Benutzer), Sundanesisch im Register *loma* mit Höflichkeitsformen für die
+  Handlungen des Benutzers. Die Kataloge von Kernel, ezoe und ezjscore sind vollständig. Eine Prüfung durch
+  Muttersprachler ist willkommen.
+- **Armenisch** (`hye-AM`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in Ostarmenisch mit der
+  höflichen Anrede (Դուք), Infinitiven auf Schaltflächen, dem armenischen Punkt ։ und Fragezeichen ՞, Guillemets und
+  frei stehenden Platzhaltern, mit einem Glossar (`share/translations/hye-AM/GUIDE.md`); die Kataloge des Kernels,
+  von ezoe und ezjscore sind vollständig. Eine Durchsicht durch Muttersprachler ist willkommen.
+- **Kasachisch** (`kaz-KZ`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in kyrillischer Schrift
+  (der Schrift des Locales und heutiger kasachischer Software; der 2017 beschlossene Wechsel zum lateinischen
+  Alphabet ist bis etwa 2031 geplant) mit der höflichen Anrede (Сіз), Verbalnomen auf Schaltflächen und frei
+  stehenden Platzhaltern, mit einem Glossar (`share/translations/kaz-KZ/GUIDE.md`); die Kataloge des Kernels, von
+  ezoe und ezjscore sind vollständig. Eine Durchsicht durch Muttersprachler ist willkommen.
+- **Shona** (`sna-ZW`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in Standard-Shona mit der
+  respektvollen Anrede im Plural (imi), Verbstämmen auf Schaltflächen, Shona-Lehnwörtern für Fachbegriffe und frei
+  stehenden Platzhaltern, mit einem Glossar (`share/translations/sna-ZW/GUIDE.md`); die Kataloge des Kernels, von
+  ezoe und ezjscore sind vollständig. Eine Durchsicht durch Muttersprachler ist besonders willkommen.
+- **Georgisch** (`kat-GE`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in Mchedruli-Schrift mit
+  der höflichen Anrede (თქვენ), Verbalnomen auf Schaltflächen und frei stehenden Platzhaltern, mit einem Glossar
+  (`share/translations/kat-GE/GUIDE.md`); die Kataloge des Kernels, von ezoe und ezjscore sind vollständig. Eine
+  Durchsicht durch Muttersprachler ist willkommen.
+- **Malaiisch** (`msa-MY`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in malaysischem Standard-Malaiisch
+  (Rumi-Schrift) mit der höflichen Anrede *anda*, den Fachbegriffen von Dewan Bahasa dan Pustaka und einem Glossar, das
+  die Unterschiede zum Indonesischen nennt (`share/translations/msa-MY/GUIDE.md`); die Kataloge des Kernels, von ezoe und
+  ezjscore sind vollständig. `msa-SG` und `msa-BN` fallen darauf zurück. Eine Prüfung durch Muttersprachler ist
+  willkommen.
+- **Thai** (`tha-TH`) und **Laotisch** (`lao-LA`) sind am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, im
+  höflichen, neutralen Ton aktueller Software ohne Satzendpartikel, mit Wörtern ohne Leerzeichen dazwischen und frei
+  stehenden Platzhaltern, jede mit einem Glossar (`share/translations/tha-TH/GUIDE.md`,
+  `share/translations/lao-LA/GUIDE.md`); die Kataloge des Kernels, von ezoe und ezjscore sind vollständig. Eine
+  Prüfung durch Muttersprachler ist willkommen.
+- **Aramäisch** ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt. `syr-IQ` ist modernes Aramäisch in
+  syrischer Schrift (assyrisch/syrisch), unvokalisiert und von rechts nach links, mit der höflichen Anrede im Plural
+  und einem Glossar (`share/translations/syr-IQ/GUIDE.md`); `syr-SY` fällt darauf zurück. `arc-IQ` (Reichsaramäisch)
+  und `huy-IL` (Hulaulá, jüdisches Neuaramäisch) werden in hebräischer Quadratschrift geschrieben und sind keine
+  eigenen Übersetzungen: Ihre Kataloge sind der Text von syr-IQ, Buchstabe für Buchstabe transliteriert (ihre
+  GUIDE.md nennt die Zuordnung). Die Kataloge des Kernels, von ezoe und ezjscore sind bei allen dreien vollständig.
+  Eine Prüfung durch Muttersprachler ist willkommen.
+- **Jiddisch** (`yid-US`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in der YIVO-Rechtschreibung und
+  von rechts nach links, mit der höflichen Anrede und einem Glossar (`share/translations/yid-US/GUIDE.md`); die Kataloge
+  des Kernels, von ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Vietnamesisch** (`vie-VN`) und **Indonesisch** (`ind-ID`) sind am 26. Oktober 2026 hinzugekommen, maschinell
+  unterstützt, jeweils mit Stilrichtlinie und Glossar (`share/translations/vie-VN/GUIDE.md`,
+  `share/translations/ind-ID/GUIDE.md`): Vietnamesisch in neutralem Ton mit „bạn“, wo ein Pronomen nötig ist,
+  Indonesisch in der Standardschreibung (EYD) mit dem höflichen „Anda“. Die Kataloge des Kernels, von ezoe und
+  ezjscore sind vollständig; `ind-ID` fällt nicht mehr auf die Quelltexte zurück. Eine Prüfung durch
+  Muttersprachler ist willkommen.
+- **Schottisch-Gälisch** (`gla-GB`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, nach den Gaelic
+  Orthographic Conventions (nur Gravis-Akzente), mit dem höflichen „sibh“ und einem Glossar in der
+  Akerbeltz-Terminologie (`share/translations/gla-GB/GUIDE.md`); die Kataloge des Kernels, von ezoe und ezjscore sind
+  vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Māori** (`mri-NZ`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in te reo Māori mit Makrons nach
+  den Regeln von Te Taura Whiri i te Reo Māori und im Ton neuseeländischer Behördensoftware, mit einem Glossar
+  (`share/translations/mri-NZ/GUIDE.md`); die Kataloge des Kernels, von ezoe und ezjscore sind vollständig. Eine
+  Prüfung durch Muttersprachler ist willkommen.
+- **Filipino** (`fil-PH`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in der KWF-Rechtschreibung
+  mit der Anrede „mo“ und den englischen Lehnwörtern philippinischer Software, mit einem Glossar
+  (`share/translations/fil-PH/GUIDE.md`); die Kataloge des Kernels, von ezoe und ezjscore sind vollständig. Eine
+  Prüfung durch Muttersprachler ist willkommen.
+- **Tschetschenisch** (`che-RU`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in Kyrillisch mit der
+  Palotschka (Ӏ, U+04C0) und dem höflichen „шу“, mit einem Glossar (`share/translations/che-RU/GUIDE.md`); die
+  Kataloge des Kernels, von ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Chinesisch** (`chi-CN`, `chi-TW`) ist seit dem 24. Oktober 2026 vollständig, maschinell unterstützt mit Leitfaden und
+  Glossar je Sprache (Festland: 帐户, 单击; Taiwan: 帳戶, 按一下, 垃圾桶). `chi-HK` hat keinen eigenen Katalog mehr und fällt auf
+  `chi-TW` zurück, `chi-SG` auf `chi-CN`. Eine Prüfung durch Muttersprachler ist willkommen.
+- **Bengalisch, Urdu, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi (Gurmukhi), Oriya, Hausa, Amharisch,
+  Yoruba, Igbo, isiZulu, Somali, isiXhosa** sind am 26. Oktober 2026 hinzugekommen, maschinell unterstützt mit
+  Leitfaden und Glossar je Sprache. Mehrdeutige Wörter haben hier noch keine kontextabhängigen Übersetzungen, und
+  einige Texte ohne verlässlichen Fachbegriff stehen bis zur Prüfung durch Muttersprachler auf Englisch (in der
+  Allowlist so begründet). Eine Prüfung durch Muttersprachler ist besonders bei den afrikanischen Sprachen erwünscht.
+- **Russisch, Katalanisch, Serbisch, Bulgarisch, Litauisch, Portugiesisch (Portugal), Afrikaans** wurden am
+  25. Oktober 2026 vervollständigt bzw. neu angelegt, maschinell unterstützt mit Leitfaden und Glossar je Sprache
+  (`share/translations/<code>/GUIDE.md`) und mit denselben Tests geprüft wie jede andere Sprache. `ser-SR` wird nicht
+  eigens übersetzt: es ist `srp-RS`, Buchstabe für Buchstabe in lateinische Schrift umgeschrieben. `eng-AU` ist aus den
+  Quelltexten mit einer geprüften Wortliste erzeugt (australische Schreibung, GST statt VAT). `nno-NO` (Nynorsk) und
+  `eng-NZ` haben keinen eigenen Katalog mehr und fallen auf `nor-NO` bzw. `eng-AU` zurück. Eine Prüfung durch
+  Muttersprachler ist willkommen.
+- **Spanisch** (`esl-ES`, `esl-MX`) war für ein älteres Release vollständig; die seither hinzugekommenen Texte wurden
+  für 6.0.15 maschinell unterstützt übersetzt, im jeweiligen Sprachgebrauch des Landes. Eine Prüfung durch einen
+  Muttersprachler ist willkommen.
+- **Arabisch** (`ara-SA`) ist neu: modernes Hocharabisch für jedes arabische Land, maschinell unterstützt und in einem
+  zweiten Durchgang gegen ein Glossar geprüft; Produktnamen, Dateinamen und Einstellungen bleiben in lateinischen
+  Buchstaben. Eine Prüfung durch einen Muttersprachler ist willkommen.
+- **Hebräisch** (`heb-IL`), **Latein** (`lat-VA`) und **Klingonisch** (`tlh-QO`) sind seit 6.0.15 vollständig. Sie
+  sind maschinell unterstützt und sollten geprüft werden, bevor sich eine Website auf sie verlässt: Hebräisch von
+  einem Muttersprachler, Latein von einem Latinisten (neue Begriffe folgen den Konventionen moderner lateinischer
+  Softwareübersetzungen), Klingonisch im Stil des Klingon Language Institute. Klingonisch ist in der lateinischen
+  Transkription von Marc Okrands *The Klingon Dictionary* geschrieben (`nej` Suchen, `mej` Abmelden, `pegh mu'`
+  Passwort, `SeHlaw` Setup, `veQ` Papierkorb), mit beschreibenden Komposita für neuere Begriffe.
+- **Französisch** (`fre-FR`) ist seit dem 17. Oktober 2026 vollständig, gemessen an den 17.295 Texten der
+  unübersetzten Datei jenes Tages. Seine älteren, von Hand erstellten Übersetzungen bleiben; die seither
+  hinzugekommenen Texte und etwa neunzig ältere, die einen Platzhalter, ein Tag oder einen Zeilenumbruch verloren
+  hatten oder englisch geblieben waren, wurden maschinell unterstützt übersetzt. Eine Prüfung durch einen
+  Muttersprachler ist willkommen. Die Kataloge von ezoe und ezjscore sind ebenfalls vollständig.
+- **Ukrainisch** (`ukr-UA`) ist neu und seit dem 17. Oktober 2026 vollständig, gemessen an den 17.295 Texten der
+  unübersetzten Datei jenes Tages, durchgehend maschinell unterstützt; die Kataloge von ezoe und ezjscore sind
+  ebenfalls vollständig. Eine Prüfung durch einen Muttersprachler ist willkommen. Ukrainisch hat drei Pluralformen,
+  die Quelltexte nur zwei (`%count item(s)`), daher lesen sich einige Zählungen für 2 bis 4 holprig; die meisten
+  solchen Texte sind als „Bezeichnung: %count“ formuliert.
+- **Türkisch** (`tur-TR`, neu), **Polnisch** (`pol-PL`), **Italienisch** (`ita-IT`), **Portugiesisch (Brasilien)**
+  (`por-BR`), **Niederländisch** (`dut-NL`), **Schwedisch** (`swe-SE`), **Norwegisch (Bokmål)** (`nor-NO`),
+  **Dänisch** (`dan-DK`), **Tschechisch** (`cze-CZ`) und **Kroatisch** (`cro-HR`) sind seit dem 18. Oktober 2026 für
+  die 17.287 Texte des Kernels vollständig, maschinell unterstützt mit einem Glossar pro Sprache; die Kataloge von ezoe
+  und ezjscore sind ebenfalls vollständig. Die 478 Meldungen, die der unübersetzten Datei während der Arbeit
+  hinzugefügt wurden, wurden beim Merge auf dieselbe Weise übersetzt, sodass jede alle 17.763 Texte vom 18. Oktober
+  2026 abdeckt. Anredeformen: Polnisch Imperativ auf Schaltflächen und bei Aktionen („Zapisz“, „Otwórz“; Fragen
+  behalten den Infinitiv) und unpersönliche Sätze, Türkisch *siz*, Italienisch *tu*, brasilianisches Portugiesisch
+  *você*, Niederländisch *je*, Tschechisch und Kroatisch das förmliche *vy* / *vi*, Schwedisch, Norwegisch und Dänisch
+  *du*. Die älteren Übersetzungen dieser Sprachen, die defekte Platzhalter, Tags, Zeilenumbrüche, englische Reste,
+  falsche Begriffe oder gemischte Anredeformen hatten, wurden neu erstellt; veraltete Einträge bleiben, wie sie waren.
+  Eine Prüfung durch einen Muttersprachler ist willkommen.
+- **Persisch** (`fas-IR`, neu), **Paschtu** (`pus-AF`, neu) und **Kurdisch** (`kur-TR`, neu, Kurmandschi in
+  lateinischer Schrift) sind seit dem 19. Oktober 2026 für alle 17.834 Texte jenes Tages vollständig, maschinell
+  unterstützt mit einem Glossar pro Sprache, dessen Begriffe nach dem ersten Durchgang festgelegt wurden, und in einem
+  zweiten Durchgang geprüft; die Kataloge von ezoe und ezjscore sind ebenfalls vollständig, die der anderen
+  mitgelieferten Extensions kommen mit deren eigenen Releases. Alle drei sprechen den Benutzer förmlich an (Persisch
+  *shomā*, Paschtu *tāso*, Kurmandschi *hûn*); Schaltflächen und Menüeinträge sind Substantive oder substantivierte
+  Verben. Persisch ist geschriebenes Standardpersisch mit den persischen Buchstaben ی und ک und dem Zero-Width
+  Non-Joiner; Dari (`fas-AF`) hat seit dem 27. Oktober 2026 einen eigenen Katalog, siehe oben. Für Kurmandschi gibt es noch keinen
+  Katalog für andere Länder. Eine Prüfung durch einen Muttersprachler ist willkommen.
+- **Suaheli** (`swa-KE`, neu) ist seit dem 23. Oktober 2026 für alle 18.404 Texte jenes Tages vollständig, auf dieselbe
+  Weise entstanden; die Kataloge von ezoe und ezjscore sind ebenfalls vollständig, die der anderen mitgelieferten
+  Extensions kommen mit deren eigenen Releases. Es ist Standard-Suaheli (Kiswahili sanifu) mit den in Kenia üblichen
+  Begriffen; Tansania (`swa-TZ`) fällt darauf zurück. Suaheli kennt keine Höflichkeitsform der Anrede: Sätze sprechen
+  den Benutzer im Singular an und bitten mit *tafadhali* (bitte), Schaltflächen und Menüeinträge sind kurze Imperative
+  (*Hifadhi*, *Futa*), wie in anderer Suaheli-Software. Eine Prüfung durch einen Muttersprachler ist willkommen.
+- **Hindi** (`hin-IN`), **Koreanisch** (`kor-KR`), **Ungarisch** (`hun-HU`), **Rumänisch** (`ron-RO`), **Slowakisch**
+  (`slk-SK`), **Slowenisch** (`slv-SI`), **Bosnisch** (`bos-BA`), **Albanisch** (`sqi-AL`), **Estnisch** (`est-EE`),
+  **Lettisch** (`lav-LV`), **Isländisch** (`isl-IS`), **Irisch** (`gle-IE`), **Maltesisch** (`mlt-MT`),
+  **Niedersorbisch** (`dsb-DE`) und **Grönländisch** (`kal-GL`), alle neu, sowie **Japanisch** (`jpn-JP`),
+  **Griechisch** (`ell-GR`) und **Finnisch** (`fin-FI`), deren ältere Übersetzungen etwa ein Drittel abdeckten, sind
+  seit dem 24. Oktober 2026 für alle 18.411 Texte jenes Tages vollständig, auf dieselbe Weise entstanden; die Kataloge
+  von ezoe und ezjscore sind ebenfalls vollständig, die der anderen mitgelieferten Extensions kommen mit deren eigenen
+  Releases. Die älteren japanischen, griechischen und finnischen Übersetzungen blieben, wo sie richtig waren und zum
+  Glossar passten, und wurden sonst neu gemacht. Texte, die an verschiedenen Stellen ein anderes Wort brauchen
+  („Store“ als Shop-Reiter oder als Speichern, „Order“ als Shop-Bestellung oder als Sortierung, „State“, „Login“,
+  „View“), sind je nach Kontext übersetzt. Anrede: förmlich in Hindi (*āp*), Koreanisch (Stil *hamnida*), Japanisch
+  (*desu/masu*), Griechisch, Ungarisch (*Ön*), Rumänisch (*dumneavoastră*), Slowakisch, Slowenisch, Bosnisch,
+  Albanisch, Lettisch und Niedersorbisch (*Wy*); der Singular, wie in ihrer Software üblich, in Estnisch, Finnisch,
+  Isländisch, Irisch, Maltesisch und Grönländisch. Schaltflächen sind im Slowakischen und Lettischen (wie im
+  Tschechischen) Infinitive, im Koreanischen, Japanischen, Griechischen und Ungarischen Nomen. Die `GUIDE.md` jeder
+  Sprache nennt die Einzelheiten. Eine Prüfung durch Muttersprachler ist willkommen, vor allem für Grönländisch,
+  Niedersorbisch, Maltesisch und Irisch.
+- Jede Extension veröffentlicht ihre eigenen Kataloge. Für die zehn Sprachen oben haben ezoe, ezjscore und
+  explayouts_ui (der Reiter Layouts) vollständige; die anderen Extensions zeigen ihre Texte in diesen Sprachen auf
+  Englisch, bis sie einen bekommen.
+- Zwei Verzeichnisse haben keine Locale-Datei mit derselben Bedeutung: `ser-SR` und `srp-RS` sind beide Serbisch
+  (`ser-SR` in lateinischer Schrift, `srp-RS` in kyrillischer; beide Locale-Dateien existieren).
+- Übersetzungen von Extensions liegen im Verzeichnis `translations/` der jeweiligen Extension und werden hier nicht
+  mitgezählt.
 
 ## 5. Die großen Sprachen der Welt
 
@@ -1253,11 +1547,11 @@ sind auf Millionen gerundet.
 | 37 | Yoruba | 53 | `yor-NG` | `yor-NG` vollständig |
 | 38 | Bhojpuri | 53 | `bho-IN` | `bho-IN` vollständig |
 
-Alle 38 haben eine Locale (eine gesprochene Varietät nach ihrer Schriftsprache gezählt; vor 6.0.15 hatten 18 von
-ihnen eine) und eine vollständige Übersetzung der Administrationsoberfläche: eine eigene oder, bei den arabischen
-Varietäten, die von `ara-SA`.
+Vor 6.0.15 hatten 18 dieser 38 Sprachen eine Locale (eine gesprochene Varietät nach ihrer Schriftsprache gezählt);
+jetzt haben alle 38 eine. Alle 38 haben eine vollständige Übersetzung der Administrationsoberfläche, eine eigene oder,
+bei den arabischen Varietäten, die von `ara-SA`.
 
-Darüber hinaus deckt die A–Z-Liste fast jede Sprache mit einer Schriftnorm und CLDR-Daten ab: die Amtssprachen
+Darüber hinaus deckt die A–Z-Liste jetzt fast jede Sprache mit einer Schriftnorm und CLDR-Daten ab: die Amtssprachen
 Indiens (alle 22 Sprachen des Achten Anhangs der Verfassung, darunter Maithili, Konkani, Manipuri, Santali, Dogri, Bodo
 und Sanskrit), die großen Sprachen Afrikas (Fulfulde, Akan, Ewe, Wolof, Bambara, Lingala, Kirundi, Luganda, Kikuyu,
 Kabylisch, Tamazight, N'Ko), Zentralasiens (Turkmenisch, Kirgisisch, Tatarisch, Tschetschenisch) und des Himalaya
@@ -1282,8 +1576,9 @@ Jede Sprache der Tabelle oben hat eine Locale. Sprachen mit einer Million oder m
   Tschuwaschisch (`chv`), Zentralatlas-Tamazight, Sango (`sag`), Masanderanisch und Nord-Luri (CLDR hat für beide
   englische Tagesnamen), Fulfulde in Adlam-Schrift, Usbekisch in arabischer Schrift, Interlingua (nur für die Region
   „Welt“, siehe [Abschnitt 3](#3-alle-locales)).
-- **Weitere regionale Varianten**: Englisch von Hongkong und Malaysia sowie Schwedisch von Finnland. Ein Land, das
-  eine Locale in einer anderen seiner Sprachen hat, ist auf der Karte trotzdem grün.
+- **Weitere regionale Varianten**: Portugiesisch von Guinea-Bissau; Englisch von Hongkong und Malaysia; Schwedisch
+  von Finnland; Russisch von Kasachstan und Belarus; traditionelles Chinesisch von Macau. (Die übrigen Länder des
+  Spanischen, Französischen, Arabischen und Deutschen kamen am 18. Oktober 2026 hinzu.)
 - Gesprochene Varietäten, die in einer Standardsprache geschrieben werden (arabische Dialekte, Wu- und
   Yue-Chinesisch), brauchen keine eigene Locale.
 
@@ -1447,14 +1742,19 @@ maschinell unterstützten Kataloge und die von ezoe und ezjscore: Eine fertige �
 HTML-Tags und Entitäten, führende und abschließende Leerzeichen und die Zeilenumbrüche ihrer Quelle und ist weder leer
 noch der englische Text selbst. Wo der englische Text richtig ist (ein Produktname, ein Code, ein gleich geschriebenes
 Wort), fügen Sie ihn mit Begründung zu `tests/tests/lib/ezi18n/translation-identical-allowlist.json` hinzu;
-schwächen Sie den Test nie ab. Eine neu vervollständigte Sprache kommt auf die Liste der Sprachen des Tests; jede
-vollständige maschinell unterstützte Übersetzung steht darauf. Deutsch (`ger-DE`) steht seit 6.0.15 darauf, mit den
+schwächen Sie den Test nie ab. Eine neu vervollständigte Sprache kommt auf die Liste der Sprachen des Tests; die zehn
+am 18. Oktober 2026 hinzugekommenen Sprachen stehen darauf. Deutsch (`ger-DE`) steht seit 6.0.15 darauf, mit den
 Katalogen des Kernels, von ezoe und von ezjscore; die Wörter, die das Deutsche aus dem Englischen übernimmt (Cache,
 Layout, Login, Siteaccess, Extension ...), stehen in der Liste `ger-DE` der Allowlist.
 
-Jede Übersetzung deckt die Texte von 6.0.15 ab; die nützlichste Arbeit ist daher jetzt die Durchsicht der maschinell
-unterstützten durch Muttersprachler, das heißt jeder Übersetzung außer `eng-US` und `ger-DE`. Siehe
-[Einen Übersetzungsfehler melden](#einen-übersetzungsfehler-melden).
+Die seit 6.0 hinzugekommenen Texte (etwa 10.000) sind in allen 101 Übersetzungen übersetzt; die nützlichste Arbeit ist
+daher die Prüfung der maschinell unterstützten durch Muttersprachler, das heißt jeder Übersetzung außer `eng-US` und
+`ger-DE`.
+
+**Übersetzungswellen.** Die Arbeit, die für jede Sprache bleibt (der Administrationskatalog, die Erweiterungen und die
+Hilfe), ist gemessen und in kleine, voneinander unabhängige Wellen geteilt, geordnet nach der Prioritätsgruppe der
+Herkunftssprachen geflüchteter Kinder, dann nach Sprechern und Schwierigkeit, in
+[Übersetzungswellen](uebersetzungswellen.md).
 
 ## 9. Sprachen, die von rechts nach links geschrieben werden
 
@@ -1518,17 +1818,14 @@ richtungssicher: Der Browser spiegelt es, statt dass es über links und rechts p
 CSS-Regeln und was noch zu prüfen ist, stehen unter
 [Sprachen, die von rechts nach links geschrieben werden](funktionen/6.0/rechts-nach-links.md).
 
-**Übersetzungen der Oberfläche.** Jede Rechts-nach-links-Locale zeigt die Administration übersetzt. Siebzehn haben
-einen eigenen Katalog: Hebräisch (`heb-IL`), Arabisch (`ara-SA`, modernes Hocharabisch, auf das jedes arabische Land
-zurückfällt), Persisch (`fas-IR`), Dari (`fas-AF`), Paschtu (`pus-AF`), Urdu (`urd-PK`, auf das `urd-IN`
-zurückfällt), Sindhi (`snd-PK`), Westpunjabi (`pnb-PK`, Shahmukhi-Schrift), Kaschmiri (`kas-IN`), Uigurisch
-(`uig-CN`), Zentralkurdisch (`ckb-IQ`), Jiddisch (`yid-US`), N’Ko (`nqo-GN`), Dhivehi (`div-MV`) und Aramäisch,
-einmal in syrischer Schrift (`syr-IQ`, auf das `syr-SY` zurückfällt) und zweimal in hebräischer Schrift (`arc-IQ`
-und `huy-IL`, daraus transliteriert). Alle decken den Kernel und die Kataloge der mitgelieferten ezoe und ezjscore
-ab, und alle sind maschinell unterstützt entstanden; sie brauchen daher eine Prüfung durch einen Muttersprachler,
-bevor sich eine Website auf sie verlässt
-([Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Wahl
-einer davon als Oberflächensprache stellt die gesamte Administrationsoberfläche (admin4l, admin4 und das
+**Übersetzungen der Oberfläche.** Zwölf Rechts-nach-links-Übersetzungen der
+Administrationsoberfläche sind vollständig: Hebräisch (`heb-IL`), Arabisch (`ara-SA`, modernes Hocharabisch, sodass jedes arabische
+Land darauf zurückfällt), Persisch (`fas-IR`), Dari (`fas-AF`), Paschtu (`pus-AF`), Urdu (`urd-PK`), Sindhi (`snd-PK`),
+Westpunjabi (`pnb-PK`, Shahmukhi-Schrift) und Jiddisch (`yid-US`); Aramäisch hat eine in syrischer Schrift (`syr-IQ`, `syr-SY` fällt darauf zurück) und zwei in hebräischer Schrift (`arc-IQ`, `huy-IL`, daraus transliteriert). Alle decken
+den Kernel und die Kataloge der mitgelieferten ezoe und ezjscore ab, und alle sind maschinell unterstützt: Sie
+brauchen eine Prüfung durch einen Muttersprachler, bevor sich eine Website auf sie verlässt
+([Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).
+Die Wahl einer davon als Oberflächensprache stellt die gesamte Administrationsoberfläche (admin4l, admin4 und das
 klassische Admin) auf rechts nach links um. Ihre Platzhalter (`%name`, `%1`) bleiben innerhalb des
 Rechts-nach-links-Textes, wie sie sind; der bidirektionale Algorithmus des Browsers platziert sie, sodass eine
 Übersetzung keine eigenen Richtungszeichen braucht. Der Übersetzer kennt keine Pluralformen (keine
@@ -1563,7 +1860,7 @@ Objekte gibt es auf Deutsch?“ ist dann ein Bittest pro Zeile (`language_mask &
 nach Sprache in jeder Abfrage des Kernels günstig.
 
 **Was zählt.** Nur die unter Setup > Sprachen hinzugefügten Inhaltssprachen, die in `ezcontent_language`. Die Locales
-in `share/locale` zählen nicht: Alle können angeboten werden, während eine Installation zwei Sprachen verwendet.
+in `share/locale` zählen nicht: 286 davon können angeboten werden, während eine Installation zwei Sprachen verwendet.
 Eine Sprache, die hinzugefügt und nie verwendet wurde, belegt trotzdem ihr Bit.
 
 **Einen Platz freimachen.** Entfernen Sie eine Inhaltssprache, in der kein Objekt und keine Klasse eine Übersetzung
@@ -1586,7 +1883,7 @@ anderes. Sie wird nicht zu den Sprachen oben gezählt, und keine Installation f�
 Daten noch die Seeds des Installers, die Pakete oder der Kickstart. Setup > Sprachen > Sprache hinzufügen bietet sie
 wie jede andere Locale an, unter ihrem schlichten Namen *Lorem Ipsum*; fügen Sie sie für einen Test hinzu und
 entfernen Sie sie danach. Wie: [Die Testsprache Lorem
-Ipsum](anleitungen/testsprache-lorem-ipsum.md).
+Ipsum](guides/test-language-lorem-ipsum.md).
 
 **Der Code.** `qlo` liegt im Bereich `qaa`-`qtz` von ISO 639-2, den ISO für die lokale Nutzung reserviert, daher kann
 er nie mit einer realen Sprache kollidieren; `ZZ` ist der Code nach ISO 3166 / CLDR für eine unbekannte Region, und
@@ -1675,17 +1972,10 @@ der Kette den Cache der Locales, die auf sie zurückfallen.
 oder weder eine Locale-Datei noch eine Übersetzung hat, und einen Eintrag in `FallbackRules[]`, der keine Klasse ist,
 die `expI18nFallbackRuleInterface` implementiert; als Warnungen (Fehler mit `--strict`) eine konfigurierte Locale
 ohne Locale-Datei und eine Kette, deren letzter Schritt keine Übersetzung hat (sie zeigt die englischen Quelltexte;
-eine Kette, die mit Absicht bei `untranslated` endet, wird nicht gemeldet). Die Abdeckung der Extensions wird in
+die arabischen Länder fallen absichtlich auf diese Weise auf `ara-SA` zurück, in Erwartung dieser Übersetzung, und
+enden bei `untranslated`, daher werden sie nicht gemeldet). Die Abdeckung der Extensions wird in
 `var/<site>/cache/i18n/fallback-report.json` gecacht und neu erstellt, wenn sich eine Datei oder eine Einstellung
 ändert; der erste Lauf liest jeden Extension-Katalog und dauert einige Sekunden.
-
-`coverage` listet auch die Codes aus `settings/country.ini` (ISO 3166-1), die keine Locale nennt. Die Codes, die mit
-Absicht keine Locale haben, stehen mit dem Grund in `expI18nCoverageMap::NO_LOCALE_BY_DESIGN`: die Antarktis (`AQ`),
-die Bouvetinsel (`BV`) und die Heard- und McDonald-Inseln (`HM`) sind unbewohnt, und CLDR definiert für sie keine
-Locale (die Karte zeigt sie trotzdem grün: Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen
-gibt es keine); der Code der Niederländischen Antillen (`AN`) wurde 2010 zurückgezogen, seine Nachfolger `BQ`, `CW` und `SX`
-haben Locales. Jeder andere Code ohne Locale wird als „noch nicht“ geführt, und der Test `expI18nCoverageMapTest`
-schlägt dann fehl.
 
 **Setup > Oberflächensprachen** (`setup/languages`, Richtlinie `setup/system_info`, neben Sprachen im Menü Setup) zeigt
 dieselbe Liste in der Administrationsoberfläche: jede Locale mit der Übersetzung, die sie zeigt, die Abdeckung des
@@ -1697,58 +1987,9 @@ und jeder Extension. Die Seite ist schreibgeschützt.
 
 | `i18n.ini [TranslationSettings]` | Standard | Bedeutung |
 |---|---|---|
-| `FallbackLanguages[<locale>]` | 146 Einträge | Die Übersetzung, auf die eine Locale zurückfällt; `eng-GB` oder `untranslated` für die Quelltexte. |
+| `FallbackLanguages[<locale>]` | 100 Einträge | Die Übersetzung, auf die eine Locale zurückfällt; `eng-GB` oder `untranslated` für die Quelltexte. |
 | `FallbackRules[]` | leer | Klassen, die `expI18nFallbackRuleInterface` implementieren, abgefragt nach `FallbackLanguages[]`. |
 | `AutomaticLanguageFallback` | `enabled` | Der Fallback innerhalb derselben Sprache für Locales ohne Übersetzung und Konfiguration. |
 | `AutomaticFallbackExclude[]` | `eng` | Sprachen oder Locales, die der automatische Fallback in Ruhe lässt. |
 | `FallbackMaxDepth` | `4` | Die meisten Schritte einer Kette (1 bis 16). |
 | `FallbackMode` | `first` | `first` oder `merge`, siehe oben. |
-
-## Wie die Übersetzungen entstanden sind
-
-Vor 6.0.15 lieferte Exponential 49 Locale-Dateien und die Übersetzungen der Administration aus früheren Releases
-mit. Die rund 10.000 Texte, die 6.0 hinzugefügt hatte (admin4, die neuen Setup-Seiten, Audit, Pakete, Jobs und mehr),
-waren nur ins Englische und Deutsche übersetzt.
-
-Für 6.0.15, zwischen dem 15. und dem 28. Oktober 2026:
-
-- **Locales.** Die fehlenden Locales wurden beim Erstellen aus Unicode CLDR 44 (ICU 74.2) erzeugt, spätere
-  Länder-Locales und die eigenständigen Monatsnamen aus CLDR 48. Die Sprachen, für die CLDR keine Daten hat (Latein,
-  Dhivehi, Klingonisch, Reichsaramäisch und Hulaulá), bekamen von Hand erstellte Dateien, und vier fehlerhafte ältere
-  Dateien wurden neu erzeugt ([Abschnitt 7](#7-eine-locale-hinzufügen)). Zuletzt kamen die übrigen Gebiete hinzu,
-  sodass jeder bewohnte Code aus ISO 3166-1 eine Locale hat.
-- **Übersetzungen.** Die Administration wurde Sprache für Sprache übersetzt, maschinell unterstützt. Für jede Sprache
-  wurden nach einem ersten Durchgang ein Glossar und ein Stilleitfaden festgelegt, und ein zweiter Durchgang prüfte
-  den Katalog dagegen. Zuerst wurden Französisch und Ukrainisch vervollständigt (17. Oktober). Es folgten zehn weitere
-  europäische Sprachen (18. Oktober), dann Persisch, Paschtu und Kurdisch (19. Oktober), Suaheli (23. Oktober),
-  achtzehn europäische und asiatische Sprachen und Chinesisch (24. Oktober) sowie sieben weitere (25. Oktober).
-  Danach kamen die großen Sprachen Südasiens, Afrikas und Südostasiens (26. Oktober) und zuletzt die Regional- und
-  Minderheitensprachen (27. und 28. Oktober). Ältere Übersetzungen blieben erhalten, wo sie richtig waren und zum
-  Glossar passten, und wurden sonst neu gemacht.
-- **Fallbacks.** Jedes Land einer übersetzten Sprache bekam einen Fallback auf den Katalog dieser Sprache, sodass
-  die Karte Land für Land grün wurde.
-- **Prüfungen.** Die Qualitäts- und Registrierungstests aus
-  [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen) liefen über jeden
-  Katalog. `./console exp:i18n coverage` hält die Zahlen und die Karte oben auf dieser Seite mit den mitgelieferten
-  Dateien im Einklang.
-
-Die verbleibende Arbeit, vor allem die Übersetzung der Hilfe und die Durchsicht der maschinell unterstützten
-Kataloge, ist in [Übersetzungswellen](uebersetzungswellen.md) gemessen und geplant.
-
-<!-- generated: exp:i18n coverage languages (start) -->
-## Die noch nicht übersetzten Sprachen
-
-Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **150** davon
-zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
-Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **0** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
-(siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
-
-<details><summary>Die 0 nicht übersetzten Sprachen</summary>
-
-| Sprache | Eigener Name | Code | Locales (Länder) |
-|---|---|---|---|
-
-</details>
-<!-- generated: exp:i18n coverage languages (end) -->

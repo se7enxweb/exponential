@@ -40,7 +40,7 @@ rollback.
 
 ## Lab setup
 
-- One training installation per learner, installed with `php bin/php/console exp:install`
+- One training installation per learner, installed with `php bin/php/console exp:install --apply`
   ([The console install](../../../install/07-console-install.md)). The default installation uses SQLite in
   `var/storage/sqlite3/exponential.db`, which learners open read-only with `sqlite3 -readonly`.
 - The extensions the root `composer.json` requires, in particular xrowextract, active on the training installation.

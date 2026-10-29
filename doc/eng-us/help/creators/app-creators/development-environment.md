@@ -36,7 +36,7 @@ can reinstall in minutes, with debugging on and your extension in its own Git re
 git clone https://github.com/se7enxweb/exponential.git exp-dev
 cd exp-dev
 composer install
-php bin/php/console exp:install --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
+php bin/php/console exp:install --apply --package=sevenx_multisite_clean --url=http://127.0.0.1:8088
 ```
 
 SQLite, generated administrator password shown once ([The console install](../../../install/07-console-install.md)).
@@ -46,7 +46,7 @@ Reinstalling with the same command (`--force`) gives a clean state in minutes.
 
 ```bash
 composer require se7enxweb/exponential-velocity
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 php bin/php/console exp:velocity start
 ```
 

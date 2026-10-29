@@ -97,7 +97,7 @@ user. `<first>` is the path of the installation you backed up in lesson 6.1.
 
    ```bash
    php bin/php/console exp:velocity start
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 9. Switch maintenance mode off: `php bin/php/maintenance.php off`.

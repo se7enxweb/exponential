@@ -109,7 +109,7 @@ Muster leeren.
 ## Ihn leeren
 
 ```bash
-php bin/php/console exp:velocity cache clear     # every cached page is rendered again on its next request
+php bin/php/console exp:velocity cache clear --apply     # every cached page is rendered again on its next request
 ```
 
 - Nach einer Änderung an Template oder Stylesheet: Leeren Sie die Template-Caches, dann `exp:velocity cache clear`; kein Neustart nötig.

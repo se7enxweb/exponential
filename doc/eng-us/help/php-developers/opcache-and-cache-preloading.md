@@ -64,8 +64,8 @@ Read the full list in `settings/velocity.ini` and the background in
 ## The site cache preloader
 
 ```bash
-php bin/php/preload.php                                   # the default siteaccess
-php bin/php/console exp:preload --siteaccess=<siteaccess>
+php bin/php/preload.php --apply                                   # the default siteaccess
+php bin/php/console exp:preload --apply --siteaccess=<siteaccess>
 ```
 
 A run starts at the section pages of a site, follows its links up to a page limit and a link depth, and requests them as

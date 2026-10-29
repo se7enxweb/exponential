@@ -607,7 +607,7 @@ persistente Verbindungen nebeneinander.
 Ein vollständiges Backup umfasst die Datenbank **und** die Dateien: `var/storage` (Uploads und Bildvarianten),
 `settings/override` und `settings/siteaccess`. Schalten Sie für eine Wiederherstellung den Wartungsmodus ein
 (`php bin/php/maintenance.php on --allow-root-user`) und leeren Sie danach jeden Cache
-(`php bin/php/ezcache.php --clear-all --allow-root-user` und, mit Velocity, `php bin/php/console exp:velocity cache clear --allow-root-user`).
+(`php bin/php/ezcache.php --clear-all --allow-root-user` und, mit Velocity, `php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 Das vollständige Verfahren steht in [Kapitel 10, Backups und Wiederherstellung](../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung).
 
 | Datenbank | Backup | Wiederherstellung |

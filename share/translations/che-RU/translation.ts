@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>ДӀахӀоттор &gt; Cron-болхаш</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron-белхан цхьа а дакъа хӀинца а дӀадолийна дац: белхийн рогӀалла, импорт, хаамаш а, лехаран индекс а хьоьжуш ю. php bin/php/installcrontab.php --add --apply дӀадоло, я --show могӀанаш crontab чу тӀетоха.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ХӀара дӀахӀоттам юкъараллин демо ю: администраторан пароль мила а хаьа мега, ткъа администраторийн пароль хийца я меттахӀотто йиш яц. Кхузахь шен хӀума ма чуязде.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Шун гӀирсаш</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Кхерамазаллин гӀуллакхаш</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Мила хийцина, мила чувелла я мила юхатоьхна, хӀора аккаунтехула; фильтр ян а, экспорт ян а.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ЧугӀорийн отчет</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Мила чугӀо хилла, хӀора дийнахь чугӀорш а, кхиам боцу гӀортарш а; декъашхо массанхьара аравакхар.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP обработчикан хан чекхъяьллина сессеш PHP-ца шех дӀадоккху (session.gc_maxlifetime), оцу агӀо я session_gc cron-болхан дакъо ца.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Массо а декъашхойн чугӀуьйриг сессеш чугӀорийн отчетехь гойту, цигахь уьш чекхъяха а мега; отчет хӀора а сессин обработчикца болх беш ю.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>ЧугӀорийн отчет схьаелла</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Ӏуллура яц</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Кхерамазаллин гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Шун тӀаьххьара чугӀорш, кхиам боцу гӀортарш, пароль, электронан поштан адрес а, шина гӀулчехь чугӀор а хийцар.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ХӀокху аккаунтан тӀаьххьара чугӀорш, кхиам боцу гӀортарш а, кхерамазаллин хийцамаш а.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>ГӀуллакхашка хьажа</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Кхиам боцу чугӀорш: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab яздина яц (%reason). Оцу могӀарш сайт болх беш йолчу декъашхочун crontab-чу тӀетоха, дацахь, рогӀ, импорташ, хаамаш а лехаран индекс цкъа а ца лелор ду:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Юха дӀахӀоттор kickstarter-ца (%file, тӀаккха php bin/php/kickstarter.php run --apply) я керла дӀахӀотторца до.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Почтан транспорто тӀаьххьара дӀадаларехь %count хаам юхатоьхна. Почтан сервер а site.ini MailSettings а таллам бе.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Хьоьжуш долу хиламаш: %count, ткъа хаамийн cron-белхан цхьа а дӀадолор дӀаяздина дац. Cron-белхан дакъа «frequent» crontab чу тӀетоха, я exp:notification:run --apply дӀадоло.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Кхин сайт я дакъа шад харжаран гӀирсаца харжа</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Да хийца системан администраторна бен йиш яц: ./console exp:content-check --fix-permissions --apply root санна дӀадоло.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>яьсса</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>КуьгтаӀоран догӀа шарал тиша ду: exp:audit key rotate --apply командица иза хийца.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ца дахьийтина</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Хаамийн cron-болх кхузахь шен хӀора дӀадолор дӀаяздеш ю. Дакъа frequent crontab чу тӀетоха, я exp:notification:run --apply дӀадоло.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Консоль лело: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Цхьа а яц.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>аутентификацин программица</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>электронан поштехула кодаца</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>меттахӀотторан кодаца</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>чугӀоран догӀаца</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>арахьарчу аккаунтаца</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Кхерамазаллин гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Сети санна гойту; адрес сайтан хаамаш ларбаран параметрашкахь ма-аллара Ӏалашйо.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Билгалдина дац</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Меттиг</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>герггара</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ГӀирсаш урхалла</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>аутентификацин программица</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>электронан поштехула кодаца</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>меттахӀотторан кодаца</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>чугӀоран догӀаца</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>арахьарчу аккаунтаца</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Кхерамазаллин гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Билгалдина дац</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Меттиг</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>герггара</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ХӀара декъашхочун сессеш хьажа</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site сайтехь шун %login аккаунте хӀинца чугӀо хилла, тӀаьххьарчу хенахь цу аккаунте чугӀо ца хиллачу меттигера:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Герггара меттиг</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser, %os тӀехь</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ЧугӀорийн отчет</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>вовзийтина дац</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Аккаунт ларъян</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site сайтехь шун аккаунте %login меттахӀотторан кодаца чугӀо хилла.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>МеттахӀотторан код лелийна</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Аккаунт</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Герггара адрес</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Юха чугӀо керла пароль деха, я сайтан администраторашка дӀакхайкха.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Керла пароль деха</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ХӀора меттахӀотторан код цкъа бен болх ца бо. Шун телефон дайнехь, аутентификацин программа юха нисъе, керла меттахӀотторан кодаш тешаме меттехь Ӏалашде.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Шун аккаунте кхиам боцу чугӀоран гӀортарш</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ХӀинца дуьйна чугӀучу хенахь пароль а долуш код а хоьтту. Иза шаьш динехь, хӀумма а дан ца оьшу.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Иза шу хиллехь, шайн пароль дицдинехь, керла деха. Шу ца хиллехь, чӀагӀ пароль харжа, шина гӀулчехь чугӀор латае.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Иза шу ца хиллехь, шун пароль цхьаьннан хаа мега: хӀинцца иза хийца, шун аккаунт мичахь чугӀо хилла хьажа.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Диснарш меттахӀотторан кодаш</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Шайн гӀирсашка хьажа</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Кхерамазаллин дӀахьедар</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Цхьаммо %site сайтехь шун аккаунте %login нийса доцу парольца масийттазза тӀаьхьа-тӀаьхьа чугӀо гӀортар дина (гӀортарш: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site сайтехь шун аккаунтехь %login кхерамазаллин хилам хилла.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ХӀара шун аккаунтах лаьцна кхерамазаллин дӀахьедар ду. Иза хӀора а иштта хийцамехь дӀадохьу, иза дӀасацо йиш яц.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Хан</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site сайтехь шун аккаунтан %login шина гӀулчехь чугӀор дӀасаделла.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Шина гӀулчехь чугӀор дӀасаделла</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site сайтехь шун аккаунтан %login шина гӀулчехь чугӀор латийна.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Шина гӀулчехь чугӀор латийна</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site сайтехь шун аккаунт %login дукха кхиам боцу чугӀорш хиллачул тӀаьхьа дӀакъовлина.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>ХӀинца шун аккаунт пароль бен ларъеш яц. Иза шаьш ца динехь, пароль хийцинчул тӀаьхьа шина гӀулчехь чугӀор юха латае.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Шун аккаунт дӀакъовлина</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Кхерамазаллин гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Кхерамазаллин гӀуллакхаш: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ЧугӀаьлла</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Кхиам боцу чугӀоран гӀортар</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Аравелла</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сессеш чекхъяьхна</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Керлачу гӀирсера чугӀор</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Керлачу меттигера чугӀор</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Шахь тӀечӀагӀдина («Шу мила ю тӀечӀагӀде»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Шахь таллар кхиамца ца даьлла</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ЧугӀоран догӀаца чугӀаьлла</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ЧугӀоран догӀаца чугӀор кхиамца ца даьлла</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ЧугӀор юхатоьхна: шина гӀулчехь чугӀоран код яц я нийса яц</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Шина гӀулчехь чугӀоран нийса доцу код</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Кхиам боцу чугӀорш хиллачул тӀаьхьа аккаунт дӀакъовлина</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Аккаунт схьаелла</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Пароль хийцина</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Пароль хийца ца делла</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Пароль дӀатесна</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Керла пароль дехна</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Электронан поштан адрес хийцина</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Декъашхочун цӀе хийцина</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Шина гӀулчехь чугӀор латийна</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Шина гӀулчехь чугӀор дӀасаделла</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>МеттахӀотторан код лелийна</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Керла меттахӀотторан кодаш</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ХӀоттаман пароль кхоьллина</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ХӀоттаман пароль юхаэцна</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ЧугӀоран догӀа тӀетоьхна</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ЧугӀоран догӀа дӀадаьккхина</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Аккаунт латийна</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Аккаунт дӀасаделла</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Массо</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ЧугӀорш а, сессеш а</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Аккаунтан хийцамаш</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Тидам оьшу</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>шаьш</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>декъашхочо</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>декъашхочо: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Кеп</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Браузер</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Операцин система</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ГӀирс</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Меттиг</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Пачхьалкх</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сессеш</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Муьлхарш</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Канал</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Кхиам боцу гӀортарш</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Диснарш кодаш</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>ЧугӀоран обработчик</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Кхерамазаллин гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Кхерамазаллин гӀуллакхаш: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Шун аккаунте чугӀорш а, цуьнан кхерамазаллин хийцамаш а. Шаьш ца дина хӀума гахь, пароль хийца, шаьш ца девза гӀирсаш аравахийта.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ХӀокху аккаунте чугӀорш а, цуьнан кхерамазаллин хийцамаш а.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Шун гӀирсаш</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Пароль хийца</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Аккаунте юхадерза</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Кхерамазаллин гӀуллакхаш дӀаяздеш дац</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Уьш декъашхойн талламан журналера ешна, ткъа цуьнан таблица expuser_audit яц я хӀокху хаамийн базехь ловш яц. php update/common/scripts/6.0/createuseraudittable.php я 6.0.15 хаамийн базан карлаяккхар дӀадоло.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ТӀаьххьара денош: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ТӀаьххьарчу деношкахь чугӀорш (денош: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ТӀаьххьара кхерамазаллин гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Гайта</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>кхиам боцуш</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>юхатоьхна</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Кхерамазаллин гӀуллакхаш хӀинца а дӀаяздина дац.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Кхерамазаллин хиламаш Ӏалашбо (денош: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Кхерамазаллин хиламаш администраторо дӀабаххалц Ӏалашбо.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Сан чугӀорийн хаамаш охьадаккха</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Шун сессеш а, кхерамазаллин хиламаш а JSON файл санна.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>ЧугӀаьлла</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Кхиам боцу чугӀоран гӀортар</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Аравелла</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сессеш чекхъяьхна</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Керлачу гӀирсера чугӀор</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Керлачу меттигера чугӀор</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Шахь тӀечӀагӀдина («Шу мила ю тӀечӀагӀде»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Шахь таллар кхиамца ца даьлла</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>ЧугӀоран догӀаца чугӀаьлла</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>ЧугӀоран догӀаца чугӀор кхиамца ца даьлла</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>ЧугӀор юхатоьхна: шина гӀулчехь чугӀоран код яц я нийса яц</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Шина гӀулчехь чугӀоран нийса доцу код</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Кхиам боцу чугӀорш хиллачул тӀаьхьа аккаунт дӀакъовлина</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Аккаунт схьаелла</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Пароль хийцина</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Пароль хийца ца делла</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Пароль дӀатесна</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Керла пароль дехна</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Электронан поштан адрес хийцина</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Декъашхочун цӀе хийцина</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Шина гӀулчехь чугӀор латийна</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Шина гӀулчехь чугӀор дӀасаделла</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>МеттахӀотторан код лелийна</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Керла меттахӀотторан кодаш</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ХӀоттаман пароль кхоьллина</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ХӀоттаман пароль юхаэцна</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>ЧугӀоран догӀа тӀетоьхна</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>ЧугӀоран догӀа дӀадаьккхина</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Аккаунт латийна</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Аккаунт дӀасаделла</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Массо</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>ЧугӀорш а, сессеш а</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Аккаунтан хийцамаш</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Тидам оьшу</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Кхерамазаллин гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Кхерамазаллин гӀуллакхаш: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Шун аккаунте чугӀорш а, цуьнан кхерамазаллин хийцамаш а. Шаьш ца дина хӀума гахь, пароль хийца, шаьш ца девза гӀирсаш аравахийта.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Шун гӀирсаш</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Пароль хийца</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ХӀокху сайтехь кхерамазаллин гӀуллакхаш хӀинца а дӀаяздеш дац.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>ТӀаьххьарчу деношкахь чугӀорш (денош: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Кхиам боцу гӀортарш</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Кхерамазаллин гӀуллакхаш хӀинца а дӀаяздина дац.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Сан чугӀорийн хаамаш охьадаккха</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Шун сессеш а, кхерамазаллин хиламаш а JSON файл санна.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Пароль а, шина гӀулчехь чугӀоран код а</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST интерфейс</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP интерфейс</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Цхьана чугӀор</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Сессеш дӀаязъян доладалале чугӀаьлла</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>ЧугӀорийн отчет</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Сайте мила чугӀо хилла, аккаунташ мел кест-кеста чугӀо а, чугӀо ца далла а, декъашхо массанхьара аравакхар а. ХӀора а сессин обработчикца болх беш ю.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сесси чекхъяьккхина. ГӀирсана юха чугӀо деза.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login араваьккхина, чекхъяьхна сессеш: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login декъашхочун болх беш йолу сесси яцара.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Иштта ID, декъашхочун цӀе я электронан поштан адрес йолу аккаунт яц.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ХӀара шаьш лелош йолу сесси ю. Иза чекхъяккха, аравала.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>И сесси хьалха чекхъяьллера.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>АгӀонан хан чекхъяьллера. Цхьа а хӀума хийцина дац; юха гӀорта.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ХӀокху сайтехь сессеш дӀаяздеш дац (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Таблица expuser_session яц</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Иза кхоьллича сессеш дӀаязъян йолало: php update/common/scripts/6.0/createusersessiontable.php я 6.0.15 хаамийн базан карлаяккхар.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ХӀинца а, тахана а</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Болх беш йолу сессеш</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>ЧугӀаьлла декъашхой</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Тахана чугӀорш</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Тахана кхиам боцу гӀортарш</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Декъашхо массанхьара аравакхар</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Аккаунтан хӀора сесси шен рогӀерчу дехарехь чекхъйолу, «Со дагалаца» лелийна Ӏалашйина сессеш а. Аккаунт нийса доцчу куьйгашка кхачанехь, иза лело; тӀаккха цуьнан пароль дӀатоха.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Декъашхочун ID, декъашхочун цӀе я электронан поштан адрес</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Массанхьара аравала</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ХӀинца чугӀаьлла</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ТӀаьххьара лелийнарш гойту (%limit сов доцуш).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Декъашхо</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ГӀирс</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ЧугӀаьлла</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ТӀаьххьара жигара</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ГӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ХӀара гӀирс</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Билгалдина дац</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Аравала</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ЧугӀаьлла цхьа а сесси яц.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>ТӀаьххьара денош: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>ЧугӀорш а, кхиам боцу гӀортарш а декъашхойн талламан журналехула лоьгу, ткъа иза яц; керла сессеш лоьгу.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Де</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>ЧугӀорш</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Кхиам боцу гӀортарш</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Керла сессеш</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Сессин обработчик: %handler. Сессеш expuser_session таблицера еша, цундела отчет хӀора а обработчикца болх беш ю.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Шун аккаунтана кхерамазаллин дӀахьедар</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Шун аккаунтехь %login кхерамазаллин хилам хилла: %event. Иза шу ца хиллехь, %url адресехь шайн аккаунт ларъе.</translation>
     </message>
 </context>
 </TS>

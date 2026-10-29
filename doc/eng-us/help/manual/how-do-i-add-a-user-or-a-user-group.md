@@ -11,12 +11,22 @@ type: help
 # How do I add a user or a user group?
 
 Users and user groups are content objects in the **Users** part of the content tree. A user gets its rights from the
-roles of the groups it is placed in, so the place where you create the account decides what the person may do.
+roles of the groups it is placed in, so the place where you create the account decides what the person may do:
+
+- **Editors** for people who write and publish content (the Editor role and its companions,
+  [What the Editor role allows](../what-the-editor-role-allows.md));
+- **Administrator users** only for the system administrators, the developers and the owners of the site;
+- **Members** for the site's front-end members, whom editors manage ([Managing members](../managing-members.md)).
+
+The whole way from a new editor's account to their first sign-in, with a screenshot of every step, is in
+[Setting up accounts for editors and administrators](../setting-up-editor-and-admin-accounts.md).
 
 ## Who can do this
 
 Users who may create objects of the classes **User** and **User group** in the user tree (`content/create` with
-those classes, usually limited to the Users section), and read it. Administrators may.
+those classes, usually limited to the Users section), and read it. Administrators may, in every group. Editors may in
+Members (role *Member management*) and may ask for a new editor's account in Editors, which an administrator approves
+(role *Editor account requests*).
 
 ## Steps
 
@@ -28,10 +38,15 @@ those classes, usually limited to the Users section), and read it. Administrator
 4. Fill in the name fields of the person.
 5. Under the user account, fill in **Username**, **Email** and, if the form asks for it, **Confirm email**.
 6. Fill in **Password** and **Confirm password**.
-   The password must meet the site's password rules, for example a minimum length.
+   The password must meet the site's password rules, for example a minimum length. When you create the account for
+   someone else, give it a temporary password and leave **Change password at next sign-in** ticked: the person then
+   chooses their own at the first sign-in.
 7. Click **Send for publishing**.
+   **Verify it's you** asks for your own password before an account is created; enter it and press **Confirm**.
    The account is created and listed in the group.
 8. Open the new account and look at its **Roles** tab to check what it received from its group.
+9. Sign out and sign in once as the new user to check the username and the temporary password, then give the person
+   the username and, by a second channel, the temporary password.
 
 ## What can go wrong
 
@@ -54,6 +69,8 @@ the site needs, and remove or disable the account when they leave
 
 ## Related pages
 
+- [Setting up accounts for editors and administrators](../setting-up-editor-and-admin-accounts.md)
+- [Managing members](../managing-members.md)
 - [How do I move a user to another group?](how-do-i-move-a-user-to-another-group.md)
 - [How do I see what a user may do?](how-do-i-see-what-a-user-may-do.md)
 - [Roles and policies](../../guides/roles-and-policies.md)

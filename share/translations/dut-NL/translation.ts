@@ -7707,6 +7707,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Naar Setup &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Er is nog geen cronjob-onderdeel uitgevoerd: de takenwachtrij, de importen, de notificaties en de zoekindex wachten. Voer php bin/php/installcrontab.php --add --apply uit, of voeg de regels van --show toe aan de crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14817,6 +14821,14 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Deze installatie is een openbare demo: iedereen kan het beheerderswachtwoord kennen, en beheerderswachtwoorden kunnen niet worden gewijzigd of teruggezet. Voer hier niets persoonlijks in.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15729,6 +15741,14 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Wie wijzigde, inlogde of werd geweigerd, per account; filteren en exporteren.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Inlograpport</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Wie er is ingelogd, inlogs en mislukte pogingen per dag; een gebruiker overal uitloggen.</translation>
     </message>
 </context>
 <context>
@@ -27484,6 +27504,14 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     <message>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Verlopen sessies van de PHP-handler worden door PHP zelf verwijderd (session.gc_maxlifetime), niet door deze pagina of het cronjobdeel session_gc.</translation>
+    </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>De ingelogde sessies van alle gebruikers staan in het inlograpport, dat ze ook kan uitloggen; het werkt met elke sessiehandler.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Inlograpport openen</translation>
     </message>
 </context>
 <context>
@@ -44007,6 +44035,10 @@ Zie de pagina met systeemeisen voor meer informatie.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>De crontab is niet geschreven (%reason). Zet deze regels in de crontab van de gebruiker waaronder de site draait, anders worden de wachtrij, de imports, de notificaties en de zoekindex nooit uitgevoerd:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Opnieuw installeren gaat met de kickstarter (%file, daarna php bin/php/kickstarter.php run --apply) of met een nieuwe installatie.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -49680,6 +49712,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Het mailtransport heeft in de laatste run %count berichten geweigerd. Controleer de mailserver en site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Er wachten %count gebeurtenissen en er is geen run van de notificatie-cronjob vastgelegd. Voeg het cronjob-onderdeel &quot;frequent&quot; toe aan de crontab, of voer exp:notification:run --apply uit.</translation>
     </message>
 </context>
 <context>
@@ -59118,6 +59154,26 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>None yet</source>
         <translation>Nog geen</translation>
     </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Je recente inlogs, mislukte pogingen en wijzigingen aan je wachtwoord, e-mailadres en inloggen in twee stappen.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>De recente inlogs, mislukte pogingen en beveiligingswijzigingen van dit account.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Activiteit bekijken</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count mislukte inlogpogingen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
@@ -64287,6 +64343,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Een andere site of sectie kiezen met de nodekiezer</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Alleen de systeembeheerder kan de eigenaar wijzigen: voer ./console exp:content-check --fix-permissions --apply uit als root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -65820,6 +65880,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>empty</source>
         <translation>leeg</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>De ondertekeningssleutel is ouder dan een jaar: vervang hem met exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70080,6 +70144,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>not sent</source>
         <translation>niet verzonden</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>De notificatie-cronjob legt hier elke run vast. Voeg het onderdeel frequent toe aan de crontab, of voer exp:notification:run --apply uit.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Gebruik de console: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -77710,6 +77782,46 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>None.</source>
         <translation>Geen.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>met een authenticator-app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>met een code per e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>met een herstelcode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>met een toegangssleutel</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>met een extern account</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Getoond als netwerk; het adres wordt bewaard zoals de privacyinstellingen van de site dat bepalen.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Niet vastgelegd</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bij benadering</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -77953,6 +78065,42 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Manage devices</source>
         <translation>Apparaten beheren</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>met een authenticator-app</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>met een code per e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>met een herstelcode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>met een toegangssleutel</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>met een extern account</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Niet vastgelegd</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bij benadering</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -78032,6 +78180,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>View the sessions of this user</source>
         <translation>Sessies van deze gebruiker bekijken</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Met je account %login op %site is zojuist ingelogd vanaf een plek waar het de laatste tijd niet vandaan is ingelogd:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Geschatte locatie</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78070,6 +78226,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser op %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Inlograpport</translation>
     </message>
 </context>
 <context>
@@ -78716,6 +78876,788 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>unknown</source>
         <translation>onbekend</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Account beveiligen</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Er is met een herstelcode ingelogd op je account %login op %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Er is een herstelcode gebruikt</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Geschat adres</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Vraag een nieuw wachtwoord aan om weer in te loggen, of neem contact op met de beheerders van de site.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Nieuw wachtwoord aanvragen</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Elke herstelcode werkt maar één keer. Ben je je telefoon kwijt, stel dan je authenticator-app opnieuw in en bewaar de nieuwe herstelcodes op een veilige plek.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Mislukte inlogpogingen op je account</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Vanaf nu wordt bij het inloggen naast je wachtwoord om een code gevraagd. Heb je dit zelf gedaan, dan hoef je niets te doen.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Was jij het en ben je je wachtwoord vergeten, vraag dan een nieuw aan. Zo niet, kies dan een sterker wachtwoord en schakel inloggen in twee stappen in.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Was jij dit niet, dan kent iemand misschien je wachtwoord: wijzig het nu en controleer waar je account is ingelogd.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Resterende herstelcodes</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Je apparaten controleren</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Beveiligingswaarschuwing</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Iemand heeft %count keer achter elkaar geprobeerd met een verkeerd wachtwoord in te loggen op je account %login op %site.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Er was een beveiligingsgebeurtenis op je account %login op %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Dit is een beveiligingswaarschuwing over je account. Deze wordt bij elke wijziging van dit soort verstuurd en kan niet worden uitgeschakeld.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tijd</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Inloggen in twee stappen is uitgeschakeld voor je account %login op %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Inloggen in twee stappen is uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Inloggen in twee stappen is ingeschakeld voor je account %login op %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Inloggen in twee stappen is ingeschakeld</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Je account %login op %site is vergrendeld na te veel mislukte inlogpogingen.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Je account wordt nu alleen nog door je wachtwoord beschermd. Heb je dit niet zelf gedaan, schakel inloggen in twee stappen dan weer in nadat je je wachtwoord hebt gewijzigd.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Je account is vergrendeld</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Beveiligingsactiviteit van %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ingelogd</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mislukte inlogpoging</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Uitgelogd</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessies uitgelogd</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ingelogd vanaf een nieuw apparaat</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ingelogd vanaf een nieuwe locatie</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiteit bevestigd (&quot;Bevestig dat jij het bent&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identiteitscontrole mislukt</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ingelogd met een toegangssleutel</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Inloggen met toegangssleutel mislukt</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Inloggen geweigerd: code voor inloggen in twee stappen ontbreekt of is onjuist</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Onjuiste code voor inloggen in twee stappen</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Account vergrendeld na mislukte inlogpogingen</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Account ontgrendeld</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Wachtwoord gewijzigd</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Wachtwoord wijzigen mislukt</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Wachtwoord teruggezet</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nieuw wachtwoord aangevraagd</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mailadres gewijzigd</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Gebruikersnaam gewijzigd</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Inloggen in twee stappen ingeschakeld</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Inloggen in twee stappen uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Herstelcode gebruikt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nieuwe herstelcodes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-wachtwoord aangemaakt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-wachtwoord ingetrokken</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Toegangssleutel toegevoegd</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Toegangssleutel verwijderd</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Account ingeschakeld</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Account uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Inlogs en sessies</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Accountwijzigingen</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Heeft aandacht nodig</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>door jou</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>door de gebruiker</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>door %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Methode</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Webbrowser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systeem</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparaat</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Plaats</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessies</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Welke</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanaal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislukte pogingen</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Resterende codes</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Inloghandler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Beveiligingsactiviteit van %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Inlogs en wijzigingen aan de beveiliging van je account. Zie je iets wat je niet zelf hebt gedaan, wijzig dan je wachtwoord en log de apparaten uit die je niet herkent.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Inlogs en wijzigingen aan de beveiliging van dit account.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Wachtwoord wijzigen</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Terug naar het account</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>De beveiligingsactiviteit wordt niet vastgelegd</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ze wordt gelezen uit de auditlog van gebruikers, waarvan de tabel expuser_audit ontbreekt of op deze database niet wordt ondersteund. Voer php update/common/scripts/6.0/createuseraudittable.php uit, of de database-update van 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>De laatste %days dagen</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Inlogs in de laatste %days dagen</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Recente beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tonen</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mislukt</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>geweigerd</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nog geen beveiligingsactiviteit vastgelegd.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Beveiligingsgebeurtenissen worden %days dagen bewaard.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Beveiligingsgebeurtenissen worden bewaard tot een beheerder ze verwijdert.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Mijn inloggegevens downloaden</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Je sessies en beveiligingsgebeurtenissen als JSON-bestand.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ingelogd</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mislukte inlogpoging</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Uitgelogd</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessies uitgelogd</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ingelogd vanaf een nieuw apparaat</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ingelogd vanaf een nieuwe locatie</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identiteit bevestigd (&quot;Bevestig dat jij het bent&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identiteitscontrole mislukt</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ingelogd met een toegangssleutel</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Inloggen met toegangssleutel mislukt</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Inloggen geweigerd: code voor inloggen in twee stappen ontbreekt of is onjuist</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Onjuiste code voor inloggen in twee stappen</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Account vergrendeld na mislukte inlogpogingen</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Account ontgrendeld</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Wachtwoord gewijzigd</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Wachtwoord wijzigen mislukt</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Wachtwoord teruggezet</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nieuw wachtwoord aangevraagd</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mailadres gewijzigd</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Gebruikersnaam gewijzigd</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Inloggen in twee stappen ingeschakeld</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Inloggen in twee stappen uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Herstelcode gebruikt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nieuwe herstelcodes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-wachtwoord aangemaakt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-wachtwoord ingetrokken</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Toegangssleutel toegevoegd</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Toegangssleutel verwijderd</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Account ingeschakeld</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Account uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Inlogs en sessies</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Accountwijzigingen</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Heeft aandacht nodig</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Beveiligingsactiviteit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Beveiligingsactiviteit van %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Inlogs en wijzigingen aan de beveiliging van je account. Zie je iets wat je niet zelf hebt gedaan, wijzig dan je wachtwoord en log de apparaten uit die je niet herkent.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Wachtwoord wijzigen</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>De beveiligingsactiviteit wordt op deze site nog niet vastgelegd.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Inlogs in de laatste %days dagen</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislukte pogingen</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Nog geen beveiligingsactiviteit vastgelegd.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Mijn inloggegevens downloaden</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Je sessies en beveiligingsgebeurtenissen als JSON-bestand.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Wachtwoord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Wachtwoord en code van inloggen in twee stappen</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Eenmalige aanmelding (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ingelogd voordat sessies werden vastgelegd</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Inlograpport</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Wie er op de site is ingelogd, hoe vaak accounts inloggen en daarbij mislukken, en een gebruiker overal uitloggen. Het werkt met elke sessiehandler.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>De sessie is uitgelogd. Het apparaat moet opnieuw inloggen.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login is uitgelogd uit %count sessies.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login had geen actieve sessie.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Er is geen account met deze ID, gebruikersnaam of dit e-mailadres.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dit is de sessie die je nu gebruikt. Log uit om hem te beëindigen.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Die sessie was al beëindigd.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>De pagina was verlopen. Er is niets gewijzigd; probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Op deze site worden geen sessies vastgelegd (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>De tabel expuser_session ontbreekt</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessies worden vastgelegd zodra die is aangemaakt: php update/common/scripts/6.0/createusersessiontable.php, of de database-update van 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nu en vandaag</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Actieve sessies</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Ingelogde gebruikers</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Inlogs vandaag</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Mislukte pogingen vandaag</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Een gebruiker overal uitloggen</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Elke sessie van het account eindigt bij het volgende verzoek, ook sessies die met &quot;Onthoud mij&quot; bewaard zijn. Gebruik dit als een account in verkeerde handen kan zijn; zet daarna het wachtwoord terug.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Gebruikers-ID, gebruikersnaam of e-mailadres</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Overal uitloggen</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nu ingelogd</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>De %limit laatst gebruikte worden getoond.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Gebruiker</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparaat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ingelogd</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Laatst actief</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acties</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dit apparaat</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Niet vastgelegd</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Uitloggen</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Er is geen sessie ingelogd.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>De laatste %days dagen</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Inlogs en mislukte pogingen worden geteld uit de auditlog van gebruikers, die ontbreekt; de nieuwe sessies worden wel geteld.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dag</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Inlogs</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislukte pogingen</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nieuwe sessies</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sessiehandler: %handler. De sessies worden gelezen uit de tabel expuser_session, dus het rapport werkt met elke handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Beveiligingswaarschuwing voor je account</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Er was een beveiligingsgebeurtenis op je account %login: %event. Was jij het niet, beveilig je account dan op %url.</translation>
     </message>
 </context>
 </TS>

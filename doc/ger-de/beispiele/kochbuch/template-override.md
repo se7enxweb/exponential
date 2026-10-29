@@ -111,7 +111,7 @@ Erwartet vom ersten Befehl: `Template file valid: ...`. Öffnen Sie dann eine No
 `site.ini [TemplateSettings] ShowUsedTemplates=enabled` (oder den Kommentaren mit den Template-Pfaden) nennt die Liste
 der verwendeten Templates `full/note.tpl` für `node/view/full.tpl`. Spätere Änderungen an derselben Datei brauchen nur
 `--clear-tag=template` (oder gar nichts, solange der Template-Cache ausgeschaltet ist). Unter Velocity leeren Sie
-außerdem dessen Response-Cache: `./console exp:velocity cache clear`.
+außerdem dessen Response-Cache: `./console exp:velocity cache clear --apply`.
 
 Für diese Seite geprüft (2026-10-18): `bin/php/eztemplatecheck.php` meldet das Template als gültig (Syntax); die
 Zuordnungsschlüssel sind die, die `eZNodeviewfunctions::generateNodeViewData()` setzt.

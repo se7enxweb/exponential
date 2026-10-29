@@ -15,9 +15,11 @@ The page about the session handler and the session table of the administration i
 | Shown | Where it comes from |
 |---|---|
 | Browser and version, system and version, kind of device (computer, phone, tablet, program or app, automated client) | The `User-Agent` header of the sign-in, read by `expUserAgent::parse()`; nothing is looked up elsewhere |
-| Address | The address of the latest request (`eZSys::clientIP()`), shown as its network: `203.0.113.x` for IPv4, `2001:db8:85a3::/48` for IPv6. The address of the sign-in is shown too when it differs. The full address is stored, and the administrator's page shows it |
-| Signed in | The time of the sign-in and its method: password, password and two-step code (the second step of `user2fa/verify`), REST, SOAP or WebDAV (by the entry script), single sign-on (a login handler that signs in on another page), or "before sessions were recorded" |
-| Last active | The latest request, written at most every `TouchInterval` seconds or when the address changes |
+| Address | The address of the latest request (`eZSys::clientIP()`), shown as its network: `203.0.113.x` for IPv4, `2001:db8:85a3::/48` for IPv6. The address of the sign-in is shown too when it differs. What is stored follows `RecordIP` (see [Addresses and data protection](#addresses-and-data-protection)); the administrator's page shows the stored address |
+| Location | The approximate place of the sign-in ("Berlin, Land Berlin, Germany"), only with a local GeoIP database (`GeoIPDatabase`, see [Location](#location-from-a-local-geoip-database)) |
+| Signed in | The time of the sign-in and its method: password, password and two-step code (the second step of `user2fa/verify`), REST, SOAP or WebDAV (by the entry script), single sign-on (a login handler that signs in on another page), or "before sessions were recorded"; with the second step when one was used: an authenticator app, a code by e-mail, a recovery code, a passkey |
+| Signed in at | The host the sign-in was made on (`www.example.com`) and the siteaccess |
+| Last active | The latest request, written at most every `TouchInterval` seconds (60) or when the address changes |
 | Stays signed in | "Remember me, until <date>" when the sign-in ticked Remember me (`[Session] RememberMeTimeout`, 360 days, ticked by default), else "until the browser is closed" |
 | This device | The session the page is looked at with; it cannot be signed out from the list (sign out instead) |
 
@@ -53,12 +55,40 @@ Not tracked: a REST, WebDAV or SOAP request that signs in for itself only, witho
 personal API key): it has no cookie that could be signed out. The two-step check of those channels is unchanged:
 only the web sign-in form asks for the second step.
 
+## Addresses and data protection
+
+`RecordIP` says how the addresses of a session are stored:
+
+| Value | Stored |
+|---|---|
+| `audit` (default) | As the audit stores them: none with audit.ini `[UserAuditSettings] RecordIP=disabled` or `[AuditPrivacySettings] Field[actor.ip]=off`, the network with `truncate` (the default there) or `hash`, the full address with `full` |
+| `full` | The full address |
+| `truncated` | The network only: `203.0.113.x`, `2001:db8:85a3::/48` |
+| `disabled` | No address; the page says "Not recorded" |
+
+The place (below) is looked up from the full address in memory before it is shortened; the full address is then not
+kept.
+
+## Location from a local GeoIP database
+
+With `GeoIPDatabase` set to a database file in the MaxMind DB format (`.mmdb`, for example GeoLite2 City or Country,
+or DB-IP Lite), relative to the installation or absolute, and a reader installed (the PHP extension `maxminddb` or the
+Composer package `maxmind-db/reader`, both provide `MaxMind\Db\Reader`), every sign-in keeps its country and an
+approximate place. No other server is ever asked, and addresses of private and reserved networks are not looked up.
+`GeoIPLanguage` picks the language of the names (English when a name is not in it). Without a database nothing is
+looked up and nothing changes.
+
+A sign-in from a country the account has not signed in from within `RetentionDays` is a **new location**: the audit
+event `access.session.new_location` and the same e-mail as a new device (one mail when both are new). The first
+sign-in with a country is not new.
+
 ## New sign-in e-mail
 
 When a sign-in comes from a combination of browser, system and kind of device that the account has not used within
-`RetentionDays`, the user gets **New sign-in to your account** (template `design:user/new_signin_mail.tpl`, mail
-category `security`): the device, the time and the approximate address, and the link to Your devices. The very first
-sign-in of an account is not new: there is nothing to compare it with (`FirstSignInMail=enabled` changes that).
+`RetentionDays`, or from a new location, the user gets **New sign-in to your account** (template
+`design:user/new_signin_mail.tpl`, mail category `security`): the device, the time, the approximate place and
+address, and the links to Your devices and to the security activity ("Secure your account"). The very first sign-in
+of an account is not new: there is nothing to compare it with (`FirstSignInMail=enabled` changes that).
 
 - On by default (`NewDeviceMail=enabled`). Each user turns it off or on with the box **E-mail me when my account
   signs in from a new device or browser** on Your devices; the choice is the user preference
@@ -68,12 +98,91 @@ sign-in of an account is not new: there is nothing to compare it with (`FirstSig
 - The mail goes through the mail gate like every other mail; with `[MailSettings] Transport=file` it is written to
   `var/log/mail` and never sent.
 
+## Security activity
+
+**Security activity** (`user/security`) is the account's "recent security activity": a timeline of its security
+events, newest first, with the sign-ins, failed attempts and account changes of the last 30 days on top. Every
+signed-in user has it for the own account; `user/security/<user id>` shows another account to a viewer with the policy
+`user/sessions`. It is linked from Your devices, the account page (the card **Security activity**, with the failed
+sign-ins of the last 30 days), the user menu of the header and the "Current user" box. Read only.
+
+| Shown | Events |
+|---|---|
+| Sign-ins and sessions | `access.session.login`, `.login.failed`, `.logout`, `.revoke`, `.new_device`, `.new_location`, `.reauth`, `.reauth.failed`, `access.passkey.use`, `.use.failed`, `access.user.second_factor.refused`, `access.user.two_factor.verify.failed` |
+| Account changes | `access.user.lock`, `.unlock`, `.password.change`, `.password.change.failed`, `.password.reset`, `.password.reset.request`, `.email.change`, `.login.change`, `.two_factor.enroll`, `.two_factor.remove`, `.two_factor.recovery_used`, `.two_factor.recovery_issued`, `.app_password.create`, `.app_password.revoke`, `.enable`, `.disable`, `access.passkey.add`, `.remove` |
+| Needs attention | The failures, refusals, locks, new devices and places, and the changes of password, e-mail, two-step sign-in and passkeys |
+
+Nothing is recorded for the page: it reads the [user audit log](user-audit.md) (`expuser_audit`), which the audit's
+sink `useraudit` fills from the same events (`expUserSecurityActivity`). Without that table, and on MongoDB, the page
+says so. The events are kept for `audit.ini [UserAuditSettings] RetentionDays` (730). Each row shows the time, who
+acted (the user, an administrator by login, or nobody signed in for a failed attempt), the approximate address, the
+host and what the event names (method, browser, system, place, number of sessions, codes left); never a secret.
+
+The two-step events `access.user.two_factor.*` are recorded by the two-step extension through
+`expSignInSecondFactor::audit()`.
+
+## Security alerts
+
+Besides "New sign-in" (above) and "Your password was changed" (`[PasswordSettings] ChangeNotificationMail`), the owner
+of an account gets a **Security alert** (template `design:user/security_alert_mail.tpl`, mail category `security`)
+when:
+
+| Alert | Event |
+|---|---|
+| Two-step sign-in was turned on / off | `access.user.two_factor.enroll`, `.remove` |
+| A recovery code was used (with the codes left) | `access.user.two_factor.recovery_used` |
+| Failed sign-in attempts | `access.session.login.failed`, once, when the failures in a row reach `FailedSignInAlertThreshold` (5) |
+| The account was locked | `access.user.lock` (one mail, also when the failures reached the threshold at the same time) |
+
+Each alert says what happened, when and from which network, and links to **Secure your account** (the security
+activity) and Your devices; the lock alert also to "Ask for a new password". A user cannot turn these alerts off;
+the site can (`SecurityAlertMail=disabled`). They are sent from the user audit log (`expUserSecurityAlerts`): when
+the sink `useraudit` stores the events of a request, the new rows are checked, so a batch delivered again from the
+spool alerts nobody twice, and rows older than an hour never alert. Without the user audit log no alert is sent. The
+mail goes through the mail gate; with `[MailSettings] Transport=file` it is written to `var/log/mail`.
+
+## Data export and erasure
+
+- **Download my sign-in data** on the security activity (own account only, "Verify it's you" first,
+  `[ReauthGroup_export]`): a JSON file with every session of the account and its details (never the token's hash) and
+  every security event of the user audit log about it; recorded as `data.export.json` with the numbers of rows.
+- **Removing an account** (`eZUser::removeUser()`) erases its sessions and their details (`eraseForUser()`); its
+  security events stay in the user audit log until `RetentionDays` there, as the record of the removal.
+- **Retention**: the cronjob `usersessions.php` ends sessions not used for `[Session] SessionTimeout` (a session kept
+  by Remember me stays until its date, 360 days), removes ended sessions after `RetentionDays` and the sessions of
+  removed users; the cronjob part `useraudit` removes security events after `audit.ini [UserAuditSettings]
+  RetentionDays`.
+
+## Sign-in report
+
+**Users > Sign-in report** (`user/sessionreport`, the new policy function **user/sessions_manage**) is the
+administrator's view of the whole site:
+
+- the sessions running now and the number of users they belong to, the sign-ins and failed attempts of today;
+- **Sign a user out everywhere**: a user ID, username or e-mail address; every session of that account ends at its
+  next request, also those kept by Remember me (`revokeAll()`, recorded as `access.session.revoke`, scope `all`; with
+  the database session handler its sessions are deleted at once);
+- the running sessions of every user, most recently used first (the 100 latest), with the user (linking to that
+  user's sessions page), device, stored address and place, sign-in time and method, last use, and a button to sign
+  one out;
+- the last 14 days: sign-ins and failed attempts (from the user audit log, when it is there) and new sessions, with
+  bars.
+
+The report reads `expuser_session`, so it works with every session handler, PHP's files of the default handler too.
+**Setup > Sessions** (`setup/session`) keeps its own lists for the database handler; with another handler it now
+links to the report. "Verify it's you" asks before signing a session or a user out here (`[ReauthGroup_users]`).
+
 ## Settings: site.ini [UserSessionSettings]
 
 | Setting | Default | Meaning |
 |---|---|---|
 | `Tracking` | `enabled` | `disabled`: no rows are written, no session is checked, the page says so |
-| `TouchInterval` | `300` | Seconds between two writes of a session's last use (or when the address changes) |
+| `TouchInterval` | `60` | Seconds between two writes of a session's last use (or when the address changes) |
+| `RecordIP` | `audit` | How addresses are stored: `audit`, `full`, `truncated`, `disabled` |
+| `GeoIPDatabase` | (empty) | A local `.mmdb` database for the place of a sign-in; empty: none |
+| `GeoIPLanguage` | `en` | The language of the place names |
+| `SecurityAlertMail` | `enabled` | The security alerts (two-step sign-in, recovery code, failures, lock); a user cannot turn them off |
+| `FailedSignInAlertThreshold` | `5` | Failed sign-ins in a row that send an alert; `0`: never |
 | `RetentionDays` | `90` | Days an ended session is kept (Recently ended, the new-device check) |
 | `NewDeviceMail` | `enabled` | The user's e-mail about a sign-in from a new device |
 | `NewDeviceAdminMail` | `disabled` | The same note to the administrators |
@@ -88,6 +197,9 @@ sign-in of an account is not new: there is nothing to compare it with (`FirstSig
 - **Another user's sessions**: the policy function **user/sessions** ("see where other users are signed in, and sign
   them out"). The account page of a user (`user/edit/<id>`) shows the card **Sessions** to a viewer who has it.
   Administrators with all rights have it.
+- **The sign-in report** and signing any user out everywhere: the policy function **user/sessions_manage**.
+- **Sign out all other sessions** of one's own account asks "Verify it's you" first (`[ReauthGroup_account]`), with
+  the password, a passkey or the code of the authenticator app; signing out one other device does not.
 
 Every change is a POST with a token of the page's own (an HMAC of the session's token), besides the form token of
 ezformtoken; after it the page redirects to itself and shows the result once.
@@ -100,12 +212,14 @@ ezformtoken; after it the page redirects to itself and shows the result once.
 | `access.session.logout` | A sign-out (as before), with `after.session` |
 | `access.session.revoke` | A session signed out from the page: `after.count`, `after.sessions` (row ids), `after.scope` (one, others, all), `after.by` (user, admin), `after.actor_id`; reason `user_request` or `admin` |
 | `access.session.new_device` | A sign-in from a new device (the e-mail goes out): browser, system, device, method |
+| `access.session.new_location` | A sign-in from a new country (only with a GeoIP database): country, place, method |
 
 ## Retention: the cronjob usersessions.php
 
 In the part `infrequent` and on its own (`php runcronjobs.php usersessions`):
 
-- a session not used for `[Session] SessionTimeout` is ended as **expired** (the server has forgotten it too);
+- a session not used for `[Session] SessionTimeout` is ended as **expired** (the server has forgotten it too), unless
+  it is kept by Remember me: such a session stays until its Remember me date (`[Session] RememberMeTimeout`, 360 days);
 - an ended session older than `RetentionDays` is removed;
 - the rows of users that no longer exist are removed.
 
@@ -121,11 +235,23 @@ One row per sign-in: `id`, `user_id`, `token_hash` (unique), `created`, `last_ac
   (`--dry-run` says whether it is missing).
 - Without the table nothing is recorded and every page works as before; the page Your devices says what to run.
 
+## The table expuser_session_info
+
+One row per session, keyed by `session_id` (the row of `expuser_session`): `user_id`, `host`, `country` (ISO code),
+`location`, `auth_detail` (`totp`, `email`, `recovery`, `passkey`, `oauth`); an index on `user_id`. A table of its
+own, so an installation that already has `expuser_session` goes on tracking until it is created: the same update files
+and the same script (`createusersessiontable.php`) create it. Its rows are removed with their sessions.
+
 ## Developers
 
 - `expUserSessionTracker::setMethodHint( 'single_sign_on' )` before `eZUser::setCurrentlyLoggedInUser()` names the
-  method of a sign-in a login handler makes.
+  method of a sign-in a login handler makes; a second argument names the second step
+  (`setMethodHint( 'two_factor', 'totp' )`). The hint counts only in the request that set it, so a persistent worker
+  (Velocity) never hands it on.
+- `expUserSessionTracker::exportForUser( $userID )` (every row with its details, without the token's hash) and
+  `eraseForUser( $userID )` serve a data export and an erasure.
+- `expUserGeoIP::lookup( $ip )`, `fromRecord()`; `expUserGeoIP::setLookup()` replaces the database in tests.
 - `expUserSessionTracker::revoke( $userID, $sessionID, $actorID )`, `revokeOthers()`, `revokeAll()`,
   `endOtherRows( $userID, $reason, $actorID )`, `listForUser( $userID )`, `cleanup()`.
 - `expUserAgent::parse()`, `label()`, `approximateIP()`: plain functions without state.
-- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`.
+- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`, `expUserSessionInfoTest.php`.

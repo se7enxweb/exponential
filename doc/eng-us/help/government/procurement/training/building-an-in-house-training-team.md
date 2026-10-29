@@ -54,7 +54,7 @@ lists every command to build, serve, check, reset and remove one. The quickest s
 SQLite, which needs no database server:
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 ([Installing Exponential in one command](../../../../features/6.0/install-in-one-command.md)). The generated

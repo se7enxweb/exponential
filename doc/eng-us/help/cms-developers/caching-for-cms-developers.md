@@ -93,7 +93,7 @@ Velocity keeps settings and classes in its workers: after INI or PHP changes, re
 ## Whole pages: HTTP cache and Velocity
 
 The HTTP cache and Velocity's response cache keep whole answers; a page served from them never reaches PHP. Clear
-Velocity's after template changes with `./console exp:velocity cache clear`, and always **after** the PHP workers run
+Velocity's after template changes with `./console exp:velocity cache clear --apply`, and always **after** the PHP workers run
 new code, or a page rendered by old code is cached again ([HTTP cache](../../bc/6.0/httpcache.md),
 [Velocity response cache](../../features/6.0/velocity-response-cache.md)). Static cache is off in new installations;
 leave it off unless you have measured a need.

@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Setup &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cronjob fã biara nnii adwuma da: adwuma ntoatoasoɔ, nneɛma a wɔde ba mu, amanneɛbɔ ne nhwehwɛmu nkyerɛkyerɛmu retwɛn. Yɛ php bin/php/installcrontab.php --add --apply, anaa fa --show nsensaneɛ no ka crontab no ho.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Sistem yi yɛ nhwɛsoɔ a ɛwɔ baguam: obiara bɛtumi ahu ne ɔhwɛfoɔ ahintasɛm, na wontumi nsesa anaa nsan nsi ɔhwɛfoɔ ahintasɛm. Mfa biribiara a ɛyɛ ahintaw nhyɛ ha.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Wo nnwinnadeɛ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Nea ɔsesaa adeɛ, ɔhyɛɛ mu anaa wɔpoo no, akawnt biara so; twa so na yi kɔ abɔnten.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Nhyɛmu amaneɛbɔ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Wɔn a wɔahyɛ mu, nhyɛmu ne nea ɛnyɛɛ yiye da biara; yi ɔdefoɔ fi mu baabiara.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ɔhwɛfoɔ no sɛhyen a ɛho bere atwam no, PHP ankasa na ɛyi (session.gc_maxlifetime), ɛnyɛ krataafa yi anaa session_gc cron adwuma fa no.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Nhyɛmu amaneɛbɔ no kyerɛ adefoɔ nyinaa sɛhyen a wɔahyɛ mu, na ɛyi wɔn fi mu nso; ɛne sɛhyen nhwɛfoɔ biara yɛ adwuma.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Bue nhyɛmu amaneɛbɔ no</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ wo akawnt.</translation>
     <message>
         <source>None yet</source>
         <translation>Biara nni hɔ ɛnnɛ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Wo nhyɛmu a ɛtwa toɔ, mmɔdenbɔ a ɛnyɛɛ yiye ne nsesaeɛ a ɛba wo ahintasɛm, wo email adrɛse ne anamɔn abien nhyɛneɛ mu.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Akawnt yi nhyɛmu a ɛtwa toɔ, mmɔdenbɔ a ɛnyɛɛ yiye ne ahobammɔ nsesaeɛ.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Hwɛ nneyɛeɛ no mu</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Nhyɛmu a ɛnyɛɛ yiye: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Hwɛ nneɛma a ɛhia krataafa no so na hunu nsɛm pii.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Wɔankyerɛw crontab no (%reason). Fa saa nsɛm yi ka crontab a ɔdefoɔ a wɛbsaet no yɛ adwuma ma no wɔ, anaasɛ nnwuma santen, nnwuma a wɔde ba mu, amanneɛbɔ ne nhwehwɛmu index no remmɔ so da:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Wɔde Kickstarter na ɛsan de to so (%file, na afei php bin/php/kickstarter.php run --apply) anaa wɔde nhyehyɛeɛ foforɔ to so.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Email ɔkwan no poo nkrataa %count wɔ adwuma a etwa toɔ no mu. Hwɛ email sɛva no ne site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Nsɛm %count retwɛn na wɔnkyerɛw amanneɛbɔ cronjob no adwumayɛ biara. Fa cronjob fã &quot;frequent&quot; ka crontab no ho, anaa yɛ exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Fa nkɔmmɔbea paw adwinnadeɛ no paw wɛbsaet foforɔ anaa ɔfa foforɔ</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Sistem hwɛfoɔ nko ara na ɔbɛtumi asesa wura no: yɛ ./console exp:content-check --fix-permissions --apply sɛ root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>empty</source>
         <translation>hunu</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Nsaano nsafeɛ no aboro afe baako: fa exp:audit key rotate --apply sesa no.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>not sent</source>
         <translation>wɔnnsomaa</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Amanneɛbɔ cronjob no kyerɛw ne adwumayɛ biara wɔ ha. Fa fã frequent ka crontab no ho, anaa yɛ exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Fa kɔnsol no di dwuma: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>None.</source>
         <translation>Biribiara nni hɔ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>denam authenticator app so</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>denam kood a wɔde email mena so</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>denam san-nya kood so</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>denam passkey so</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>denam akawnt foforɔ a ɛwɔ abɔnten so</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Wɔkyerɛ no sɛ ne nɛtwɛk; wɔkora adrɛse no sɛdeɛ wɛbsaet no data ahobammɔ nhyehyɛeɛ kyerɛ.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Wɔankyerɛw</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Beaeɛ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bɛyɛ saa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Manage devices</source>
         <translation>Hwɛ nnwinnadeɛ so</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>denam authenticator app so</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>denam kood a wɔde email mena so</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>denam san-nya kood so</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>denam passkey so</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>denam akawnt foforɔ a ɛwɔ abɔnten so</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Wɔankyerɛw</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Beaeɛ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bɛyɛ saa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>View the sessions of this user</source>
         <translation>Hwɛ bere a ɔdefoɔ yi wowɔ mu</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Wɔde wo akawnt %login wɔ %site so ahyɛ mu seesei fi beaeɛ bi a ɛmfii hɔ nhyɛɛ mu nnansa yi:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Beaeɛ a ɛbɛyɛ saa</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser wɔ %os so</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Nhyɛmu amaneɛbɔ</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>unknown</source>
         <translation>wonnim</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Bɔ wo akawnt ho ban</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Wɔde san-nya kood ahyɛ wo akawnt %login wɔ %site so mu.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Wɔde san-nya kood adi dwuma</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akawnt</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adrɛse a ɛbɛyɛ saa</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Bisa ahintasɛm foforɔ na san hyɛ mu, anaa kɔ wɛbsaet no hwɛfoɔ nkyɛn.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Bisa ahintasɛm foforɔ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>San-nya kood biara yɛ adwuma prɛko pɛ. Sɛ wo fon ayera a, san hyehyɛ wo authenticator app no na kora san-nya kood foforɔ no wɔ baabi a ahobammɔ wɔ.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Nhyɛmu mmɔdenbɔ a ɛnyɛɛ yiye wɔ wo akawnt so</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Efi seesei, nhyɛmu bɛbisa kood bi ka wo ahintasɛm ho. Sɛ wo na woyɛeɛ a, ɛnhia sɛ woyɛ biribiara.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Sɛ ɛyɛ wo na wo werɛ afi wo ahintasɛm a, bisa foforɔ. Sɛ ɛnyɛ wo a, paw ahintasɛm a ɛyɛ den kyɛn so na sɔ anamɔn abien nhyɛneɛ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Sɛ ɛnyɛ wo na woyɛeɛ a, ebia obi nim wo ahintasɛm: sesa no seesei na hwɛ baabi a wo akawnt ahyɛ mu.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>San-nya kood a aka</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Hwɛ wo nnwinnadeɛ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Ahobammɔ kɔkɔbɔ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Obi bɔɔ mmɔden sɛ ɔde ahintasɛm a ɛnteɛ bɛhyɛ wo akawnt %login wɔ %site so mu mpɛn %count toatoa so.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Ahobammɔ asɛm bi sii wɔ wo akawnt %login wɔ %site so.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Yei yɛ ahobammɔ kɔkɔbɔ fa wo akawnt ho. Wɔsoma no wɔ nsesaeɛ biara a ɛte saa ho na wontumi nnum.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Bere</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Wɔadum anamɔn abien nhyɛneɛ ama wo akawnt %login wɔ %site so.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Wɔadum anamɔn abien nhyɛneɛ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Wɔasɔ anamɔn abien nhyɛneɛ ama wo akawnt %login wɔ %site so.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Wɔasɔ anamɔn abien nhyɛneɛ</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Wɔato wo akawnt %login wɔ %site so mu wɔ nhyɛmu bebree a ɛnyɛɛ yiye akyi.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Seesei wo ahintasɛm nko ara na ɛbɔ wo akawnt ho ban. Sɛ ɛnyɛ wo na woyɛeɛ a, san sɔ anamɔn abien nhyɛneɛ bere a woasesa wo ahintasɛm awie.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Wɔato wo akawnt mu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ahobammɔ nneyɛeɛ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Wɔakɔ mu</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nhyɛmu mmɔdenbɔ a ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wɔafi mu</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Wɔayi sɛhyen afi mu</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Nhyɛmu fi adwinnadeɛ foforɔ so</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Nhyɛmu fi beaeɛ foforɔ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Wɔasi ahyɛnsodeɛ so dua (&quot;Si so dua sɛ ɛyɛ wo&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ahyɛnsodeɛ nhwehwɛmu annyɛ yiye</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Wɔde passkey ahyɛ mu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey nhyɛmu annyɛ yiye</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Wɔapo nhyɛmu: anamɔn abien kood no nni hɔ anaa ɛnteɛ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Anamɔn abien kood a ɛnteɛ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Wɔato akawnt mu wɔ nhyɛmu a ɛnyɛɛ yiye akyi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Wɔabue akawnt</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Wɔasesa ahintasɛm</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ahintasɛm nsesaeɛ annyɛ yiye</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Wɔasan ahyehyɛ ahintasɛm</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Wɔabisa ahintasɛm foforɔ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Wɔasesa email adrɛse</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Wɔasesa ɔdefoɔ din</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Anamɔn abien nhyɛneɛ ayɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Anamɔn abien nhyɛneɛ agyae adwuma</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Wɔde san-nya kood bi adi dwuma</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>San-nya kood foforɔ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Wɔayɛ app ahintasɛm</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Wɔayi app ahintasɛm</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Wɔde passkey aka ho</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Wɔayi passkey afi mu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Wɔama akawnt no ayɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Wɔagyae akawnt no adwuma</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyinaa</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Nhyɛmu ne sɛhyen</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Akawnt nsesaeɛ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ɛhia adwene</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>wo na woyɛeɛ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ɔdefoɔ no na ɔyɛeɛ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>ɛfi %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Ɔkwan</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Brɔsa</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Kɔmputa nhyehyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Adwinnadeɛ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Baabi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ɔman</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sɛhyen ahodoɔ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Nea ɛyɛ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Ɔkwan a wɔfaa so somaeɛ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mmɔdenbɔ a ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kood a aka</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Nhyɛmu nhwɛfoɔ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Nhyɛmu ne nsesaeɛ a ɛfa wo akawnt ahobammɔ ho. Sɛ wohu biribi a woanyɛ a, sesa wo ahintasɛm na yi nnwinnadeɛ a wonnim no fi mu.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Nhyɛmu ne nsesaeɛ a ɛfa akawnt yi ahobammɔ ho.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Wo nnwinnadeɛ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Sesa ahintasɛm</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>San kɔ akawnt no so</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Wɔnkyerɛw ahobammɔ nneyɛeɛ no</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Wɔkenkan fi adefoɔ nhwehwɛmu kyerɛwtohɔ mu, a ne pon expuser_audit nni hɔ anaa wɔmmoa no wɔ data korabea yi so. Yɛ php update/common/scripts/6.0/createuseraudittable.php, anaa 6.0.15 data korabea nsesaeɛ no.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Nnansa %days a atwam</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Nhyɛmu wɔ nnansa %days a atwam mu</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ a ɛtwa toɔ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kyerɛ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wɔapo</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Wɔnkyerɛw ahobammɔ nneyɛeɛ biara ase.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Wɔkora ahobammɔ nsɛm nnansa %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Wɔkora ahobammɔ nsɛm kosi sɛ hwɛfoɔ bi bɛyi afi hɔ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Twe me nhyɛmu data gu so</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Wo sɛhyen ne wo ahobammɔ nsɛm sɛ JSON fael.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Wɔakɔ mu</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nhyɛmu mmɔdenbɔ a ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wɔafi mu</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Wɔayi sɛhyen afi mu</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Nhyɛmu fi adwinnadeɛ foforɔ so</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Nhyɛmu fi beaeɛ foforɔ</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Wɔasi ahyɛnsodeɛ so dua (&quot;Si so dua sɛ ɛyɛ wo&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ahyɛnsodeɛ nhwehwɛmu annyɛ yiye</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Wɔde passkey ahyɛ mu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey nhyɛmu annyɛ yiye</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Wɔapo nhyɛmu: anamɔn abien kood no nni hɔ anaa ɛnteɛ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Anamɔn abien kood a ɛnteɛ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Wɔato akawnt mu wɔ nhyɛmu a ɛnyɛɛ yiye akyi</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Wɔabue akawnt</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Wɔasesa ahintasɛm</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ahintasɛm nsesaeɛ annyɛ yiye</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Wɔasan ahyehyɛ ahintasɛm</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Wɔabisa ahintasɛm foforɔ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Wɔasesa email adrɛse</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Wɔasesa ɔdefoɔ din</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Anamɔn abien nhyɛneɛ ayɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Anamɔn abien nhyɛneɛ agyae adwuma</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Wɔde san-nya kood bi adi dwuma</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>San-nya kood foforɔ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Wɔayɛ app ahintasɛm</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Wɔayi app ahintasɛm</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Wɔde passkey aka ho</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Wɔayi passkey afi mu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Wɔama akawnt no ayɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Wɔagyae akawnt no adwuma</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyinaa</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Nhyɛmu ne sɛhyen</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Akawnt nsesaeɛ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ɛhia adwene</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ahobammɔ nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Nhyɛmu ne nsesaeɛ a ɛfa wo akawnt ahobammɔ ho. Sɛ wohu biribi a woanyɛ a, sesa wo ahintasɛm na yi nnwinnadeɛ a wonnim no fi mu.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Wo nnwinnadeɛ</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Sesa ahintasɛm</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Wɔnkyerɛw ahobammɔ nneyɛeɛ wɔ wɛbsaet yi so ase.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Nhyɛmu wɔ nnansa %days a atwam mu</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mmɔdenbɔ a ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Wɔnkyerɛw ahobammɔ nneyɛeɛ biara ase.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Twe me nhyɛmu data gu so</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Wo sɛhyen ne wo ahobammɔ nsɛm sɛ JSON fael.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Ahintasɛm</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Ahintasɛm ne anamɔn abien kood</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST nkitahodi</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP nkitahodi</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Nhyɛmu prɛko (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Wɔkɔɔ mu ansa na wɔrefi ase akyerɛw sɛhyen</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Nhyɛmu amaneɛbɔ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Wɔn a wɔahyɛ wɛbsaet no mu, mpɛn dodoɔ a akawnt hyɛ mu ne deɛ ɛnyɛ yiye, ne ɔdefoɔ biara a wobɛyi no afi mu baabiara. Ɛne sɛhyen nhwɛfoɔ biara yɛ adwuma.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Wɔayi sɛhyen no afi mu. Ɛsɛ sɛ adwinnadeɛ no san hyɛ mu.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Wɔayi %login afi sɛhyen %count mu.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login nni sɛhyen biara a ɛrekɔ so.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Akawnt biara nni ID, ɔdefoɔ din anaa email adrɛse no.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Yei ne sɛhyen a wode redi dwuma. Sɛ wopɛ sɛ wowie a, fi mu.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Saa sɛhyen no aba awieeɛ dedaw.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Krataafa no bere atwam. Wɔansesa biribiara; mesrɛ wo, san bɔ mmɔden.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Wɔnkyerɛw sɛhyen wɔ wɛbsaet yi so (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Pon expuser_session no nni hɔ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Wɔbɛkyerɛw sɛhyen bere a wɔayɛ no: php update/common/scripts/6.0/createusersessiontable.php, anaa 6.0.15 data korabea nsesaeɛ no.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Seesei ne ɛnnɛ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sɛhyen a ɛrekɔ so</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Adefoɔ a wɔahyɛ mu</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Ɛnnɛ nhyɛmu</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Ɛnnɛ mmɔdenbɔ a ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Yi ɔdefoɔ fi mu baabiara</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Akawnt no sɛhyen biara ba awieeɛ wɔ n&apos;abisadeɛ a ɛdi hɔ so, a deɛ &quot;Kae me&quot; kora ka ho. Fa di dwuma sɛ ebia akawnt bi wɔ nsa a ɛnteɛ mu; afei san hyehyɛ n&apos;ahintasɛm.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Ɔdefoɔ ID, ɔdefoɔ din anaa email adrɛse</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Fi mu baabiara</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Wɔwɔ mu seesei</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Wɔkyerɛ %limit a wɔde dii dwuma akyire yi.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Ɔdefoɔ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Adwinnadeɛ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrɛse</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Wɔakɔ mu</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Bere a ɔyɛɛ adwuma akyire</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Adwinnadeɛ yi</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Wɔankyerɛw</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Fi mu</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Sɛhyen biara nni mu.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Nnansa %days a atwam</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Wɔkan nhyɛmu ne mmɔdenbɔ a ɛnyɛɛ yiye fi adefoɔ nhwehwɛmu kyerɛwtohɔ a ɛnni hɔ no mu; sɛhyen foforɔ deɛ, wɔkan.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Nhyɛmu</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mmɔdenbɔ a ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sɛhyen foforɔ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sɛhyen nhwɛfoɔ: %handler. Wɔkenkan sɛhyen fi pon expuser_session mu, enti amaneɛbɔ no ne nhwɛfoɔ biara yɛ adwuma.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Ahobammɔ kɔkɔbɔ ma wo akawnt</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Ahobammɔ asɛm bi sii wɔ wo akawnt %login so: %event. Sɛ ɛnyɛ wo a, bɔ wo akawnt ho ban wɔ %url.</translation>
     </message>
 </context>
 </TS>

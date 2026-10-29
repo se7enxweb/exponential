@@ -29,7 +29,7 @@ story, when it fits, and what not to promise.
 "With SQLite, a complete Exponential site runs from one file on disk, with no database server to install, configure
 or secure" ([SQLite database support](../../features/6.0/sqlite-database.md)). It arrived with the first months of the
 6.0 line in January 2024 and became the default: of the setup wizard in September 2026 and of the one-command
-installer (`./console exp:install`), which installs on SQLite unless told otherwise
+installer (`./console exp:install --apply`), which installs on SQLite unless told otherwise
 ([Install in one command](../../features/6.0/install-in-one-command.md)). The README calls it "an incredible
 improvement to the kernel" ([README, Recent improvements](https://github.com/se7enxweb/exponential/blob/main/README.md#recent-improvements-to-exponential)).
 

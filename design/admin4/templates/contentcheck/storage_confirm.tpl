@@ -24,7 +24,7 @@
                       'exists', 'A file is already at the destination.'|i18n( 'kernel/contentcheck' ),
                       'no_index', 'The reference index cannot be read now.'|i18n( 'kernel/contentcheck' ),
                       'cluster', 'Files of a cluster file handler cannot be changed here.'|i18n( 'kernel/contentcheck' ),
-                      'needs_root', 'Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.'|i18n( 'kernel/contentcheck' ),
+                      'needs_root', 'Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.'|i18n( 'kernel/contentcheck' ),
                       'not_owner', 'This server process does not own the file, so it cannot change its mode.'|i18n( 'kernel/contentcheck' ),
                       'fine', 'Owner and mode are already as expected.'|i18n( 'kernel/contentcheck' ) )}
 <div class="context-block a4-page a4-contentcheck">

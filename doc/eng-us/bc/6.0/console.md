@@ -58,8 +58,8 @@ php bin/php/console exp:ezpgenerateautoloads
 php bin/php/console exp:updatesearchindex
 
 # Warm the caches of the default siteaccess, or of one siteaccess
-php bin/php/console exp:preload
-php bin/php/console exp:preload --siteaccess=sevenx_site_user
+php bin/php/console exp:preload --apply
+php bin/php/console exp:preload --apply --siteaccess=sevenx_site_user
 
 # Fix directory and file permissions after a deployment
 php bin/php/console bin:modfix
@@ -136,7 +136,7 @@ php bin/php/console exp:ezcache --clear-all
 Everything after the command name goes to the script unchanged:
 
 ```bash
-php bin/php/console exp:preload --siteaccess=sevenx_site_user
+php bin/php/console exp:preload --apply --siteaccess=sevenx_site_user
 php bin/php/console exp:cleanupversions --dry-run
 php bin/php/console exp:updatesearchindex --siteaccess=sevenx_site_user --verbose
 ```

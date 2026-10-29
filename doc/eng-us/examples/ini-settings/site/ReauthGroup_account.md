@@ -43,7 +43,9 @@ Enabled=true
 
 ## Rules
 
-Default: a list of 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton`.
+> "Sign out all other sessions" asks first too: someone at an unattended screen must not lock the owner out  
+
+Default: a list of 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton RevokeOthersButton`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -56,7 +58,7 @@ Rules[]=user/passkeys *
 Rules[]=user2fa/setup
 Rules[]=apikey/list
 Rules[]=content/edit self credentials
-Rules[]=user/sessions self SaveMailButton
+Rules[]=user/sessions self SaveMailButton RevokeOthersButton
 */ ?>
 ```
 

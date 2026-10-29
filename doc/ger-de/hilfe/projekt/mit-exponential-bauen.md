@@ -124,7 +124,7 @@ abgeglichen mit `console list`:
 ```bash
 php bin/php/console list                        # every command
 php bin/php/console exp:ezcache --clear-all     # clear all caches
-php bin/php/console exp:preload                 # warm the page caches and report broken links
+php bin/php/console exp:preload --apply                 # warm the page caches and report broken links
 php bin/php/console exp:updatesearchindex       # rebuild the search index
 php bin/php/console exp:ezpgenerateautoloads -e # regenerate the class autoload arrays of the extensions
 ```

@@ -39,9 +39,9 @@ Benutzer, die sich heute bei REST-Clients anmelden, würden nach dem Upgrade abg
 Richtlinie nicht erhalten. Das Skript `bin/php/addoauthauthorizepolicy.php` gibt sie genau diesen Rollen:
 
 ```bash
-php bin/php/addoauthauthorizepolicy.php --dry-run        # lists what it would grant, changes nothing
-php bin/php/addoauthauthorizepolicy.php                  # grants it
-php bin/php/addoauthauthorizepolicy.php --role=Editor --role=12 --dry-run   # only the roles named
+php bin/php/addoauthauthorizepolicy.php                  # Probelauf: listet, was es gewähren würde, ändert nichts
+php bin/php/addoauthauthorizepolicy.php --apply          # gewährt sie
+php bin/php/addoauthauthorizepolicy.php --role=Editor --role=12   # nur die genannten Rollen (Probelauf)
 ```
 
 - Jede Rolle mit `user/login` (oder `user/*`) erhält `oauth/authorize` mit denselben Siteaccesses: Ein

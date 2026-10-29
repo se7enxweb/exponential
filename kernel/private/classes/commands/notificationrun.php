@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them)
+ * @description Run the notification filter: send the notifications of the pending events and the due digests (dry run unless --apply)
  * @alias exp:notification:run
  * @alias exp:notify:run
  *
@@ -27,23 +27,26 @@ class Notificationrun extends \Exponential\Runnable\Command
                                  "events nothing waits for are removed. The run is locked (a second one is refused while one runs),\n" .
                                  "recorded (exp:notification:status shows it) and audited.\n" .
                                  "\n" .
-                                 "--dry-run lists what would be sent (subject, number of recipients, masked addresses) and changes\n" .
-                                 "nothing: the pass runs in a transaction that is rolled back and no mail is handed to the transport.\n" .
+                                 "Without --apply the command lists what would be sent (subject, number of recipients, masked\n" .
+                                 "addresses) and changes nothing: the pass runs in a transaction that is rolled back and no mail is\n" .
+                                 "handed to the transport. --apply sends. --dry-run is still accepted and means the same as no flag;\n" .
+                                 "--apply together with --dry-run is a usage error (exit 2).\n" .
                                  "--mail-file-dir=<dir> forces the file transport for this process: the mail is written to <dir>\n" .
                                  "instead of being sent, whatever site.ini says. Use it for every trial.\n" .
                                  "--at=<time> sets the time of the time event (a date or timestamp), to try digest windows.\n" .
                                  "\n" .
-                                 "./console exp:notification:run --dry-run\n" .
-                                 "./console exp:notification:run --mail-file-dir=var/tmp/notification-mail\n" .
-                                 "./console exp:notification:run",
+                                 "./console exp:notification:run\n" .
+                                 "./console exp:notification:run --apply --mail-file-dir=var/tmp/notification-mail\n" .
+                                 "./console exp:notification:run --apply",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            '[dry-run][at:][event:][no-time-event][mail-file-dir:][addresses][json][job:][source:]', '',
-            array( 'dry-run'        => 'List what would be sent and change nothing',
+            '[apply][dry-run][at:][event:][no-time-event][mail-file-dir:][addresses][json][job:][source:]', '',
+            array( 'apply'          => 'Send the messages, mark and remove the events (the default lists what would be sent)',
+                   'dry-run'        => 'The default, kept for scripts that pass it: list what would be sent and change nothing',
                    'at'             => 'The time of the time event: a date (2026-10-05 08:00) or a timestamp, default now',
                    'event'          => 'Only these events (ids, comma separated); no time event is made then',
                    'no-time-event'  => 'Make no time event: only the pending events are handled (no digest is due because of this run)',
@@ -65,6 +68,15 @@ class Notificationrun extends \Exponential\Runnable\Command
                 \expNotificationJob::emit( $job, array( 'type' => 'end', 'result' => $result ) );
             $this->shutdown( $code );
         };
+
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $finish( 2, 'failed' );
+            return;
+        }
+        $dryRun = !$apply;
 
         // Mail kept local: the file transport, in this process only (nothing is written to a settings file)
         if ( !empty( $options['mail-file-dir'] ) )
@@ -101,9 +113,9 @@ class Notificationrun extends \Exponential\Runnable\Command
             $say( 'Time event at ' . date( 'Y-m-d H:i:s', $at ) . '.' );
         }
 
-        if ( !empty( $options['dry-run'] ) )
+        if ( $dryRun )
         {
-            $say( 'Dry run: nothing is sent, marked or removed.' );
+            $say( 'Dry run: nothing is sent, marked or removed (--apply sends).' );
             $plan = \expNotificationService::plan( $run );
             if ( $plan['result'] !== 'ok' )
             {
@@ -126,7 +138,7 @@ class Notificationrun extends \Exponential\Runnable\Command
                 foreach ( $plan['mails'] as $m )
                     $say( sprintf( '  would send "%s" to %d recipient(s): %s', $m['subject'], $m['to'],
                                    implode( ', ', !empty( $options['addresses'] ) ? $m['raw'] : $m['addresses'] ) ) );
-                $say( sprintf( 'PASS: dry run, %d event(s) handled, %d message(s) would be sent, %d event(s) would be kept for a digest.',
+                $say( sprintf( 'PASS: %d event(s) handled, %d message(s) would be sent, %d event(s) would be kept for a digest (dry run, nothing changed; --apply writes)',
                                $plan['events'], count( $plan['mails'] ), $plan['kept'] ) );
             }
             $finish( 0, 'ok' );
@@ -134,7 +146,8 @@ class Notificationrun extends \Exponential\Runnable\Command
         }
 
         $say( 'Starting notification event processing' );
-        $result = \expNotificationService::run( $run );
+        if ( !$dryRun )
+            $result = \expNotificationService::run( $run );
         if ( !empty( $options['json'] ) )
             $cli->output( json_encode( $result, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) );
         if ( $result['result'] === 'busy' )

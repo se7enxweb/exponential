@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Насб &gt; Вазифаҳои cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Ҳеҷ як қисми вазифаҳои cron то ҳол иҷро нашудааст: навбати вазифаҳо, воридотҳо, огоҳиномаҳо ва индекси ҷустуҷӯ интизоранд. Фармони php bin/php/installcrontab.php --add --apply иҷро кунед ё сатрҳоеро, ки фармони --show нишон медиҳад, ба crontab илова кунед.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ин насб намоиши ҷамъиятӣ аст: ҳар кас метавонад пароли маъмури онро донад, ва паролҳои маъмуронро тағйир додан ё аз нав танзим кардан мумкин нест. Дар ин ҷо чизи хусусиро ворид накунед.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Дастгоҳҳои шумо</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Кӣ тағйир дод, ворид шуд ё рад карда шуд, аз рӯи ҳар ҳисоб; филтр ва содир кардан.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ҳисоботи вурудҳо</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Кӣ ворид шудааст, вурудҳо ва нокомиҳо дар як рӯз; баровардани корбар аз ҳама ҷо.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Ҷаласаҳои мӯҳлаташ гузаштаи коркарди PHP-ро худи PHP хориҷ мекунад (session.gc_maxlifetime), на ин саҳифа ё қисми session_gc-и вазифаи cron.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ҷаласаҳои воридшудаи ҳамаи корбарон дар ҳисоботи вурудҳо нишон дода мешаванд ва дар он ҷо қатъ карда мешаванд; ҳисобот бо ҳар коркардкунандаи ҷаласа кор мекунад.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Кушодани ҳисоботи вурудҳо</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Ҳоло нест</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Вурудҳои охирини шумо, кӯшишҳои ноком ва тағйироти парол, суроғаи почтаи электронӣ ва вуруди дуқадама.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Вурудҳои охирин, кӯшишҳои ноком ва тағйироти амниятии ин ҳисоб.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Дидани фаъолият</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Вурудҳои ноком: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab навишта нашуд (%reason). Ин сатрҳоро ба crontab-и корбаре, ки сомона бо номи он кор мекунад, илова кунед, вагарна навбат, воридот, огоҳиномаҳо ва индекси ҷустуҷӯ ҳеҷ гоҳ иҷро намешаванд:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Насби дубора бо kickstarter (%file, сипас php bin/php/kickstarter.php run --apply) ё бо насби нав анҷом дода мешавад.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Нақлиёти почта дар иҷрои охирин %count паёмро рад кард. Сервери почта ва site.ini MailSettings-ро санҷед.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Рӯйдодҳои интизор: %count, вале ягон иҷрои вазифаи cron-и огоҳиномаҳо сабт нашудааст. Қисми cron бо номи &quot;frequent&quot; ба crontab илова кунед ё фармони exp:notification:run --apply иҷро кунед.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Сомона ё бахши дигарро бо интихобкунаки гиреҳ интихоб кунед</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Соҳибро танҳо маъмури система иваз карда метавонад: фармони ./console exp:content-check --fix-permissions --apply ҳамчун root иҷро кунед.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>холӣ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Калиди имзо аз як сол кӯҳнатар аст: онро бо exp:audit key rotate --apply иваз кунед.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>фиристода нашуд</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Вазифаи cron-и огоҳиномаҳо ҳар як иҷрои худро дар ин ҷо сабт мекунад. Қисми frequent ба crontab илова кунед ё фармони exp:notification:run --apply иҷро кунед.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Аз консол истифода баред: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Ҳеҷ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>бо барномаи аутентификатор</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>бо рамз тавассути почтаи электронӣ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>бо рамзи барқарорсозӣ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>бо Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>бо ҳисоби берунӣ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ҳамчун шабака нишон дода мешавад; суроға тибқи танзимоти ҳифзи маълумоти сомона нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Макон</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>тахминан</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Идора кардани дастгоҳҳо</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>бо барномаи аутентификатор</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>бо рамз тавассути почтаи электронӣ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>бо рамзи барқарорсозӣ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>бо Passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>бо ҳисоби берунӣ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Макон</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>тахминан</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Дидани ҷаласаҳои ин корбар</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Ба ҳисоби шумо %login дар сомонаи %site ҳозир аз ҷое ворид шуданд, ки аз он ҷо дар вақтҳои охир ворид нашуда буданд:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Макони тахминӣ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser дар %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ҳисоботи вурудҳо</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>номаълум</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ҳифз кардани ҳисоб</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Ба ҳисоби шумо %login дар сомонаи %site бо рамзи барқарорсозӣ ворид шуданд.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Рамзи барқарорсозӣ истифода шуд</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Ҳисоб</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Суроғаи тахминӣ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Барои дубора ворид шудан пароли нав дархост кунед ё ба маъмурони сомона муроҷиат кунед.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Дархости пароли нав</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Ҳар рамзи барқарорсозӣ як маротиба кор мекунад. Агар телефони худро гум карда бошед, барномаи аутентификаторро аз нав танзим кунед ва рамзҳои нави барқарорсозиро дар ҷои бехатар нигоҳ доред.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Кӯшишҳои ноками ворид шудан ба ҳисоби шумо</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Аз ин пас ҳангоми вуруд ғайр аз парол рамз низ пурсида мешавад. Агар инро шумо карда бошед, ҳеҷ коре кардан лозим нест.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Агар ин шумо бошед ва паролро фаромӯш карда бошед, пароли нав дархост кунед. Агар не, пароли мустаҳкамтар интихоб кунед ва вуруди дуқадамаро фаъол кунед.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Агар ин шумо набошед, шояд касе пароли шуморо медонад: онро ҳозир иваз кунед ва санҷед, ки ҳисоби шумо дар куҷо ворид шудааст.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Рамзҳои барқарорсозии боқимонда</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Санҷидани дастгоҳҳои шумо</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Огоҳии амниятӣ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Касе кӯшиш кард, ки ба ҳисоби шумо %login дар сомонаи %site бо пароли нодуруст пай дар пай чанд маротиба ворид шавад (кӯшишҳо: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Дар ҳисоби шумо %login дар сомонаи %site рӯйдоди амниятӣ ба амал омад.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ин огоҳии амниятӣ дар бораи ҳисоби шумост. Он ҳангоми ҳар чунин тағйирот фиристода мешавад ва хомӯш карда намешавад.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вақт</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Вуруди дуқадама барои ҳисоби шумо %login дар сомонаи %site ғайрифаъол карда шуд.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Вуруди дуқадама ғайрифаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Вуруди дуқадама барои ҳисоби шумо %login дар сомонаи %site фаъол карда шуд.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Вуруди дуқадама фаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Ҳисоби шумо %login дар сомонаи %site пас аз вурудҳои ноками аз ҳад зиёд қуфл карда шуд.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Акнун ҳисоби шумо танҳо бо парол ҳифз шудааст. Агар инро шумо накарда бошед, пас аз иваз кардани парол вуруди дуқадамаро дубора фаъол кунед.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Ҳисоби шумо қуфл карда шуд</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Фаъолияти амниятӣ: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Воридшуда</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Кӯшиши ноками вуруд</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Баромад</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ҷаласаҳо қатъ карда шуданд</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Вуруд аз дастгоҳи нав</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Вуруд аз макони нав</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Шахсият тасдиқ шуд (&quot;Тасдиқи шахсият&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Санҷиши шахсият ноком шуд</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Бо Passkey ворид шуд</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Вуруд бо Passkey ноком шуд</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Вуруд рад шуд: рамзи вуруди дуқадама нест ё нодуруст аст</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Рамзи нодурусти вуруди дуқадама</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ҳисоб пас аз вурудҳои ноком қуфл карда шуд</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ҳисоб аз қуфл кушода шуд</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Парол тағйир дода шуд</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Тағйири парол ноком шуд</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Парол аз нав танзим шуд</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Пароли нав дархост шуд</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Суроғаи почтаи электронӣ тағйир дода шуд</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Номи корбар тағйир дода шуд</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Вуруди дуқадама фаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Вуруди дуқадама ғайрифаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Рамзи барқарорсозӣ истифода шуд</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Рамзҳои нави барқарорсозӣ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Пароли барнома сохта шуд</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Пароли барнома бекор карда шуд</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey илова шуд</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey хориҷ карда шуд</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ҳисоб фаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ҳисоб ғайрифаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Вурудҳо ва ҷаласаҳо</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Тағйироти ҳисоб</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Диққат талаб мекунад</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>аз ҷониби шумо</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>аз ҷониби корбар</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>аз ҷониби %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Усул</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Браузер</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Системаи амалиётӣ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Дастгоҳ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Ҷой</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Кишвар</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ҷаласаҳо</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Кадомҳо</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Канал</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Кӯшишҳои ноком</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Рамзҳои боқимонда</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Коркардкунандаи вуруд</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Фаъолияти амниятӣ: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Вурудҳо ва тағйироти амнияти ҳисоби шумо. Агар чизеро бинед, ки шумо накардаед, паролро иваз кунед ва дастгоҳҳоеро, ки намешиносед, аз ҳисоб бароред.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Вурудҳо ва тағйироти амнияти ин ҳисоб.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Дастгоҳҳои шумо</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Тағйири парол</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Бозгашт ба ҳисоб</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Фаъолияти амниятӣ сабт намешавад</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Он аз сабти аудити корбарон хонда мешавад, ки ҷадвали он expuser_audit вуҷуд надорад ё дар ин пойгоҳи додаҳо дастгирӣ намешавад. Фармони php update/common/scripts/6.0/createuseraudittable.php ё навсозии пойгоҳи додаҳо барои 6.0.15 иҷро кунед.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Рӯзҳои охир: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Вурудҳо дар рӯзҳои охир (рӯзҳо: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Фаъолияти охирини амниятӣ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ноком</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>рад шуд</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ҳоло ягон фаъолияти амниятӣ сабт нашудааст.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Рӯйдодҳои амниятӣ нигоҳ дошта мешаванд (рӯзҳо: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Рӯйдодҳои амниятӣ то он даме нигоҳ дошта мешаванд, ки маъмур онҳоро хориҷ кунад.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Боргирии маълумоти вурудҳои ман</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ҷаласаҳо ва рӯйдодҳои амниятии шумо ҳамчун файли JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Воридшуда</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Кӯшиши ноками вуруд</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Баромад</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ҷаласаҳо қатъ карда шуданд</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Вуруд аз дастгоҳи нав</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Вуруд аз макони нав</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Шахсият тасдиқ шуд (&quot;Тасдиқи шахсият&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Санҷиши шахсият ноком шуд</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Бо Passkey ворид шуд</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Вуруд бо Passkey ноком шуд</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Вуруд рад шуд: рамзи вуруди дуқадама нест ё нодуруст аст</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Рамзи нодурусти вуруди дуқадама</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ҳисоб пас аз вурудҳои ноком қуфл карда шуд</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Ҳисоб аз қуфл кушода шуд</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Парол тағйир дода шуд</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Тағйири парол ноком шуд</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Парол аз нав танзим шуд</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Пароли нав дархост шуд</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Суроғаи почтаи электронӣ тағйир дода шуд</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Номи корбар тағйир дода шуд</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Вуруди дуқадама фаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Вуруди дуқадама ғайрифаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Рамзи барқарорсозӣ истифода шуд</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Рамзҳои нави барқарорсозӣ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Пароли барнома сохта шуд</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Пароли барнома бекор карда шуд</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey илова шуд</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey хориҷ карда шуд</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Ҳисоб фаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Ҳисоб ғайрифаъол карда шуд</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Вурудҳо ва ҷаласаҳо</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Тағйироти ҳисоб</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Диққат талаб мекунад</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Фаъолияти амниятӣ</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Фаъолияти амниятӣ: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Вурудҳо ва тағйироти амнияти ҳисоби шумо. Агар чизеро бинед, ки шумо накардаед, паролро иваз кунед ва дастгоҳҳоеро, ки намешиносед, аз ҳисоб бароред.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Дастгоҳҳои шумо</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Тағйири парол</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Фаъолияти амниятӣ дар ин сомона ҳоло сабт намешавад.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Вурудҳо дар рӯзҳои охир (рӯзҳо: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Кӯшишҳои ноком</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ҳоло ягон фаъолияти амниятӣ сабт нашудааст.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Боргирии маълумоти вурудҳои ман</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ҷаласаҳо ва рӯйдодҳои амниятии шумо ҳамчун файли JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Парол</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Парол ва рамзи вуруди дуқадама</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Интерфейси REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Интерфейси SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Вуруди ягона</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Пеш аз оғози сабти ҷаласаҳо ворид шудааст</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ҳисоботи вурудҳо</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Кӣ ба сомона ворид шудааст, ҳисобҳо чӣ қадар зуд-зуд ворид мешаванд ва ворид шуда наметавонанд, инчунин баровардани корбар аз ҳама ҷо. Бо ҳар коркардкунандаи ҷаласа кор мекунад.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Ҷаласа қатъ карда шуд. Дастгоҳ бояд дубора ворид шавад.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Корбари %login аз ҷаласаҳо бароварда шуд (ҷаласаҳо: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Корбари %login ҷаласаи фаъол надошт.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ҳисоб бо чунин ID, номи корбар ё суроғаи почтаи электронӣ вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ин ҷаласаест, ки шумо истифода мебаред. Барои қатъ кардани он аз система бароед.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Он ҷаласа аллакай қатъ шуда буд.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Мӯҳлати саҳифа гузашта буд. Ҳеҷ чиз тағйир дода нашуд; лутфан бори дигар кӯшиш кунед.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ҷаласаҳо дар ин сомона сабт намешаванд (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Ҷадвали expuser_session вуҷуд надорад</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ҷаласаҳо пас аз сохта шудани он сабт мешаванд: php update/common/scripts/6.0/createusersessiontable.php ё навсозии пойгоҳи додаҳо барои 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Ҳозир ва имрӯз</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ҷаласаҳои фаъол</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Корбарони воридшуда</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Вурудҳои имрӯз</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Кӯшишҳои ноками имрӯз</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Баровардани корбар аз ҳама ҷо</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Ҳар ҷаласаи ҳисоб ҳангоми дархости навбатии худ қатъ мешавад, инчунин ҷаласаҳое, ки бо &quot;Маро дар хотир нигоҳ дор&quot; нигоҳ дошта шудаанд. Инро вақте истифода баред, ки ҳисоб метавонад ба дасти бегона афтода бошад; сипас пароли онро аз нав танзим кунед.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID-и корбар, номи корбар ё суроғаи почтаи электронӣ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Баромадан аз ҳама ҷо</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ҳозир воридшуда</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Охирин истифодашудаҳо нишон дода мешаванд (на бештар аз %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Корбар</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Дастгоҳ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Суроға</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Воридшуда</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Фаъолияти охирин</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Амалҳо</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ин дастгоҳ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Баромадан</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ягон ҷаласаи воридшуда нест.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Рӯзҳои охир: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Вурудҳо ва кӯшишҳои ноком аз сабти аудити корбарон шумурда мешаванд, ки вуҷуд надорад; ҷаласаҳои нав шумурда мешаванд.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Рӯз</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Вурудҳо</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Кӯшишҳои ноком</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Ҷаласаҳои нав</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Коркардкунандаи ҷаласа: %handler. Ҷаласаҳо аз ҷадвали expuser_session хонда мешаванд, бинобар ин ҳисобот бо ҳар коркардкунанда кор мекунад.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Огоҳии амниятӣ барои ҳисоби шумо</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Дар ҳисоби шумо %login рӯйдоди амниятӣ ба амал омад: %event. Агар ин шумо набошед, ҳисоби худро дар %url ҳифз кунед.</translation>
     </message>
 </context>
 </TS>

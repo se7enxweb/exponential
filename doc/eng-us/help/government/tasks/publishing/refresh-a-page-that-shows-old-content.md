@@ -34,7 +34,7 @@ CDN or your own browser can still show the old version for a while ([Caches](../
 3. press **Clear**.
 4. Reload the page signed out in a private window.
 5. Still old: the copy is in a cache in front of the CMS (static cache, Velocity's response cache, a CDN). Ask the web
-   team; they can clear those (for example `./console exp:velocity cache clear` for Velocity).
+   team; they can clear those (for example `./console exp:velocity cache clear --apply` for Velocity).
 
 The other choices of the box (**Template**, **Ini settings**, **Static**, **All caches**) are for administrators; they
 affect the whole site.

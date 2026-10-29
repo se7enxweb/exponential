@@ -17,7 +17,7 @@ administrator who wants the help classes on a site through **Setup > Packages** 
 - `./console exp:help:content verify-package -s <admin siteaccess> --file=<.ezpkg>` compares a built package with
   the classes of the release, **without a database**.
 - The package is **not** the whole help system. Sections, the object state group, the folder tree and the roles hold
-  ids of the installation; `./console exp:help:content install` makes them, and completes the classes a package
+  ids of the installation; `./console exp:help:content install --apply` makes them, and completes the classes a package
   installed. It is idempotent: after the package it prints only the parts the package does not carry.
 - Building is done here; **publishing to the package server is the owner's step** (below).
 
@@ -64,8 +64,8 @@ On an installation of the release (a throwaway installation is best; never a pro
 settings):
 
 ```bash
-./console exp:help:content classes -s <admin siteaccess>             # the classes, if not yet there
-./console exp:help:content classes -s <admin siteaccess>             # "No change." (the acceptance test)
+./console exp:help:content classes --apply -s <admin siteaccess>             # the classes, if not yet there
+./console exp:help:content classes --apply -s <admin siteaccess>             # "No change." (the acceptance test)
 ./console exp:help:content package -s <admin siteaccess> --dry-run   # what would be written
 ./console exp:help:content package -s <admin siteaccess> [--output=<dir>] [--version=6.0.15]
 ```
@@ -104,9 +104,9 @@ The acceptance test of a release, on a **new throwaway installation** (never the
 
 1. install the package (**Setup > Packages > Upload**, then **Install**, or `php ezpm.php import <file>` and
    `php ezpm.php install exp_help_classes`);
-2. `./console exp:help:content classes -s <admin siteaccess>` prints **No change.**: the package installed every
+2. `./console exp:help:content classes --apply -s <admin siteaccess>` prints **No change.**: the package installed every
    class, attribute and option the command would have made;
-3. `./console exp:help:content install -s <admin siteaccess>` then makes the sections, states, tree and roles, and a
+3. `./console exp:help:content install --apply -s <admin siteaccess>` then makes the sections, states, tree and roles, and a
    second run prints **No change.**;
 4. remove the throwaway installation.
 
@@ -149,7 +149,7 @@ An administrator who prefers packages to the command line:
 
 1. **Setup > Packages > Upload**, choose `exp_help_classes-<version>.ezpkg`, then **Install** on its page. The classes
    appear in the class group **Help**.
-2. Run `./console exp:help:content install -s <admin siteaccess>` once (sections, states, tree, roles). It finds the
+2. Run `./console exp:help:content install --apply -s <admin siteaccess>` once (sections, states, tree, roles). It finds the
    classes the package installed and changes nothing on them.
 3. Optionally `seed-glossary` and `seed-topics` for the starting content, as on any installation.
 

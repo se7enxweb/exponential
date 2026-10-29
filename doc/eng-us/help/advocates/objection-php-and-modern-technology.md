@@ -65,7 +65,7 @@ Source: (link to the support commitment)
 DATED INTERFACE
 Have a look at the admin4 design: light and dark mode, keyboard navigation, accessibility tests in CI.
 There is also AdminUI as an alternative. Screenshots are better on your own install: one command,
-./console exp:install, gives you a site on SQLite in minutes.
+./console exp:install --apply, gives you a site on SQLite in minutes.
 
 HEADLESS
 There's a REST API (v1 and v2) for apps and other systems. If you want a Symfony stack with GraphQL,

@@ -59,7 +59,7 @@ From [Adding German to an English site](../../../guides/content-languages.md#add
 3. **Register it** in `AvailableSiteAccessList[]` and `RelatedSiteAccessList[]` and set up matching: a path (`/de`) or
    a host ([Language switchers and addresses per language](language-switcher-and-language-urls.md)).
 4. **Clear caches**: `php bin/php/ezcache.php --clear-tag=ini,content --allow-root-user` (and the Velocity response
-   cache, `./console exp:velocity cache clear`, when Velocity serves the site).
+   cache, `./console exp:velocity cache clear --apply`, when Velocity serves the site).
 5. **Translate**, starting with the front page and the menu folders.
 6. **Mark shared objects always available** (media folders, users) so they show without a translation.
 7. **Check** the German address.

@@ -6,5 +6,6 @@
     <p><b>{'Your devices'|i18n( 'design/standard/user/sessions' )}:</b>
         {'See where your account is signed in, and sign out a device you do not know.'|i18n( 'design/standard/user/sessions' )}</p>
     <a class="us-account-link-button" href={'user/sessions'|ezurl}>{'Manage devices'|i18n( 'design/standard/user/sessions' )}</a>
+    <a class="us-account-link-button" href={'user/security'|ezurl}>{'Security activity'|i18n( 'design/standard/user/sessions' )}</a>
 </div>
 {/if}

@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Kefluniañ &gt; Trevelloù cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>N&apos;eo bet lañset lodenn labour cron ebet c&apos;hoazh: al lostennad labourioù, an enporzhiadurioù, ar c&apos;hemennadennoù hag ar menegva klask a chom o c&apos;hortoz. Lañsit php bin/php/installcrontab.php --add --apply, pe ouzhpennit linennoù --show d&apos;ar crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Un diskouezadeg foran eo ar staliadur-mañ: gouzout a c'hall an holl e ger-tremen merour, ha ne c'hall ket ger-tremen ar verourien bezañ kemmet nag adlakaet. Na skrivit netra prevez amañ.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Hoc&apos;h ardivinkoù</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Piv en deus kemmet, kevreet pe bet nac&apos;het, dre gont; silañ hag ezporzhiañ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Danevell ar c&apos;hevreadennoù</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Piv a zo kevreet, kevreadennoù ha c&apos;hwitadennoù bep devezh; digevreañ un implijer e pep lec&apos;h.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Dalc'hioù aet da bell ar merour PHP a vez lamet kuit gant PHP e-unan (session.gc_maxlifetime), n'eo ket gant ar bajenn-mañ nag a-berzh al labour cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Dalc&apos;hioù kevreet an holl implijerien a vez rollet, ha digevreet, war zanevell ar c&apos;hevreadennoù, a ya en-dro gant pep dornier dalc&apos;hoù.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Digeriñ danevell ar c&apos;hevreadennoù</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ gweredekaat ho kont.</translation>
     <message>
         <source>None yet</source>
         <translation>Hini ebet c'hoazh</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ho kevreadennoù diwezhañ, an taolioù-esae c&apos;hwitet hag ar c&apos;hemmoù d&apos;ho ker-tremen, d&apos;ho chomlec&apos;h postel ha d&apos;ho kevreadenn e daou gam.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Kevreadennoù diwezhañ, taolioù-esae c&apos;hwitet ha kemmoù surentez ar gont-mañ.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Adwelout an obererezh</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Kevreadennoù c&apos;hwitet: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Sellit ouzh pajenn ar goulennoù evit gouzout hiroc'h.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>N'eo ket bet skrivet ar crontab (%reason). Ouzhpennit al linennoù-mañ da crontab an implijer m'emañ al lec'hienn o treiñ dindan e anv, pe ne vo biskoazh lañset al lostennad, an enporzhiadennoù, ar c'hemennadennoù nag ar meneger klask:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Adstaliañ a reer gant ar c&apos;hickstarter (%file, goude php bin/php/kickstarter.php run --apply) pe gant ur staliadur nevez.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Nac'het en deus an treuzdougen postel %count kemennadenn er lañs diwezhañ. Gwiriit servijer ar postelioù ha site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Darvoudoù o c&apos;hortoz: %count, ha n&apos;eo bet enrollet lañsadenn ebet eus labour cron ar c&apos;hemennadennoù. Ouzhpennit al lodenn labour cron &quot;frequent&quot; d&apos;ar crontab, pe lañsit exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Dibab ul lec'hienn pe ur rann all gant diuzer ar skoulmoù</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Merour ar reizhiad hepken a c&apos;hall kemmañ ar perc&apos;henn: lañsit ./console exp:content-check --fix-permissions --apply evel root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>empty</source>
         <translation>goullo</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Ouzhpenn ur bloaz eo an alc&apos;hwez sinañ: cheñchit anezhañ gant exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>not sent</source>
         <translation>n'eo ket bet kaset</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Labour cron ar c&apos;hemennadennoù a enroll amañ pep lañsadenn anezhañ. Ouzhpennit al lodenn frequent d&apos;ar crontab, pe lañsit exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Implijit al letrin: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>None.</source>
         <translation>Hini ebet.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>gant un arload kadarnaat</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>gant ur c&apos;hod dre bostel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>gant ur c&apos;hod adtapout</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>gant un alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>gant ur gont diavaez</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Diskouezet evel e rouedad; miret e vez ar chomlec&apos;h evel ma lavar arventennoù gwarez ar roadennoù el lec&apos;hienn.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ket enrollet</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lec&apos;hiadur</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>war-dro</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Manage devices</source>
         <translation>Merañ an ardivinkoù</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>gant un arload kadarnaat</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>gant ur c&apos;hod dre bostel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>gant ur c&apos;hod adtapout</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>gant un alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>gant ur gont diavaez</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ket enrollet</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lec&apos;hiadur</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>war-dro</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>View the sessions of this user</source>
         <translation>Diskouez dalc'hioù an implijer-mañ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Implijet eo bet ho kont %login war %site emberr evit kevreañ eus ul lec&apos;h ma n&apos;eo ket bet kevreet diouzhtañ nevez zo:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Lec&apos;hiadur war-dro</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser war %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Danevell ar c&apos;hevreadennoù</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>unknown</source>
         <translation>dianav</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Surentezañ ho kont</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Implijet eo bet ur c&apos;hod adtapout evit kevreañ d&apos;ho kont %login war %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Implijet eo bet ur c&apos;hod adtapout</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Chomlec&apos;h war-dro</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Goulennit ur ger-tremen nevez evit kevreañ en-dro, pe kit e darempred gant merourien al lec&apos;hienn.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Goulenn ur ger-tremen nevez</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Pep kod adtapout a ya en-dro ur wech. Ma hoc&apos;h eus kollet ho pellgomz, kefluniit en-dro hoc&apos;h arload kadarnaat ha mirit ar c&apos;hodoù adtapout nevez en ul lec&apos;h sur.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Taolioù-esae kevreañ c&apos;hwitet war ho kont</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>A-benn bremañ e vo goulennet ur c&apos;hod ouzhpenn ho ker-tremen evit kevreañ. Ma&apos;z eo c&apos;hwi hoc&apos;h eus graet an dra-se, n&apos;eus netra d&apos;ober.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ma oa c&apos;hwi ha ma hoc&apos;h eus ankouaet ho ker-tremen, goulennit unan nevez. Ma ne oa ket, dibabit ur ger-tremen kreñvoc&apos;h ha gweredekait ar gevreadenn e daou gam.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ma ne oa ket c&apos;hwi, marteze e oar unan bennak ho ker-tremen: kemmit anezhañ bremañ ha gwiriit e pelec&apos;h eo kevreet ho kont.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Kodoù adtapout a chom</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Adwelout hoc&apos;h ardivinkoù</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Kemenn surentez</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Unan bennak en deus klasket kevreañ d&apos;ho kont %login war %site gant ur ger-tremen fall meur a wech diouzhtu (niver: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Un darvoud surentez a zo bet war ho kont %login war %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ur c&apos;hemenn surentez diwar-benn ho kont eo hemañ. Kaset e vez evit pep kemm a seurt-se ha n&apos;hall ket bezañ diweredekaet.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Eur</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Diweredekaet eo bet ar gevreadenn e daou gam evit ho kont %login war %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Diweredekaet eo bet ar gevreadenn e daou gam</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Gweredekaet eo bet ar gevreadenn e daou gam evit ho kont %login war %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Gweredekaet eo bet ar gevreadenn e daou gam</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Prennet eo bet ho kont %login war %site goude re a gevreadennoù c&apos;hwitet.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Gwarezet eo ho kont gant ho ker-tremen hepken bremañ. Ma n&apos;eo ket c&apos;hwi hoc&apos;h eus graet an dra-se, gweredekait en-dro ar gevreadenn e daou gam goude bezañ kemmet ho ker-tremen.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Prennet eo bet ho kont</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Obererezh surentez an implijer %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kevreet</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Taol-esae kevreañ c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Digevreet</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Dalc&apos;hioù digevreet</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kevreadenn eus un trepas nevez</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kevreadenn eus ul lec&apos;hiadur nevez</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identelezh kadarnaet (&quot;Gwiriit ez eo c&apos;hwi&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>C&apos;hwitet eo gwiriadur an identelezh</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kevreet gant un alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>C&apos;hwitet eo ar gevreadenn gant an alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kevreadenn nac&apos;het: kod an daou gam a vank pe fall eo</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kod an daou gam fall</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont prennet goude kevreadennoù c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont dibrennet</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ger-tremen kemmet</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>C&apos;hwitet eo kemmañ ar ger-tremen</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ger-tremen adderaouekaet</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ger-tremen nevez goulennet</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Chomlec&apos;h postel kemmet</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Anv implijer kemmet</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kevreadenn e daou gam gweredekaet</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kevreadenn e daou gam diweredekaet</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kod adtapout implijet</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodoù adtapout nevez</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ger-tremen arload krouet</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ger-tremen arload torret</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Alc&apos;hwez-tremen ouzhpennet</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Alc&apos;hwez-tremen lamet</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont gweredekaet</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont diweredekaet</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>An holl</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kevreadennoù ha dalc&apos;hioù</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kemmoù er gont</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ezhomm evezh</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>ganeoc&apos;h</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>gant an implijer</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>gant %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Hentenn</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Merdeer</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Reizhiad korvoiñ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Trepas</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Lec&apos;h</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Bro</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Dalc&apos;hioù</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Peseurt re</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanol</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Taolioù-esae c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kodoù a chom</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Dornier kevreañ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Obererezh surentez an implijer %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kevreadennoù ha kemmoù e surentez ho kont. Ma welit un dra n&apos;hoc&apos;h eus ket graet, kemmit ho ker-tremen ha digevreit an trepasoù n&apos;anavezit ket.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Kevreadennoù ha kemmoù e surentez ar gont-mañ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Hoc&apos;h ardivinkoù</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Kemmañ ar ger-tremen</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Distreiñ d&apos;ar gont</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>N&apos;eo ket enrollet an obererezh surentez</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Lennet e vez eus marilh aodit an implijerien, hag e daolenn expuser_audit a vank pe n&apos;eo ket skoret gant an diaz roadennoù-mañ. Lañsit php update/common/scripts/6.0/createuseraudittable.php, pe hizivadur diaz roadennoù ar stumm 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>An devezhioù diwezhañ: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kevreadennoù en devezhioù diwezhañ (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Obererezh surentez nevez</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Diskouez</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>nac&apos;het</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>N&apos;eus bet enrollet obererezh surentez ebet c&apos;hoazh.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Miret e vez an darvoudoù surentez e-pad un niver a zevezhioù: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Miret e vez an darvoudoù surentez betek ma vint lamet gant ur merour.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Pellgargañ ma roadennoù kevreañ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ho talc&apos;hioù hag hoc&apos;h darvoudoù surentez evel ur restr JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kevreet</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Taol-esae kevreañ c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Digevreet</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Dalc&apos;hioù digevreet</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kevreadenn eus un trepas nevez</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kevreadenn eus ul lec&apos;hiadur nevez</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identelezh kadarnaet (&quot;Gwiriit ez eo c&apos;hwi&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>C&apos;hwitet eo gwiriadur an identelezh</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kevreet gant un alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>C&apos;hwitet eo ar gevreadenn gant an alc&apos;hwez-tremen</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kevreadenn nac&apos;het: kod an daou gam a vank pe fall eo</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kod an daou gam fall</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kont prennet goude kevreadennoù c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kont dibrennet</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ger-tremen kemmet</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>C&apos;hwitet eo kemmañ ar ger-tremen</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ger-tremen adderaouekaet</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ger-tremen nevez goulennet</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Chomlec&apos;h postel kemmet</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Anv implijer kemmet</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kevreadenn e daou gam gweredekaet</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kevreadenn e daou gam diweredekaet</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Kod adtapout implijet</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Kodoù adtapout nevez</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ger-tremen arload krouet</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ger-tremen arload torret</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Alc&apos;hwez-tremen ouzhpennet</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Alc&apos;hwez-tremen lamet</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kont gweredekaet</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kont diweredekaet</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>An holl</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kevreadennoù ha dalc&apos;hioù</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kemmoù er gont</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ezhomm evezh</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Obererezh surentez</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Obererezh surentez an implijer %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kevreadennoù ha kemmoù e surentez ho kont. Ma welit un dra n&apos;hoc&apos;h eus ket graet, kemmit ho ker-tremen ha digevreit an trepasoù n&apos;anavezit ket.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Hoc&apos;h ardivinkoù</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Kemmañ ar ger-tremen</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>N&apos;eo ket enrollet an obererezh surentez war al lec&apos;hienn-mañ c&apos;hoazh.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kevreadennoù en devezhioù diwezhañ (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Taolioù-esae c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>N&apos;eus bet enrollet obererezh surentez ebet c&apos;hoazh.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Pellgargañ ma roadennoù kevreañ</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ho talc&apos;hioù hag hoc&apos;h darvoudoù surentez evel ur restr JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Ger-tremen</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Ger-tremen ha kod an daou gam</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Etrefas REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Etrefas SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Kevreañ unan</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Kevreet a-raok ma vije enrollet an dalc&apos;hioù</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Danevell ar c&apos;hevreadennoù</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Piv a zo kevreet d&apos;al lec&apos;hienn, pegen alies e kevre ar c&apos;hontoù hag e c&apos;hwitont, ha digevreañ un implijer e pep lec&apos;h. Mont a ra en-dro gant pep dornier dalc&apos;hoù.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Digevreet eo bet an dalc&apos;h. Ret eo d&apos;an trepas kevreañ en-dro.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Digevreet eo bet %login eus dalc&apos;hioù (niver: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>N&apos;en doa %login dalc&apos;h ebet o vont en-dro.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Kont ebet n&apos;he deus an ID, an anv implijer pe ar chomlec&apos;h postel-se.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Hemañ eo an dalc&apos;h emaoc&apos;h oc&apos;h implijout. Evit echuiñ anezhañ, digevreit.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Echu e oa an dalc&apos;h-se dija.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Diamzeret e oa ar bajenn. N&apos;eus bet kemmet netra; klaskit en-dro.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>N&apos;eo ket enrollet an dalc&apos;hioù war al lec&apos;hienn-mañ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>An daolenn expuser_session a vank</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Enrollet e vez an dalc&apos;hioù kerkent ha ma vez krouet anezhi: php update/common/scripts/6.0/createusersessiontable.php, pe hizivadur diaz roadennoù ar stumm 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Bremañ hag hiziv</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Dalc&apos;hioù o vont en-dro</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Implijerien kevreet</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Kevreadennoù hiziv</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Taolioù-esae c&apos;hwitet hiziv</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Digevreañ un implijer e pep lec&apos;h</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Pep dalc&apos;h eus ar gont a echu d&apos;he goulenn da zont, ar re viret gant &quot;Derc&apos;hel soñj ac&apos;hanon&quot; ivez. Implijit an dra-se pa c&apos;hallfe ur gont bezañ en daouarn fall; goude-se adderaouekait he ger-tremen.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID an implijer, anv implijer pe chomlec&apos;h postel</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Digevreañ e pep lec&apos;h</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Kevreet bremañ</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Diskouezet eo ar re implijet nevesañ, betek %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Implijer</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Trepas</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Chomlec&apos;h</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kevreet</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Oberiant da ziwezhañ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Obererezhioù</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>An trepas-mañ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ket enrollet</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Digevreañ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Dalc&apos;h kevreet ebet.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>An devezhioù diwezhañ: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Kevreadennoù ha taolioù-esae c&apos;hwitet a vez kontet diwar marilh aodit an implijerien, ha n&apos;emañ ket eno; an dalc&apos;hioù nevez a vez kontet.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Devezh</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Kevreadennoù</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Taolioù-esae c&apos;hwitet</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Dalc&apos;hioù nevez</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Dornier dalc&apos;hoù: %handler. Lennet e vez an dalc&apos;hioù eus an daolenn expuser_session, setu ez a en-dro an danevell gant pep dornier.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Kemenn surentez diwar-benn ho kont</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Un darvoud surentez a zo bet war ho kont %login: %event. Ma ne oa ket c&apos;hwi, surentezit ho kont war %url.</translation>
     </message>
 </context>
 </TS>

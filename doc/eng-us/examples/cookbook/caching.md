@@ -13,7 +13,7 @@ A page of Exponential can be answered from four layers, from the outside in:
 
 | Layer | What it holds | Cleared |
 |---|---|---|
-| Velocity's response cache | whole answers, for a few seconds | `./console exp:velocity cache clear` |
+| Velocity's response cache | whole answers, for a few seconds | `./console exp:velocity cache clear --apply` |
 | The HTTP cache (off by default) | whole pages per permission context | `--clear-id=exphttpcache`; expired on publish |
 | The **view cache** | the rendered content of a node view, per user role and view parameters | expired for the node, its parents and relations on publish |
 | **cache-block** | a piece of a template (a menu, a footer) | by its `expiry`, `subtree_expiry`, or the content expiry |
@@ -111,7 +111,7 @@ php bin/php/ezcache.php --clear-id=template-block,content --allow-root-user   # 
 php bin/php/ezcache.php --clear-tag=template --allow-root-user                 # every cache with a tag
 php bin/php/ezcache.php --clear-all --allow-root-user                          # everything
 ./console exp:cache clear --id=content --dry-run --allow-root-user             # what would go, with sizes
-./console exp:velocity cache clear                                            # Velocity's response cache
+./console exp:velocity cache clear --apply                                            # Velocity's response cache
 ```
 
 After a **template** change: nothing while the template cache is off; with it on, `--clear-tag=template`; a **new**

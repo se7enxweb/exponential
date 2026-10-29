@@ -29,6 +29,7 @@
 <div class="a4-notice is-info" role="status">
     <p><strong>{'Your current session handler does not support session administration.'|i18n( 'design/standard/setup/session' )}</strong></p>
     <p>{'Sessions are kept by %handler (PHP session storage: %storage), not in a table this page can read, so they cannot be counted or removed one by one here. Each session ends by itself %lifetime after its last use.'|i18n( 'design/admin/setup/session',, hash( '%handler', concat( '<code>', first_set( $session_handler, '' )|wash, '</code>' ), '%storage', concat( '<code>', first_set( $php_save_handler, '' )|wash, '</code>' ), '%lifetime', first_set( $session_timeout_text, '' )|wash ) )}</p>
+    {if fetch( 'user', 'can_open', hash( 'uri', 'user/sessionreport' ) )}<p>{'The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.'|i18n( 'design/admin/setup/session' )} <a href={'user/sessionreport'|ezurl}>{'Open the sign-in report'|i18n( 'design/admin/setup/session' )}</a></p>{/if}
 </div>
 
 {if $summary}

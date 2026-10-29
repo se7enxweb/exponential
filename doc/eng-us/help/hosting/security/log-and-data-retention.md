@@ -67,7 +67,7 @@ On demand, or nightly as the site's user:
 
 ```bash
 ./console exp:logs --prune --dry-run
-./console exp:logs --prune
+./console exp:logs --apply --prune
 # crontab: 15 3 * * * cd /var/www/vhosts/<domain>/<installation> && php runcronjobs.php -q logs
 ```
 

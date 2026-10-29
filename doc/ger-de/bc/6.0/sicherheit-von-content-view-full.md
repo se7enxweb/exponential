@@ -930,7 +930,7 @@ dank dreier Zusagen:
 
 **Leeren Sie nach dem Ändern von Regeln die Seiten-Caches.** Eine Seite, die gespeichert wurde, bevor eine Regel
 existierte, wird ausgeliefert, ohne sie zu fragen. `exp:velocity deploy` tut das; andernfalls führen Sie
-`php bin/php/ezcache.php --clear-id=content,exphttpcache --allow-root-user` und `./console exp:velocity cache clear`
+`php bin/php/ezcache.php --clear-id=content,exphttpcache --allow-root-user` und `./console exp:velocity cache clear --apply`
 aus.
 
 Der **View-Cache** der Inhalte (`ViewCaching`) speichert die gerenderte Ansicht eines Knotens, nicht die Antwort. Er

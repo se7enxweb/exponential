@@ -2,14 +2,14 @@
 title: exp:ezsubtreeremove
 audience: developer, admin
 category: examples
-summary: Remove content subtrees by node ID, to the trash unless --ignore-trash is given.
+summary: Remove content subtrees by node ID, to the trash unless --ignore-trash is given (dry run unless --apply).
 keywords: exp:ezsubtreeremove, ezsubtreeremove, console, command, CLI, ezsubtreeremove.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsubtreeremove
 
-Remove content subtrees by node ID, to the trash unless --ignore-trash is given.
+Remove content subtrees by node ID, to the trash unless --ignore-trash is given (dry run unless --apply).
 
 Script `bin/php/ezsubtreeremove.php`, code in `kernel/private/classes/commands/ezsubtreeremove.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -22,6 +22,8 @@ php bin/php/ezsubtreeremove.php --help
 
 | Option | Value | Help |
 |---|---|---|
+| `--apply` |  | Remove the subtrees (the default is a dry run that lists them and removes nothing) |
+| `--dry-run` |  | The default: list what would be removed, change nothing |
 | `--nodes-id` | required | Subtree nodes ID (separated by comma ','). |
 | `--ignore-trash` |  | Ignore trash ('move to trash' by default). |
 

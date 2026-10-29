@@ -64,7 +64,7 @@ Listeners[]`.
 `404.log` and `security.log` keep 5 compressed archives of up to 10 MB, pruned after 30 days (404) and 90 days
 (security) ([Log rotation](../../../features/6.0/log-rotation.md)). Change them per log in
 `settings/override/logviewer.ini.append.php`, `[RotationSettings] MaxAgeDays[security]=<days>`. Pruning by age runs
-with `./console exp:logs --prune` or the cronjob part `logs` (`php runcronjobs.php logs`).
+with `./console exp:logs --apply --prune` or the cronjob part `logs` (`php runcronjobs.php logs`).
 
 ## Acting on what you see
 

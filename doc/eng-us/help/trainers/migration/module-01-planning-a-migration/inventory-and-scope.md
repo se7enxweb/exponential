@@ -76,7 +76,7 @@ version, datatypes, password hash types, charset and cluster mode (lesson 4.1).
 
 ## Hands-on exercise
 
-Use your own training installation, installed with `php bin/php/console exp:install` as in
+Use your own training installation, installed with `php bin/php/console exp:install --apply` as in
 [the console install](../../../../install/07-console-install.md). It stands in for "the old site". The default
 installation uses SQLite, with the database in `var/storage/sqlite3/exponential.db`; open it read-only.
 

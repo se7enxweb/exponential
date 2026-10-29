@@ -97,7 +97,7 @@ On an upgrade apply the `dbupdate-cluster-...` file of every step that has one (
 |---|---|
 | `php bin/php/clusterize.php` (`exp:clusterize`) | moves the files of `var/` into the cluster; `-u` moves them back |
 | `php bin/php/dfscleanup.php` (`exp:dfscleanup`) | checks the mount against `ezdfsfile` (`-S`) and the table against the mount (`-B`); `-D` deletes what does not exist |
-| `php bin/php/clusterpurge.php` (`exp:clusterpurge`) | physically removes expired cluster files (`--scopes`, `--expiry`, `--dry-run`) |
+| `php bin/php/clusterpurge.php --apply` (`exp:clusterpurge`) | physically removes expired cluster files (`--scopes`, `--expiry`, `--dry-run`) |
 
 Run `dfscleanup.php` with `-S` and `-B` first and read the result before you add `-D`. `clusterpurge.php` is the
 cronjob part `cluster_maintenance`, which `cronjob.ini [AdminSettings] ForbiddenParts[]` keeps off the browser; run it

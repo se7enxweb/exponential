@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Gosod &gt; Cronswyddi</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Nid oes unrhyw ran o&apos;r cronswyddi wedi rhedeg eto: mae&apos;r ciw swyddi, y mewnforion, yr hysbysiadau a&apos;r mynegai chwilio yn aros. Rhedwch php bin/php/installcrontab.php --add --apply, neu ychwanegwch linellau --show at y crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Arddangosiad cyhoeddus yw'r gosodiad hwn: gall unrhyw un wybod cyfrinair ei weinyddwr, ac ni ellir newid nac ailosod cyfrineiriau gweinyddwyr. Peidiwch â rhoi unrhyw beth preifat yma.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Eich dyfeisiau</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Pwy a newidiodd, a fewngofnododd neu a wrthodwyd, fesul cyfrif; hidlo ac allforio.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Adroddiad mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Pwy sydd wedi mewngofnodi, mewngofnodion a methiannau bob dydd; allgofnodi defnyddiwr ym mhobman.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Caiff sesiynau trinwr PHP sydd wedi mynd heibio'u hamser eu tynnu gan PHP ei hun (session.gc_maxlifetime), nid gan y dudalen hon na rhan session_gc y gronswydd.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Mae sesiynau mewngofnodi pob defnyddiwr yn cael eu rhestru, a&apos;u hallgofnodi, ar yr adroddiad mewngofnodi, sy&apos;n gweithio gyda phob trinydd sesiynau.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Agor yr adroddiad mewngofnodi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ eich cyfrif.</translation>
     <message>
         <source>None yet</source>
         <translation>Dim eto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Eich mewngofnodion diweddar, ymdrechion a fethodd a newidiadau i&apos;ch cyfrinair, eich cyfeiriad e-bost a&apos;ch mewngofnodi dau gam.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Mewngofnodion diweddar, ymdrechion a fethodd a newidiadau diogelwch y cyfrif hwn.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Adolygu gweithgarwch</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Mewngofnodion a fethodd: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Gweler y dudalen gofynion am ragor o wybodaeth.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Ni ysgrifennwyd y crontab (%reason). Ychwanegwch y llinellau hyn at crontab y defnyddiwr y mae'r wefan yn rhedeg fel, neu ni fydd y ciw, y mewnforion, yr hysbysiadau na'r mynegai chwilio byth yn rhedeg:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Mae ailosod yn cael ei wneud gyda&apos;r kickstarter (%file, yna php bin/php/kickstarter.php run --apply) neu gyda gosodiad newydd.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Gwrthododd y cludydd post %count neges yn y rhediad diwethaf. Gwiriwch y gweinydd post a site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Mae digwyddiadau&apos;n aros (%count) ac nid oes cofnod bod cronswydd yr hysbysiadau wedi rhedeg. Ychwanegwch y rhan cronswydd &quot;frequent&quot; at y crontab, neu rhedwch exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Choose another site or section with the node picker</source>
         <translation>Dewis gwefan neu adran arall gyda'r dewisydd nodau</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Dim ond gweinyddwr y system sy&apos;n gallu newid y perchennog: rhedwch ./console exp:content-check --fix-permissions --apply fel root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>empty</source>
         <translation>gwag</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Mae&apos;r allwedd lofnodi dros flwydd oed: newidiwch hi gydag exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>not sent</source>
         <translation>heb ei anfon</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Mae cronswydd yr hysbysiadau yn cofnodi pob tro y mae&apos;n rhedeg yma. Ychwanegwch y rhan frequent at y crontab, neu rhedwch exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Defnyddiwch y consol: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>None.</source>
         <translation>Dim.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>gydag ap dilysu</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>gyda chod drwy e-bost</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>gyda chod adfer</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>gydag allwedd pas</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>gyda chyfrif allanol</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Yn cael ei ddangos fel ei rwydwaith; mae&apos;r cyfeiriad yn cael ei gadw fel y mae gosodiadau diogelu data&apos;r wefan yn ei ddweud.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Heb ei gofnodi</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lleoliad</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bras</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Manage devices</source>
         <translation>Rheoli dyfeisiau</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>gydag ap dilysu</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>gyda chod drwy e-bost</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>gyda chod adfer</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>gydag allwedd pas</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>gyda chyfrif allanol</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Heb ei gofnodi</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lleoliad</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>bras</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>View the sessions of this user</source>
         <translation>Gweld sesiynau'r defnyddiwr hwn</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Mae eich cyfrif %login ar %site newydd gael ei ddefnyddio i fewngofnodi o le nad yw wedi mewngofnodi ohono&apos;n ddiweddar:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Lleoliad bras</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ar %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Adroddiad mewngofnodi</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>unknown</source>
         <translation>anhysbys</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Diogelu eich cyfrif</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Defnyddiwyd cod adfer i fewngofnodi i&apos;ch cyfrif %login ar %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Defnyddiwyd cod adfer</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cyfrif</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Cyfeiriad bras</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Gofynnwch am gyfrinair newydd i fewngofnodi eto, neu cysylltwch â gweinyddwyr y wefan.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Gofyn am gyfrinair newydd</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Mae pob cod adfer yn gweithio unwaith. Os ydych wedi colli eich ffôn, gosodwch eich ap dilysu eto a chadwch y codau adfer newydd mewn lle diogel.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Ymdrechion i fewngofnodi a fethodd ar eich cyfrif</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>O hyn ymlaen, bydd mewngofnodi&apos;n gofyn am god yn ogystal â&apos;ch cyfrinair. Os mai chi wnaeth hyn, nid oes angen i chi wneud dim.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Os mai chi oedd yno a&apos;ch bod wedi anghofio eich cyfrinair, gofynnwch am un newydd. Os nad chi, dewiswch gyfrinair cryfach a throwch fewngofnodi dau gam ymlaen.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Os nad chi oedd yno, efallai bod rhywun yn gwybod eich cyfrinair: newidiwch ef nawr a gwiriwch ble mae eich cyfrif wedi mewngofnodi.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Codau adfer sydd ar ôl</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Adolygu eich dyfeisiau</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Rhybudd diogelwch</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Ceisiodd rhywun fewngofnodi i&apos;ch cyfrif %login ar %site gyda chyfrinair anghywir sawl gwaith yn olynol (nifer: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Bu digwyddiad diogelwch ar eich cyfrif %login ar %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Rhybudd diogelwch am eich cyfrif yw hwn. Mae&apos;n cael ei anfon ar gyfer pob newid o&apos;r fath ac nid oes modd ei ddiffodd.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Amser</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Diffoddwyd mewngofnodi dau gam ar gyfer eich cyfrif %login ar %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Diffoddwyd mewngofnodi dau gam</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Trowyd mewngofnodi dau gam ymlaen ar gyfer eich cyfrif %login ar %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Trowyd mewngofnodi dau gam ymlaen</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Cafodd eich cyfrif %login ar %site ei gloi ar ôl gormod o fewngofnodion a fethodd.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Mae eich cyfrif bellach wedi&apos;i ddiogelu gan eich cyfrinair yn unig. Os nad chi wnaeth hyn, trowch fewngofnodi dau gam ymlaen eto ar ôl i chi newid eich cyfrinair.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Cafodd eich cyfrif ei gloi</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Gweithgarwch diogelwch y defnyddiwr %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Mewngofnodwyd</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ymdrech i fewngofnodi a fethodd</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Allgofnodwyd</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Allgofnodwyd sesiynau</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Mewngofnodi o ddyfais newydd</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Mewngofnodi o leoliad newydd</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Cadarnhawyd pwy ydych (&quot;Cadarnhewch mai chi sydd yno&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Methodd y gwiriad hunaniaeth</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mewngofnodwyd gydag allwedd pas</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Methodd mewngofnodi gydag allwedd pas</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gwrthodwyd mewngofnodi: cod dau gam ar goll neu&apos;n anghywir</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Cod dau gam anghywir</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cyfrif wedi&apos;i gloi ar ôl mewngofnodion a fethodd</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cyfrif wedi&apos;i ddatgloi</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Newidiwyd y cyfrinair</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Methodd newid y cyfrinair</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ailosodwyd y cyfrinair</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Gofynnwyd am gyfrinair newydd</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Newidiwyd y cyfeiriad e-bost</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Newidiwyd yr enw defnyddiwr</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Trowyd mewngofnodi dau gam ymlaen</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Diffoddwyd mewngofnodi dau gam</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Defnyddiwyd cod adfer</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Codau adfer newydd</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Gwnaed cyfrinair ap</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Dirymwyd cyfrinair ap</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ychwanegwyd allwedd pas</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Tynnwyd allwedd pas</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Galluogwyd y cyfrif</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Analluogwyd y cyfrif</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Y cyfan</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Mewngofnodion a sesiynau</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Newidiadau i&apos;r cyfrif</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Angen sylw</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>gennych chi</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>gan y defnyddiwr</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>gan %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Dull</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Porwr</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System weithredu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dyfais</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Lle</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Gwlad</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiynau</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Pa rai</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Sianel</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ymdrechion a fethodd</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Codau ar ôl</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Trinydd mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Gweithgarwch diogelwch y defnyddiwr %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Mewngofnodion a newidiadau i ddiogelwch eich cyfrif. Os gwelwch rywbeth na wnaethoch chi, newidiwch eich cyfrinair ac allgofnodwch y dyfeisiau nad ydych yn eu hadnabod.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Mewngofnodion a newidiadau i ddiogelwch y cyfrif hwn.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Eich dyfeisiau</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Newid cyfrinair</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Yn ôl i&apos;r cyfrif</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Nid yw&apos;r gweithgarwch diogelwch yn cael ei gofnodi</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Mae&apos;n cael ei ddarllen o log archwilio defnyddwyr, ac mae ei dabl expuser_audit ar goll neu heb ei gefnogi ar y gronfa ddata hon. Rhedwch php update/common/scripts/6.0/createuseraudittable.php, neu ddiweddariad cronfa ddata fersiwn 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Y dyddiau diwethaf: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Mewngofnodion yn y dyddiau diwethaf (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Gweithgarwch diogelwch diweddar</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Dangos</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>methodd</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>gwrthodwyd</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Dim gweithgarwch diogelwch wedi&apos;i gofnodi eto.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Mae digwyddiadau diogelwch yn cael eu cadw am nifer o ddyddiau: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Mae digwyddiadau diogelwch yn cael eu cadw nes bydd gweinyddwr yn eu tynnu.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Llwytho fy nata mewngofnodi i lawr</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Eich sesiynau a&apos;ch digwyddiadau diogelwch fel ffeil JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Mewngofnodwyd</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ymdrech i fewngofnodi a fethodd</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Allgofnodwyd</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Allgofnodwyd sesiynau</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Mewngofnodi o ddyfais newydd</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Mewngofnodi o leoliad newydd</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Cadarnhawyd pwy ydych (&quot;Cadarnhewch mai chi sydd yno&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Methodd y gwiriad hunaniaeth</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mewngofnodwyd gydag allwedd pas</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Methodd mewngofnodi gydag allwedd pas</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gwrthodwyd mewngofnodi: cod dau gam ar goll neu&apos;n anghywir</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Cod dau gam anghywir</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cyfrif wedi&apos;i gloi ar ôl mewngofnodion a fethodd</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cyfrif wedi&apos;i ddatgloi</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Newidiwyd y cyfrinair</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Methodd newid y cyfrinair</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ailosodwyd y cyfrinair</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Gofynnwyd am gyfrinair newydd</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Newidiwyd y cyfeiriad e-bost</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Newidiwyd yr enw defnyddiwr</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Trowyd mewngofnodi dau gam ymlaen</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Diffoddwyd mewngofnodi dau gam</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Defnyddiwyd cod adfer</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Codau adfer newydd</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Gwnaed cyfrinair ap</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Dirymwyd cyfrinair ap</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ychwanegwyd allwedd pas</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Tynnwyd allwedd pas</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Galluogwyd y cyfrif</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Analluogwyd y cyfrif</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Y cyfan</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Mewngofnodion a sesiynau</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Newidiadau i&apos;r cyfrif</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Angen sylw</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Gweithgarwch diogelwch y defnyddiwr %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Mewngofnodion a newidiadau i ddiogelwch eich cyfrif. Os gwelwch rywbeth na wnaethoch chi, newidiwch eich cyfrinair ac allgofnodwch y dyfeisiau nad ydych yn eu hadnabod.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Eich dyfeisiau</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Newid cyfrinair</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Nid yw&apos;r gweithgarwch diogelwch yn cael ei gofnodi ar y wefan hon eto.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Mewngofnodion yn y dyddiau diwethaf (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ymdrechion a fethodd</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Dim gweithgarwch diogelwch wedi&apos;i gofnodi eto.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Llwytho fy nata mewngofnodi i lawr</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Eich sesiynau a&apos;ch digwyddiadau diogelwch fel ffeil JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Cyfrinair</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Cyfrinair a chod dau gam</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Rhyngwyneb REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Rhyngwyneb SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Mewngofnodi unigol</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Wedi mewngofnodi cyn i sesiynau gael eu cofnodi</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Adroddiad mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Pwy sydd wedi mewngofnodi i&apos;r wefan, pa mor aml y mae cyfrifon yn mewngofnodi ac yn methu, ac allgofnodi defnyddiwr ym mhobman. Mae&apos;n gweithio gyda phob trinydd sesiynau.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Allgofnodwyd y sesiwn. Rhaid i&apos;r ddyfais fewngofnodi eto.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Allgofnodwyd %login o sesiynau (nifer: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Nid oedd gan %login unrhyw sesiwn yn rhedeg.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Nid oes gan unrhyw gyfrif yr ID, yr enw defnyddiwr na&apos;r cyfeiriad e-bost hwnnw.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dyma&apos;r sesiwn rydych yn ei defnyddio. I&apos;w dod i ben, allgofnodwch.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Roedd y sesiwn honno eisoes wedi dod i ben.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Roedd y dudalen wedi dod i ben. Ni newidiwyd dim; rhowch gynnig arall arni.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Nid yw sesiynau&apos;n cael eu cofnodi ar y wefan hon (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Mae&apos;r tabl expuser_session ar goll</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Bydd sesiynau&apos;n cael eu cofnodi unwaith y bydd wedi&apos;i greu: php update/common/scripts/6.0/createusersessiontable.php, neu ddiweddariad cronfa ddata fersiwn 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nawr a heddiw</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesiynau&apos;n rhedeg</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Defnyddwyr wedi mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Mewngofnodion heddiw</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Ymdrechion a fethodd heddiw</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Allgofnodi defnyddiwr ym mhobman</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Mae pob sesiwn y cyfrif yn dod i ben ar ei chais nesaf, gan gynnwys y rhai a gedwir gan &quot;Cofio fi&quot;. Defnyddiwch hyn pan allai cyfrif fod yn y dwylo anghywir; yna ailosodwch ei gyfrinair.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID defnyddiwr, enw defnyddiwr neu gyfeiriad e-bost</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Allgofnodi ym mhobman</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Wedi mewngofnodi nawr</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Dangosir y rhai a ddefnyddiwyd fwyaf diweddar, hyd at %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Defnyddiwr</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dyfais</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cyfeiriad</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Mewngofnodwyd</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Gweithgar ddiwethaf</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gweithredoedd</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Y ddyfais hon</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Heb ei gofnodi</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Allgofnodi</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nid oes unrhyw sesiwn wedi mewngofnodi.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Y dyddiau diwethaf: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Mae mewngofnodion ac ymdrechion a fethodd yn cael eu cyfrif o log archwilio defnyddwyr, nad yw yno; mae&apos;r sesiynau newydd yn cael eu cyfrif.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Diwrnod</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Mewngofnodion</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ymdrechion a fethodd</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesiynau newydd</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Trinydd sesiynau: %handler. Mae&apos;r sesiynau&apos;n cael eu darllen o&apos;r tabl expuser_session, felly mae&apos;r adroddiad yn gweithio gyda phob trinydd.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Rhybudd diogelwch am eich cyfrif</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Bu digwyddiad diogelwch ar eich cyfrif %login: %event. Os nad chi oedd yno, diogelwch eich cyfrif yn %url.</translation>
     </message>
 </context>
 </TS>

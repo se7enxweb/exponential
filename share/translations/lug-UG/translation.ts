@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Okuteekateeka &gt; Emirimu gya cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Tewali kitundu kya cronjob kyali kiddukiddwa: olunyiriri lw&apos;emirimu, ebiyingizibwa, okumanyisa n&apos;olukalala lw&apos;okunoonya birindiridde. Ddusa php bin/php/installcrontab.php --add --apply, oba yongera ennyiriri za --show mu crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Okuteekamu kuno kwa kulaga bantu bonna: omuntu yenna ayinza okumanya ekigambo kyakyo eky'ekyama eky'omuddukanya, era ebigambo eby'ekyama eby'abaddukanya tebiyinza kukyusibwa wadde okuzzibwawo. Teewandiika kintu kya kyama wano.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ebyuma byo</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Ani yakyusizza, yayingidde oba yagaaniddwa, ku buli akawunti; sengejja era sindika ebweru.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Lipoota y&apos;okuyingira</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ani ayingidde, okuyingira n&apos;okulemererwa buli lunaku; fulumya omukozesa buli wamu.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Enkuutuula eziweddeko ekiseera ez'ekikwata kya PHP ziggyibwamu PHP yennyini (session.gc_maxlifetime), si lupapula luno wadde ekitundu kya cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Entuula eziyingidde ez&apos;abakozesa bonna zirambikibwa, era zifulumizibwa, ku lipoota y&apos;okuyingira, ekola n&apos;ekikwata kyonna eky&apos;entuula.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Ggulawo lipoota y&apos;okuyingira</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ akawunti yo.</translation>
     <message>
         <source>None yet</source>
         <translation>Tewali nsangi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Okuyingira kwo okw&apos;emabegako, okugezaako okulemereddwa n&apos;enkyukakyuka mu kigambo kyo eky&apos;ekyama, endagiriro ya imeeyilo n&apos;okuyingira mu mitendera ebiri.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Okuyingira okw&apos;emabegako, okugezaako okulemereddwa n&apos;enkyukakyuka mu bukuumi bw&apos;akawunti eno.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Kebera ebikolebwa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Okuyingira okulemereddwa: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ Laba olupapula lw'ebyetaagisa olabe ebisingawo.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab teyawandiikibwa (%reason). Yongera layini zino mu crontab y'omukozesa omukutu gw'adduukirako, oba olunyiriri, okuyingiza, okumanyisa n'indekisi y'okunoonya tebijja kuddukanyizibwa lumu:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Okuteekamu buggya kukolebwa ne Kickstarter (%file, oluvannyuma php bin/php/kickstarter.php run --apply) oba n&apos;okuteekamu okupya.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Enkola y'okuweereza imeeyilo egaanye obubaka %count mu kuddukanya okusembayo. Kebera seeva ya imeeyilo ne site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ebibaddewo %count birindiridde era tewali kudduka kwa cronjob y&apos;okumanyisa okuwandiikiddwa. Yongera ekitundu kya cronjob «frequent» mu crontab, oba ddusa exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Choose another site or section with the node picker</source>
         <translation>Londa omukutu oba ekitundu ekirala n'omulonzi wa nodi</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Omuddukanya w&apos;enkola yekka y&apos;asobola okukyusa nannyini kyo: ddusa ./console exp:content-check --fix-permissions --apply nga root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>empty</source>
         <translation>tekirimu kintu</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Ekisumuluzo eky&apos;okussaako omukono kisussa omwaka gumu obukadde: kikyuse ne exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>not sent</source>
         <translation>tekyasindikibwa</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob y&apos;okumanyisa ewandiika wano buli lw&apos;eddukibwa. Yongera ekitundu frequent mu crontab, oba ddusa exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Kozesa konsolo: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>None.</source>
         <translation>Tewali.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nga okozesa pulogulaamu ekakasa</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>nga okozesa koodi eyaweerezeddwa ku imeeyilo</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>nga okozesa koodi ey&apos;okuzzaawo</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nga okozesa ekisumuluzo eky&apos;okuyingira (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>nga okozesa akawunti ey&apos;ebweru</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Kiragibwa ng&apos;omukutu gwakyo; endagiriro eterekebwa nga entegeka z&apos;okukuuma ebikwata ku bantu ez&apos;omukutu bwe zigamba.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tekiwandiikiddwa</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ekifo</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kumpi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Manage devices</source>
         <translation>Ddukanya ebyuma</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>nga okozesa pulogulaamu ekakasa</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>nga okozesa koodi eyaweerezeddwa ku imeeyilo</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>nga okozesa koodi ey&apos;okuzzaawo</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>nga okozesa ekisumuluzo eky&apos;okuyingira (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>nga okozesa akawunti ey&apos;ebweru</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tekiwandiikiddwa</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ekifo</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kumpi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>View the sessions of this user</source>
         <translation>Laba enkuŋŋaana z'omukozesa ono</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Akawunti yo %login ku %site yaakakozesebwa okuyingira okuva mu kifo mw&apos;etaayingirira mu kiseera kino:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ekifo ekikumpi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ku %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Lipoota y&apos;okuyingira</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>unknown</source>
         <translation>tekimanyiddwa</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kuuma akawunti yo</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Koodi ey&apos;okuzzaawo yakozesebwa okuyingira mu kawunti yo %login ku %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Koodi ey&apos;okuzzaawo yakozesebwa</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akawunti</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Endagiriro ekumpi</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Saba ekigambo ky&apos;ekyama ekipya oyingire nate, oba tuukirira abaddukanya omukutu.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Saba ekigambo ky&apos;ekyama ekipya</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Buli koodi ey&apos;okuzzaawo ekola omulundi gumu gwokka. Bw&apos;oba wabuza essimu yo, teekateeka nate pulogulaamu yo ekakasa era otereke koodi empya ez&apos;okuzzaawo mu kifo ekirimu obukuumi.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Okugezaako okuyingira okulemereddwa ku kawunti yo</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Okuva kati, okuyingira kusaba koodi ng&apos;oggyeeko ekigambo kyo eky&apos;ekyama. Bw&apos;oba ggwe wakikoze, tolina ky&apos;okola.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Bw&apos;oba ggwe era weerabidde ekigambo kyo eky&apos;ekyama, saba ekipya. Bwe kitaba ggwe, londa ekigambo ky&apos;ekyama eky&apos;amaanyi okusingawo era okoleeze okuyingira mu mitendera ebiri.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Bwe kitaba ggwe, waliwo ayinza okuba amanyi ekigambo kyo eky&apos;ekyama: kikyuse kati era okebere akawunti yo w&apos;eyingidde.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Koodi ez&apos;okuzzaawo ezisigaddeyo</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Kebera ebyuma byo</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Okulabula ku bukuumi</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Waliwo eyagezaako okuyingira mu kawunti yo %login ku %site n&apos;ekigambo ky&apos;ekyama ekikyamu emirundi %count egiddiriŋŋana.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Waliwo ekibaddewo eky&apos;obukuumi ku kawunti yo %login ku %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Kuno kulabula ku bukuumi bw&apos;akawunti yo. Kuweerezebwa ku buli nkyukakyuka ng&apos;eno era tekuyinza kuzikizibwa.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Obudde</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Okuyingira mu mitendera ebiri kwazikizibwa ku kawunti yo %login ku %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Okuyingira mu mitendera ebiri kwazikizibwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Okuyingira mu mitendera ebiri kwakoleezebwa ku kawunti yo %login ku %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Okuyingira mu mitendera ebiri kwakoleezebwa</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Akawunti yo %login ku %site yaggalwawo oluvannyuma lw&apos;okuyingira okulemereddwa emirundi mingi nnyo.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Akawunti yo kati ekuumibwa ekigambo kyo eky&apos;ekyama kyokka. Bw&apos;oba si ggwe wakikoze, koleeza nate okuyingira mu mitendera ebiri ng&apos;omaze okukyusa ekigambo kyo eky&apos;ekyama.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Akawunti yo yaggalwawo</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ebikolebwa eby&apos;obukuumi ebya %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kyayingira</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Okugezaako okuyingira okulemereddwa</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kyafuluma</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Entuula zifulumiziddwa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Okuyingira okuva ku kyuma ekipya</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Okuyingira okuva mu kifo ekipya</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Obuntu bukakasiddwa («Kakasa nti ggwe»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Okukakasa obuntu kulemereddwa</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kyayingira n&apos;ekisumuluzo eky&apos;okuyingira</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Okuyingira n&apos;ekisumuluzo eky&apos;okuyingira kulemereddwa</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Okuyingira kugaaniddwa: koodi y&apos;omutendera ogwokubiri tebaddewo oba nkyamu</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodi y&apos;omutendera ogwokubiri nkyamu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akawunti eggaddwawo oluvannyuma lw&apos;okuyingira okulemereddwa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akawunti esumuluddwa</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ekigambo ky&apos;ekyama kikyusiddwa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Okukyusa ekigambo ky&apos;ekyama kulemereddwa</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ekigambo ky&apos;ekyama kizziddwa buggya</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ekigambo ky&apos;ekyama ekipya kisabiddwa</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Endagiriro ya imeeyilo ekyusiddwa</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Erinnya ly&apos;omukozesa likyusiddwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Okuyingira mu mitendera ebiri kukoleezeddwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Okuyingira mu mitendera ebiri kuzikiziddwa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koodi ey&apos;okuzzaawo ekozeseddwa</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodi empya ez&apos;okuzzaawo</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ekigambo ky&apos;ekyama kya pulogulaamu kikoleddwa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ekigambo ky&apos;ekyama kya pulogulaamu kisaziddwamu</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ekisumuluzo eky&apos;okuyingira kyongeddwamu</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ekisumuluzo eky&apos;okuyingira kiggyiddwamu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akawunti ekoleezeddwa</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akawunti ezikiziddwa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Byonna</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Okuyingira n&apos;entuula</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Enkyukakyuka mu kawunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kyetaaga okufiibwako</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>kyakoleddwa ggwe</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>kyakoleddwa omukozesa</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>kyakoleddwa %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Enkola</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Bulawuza</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Enkola y&apos;ekyuma</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ekyuma</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Ekifo</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ensi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Entuula</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ziruwa</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Engeri gye yaweerezeddwamu</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Okugezaako okulemereddwa</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Koodi ezisigaddeyo</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Ekikwata okuyingira</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ebikolebwa eby&apos;obukuumi ebya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Okuyingira n&apos;enkyukakyuka mu bukuumi bw&apos;akawunti yo. Bw&apos;olaba ekintu ky&apos;otaakola, kyusa ekigambo kyo eky&apos;ekyama era ofulumye ebyuma by&apos;otamanyi.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Okuyingira n&apos;enkyukakyuka mu bukuumi bw&apos;akawunti eno.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ebyuma byo</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Kyusa ekigambo ky&apos;ekyama</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Ddayo ku kawunti</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Ebikolebwa eby&apos;obukuumi tebiwandiikibwa</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Bisomebwa okuva mu logi y&apos;okwekenneenya abakozesa, nga taabulo yaayo expuser_audit tebaawo oba tewagirwa ku databeesi eno. Ddusa php update/common/scripts/6.0/createuseraudittable.php, oba okulongoosa databeesi okwa 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ennaku %days eziyise</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Okuyingira mu nnaku %days eziyise</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi eby&apos;emabegako</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Laga</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>kiremereddwa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>kigaaniddwa</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Tewannabaawo bikolebwa bya bukuumi biwandiikiddwa.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Ebibaddewo eby&apos;obukuumi bitereka okumala ennaku %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Ebibaddewo eby&apos;obukuumi bitereka okutuusa omuddukanya lw&apos;abiggyawo.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Wanula ebikwata ku kuyingira kwange</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Entuula zo n&apos;ebibaddewo eby&apos;obukuumi nga fayiro ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kyayingira</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Okugezaako okuyingira okulemereddwa</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kyafuluma</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Entuula zifulumiziddwa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Okuyingira okuva ku kyuma ekipya</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Okuyingira okuva mu kifo ekipya</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Obuntu bukakasiddwa («Kakasa nti ggwe»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Okukakasa obuntu kulemereddwa</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kyayingira n&apos;ekisumuluzo eky&apos;okuyingira</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Okuyingira n&apos;ekisumuluzo eky&apos;okuyingira kulemereddwa</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Okuyingira kugaaniddwa: koodi y&apos;omutendera ogwokubiri tebaddewo oba nkyamu</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodi y&apos;omutendera ogwokubiri nkyamu</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akawunti eggaddwawo oluvannyuma lw&apos;okuyingira okulemereddwa</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akawunti esumuluddwa</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Ekigambo ky&apos;ekyama kikyusiddwa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Okukyusa ekigambo ky&apos;ekyama kulemereddwa</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Ekigambo ky&apos;ekyama kizziddwa buggya</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ekigambo ky&apos;ekyama ekipya kisabiddwa</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Endagiriro ya imeeyilo ekyusiddwa</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Erinnya ly&apos;omukozesa likyusiddwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Okuyingira mu mitendera ebiri kukoleezeddwa</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Okuyingira mu mitendera ebiri kuzikiziddwa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koodi ey&apos;okuzzaawo ekozeseddwa</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodi empya ez&apos;okuzzaawo</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Ekigambo ky&apos;ekyama kya pulogulaamu kikoleddwa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ekigambo ky&apos;ekyama kya pulogulaamu kisaziddwamu</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Ekisumuluzo eky&apos;okuyingira kyongeddwamu</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Ekisumuluzo eky&apos;okuyingira kiggyiddwamu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akawunti ekoleezeddwa</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akawunti ezikiziddwa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Byonna</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Okuyingira n&apos;entuula</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Enkyukakyuka mu kawunti</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kyetaaga okufiibwako</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby&apos;obukuumi</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ebikolebwa eby&apos;obukuumi ebya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Okuyingira n&apos;enkyukakyuka mu bukuumi bw&apos;akawunti yo. Bw&apos;olaba ekintu ky&apos;otaakola, kyusa ekigambo kyo eky&apos;ekyama era ofulumye ebyuma by&apos;otamanyi.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ebyuma byo</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Kyusa ekigambo ky&apos;ekyama</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Ebikolebwa eby&apos;obukuumi tebinnaba kuwandiikibwa ku mukutu guno.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Okuyingira mu nnaku %days eziyise</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Okugezaako okulemereddwa</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Tewannabaawo bikolebwa bya bukuumi biwandiikiddwa.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Wanula ebikwata ku kuyingira kwange</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Entuula zo n&apos;ebibaddewo eby&apos;obukuumi nga fayiro ya JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Ekigambo ky&apos;ekyama</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Ekigambo ky&apos;ekyama ne koodi y&apos;omutendera ogwokubiri</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Enkolagana ya REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Enkolagana ya SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Okuyingira omulundi gumu (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Kyayingira ng&apos;entuula tezinnatandika kuwandiikibwa</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Lipoota y&apos;okuyingira</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ani ayingidde ku mukutu, akawunti emirundi gye ziyingira n&apos;emirundi gye zilemererwa, n&apos;okufulumya omukozesa buli wamu. Ekola n&apos;ekikwata kyonna eky&apos;entuula.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Olutuula lufulumiziddwa. Ekyuma kirina okuyingira nate.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login afulumiziddwa mu ntuula %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login teyalina lutuula oludduka.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Tewali kawunti erina ID eyo, erinnya ly&apos;omukozesa eryo oba endagiriro ya imeeyilo eyo.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Luno lwe lutuula lw&apos;okozesa. Okulukomya, fuluma.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Olutuula olwo lwali lumaze okuggwa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Omuko gwali guweddeko obudde. Tewali kyakyusiddwa; bambi gezaako nate.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Entuula teziwandiikibwa ku mukutu guno (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Taabulo expuser_session tebaawo</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Entuula ziwandiikibwa ng&apos;emaze okukolebwa: php update/common/scripts/6.0/createusersessiontable.php, oba okulongoosa databeesi okwa 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Kati ne leero</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Entuula ezidduka</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Abakozesa abayingidde</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Okuyingira kwa leero</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Okugezaako okulemereddwa okwa leero</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Fulumya omukozesa buli wamu</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Buli lutuula lw&apos;akawunti luggwaako ku kusaba kwalwo okuddako, n&apos;ezo ezikuumibwa Nzijukire. Kozesa kino ng&apos;akawunti eyinza okuba mu mikono emikyamu; oluvannyuma zza buggya ekigambo kyayo eky&apos;ekyama.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID y&apos;omukozesa, erinnya ly&apos;omukozesa oba endagiriro ya imeeyilo</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Fulumya buli wamu</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ayingidde kati</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Eziyise okukozesebwa %limit ze zisembyeyo ze ziragiddwa.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Omukozesa</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ekyuma</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Endagiriro</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kyayingira</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ekikoleddwa ekisembyeyo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ebikolebwa</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ekyuma kino</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Tekiwandiikiddwa</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Fulumya</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Tewali lutuula luyingidde.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ennaku %days eziyise</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Okuyingira n&apos;okugezaako okulemereddwa bibalibwa okuva mu logi y&apos;okwekenneenya abakozesa, etaliiwo; entuula empya ze zibalibwa.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Olunaku</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Okuyingira</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Okugezaako okulemereddwa</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Entuula empya</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Ekikwata entuula: %handler. Entuula zisomebwa okuva mu taabulo expuser_session, n&apos;olwekyo lipoota ekola n&apos;ekikwata kyonna.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Okulabula ku bukuumi bw&apos;akawunti yo</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Waliwo ekibaddewo eky&apos;obukuumi ku kawunti yo %login: %event. Bwe kitaba ggwe, kuuma akawunti yo ku %url.</translation>
     </message>
 </context>
 </TS>

@@ -14,7 +14,7 @@ If you want to send comments to the approver or view the status use the URL belo
               '%objectname', $objectversion.version_name ) )}
 
 
-https://{ezini( "SiteSettings", "SiteURL" )}{concat( "collaboration/item/full/", $collaboration_item.id )|ezurl( no )}
+{$collaboration_item.admin_url}
 
 {"If you do not want to continue receiving these notifications,
 change your settings at:"|i18n( 'design/standard/notification' )}

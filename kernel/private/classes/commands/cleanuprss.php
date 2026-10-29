@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/cleanuprss.php, moved into a class (#207 stage 1). The file bin/php/cleanuprss.php is one call to it.
- * @description Trim RSS-imported content, keeping the newest items of each active import
+ * @description Trim RSS-imported content, keeping the newest items of each active import (dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -42,8 +42,12 @@ class Cleanuprss extends \Exponential\Runnable\Command
                                  "\n" .
                                  "Configured in content.ini [RSSImportCleanupSettings]; it removes nothing\n" .
                                  "until that names the classes it is allowed to remove.\n" .
+                                 "Without --apply nothing is removed: the script lists the items it would remove.\n" .
+                                 "--dry-run is still accepted and means the same as no flag; --apply together with\n" .
+                                 "--dry-run is a usage error (exit 2). The cronjob part cleanuprss removes as before.\n" .
                                  "\n" .
-                                 "./bin/php/cleanuprss.php --dry-run",
+                                 "./bin/php/cleanuprss.php\n" .
+                                 "./bin/php/cleanuprss.php --apply",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
@@ -51,13 +55,22 @@ class Cleanuprss extends \Exponential\Runnable\Command
         );
 
         $options = $this->startup(
-            "[dry-run][keep:]",
+            "[apply][dry-run][keep:]",
             "",
-            array( 'dry-run' => 'List what would be removed, and remove nothing',
+            array( 'apply'   => 'Remove the items (the default is a dry run that lists them and removes nothing)',
+                   'dry-run' => 'The default, kept for scripts that pass it: list what would be removed, remove nothing',
                    'keep'    => 'Keep this many items per feed instead of the configured number' ) );
 
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
+
         $cleanup = new \expCleanupRSS(
-            array( 'dry-run' => (bool)$options['dry-run'],
+            array( 'dry-run' => $dryRun,
                    'keep'    => $options['keep'] !== null ? (int)$options['keep'] : null ) );
 
         if ( !$cleanup->isEnabled() )
@@ -74,7 +87,19 @@ class Cleanuprss extends \Exponential\Runnable\Command
         $counts = $cleanup->counts();
 
         $cli->output();
-        $cli->output( sprintf( '%d feed(s), %d item(s) above the limit, %d removed.',
+        if ( $dryRun )
+        {
+            $cli->output( sprintf( 'PASS: %d feed(s), %d item(s) above the limit would be removed (dry run, nothing changed; --apply writes)',
+                                   $counts['feeds'], $counts['examined'] ) );
+            $script->shutdown( 0 );
+        }
+        if ( $counts['removed'] !== $counts['examined'] )
+        {
+            $cli->error( sprintf( 'FAIL: %d feed(s), %d item(s) above the limit, only %d removed',
+                                  $counts['feeds'], $counts['examined'], $counts['removed'] ) );
+            $script->shutdown( 1 );
+        }
+        $cli->output( sprintf( 'PASS: %d feed(s), %d item(s) above the limit, %d removed',
                                $counts['feeds'], $counts['examined'], $counts['removed'] ) );
 
         $script->shutdown( 0 );

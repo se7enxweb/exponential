@@ -9,14 +9,14 @@ Schlüssel von `kickstart.ini` mit Typ, Standardwert und Wirkung, so wie der Cod
 Beispieldateien für SQLite, MySQL und PostgreSQL, die Datenbankaktion und ihre Gefahren, Probeläufe, Fortsetzen und
 erneutes Ausführen sowie der Einsatz des Kickstarters in CI und Containern. Die Kurzfassung: Schreiben Sie die Datei
 mit `exp:kickstarter ini`, prüfen Sie jeden Wert anhand von [6.4](#64-referenz-zu-kickstartini) (vor allem
-`DatabaseAction`), führen Sie `run --dry-run` aus und dann `run --force`.
+`DatabaseAction`), führen Sie `run --dry-run` aus und dann `run --apply`.
 
 [Inhalt](README.md) · Zurück: [5. Der Setup-Assistent](05-setup-assistent.md) · Weiter: [7. Die Installation über die Konsole](07-installation-ueber-die-konsole.md)
 
 ## 6.1 Wie er funktioniert
 
 ```text
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
         |
         |  bin/php/kickstarter.php  ->  \Exponential\Command\Kernel\Kickstarter
         |  (kernel/private/classes/commands/kickstarter.php)
@@ -136,7 +136,7 @@ Ein durchgespieltes Beispiel für eine SQLite-Testsite:
 php bin/php/console exp:kickstarter ini --yes
 # edit kickstart.ini: URL=http://localhost:8087, Email= your address
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 `ini` schreibt die Datei mit dem Modus `0600`, weil sie Passwörter enthält; belassen Sie es dabei.
@@ -172,7 +172,7 @@ die Datei unverändert zu lassen.
 ```bash
 php bin/php/console exp:kickstarter run --list-steps    # show the steps, change nothing
 php bin/php/console exp:kickstarter run --dry-run       # check, stop after SiteDetails
-php bin/php/console exp:kickstarter run --force         # install
+php bin/php/console exp:kickstarter run --apply --force         # install
 ```
 
 | Option | Standard | Wirkung |
@@ -521,7 +521,7 @@ ausführen; ein Dump, der mangels Rechten fehlgeschlagen ist, hinterlässt eine 
 
 ## 6.6 Kommentierte Beispieldateien
 
-Jedes Beispiel ist eine vollständige `kickstart.ini` für `run --force`. Zeilen, die mit `;` beginnen, sind Kommentare
+Jedes Beispiel ist eine vollständige `kickstart.ini` für `run --apply`. Zeilen, die mit `;` beginnen, sind Kommentare
 und können in der Datei bleiben; jeder steht in einer eigenen Zeile, weil ein Kommentar hinter einem Wert Teil des
 Werts würde.
 
@@ -818,7 +818,7 @@ grep -n "FAIL\|ERROR" var/log/setup.log
 ## 6.10 Erneut ausführen und fortsetzen
 
 **Erneut ausführen für eine identische Installation.** Dieselbe `kickstart.ini` mit `DatabaseAction=remove` und
-`run --force` ersetzt die Datenbank und die Einstellungen erneut. Verwenden Sie das, um eine Test- oder Schulungssite
+`run --apply` ersetzt die Datenbank und die Einstellungen erneut. Verwenden Sie das, um eine Test- oder Schulungssite
 zurückzusetzen.
 
 **Nach einem Fehler die ganze Abfolge erneut ausführen.** Beheben Sie die Ursache (der fehlgeschlagene Schritt und
@@ -826,7 +826,7 @@ seine Meldung stehen in der Ausgabe und in `var/log/setup.log`), dann:
 
 ```bash
 php bin/php/console exp:kickstarter run --dry-run     # optional: check up to SiteDetails
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 ```
 
 Die Schritte reichen ihre Ergebnisse innerhalb eines Prozesses an die folgenden weiter: `DatabaseChoice` setzt den
@@ -845,7 +845,7 @@ Beispiel `--stop-step=SiteDetails`) wird nichts installiert, und `--force` ist n
 Konfiguration bis zu diesem Punkt, und die Zusammenfassung im Setup-Log meldet „stopped after SiteDetails (nothing
 installed)“. Anders als ein Probelauf schaltet ein solcher Durchlauf den Wartungsmodus ein, solange er arbeitet.
 
-**Nur die Einstellungen neu erzeugen.** `DatabaseAction=skip` und `run --force` schreiben `settings/siteaccess/` und
+**Nur die Einstellungen neu erzeugen.** `DatabaseAction=skip` und `run --apply` schreiben `settings/siteaccess/` und
 `settings/override/` aus der Datei neu und lassen die Datenbank unberührt.
 
 **Datei bearbeitet und alte Werte gesehen?** `ini` und `run` löschen `var/cache/ini/kickstart-*.php` selbst, weil
@@ -878,7 +878,7 @@ cd /srv/exponential
 umask 077
 envsubst < deploy/kickstart.ini.template > kickstart.ini
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 rm -f kickstart.ini
 ```
 

@@ -114,7 +114,7 @@ operator from an extension that is not active on the siteaccess.
 - **Cache-blocks.** Parts in `{cache-block}` keep their output until their keys change or they expire; clear
   `--clear-id=template-block`.
 - **Velocity.** On installations that run the Velocity application server, its response cache is separate:
-  `./console exp:velocity cache clear`.
+  `./console exp:velocity cache clear --apply`.
 
 ## Quick reference
 

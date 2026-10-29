@@ -119,7 +119,7 @@ selbstsigniertes Zertifikat springt ein, bis das echte wieder nutzbar ist.
 ```bash
 php bin/php/console exp:velocity ssl show --allow-root-user          # served certificate, every known one by expiry
 php bin/php/console exp:velocity ssl show --json --allow-root-user   # for monitoring: watch daysLeft
-php bin/php/console exp:velocity ssl renew example.com --allow-root-user
+php bin/php/console exp:velocity ssl renew --apply example.com --allow-root-user
 ```
 
 Ein CA-Zertifikat mit 90 Tagen Laufzeit wird erneuert, wenn etwa 30 Tage übrig sind; eines mit weniger als 14 verbleibenden Tagen

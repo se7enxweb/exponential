@@ -69,7 +69,7 @@ Steps:
 
 Checklist:
 
-- [ ] A demonstration installation exists for the team to look at (`./console exp:install`,
+- [ ] A demonstration installation exists for the team to look at (`./console exp:install --apply`,
       [Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
 - [ ] The sponsor has seen the administration, not only slides.
 - [ ] The product, the database, the web server and the install method are written in the charter.

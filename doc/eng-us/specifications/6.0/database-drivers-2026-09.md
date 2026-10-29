@@ -127,7 +127,7 @@ children, and the attribute join of the built-in search engine when results are
 sorted by a class attribute). Oracle allows `AS` for column aliases only
 (`ORA-00933`), so both failed there; the aliases are written without `AS`, which
 is the same on every database. Install on Oracle with
-`./console exp:install --db=oracle` (see
+`./console exp:install --apply --db=oracle` (see
 [Installing in one command](../../features/6.0/install-in-one-command.md)).
 
 ### Oracle and the SQL query cache (1-2 October 2026)

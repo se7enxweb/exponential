@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>সেটআপ &gt; ক্রনজব</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ক্রনজবগী শরুক অমত্তা হৌজিক ফাওবা চলাখিদ্রি: জবগী লাইন, ইমপোর্টশিং, ৱাংবাশিং অমসুং সার্চ ইন্দেক্স ঙাইরি. php bin/php/installcrontab.php --add --apply চলাবিয়ু, নত্রগা --show না উৎপা লাইনশিং crontab ফাইলদা যোগ তৌবিয়ু.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ইনস্টলেসন অসি পাবলিক ডেমো অমনি: করনাসু মসিগী এদমিনিষ্ট্রেটর পাসওয়র্দ খঙজরি, অদুগা এদমিনিষ্ট্রেটর পাসওয়র্দ সুধরজরদে নত্রগা রিসেট তৌজরদে. অসিদা প্রাইভেট করিসু ইনবিগদ্রবিয়ু.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>নঙ্গী ডিভাইসশিং</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15302,6 +15314,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>একাউন্ট অমমমগী মতাংদা কনানা হোংদোকখিবগে, কনানা লগইন তৌখিবগে নত্রগা কনাবু য়াদখিবগে; ফিল্টর তৌবা অমসুং এক্সপোর্ট তৌবা.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>লগইনগী রিপোর্ট</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>কনা লগইন তৌরি, নুমিৎ খুদিংগী লগইন অমসুং ঙমদবশিং; ইউজর অমবু মফম খুদিংদগী লগআউট তৌবা.</translation>
     </message>
 </context>
 <context>
@@ -33607,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP হ্যান্দলরগী মতম পুরবা সেসনশিং PHP অমুকনা থোক্কনি (session.gc_maxlifetime), পেজ অসিনা নত্রগা session_gc ক্রনজোব অংশনা থোক্কনদে.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ইউজর খুদিংমকগী লগইন তৌরিবা সেসনশিং লগইনগী রিপোর্টতা উৎলি অমসুং মফম অদুদগী লগআউট তৌবা য়াই; মসিনা সেসন হেন্দলর খুদিংমকগা থবক তৌই.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>লগইনগী রিপোর্ট হাংদোকপা</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37931,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ঙসিদা অমুক লৈদে</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>হৌখিবা নুমিৎ খরগী নঙ্গী লগইনশিং, ঙমদবা হোৎনবশিং অমসুং পাসওয়র্দ, ই-মেইল ঠিকানা অমসুং দুইগী স্তরগী সাইন ইনদা অহোংবশিং.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>একাউন্ট অসিগী হৌখিবা নুমিৎ খরগী লগইনশিং, ঙমদবা হোৎনবশিং অমসুং সুরক্ষাগী অহোংবশিং.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>থবকশিং য়েংবা</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>ঙমদবা লগইন: %count</translation>
     </message>
 </context>
 <context>
@@ -51021,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab ইদ্রে (%reason). সাইট চলিবা ইউজরগী crontab দা লাইন অসিশিং যোগ তৌবিয়ু, নত্তরো কিউ, ইম্পোর্ট, ৱাংবাশিং অমসুং সার্চ ইন্দেক্স মতম্না চলদে:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>অমুক হন্না ইনস্তল তৌবা হায়বসি কিকস্তার্তরনা (%file, অদুগা php bin/php/kickstarter.php run --apply) নত্রগা অনৌবা ইনস্তলেসন অমনা তৌই.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56813,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>মখাংগী রানদা মেইল ট্রান্সপোর্টনা মেসেজ %count ফংদখ্রে. মেইল সার্ভর অমসুং site.ini MailSettings চেক তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>থৌদোক %count ঙাইরি অমসুং ৱাংবাগী ক্রনজব চলাখিবা অমত্তা রেকর্ড তৌদ্রে. ক্রনজবগী শরুক &quot;frequent&quot; crontab ফাইলদা যোগ তৌবিয়ু, নত্রগা exp:notification:run --apply চলাবিয়ু.</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>নোদ পিকরনা সাইট নত্তসু সেক্সন অমুক সিলেক্ট তৌবিয়ু</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>সিস্তেম এদমিনিস্ত্রেতর খক্তনা মালিক হোংদোকপা ঙম্মি: root ওইনা ./console exp:content-check --fix-permissions --apply চলাবিয়ু.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>খালি</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>সাইন তৌবগী কী অসি চহি অমদগী হেন্না অরিবা ওইরে: exp:audit key rotate --apply না মসি হোংদোকপিয়ু.</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>পাঠাদ্রবা</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>ৱাংবাগী ক্রনজবনা মসিগী চলাবা খুদিংমক মফম অসিদা রেকর্ড তৌই. শরুক frequent crontab ফাইলদা যোগ তৌবিয়ু, নত্রগা exp:notification:run --apply চলাবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>কনসোল শিজিন্নবিয়ু: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>অমুক ফংদে.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>অথেন্টিকেটর এপ অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ই-মেইলদা থাখিবা কোদ অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>রিকভরি কোদ অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>পাসকী অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>মপান্থোংগী একাউন্ট অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>মসিগী নেটৱর্ক ওইনা উৎলি; ঠিকানা অসি সাইতকী দাতা সুরক্ষাগী সেটিংশিংনা হায়বগী মতোংদা থম্লি.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>রেকর্ড তৌদ্রে</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>মফম</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>চপ মান্নবা</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>ডিভাইসশিং চেন্দোকপা</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>অথেন্টিকেটর এপ অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ই-মেইলদা থাখিবা কোদ অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>রিকভরি কোদ অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>পাসকী অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>মপান্থোংগী একাউন্ট অমগা লোয়ননা</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>রেকর্ড তৌদ্রে</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>মফম</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>চপ মান্নবা</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ইউজর অসিগী সেসনশিং ফংবা</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>নঙ্গী একাউন্টনা হৌখিবা মতমদা লগইন তৌখিদবা মফম অমদগী হৌজিকসু লগইন তৌখ্রে. একাউন্ট: %login, সাইট: %site:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>চপ মান্নবা মফম</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os দা %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>লগইনগী রিপোর্ট</translation>
     </message>
 </context>
 <context>
@@ -77491,6 +77651,788 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>ফংদে</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>নঙ্গী একাউন্ট ঙাক্তবা</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>রিকভরি কোদ অমা শিজিন্নদুনা নঙ্গী একাউন্টতা লগইন তৌখ্রে. একাউন্ট: %login, সাইট: %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>রিকভরি কোদ অমা শিজিন্নখ্রে</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>একাউন্ট</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>চপ মান্নবা ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>অমুক হন্না লগইন তৌনবা অনৌবা পাসওয়র্দ অমা হায়জবিয়ু, নত্রগা সাইতকী এদমিনিস্ত্রেতরশিংগা খরনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>অনৌবা পাসওয়র্দ হায়জবা</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>রিকভরি কোদ অমমম অমুক খক্তা থবক তৌই. ফোন মাংখ্রবদি, অথেন্টিকেটর এপ অমুক হন্না সেত অপ তৌবিয়ু অমসুং অনৌবা রিকভরি কোদশিং শেংলবা মফমদা থম্বিয়ু.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>নঙ্গী একাউন্টতা লগইন তৌবা হোৎনখিবা ঙমদবশিং</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>হৌজিকদগী লগইন তৌবা মতমদা পাসওয়র্দকী মথক্তা কোদ অমসু হায়জগনি. মসি তৌখিবা নহাক ওইরবদি, কয়া অমত্তা তৌবা মথৌ তাদে.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>নহাক ওইরবদি অমসুং পাসওয়র্দ কাউখ্রবদি, অনৌবা অমা হায়জবিয়ু. নত্রবদি, হেন্না চেকপা পাসওয়র্দ অমা খনবিয়ু অমসুং দুইগী স্তরগী সাইন ইন চালু তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>মসি নহাক নত্রবদি, কনানা অমনা নঙ্গী পাসওয়র্দ খঙবা য়াই: হৌজিক মসি হোংদোকপিয়ু অমসুং নঙ্গী একাউন্ট কদাইদা লগইন তৌরিবগে হায়বা চেক তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>লৈরিবা রিকভরি কোদশিং</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>নঙ্গী ডিভাইসশিং য়েংবা</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>সুরক্ষাগী চেকশিনবা</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>কনানা অমনা অশোইবা পাসওয়র্দ্না নঙ্গী একাউন্টতা মতম চাদনা লগইন তৌবা হোৎনখি. মরক: %count, একাউন্ট: %login, সাইট: %site.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>নঙ্গী একাউন্টতা সুরক্ষাগী থৌদোক অমা থোকখি. একাউন্ট: %login, সাইট: %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>মসি নঙ্গী একাউন্টগী মরমদা সুরক্ষাগী চেকশিনবা অমনি. অসুম্বা অহোংবা খুদিংমকদা থাই অমসুং মসি বন্দ তৌবা ঙম্মদে.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>মতম</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>নঙ্গী একাউন্টগীদমক দুইগী স্তরগী সাইন ইন বন্দ তৌরে. একাউন্ট: %login, সাইট: %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>দুইগী স্তরগী সাইন ইন বন্দ তৌরে</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>নঙ্গী একাউন্টগীদমক দুইগী স্তরগী সাইন ইন চালু তৌরে. একাউন্ট: %login, সাইট: %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>দুইগী স্তরগী সাইন ইন চালু তৌরে</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>য়াম্না য়াম্লবা লগইন ঙমদবগী মতুংদা নঙ্গী একাউন্ট লক তৌরে. একাউন্ট: %login, সাইট: %site.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>হৌজিক নঙ্গী একাউন্ট পাসওয়র্দ খক্তনা ঙাক্লি. মসি নহাক্না তৌখিদ্রবদি, পাসওয়র্দ হোংদোকপগী মতুংদা দুইগী স্তরগী সাইন ইন অমুক হন্না চালু তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>নঙ্গী একাউন্ট লক তৌরে</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>সুরক্ষাগী থবকশিং: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>লগইন তৌরে</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>লগইন তৌবা হোৎনখিবা ঙমদবা</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>লগআউট তৌরে</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>সেসনশিং লগআউট তৌরে</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>অনৌবা ডিভাইস অমদগী লগইন</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>অনৌবা মফম অমদগী লগইন</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>মশক শোয়দনা তাকখ্রে (&quot;নঙ্গী ওইবদু ভেরিফাই তৌবা&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>মশক চেক তৌবা ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>পাসকীগা লোয়ননা লগইন তৌরে</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>পাসকীগা লোয়ননা লগইন তৌবা ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>লগইন হনথোকখ্রে: দুইগী স্তরগী কোদ লৈতে নত্রগা অশোইবা</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>অশোইবা দুইগী স্তরগী কোদ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>লগইন ঙমদবগী মতুংদা একাউন্ট লক তৌরে</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>একাউন্টকী লক হাংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>পাসওয়র্দ হোংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>পাসওয়র্দ হোংদোকপা ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>পাসওয়র্দ রিসেত তৌরে</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>অনৌবা পাসওয়র্দ হায়জখ্রে</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ই-মেইল ঠিকানা হোংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ইউজর মমিং হোংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>দুইগী স্তরগী সাইন ইন চালু তৌরে</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>দুইগী স্তরগী সাইন ইন বন্দ তৌরে</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>রিকভরি কোদ শিজিন্নখ্রে</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>অনৌবা রিকভরি কোদশিং</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>এপ পাসওয়র্দ সেম্লে</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>এপ পাসওয়র্দ হনখ্রে</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>পাসকী যোগ তৌরে</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>পাসকী থোক্কখ্রে</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>একাউন্ট চালু তৌরে</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>একাউন্ট বন্দ তৌরে</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>লগইনশিং অমসুং সেসনশিং</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>একাউন্টকী অহোংবশিং</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>মীৎয়েং থম্বা মথৌ তাই</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>নহাক্না</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>ইউজরনা</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>তৌরিবা: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>মওং</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ব্রাউজর</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>অপরেতিং সিস্তেম</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ডিভাইস</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>মফম</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>দেশ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>সেসনশিং</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>করি করি</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>পাঠাবগী লম্বী</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ঙমদবা হোৎনবশিং</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>লৈরিবা কোদশিং</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>লগইন হেন্দলর</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>সুরক্ষাগী থবকশিং: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>নঙ্গী একাউন্টগী লগইনশিং অমসুং সুরক্ষাদা অহোংবশিং. নহাক্না তৌখিদবা কয়া অমা উরবদি, পাসওয়র্দ হোংদোকপিয়ু অমসুং খঙদবা ডিভাইসশিং লগআউট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>একাউন্ট অসিগী লগইনশিং অমসুং সুরক্ষাদা অহোংবশিং.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>নঙ্গী ডিভাইসশিং</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>পাসওয়র্দ সুধরবা</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>একাউন্টতা হনবা</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>সুরক্ষাগী থবকশিং রেকর্ড তৌদে</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>মসি ইউজর অদিত লোগদগী পাই, মসিগী তেবল expuser_audit লৈতে নত্রগা দাতাবেস অসিদা সপোর্ত তৌদে. php update/common/scripts/6.0/createuseraudittable.php চলাবিয়ু, নত্রগা 6.0.15 গী দাতাবেস অপদেত চলাবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>হৌখিবা নুমিৎ %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>হৌখিবা নুমিৎ %days গী মনুংদা লগইনশিং</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>হৌখিবা মতমগী সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ফংবা</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>হনথোকখ্রে</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>হৌজিক ফাওবা সুরক্ষাগী থবক অমত্তা রেকর্ড তৌদ্রি.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>সুরক্ষাগী থৌদোকশিং নুমিৎ %days থম্মি.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>এদমিনিস্ত্রেতর অমনা থোক্কদ্রিফাওবা সুরক্ষাগী থৌদোকশিং থম্মি.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ঐগী লগইন দাতা ডাউনলোদ তৌবা</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>নঙ্গী সেসনশিং অমসুং সুরক্ষাগী থৌদোকশিং JSON ফাইল ওইনা.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>লগইন তৌরে</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>লগইন তৌবা হোৎনখিবা ঙমদবা</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>লগআউট তৌরে</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>সেসনশিং লগআউট তৌরে</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>অনৌবা ডিভাইস অমদগী লগইন</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>অনৌবা মফম অমদগী লগইন</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>মশক শোয়দনা তাকখ্রে (&quot;নঙ্গী ওইবদু ভেরিফাই তৌবা&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>মশক চেক তৌবা ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>পাসকীগা লোয়ননা লগইন তৌরে</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>পাসকীগা লোয়ননা লগইন তৌবা ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>লগইন হনথোকখ্রে: দুইগী স্তরগী কোদ লৈতে নত্রগা অশোইবা</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>অশোইবা দুইগী স্তরগী কোদ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>লগইন ঙমদবগী মতুংদা একাউন্ট লক তৌরে</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>একাউন্টকী লক হাংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>পাসওয়র্দ হোংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>পাসওয়র্দ হোংদোকপা ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>পাসওয়র্দ রিসেত তৌরে</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>অনৌবা পাসওয়র্দ হায়জখ্রে</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ই-মেইল ঠিকানা হোংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>ইউজর মমিং হোংদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>দুইগী স্তরগী সাইন ইন চালু তৌরে</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>দুইগী স্তরগী সাইন ইন বন্দ তৌরে</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>রিকভরি কোদ শিজিন্নখ্রে</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>অনৌবা রিকভরি কোদশিং</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>এপ পাসওয়র্দ সেম্লে</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>এপ পাসওয়র্দ হনখ্রে</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>পাসকী যোগ তৌরে</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>পাসকী থোক্কখ্রে</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>একাউন্ট চালু তৌরে</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>একাউন্ট বন্দ তৌরে</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>লগইনশিং অমসুং সেসনশিং</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>একাউন্টকী অহোংবশিং</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>মীৎয়েং থম্বা মথৌ তাই</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>সুরক্ষাগী থবকশিং</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>সুরক্ষাগী থবকশিং: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>নঙ্গী একাউন্টগী লগইনশিং অমসুং সুরক্ষাদা অহোংবশিং. নহাক্না তৌখিদবা কয়া অমা উরবদি, পাসওয়র্দ হোংদোকপিয়ু অমসুং খঙদবা ডিভাইসশিং লগআউট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>নঙ্গী ডিভাইসশিং</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>পাসওয়র্দ সুধরবা</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>সাইট অসিদা সুরক্ষাগী থবকশিং হৌজিক ফাওবা রেকর্ড তৌদ্রি.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>হৌখিবা নুমিৎ %days গী মনুংদা লগইনশিং</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ঙমদবা হোৎনবশিং</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>হৌজিক ফাওবা সুরক্ষাগী থবক অমত্তা রেকর্ড তৌদ্রি.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>ঐগী লগইন দাতা ডাউনলোদ তৌবা</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>নঙ্গী সেসনশিং অমসুং সুরক্ষাগী থৌদোকশিং JSON ফাইল ওইনা.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>পাসওয়র্দ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>পাসওয়র্দ অমসুং দুইগী স্তরগী কোদ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ইন্তরফেস</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ইন্তরফেস</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>সিঙ্গল সাইন-অন</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>সেসনশিং রেকর্ড তৌবা হৌদ্রিঙৈগী মমাংদা লগইন তৌখিবা</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>লগইনগী রিপোর্ট</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>সাইততা কনা লগইন তৌরি, একাউন্টশিংনা কয়া খুৎলাই লগইন তৌই অমসুং ঙমদে, অমসুং ইউজর অমবু মফম খুদিংদগী লগআউট তৌবা. মসিনা সেসন হেন্দলর খুদিংমকগা থবক তৌই.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>সেসন অসি লগআউট তৌরে. ডিভাইস অসিনা অমুক হন্না লগইন তৌবা মথৌ তাই.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>সেসন %count পুম্নমক লগআউট তৌরে: %login.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>চলরিবা সেসন অমত্তা লৈতে: %login.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ID, ইউজর মমিং নত্রগা ই-মেইল ঠিকানা অসি লৈবা একাউন্ট অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>মসি নহাক্না শিজিন্নরিবা সেসননি. মসি লোইশিন্নবা লগআউট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>সেসন অদু হান্নদগী লোইরম্লে.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>পেজ অসিগী মতম লোইরম্লে. কয়া অমত্তা হোংদোকখিদ্রে; অমুক হন্না হোৎনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>সাইট অসিদা সেসনশিং রেকর্ড তৌদে (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>তেবল expuser_session লৈতে</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>তেবল অদু সেম্লবা মতুংদা সেসনশিং রেকর্ড তৌগনি: php update/common/scripts/6.0/createusersessiontable.php, নত্রগা 6.0.15 গী দাতাবেস অপদেত.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>হৌজিক অমসুং ঙসি</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>চলরিবা সেসনশিং</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>লগইন তৌরিবা ইউজরশিং</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ঙসিগী লগইনশিং</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ঙসিগী ঙমদবা হোৎনবশিং</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ইউজর অমবু মফম খুদিংদগী লগআউট তৌবা</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>একাউন্ট অসিগী সেসন খুদিংমক মথং লাকপা রিকুয়েস্ততা লোইশিনই, &quot;ঐ মনুংদা থম্বা&quot; না থম্বা সেসনশিংসু. একাউন্ট অমা অশোইবা মীগী খুৎতা লৈবা য়াই হায়বা মতমদা মসি শিজিন্নবিয়ু; অদুগা মসিগী পাসওয়র্দ রিসেত তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ইউজর ID, ইউজর মমিং নত্রগা ই-মেইল ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>মফম খুদিংদগী লগআউট তৌবা</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>হৌজিক লগইন তৌরি</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>অনৌবা মতমদা শিজিন্নখিবা অমসুং উৎলিবা: %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ইউজর</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ডিভাইস</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ঠিকানা</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>লগইন তৌরে</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>অরোইবা মতমদা এক্তিভ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>একসন</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ডিভাইস অসি</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>রেকর্ড তৌদ্রে</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>লগআউট তৌবা</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>লগইন তৌরিবা সেসন অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>হৌখিবা নুমিৎ %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>লগইনশিং অমসুং ঙমদবা হোৎনবশিং ইউজর অদিত লোগদগী মশিং থাই, মসি লৈতে; অনৌবা সেসনশিংদি মশিং থাই.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>নুমিৎ</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>লগইনশিং</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ঙমদবা হোৎনবশিং</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>অনৌবা সেসনশিং</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>সেসন হেন্দলর: %handler. সেসনশিং তেবল expuser_session দগী পাই, মরম অদুনা রিপোর্ট অসিনা হেন্দলর খুদিংমকগা থবক তৌই.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>নঙ্গী একাউন্টগীদমক সুরক্ষাগী চেকশিনবা</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>নঙ্গী একাউন্টতা সুরক্ষাগী থৌদোক অমা থোকখি. একাউন্ট: %login, থৌদোক: %event. মসি নহাক নত্রবদি, নঙ্গী একাউন্ট মসিদা ঙাক্তবিয়ু: %url.</translation>
     </message>
 </context>
 </TS>

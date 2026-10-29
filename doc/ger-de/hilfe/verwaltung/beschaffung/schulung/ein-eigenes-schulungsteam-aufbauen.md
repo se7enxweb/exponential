@@ -55,7 +55,7 @@ führt jeden Befehl auf, um eine zu bauen, auszuliefern, zu prüfen, zurückzuse
 Einstieg ist das Konsolen-Installationsprogramm auf SQLite, das keinen Datenbankserver braucht:
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)). Das generierte

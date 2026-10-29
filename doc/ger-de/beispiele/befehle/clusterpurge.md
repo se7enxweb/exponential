@@ -2,14 +2,14 @@
 title: exp:clusterpurge
 audience: developer, admin
 category: examples
-summary: Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2).
+summary: Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2; Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:clusterpurge, clusterpurge, console, command, CLI, clusterpurge.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:clusterpurge
 
-Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2).
+Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2; Probelauf, außer mit --apply).
 
 Skript `bin/php/clusterpurge.php`, Code in `kernel/private/classes/commands/clusterpurge.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,7 +22,8 @@ php bin/php/clusterpurge.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Testmodus: die Liste der betroffenen Dateien ausgeben, ohne sie zu entfernen |
+| `--apply` |  | Die Dateien löschen (Standard ist ein Probelauf, der sie auflistet und nichts löscht) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: die betroffenen Dateien auflisten, ohne sie zu entfernen |
 | `--iteration-sleep` | erforderlich | Sekunden Pause zwischen den Iterationen beim Löschen, auch als Dezimalzahl. Standard ist eine Sekunde. |
 | `--iteration-limit` | erforderlich | Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. Standard ist 100. |
 | `--memory-monitoring` |  | Erzeugt eine Ausgabe zur Speicherüberwachung. Wenn gesetzt, wird der Speicherverbrauch in var/log/clusterpurge.log protokolliert. |

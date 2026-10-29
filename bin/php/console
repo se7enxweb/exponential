@@ -69,7 +69,7 @@ $script = eZScript::instance(
             "and extension/*/bin scripts — zero configuration required.\n\n" .
             "Usage:\n" .
             "  ./bin/php/console list\n" .
-            "  ./bin/php/console exp:preload --siteaccess=<siteaccess>\n" .
+            "  ./bin/php/console exp:preload --siteaccess=<siteaccess> --apply\n" .
             "  ./bin/php/console ext:<extension>:<command>\n" .
             "  ./bin/php/console help <command>",
         'use-session'    => false,

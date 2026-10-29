@@ -17,6 +17,11 @@
                       'replaced', 'Replaced by a new sign-in'|i18n( 'design/standard/user/sessions' ),
                       'password_change', 'Ended by a password change'|i18n( 'design/standard/user/sessions' ),
                       'expired', 'Expired'|i18n( 'design/standard/user/sessions' ) )
+     $details = hash( 'totp', 'with an authenticator app'|i18n( 'design/standard/user/sessions' ),
+                      'email', 'with a code by e-mail'|i18n( 'design/standard/user/sessions' ),
+                      'recovery', 'with a recovery code'|i18n( 'design/standard/user/sessions' ),
+                      'passkey', 'with a passkey'|i18n( 'design/standard/user/sessions' ),
+                      'oauth', 'with an external account'|i18n( 'design/standard/user/sessions' ) )
      $others = 0}
 {foreach $sessions_active as $s}{if $s.current|not}{set $others = inc( $others )}{/if}{/foreach}
 <link rel="stylesheet" type="text/css" href={'stylesheets/user_sessions.css'|ezdesign} />
@@ -24,6 +29,7 @@
 
 <h1>{if $sessions_own}{'Your devices'|i18n( 'design/standard/user/sessions' )}{else}{'Sessions of %name'|i18n( 'design/standard/user/sessions',, hash( '%name', $sessions_user_name ) )|wash}{/if}</h1>
 <p class="us-intro">{if $sessions_own}{'Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.'|i18n( 'design/standard/user/sessions' )}{else}{'Where this account is signed in right now. Signing the user out ends every session at its next request.'|i18n( 'design/standard/user/sessions' )}{/if}</p>
+<p><a href={cond( $sessions_own, 'user/security', concat( 'user/security/', $sessions_user_id ) )|ezurl}>{'Security activity'|i18n( 'design/standard/user/sessions' )}</a></p>
 
 {if $sessions_message}
 <div class="us-notice is-{$sessions_message.level|wash}" role="status"><p>{switch match=$sessions_message.key}
@@ -56,8 +62,9 @@
         <h3>{$s.label|wash}{if $s.current} <span class="us-badge">{'This device'|i18n( 'design/standard/user/sessions' )}</span>{/if}</h3>
         <dl class="us-facts">
             <dt>{'Device'|i18n( 'design/standard/user/sessions' )}</dt><dd>{first_set( $device_names[$s.device], $s.device )|wash}</dd>
-            <dt>{'Address'|i18n( 'design/standard/user/sessions' )}</dt><dd>{$s.ip|wash}</dd>
-            <dt>{'Signed in'|i18n( 'design/standard/user/sessions' )}</dt><dd>{$s.created|l10n( 'shortdatetime' )} <span class="us-meta">{first_set( $methods[$s.method], $s.method )|wash}</span></dd>
+            <dt>{'Address'|i18n( 'design/standard/user/sessions' )}</dt><dd>{if $s.ip}{$s.ip|wash}{else}<span class="us-meta">{'Not recorded'|i18n( 'design/standard/user/sessions' )}</span>{/if}</dd>
+            {if $s.location}<dt>{'Location'|i18n( 'design/standard/user/sessions' )}</dt><dd>{$s.location|wash} <span class="us-meta">{'approximate'|i18n( 'design/standard/user/sessions' )}</span></dd>{/if}
+            <dt>{'Signed in'|i18n( 'design/standard/user/sessions' )}</dt><dd>{$s.created|l10n( 'shortdatetime' )} <span class="us-meta">{first_set( $methods[$s.method], $s.method )|wash}{if is_set( $details[$s.auth_detail] )} {$details[$s.auth_detail]|wash}{/if}</span></dd>
             <dt>{'Last active'|i18n( 'design/standard/user/sessions' )}</dt><dd>{if $s.current}{'Now'|i18n( 'design/standard/user/sessions' )}{else}{$s.last_active|l10n( 'shortdatetime' )}{/if}</dd>
             <dt>{'Stays signed in'|i18n( 'design/standard/user/sessions' )}</dt><dd>{if $s.remember_until}{'Remember me, until %date'|i18n( 'design/standard/user/sessions',, hash( '%date', $s.remember_until|l10n( 'shortdate' ) ) )|wash}{else}{'Until the browser is closed'|i18n( 'design/standard/user/sessions' )}{/if}</dd>
         </dl>
@@ -107,4 +114,4 @@
 
 {/if}
 </div>
-{undef $device_names $methods $reasons $others}
+{undef $device_names $methods $reasons $details $others}

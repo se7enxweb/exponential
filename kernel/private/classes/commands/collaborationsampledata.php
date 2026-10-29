@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Build sample content for the collaboration tool (approvals, comments, groups), or remove it again
+ * @description Build sample content for the collaboration tool (approvals, comments, groups), or remove it again (dry run unless --apply)
  * @alias exp:collaboration:sample-data
  *
  * File containing the exp:collaboration:sample-data command.
@@ -28,10 +28,13 @@ class Collaborationsampledata extends \Exponential\Runnable\Command
                                  "Everything is made through the kernel's own approval workflow and handler, and is marked\n" .
                                  "(names start with \"Sample: \", remote ids with \"sample-collab-\") so --remove deletes exactly it.\n" .
                                  "The command is idempotent: what exists is left as it is.\n" .
+                                 "Without --apply nothing is changed: the command lists what it would create (or, with --remove,\n" .
+                                 "delete). --dry-run means the same as no flag; --apply together with --dry-run is a usage error\n" .
+                                 "(exit 2).\n" .
                                  "\n" .
-                                 "./console exp:collaboration:sample-data --dry-run\n" .
                                  "./console exp:collaboration:sample-data\n" .
-                                 "./console exp:collaboration:sample-data --remove",
+                                 "./console exp:collaboration:sample-data --apply\n" .
+                                 "./console exp:collaboration:sample-data --remove --apply",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
@@ -39,21 +42,29 @@ class Collaborationsampledata extends \Exponential\Runnable\Command
         );
 
         $options = $this->startup(
-            "[remove][dry-run]",
+            "[apply][dry-run][remove]",
             "",
-            array( 'remove'  => 'Delete the sample data (and only that)',
-                   'dry-run' => 'Show what would be done and change nothing' ) );
+            array( 'apply'   => 'Make the changes (the default is a dry run that shows them and changes nothing)',
+                   'dry-run' => 'The default, kept for scripts that pass it: show what would be done and change nothing',
+                   'remove'  => 'Delete the sample data (and only that)' ) );
+
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
 
         $data = new \expCollaborationSampleData( function ( $message ) use ( $cli ) {
             $cli->output( '  ' . $message );
         } );
 
         $remove = (bool)$options['remove'];
-        $dry = (bool)$options['dry-run'];
 
         try
         {
-            if ( $dry )
+            if ( $dryRun )
             {
                 $cli->output( $remove ? 'Dry run: --remove would delete these sample items (nothing is changed).'
                                       : 'Dry run: this is what the command would do now (nothing is changed).' );
@@ -72,21 +83,23 @@ class Collaborationsampledata extends \Exponential\Runnable\Command
                 if ( $remove )
                     $cli->output( sprintf( '  %d collaboration item(s) and %d collaboration group(s) would also be removed.',
                                            count( $data->sampleItemIDs() ), count( $data->sampleCollaborationGroupIDs() ) ) );
-                $cli->output( 'PASS: dry run, ' . $todo . ' step(s) pending.' );
+                $cli->output( 'PASS: ' . $todo . ' step(s) pending (dry run, nothing changed; --apply writes)' );
                 $script->shutdown( 0 );
                 return;
             }
 
             if ( $remove )
             {
-                $counts = $data->remove();
+                if ( !$dryRun )
+                    $counts = $data->remove();
                 $cli->output( sprintf( 'PASS: removed %d item(s), %d object(s), %d group(s), %d workflow(s), %d other.',
                                        $counts['items'], $counts['objects'], $counts['groups'], $counts['workflows'], $counts['other'] ) );
                 $script->shutdown( 0 );
                 return;
             }
 
-            $counts = $data->apply();
+            if ( !$dryRun )
+                $counts = $data->apply();
             $cli->output( sprintf( 'PASS: %d created, %d already there%s.', $counts['created'], $counts['skipped'],
                                    $counts['warnings'] ? ', ' . $counts['warnings'] . ' warning(s)' : '' ) );
             $script->shutdown( 0 );
