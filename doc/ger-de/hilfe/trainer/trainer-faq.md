@@ -14,9 +14,9 @@ Kurze Antworten, jeweils mit einem Link auf die ausführliche Erklärung.
 ## Zum Material
 
 **Gibt es eine offizielle Exponential-Zertifizierung?**
-Das Exponential-Partnerprogramm nennt Zertifizierungen für Partnerteams (Developer, Design, Solution, Sales), aber
-deren Lehrplan, Prüfungsformat und Prüfer sind nicht veröffentlicht ([Zertifizierungen](../partner/zertifizierungen.md)).
-Die Kurse hier sind nicht diese Zertifizierungen. Prüfungen und Zertifikate, die Sie ausstellen, sind Ihre eigenen;
+Noch nicht. Offizielle Exponential-Zertifizierungen sind geplant, als Teil der Zukunftspläne des Projekts für die
+Community, Partner, Exponential-Entwickler und Lernende; sie sind noch nicht verfügbar ([Zertifizierungen und
+Zertifikate](../lernende/zertifizierungen-und-zertifikate.md)). Die Kurse hier sind nicht diese Zertifizierungen. Prüfungen und Zertifikate, die Sie ausstellen, sind Ihre eigenen;
 sagen Sie das auch darauf
 ([Teilnahmebescheinigungen in Ihrem eigenen Namen](train-the-trainer/modul-06-pruefung-und-nachbereitung/teilnahmebescheinigungen.md)).
 

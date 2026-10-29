@@ -3,7 +3,7 @@ title: Fassade / Dienst
 audience: developer
 category: standards
 order: 330
-summary: Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die Operationen einer Domäne enthält. 37 Instanzen in Exponential.
+summary: Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die Operationen einer Domäne enthält. 40 Instanzen in Exponential.
 keywords: Entwurfsmuster, Fassade, Struktur, Musterkatalog, design pattern, facade, pattern catalogue
 type: catalogue
 ---
@@ -15,13 +15,21 @@ type: catalogue
 
 Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die Operationen einer Domäne enthält.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Struktur |
-| Instanzen | 37 |
+| Instanzen | 40 |
 | Erkannt an | Der Klassenname endet auf Facade, Service, Manager, API oder Api. |
 
 ## Klassen nach Bereich
+
+### extension/expai (1)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expAiBatchApi` | abstract class | `extension/expai/classes/lanes/expaibatchapi.php:27` | Die Batch-API eines Anbieters: viele Anfragen auf einmal einreichen, den Batch abfragen, die Ergebnisse abholen, abbrechen, löschen. | extension/expai/settings/rad.ini [Registry_expai_batch_apis] Implements |
 
 ### extension/explayouts (2)
 
@@ -52,6 +60,14 @@ Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expLayoutsUIApplicationApi` | class | `extension/explayouts_ui_api/classes/explayoutsuiapplicationapi.php:2` | – | – |
+
+### extension/expqueue (1)
+
+[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expQueueService` | class | `extension/expqueue/classes/expqueueservice.php:22` | Der systemd-Dienst der Worker der Warteschlange: ./console ext:expqueue:service install\|start\|stop\|status\|uninstall. | – |
 
 ### extension/expsite_api (4)
 
@@ -151,7 +167,7 @@ Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log-Verwaltung (doc/eng-us/features/6.0/log-rotation.md): die Logs der Installation mit ihren Archiven, Größen, Wachstum und Grenzen; Rotation, Bereinigung, Kom… | – |
+| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log-Verwaltung (doc/eng-us/features/6.0/log-rotation.md): die Logs der Installation mit ihren Archiven, Größen, ihrem Wachstum und ihren Limits; Rotation, Bereinigung… | – |
 
 ### kernel/classes/mailpreferences (1)
 
@@ -160,6 +176,14 @@ Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expMailPreferencesService` | class | `kernel/classes/mailpreferences/expmailpreferencesservice.php:18` | Die Abläufe rund um die Präferenzen: die Double-Opt-in-Mail und ihre Bestätigung, die Abmeldung mit einem Klick, „Link zusenden“ für Personen ohne Login,… | settings/mailpreferences.ini [GateSettings] EssentialSenders[] |
+
+### kernel/classes/passkey (1)
+
+[Alle Muster von kernel/classes/passkey](area-kernel-classes-passkey.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expPasskeyService` | class | `kernel/classes/passkey/exppasskeyservice.php:32` | Die Passkey-Abläufe der Webseiten (doc/eng-us/guides/passkeys.md): | – |
 
 ### kernel/private (2)
 

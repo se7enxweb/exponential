@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/collaborationhandlers
 audience: developer
 category: standards
-order: 485
+order: 491
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/collaborationhandlers mit den Entwurfsmustern.
 keywords: kernel/classes/collaborationhandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -27,7 +27,7 @@ Kürze und verweist auf die Seiten für DXP-Entwickler, die sie gründlich behan
 
 Fragen Sie zuerst. Eine Website auf Exponential 6 hat `.tpl`-Templates, `design/`-Ordner in Erweiterungen und
 `settings/*.ini`-Dateien. Eine Website auf der DXP hat `.html.twig`-Templates, einen Ordner `templates/themes/` und
-YAML-Konfiguration unter `config/`. [DXP, Legacy, Nexus oder Exponential 6 wählen](../../../eng-us/help/dxp-developers/choosing-dxp-legacy-nexus-or-exponential-6.md)
+YAML-Konfiguration unter `config/`. [DXP, Legacy, Nexus oder Exponential 6 wählen](../dxp-entwickler/dxp-legacy-nexus-oder-exponential-6-waehlen.md)
 erklärt die Produktlinien.
 
 ## Dieselbe Idee, andere Worte
@@ -40,26 +40,26 @@ erklärt die Produktlinien.
 | TPL-Templates, `{include uri='design:...'}` | Twig-Templates, `{% include '@ibexadesign/...' %}` |
 | `pagelayout.tpl` | `pagelayout.html.twig` |
 | `node/view/full.tpl` und Overrides nach Klasse | Templates für Voll- und Zeilenansicht, in der Konfiguration der Inhaltsansichten Inhaltstypen zugeordnet |
-| Bild-Aliase in `image.ini` | Bildvarianten ([Bildvarianten](../../../eng-us/help/dxp-developers/image-variations.md)) |
+| Bild-Aliase in `image.ini` | Bildvarianten ([Bildvarianten](../dxp-entwickler/bildvariationen.md)) |
 
 Die Design-Engine der DXP (`ibexa/design-engine`) löst jeden Namen `@ibexadesign/...` über das Design des aktuellen
 Siteaccess und dessen Reihenfolge der Themes auf, ganz ähnlich wie die Kaskade. Templates verweisen immer auf
 `@ibexadesign/...`, nie auf den Ordnerpfad eines Themes
-([Twig-Templates und die Design-Engine](../../../eng-us/help/dxp-developers/twig-templates-and-the-design-engine.md)).
+([Twig-Templates und die Design-Engine](../dxp-entwickler/twig-templates-und-die-design-engine.md)).
 
 ## Wo Theme-Dateien liegen
 
 Ein Projekt-Theme ist ein Ordner unter `templates/themes/`, und ein Design, das es vor `standard` aufführt, wird unter
 `ibexa_design_engine.design_list` konfiguriert; eine Siteaccess-Gruppe verwendet dann dieses Design. Auch Bundles können
 Themes mitliefern. Die Schritte samt Konfiguration stehen in
-[Das Standarddesign und Ihr Theme](../../../eng-us/help/dxp-developers/the-standard-design-and-your-theme.md#building-your-theme).
+[Das Standarddesign und Ihr Theme](../dxp-entwickler/das-standarddesign-und-ihr-theme.md#ihr-theme-bauen).
 
 ## Stylesheets und Skripte
 
 Die DXP hat keinen ezjscore-Packer. Die meisten Projekte bauen ihre Stylesheets und Skripte mit Webpack Encore und binden
 sie mit den Twig-Funktionen von Encore ein; die Design-Engine kann Theme-Assets auch aus `public/assets/themes/<theme>/`
-auflösen ([Assets mit Yarn und Encore bauen](../../../eng-us/help/dxp-developers/building-assets-with-yarn-and-encore.md),
-[Das Standarddesign und Ihr Theme](../../../eng-us/help/dxp-developers/the-standard-design-and-your-theme.md#theme-assets)).
+auflösen ([Assets mit Yarn und Encore bauen](../dxp-entwickler/assets-mit-yarn-und-encore-bauen.md),
+[Das Standarddesign und Ihr Theme](../dxp-entwickler/das-standarddesign-und-ihr-theme.md#theme-assets)).
 Die Designprinzipien bleiben dieselben: keine Inline-Skripte oder -Stile, damit eine Content Security Policy streng
 bleiben kann.
 
@@ -80,14 +80,14 @@ Was nicht übertragbar ist: die TPL-Syntax, `override.ini`, `design.ini`, der Pa
 
 ## Wo es weitergeht
 
-- [DXP-Entwickler: hier beginnen](../../../eng-us/help/dxp-developers/dxp-developers-start-here.md)
-- [Twig-Templates und die Design-Engine](../../../eng-us/help/dxp-developers/twig-templates-and-the-design-engine.md)
-- [Das Standarddesign und Ihr Theme](../../../eng-us/help/dxp-developers/the-standard-design-and-your-theme.md)
-- [Twig-Funktionen für jeden Tag](../../../eng-us/help/dxp-developers/twig-functions-you-use-daily.md)
+- [DXP-Entwickler: hier beginnen](../dxp-entwickler/dxp-entwickler-hier-beginnen.md)
+- [Twig-Templates und die Design-Engine](../dxp-entwickler/twig-templates-und-die-design-engine.md)
+- [Das Standarddesign und Ihr Theme](../dxp-entwickler/das-standarddesign-und-ihr-theme.md)
+- [Twig-Funktionen für jeden Tag](../dxp-entwickler/twig-funktionen-fuer-den-alltag.md)
 
 ## Verwandte Seiten
 
-- [Was Exponential Platform DXP ist](../../../eng-us/help/dxp-developers/what-exponential-platform-dxp-is.md)
+- [Was Exponential Platform DXP ist](../dxp-entwickler/was-exponential-platform-dxp-ist.md)
 - [Wie sich Exponential-Themes unterscheiden](wie-sich-exponential-themes-unterscheiden.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 

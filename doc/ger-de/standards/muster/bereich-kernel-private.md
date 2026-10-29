@@ -2,7 +2,7 @@
 title: Muster in kernel/private
 audience: developer
 category: standards
-order: 514
+order: 527
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private mit den Entwurfsmustern.
 keywords: kernel/private, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,21 +15,25 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/private` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (177)
+## Klassen (181)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
-| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | [Dekorierer / Filter](dekorierer.md) | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentifizierungsfilter für einen persönlichen API-Schlüssel (expApiKey), vorgelegt als „Authorization: Bearer expk_...“ (doc/eng-us/guides/api-keys.md, „How the REST layer r… |
+| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | [Dekorierer / Filter](dekorierer.md) | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentifizierungsfilter für einen persönlichen API-Schlüssel (expApiKey), übergeben als „Authorization: Bearer expk_...“ (doc/eng-us/guides/api-keys.md, „How the REST… |
 | `expApiKeyRest` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/rest/classes/auth/apikey_rest.php:24` | Wie die REST-Schicht einen persönlichen API-Schlüssel auflöst (doc/eng-us/guides/api-keys.md, „For developers“). |
 | `expContentAccessReport` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/classes/expcontentaccessreport.php:23` | Beantwortet „darf dieser Benutzer dies mit diesem Objekt oder Knoten tun, und wenn nicht, welche Einschränkung verweigert es“: die Zugriffsprüfungen des Kernels für einen anderen Ben… |
 | `expContentSecurityPolicy` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/classes/expcontentsecuritypolicy.php:39` | Die Content Security Policy einer Seite, aus site.ini [ContentSecurityPolicy]. |
-| `expContentSecurityPolicyReport` | class | – | `kernel/private/classes/expcontentsecuritypolicyreport.php:40` | Die Berichte der Content Security Policy (doc/eng-us/features/6.0/content-security-policy.md, "Reports"): was die Ansicht csp/report vom Brows… empfängt |
+| `expContentSecurityPolicyReport` | class | – | `kernel/private/classes/expcontentsecuritypolicyreport.php:40` | Die Berichte der Content Security Policy (doc/eng-us/features/6.0/content-security-policy.md, „Reports“): was die Ansicht csp/report von den… |
 | `expFileConsistencyReport` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/private/classes/expfileconsistencyreport.php:36` | Vergleicht die Dateien einer Installation mit den Prüfsummenlisten, die mit ihr ausgeliefert werden: share/filelist.md5 von Exponential und die share/filelist.md5, die eine Exte… |
 | `expOAuthAuthorizePolicy` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/rest/classes/oauth/authorize_policy.php:21` | Entscheidet, ob ein angemeldeter Benutzer einen OAuth-Client in oauth/authorize autorisieren darf. |
 | `expOAuthAuthorizePolicyGrant` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/rest/classes/oauth/authorize_policy_grant.php:26` | Plant und vergibt beim Upgrade die Richtlinie oauth/authorize (bin/php/addoauthauthorizepolicy.php). |
-| `expRestContentPermission` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/rest/classes/auth/content_permission.php:36` | Die Rechte des aktuellen Benutzers an den Inhalten, die ein REST-Aufruf liest oder schreibt, geprüft so, wie das Modul content sie prüft (doc/eng-us/guides/api-keys.md, „Permis… |
-| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | [Dekorierer / Filter](dekorierer.md) | `kernel/private/rest/classes/auth/password_auth_filter.php:19` | Prüft Login und Passwort für die Basic-Authentifizierung der REST-Schnittstelle so, wie es die Anmeldung tut. |
+| `expOAuthPkce` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/rest/classes/oauth/pkce.php:24` | Proof Key for Code Exchange (PKCE, RFC 7636) für den OAuth-Authorization-Code-Flow. |
+| `expRestContentPermission` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/rest/classes/auth/content_permission.php:36` | Die Rechte des aktuellen Benutzers an dem Inhalt, den ein REST-Aufruf liest oder schreibt, geprüft so, wie das Content-Modul sie prüft (doc/eng-us/guides/api-keys.md,… |
+| `expRestCors` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/private/rest/classes/cors.php:29` | Cross-Origin Resource Sharing (CORS) für die REST-Schnittstelle (index_rest.php: die Inhalts-API, der OAuth-Token-Endpunkt und jede andere Route einer RE… |
+| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | [Dekorierer / Filter](dekorierer.md) | `kernel/private/rest/classes/auth/password_auth_filter.php:23` | Prüft Login und Passwort für die Basic-Authentifizierung der REST-Schnittstelle so, wie es die Anmeldung tut. |
+| `expRestPasswordChangeRequiredStatus` | class implements ezcMvcResultStatusObject | – | `kernel/private/rest/classes/status/password_change_required.php:15` | 403 Forbidden mit dem Fehlercode password_change_required: Die Zugangsdaten sind richtig, aber das Konto ist mit „Passwort bei der nächsten Anmeldung ändern“ markiert (e… |
 | `expRestRateLimitedStatus` | class implements ezcMvcResultStatusObject | – | `kernel/private/rest/classes/status/rate_limited.php:14` | 429 Too Many Requests mit Retry-After, für einen persönlichen API-Schlüssel über seinem Ratenlimit (rest.ini [ApiKeySettings] RateLimitPerMinute). |
+| `expRestSecondFactorRequiredStatus` | class implements ezcMvcResultStatusObject | – | `kernel/private/rest/classes/status/second_factor_required.php:16` | Die REST-Antwort auf ein richtiges Passwort bei einem Konto, das einen zweiten Anmeldeschritt braucht (expSignInSecondFactor): 401 mit WWW-Authenticate (ein… |
 | `expSchemaConsistencyReport` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/private/classes/expschemaconsistencyreport.php:36` | Vergleicht die Datenbank mit dem Schema, das mit Exponential und seinen aktiven Extensions ausgeliefert wird (share/db_schema.dba der Wurzel und jeder Extension),… |
 | `eZAutoloadGenerator` | class | [Builder](builder.md), [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/private/classes/ezautoloadgenerator.php:19` | Hilfsklasse zum Erzeugen von Autoload-Arrays für Exponential. |
 | `eZClusterFileHandlerInterface` | interface | [Schnittstelle (Vertrag)](schnittstelle.md) | `kernel/private/interfaces/ezclusterfilehandlerinterface.php:15` | Schnittstelle für Cluster-Datei-Handler |
@@ -186,7 +190,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private` mit den Mustern,
 | `ezpRouteMethodNotAllowedException` | class extends ezcMvcToolsException | [Ausnahmehierarchie](ausnahme.md) | `kernel/private/rest/classes/exceptions/route_method_not_allowed.php:12` | – |
 | `ezpSearchEngine` | interface | [Schnittstelle (Vertrag)](schnittstelle.md), [Strategie / Handler](strategie-handler.md) | `kernel/private/interfaces/ezpsearchengine.php:18` | Diese Schnittstelle dient als Grundlage für die verschiedenen Suchmaschinen-Implementierungen |
 | `ezpSiteAccessMenu` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/classes/ezpsiteaccessmenu.php:48` | Das Site-Menü der Administrationsoberfläche: die Siteaccesses dieser Installation mit ihren Startseitenadressen, für die Globus-Schaltfläche im Kopf von admin4. |
-| `ezpSiteAccessURL` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/classes/ezpsiteaccessurl.php:36` | Die Adresse der Startseite eines Siteaccess, ermittelt aus den Siteaccess-Einstellungen und der Anfrage, auf der der Besucher ist: der Admin-Link "Site öffnen"… |
+| `ezpSiteAccessURL` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/classes/ezpsiteaccessurl.php:44` | Die Adresse der Startseite eines Siteaccess, ermittelt aus den Siteaccess-Einstellungen und der Anfrage, auf der der Besucher ist: der Admin-Link "Site öffnen"… |
 | `ezpStaticCache` | interface | [Schnittstelle (Vertrag)](schnittstelle.md) | `kernel/private/interfaces/ezpstaticcache.php:16` | Diese Schnittstelle dient als Basis für die verschiedenen Implementierungen der StaticCache-Engines |
 | `ezpTemplateOverrides` | class | – | `kernel/private/classes/ezptemplateoverrides.php:33` | Ändert die Template-Überschreibungen eines Siteaccess, für Design › Templates, in settings/siteaccess//override.ini.append.php und nirgendwo sonst. |
 | `ezpTopologicalSort` | class | – | `kernel/private/classes/ezptopologicalsort.php:15` | Sortiert eine Reihe von Abhängigkeiten in eine lineare Reihenfolge (topologische Sortierung). |
@@ -232,7 +236,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private` mit den Mustern,
 
 | Ereignis | Art | Aufgerufen in |
 | --- | --- | --- |
-| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1649` |
-| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1769` |
+| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1661` |
+| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1786` |
 | `response/preoutput` | filter | `kernel/private/classes/global_functions.php:83` |
 | `response/output` | filter | `kernel/private/classes/global_functions.php:102` |

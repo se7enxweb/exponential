@@ -2,7 +2,7 @@
 title: Muster in extension/expsite_data_media
 audience: developer
 category: standards
-order: 429
+order: 433
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/expsite_data_media mit den Entwurfsmustern.
 keywords: extension/expsite_data_media, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

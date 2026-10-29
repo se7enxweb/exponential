@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-exphelp]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> Help maintained as content on its own: php runcronjobs.php exphelp (doc/eng-us/features/6.0/help-content.md)  
+> Als Inhalt gepflegte Hilfe für sich: php runcronjobs.php exphelp (doc/eng-us/features/6.0/help-content.md)  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

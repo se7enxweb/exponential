@@ -2,7 +2,7 @@
 title: Muster in kernel/common
 audience: developer
 category: standards
-order: 512
+order: 525
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/common mit den Entwurfsmustern.
 keywords: kernel/common, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,12 +15,15 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/common` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (23)
+## Klassen (26)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
 | `expContentSecurityPolicyOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/expcontentsecuritypolicyoperator.php:21` | Der Template-Operator csp_nonce(): die Nonce der Content Security Policy dieser Anfrage, für ein Inline-Skript, das ein Template nicht in eine Datei verschieben kann… |
+| `expDemoModeOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/expdemomodeoperator.php:21` | Der Template-Operator exp_demo_mode(): true, solange der Demo-Modus aktiv ist (die Umgebungsvariable EXP_DEMO_MODE=1, expDemoMode). |
 | `expEnvironmentOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/expenvironmentoperator.php:29` | – |
+| `expKernelTransferOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/expkerneltransferoperator.php:29` | Die Template-Operatoren der Transfer-Registry (expKernelTransferRegistry; doc/eng-us/features/6.0/transfer-registry.md). |
+| `expViewParameterOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/expviewparameteroperator.php:21` | Der Template-Operator view_parameter: ein Wert als Wert eines View-Parameters, /(name)/, so geschrieben, wie expViewParameters::encode() ihn schreibt („~2F“ für… |
 | `eZAlphabetOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/ezalphabetoperator.php:19` | – |
 | `eZAutoLinkOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/ezautolinkoperator.php:12` | – |
 | `eZContentStructureTreeOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/ezcontentstructuretreeoperator.php:17` | – |
@@ -43,7 +46,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/common` mit den Mustern, 
 | `eZURLOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/ezurloperator.php:18` | – |
 | `eZWordToImageOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `kernel/common/ezwordtoimageoperator.php:17` | – |
 
-## Template-Operatoren (21)
+## Template-Operatoren (24)
 
 | Operatoren | Klasse | Registriert in |
 | --- | --- | --- |
@@ -67,4 +70,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/common` mit den Mustern, 
 | installation_name, is_production_system | `ExpInstallationOperator` | `kernel/common/eztemplateautoload.php:72` |
 | audit_label | `expAuditTemplateOperator` | `kernel/common/eztemplateautoload.php:75` |
 | exp_environment, exp_environment_badge | `expEnvironmentOperator` | `kernel/common/eztemplateautoload.php:78` |
-| csp_nonce | `expContentSecurityPolicyOperator` | `kernel/common/eztemplateautoload.php:81` |
+| exp_demo_mode | `expDemoModeOperator` | `kernel/common/eztemplateautoload.php:81` |
+| csp_nonce | `expContentSecurityPolicyOperator` | `kernel/common/eztemplateautoload.php:84` |
+| view_parameter | `expViewParameterOperator` | `kernel/common/eztemplateautoload.php:87` |
+| transfer_tools, transfer_actions, transfer_related, transfer_tool | `expKernelTransferOperator` | `kernel/common/eztemplateautoload.php:90` |

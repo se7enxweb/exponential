@@ -10,11 +10,12 @@ generated: exp:help:examples
 ---
 # Das Modul user
 
-Name `User management`, definiert in `kernel/user/module.php`. 17 Ansichten.
+Name `User management`, definiert in `kernel/user/module.php`. 20 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
 | [activate](activate.md) | `/user/activate/<Hash>/<MainNodeID>` | login |
+| [audit](audit.md) | `/user/audit` | audit |
 | [deactivate](deactivate.md) | `/user/deactivate` | deactivate |
 | [edit](edit.md) | `/user/edit/<UserID>` | login |
 | [forgotpassword](forgotpassword.md) | `/user/forgotpassword/<HashKey>` | password |
@@ -27,6 +28,8 @@ Name `User management`, definiert in `kernel/user/module.php`. 17 Ansichten.
 | [preferences](preferences.md) | `/user/preferences/<Function>/<Key>/<Value>` | login |
 | [register](register.md) | `/user/register/<redirect_number>` | register |
 | [registration](registration.md) | `/user/registration/<Token>` | login |
+| [security](security.md) | `/user/security/<UserID>` | login |
+| [sessionreport](sessionreport.md) | `/user/sessionreport` | sessions_manage |
 | [sessions](sessions.md) | `/user/sessions/<UserID>` | login |
 | [setting](setting.md) | `/user/setting/<UserID>` | preferences |
 | [success](success.md) | `/user/success` | register |

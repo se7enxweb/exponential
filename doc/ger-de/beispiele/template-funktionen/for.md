@@ -17,7 +17,7 @@ Innerhalb des Blocks verwendet: `{delimiter}`, `{break}`, `{continue}`, `{skip}`
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/children_detailed.tpl` Zeile 283:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/children_detailed.tpl` Zeile 300:
 
 ```tpl
 <div class="a4-subitems-reserve" aria-hidden="true"><span class="a4-subitems-reserve-head"></span>{if gt( $subitems_reserve_rows, 0 )}{for 1 to $subitems_reserve_rows as $subitems_reserve_row}<span></span>{/for}<span class="a4-subitems-reserve-pager"></span>{/if}</div>

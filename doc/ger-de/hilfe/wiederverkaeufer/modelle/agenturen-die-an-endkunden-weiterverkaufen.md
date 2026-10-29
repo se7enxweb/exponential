@@ -85,7 +85,7 @@ Die Sicht des Kunden auf dieselben Fragen steht unter [Was Ihnen gehört](../../
 
 - [Website-Ersteller: hier beginnen](../../ersteller/website-ersteller/website-ersteller-hier-beginnen.md)
 - [Ein Leitfaden für Implementierungsprojekte](../../partner/leitfaden-fuer-implementierungsprojekte.md)
-- [Integratoren: hier beginnen](../../../../eng-us/help/integrators/integrators-start-here.md)
+- [Integratoren: hier beginnen](../../integratoren/integratoren-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -99,7 +99,7 @@ die vollständige Lesereihenfolge im [Lesepfad](lesepfad-fuer-non-profit-organis
 | Kommunikationsmitarbeitende | [Kommunikation](kommunikation/README.md), [Barrierefreiheit](barrierefreiheit/README.md) |
 | Schatzmeister | [Budgetposten](foerdermittel/budgetposten-fuer-hosting-und-wartung.md), [Finanzdokumente](transparenz/finanzdokumente.md), [Hosting mit kleinem Budget](betrieb/hosting-mit-kleinem-budget.md) |
 | Technisch versierte Ehrenamtliche oder Partner | [SQLite und Velocity für kleine Teams](betrieb/sqlite-und-velocity-fuer-kleine-teams.md), [Routine für Sicherungen und Updates](betrieb/routine-fuer-sicherungen-und-updates.md) |
-| Neu im Thema Websites | [Nicht-Techniker: hier beginnen](../../../eng-us/help/non-technical-people/non-technical-people-start-here.md) |
+| Neu im Thema Websites | [Nicht-Techniker: hier beginnen](../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md) |
 
 ## Ihr erster Monat
 
@@ -119,8 +119,8 @@ die vollständige Lesereihenfolge im [Lesepfad](lesepfad-fuer-non-profit-organis
 - [Behörden: hier beginnen](../verwaltung/verwaltungen-hier-beginnen.md): Öffentliche Einrichtungen teilen viele
   Anforderungen mit Non-Profit-Organisationen (Barrierefreiheit, Transparenz, Aktenführung).
 - [Kunden: hier beginnen](../kunden/kunden-hier-beginnen.md): eine Website besitzen und im Alltag betreiben.
-- [Lokale Unternehmen: hier beginnen](../../../eng-us/help/local-businesses/local-businesses-start-here.md) und
-  [Privatpersonen: hier beginnen](../../../eng-us/help/individuals/individuals-start-here.md).
+- [Lokale Unternehmen: hier beginnen](../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md) und
+  [Privatpersonen: hier beginnen](../privatpersonen/privatpersonen-hier-beginnen.md).
 
 ## Verwandte Seiten
 

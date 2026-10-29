@@ -29,7 +29,7 @@ Korrekturen.
 - Über Composer oder Git, je nachdem, wie die Website installiert wurde ([Mit Git aktualisieren](../../mit-git-aktualisieren.md)).
 - **Setup > Updates and packages** (Aktualisierungen und Pakete) in der Administration findet und installiert
   Composer-Pakete ([Roadmap](../../projekt/roadmap.md)).
-- Was sich geändert hat: die Changelogs ([Auf dem Laufenden bleiben](../../../../eng-us/help/community/joining/staying-informed.md)).
+- Was sich geändert hat: die Changelogs ([Auf dem Laufenden bleiben](../../gemeinschaft/beitreten/auf-dem-laufenden-bleiben.md)).
 
 ## Eine Routine
 

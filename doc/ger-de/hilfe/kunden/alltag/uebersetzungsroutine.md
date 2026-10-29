@@ -60,6 +60,9 @@ Möglichkeiten, den Überblick zu behalten:
 
 - **Setup > Sprachen** zeigt pro Sprache, wie viele Elemente und Klassen eine Übersetzung darin haben und welche
   Siteaccesses sie anzeigen.
+
+  ![Setup, Sprachen: jede Inhaltssprache mit der Zahl ihrer Elemente und Klassen und den Siteaccesses, die sie anzeigen](../../bilder/creators/translations-overview.webp)
+
 - Auf der Versionsseite können Sie die aktuelle Version der Quelle mit der vergleichen, aus der die Übersetzung erstellt
   wurde ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 - Eine gemeinsame Liste (Ihr [Redaktionskalender](redaktionskalender.md)) mit einer Spalte „Sprachen“ für jedes neue Element.

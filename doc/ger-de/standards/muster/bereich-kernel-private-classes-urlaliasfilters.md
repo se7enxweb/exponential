@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/urlaliasfilters
 audience: developer
 category: standards
-order: 524
+order: 537
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/urlaliasfilters mit den Entwurfsmustern.
 keywords: kernel/private/classes/urlaliasfilters, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

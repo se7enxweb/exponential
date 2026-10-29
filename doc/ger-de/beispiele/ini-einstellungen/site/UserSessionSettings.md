@@ -2,14 +2,14 @@
 title: site.ini [UserSessionSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [UserSessionSettings] in site.ini: Tracking, TouchInterval, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail"
-keywords: Einstellung, site.ini, UserSessionSettings, INI, setting, Tracking, TouchInterval, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail
+summary: "Die Einstellungen von [UserSessionSettings] in site.ini: Tracking, TouchInterval, RecordIP, GeoIPDatabase, GeoIPLanguage, RetentionDays, NewDeviceMail, NewDeviceAdminMail ..."
+keywords: Einstellung, site.ini, UserSessionSettings, INI, setting, Tracking, TouchInterval, RecordIP, GeoIPDatabase, GeoIPLanguage, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail, SecurityAlertMail, FailedSignInAlertThreshold
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [UserSessionSettings]
 
-Der Block `[UserSessionSettings]` von `settings/site.ini`, mit 7 Einstellung(en).
+Der Block `[UserSessionSettings]` von `settings/site.ini`, mit 12 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Tracking
 
-> "Your devices": every sign-in is a row of the table expuser\_session (when the table is there), with when it  
-> started and was last used, the address, the browser and system, the sign-in method and Remember me. The user sees  
-> them at user/sessions and signs out one session or all others; an administrator with the policy user/sessions does  
-> the same for any user (user/sessions/<user id>). A session signed out there ends on its next request, on every  
-> session handler. Guide: doc/eng-us/features/6.0/user-sessions.md  
-> disabled: no rows are written and no session is checked (the pages say so).  
+> "Ihre Geräte": jede Anmeldung ist eine Zeile der Tabelle expuser\_session (wenn die Tabelle da ist), mit Beginn und letzter  
+> Nutzung, der Adresse, dem Browser und System, der Anmeldemethode und Angemeldet bleiben. Der Benutzer sieht  
+> sie unter user/sessions und meldet eine Sitzung oder alle anderen ab; ein Administrator mit der Richtlinie user/sessions  
+> tut dasselbe für jeden Benutzer (user/sessions/<user id>). Eine dort abgemeldete Sitzung endet bei ihrer nächsten Anfrage, bei jedem  
+> Session-Handler. Anleitung: doc/eng-us/features/6.0/user-sessions.md  
+> disabled: es werden keine Zeilen geschrieben und keine Sitzung geprüft (die Seiten sagen es).  
 
 Standard: `enabled`.
 
@@ -38,23 +38,70 @@ Tracking=enabled
 
 ## TouchInterval
 
-> The last use and address of a session are written at most this often (seconds), or when the address changes.  
+> Die letzte Nutzung und Adresse einer Sitzung werden höchstens so oft geschrieben (Sekunden), oder wenn sich die Adresse ändert.  
 
-Standard: `300`.
+Standard: `60`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/site.ini.append.php
 [UserSessionSettings]
-TouchInterval=300
+TouchInterval=60
+*/ ?>
+```
+
+## RecordIP
+
+> Wie die Adressen von Sitzungen aufbewahrt werden: full, truncated (nur das Netzwerk: 203.0.113.x, 2001:db8:85a3::/48),  
+> disabled (keine) oder audit: wie audit.ini es für das Audit sagt (\[UserAuditSettings\] RecordIP=disabled: keine,  
+> \[AuditPrivacySettings\] Field\[actor.ip\]=off: keine, truncate oder hash: das Netzwerk, full: die Adresse).  
+
+Standard: `audit`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+RecordIP=audit
+*/ ?>
+```
+
+## GeoIPDatabase
+
+> Der ungefähre Ort einer Anmeldung, aus einer GeoIP-Datenbank auf diesem Server im MaxMind-DB-Format (.mmdb, z. B.  
+> GeoLite2-City.mmdb), relativ zur Installation oder absolut; leer: keine Orte. Braucht die PHP-Erweiterung maxminddb  
+> oder das Composer-Paket maxmind-db/reader. Es wird nie ein anderer Server gefragt. Damit ist eine Anmeldung aus einem  
+> Land, aus dem sich das Konto innerhalb von RetentionDays nicht angemeldet hat, ein "neuer Ort" (Ereignis und Mail).  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+GeoIPDatabase=
+*/ ?>
+```
+
+## GeoIPLanguage
+
+> Die Sprache der Ortsnamen, die die Datenbank enthält (en, wenn ein Name nicht darin steht).  
+
+Standard: `en`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+GeoIPLanguage=en
 */ ?>
 ```
 
 ## RetentionDays
 
-> Ended sessions (signed out, revoked, expired) are kept this many days, for the list of recent sign-ins and to know  
-> a device seen before; the cronjob usersessions.php removes them afterwards. Sessions not used for \[Session\]  
-> SessionTimeout are ended by the same cronjob.  
+> Beendete Sitzungen (abgemeldet, widerrufen, abgelaufen) werden so viele Tage aufbewahrt, für die Liste der letzten Anmeldungen und um  
+> ein zuvor gesehenes Gerät zu erkennen; der Cronjob usersessions.php entfernt sie danach. Sitzungen, die für \[Session\]  
+> SessionTimeout nicht benutzt wurden, beendet derselbe Cronjob.  
 
 Standard: `90`.
 
@@ -68,8 +115,8 @@ RetentionDays=90
 
 ## NewDeviceMail
 
-> "New sign-in to your account" to the user, when a sign-in comes from a browser, system and device kind not seen  
-> for the account within RetentionDays (category security). Each user can turn it off on the page.  
+> "Neue Anmeldung bei Ihrem Konto" an den Benutzer, wenn eine Anmeldung von einem Browser, System und Gerätetyp kommt, die für das Konto  
+> innerhalb von RetentionDays nicht gesehen wurden (Kategorie security). Jeder Benutzer kann es auf der Seite ausschalten.  
 
 Standard: `enabled`.
 
@@ -83,7 +130,7 @@ NewDeviceMail=enabled
 
 ## NewDeviceAdminMail
 
-> The same as a note to the administrators: AdminMailReceivers\[\], else \[MailSettings\] AdminEmail (category admin).  
+> Dasselbe als Hinweis an die Administratoren: AdminMailReceivers\[\], sonst \[MailSettings\] AdminEmail (Kategorie admin).  
 
 Standard: `disabled`.
 
@@ -110,7 +157,7 @@ AdminMailReceivers[]
 
 ## FirstSignInMail
 
-> Whether the very first sign-in an account has here counts as a new device (there is nothing to compare it with).  
+> Ob die allererste Anmeldung, die ein Konto hier hat, als neues Gerät zählt (es gibt nichts, womit man sie vergleichen könnte).  
 
 Standard: `disabled`.
 
@@ -119,6 +166,35 @@ Standard: `disabled`.
 # settings/override/site.ini.append.php
 [UserSessionSettings]
 FirstSignInMail=disabled
+*/ ?>
+```
+
+## SecurityAlertMail
+
+> "Sicherheitswarnung" an den Eigentümer eines Kontos, wenn die zweistufige Anmeldung ein- oder ausgeschaltet wird, ein Wiederherstellungscode benutzt wird, Anmeldungen  
+> FailedSignInAlertThreshold-mal in Folge fehlschlagen (0: nie) oder das Konto gesperrt wird (Kategorie security, design:user/  
+> security\_alert\_mail.tpl, verlinkt auf user/security). Ein Benutzer kann diese nicht ausschalten; disabled schaltet sie für die Site aus.  
+> Gesendet aus dem Benutzer-Audit-Log (audit.ini \[UserAuditSettings\]): ohne es wird keine Warnung gesendet.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+SecurityAlertMail=enabled
+*/ ?>
+```
+
+## FailedSignInAlertThreshold
+
+Standard: `5`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+FailedSignInAlertThreshold=5
 */ ?>
 ```
 

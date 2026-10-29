@@ -64,7 +64,7 @@ dürfen; geben Sie solchen Seiten eine eigene Sektion und eine eigene Rolle.
 - [Sektionen](../../anleitungen/sektionen.md): Abschnitt 13.1 beschreibt dieselbe Einrichtung mit den Sektionsseiten
 - [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)
 - [Wie lege ich einen Benutzer oder eine Benutzergruppe an?](wie-lege-ich-einen-benutzer-oder-eine-benutzergruppe-an.md)
-- [Benutzer und Registrierung](../../../eng-us/help/cms-developers/users-and-registration.md)
+- [Benutzer und Registrierung](../cms-entwickler/benutzer-und-registrierung.md)
 - [Benutzerhandbuch](README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

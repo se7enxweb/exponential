@@ -77,8 +77,8 @@ Etwa eine Stunde, dann Gespräche mit Anbietern.
 3. [Fragen zu den Kosten](hosting-auswahl/fragen-zu-den-kosten.md)
 4. [Was Sie vor der Unterschrift fragen sollten](hosting-auswahl/was-sie-vor-der-unterschrift-fragen-sollten.md)
 5. [Domainname und E-Mail](hosting-auswahl/domainname-und-e-mail.md)
-6. Dann der Bereich für Ihre Art von Website: [Privatpersonen](../../../eng-us/help/individuals/individuals-start-here.md),
-   [Lokale Unternehmen](../../../eng-us/help/local-businesses/local-businesses-start-here.md) oder [Gemeinnützige Organisationen](../../../eng-us/help/non-profits/non-profits-start-here.md).
+6. Dann der Bereich für Ihre Art von Website: [Privatpersonen](../privatpersonen/privatpersonen-hier-beginnen.md),
+   [Lokale Unternehmen](../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md) oder [Gemeinnützige Organisationen](../non-profit-organisationen/non-profit-organisationen-hier-beginnen.md).
 
 Ziehen Sie eine bestehende Website um? Lesen Sie [Zu einem neuen Hoster wechseln](hosting-auswahl/zu-einem-neuen-hoster-wechseln.md).
 

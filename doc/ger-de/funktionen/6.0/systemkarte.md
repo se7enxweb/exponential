@@ -54,7 +54,7 @@ aus. Fügen Sie als root `--allow-root-user` hinzu, wie bei jedem Konsolenbefehl
 - **PHP**: die Version und die SAPI, OPcache (mit seinem Speicher), der JIT, die für Exponential wichtigen Extensions
   und `memory_limit`.
 - **Engine**: Exponential Velocity (Version, läuft oder gestoppt, laufende und konfigurierte Worker, Ports und TLS,
-  die Anzahl der Variablen in seiner envvars-Datei, Demo-Modus) und die anderen Webserver auf der Maschine (Apache,
+  die Anzahl der Variablen in seiner envvars-Datei, Demo-Modus aus den Site-envvars der Installation) und die anderen Webserver auf der Maschine (Apache,
   nginx, Caddy, FrankenPHP, PHP-FPM-Master und Pool-Worker).
 - **Datenbank**: ihr Typ, die Version des Servers und der Host (nur Host und Port).
 - **Website**: die Siteaccesses und der Standard-Siteaccess, die aktiven Extensions, der Demo-Modus, die
@@ -402,7 +402,7 @@ JSON):
 |---|---|
 | host | die Last mehr als doppelt so hoch ist wie die Anzahl der Kerne; der Arbeitsspeicher zu 90 % belegt ist (Fehler bei 95 %); ein Datenträger zu 90 % voll ist (Fehler bei 97 %) |
 | php | der PHP-Branch keinen Sicherheitssupport mehr hat (Fehler) oder ihn innerhalb von `[Php] WarnDays` verliert (Warnung); OPcache nicht geladen oder ausgeschaltet ist; eine empfohlene Extension fehlt (intl, mbstring, curl, gd oder imagick, xsl, sodium, apcu); `memory_limit` unter 256M liegt |
-| velocity | Velocity im Demo-Modus läuft (`EXP_DEMO_MODE=1` in seinen envvars) |
+| velocity | Velocity im Demo-Modus läuft (`EXP_DEMO_MODE=1` in seinen Site-envvars, `sites-available/<site>.envvars`); `EXP_DEMO_MODE=1` steht in den gemeinsamen `envvars`, wo die Worker es ablehnen (`refused (shared envvars)`) |
 | database | die Datenbank nicht antwortet (Fehler) |
 | site | der Demo-Modus eingeschaltet ist; die Debug-Ausgabe für jeden Besucher eingeschaltet ist |
 | caches | der View-Cache ausgeschaltet ist |

@@ -516,7 +516,7 @@ Erweiterung aktiv ist.
 |---|---|---|---|
 | `variable_names` | [Swark-Operatoren: Anfrage und System](swark-operatoren-anfrage-und-system.md#variable_names) | `SwarkVariableNamesOperator` (Erweiterung swark) | site, admin |
 | `video_thumbnail` |  | `sevenxThemesMediaOperators` (Erweiterung sevenx_themes_media) | site, admin |
-| `view_parameter` ([generiert](../../../eng-us/examples/template-operators/view_parameter.md)) | [Operatoren für Installation, Umgebung, Audit und CSP](operatoren-des-exponential-kernels.md#view_parameter) | `expViewParameterOperator` (kernel/common) | site, admin |
+| `view_parameter` ([generiert](../../beispiele/template-operatoren/view_parameter.md)) | [Operatoren für Installation, Umgebung, Audit und CSP](operatoren-des-exponential-kernels.md#view_parameter) | `expViewParameterOperator` (kernel/common) | site, admin |
 | `vsprintf` ([generiert](../../beispiele/template-operatoren/vsprintf.md)) | [PHP-Zeichenkettenfunktionen: kodieren und formatieren](php-zeichenkettenfunktionen-kodieren-und-formatieren.md#sprintf-und-vsprintf) | `eZTemplateStringsOperator` (lib/eztemplate/classes) | site, admin |
 
 ## W

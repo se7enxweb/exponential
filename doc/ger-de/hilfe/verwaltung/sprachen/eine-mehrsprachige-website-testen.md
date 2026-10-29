@@ -62,7 +62,7 @@ Verwenden Sie eine Testinstallation; üben Sie das Entfernen nie an einer Sprach
 ## Caches
 
 Leeren Sie nach Änderungen an Einstellungen den INI- und den Inhalts-Cache (`php bin/php/ezcache.php
---clear-tag=ini,content`) sowie den Antwort-Cache von Velocity (`./console exp:velocity cache clear`), wenn Velocity die
+--clear-tag=ini,content`) sowie den Antwort-Cache von Velocity (`./console exp:velocity cache clear --apply`), wenn Velocity die
 Website ausliefert; sonst zeigt ein Test womöglich einen alten Stand
 ([Inhaltssprachen, Abschnitt 10](../../../anleitungen/inhaltssprachen.md#10-befehle-für-die-shell)).
 

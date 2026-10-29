@@ -15,7 +15,7 @@ type: catalogue
 
 Eine Klasse, die der Template-Sprache einen Block oder eine Funktion hinzufügt ({def}, {foreach}, {cache-block} ...).
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Plugins |
 | Instanzen | 45 |

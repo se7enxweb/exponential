@@ -12,13 +12,13 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/datatable.ini`: 3 Blöcke, 10 Einstellungen.
 
-> Data tables: the tables of the installation's persistent classes (eZPersistentObject), the named database  
-> connections they and the tools can use, their schema, their relations to content, and the synchronisation between  
-> tables and content. See doc/eng-us/features/6.0/data-tables.md.  
+> Datentabellen: die Tabellen der persistenten Klassen der Installation (eZPersistentObject), die benannten Datenbankverbindungen,  
+> die sie und die Werkzeuge nutzen können, ihr Schema, ihre Beziehungen zu Inhalten und die Synchronisation zwischen  
+> Tabellen und Inhalten. Siehe doc/eng-us/features/6.0/data-tables.md.  
 >
-> Connections made in the administration (Setup > Data tables > Connections) are rows of the table  
-> exp\_data\_connection and need nothing here. This file is for what an extension ships: a connection it declares, the  
-> connection one of its classes uses, a relation its definition() does not state.  
+> Verbindungen, die in der Administration angelegt werden (Setup > Datentabellen > Verbindungen), sind Zeilen der Tabelle  
+> exp\_data\_connection und brauchen hier nichts. Diese Datei ist für das, was eine Erweiterung mitliefert: eine Verbindung, die sie deklariert, die  
+> Verbindung, die eine ihrer Klassen nutzt, eine Beziehung, die ihre definition() nicht angibt.  
 
 | Block | Einstellungen |
 |---|---|

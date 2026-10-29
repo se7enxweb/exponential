@@ -2,7 +2,7 @@
 title: Muster in extension/xrowmetadata
 audience: developer
 category: standards
-order: 477
+order: 483
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/xrowmetadata mit den Entwurfsmustern.
 keywords: extension/xrowmetadata, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -36,6 +36,7 @@ verweisen möchten. Jeder Pfad ist geordnet: Lesen Sie von oben nach unten.
 2. [Ein Leitfaden für Implementierungsprojekte](leitfaden-fuer-implementierungsprojekte.md)
 3. [Support-Stufen und Reaktionszeiten](support-stufen-und-reaktionszeiten.md)
 4. [Kunden-Websites aktuell halten](kunden-websites-aktuell-halten.md)
+5. [Eine Kundeninstallation prüfen](eine-kundeninstallation-pruefen.md)
 
 ## Entwicklung
 

@@ -2,7 +2,7 @@
 title: Muster in extension/explayouts_tags_query
 audience: developer
 category: standards
-order: 421
+order: 424
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/explayouts_tags_query mit den Entwurfsmustern.
 keywords: extension/explayouts_tags_query, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

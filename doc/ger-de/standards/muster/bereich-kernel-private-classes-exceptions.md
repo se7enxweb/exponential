@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/exceptions
 audience: developer
 category: standards
-order: 519
+order: 532
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/exceptions mit den Entwurfsmustern.
 keywords: kernel/private/classes/exceptions, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

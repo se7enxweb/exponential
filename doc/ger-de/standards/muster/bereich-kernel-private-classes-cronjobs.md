@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/cronjobs
 audience: developer
 category: standards
-order: 518
+order: 531
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/cronjobs mit den Entwurfsmustern.
 keywords: kernel/private/classes/cronjobs, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/cronjobs` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (27)
+## Klassen (30)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
@@ -25,7 +25,9 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/cronjobs`
 | `Exponential\Cronjob\Kernel\Cleanuprss` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/cleanuprss.php:29` | Der Code von cronjobs/cleanuprss.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Cronjob\Kernel\Clusterpurge` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/clusterpurge.php:25` | Der Code von cronjobs/clusterpurge.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Cronjob\Kernel\Contentcheck` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/contentcheck.php:18` | Der Code von cronjobs/contentcheck.php: baut den Referenzindex der Inhaltsprüfungen auf und hält ihn im Cache (expContentCheckReferences). |
-| `Exponential\Cronjob\Kernel\Contentjobs` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/contentjobs.php:20` | Der Cronjob-Teil contentjobs (cronjobs/contentjobs.php, Gruppe frequent): startet die Inhaltsjobs, die einen Worker brauchen und keinen haben — ein laufender Job, des… |
+| `Exponential\Cronjob\Kernel\Contentjobs` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/contentjobs.php:21` | Der Cronjob-Teil contentjobs (cronjobs/contentjobs.php, Gruppe frequent): startet die Inhaltsjobs, die einen Worker brauchen und keinen haben — ein laufender Job, des… |
+| `Exponential\Cronjob\Kernel\Datatablesync` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/datatablesync.php:16` | Der Cronjob-Teil datatablesync (cronjobs/datatablesync.php, Gruppe frequent; doc/eng-us/features/6.0/data-tables.md, „Synchronisation“): startet jede… |
+| `Exponential\Cronjob\Kernel\Exphelp` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/exphelp.php:15` | – |
 | `Exponential\Cronjob\Kernel\Explogrotate` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/explogrotate.php:19` | Der Code von cronjobs/explogrotate.php: der Cronjob-Teil für die Log-Rotation ([CronjobPart-logs], in keinem Standardteil, er läuft also nur, wenn eine Site ihn hinzufügt zu… |
 | `Exponential\Cronjob\Kernel\Hide` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/hide.php:25` | Der Code von cronjobs/hide.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Cronjob\Kernel\HttpcacheCleanup` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/httpcache_cleanup.php:23` | Der Code von cronjobs/httpcache_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). |
@@ -45,4 +47,5 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/cronjobs`
 | `Exponential\Cronjob\Kernel\Unlock` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/unlock.php:93` | Der Code von cronjobs/unlock.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Cronjob\Kernel\Unpublish` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/unpublish.php:25` | Der Code von cronjobs/unpublish.php, in eine Klasse verschoben (#207 Stufe 1). |
 | `Exponential\Cronjob\Kernel\Updateviewcount` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/updateviewcount.php:25` | Der Code von cronjobs/updateviewcount.php, in eine Klasse verschoben (#207 Stufe 1). |
+| `Exponential\Cronjob\Kernel\Usersessions` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/usersessions.php:15` | – |
 | `Exponential\Cronjob\Kernel\Workflow` | class extends CronjobPart | [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | `kernel/private/classes/cronjobs/workflow.php:25` | Der Code von cronjobs/workflow.php, in eine Klasse verschoben (#207 Stufe 1). |

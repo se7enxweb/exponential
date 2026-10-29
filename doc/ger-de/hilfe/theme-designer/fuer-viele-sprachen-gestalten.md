@@ -37,7 +37,7 @@ Diese Seite listet die Entscheidungen auf, die ein Designer vor diesen Schritten
 | Daten und Zahlen | der Locale des Siteaccess | automatisch |
 
 Ihr Design muss alle drei in ihrer längsten Form aufnehmen. Hintergrund zu Übersetzungen von Inhalten:
-[Übersetzungen und Sprachen](../../../eng-us/help/cms-developers/translations-and-languages.md).
+[Übersetzungen und Sprachen](../cms-entwickler/uebersetzungen-und-sprachen.md).
 
 ## Textausdehnung
 

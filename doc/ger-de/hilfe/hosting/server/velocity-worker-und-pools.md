@@ -133,8 +133,10 @@ geforkt, und das Log sagt es.
 `ForkPerRequest=disabled` (ausgeliefert) hält Worker über Anfragen hinweg am Leben, mit Datenbankverbindungen und Stat-Caches. Gemessen auf
 einer angemeldeten Seite der Administration: 256 bis 284 ms mit einem frischen Worker pro Anfrage, 73 bis 80 ms mit persistenten Workern
 ([Kapitel 8, Abschnitt 8.3.7](../../../installation/08-die-website-ausliefern.md#837-persistente-worker-und-keepglobals)). Zwischen Anfragen stellt
-der Worker statische Eigenschaften, Superglobals, Globals, Puffer und Handler wieder her. Vier Registries des Kernels werden absichtlich
-behalten (`expVelocity::DEFAULT_KEEP_GLOBALS`); `[ApplicationSettings] KeepGlobals[]` fügt Namen nur für eine globale Variable hinzu, die
+der Worker statische Eigenschaften, Superglobals, Globals, Puffer und Handler wieder her. Vier Registries des Kernels und der Worker-Bereich des
+Kernel-Service-Containers (`expKernelServicesWorker`: die Einstellungsdateien jedes Siteaccess, einmal pro Worker
+aufgebaut, siehe [den kompilierten Kernel-Container](../leistung/kompilierter-kernel-container.md))
+werden absichtlich behalten (`expVelocity::DEFAULT_KEEP_GLOBALS`); `[ApplicationSettings] KeepGlobals[]` fügt Namen nur für eine globale Variable hinzu, die
 einmal durch `include_once` gefüllt wird. Behalten Sie nichts anderes: Eine globale Variable mit Anfragebezug, die zwischen Anfragen
 behalten wird, lässt die Anfrage eines Besuchers in die nächste durchsickern.
 

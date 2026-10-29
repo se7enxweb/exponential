@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/role
 audience: developer
 category: standards
-order: 505
+order: 514
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/role mit den Entwurfsmustern.
 keywords: kernel/classes/role, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

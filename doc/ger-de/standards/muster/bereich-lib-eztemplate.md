@@ -2,7 +2,7 @@
 title: Muster in lib/eztemplate
 audience: developer
 category: standards
-order: 539
+order: 552
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/eztemplate mit den Entwurfsmustern.
 keywords: lib/eztemplate, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -58,7 +58,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `lib/eztemplate` mit den Mustern,
 | `eZTemplateOptimizer` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `lib/eztemplate/classes/eztemplateoptimizer.php:18` | – |
 | `eZTemplateParser` | class | – | `lib/eztemplate/classes/eztemplateparser.php:18` | – |
 | `eZTemplatePHPOperator` | class | [Template-Operator (Interpreter-Plugin)](template-operator.md) | `lib/eztemplate/classes/eztemplatephpoperator.php:30` | – |
-| `eZTemplateRoleOperator` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Template-Operator (Interpreter-Plugin)](template-operator.md) | `lib/eztemplate/classes/eztemplateroleoperator.php:24` | Die Klasse eZTemplateRoleOperator stellt Template-Operatoren zur Prüfung der Rollenzugehörigkeit von Benutzern bereit |
+| `eZTemplateRoleOperator` | class | [Fabrik und statische Fabrikmethoden](fabrik.md), [Template-Operator (Interpreter-Plugin)](template-operator.md) | `lib/eztemplate/classes/eztemplateroleoperator.php:29` | Die Klasse eZTemplateRoleOperator stellt Template-Operatoren zur Prüfung der Rollenzugehörigkeit und der Richtlinien eines Benutzers bereit (doc/eng-us/features/6.0/role-and-policy-… |
 | `eZTemplateRoot` | class | – | `lib/eztemplate/classes/eztemplateroot.php:26` | – |
 | `eZTemplateSectionFunction` | class | [Template-Funktion (Interpreter-Plugin)](template-funktion.md) | `lib/eztemplate/classes/eztemplatesectionfunction.php:58` | – |
 | `eZTemplateSectionIterator` | class | – | `lib/eztemplate/classes/eztemplatesectioniterator.php:28` | – |

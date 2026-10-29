@@ -118,7 +118,7 @@ niemand diese Aufgabe übernehmen will, planen Sie von Anfang an ein, einen Host
 | [Website-Ersteller](../ersteller/website-ersteller/website-ersteller-hier-beginnen.md) | wer auch immer die Website baut |
 | [Gemeinnützige Organisationen](../non-profit-organisationen/non-profit-organisationen-hier-beginnen.md) | Wohltätigkeitsorganisationen, Vereine und Gemeinschaftsgruppen |
 | [Privatpersonen](../privatpersonen/privatpersonen-hier-beginnen.md) | eine Person mit einer eigenen Website |
-| [Nicht-technische Menschen](../../../eng-us/help/non-technical-people/non-technical-people-start-here.md) | alle, die lieber keine technischen Seiten lesen |
+| [Nicht-technische Menschen](../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md) | alle, die lieber keine technischen Seiten lesen |
 
 ## Verwandte Seiten
 

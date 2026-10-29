@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/classicmenu
 audience: developer
 category: standards
-order: 483
+order: 489
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/classicmenu mit den Entwurfsmustern.
 keywords: kernel/classes/classicmenu, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

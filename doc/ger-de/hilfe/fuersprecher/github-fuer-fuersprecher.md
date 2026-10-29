@@ -58,10 +58,18 @@ Wie Sie ein gutes Issue schreiben: [Fehler gut melden](fehler-gut-melden.md). We
 - **Dokumentation**: **Auf GitHub bearbeiten** auf jeder Hilfeseite öffnet die Datei; GitHub forkt das Repository für
   Sie ([Die Hilfe verbessern](die-hilfe-verbessern.md)).
 - **Code**: forken, Branch anlegen, committen, Pull Request ([Mit Git entwickeln](../mit-git-entwickeln.md#eine-änderung-per-pull-request-beitragen)).
+- **Übertragung des Urheberrechts (CLA)**: Ein Code-Beitrag zum Kernel (`se7enxweb/exponential`), in welcher Form auch
+  immer, wird erst übernommen, wenn das unterzeichnete Contributor Licensing Agreement seines Autors eingegangen ist.
+  Mit Unterschrift und Einreichung übertragen Sie das Urheberrecht an Ihrem Beitrag an 7x, das damit sein Eigentümer
+  wird, und geben die Kontrolle darüber ab: 7x darf ihn auf jede Weise verwenden, ändern, neu lizenzieren und
+  verbreiten, ohne Sie zu fragen oder zu bezahlen, und Sie können ihn nicht zurückziehen
+  ([Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)). Ihre eigenen
+  Erweiterungen sind nicht betroffen.
 - **Commit-Nachrichten** beginnen mit `Added:`, `Updated:`, `Fixed:`, `Removed:` oder `Renamed:`
   ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
-- **Jeder Pull Request wird übernommen**, und seine Commits bleiben erhalten; was korrigiert werden muss, wird in Commits
-  obendrauf korrigiert ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
+- **Jeder Pull Request wird übernommen.** Solange er offen ist, fasst sein Autor ihn zusammen (Squash) und setzt ihn
+  per Rebase auf `main` auf, wie es die Reviews verlangen; sobald er übernommen ist, wird `main` nie umgeschrieben, und
+  spätere Korrekturen kommen als neue Pull Requests ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 
 ## Helfen ohne Code
 

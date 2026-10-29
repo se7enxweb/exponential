@@ -2,7 +2,7 @@
 title: Muster in extension/recaptcha
 audience: developer
 category: standards
-order: 467
+order: 472
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/recaptcha mit den Entwurfsmustern.
 keywords: extension/recaptcha, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

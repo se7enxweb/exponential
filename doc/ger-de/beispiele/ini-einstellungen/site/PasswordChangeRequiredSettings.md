@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## ExemptViews
 
-> "Change password at next sign-in": an administrator ticks it on a user account (the  
-> account edit form, or ./console exp:user-password-change-required); after that user's  
-> next sign-in every page sends them to user/password until they set a new password,  
-> which clears it. The REST interface answers 403 password\_change\_required, WebDAV and  
-> SOAP refuse the sign-in. Ignored for administrators in demo mode (EXP\_DEMO\_MODE=1).  
-> Guide: doc/eng-us/features/6.0/password-change-at-next-sign-in.md  
+> "Passwort bei der nächsten Anmeldung ändern": ein Administrator setzt den Haken an einem Benutzerkonto (im  
+> Bearbeitungsformular des Kontos oder mit ./console exp:user-password-change-required); nach der  
+> nächsten Anmeldung dieses Benutzers sendet jede Seite ihn zu user/password, bis er ein neues Passwort setzt,  
+> was die Markierung löscht. Die REST-Schnittstelle antwortet mit 403 password\_change\_required, WebDAV und  
+> SOAP verweigern die Anmeldung. Ignoriert für Administratoren im Demo-Modus (EXP\_DEMO\_MODE=1).  
+> Anleitung: doc/eng-us/features/6.0/password-change-at-next-sign-in.md  
 >
-> The views that stay open meanwhile: module/view, or a module alone for all its views.  
-> user/password is always open. user2fa is the two-step sign-in (it comes first).  
+> Die Ansichten, die währenddessen offen bleiben: module/view, oder ein Modul allein für alle seine Ansichten.  
+> user/password ist immer offen. user2fa ist die zweistufige Anmeldung (sie kommt zuerst).  
 
 Standard: eine Liste mit 3: `user/password`, `user/logout`, `user2fa`.
 

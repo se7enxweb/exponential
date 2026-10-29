@@ -105,7 +105,7 @@ anderen Sprache zu zeigen, kann verwirren. Entscheiden Sie notfalls je Produktka
 |---|---|---|
 | Inhaltssprachen je Installation | höchstens 62 unter 64-Bit-PHP, 30 unter 32-Bit-PHP | [Sprachen, Abschnitt 11](../../../sprachen.md#11-die-grenze-von-62-inhaltssprachen) |
 | Eine Sprache, die hinzugefügt und nie verwendet wurde | belegt ihren Platz trotzdem, bis sie entfernt wird | ebenda |
-| Administration in der eigenen Sprache des Redakteurs | vollständig bei 19 Übersetzungen; teilweise oder Englisch bei den übrigen | [Sprachen, Abschnitt 2](../../../sprachen.md#2-unterstützungsstufen) |
+| Administration in der eigenen Sprache des Redakteurs | vollständig in jeder mitgelieferten Übersetzung; Englisch für eine Sprache ohne Übersetzung | [Sprachen, Abschnitt 2](../../../sprachen.md#2-unterstützungsstufen) |
 | Die Standard-Inhaltssprache einer Website mit Inhalten ändern | kann Objekte verbergen, die es in der neuen Sprache nicht gibt | [10.14 Mehrsprachige Websites](../../../installation/10-nach-der-installation.md#1014-mehrsprachige-sites) |
 
 ## Die Entscheidungstabelle

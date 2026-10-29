@@ -2,7 +2,7 @@
 title: Muster in lib
 audience: developer
 category: standards
-order: 527
+order: 540
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib mit den Entwurfsmustern.
 keywords: lib, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Muster in extension/ngclasslist
 audience: developer
 category: standards
-order: 463
+order: 468
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ngclasslist mit den Entwurfsmustern.
 keywords: extension/ngclasslist, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

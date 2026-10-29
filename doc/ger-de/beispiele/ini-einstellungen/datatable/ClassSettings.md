@@ -11,14 +11,14 @@ generated: exp:help:examples
 
 Der Block `[ClassSettings]` von `settings/datatable.ini`, mit 1 Einstellung(en).
 
-> Declared connections: one block per connection, \[Connection\_<identifier>\], read-only in the administration.  
+> Deklarierte Verbindungen: ein Block pro Verbindung, \[Connection\_<identifier>\], in der Administration nur lesbar.  
 >
 > \[Connection\_archive\]  
 > Name=Archive database  
-> Engine=mysql                 sqlite, mysql, postgresql, oracle, sqlserver or mongodb  
+> Engine=mysql                 sqlite, mysql, postgresql, oracle, sqlserver oder mongodb  
 > Server=db2.example.com  
 > Port=3306  
-> Database=archive             for sqlite the file, relative to the installation (in SQLiteDirectories)  
+> Database=archive             bei sqlite die Datei, relativ zur Installation (in SQLiteDirectories)  
 > User=archive  
 > Secret=env:ARCHIVE\_DB\_PASSWORD  
 > Charset=utf8mb4  
@@ -32,8 +32,8 @@ Bearbeiten Sie `settings/datatable.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Connection
 
-> The connection a persistent class uses, when its definition() does not name one ('connection' => '<identifier>'):  
-> Connection\[<class name>\]=<identifier>  
+> Die Verbindung, die eine persistente Klasse nutzt, wenn ihre definition() keine nennt ('connection' => '<identifier>'):  
+> Connection\[<Klassenname>\]=<identifier>  
 
 Standard: eine leere Liste.
 

@@ -14,8 +14,8 @@ Jeder Workflow-Ereignistyp des Kernels und der mitgelieferten Erweiterungen und 
 
 | Ereignis | Name | Klasse | Akzeptierte Auslöser |
 |---|---|---|---|
-| [expdatatablemirror](expdatatablemirror.md) | Mirror to data tables | `expDataTableMirrorType` | content/publish (after) |
-| [expuserapprove](expuserapprove.md) | Approve user accounts | `expUserApproveType` | content/publish (before) |
+| [expdatatablemirror](expdatatablemirror.md) | Auf Datentabellen spiegeln | `expDataTableMirrorType` | content/publish (after) |
+| [expuserapprove](expuserapprove.md) | Benutzerkonten freigeben | `expUserApproveType` | content/publish (before) |
 | [ezapprove](ezapprove.md) | Freigeben | `eZApproveType` | content/publish (before) |
 | [ezfinishuserregister](ezfinishuserregister.md) | Benutzerregistrierung abschließen | `eZFinishUserRegisterType` | content/publish (after) |
 | [ezmultiplexer](ezmultiplexer.md) | Multiplexer | `eZMultiplexerType` | beliebig |

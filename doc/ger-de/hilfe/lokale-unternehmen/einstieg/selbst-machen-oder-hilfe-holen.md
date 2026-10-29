@@ -91,7 +91,7 @@ gegenüber.
 - [Mit einem lokalen Partner oder Freiberufler arbeiten](mit-einem-lokalen-partner-oder-freiberufler-arbeiten.md)
 - [Wann Sie wen anrufen](../../kunden/partner-und-hoster/wann-sie-wen-anrufen.md)
 - [Wer was macht](../../kunden/partner-und-hoster/wer-was-macht.md)
-- [Nicht-technische Menschen: hier beginnen](../../../../eng-us/help/non-technical-people/non-technical-people-start-here.md)
+- [Nicht-technische Menschen: hier beginnen](../../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

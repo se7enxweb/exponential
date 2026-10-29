@@ -38,6 +38,9 @@ ausgegraut oder gar nicht angezeigt.
 | [Wer ist 7x?](wer-ist-7x.md) | Das Unternehmen hinter Exponential kennenlernen: fast dreißig Jahre mit diesem Code, von den Jahren von eZ Publish bis Exponential 6, die Produkte, die Community und wie Sie mitmachen |
 | [Wer ist die Exponential Foundation?](wer-ist-die-exponential-foundation.md) | Die gemeinnützige Organisation kennenlernen, die das Open-Source-Projekt und die ganze Familie der Exponential-Produkte betreibt, und wozu sich das Projekt verpflichtet |
 | [Unsere Ziele](../ziele.md) | Wissen, warum es Exponential gibt, was schon eingebaut ist, damit Sie es nicht bauen müssen, warum es freie Software ist, wie 7x seinen Lebensunterhalt verdient und warum wir Sie einladen mitzumachen, mit ehrlichen Antworten auf Zweifel an unseren Absichten |
+| [Community](gemeinschaft/community-hier-beginnen.md) | Die Exponential-Community kennenlernen: die Menschen, die weltweit Software mit Exponential nutzen, dazu beitragen, sie bekannt machen und entwickeln |
+| [Ökosystem](oekosystem/oekosystem-hier-beginnen.md) | Das größere Ökosystem jenseits der Community kennenlernen: jeden Teil der Welt von Exponential innerhalb des PHP-Stacks, seine Benutzer und Schöpfer |
+| [Partner](partner/partner-hier-beginnen.md) | Die Exponential-Partner kennenlernen: Sie tragen finanziell zur dauerhaften Zukunft des Projekts bei, geben Code und mehr an es zurück und arbeiten direkt mit 7x und der Exponential Foundation zusammen |
 | [Das Projekt Exponential](projekt/README.md) | Die FAQ, die Fragen zur Lizenz, die Roadmap, Unterstützung und die Community-Kanäle finden, und wie Sie bauen, beitragen und geben, so wie die Projektwebsite exponential.earth sie vorstellt |
 
 ## Die tägliche Arbeit

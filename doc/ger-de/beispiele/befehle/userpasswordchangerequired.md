@@ -2,14 +2,14 @@
 title: exp:userpasswordchangerequired
 audience: developer, admin
 category: examples
-summary: "Change password at next sign-in: show, set or clear the mark of a user account."
+summary: "Passwortänderung bei der nächsten Anmeldung: zeigt die Markierung eines Benutzerkontos an, setzt sie oder löscht sie."
 keywords: Konsole, Befehl, exp:userpasswordchangerequired, userpasswordchangerequired, console, command, CLI, userpasswordchangerequired.php, exp:user-password-change-required
 type: generated
 generated: exp:help:examples
 ---
 # exp:userpasswordchangerequired
 
-Change password at next sign-in: show, set or clear the mark of a user account.
+Passwortänderung bei der nächsten Anmeldung: zeigt die Markierung eines Benutzerkontos an, setzt sie oder löscht sie.
 
 Skript `bin/php/userpasswordchangerequired.php`, Code in `kernel/private/classes/commands/userpasswordchangerequired.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -42,8 +42,8 @@ Exit code: 0 done, 1 no such user, 2 usage error.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--login` | erforderlich | The login of the account |
-| `--user-id` | erforderlich | The user (content object) id of the account |
+| `--login` | erforderlich | Das Login des Kontos |
+| `--user-id` | erforderlich | Die Benutzer-ID (Inhaltsobjekt-ID) des Kontos |
 | `--json` |  | Ein JSON-Objekt statt des Textes |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

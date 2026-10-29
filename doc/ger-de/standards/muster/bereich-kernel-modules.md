@@ -2,7 +2,7 @@
 title: Muster in kernel/modules
 audience: developer
 category: standards
-order: 513
+order: 526
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/modules mit den Entwurfsmustern.
 keywords: kernel/modules, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (76)
+## Klassen (78)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
@@ -27,13 +27,15 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `expHandlerWizard` | class extends expExtensionWizard | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/exphandlerwizard.php:29` | Erstellt einen Handler: eine Klasse, die durch eine INI-Einstellung benannt wird und die der Kernel anstelle seiner eigenen lädt. |
 | `expKernelOverrideWizard` | class extends expExtensionWizard | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expkerneloverridewizard.php:24` | Der Kernel-Überschreibungsassistent: eine Kernel-Klasse vollständig ersetzen. |
 | `expModuleExtensionWizard` | class extends expExtensionWizard | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expmoduleextensionwizard.php:31` | Erstellt eine Modul-Extension über bereits vorhandene Tabellen. |
+| `expModuleTableCode` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expmoduletablecode.php:22` | Die Dateien einer Modultabelle (expModuleTableWizard): die persistente Klasse, das Modul mit seinen Ansichten list, edit, remove und JSON und seinen Richtlinien, die… |
+| `expModuleTableWizard` | class extends expExtensionWizard | [Fabrik und statische Fabrikmethoden](fabrik.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expmoduletablewizard.php:34` | Der Modultabellen-Assistent (Setup › RAD › Module table, setup/moduletable; doc/eng-us/features/6.0/data-tables.md, „The module table wizard“): eine NEUE Datentabelle… |
 | `expModuleWizard` | class extends expExtensionWizard | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expmodulewizard.php:28` | Der Modul-Assistent: ein Modul, seine Ansichten und die Richtlinien, die sie erreichen. |
-| `expPreloadRunner` | class | – | `kernel/setup/exppreloadrunner.php:28` | Der Preloader als Bibliothek: Er wärmt die Seiten-Caches der Website vor und meldet über einen Callback, was er getan hat, sodass derselbe Code ein Terminal, eine Adm… steuern kann |
+| `expPreloadRunner` | class | – | `kernel/setup/exppreloadrunner.php:28` | Der Preloader als Bibliothek: er wärmt die Seiten-Caches der Site auf und meldet über einen Callback, was er getan hat, damit derselbe Code ein Terminal, eine Admin… |
 | `expRADCatalogue` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expradcatalogue.php:29` | Jeder Punkt, an dem dieses System erweitert werden kann, und was dazu nötig ist. |
 | `expRADHealth` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expradhealth.php:23` | Was in dieser Installation konfiguriert ist und nicht funktionieren kann. |
 | `expRADSurvey` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expradsurvey.php:26` | Eine Live-Erhebung, an welchen Stellen diese Installation erweitert werden kann. |
 | `expSettingsExtensionWizard` | class extends expExtensionWizard | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expsettingsextensionwizard.php:26` | Der Einstellungs-Extension-Assistent: eine Extension, die überwiegend aus INI-Dateien besteht. |
-| `expStaticCacheRunner` | class | – | `kernel/setup/expstaticcacherunner.php:33` | Erzeugt den statischen Cache für jeweils eine Website und meldet jede Seite, sobald sie geschrieben ist, sodass die Administrationsoberfläche einen Lauf statt eines b… zeigt |
+| `expStaticCacheRunner` | class | – | `kernel/setup/expstaticcacherunner.php:33` | Erzeugt den statischen Cache für jeweils eine Website und meldet jede Seite, sobald sie geschrieben ist, sodass die Administrationsoberfläche einen Lauf statt eines Bl… |
 | `expTemplateExtensionWizard` | class extends expExtensionWizard | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/exptemplateextensionwizard.php:25` | Der Template-Extension-Assistent: alles, was man einem Template beibringen kann aufzurufen. |
 | `expWorkflowEventWizard` | class extends expExtensionWizard | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expworkfloweventwizard.php:27` | Erstellt einen Workflow-Ereignistyp: einen Schritt, den ein Workflow ausführen kann, wenn etwas veröffentlicht, verschoben, entfernt, registriert oder gekauft wird. |
 | `eZCheckClasses` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/setup/expclassloadcheck.php:26` | Die Teile der Prüfung, die es lohnt, an einer Stelle zu haben. |
@@ -96,7 +98,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `eZWorkflowFunctionCollection` | class | [Fetch-Funktion (Query Object, Fassade)](fetch-funktion.md) | `kernel/workflow/ezworkflowfunctioncollection.php:20` | – |
 | `eZWorkflowFunctions` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/workflow/ezworkflowfunctions.php:14` | – |
 
-## Modulansichten (234)
+## Modulansichten (231)
 
 | Ansicht | Skript | Richtlinienfunktionen | Definiert in |
 | --- | --- | --- | --- |
@@ -165,31 +167,45 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `/content/translation` | `translation.php` | read | `kernel/content/module.php:476` |
 | `/content/treemenu` | `treemenu.php` | read | `kernel/content/module.php:505` |
 | `/content/subitemsexport` | `subitemsexport.php` | read | `kernel/content/module.php:513` |
-| `/content/dashboard` | `dashboard.php` | dashboard | `kernel/content/module.php:519` |
-| `/content/queued` | `queued.php` | edit | `kernel/content/module.php:526` |
-| `/content/job` | `job.php` | read | `kernel/content/module.php:535` |
-| `/content/jobs` | `jobs.php` | read | `kernel/content/module.php:542` |
-| `/contentcheck/unreferenced` | `unreferenced.php` | unreferenced | `kernel/contentcheck/module.php:26` |
-| `/contentcheck/trash` | `trash.php` | unreferenced, trash | `kernel/contentcheck/module.php:34` |
-| `/contentcheck/brokenrelations` | `brokenrelations.php` | brokenrelations | `kernel/contentcheck/module.php:42` |
-| `/contentcheck/fixfiles` | `fixfiles.php` | brokenrelations, fixfiles | `kernel/contentcheck/module.php:49` |
-| `/contentcheck/scope` | `scope.php` | – | `kernel/contentcheck/module.php:57` |
-| `/contentcheck/storage` | `storage.php` | storage | `kernel/contentcheck/module.php:64` |
-| `/contentcheck/storageaction` | `storageaction.php` | storage | `kernel/contentcheck/module.php:72` |
-| `/contentfinder/search` | `search.php` | search | `kernel/contentfinder/module.php:24` |
-| `/contentfinder/action` | `action.php` | search, delete | `kernel/contentfinder/module.php:31` |
+| `/content/dashboard` | `dashboard.php` | dashboard | `kernel/content/module.php:520` |
+| `/content/queued` | `queued.php` | edit | `kernel/content/module.php:527` |
+| `/content/job` | `job.php` | read | `kernel/content/module.php:536` |
+| `/content/jobs` | `jobs.php` | read | `kernel/content/module.php:544` |
+| `/contentcheck/unreferenced` | `unreferenced.php` | unreferenced | `kernel/contentcheck/module.php:28` |
+| `/contentcheck/trash` | `trash.php` | unreferenced, trash | `kernel/contentcheck/module.php:37` |
+| `/contentcheck/brokenrelations` | `brokenrelations.php` | brokenrelations | `kernel/contentcheck/module.php:46` |
+| `/contentcheck/fixfiles` | `fixfiles.php` | brokenrelations, fixfiles | `kernel/contentcheck/module.php:56` |
+| `/contentcheck/scope` | `scope.php` | – | `kernel/contentcheck/module.php:64` |
+| `/contentcheck/storage` | `storage.php` | storage | `kernel/contentcheck/module.php:72` |
+| `/contentcheck/storageaction` | `storageaction.php` | storage | `kernel/contentcheck/module.php:81` |
+| `/contentfinder/search` | `search.php` | search | `kernel/contentfinder/module.php:25` |
+| `/contentfinder/action` | `action.php` | search, delete | `kernel/contentfinder/module.php:33` |
 | `/csp/report` | `report.php` | – | `kernel/csp/module.php:22` |
+| `/datatable/dashboard` | `dashboard.php` | read | `kernel/datatable/module.php:21` |
+| `/datatable/table` | `table.php` | read | `kernel/datatable/module.php:28` |
+| `/datatable/rows` | `rows.php` | read | `kernel/datatable/module.php:34` |
+| `/datatable/schema` | `schema.php` | manage | `kernel/datatable/module.php:41` |
+| `/datatable/syncs` | `syncs.php` | sync | `kernel/datatable/module.php:48` |
+| `/datatable/sync` | `sync.php` | sync | `kernel/datatable/module.php:54` |
+| `/datatable/conflicts` | `conflicts.php` | sync | `kernel/datatable/module.php:61` |
+| `/datatable/connections` | `connections.php` | connections | `kernel/datatable/module.php:68` |
+| `/datatable/connection` | `connection.php` | connections | `kernel/datatable/module.php:74` |
 | `/error/view` | `view.php` | – | `kernel/error/module.php:13` |
-| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:28` |
-| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:35` |
-| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:42` |
-| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:51` |
-| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:65` |
-| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:72` |
-| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:79` |
-| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:87` |
-| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:94` |
-| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:102` |
+| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:41` |
+| `/exphelp/audience` | `audience.php` | read | `kernel/exphelp/module.php:49` |
+| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:59` |
+| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:67` |
+| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:77` |
+| `/exphelp/extensions` | `extensions.php` | read | `kernel/exphelp/module.php:93` |
+| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:100` |
+| `/exphelp/image` | `image.php` | read | `kernel/exphelp/module.php:108` |
+| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:116` |
+| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:123` |
+| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:132` |
+| `/exphelp/state` | `state.php` | read | `kernel/exphelp/module.php:143` |
+| `/exphelp/feedback` | `feedback.php` | – | `kernel/exphelp/module.php:151` |
+| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:159` |
+| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:168` |
 | `/ezinfo/copyright` | `copyright.php` | read | `kernel/ezinfo/module.php:14` |
 | `/ezinfo/about` | `about.php` | read | `kernel/ezinfo/module.php:21` |
 | `/ezinfo/is_alive` | `isalive.php` | read | `kernel/ezinfo/module.php:27` |
@@ -211,12 +227,8 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `/notification/job` | `job.php` | administrate | `kernel/notification/module.php:39` |
 | `/notification/addtonotification` | `addtonotification.php` | use | `kernel/notification/module.php:46` |
 | `/package/list` | `list.php` | list | `kernel/package/module.php:13` |
-| `/package/upload` | `upload.php` | import | `kernel/package/module.php:29` |
-| `/package/create` | `create.php` | create | `kernel/package/module.php:37` |
-| `/package/viewfile` | `viewfile.php` | read | `kernel/package/module.php:84` |
-| `/package/compare` | `compare.php` | read | `kernel/package/module.php:95` |
-| `/package/install` | `install.php` | install | `kernel/package/module.php:108` |
-| `/package/uninstall` | `uninstall.php` | install | `kernel/package/module.php:132` |
+| `/package/export` | `export.php` | export | `kernel/package/module.php:62` |
+| `/package/view` | `view.php` | read | `kernel/package/module.php:71` |
 | `/pdf/edit` | `edit.php` | edit | `kernel/pdf/module.php:13` |
 | `/pdf/list` | `list.php` | edit | `kernel/pdf/module.php:48` |
 | `/role/list` | `list.php` | – | `kernel/role/module.php:13` |
@@ -230,66 +242,51 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `/rss/edit_import` | `edit_import.php` | edit | `kernel/rss/module.php:41` |
 | `/rss/feed` | `feed.php` | feed | `kernel/rss/module.php:55` |
 | `/search/stats` | `stats.php` | – | `kernel/search/module.php:15` |
+| `/secrets/list` | `list.php` | manage | `kernel/secrets/module.php:19` |
 | `/section/list` | `list.php` | ansehen, bearbeiten oder zuweisen | `kernel/section/module.php:13` |
 | `/section/view` | `view.php` | ansehen oder zuweisen | `kernel/section/module.php:20` |
 | `/section/edit` | `edit.php` | edit | `kernel/section/module.php:28` |
 | `/section/assign` | `assign.php` | assign | `kernel/section/module.php:35` |
 | `/settings/view` | `view.php` | – | `kernel/settings/module.php:14` |
-| `/settings/edit` | `edit.php` | – | `kernel/settings/module.php:18` |
+| `/settings/edit` | `edit.php` | – | `kernel/settings/module.php:21` |
 | `/setup/init` | `ezsetup.php` | install | `kernel/setup/module.php:18` |
 | `/setup/cache` | `cache.php` | managecache | `kernel/setup/module.php:25` |
-| `/setup/cronjobsstream` | `cronjobsstream.php` | managecronjobs | `kernel/setup/module.php:303` |
-| `/setup/staticcachestream` | `staticcachestream.php` | managecache | `kernel/setup/module.php:315` |
-| `/setup/systemupgrade` | `systemupgrade.php` | setup | `kernel/setup/module.php:326` |
-| `/setup/logs` | `logs.php` | logs | `kernel/setup/module.php:342` |
-| `/setup/logsmanage` | `logsmanage.php` | managelogs | `kernel/setup/module.php:357` |
-| `/setup/logshealth` | `logshealth.php` | logs | `kernel/setup/module.php:367` |
-| `/setup/logsdigest` | `logsdigest.php` | logs | `kernel/setup/module.php:376` |
-| `/setup/logsfeed` | `logsfeed.php` | logs | `kernel/setup/module.php:384` |
-| `/setup/logsaction` | `logsaction.php` | logs | `kernel/setup/module.php:391` |
-| `/setup/toolbarlist` | `toolbarlist.php` | setup | `kernel/setup/module.php:400` |
-| `/setup/toolbar` | `toolbar.php` | setup | `kernel/setup/module.php:406` |
-| `/setup/menuconfig` | `menuconfig.php` | setup | `kernel/setup/module.php:414` |
-| `/setup/templatelist` | `templatelist.php` | setup | `kernel/setup/module.php:422` |
-| `/setup/templateview` | `templateview.php` | setup | `kernel/setup/module.php:429` |
-| `/setup/templateedit` | `templateedit.php` | setup | `kernel/setup/module.php:439` |
-| `/setup/templatecreate` | `templatecreate.php` | setup | `kernel/setup/module.php:448` |
 | `/shop/add` | `add.php` | buy | `kernel/shop/module.php:14` |
 | `/shop/orderview` | `orderview.php` | buy | `kernel/shop/module.php:20` |
 | `/shop/orderreceipt` | `orderreceipt.php` | – | `kernel/shop/module.php:28` |
-| `/shop/orderreciept` | `orderreciept.php` | – | `kernel/shop/module.php:35` |
-| `/shop/updatebasket` | `updatebasket.php` | buy | `kernel/shop/module.php:41` |
-| `/shop/basket` | `basket.php` | buy | `kernel/shop/module.php:47` |
-| `/shop/register` | `register.php` | buy | `kernel/shop/module.php:69` |
-| `/shop/userregister` | `userregister.php` | buy | `kernel/shop/module.php:79` |
-| `/shop/wishlist` | `wishlist.php` | buy | `kernel/shop/module.php:89` |
-| `/shop/dashboard` | `dashboard.php` | administrate | `kernel/shop/module.php:98` |
-| `/shop/orderlist` | `orderlist.php` | administrate | `kernel/shop/module.php:104` |
-| `/shop/archivelist` | `archivelist.php` | administrate | `kernel/shop/module.php:111` |
-| `/shop/removeorder` | `removeorder.php` | administrate | `kernel/shop/module.php:118` |
-| `/shop/archiveorder` | `archiveorder.php` | administrate | `kernel/shop/module.php:125` |
-| `/shop/unarchiveorder` | `unarchiveorder.php` | administrate | `kernel/shop/module.php:132` |
-| `/shop/customerlist` | `customerlist.php` | administrate | `kernel/shop/module.php:140` |
-| `/shop/customerorderview` | `customerorderview.php` | administrate | `kernel/shop/module.php:147` |
-| `/shop/statistics` | `orderstatistics.php` | administrate | `kernel/shop/module.php:153` |
-| `/shop/confirmorder` | `confirmorder.php` | buy | `kernel/shop/module.php:159` |
-| `/shop/checkout` | `checkout.php` | buy | `kernel/shop/module.php:165` |
-| `/shop/vattype` | `vattype.php` | setup | `kernel/shop/module.php:171` |
-| `/shop/vatrules` | `vatrules.php` | setup | `kernel/shop/module.php:184` |
-| `/shop/editvatrule` | `editvatrule.php` | setup | `kernel/shop/module.php:190` |
-| `/shop/productcategories` | `productcategories.php` | setup | `kernel/shop/module.php:208` |
-| `/shop/discountgroup` | `discountgroup.php` | setup | `kernel/shop/module.php:221` |
-| `/shop/discountgroupedit` | `discountgroupedit.php` | setup | `kernel/shop/module.php:227` |
-| `/shop/discountruleedit` | `discountruleedit.php` | setup | `kernel/shop/module.php:234` |
-| `/shop/discountgroupview` | `discountgroupmembershipview.php` | setup | `kernel/shop/module.php:242` |
-| `/shop/status` | `status.php` | edit_status | `kernel/shop/module.php:249` |
-| `/shop/setstatus` | `setstatus.php` | setstatus | `kernel/shop/module.php:255` |
-| `/shop/currencylist` | `currencylist.php` | setup | `kernel/shop/module.php:261` |
-| `/shop/editcurrency` | `editcurrency.php` | setup | `kernel/shop/module.php:278` |
-| `/shop/preferredcurrency` | `preferredcurrency.php` | buy | `kernel/shop/module.php:291` |
-| `/shop/productsoverview` | `productsoverview.php` | administrate | `kernel/shop/module.php:297` |
-| `/shop/setpreferredcurrency` | `setpreferredcurrency.php` | buy | `kernel/shop/module.php:311` |
-| `/shop/setusercountry` | `setusercountry.php` | buy | `kernel/shop/module.php:320` |
+| `/shop/orderreciept` | `orderreciept.php` | – | `kernel/shop/module.php:36` |
+| `/shop/updatebasket` | `updatebasket.php` | buy | `kernel/shop/module.php:42` |
+| `/shop/basket` | `basket.php` | buy | `kernel/shop/module.php:48` |
+| `/shop/register` | `register.php` | buy | `kernel/shop/module.php:70` |
+| `/shop/userregister` | `userregister.php` | buy | `kernel/shop/module.php:80` |
+| `/shop/wishlist` | `wishlist.php` | buy | `kernel/shop/module.php:90` |
+| `/shop/dashboard` | `dashboard.php` | administrate | `kernel/shop/module.php:99` |
+| `/shop/orderlist` | `orderlist.php` | administrate | `kernel/shop/module.php:105` |
+| `/shop/archivelist` | `archivelist.php` | administrate | `kernel/shop/module.php:112` |
+| `/shop/removeorder` | `removeorder.php` | administrate | `kernel/shop/module.php:119` |
+| `/shop/archiveorder` | `archiveorder.php` | administrate | `kernel/shop/module.php:126` |
+| `/shop/unarchiveorder` | `unarchiveorder.php` | administrate | `kernel/shop/module.php:133` |
+| `/shop/customerlist` | `customerlist.php` | administrate | `kernel/shop/module.php:141` |
+| `/shop/customerorderview` | `customerorderview.php` | administrate | `kernel/shop/module.php:148` |
+| `/shop/statistics` | `orderstatistics.php` | administrate | `kernel/shop/module.php:154` |
+| `/shop/confirmorder` | `confirmorder.php` | buy | `kernel/shop/module.php:160` |
+| `/shop/checkout` | `checkout.php` | buy | `kernel/shop/module.php:166` |
+| `/shop/vattype` | `vattype.php` | setup | `kernel/shop/module.php:172` |
+| `/shop/vatrules` | `vatrules.php` | setup | `kernel/shop/module.php:185` |
+| `/shop/editvatrule` | `editvatrule.php` | setup | `kernel/shop/module.php:191` |
+| `/shop/productcategories` | `productcategories.php` | setup | `kernel/shop/module.php:209` |
+| `/shop/discountgroup` | `discountgroup.php` | setup | `kernel/shop/module.php:222` |
+| `/shop/discountgroupedit` | `discountgroupedit.php` | setup | `kernel/shop/module.php:228` |
+| `/shop/discountruleedit` | `discountruleedit.php` | setup | `kernel/shop/module.php:235` |
+| `/shop/discountgroupview` | `discountgroupmembershipview.php` | setup | `kernel/shop/module.php:243` |
+| `/shop/status` | `status.php` | edit_status | `kernel/shop/module.php:250` |
+| `/shop/setstatus` | `setstatus.php` | setstatus | `kernel/shop/module.php:256` |
+| `/shop/currencylist` | `currencylist.php` | setup | `kernel/shop/module.php:262` |
+| `/shop/editcurrency` | `editcurrency.php` | setup | `kernel/shop/module.php:279` |
+| `/shop/preferredcurrency` | `preferredcurrency.php` | buy | `kernel/shop/module.php:292` |
+| `/shop/productsoverview` | `productsoverview.php` | administrate | `kernel/shop/module.php:298` |
+| `/shop/setpreferredcurrency` | `setpreferredcurrency.php` | buy | `kernel/shop/module.php:312` |
+| `/shop/setusercountry` | `setusercountry.php` | buy | `kernel/shop/module.php:321` |
 | `/state/assign` | `assign.php` | assign | `kernel/state/module.php:15` |
 | `/state/groups` | `groups.php` | administrate | `kernel/state/module.php:26` |
 | `/state/group` | `group.php` | administrate | `kernel/state/module.php:37` |
@@ -306,16 +303,18 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `/user/setting` | `setting.php` | preferences | `kernel/user/module.php:34` |
 | `/user/preferences` | `preferences.php` | login | `kernel/user/module.php:40` |
 | `/user/megamenu` | `megamenu.php` | login | `kernel/user/module.php:52` |
-| `/user/password` | `password.php` | password | `kernel/user/module.php:58` |
-| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:65` |
-| `/user/edit` | `edit.php` | login | `kernel/user/module.php:76` |
-| `/user/register` | `register.php` | register | `kernel/user/module.php:86` |
-| `/user/activate` | `activate.php` | login | `kernel/user/module.php:96` |
-| `/user/success` | `success.php` | register | `kernel/user/module.php:103` |
-| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:110` |
-| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:135` |
-| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:148` |
-| `/user/registration` | `registration.php` | login | `kernel/user/module.php:161` |
+| `/user/passkeys` | `passkeys.php` | login | `kernel/user/module.php:61` |
+| `/user/password` | `password.php` | password | `kernel/user/module.php:67` |
+| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:74` |
+| `/user/edit` | `edit.php` | login | `kernel/user/module.php:85` |
+| `/user/register` | `register.php` | register | `kernel/user/module.php:95` |
+| `/user/activate` | `activate.php` | login | `kernel/user/module.php:105` |
+| `/user/success` | `success.php` | register | `kernel/user/module.php:112` |
+| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:119` |
+| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:144` |
+| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:157` |
+| `/user/registration` | `registration.php` | login | `kernel/user/module.php:170` |
+| `/user/sessions` | `sessions.php` | login | `kernel/user/module.php:187` |
 | `/visual/toolbarlist` | `toolbarlist.php` | – | `kernel/visual/module.php:15` |
 | `/visual/toolbar` | `toolbar.php` | – | `kernel/visual/module.php:20` |
 | `/visual/menuconfig` | `menuconfig.php` | – | `kernel/visual/module.php:33` |
@@ -335,99 +334,106 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `/workflow/event` | `event.php` | – | `kernel/workflow/module.php:51` |
 | `/workflow/processlist` | `processlist.php` | – | `kernel/workflow/module.php:55` |
 
-## Richtlinienfunktionen (87)
+## Richtlinienfunktionen (94)
 
 | Funktion | Einschränkungen | Definiert in |
 | --- | --- | --- |
 | `apikey/create` | values | `kernel/apikey/module.php:47` |
 | `audit/read` | – | `kernel/audit/module.php:90` |
 | `audit/manage` | – | `kernel/audit/module.php:121` |
-| `content/bookmark` | – | `kernel/content/module.php:661` |
-| `content/move` | – | `kernel/content/module.php:663` |
-| `content/read` | Class, Section, Owner, Group, Node, Subtree | `kernel/content/module.php:665` |
-| `content/diff` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:672` |
-| `content/view_embed` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:677` |
-| `content/create` | Class, Section, ParentOwner, ParentGroup, ParentClass, ParentDepth, Subtree, Language | `kernel/content/module.php:682` |
-| `content/edit` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:692` |
-| `content/publish` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:701` |
-| `content/manage_locations` | Class, Section, Owner, Subtree | `kernel/content/module.php:710` |
-| `content/hide` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:716` |
-| `content/reverserelatedlist` | – | `kernel/content/module.php:724` |
-| `content/translate` | Class, Section, Owner, Node, Subtree, Language | `kernel/content/module.php:726` |
-| `content/remove` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:732` |
-| `content/versionread` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:740` |
-| `content/versionremove` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:747` |
-| `content/pdf` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:754` |
-| `content/translations` | – | `kernel/content/module.php:760` |
-| `content/urltranslator` | – | `kernel/content/module.php:761` |
-| `content/pendinglist` | – | `kernel/content/module.php:762` |
-| `content/restore` | – | `kernel/content/module.php:763` |
-| `content/cleantrash` | – | `kernel/content/module.php:764` |
-| `content/tipafriend` | – | `kernel/content/module.php:765` |
-| `content/dashboard` | – | `kernel/content/module.php:766` |
-| `content/view_system_url` | – | `kernel/content/module.php:770` |
-| `content/jobs` | – | `kernel/content/module.php:772` |
-| `content/publish_without_notification` | – | `kernel/content/module.php:776` |
-| `contentcheck/unreferenced` | – | `kernel/contentcheck/module.php:80` |
-| `contentcheck/trash` | – | `kernel/contentcheck/module.php:82` |
-| `contentcheck/brokenrelations` | – | `kernel/contentcheck/module.php:84` |
-| `contentcheck/fixfiles` | – | `kernel/contentcheck/module.php:87` |
-| `contentcheck/storage` | – | `kernel/contentcheck/module.php:89` |
-| `contentcheck/quarantine` | – | `kernel/contentcheck/module.php:91` |
-| `contentcheck/permissions` | – | `kernel/contentcheck/module.php:93` |
-| `contentfinder/search` | – | `kernel/contentfinder/module.php:39` |
-| `contentfinder/delete` | – | `kernel/contentfinder/module.php:41` |
-| `exphelp/read` | – | `kernel/exphelp/module.php:110` |
-| `exphelp/context` | – | `kernel/exphelp/module.php:112` |
+| `content/bookmark` | – | `kernel/content/module.php:664` |
+| `content/move` | – | `kernel/content/module.php:666` |
+| `content/read` | Class, Section, Owner, Group, Node, Subtree | `kernel/content/module.php:668` |
+| `content/diff` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:675` |
+| `content/view_embed` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:680` |
+| `content/create` | Class, Section, ParentOwner, ParentGroup, ParentClass, ParentDepth, Subtree, Language | `kernel/content/module.php:685` |
+| `content/edit` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:695` |
+| `content/publish` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:704` |
+| `content/manage_locations` | Class, Section, Owner, Subtree | `kernel/content/module.php:713` |
+| `content/hide` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:719` |
+| `content/reverserelatedlist` | – | `kernel/content/module.php:727` |
+| `content/translate` | Class, Section, Owner, Node, Subtree, Language | `kernel/content/module.php:729` |
+| `content/remove` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:735` |
+| `content/versionread` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:743` |
+| `content/versionremove` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:750` |
+| `content/pdf` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:757` |
+| `content/translations` | – | `kernel/content/module.php:763` |
+| `content/urltranslator` | – | `kernel/content/module.php:764` |
+| `content/pendinglist` | – | `kernel/content/module.php:765` |
+| `content/restore` | – | `kernel/content/module.php:766` |
+| `content/cleantrash` | – | `kernel/content/module.php:767` |
+| `content/tipafriend` | – | `kernel/content/module.php:768` |
+| `content/dashboard` | – | `kernel/content/module.php:769` |
+| `content/view_system_url` | – | `kernel/content/module.php:773` |
+| `content/jobs` | – | `kernel/content/module.php:775` |
+| `content/publish_without_notification` | – | `kernel/content/module.php:779` |
+| `contentcheck/unreferenced` | – | `kernel/contentcheck/module.php:89` |
+| `contentcheck/trash` | – | `kernel/contentcheck/module.php:91` |
+| `contentcheck/brokenrelations` | – | `kernel/contentcheck/module.php:93` |
+| `contentcheck/fixfiles` | – | `kernel/contentcheck/module.php:96` |
+| `contentcheck/storage` | – | `kernel/contentcheck/module.php:98` |
+| `contentcheck/quarantine` | – | `kernel/contentcheck/module.php:100` |
+| `contentcheck/permissions` | – | `kernel/contentcheck/module.php:102` |
+| `contentfinder/search` | – | `kernel/contentfinder/module.php:41` |
+| `contentfinder/delete` | – | `kernel/contentfinder/module.php:43` |
+| `datatable/read` | – | `kernel/datatable/module.php:82` |
+| `datatable/manage` | – | `kernel/datatable/module.php:84` |
+| `datatable/connections` | – | `kernel/datatable/module.php:86` |
+| `datatable/sync` | – | `kernel/datatable/module.php:88` |
+| `exphelp/read` | – | `kernel/exphelp/module.php:176` |
+| `exphelp/context` | – | `kernel/exphelp/module.php:178` |
+| `exphelp/feedback` | – | `kernel/exphelp/module.php:180` |
 | `ezinfo/read` | – | `kernel/ezinfo/module.php:33` |
 | `infocollector/read` | – | `kernel/infocollector/module.php:50` |
-| `mailpreferences/administrate` | – | `kernel/mailpreferences/module.php:71` |
-| `mailpreferences/export` | – | `kernel/mailpreferences/module.php:72` |
+| `mailpreferences/administrate` | – | `kernel/mailpreferences/module.php:72` |
+| `mailpreferences/export` | – | `kernel/mailpreferences/module.php:73` |
 | `notification/use` | – | `kernel/notification/module.php:53` |
 | `notification/administrate` | – | `kernel/notification/module.php:54` |
-| `package/read` | Typ | `kernel/package/module.php:170` |
-| `package/list` | Typ | `kernel/package/module.php:171` |
-| `package/create` | Type, CreatorType, Role | `kernel/package/module.php:172` |
-| `package/edit` | Typ | `kernel/package/module.php:175` |
-| `package/remove` | Typ | `kernel/package/module.php:176` |
-| `package/install` | Typ | `kernel/package/module.php:177` |
-| `package/import` | Typ | `kernel/package/module.php:178` |
-| `package/export` | Typ | `kernel/package/module.php:179` |
-| `package/export_extension` | – | `kernel/package/module.php:182` |
-| `pdf/create` | – | `kernel/pdf/module.php:59` |
-| `pdf/edit` | – | `kernel/pdf/module.php:60` |
+| `package/read` | Typ | `kernel/package/module.php:179` |
+| `package/list` | Typ | `kernel/package/module.php:180` |
+| `package/create` | Type, CreatorType, Role | `kernel/package/module.php:181` |
+| `package/edit` | Typ | `kernel/package/module.php:184` |
+| `package/remove` | Typ | `kernel/package/module.php:185` |
+| `package/install` | Typ | `kernel/package/module.php:186` |
+| `package/import` | Typ | `kernel/package/module.php:187` |
+| `package/export` | Typ | `kernel/package/module.php:188` |
+| `package/export_extension` | – | `kernel/package/module.php:191` |
+| `pdf/create` | – | `kernel/pdf/module.php:60` |
+| `pdf/edit` | – | `kernel/pdf/module.php:61` |
 | `rss/feed` | – | `kernel/rss/module.php:62` |
 | `rss/edit` | – | `kernel/rss/module.php:63` |
+| `secrets/manage` | – | `kernel/secrets/module.php:28` |
 | `section/assign` | Class, Section, Owner, NewSection | `kernel/section/module.php:79` |
 | `section/edit` | – | `kernel/section/module.php:83` |
 | `section/view` | – | `kernel/section/module.php:84` |
-| `setup/administrate` | – | `kernel/setup/module.php:459` |
-| `setup/install` | – | `kernel/setup/module.php:460` |
-| `setup/logs` | – | `kernel/setup/module.php:462` |
-| `setup/managelogs` | – | `kernel/setup/module.php:463` |
-| `setup/unmasklogs` | – | `kernel/setup/module.php:464` |
-| `setup/managecache` | – | `kernel/setup/module.php:465` |
-| `setup/managecronjobs` | – | `kernel/setup/module.php:466` |
-| `setup/preload` | – | `kernel/setup/module.php:467` |
-| `setup/setup` | – | `kernel/setup/module.php:468` |
-| `setup/system_info` | – | `kernel/setup/module.php:469` |
-| `shop/setup` | – | `kernel/shop/module.php:349` |
-| `shop/administrate` | – | `kernel/shop/module.php:350` |
-| `shop/buy` | – | `kernel/shop/module.php:351` |
-| `shop/edit_status` | – | `kernel/shop/module.php:352` |
-| `shop/setstatus` | FromStatus, ToStatus | `kernel/shop/module.php:353` |
+| `setup/administrate` | – | `kernel/setup/module.php:485` |
+| `setup/install` | – | `kernel/setup/module.php:486` |
+| `setup/logs` | – | `kernel/setup/module.php:488` |
+| `setup/managelogs` | – | `kernel/setup/module.php:489` |
+| `setup/unmasklogs` | – | `kernel/setup/module.php:490` |
+| `setup/managecache` | – | `kernel/setup/module.php:491` |
+| `setup/managecronjobs` | – | `kernel/setup/module.php:492` |
+| `setup/preload` | – | `kernel/setup/module.php:493` |
+| `setup/setup` | – | `kernel/setup/module.php:494` |
+| `setup/system_info` | – | `kernel/setup/module.php:495` |
+| `shop/setup` | – | `kernel/shop/module.php:350` |
+| `shop/administrate` | – | `kernel/shop/module.php:351` |
+| `shop/buy` | – | `kernel/shop/module.php:352` |
+| `shop/edit_status` | – | `kernel/shop/module.php:353` |
+| `shop/setstatus` | FromStatus, ToStatus | `kernel/shop/module.php:354` |
 | `state/administrate` | – | `kernel/state/module.php:132` |
 | `state/assign` | Class, Section, Owner, Group, Node, Subtree | `kernel/state/module.php:134` |
-| `user/login` | SiteAccess | `kernel/user/module.php:182` |
-| `user/password` | – | `kernel/user/module.php:183` |
-| `user/preferences` | – | `kernel/user/module.php:184` |
-| `user/register` | – | `kernel/user/module.php:185` |
-| `user/selfedit` | – | `kernel/user/module.php:186` |
-| `user/activation` | – | `kernel/user/module.php:187` |
-| `user/hygiene` | – | `kernel/user/module.php:188` |
-| `user/deactivate` | – | `kernel/user/module.php:189` |
+| `user/login` | SiteAccess | `kernel/user/module.php:204` |
+| `user/password` | – | `kernel/user/module.php:205` |
+| `user/preferences` | – | `kernel/user/module.php:206` |
+| `user/register` | – | `kernel/user/module.php:207` |
+| `user/selfedit` | – | `kernel/user/module.php:208` |
+| `user/activation` | – | `kernel/user/module.php:209` |
+| `user/hygiene` | – | `kernel/user/module.php:210` |
+| `user/deactivate` | – | `kernel/user/module.php:211` |
+| `user/sessions` | – | `kernel/user/module.php:213` |
 
-## Fetch-Funktionen (173)
+## Fetch-Funktionen (182)
 
 | Fetch | Implementiert von | Definiert in |
 | --- | --- | --- |
@@ -487,39 +493,47 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `fetch( 'content', 'contentobject_attributes' )` | `eZContentFunctionCollection::contentobjectAttributes()` | `kernel/content/function_definition.php:723` |
 | `fetch( 'content', 'bookmarks' )` | `eZContentFunctionCollection::fetchBookmarks()` | `kernel/content/function_definition.php:737` |
 | `fetch( 'content', 'bookmark_rows' )` | `eZContentFunctionCollection::fetchBookmarkRows()` | `kernel/content/function_definition.php:751` |
-| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:761` |
-| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:768` |
-| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:775` |
-| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:782` |
-| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:816` |
-| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:838` |
-| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:864` |
-| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:875` |
-| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:889` |
-| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:919` |
-| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:929` |
-| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:947` |
-| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:962` |
-| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1008` |
-| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1048` |
-| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1073` |
-| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1081` |
-| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1106` |
-| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1114` |
-| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1124` |
-| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1173` |
-| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1190` |
-| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1234` |
-| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1254` |
-| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1261` |
-| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1275` |
-| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1285` |
-| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1302` |
-| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1321` |
-| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1330` |
+| `fetch( 'content', 'view_bookmark' )` | `eZContentFunctionCollection::fetchViewBookmark()` | `kernel/content/function_definition.php:761` |
+| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:774` |
+| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:781` |
+| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:788` |
+| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:795` |
+| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:829` |
+| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:851` |
+| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:877` |
+| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:888` |
+| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:902` |
+| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:932` |
+| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:942` |
+| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:960` |
+| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:975` |
+| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1021` |
+| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1061` |
+| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1086` |
+| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1094` |
+| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1119` |
+| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1127` |
+| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1137` |
+| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1186` |
+| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1203` |
+| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1247` |
+| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1267` |
+| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1274` |
+| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1288` |
+| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1298` |
+| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1315` |
+| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1334` |
+| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1343` |
+| `fetch( 'datatable', 'list' )` | `expDataTableFunctionCollection::fetchList()` | `kernel/datatable/function_definition.php:13` |
+| `fetch( 'datatable', 'count' )` | `expDataTableFunctionCollection::fetchCount()` | `kernel/datatable/function_definition.php:23` |
+| `fetch( 'datatable', 'row' )` | `expDataTableFunctionCollection::fetchRow()` | `kernel/datatable/function_definition.php:30` |
+| `fetch( 'datatable', 'pointing_at' )` | `expDataTableFunctionCollection::fetchPointingAt()` | `kernel/datatable/function_definition.php:37` |
+| `fetch( 'datatable', 'can' )` | `expDataTableFunctionCollection::fetchCan()` | `kernel/datatable/function_definition.php:44` |
 | `fetch( 'exphelp', 'context' )` | `expHelpFunctionCollection::fetchContext()` | `kernel/exphelp/function_definition.php:16` |
 | `fetch( 'exphelp', 'license' )` | `expHelpFunctionCollection::fetchLicense()` | `kernel/exphelp/function_definition.php:25` |
 | `fetch( 'exphelp', 'context_menu' )` | `expHelpFunctionCollection::fetchContextMenu()` | `kernel/exphelp/function_definition.php:33` |
+| `fetch( 'exphelp', 'site_topic' )` | `expHelpFunctionCollection::fetchSiteTopic()` | `kernel/exphelp/function_definition.php:45` |
+| `fetch( 'exphelp', 'site_map' )` | `expHelpFunctionCollection::fetchSiteMap()` | `kernel/exphelp/function_definition.php:51` |
 | `fetch( 'infocollector', 'collected_info_count' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCount()` | `kernel/infocollector/function_definition.php:13` |
 | `fetch( 'infocollector', 'collected_info_count_list' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCountList()` | `kernel/infocollector/function_definition.php:39` |
 | `fetch( 'infocollector', 'collected_info_collection' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCollection()` | `kernel/infocollector/function_definition.php:50` |
@@ -571,7 +585,8 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `fetch( 'setup', 'edition' )` | `eZSetupFunctionCollection::fetchEdition()` | `kernel/setup/function_definition.php:70` |
 | `fetch( 'setup', 'extension_counts' )` | `eZSetupFunctionCollection::fetchExtensionCounts()` | `kernel/setup/function_definition.php:76` |
 | `fetch( 'setup', 'cronjob_pauses' )` | `eZSetupFunctionCollection::fetchCronjobPauses()` | `kernel/setup/function_definition.php:86` |
-| `fetch( 'setup', 'log_files' )` | `eZSetupFunctionCollection::fetchLogFiles()` | `kernel/setup/function_definition.php:94` |
+| `fetch( 'setup', 'cronjob_status' )` | `eZSetupFunctionCollection::fetchCronjobStatus()` | `kernel/setup/function_definition.php:94` |
+| `fetch( 'setup', 'log_files' )` | `eZSetupFunctionCollection::fetchLogFiles()` | `kernel/setup/function_definition.php:102` |
 | `fetch( 'shop', 'basket' )` | `eZShopFunctionCollection::fetchBasket()` | `kernel/shop/function_definition.php:11` |
 | `fetch( 'shop', 'best_sell_list' )` | `eZShopFunctionCollection::fetchBestSellList()` | `kernel/shop/function_definition.php:18` |
 | `fetch( 'shop', 'related_purchase' )` | `eZShopFunctionCollection::fetchRelatedPurchaseList()` | `kernel/shop/function_definition.php:54` |
@@ -605,14 +620,15 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/modules` mit den Mustern,
 | `fetch( 'workflow', 'workflow_statuses' )` | `eZWorkflowFunctionCollection::fetchWorkflowStatuses()` | `kernel/workflow/function_definition.php:12` |
 | `fetch( 'workflow', 'workflow_type_statuses' )` | `eZWorkflowFunctionCollection::fetchWorkflowTypeStatuses()` | `kernel/workflow/function_definition.php:19` |
 
-## Ereignis-Hooks (7)
+## Ereignis-Hooks (8)
 
 | Ereignis | Art | Aufgerufen in |
 | --- | --- | --- |
-| `content/class/cache` | notify | `kernel/class/delete.php:32` |
 | `content/cache/version` | notify | `kernel/content/attribute_edit.php:325` |
-| `content/notification/create` | filter | `kernel/content/ezcontentoperationcollection.php:920` |
-| `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1414` |
-| `content/cache` | notify | `kernel/content/ezcontentoperationcollection.php:1530` |
-| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2034` |
+| `content/publish` | notify | `kernel/content/ezcontentoperationcollection.php:277` |
+| `content/notification/create` | filter | `kernel/content/ezcontentoperationcollection.php:983` |
+| `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1481` |
+| `content/remove` | notify | `kernel/content/ezcontentoperationcollection.php:1490` |
+| `content/cache` | notify | `kernel/content/ezcontentoperationcollection.php:1604` |
+| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2117` |
 | `content/cache/version` | notify | `kernel/content/multiedit_functions.php:496` |

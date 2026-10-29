@@ -70,6 +70,7 @@ das selbst; betrachten Sie sie als Beispiele dafür, was zu messen ist, nicht al
 | [Statischer Cache](statischer-cache.md) | Als Dateien erzeugte Seiten; warum er ausgeschaltet ausgeliefert wird und wann Sie ihn nutzen |
 | [Caches leeren und vorwärmen](caches-leeren-und-vorwaermen.md) | Welcher Cache für welche Änderung geleert wird, in welcher Reihenfolge, und wie Sie vorwärmen |
 | [Benchmark einer gehosteten Website](benchmark-einer-gehosteten-website.md) | `exp:benchmark` für Hoster: faire Vergleiche, Prüfungen nach dem Ausrollen, Grenzen von Tarifen |
+| [Der kompilierte Kernel-Container](kompilierter-kernel-container.md) | Was `var/cache/kernelservices/` ist, wann er neu aufgebaut wird, wie Sie ihn prüfen und was er pro Anfrage einspart |
 
 ## Was Hoster am häufigsten falsch machen
 

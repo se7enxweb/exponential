@@ -74,7 +74,7 @@ erklärt, wie die Bücher mit dieser Hilfe zusammenhängen und wie Sie das Origi
 
 1. [Eine standardkonforme Website: Markup, Stil und Struktur](eine-standardkonforme-website.md)
 
-Die Anleitung, die eine vollständige kleine Website baut, steht in [Eine Website Schritt für Schritt bauen](../../../eng-us/help/book-building-a-site/README.md).
+Die Anleitung, die eine vollständige kleine Website baut, steht in [Eine Website Schritt für Schritt bauen](../buch-eine-website-bauen/README.md).
 
 Kapitel 8 des Buchs ist eine Fallstudie über ein einzelnes Kundenprojekt und wird nicht bearbeitet; seine Lehren stehen
 in den Kapiteln 7 und 9 oben.

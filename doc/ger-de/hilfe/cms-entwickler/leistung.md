@@ -95,7 +95,7 @@ Die Reihenfolge dieser Schritte mit Befehlen: [Schnell machen](../../anleitungen
 
 Nach einer Bereitstellung oder dem Leeren eines Cache bezahlen die ersten Besucher für den Aufbau der Caches.
 `exp:velocity deploy` ruft Seiten zum Vorwärmen auf, und der Preloader ruft die Seiten einer Website auf, wie es ein
-anonymer Besucher täte (**Setup** > **Preload**, `php bin/php/preload.php`), und listet dabei defekte Links auf
+anonymer Besucher täte (**Setup** > **Preload**, `php bin/php/preload.php --apply`), und listet dabei defekte Links auf
 ([Caches vorladen](../../anleitungen/caches-vorwaermen.md)).
 
 ## Eine kurze Checkliste

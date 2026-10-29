@@ -113,8 +113,13 @@ pro Anfrage). Deshalb:
 
 ## jQuery und expui
 
-Die Administration verwendet jQuery 4 und den Namensraum `Exp` der Erweiterung `expui`; YUI wurde entfernt. Verwenden
-Sie diese, statt eine eigene Kopie einer Bibliothek mitzubringen; siehe
+Die Administration verwendet jQuery 4 und den Namensraum `Exp` der Erweiterung `expui`; YUI wurde entfernt. admin4 und
+admin4l laden keines davon auf jeder Seite: Ein Skript in `BackendJavaScriptList[]` läuft ohne sie, und ein Template,
+dessen Skript jQuery oder ein `exp::`-Modul braucht, fordert es an, außerhalb jedes cache-block
+(`{ezscript_require( array( 'exp::core::shared', 'exp::io', 'myextension.js' ) )}`); ein jQuery-Plugin, das die älteren
+Admin-Designs auf jeder Seite brauchen, gehört in `ClassicBackendJavaScriptList[]`. Verwenden Sie diese, statt eine
+eigene Kopie einer Bibliothek mitzubringen; siehe
+[admin4 und admin4l ohne jQuery](../../../funktionen/6.0/jquery4-und-entfernung-von-yui.md#admin4-und-admin4l-ohne-jquery),
 [Die JavaScript-API von expui](../teil-8-referenz/expui-javascript-api.md)
 und [Vom alten jQuery zu jQuery 4](../teil-4-aktualisieren/altes-jquery-zu-jquery-4.md).
 

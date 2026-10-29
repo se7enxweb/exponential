@@ -26,7 +26,7 @@ Diese Seite ist für alle, die auf den Partnerseiten auf einen unbekannten Begri
 | **Zertifizierung** | Developer, Design, Solution (WCMS) oder Sales; ab Silver verlangt | [Zertifizierungen](zertifizierungen.md) |
 | **Exponential Certified** | Das Logo, das zertifizierte Partner der Stufen Silver, Gold und Platinum verwenden dürfen | [Logos und Zeichen](partnerlogos-und-zeichen.md) |
 | **Lead-Priorität** | Die Reihenfolge, in der Partner Leads erhalten (1 = höchste) | [Empfehlungen und Leads](empfehlungen-und-leads.md) |
-| **Kalter Lead / heißer Lead** | Ein Erstkontakt / ein „kaufbereiter Kunde“ | [Empfehlungen und Leads](empfehlungen-und-leads.md) |
+| **Kalter Lead / heißer Lead** | Ein Erstkontakt (10 % Provision) / ein „kaufbereiter Kunde“ (20 % Provision) | [Empfehlungen und Leads](empfehlungen-und-leads.md) |
 | **Pre-Sales-Unterstützung** | Hilfe von 7x bei Angeboten und Ausschreibungen, ab Professional | [Pre-Sales-Unterstützung](pre-sales-unterstuetzung.md) |
 | **White Label** | Dienstleistungen von 7x unter der Marke des Partners, ab Professional | [Dienstleistungen von 7x als White Label](white-label-dienstleistungen.md) |
 | **OEM** | Wiederverkauf Ihres eigenen Produkts auf Grundlage von Exponential | [OEM und Wiederverkauf](oem-und-wiederverkauf.md) |
@@ -36,6 +36,7 @@ Diese Seite ist für alle, die auf den Partnerseiten auf einen unbekannten Begri
 | **GPL** | GNU General Public License, v2 oder später: die Lizenz des Codes | [Lizenzierung für Partner](lizenzierung-fuer-partner.md) |
 | **GFDL** | GNU Free Documentation License 1.3 oder später: die Lizenz der Dokumentation | [Freie Dokumentation](../freie-dokumentation.md) |
 | **CC BY-SA 4.0** | Die Lizenz des Textes des Partnerprogramms | [Die Partnerschaftsvereinbarung](die-partnerschaftsvereinbarung.md) |
+| **CLA** | Contributor Licensing Agreement mit 7x, einmal unterzeichnet, verlangt, bevor ein Code-Beitrag zum Kernel gemergt wird; mit Unterschrift und Einreichung übertragen Sie das Urheberrecht an dem Beitrag an 7x, das damit sein Eigentümer wird, und geben die Kontrolle darüber ab: 7x darf ihn auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, ohne Sie zu fragen oder zu bezahlen, und Sie können ihn nicht zurückziehen; Ihre eigenen individuellen Erweiterungen sind nicht betroffen | [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
 | **Unterstützer** | Alle, die dem Projekt helfen | [Unterstützer: hier beginnen](../unterstuetzer/unterstuetzer-hier-beginnen.md) |
 | **Sponsor** | Alle, die 7x oder die Foundation finanzieren | [Sponsoren: hier beginnen](../sponsoren/sponsoren-hier-beginnen.md) |
 | **Upstream** | Das ursprüngliche Projekt von Code, den Sie nutzen oder geändert haben | [Erweiterungen an die Upstream-Projekte zurückgeben](erweiterungen-zurueckgeben.md) |

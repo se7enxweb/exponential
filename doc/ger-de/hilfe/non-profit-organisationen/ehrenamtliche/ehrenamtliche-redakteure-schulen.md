@@ -100,7 +100,7 @@ Entwürfe; ein Mensch prüft und veröffentlicht ([KI-Entwürfe verantwortungsvo
 - [Medien und Uploads](../../medien-und-uploads.md)
 - [Checkliste zur Barrierefreiheit für Redakteure](../../kunden/alltag/checkliste-barrierefreiheit-fuer-redakteure.md)
 - [Tastenkürzel](../../tastenkuerzel.md)
-- Für Menschen, die neu im Umgang mit Computern und Websites sind: [Nicht-technische Menschen: hier beginnen](../../../../eng-us/help/non-technical-people/non-technical-people-start-here.md)
+- Für Menschen, die neu im Umgang mit Computern und Websites sind: [Nicht-technische Menschen: hier beginnen](../../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md)
 
 ## Verwandte Seiten
 

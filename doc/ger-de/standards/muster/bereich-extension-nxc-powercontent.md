@@ -2,7 +2,7 @@
 title: Muster in extension/nxc_powercontent
 audience: developer
 category: standards
-order: 464
+order: 469
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/nxc_powercontent mit den Entwurfsmustern.
 keywords: extension/nxc_powercontent, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

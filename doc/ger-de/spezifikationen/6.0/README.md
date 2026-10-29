@@ -25,6 +25,8 @@ Block, Schlüssel, Standard, Geltungsbereich) und endet mit „Verwandte Seiten�
 | [E-Mail-Einstellungen: die Checkliste zu den Gesetzen](mail-einstellungen-compliance.md) | CAN-SPAM, DSGVO und ePrivacy, CCPA/CPRA, CASL, RFC 8058, abgebildet auf Code und Tests; die Lücken |
 | [Hilfesystem](hilfesystem.md) | Hilfe und Handbücher als Inhalte: DITA-Themenklassen, Sektionen, Objektzustände, Rollen, Validator, Web, Kontexthilfe und Auslieferung als E-Book |
 | [Leitfaden für Hilfethemen](hilfe-stilrichtlinien.md) | Redaktionelle Regeln für Hilfethemen: Thementypen mit Vorlagen, Schritte, Hinweise, Abbildungen, `help_id`, Felder, Terminologie |
+| [Hilfestandards](hilfestandards.md) | DITA 1.3, IEC/IEEE 82079-1, ISO/IEC/IEEE 26514, ISO 3864-2, EPUB Accessibility 1.1, WCAG 2.2 AA: was die Hilfe übernimmt, was sie anders macht und wie weit |
+| [Die Hilfeklassen als Paket](hilfeklassen-als-paket.md) | Das Paket `exp_help_classes`: Inhalt, was es weglässt, Bauen, Prüfen, Version, Übergabe an den Paketserver |
 
 ## Datenbanken
 

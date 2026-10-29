@@ -2174,7 +2174,7 @@ ihn also. Ein Ereignis **notify** ignoriert ihn.
 | `content/cache` | filter | `kernel/classes/ezcontentcachemanager.php`, `kernel/content/ezcontentoperationcollection.php`, `kernel/content/urlalias.php` |
 | `content/cache/all` | notify | `kernel/classes/ezcache.php`, `kernel/classes/ezcontentcachemanager.php` |
 | `content/cache/version` | notify | `kernel/content/attribute_edit.php`, `extension/ezautosave/classes/ezjscserverfunctionsautosave.php`, `extension/nxc_powercontent/modules/content/attribute_edit.php` |
-| `content/class/cache` | notify | `kernel/class/delete.php`, `kernel/class/edit.php`, `kernel/class/removeclass.php` |
+| `content/class/cache` | notify | `kernel/class/edit.php`, `kernel/class/removeclass.php` |
 | `content/class/cache/all` | notify | `kernel/classes/ezcache.php` |
 | `content/class/group/cache` | notify | `kernel/class/groupedit.php`, `kernel/class/removegroup.php` |
 | `content/download` | notify | `kernel/content/download.php`, `extension/nxc_powercontent/modules/content/download.php` |

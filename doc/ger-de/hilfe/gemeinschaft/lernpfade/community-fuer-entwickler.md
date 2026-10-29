@@ -61,7 +61,7 @@ Entwickler bauen das meiste von dem, was die Community teilt: Websites, Erweiter
 
 - [Wege durch die Community](README.md)
 - [Argumente für Entwickler](../../fuersprecher/gespraechspunkte-fuer-entwickler.md)
-- [Ökosystem: hier beginnen](../../../../eng-us/help/ecosystem/ecosystem-start-here.md)
+- [Ökosystem: hier beginnen](../../oekosystem/oekosystem-hier-beginnen.md)
 - [Mit Git entwickeln](../../mit-git-entwickeln.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

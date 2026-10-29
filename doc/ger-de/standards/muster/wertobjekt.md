@@ -3,7 +3,7 @@ title: Wertobjekt / Struktur
 audience: developer
 category: standards
 order: 334
-summary: Ein kleines Objekt, das Daten trägt und keine eigene Identität hat. 95 Instanzen in Exponential.
+summary: Ein kleines Objekt, das Daten trägt und keine eigene Identität hat. 106 Instanzen in Exponential.
 keywords: Entwurfsmuster, Wertobjekt, Struktur, Musterkatalog, design pattern, value-object, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Struktur |
-| Instanzen | 95 |
+| Instanzen | 106 |
 | Erkannt an | Der Klassenname endet auf Struct, Value, Result, Item, Info oder Definition und die Klasse hat wenige Methoden, oder sie erweitert ezcBaseStruct. |
 
 ## Klassen nach Bereich
@@ -77,7 +77,7 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `cjw_newsletterInfo` | class | `extension/cjw_newsletter/ezinfo.php:16` | Klassenbeschreibung hier | – |
+| `cjw_newsletterInfo` | class | `extension/cjw_newsletter/ezinfo.php:16` | Name, Version, Copyright, Lizenz und Projektseite der Extension, auf der Info-Seite angezeigt. | – |
 
 ### extension/cjw_themes_jumper (1)
 
@@ -111,6 +111,15 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | --- | --- | --- | --- | --- |
 | `enhancedselection2Info` | class | `extension/enhancedselection2/ezinfo.php:14` | Extension Enhanced Selection | – |
 
+### extension/expai (2)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expaiInfo` | class | `extension/expai/ezinfo.php:7` | – | – |
+| `expAiToolGetClassDefinition` | class extends expAiTool | `extension/expai/classes/tools/expaitoolgetclassdefinition.php:9` | get_class_definition: die Felder einer Inhaltsklasse | extension/expai/settings/expai.ini [Tool_get_class_definition] Class |
+
 ### extension/expchangeclass (1)
 
 [Alle Muster von extension/expchangeclass](bereich-extension-expchangeclass.md)
@@ -118,6 +127,22 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expchangeclassInfo` | class | `extension/expchangeclass/ezinfo.php:14` | – | – |
+
+### extension/exphelpsite (1)
+
+[Alle Muster von extension/exphelpsite](area-extension-exphelpsite.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `exphelpsiteInfo` | class | `extension/exphelpsite/ezinfo.php:11` | Die Extension exphelpsite: die Node-Templates der als Inhalt gepflegten Hilfe für die öffentlichen Seiten einer Site (doc/eng-us/features/6.0/help-content.md, „Help… | – |
+
+### extension/expimageeditor (1)
+
+[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expimageeditorInfo` | class | `extension/expimageeditor/ezinfo.php:9` | – | – |
 
 ### extension/explayouts (2)
 
@@ -225,6 +250,14 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | --- | --- | --- | --- | --- |
 | `expquery_translatorInfo` | class | `extension/expquery_translator/ezinfo.php:12` | – | – |
 
+### extension/expqueue (1)
+
+[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expqueueInfo` | class | `extension/expqueue/ezinfo.php:7` | – | – |
+
 ### extension/expservices (1)
 
 [Alle Muster von extension/expservices](bereich-extension-expservices.md)
@@ -313,6 +346,14 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | --- | --- | --- | --- | --- |
 | `eZAuthorizeInfo` | class | `extension/ezauthorize/classes/ezauthorizeinfo.php:11` | – | – |
 
+### extension/ezautosave (1)
+
+[Alle Muster von extension/ezautosave](bereich-extension-ezautosave.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `ezautosaveInfo` | class | `extension/ezautosave/ezinfo.php:7` | – | – |
+
 ### extension/ezdemo (1)
 
 [Alle Muster von extension/ezdemo](bereich-extension-ezdemo.md)
@@ -337,6 +378,14 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `ezflowInfo` | class | `extension/ezflow/ezinfo.php:12` | – | – |
+
+### extension/ezgmaplocation (1)
+
+[Alle Muster von extension/ezgmaplocation](bereich-extension-ezgmaplocation.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `ezgmaplocationInfo` | class | `extension/ezgmaplocation/ezinfo.php:7` | – | – |
 
 ### extension/ezie (1)
 
@@ -378,6 +427,14 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | --- | --- | --- | --- | --- |
 | `ezodfInfo` | class | `extension/ezodf/ezinfo.php:12` | – | – |
 
+### extension/ezoracle (1)
+
+[Alle Muster von extension/ezoracle](area-extension-ezoracle.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `ezoracleInfo` | class | `extension/ezoracle/ezinfo.php:11` | – | – |
+
 ### extension/ezownerchange (1)
 
 [Alle Muster von extension/ezownerchange](bereich-extension-ezownerchange.md)
@@ -418,6 +475,14 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | --- | --- | --- | --- | --- |
 | `ezsspInfo` | class | `extension/ezssp/ezinfo.php:2` | – | – |
 
+### extension/ezstarrating (1)
+
+[Alle Muster von extension/ezstarrating](bereich-extension-ezstarrating.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `ezstarratingInfo` | class | `extension/ezstarrating/ezinfo.php:7` | – | – |
+
 ### extension/eztags (1)
 
 [Alle Muster von extension/eztags](bereich-extension-eztags.md)
@@ -449,6 +514,14 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `ezwebinInfo` | class | `extension/ezwebin/ezinfo.php:12` | – | – |
+
+### extension/ezwt (1)
+
+[Alle Muster von extension/ezwt](bereich-extension-ezwt.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `ezwtInfo` | class | `extension/ezwt/ezinfo.php:7` | – | – |
 
 ### extension/git_manager (2)
 
@@ -555,13 +628,21 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 | --- | --- | --- | --- | --- |
 | `SevenxthemessuperInfo` | class | `extension/sevenx_themes_super/ezinfo.php:13` | Was die Administrationsoberfläche über diese Extension liest. | – |
 
+### extension/sqliimport (1)
+
+[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `sqliimportInfo` | class | `extension/sqliimport/ezinfo.php:7` | – | – |
+
 ### extension/str_replace (1)
 
 [Alle Muster von extension/str_replace](bereich-extension-str-replace.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `strReplaceInfo` | class | `extension/str_replace/ezinfo.php:2` | – | – |
+| `str_replaceInfo` | class | `extension/str_replace/ezinfo.php:2` | – | – |
 
 ### extension/swark (1)
 

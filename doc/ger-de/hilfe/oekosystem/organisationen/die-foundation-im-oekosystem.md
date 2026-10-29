@@ -56,7 +56,7 @@ Füllen Sie diese Lücken nicht mit Vermutungen.
 - [Organisationen](README.md)
 - [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md)
 - [7x im Ökosystem](7x-im-oekosystem.md)
-- [Wer entscheidet](../../../../eng-us/help/community/how-it-works/who-decides.md)
+- [Wer entscheidet](../../gemeinschaft/so-funktioniert-es/wer-entscheidet.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

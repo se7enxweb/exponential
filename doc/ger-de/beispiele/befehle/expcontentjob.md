@@ -48,7 +48,7 @@ Content jobs: large subtree removes and copies, run in batches in the background
 | `--all-versions` |  | copy: alle Versionen jedes Objekts kopieren, nicht nur die aktuelle |
 | `--keep-creator` |  | copy: Eigentümer und Ersteller der kopierten Objekte beibehalten |
 | `--keep-time` |  | copy: die Zeitpunkte der Erstellung und Änderung beibehalten |
-| `--scope` | erforderlich | section: which objects below the node get the section: subtree (the default, all of them), inherited (those that have the section of the node's object, not branches in another section) or object (none) |
+| `--scope` | erforderlich | section: welche Objekte unterhalb des Knotens die Sektion erhalten: subtree (Standard, alle), inherited (die, die die Sektion des Objekts des Knotens haben, nicht Zweige in einer anderen Sektion) oder object (keines) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

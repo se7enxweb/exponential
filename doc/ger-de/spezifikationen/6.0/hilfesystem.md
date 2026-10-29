@@ -2,8 +2,10 @@
 
 Status: Vorschlag, 18. Oktober 2026; Phase 1 (Klassen, Baum, Sektionen, Zustände, Rollen, Validator, Web- und Kontexthilfe
 in der Hilfe der Administration) umgesetzt in 6.0.15, siehe [Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md);
-ab 20. Oktober 2026 auch der DITA-Export, die gespeicherten E-Books und die überfälligen Prüfungen
-([Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-dita-ebooks-reviews.md)); ab 25. Oktober 2026 der Rest: die Regel,
+ab 20. Oktober 2026 auch der DITA-Export (Auslieferungsweg 3 und der Export für Weg 4), die als Dateiobjekte
+gespeicherten und bei der Freigabe neu gebauten E-Books (Auslieferungsweg 3) und die Liste der Topics mit überfälliger
+Prüfung im Dashboard (Phase 7), siehe [den Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-dita-ebooks-reviews.md);
+ab 25. Oktober 2026 der Rest: die Regel,
 dass der Autor nicht freigibt, der Prüfablauf auf der Seite des Themas, veröffentlichte help_ids nie umbenannt oder
 wiederverwendet, die übrigen maschinell prüfbaren Regeln des Styleguides, „War das hilfreich?“ (Phase 7), Kontexthilfe
 für Clients mit Token (Auslieferungsweg 2), epubcheck und Ace, wo die Site sie hat (Weg 3), der regelmäßige DITA-Export
@@ -268,6 +270,11 @@ Zwei Tatsachen des Kernels, mit denen die Skripte umgehen müssen:
 ## Siehe auch
 
 - [Styleguide für die Hilfe](hilfe-stilrichtlinien.md)
+- [Standards für die Hilfe](hilfestandards.md): was die Hilfe aus DITA 1.3, IEC/IEEE 82079-1, ISO/IEC/IEEE 26514,
+  ISO 3864-2, EPUB Accessibility 1.1 und WCAG 2.2 AA übernimmt
+- [Die Hilfeklassen als Paket](hilfeklassen-als-paket.md)
+- [Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md#abgleich-mit-den-spezifikationen): was von diesem
+  Plan umgesetzt, in Arbeit oder ausgelassen ist
 - [Sektionen](../../anleitungen/sektionen.md)
 - [Objektzustände](../../anleitungen/objektzustaende.md)
 - [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)

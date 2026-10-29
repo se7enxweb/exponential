@@ -3,7 +3,7 @@ title: Ausnahmehierarchie
 audience: developer
 category: standards
 order: 335
-summary: Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können. 51 Instanzen in Exponential.
+summary: Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können. 73 Instanzen in Exponential.
 keywords: Entwurfsmuster, Ausnahme, Struktur, Musterkatalog, design pattern, exception, pattern catalogue
 type: catalogue
 ---
@@ -15,13 +15,23 @@ type: catalogue
 
 Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Struktur |
-| Instanzen | 51 |
+| Instanzen | 73 |
 | Erkannt an | Erweitert Exception, eine *Exception-Klasse oder Error. |
 
 ## Klassen nach Bereich
+
+### extension/expai (3)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expAiConversationBusyException` | class extends expAiException | `extension/expai/classes/expaiconversationlock.php:150` | Ein anderer Schritt der Unterhaltung hält ihre Sperre (expAiConversationLock). | – |
+| `expAiException` | class extends Exception | `extension/expai/classes/expaiexception.php:15` | Ein Fehler von expai. | – |
+| `expAiVetoException` | class extends expAiException | `extension/expai/classes/expaigate.php:14` | Eine Anfrage, die vom Veto-Hook abgelehnt wurde (eine Regel von [RequestVeto] oder ein Listener von expai/request/veto). | – |
 
 ### extension/expchangeclass (1)
 
@@ -30,6 +40,25 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expChangeClassException` | class extends Exception | `extension/expchangeclass/classes/functions.php:35` | Wird ausgelöst, wenn eine Konvertierung nicht abgeschlossen werden kann. | – |
+
+### extension/expimageeditor (1)
+
+[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImageEditorException` | class extends RuntimeException | `extension/expimageeditor/classes/expimageeditorexception.php:15` | Eine Anfrage, die der Bildeditor ablehnt: die Meldung (englisch, bei der Anzeige übersetzt) und der HTTP-Status der Antwort. | – |
+
+### extension/expqueue (4)
+
+[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expQueueCancelledException` | class extends expQueueException | `extension/expqueue/classes/expqueuecancelledexception.php:9` | Wird von expQueueContext::throwIfCancelled() ausgelöst, wenn der Job während seiner Ausführung abgebrochen wurde; der Job endet als abgebrochen. | – |
+| `expQueueException` | class extends RuntimeException | `extension/expqueue/classes/expqueueexception.php:9` | Ein Fehler der Warteschlange selbst: eine unbekannte Klasse oder ein unbekannter Typ, ein erreichtes Kontingent, ein Job, der seinen Zustand nicht ändern kann. | – |
+| `expQueuePermanentException` | class extends expQueueException | `extension/expqueue/classes/expqueuepermanentexception.php:12` | Wird von einem Handler für einen Fehler ausgelöst, den ein weiterer Versuch nicht beheben kann (ungültige Eingabe, eine Ablehnung, ein fehlendes Objekt): Der Job geht sofort in die Dead-Letter-Warteschlange… | – |
+| `expQueueRetryableException` | class extends expQueueException | `extension/expqueue/classes/expqueueretryableexception.php:13` | Wird von einem Handler für einen Fehler ausgelöst, der von selbst verschwinden kann: ein Timeout, eine Antwort 429 oder 5xx, eine belegte Ressource. | – |
 
 ### extension/expservices (1)
 
@@ -56,6 +85,14 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 | `ezfBaseException` | abstract class extends ezcBaseException | `extension/ezfind/classes/exceptions/ezfexception.php:15` | Basisausnahmeklasse für eZ Find | – |
 | `ezfSolrException` | class extends ezfBaseException | `extension/ezfind/classes/exceptions/ezfsolrexception.php:15` | Ausnahme für Solr-Probleme | – |
 
+### extension/ezodf (1)
+
+[Alle Muster von extension/ezodf](bereich-extension-ezodf.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expOdfConverterException` | class extends RuntimeException | `extension/ezodf/classes/converter/expodfconverterexception.php:14` | Eine fehlgeschlagene Konvertierung. | – |
+
 ### extension/ezoe (1)
 
 [Alle Muster von extension/ezoe](bereich-extension-ezoe.md)
@@ -71,6 +108,25 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `AdminNeo\EzExit` | class extends RuntimeException | `extension/sevenx_dse/adminneo/core/EzExit.php:13` | Wird anstelle von exit() ausgelöst, wenn AdminNeo in Exponential eingebettet ist. | – |
+
+### extension/sqliimport (12)
+
+[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImportAiException` | class extends expImportException | `extension/sqliimport/classes/exp/ai/expimportaitransport.php:39` | Der KI-Assistent konnte nicht antworten: nicht verfügbar, abgelehnt (Schalter, Berechtigung, Datenrichtlinie, Budget) oder nicht lesbar. | – |
+| `expImportException` | class extends RuntimeException | `extension/sqliimport/classes/exp/expimportexception.php:11` | Die Basis der Exceptions der 2.x-Engine. | – |
+| `expImportSourceException` | class extends expImportException | `extension/sqliimport/classes/exp/expimportexception.php:16` | Eine Quelle kann nicht gelesen werden (fehlende Datei, falsches Format, Netzwerkfehler). | – |
+| `expImportTransformException` | class extends expImportException | `extension/sqliimport/classes/exp/expimportexception.php:21` | Ein Wert kann nicht transformiert werden; der Datensatz schlägt mit dieser Meldung fehl. | – |
+| `expImportValidationException` | class extends expImportException | `extension/sqliimport/classes/exp/expimportexception.php:26` | Eine Definition, Zuordnung, ein Zeitplan oder eine Option ist nicht gültig. | – |
+| `SQLIContentException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/content/sqlicontentexception.php:15` | Diese Exception wird ausgelöst, wenn ein Problem mit Inhalt erkannt wurde | – |
+| `SQLICSVException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/sourcehandlers/csv/sqlicsvexception.php:13` | – | – |
+| `SQLIImportBaseException` | class extends ezcBaseException | `extension/sqliimport/classes/exceptions/sqliimportbaseexception.php:11` | SQLIImportBaseException | – |
+| `SQLIImportConfigException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/exceptions/sqliimportconfigexception.php:14` | Diese Exception wird ausgelöst, wenn ein Konfigurationsproblem erkannt wurde | – |
+| `SQLIImportRuntimeException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/exceptions/sqliimportruntimeexception.php:14` | Diese Exception wird ausgelöst, wenn ein Laufzeitproblem erkannt wurde | – |
+| `SQLILocationException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/location/sqlilocationexception.php:15` | Diese Exception wird ausgelöst, wenn ein Problem mit einer Location erkannt wurde | – |
+| `SQLIXMLException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/sourcehandlers/xml/sqlixmlexception.php:13` | – | – |
 
 ### kernel/classes/contentjob (1)
 
@@ -95,6 +151,14 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expLogSearchLimitException` | class extends RuntimeException | `kernel/classes/logviewer/explogsearch.php:502` | Ein regulärer Ausdruck, der in einer Zeile pcre.backtrack_limit (oder eine andere PCRE-Grenze) überschritten hat. | – |
+
+### kernel/classes/transfer (1)
+
+[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expKernelTransferCancelledException` | class extends RuntimeException | `kernel/classes/transfer/expkerneltransfercancelledexception.php:17` | Wird von einer Transfer-Aufgabe (expKernelTransferTask) ausgelöst, die angehalten wurde, weil ihr Lauf abgebrochen wurde (expKernelTransferContext::throwIfCancelled()); der Lauf… | – |
 
 ### kernel/private (24)
 

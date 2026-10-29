@@ -92,7 +92,7 @@ vielleicht kennen, sagt die Seite das. Jede Zeile nennt die Datei oder das Dokum
 - [Softwareingenieure: hier beginnen](softwareingenieure-hier-beginnen.md)
 - [Architekturüberblick](architekturueberblick.md)
 - [Exponential bewerten](exponential-bewerten.md)
-- [PHP-Entwickler: hier beginnen](../../../eng-us/help/php-developers/php-developers-start-here.md), [Erweiterungsentwicklung](../erweiterungsentwicklung/README.md) und [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
+- [PHP-Entwickler: hier beginnen](../php-entwickler/php-entwickler-hier-beginnen.md), [Erweiterungsentwicklung](../erweiterungsentwicklung/README.md) und [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

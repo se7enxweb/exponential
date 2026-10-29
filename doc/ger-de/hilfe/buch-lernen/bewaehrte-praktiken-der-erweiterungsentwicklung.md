@@ -11,7 +11,7 @@ type: help
 
 Kapitel 6 des Buchs baut zwei Erweiterungen im Detail, ein Zahlungsmodul für einen Anbieter seiner Zeit und einen
 Kategorie-Datentyp. Diese anbieterspezifischen Teile sind veraltet, und der Shop von Exponential 6 hat ein eigenes
-Zahlungsgateway-Ereignis ([Zahlungsgateway-Ereignis](../../../eng-us/help/e-commerce/checkout/payment-gateway-event.md)). Nicht veraltet
+Zahlungsgateway-Ereignis ([Zahlungsgateway-Ereignis](../e-commerce/kasse/das-ereignis-zahlungs-gateway.md)). Nicht veraltet
 ist der erste Abschnitt, die Praxis der Erweiterungsentwicklung. Jeder seiner Punkte ist immer noch eine gute Regel.
 
 ## Zuerst entwerfen

@@ -2,7 +2,7 @@
 title: Muster in extension/ezie
 audience: developer
 category: standards
-order: 442
+order: 446
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezie mit den Entwurfsmustern.
 keywords: extension/ezie, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

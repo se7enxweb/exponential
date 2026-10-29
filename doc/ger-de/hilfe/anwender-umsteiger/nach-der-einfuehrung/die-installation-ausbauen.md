@@ -38,18 +38,18 @@ das [Arbeitsblatt für einen Wachstumsfahrplan](../../kunden/wachstum/arbeitsbla
 Eine Organisation, die sich auf Exponential verlässt, hat ein Interesse an seiner Zukunft. Wege, etwas zurückzugeben,
 von klein bis groß:
 
-- Melden Sie Fehler, die Sie finden, und bestätigen Sie die anderer ([Einen Fehler melden](../../../../eng-us/help/community/contributing/filing-a-bug.md));
-- lassen Sie Ihre Entwickler Korrekturen beitragen ([Code beitragen](../../../../eng-us/help/community/contributing/contributing-code.md));
+- Melden Sie Fehler, die Sie finden, und bestätigen Sie die anderer ([Einen Fehler melden](../../gemeinschaft/mitwirken/einen-fehler-melden.md));
+- lassen Sie Ihre Entwickler Korrekturen beitragen ([Code beitragen](../../gemeinschaft/mitwirken/code-beitragen.md));
 - teilen Sie eine anonymisierte Fallstudie ([Eine Fallstudie für die Community schreiben](../../fuersprecher/eine-community-fallstudie-schreiben.md));
-- sponsern Sie 7x oder die Foundation ([Die Community finanzieren](../../../../eng-us/help/community/how-it-works/funding-the-community.md));
-- werden Sie Partner, wenn Sie Dienstleistungen verkaufen ([Von der Community zum Partner](../../../../eng-us/help/community/paths/from-community-to-partner.md)).
+- sponsern Sie 7x oder die Foundation ([Die Community finanzieren](../../gemeinschaft/so-funktioniert-es/die-community-finanzieren.md));
+- werden Sie Partner, wenn Sie Dienstleistungen verkaufen ([Von der Community zum Partner](../../gemeinschaft/lernpfade/von-der-community-zum-partner.md)).
 
 ## Verwandte Seiten
 
 - [Nach der Einführung](README.md)
 - [Wachstum (Kunden)](../../kunden/wachstum/README.md)
 - [Exponential als Unternehmen unterstützen](../../unterstuetzer/als-unternehmen-unterstuetzen.md)
-- [Community: hier beginnen](../../../../eng-us/help/community/community-start-here.md)
+- [Community: hier beginnen](../../gemeinschaft/community-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite dürfen Sie unter der GNU FDL 1.3 frei kopieren, übersetzen und verbessern.
 
 <!-- exp-partner-block:start -->

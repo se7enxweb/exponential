@@ -53,6 +53,10 @@ GitHub-Issue-Tickets und Reaktionszeiten je nach Stufe. [Support-Stufen](support
 Die Partnerlogos ab Professional; „Exponential Certified“ ab Silver mit Zertifizierung.
 [Logos und Zeichen](partnerlogos-und-zeichen.md)
 
+**Wie prüfen wir schnell die Installation eines Kunden?**
+`./console exp:info` auf dem Server: Versionen, Engine, Datenbank, jede Erweiterung und die Hinweise, ohne Geheimnisse;
+`--json` hält einen datierten Stand fest. [Eine Kundeninstallation prüfen](eine-kundeninstallation-pruefen.md)
+
 **Bekommen wir Leads?**
 Empfehlungen von Kundenprojekten ab Professional; Lead-Priorität je nach Stufe. [Empfehlungen und Leads](empfehlungen-und-leads.md)
 
@@ -79,7 +83,9 @@ Ja, unter der GFDL 1.3 oder später. [Freie Dokumentation](../freie-dokumentatio
 ## Offene Punkte
 
 **Gibt es einen Verhaltenskodex?**
-Noch keinen formellen; das erwartete Verhalten ist hier zusammengestellt: [Verhaltenskodex für Partner](verhaltenskodex.md).
+Ja: den Verhaltenskodex des Projekts, den Contributor Covenant 2.1 mit Ergänzungen von Exponential für Partner und
+geschäftliches Verhalten ([Der Verhaltenskodex von Exponential](../projekt/verhaltenskodex.md)). Wie er für die Arbeit
+von Partnern gilt: [Verhaltenskodex für Partner](verhaltenskodex.md).
 
 ## Verwandte Seiten
 

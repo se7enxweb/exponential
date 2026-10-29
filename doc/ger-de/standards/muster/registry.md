@@ -3,7 +3,7 @@ title: Registry
 audience: developer
 category: standards
 order: 323
-summary: Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert und später nachgeschlagen werden. 30 Instanzen in Exponential.
+summary: Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert und später nachgeschlagen werden. 39 Instanzen in Exponential.
 keywords: Entwurfsmuster, Registry, Struktur, Musterkatalog, design pattern, registry, pattern catalogue
 type: catalogue
 ---
@@ -15,13 +15,24 @@ type: catalogue
 
 Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert und später nachgeschlagen werden.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Struktur |
-| Instanzen | 30 |
+| Instanzen | 39 |
 | Erkannt an | Der Klassenname enthält Registry, oder die Klasse hat statische Methoden register*(). |
 
 ## Klassen nach Bereich
+
+### extension/expai (4)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expAiFieldActionRegistry` | class | `extension/expai/classes/fieldactions/expaifieldactionregistry.php:13` | Die Feldaktionen von expai.ini [EditViewSettings] FieldActions[] und die Beschreibung des Bearbeitungsformulars dazu. | – |
+| `expAiProviderRegistry` | class | `extension/expai/classes/expaiproviderregistry.php:24` | Die Anbieter und Modelle von expai.ini: | – |
+| `expAiSegmenterRegistry` | class | `extension/expai/classes/diff/expaisegmenterregistry.php:15` | Der Segmentierer eines Datentyps: expai.ini [DiffSettings] Segmenters[]=, sonst FallbackSegmenter (expAiSegmenterGeneric). | – |
+| `expAiToolRegistry` | class | `extension/expai/classes/expaitoolregistry.php:16` | Die Werkzeuge aus expai.ini [ToolSettings] Tools[], jeweils [Tool_] Class=, plus die MCP-Werkzeuge, die der aktuelle Benutzer verwenden darf (expAiMcp::tools(): die In-Process-Br… | – |
 
 ### extension/expservices (1)
 
@@ -46,6 +57,16 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `eZContentOperationCollection` | class | `extension/nxc_powercontent/modules/content/ezcontentoperationcollection.php:20` | – | – |
+
+### extension/sqliimport (3)
+
+[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImportRegistry` | class | `extension/sqliimport/classes/exp/engine/expimportregistry.php:23` | Der Katalog einer Site: ihre Quellen, Handler und Transformationen. | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.registry] Class |
+| `expImportTransforms` | class | `extension/sqliimport/classes/exp/expimporttransforms.php:18` | Die Transformationen eines Mappings: die eingebauten und die der Kernel-Services mit dem Tag sqliimport.transform. | – |
+| `SQLIImportToken` | class extends eZPersistentObject | `extension/sqliimport/classes/sqliimporttoken.php:12` | Token-Klasse für SQLI Import, behandelt den Import-Status | – |
 
 ### kernel/classes (5)
 
@@ -92,8 +113,8 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Kontexthilfe: welche Hilfeseite „Hilfe zu dieser Seite“ beantwortet, für ein Modul, eine Ansicht und ein Design. | – |
-| `expHelpHighlighter` | class | `kernel/classes/help/exphelphighlighter.php:29` | Serverseitige Syntaxhervorhebung der Codeblöcke der Hilfeseiten (exphelp, doc/eng-us/features/6.0/help-system.md), ohne JavaScript oder eine externe Bi… | – |
+| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:45` | Kontexthilfe: welche Hilfeseite „Hilfe zu dieser Seite“ beantwortet, für ein Modul, eine Ansicht und ein Design. | – |
+| `expHelpHighlighter` | class | `kernel/classes/help/exphelphighlighter.php:29` | Serverseitige Syntaxhervorhebung der Codeblöcke der Hilfeseiten (exphelp, doc/eng-us/features/6.0/help-system.md), ohne JavaScript oder eine externe… | – |
 
 ### kernel/classes/ini (2)
 
@@ -127,6 +148,22 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expSubitemsColumnRegistry` | class | `kernel/classes/subitems/expsubitemscolumnregistry.php:23` | Die Registry der Spalten der Unterelementliste der Administrationsoberfläche („Tabellenoptionen“). | – |
+
+### kernel/classes/syscard (1)
+
+[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expSysCardRegistry` | class | `kernel/classes/syscard/expsyscardregistry.php:30` | Die Anbieter der Systemkarte und wie sie laufen (settings/syscard.ini [Providers] und [Runtime]): | – |
+
+### kernel/classes/transfer (1)
+
+[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expKernelTransferRegistry` | class | `kernel/classes/transfer/expkerneltransferregistry.php:30` | Die Transfer-Registry: jedes Import- und Export-Werkzeug der Installation, wie es sich in kernelservices.ini selbst deklariert (ein [Service_transfer.]-Block t… | settings/kernelservices.ini [Service_transfer.registry] Class |
 
 ### kernel/classes/workflowtypes (1)
 

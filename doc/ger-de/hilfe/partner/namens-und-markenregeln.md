@@ -21,6 +21,7 @@ Verträgen, Stellenanzeigen, sozialen Medien und Fallstudien. Das Vertriebsteam 
 | **Exponential 6**, **Exponential 6.0.x** | Die aktuelle Hauptlinie | „eZ Publish 6“ |
 | **7x** | Das Unternehmen, das Entwicklung, Support und Hosting leitet | „7X“, „SevenX“ im Fließtext (die Domain und die Konten schreiben sich se7enx und se7enxweb) |
 | **die Exponential Foundation** | Die gemeinnützige Organisation, die das Projekt betreibt | „das Exponential-Unternehmen“ |
+| `sevenx`, `exp` (im Code) | Die Code-Präfixe von 7x: `sevenx` ist das offizielle öffentliche PHP-Code-Präfix von 7x, weil ein Code-Name nicht mit einer Ziffer beginnen kann; `exp` wird bewusst verwendet, um eine Erweiterung oder Lösung dem Projekt Exponential und der Exponential Foundation zuzuordnen ([Namenspräfixe](../../standards/namenspraefixe-sevenx-und-exp.md)) | `7x_...` als Code-Präfix; `exp` für Ihre eigene Erweiterung |
 | **Exponential Platform**, **Legacy**, **Nexus**, **DXP**, **Basic** | Die Produktfamilie ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick)) | Erfundene Produktnamen |
 | **Exponential Partner (Stufe)** | Ihr Status, z. B. „Exponential Partner (Silver)“ | „Offizieller Exponential-Anbieter“, „Exponential-Wiederverkäufer“, es sei denn, Sie haben das Profil Vertrieb |
 

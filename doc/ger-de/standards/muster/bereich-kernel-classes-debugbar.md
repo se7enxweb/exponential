@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/debugbar
 audience: developer
 category: standards
-order: 491
+order: 498
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/debugbar mit den Entwurfsmustern.
 keywords: kernel/classes/debugbar, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

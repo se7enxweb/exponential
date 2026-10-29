@@ -94,7 +94,7 @@ zuerst die oben genannten Alternativen an.
 - [Was es gibt und was nicht](was-es-gibt-und-was-nicht.md)
 - [Was Sie bauen können](../ersteller/website-ersteller/was-sie-bauen-koennen.md)
 - [Für wen Exponential ist](../geschaeft/fuer-wen-exponential-ist.md)
-- [Nicht-technische Menschen: hier beginnen](../../../eng-us/help/non-technical-people/non-technical-people-start-here.md)
+- [Nicht-technische Menschen: hier beginnen](../nicht-technische-menschen/nicht-technische-menschen-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

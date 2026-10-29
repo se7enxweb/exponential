@@ -2,7 +2,7 @@
 title: Muster in extension/exp_oe_tiptap
 audience: developer
 category: standards
-order: 434
+order: 438
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/exp_oe_tiptap mit den Entwurfsmustern.
 keywords: extension/exp_oe_tiptap, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

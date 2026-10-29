@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## UserAudit
 
-> The user audit log (doc/eng-us/features/6.0/user-audit.md): one row per security event about a  
-> user account or a user group in the table expuser\_audit, a copy of the access channel's records  
-> made by the sink useraudit (\[AuditChannel\_access\] Sinks\[\]). Read on Users > User audit log  
-> (user/audit, policy user/audit), filtered and exported as CSV.  enabled | disabled  
+> Das Benutzer-Audit-Log (doc/eng-us/features/6.0/user-audit.md): eine Zeile pro Sicherheitsereignis zu einem  
+> Benutzerkonto oder einer Benutzergruppe in der Tabelle expuser\_audit, eine Kopie der Einträge des Access-Kanals,  
+> geschrieben von der Senke useraudit (\[AuditChannel\_access\] Sinks\[\]). Lesbar unter Benutzer > Benutzer-Audit-Log  
+> (user/audit, Richtlinie user/audit), gefiltert und als CSV exportierbar.  enabled | disabled  
 
 Standard: `enabled`.
 
@@ -36,9 +36,9 @@ UserAudit=enabled
 
 ## Events
 
-> Which events: patterns as in \[AuditEventSettings\]; only records naming a user account (the  
-> account changed, signed in or refused, the user a role was assigned to) or a user group are kept.  
-> An event the audit does not record (\[AuditEventSettings\]) never reaches the table either.  
+> Welche Ereignisse: Muster wie in \[AuditEventSettings\]; nur Einträge, die ein Benutzerkonto nennen (das  
+> geänderte Konto, angemeldet oder abgewiesen, der Benutzer, dem eine Rolle zugewiesen wurde) oder eine Benutzergruppe, werden behalten.  
+> Ein Ereignis, das das Audit nicht aufzeichnet (\[AuditEventSettings\]), erreicht auch die Tabelle nie.  
 
 Standard: eine Liste mit 7: `access.user.*`, `access.role.assign`, `access.role.unassign`, `access.session.*`, `access.passkey.*`, `access.registration.*`, `access.permission.refused`.
 
@@ -60,8 +60,8 @@ Events[]=access.permission.refused
 
 ## RecordIP
 
-> The address of the request, as \[AuditPrivacySettings\] Field\[actor.ip\] leaves it (by default  
-> shortened to /24 or /48); disabled: never stored in the table.  enabled | disabled  
+> Die Adresse der Anfrage, so wie \[AuditPrivacySettings\] Field\[actor.ip\] sie belässt (standardmäßig  
+> auf /24 oder /48 gekürzt); disabled: wird nie in der Tabelle gespeichert.  enabled | disabled  
 
 Standard: `enabled`.
 
@@ -75,8 +75,8 @@ RecordIP=enabled
 
 ## RetentionDays
 
-> Rows older than this are removed by the cronjob part useraudit (cronjobs/useraudit.php, in the  
-> infrequent group). 0 keeps them all.  
+> Ältere Zeilen entfernt der Cronjob-Teil useraudit (cronjobs/useraudit.php, in der  
+> Gruppe infrequent). 0 behält alle.  
 
 Standard: `730`.
 
@@ -90,7 +90,7 @@ RetentionDays=730
 
 ## MaxValueLength
 
-> The longest before or after value stored, in bytes of JSON; a longer one is cut.  
+> Der längste gespeicherte Wert vorher oder nachher, in Bytes JSON; ein längerer wird abgeschnitten.  
 
 Standard: `2000`.
 

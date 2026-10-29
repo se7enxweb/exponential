@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/datatable.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## Engines
 
-> The engines that may be used for a connection (sqlite, mysql, postgresql, oracle, sqlserver, mongodb)  
+> Die Engines, die für eine Verbindung verwendet werden dürfen (sqlite, mysql, postgresql, oracle, sqlserver, mongodb)  
 
 Standard: eine Liste mit 6: `sqlite`, `mysql`, `postgresql`, `oracle`, `sqlserver`, `mongodb`.
 
@@ -40,8 +40,8 @@ Engines[]=mongodb
 
 ## SQLiteDirectories
 
-> The directories a SQLite connection's file may be in, relative to the installation; the file is created there  
-> when it does not exist yet. A path outside them is refused.  
+> Die Verzeichnisse, in denen die Datei einer SQLite-Verbindung liegen darf, relativ zur Installation; die Datei wird dort angelegt,  
+> wenn sie noch nicht existiert. Ein Pfad außerhalb davon wird abgelehnt.  
 
 Standard: eine Liste mit 1: `var/datatable`.
 
@@ -57,7 +57,7 @@ SQLiteDirectories[]=var/datatable
 
 ## AllowedHosts
 
-> Hosts a server connection may reach, besides any when the list is empty (host names or addresses; \* for any)  
+> Hosts, die eine Server-Verbindung erreichen darf; ist die Liste leer, jeder (Hostnamen oder Adressen; \* für jeden)  
 
 Standard: eine leere Liste.
 
@@ -72,7 +72,7 @@ AllowedHosts[]
 
 ## ConnectTimeout
 
-> Seconds a connection test waits for the server  
+> Sekunden, die ein Verbindungstest auf den Server wartet  
 
 Standard: `5`.
 

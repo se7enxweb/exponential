@@ -2,7 +2,7 @@
 title: Muster in extension/explayouts_content_browser
 audience: developer
 category: standards
-order: 414
+order: 417
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/explayouts_content_browser mit den Entwurfsmustern.
 keywords: extension/explayouts_content_browser, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -39,7 +39,7 @@ Exponential führt einen manipulationssicheren Audit-Trail und Logs, mit Ansicht
 
 Wenn Sie eine Schwachstelle in Exponential selbst finden, melden Sie sie vertraulich an security@se7enx.com, nicht an
 einem öffentlichen Ort. "You can expect a first answer within one business day", eine erste Antwort kommt also innerhalb
-eines Werktags (`SECURITY.md`; [Wie Sicherheitsmeldungen bearbeitet werden](../../../../eng-us/help/community/how-it-works/how-security-reports-are-handled.md)).
+eines Werktags (`SECURITY.md`; [Wie Sicherheitsmeldungen bearbeitet werden](../../gemeinschaft/so-funktioniert-es/wie-sicherheitsmeldungen-behandelt-werden.md)).
 
 ## Eine jährliche Überprüfung
 

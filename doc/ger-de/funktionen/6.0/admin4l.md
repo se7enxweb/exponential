@@ -52,7 +52,13 @@ greift auf den Rückfall zurück.
 |---|---|---|
 | `admin_3col` | header, topmenu, left, right, main_top, main, main_bottom, footer | links und rechts |
 | `admin_2col` | header, topmenu, left, main_top, main, main_bottom, footer | links |
-| `admin_full` | header, topmenu, main_top, main, main_bottom, footer | keine |
+| `admin_full` | header, topmenu, main, footer | keine |
+
+Die Zonen `main_top` und `main_bottom` werden nur auf einer Seite gezeichnet, die den Rahmen `#maincolumn` hat: nicht
+auf einer Seite, die admin4 in `#a4-main` eingehüllt zeichnet (`main_wrapped`), und nicht, wenn eine Ansicht
+`hide_left_menu` setzt. `admin_full` deklariert sie deshalb nicht. Ein Block, der in einem früher gespeicherten Layout
+dort platziert ist (Installationen, die vor dieser Änderung befüllt wurden, haben einen Brotkrumenpfad in `main_top` von
+`admin_full`, siehe die [Verhaltensänderung](../../bc/6.0/admin4l.md)), bleibt gespeichert, wird aber nie angezeigt.
 
 Die Layouts werden im Reiter **Layouts** bearbeitet, wie Website-Layouts. Admin-Layouts, -Regeln und -Blöcke sind eine
 eigene Gruppe: Der Editor führt sie nur als Admin-Layouts auf (`?group=admin` oder `all`), die Blockliste eines
@@ -63,15 +69,19 @@ Blöcke (`[AdminBlockSettings]` in `explayouts.ini`, jeder mit `Group=admin`; da
 
 | Teil der Seite | Blöcke |
 |---|---|
-| Kopfbereich | `admin_logo`, `admin_menu_button`, `admin_search`, `admin_theme_switch`, `admin_sidebar_controls` (die Seite zeichnet das Logo und die Menüschaltfläche vor dem Menübereich und den Rest der Kopfzone danach, sodass die Tab-Reihenfolge die von admin4 ist; `admin_sidebar_toggles`, die Menüschaltfläche und die Steuerungen der Seitenleisten in einem Block, funktioniert weiter in Layouts, die vor der Aufteilung gespeichert wurden, und wird nach den Werkzeugen gezeichnet); `admin_tab_menu` für die Zone **topmenu**: Es zeichnet nur die Listeneinträge, die Seite zeichnet den einen Menübereich darum |
+| Kopfbereich | `admin_logo`, `admin_menu_button`, `admin_search`, `admin_theme_switch` (nicht nur die Theme-Schaltfläche: Er zeichnet die ganze Gruppe von Werkzeugen, die admin4 hinter die Suche setzt, den Website-Link und das Website-Menü, die Schaltfläche für den Farbmodus, die Kontexthilfe und das Benutzermenü; der Name blieb, damit gespeicherte Layouts weiter funktionieren), `admin_sidebar_controls` (die Seite zeichnet das Logo und die Menüschaltfläche vor dem Menübereich und den Rest der Kopfzone danach, sodass die Tab-Reihenfolge die von admin4 ist; `admin_sidebar_toggles`, die Menüschaltfläche und die Steuerungen der Seitenleisten in einem Block, funktioniert weiter in Layouts, die vor der Aufteilung gespeichert wurden, und wird nach den Werkzeugen gezeichnet); `admin_tab_menu` für die Zone **topmenu**: Es zeichnet nur die Listeneinträge, die Seite zeichnet den einen Menübereich darum |
 | Linke Seitenleiste | `admin_left_menu` (das Menü des aktuellen Navigationsteils; der optionale Parameter `part` erzwingt einen), `admin_content_tree` |
 | Rechte Seitenleiste | `admin_toolbar_right`, `admin_toolbar_developer` (die Werkzeugleisten `admin_right` und `admin_developer` aus `toolbar.ini`, wie admin4 sie zeichnet, in der Reihenfolge von admin4) oder die einzelnen Werkzeuge `admin_clear_cache`, `admin_bookmarks`, `admin_current_user`, `admin_preferences`, `admin_quick_settings` |
 | Seite | `admin_breadcrumb`, `admin_module_result`, `admin_footer`, `admin_popup_menu`, `admin_overlay`, `admin_debug_area` |
+| Werkzeugleiste | `admin_ui_switch` (das Werkzeug von admin4 in der Werkzeugleiste für die Auswahl der Oberfläche, `uiswitch`) |
 
 Jeder Block bindet den Teil von admin4 ein, nach dem er benannt ist, mit den eigenen Bedingungen von admin4, sodass das
 Markup gleich bleibt. Die Hüllen (`#navbar`, `#leftmenu`, `#footer-design` ...) zeichnet die Seite, nicht die Blöcke.
 Das Kontextmenü, die Debug-Markierung und die Überlagerung werden dort gezeichnet, wo admin4 sie zeichnet (außerhalb der
-Fußzeile), aus den Blöcken der Fußzone.
+Fußzeile), aus den Blöcken der Fußzone, und **nur** von dort: In einer anderen Zone platziert, werden sie nicht
+gezeichnet (die Seite zeichnet jeden von ihnen einmal). Gezeichnet werden nur Blöcke, deren Definitionskennung mit
+`admin_` beginnt; die Kennung benennt das Template, deshalb wird jede andere Definition in einem Admin-Layout
+übersprungen und im Debug-Log vermerkt.
 
 `admin_left_menu` der Navigationsteile my, content, media und user enthält bereits die Inhaltsstruktur. Setzen Sie
 `admin_content_tree` nur dann in eine Zone, wenn Sie den Baum auf einer Seite möchten, deren eigenes Menü keinen hat; in
@@ -102,9 +112,19 @@ keine Cache-Dateien erzeugen.
 
 ## Unterschiede zu admin4
 
-- Die Tab-Reihenfolge des Kopfbereichs unterscheidet sich: admin4 hat Logo, Menüschaltfläche, Menü, Suche, Werkzeuge;
-  admin4l hat die Kopfzone (Logo, Suche, Theme, Menüschaltfläche und Steuerungen der Seitenleisten) vor der Zone
-  topmenu, weil die Menüschaltfläche und die Steuerungen der Seitenleisten ein Block sind.
+- Die Tab-Reihenfolge des Kopfbereichs ist die von admin4 (Logo, Menüschaltfläche, Menü, Suche, Werkzeuge,
+  Steuerungen der Seitenleisten): Die Seite zeichnet das Logo und die Menüschaltfläche der Kopfzone vor dem Menübereich
+  und den Rest der Kopfzone danach. Ein Layout, das mit dem alten Block `admin_sidebar_toggles` gespeichert wurde
+  (Menüschaltfläche und Steuerungen in einem), zeichnet ihn nach den Werkzeugen.
+- Auf einem Telefon fügt admin4 die Aktionen des Benutzers (`parts/a4_phone_user.tpl`) in das geöffnete Telefonmenü
+  ein und blendet dort das Benutzermenü des Kopfbereichs aus. Der Tab-Menü-Block von admin4l bindet sie nicht ein: Das
+  Benutzermenü des Kopfbereichs bleibt, deshalb hat das Telefonmenü nur die Suche, die Reiter, „Mehr“ und die
+  Schaltfläche zum Schließen.
+- Ein Block in `main_top`/`main_bottom` wird nicht angezeigt, wo die Seite kein `#maincolumn` hat (siehe die
+  Zonentabelle oben).
+- `admin_left_menu` mit dem Parameter `part` oder jeder Navigationsteil, dessen `parts/<name>/menu.tpl` nicht existiert,
+  zeichnet dieses Include so, wie es ist: Die Template-Sprache kann nicht prüfen, ob ein Template existiert, deshalb gibt
+  es keinen Rückfall. Nennen Sie nur Teile, die auf dem Siteaccess existieren.
 
 ## Prüfen
 

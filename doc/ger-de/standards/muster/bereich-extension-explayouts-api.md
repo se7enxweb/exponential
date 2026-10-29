@@ -2,7 +2,7 @@
 title: Muster in extension/explayouts_api
 audience: developer
 category: standards
-order: 413
+order: 416
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/explayouts_api mit den Entwurfsmustern.
 keywords: extension/explayouts_api, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

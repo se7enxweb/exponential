@@ -108,14 +108,14 @@ ActiveExtensions[]=xrowmetadata
 
 ## RequiredExtensions
 
-> Extensions the kernel's own designs need. Each one that is installed is active  
-> in every siteaccess, ahead of ActiveExtensions\[\], whatever an override sets  
-> there; one that is not installed is left out without an error. The admin  
-> designs request the script packs of Exponential UI (expui, which the kernel  
-> package requires: exp::core::shared, exp::io, exp::datatable ...) for the  
-> sub-items table, relation search, uploads and date fields; without it ezjscore  
-> answers "Not a valid ezjscServer function" for each of them. A project that  
-> resets ActiveExtensions\[\] (a Platform Legacy project's override) keeps it.  
+> Erweiterungen, die die eigenen Designs des Kernels brauchen. Jede installierte ist  
+> in jedem Siteaccess aktiv, vor ActiveExtensions\[\], was auch immer ein Override  
+> dort setzt; eine nicht installierte wird ohne Fehler ausgelassen. Die Admin-  
+> Designs fordern die Skriptpakete von Exponential UI (expui, das das Kernel-  
+> Paket verlangt: exp::core::shared, exp::io, exp::datatable ...) für die  
+> Tabelle der Unterelemente, die Relationssuche, Uploads und Datumsfelder an; ohne sie  
+> antwortet ezjscore für jedes davon "Not a valid ezjscServer function". Ein Projekt, das  
+> ActiveExtensions\[\] zurücksetzt (der Override eines Platform-Legacy-Projekts), behält sie.  
 
 Standard: eine Liste mit 1: `expui`.
 
