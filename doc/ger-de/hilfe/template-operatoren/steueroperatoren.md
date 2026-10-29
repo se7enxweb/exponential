@@ -3,7 +3,7 @@ title: Steueroperatoren
 audience: developer, designer, app-creator
 category: development
 order: 130
-summary: cond und first_set aus eZTemplateControlOperator - Bedingungen und Ersatzwerte innerhalb eines Ausdrucks, die nur auswerten, was sie brauchen, wie sich Interpreter und kompiliertes Template bei einem falschen Standardwert unterscheiden, mit Beispielen, die auf alpha gerendert wurden.
+summary: cond und first_set aus eZTemplateControlOperator - Bedingungen und Ersatzwerte innerhalb eines Ausdrucks, die nur auswerten, was sie brauchen, wie sich Interpreter und kompiliertes Template bei einem falschen Standardwert unterscheiden, mit Beispielen, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: cond, first_set, Bedingung, ternärer Operator, Ersatzwert, Standardwert, condition, ternary, fallback, default value, eZTemplateControlOperator
 type: help
 ---
@@ -46,7 +46,7 @@ gibt. Generierte Referenz: [cond](../../beispiele/template-operatoren/cond.md).
 {cond( 'only one parameter' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 many children (18)
@@ -63,7 +63,7 @@ Fit & Healthy (Knoten 89):
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 <li class="first">Fitness</li><li class="topic">Workout</li><li class="item">Fit &amp; Healthy site info - [SITEINFO]</li><li class="item">Tour</li>
@@ -77,15 +77,15 @@ kompilierte Form weist den Standardwert zu, ohne ihn zu prüfen. Das folgende Be
 [{cond( false(), 'x', 0 )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []
 ```
 
-Kompiliert auf alpha, wo das Kompilieren von Templates aktiviert ist, gab dieselbe Zeile `[0]` aus.
+Kompiliert auf einer Entwicklungsinstallation, wo das Kompilieren von Templates aktiviert ist, gab dieselbe Zeile `[0]` aus.
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 [0]
@@ -116,7 +116,7 @@ limit = {first_set( $view_parameters.limit, $undefined_limit, 10 )}
 title = {first_set( $no_such_variable, 'Untitled' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 offset = 20

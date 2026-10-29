@@ -3,7 +3,7 @@ title: Newsletter operators of cjw_newsletter
 audience: developer, designer, app-creator
 category: development
 order: 450
-summary: The thirteen template operators of the cjw_newsletter extension - three general ones (cjw_newsletter_str_replace, cjw_newsletter_preg_replace, cjw_newsletter_variable) and ten rendering operators (conditions, plain text and rich text conversion, interests block, absolute URLs, underline, wrap, rendering data) - with parameters, return values, when the condition markers appear, and examples rendered on alpha.
+summary: The thirteen template operators of the cjw_newsletter extension - three general ones (cjw_newsletter_str_replace, cjw_newsletter_preg_replace, cjw_newsletter_variable) and ten rendering operators (conditions, plain text and rich text conversion, interests block, absolute URLs, underline, wrap, rendering data) - with parameters, return values, when the condition markers appear, and examples rendered on a development installation.
 keywords: cjw_newsletter, newsletter, cjw_newsletter_str_replace, cjw_newsletter_preg_replace, cjw_newsletter_variable, cjwnl_condition_open, cjwnl_condition_else, cjwnl_condition_close, cjwnl_plaintext, cjwnl_richtext, cjwnl_interests_block, cjwnl_abs_url, cjwnl_text_underline, cjwnl_text_wrap, cjwnl_rendering_data
 type: help
 ---
@@ -100,7 +100,7 @@ unchanged.
 8 cjwnl_plaintext of node 90 body: {$node.data_map.body|cjwnl_plaintext|extract_left( 160 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 
@@ -113,7 +113,7 @@ Output on alpha:
 5 cjwnl_text_wrap 30: Exponential sends newsletters
 as HTML and as plain text,
 wrapped for mail clients.
-6 cjwnl_abs_url: http://alpha.se7enx.com/privacy-policy / mailto:info@example.com
+6 cjwnl_abs_url: http://www.example.com/privacy-policy / mailto:info@example.com
 7 cjwnl_richtext text: Hello *world*
 
 - one
@@ -193,7 +193,7 @@ string; the `design:` path of a plain-text override template, or `false`). Unkno
 7 subscription statuses: {foreach cjw_newsletter_variable( 'available_subscription_status_id_name_array' ) as $id => $name}{$id}={$name}{delimiter}, {/delimiter}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 condition: AB

@@ -3,7 +3,7 @@ title: "Fetch functions: how they work"
 audience: developer, app-creator
 category: development
 order: 700
-summary: What happens when a template calls fetch() - eZFunctionHandler, eZModuleFunctionInfo, the module's function_definition.php and its function collection class - the definition format, results and errors, the module repository search order, and how an extension adds a fetch module, extends a kernel module's fetch functions or replaces them, each rendered on alpha.
+summary: What happens when a template calls fetch() - eZFunctionHandler, eZModuleFunctionInfo, the module's function_definition.php and its function collection class - the definition format, results and errors, the module repository search order, and how an extension adds a fetch module, extends a kernel module's fetch functions or replaces them, each rendered on a development installation.
 keywords: fetch, fetch function, function_definition.php, FunctionList, call_method, function collection, eZFunctionHandler, eZModuleFunctionInfo, module repositories, ExtensionRepositories, override fetch function, extend fetch function
 type: help
 ---
@@ -35,7 +35,7 @@ written step by step in [Writing your own fetch function](../creators/app-creato
 {$node.name|wash}: {$count} children
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Fit &amp; Healthy: 16 children
@@ -107,7 +107,7 @@ Fetch never stops the page. Every problem is written to the debug output and the
 [{fetch( 'nosuchmodule', 'list', hash() )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []
@@ -121,7 +121,7 @@ Output on alpha:
 {if is_null( $result )}no result{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 no result
@@ -134,7 +134,7 @@ no result
 {if is_null( $result )}no result{else}{$result.name|wash}{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 no result
@@ -151,10 +151,10 @@ The module repositories come from `module.ini` `[ModuleSettings]`: `ModuleReposi
 and `kernel/private/modules`) and, for each extension listed in `ExtensionRepositories[]` and active, its
 `modules` folder. `eZModule::activeModuleRepositories()` (`lib/ezutils/classes/ezmodule.php`) merges the two lists
 and **reverses** them, so extensions are searched before the kernel, and of the extensions the one listed last in
-`ExtensionRepositories[]` first. On alpha's `site` siteaccess the search order starts with
+`ExtensionRepositories[]` first. On the `site` siteaccess the search order starts with
 `extension/sevenx_alpha_settings/modules`, `extension/expui/modules`, `extension/ezjscore/modules`, ... and ends
 with `kernel/private/modules` and `kernel`; 28 modules have fetch functions, 21 of them in the kernel. No extension
-on alpha has a `function_definition.php` for a kernel module.
+on a development installation has a `function_definition.php` for a kernel module.
 
 ## Adding a fetch module in an extension
 
@@ -223,7 +223,7 @@ class C11DemoFunctionCollection
 }
 ```
 
-Not run on alpha as an installed extension: the script that rendered the examples in this and the next two
+Not run on a development installation as an installed extension: the script that rendered the examples in this and the next two
 sections put a scratch module repository in front of the others in memory (`eZModule::setGlobalPathList()`, for its
 own process) and loaded the classes from a scratch folder.
 
@@ -234,7 +234,7 @@ own process) and loaded the classes from a scratch folder.
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 ng_landing_page: 5
@@ -281,14 +281,14 @@ section/list: {$sections|count} sections
 section/c11_identifiers: {$identifiers|implode( ', ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 section/list: 10 sections
 section/c11_identifiers: , , design, help_internal, help_public, media, sample_collaboration, setup, standard, users
 ```
 
-(Two sections on alpha have an empty identifier, hence the two leading commas.) The include path is relative to
+(Two sections on a development installation have an empty identifier, hence the two leading commas.) The include path is relative to
 the installation root, which is the working directory of every Exponential request and script.
 
 Even so, a function with your own module name (`fetch( 'myext', ... )`) is the better choice: it cannot collide
@@ -306,7 +306,7 @@ section/list: {$sections|count} sections
 section/c11_identifiers: {$identifiers|implode( ', ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 section/list: 0 sections
@@ -329,7 +329,7 @@ template, guarded by `class_exists()`/`method_exists()`. Two consequences:
   method with the old argument order;
 - a definition that cannot be loaded at compile time (class missing) makes the compiler fall back to a run-time call.
 
-All examples on this page gave the same result interpreted and compiled (into a scratch folder) on alpha.
+All examples on this page gave the same result interpreted and compiled (into a scratch folder) on a development installation.
 
 ## Related pages
 

@@ -24,8 +24,8 @@ creating and publishing content are on [Creating and editing content](../../edit
 
 ## The fields
 
-The fields depend on how your product class was built. On the demonstration installation at
-<https://alpha.se7enx.com> the Product class has a name, a product number, a short description, a description, a
+The fields depend on how your product class was built. On a demonstration installation
+the Product class has a name, a product number, a short description, a description, a
 price, images, additional options, tags, a star rating, metadata and a specifications table
 ([Product classes and catalog](../../businesses/stores/product-classes-and-catalog.md)). Your own class may differ.
 

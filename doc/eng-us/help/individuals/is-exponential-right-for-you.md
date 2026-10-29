@@ -81,7 +81,7 @@ Answer yes or no. Mostly yes means Exponential is a good fit; mostly no means lo
 
 - Install it on your own computer with SQLite and try it for an evening; nothing is lost if you decide against it
   ([Choosing an install method](setup/choosing-an-install-method.md)).
-- Look at the demonstration installation at <https://alpha.se7enx.com>.
+- Look at a demonstration installation ([Trying the demo and a test install](../adopters/evaluating/trying-the-demo-and-a-test-install.md)).
 - Ask in the community ([Community channels](../advocates/community-channels.md)).
 - If you are a student or teacher, consider the Student partner level
   ([Learning with the Student level](running-it/learning-with-the-student-level.md)).

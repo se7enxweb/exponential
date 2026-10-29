@@ -40,7 +40,7 @@ business:
 
 ## The product class as shipped
 
-On the alpha installation (https://alpha.se7enx.com), the **Product** class has these fields, in this order:
+On a development installation, the **Product** class has these fields, in this order:
 
 | Field | Datatype | Use |
 |---|---|---|

@@ -3,14 +3,14 @@ title: Werte und Literale
 audience: developer, designer, app-creator
 category: development
 order: 70
-summary: Die Werte, die ein Template hinschreiben kann - Zeichenketten in einfachen oder doppelten Anführungszeichen (keine Interpolation von Variablen, die Escapes, die der Parser kennt), ganze Zahlen und Gleitkommazahlen, true() und false(), mit array() und hash() gebaute Arrays und Hashes, bloße Bezeichner und was für null steht - jedes auf alpha mit get_type gezeigt.
+summary: Die Werte, die ein Template hinschreiben kann - Zeichenketten in einfachen oder doppelten Anführungszeichen (keine Interpolation von Variablen, die Escapes, die der Parser kennt), ganze Zahlen und Gleitkommazahlen, true() und false(), mit array() und hash() gebaute Arrays und Hashes, bloße Bezeichner und was für null steht - jedes auf einer Entwicklungsinstallation mit get_type gezeigt.
 keywords: Werte, Literale, Zeichenketten, Anführungszeichen, Escape-Sequenzen, Zahlen, ganze Zahl, Gleitkommazahl, Boolescher Wert, true, false, array, hash, Bezeichner, null, get_type, Wahrheitswert, values, literals, strings, quotes, escape sequences, numbers, integer, float, boolean, identifier, truthiness
 type: help
 ---
 # Werte und Literale
 
 Der Ausdrucksparser (`lib/eztemplate/classes/eztemplateelementparser.php`) kennt sechs Arten literaler Werte. Diese Seite führt sie mit den
-genauen Regeln des Parsers auf und zeigt jede auf alpha. `get_type` (aus `eZTemplateTypeOperator`) gibt den PHP-Typ eines Werts aus und wird
+genauen Regeln des Parsers auf und zeigt jede auf einer Entwicklungsinstallation. `get_type` (aus `eZTemplateTypeOperator`) gibt den PHP-Typ eines Werts aus und wird
 hier deshalb genutzt, um zu zeigen, was aus einem Literal wird.
 
 ## Inhalt
@@ -50,7 +50,7 @@ Innerhalb eines Tags muss eine `}` in einer Zeichenkette als `\}` geschrieben we
 [{'line one\nline two'}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [Hello $name] [Hello $name] [Hello World]
@@ -74,7 +74,7 @@ gibt eine ganze Zahl zurück, wenn die Division ohne Rest aufgeht, und sonst ein
 [{10|div( 4 )}] [{10|div( 5 )|get_type}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [42] [-7] [3.14] [0.5] [1.5]
@@ -88,7 +88,7 @@ Ein Punkt ohne Ziffer danach:
 [{1.|get_type}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1]
@@ -112,7 +112,7 @@ von PHP zurückgeben. Ausgegeben wird true zu `1` und false zur leeren Zeichenke
 [{if 0}0 is true{else}0 is false{/if}] [{if '0'}'0' is true{else}'0' is false{/if}] [{if ''}empty is true{else}empty is false{/if}] [{if array()}empty array is true{else}empty array is false{/if}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1] [] [boolean[true]] [boolean[false]]
@@ -135,7 +135,7 @@ Ausgabe auf alpha:
 [{array()|count}] [{$list|get_type}] [{$map|get_type}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [3] [b] [a-b-c]
@@ -155,7 +155,7 @@ Bezeichner, wo andere Sprachen Schlüsselwörter in Anführungszeichen nutzen w�
 [{1|choose( zero, one, two )}] [{array( red, green )|implode( '+' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [one] [red+green]
@@ -175,7 +175,7 @@ Sie eine fehlende Variable mit `first_set`:
 [{$empty|get_type}] [{if $empty|is_null}is null{/if}] [{if is_set( $empty )}is set{else}not set{/if}] [{first_set( $missing, 'default' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [null] [is null] [not set] [default]
@@ -191,7 +191,7 @@ andere, auch ein Array, das eine `0` enthält, ist wahr. Die in dieser Schleife 
 {foreach array( 0, 1, '', 'x', '0', array(), array( 0 ), false(), true() ) as $v}[{if $v}T{else}F{/if}]{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [F][T][F][T][F][F][T][F][T]

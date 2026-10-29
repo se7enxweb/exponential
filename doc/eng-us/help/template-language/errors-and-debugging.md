@@ -3,7 +3,7 @@ title: Errors and debugging
 audience: developer, designer, app-creator
 category: development
 order: 430
-summary: The messages the template engine logs - unknown variable, unknown attribute, unknown operator or function, parser errors with line and column, a missing template, def/set/undef misuse - each produced on alpha, what the engine outputs in each case, the whitespace rule that surprises everyone, and the debug settings (Debug, ShowXHTMLCode, ShowUsedTemplates, ShowTemplatePathComments, ShowMethodDebug, DisplayWarnings).
+summary: The messages the template engine logs - unknown variable, unknown attribute, unknown operator or function, parser errors with line and column, a missing template, def/set/undef misuse - each produced on a development installation, what the engine outputs in each case, the whitespace rule that surprises everyone, and the debug settings (Debug, ShowXHTMLCode, ShowUsedTemplates, ShowTemplatePathComments, ShowMethodDebug, DisplayWarnings).
 keywords: template errors, template warnings, unknown template variable, not registered, parser error, unterminated tag, no template could be loaded, already defined, debug, ShowXHTMLCode, ShowUsedTemplates, ShowTemplatePathComments, DisplayWarnings, whitespace
 type: help
 ---
@@ -11,7 +11,7 @@ type: help
 
 The template engine never stops a page for a template mistake. It logs an error or a warning, outputs nothing (or
 the rest of the text) for the faulty part and goes on. This page shows the messages it produces, each one triggered
-on alpha by a small template, so you can recognize them in the debug output, and the settings that help find the
+on a development installation by a small template, so you can recognize them in the debug output, and the settings that help find the
 template behind a piece of HTML.
 
 ## Contents
@@ -35,9 +35,9 @@ engine's error or warning log and pass it to `eZDebug` with the template file, l
   (`DebugByIP`, `DebugByUser`);
 - in `var/log/error.log` and `var/log/warning.log` when the debug log for that level is enabled;
 - on the page itself only with `template.ini [ControlSettings] DisplayWarnings=enabled` (disabled by default and on
-  alpha), which adds a warning box for template errors.
+  a development installation), which adds a warning box for template errors.
 
-The examples below ran through the engine on alpha; each shows the output and then what the engine logged. The file
+The examples below ran through the engine on a development installation; each shows the output and then what the engine logged. The file
 paths in the parser messages are the scratch paths the examples were kept in.
 
 ## Variables and attributes
@@ -48,7 +48,7 @@ A variable that does not exist outputs nothing and logs an error with the namesp
 before [{$no_such_variable}] after
 ```
 
-Output on alpha:
+Output:
 
 ```text
 before [] after
@@ -68,7 +68,7 @@ exists:
 [{$list.5}] [{$list.first}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [] []
@@ -94,7 +94,7 @@ An operator that is not registered on this siteaccess logs a warning and **passe
 before [{'text'|no_such_operator}] after
 ```
 
-Output on alpha:
+Output:
 
 ```text
 before [text] after
@@ -113,7 +113,7 @@ same line was not output either:
 before {no_such_function param=1} after
 ```
 
-Output on alpha:
+Output:
 
 ```text
 before
@@ -140,7 +140,7 @@ line one
 line three
 ```
 
-Output on alpha:
+Output:
 
 ```text
 line one
@@ -165,7 +165,7 @@ Extra characters in a function's parameters: the parser logs what it expected; t
 [{$a}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1]
@@ -185,7 +185,7 @@ A block that is never closed is not reported at all: the parser treats the rest 
 open if, never closed
 ```
 
-Output on alpha:
+Output:
 
 ```text
 open if, never closed
@@ -199,7 +199,7 @@ An `include` (or a view function) whose template is not found in any design base
 before [{include uri='design:no/such/template.tpl'}] after
 ```
 
-Output on alpha:
+Output:
 
 ```text
 before [] after
@@ -226,7 +226,7 @@ nothing; `undef` of a variable not made with `def` warns:
 [{$a}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [2]
@@ -259,7 +259,7 @@ The [Data map and content](data-map-and-content.md) examples use empty lines for
 
 ## Debug settings
 
-All in `site.ini [TemplateSettings]` unless noted; values on alpha's `site` siteaccess:
+All in `site.ini [TemplateSettings]` unless noted; values on the `site` siteaccess:
 
 ```tpl
 Debug:                    {ezini( 'TemplateSettings', 'Debug' )}
@@ -270,7 +270,7 @@ DebugOutput:              {ezini( 'DebugSettings', 'DebugOutput' )}
 DisplayWarnings:          {ezini( 'ControlSettings', 'DisplayWarnings', 'template.ini' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Debug:                    disabled

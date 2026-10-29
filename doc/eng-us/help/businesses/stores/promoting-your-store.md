@@ -45,7 +45,7 @@ The points that matter most for a store:
 | robots.txt | Keep basket, checkout and account pages out of search | [robots.txt](../../creators/website-creators/robots-txt.md) |
 | Redirects for removed products | Old links still lead somewhere | [Redirects and moved content](../../creators/website-creators/redirects-and-moved-content.md) |
 
-On alpha, the product class carries an `xrowmetadata` field for metadata
+On a development installation, the product class carries an `xrowmetadata` field for metadata
 ([xrowmetadata](../../../features/6.0/extensions/xrowmetadata.md)); sitemaps come from `bcgooglesitemaps` or
 `xrowmetadata` ([XML sitemaps](../../creators/website-creators/sitemaps.md#choose-an-extension)).
 

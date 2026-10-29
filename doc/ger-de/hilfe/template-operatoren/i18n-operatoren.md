@@ -3,7 +3,7 @@ title: Die Übersetzungsoperatoren i18n, d18n und x18n
 audience: developer, designer, app-creator
 category: development
 order: 310
-summary: Die drei Übersetzungsoperatoren von eZi18nOperator, ihre Parameter (Kontext, Kommentar, Argumente, Erweiterung), wie ezpI18n::tr() eine Übersetzung findet und Argumente einsetzt, wie kompilierte Templates beim Kompilieren übersetzen und warum es d18n gibt, mit Beispielen, die auf alpha auf Englisch und Deutsch gerendert wurden.
+summary: Die drei Übersetzungsoperatoren von eZi18nOperator, ihre Parameter (Kontext, Kommentar, Argumente, Erweiterung), wie ezpI18n::tr() eine Übersetzung findet und Argumente einsetzt, wie kompilierte Templates beim Kompilieren übersetzen und warum es d18n gibt, mit Beispielen, die auf einer Entwicklungsinstallation auf Englisch und Deutsch gerendert wurden.
 keywords: i18n, d18n, x18n, Übersetzung, übersetzen, Kontext, Argumente, Sprache, translation, translate, ezpI18n, eZi18nOperator, context, arguments, translation.ts, ezlupdate, locale
 type: help
 ---
@@ -98,7 +98,7 @@ locale: {ezini( 'RegionalSettings', 'Locale' )}
 5 {'Search'|x18n( 'myextension', 'design/standard/content/search' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 locale: eng-US

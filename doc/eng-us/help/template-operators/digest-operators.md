@@ -3,7 +3,7 @@ title: Digest operators
 audience: developer, designer, app-creator
 category: development
 order: 230
-summary: crc32, md5 and rot13 from eZTemplateDigestOperator, plus sha1, which the class offers but which only works after another digest operator has loaded it; what they are for in templates and what not, with examples rendered on alpha.
+summary: crc32, md5 and rot13 from eZTemplateDigestOperator, plus sha1, which the class offers but which only works after another digest operator has loaded it; what they are for in templates and what not, with examples rendered on a development installation.
 keywords: crc32, md5, sha1, rot13, hash, checksum, digest, eZSys::ezcrc32, 64bitCompatibilityMode, eZTemplateDigestOperator
 type: help
 ---
@@ -50,7 +50,7 @@ All four: input the string (piped), no parameters, return a string (`crc32` a nu
 'Fit & Healthy'|sha1 = {'Fit & Healthy'|sha1}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'Fit & Healthy'|md5 = 230d0ad476984ff3dba19ec739b09733
@@ -59,14 +59,14 @@ Output on alpha:
 'Fit & Healthy'|sha1 = 2441fb64e95685d5f0064f97e86d06048e57a499
 ```
 
-A short, stable id for an element, from a node of alpha (node 89) and its current version:
+A short, stable id for an element, from a node of a development installation (node 89) and its current version:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )}
 id-{concat( $node.node_id, '-', $node.object.current_version )|md5|extract_left( 8 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 id-0c7e77db
@@ -84,7 +84,7 @@ registered" before that, leaving the value unchanged:
 [{'Fit & Healthy'|sha1}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [Fit & Healthy]
@@ -104,7 +104,7 @@ Use `md5` when you need a hash in a template, or register an operator of your ow
 These are not for passwords, signatures or anything an attacker must not forge: MD5 and SHA-1 are broken for those
 purposes, and a template is the wrong place for secrets anyway. Use them for ids and cache keys only.
 
-The examples gave the same output interpreted and compiled on alpha.
+The examples gave the same output interpreted and compiled on a development installation.
 
 ## Related pages
 

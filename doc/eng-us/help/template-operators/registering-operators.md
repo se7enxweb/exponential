@@ -94,7 +94,7 @@ of `ExtensionAutoloadPath[]` is the order in which the extensions' `site.ini.app
 
 1. `[ExtensionSettings] ActiveExtensions[]` (global extensions), then the siteaccess's
    `ActiveAccessExtensions[]` (access extensions);
-2. with `[ExtensionSettings] ExtensionOrdering=enabled` (the default in `settings/site.ini`, and on alpha), the
+2. with `[ExtensionSettings] ExtensionOrdering=enabled` (the default in `settings/site.ini`, and on a development installation), the
    list of active extensions is sorted by the dependencies each extension declares in its `extension.xml`
    (`eZExtension::extensionOrdering()`, `ezpExtension::getLoadingOrder()`):
    `<requires>` and `<uses>` make your extension load **after** the named one, `<extends>` **before** it.
@@ -127,7 +127,7 @@ PHPOperatorList[rawurldecode]=rawurldecode
 That is the kernel's `settings/template.ini`. `kernel/common/eztemplateautoload.php` registers these names
 through the functions `eZPHPOperatorNameInit()` (the names) and `eZPHPOperatorInit()` (one
 `eZTemplatePHPOperator` object for all of them). Extensions add entries in their `template.ini.append.php`; on
-alpha cjw_newsletter adds `nl2br`, ezmultiupload `strip_tags`, swark `serialize` and `unserialize`,
+a development installation cjw_newsletter adds `nl2br`, ezmultiupload `strip_tags`, swark `serialize` and `unserialize`,
 bcgooglesitemaps `getenv`. Use key=value lines without a leading empty `PHPOperatorList[]` in an append, for the
 reason above. What these operators do and their limits: [PHP function operators](php-function-operators.md).
 
@@ -150,10 +150,10 @@ Template functions use the same files and the same lists: `$eZTemplateFunctionAr
   against the old list): `php bin/php/ezcache.php --clear-tag=ini,template --allow-root-user`.
 - `php bin/php/ezpgenerateautoloads.php -e` only when you added classes that are loaded through the autoload
   arrays rather than through `script`.
-- On alpha: `./console exp:velocity deploy --allow-root-user` does all of this and restarts Velocity, whose workers
+- On a development installation: `./console exp:velocity deploy --allow-root-user` does all of this and restarts Velocity, whose workers
   keep the registrations they made when they started.
 - Check the name on each siteaccess that uses it: `{'x'|myext_initials}` must not log
-  `Operator 'myext_initials' is not registered`, and the [owner listing script](registration-order-and-overrides.md#the-names-registered-twice-on-alpha)
+  `Operator 'myext_initials' is not registered`, and the [owner listing script](registration-order-and-overrides.md#the-names-registered-twice)
   must not show your name next to another class.
 
 ## Related pages

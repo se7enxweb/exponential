@@ -3,7 +3,7 @@ title: Array-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 110
-summary: Die 24 Operatoren von eZTemplateArrayOperator (array, hash, append, prepend, merge, contains, compare, extract, extract_left, extract_right, begins_with, ends_with, implode, explode, repeat, reverse, insert, remove, replace, unique, array_sum und drei veraltete Namen), auf Arrays und auf Zeichenketten, mit auf alpha gerenderten Beispielen.
+summary: Die 24 Operatoren von eZTemplateArrayOperator (array, hash, append, prepend, merge, contains, compare, extract, extract_left, extract_right, begins_with, ends_with, implode, explode, repeat, reverse, insert, remove, replace, unique, array_sum und drei veraltete Namen), auf Arrays und auf Zeichenketten, mit auf einer Entwicklungsinstallation gerenderten Beispielen.
 keywords: Array-Operatoren, Arrays, Hashes, Zeichenketten, Liste aufbauen, array, hash, append, prepend, merge, contains, compare, extract, extract_left, extract_right, begins_with, ends_with, implode, explode, repeat, reverse, insert, remove, replace, unique, array_sum, array_append, array_prepend, array_merge, eZTemplateArrayOperator, array operators
 type: help
 ---
@@ -19,7 +19,7 @@ nimmt es den Zeichenketten-Zweig, der mit den Multibyte-Funktionen `mb_*` auf Ze
 welche Zweige ein Operator hat. Kein Operator verändert die Variable, auf die er angewendet wird: Speichern Sie das
 Ergebnis mit `{set $list = $list|append( 4 )}`.
 
-Die Beispiele wurden auf alpha vom Template-Interpreter und noch einmal vom Template-Compiler gerendert (das Kompilieren
+Die Beispiele wurden auf einer Entwicklungsinstallation vom Template-Interpreter und noch einmal vom Template-Compiler gerendert (das Kompilieren
 von Templates ist dort eingeschaltet). Wo die beiden voneinander abwichen, sagt es der Abschnitt.
 
 ## Inhalt
@@ -67,7 +67,7 @@ array: {$list|implode( ', ' )} ({$list|count} items)
 hash: {foreach $map as $key => $value}{$key}={$value|wash} {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 array: red, green, blue (3 items)
@@ -110,7 +110,7 @@ append( $list, 9 ) = {append( $list, 9 )|implode( ',' )}
 'world'|prepend( 'Hello ' ) = {'world'|prepend( 'Hello ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $list|append( 4, 5 ) = 2,3,4,5
@@ -120,11 +120,11 @@ append( $list, 9 ) = 2,3,9
 'world'|prepend( 'Hello ' ) = Hello world
 ```
 
-Verwenden Sie die Pipe-Form. Kompiliert gab die Aufrufform `append( $list, 9 )` auf alpha `Array,Array` statt `2,3,9`
+Verwenden Sie die Pipe-Form. Kompiliert gab die Aufrufform `append( $list, 9 )` auf einer Entwicklungsinstallation `Array,Array` statt `2,3,9`
 aus; der kompilierte Code (`mergeTrans()`, dem die Eingabe immer als Parameter übergeben wird) behandelt den ersten
 Parameter nicht als Ziel-Array. Alle anderen Zeilen waren identisch.
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 $list|append( 4, 5 ) = 2,3,4,5
@@ -156,7 +156,7 @@ merge( $a, $b ) = {merge( $a, $b )|implode( ',' )}
 $h|merge( hash( 'size', 'XL' ) ) = {foreach $h|merge( hash( 'size', 'XL' ) ) as $k => $v}{$k}={$v} {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $a|merge( $b, array( 4 ) ) = 1,2,3,4
@@ -203,7 +203,7 @@ $list|compare( array( 'event', 'news', 'blog' ) ) = {$list|compare( array( 'even
 'abc'|compare( 'abc' ) = {'abc'|compare( 'abc' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $list|contains( 'blog' ) = true
@@ -244,7 +244,7 @@ $list|ends_with( 2 ) = {$list|ends_with( 2 )|choose( 'false', 'true' )}
 'image.jpg'|ends_with( '.jpg' ) = {'image.jpg'|ends_with( '.jpg' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $list|begins_with( 1, 2 ) = true
@@ -299,7 +299,7 @@ $list|extract_right( 2 ) = {$list|extract_right( 2 )|implode( '' )}
 'Exponential'|extract_right( 4 ) = {'Exponential'|extract_right( 4 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $list|extract( 1, 3 ) = bcd
@@ -345,7 +345,7 @@ $list|explode( 1 ) = [{$parts[0]|implode( ',' )}] [{$parts[1]|implode( ',' )}]
 'red,green,blue'|explode( ',' ) = {'red,green,blue'|explode( ',' )|implode( ' | ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $list|implode( ' / ' ) = a / b / c / d
@@ -386,7 +386,7 @@ array( 1, 2, 3 )|reverse = {array( 1, 2, 3 )|reverse|implode( ',' )}
 array( 'a', 'b', 'a', 'c', 'b' )|unique = {array( 'a', 'b', 'a', 'c', 'b' )|unique|implode( ',' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 array( 1, 2 )|repeat( 3 ) = 1,2,1,2,1,2
@@ -445,7 +445,7 @@ $list|replace( 1, 2, 'X' ) = {$list|replace( 1, 2, 'X' )|implode( ',' )}
 'Exponential'|replace( 0, 3, 'IM' ) = {'Exponential'|replace( 0, 3, 'IM' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $list|insert( 2, 'X', 'Y' ) = a,b,X,Y,c,d
@@ -469,7 +469,7 @@ Generierte Referenz: [array_sum](../../beispiele/template-operatoren/array_sum.m
 array( 1, 2, 3.5 )|array_sum = {array( 1, 2, 3.5 )|array_sum}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 array( 1, 2, 3.5 )|array_sum = 6.5
@@ -487,7 +487,7 @@ array( 2 )|array_prepend( 1 ) = {array( 2 )|array_prepend( 1 )|implode( ',' )}
 array( 1 )|array_merge( array( 2 ) ) = {array( 1 )|array_merge( array( 2 ) )|implode( ',' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 array( 1 )|array_append( 2 ) = 1,2
@@ -502,7 +502,7 @@ Bei einer Zeichenkette als Eingabe kennt der Zeichenketten-Zweig nur die neuen N
 'abc'|array_append( 'd' ) = {'abc'|array_append( 'd' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'abc'|array_append( 'd' ) = abc
@@ -514,10 +514,10 @@ Von der Template-Engine protokolliert:
 WARNING array_append: Unknown operatorname: array_append
 ```
 
-Das kompilierte Template ist hier nachsichtiger: Kompiliert gab dieselbe Zeile auf alpha `abcd` aus. Verlassen Sie sich
+Das kompilierte Template ist hier nachsichtiger: Kompiliert gab dieselbe Zeile auf einer Entwicklungsinstallation `abcd` aus. Verlassen Sie sich
 auf keines von beiden; verwenden Sie `append`.
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 'abc'|array_append( 'd' ) = abcd
@@ -525,7 +525,7 @@ Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ## Ein ausgearbeitetes Beispiel: Namen in einer Schleife sammeln
 
-Eine Liste in einer Schleife mit `set` und `append` aufbauen und dann zusammenfügen, an der Kategorie Recipes von alpha
+Eine Liste in einer Schleife mit `set` und `append` aufbauen und dann zusammenfügen, an der Kategorie Recipes einer Entwicklungsinstallation
 (Knoten 144):
 
 ```tpl
@@ -536,7 +536,7 @@ Eine Liste in einer Schleife mit `set` und `append` aufbauen und dann zusammenf�
 Recipes (first three by name): {$names|implode( ', ' )|wash}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Recipes (first three by name): Almond French Toast, Avocado Kale Pesto Grilled Cheese, Gluten-Free Shrimp Pad Thai with Tofu

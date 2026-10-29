@@ -3,14 +3,14 @@ title: Values and literals
 audience: developer, designer, app-creator
 category: development
 order: 70
-summary: The values a template can write down - strings in single or double quotes (no variable interpolation, the escapes the parser knows), integers and floats, true() and false(), arrays and hashes built with array() and hash(), bare identifiers, and what stands in for null - each shown on alpha with get_type.
+summary: The values a template can write down - strings in single or double quotes (no variable interpolation, the escapes the parser knows), integers and floats, true() and false(), arrays and hashes built with array() and hash(), bare identifiers, and what stands in for null - each shown on a development installation with get_type.
 keywords: values, literals, strings, quotes, escape sequences, numbers, integer, float, boolean, true, false, array, hash, identifier, null, get_type, truthiness
 type: help
 ---
 # Values and literals
 
 The expression parser (`lib/eztemplate/classes/eztemplateelementparser.php`) knows six kinds of literal values. This
-page lists them with the exact rules of the parser and shows each on alpha. `get_type` (from
+page lists them with the exact rules of the parser and shows each on a development installation. `get_type` (from
 `eZTemplateTypeOperator`) prints the PHP type of a value, so it is used here to show what a literal becomes.
 
 ## Contents
@@ -50,7 +50,7 @@ Inside a tag, a `}` in a string must be written `\}`, or the tag ends there (see
 [{'line one\nline two'}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [Hello $name] [Hello $name] [Hello World]
@@ -74,7 +74,7 @@ Strings from content or requests stay strings until an operator converts them; `
 [{10|div( 4 )}] [{10|div( 5 )|get_type}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [42] [-7] [3.14] [0.5] [1.5]
@@ -88,7 +88,7 @@ A dot without a digit after it:
 [{1.|get_type}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1]
@@ -112,7 +112,7 @@ PHP booleans. Printed, true becomes `1` and false the empty string, as in PHP.
 [{if 0}0 is true{else}0 is false{/if}] [{if '0'}'0' is true{else}'0' is false{/if}] [{if ''}empty is true{else}empty is false{/if}] [{if array()}empty array is true{else}empty array is false{/if}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1] [] [boolean[true]] [boolean[false]]
@@ -135,7 +135,7 @@ Elements are read with a dot or with brackets: `$list.1`, `$map.red`, `$deep['co
 [{array()|count}] [{$list|get_type}] [{$map|get_type}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [3] [b] [a-b-c]
@@ -155,7 +155,7 @@ functions use identifiers where other languages would use quoted keywords, for e
 [{1|choose( zero, one, two )}] [{array( red, green )|implode( '+' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [one] [red+green]
@@ -175,7 +175,7 @@ or `is_set`, and replace a missing variable with `first_set`:
 [{$empty|get_type}] [{if $empty|is_null}is null{/if}] [{if is_set( $empty )}is set{else}not set{/if}] [{first_set( $missing, 'default' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [null] [is null] [not set] [default]
@@ -191,7 +191,7 @@ else, including an array that holds a `0`, is true. The values tested in this lo
 {foreach array( 0, 1, '', 'x', '0', array(), array( 0 ), false(), true() ) as $v}[{if $v}T{else}F{/if}]{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [F][T][F][T][F][F][T][F][T]

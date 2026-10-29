@@ -3,7 +3,7 @@ title: Creating an operator, step by step
 audience: developer, app-creator
 category: development
 order: 520
-summary: The whole path from an idea to a working template operator in an extension - choose a free name, write the class, register it, clear caches, try it interpreted and compiled, deploy - or let the template extension wizard write it; each step checked against alpha.
+summary: The whole path from an idea to a working template operator in an extension - choose a free name, write the class, register it, clear caches, try it interpreted and compiled, deploy - or let the template extension wizard write it; each step checked against a development installation.
 keywords: create operator, new template operator, extension, eztemplateautoload.php, ExtensionAutoloadPath, operator class, template extension wizard, setup/templateoperator, RAD, test, compiled
 type: help
 ---
@@ -62,7 +62,7 @@ you write them by hand or review what the wizard wrote.
 
 Put the class in your extension, for example `extension/myextension/autoloads/myextensionoperators.php`. The
 minimum is `operatorList()`, `namedParameterPerOperator()`, `namedParameterList()` and `modify()`. A class with
-two operators, `exp_initials` and `exp_reading_time( words_per_minute )`, works like this on alpha:
+two operators, `exp_initials` and `exp_reading_time( words_per_minute )`, works like this on a development installation:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )
@@ -72,7 +72,7 @@ two operators, `exp_initials` and `exp_reading_time( words_per_minute )`, works 
 {exp_initials( 'Bold Agency' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Fit &amp; Healthy -> FH
@@ -129,7 +129,7 @@ php bin/php/ezpgenerateautoloads.php -e        # only if other classes of the ex
 php bin/php/ezcache.php --clear-tag=ini,template --allow-root-user
 ```
 
-On alpha, where Velocity keeps the template engine's registrations from its warm-up, use the one deploy command,
+On a development installation, where Velocity keeps the template engine's registrations from its warm-up, use the one deploy command,
 which clears these caches, reloads PHP-FPM and restarts Velocity:
 
 ```bash
@@ -138,7 +138,7 @@ which clears these caches, reloads PHP-FPM and restarts Velocity:
 
 ## 7. Try it, interpreted and compiled
 
-Alpha compiles templates (`[TemplateSettings] TemplateCompile=enabled`), and the compiled template is what visitors
+A development installation compiles templates (`[TemplateSettings] TemplateCompile=enabled`), and the compiled template is what visitors
 get. Try the operator both ways:
 
 - in a development installation, switch `TemplateCompile` off in a siteaccess override, reload the page, switch it
@@ -148,14 +148,14 @@ get. Try the operator both ways:
 - look at the debug output for `Operator '...' is not registered`, `Object problem with operator '...'` (the class
   was not found or has no `modify()`) and `Parameter '...' missing`.
 
-A required parameter left out, on alpha:
+A required parameter left out, on a development installation:
 
 ```tpl
 {150|exp_clamp( 0, 100 )} {-5|exp_clamp( 0, 100 )} {42|exp_clamp( 0, 100 )}
 {42|exp_clamp( 0 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 100 0 42

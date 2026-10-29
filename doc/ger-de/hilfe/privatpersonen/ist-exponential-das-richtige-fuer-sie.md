@@ -83,7 +83,7 @@ zuerst die oben genannten Alternativen an.
 
 - Installieren Sie es mit SQLite auf Ihrem eigenen Computer und probieren Sie es einen Abend lang aus; es geht nichts
   verloren, wenn Sie sich dagegen entscheiden ([Eine Installationsmethode wählen](setup/eine-installationsmethode-waehlen.md)).
-- Sehen Sie sich die Demonstrationsinstallation unter <https://alpha.se7enx.com> an.
+- Sehen Sie sich eine Demonstrationsinstallation an ([Demo und Testinstallation ausprobieren](../anwender-umsteiger/bewerten/demo-und-testinstallation-ausprobieren.md)).
 - Fragen Sie in der Community ([Community-Kanäle](../fuersprecher/community-kanaele.md)).
 - Wenn Sie Studierende oder Lehrende sind, ziehen Sie die Partnerstufe Student in Betracht
   ([Lernen mit der Stufe Student](im-betrieb/lernen-mit-der-stufe-student.md)).

@@ -3,16 +3,16 @@ title: The template compiler
 audience: developer, designer, app-creator
 category: development
 order: 400
-summary: How eZTemplateCompiler turns a parsed template into PHP - the pipeline (node transformation, static optimizations, combining, PHP generation), the compiled file name and folder, the operator and function hints that let an operator become inline PHP, the processOperator fallback, DevelopmentMode, the settings - with generated code from alpha and one real difference between compiled and interpreted output.
+summary: How eZTemplateCompiler turns a parsed template into PHP - the pipeline (node transformation, static optimizations, combining, PHP generation), the compiled file name and folder, the operator and function hints that let an operator become inline PHP, the processOperator fallback, DevelopmentMode, the settings - with generated code from a development installation and one real difference between compiled and interpreted output.
 keywords: template compiler, eZTemplateCompiler, TemplateCompile, compiled templates, var/cache/template/compiled, operatorTemplateHints, functionTemplateHints, element-transformation, processOperator, DevelopmentMode, eztc, CompileComments, choose
 type: help
 ---
 # The template compiler
 
-With `[TemplateSettings] TemplateCompile=enabled` (the default in `settings/site.ini`, and the value on alpha) a
+With `[TemplateSettings] TemplateCompile=enabled` (the default in `settings/site.ini`, and the value on a development installation) a
 template is not interpreted on every request. The first time it is used, `eZTemplateCompiler`
 (`lib/eztemplate/classes/eztemplatecompiler.php`) turns its parsed tree into a PHP file, and later requests include
-that file. This page shows how, with code the compiler generated on alpha.
+that file. This page shows how, with code the compiler generated on a development installation.
 
 ## Contents
 
@@ -55,7 +55,7 @@ the generated file, for work on the compiler itself.
 
 ## What the generated PHP looks like
 
-This small template was compiled on alpha into a scratch folder (the compiler's `compilation-directory` setting
+This small template was compiled on a development installation into a scratch folder (the compiler's `compilation-directory` setting
 pointed elsewhere, so the site's cache was not touched) and run both ways:
 
 ```tpl
@@ -66,7 +66,7 @@ pointed elsewhere, so the site's cache was not touched) and run both ways:
 {'compiled'|upcase}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <h1>Why Should You Choose Strength Training?</h1>no children
@@ -150,7 +150,7 @@ Writing an operator of your own is covered in [Writing template operators](../cr
 ## Compiled and interpreted are not always identical
 
 The transformation code is a second implementation of each operator, so the two can disagree. Running every example
-of this section both ways on alpha found one case: `choose` with an empty string as the index.
+of this section both ways on a development installation found one case: `choose` with an empty string as the index.
 
 ```tpl
 {def $empty_image = fetch( 'content', 'node', hash( 'node_id', 96 ) ).data_map.additional_image}
@@ -159,7 +159,7 @@ choose: [{$empty_image.has_content|choose( 'no', 'yes' )}]
 cond:   [{cond( $empty_image.has_content, 'yes', 'no' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 has_content returns string[0]
@@ -185,7 +185,7 @@ to `0`, so no case matches and the result is empty. The `has_content` of an empt
   and the locale count.
 - Rebuilt when the template file is newer than the compiled file. Templates included from a compiled template are
   checked only for existence, unless `DevelopmentMode=enabled` adds a modification time check there too (the
-  generated include code compares `filemtime()` of both files). With `DevelopmentMode=disabled`, as on alpha, clear
+  generated include code compares `filemtime()` of both files). With `DevelopmentMode=disabled`, as on a development installation, clear
   the template cache after changing an included template.
 - Cleared with `php bin/php/ezcache.php --clear-id=template` or the "Template cache" button of the cache page; see
   [Template caches](template-caches.md).
@@ -194,7 +194,7 @@ to `0`, so no case matches and the result is empty. The `has_content` of an empt
 
 ## Settings
 
-All in `site.ini [TemplateSettings]`, values on alpha's `site` siteaccess:
+All in `site.ini [TemplateSettings]`, values on the `site` siteaccess:
 
 ```tpl
 TemplateCompile:  {ezini( 'TemplateSettings', 'TemplateCompile' )}
@@ -205,7 +205,7 @@ ViewCaching:      {ezini( 'ContentSettings', 'ViewCaching' )}
 CachedViewModes:  {ezini( 'ContentSettings', 'CachedViewModes' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 TemplateCompile:  enabled

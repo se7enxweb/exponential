@@ -3,7 +3,7 @@ title: Installation, environment, audit and CSP operators
 audience: developer, designer, app-creator
 category: development
 order: 370
-summary: Seven operators the Exponential kernel added - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce and view_parameter - with the settings they read, what they return, the caching rule for csp_nonce, and examples rendered on alpha.
+summary: Seven operators the Exponential kernel added - installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce and view_parameter - with the settings they read, what they return, the caching rule for csp_nonce, and examples rendered on a development installation.
 keywords: installation_name, is_production_system, exp_environment, exp_environment_badge, audit_label, csp_nonce, view_parameter, view parameters, EXP_ENV, EzInstallationName, ProductionInstallationList, AdminEnvironment, Content Security Policy, nonce, audit
 type: help
 ---
@@ -146,7 +146,7 @@ On the `site` siteaccess, which has no installation name, no `EXP_ENV` and no no
 6 audit_label: {'content.node.move'|audit_label} / {'no.such.event'|audit_label}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 installation_name: []
@@ -157,7 +157,7 @@ Output on alpha:
 6 audit_label: Node move / Such event
 ```
 
-On the `admin` siteaccess, whose policy carries a nonce (no badge level is set on alpha):
+On the `admin` siteaccess, whose policy carries a nonce (no badge level is set on a development installation):
 
 ```tpl
 {def $badge = exp_environment_badge()}
@@ -165,7 +165,7 @@ level=[{$badge.level}] name=[{$badge.name}] short=[{$badge.short}] display={$bad
 csp_nonce on admin: length {csp_nonce()|count_chars}, same on the second call: {eq( csp_nonce(), csp_nonce() )|choose( 'no', 'yes' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 level=[] name=[] short=[] display= title=no

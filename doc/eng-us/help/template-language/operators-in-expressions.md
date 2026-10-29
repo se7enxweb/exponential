@@ -42,7 +42,7 @@ Operators differ in what they do with the input. `upcase` works only on its inpu
 [{'a'|concat( 'b', 'c' )}] [{concat( 'a', 'b', 'c' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [ABC] []
@@ -56,7 +56,7 @@ An input that an operator cannot use is not an error. `sum` treats a non-numeric
 [{'ignored'|sum( 1, 2 )}] [{5|sum( 1, 2 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [3] [8]
@@ -74,7 +74,7 @@ Each `|` hands the result of the operator before it to the next one, left to rig
 [{array( 3, 1, 2 )|count|mul( 10 )|sum( 5 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [Hello tem...]
@@ -93,7 +93,7 @@ Conditions are built this way, because there are no infix operators:
 [{cond( $a|gt( $b ), 'a wins', 'b wins' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [sum=6, product=8]
@@ -111,7 +111,7 @@ A dot or brackets can follow an operator call. The attribute is read from the op
 [{array( 'x', 'y', 'z' )|reverse.0}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [Fit & Healthy]
@@ -128,7 +128,7 @@ Function parameters are expressions too, so an operator can supply the array of 
 {def $label = concat( 'Item ', 3|inc )}[{$label}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 CAB[Item 4]
@@ -141,7 +141,7 @@ expression is looked up as an operator named `if`, which does not exist:
 [{concat( 'a', if( true() ) )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [a]
@@ -177,7 +177,7 @@ The page renders on, which hides typing mistakes:
 [{'kept as it is'|nosuchoperator( 1 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [kept as it is]
@@ -196,7 +196,7 @@ class as its first parameter; without it the timestamp is printed unformatted an
 [{1674667522|datetime}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1674667522]

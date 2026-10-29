@@ -3,7 +3,7 @@ title: Attribute access
 audience: developer, designer, app-creator
 category: development
 order: 100
-summary: How $a.b and $a[b] are resolved - arrays by key, objects through attributes(), hasAttribute() and attribute(), eZPersistentObject fields and function attributes, dynamic keys, numeric indexes, attributes after an operator, the error with its list of choices, and the attribute and dump operators for looking inside a value - shown on node 90 of alpha.
+summary: How $a.b and $a[b] are resolved - arrays by key, objects through attributes(), hasAttribute() and attribute(), eZPersistentObject fields and function attributes, dynamic keys, numeric indexes, attributes after an operator, the error with its list of choices, and the attribute and dump operators for looking inside a value - shown on node 90 of a development installation.
 keywords: attribute access, dot notation, brackets, attribute protocol, hasAttribute, attribute(), attributes(), eZPersistentObject, function_attributes, fields, data_map, attribute operator, dump, debug
 type: help
 ---
@@ -12,7 +12,7 @@ type: help
 `$node.parent.name` reads like a chain of array keys, but `$node` is a PHP object. The template engine resolves each
 step through one small protocol, and that protocol is what makes nodes, content objects, users and every other kernel
 object usable in templates. The code is the `TYPE_ATTRIBUTE` branch of `elementValue()` in
-`lib/eztemplate/classes/eztemplate.php`. The examples use node 90 of alpha, the article "Privacy Policy".
+`lib/eztemplate/classes/eztemplate.php`. The examples use node 90 of a development installation, the article "Privacy Policy".
 
 ## Contents
 
@@ -38,7 +38,7 @@ computed keys; after a dot only a name, a number or a variable.
 [{$node.data_map.title.content}] [{$node['data_map']['title'].data_type_string}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [Privacy Policy] [Privacy Policy] [88] [Fit & Healthy]
@@ -77,7 +77,7 @@ object field: published={$node.object.published} section_id={$node.object.sectio
 object function: class_name={$node.object.class_name} main_node_id={$node.object.main_node_id}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 field:    node_id=90 depth=3 path_string=/1/2/89/90/
@@ -101,7 +101,7 @@ A variable in brackets, or after a dot, supplies the key:
 {foreach $keys as $k}[{$k}={$node[$k]}]{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [90] [90][name=Privacy Policy][depth=3][class_identifier=ng_article]
@@ -116,7 +116,7 @@ Lists are read by position, with a number after the dot or any expression in bra
 [{$list.0}] [{$list[1]}] [{$list[$i]}] [{$list[$i|dec]}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [zero] [one] [two] [one]
@@ -132,7 +132,7 @@ A dot or brackets may follow an operator call, so the result of a fetch or an ar
 [{array( 'x', 'y', 'z' )|reverse.0}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [Fit & Healthy]
@@ -150,7 +150,7 @@ exist (the first 25, from `attributes()` for objects), which makes it the quicke
 [{$map.blue}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []
@@ -174,7 +174,7 @@ descend, default 2 for `attribute` and 1 for `dump`) and `format` (`html` or `te
 {hash( 'title', 'Hello', 'sizes', array( 'S', 'M' ) )|attribute( show, 2, text )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 title (string='Hello')
@@ -187,7 +187,7 @@ sizes (array=Array(2))
 {hash( 'title', 'Hello', 'count', 3 )|dump( show, 1, text )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 title (string='Hello')
@@ -204,7 +204,7 @@ operators can cut it):
 {$list|explode( "\n" )|extract_left( 12 )|implode( "\n" )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 node_id (integer)
@@ -254,7 +254,7 @@ class expExampleBox
 }
 ```
 
-This sketch was not run on alpha; it shows the shape the engine checks for (`method_exists( $value, 'attribute' )` and
+This sketch was not run on a development installation; it shows the shape the engine checks for (`method_exists( $value, 'attribute' )` and
 `method_exists( $value, 'hasAttribute' )`).
 
 ## Related pages

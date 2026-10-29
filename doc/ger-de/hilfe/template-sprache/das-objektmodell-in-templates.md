@@ -17,7 +17,7 @@ Referenzseiten, auf die am Ende verwiesen wird.
 ## Inhalt
 
 1. [Die Kette vom Knoten zum Inhalt](#die-kette-vom-knoten-zum-inhalt)
-2. [Ein Gang die Kette hinab auf alpha](#ein-gang-die-kette-hinab-auf-alpha)
+2. [Ein Gang die Kette hinab](#ein-gang-die-kette-hinab)
 3. [Das Attributprotokoll](#das-attributprotokoll)
 4. [Arrays und Objekte nutzen denselben Punkt](#arrays-und-objekte-nutzen-denselben-punkt)
 5. [Vor dem Lesen prüfen](#vor-dem-lesen-prüfen)
@@ -54,9 +54,9 @@ Die `data_map` des Knotens und die `data_map` des Objekts enthalten normalerweis
 `eZContentObjectTreeNode::setUseCurrentUserDraft( true )` eingeschaltet ist (standardmäßig aus). `eZContentObject::fetchDataMap()` behält jede
 Zuordnung im globalen `$eZContentObjectDataMapCache`, sodass zweimaliges Lesen in einer Anfrage eine Abfrage kostet.
 
-## Ein Gang die Kette hinab auf alpha
+## Ein Gang die Kette hinab
 
-Knoten 96 auf alpha ist ein `ng_article` unter „Fitness“ in der Website Fit & Healthy:
+Knoten 96 auf einer Entwicklungsinstallation ist ein `ng_article` unter „Fitness“ in der Website Fit & Healthy:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 96 ) )}
@@ -68,7 +68,7 @@ attribute: {$node.data_map.title|get_class} {$node.data_map.title.id}, datatype 
 content:   {$node.data_map.title.content|get_type} "{$node.data_map.title.content|wash}"
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 node:      ezcontentobjecttreenode 96, parent 92, depth 4, path /1/2/89/92/96/
@@ -119,7 +119,7 @@ path_array: {$node.path_array|implode( '/' )}
 dynamic key: {$node.data_map[$field].content|wash}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 3 ancestors: Websites, then Fit &amp; Healthy, then Fitness
@@ -142,7 +142,7 @@ ganzen Pfads. Das `&amp;` in `Fit &amp; Healthy` ist `wash`, das das kaufmännis
 {if is_set( $node.data_map.price )}has a price field{else}no price field{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 has an image field
@@ -159,7 +159,7 @@ Template läuft also weiter:
 [{$node.no_such_attribute}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []
@@ -187,7 +187,7 @@ by object: {$object.name|wash} / main node {$object.main_node_id} / {$object.ass
 same data_map: {if eq( $node.data_map.title.id, $object.data_map.title.id )}yes{else}no{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 by node:   Why Should You Choose Strength Training? / main node 96

@@ -10,7 +10,7 @@ type: help
 # Variablen im Detail
 
 [Variablen und def](../designer/vorlagen/variablen-und-def.md) zeigt, wie Sie Variablen nutzen. Diese Seite gibt die genauen Regeln, gelesen
-aus `lib/eztemplate/classes/eztemplatedeffunction.php` und `lib/eztemplate/classes/eztemplatesetfunction.php`, und zeigt jeden Fall auf alpha,
+aus `lib/eztemplate/classes/eztemplatedeffunction.php` und `lib/eztemplate/classes/eztemplatesetfunction.php`, und zeigt jeden Fall auf einer Entwicklungsinstallation,
 einschließlich der Warnungen, die die Engine schreibt.
 
 ## Inhalt
@@ -50,7 +50,7 @@ Mehrere Variablen lassen sich in einem Tag behandeln:
 [{if is_set( $label )}label still set{else}label removed{/if}] [{$count}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [1 items][2 things][label removed] [2]
@@ -67,7 +67,7 @@ neuen Wert trotzdem zu:
 [{$color}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [blue]
@@ -91,7 +91,7 @@ eine Variable aus einem einbindenden Template hereinsickert.
 [{if is_set( $size )}size exists{else}size was not created{/if}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [size was not created]
@@ -116,7 +116,7 @@ mit `def` definiert hat (`unsetLocalVariables()`):
 [{if is_set( $a )}a{/if}{if is_set( $b )}b{/if}{if is_set( $c )}c{/if}] all removed
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [] all removed
@@ -127,7 +127,7 @@ Ausgabe auf alpha:
 done
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 done
@@ -152,7 +152,7 @@ after let: [{if is_set( $greeting )}still set{else}gone{/if}]
 {default size='fallback' color='fallback'}[{$size}] [{$color}]{/default}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 inside let: [hi]after let: [gone][given] [fallback]
@@ -173,7 +173,7 @@ part: [{$inner}]
 after: [{if is_set( $inner )}inner visible{else}inner gone after the include{/if}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 part: [made in the part]
@@ -210,7 +210,7 @@ part sees: [{if is_set( $total )}{$total}{else}no $total{/if}]
 after include: [{$total}] [{if is_set( $inner )}inner visible{else}inner not visible{/if}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 part sees: [no $total]after include: [10] [inner not visible]

@@ -46,7 +46,7 @@ first, what to do in your first week, and where every topic lives in this help.
 ### Day 1: look around
 
 - [ ] Read [What a design is](theme-design/what-a-design-is.md) and [Designs and siteaccesses](theme-design/designs-and-siteaccesses.md).
-- [ ] Browse [The themes that ship with Exponential](theme-design/themes-on-alpha.md); open one theme's `pagelayout.tpl`.
+- [ ] Browse [The themes that ship with Exponential](theme-design/themes-that-ship-with-exponential.md); open one theme's `pagelayout.tpl`.
 
 ### Day 2: the template language
 

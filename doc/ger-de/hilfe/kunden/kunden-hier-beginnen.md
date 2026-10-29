@@ -22,8 +22,8 @@ Ihrem Team es üblicherweise erledigt, und verweist auf die Schritt-für-Schritt
 Administratoren sowie auf die technischen Seiten für Ihren Anbieter.
 
 > **Hinweis**
-> Jede Angabe hier stammt aus dem Exponential-Repository, aus der Demo-Installation unter
-> <https://alpha.se7enx.com> oder von <https://exponential.earth>, und die Quelle wird auf der Seite genannt. Der
+> Jede Angabe hier stammt aus dem Exponential-Repository, aus einer Demo-Installation
+> oder von <https://exponential.earth>, und die Quelle wird auf der Seite genannt. Der
 > Bereich nennt keine Kunden und zitiert keine Geschäftszahlen von irgendjemandem. Wo eine Seite rechnet, sind die
 > Eingaben als Beispielannahmen gekennzeichnet, die Sie durch Ihre eigenen ersetzen. Seiten über Mehrwertsteuer,
 > Verträge und personenbezogene Daten beschreiben die Software und was zu prüfen ist; sie sind keine Rechtsberatung.

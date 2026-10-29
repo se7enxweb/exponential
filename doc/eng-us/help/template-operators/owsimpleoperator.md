@@ -3,7 +3,7 @@ title: OW Simple Operator - PHP functions as template operators
 audience: developer, designer, app-creator
 category: development
 order: 900
-summary: What the owsimpleoperator extension does, how its operators are registered from owsimpleoperator.ini, the five PHP functions it offers on this installation (time, mktime, getdate, str_replace, str_rot13), and how to call them, with every example rendered on alpha.
+summary: What the owsimpleoperator extension does, how its operators are registered from owsimpleoperator.ini, the five PHP functions it offers on this installation (time, mktime, getdate, str_replace, str_rot13), and how to call them, with every example rendered on a development installation.
 keywords: owsimpleoperator, OW Simple Operator, OWSimpleOperator, PHPFunctionOperator, PermittedFunctionList, time, mktime, getdate, str_replace, str_rot13, php function operator
 type: help
 ---
@@ -63,7 +63,7 @@ PermittedClassOperatorList[]
 #PermittedClassOperatorList[]=extension/owsimpleoperator/autoloads/exampleoperator.php;ExampleOperator;example_sum
 ```
 
-On alpha the extension is active on the `site` and `admin` siteaccesses, and these five names are its operators.
+On a development installation the extension is active on the `site` and `admin` siteaccesses, and these five names are its operators.
 
 ## The operators it offers here
 
@@ -81,7 +81,7 @@ Each takes up to ten arguments (`$max_operator_parameter = 10` in `OWSimpleOpera
 are left out of the PHP call, so the PHP function's own defaults apply.
 
 `str_replace` has the same name as an operator of the extension swark. The owsimpleoperator registration is read
-later, so it wins on alpha (see [Registration order and overrides](registration-order-and-overrides.md)).
+later, so it wins on a development installation (see [Registration order and overrides](registration-order-and-overrides.md)).
 The kernel's own date operators (`currentdate`, `maketime`, `makedate`, `datetime`, `l10n`) cover most date needs
 without this extension: see [Locale operators](locale-operators.md).
 
@@ -96,7 +96,7 @@ Use the call form and give every argument in the order of the PHP function:
 {'Exponential'|str_rot13}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 
@@ -118,7 +118,7 @@ mktime( 0, 0, 0, 1, 1, 2026 ) = {mktime( 0, 0, 0, 1, 1, 2026 )}
 {$parts.weekday} {$parts.mday} {$parts.month} {$parts.year}, {$parts.hours}:{$parts.minutes}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 time() returned a Unix timestamp: an integer
@@ -126,7 +126,7 @@ mktime( 0, 0, 0, 1, 1, 2026 ) = 1767254400
 Saturday 4 July 2026, 12:30
 ```
 
-`mktime()` uses the time zone of the PHP process: on alpha that is Pacific time, so midnight on 1 January 2026
+`mktime()` uses the time zone of the PHP process: on a development installation that is Pacific time, so midnight on 1 January 2026
 is `1767254400` and not the UTC value. Format timestamps for people with the kernel's `l10n` or `datetime`
 operators, which follow the siteaccess locale.
 
@@ -139,7 +139,7 @@ too few:
 {'This is a great example!'|str_replace( 'great', 'very good' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 (no output)
@@ -162,7 +162,7 @@ empty and logs a warning:
 {strrev( 'abc' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 (no output)

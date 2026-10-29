@@ -3,7 +3,7 @@ title: ezwebin-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 410
-summary: Die sechs Operatoren der Erweiterung ezwebin - ezpagedata, ezpagedata_set, ezpagedata_append, ezarchive, ezkeywordlist und eztagcloud - mit ihren Parametern, was ezpagedata für ein Pagelayout berechnet, welche Datenbanksysteme ezarchive unterstützt, und Beispiele, auf alpha gerendert.
+summary: Die sechs Operatoren der Erweiterung ezwebin - ezpagedata, ezpagedata_set, ezpagedata_append, ezarchive, ezkeywordlist und eztagcloud - mit ihren Parametern, was ezpagedata für ein Pagelayout berechnet, welche Datenbanksysteme ezarchive unterstützt, und Beispiele, auf einer Entwicklungsinstallation gerendert.
 keywords: Seitendaten, Schlagwortwolke, Schlüsselwörter, Archiv, persistente Variable, ezwebin, ezpagedata, ezpagedata_set, ezpagedata_append, ezarchive, ezkeywordlist, eztagcloud, page data, persistent_variable, tag cloud, keywords, archive
 type: help
 ---
@@ -80,7 +80,7 @@ keys: {foreach $page as $k => $v}{$k}{delimiter} {/delimiter}{/foreach}
 left_menu={$page.left_menu|choose( 'false', 'true' )} css_classes={$page.css_classes} top_menu={$page.top_menu} root_node={$page.root_node}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 
@@ -102,7 +102,7 @@ left_menu=false css_classes=nosidemenu noextrainfo top_menu=flat_top root_node=8
   haben.
 
 Der Attributbezeichner `publication_date` ist im SQL fest eingetragen. Der Operator hat SQL nur für MySQL, PostgreSQL und
-Oracle; auf jedem anderen Datenbanksystem ist die Abfrage leer und das Ergebnis eine leere Liste. Alpha läuft mit SQLite,
+Oracle; auf jedem anderen Datenbanksystem ist die Abfrage leer und das Ergebnis eine leere Liste. Die hier verwendete Entwicklungsinstallation läuft mit SQLite,
 daher:
 
 ```tpl
@@ -112,7 +112,7 @@ database: {ezini( 'DatabaseSettings', 'DatabaseImplementation' )}
 ezarchive rows: {$months|count}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 database: sqlite3
@@ -146,7 +146,7 @@ ezarchive rows: 0
 - **Rückgabe:** HTML: das Template `design:tagcloud/tagcloud.tpl`, gerendert mit `$tag_cloud`, einer Liste aus `tag`,
   `count` und `font_size` (100 bis 200, über die Anzahlen verteilt).
 
-Alpha verschlagwortet seine Inhalte mit eztags, nicht mit `ezkeyword`-Attributen, daher finden beide
+Die hier verwendete Entwicklungsinstallation verschlagwortet ihre Inhalte mit eztags, nicht mit `ezkeyword`-Attributen, daher finden beide
 Schlüsselwort-Operatoren hier nichts:
 
 ```tpl
@@ -158,7 +158,7 @@ eztagcloud:
 {eztagcloud( hash( 'parent_node_id', 2, 'sort_by', array( 'count', false() ), 'limit', 4 ) )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ezkeywordlist: 0 keywords, first: 

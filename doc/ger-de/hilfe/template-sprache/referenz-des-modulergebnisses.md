@@ -3,7 +3,7 @@ title: Referenz des Modulergebnisses
 audience: developer, designer, app-creator
 category: development
 order: 310
-summary: Jeder im Kernel gefundene Schlüssel von $Result / $module_result - content, path, title_path, content_info und seine 25 Schlüssel, view_parameters, pagelayout, navigation_part, left_menu, errorType und der Rest - mit dem Code, der jeden setzt, und den Werten, die content/view auf alpha zurückgab.
+summary: Jeder im Kernel gefundene Schlüssel von $Result / $module_result - content, path, title_path, content_info und seine 25 Schlüssel, view_parameters, pagelayout, navigation_part, left_menu, errorType und der Rest - mit dem Code, der jeden setzt, und den Werten, die content/view auf einer Entwicklungsinstallation zurückgab.
 keywords: $module_result, $Result, content_info, path, title_path, view_parameters, Pagelayout, navigation_part, errorType, errorNumber, cache_ttl, template_list, ui_context, Referenz, Modulergebnis, pagelayout, module result, reference
 type: help
 ---
@@ -12,7 +12,7 @@ type: help
 Eine Modulansicht gibt ein Array zurück, `$Result`; der Kernel fügt einige Schlüssel hinzu und übergibt es dem Pagelayout als `$module_result`
 (siehe [Templates von Modulansichten](templates-von-modulansichten.md)). Diese Seite führt jeden Schlüssel auf, den die Ansichten des Kernels,
 `eZModule::run()` und `ezpKernelWeb` setzen, gefunden durch Durchsuchen des Kernels nach `$Result['...']` und `$moduleResult['...']`. Die Werte
-in den Beispielen sind das, was `content/view/full/96` auf alpha zurückgab.
+in den Beispielen sind das, was `content/view/full/96` auf einer Entwicklungsinstallation zurückgab.
 
 ## Inhalt
 
@@ -54,21 +54,21 @@ in den Beispielen sind das, was `content/view/full/96` auf alpha zurückgab.
 
 `eZNodeviewfunctions::generateNodeViewData()` (`kernel/classes/eznodeviewfunctions.php`) baut diese für `content/view`:
 
-| Schlüssel | Wert auf alpha (Knoten 96) |
+| Schlüssel | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|
 | `view_parameters` | `offset`, `year`, `month`, `day`, `namefilter`, plus jeder Benutzerparameter (siehe [Ansichtsparameter](ansichtsparameter.md)) |
 | `section_id` | `1` |
 | `node_id` | `96` |
 | `content_info` | siehe unten |
-| `template_list` | die zum Rendern der Ansicht genutzten Templates (11 auf alpha), mit dem View-Cache gespeichert, damit ein geändertes Template ihn verfallen lässt |
+| `template_list` | die zum Rendern der Ansicht genutzten Templates (11 auf einer Entwicklungsinstallation), mit dem View-Cache gespeichert, damit ein geändertes Template ihn verfallen lässt |
 | `cache_ttl` | `-1`, oder der Wert einer Template-Variablen `$cache_ttl`; `0` fügt `no_cache` hinzu |
 | `no_cache` | `true`, wenn ein Template `cache_ttl` auf 0 gesetzt hat |
 
 ## content_info
 
-`content_info` lässt das Pagelayout wissen, was die Seite zeigt, ohne Fetch. Alle 25 Schlüssel, wie alpha sie für Knoten 96 zurückgab:
+`content_info` lässt das Pagelayout wissen, was die Seite zeigt, ohne Fetch. Alle 25 Schlüssel, wie eine Entwicklungsinstallation sie für Knoten 96 zurückgab:
 
-| Schlüssel | Wert auf alpha | Bedeutung |
+| Schlüssel | Wert auf einer Entwicklungsinstallation | Bedeutung |
 |---|---|---|
 | `object_id` | `94` | ID des Inhaltsobjekts |
 | `node_id` | `96` | Knoten-ID |
@@ -103,9 +103,9 @@ gecacht war oder nicht.
 ## Schlüssel von Fehlerergebnissen
 
 Eine Ansicht, die scheitert, ruft `$Module->handleError()` auf, das die Fehleransicht ausführt (`kernel/private/classes/views/error/view.php`).
-Auf alpha gab `content/view/full/99999999` zurück:
+Auf einer Entwicklungsinstallation gab `content/view/full/99999999` zurück:
 
-| Schlüssel | Wert auf alpha |
+| Schlüssel | Wert auf einer Entwicklungsinstallation |
 |---|---|
 | `errorType` | `'kernel'` |
 | `errorNumber` | `3`, `eZError::KERNEL_NOT_AVAILABLE` (die Nummern sind Konstanten von `eZError`, `kernel/classes/ezerror.php`: 1 Zugriff verweigert, 2 nicht gefunden, 3 nicht verfügbar, 4 verschoben, 5 Sprache nicht gefunden, 6 Formular-Token abgelehnt, 20 Modul nicht gefunden, 21 Ansicht nicht gefunden, 22 Modul ausgeschaltet) |
@@ -119,7 +119,7 @@ haben können (siehe [Fehler-Templates](../designer/vorlagen/fehler-templates.md
 
 ## Es im Pagelayout lesen
 
-Nicht auf alpha ausgeführt: `$module_result` existiert nur, während der Kernel ein Pagelayout für eine Web-Anfrage rendert, dieses Beispiel
+Nicht auf einer Entwicklungsinstallation ausgeführt: `$module_result` existiert nur, während der Kernel ein Pagelayout für eine Web-Anfrage rendert, dieses Beispiel
 kann also nicht im CLI-Renderer der Beispiele laufen. Die Werte, die es liest, sind die in den Tabellen oben aufgeführten, die aus dem
 Ausführen der Ansicht stammen.
 

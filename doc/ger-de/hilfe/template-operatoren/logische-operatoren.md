@@ -3,7 +3,7 @@ title: Logische Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 120
-summary: Die 13 Operatoren von eZTemplateLogicOperator (eq, ne, lt, gt, le, ge, and, or, not, null, true, false, choose), einschließlich der Zählregel von lt/gt/le/ge, die Zeichenketten nach ihrer Länge vergleicht, mit auf alpha ausgegebenen Beispielen.
+summary: Die 13 Operatoren von eZTemplateLogicOperator (eq, ne, lt, gt, le, ge, and, or, not, null, true, false, choose), einschließlich der Zählregel von lt/gt/le/ge, die Zeichenketten nach ihrer Länge vergleicht, mit auf einer Entwicklungsinstallation ausgegebenen Beispielen.
 keywords: Logik, Vergleich, Bedingung, boolescher Wert, Wahrheitswert, logic, comparison, eq, ne, lt, gt, le, ge, and, or, not, null, true, false, choose, boolean, condition, eZTemplateLogicOperator
 type: help
 ---
@@ -66,7 +66,7 @@ eq( 3, 3, 4 ) = {eq( 3, 3, 4 )|choose( 'false', 'true' )}
 ne( 1, 1, 2 ) = {ne( 1, 1, 2 )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 5|eq( 5 ) = true
@@ -120,7 +120,7 @@ array( 1, 2, 3 )|gt( 2 ) = {array( 1, 2, 3 )|gt( 2 )|choose( 'false', 'true' )}
 '10'|gt( '9' ) = {'10'|gt( '9' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 3|lt( 5 ) = true
@@ -168,7 +168,7 @@ or( false(), '', 'first', 'second' ) = {or( false(), '', 'first', 'second' )}
 or( 0, array() ) = {or( 0, array() )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 and( 1, 'yes', array( 1 ) ) = 1
@@ -177,12 +177,12 @@ or( false(), '', 'first', 'second' ) = first
 or( 0, array() ) = false
 ```
 
-Die Regel für Leerraum ist die des Interpreters. Kompiliert auf alpha behandelte `and( 1, '  ', 3 )` die leere
+Die Regel für Leerraum ist die des Interpreters. Kompiliert auf einer Entwicklungsinstallation behandelte `and( 1, '  ', 3 )` die leere
 Zeichenkette als wahr und gab 3 zurück, den letzten Operanden, woraufhin das folgende `choose` "Index 3 out of range"
 protokollierte und nichts ausgab. Entfernen Sie Leerraum, bevor Sie Zeichenketten prüfen (`$text|trim`), dann sind
 sich beide einig.
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 and( 1, 'yes', array( 1 ) ) = 1
@@ -229,7 +229,7 @@ $missing|null (no node has that id) = {$missing|null|choose( 'false', 'true' )}
 true() = {true()|choose( 'false', 'true' )}, false() = {false()|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $empty|not = true
@@ -264,7 +264,7 @@ true()|choose( 'no', 'yes' ) = {true()|choose( 'no', 'yes' )}
 The Recipes node {$node.children_count|gt( 0 )|choose( 'has no children', concat( 'has ', $node.children_count, ' children' ) )}.
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 $n|choose( 'zero', 'one', 'two' ) = two
@@ -278,7 +278,7 @@ Ein Index außerhalb der Liste ist ein Fehler:
 3|choose( 'a', 'b' ) = {3|choose( 'a', 'b' )|choose( 'false', 'true' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 3|choose( 'a', 'b' ) = false

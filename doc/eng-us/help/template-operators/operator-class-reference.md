@@ -3,7 +3,7 @@ title: The operator class interface
 audience: developer, app-creator
 category: development
 order: 530
-summary: Every method and argument the template engine uses on a template operator object - operatorList, namedParameterPerOperator, namedParameterList, modify with its eight arguments, operatorTemplateHints and element transformations, operatorCompiledStaticData - and the registration entry keys, each shown with a sample class rendered on alpha in interpreted and compiled mode.
+summary: Every method and argument the template engine uses on a template operator object - operatorList, namedParameterPerOperator, namedParameterList, modify with its eight arguments, operatorTemplateHints and element transformations, operatorCompiledStaticData - and the registration entry keys, each shown with a sample class rendered on a development installation in interpreted and compiled mode.
 keywords: operator class, operatorList, namedParameterPerOperator, namedParameterList, modify, operatorTemplateHints, element-transformation, input-as-parameter, transform-parameters, elementValue, placement, eztemplateautoload.php, eZTemplateOperatorArray
 type: help
 ---
@@ -27,7 +27,7 @@ Everything here is read from `lib/eztemplate/classes/eztemplate.php` (`processOp
 
 ## The sample class
 
-The examples use `C11ExampleOperators`, a class written for these pages. Not run on alpha as an installed
+The examples use `C11ExampleOperators`, a class written for these pages. Not run on a development installation as an installed
 extension: the script that rendered the examples registered the class on the template engine in memory (the same
 entry an extension's `eztemplateautoload.php` would add), loaded from a scratch folder; compiled results were
 compiled into a scratch folder. Its operators:
@@ -101,7 +101,7 @@ function namedParameterList()
   `null` and warns `Operator '<operator>' has no default value for parameter '<name>'` (once per request in
   interpreted templates, at compile time for compiled ones).
 
-Optional and required parameters on alpha:
+Optional and required parameters on a development installation:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )
@@ -111,7 +111,7 @@ Optional and required parameters on alpha:
 {exp_initials( 'Bold Agency' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Fit &amp; Healthy -> FH
@@ -123,7 +123,7 @@ Fit &amp; Healthy -> FH
 {42|exp_clamp( 0 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 100 0 42
@@ -165,14 +165,14 @@ What `exp_parameters_seen` reports about its arguments, once called as a functio
 {'piped'|exp_parameters_seen}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 value=NULL named={"first":"a","second":"bee"} raw count=2 first raw element type=1 second evaluated again='bee' placement=[[2,0,18],[2,30,48],"var\/tmp\/examples\/ld-op\/03-what-modify-receives.tpl"]
 value='piped' named={"first":"first-default","second":"second-default"} raw count=0 first raw element type=none second evaluated again=NULL placement=[[3,0,51],[3,27,78],"var\/tmp\/examples\/ld-op\/03-what-modify-receives.tpl"]
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 value=NULL named={"first":"a","second":"bee"} raw count=2 first raw element type=1 second evaluated again='bee' placement=false
@@ -231,13 +231,13 @@ templates show, which on a default installation means every visitor:
 {'fit & healthy'|exp_initials} {'fit & healthy'|exp_wrong_hint}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 FH FIT & HEALTHY
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 FH
@@ -278,19 +278,19 @@ run-time call. `modify()` must still implement the operator for interpreted temp
 {$n|exp_twice} {4|exp_twice|exp_twice}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 42 16
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 42 16
 ```
 
-An excerpt of the PHP the compiler generated on alpha for the second line (`{4|exp_twice|exp_twice}`): the constant
+An excerpt of the PHP the compiler generated on a development installation for the second line (`{4|exp_twice|exp_twice}`): the constant
 was folded into the first multiplication and no operator object is called:
 
 ```php

@@ -3,7 +3,7 @@ title: Wie Fetch-Funktionen arbeiten
 audience: developer, app-creator
 category: development
 order: 700
-summary: Was geschieht, wenn ein Template fetch() aufruft - eZFunctionHandler, eZModuleFunctionInfo, die function_definition.php des Moduls und seine Klasse für die Funktionssammlung -, das Format der Definition, Ergebnisse und Fehler, die Suchreihenfolge der Modul-Repositories und wie eine Erweiterung ein Fetch-Modul hinzufügt, die Fetch-Funktionen eines Kernel-Moduls erweitert oder ersetzt, jeweils auf alpha gerendert.
+summary: Was geschieht, wenn ein Template fetch() aufruft - eZFunctionHandler, eZModuleFunctionInfo, die function_definition.php des Moduls und seine Klasse für die Funktionssammlung -, das Format der Definition, Ergebnisse und Fehler, die Suchreihenfolge der Modul-Repositories und wie eine Erweiterung ein Fetch-Modul hinzufügt, die Fetch-Funktionen eines Kernel-Moduls erweitert oder ersetzt, jeweils auf einer Entwicklungsinstallation gerendert.
 keywords: Fetch-Funktionen, Fetch-Funktion, Funktionssammlung, Modul-Repositories, Fetch-Funktion überschreiben, Fetch-Funktion erweitern, fetch, fetch function, function_definition.php, FunctionList, call_method, function collection, eZFunctionHandler, eZModuleFunctionInfo, module repositories, ExtensionRepositories, override fetch function, extend fetch function
 type: help
 ---
@@ -36,7 +36,7 @@ geschrieben.
 {$node.name|wash}: {$count} children
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Fit &amp; Healthy: 16 children
@@ -110,7 +110,7 @@ Fetch hält die Seite nie an. Jedes Problem wird in die Debug-Ausgabe geschriebe
 [{fetch( 'nosuchmodule', 'list', hash() )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []
@@ -124,7 +124,7 @@ Ausgabe auf alpha:
 {if is_null( $result )}no result{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 no result
@@ -137,7 +137,7 @@ no result
 {if is_null( $result )}no result{else}{$result.name|wash}{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 no result
@@ -155,10 +155,10 @@ Die Modul-Repositories stammen aus `module.ini` `[ModuleSettings]`: `ModuleRepos
 und `kernel/private/modules` des Kernels) und für jede in `ExtensionRepositories[]` aufgeführte und aktive Erweiterung
 deren Ordner `modules`. `eZModule::activeModuleRepositories()` (`lib/ezutils/classes/ezmodule.php`) führt die beiden
 Listen zusammen und **kehrt sie um**; Erweiterungen werden also vor dem Kernel durchsucht, und von den Erweiterungen
-zuerst die, die in `ExtensionRepositories[]` zuletzt steht. Im Siteaccess `site` von alpha beginnt die
+zuerst die, die in `ExtensionRepositories[]` zuletzt steht. Im Siteaccess `site` einer Entwicklungsinstallation beginnt die
 Suchreihenfolge mit `extension/sevenx_alpha_settings/modules`, `extension/expui/modules`, `extension/ezjscore/modules`,
 ... und endet mit `kernel/private/modules` und `kernel`; 28 Module haben Fetch-Funktionen, 21 davon im Kernel. Keine
-Erweiterung auf alpha hat eine `function_definition.php` für ein Kernel-Modul.
+Erweiterung auf einer Entwicklungsinstallation hat eine `function_definition.php` für ein Kernel-Modul.
 
 ## Ein Fetch-Modul in einer Erweiterung hinzufügen
 
@@ -228,7 +228,7 @@ class C11DemoFunctionCollection
 }
 ```
 
-Auf alpha nicht als installierte Erweiterung ausgeführt: Das Skript, das die Beispiele dieses und der beiden nächsten
+Auf einer Entwicklungsinstallation nicht als installierte Erweiterung ausgeführt: Das Skript, das die Beispiele dieses und der beiden nächsten
 Abschnitte gerendert hat, stellte im Speicher ein Modul-Repository aus einem Arbeitsordner vor die anderen
 (`eZModule::setGlobalPathList()`, nur für seinen eigenen Prozess) und lud die Klassen aus einem Arbeitsordner.
 
@@ -239,7 +239,7 @@ Abschnitte gerendert hat, stellte im Speicher ein Modul-Repository aus einem Arb
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ng_landing_page: 5
@@ -287,14 +287,14 @@ section/list: {$sections|count} sections
 section/c11_identifiers: {$identifiers|implode( ', ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 section/list: 10 sections
 section/c11_identifiers: , , design, help_internal, help_public, media, sample_collaboration, setup, standard, users
 ```
 
-(Zwei Sections auf alpha haben einen leeren Bezeichner, daher die beiden führenden Kommas.) Der Pfad im include ist
+(Zwei Sections auf einer Entwicklungsinstallation haben einen leeren Bezeichner, daher die beiden führenden Kommas.) Der Pfad im include ist
 relativ zum Wurzelverzeichnis der Installation, dem Arbeitsverzeichnis jeder Anfrage und jedes Skripts von
 Exponential.
 
@@ -313,7 +313,7 @@ section/list: {$sections|count} sections
 section/c11_identifiers: {$identifiers|implode( ', ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 section/list: 0 sections
@@ -339,7 +339,7 @@ Folgen:
 - eine Definition, die zur Kompilierzeit nicht geladen werden kann (fehlende Klasse), lässt den Compiler auf einen
   Aufruf zur Laufzeit zurückfallen.
 
-Alle Beispiele auf dieser Seite lieferten auf alpha interpretiert und kompiliert (in einen Arbeitsordner) dasselbe
+Alle Beispiele auf dieser Seite lieferten auf einer Entwicklungsinstallation interpretiert und kompiliert (in einen Arbeitsordner) dasselbe
 Ergebnis.
 
 ## Verwandte Seiten

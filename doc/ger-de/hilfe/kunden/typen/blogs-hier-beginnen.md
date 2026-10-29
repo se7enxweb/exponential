@@ -29,7 +29,7 @@ verantwortlich ist.
 | Kommentare von Lesern | Eine Klasse *Comment* in der Demo-Installation; der Umgang mit Kommentaren hängt davon ab, wie Ihre Website gebaut wurde | Fragen Sie Ihren Partner; [Spamschutz für Formulare](../../ersteller/website-ersteller/spamschutz-fuer-formulare.md) |
 | Hilfe bei einem ersten Entwurf | Exponential Intelligence (nur Entwürfe) | [KI-Entwürfe verantwortungsvoll nutzen](../wachstum/ki-entwuerfe-verantwortungsvoll-nutzen.md) |
 
-Die Klassennamen sind die von <https://alpha.se7enx.com>; die Funktionen sind in der `README.md` des Repositorys
+Die Klassennamen sind die einer Demo-Installation; die Funktionen sind in der `README.md` des Repositorys
 aufgeführt („Main Exponential features“).
 
 ## Der Rhythmus eines Blogs

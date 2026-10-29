@@ -3,7 +3,7 @@ title: The swark operators
 audience: developer, designer, app-creator
 category: development
 order: 430
-summary: How the swark extension registers its 37 one-class-per-operator template operators, the SwarkOperator base class with name=default parameter strings and compiled execute() calls, which of its names other extensions or the kernel take over on alpha, and a proven case where the owner of an operator changes in the middle of a request.
+summary: How the swark extension registers its 37 one-class-per-operator template operators, the SwarkOperator base class with name=default parameter strings and compiled execute() calls, which of its names other extensions or the kernel take over on a development installation, and a proven case where the owner of an operator changes in the middle of a request.
 keywords: swark, SwarkOperator, SwarkOperators, operator collision, strpos, substr, ltrim, rtrim, str_replace, json_encode, registration order, ExtensionAutoloadPath
 type: help
 ---
@@ -20,7 +20,7 @@ are built and registered; the two pages after it document each operator:
 
 1. [Registration](#registration)
 2. [The base class](#the-base-class)
-3. [Names that collide on alpha](#names-that-collide-on-alpha)
+3. [Names that collide](#names-that-collide)
 4. [Ownership can change during a request](#ownership-can-change-during-a-request)
 
 ## Registration
@@ -47,12 +47,12 @@ the class's static `execute( $operatorValue, $namedParameters )` and uses its re
 `<Class>::execute()` into the compiled template, filling missing parameters with their defaults. Only
 `variable_names` switches that off (its `transformation()` returns `false`), because it needs the template object.
 
-## Names that collide on alpha
+## Names that collide
 
-Seven swark names are also registered elsewhere. On alpha `swark` comes before `owsimpleoperator` and `ezjscore` in
+Seven swark names are also registered elsewhere. On a development installation `swark` comes before `owsimpleoperator` and `ezjscore` in
 `ExtensionAutoloadPath[]`, and a later definition of a name replaces an earlier one:
 
-| Name | swark behavior | Registered last by | Result on alpha |
+| Name | swark behavior | Registered last by | Result on a development installation |
 |---|---|---|---|
 | `json_encode` | `$value|json_encode` or `json_encode( $value )` | ezjscore (`json_encode( $hash )`) | ezjscore's operator |
 | `str_replace` | `$text|str_replace( search, replace )` | owsimpleoperator (PHP `str_replace`) | owsimpleoperator's operator |
@@ -60,7 +60,7 @@ Seven swark names are also registered elsewhere. On alpha `swark` comes before `
 | `substr` | `length` 0 means "to the end" | kernel `eZTemplateStringsOperator` | depends on first use |
 | `ltrim`, `rtrim` | optional `charlist` | kernel `eZTemplateStringsOperator` | depends on first use |
 
-The swark classes for these names are documented with the others; on alpha a template cannot rely on reaching them.
+The swark classes for these names are documented with the others; on a development installation a template cannot rely on reaching them.
 
 ## Ownership can change during a request
 
@@ -77,7 +77,7 @@ names back for the rest of the request. The result of `strpos` therefore depends
 3 strpos after:   [{'abc'|strpos( 'z' )}] {'abc'|strpos( 'z' )|get_type}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 strpos before:  [-1] integer

@@ -3,7 +3,7 @@ title: Zugriff auf Attribute
 audience: developer, designer, app-creator
 category: development
 order: 100
-summary: Wie $a.b und $a[b] aufgelöst werden - Arrays nach Schlüssel, Objekte über attributes(), hasAttribute() und attribute(), Felder und Funktionsattribute von eZPersistentObject, dynamische Schlüssel, numerische Indizes, Attribute nach einem Operator, der Fehler mit seiner Liste von Wahlmöglichkeiten und die Operatoren attribute und dump, um in einen Wert hineinzusehen - gezeigt an Knoten 90 von alpha.
+summary: Wie $a.b und $a[b] aufgelöst werden - Arrays nach Schlüssel, Objekte über attributes(), hasAttribute() und attribute(), Felder und Funktionsattribute von eZPersistentObject, dynamische Schlüssel, numerische Indizes, Attribute nach einem Operator, der Fehler mit seiner Liste von Wahlmöglichkeiten und die Operatoren attribute und dump, um in einen Wert hineinzusehen - gezeigt an Knoten 90 einer Entwicklungsinstallation.
 keywords: Zugriff auf Attribute, Punktschreibweise, eckige Klammern, Attributprotokoll, hasAttribute, attribute(), attributes(), eZPersistentObject, function_attributes, Felder, data_map, Operator attribute, dump, Fehlersuche, attribute access, dot notation, brackets, attribute protocol, fields, debug
 type: help
 ---
@@ -12,7 +12,7 @@ type: help
 `$node.parent.name` liest sich wie eine Kette von Array-Schlüsseln, aber `$node` ist ein PHP-Objekt. Die Template-Engine löst jeden Schritt
 über ein kleines Protokoll auf, und dieses Protokoll macht Knoten, Inhaltsobjekte, Benutzer und jedes andere Objekt des Kernels in Templates
 nutzbar. Der Code ist der Zweig `TYPE_ATTRIBUTE` von `elementValue()` in `lib/eztemplate/classes/eztemplate.php`. Die Beispiele nutzen
-Knoten 90 von alpha, den Artikel „Privacy Policy“.
+Knoten 90 einer Entwicklungsinstallation, den Artikel „Privacy Policy“.
 
 ## Inhalt
 
@@ -38,7 +38,7 @@ Schlüssel; nach einem Punkt nur ein Name, eine Zahl oder eine Variable.
 [{$node.data_map.title.content}] [{$node['data_map']['title'].data_type_string}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [Privacy Policy] [Privacy Policy] [88] [Fit & Healthy]
@@ -77,7 +77,7 @@ object field: published={$node.object.published} section_id={$node.object.sectio
 object function: class_name={$node.object.class_name} main_node_id={$node.object.main_node_id}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 field:    node_id=90 depth=3 path_string=/1/2/89/90/
@@ -101,7 +101,7 @@ Eine Variable in eckigen Klammern, oder nach einem Punkt, liefert den Schlüssel
 {foreach $keys as $k}[{$k}={$node[$k]}]{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [90] [90][name=Privacy Policy][depth=3][class_identifier=ng_article]
@@ -116,7 +116,7 @@ Listen werden nach Position gelesen, mit einer Zahl nach dem Punkt oder einem be
 [{$list.0}] [{$list[1]}] [{$list[$i]}] [{$list[$i|dec]}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [zero] [one] [two] [one]
@@ -133,7 +133,7 @@ lesen lässt:
 [{array( 'x', 'y', 'z' )|reverse.0}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [Fit & Healthy]
@@ -152,7 +152,7 @@ bietet:
 [{$map.blue}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 []
@@ -176,7 +176,7 @@ bei `attribute` und 1 bei `dump`) und `format` (`html` oder `text`, Standard aus
 {hash( 'title', 'Hello', 'sizes', array( 'S', 'M' ) )|attribute( show, 2, text )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 title (string='Hello')
@@ -189,7 +189,7 @@ sizes (array=Array(2))
 {hash( 'title', 'Hello', 'count', 3 )|dump( show, 1, text )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 title (string='Hello')
@@ -206,7 +206,7 @@ ihn also zuschneiden):
 {$list|explode( "\n" )|extract_left( 12 )|implode( "\n" )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 node_id (integer)
@@ -255,7 +255,7 @@ class expExampleBox
 }
 ```
 
-Diese Skizze wurde nicht auf alpha ausgeführt; sie zeigt die Form, auf die die Engine prüft (`method_exists( $value, 'attribute' )` und
+Diese Skizze wurde nicht auf einer Entwicklungsinstallation ausgeführt; sie zeigt die Form, auf die die Engine prüft (`method_exists( $value, 'attribute' )` und
 `method_exists( $value, 'hasAttribute' )`).
 
 ## Verwandte Seiten

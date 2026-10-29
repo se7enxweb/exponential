@@ -3,20 +3,20 @@ title: Operatorenverzeichnis
 audience: developer, designer, app-creator
 category: development
 order: 10
-summary: Alle 401 Template-Operatoren, die auf den Siteaccesses site und admin von alpha registriert sind, von A bis Z, jeweils mit der Seite ihrer Familie, die Parameter, Rückgabewert und Beispiele dokumentiert, der Klasse, die den Operator bereitstellt, und der Herkunft dieser Klasse.
+summary: Alle 401 Template-Operatoren, die auf den Siteaccesses site und admin einer Entwicklungsinstallation registriert sind, von A bis Z, jeweils mit der Seite ihrer Familie, die Parameter, Rückgabewert und Beispiele dokumentiert, der Klasse, die den Operator bereitstellt, und der Herkunft dieser Klasse.
 keywords: Operatorenverzeichnis, Template-Operatoren, A-Z, alle Operatoren, Liste der Operatoren, welche Klasse, Operatoren von Erweiterungen, operator index, template operators, all operators, operator list, extension operators
 type: help
 ---
 # Operatorenverzeichnis
 
-Alle Template-Operatoren, die die Template-Engine auf den Siteaccesses `site` und `admin` von alpha registriert, aus
+Alle Template-Operatoren, die die Template-Engine auf den Siteaccesses `site` und `admin` einer Entwicklungsinstallation registriert, aus
 der Engine selbst gelesen (`eZTemplate::factory()` mit allen Autoload-Dateien, danach jedes Operatorobjekt geladen
 und nach seinen Parametern gefragt). 401 Namen, davon 5 nur auf `admin`. Angegeben ist die Klasse, die den Namen
 bereitstellt, nachdem die Autoload-Dateien gelesen sind; zu Namen, die zwei Klassen registrieren, siehe
-[Registrierungsreihenfolge und Überschreibungen](registrierungsreihenfolge-und-ueberschreibungen.md#die-auf-alpha-doppelt-registrierten-namen).
+[Registrierungsreihenfolge und Überschreibungen](registrierungsreihenfolge-und-ueberschreibungen.md#die-doppelt-registrierten-namen).
 
 "Dokumentiert in" führt zum Abschnitt des Operators auf der Seite seiner Familie, mit Parametern, Rückgabewert und
-auf alpha gerenderten Beispielen; "generiert" zu der Seite, die `./console exp:help:examples` aus dem Code erzeugt,
+auf einer Entwicklungsinstallation gerenderten Beispielen; "generiert" zu der Seite, die `./console exp:help:examples` aus dem Code erzeugt,
 mit der ersten Verwendung in einem mitgelieferten Template. Operatoren einer Erweiterung gibt es nur dort, wo diese
 Erweiterung aktiv ist.
 

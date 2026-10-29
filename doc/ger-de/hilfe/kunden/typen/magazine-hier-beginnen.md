@@ -29,7 +29,7 @@ Diese Seite ist für die Chefredaktion, den Art Director und die Person, die die
 | Verwandte Geschichten | Beziehungen zwischen Inhaltselementen | [Beziehungen und Wiederverwendung](../../ersteller/website-ersteller/relationen-und-wiederverwendung.md) |
 
 Die Liste der Funktionen steht in der `README.md` des Repositorys („Main Exponential features“, „Exponential Layouts“).
-Die obigen Klassennamen sind die der Demo-Installation unter <https://alpha.se7enx.com>; Ihre Website verwendet
+Die obigen Klassennamen sind die einer Demo-Installation; Ihre Website verwendet
 vielleicht andere.
 
 ## Eine Ausgabe organisieren

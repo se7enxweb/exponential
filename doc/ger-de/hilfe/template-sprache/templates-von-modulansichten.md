@@ -3,7 +3,7 @@ title: Templates von Modulansichten
 audience: developer, designer, app-creator
 category: development
 order: 300
-summary: Wie eine Modulansicht ihre Templates rendert - die PHP-Seite (eZTemplate::factory(), setVariable(), fetch( 'design:...' )), das Array $Result, das eine Ansicht zurückgibt, und wie der Kernel es dem Pagelayout als $module_result zusammen mit den anderen Variablen des Pagelayouts übergibt - belegt durch nur lesendes Ausführen von content/view auf alpha.
+summary: Wie eine Modulansicht ihre Templates rendert - die PHP-Seite (eZTemplate::factory(), setVariable(), fetch( 'design:...' )), das Array $Result, das eine Ansicht zurückgibt, und wie der Kernel es dem Pagelayout als $module_result zusammen mit den anderen Variablen des Pagelayouts übergibt - belegt durch nur lesendes Ausführen von content/view auf einer Entwicklungsinstallation.
 keywords: Modulansicht, $Result, $module_result, Pagelayout, eZTemplate::factory, setVariable, fetch design, ezpKernelWeb, Ansichts-Template, module.php, Kernel, module view, pagelayout, view template, kernel
 type: help
 ---
@@ -17,7 +17,7 @@ der Ansicht zu ihrem Template und weiter zum Pagelayout, mit dem Kernel-Code, de
 
 1. [Die zwei Templates einer Seite](#die-zwei-templates-einer-seite)
 2. [Die PHP-Seite einer Ansicht](#die-php-seite-einer-ansicht)
-3. [Was content/view auf alpha zurückgibt](#was-contentview-auf-alpha-zurückgibt)
+3. [Was content/view zurückgibt](#was-contentview-zurückgibt)
 4. [Von $Result zu $module_result](#von-result-zu-module_result)
 5. [Das Pagelayout wählen](#das-pagelayout-wählen)
 6. [Variablen, die ein Template einer Knotenansicht bekommt](#variablen-die-ein-template-einer-knotenansicht-bekommt)
@@ -73,9 +73,9 @@ $Result['path'] = array( array( 'url' => 'section/list',
 Eine eigene Ansicht in einer Erweiterung folgt demselben Muster; der Durchgang steht in
 [Eigene Module und Ansichten](../ersteller/anwendungsentwickler/eigene-module-und-ansichten.md).
 
-## Was content/view auf alpha zurückgibt
+## Was content/view zurückgibt
 
-Um ein echtes `$Result` zu sehen, führte ein nur lesendes CLI-Skript auf alpha die Ansicht so aus, wie der Kernel es tut, mit für diesen
+Um ein echtes `$Result` zu sehen, führte ein nur lesendes CLI-Skript auf einer Entwicklungsinstallation die Ansicht so aus, wie der Kernel es tut, mit für diesen
 Prozess im Speicher ausgeschaltetem Content-View-Cache und ausgeschalteter Template-Kompilierung (es wurde keine Cache-Datei geschrieben), und
 gab die Struktur des zurückgegebenen Arrays aus:
 
@@ -86,7 +86,7 @@ $module = eZModule::findModule( 'content' );
 $result = $module->run( 'view', array( 'full', 96 ), false, array() );
 ```
 
-Ausgabe auf alpha (die Listen `path` und `title_path` sind hier auf ihren ersten und letzten Eintrag gekürzt):
+Ausgabe auf einer Entwicklungsinstallation (die Listen `path` und `title_path` sind hier auf ihren ersten und letzten Eintrag gekürzt):
 
 ```text
 exit status: 1 (STATUS_OK)

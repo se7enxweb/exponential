@@ -3,7 +3,7 @@ title: URL, design, INI and HTTP operators
 audience: developer, designer, app-creator
 category: development
 order: 300
-summary: The ten operators of the kernel's eZURLOperator (ezurl, ezroot, ezdesign, ezimage, exturl, ezsys, ezhttp, ezhttp_hasvariable, ezini, ezini_hasvariable), how the ezurlmultisite extension takes them over on alpha, and its own ezurl_path, ezurl_siteaccess and ezurl_roots, each with proven examples.
+summary: The ten operators of the kernel's eZURLOperator (ezurl, ezroot, ezdesign, ezimage, exturl, ezsys, ezhttp, ezhttp_hasvariable, ezini, ezini_hasvariable), how the ezurlmultisite extension takes them over on a development installation, and its own ezurl_path, ezurl_siteaccess and ezurl_roots, each with proven examples.
 keywords: ezurl, ezroot, ezdesign, ezimage, exturl, ezsys, ezhttp, ezhttp_hasvariable, ezini, ezini_hasvariable, ezurl_path, ezurl_siteaccess, ezurl_roots, eZURLOperator, ezurlmultisite, links, url, quote
 type: help
 ---
@@ -14,9 +14,9 @@ The kernel registers ten operators with one class, `eZURLOperator` (`kernel/comm
 register external links (`exturl`), and read the environment (`ezsys`), the request (`ezhttp`, `ezhttp_hasvariable`)
 and the settings (`ezini`, `ezini_hasvariable`).
 
-On alpha all ten names are registered by the extension `ezurlmultisite` instead (class `eZURLMultisiteURLOperator`,
+On a development installation all ten names are registered by the extension `ezurlmultisite` instead (class `eZURLMultisiteURLOperator`,
 `extension/ezurlmultisite/classes/ezurlmultisiteurloperator.php`), which extends the kernel class and changes only
-`ezurl`. The same extension adds three operators of its own. Every example on this page was rendered on alpha with
+`ezurl`. The same extension adds three operators of its own. Every example on this page was rendered on a development installation with
 the `site` siteaccess from the command line, so links are made without a web request (no `index.php`, scheme `http`).
 
 ## Contents
@@ -71,14 +71,14 @@ line 6 below). Escaping does not make a link safe to follow: a `javascript:` val
 6 {'https://example.com/a?b=1&c=2'|ezurl}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 "/content/view/full/90"
 2 "/privacy-policy"
 3 '/privacy-policy'
 4 /privacy-policy
-5 http://alpha.se7enx.com/privacy-policy
+5 http://www.example.com/privacy-policy
 6 "https://example.com/a?b=1&amp;c=2"
 ```
 
@@ -120,7 +120,7 @@ Like `ezdesign`, but it searches the `images` folder of each design base. Missin
 5 {'1x1.gif'|ezimage( 'no', true() )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 "/robots.txt"
@@ -144,7 +144,7 @@ Generated page: [exturl](../../examples/template-operators/exturl.md).
 **registers it** with `eZURL::registerURL()`, so the link checker and the URL management in the administration
 interface know it.
 
-Not run on alpha: `exturl` writes a row into the `ezurl` table for every address it has not seen, and these examples
+Not run on a development installation: `exturl` writes a row into the `ezurl` table for every address it has not seen, and these examples
 change nothing. Its use is `{'https://example.com/'|exturl}`, which gives `"https://example.com/"`.
 
 ### ezsys
@@ -194,7 +194,7 @@ forms; lines 4 to 6 show `ezhttp()` without a name and `ezsys`.
 6 indexdir=[{ezsys( 'indexdir' )}] hostname=[{ezsys( 'hostname' )}] querystring=[{ezsys( 'querystring' )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 no
@@ -202,7 +202,7 @@ Output on alpha:
 3 no
 4 ezhttptool
 5 wwwdir=[] indexfile=[]
-6 indexdir=[] hostname=[alpha.se7enx.com] querystring=[]
+6 indexdir=[] hostname=[www.example.com] querystring=[]
 ```
 
 ### ezini
@@ -242,7 +242,7 @@ error. Lines 6 and 7 below; line 5 is the same check through parameter 6 of `ezi
 8 {ezini( 'SiteAccessSettings', 'AvailableSiteAccessList' )|count} siteaccesses
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 site
@@ -300,7 +300,7 @@ with `RequireUserLogin=false` and a path prefix. Below, node 74 belongs to the B
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 /bold/privacy-policy
@@ -309,12 +309,12 @@ Output on alpha:
 4 bold
 5 site
 6 /privacy-policy?a=1#top
-7 http://alpha.se7enx.com/privacy-policy
-site: host=alpha.se7enx.com prefix=fit-healthy root=89
-bold: host=alpha.se7enx.com/bold prefix=bold-agency root=73
-bold_ger: host=alpha.se7enx.com/bold_ger prefix=bold-agency root=73
-starter: host=alpha.se7enx.com/starter prefix=starter root=31927
-starter_ger: host=alpha.se7enx.com/starter_ger prefix=starter root=31927
+7 http://www.example.com/privacy-policy
+site: host=www.example.com prefix=fit-healthy root=89
+bold: host=www.example.com/bold prefix=bold-agency root=73
+bold_ger: host=www.example.com/bold_ger prefix=bold-agency root=73
+starter: host=www.example.com/starter prefix=starter root=31927
+starter_ger: host=www.example.com/starter_ger prefix=starter root=31927
 ```
 
 ## The operators of ezurlmultisite

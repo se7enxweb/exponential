@@ -3,7 +3,7 @@ title: Text-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 200
-summary: concat und indent aus eZTemplateTextOperator - Werte zu einer Zeichenkette verbinden und mehrzeiligen Text mit Leerzeichen, Tabulatoren oder einem eigenen Füllzeichen einrücken, die Objektfalle von concat in kompilierten Templates, mit Beispielen, die auf alpha gerendert wurden.
+summary: concat und indent aus eZTemplateTextOperator - Werte zu einer Zeichenkette verbinden und mehrzeiligen Text mit Leerzeichen, Tabulatoren oder einem eigenen Füllzeichen einrücken, die Objektfalle von concat in kompilierten Templates, mit Beispielen, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: concat, indent, Zeichenketten verbinden, verketten, einrücken, string concatenation, join, eZTemplateTextOperator
 type: help
 ---
@@ -34,7 +34,7 @@ Eingabe: optional, sie kommt zuerst. Gibt eine Zeichenkette zurück. `concat` ma
 auf das Ergebnis oder auf jeden nicht vertrauenswürdigen Teil an, bevor Sie es in HTML ausgeben. Generierte Referenz:
 [concat](../../beispiele/template-operatoren/concat.md).
 
-Das Beispiel verwendet das Thema Running auf alpha (Knoten 163):
+Das Beispiel verwendet das Thema Running auf einer Entwicklungsinstallation (Knoten 163):
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 163 ) )}
@@ -43,7 +43,7 @@ Das Beispiel verwendet das Thema Running auf alpha (Knoten 163):
 {concat( 'class ', 'ng-', $node.class_identifier )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Topic: Running (node 163)
@@ -58,14 +58,14 @@ class ng-ng_topic
 [{concat( 'object skipped: ', $node )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [object skipped: ]
 ```
 
 Die kompilierte Form (`concatTransformation()`) verbindet die Werte mit dem PHP-Operator `.`, und PHP kann einen
-Knoten nicht in eine Zeichenkette umwandeln. Auf alpha brach dasselbe Template kompiliert mit
+Knoten nicht in eine Zeichenkette umwandeln. Auf einer Entwicklungsinstallation brach dasselbe Template kompiliert mit
 `Error: Object of class eZContentObjectTreeNode could not be converted to string` ab und erzeugte überhaupt keine
 Ausgabe, nicht einmal den Text davor. Übergeben Sie immer das gemeinte Attribut (`$node.name`), nie das Objekt.
 
@@ -94,7 +94,7 @@ line two"}
 [{$text|indent( 1, 'tab' )|bin2hex|extract_left( 4 )}] (09 = a tab)
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [    line one

@@ -3,7 +3,7 @@ title: Operatoren für Einstellungen, Module, Pakete und PDF
 audience: developer, designer, app-creator
 category: development
 order: 350
-summary: Die Kernel-Operatoren ezpreference, ezmodule, module_params und ezpackage und der Bibliotheksoperator pdf - was jeder liest, seine Parameter, was er zurückgibt, welche davon Seiteneffekte haben - mit Beispielen, auf alpha gerendert.
+summary: Die Kernel-Operatoren ezpreference, ezmodule, module_params und ezpackage und der Bibliotheksoperator pdf - was jeder liest, seine Parameter, was er zurückgibt, welche davon Seiteneffekte haben - mit Beispielen, auf einer Entwicklungsinstallation gerendert.
 keywords: Benutzereinstellungen, Module, Pakete, PDF-Export, Siteaccess-Regeln, ezpreference, ezmodule, module_params, ezpackage, pdf, eZPreferences, eZModule::accessAllowed, SiteAccessRules, package, PDF export, eZPDF
 type: help
 ---
@@ -51,7 +51,7 @@ Aufruf von `eZPreferences::value()` (`preferencesTransformation()`).
 2 {ezpreference( 'admin_list_limit' )|get_type}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 []
@@ -92,7 +92,7 @@ Generierte Seite: [module_params](../../beispiele/template-operatoren/module_par
 5 module_params: {module_params()|get_type}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 content/view: yes
@@ -133,7 +133,7 @@ der Installation.
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 slash_quotes: thumbnail= dir=var/storage/packages/local/slash_quotes
@@ -163,7 +163,7 @@ PDF-Engine zurück, den das Template als Text sammelt; einige wenige wirken auf 
 | `stream` | sendet das PDF an den Browser |
 | `close` | schreibt das PDF über den Cluster-Datei-Handler in den als zweiten Parameter angegebenen Dateinamen |
 
-Auf alpha nicht ausgeführt: `execute`, `stream` und `close` (sie rendern ein Dokument, senden Ausgabe oder schreiben eine
+Auf einer Entwicklungsinstallation nicht ausgeführt: `execute`, `stream` und `close` (sie rendern ein Dokument, senden Ausgabe oder schreiben eine
 Datei). Die Operationen unten bauen nur Befehlszeichenketten:
 
 ```tpl
@@ -175,7 +175,7 @@ Datei). Die Operationen unten bauen nur Befehlszeichenketten:
 6 {pdf( 'toc', hash( 'size', array( 12, 10 ), 'dots', 'true' ) )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 <C:callNewLine>

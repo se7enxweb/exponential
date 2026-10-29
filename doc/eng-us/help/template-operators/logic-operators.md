@@ -3,7 +3,7 @@ title: Logic operators
 audience: developer, designer, app-creator
 category: development
 order: 120
-summary: The 13 operators of eZTemplateLogicOperator (eq, ne, lt, gt, le, ge, and, or, not, null, true, false, choose), including the count rule of lt/gt/le/ge that compares strings by length, with examples rendered on alpha.
+summary: The 13 operators of eZTemplateLogicOperator (eq, ne, lt, gt, le, ge, and, or, not, null, true, false, choose), including the count rule of lt/gt/le/ge that compares strings by length, with examples rendered on a development installation.
 keywords: logic, comparison, eq, ne, lt, gt, le, ge, and, or, not, null, true, false, choose, boolean, condition, eZTemplateLogicOperator
 type: help
 ---
@@ -65,7 +65,7 @@ eq( 3, 3, 4 ) = {eq( 3, 3, 4 )|choose( 'false', 'true' )}
 ne( 1, 1, 2 ) = {ne( 1, 1, 2 )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 5|eq( 5 ) = true
@@ -117,7 +117,7 @@ array( 1, 2, 3 )|gt( 2 ) = {array( 1, 2, 3 )|gt( 2 )|choose( 'false', 'true' )}
 '10'|gt( '9' ) = {'10'|gt( '9' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 3|lt( 5 ) = true
@@ -165,7 +165,7 @@ or( false(), '', 'first', 'second' ) = {or( false(), '', 'first', 'second' )}
 or( 0, array() ) = {or( 0, array() )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 and( 1, 'yes', array( 1 ) ) = 1
@@ -174,11 +174,11 @@ or( false(), '', 'first', 'second' ) = first
 or( 0, array() ) = false
 ```
 
-The whitespace rule is the interpreter's. Compiled on alpha, `and( 1, '  ', 3 )` treated the blank string as true and
+The whitespace rule is the interpreter's. Compiled on a development installation, `and( 1, '  ', 3 )` treated the blank string as true and
 returned 3, the last operand, which made the `choose` after it log "Index 3 out of range" and print nothing. Trim
 strings before testing them (`$text|trim`) and the two agree.
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 and( 1, 'yes', array( 1 ) ) = 1
@@ -223,7 +223,7 @@ $missing|null (no node has that id) = {$missing|null|choose( 'false', 'true' )}
 true() = {true()|choose( 'false', 'true' )}, false() = {false()|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $empty|not = true
@@ -258,7 +258,7 @@ true()|choose( 'no', 'yes' ) = {true()|choose( 'no', 'yes' )}
 The Recipes node {$node.children_count|gt( 0 )|choose( 'has no children', concat( 'has ', $node.children_count, ' children' ) )}.
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $n|choose( 'zero', 'one', 'two' ) = two
@@ -272,7 +272,7 @@ An index outside the list is an error:
 3|choose( 'a', 'b' ) = {3|choose( 'a', 'b' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 3|choose( 'a', 'b' ) = false

@@ -3,7 +3,7 @@ title: "PHP string functions: search and compare"
 audience: developer, designer, app-creator
 category: development
 order: 160
-summary: The searching, comparing and similarity operators of eZTemplateStringsOperator (strlen, strpos, stripos, strrpos, strripos, strstr, stristr, strrchr, strpbrk, strspn, strcspn, substr_count, str_contains, str_starts_with, str_ends_with, strcmp, strcasecmp, strncmp, strncasecmp, strnatcmp, strnatcasecmp, strcoll, substr_compare, levenshtein, similar_text, soundex, metaphone), how their parameters map to PHP, with examples rendered on alpha.
+summary: The searching, comparing and similarity operators of eZTemplateStringsOperator (strlen, strpos, stripos, strrpos, strripos, strstr, stristr, strrchr, strpbrk, strspn, strcspn, substr_count, str_contains, str_starts_with, str_ends_with, strcmp, strcasecmp, strncmp, strncasecmp, strnatcmp, strnatcasecmp, strcoll, substr_compare, levenshtein, similar_text, soundex, metaphone), how their parameters map to PHP, with examples rendered on a development installation.
 keywords: strlen, strpos, stripos, strrpos, strripos, strstr, stristr, strrchr, strpbrk, strspn, strcspn, substr_count, str_contains, str_starts_with, str_ends_with, strcmp, strcasecmp, strncmp, strncasecmp, strnatcmp, strnatcasecmp, strcoll, substr_compare, levenshtein, similar_text, soundex, metaphone, eZTemplateStringsOperator
 type: help
 ---
@@ -73,7 +73,7 @@ strripos( 'HEALTHY' ) = {$s|strripos( 'HEALTHY' )}
 strpos( 'healthy', 20 ) = [{$s|strpos( 'healthy', 20 )|choose( 'false', 'true' )}] (false: not found after 20)
 ```
 
-Output on alpha:
+Output:
 
 ```text
 strlen = 29
@@ -146,7 +146,7 @@ strcspn( '/' ) = {$s|strcspn( '/' )}
 substr_count( '-' ) = {$s|substr_count( '-' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 strstr( '/' ) = /pasta/almond-french-toast
@@ -184,7 +184,7 @@ str_ends_with( '.jpg' ) = {$file|str_ends_with( '.jpg' )|choose( 'false', 'true'
 str_ends_with( '.JPG' ) = {$file|str_ends_with( '.JPG' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 str_contains( 'Breakfast' ) = true
@@ -254,7 +254,7 @@ Generated reference: [substr_compare](../../examples/template-operators/substr_c
 'Hello WORLD'|substr_compare( 'world', 6, 5, true() ) = {'Hello WORLD'|substr_compare( 'world', 6, 5, true() )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'apple'|strcmp( 'banana' ) = -1
@@ -278,7 +278,7 @@ A test for "the same word, ignoring case":
 {if $a|strcasecmp( $b )|eq( 0 )}"{$a}" and "{$b}" are the same word, ignoring case.{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 "Running" and "running" are the same word, ignoring case.
@@ -290,7 +290,7 @@ Without its required parameter a comparison leaves the input as it was and logs 
 [{'abc'|strcmp}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [abc]
@@ -328,7 +328,7 @@ Return strings. Generated references: [soundex](../../examples/template-operator
 'Thompson'|metaphone( 2 ) = {'Thompson'|metaphone( 2 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'recipe'|levenshtein( 'recipes' ) = 1

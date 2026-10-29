@@ -3,7 +3,7 @@ title: "PHP-Zeichenkettenfunktionen: umwandeln"
 audience: developer, designer, app-creator
 category: development
 order: 170
-summary: Die umwandelnden Operatoren von eZTemplateStringsOperator (substr, substr_replace, ristring, rstring, strtr, str_split, str_word_count, str_getcsv, strtok, ltrim, rtrim, lcfirst, chunk_split, addslashes, stripslashes, addcslashes, stripcslashes, quotemeta, strip_tags, str_shuffle, hebrev, dazu str_increment und str_decrement), die Registrierungsfalle von strip_tags, mit auf alpha gerenderten Beispielen.
+summary: Die umwandelnden Operatoren von eZTemplateStringsOperator (substr, substr_replace, ristring, rstring, strtr, str_split, str_word_count, str_getcsv, strtok, ltrim, rtrim, lcfirst, chunk_split, addslashes, stripslashes, addcslashes, stripcslashes, quotemeta, strip_tags, str_shuffle, hebrev, dazu str_increment und str_decrement), die Registrierungsfalle von strip_tags, mit auf einer Entwicklungsinstallation gerenderten Beispielen.
 keywords: Zeichenketten umwandeln, ausschneiden, ersetzen, aufteilen, Backslashes, Tags entfernen, substr, substr_replace, ristring, rstring, str_replace, str_ireplace, strtr, str_split, str_word_count, str_getcsv, strtok, ltrim, rtrim, lcfirst, chunk_split, addslashes, stripslashes, addcslashes, stripcslashes, quotemeta, strip_tags, str_shuffle, hebrev, str_increment, str_decrement, eZTemplateStringsOperator, PHP string functions
 type: help
 ---
@@ -64,7 +64,7 @@ substr_replace( 'Clean', 0, 7 ) = {$s|substr_replace( 'Clean', 0, 7 )}
 substr_replace( '!', 14 ) = {$s|substr_replace( '!', 14 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 substr( 8 ) = eating
@@ -95,7 +95,7 @@ PHP `str_ireplace()`: die Ersetzung **ohne Beachtung der Groß- und Kleinschreib
 Generierte Referenz: [rstring](../../beispiele/template-operatoren/rstring.md).
 
 Die Namen sind das Gegenteil dessen, was man vermuten würde; der Klassenkommentar dokumentiert sie als
-`ristring: str_replace` und `rstring: str_ireplace`, und das Beispiel bestätigt es. Auf alpha bietet außerdem die
+`ristring: str_replace` und `rstring: str_ireplace`, und das Beispiel bestätigt es. Auf einer Entwicklungsinstallation bietet außerdem die
 Erweiterung owsimpleoperator einen einfachen Operator `str_replace` an ([owsimpleoperator](owsimpleoperator.md)).
 
 ### strtr
@@ -120,7 +120,7 @@ strtr( 'aeiou', 'AEIOU' ) = {$s|strtr( 'aeiou', 'AEIOU' )}
 strtr( hash( 'Fit', 'Strong', 'healthy', 'happy' ) ) = {$s|strtr( hash( 'Fit', 'Strong', 'healthy', 'happy' ) )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ristring( 'healthy', 'strong' ) = Fit and strong. Stay Healthy.
@@ -178,7 +178,7 @@ Generierte Referenz: [strtok](../../beispiele/template-operatoren/strtok.md).
 'first second third'|strtok( ' ' ) = {'first second third'|strtok( ' ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'abcdefg'|str_split( 3 ) = abc | def | g
@@ -220,7 +220,7 @@ Generierte Referenz: [chunk_split](../../beispiele/template-operatoren/chunk_spl
 'abcdefgh'|chunk_split( 3, '-' ) = {'abcdefgh'|chunk_split( 3, '-' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [slug--] [--slug] [both  ]
@@ -255,7 +255,7 @@ geschrieben und ein Backslash als `\\`:
 '1+1=2?'|quotemeta = {'1+1=2?'|quotemeta}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'It\'s "fit"'|addslashes = It\'s \"fit\"
@@ -285,13 +285,13 @@ maskiert `&` nicht. Bereinigen Sie das Ergebnis mit wash, bevor Sie es ausgeben.
 strip_tags = {$html|strip_tags}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 strip_tags = Fit and healthy
 ```
 
-**Die Registrierungsfalle.** Auf alpha fügt die Erweiterung ezmultiupload `PHPOperatorList[strip_tags]=strip_tags` zu
+**Die Registrierungsfalle.** Auf einer Entwicklungsinstallation fügt die Erweiterung ezmultiupload `PHPOperatorList[strip_tags]=strip_tags` zu
 `template.ini` hinzu (`extension/ezmultiupload/settings/template.ini.append.php`). Die Datei
 `kernel/common/eztemplateautoload.php` des Kernels registriert die Namen aus `PHPOperatorList` über
 `eZTemplatePHPOperator`, das der PHP-Funktion nur einen Wert übergibt; diese Fassung ignoriert also die erlaubten Tags.
@@ -308,7 +308,7 @@ first use: [{$html|strip_tags( '<b>' )}]
 after strlen: [{$html|strip_tags( '<b>' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 first use: [Fit and healthy]
@@ -338,7 +338,7 @@ str_shuffle keeps the letters: {$s|str_split( 1 )|unique|count} distinct letters
 hebrev of a Latin text returns it unchanged: {'plain text'|hebrev}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 str_shuffle keeps the letters: 6 distinct letters, length 6
@@ -356,7 +356,7 @@ Engine sie als nicht registriert:
 [{'a9'|str_increment}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [a9]
@@ -376,7 +376,7 @@ Nachdem `strlen` die Klasse geladen hat:
 'Ab'|str_decrement = {'Ab'|str_decrement}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'a9'|str_increment = b0

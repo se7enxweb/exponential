@@ -3,7 +3,7 @@ title: Text operators
 audience: developer, designer, app-creator
 category: development
 order: 200
-summary: concat and indent from eZTemplateTextOperator - joining values into one string and indenting multi-line text with spaces, tabs or a custom filler, the object trap of concat in compiled templates, with examples rendered on alpha.
+summary: concat and indent from eZTemplateTextOperator - joining values into one string and indenting multi-line text with spaces, tabs or a custom filler, the object trap of concat in compiled templates, with examples rendered on a development installation.
 keywords: concat, indent, string concatenation, join, eZTemplateTextOperator
 type: help
 ---
@@ -33,7 +33,7 @@ text.
 Input: optional, it comes first. Returns a string. `concat` does not escape, so wash the result, or each untrusted
 part, before printing it in HTML. Generated reference: [concat](../../examples/template-operators/concat.md).
 
-The example uses the Running topic on alpha (node 163):
+The example uses the Running topic on a development installation (node 163):
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 163 ) )}
@@ -42,7 +42,7 @@ The example uses the Running topic on alpha (node 163):
 {concat( 'class ', 'ng-', $node.class_identifier )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Topic: Running (node 163)
@@ -57,14 +57,14 @@ class ng-ng_topic
 [{concat( 'object skipped: ', $node )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [object skipped: ]
 ```
 
 The compiled form (`concatTransformation()`) joins the values with PHP's `.` operator, and PHP cannot turn a node
-into a string. On alpha the same template, compiled, stopped with
+into a string. On a development installation the same template, compiled, stopped with
 `Error: Object of class eZContentObjectTreeNode could not be converted to string` and produced no output at all, not
 even the text before it. Always pass the attribute you mean (`$node.name`), never the object.
 
@@ -92,7 +92,7 @@ line two"}
 [{$text|indent( 1, 'tab' )|bin2hex|extract_left( 4 )}] (09 = a tab)
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [    line one

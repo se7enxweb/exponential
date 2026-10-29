@@ -20,8 +20,8 @@ You do not need to be technical to use it. Each page says what to do, how often 
 it, and links to the step-by-step help for editors and administrators and to the technical pages for your provider.
 
 > **Note**
-> Every fact here comes from the Exponential repository, from the demonstration installation at
-> <https://alpha.se7enx.com> or from <https://exponential.earth>, and the source is named on the page. The section
+> Every fact here comes from the Exponential repository, from a demonstration installation
+> or from <https://exponential.earth>, and the source is named on the page. The section
 > names no customers and quotes no figures of anyone's business. Where a page calculates, the inputs are labeled as
 > example assumptions to replace with your own. Pages about VAT, contracts and personal data describe the software
 > and what to check; they are not legal advice.

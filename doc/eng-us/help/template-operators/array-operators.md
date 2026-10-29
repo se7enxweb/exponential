@@ -3,7 +3,7 @@ title: Array operators
 audience: developer, designer, app-creator
 category: development
 order: 110
-summary: The 24 operators of eZTemplateArrayOperator (array, hash, append, prepend, merge, contains, compare, extract, extract_left, extract_right, begins_with, ends_with, implode, explode, repeat, reverse, insert, remove, replace, unique, array_sum and three deprecated names), on arrays and on strings, with examples rendered on alpha.
+summary: The 24 operators of eZTemplateArrayOperator (array, hash, append, prepend, merge, contains, compare, extract, extract_left, extract_right, begins_with, ends_with, implode, explode, repeat, reverse, insert, remove, replace, unique, array_sum and three deprecated names), on arrays and on strings, with examples rendered on a development installation.
 keywords: array, hash, append, prepend, merge, contains, compare, extract, extract_left, extract_right, begins_with, ends_with, implode, explode, repeat, reverse, insert, remove, replace, unique, array_sum, array_append, array_prepend, array_merge, eZTemplateArrayOperator
 type: help
 ---
@@ -18,7 +18,7 @@ Most of them work on **arrays and on strings**: `modify()` first looks at the in
 which works on characters with the multibyte `mb_*` functions. The sections say which branches an operator has. No
 operator changes the variable it is applied to: store the result with `{set $list = $list|append( 4 )}`.
 
-The examples were rendered by the template interpreter and again by the template compiler on alpha (template
+The examples were rendered by the template interpreter and again by the template compiler on a development installation (template
 compiling is enabled there). Where the two disagreed, the section says so.
 
 ## Contents
@@ -65,7 +65,7 @@ array: {$list|implode( ', ' )} ({$list|count} items)
 hash: {foreach $map as $key => $value}{$key}={$value|wash} {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 array: red, green, blue (3 items)
@@ -106,7 +106,7 @@ append( $list, 9 ) = {append( $list, 9 )|implode( ',' )}
 'world'|prepend( 'Hello ' ) = {'world'|prepend( 'Hello ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $list|append( 4, 5 ) = 2,3,4,5
@@ -116,10 +116,10 @@ append( $list, 9 ) = 2,3,9
 'world'|prepend( 'Hello ' ) = Hello world
 ```
 
-Use the piped form. Compiled on alpha, the call form `append( $list, 9 )` printed `Array,Array` instead of `2,3,9`; the compiled
+Use the piped form. Compiled on a development installation, the call form `append( $list, 9 )` printed `Array,Array` instead of `2,3,9`; the compiled
 code (`mergeTrans()`, with the input always passed as a parameter) does not treat the first parameter as the target array. All other lines were identical.
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 $list|append( 4, 5 ) = 2,3,4,5
@@ -150,7 +150,7 @@ merge( $a, $b ) = {merge( $a, $b )|implode( ',' )}
 $h|merge( hash( 'size', 'XL' ) ) = {foreach $h|merge( hash( 'size', 'XL' ) ) as $k => $v}{$k}={$v} {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $a|merge( $b, array( 4 ) ) = 1,2,3,4
@@ -196,7 +196,7 @@ $list|compare( array( 'event', 'news', 'blog' ) ) = {$list|compare( array( 'even
 'abc'|compare( 'abc' ) = {'abc'|compare( 'abc' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $list|contains( 'blog' ) = true
@@ -237,7 +237,7 @@ $list|ends_with( 2 ) = {$list|ends_with( 2 )|choose( 'false', 'true' )}
 'image.jpg'|ends_with( '.jpg' ) = {'image.jpg'|ends_with( '.jpg' )|choose( 'false', 'true' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $list|begins_with( 1, 2 ) = true
@@ -292,7 +292,7 @@ $list|extract_right( 2 ) = {$list|extract_right( 2 )|implode( '' )}
 'Exponential'|extract_right( 4 ) = {'Exponential'|extract_right( 4 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $list|extract( 1, 3 ) = bcd
@@ -337,7 +337,7 @@ $list|explode( 1 ) = [{$parts[0]|implode( ',' )}] [{$parts[1]|implode( ',' )}]
 'red,green,blue'|explode( ',' ) = {'red,green,blue'|explode( ',' )|implode( ' | ' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $list|implode( ' / ' ) = a / b / c / d
@@ -377,7 +377,7 @@ array( 1, 2, 3 )|reverse = {array( 1, 2, 3 )|reverse|implode( ',' )}
 array( 'a', 'b', 'a', 'c', 'b' )|unique = {array( 'a', 'b', 'a', 'c', 'b' )|unique|implode( ',' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 array( 1, 2 )|repeat( 3 ) = 1,2,1,2,1,2
@@ -436,7 +436,7 @@ $list|replace( 1, 2, 'X' ) = {$list|replace( 1, 2, 'X' )|implode( ',' )}
 'Exponential'|replace( 0, 3, 'IM' ) = {'Exponential'|replace( 0, 3, 'IM' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 $list|insert( 2, 'X', 'Y' ) = a,b,X,Y,c,d
@@ -460,7 +460,7 @@ Generated reference: [array_sum](../../examples/template-operators/array_sum.md)
 array( 1, 2, 3.5 )|array_sum = {array( 1, 2, 3.5 )|array_sum}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 array( 1, 2, 3.5 )|array_sum = 6.5
@@ -477,7 +477,7 @@ array( 2 )|array_prepend( 1 ) = {array( 2 )|array_prepend( 1 )|implode( ',' )}
 array( 1 )|array_merge( array( 2 ) ) = {array( 1 )|array_merge( array( 2 ) )|implode( ',' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 array( 1 )|array_append( 2 ) = 1,2
@@ -492,7 +492,7 @@ the input unchanged:
 'abc'|array_append( 'd' ) = {'abc'|array_append( 'd' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 'abc'|array_append( 'd' ) = abc
@@ -504,10 +504,10 @@ Logged by the template engine:
 WARNING array_append: Unknown operatorname: array_append
 ```
 
-The compiled template is more lenient here: compiled on alpha, the same line printed `abcd`. Do not rely on either;
+The compiled template is more lenient here: compiled on a development installation, the same line printed `abcd`. Do not rely on either;
 use `append`.
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 'abc'|array_append( 'd' ) = abcd
@@ -515,7 +515,7 @@ Output on alpha with the template compiler (compiled into a scratch folder):
 
 ## A worked example: collecting names in a loop
 
-Building a list in a loop with `set` and `append`, then joining it, on the Recipes category of alpha (node 144):
+Building a list in a loop with `set` and `append`, then joining it, on the Recipes category of a development installation (node 144):
 
 ```tpl
 {def $names = array()}
@@ -525,7 +525,7 @@ Building a list in a loop with `set` and `append`, then joining it, on the Recip
 Recipes (first three by name): {$names|implode( ', ' )|wash}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Recipes (first three by name): Almond French Toast, Avocado Kale Pesto Grilled Cheese, Gluten-Free Shrimp Pad Thai with Tofu
