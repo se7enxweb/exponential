@@ -113,14 +113,14 @@ class expTwigExtension extends \Twig\Extension\AbstractExtension
             }
         }
         return array_merge( array_values( $bridged ), array(
-            new \Twig\TwigFunction( 'expvar', function ( $name, $namespace = '' ) use ( $proxy ) { return expTemplateBridge::globalVariable( $name, $namespace, $proxy ); } ),
-            new \Twig\TwigFunction( 'expattr', function ( $value, $key ) use ( $proxy ) { return expTemplateBridge::attributeOf( $value, $key, $proxy ); } ),
+            new \Twig\TwigFunction( 'expvar', array( 'expTwigBridgeCalls', 'globalVariable' ) ),
+            new \Twig\TwigFunction( 'expattr', array( 'expTwigBridgeCalls', 'attributeOf' ) ),
             new \Twig\TwigFunction( 'expvoid', array( 'expTemplateBridge', 'void' ) ),
             new \Twig\TwigFunction( 'expsequence', array( 'expTemplateBridge', 'sequence' ) ),
             new \Twig\TwigFunction( 'expslice', array( 'expTemplateBridge', 'loopSlice' ) ),
-            new \Twig\TwigFunction( 'expsectionloop', function ( $loop, $offset = 0, $max = null, $reverse = false, $iterators = false, $sequence = null ) use ( $proxy ) { return expTemplateBridge::sectionLoop( $loop, $offset, $max, $reverse, $iterators, $sequence, $proxy ); } ),
+            new \Twig\TwigFunction( 'expsectionloop', array( 'expTwigBridgeCalls', 'sectionLoop' ) ),
             new \Twig\TwigFunction( 'exprange', array( 'expTemplateBridge', 'range' ) ),
-            new \Twig\TwigFunction( 'expcolumn', function ( $array, $key ) use ( $proxy ) { return expTemplateBridge::column( $array, $key, $proxy ); } ),
+            new \Twig\TwigFunction( 'expcolumn', array( 'expTwigBridgeCalls', 'column' ) ),
             new \Twig\TwigFunction( 'expi18nargs', array( __CLASS__, 'i18nArguments' ) ),
         ) );
     }
@@ -243,23 +243,10 @@ class expTwigExtension extends \Twig\Extension\AbstractExtension
                 self::$found['filter'][$name] = new \Twig\TwigFilter( $name, array( 'expTwigFastOperators', 'filter_' . $operator ) );
                 return self::$found['filter'][$name];
             }
-            self::$found['filter'][$name] = $operator === null ? false : new \Twig\TwigFilter( $name, function ( $input, ...$parameters ) use ( $operator )
-            {
-                // as the operator takes its input (expTemplateBridge::callOperatorWithInput())
-                if ( !expTwigRenderer::profiling() )
-                    return expTemplateBridge::callOperatorWithInput( $operator, $input, $parameters, expTwigRenderer::PROXY );
-                expTwigRenderer::profileStart( 'operator', 'operators (filters)' );
-                expTwigRenderer::profileStart( 'op:' . $operator, '  |' . $operator );
-                try
-                {
-                    return expTemplateBridge::callOperatorWithInput( $operator, $input, $parameters, expTwigRenderer::PROXY );
-                }
-                finally
-                {
-                    expTwigRenderer::profileStop( 'op:' . $operator );
-                    expTwigRenderer::profileStop( 'operator' );
-                }
-            } );
+            // compiled as \expTwigBridgeCalls::filter('<operator>', ...) (expTwigBridgeFilterNode); the callable serves a lookup
+            self::$found['filter'][$name] = $operator === null ? false : new \Twig\TwigFilter( $name,
+                function ( $input, ...$parameters ) use ( $operator ) { return expTwigBridgeCalls::filter( $operator, $input, $parameters ); },
+                array( 'node_class' => 'expTwigBridgeFilterNode' ) );
         }
         return self::$found['filter'][$name];
     }
@@ -276,20 +263,9 @@ class expTwigExtension extends \Twig\Extension\AbstractExtension
             $function = false;
             if ( self::isBridgedFunction( $name ) )
             {
-                $function = new \Twig\TwigFunction( $name, function ( $parameters = array() ) use ( $name )
-                {
-                    if ( !expTwigRenderer::profiling() )
-                        return expTemplateBridge::callFunction( $name, is_array( $parameters ) ? $parameters : array(), 'twig' );
-                    expTwigRenderer::profileStart( 'function', 'template functions (*_view_gui ...)' );
-                    try
-                    {
-                        return expTemplateBridge::callFunction( $name, is_array( $parameters ) ? $parameters : array(), 'twig' );
-                    }
-                    finally
-                    {
-                        expTwigRenderer::profileStop( 'function' );
-                    }
-                }, array( 'is_safe' => array( 'all' ) ) );
+                $function = new \Twig\TwigFunction( $name,
+                    function ( $parameters = array() ) use ( $name ) { return expTwigBridgeCalls::templateFunction( $name, $parameters ); },
+                    array( 'is_safe' => array( 'all' ), 'node_class' => 'expTwigBridgeFunctionNode' ) );
             }
             else if ( ( $operator = self::operatorFor( $name ) ) !== null && expTwigNativeOperators::supports( $operator ) )
             {
@@ -297,23 +273,9 @@ class expTwigExtension extends \Twig\Extension\AbstractExtension
             }
             else if ( ( $operator = self::operatorFor( $name ) ) !== null )
             {
-                $function = new \Twig\TwigFunction( $name, function ( ...$parameters ) use ( $operator )
-                {
-                    if ( !expTwigRenderer::profiling() )
-                        return expTemplateBridge::callOperatorDirect( $operator, false, null, $parameters, expTwigRenderer::PROXY );
-                    expTwigRenderer::profileStart( 'operatorfn', 'operators (functions)' );
-                    $detail = 'fn:' . $operator . ( $operator === 'fetch' && isset( $parameters[0], $parameters[1] ) && is_string( $parameters[0] ) && is_string( $parameters[1] ) ? ':' . $parameters[0] . '/' . $parameters[1] : '' );
-                    expTwigRenderer::profileStart( $detail, '  ' . substr( $detail, 3 ) . '()' );
-                    try
-                    {
-                        return expTemplateBridge::callOperatorDirect( $operator, false, null, $parameters, expTwigRenderer::PROXY );
-                    }
-                    finally
-                    {
-                        expTwigRenderer::profileStop( $detail );
-                        expTwigRenderer::profileStop( 'operatorfn' );
-                    }
-                } );
+                $function = new \Twig\TwigFunction( $name,
+                    function ( ...$parameters ) use ( $operator ) { return expTwigBridgeCalls::call( $operator, $parameters ); },
+                    array( 'node_class' => 'expTwigBridgeFunctionNode' ) );
             }
             else if ( self::isUnknownOperatorName( $name ) )
             {

@@ -244,6 +244,53 @@ class expTwigTemplateRenderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'expi18nargs', $this->extensionFunctionName() );
     }
 
+    /**
+     * Bridged operators, template functions, the native operators and the helpers are compiled as direct static calls:
+     * the compiled template never looks a filter or function up in the environment, which would make Twig set up all
+     * of its extensions on every request.
+     */
+    public function testBridgedCallsAreCompiledAsStaticCalls()
+    {
+        $source = "{{ name|ezurl }}{{ fetch('content', 'node', {node_id: 2}) }}{{ attribute_view_gui({attribute: a}) }}"
+                . "{{ list|implode(',') }}{{ cond(a, 'x', 'y') }}{{ expvar('x') }}{% for k, v in expsectionloop(3) %}{% endfor %}";
+        $this->assertNull( expTwigRenderer::compileCheck( $source, 'calls.twig' ) );
+        $this->assertNull( expTwigRenderer::compileCheck( $source, 'calls.twig' ) );
+        $code = expTwigRenderer::checkEnvironment()->compileSource( new \Twig\Source( $source, 'calls.twig' ) );
+        $this->assertStringNotContainsString( 'getFilter(', $code );
+        $this->assertStringNotContainsString( 'getFunction(', $code );
+        $this->assertStringContainsString( "expTwigBridgeCalls::filter(\"ezurl\"", $code );
+        $this->assertStringContainsString( "expTwigBridgeCalls::call(\"fetch\"", $code );
+        $this->assertStringContainsString( "expTwigBridgeCalls::templateFunction(\"attribute_view_gui\"", $code );
+        $this->assertStringContainsString( 'expTwigFastOperators::filter_implode(', $code );
+    }
+
+    /**
+     * Compiled templates are written with the permissions of the installation's other cache files, whatever the
+     * umask of the process that compiles them (Velocity's workers run as root with umask 022).
+     */
+    public function testCompiledTemplatesAreWrittenWithTheInstallationsPermissions()
+    {
+        $dir = eZSys::rootDir() . '/var/tmp/twig-cache-permissions-' . getmypid();
+        $old = umask( 022 );
+        try
+        {
+            $cache = new expTwigFilesystemCache( $dir );
+            $key = $cache->generateKey( 'x.twig', 'expTwigPermissionsProbe' );
+            $cache->write( $key, '<?php ' );
+            $expected = 0777 & ~eZFile::creationUmask();
+            $this->assertSame( decoct( $expected ), decoct( fileperms( dirname( $key ) ) & 0777 ) );
+        }
+        finally
+        {
+            umask( $old );
+            foreach ( (array)glob( $dir . '/*/*' ) as $file )
+                @unlink( $file );
+            foreach ( (array)glob( $dir . '/*' ) as $sub )
+                @rmdir( $sub );
+            @rmdir( $dir );
+        }
+    }
+
     private function extensionFunctionName()
     {
         return expTwigRenderer::checkEnvironment()->getFunction( 'expi18nargs' )->getName();
