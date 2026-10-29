@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-The shipped settings of `settings/site.ini`: 60 blocks, 487 settings.
+The shipped settings of `settings/site.ini`: 60 blocks, 488 settings.
 
 > Exponential configuration file.  
 >
@@ -67,7 +67,7 @@ The shipped settings of `settings/site.ini`: 60 blocks, 487 settings.
 | [RegionalSettings](RegionalSettings.md) | 17 |
 | [UnitSettings](UnitSettings.md) | 2 |
 | [FileSettings](FileSettings.md) | 22 |
-| [TemplateSettings](TemplateSettings.md) | 25 |
+| [TemplateSettings](TemplateSettings.md) | 26 |
 | [ContentSettings](ContentSettings.md) | 20 |
 | [MailSettings](MailSettings.md) | 23 |
 | [ShopSettings](ShopSettings.md) | 4 |

@@ -5175,7 +5175,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-b1e5087c796b83fb8b027606e7e6483a  doc/eng-us/examples/ini-settings/site/README.md
+54e9ff8ed7cacfc98265334f5fbacfad  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 daa926d9dff491a714913dbd9adc3264  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -5199,7 +5199,7 @@ f919ae53a39eb0dbdae8797d7dc8691e  doc/eng-us/examples/ini-settings/site/SiteAcce
 ce98788cbd9e0fdbe49e419ceb0217d9  doc/eng-us/examples/ini-settings/site/SiteAccessSettings.md
 d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteDataSettings.md
 9c7893cd8fdb562ad88192fc8f906324  doc/eng-us/examples/ini-settings/site/SiteSettings.md
-15280cf5c6222ec0cb77f225f2e591a2  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
+46f30696623896c42385b69fd5bde7a1  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
 6923dbcc08a6b096908508291722e55b  doc/eng-us/examples/ini-settings/site/TimeZoneSettings.md
 f71ee5c2e368a56f3de8ca5747acc89e  doc/eng-us/examples/ini-settings/site/TipAFriend.md
 79013d607c265d5f841acddc0eaf32ca  doc/eng-us/examples/ini-settings/site/URLTranslator.md
@@ -14526,7 +14526,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-8924cc660260e34f0aa674cee39d9109  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+8fe8ebb56e4b07fb2008f57c62d3f0c6  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 6b72a97ff9fd3a30ba648460bea46f38  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 2fbb7d1eafbe1175201652854abfc88f  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -14550,7 +14550,7 @@ fcad2a9141871c1b2031263cf684ae7f  doc/ger-de/beispiele/ini-einstellungen/site/Se
 b4a28114bd62011bf3194722d3e8e1ba  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessSettings.md
 830bb02905506fcf16617e7243013530  doc/ger-de/beispiele/ini-einstellungen/site/SiteDataSettings.md
 988c875873f8f78e5b806d67bda87fae  doc/ger-de/beispiele/ini-einstellungen/site/SiteSettings.md
-bf0a48d4461ed3b2457b1228b5d35783  doc/ger-de/beispiele/ini-einstellungen/site/TemplateSettings.md
+ae86f52dc75ca3d3d8bd7f5b0f3f929d  doc/ger-de/beispiele/ini-einstellungen/site/TemplateSettings.md
 bd2cdec549f737c40f2e666e9bb56eb8  doc/ger-de/beispiele/ini-einstellungen/site/TimeZoneSettings.md
 20b486bb370d31a7d01543c720859c7d  doc/ger-de/beispiele/ini-einstellungen/site/TipAFriend.md
 fa3c91c1d428a3a3de6c3d51dad9cb4a  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
