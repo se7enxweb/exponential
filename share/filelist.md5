@@ -26158,9 +26158,11 @@ a08f3fc912ea0e876de1c21aabc43b5f  tests/bin/ezp_lint_patched.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-6990947990c7278b332a5b40d6da230d  tests/test-map.json
+d5677c6f6be920d2d2d5cb35b64b4946  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
+3faf612a5c331bc0e1a370c5a9b6e606  tests/tests/bin/CopyrightNoticeTest.php
+401895e6d8a3883c9e17338db3ae0ab0  tests/tests/bin/copyright-notice-allowlist.json
 ed0528c8354aa4f54271ca7e27161186  tests/tests/bin/githooks/CheckCommitRangeTest.php
 735d550178cf4be356e271b8fb236b6f  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
@@ -26266,6 +26268,7 @@ b05dccf2853213631a7cf75445561820  tests/tests/design/AdminThemeSwitchTest.php
 61de4b5925bfc60f09b74b7a0cf3bd37  tests/tests/design/AdminVisibilityStatusTest.php
 323460b0361becf1eb0f42d36fcf64d9  tests/tests/design/AsynchronousPublishingLinkTest.php
 3999bb1c3385aa4ad3bf6dcc97873526  tests/tests/design/ClassicAdminNarrowWindowTest.php
+93cb71110291cc247c6c71a6d5c9a635  tests/tests/design/CopyrightFooterNoticeTest.php
 343bdcaa85977abde7e17fa94a39e653  tests/tests/design/DemoModeUserTemplatesTest.php
 07d0f56be01dbd752bdf1c99ef8df8a6  tests/tests/design/ExtensionInlineScriptsTest.php
 0710fd0f4116c01a9a299beba675c049  tests/tests/design/FormSubmitButtonDisableTest.php

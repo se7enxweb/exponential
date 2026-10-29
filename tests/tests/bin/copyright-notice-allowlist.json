@@ -1,0 +1,83 @@
+{
+    "_about": "Copyright lines that name 7x or the Exponential Foundation and may keep a form other than the two approved ones (CopyrightNoticeTest, owner rule 2026-10-29, #284). 'skip' holds paths whose lines are history or test data (fnmatch, * also matches /); 'lines' holds a path pattern and a text the line contains, each with its reason. Notices that name only other holders (eZ Systems AS, Mugo Web, Moxiecode, the Free Software Foundation, Unicode ...) need no entry: they are third-party notices, never changed. Add an entry only for a notice of another author or a quote of history, never to let an old notice of the project's own pass.",
+    "approved": {
+        "header": "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.",
+        "visible": "Exponential Copyright © 1998-2026 Exponential Foundation and 7x"
+    },
+    "skip": {
+        "doc/changelogs/*": "history: the changelogs quote commit subjects and earlier notices as they were on their date",
+        "doc/eng-us/history/*": "history: the project's history quotes the notices of earlier years",
+        "doc/ger-de/geschichte/*": "history: German translation of the project's history",
+        "doc/eng-us/help/copyright-and-copyleft.md": "the page on the copyright quotes every earlier form of the notice to record the 2026-10-29 shift",
+        "doc/ger-de/hilfe/urheberrecht-und-copyleft.md": "German translation of the page on the copyright, quotes the earlier forms",
+        "tests/tests/bin/copyright-notice-allowlist.json": "this file",
+        "tests/tests/bin/CopyrightNoticeTest.php": "the test's own examples of old notices"
+    },
+    "lines": [
+        {
+            "path": "*",
+            "contains": "CJW Network and Exponential Foundation",
+            "reason": "the notice of CJW Network, co-author of these files with the Exponential Foundation; another author's notice is kept as it is"
+        },
+        {
+            "path": "lib/eztemplate/classes/eztemplateroleoperator.php",
+            "contains": "7x / Brookins Consulting / eZ Systems AS",
+            "reason": "joint historical notice of Brookins Consulting (7x's name before 2022) and eZ Systems AS for the original operator; the approved notice is the line above it"
+        },
+        {
+            "path": "doc/*",
+            "contains": "CJW Network, JAC Systeme GmbH and 7x",
+            "reason": "the notice of a third-party theme (CJW Network, JAC Systeme GmbH and 7x), quoted as an example of a theme's own notice"
+        },
+        {
+            "path": "doc/*",
+            "contains": "7x and Graham",
+            "reason": "the copyright of the book Learning eZ Publish (7x and Graham Brookins), a separate work"
+        },
+        {
+            "path": "doc/*",
+            "contains": "7x und Graham",
+            "reason": "German: the copyright of the book Learning eZ Publish (7x and Graham Brookins), a separate work"
+        },
+        {
+            "path": "doc/*",
+            "contains": "Book-Building-An-eZPublish-Site). Copyright",
+            "reason": "the copyright of the book Building an eZ Publish Site, a separate work"
+        },
+        {
+            "path": "doc/*",
+            "contains": "Book-Learning-eZPublish). Copyright",
+            "reason": "the copyright of the book Learning eZ Publish, a separate work"
+        },
+        {
+            "path": "doc/*",
+            "contains": "except where otherwise noted",
+            "reason": "quotes, word for word, the footer another site (share.exponential.earth, projects.exponential.earth) or a separately released site package shows today; it changes there, not here"
+        },
+        {
+            "path": "doc/*",
+            "contains": "Exponential Foundation first",
+            "reason": "history: the release tables and upgrade notes record what the releases of 2026-10-02 did (they named the project's line first, above the eZ Systems notice), in the words of that day"
+        },
+        {
+            "path": "doc/*",
+            "contains": "nennen zuerst",
+            "reason": "German: history of the releases of 2026-10-02, in the words of that day"
+        },
+        {
+            "path": "doc/*",
+            "contains": "nennt zuerst",
+            "reason": "German: history of the releases of 2026-10-02, in the words of that day"
+        },
+        {
+            "path": "kernel/sql/*/cleandata.sql",
+            "contains": "copyright=Exponential Foundation",
+            "reason": "the meta copyright value of the default site's content (site.ini MetaDataArray), which each site owner sets for its own site; not a notice of the software"
+        },
+        {
+            "path": "share/db_data.dba",
+            "contains": "copyright=Exponential Foundation",
+            "reason": "the same meta copyright value of the default site in the installer's data"
+        }
+    ]
+}
