@@ -214,7 +214,11 @@ class expOrderSiteaccessURLTest extends PHPUnit\Framework\TestCase
         foreach ( $messages as list( $context, $source ) )
         {
             $this->assertStringContainsString( "'$source'|i18n( '$context' )", $template );
-            $this->assertMatchesRegularExpression( '#<name>' . preg_quote( $context, '#' ) . '</name>(?:(?!</context>).)*<source>' . preg_quote( $source, '#' ) . '</source>#s', $catalogue );
+            // the context's block cut out by position: a regex across the catalogue's long contexts runs into the PCRE limits
+            $start = strpos( $catalogue, '<name>' . $context . '</name>' );
+            $this->assertNotFalse( $start, "context $context" );
+            $block = substr( $catalogue, $start, strpos( $catalogue, '</context>', $start ) - $start );
+            $this->assertStringContainsString( '<source>' . htmlspecialchars( $source, ENT_NOQUOTES ) . '</source>', $block, "$context: $source" );
         }
 
         // the customer's view and the lists are left as they are
