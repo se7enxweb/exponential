@@ -2058,6 +2058,12 @@
     "extension/expimageeditor/*": [
       "extension/expimageeditor/tests/phpunit/unit/expImageEditorStoreTest.php",
       "extension/expimageeditor/tests/phpunit/unit/expImageEditorDesignTest.php"
+    ],
+    "kernel/private/classes/commands/*.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php"
+    ],
+    "kernel/private/classes/runnable/command.php": [
+      "tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php"
     ]
   },
   "generated": {

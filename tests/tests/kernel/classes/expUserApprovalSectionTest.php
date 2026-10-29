@@ -79,8 +79,10 @@ class expUserApprovalSectionTest extends PHPUnit\Framework\TestCase
     public function testTheCommandIsADryRunInSectionModeUnlessApplied()
     {
         $code = file_get_contents( self::root() . '/kernel/private/classes/commands/adduserapproval.php' );
-        $this->assertStringContainsString( '[mode:][apply]', $code );
-        $this->assertStringContainsString( "\$dryRun = !\$options['apply'] || \$options['dry-run'];", $code );
+        // every mode: a dry run unless --apply (Exponential\Runnable\Command::applyRequested())
+        $this->assertStringContainsString( '"[apply][dry-run][mode:]', $code );
+        $this->assertStringContainsString( '$apply = self::applyRequested( $options );', $code );
+        $this->assertStringContainsString( '$this->runSection( $cli, $script, $options, $dryRun );', $code );
         // the group mode warns when the section based event is on the trigger too
         $this->assertStringContainsString( 'expUserApprovalSection::eventOnTrigger()', $code );
     }
