@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>सिस्टम पृष्ठ सेहो बुकमार्क कयल जा सकैत अछि: पृष्ठ खोलू (सेटअप, ऑडिट ट्रेल, प्रयोक्ता सभक सूची ...) आ ओकर ऊपर "एहि पृष्ठ केँ बुकमार्क करू" चुनू। एहन बुकमार्क पर गियर आइकन होइत अछि।</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>अहाँ आब एतय ई पृष्ठ नहि खोलि सकैत छी। बुकमार्क हटाउ, वा कोनो प्रशासक सँ पहुँचक अनुमति माँगू।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition क मूल्यांकन करू&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential समुदायक सदस्य बनू, विचारक आदान-प्रदान करू आ योगदान दिअ&lt;/a&gt;। &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; आ आन।</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; द्वारा संचालित। बेसी जानकारीक लेल &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; देखू।</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; आ आन।</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> बेसी जानकारीक लेल &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; देखू।</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; आ आन।</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential क मूल्यांकन करू (7x सँ)&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential समुदायक सदस्य बनू, सहायता पाउ आ योगदान दिअ&lt;/a&gt;।</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; कॉपीराइट &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; आ आन।</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>बुकमार्क क नाम बदलि कऽ "%name" कऽ देल गेल।</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ई पृष्ठ एहि साइट एक्सेस (%siteaccess) मे बन्द अछि। बुकमार्क ओहि साइट एक्सेस मे खोलू जाहि मे ई पृष्ठ अछि।</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>एहि पृष्ठक मॉड्यूल एतय स्थापित नहि अछि वा सक्षम नहि अछि।</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ई पृष्ठ आब नहि अछि: एकर मॉड्यूल मे एहन कोनो दृश्य नहि अछि।</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>अहाँक कोनो भूमिका अहाँ केँ ई पृष्ठ खोलबाक अनुमति नहि दैत अछि।</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>अहाँ लग एहि साइट एक्सेसक उपयोग करबाक अनुमति नहि अछि।</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>अहाँ लग ई पृष्ठ जे सामग्री देखबैत अछि से पढ़बाक अनुमति नहि अछि।</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>एहि प्रकारक पृष्ठ बुकमार्क नहि कयल जा सकैत अछि: ई केवल कोनो फ़ॉर्म पर काज करैत अछि, वा क्षणिक पृष्ठ अछि।</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>एहि पृष्ठक पता नहि अछि।</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ई पृष्ठ एखन नहि खोलल जा सकैत अछि।</translation>
     </message>
 </context>
 <context>

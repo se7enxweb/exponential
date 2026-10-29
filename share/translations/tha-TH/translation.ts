@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>คุณสามารถบุ๊กมาร์กหน้าระบบได้เช่นกัน: เปิดหน้านั้น (ตั้งค่าระบบ ประวัติการตรวจสอบ รายการผู้ใช้ ...) แล้วเลือก "บุ๊กมาร์กหน้านี้" ที่อยู่ด้านบน บุ๊กมาร์กเหล่านี้มีไอคอนรูปเฟือง.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>คุณไม่สามารถเปิดหน้านี้ที่นี่ได้อีกต่อไป กรุณานำบุ๊กมาร์กออก หรือขอสิทธิ์การเข้าถึงจากผู้ดูแลระบบ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;ทดลองใช้ Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;เข้าร่วมเป็นสมาชิกของ Exponential Community แลกเปลี่ยนและร่วมพัฒนา&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ลิขสิทธิ์ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; และผู้อื่น.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>ขับเคลื่อนโดย &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. สำหรับข้อมูลเพิ่มเติม ดู &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ลิขสิทธิ์ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; และผู้อื่น.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> สำหรับข้อมูลเพิ่มเติม ดู &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ลิขสิทธิ์ &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; และผู้อื่น.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;ทดลองใช้ Exponential (จาก 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;เป็นสมาชิกของชุมชน Exponential รับการสนับสนุนและร่วมพัฒนา&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ลิขสิทธิ์ &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; และผู้อื่น.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>เปลี่ยนชื่อบุ๊กมาร์กเป็น "%name" แล้ว.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>หน้านี้ถูกปิดใช้งานในการเข้าถึงไซต์นี้ (%siteaccess) กรุณาเปิดบุ๊กมาร์กในการเข้าถึงไซต์ที่มีหน้านี้</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>โมดูลของหน้านี้ไม่ได้ติดตั้งหรือไม่ได้เปิดใช้งานที่นี่</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>หน้านี้ไม่มีอยู่แล้ว: โมดูลของหน้านี้ไม่มีมุมมองดังกล่าว</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>ไม่มีบทบาทใดของคุณที่อนุญาตให้คุณเปิดหน้านี้</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>คุณไม่มีสิทธิ์ใช้การเข้าถึงไซต์นี้</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>คุณไม่มีสิทธิ์อ่านเนื้อหาที่หน้านี้แสดง</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ไม่สามารถบุ๊กมาร์กหน้าประเภทนี้ได้: หน้านี้ทำงานกับฟอร์มเท่านั้น หรือเป็นหน้าที่ใช้ได้เพียงชั่วขณะ</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ไม่มีที่อยู่ของหน้านี้</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ไม่สามารถเปิดหน้านี้ได้ในขณะนี้</translation>
     </message>
 </context>
 <context>

@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>ទំព័រប្រព័ន្ធក៏អាចចំណាំបានដែរ: សូមបើកទំព័រ (ការរៀបចំ ប្រវត្តិសវនកម្ម បញ្ជីអ្នកប្រើ ...) ហើយជ្រើសរើស "ចំណាំទំព័រនេះ" នៅខាងលើវា។ ចំណាំបែបនេះមានរូបតំណាងស្ពឺរ។</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>អ្នកលែងអាចបើកទំព័រនេះនៅទីនេះបានទៀតហើយ។ សូមដកចំណាំចេញ ឬសុំការចូលប្រើពីអ្នកគ្រប់គ្រង។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;វាយតម្លៃ Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;ក្លាយជាសមាជិកនៃសហគមន៍ Exponential ផ្លាស់ប្តូរ និងចូលរួមចំណែក&lt;/a&gt;។ &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; រក្សាសិទ្ធិ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; និងអ្នកដទៃ។</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>ដំណើរការដោយ &lt;span class="edition-info"&gt;%edition&lt;/span&gt;។ សម្រាប់ព័ត៌មានបន្ថែម សូមមើល &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;។</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; រក្សាសិទ្ធិ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; និងអ្នកដទៃ។</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> សម្រាប់ព័ត៌មានបន្ថែម សូមមើល &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;។</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; រក្សាសិទ្ធិ &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; និងអ្នកដទៃ។</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;វាយតម្លៃ Exponential (ពី 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;ក្លាយជាសមាជិកនៃសហគមន៍ Exponential ទទួលការគាំទ្រ និងចូលរួមចំណែក&lt;/a&gt;។</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; រក្សាសិទ្ធិ &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; និងអ្នកដទៃ។</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>ចំណាំត្រូវបានប្តូរឈ្មោះទៅជា "%name"។</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ទំព័រនេះត្រូវបានបិទនៅក្នុងការចូលគេហទំព័រនេះ (%siteaccess)។ សូមបើកចំណាំនៅក្នុងការចូលគេហទំព័រដែលមានទំព័រនេះ។</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ម៉ូឌុលនៃទំព័រនេះមិនត្រូវបានដំឡើង ឬមិនត្រូវបានបើកនៅទីនេះទេ។</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ទំព័រនេះលែងមានទៀតហើយ៖ ម៉ូឌុលរបស់វាគ្មានទិដ្ឋភាពបែបនេះទេ។</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>គ្មានតួនាទីណាមួយរបស់អ្នកអនុញ្ញាតឱ្យអ្នកបើកទំព័រនេះទេ។</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>អ្នកមិនអាចប្រើការចូលគេហទំព័រនេះបានទេ។</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>អ្នកមិនអាចអានមាតិកាដែលទំព័រនេះបង្ហាញបានទេ។</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ប្រភេទទំព័រនេះមិនអាចចំណាំបានទេ៖ វាគ្រាន់តែធ្វើសកម្មភាពលើទម្រង់មួយ ឬជាទំព័រសម្រាប់តែមួយភ្លែតប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>អាសយដ្ឋាននៃទំព័រនេះបាត់។</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ឥឡូវនេះមិនអាចបើកទំព័រនេះបានទេ។</translation>
     </message>
 </context>
 <context>

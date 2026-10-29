@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Empapula ez'enkola nazo zisobola okuteekebwako obubonero: ggulawo olupapula (Okuteekateeka, ebyafaayo by'okwekenneenya, olukalala lw'abakozesa ...) olonde Teeka akabonero ku lupapula luno waggulu waalwo. Obubonero obwo bulina akabonero k'ekyuma ekiwuubaala.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Tokyakkirizibwa kuggulawo lupapula luno wano. Ggyamu akabonero, oba saba omuddukanya akuwe olukusa okuyingira.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Gezesa Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Fuuka memba w'Ekibiina kya Exponential, kyusaganya ebirowoozo era oyambeko&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Eddembe ly'okukoppa &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; n'abalala.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Ekozesa &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. Okumanya ebisingawo laba &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Eddembe ly'okukoppa &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; n'abalala.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Okumanya ebisingawo laba &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Eddembe ly'okukoppa &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; n'abalala.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Gezesa Exponential (okuva ku 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Fuuka memba w'ekibiina kya Exponential, ofune obuyambi era oyambeko&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Eddembe ly'okukoppa &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; n'abalala.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ ensobi eno. Bambi tokemba kuddamu kuweereza kusasula.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Akabonero kaweereddwa erinnya eppya «%name».</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Olupapula luno luggaddwa mu mulyango gw'omukutu guno (%siteaccess). Ggulawo akabonero mu mulyango gw'omukutu ogulina olupapula luno.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Moduli y'olupapula luno teteekeddwamu oba tekoleezeddwa wano.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Olupapula luno terukyaliwo: moduli yaalwo terina ndabika ng'eyo.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Tewali buvunaanyizibwa bwo bukukkiriza kuggulawo lupapula luno.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Tolina lukusa lw'okukozesa mulyango gw'omukutu guno.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Tolina lukusa lw'okusoma birimu olupapula luno bye lulaga.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Olupapula olw'engeri eno terusobola kuteekebwako kabonero: lukola ku foomu yokka, oba lupapula lwa kaseera kamu.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Endagiriro y'olupapula luno teriiwo.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Olupapula luno terusobola kuggulwawo kaakano.</translation>
     </message>
 </context>
 <context>

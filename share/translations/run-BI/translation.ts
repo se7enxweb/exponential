@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>Impapuro za sisitemu na zo zishobora gushirwako akamenyetso: mufungure urupapuro (Gutunganya, igitabo c'ugusuzuma, urutonde rw'abakoresha ...) hanyuma muhitemwo Gushira akamenyetso kuri uru rupapuro hejuru yarwo. Utwo tumenyetso dufise ishusho y'igikoresho.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ntimugishoboye kwugurura uru rupapuro ng'aha. Mukureho akamenyetso, canke musabe umuyobozi uburenganzira bwo kwinjira.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Gerageza Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Mube umunywanyi w'Umuryango wa Exponential, musangire kandi mutange umusanzu&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Uburenganzira bw'umwanditsi &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; n'abandi.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>Ikoreshwa na &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. Kugira mumenye ibindi raba &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Uburenganzira bw'umwanditsi &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; n'abandi.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> Kugira mumenye ibindi raba &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Uburenganzira bw'umwanditsi &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; n'abandi.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Gerageza Exponential (ivuye kuri 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Mube umunywanyi w'Umuryango wa Exponential, mushike ku mfashanyo kandi mutange umusanzu&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Uburenganzira bw'umwanditsi &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; n'abandi.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ konti yanyu.</translation>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>Akamenyetso kahinduwe izina kakitwa "%name".</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>Uru rupapuro rwazimijwe muri ubu buryo bwo gushika ku rubuga (%siteaccess). Mwugurure akamenyetso mu buryo bwo gushika ku rubuga bufise uru rupapuro.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>Modile y'uru rupapuro ntiyashizwemwo canke ntiyatanguzwa ng'aha.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>Uru rupapuro ntirukiriho: modile yarwo ntifise ivyerekanwa nk'ivyo.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>Nta ruhara rwanyu na rumwe rubemerera kwugurura uru rupapuro.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>Ntimufise uburenganzira bwo gukoresha ubu buryo bwo gushika ku rubuga.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>Ntimufise uburenganzira bwo gusoma ibirimwo uru rupapuro rwerekana.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>Uru rupapuro rw'ubu bwoko ntirushobora gushirwako akamenyetso: rukora gusa ku rupapuro rwo kwuzuza, canke ni urupapuro rw'akanya gato.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>Aderese y'uru rupapuro ntiriho.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>Uru rupapuro ntirushobora kwugururwa ubu.</translation>
     </message>
 </context>
 <context>

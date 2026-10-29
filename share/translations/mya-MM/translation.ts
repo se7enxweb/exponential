@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>စနစ်စာမျက်နှာများကိုလည်း စာညှပ်တင်နိုင်သည် - စာမျက်နှာကို ဖွင့်ပြီး (စနစ်ထည့်သွင်းမှု၊ စစ်ဆေးမှတ်တမ်း၊ အသုံးပြုသူစာရင်း ...) ၎င်း၏အထက်ရှိ "ဤစာမျက်နှာကို စာညှပ်တင်ရန်" ကို ရွေးပါ။ ထိုစာညှပ်များတွင် သွားရုပ်သင်္ကေတ ပါသည်။</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ဤစာမျက်နှာကို ဤနေရာတွင် မဖွင့်ရတော့ပါ။ စာညှပ်ကို ဖယ်ရှားပါ သို့မဟုတ် စီမံခန့်ခွဲသူထံ ဝင်ရောက်ခွင့် တောင်းပါ။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition ကို အကဲဖြတ်ရန်&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential အသိုင်းအဝိုင်း၏ အဖွဲ့ဝင် ဖြစ်ပါ၊ ဖလှယ်ပါ၊ ပါဝင်ကူညီပါ&lt;/a&gt;။ &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; နှင့် အခြားသူများ။</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; ဖြင့် လည်ပတ်သည်။ ပိုမိုသိရှိလိုပါက &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ကို ကြည့်ပါ။</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; နှင့် အခြားသူများ။</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> ပိုမိုသိရှိလိုပါက &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ကို ကြည့်ပါ။</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; နှင့် အခြားသူများ။</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential (7x မှ) ကို အကဲဖြတ်ရန်&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential အသိုင်းအဝိုင်း၏ အဖွဲ့ဝင် ဖြစ်ပါ၊ ပံ့ပိုးမှုရယူပါ၊ ပါဝင်ကူညီပါ&lt;/a&gt;။</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; နှင့် အခြားသူများ။</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>စာညှပ်ကို "%name" သို့ အမည်ပြောင်းပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ဤစာမျက်နှာကို ဤဆိုက်ဝင်ရောက်မှု (%siteaccess) တွင် ပိတ်ထားသည်။ ဤစာမျက်နှာ ပါဝင်သော ဆိုက်ဝင်ရောက်မှုတွင် စာညှပ်ကို ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ဤစာမျက်နှာ၏ မော်ဂျူးကို ဤနေရာတွင် ထည့်သွင်းမထားပါ သို့မဟုတ် ဖွင့်မထားပါ။</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ဤစာမျက်နှာ မရှိတော့ပါ။ ၎င်း၏ မော်ဂျူးတွင် ထိုမြင်ကွင်း မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>သင်၏ အခန်းကဏ္ဍများထဲမှ မည်သည့်တစ်ခုကမျှ ဤစာမျက်နှာကို ဖွင့်ခွင့် မပြုပါ။</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှုကို အသုံးပြုခွင့် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>ဤစာမျက်နှာ ပြသသည့် အကြောင်းအရာကို ဖတ်ခွင့် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ဤစာမျက်နှာအမျိုးအစားကို စာညှပ်၍ မရပါ။ ၎င်းသည် ဖောင်တစ်ခုပေါ်တွင်သာ လုပ်ဆောင်သည် သို့မဟုတ် ခဏတာ စာမျက်နှာ ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ဤစာမျက်နှာ၏ လိပ်စာ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ဤစာမျက်နှာကို ယခု ဖွင့်၍ မရပါ။</translation>
     </message>
 </context>
 <context>

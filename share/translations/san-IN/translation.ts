@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>तन्त्रपृष्ठान्यपि पृष्ठचिह्नयितुं शक्यन्ते: पृष्ठम् उद्घाटयतु (स्थापना, लेखापरीक्षामार्गः, उपयोक्तृसूचिः ...) तस्य उपरि "इदं पृष्ठं पृष्ठचिह्नयतु" इति चिनोतु। एतादृशानां पृष्ठचिह्नानां चक्रचिह्नं भवति।</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>अत्र इदं पृष्ठम् उद्घाटयितुं भवतः अनुमतिः इदानीं नास्ति। पृष्ठचिह्नम् अपसारयतु, अथवा प्रशासकं प्रवेशानुमतिं याचतु।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition इत्यस्य मूल्याङ्कनम्&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential समुदायस्य सदस्यः भवतु, आदानप्रदानं योगदानं च करोतु&lt;/a&gt;। &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; प्रतिलिप्यधिकारः &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; अन्ये च।</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; इत्यनेन सञ्चालितम्। अधिकसूचनायै &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; पश्यतु।</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; प्रतिलिप्यधिकारः &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; अन्ये च।</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> अधिकसूचनायै &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; पश्यतु।</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; प्रतिलिप्यधिकारः &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; अन्ये च।</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential इत्यस्य मूल्याङ्कनम् (7x तः)&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential समुदायस्य सदस्यः भवतु, साहाय्यं प्राप्नोतु योगदानं च करोतु&lt;/a&gt;।</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; प्रतिलिप्यधिकारः &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; अन्ये च।</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>पृष्ठचिह्नस्य नाम "%name" इति परिवर्तितम्।</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>इदं पृष्ठम् अस्मिन् जालस्थलप्रवेशे (%siteaccess) निष्क्रियम् अस्ति। यस्मिन् जालस्थलप्रवेशे इदं पृष्ठम् अस्ति, तस्मिन् पृष्ठचिह्नम् उद्घाटयतु।</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>अस्य पृष्ठस्य घटकः अत्र स्थापितः सक्रियः वा नास्ति।</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>इदं पृष्ठम् इदानीं न विद्यते: अस्य घटके तादृशं दृश्यं नास्ति।</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>भवतः भूमिकासु एका अपि इदं पृष्ठम् उद्घाटयितुम् अनुमतिं न ददाति।</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>अस्य जालस्थलप्रवेशस्य उपयोगाय भवतः अनुमतिः नास्ति।</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>इदं पृष्ठं यत् विषयवस्तु दर्शयति, तस्य पठनाय भवतः अनुमतिः नास्ति।</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>एतादृशं पृष्ठं पृष्ठचिह्नेन चिह्नितुं न शक्यते: तत् केवलं प्रपत्रे कार्यं करोति, अथवा एकक्षणमात्रस्य पृष्ठम् अस्ति।</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>अस्य पृष्ठस्य सङ्केतः नास्ति।</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>इदानीम् इदं पृष्ठम् उद्घाटयितुं न शक्यते।</translation>
     </message>
 </context>
 <context>

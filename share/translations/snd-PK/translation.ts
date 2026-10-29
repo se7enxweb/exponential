@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>سسٽم صفحا به بُڪ مارڪ ڪري سگهجن ٿا: صفحو کوليو (سيٽ اپ، آڊٽ ٽريل، استعمال ڪندڙن جي فهرست ...) ۽ ان جي مٿان "هي صفحو بُڪ مارڪ ڪريو" چونڊيو. اهڙن بُڪ مارڪن تي گيئر جو آئڪن هوندو آهي.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>توهان هاڻي هي صفحو هتي کولي نٿا سگهو. بُڪ مارڪ هٽايو، يا ڪنهن منتظم کان رسائي گهرو.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;Exponential Enterprise Edition جو جائزو وٺو&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential Community جا ميمبر ٿيو، مٽاسٽا ڪريو ۽ حصو وٺو&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ڪاپي رائيٽ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; ۽ ٻيا.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>&lt;span class="edition-info"&gt;%edition&lt;/span&gt; جي طاقت سان. وڌيڪ معلومات لاءِ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ڏسو.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ڪاپي رائيٽ &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; ۽ ٻيا.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> وڌيڪ معلومات لاءِ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; ڏسو.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ڪاپي رائيٽ &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; ۽ ٻيا.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;Exponential (From 7x) جو جائزو وٺو&lt;/a&gt; - &lt;a href="%share_link"&gt;Exponential Community جا ميمبر ٿيو، مدد حاصل ڪريو ۽ حصو وٺو&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; ڪاپي رائيٽ &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; ۽ ٻيا.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>بُڪ مارڪ جو نالو تبديل ڪري "%name" ڪيو ويو.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>هي صفحو هن سائيٽ رسائي (%siteaccess) ۾ بند ٿيل آهي. بُڪ مارڪ اهڙي سائيٽ رسائي ۾ کوليو جنهن ۾ هي صفحو موجود هجي.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>هن صفحي جو ماڊيول هتي انسٽال ٿيل يا فعال ناهي.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>هي صفحو هاڻي موجود ناهي: ان جي ماڊيول ۾ اهڙو ڪو منظر ناهي.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>توهان جو ڪوبه ڪردار توهان کي هي صفحو کولڻ جي اجازت نٿو ڏئي.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>توهان وٽ هن سائيٽ رسائي کي استعمال ڪرڻ جي اجازت ناهي.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>توهان وٽ اهو مواد پڙهڻ جي اجازت ناهي جيڪو هي صفحو ڏيکاري ٿو.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>هن قسم جي صفحي کي بُڪ مارڪ نٿو ڪري سگهجي: اهو صرف هڪ فارم تي عمل ڪري ٿو، يا صرف هڪ لمحي جو صفحو آهي.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>هن صفحي جو پتو موجود ناهي.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>هي صفحو هن وقت کولي نٿو سگهجي.</translation>
     </message>
 </context>
 <context>

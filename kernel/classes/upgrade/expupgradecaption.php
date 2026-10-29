@@ -59,7 +59,10 @@ class expUpgradeCaption
     {
         if ( !class_exists( 'BackupManager' ) )
             return false;
-        $engines = method_exists( 'BackupManager', 'supportedEngines' ) ? BackupManager::supportedEngines() : array( 'mysql' );
+        // supportedEngines() arrived in git_manager 2.0.25; older copies dump MySQL only
+        $engines = is_callable( array( 'BackupManager', 'supportedEngines' ) )
+            ? (array)call_user_func( array( 'BackupManager', 'supportedEngines' ) )
+            : array( 'mysql' );
         return in_array( $engine, $engines, true );
     }
 

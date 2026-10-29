@@ -2317,6 +2317,10 @@
         <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
         <translation>სანიშნეებში შეიძლება სისტემური გვერდების დამატებაც: გახსენით გვერდი (კონფიგურაცია, აუდიტის ჟურნალი, მომხმარებელთა სია ...) და მის ზემოთ აირჩიეთ „ამ გვერდის სანიშნეებში დამატება“. ასეთ სანიშნეებს გადაცემათა კოლოფის ხატულა აქვს.</translation>
     </message>
+    <message>
+        <source>You may no longer open this page here. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ამ გვერდის აქ გახსნა აღარ შეგიძლიათ. მოაცილეთ სანიშნე ან სთხოვეთ ადმინისტრატორს წვდომა.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -13885,32 +13889,20 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/page_copyright</name>
     <message>
-        <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%evaluate_link"&gt;შეაფასეთ Exponential Enterprise Edition&lt;/a&gt; - &lt;a href="%share_link"&gt;გახდით Exponential Community-ის წევრი, გაცვალეთ გამოცდილება და შეიტანეთ წვლილი&lt;/a&gt;. &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; საავტორო უფლებები &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; და სხვები.</translation>
-    </message>
-    <message>
         <source>Powered by &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation>მუშაობს პლატფორმაზე &lt;span class="edition-info"&gt;%edition&lt;/span&gt;. დამატებითი ინფორმაციისთვის იხილეთ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; საავტორო უფლებები &amp;copy; 1999-2014 &lt;a href="%ez_link"&gt;7x AS&lt;/a&gt; და სხვები.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
         <translation> დამატებითი ინფორმაციისთვის იხილეთ &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
-        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; საავტორო უფლებები &amp;copy; 1998-2026 &lt;a href="%ez_link"&gt;7x&lt;/a&gt; და სხვები.</translation>
+        <source>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</source>
+        <translation>&lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%foundation_link"&gt;Exponential Foundation&lt;/a&gt; and &lt;a href="%7x_link"&gt;7x&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href="%evaluate_link"&gt;Evaluate Exponential (From 7x)&lt;/a&gt; - &lt;a href="%share_link"&gt;Become a member of the Exponential Community, get support and contribute&lt;/a&gt;.</source>
         <translation>&lt;a href="%evaluate_link"&gt;შეაფასეთ Exponential (7x-ისგან)&lt;/a&gt; - &lt;a href="%share_link"&gt;გახდით Exponential Community-ის წევრი, მიიღეთ მხარდაჭერა და შეიტანეთ წვლილი&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; and others.</source>
-        <translation> &lt;a href="%ezpublish_link"&gt;Exponential&lt;/a&gt; საავტორო უფლებები &amp;copy; 1998-2026 &lt;a href="%7x_link"&gt;7x&lt;/a&gt; და სხვები.</translation>
     </message>
     <message>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
@@ -56393,6 +56385,42 @@ your account.</source>
     <message>
         <source>The bookmark was renamed to "%name".</source>
         <translation>სანიშნეს სახელი გადაერქვა: „%name“.</translation>
+    </message>
+    <message>
+        <source>This page is switched off in this siteaccess (%siteaccess). Open the bookmark in a siteaccess that has it.</source>
+        <translation>ეს გვერდი გამორთულია ამ საიტზე წვდომაში (%siteaccess). გახსენით სანიშნე იმ საიტზე წვდომაში, რომელშიც ეს გვერდი არის.</translation>
+    </message>
+    <message>
+        <source>The module of this page is not installed or not enabled here.</source>
+        <translation>ამ გვერდის მოდული აქ არ არის დაინსტალირებული ან ჩართული.</translation>
+    </message>
+    <message>
+        <source>This page no longer exists: its module has no such view.</source>
+        <translation>ეს გვერდი აღარ არსებობს: მის მოდულს ასეთი ხედი არ აქვს.</translation>
+    </message>
+    <message>
+        <source>None of your roles allows you to open this page.</source>
+        <translation>თქვენი არცერთი როლი არ გაძლევთ ამ გვერდის გახსნის უფლებას.</translation>
+    </message>
+    <message>
+        <source>You may not use this siteaccess.</source>
+        <translation>ამ საიტზე წვდომის გამოყენება არ შეგიძლიათ.</translation>
+    </message>
+    <message>
+        <source>You may not read the content this page shows.</source>
+        <translation>შიგთავსის წაკითხვა, რომელსაც ეს გვერდი აჩვენებს, არ შეგიძლიათ.</translation>
+    </message>
+    <message>
+        <source>This kind of page cannot be bookmarked: it only acts on a form, or is a page of one moment.</source>
+        <translation>ამ ტიპის გვერდის სანიშნეებში დამატება შეუძლებელია: ის მხოლოდ ფორმაზე მოქმედებს, ან ერთი წამის გვერდია.</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing.</source>
+        <translation>ამ გვერდის მისამართი აკლია.</translation>
+    </message>
+    <message>
+        <source>This page cannot be opened now.</source>
+        <translation>ამ გვერდის გახსნა ახლა შეუძლებელია.</translation>
     </message>
 </context>
 <context>
