@@ -2,14 +2,14 @@
 title: notification.ini [MailSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [MailSettings] in notification.ini: EmailSender"
-keywords: notification.ini, MailSettings, INI, setting, EmailSender
+summary: "The settings of [MailSettings] in notification.ini: EmailSender, HTMLLayout"
+keywords: notification.ini, MailSettings, INI, setting, EmailSender, HTMLLayout
 type: generated
 generated: exp:help:examples
 ---
 # notification.ini [MailSettings]
 
-The block `[MailSettings]` of `settings/notification.ini`, with 1 setting(s).
+The block `[MailSettings]` of `settings/notification.ini`, with 2 setting(s).
 
 Never edit `settings/notification.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -29,6 +29,24 @@ Default: empty.
 # settings/override/notification.ini.append.php
 [MailSettings]
 EmailSender=
+*/ ?>
+```
+
+## HTMLLayout
+
+> enabled: a notification written as text (the templates of  
+> notification/handler/\*/view/) is sent as text and as HTML in the mail layout  
+> (design:mail/layout.tpl), the first address on a line of its own as the  
+> button. disabled: as text only. A template that sets content\_type is sent as  
+> it says either way.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/notification.ini.append.php
+[MailSettings]
+HTMLLayout=enabled
 */ ?>
 ```
 

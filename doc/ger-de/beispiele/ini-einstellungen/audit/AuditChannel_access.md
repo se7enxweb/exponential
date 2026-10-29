@@ -67,7 +67,10 @@ ArchiveFormat=gzip
 
 ## Sinks
 
-Standard: eine Liste mit 1: `syslog`.
+> The user audit log: records about a user account or group also go to the table  
+> expuser\_audit (\[UserAuditSettings\], doc/eng-us/features/6.0/user-audit.md)  
+
+Standard: eine Liste mit 2: `syslog`, `useraudit`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -76,6 +79,7 @@ Standard: eine Liste mit 1: `syslog`.
 # ein leeres "Sinks[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 Sinks[]
 Sinks[]=syslog
+Sinks[]=useraudit
 */ ?>
 ```
 

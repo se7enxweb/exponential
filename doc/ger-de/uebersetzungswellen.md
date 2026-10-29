@@ -37,7 +37,7 @@ eine Welle gemacht und geprüft wird. Die Sprachen, ihre Locales und ihre Übers
 |---|---:|
 | Administration: Texte in `share/translations/untranslated/translation.ts`, in 10 Teilen | **18.877** (128.063 Wörter) |
 | Mitgelieferte Erweiterungen (`expimageeditor`, `ezjscore`, `ezoe`) | **567** Texte |
-| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.734** Seiten, 4.973.938 Wörter |
+| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.738** Seiten, 4.981.821 Wörter |
 | Hilfe: Tabellen der erzeugten Beispielseiten (`.examples/`) | **2.705** Einträge, 80.642 Wörter |
 | Übersetzungen der Administration, davon vollständig | **155**, 3 |
 | davon im täglichen Gebrauch (Administration, Erweiterungen und Hilfe des Alltags ≥ 97 %) | **2** |
@@ -210,22 +210,22 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 
 | Stufe | Abschnitte | Seiten | Wörter | Teile |
 |---|---|---:|---:|---:|
-| Alltag: Redakteure, Benutzer, Anleitungen für Administratoren | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 261 | 292.497 | 13 |
-| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 22 weitere | 3.683 | 2.877.983 | 112 |
-| Entwicklerreferenz | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` und 12 weitere | 1.790 | 1.803.458 | 70 |
+| Alltag: Redakteure, Benutzer, Anleitungen für Administratoren | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 265 | 299.038 | 13 |
+| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 22 weitere | 3.683 | 2.878.119 | 112 |
+| Entwicklerreferenz | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` und 12 weitere | 1.790 | 1.804.664 | 70 |
 | Tabellen der erzeugten Beispiele | `examples` | 2.705 Einträge | 80.642 | 4 |
 
 <details><summary>Die 199 Teile der Hilfe</summary>
 
 | Teil | Stufe | Seiten | Wörter | Erste … letzte Seite |
 |---|---|---:|---:|---|
-| `H-help-01` | daily | 11 | 24.706 | `help/README.md` … `help/develop-with-git.md` |
-| `H-help-02` | daily | 11 | 12.294 | `help/editing-content.md` … `help/media-and-uploads.md` |
-| `H-help-03` | daily | 11 | 30.227 | `help/os-support.md` … `help/who-is-the-exponential-foundation.md` |
-| `H-help-manual-01` | daily | 44 | 17.445 | `help/manual/README.md` … `help/manual/how-do-i-let-a-translator-edit-one-language.md` |
-| `H-help-manual-02` | daily | 44 | 18.658 | `help/manual/how-do-i-move-a-user-to-another-group.md` … `help/manual/why-does-search-not-find-an-item.md` |
+| `H-help-01` | daily | 12 | 26.349 | `help/README.md` … `help/editing-content.md` |
+| `H-help-02` | daily | 12 | 15.164 | `help/free-documentation.md` … `help/os-support.md` |
+| `H-help-03` | daily | 13 | 31.620 | `help/project-files.md` … `help/who-is-the-exponential-foundation.md` |
+| `H-help-manual-01` | daily | 44 | 17.658 | `help/manual/README.md` … `help/manual/how-do-i-let-a-translator-edit-one-language.md` |
+| `H-help-manual-02` | daily | 44 | 18.665 | `help/manual/how-do-i-move-a-user-to-another-group.md` … `help/manual/why-does-search-not-find-an-item.md` |
 | `H-help-non-technical-people` | daily | 47 | 28.042 | `help/non-technical-people/checklists/README.md` … `help/non-technical-people/words/the-site-and-the-administration.md` |
-| `H-guides-01` | daily | 10 | 26.121 | `guides/README.md` … `guides/collected-information.md` |
+| `H-guides-01` | daily | 10 | 26.536 | `guides/README.md` … `guides/collected-information.md` |
 | `H-guides-02` | daily | 11 | 28.453 | `guides/content-history.md` … `guides/getting-started.md` |
 | `H-guides-03` | daily | 10 | 28.000 | `guides/mail-preferences-administrator.md` … `guides/passkeys.md` |
 | `H-guides-04` | daily | 11 | 28.451 | `guides/pdf-exports.md` … `guides/system-information.md` |
@@ -239,7 +239,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-install-05` | guides | 7 | 7.921 | `install/migration/exponential-platform-nexus.md` … `install/migration/magento.md` |
 | `H-install-06` | guides | 7 | 5.299 | `install/migration/older-releases.md` … `install/migration/wordpress.md` |
 | `H-features-01` | guides | 22 | 36.504 | `features/4.7/cluster_events.md` … `features/6.0/bookmark-folders.md` |
-| `H-features-02` | guides | 23 | 39.007 | `features/6.0/bookmarks-of-system-pages.md` … `features/6.0/extension-list-and-downloads.md` |
+| `H-features-02` | guides | 23 | 39.128 | `features/6.0/bookmarks-of-system-pages.md` … `features/6.0/extension-list-and-downloads.md` |
 | `H-features-03` | guides | 23 | 16.924 | `features/6.0/extension-loading-order.md` … `features/6.0/extensions/ezgmaplocation.md` |
 | `H-features-04` | guides | 23 | 16.721 | `features/6.0/extensions/ezie.md` … `features/6.0/extensions/owsimpleoperator.md` |
 | `H-features-05` | guides | 23 | 37.605 | `features/6.0/extensions/recaptcha.md` … `features/6.0/legacy-bridge.md` |
@@ -263,7 +263,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-creators-03` | guides | 47 | 28.743 | `help/creators/website-creators/menus-and-navigation.md` … `help/creators/website-creators/your-first-site-step-by-step.md` |
 | `H-help-customers-01` | guides | 37 | 25.803 | `help/customers/commerce/README.md` … `help/customers/day-to-day/analytics-and-what-to-measure.md` |
 | `H-help-customers-02` | guides | 38 | 26.709 | `help/customers/day-to-day/approvals-and-review.md` … `help/customers/growth/rss-and-podcast-feeds.md` |
-| `H-help-customers-03` | guides | 38 | 24.959 | `help/customers/growth/using-ai-drafts-responsibly.md` … `help/customers/partners-and-hosts/who-does-what.md` |
+| `H-help-customers-03` | guides | 38 | 24.974 | `help/customers/growth/using-ai-drafts-responsibly.md` … `help/customers/partners-and-hosts/who-does-what.md` |
 | `H-help-customers-04` | guides | 38 | 22.266 | `help/customers/partners-and-hosts/working-with-7x-and-the-project.md` … `help/customers/what-you-own.md` |
 | `H-help-designers-01` | guides | 63 | 28.180 | `help/designers/README.md` … `help/designers/extensions/gitignore-for-themes.md` |
 | `H-help-designers-02` | guides | 64 | 24.251 | `help/designers/extensions/install-and-changelog-files.md` … `help/designers/sales/assets-under-separate-licenses.md` |
@@ -395,10 +395,10 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-bc-05` | reference | 11 | 30.832 | `bc/6.0/frankenphp.md` … `bc/6.0/kickstartercli.md` |
 | `H-bc-06` | reference | 11 | 9.474 | `bc/6.0/locations-tab-paging-and-sorting.md` … `bc/6.0/love/ROADMAP.md` |
 | `H-bc-07` | reference | 11 | 20.982 | `bc/6.0/love/TESTING.md` … `bc/6.0/oauth-pkce.md` |
-| `H-bc-08` | reference | 10 | 12.624 | `bc/6.0/oauth-token-hardening.md` … `bc/6.0/php-8.0-support.md` |
+| `H-bc-08` | reference | 10 | 12.854 | `bc/6.0/oauth-token-hardening.md` … `bc/6.0/php-8.0-support.md` |
 | `H-bc-09` | reference | 11 | 35.090 | `bc/6.0/php8.md` … `bc/6.0/repair.md` |
 | `H-bc-10` | reference | 11 | 27.579 | `bc/6.0/response-cache-and-navigation.md` … `bc/6.0/trash.md` |
-| `H-bc-11` | reference | 11 | 26.805 | `bc/6.0/trusted-proxies.md` … `bc/6.0/yui-removal.md` |
+| `H-bc-11` | reference | 11 | 27.781 | `bc/6.0/trusted-proxies.md` … `bc/6.0/yui-removal.md` |
 | `H-history-01` | reference | 23 | 9.704 | `history/2023/2023-12.md` … `history/2025/2025-09.md` |
 | `H-history-02` | reference | 24 | 42.484 | `history/2025/2025-10.md` … `history/ecosystem/adminneo.md` |
 | `H-history-03` | reference | 24 | 20.834 | `history/ecosystem/cjw-exponential-platform-nexus.md` … `history/ecosystem/ezplatform-query-fieldtype.md` |
@@ -509,44 +509,44 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | 25 | `fas-IR/S` | Persisch | Hilfe einrichten | klein | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab |
 | 26 | `pus-AF/S` | Paschtu | Hilfe einrichten | klein | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab |
 | 27 | `kur-TR/S` | Kurdisch (Kurmandschi) | Hilfe einrichten | klein | 3 | `GUIDE.md` |
-| 28 | `ara-SA/H-help-01` | Arabisch | Hilfe `H-help-01` | 11 Seiten, 24.706 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 29 | `tur-TR/H-help-01` | Türkisch | Hilfe `H-help-01` | 11 Seiten, 24.706 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 30 | `ukr-UA/H-help-01` | Ukrainisch | Hilfe `H-help-01` | 11 Seiten, 24.706 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 31 | `rus-RU/H-help-01` | Russisch | Hilfe `H-help-01` | 11 Seiten, 24.706 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 32 | `fas-IR/H-help-01` | Persisch | Hilfe `H-help-01` | 11 Seiten, 24.706 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 33 | `pus-AF/H-help-01` | Paschtu | Hilfe `H-help-01` | 11 Seiten, 24.706 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 34 | `kur-TR/H-help-01` | Kurdisch (Kurmandschi) | Hilfe `H-help-01` | 11 Seiten, 24.706 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 35 | `ara-SA/H-help-02` | Arabisch | Hilfe `H-help-02` | 11 Seiten, 12.294 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 36 | `tur-TR/H-help-02` | Türkisch | Hilfe `H-help-02` | 11 Seiten, 12.294 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 37 | `ukr-UA/H-help-02` | Ukrainisch | Hilfe `H-help-02` | 11 Seiten, 12.294 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 38 | `rus-RU/H-help-02` | Russisch | Hilfe `H-help-02` | 11 Seiten, 12.294 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 39 | `fas-IR/H-help-02` | Persisch | Hilfe `H-help-02` | 11 Seiten, 12.294 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 40 | `pus-AF/H-help-02` | Paschtu | Hilfe `H-help-02` | 11 Seiten, 12.294 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 41 | `kur-TR/H-help-02` | Kurdisch (Kurmandschi) | Hilfe `H-help-02` | 11 Seiten, 12.294 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 42 | `ara-SA/H-help-03` | Arabisch | Hilfe `H-help-03` | 11 Seiten, 30.227 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 43 | `tur-TR/H-help-03` | Türkisch | Hilfe `H-help-03` | 11 Seiten, 30.227 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 44 | `ukr-UA/H-help-03` | Ukrainisch | Hilfe `H-help-03` | 11 Seiten, 30.227 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 45 | `rus-RU/H-help-03` | Russisch | Hilfe `H-help-03` | 11 Seiten, 30.227 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 46 | `fas-IR/H-help-03` | Persisch | Hilfe `H-help-03` | 11 Seiten, 30.227 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 47 | `pus-AF/H-help-03` | Paschtu | Hilfe `H-help-03` | 11 Seiten, 30.227 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 48 | `kur-TR/H-help-03` | Kurdisch (Kurmandschi) | Hilfe `H-help-03` | 11 Seiten, 30.227 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 49 | `ara-SA/H-help-manual-01` | Arabisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.445 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 50 | `tur-TR/H-help-manual-01` | Türkisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.445 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 51 | `ukr-UA/H-help-manual-01` | Ukrainisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.445 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 52 | `rus-RU/H-help-manual-01` | Russisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.445 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 53 | `fas-IR/H-help-manual-01` | Persisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.445 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 54 | `pus-AF/H-help-manual-01` | Paschtu | Hilfe `H-help-manual-01` | 44 Seiten, 17.445 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 55 | `kur-TR/H-help-manual-01` | Kurdisch (Kurmandschi) | Hilfe `H-help-manual-01` | 44 Seiten, 17.445 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 56 | `ara-SA/H-help-manual-02` | Arabisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.658 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 57 | `tur-TR/H-help-manual-02` | Türkisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.658 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 58 | `ukr-UA/H-help-manual-02` | Ukrainisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.658 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 59 | `rus-RU/H-help-manual-02` | Russisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.658 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 60 | `fas-IR/H-help-manual-02` | Persisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.658 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 28 | `ara-SA/H-help-01` | Arabisch | Hilfe `H-help-01` | 12 Seiten, 26.349 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 29 | `tur-TR/H-help-01` | Türkisch | Hilfe `H-help-01` | 12 Seiten, 26.349 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 30 | `ukr-UA/H-help-01` | Ukrainisch | Hilfe `H-help-01` | 12 Seiten, 26.349 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 31 | `rus-RU/H-help-01` | Russisch | Hilfe `H-help-01` | 12 Seiten, 26.349 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 32 | `fas-IR/H-help-01` | Persisch | Hilfe `H-help-01` | 12 Seiten, 26.349 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 33 | `pus-AF/H-help-01` | Paschtu | Hilfe `H-help-01` | 12 Seiten, 26.349 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 34 | `kur-TR/H-help-01` | Kurdisch (Kurmandschi) | Hilfe `H-help-01` | 12 Seiten, 26.349 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 35 | `ara-SA/H-help-02` | Arabisch | Hilfe `H-help-02` | 12 Seiten, 15.164 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 36 | `tur-TR/H-help-02` | Türkisch | Hilfe `H-help-02` | 12 Seiten, 15.164 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 37 | `ukr-UA/H-help-02` | Ukrainisch | Hilfe `H-help-02` | 12 Seiten, 15.164 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 38 | `rus-RU/H-help-02` | Russisch | Hilfe `H-help-02` | 12 Seiten, 15.164 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 39 | `fas-IR/H-help-02` | Persisch | Hilfe `H-help-02` | 12 Seiten, 15.164 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 40 | `pus-AF/H-help-02` | Paschtu | Hilfe `H-help-02` | 12 Seiten, 15.164 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 41 | `kur-TR/H-help-02` | Kurdisch (Kurmandschi) | Hilfe `H-help-02` | 12 Seiten, 15.164 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 42 | `ara-SA/H-help-03` | Arabisch | Hilfe `H-help-03` | 13 Seiten, 31.620 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 43 | `tur-TR/H-help-03` | Türkisch | Hilfe `H-help-03` | 13 Seiten, 31.620 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 44 | `ukr-UA/H-help-03` | Ukrainisch | Hilfe `H-help-03` | 13 Seiten, 31.620 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 45 | `rus-RU/H-help-03` | Russisch | Hilfe `H-help-03` | 13 Seiten, 31.620 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 46 | `fas-IR/H-help-03` | Persisch | Hilfe `H-help-03` | 13 Seiten, 31.620 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 47 | `pus-AF/H-help-03` | Paschtu | Hilfe `H-help-03` | 13 Seiten, 31.620 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 48 | `kur-TR/H-help-03` | Kurdisch (Kurmandschi) | Hilfe `H-help-03` | 13 Seiten, 31.620 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 49 | `ara-SA/H-help-manual-01` | Arabisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.658 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 50 | `tur-TR/H-help-manual-01` | Türkisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.658 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 51 | `ukr-UA/H-help-manual-01` | Ukrainisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.658 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 52 | `rus-RU/H-help-manual-01` | Russisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.658 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 53 | `fas-IR/H-help-manual-01` | Persisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.658 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 54 | `pus-AF/H-help-manual-01` | Paschtu | Hilfe `H-help-manual-01` | 44 Seiten, 17.658 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 55 | `kur-TR/H-help-manual-01` | Kurdisch (Kurmandschi) | Hilfe `H-help-manual-01` | 44 Seiten, 17.658 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 56 | `ara-SA/H-help-manual-02` | Arabisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.665 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 57 | `tur-TR/H-help-manual-02` | Türkisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.665 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 58 | `ukr-UA/H-help-manual-02` | Ukrainisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.665 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 59 | `rus-RU/H-help-manual-02` | Russisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.665 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 60 | `fas-IR/H-help-manual-02` | Persisch | Hilfe `H-help-manual-02` | 44 Seiten, 18.665 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
 
 Die ganze Warteschlange und die Seiten einer Welle: `./console exp:i18n waves --list`, `./console exp:i18n waves --wave=<Welle>`.
 
 Erzeugt mit `./console exp:i18n waves`; `./console exp:i18n waves --check` und der Test `expI18nTranslationWavesTest` schlagen fehl, sobald ein Prozentwert nicht mehr stimmt oder ein Umfang um mehr als 3 % abweicht.
-<!-- exp:i18n waves data {"status":{"afr-ZA":[99,100,0,0],"aka-GH":[99,80,0,0],"amh-ET":[99,100,0,0],"ara-SA":[99,80,0,0],"arc-IQ":[99,80,0,0],"asm-IN":[99,80,0,0],"ast-ES":[99,100,0,0],"aze-AZ":[99,80,0,0],"bam-ML":[99,100,0,0],"bel-BY":[99,80,0,0],"ben-BD":[99,100,0,0],"bho-IN":[99,80,0,0],"bod-CN":[99,80,0,0],"bos-BA":[99,80,0,0],"bre-FR":[99,100,0,0],"brx-IN":[99,100,0,0],"bul-BG":[99,100,0,0],"cat-ES":[99,100,0,0],"ceb-PH":[99,80,0,0],"che-RU":[99,80,0,0],"chi-CN":[99,100,0,0],"chi-TW":[99,100,0,0],"ckb-IQ":[99,80,0,0],"cro-HR":[99,80,0,0],"cym-GB":[99,80,0,0],"cze-CZ":[99,80,0,0],"dan-DK":[99,80,0,0],"div-MV":[99,100,0,0],"doi-IN":[99,100,0,0],"dsb-DE":[99,80,0,0],"dut-NL":[99,80,0,0],"dzo-BT":[99,100,0,0],"ell-GR":[99,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[99,100,0,0],"esl-ES":[99,80,0,0],"esl-MX":[99,80,0,0],"est-EE":[99,80,0,0],"eus-ES":[99,80,0,0],"ewe-GH":[99,100,0,0],"fao-FO":[99,100,0,0],"fas-AF":[99,100,0,0],"fas-IR":[99,80,0,0],"fil-PH":[99,80,0,0],"fin-FI":[99,80,0,0],"fre-FR":[99,80,0,0],"fry-NL":[99,100,0,0],"ful-SN":[99,80,0,0],"ger-DE":[100,76,100,99],"gla-GB":[99,80,0,0],"gle-IE":[99,80,0,0],"glg-ES":[99,80,0,0],"guj-IN":[99,100,0,0],"hau-NG":[99,100,0,0],"haw-US":[99,80,0,0],"heb-IL":[99,80,0,0],"hin-IN":[99,80,0,0],"hsb-DE":[99,100,0,0],"hun-HU":[99,80,0,0],"huy-IL":[99,80,0,0],"hye-AM":[99,80,0,0],"ibo-NG":[99,100,0,0],"ind-ID":[99,80,0,0],"isl-IS":[99,80,0,0],"ita-IT":[99,80,0,0],"jav-ID":[99,80,0,0],"jpn-JP":[99,100,0,0],"kab-DZ":[99,100,0,0],"kal-GL":[99,80,0,0],"kan-IN":[99,100,0,0],"kas-IN":[99,100,0,0],"kat-GE":[99,80,0,0],"kaz-KZ":[99,80,0,0],"khm-KH":[99,80,0,0],"kik-KE":[99,80,0,0],"kin-RW":[99,80,0,0],"kir-KG":[99,80,0,0],"kok-IN":[99,100,0,0],"kor-KP":[99,100,0,0],"kor-KR":[99,100,0,0],"kur-TR":[99,80,0,0],"lao-LA":[99,80,0,0],"lat-VA":[99,80,0,0],"lav-LV":[99,80,0,0],"lin-CD":[99,80,0,0],"lit-LT":[99,100,0,0],"ltz-LU":[99,100,0,0],"lug-UG":[99,80,0,0],"mai-IN":[99,80,0,0],"mal-IN":[99,100,0,0],"mar-IN":[99,100,0,0],"mkd-MK":[99,80,0,0],"mlg-MG":[99,80,0,0],"mlt-MT":[99,80,0,0],"mni-IN":[99,100,0,0],"mon-MN":[99,80,0,0],"mri-NZ":[99,80,0,0],"msa-MY":[99,80,0,0],"mya-MM":[99,80,0,0],"nep-NP":[99,80,0,0],"nor-NO":[99,80,0,0],"nqo-GN":[99,100,0,0],"oci-FR":[99,100,0,0],"ori-IN":[99,100,0,0],"orm-ET":[99,80,0,0],"pan-IN":[99,100,0,0],"pcm-NG":[99,80,0,0],"pnb-PK":[99,80,0,0],"pol-PL":[99,80,0,0],"por-BR":[99,80,0,0],"por-PT":[99,100,0,0],"pus-AF":[99,80,0,0],"que-PE":[99,100,0,0],"roh-CH":[99,100,0,0],"ron-RO":[99,80,0,0],"run-BI":[99,80,0,0],"rus-RU":[99,100,0,0],"san-IN":[99,100,0,0],"sat-IN":[99,100,0,0],"ser-SR":[99,100,0,0],"sin-LK":[99,80,0,0],"slk-SK":[99,80,0,0],"slv-SI":[99,80,0,0],"sme-NO":[99,100,0,0],"sna-ZW":[99,80,0,0],"snd-PK":[99,80,0,0],"som-SO":[99,100,0,0],"sqi-AL":[99,80,0,0],"srp-RS":[99,100,0,0],"sun-ID":[99,80,0,0],"swa-KE":[99,80,0,0],"swe-SE":[99,80,0,0],"syr-IQ":[99,80,0,0],"tam-IN":[99,100,0,0],"tat-RU":[99,80,0,0],"tel-IN":[99,100,0,0],"tgk-TJ":[99,80,0,0],"tha-TH":[99,80,0,0],"tir-ET":[99,80,0,0],"tlh-QO":[99,80,0,0],"ton-TO":[99,100,0,0],"tuk-TM":[99,80,0,0],"tur-TR":[99,80,0,0],"uig-CN":[99,80,0,0],"ukr-UA":[99,100,0,0],"urd-PK":[99,100,0,0],"uzb-UZ":[99,80,0,0],"vie-VN":[99,80,0,0],"wol-SN":[99,100,0,0],"xho-ZA":[99,100,0,0],"yid-US":[99,80,0,0],"yor-NG":[99,100,0,0],"zgh-MA":[99,100,0,0],"zul-ZA":[99,100,0,0]},"sizes":{"messages":18877,"extensions":567,"parts":199,"daily_pages":261,"daily_words":292497,"guides_pages":3683,"guides_words":2877983,"reference_pages":1790,"reference_words":1803458,"tables_pages":0,"tables_words":80642},"waves":31052,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
+<!-- exp:i18n waves data {"status":{"afr-ZA":[99,100,0,0],"aka-GH":[99,80,0,0],"amh-ET":[99,100,0,0],"ara-SA":[99,80,0,0],"arc-IQ":[99,80,0,0],"asm-IN":[99,80,0,0],"ast-ES":[99,100,0,0],"aze-AZ":[99,80,0,0],"bam-ML":[99,100,0,0],"bel-BY":[99,80,0,0],"ben-BD":[99,100,0,0],"bho-IN":[99,80,0,0],"bod-CN":[99,80,0,0],"bos-BA":[99,80,0,0],"bre-FR":[99,100,0,0],"brx-IN":[99,100,0,0],"bul-BG":[99,100,0,0],"cat-ES":[99,100,0,0],"ceb-PH":[99,80,0,0],"che-RU":[99,80,0,0],"chi-CN":[99,100,0,0],"chi-TW":[99,100,0,0],"ckb-IQ":[99,80,0,0],"cro-HR":[99,80,0,0],"cym-GB":[99,80,0,0],"cze-CZ":[99,80,0,0],"dan-DK":[99,80,0,0],"div-MV":[99,100,0,0],"doi-IN":[99,100,0,0],"dsb-DE":[99,80,0,0],"dut-NL":[99,80,0,0],"dzo-BT":[99,100,0,0],"ell-GR":[99,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[99,100,0,0],"esl-ES":[99,80,0,0],"esl-MX":[99,80,0,0],"est-EE":[99,80,0,0],"eus-ES":[99,80,0,0],"ewe-GH":[99,100,0,0],"fao-FO":[99,100,0,0],"fas-AF":[99,100,0,0],"fas-IR":[99,80,0,0],"fil-PH":[99,80,0,0],"fin-FI":[99,80,0,0],"fre-FR":[99,80,0,0],"fry-NL":[99,100,0,0],"ful-SN":[99,80,0,0],"ger-DE":[100,76,100,99],"gla-GB":[99,80,0,0],"gle-IE":[99,80,0,0],"glg-ES":[99,80,0,0],"guj-IN":[99,100,0,0],"hau-NG":[99,100,0,0],"haw-US":[99,80,0,0],"heb-IL":[99,80,0,0],"hin-IN":[99,80,0,0],"hsb-DE":[99,100,0,0],"hun-HU":[99,80,0,0],"huy-IL":[99,80,0,0],"hye-AM":[99,80,0,0],"ibo-NG":[99,100,0,0],"ind-ID":[99,80,0,0],"isl-IS":[99,80,0,0],"ita-IT":[99,80,0,0],"jav-ID":[99,80,0,0],"jpn-JP":[99,100,0,0],"kab-DZ":[99,100,0,0],"kal-GL":[99,80,0,0],"kan-IN":[99,100,0,0],"kas-IN":[99,100,0,0],"kat-GE":[99,80,0,0],"kaz-KZ":[99,80,0,0],"khm-KH":[99,80,0,0],"kik-KE":[99,80,0,0],"kin-RW":[99,80,0,0],"kir-KG":[99,80,0,0],"kok-IN":[99,100,0,0],"kor-KP":[99,100,0,0],"kor-KR":[99,100,0,0],"kur-TR":[99,80,0,0],"lao-LA":[99,80,0,0],"lat-VA":[99,80,0,0],"lav-LV":[99,80,0,0],"lin-CD":[99,80,0,0],"lit-LT":[99,100,0,0],"ltz-LU":[99,100,0,0],"lug-UG":[99,80,0,0],"mai-IN":[99,80,0,0],"mal-IN":[99,100,0,0],"mar-IN":[99,100,0,0],"mkd-MK":[99,80,0,0],"mlg-MG":[99,80,0,0],"mlt-MT":[99,80,0,0],"mni-IN":[99,100,0,0],"mon-MN":[99,80,0,0],"mri-NZ":[99,80,0,0],"msa-MY":[99,80,0,0],"mya-MM":[99,80,0,0],"nep-NP":[99,80,0,0],"nor-NO":[99,80,0,0],"nqo-GN":[99,100,0,0],"oci-FR":[99,100,0,0],"ori-IN":[99,100,0,0],"orm-ET":[99,80,0,0],"pan-IN":[99,100,0,0],"pcm-NG":[99,80,0,0],"pnb-PK":[99,80,0,0],"pol-PL":[99,80,0,0],"por-BR":[99,80,0,0],"por-PT":[99,100,0,0],"pus-AF":[99,80,0,0],"que-PE":[99,100,0,0],"roh-CH":[99,100,0,0],"ron-RO":[99,80,0,0],"run-BI":[99,80,0,0],"rus-RU":[99,100,0,0],"san-IN":[99,100,0,0],"sat-IN":[99,100,0,0],"ser-SR":[99,100,0,0],"sin-LK":[99,80,0,0],"slk-SK":[99,80,0,0],"slv-SI":[99,80,0,0],"sme-NO":[99,100,0,0],"sna-ZW":[99,80,0,0],"snd-PK":[99,80,0,0],"som-SO":[99,100,0,0],"sqi-AL":[99,80,0,0],"srp-RS":[99,100,0,0],"sun-ID":[99,80,0,0],"swa-KE":[99,80,0,0],"swe-SE":[99,80,0,0],"syr-IQ":[99,80,0,0],"tam-IN":[99,100,0,0],"tat-RU":[99,80,0,0],"tel-IN":[99,100,0,0],"tgk-TJ":[99,80,0,0],"tha-TH":[99,80,0,0],"tir-ET":[99,80,0,0],"tlh-QO":[99,80,0,0],"ton-TO":[99,100,0,0],"tuk-TM":[99,80,0,0],"tur-TR":[99,80,0,0],"uig-CN":[99,80,0,0],"ukr-UA":[99,100,0,0],"urd-PK":[99,100,0,0],"uzb-UZ":[99,80,0,0],"vie-VN":[99,80,0,0],"wol-SN":[99,100,0,0],"xho-ZA":[99,100,0,0],"yid-US":[99,80,0,0],"yor-NG":[99,100,0,0],"zgh-MA":[99,100,0,0],"zul-ZA":[99,100,0,0]},"sizes":{"messages":18877,"extensions":567,"parts":199,"daily_pages":265,"daily_words":299038,"guides_pages":3683,"guides_words":2878119,"reference_pages":1790,"reference_words":1804664,"tables_pages":0,"tables_words":80642},"waves":31052,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
 <!-- generated: exp:i18n waves (end) -->
 
 ## Was die Wellen sind

@@ -75,6 +75,8 @@ Der Text nennt das Konto, den Benutzernamen, die Gruppe (*Editors*) und wer gefr
 Den Link in einem Browser öffnen, in dem Sie nicht angemeldet sind. Die Administration verlangt die Anmeldung; dann
 öffnet sich die Freigabeseite mit der Vorschau des Kontos und den Beteiligten.
 
+![Das Freigabeelement eines neuen Redakteurskontos: die Entscheidung mit Freigeben und Ablehnen, die Vorschau des Kontos und die Beteiligten](bilder/account-approval/approval-item.png)
+
 - **Freigeben** drücken und bestätigen. Die Meldung sagt, dass das Konto freigegeben und veröffentlicht ist. Es steht in
   Benutzer > Editors und meldet sich mit dem Passwort an, das der Redakteur gesetzt hat.
 - Oder **Ablehnen** drücken und bestätigen. Das Konto ist nicht veröffentlicht und kann sich nicht anmelden; der
@@ -86,7 +88,11 @@ falsches Passwort wird abgewiesen, die Seite fragt erneut, und nichts wird entsc
 gedrückte Freigeben oder Ablehnen aus. In den nächsten zehn Minuten (`[ReauthSettings] Minutes`) fragt eine weitere
 Entscheidung nicht erneut. Siehe [Identität bestätigen](identitaet-bestaetigen.md).
 
+![Identität bestätigen: das Passwort wird abgefragt, bevor die Freigabe des Kontos ausgeführt wird](bilder/account-approval/verify-its-you.png)
+
 Die Entscheidung wirkt sofort; der Workflow-Cronjob wird dafür nicht gebraucht.
+
+![Nach Freigeben: das Konto wurde freigegeben und veröffentlicht und kann sich jetzt anmelden](bilder/account-approval/approved.png)
 
 ## 6. Was verweigert wird
 
@@ -108,6 +114,52 @@ Setup > Workflows > *Approve new editor accounts* > **Bearbeiten**: das Formular
 als Editors brauchen die Anfragenden dort auch `content/create`: geben Sie ihrer Rolle eine Richtlinie wie die Rolle
 *Editor account requests*, oder führen Sie `adduserapproval.php --required=... --approvers=... --requesters=...` aus.
 
+Beispiele mit demselben Mechanismus, selbst registrierte Mitglieder, die Moderatoren freigeben, und zwei Freigebende für
+einen neuen Administrator, stehen unter
+[Zwei Wege](../bc/6.0/freigabe-von-benutzerkonten.md#weitere-beispiele-mit-demselben-mechanismus).
+
+## 9. Der andere Weg: Freigabe nach Abschnitt
+
+Statt des Ereignisses *Benutzerkonten freigeben* können Sie das einfache Ereignis *Freigabe* des Kernels mit einem
+Abschnitt **Staff** für Administrator users und Editors verwenden. Wählen Sie einen der beiden Wege; wann welcher passt,
+steht unter [Zwei Wege](../bc/6.0/freigabe-von-benutzerkonten.md#zwei-wege-nach-gruppe-standard-oder-nach-abschnitt).
+
+Der Befehl verweigert, solange das Ereignis nach Gruppe läuft; entfernen Sie es darum zuerst: Setup > Workflows > der
+Workflow, den content/publish (vorher) ausführt > **Bearbeiten**, das Ereignis *Benutzerkonten freigeben* auswählen,
+**Ausgewählte entfernen**, **Speichern**. Die Rolle *Editor account requests* bleibt: die Redakteure brauchen sie
+weiterhin, um Konten in Editors anzulegen. Dann:
+
+```bash
+php bin/php/adduserapproval.php --mode=section --allow-root-user            # Probelauf
+```
+
+Erwartet:
+
+```
+section Staff     Administrator users (node 13, object 12)
+section Staff     Editors (node 14, object 13)
+approves          Administrator users (node 13, object 12)
+no approval       Administrator users (node 13, object 12)
+  would create section "Staff" (identifier staff)
+  would assign the section to Administrator users and below (3 object(s))
+  would assign the section to Editors and below (2 object(s))
+  would add the approval event first into the workflow "Approve new editor accounts" that content/publish/before runs
+PASS: 4 change(s) would be made (dry run, nothing changed; --apply makes them)
+```
+
+Die Zahlen zählen die Gruppe und die Konten darin. Eine Zeile `check:` nennt jede Richtlinie, die auf den Abschnitt eingeschränkt ist, den die Konten verlassen (*Users*);
+sehen Sie sich diese Rollen an. Solange das Ereignis nach Gruppe noch da ist, endet der Befehl mit `FAIL: the event
+"Approve user accounts" ... runs on content/publish before` und ändert nichts. Mit `--apply` führt er die Änderungen aus
+und endet mit `PASS: the section based approval of new staff accounts is set up`. Leeren Sie die Caches wie in
+Schritt 1.
+
+![Der Workflow mit dem Freigabe-Ereignis für den Abschnitt Staff: Freigebende und Gruppe ohne Freigabe Administrator users, nur neue Objekte](bilder/account-approval/section-workflow.png)
+
+Ab hier sind die Schritte 3 bis 5 und 7 gleich: das neue Konto des Redakteurs wartet, jeder Freigebende bekommt die Mail
+mit dem Link zum Element in der Administration, **Identität bestätigen** fragt, und Freigeben oder Ablehnen wird sofort
+ausgeführt und festgehalten (mit `mode: section`). Schritt 6 ist anders: ein Verschieben nach Editors verweigert dieser
+Weg nicht.
+
 ## Fehlerbehebung
 
 | Was Sie sehen | Warum, und was zu tun ist |
@@ -116,6 +168,8 @@ als Editors brauchen die Anfragenden dort auch `content/create`: geben Sie ihrer
 | Das Konto wurde ohne Freigabe veröffentlicht | Der Redakteur gibt selbst frei oder ist in einer Gruppe ohne Freigabe, oder das Ereignis steht nicht im Workflow, den content/publish (vorher) ausführt: Setup > Trigger und das Ereignis prüfen |
 | Keine Mail | Freigebende ohne E-Mail-Adresse bekommen keine; der Transport in `[MailSettings]`; ist die E-Mail aus, gibt es keine. Das Freigabeelement ist trotzdem da |
 | Der Link zeigt auf den falschen Host | `[UserSettings] RegistrationAdminBaseURL` setzen |
+| Die Freigebenden werden für ein Konto zweimal gefragt | Beide Wege sind eingerichtet: behalten Sie im Workflow entweder das Ereignis *Benutzerkonten freigeben* oder das Freigabe-Ereignis des Abschnitts Staff, nicht beide |
+| `--mode=section` endet mit FAIL und ändert nichts | Das Ereignis *Benutzerkonten freigeben* läuft noch an content/publish (vorher): zuerst entfernen (Schritt 9) |
 | Nach *Freigeben* oder *Ablehnen* erscheint *Identität bestätigen* | So gewollt: Die Gruppe users fragt, bevor ein Konto freigegeben oder abgelehnt wird. Bestätigen, dann wird die Entscheidung ausgeführt. Ein Administrator kann die Gruppe unter Setup > Verify it's you ausschalten |
 | Nach *Freigeben* wartet es weiter | Ein anderes Ereignis des Workflows wartet (zum Beispiel eine Inhaltsfreigabe); der Workflow-Cronjob setzt fort |
 

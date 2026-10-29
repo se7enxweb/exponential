@@ -55,7 +55,18 @@ Setup > Workflows > *Approve new editor accounts* > das Ereignis *Approve user a
 - **E-Mail an die Freigebenden** (Standard an)
 
 Die Adresse in der Mail ist die der Administration: setzen Sie `site.ini [UserSettings] RegistrationAdminBaseURL`, wenn
-sie einen eigenen Host hat (zum Beispiel `https://admin.example.com`).
+sie einen eigenen Host hat (zum Beispiel `https://admin.example.com`). Auch die Kollaborationsbenachrichtigungen
+verlinken dorthin.
+
+## Oder nach Abschnitt
+
+Statt des Ereignisses oben können Sie das einfache Ereignis *Freigabe* des Kernels verwenden: einen Abschnitt **Staff**
+für Administrator users und Editors und ein Freigabe-Ereignis für diesen Abschnitt (Freigebende und ohne Freigabe:
+Administrator users, nur neue Objekte). `php bin/php/adduserapproval.php --mode=section` zeigt, was er tun würde,
+`--apply` führt es aus. Die Freigebenden bekommen dieselbe Mail mit dem Link, Freigeben und Ablehnen werden ebenso
+bestätigt und festgehalten. Wählen Sie einen der beiden Wege, nie beide: ein Konto würde zweimal angefragt, darum
+verweigert der Befehl, solange das Ereignis *Benutzerkonten freigeben* läuft. Wann welcher Weg:
+[Zwei Wege](../../bc/6.0/freigabe-von-benutzerkonten.md#zwei-wege-nach-gruppe-standard-oder-nach-abschnitt).
 
 Mehr: die technische Notiz [Freigabe neuer Benutzerkonten](../../bc/6.0/freigabe-von-benutzerkonten.md), die Anleitung
 [Neue Redakteurskonten freigeben](../../anleitungen/neue-redakteurskonten-freigeben.md).

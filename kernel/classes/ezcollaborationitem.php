@@ -96,7 +96,8 @@ class eZCollaborationItem extends eZPersistentObject
                                                       'message_count' => 'messageCount',
                                                       'unread_message_count' => 'unreadMessageCount',
                                                       'content' => 'content',
-                                                      'title' => 'title' ),
+                                                      'title' => 'title',
+                                                      'admin_url' => 'adminURL' ),
                       'increment_key' => 'id',
                       'class_name' => 'eZCollaborationItem',
                       'sort' => array( 'modified' => 'asc' ),
@@ -171,6 +172,20 @@ class eZCollaborationItem extends eZPersistentObject
     {
         $userID = eZUser::currentUserID();
         return eZCollaborationItemStatus::fetch( $this->ID, $userID );
+    }
+
+    /**
+     * The address of this item in the administration (collaboration/item/full/<id>), for the notification mails: the
+     * approver signs in there, whichever siteaccess published the content or ran the notification cronjob. The base
+     * is site.ini [UserSettings] RegistrationAdminBaseURL, else the administration siteaccess's address
+     * (expRegistrationAdminAction::adminBaseURL()). The link carries no key.
+     *
+     * @return string
+     */
+    function adminURL()
+    {
+        $base = class_exists( 'expRegistrationAdminAction' ) ? expRegistrationAdminAction::adminBaseURL() : '';
+        return rtrim( (string)$base, '/' ) . '/collaboration/item/full/' . (int)$this->attribute( 'id' );
     }
 
     function handler()

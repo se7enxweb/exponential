@@ -1488,6 +1488,7 @@ return array(
       'expUserActivation'                                            => 'kernel/classes/user/expuseractivation.php',
       'expUserAgent'                                                 => 'kernel/classes/user/expuseragent.php',
       'expUserApproval'                                              => 'kernel/classes/user/expuserapproval.php',
+      'expUserApprovalSection'                                       => 'kernel/classes/user/expuserapprovalsection.php',
       'expUserApproveType'                                           => 'kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php',
       'expUserAudit'                                                 => 'kernel/classes/user/expuseraudit.php',
       'expUserDeactivation'                                          => 'kernel/classes/user/expuserdeactivation.php',

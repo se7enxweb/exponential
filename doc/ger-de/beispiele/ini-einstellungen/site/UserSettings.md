@@ -3,13 +3,13 @@ title: site.ini [UserSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [UserSettings] in site.ini: MaxNumberOfFailedLogin, TrustedIPList, ShowMessageIfExceeded, MinPasswordLength, WeakPasswordCheck, WeakPasswordFile, ForgotPasswordKeyLifetime, GeneratePasswordIfEmpty ..."
-keywords: Einstellung, site.ini, UserSettings, INI, setting, MaxNumberOfFailedLogin, TrustedIPList, ShowMessageIfExceeded, MinPasswordLength, WeakPasswordCheck, WeakPasswordFile, ForgotPasswordKeyLifetime, GeneratePasswordIfEmpty, GeneratePasswordLength, AnonymousUserID, DefaultUserPlacement, DefaultSectionID, RegistrationFeedback, RegistrationEmail, VerifyUserType, PasswordInRegistrationEmail, EmailRegistrationInfo, ActivationByAdministratorSendsApprovalMail, RegistrationAdminLinks, RegistrationAdminBaseURL, RegistrationAdminSiteAccess, RegistrationActionTTL, RegisterAutoLogin, UserClassID, UserGroupClassID, UserClassGroupID, UserCreatorID, DeactivateAndMove, DeactivatedUserGroupNodeID, HashType
+keywords: Einstellung, site.ini, UserSettings, INI, setting, MaxNumberOfFailedLogin, TrustedIPList, ShowMessageIfExceeded, MinPasswordLength, WeakPasswordCheck, WeakPasswordFile, ForgotPasswordKeyLifetime, GeneratePasswordIfEmpty, GeneratePasswordLength, AnonymousUserID, DefaultUserPlacement, DefaultSectionID, RegistrationFeedback, RegistrationEmail, VerifyUserType, PasswordInRegistrationEmail, EmailRegistrationInfo, ActivationByAdministratorSendsApprovalMail, RegistrationAdminLinks, RegistrationAdminBaseURL, RegistrationAdminSiteAccess, RegistrationActionTTL, AccountApprovalMode, RegisterAutoLogin, UserClassID, UserGroupClassID, UserClassGroupID, UserCreatorID, DeactivateAndMove, DeactivatedUserGroupNodeID
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [UserSettings]
 
-Der Block `[UserSettings]` von `settings/site.ini`, mit 44 Einstellung(en).
+Der Block `[UserSettings]` von `settings/site.ini`, mit 45 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -377,6 +377,26 @@ Standard: `604800`.
 # settings/override/site.ini.append.php
 [UserSettings]
 RegistrationActionTTL=604800
+*/ ?>
+```
+
+## AccountApprovalMode
+
+> How the setup (setup wizard, kickstarter) sets up the approval of new editor  
+> accounts: group (the default: the workflow event "Approve user accounts",  
+> decided by the group an account is placed in), section (the section Staff for  
+> Administrator users and Editors and the plain approval event on it) or none.  
+> Choose one, never both: an account would be asked for twice. An installation  
+> that exists: bin/php/adduserapproval.php \[--mode=section\].  
+> Guide: doc/eng-us/bc/6.0/user-account-approval.md  
+
+Standard: `group`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSettings]
+AccountApprovalMode=group
 */ ?>
 ```
 
