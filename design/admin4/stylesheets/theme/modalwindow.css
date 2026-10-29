@@ -52,7 +52,7 @@ div.box-content .modal-window div.message-error
     padding:1em;
     background: var(--a4-bad-bg);
     border: 2px solid var(--a4-bad);
-    border-radius:3px;
+    border-radius:var(--a4-radius-s);
 }
 
 .window-close
@@ -86,7 +86,7 @@ div.box-content .modal-window div.message-error
 .ajaxuploader-error
 {
     color: var(--a4-bad);
-    font-weight:bold;
+    font-weight:var(--a4-weight-bold);
     padding-left:1em;
 }
 

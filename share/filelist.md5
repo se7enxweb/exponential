@@ -1116,7 +1116,7 @@ e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tp
 9bfcc92f9192fd13ba4bff2c456a14a4  design/admin4/stylesheets/admin4.css
 b1cf4e1bf652a916be9e86fa6e610b69  design/admin4/stylesheets/components.css
 a87bec7d01d40f3de1611df181975ceb  design/admin4/stylesheets/content.css
-ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
+005d3f98e2671b2f9ea348032aaae860  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 7f64dab9b9b27453123a86ade1f2f088  design/admin4/stylesheets/modules/content.css
@@ -1128,9 +1128,9 @@ c34f91ab4574d20b218dabe48383162d  design/admin4/stylesheets/modules/structure.cs
 6e999aa90b2660caf0fe3e2ef577ecdf  design/admin4/stylesheets/packagecompare.css
 8eddc989d2d2222387ec716ebc783682  design/admin4/stylesheets/pagelayout.css
 ff5905841b79458608cca6dda718778d  design/admin4/stylesheets/theme/admin_datatable.css
-35eebb3baea1095a0aae748f750e4917  design/admin4/stylesheets/theme/modalwindow.css
+1f9526457e76eaf166766b7160e70a51  design/admin4/stylesheets/theme/modalwindow.css
 9cd0514b0cf33301ab105531a05c0b46  design/admin4/stylesheets/theme/rounded.css
-675329c4b3245699c55425d7aa2ad4ed  design/admin4/stylesheets/visual-templateview.css
+729301f6f8de6eabf3973961e25d7fda  design/admin4/stylesheets/visual-templateview.css
 022eb4fed292327e7a10f4812af68540  design/admin4/templates/ajaxuploader/browse.tpl
 66e556ddbb2a268470dd9b7c34d65393  design/admin4/templates/ajaxuploader/location.tpl
 f5c677b2579053f3f5a23f2a3dd3b87d  design/admin4/templates/ajaxuploader/preview.tpl
@@ -21531,7 +21531,7 @@ dc68ad63014838b2b146ebf6f7129bc4  extension/expimageeditor/design/admin4/javascr
 9e3a041ed5f3f1d795271af7b4f52159  extension/expimageeditor/design/admin4/javascript/licenses/tiny-inflate-LICENSE
 2fdcd025e935ae8e10dafa6d1764637f  extension/expimageeditor/design/admin4/javascript/opentype.min.js
 ad40dcd9062eabeaee9fe3ea63923302  extension/expimageeditor/design/admin4/javascript/svgcanvas.min.js
-e8de294915b029601dfb5f027c96f7c8  extension/expimageeditor/design/admin4/stylesheets/expimageeditor.css
+2bb0dff74e13a4bec182938a19602d60  extension/expimageeditor/design/admin4/stylesheets/expimageeditor.css
 e430511c54f225965eb4298b4cfbb45c  extension/expimageeditor/design/admin4/templates/content/datatype/edit/ezimage_editor.tpl
 e95ea046c3ddd09ac1791df2db30dcf9  extension/expimageeditor/design/admin4/templates/content/datatype/edit/ezimage_new.tpl
 90bd00be4c7aec0d0be0a4629e91d087  extension/expimageeditor/design/admin4/templates/expimageeditor/config.tpl
