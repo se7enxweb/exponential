@@ -2,7 +2,7 @@
 title: Muster in lib/ezdb
 audience: developer
 category: standards
-order: 528
+order: 541
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezdb mit den Entwurfsmustern.
 keywords: lib/ezdb, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,13 +15,14 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `lib/ezdb` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (10)
+## Klassen (11)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
 | `expMongoDB` | class extends eZDBInterface | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `lib/ezdb/classes/expmongodb.php:18` | – |
+| `expPDODB` | class extends eZDBInterface | – | `lib/ezdb/classes/exppdodb.php:35` | Ein generischer Datenbanktreiber über PDO, für Engines, für die Exponential keinen nativen Treiber hat: Microsoft SQL Server (pdo_sqlsrv, pdo_dblib oder pdo_odbc mit einem… |
 | `eZDB` | class | [Singleton / instance()](singleton.md) | `lib/ezdb/classes/ezdb.php:80` | – |
-| `eZDBInterface` | class | – | `lib/ezdb/classes/ezdbinterface.php:21` | Die eZDBInterface definiert die Schnittstelle für alle Datenbankimplementierungen |
+| `eZDBInterface` | class | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | `lib/ezdb/classes/ezdbinterface.php:21` | Die eZDBInterface definiert die Schnittstelle für alle Datenbankimplementierungen |
 | `eZDBQueryCache` | class | [Registry](registry.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `lib/ezdb/classes/ezdbquerycache.php:37` | Ein Ergebnis-Cache für die SQL-Treiber (MySQL/MariaDB, PostgreSQL, SQLite): die Zeilen, die ein SELECT geliefert hat, werden erneut geliefert, bis ein Schreibvorgang in eine der Tabellen… |
 | `eZDBTool` | class | [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `lib/ezdb/classes/ezdbtool.php:18` | – |
 | `eZMySQLCharset` | abstract class | [Schablonenmethode / abstrakte Basisklasse](schablonenmethode.md) | `lib/ezdb/classes/ezmysqlcharset.php:13` | – |

@@ -2,7 +2,7 @@
 title: Muster in extension/ezformtoken
 audience: developer
 category: standards
-order: 440
+order: 444
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezformtoken mit den Entwurfsmustern.
 keywords: extension/ezformtoken, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

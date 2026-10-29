@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/asynchronouspublisheroutput
 audience: developer
 category: standards
-order: 515
+order: 528
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/asynchronouspublisheroutput mit den Entwurfsmustern.
 keywords: kernel/private/classes/asynchronouspublisheroutput, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

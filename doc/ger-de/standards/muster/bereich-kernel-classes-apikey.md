@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/apikey
 audience: developer
 category: standards
-order: 479
+order: 485
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/apikey mit den Entwurfsmustern.
 keywords: kernel/classes/apikey, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/packagehandlers
 audience: developer
 category: standards
-order: 500
+order: 507
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/packagehandlers mit den Entwurfsmustern.
 keywords: kernel/classes/packagehandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

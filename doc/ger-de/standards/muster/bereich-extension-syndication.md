@@ -2,7 +2,7 @@
 title: Muster in extension/syndication
 audience: developer
 category: standards
-order: 475
+order: 481
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/syndication mit den Entwurfsmustern.
 keywords: extension/syndication, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -96,3 +96,9 @@ Jede Klasse, Schnittstelle und jeder Trait von `extension/syndication` mit den M
 | `php_import_feed` | `extension/syndication/classes/runnable/cronjobs/php_import_feed.php` | – |
 | `syndication_export` | `extension/syndication/cronjobs/syndication_export.php` | Cronjob-Teil export_feed der Extension syndication. |
 | `syndication_import` | `extension/syndication/cronjobs/syndication_import.php` | Cronjob-Teil import_feed der Extension syndication. |
+
+## INI-Plugin-Punkte (1)
+
+| Einstellung | Klasse | Gesetzt in |
+| --- | --- | --- |
+| `[Service_transfer.syndication] Class` | `expKernelTransferTool` | `extension/syndication/settings/kernelservices.ini.append.php:10` |

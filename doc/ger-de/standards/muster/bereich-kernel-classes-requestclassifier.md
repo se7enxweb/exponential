@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/requestclassifier
 audience: developer
 category: standards
-order: 503
+order: 512
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/requestclassifier mit den Entwurfsmustern.
 keywords: kernel/classes/requestclassifier, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -15,7 +15,7 @@ type: catalogue
 
 Jeder Datentyp ist eine Strategie für eine Art von Inhaltsfeld: wie es bearbeitet, validiert, gespeichert, indexiert, verglichen und angezeigt wird.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Plugins |
 | Instanzen | 54 |

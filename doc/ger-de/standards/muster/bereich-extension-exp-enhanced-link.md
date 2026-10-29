@@ -2,7 +2,7 @@
 title: Muster in extension/exp_enhanced_link
 audience: developer
 category: standards
-order: 433
+order: 437
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/exp_enhanced_link mit den Entwurfsmustern.
 keywords: extension/exp_enhanced_link, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

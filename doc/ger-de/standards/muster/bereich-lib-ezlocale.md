@@ -2,7 +2,7 @@
 title: Muster in lib/ezlocale
 audience: developer
 category: standards
-order: 534
+order: 547
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezlocale mit den Entwurfsmustern.
 keywords: lib/ezlocale, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

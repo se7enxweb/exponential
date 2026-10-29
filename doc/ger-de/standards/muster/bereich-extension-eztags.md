@@ -2,7 +2,7 @@
 title: Muster in extension/eztags
 audience: developer
 category: standards
-order: 456
+order: 461
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/eztags mit den Entwurfsmustern.
 keywords: extension/eztags, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

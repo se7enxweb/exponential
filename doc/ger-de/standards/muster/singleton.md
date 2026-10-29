@@ -3,7 +3,7 @@ title: Singleton / instance()
 audience: developer
 category: standards
 order: 320
-summary: Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über eine statische Methode instance() (oft in $GLOBALS zwischengespeichert). 69 Instanzen in Exponential.
+summary: Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über eine statische Methode instance() (oft in $GLOBALS zwischengespeichert). 77 Instanzen in Exponential.
 keywords: Entwurfsmuster, Singleton, Erzeugung, Musterkatalog, design pattern, singleton, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über eine statische Methode instance() (oft in $GLOBALS zwischengespeichert).
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Anlegen |
-| Instanzen | 69 |
+| Instanzen | 77 |
 | Erkannt an | Hat eine statische Methode instance() oder getInstance(). |
 | Erweiterungspunkt | Rufen Sie Class::instance() auf; viele davon nehmen die Einstellungsdatei oder die Datenbank als Schlüssel. |
 
@@ -40,6 +40,15 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 | --- | --- | --- | --- | --- |
 | `CjwNewsletterLog` | class extends ezcLog | `extension/cjw_newsletter/classes/cjwnewsletterlog.php:28` | Log-Verarbeitung des Cjw Newsletter mit ezcLog, logmessage time [severity] [source] [category] ( element1: value1, .... | – |
 
+### extension/expai (2)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expAiConfig` | class | `extension/expai/classes/expaiconfig.php:14` | Die Einstellungen von expai.ini, bei jedem Aufruf neu gelesen (kein statischer Zustand: Die persistenten Worker von Velocity bedienen viele Anfragen und Siteaccesses mit einem Pro… | – |
+| `expAiProviderRegistry` | class | `extension/expai/classes/expaiproviderregistry.php:24` | Die Anbieter und Modelle von expai.ini: | – |
+
 ### extension/explayouts (1)
 
 [Alle Muster von extension/explayouts](bereich-extension-explayouts.md)
@@ -47,6 +56,14 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expLayoutsSite` | class | `extension/explayouts/classes/explayoutssite.php:9` | Site-Registry für Exponential 4, kompatibel mit der Site-Schnittstelle der Exp Site API. | – |
+
+### extension/expqueue (1)
+
+[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expQueueConfig` | class | `extension/expqueue/classes/expqueueconfig.php:15` | Die Einstellungen von expqueue (expqueue.ini), mit den Standardwerten, die gelten, wenn eine Einstellung fehlt. | – |
 
 ### extension/ezfind (2)
 
@@ -97,6 +114,16 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 | --- | --- | --- | --- | --- |
 | `sevenxAuthentication2faHelper` | class | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fahelper.php:23` | – | – |
 
+### extension/sqliimport (3)
+
+[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImportRegistry` | class | `extension/sqliimport/classes/exp/engine/expimportregistry.php:23` | Der Katalog einer Site: ihre Quellen, Handler und Transformationen. | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.registry] Class |
+| `SQLIContentPublisher` | class | `extension/sqliimport/classes/content/sqlicontentpublisher.php:26` | SQLIContentPublisher ist eine Klasse, die das Veröffentlichen von Inhalt erlaubt $options = new SQLIContentOptions( array( 'class_identifier' =› 'article', 'remote_id'… | – |
+| `SQLIImportFactory` | class | `extension/sqliimport/classes/sqliimportfactory.php:12` | Import-Fabrik. Löst den Import für alle deklarierten und aktivierten Import-Handler aus | – |
+
 ### extension/syndication (1)
 
 [Alle Muster von extension/syndication](bereich-extension-syndication.md)
@@ -124,6 +151,14 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 | `eZScript` | class | `kernel/classes/ezscript.php:49` | – | – |
 | `eZShopAccountHandler` | class | `kernel/classes/ezshopaccounthandler.php:12` | – | – |
 
+### kernel/classes/datatable (1)
+
+[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expDataTableCatalogue` | class | `kernel/classes/datatable/expdatatablecatalogue.php:32` | Der Katalog der Datentabellen (doc/eng-us/features/6.0/data-tables.md, „The catalogue“): jede persistente Klasse der Installation (ein eZPersistentOb… | – |
+
 ### kernel/classes/datatypes (3)
 
 [Alle Muster von kernel/classes/datatypes](bereich-kernel-classes-datatypes.md)
@@ -141,9 +176,9 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expHelpContentProvider` | class | `kernel/classes/help/content/exphelpcontentprovider.php:19` | Als Inhalt gepflegte Hilfe, ausgeliefert in das Hilfesystem (exphelp): die Themen, die der aktuelle Benutzer sehen darf, gerendert mit dem Markdown-Renderer der Hilfe… | settings/exphelp.ini [ContextHelp] Providers[] |
-| `expHelpContentRepository` | class | `kernel/classes/help/content/exphelpcontentrepository.php:15` | Liest als Inhalt gepflegte Hilfe aus der Datenbank in einfache Arrays (die Formen, die expHelpContentValidator beschreibt), ohne jeden Berechtigungsfilter:… | – |
-| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Kontexthilfe: welche Hilfeseite „Hilfe zu dieser Seite“ beantwortet, für ein Modul, eine Ansicht und ein Design. | – |
-| `expHelpDocumentIndex` | class | `kernel/classes/help/exphelpdocumentindex.php:34` | Der Index der Hilfeseiten (doc/eng-us/features/6.0/help-system.md, "The index"): ein Eintrag je Dokument der Allowlist (expHelpAllowlist: von Git verfolgte Da… | – |
+| `expHelpContentRepository` | class | `kernel/classes/help/content/exphelpcontentrepository.php:15` | Liest als Inhalt gepflegte Hilfe aus der Datenbank in einfache Arrays (die Formen, die expHelpContentValidator beschreibt), ohne jeden Berechtigungsfilter:… | settings/site.ini [Cache_exphelpcontent] class; settings/site.ini [Cache_exphelpcontent] purgeClass |
+| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:45` | Kontexthilfe: welche Hilfeseite „Hilfe zu dieser Seite“ beantwortet, für ein Modul, eine Ansicht und ein Design. | – |
+| `expHelpDocumentIndex` | class | `kernel/classes/help/exphelpdocumentindex.php:46` | Der Index der Hilfeseiten (doc/eng-us/features/6.0/help-system.md, „The index“): ein Eintrag je Dokument der Allowlist (expHelpAllowlist: git-tra… | – |
 
 ### kernel/classes/logviewer (2)
 
@@ -151,7 +186,7 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log-Verwaltung (doc/eng-us/features/6.0/log-rotation.md): die Logs der Installation mit ihren Archiven, Größen, Wachstum und Grenzen; Rotation, Bereinigung, Kom… | – |
+| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log-Verwaltung (doc/eng-us/features/6.0/log-rotation.md): die Logs der Installation mit ihren Archiven, Größen, ihrem Wachstum und ihren Limits; Rotation, Bereinigung… | – |
 | `expLogViewerConfig` | class | `kernel/classes/logviewer/explogviewerconfig.php:11` | Die Einstellungen des Log-Viewers (settings/logviewer.ini, doc/eng-us/features/6.0/log-viewer.md, „Settings“), einmal pro Anfrage mit sicheren Grenzen gelesen. | – |
 
 ### kernel/classes/mailpreferences (1)
@@ -185,6 +220,14 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expSubitemsColumnRegistry` | class | `kernel/classes/subitems/expsubitemscolumnregistry.php:23` | Die Registry der Spalten der Unterelementliste der Administrationsoberfläche („Tabellenoptionen“). | – |
+
+### kernel/classes/transfer (1)
+
+[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expKernelTransferRegistry` | class | `kernel/classes/transfer/expkerneltransferregistry.php:30` | Die Transfer-Registry: jedes Import- und Export-Werkzeug der Installation, wie es sich in kernelservices.ini selbst deklariert (ein [Service_transfer.]-Block t… | settings/kernelservices.ini [Service_transfer.registry] Class |
 
 ### kernel/common (1)
 
@@ -296,8 +339,8 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 | `eZCLI` | class | `lib/ezutils/classes/ezcli.php:31` | – | – |
 | `eZDebug` | class | `lib/ezutils/classes/ezdebug.php:59` | – | – |
 | `eZExpiryHandler` | class | `lib/ezutils/classes/ezexpiryhandler.php:16` | Verwaltet Ablaufschlüssel und ihre Zeitstempel | – |
-| `eZHTTPTool` | class | `lib/ezutils/classes/ezhttptool.php:25` | – | – |
-| `eZINI` | class | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - neue INI-Einstellung ext-siteaccess-override - - neue INI-Einstellung ext-siteaccess… | – |
+| `eZHTTPTool` | class | `lib/ezutils/classes/ezhttptool.php:25` | – | settings/kernelservices.ini [Service_http] Class |
+| `eZINI` | class | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - neue INI-Einstellung ext-siteaccess-override - - neue INI-Einstellung ext-siteaccess… | settings/kernelservices.ini [Service_ini.i18n] Class; settings/kernelservices.ini [Service_ini.site] Class |
 | `eZMimeType` | class | `lib/ezutils/classes/ezmimetype.php:34` | – | – |
 | `eZProcess` | class | `lib/ezutils/classes/ezprocess.php:18` | – | – |
 | `eZSys` | class | `lib/ezutils/classes/ezsys.php:33` | Einfacher Zugriff auf verschiedene Systemeinstellungen | – |

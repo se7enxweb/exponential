@@ -2,7 +2,7 @@
 title: Muster in extension/ezupdate
 audience: developer
 category: standards
-order: 457
+order: 462
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezupdate mit den Entwurfsmustern.
 keywords: extension/ezupdate, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

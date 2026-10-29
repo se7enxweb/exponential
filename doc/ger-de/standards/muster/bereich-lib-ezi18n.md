@@ -2,7 +2,7 @@
 title: Muster in lib/ezi18n
 audience: developer
 category: standards
-order: 532
+order: 545
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezi18n mit den Entwurfsmustern.
 keywords: lib/ezi18n, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

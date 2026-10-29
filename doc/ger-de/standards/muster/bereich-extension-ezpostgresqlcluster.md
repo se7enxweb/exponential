@@ -2,7 +2,7 @@
 title: Muster in extension/ezpostgresqlcluster
 audience: developer
 category: standards
-order: 451
+order: 456
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezpostgresqlcluster mit den Entwurfsmustern.
 keywords: extension/ezpostgresqlcluster, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

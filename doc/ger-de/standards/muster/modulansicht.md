@@ -3,7 +3,7 @@ title: Modulansicht (Page Controller)
 audience: developer
 category: standards
 order: 316
-summary: "Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW an das Skript der Ansicht weiter, das die Anfrage liest und ein Template ausgibt. 921 Instanzen in Exponential."
+summary: "Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW an das Skript der Ansicht weiter, das die Anfrage liest und ein Template ausgibt. 993 Instanzen in Exponential."
 keywords: Entwurfsmuster, Modulansicht, Anfrageverarbeitung, Musterkatalog, design pattern, module-view, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW an das Skript der Ansicht weiter, das die Anfrage liest und ein Template ausgibt.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Verarbeitung von Anfragen |
-| Instanzen | 921 |
+| Instanzen | 993 |
 | Erkannt an | Ein Eintrag von $ViewList in einer module.php oder eine Klasse, die ModuleView oder Page erweitert (die ausführbare Form einer Ansicht). |
 | Erweiterungspunkt | module.ini [ModuleSettings] ExtensionRepositories[] und ModuleList[]; Ansichten deklarieren die Richtlinienfunktionen, die sie brauchen. |
 
@@ -115,6 +115,14 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Extension\Expchangeclass\Changeclass\Action` | class extends ModuleView | `extension/expchangeclass/classes/runnable/views/changeclass/action.php:43` | Der Code von extension/expchangeclass/modules/changeclass/action.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Extension\Expchangeclass\Changeclass\MapAttributes` | class extends ModuleView | `extension/expchangeclass/classes/runnable/views/changeclass/map_attributes.php:10` | Der Code von extension/expchangeclass/modules/changeclass/map_attributes.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Extension\Expchangeclass\Changeclass\SelectClass` | class extends ModuleView | `extension/expchangeclass/classes/runnable/views/changeclass/select_class.php:10` | Der Code von extension/expchangeclass/modules/changeclass/select_class.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+
+### extension/expimageeditor (1)
+
+[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `Exponential\View\Extension\Expimageeditor\Expimageeditor\Save` | class extends ModuleView | `extension/expimageeditor/classes/runnable/views/expimageeditor/save.php:20` | expimageeditor/save//: nimmt das bearbeitete Bild entgegen (POST, Feld „image“, mit dem Formular-Token im Header X-CSRF-Token oder im Feld ezxform_token), speichert… | – |
 
 ### extension/explayouts (9)
 
@@ -318,12 +326,25 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | --- | --- | --- | --- | --- |
 | `Exponential\View\Extension\Powercontent\Powercontent\Action` | class extends ModuleView | `extension/powercontent/classes/runnable/views/powercontent/action.php:10` | Der Code von extension/powercontent/modules/powercontent/action.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 
-### extension/sevenx_dse (2)
+### extension/sevenx_dse (15)
 
 [Alle Muster von extension/sevenx_dse](bereich-extension-sevenx-dse.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
+| `AdminNeo\ClickHouseConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/clickhouse.inc.php:14` | – | – |
+| `AdminNeo\DummyConnection` | class extends Connection | `extension/sevenx_dse/adminneo/core/DummyConnection.php:5` | – | – |
+| `AdminNeo\ElasticConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/elastic.inc.php:15` | – | – |
+| `AdminNeo\MongoConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/mongo.inc.php:23` | – | – |
+| `AdminNeo\MsSqlConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/mssql.inc.php:20` | – | – |
+| `AdminNeo\MsSqlPdoConnection` | abstract class extends PdoConnection | `extension/sevenx_dse/adminneo/drivers/mssql.inc.php:236` | – | – |
+| `AdminNeo\MySqlConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/mysql.inc.php:19` | – | – |
+| `AdminNeo\OracleConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/oracle.inc.php:14` | – | – |
+| `AdminNeo\PdoConnection` | abstract class extends Connection | `extension/sevenx_dse/adminneo/include/pdo.inc.php:11` | – | – |
+| `AdminNeo\PgSqlConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/pgsql.inc.php:14` | – | – |
+| `AdminNeo\SimpleDbConnection` | class extends Connection | `extension/sevenx_dse/adminneo/drivers/simpledb.inc.php:14` | – | – |
+| `AdminNeo\SqLiteConnection` | class extends SqLiteConnectionBase | `extension/sevenx_dse/adminneo/drivers/sqlite.inc.php:129` | – | – |
+| `AdminNeo\SqLiteConnectionBase` | abstract class extends Connection | `extension/sevenx_dse/adminneo/drivers/sqlite.inc.php:18` | – | – |
 | `Exponential\View\Extension\SevenxDse\Dse\Adminneo` | class extends ModuleView | `extension/sevenx_dse/classes/runnable/views/dse/adminneo.php:28` | Der Code von extension/sevenx_dse/modules/dse/adminneo.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Extension\SevenxDse\Dse\Dashboard` | class extends ModuleView | `extension/sevenx_dse/classes/runnable/views/dse/dashboard.php:50` | Der Code von extension/sevenx_dse/modules/dse/dashboard.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 
@@ -367,21 +388,21 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Extension\Xrowmetadata\Sitemaps\Index` | class extends ModuleView | `extension/xrowmetadata/classes/runnable/views/sitemaps/index.php:65` | Der Code von extension/xrowmetadata/modules/sitemaps/index.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Extension\Xrowmetadata\Sitemaps\Robots` | class extends ModuleView | `extension/xrowmetadata/classes/runnable/views/sitemaps/robots.php:10` | Der Code von extension/xrowmetadata/modules/sitemaps/robots.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 
-### kernel/private/classes/views (255)
+### kernel/private/classes/views (272)
 
 [Alle Muster von kernel/private/classes/views](bereich-kernel-private-classes-views.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `Exponential\View\Kernel\Audit\Alerts` | class extends ModuleView | `kernel/private/classes/views/audit/alerts.php:17` | Die Ansicht audit/alerts (doc/eng-us/bc/6.0/audit.md, "Views", "Alerts (F5)"): die ausgelösten Alarme (system.audit.alert-Datensätze: Regel, Gruppe, Anzahl, Fenster, Z… | – |
-| `Exponential\View\Kernel\Audit\Archives` | class extends ModuleView | `kernel/private/classes/views/audit/archives.php:17` | Die Ansicht audit/archives (doc/eng-us/bc/6.0/audit.md, "Views", "Rotation, archives and retention"): pro Kanal seine Live-Dateien (Anzahl, Größe, älteste), seine Arc… | – |
-| `Exponential\View\Kernel\Audit\Charts` | class extends ModuleView | `kernel/private/classes/views/audit/charts.php:16` | Die Ansicht audit/charts (doc/eng-us/bc/6.0/audit.md, "Views"): Ereignisse pro Tag und Kanal, Ablehnungen und Fehlschläge pro Tag, Logins gegenüber fehlgeschlagenen Logins pro Tag… | – |
-| `Exponential\View\Kernel\Audit\Console` | class extends ModuleView | `kernel/private/classes/views/audit/console.php:17` | Die Ansicht audit/console (doc/eng-us/bc/6.0/audit.md, "Views"): die Zeitleiste der Audit-Datensätze, neueste zuerst, mit Filtern, Suche und Blättern, und die Stat… | – |
-| `Exponential\View\Kernel\Audit\Dashboard` | class extends ModuleView | `kernel/private/classes/views/audit/dashboard.php:22` | Die Ansicht audit/dashboard (doc/eng-us/bc/6.0/audit.md, "The console", "Views"): die Übersicht, die die Ansichten des Audits zusammenführt, in Karten, die jeweils verlinken in… | – |
-| `Exponential\View\Kernel\Audit\Event` | class extends ModuleView | `kernel/private/classes/views/audit/event.php:17` | Die Ansicht audit/event (doc/eng-us/bc/6.0/audit.md, "Views"): ein Datensatz vollständig: wann, wer, die Anfrage, Objekt und Ziel mit Links in den Admin, vorher… | – |
-| `Exponential\View\Kernel\Audit\Export` | class extends ModuleView | `kernel/private/classes/views/audit/export.php:28` | Die Ansicht audit/export (doc/eng-us/bc/6.0/audit.md, "Views"): die Datensätze des Konsolenfilters als Download, neueste zuerst: /(format)/csv (eine Zeile pro Dat… | – |
+| `Exponential\View\Kernel\Audit\Alerts` | class extends ModuleView | `kernel/private/classes/views/audit/alerts.php:17` | Die Ansicht audit/alerts (doc/eng-us/bc/6.0/audit.md, „Views“, „Alerts (F5)“): die Alarme, die ausgelöst wurden (system.audit.alert-Datensätze: Regel, Gruppe, Anzahl, Fen… | – |
+| `Exponential\View\Kernel\Audit\Archives` | class extends ModuleView | `kernel/private/classes/views/audit/archives.php:17` | Die Ansicht audit/archives (doc/eng-us/bc/6.0/audit.md, „Views“, „Rotation, archives and retention“): je Kanal seine Live-Dateien (Anzahl, Größe, älteste),… | – |
+| `Exponential\View\Kernel\Audit\Charts` | class extends ModuleView | `kernel/private/classes/views/audit/charts.php:16` | Die Ansicht audit/charts (doc/eng-us/bc/6.0/audit.md, „Views“): Ereignisse pro Tag und Kanal, Ablehnungen und Fehler pro Tag, Anmeldungen gegenüber fehlgeschlagenen Anmeldungen… | – |
+| `Exponential\View\Kernel\Audit\Console` | class extends ModuleView | `kernel/private/classes/views/audit/console.php:17` | Die Ansicht audit/console (doc/eng-us/bc/6.0/audit.md, „Views“): die Zeitleiste der Audit-Datensätze, neueste zuerst, mit Filtern, Suche und Blättern, und d… | – |
+| `Exponential\View\Kernel\Audit\Dashboard` | class extends ModuleView | `kernel/private/classes/views/audit/dashboard.php:22` | Die Ansicht audit/dashboard (doc/eng-us/bc/6.0/audit.md, „The console“, „Views“): die Zusammenfassung, die die Ansichten des Audits verbindet, in Karten, die jeweils… | – |
+| `Exponential\View\Kernel\Audit\Event` | class extends ModuleView | `kernel/private/classes/views/audit/event.php:17` | Die Ansicht audit/event (doc/eng-us/bc/6.0/audit.md, „Views“): ein Datensatz vollständig: wann, wer, die Anfrage, Objekt und Ziel mit Links in die Administration,… | – |
+| `Exponential\View\Kernel\Audit\Export` | class extends ModuleView | `kernel/private/classes/views/audit/export.php:28` | Die Ansicht audit/export (doc/eng-us/bc/6.0/audit.md, „Views“): die Datensätze des Konsolenfilters als Download, neueste zuerst: /(format)/csv (eine Zeile… | – |
 | `Exponential\View\Kernel\Audit\Recent` | class extends ModuleView | `kernel/private/classes/views/audit/recent.php:17` | Die Ansicht audit/recent: die letzten 100 Audit-Ereignisse jedes Kanals, den der Benutzer lesen darf (oder eines, /(channel)/access), mit Name, Zeit, Akteur, Objekt,… | – |
-| `Exponential\View\Kernel\Audit\Settings` | class extends ModuleView | `kernel/private/classes/views/audit/settings.php:18` | Die Ansicht audit/settings (doc/eng-us/bc/6.0/audit.md, "Views", "The settings reference"): die wirksame audit.ini dieses Siteaccess, jeder Wert mit der Da… | – |
+| `Exponential\View\Kernel\Audit\Settings` | class extends ModuleView | `kernel/private/classes/views/audit/settings.php:18` | Die Ansicht audit/settings (doc/eng-us/bc/6.0/audit.md, „Views“, „The settings reference“): die wirksame audit.ini dieses Siteaccess, jeder Wert mit… | – |
 | `Exponential\View\Kernel\Class\Classlist` | class extends ModuleView | `kernel/private/classes/views/class/classlist.php:21` | Der Code von kernel/class/classlist.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Class\Copy` | class extends ModuleView | `kernel/private/classes/views/class/copy.php:21` | Der Code von kernel/class/copy.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Class\Edit` | class extends ModuleView | `kernel/private/classes/views/class/edit.php:21` | Der Code von kernel/class/edit.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -395,18 +416,18 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\Collaboration\Group` | class extends ModuleView | `kernel/private/classes/views/collaboration/group.php:21` | Der Code von kernel/collaboration/group.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Collaboration\Item` | class extends ModuleView | `kernel/private/classes/views/collaboration/item.php:21` | Der Code von kernel/collaboration/item.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Collaboration\View` | class extends ModuleView | `kernel/private/classes/views/collaboration/view.php:21` | Der Code von kernel/collaboration/view.php, in eine Klasse verschoben (#207 Stufe 1). | – |
-| `Exponential\View\Kernel\Contentcheck\Brokenrelations` | class extends ModuleView | `kernel/private/classes/views/contentcheck/brokenrelations.php:18` | Die Ansicht contentcheck/brokenrelations (doc/eng-us/features/6.0/content-checks.md, "Broken relations"): sichtbare, veröffentlichte Inhalte unterhalb eines Knotens (contentcheck… | – |
+| `Exponential\View\Kernel\Contentcheck\Brokenrelations` | class extends ModuleView | `kernel/private/classes/views/contentcheck/brokenrelations.php:21` | Die Ansicht contentcheck/brokenrelations (doc/eng-us/features/6.0/content-checks.md, „Broken relations“): sichtbarer, veröffentlichter Inhalt unterhalb eines Knotens (conte… | – |
 | `Exponential\View\Kernel\Contentcheck\Fixfiles` | class extends ModuleView | `kernel/private/classes/views/contentcheck/fixfiles.php:23` | Die Ansicht contentcheck/fixfiles (doc/eng-us/features/6.0/content-checks.md, "Resolving"): nur POST. | – |
-| `Exponential\View\Kernel\Contentcheck\Scope` | class extends ModuleView | `kernel/private/classes/views/contentcheck/scope.php:23` | Die Ansicht contentcheck/scope (doc/eng-us/features/6.0/content-checks.md, "Where a check starts"): wählt den Startort einer Prüfung mit dem gemeinsamen Knoten… | – |
-| `Exponential\View\Kernel\Contentcheck\Storage` | class extends ModuleView | `kernel/private/classes/views/contentcheck/storage.php:22` | Die Ansicht contentcheck/storage (doc/eng-us/features/6.0/content-checks.md, "Storage files"): das Ergebnis des letzten Scans von var//storage, in drei Listen (GET… | – |
+| `Exponential\View\Kernel\Contentcheck\Scope` | class extends ModuleView | `kernel/private/classes/views/contentcheck/scope.php:23` | Die Ansicht contentcheck/scope (doc/eng-us/features/6.0/content-checks.md, „Where a check starts“): wählt den Startort einer Prüfung mit dem gemeinsamen… | – |
+| `Exponential\View\Kernel\Contentcheck\Storage` | class extends ModuleView | `kernel/private/classes/views/contentcheck/storage.php:24` | Die Ansicht contentcheck/storage (doc/eng-us/features/6.0/content-checks.md, „Storage files“): das Ergebnis des letzten Scans von var//storage, in drei Listen… | – |
 | `Exponential\View\Kernel\Contentcheck\Storageaction` | class extends ModuleView | `kernel/private/classes/views/contentcheck/storageaction.php:26` | Die Ansicht contentcheck/storageaction (doc/eng-us/features/6.0/content-checks.md, "Storage files"): nur POST, aus den Formularen von contentcheck/storage. | – |
 | `Exponential\View\Kernel\Contentcheck\Trash` | class extends ModuleView | `kernel/private/classes/views/contentcheck/trash.php:22` | Die Ansicht contentcheck/trash (doc/eng-us/features/6.0/content-checks.md, "Moving to the trash"): nur POST. | – |
-| `Exponential\View\Kernel\Contentcheck\Unreferenced` | class extends ModuleView | `kernel/private/classes/views/contentcheck/unreferenced.php:16` | Die Ansicht contentcheck/unreferenced (doc/eng-us/features/6.0/content-checks.md, "Unreferenced objects"): die veröffentlichten Objekte unterhalb eines Knotens (contentcheck/unr… | – |
+| `Exponential\View\Kernel\Contentcheck\Unreferenced` | class extends ModuleView | `kernel/private/classes/views/contentcheck/unreferenced.php:18` | Die Ansicht contentcheck/unreferenced (doc/eng-us/features/6.0/content-checks.md, „Unreferenced objects“): die veröffentlichten Objekte unterhalb eines Knotens (contentch… | – |
 | `Exponential\View\Kernel\Contentfinder\Action` | class extends ModuleView | `kernel/private/classes/views/contentfinder/action.php:21` | Die Ansicht contentfinder/action (doc/eng-us/features/6.0/content-finder.md, "Actions"): nur POST. | – |
-| `Exponential\View\Kernel\Contentfinder\Search` | class extends ModuleView | `kernel/private/classes/views/contentfinder/search.php:16` | Die Ansicht contentfinder/search (doc/eng-us/features/6.0/content-finder.md): ein Suchfeld und eine Typauswahl, gelesen aus dem Query-String (SearchText, Sea… | – |
+| `Exponential\View\Kernel\Contentfinder\Search` | class extends ModuleView | `kernel/private/classes/views/contentfinder/search.php:20` | Die Ansicht contentfinder/search (doc/eng-us/features/6.0/content-finder.md): ein Suchfeld und eine Typauswahl, gelesen aus den View-Parametern (text)… | – |
 | `Exponential\View\Kernel\Content\Action` | class extends ModuleView | `kernel/private/classes/views/content/action.php:21` | Der Code von kernel/content/action.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\Advancedsearch` | class extends ModuleView | `kernel/private/classes/views/content/advancedsearch.php:51` | Der Code von kernel/content/advancedsearch.php, in eine Klasse verschoben (#207 Stufe 1). | – |
-| `Exponential\View\Kernel\Content\Bookmark` | class extends ModuleView | `kernel/private/classes/views/content/bookmark.php:29` | Meine Lesezeichen: die Lesezeichen des aktuellen Benutzers nach Ordnern gruppiert, mit einem Ordner (folder), einer Reihenfolge (sort), einer Suche (?q=) und Blättern (offset), gehalten i… | – |
+| `Exponential\View\Kernel\Content\Bookmark` | class extends ModuleView | `kernel/private/classes/views/content/bookmark.php:30` | Meine Lesezeichen: die Lesezeichen des aktuellen Benutzers, nach Ordnern gruppiert, mit Ordner (folder), Reihenfolge (sort), Suche (/(q)/) und Seitenumbruch (offset), die erhalten bleiben… | – |
 | `Exponential\View\Kernel\Content\Browse` | class extends ModuleView | `kernel/private/classes/views/content/browse.php:21` | Der Code von kernel/content/browse.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\Collectedinfo` | class extends ModuleView | `kernel/private/classes/views/content/collectedinfo.php:21` | Der Code von kernel/content/collectedinfo.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\Collectinformation` | class extends ModuleView | `kernel/private/classes/views/content/collectinformation.php:21` | Der Code von kernel/content/collectinformation.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -419,7 +440,7 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\Content\Hide` | class extends ModuleView | `kernel/private/classes/views/content/hide.php:21` | Der Code von kernel/content/hide.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\History` | class extends ModuleView | `kernel/private/classes/views/content/history.php:27` | Der Code von kernel/content/history.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\Job` | class extends ModuleView | `kernel/private/classes/views/content/job.php:19` | Die Ansicht content/job/: die Fortschrittsseite eines Inhaltsjobs (ein großes Entfernen oder Kopieren eines Teilbaums, das im Hintergrund läuft, siehe kernel/classes/contentjob/… | – |
-| `Exponential\View\Kernel\Content\Jobs` | class extends ModuleView | `kernel/private/classes/views/content/jobs.php:19` | Die Ansicht content/jobs: die Liste der Inhaltsjobs (große Teilbaum-Entfernungen und -Kopien, die im Hintergrund laufen) mit dem, der sie gestartet hat, der Operation, so… | – |
+| `Exponential\View\Kernel\Content\Jobs` | class extends ModuleView | `kernel/private/classes/views/content/jobs.php:20` | Die Ansicht content/jobs: die Liste der Inhaltsjobs (große Teilbaum-Entfernungen und -Kopien, die im Hintergrund laufen) mit dem, der sie gestartet hat, der Operation, so… | – |
 | `Exponential\View\Kernel\Content\Keyword` | class extends ModuleView | `kernel/private/classes/views/content/keyword.php:21` | Der Code von kernel/content/keyword.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\Move` | class extends ModuleView | `kernel/private/classes/views/content/move.php:21` | Der Code von kernel/content/move.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\Multiedit` | class extends ModuleView | `kernel/private/classes/views/content/multiedit.php:10` | Der Code von kernel/content/multiedit.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -447,17 +468,31 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\Content\Versionview` | class extends ModuleView | `kernel/private/classes/views/content/versionview.php:21` | Der Code von kernel/content/versionview.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Content\View` | class extends ModuleView | `kernel/private/classes/views/content/view.php:21` | Der Code von kernel/content/view.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Csp\Report` | class extends ModuleView | `kernel/private/classes/views/csp/report.php:29` | Nimmt einen Bericht der Content Security Policy von einem Browser entgegen und schreibt dessen Verstöße nach var/log/csp.log (expContentSecurityPolicyReport). | – |
+| `Exponential\View\Kernel\Datatable\Conflicts` | class extends ModuleView | `kernel/private/classes/views/datatable/conflicts.php:15` | Die Ansicht datatable/conflicts (doc/eng-us/features/6.0/data-tables.md, „Conflicts“): die offenen Konflikte der Zwei-Wege-Synchronisationen mit der Regel… | – |
+| `Exponential\View\Kernel\Datatable\Connection` | class extends ModuleView | `kernel/private/classes/views/datatable/connection.php:17` | Die Ansicht datatable/connection (doc/eng-us/features/6.0/data-tables.md, „Connections“): legt eine neue Verbindung an (/new) oder zeigt, ändert, testet und ent… | – |
+| `Exponential\View\Kernel\Datatable\Connections` | class extends ModuleView | `kernel/private/classes/views/datatable/connections.php:16` | Die Ansicht datatable/connections (doc/eng-us/features/6.0/data-tables.md, „Connections“): die eigene Datenbank der Installation, die Verbindungen, die Extensions… | – |
+| `Exponential\View\Kernel\Datatable\Dashboard` | class extends ModuleView | `kernel/private/classes/views/datatable/dashboard.php:16` | Die Ansicht datatable/dashboard (doc/eng-us/features/6.0/data-tables.md): jede persistente Klasse der Installation mit ihrer Tabelle, Verbindung, Schlüsseln und… | – |
+| `Exponential\View\Kernel\Datatable\Rows` | class extends ModuleView | `kernel/private/classes/views/datatable/rows.php:16` | Die Ansicht datatable/rows (doc/eng-us/features/6.0/data-tables.md, „Rows“): die Zeilen der Tabelle einer persistenten Klasse, 25 je Seite, nach einem Feld gefiltert… | – |
+| `Exponential\View\Kernel\Datatable\Schema` | class extends ModuleView | `kernel/private/classes/views/datatable/schema.php:17` | Die Ansicht datatable/schema (doc/eng-us/features/6.0/data-tables.md, „Schema“): legt Datentabellen auf einer Verbindung an oder aktualisiert sie. | – |
+| `Exponential\View\Kernel\Datatable\Sync` | class extends ModuleView | `kernel/private/classes/views/datatable/sync.php:15` | Die Ansicht datatable/sync (doc/eng-us/features/6.0/data-tables.md, „Synchronisation“): legt eine Synchronisation an (/new, /new/(class)//(content_class)/ aus… | – |
+| `Exponential\View\Kernel\Datatable\Syncs` | class extends ModuleView | `kernel/private/classes/views/datatable/syncs.php:16` | Die Ansicht datatable/syncs (doc/eng-us/features/6.0/data-tables.md, „Synchronisation“): jede Synchronisation zwischen Inhalt und einer Datentabelle, mit ihrem… | – |
+| `Exponential\View\Kernel\Datatable\Table` | class extends ModuleView | `kernel/private/classes/views/datatable/table.php:16` | Die Ansicht datatable/table (doc/eng-us/features/6.0/data-tables.md, „Describe“): eine persistente Klasse und ihre Tabelle: die Definition (Felder, Schlüssel, Sortier… | – |
 | `Exponential\View\Kernel\Error\View` | class extends ModuleView | `kernel/private/classes/views/error/view.php:21` | Der Code von kernel/error/view.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Exphelp\Asset` | class extends ModuleView | `kernel/private/classes/views/exphelp/asset.php:15` | exphelp/asset/ (doc/eng-us/features/6.0/help-system.md): ein Bild unterhalb eines Hilfe-Wurzelverzeichnisses. | – |
-| `Exponential\View\Kernel\Exphelp\Contents` | class extends ModuleView | `kernel/private/classes/views/exphelp/contents.php:17` | exphelp/contents (doc/eng-us/features/6.0/help-system.md): jede Seite der Hilfe als ein Baum, alle Ordner geöffnet, mit einem Filterfeld (exphelp.js), das einschränkt… | – |
-| `Exponential\View\Kernel\Exphelp\Context` | class extends ModuleView | `kernel/private/classes/views/exphelp/context.php:21` | exphelp/context/ und exphelp/context/manual/ (doc/eng-us/features/6.0/help-content.md, "Context help by help_id"): ein Hilfethema oder das Inhaltsverzeichnis eines Handbuchs… | – |
-| `Exponential\View\Kernel\Exphelp\Dashboard` | class extends ModuleView | `kernel/private/classes/views/exphelp/dashboard.php:17` | exphelp/dashboard (doc/eng-us/features/6.0/help-system.md): die Startseite der Hilfe. | – |
-| `Exponential\View\Kernel\Exphelp\Manual` | class extends ModuleView | `kernel/private/classes/views/exphelp/manual.php:18` | exphelp/manual/ (doc/eng-us/features/6.0/help-content.md): ein als Inhalt gepflegtes Hilfehandbuch, seine Metadaten und sein Inhaltsverzeichnis (Kapitel und Themen t… | – |
+| `Exponential\View\Kernel\Exphelp\Audience` | class extends ModuleView | `kernel/private/classes/views/exphelp/audience.php:20` | exphelp/audience/ (doc/eng-us/features/6.0/help-system.md, „Landing pages“): die Landingpage einer Zielgruppe, aufgebaut aus den Blöcken von exphelp.ini [… | – |
+| `Exponential\View\Kernel\Exphelp\Contents` | class extends ModuleView | `kernel/private/classes/views/exphelp/contents.php:19` | exphelp/contents (doc/eng-us/features/6.0/help-system.md): jede Seite der Hilfe als ein Baum, seine Ordner geschlossen (nativ : Titel und Seitenanzahl, die… | – |
+| `Exponential\View\Kernel\Exphelp\Context` | class extends ModuleView | `kernel/private/classes/views/exphelp/context.php:21` | exphelp/context/ und exphelp/context/manual/ (doc/eng-us/features/6.0/help-content.md, „Context help by help_id“): ein Hilfethema oder das Inhaltsverzeichnis eines Handbuchs… | – |
+| `Exponential\View\Kernel\Exphelp\Dashboard` | class extends ModuleView | `kernel/private/classes/views/exphelp/dashboard.php:19` | exphelp/dashboard (doc/eng-us/features/6.0/help-system.md): die Startseite der Hilfe. | – |
+| `Exponential\View\Kernel\Exphelp\Extensions` | class extends ModuleView | `kernel/private/classes/views/exphelp/extensions.php:27` | exphelp/extensions (doc/eng-us/features/6.0/help-system.md, „Documentation of the extensions“): die Dokumentation der aktiven Extensions in der Hil… | – |
+| `Exponential\View\Kernel\Exphelp\Feedback` | class extends ModuleView | `kernel/private/classes/views/exphelp/feedback.php:21` | exphelp/feedback/ (doc/eng-us/features/6.0/help-content.md, „Was this helpful?“): speichert eine Antwort auf „War das hilfreich?“ zu einem freigegebenen Hilfethema (… | – |
+| `Exponential\View\Kernel\Exphelp\Image` | class extends ModuleView | `kernel/private/classes/views/exphelp/image.php:18` | exphelp/image/(id)/ (doc/eng-us/features/6.0/help-system.md, „External images“): die lokale Kopie eines externen Bildes, das eine Hilfeseite zeigt (README.md… | – |
+| `Exponential\View\Kernel\Exphelp\Manual` | class extends ModuleView | `kernel/private/classes/views/exphelp/manual.php:18` | exphelp/manual/ (doc/eng-us/features/6.0/help-content.md): ein als Inhalt gepflegtes Hilfehandbuch, seine Metadaten und sein Inhaltsverzeichnis (Kapitel und… | – |
 | `Exponential\View\Kernel\Exphelp\Pdf` | class extends ModuleView | `kernel/private/classes/views/exphelp/pdf.php:18` | exphelp/pdf/ (doc/eng-us/features/6.0/help-system.md, "Print and PDF"): die Hilfeseite als PDF-Datei zum Herunterladen. | – |
-| `Exponential\View\Kernel\Exphelp\Report` | class extends ModuleView | `kernel/private/classes/views/exphelp/report.php:18` | exphelp/report (doc/eng-us/features/6.0/help-system.md, "Reporting an error"): welcher Tracker, wie man einen guten Bericht schreibt, ein vorausgefülltes Issue, die sichere Diagno… | – |
-| `Exponential\View\Kernel\Exphelp\Search` | class extends ModuleView | `kernel/private/classes/views/exphelp/search.php:31` | exphelp/search (doc/eng-us/features/6.0/help-system.md, "Search"): die Such- und Stöberseite der Hilfe. | – |
-| `Exponential\View\Kernel\Exphelp\Topic` | class extends ModuleView | `kernel/private/classes/views/exphelp/topic.php:21` | exphelp/topic/ (doc/eng-us/features/6.0/help-content.md): ein als Inhalt gepflegtes Hilfethema, gerendert. | – |
-| `Exponential\View\Kernel\Exphelp\Viewer` | class extends ModuleView | `kernel/private/classes/views/exphelp/viewer.php:19` | exphelp/viewer/ (doc/eng-us/features/6.0/help-system.md): eine Hilfeseite, gerendert. | – |
+| `Exponential\View\Kernel\Exphelp\Report` | class extends ModuleView | `kernel/private/classes/views/exphelp/report.php:18` | exphelp/report (doc/eng-us/features/6.0/help-system.md, „Reporting an error“): welcher Tracker, wie man eine gute Meldung schreibt, ein vorausgefülltes Issue, die sicher… | – |
+| `Exponential\View\Kernel\Exphelp\Search` | class extends ModuleView | `kernel/private/classes/views/exphelp/search.php:32` | exphelp/search (doc/eng-us/features/6.0/help-system.md, "Search"): die Such- und Stöberseite der Hilfe. | – |
+| `Exponential\View\Kernel\Exphelp\State` | class extends ModuleView | `kernel/private/classes/views/exphelp/state.php:21` | exphelp/state/ und exphelp/state/manual/ (doc/eng-us/features/6.0/help-content.md, „The review workflow“): ein Schritt von Entwurf -› Prüfung -› Freigegeben für… | – |
+| `Exponential\View\Kernel\Exphelp\Topic` | class extends ModuleView | `kernel/private/classes/views/exphelp/topic.php:26` | exphelp/topic/ (doc/eng-us/features/6.0/help-content.md): ein als Inhalt gepflegtes Hilfethema, gerendert. | – |
+| `Exponential\View\Kernel\Exphelp\Viewer` | class extends ModuleView | `kernel/private/classes/views/exphelp/viewer.php:24` | exphelp/viewer/ (doc/eng-us/features/6.0/help-system.md): eine Hilfeseite, gerendert. | – |
 | `Exponential\View\Kernel\Ezinfo\About` | class extends ModuleView | `kernel/private/classes/views/ezinfo/about.php:267` | Der Code von kernel/ezinfo/about.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Ezinfo\Copyright` | class extends ModuleView | `kernel/private/classes/views/ezinfo/copyright.php:21` | Der Code von kernel/ezinfo/copyright.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Ezinfo\Isalive` | class extends ModuleView | `kernel/private/classes/views/ezinfo/isalive.php:21` | Der Code von kernel/ezinfo/isalive.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -466,7 +501,7 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\Infocollector\Overview` | class extends ModuleView | `kernel/private/classes/views/infocollector/overview.php:28` | Setup › Gesammelte Informationen (infocollector/overview): die Objekte (Formulare, Umfragen, Feedbackseiten), die Informationen gesammelt haben, mit Kennzahlen, ei… | – |
 | `Exponential\View\Kernel\Infocollector\View` | class extends ModuleView | `kernel/private/classes/views/infocollector/view.php:21` | Der Code von kernel/infocollector/view.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Layout\Set` | class extends ModuleView | `kernel/private/classes/views/layout/set.php:21` | Der Code von kernel/layout/set.php, in eine Klasse verschoben (#207 Stufe 1). | – |
-| `Exponential\View\Kernel\Mailpreferences\Admin` | class extends Page | `kernel/private/classes/views/mailpreferences/admin.php:27` | Die Seiten des Administrators für die E-Mail-Einstellungen (Richtlinie mailpreferences/administrate): | – |
+| `Exponential\View\Kernel\Mailpreferences\Admin` | class extends Page | `kernel/private/classes/views/mailpreferences/admin.php:29` | Die Seiten des Administrators für die E-Mail-Einstellungen (Richtlinie mailpreferences/administrate): | – |
 | `Exponential\View\Kernel\Mailpreferences\Confirm` | class extends Page | `kernel/private/classes/views/mailpreferences/confirm.php:20` | Der Link einer Double-Opt-in-Mail (eine Kategorie oder eine neue E-Mail-Adresse). | – |
 | `Exponential\View\Kernel\Mailpreferences\Export` | class extends Page | `kernel/private/classes/views/mailpreferences/export.php:20` | „Meine E-Mail-Daten herunterladen“: alles, was über die E-Mail-Präferenzen einer Person gespeichert ist, als JSON oder CSV (die Kategorien und ihr Zustand, ausstehende Bestätigu… | – |
 | `Exponential\View\Kernel\Mailpreferences\Manage` | class extends Page | `kernel/private/classes/views/mailpreferences/manage.php:19` | Die Einstellungsseite über einen persönlichen Link (der "Manage"-Link jeder optionalen E-Mail oder "send me a link"): dieselbe Seite wie mailpreferences/settings,… | – |
@@ -501,6 +536,7 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\Rss\Feed` | class extends ModuleView | `kernel/private/classes/views/rss/feed.php:21` | Der Code von kernel/rss/feed.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Rss\ListView` | class extends ModuleView | `kernel/private/classes/views/rss/list.php:21` | Der Code von kernel/rss/list.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Search\Stats` | class extends ModuleView | `kernel/private/classes/views/search/stats.php:22` | Der Code von kernel/search/stats.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+| `Exponential\View\Kernel\Secrets\SecretList` | class extends ModuleView | `kernel/private/classes/views/secrets/list.php:17` | Die Ansicht secrets/list (doc/eng-us/features/6.0/secret-store.md): die Namen der Geheimnisse des Geheimnisspeichers des Kernels und von secrets.ini, mit dem… | – |
 | `Exponential\View\Kernel\Section\Assign` | class extends ModuleView | `kernel/private/classes/views/section/assign.php:21` | Der Code von kernel/section/assign.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Section\Edit` | class extends ModuleView | `kernel/private/classes/views/section/edit.php:21` | Der Code von kernel/section/edit.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Section\ListView` | class extends ModuleView | `kernel/private/classes/views/section/list.php:22` | Der Code von kernel/section/list.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -520,15 +556,16 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\Setup\Info` | class extends ModuleView | `kernel/private/classes/views/setup/info.php:21` | Der Code von kernel/setup/info.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Setup\Kerneloverride` | class extends ModuleView | `kernel/private/classes/views/setup/kerneloverride.php:10` | Der Code von kernel/setup/kerneloverride.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Setup\Languages` | class extends ModuleView | `kernel/private/classes/views/setup/languages.php:17` | Setup › Oberflächensprachen (setup/languages): jede Locale mit der Übersetzung, in der die Administrationsoberfläche sie anzeigt, die Kette der Übersetzungen, auf die sie zurückf… | – |
-| `Exponential\View\Kernel\Setup\Logs` | class extends ModuleView | `kernel/private/classes/views/setup/logs.php:20` | Setup › Logdateien (setup/logs; doc/eng-us/features/6.0/log-viewer.md): die Seite des Log-Viewers. | – |
+| `Exponential\View\Kernel\Setup\Logs` | class extends ModuleView | `kernel/private/classes/views/setup/logs.php:22` | Setup › Logdateien (setup/logs; doc/eng-us/features/6.0/log-viewer.md): die Seite des Log-Viewers. | – |
 | `Exponential\View\Kernel\Setup\Logsaction` | class extends ModuleView | `kernel/private/classes/views/setup/logsaction.php:21` | Die Aktionen des Log-Viewers (setup/logsaction; doc/eng-us/features/6.0/log-viewer.md, "Actions"). | – |
-| `Exponential\View\Kernel\Setup\Logsdigest` | class extends ModuleView | `kernel/private/classes/views/setup/logsdigest.php:22` | Setup › Logdateien › Fehlerübersicht (setup/logsdigest; doc/eng-us/features/6.0/log-viewer.md, "Error digest"): die unterschiedlichen Fehler und Warnungen der letzten Stun… | – |
-| `Exponential\View\Kernel\Setup\Logsfeed` | class extends ModuleView | `kernel/private/classes/views/setup/logsfeed.php:25` | Der Feed des Log-Viewers (setup/logsfeed; doc/eng-us/features/6.0/log-viewer.md, "The feed"): JSON für das Skript der Seite, jeweils eine kurze Anfrage, nie he… | – |
-| `Exponential\View\Kernel\Setup\Logshealth` | class extends ModuleView | `kernel/private/classes/views/setup/logshealth.php:17` | Setup › Logdateien › Zustand (setup/logshealth; doc/eng-us/features/6.0/log-viewer.md, "Health"): der Plattenplatz, den die Logs und ihre Archive belegen, gegenüber [HealthSett… | – |
-| `Exponential\View\Kernel\Setup\Logsmanage` | class extends ModuleView | `kernel/private/classes/views/setup/logsmanage.php:24` | Setup › Logdateien › Verwalten (setup/logsmanage; doc/eng-us/features/6.0/log-viewer.md, "Managing logs"): jedes Log mit seiner Größe, geschätzten Zeilen, letztem Schreibzugriff,… | – |
+| `Exponential\View\Kernel\Setup\Logsdigest` | class extends ModuleView | `kernel/private/classes/views/setup/logsdigest.php:22` | Setup › Logdateien › Fehlerübersicht (setup/logsdigest; doc/eng-us/features/6.0/log-viewer.md, „Error digest“): die verschiedenen Fehler und Warnungen der Lo… | – |
+| `Exponential\View\Kernel\Setup\Logsfeed` | class extends ModuleView | `kernel/private/classes/views/setup/logsfeed.php:28` | Der Feed des Log-Viewers (setup/logsfeed; doc/eng-us/features/6.0/log-viewer.md, „The feed“): JSON für das Skript der Seite, je eine kurze Anfrage, n… | – |
+| `Exponential\View\Kernel\Setup\Logshealth` | class extends ModuleView | `kernel/private/classes/views/setup/logshealth.php:17` | Setup › Logdateien › Zustand (setup/logshealth; doc/eng-us/features/6.0/log-viewer.md, „Health“): der Speicherplatz, den die Logs und ihre Archive belegen, gegenüber [Hea… | – |
+| `Exponential\View\Kernel\Setup\Logsmanage` | class extends ModuleView | `kernel/private/classes/views/setup/logsmanage.php:24` | Setup › Logdateien › Verwalten (setup/logsmanage; doc/eng-us/features/6.0/log-viewer.md, „Managing logs“): jedes Log mit Größe, geschätzten Zeilen, letzt… | – |
 | `Exponential\View\Kernel\Setup\Maintenance` | class extends ModuleView | `kernel/private/classes/views/setup/maintenance.php:19` | Der Code von kernel/setup/maintenance.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Setup\Menuconfig` | class extends ModuleView | `kernel/private/classes/views/setup/menuconfig.php:21` | Der Code von kernel/setup/menuconfig.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Setup\Moduleextension` | class extends ModuleView | `kernel/private/classes/views/setup/moduleextension.php:10` | Der Code von kernel/setup/moduleextension.php, in eine Klasse verschoben (#207 Stufe 1). | – |
+| `Exponential\View\Kernel\Setup\Moduletable` | class extends ModuleView | `kernel/private/classes/views/setup/moduletable.php:18` | Die Ansicht setup/moduletable: der Modultabellen-Assistent (expModuleTableWizard; doc/eng-us/features/6.0/data-tables.md, „The module table wizard“). | – |
 | `Exponential\View\Kernel\Setup\Modulewizard` | class extends ModuleView | `kernel/private/classes/views/setup/modulewizard.php:10` | Der Code von kernel/setup/modulewizard.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Setup\Preload` | class extends ModuleView | `kernel/private/classes/views/setup/preload.php:36` | Setup › Preload: was gerade läuft, das Formular, das einen Lauf startet oder zeigt, was er tun würde (der Probelauf), und die letzten Läufe. | – |
 | `Exponential\View\Kernel\Setup\Preloadjob` | class extends ModuleView | `kernel/private/classes/views/setup/preloadjob.php:37` | Setup › Backend von Preload, antwortet mit JSON: POST Action=start, SiteAccess, MaxPages, MaxDepth[, Images] -› { "id": "..." }, 409, solange ein Lauf aktiv ist… | – |
@@ -593,7 +630,7 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\State\Groups` | class extends ModuleView | `kernel/private/classes/views/state/groups.php:21` | Der Code von kernel/state/groups.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\State\View` | class extends ModuleView | `kernel/private/classes/views/state/view.php:21` | Der Code von kernel/state/view.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Trigger\ListView` | class extends ModuleView | `kernel/private/classes/views/trigger/list.php:37` | Der Code von kernel/trigger/list.php, in eine Klasse verschoben (#207 Stufe 1). | – |
-| `Exponential\View\Kernel\Uiswitch\Set` | class extends ModuleView | `kernel/private/classes/views/uiswitch/set.php:20` | Die Ansicht uiswitch/set (doc/eng-us/features/6.0/ui-switch.md): ändert eine der Oberflächen-Einstellungen des angemeldeten Benutzers im aktuellen Siteaccess und kehrt zurück… | – |
+| `Exponential\View\Kernel\Uiswitch\Set` | class extends ModuleView | `kernel/private/classes/views/uiswitch/set.php:20` | Die Ansicht uiswitch/set (doc/eng-us/features/6.0/ui-switch.md): ändert eine der Oberflächeneinstellungen des angemeldeten Benutzers in der aktuellen Siteaccess und geht… | – |
 | `Exponential\View\Kernel\Uiswitch\State` | class extends ModuleView | `kernel/private/classes/views/uiswitch/state.php:14` | Die Ansicht uiswitch/state: JSON dessen, was der angemeldete Benutzer im aktuellen Siteaccess wählen darf, für Skripte (expUISwitch::toolbar()). | – |
 | `Exponential\View\Kernel\Url\Edit` | class extends ModuleView | `kernel/private/classes/views/url/edit.php:21` | Der Code von kernel/url/edit.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Url\ListView` | class extends ModuleView | `kernel/private/classes/views/url/list.php:22` | Der Code von kernel/url/list.php, in eine Klasse verschoben (#207 Stufe 1). | – |
@@ -609,7 +646,8 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\User\Password` | class extends ModuleView | `kernel/private/classes/views/user/password.php:24` | Der Code von kernel/user/password.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\User\Preferences` | class extends ModuleView | `kernel/private/classes/views/user/preferences.php:21` | Der Code von kernel/user/preferences.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\User\Register` | class extends ModuleView | `kernel/private/classes/views/user/register.php:195` | Der Code von kernel/user/register.php, in eine Klasse verschoben (#207 Stufe 1). | – |
-| `Exponential\View\Kernel\User\Registration` | class extends ModuleView | `kernel/private/classes/views/user/registration.php:30` | user/registration/: die Seite, die die signierten Links der Mail "Neuer Benutzer registriert" an den Administrator öffnen (expRegistrationAdminAction, doc/eng-us/features/6.0/re… | – |
+| `Exponential\View\Kernel\User\Registration` | class extends ModuleView | `kernel/private/classes/views/user/registration.php:30` | user/registration/: die Seite, die die signierten Links der Mail „Neuer Benutzer registriert“ an den Administrator öffnen (expRegistrationAdminAction, doc/eng-us/features… | – |
+| `Exponential\View\Kernel\User\Sessions` | class extends ModuleView | `kernel/private/classes/views/user/sessions.php:28` | user/sessions: „Ihre Geräte“. | – |
 | `Exponential\View\Kernel\User\Setting` | class extends ModuleView | `kernel/private/classes/views/user/setting.php:21` | Der Code von kernel/user/setting.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\User\Success` | class extends ModuleView | `kernel/private/classes/views/user/success.php:21` | Der Code von kernel/user/success.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\User\Unactivated` | class extends ModuleView | `kernel/private/classes/views/user/unactivated.php:31` | user/unactivated: die Benutzer, die sich registriert und ihr Konto nie aktiviert haben (expUnactivatedUsers). | – |
@@ -629,7 +667,7 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `Exponential\View\Kernel\Workflow\View` | class extends ModuleView | `kernel/private/classes/views/workflow/view.php:21` | Der Code von kernel/workflow/view.php, in eine Klasse verschoben (#207 Stufe 1). | – |
 | `Exponential\View\Kernel\Workflow\Workflowlist` | class extends ModuleView | `kernel/private/classes/views/workflow/workflowlist.php:56` | Entfernt einen Workflow und alles, was dazugehört. | – |
 
-## Modulansichten (491)
+## Modulansichten (532)
 
 ### extension/AdminAid (6)
 
@@ -727,6 +765,20 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/cjw_paging/page` | `page.php` | – | `extension/cjw_themes_jumper/modules/cjw_paging/module.php:16` |
 | `/osm_proxy/tiles` | `tiles.php` | tiles | `extension/cjw_themes_jumper/modules/osm_proxy/module.php:16` |
 
+### extension/expai (9)
+
+| Ansicht | Skript | Richtlinienfunktionen | Definiert in |
+| --- | --- | --- | --- |
+| `/expai/log` | `log.php` | write | `extension/expai/modules/expai/module.php:41` |
+| `/expai/budgets` | `budgets.php` | log | `extension/expai/modules/expai/module.php:52` |
+| `/expai/dashboard` | `dashboard.php` | write | `extension/expai/modules/expai/module.php:60` |
+| `/expai/models` | `models.php` | model_manage | `extension/expai/modules/expai/module.php:72` |
+| `/expai/chain` | `chain.php` | chain | `extension/expai/modules/expai/module.php:83` |
+| `/expai/vector` | `vector.php` | vector | `extension/expai/modules/expai/module.php:94` |
+| `/expai/stream` | `stream.php` | vector | `extension/expai/modules/expai/module.php:102` |
+| `/expai/summary` | `summary.php` | summary | `extension/expai/modules/expai/module.php:110` |
+| `/expai/alttext` | `alttext.php` | write | `extension/expai/modules/expai/module.php:157` |
+
 ### extension/expchangeclass (3)
 
 | Ansicht | Skript | Richtlinienfunktionen | Definiert in |
@@ -734,6 +786,12 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/changeclass/select_class` | `select_class.php` | convert | `extension/expchangeclass/modules/changeclass/module.php:34` |
 | `/changeclass/map_attributes` | `map_attributes.php` | convert | `extension/expchangeclass/modules/changeclass/module.php:38` |
 | `/changeclass/action` | `action.php` | convert | `extension/expchangeclass/modules/changeclass/module.php:42` |
+
+### extension/expimageeditor (1)
+
+| Ansicht | Skript | Richtlinienfunktionen | Definiert in |
+| --- | --- | --- | --- |
+| `/expimageeditor/save` | `save.php` | edit | `extension/expimageeditor/modules/expimageeditor/module.php:15` |
 
 ### extension/explayouts (9)
 
@@ -782,6 +840,16 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/explayouts_ui_api/rules` | `rules.php` | read | `extension/explayouts_ui_api/modules/explayouts_ui_api/module.php:14` |
 | `/explayouts_ui_api/blocks` | `blocks.php` | read | `extension/explayouts_ui_api/modules/explayouts_ui_api/module.php:21` |
 | `/explayouts_ui_api/app` | `app.php` | read | `extension/explayouts_ui_api/modules/explayouts_ui_api/module.php:28` |
+
+### extension/expqueue (5)
+
+| Ansicht | Skript | Richtlinienfunktionen | Definiert in |
+| --- | --- | --- | --- |
+| `/expqueue/dashboard` | `dashboard.php` | view | `extension/expqueue/modules/expqueue/module.php:14` |
+| `/expqueue/list` | `list.php` | view | `extension/expqueue/modules/expqueue/module.php:20` |
+| `/expqueue/job` | `job.php` | view | `extension/expqueue/modules/expqueue/module.php:28` |
+| `/expqueue/group` | `group.php` | view | `extension/expqueue/modules/expqueue/module.php:34` |
+| `/expqueue/action` | `action.php` | manage | `extension/expqueue/modules/expqueue/module.php:41` |
 
 ### extension/exp_oe_tiptap (1)
 
@@ -857,12 +925,21 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/ezmultiupload/upload` | `upload.php` | – | `extension/ezmultiupload/modules/ezmultiupload/module.php:15` |
 | `/ezmultiupload/service` | `service.php` | – | `extension/ezmultiupload/modules/ezmultiupload/module.php:20` |
 
-### extension/ezodf (2)
+### extension/ezodf (11)
 
 | Ansicht | Skript | Richtlinienfunktionen | Definiert in |
 | --- | --- | --- | --- |
-| `/ezodf/import` | `import.php` | import | `extension/ezodf/modules/ezodf/module.php:34` |
-| `/ezodf/export` | `export.php` | export | `extension/ezodf/modules/ezodf/module.php:42` |
+| `/ezodf/import` | `import.php` | import | `extension/ezodf/modules/ezodf/module.php:29` |
+| `/ezodf/export` | `export.php` | export | `extension/ezodf/modules/ezodf/module.php:37` |
+| `/ezodf/upload` | `upload.php` | import | `extension/ezodf/modules/ezodf/module.php:45` |
+| `/ezodf/batch` | `batch.php` | import | `extension/ezodf/modules/ezodf/module.php:50` |
+| `/ezodf/batchstatus` | `batchstatus.php` | import | `extension/ezodf/modules/ezodf/module.php:56` |
+| `/ezodf/runs` | `runs.php` | import | `extension/ezodf/modules/ezodf/module.php:61` |
+| `/ezodf/exportfile` | `exportfile.php` | export | `extension/ezodf/modules/ezodf/module.php:67` |
+| `/ezodf/exportstatus` | `exportstatus.php` | export | `extension/ezodf/modules/ezodf/module.php:72` |
+| `/ezodf/converter` | `converter.php` | converter | `extension/ezodf/modules/ezodf/module.php:77` |
+| `/ezodf/converterstatus` | `converterstatus.php` | converter | `extension/ezodf/modules/ezodf/module.php:83` |
+| `/ezodf/converterfile` | `converterfile.php` | converter | `extension/ezodf/modules/ezodf/module.php:88` |
 
 ### extension/ezoe (8)
 
@@ -1001,6 +1078,31 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/info-collection/view-modal` | `viewmodal.php` | read | `extension/sevenx_themes_media/modules/info-collection/module.php:6` |
 | `/info-collection/submit` | `submit.php` | read | `extension/sevenx_themes_media/modules/info-collection/module.php:13` |
 
+### extension/sqliimport (20)
+
+| Ansicht | Skript | Richtlinienfunktionen | Definiert in |
+| --- | --- | --- | --- |
+| `/sqliimport/list` | `list.php` | – | `extension/sqliimport/modules/sqliimport/module.php:36` |
+| `/sqliimport/run` | `run.php` | – | `extension/sqliimport/modules/sqliimport/module.php:44` |
+| `/sqliimport/mapping` | `mapping.php` | – | `extension/sqliimport/modules/sqliimport/module.php:52` |
+| `/sqliimport/report` | `report.php` | – | `extension/sqliimport/modules/sqliimport/module.php:59` |
+| `/sqliimport/statistics` | `statistics.php` | – | `extension/sqliimport/modules/sqliimport/module.php:67` |
+| `/sqliimport/action` | `action.php` | – | `extension/sqliimport/modules/sqliimport/module.php:77` |
+| `/sqliimport/edit` | `edit.php` | manage oder manageimports | `extension/sqliimport/modules/sqliimport/module.php:84` |
+| `/sqliimport/schedules` | `schedules.php` | – | `extension/sqliimport/modules/sqliimport/module.php:92` |
+| `/sqliimport/catalogue` | `catalogue.php` | – | `extension/sqliimport/modules/sqliimport/module.php:100` |
+| `/sqliimport/settings` | `settings.php` | manage oder manageimports | `extension/sqliimport/modules/sqliimport/module.php:108` |
+| `/sqliimport/transfer` | `transfer.php` | manage oder manageimports | `extension/sqliimport/modules/sqliimport/module.php:116` |
+| `/sqliimport/templates` | `templates.php` | manage oder manageimports | `extension/sqliimport/modules/sqliimport/module.php:124` |
+| `/sqliimport/trigger` | `trigger.php` | – | `extension/sqliimport/modules/sqliimport/module.php:135` |
+| `/sqliimport/items` | `items.php` | – | `extension/sqliimport/modules/sqliimport/module.php:143` |
+| `/sqliimport/scheduledlist` | `scheduledlist.php` | – | `extension/sqliimport/modules/sqliimport/module.php:151` |
+| `/sqliimport/addimport` | `addimport.php` | – | `extension/sqliimport/modules/sqliimport/module.php:158` |
+| `/sqliimport/addscheduled` | `addscheduled.php` | – | `extension/sqliimport/modules/sqliimport/module.php:167` |
+| `/sqliimport/removescheduled` | `removescheduled.php` | – | `extension/sqliimport/modules/sqliimport/module.php:186` |
+| `/sqliimport/alterimport` | `alterimport.php` | – | `extension/sqliimport/modules/sqliimport/module.php:193` |
+| `/sqliimport/purgelist` | `purgelist.php` | – | `extension/sqliimport/modules/sqliimport/module.php:200` |
+
 ### extension/syndication (13)
 
 | Ansicht | Skript | Richtlinienfunktionen | Definiert in |
@@ -1040,7 +1142,7 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/sitemaps/index` | `index.php` | – | `extension/xrowmetadata/modules/sitemaps/module.php:9` |
 | `/sitemaps/robots` | `robots.php` | – | `extension/xrowmetadata/modules/sitemaps/module.php:12` |
 
-### kernel/modules (234)
+### kernel/modules (231)
 
 | Ansicht | Skript | Richtlinienfunktionen | Definiert in |
 | --- | --- | --- | --- |
@@ -1109,31 +1211,45 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/content/translation` | `translation.php` | read | `kernel/content/module.php:476` |
 | `/content/treemenu` | `treemenu.php` | read | `kernel/content/module.php:505` |
 | `/content/subitemsexport` | `subitemsexport.php` | read | `kernel/content/module.php:513` |
-| `/content/dashboard` | `dashboard.php` | dashboard | `kernel/content/module.php:519` |
-| `/content/queued` | `queued.php` | edit | `kernel/content/module.php:526` |
-| `/content/job` | `job.php` | read | `kernel/content/module.php:535` |
-| `/content/jobs` | `jobs.php` | read | `kernel/content/module.php:542` |
-| `/contentcheck/unreferenced` | `unreferenced.php` | unreferenced | `kernel/contentcheck/module.php:26` |
-| `/contentcheck/trash` | `trash.php` | unreferenced, trash | `kernel/contentcheck/module.php:34` |
-| `/contentcheck/brokenrelations` | `brokenrelations.php` | brokenrelations | `kernel/contentcheck/module.php:42` |
-| `/contentcheck/fixfiles` | `fixfiles.php` | brokenrelations, fixfiles | `kernel/contentcheck/module.php:49` |
-| `/contentcheck/scope` | `scope.php` | – | `kernel/contentcheck/module.php:57` |
-| `/contentcheck/storage` | `storage.php` | storage | `kernel/contentcheck/module.php:64` |
-| `/contentcheck/storageaction` | `storageaction.php` | storage | `kernel/contentcheck/module.php:72` |
-| `/contentfinder/search` | `search.php` | search | `kernel/contentfinder/module.php:24` |
-| `/contentfinder/action` | `action.php` | search, delete | `kernel/contentfinder/module.php:31` |
+| `/content/dashboard` | `dashboard.php` | dashboard | `kernel/content/module.php:520` |
+| `/content/queued` | `queued.php` | edit | `kernel/content/module.php:527` |
+| `/content/job` | `job.php` | read | `kernel/content/module.php:536` |
+| `/content/jobs` | `jobs.php` | read | `kernel/content/module.php:544` |
+| `/contentcheck/unreferenced` | `unreferenced.php` | unreferenced | `kernel/contentcheck/module.php:28` |
+| `/contentcheck/trash` | `trash.php` | unreferenced, trash | `kernel/contentcheck/module.php:37` |
+| `/contentcheck/brokenrelations` | `brokenrelations.php` | brokenrelations | `kernel/contentcheck/module.php:46` |
+| `/contentcheck/fixfiles` | `fixfiles.php` | brokenrelations, fixfiles | `kernel/contentcheck/module.php:56` |
+| `/contentcheck/scope` | `scope.php` | – | `kernel/contentcheck/module.php:64` |
+| `/contentcheck/storage` | `storage.php` | storage | `kernel/contentcheck/module.php:72` |
+| `/contentcheck/storageaction` | `storageaction.php` | storage | `kernel/contentcheck/module.php:81` |
+| `/contentfinder/search` | `search.php` | search | `kernel/contentfinder/module.php:25` |
+| `/contentfinder/action` | `action.php` | search, delete | `kernel/contentfinder/module.php:33` |
 | `/csp/report` | `report.php` | – | `kernel/csp/module.php:22` |
+| `/datatable/dashboard` | `dashboard.php` | read | `kernel/datatable/module.php:21` |
+| `/datatable/table` | `table.php` | read | `kernel/datatable/module.php:28` |
+| `/datatable/rows` | `rows.php` | read | `kernel/datatable/module.php:34` |
+| `/datatable/schema` | `schema.php` | manage | `kernel/datatable/module.php:41` |
+| `/datatable/syncs` | `syncs.php` | sync | `kernel/datatable/module.php:48` |
+| `/datatable/sync` | `sync.php` | sync | `kernel/datatable/module.php:54` |
+| `/datatable/conflicts` | `conflicts.php` | sync | `kernel/datatable/module.php:61` |
+| `/datatable/connections` | `connections.php` | connections | `kernel/datatable/module.php:68` |
+| `/datatable/connection` | `connection.php` | connections | `kernel/datatable/module.php:74` |
 | `/error/view` | `view.php` | – | `kernel/error/module.php:13` |
-| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:28` |
-| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:35` |
-| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:42` |
-| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:51` |
-| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:65` |
-| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:72` |
-| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:79` |
-| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:87` |
-| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:94` |
-| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:102` |
+| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:41` |
+| `/exphelp/audience` | `audience.php` | read | `kernel/exphelp/module.php:49` |
+| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:59` |
+| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:67` |
+| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:77` |
+| `/exphelp/extensions` | `extensions.php` | read | `kernel/exphelp/module.php:93` |
+| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:100` |
+| `/exphelp/image` | `image.php` | read | `kernel/exphelp/module.php:108` |
+| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:116` |
+| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:123` |
+| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:132` |
+| `/exphelp/state` | `state.php` | read | `kernel/exphelp/module.php:143` |
+| `/exphelp/feedback` | `feedback.php` | – | `kernel/exphelp/module.php:151` |
+| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:159` |
+| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:168` |
 | `/ezinfo/copyright` | `copyright.php` | read | `kernel/ezinfo/module.php:14` |
 | `/ezinfo/about` | `about.php` | read | `kernel/ezinfo/module.php:21` |
 | `/ezinfo/is_alive` | `isalive.php` | read | `kernel/ezinfo/module.php:27` |
@@ -1155,12 +1271,8 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/notification/job` | `job.php` | administrate | `kernel/notification/module.php:39` |
 | `/notification/addtonotification` | `addtonotification.php` | use | `kernel/notification/module.php:46` |
 | `/package/list` | `list.php` | list | `kernel/package/module.php:13` |
-| `/package/upload` | `upload.php` | import | `kernel/package/module.php:29` |
-| `/package/create` | `create.php` | create | `kernel/package/module.php:37` |
-| `/package/viewfile` | `viewfile.php` | read | `kernel/package/module.php:84` |
-| `/package/compare` | `compare.php` | read | `kernel/package/module.php:95` |
-| `/package/install` | `install.php` | install | `kernel/package/module.php:108` |
-| `/package/uninstall` | `uninstall.php` | install | `kernel/package/module.php:132` |
+| `/package/export` | `export.php` | export | `kernel/package/module.php:62` |
+| `/package/view` | `view.php` | read | `kernel/package/module.php:71` |
 | `/pdf/edit` | `edit.php` | edit | `kernel/pdf/module.php:13` |
 | `/pdf/list` | `list.php` | edit | `kernel/pdf/module.php:48` |
 | `/role/list` | `list.php` | – | `kernel/role/module.php:13` |
@@ -1174,66 +1286,51 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/rss/edit_import` | `edit_import.php` | edit | `kernel/rss/module.php:41` |
 | `/rss/feed` | `feed.php` | feed | `kernel/rss/module.php:55` |
 | `/search/stats` | `stats.php` | – | `kernel/search/module.php:15` |
+| `/secrets/list` | `list.php` | manage | `kernel/secrets/module.php:19` |
 | `/section/list` | `list.php` | ansehen, bearbeiten oder zuweisen | `kernel/section/module.php:13` |
 | `/section/view` | `view.php` | ansehen oder zuweisen | `kernel/section/module.php:20` |
 | `/section/edit` | `edit.php` | edit | `kernel/section/module.php:28` |
 | `/section/assign` | `assign.php` | assign | `kernel/section/module.php:35` |
 | `/settings/view` | `view.php` | – | `kernel/settings/module.php:14` |
-| `/settings/edit` | `edit.php` | – | `kernel/settings/module.php:18` |
+| `/settings/edit` | `edit.php` | – | `kernel/settings/module.php:21` |
 | `/setup/init` | `ezsetup.php` | install | `kernel/setup/module.php:18` |
 | `/setup/cache` | `cache.php` | managecache | `kernel/setup/module.php:25` |
-| `/setup/cronjobsstream` | `cronjobsstream.php` | managecronjobs | `kernel/setup/module.php:303` |
-| `/setup/staticcachestream` | `staticcachestream.php` | managecache | `kernel/setup/module.php:315` |
-| `/setup/systemupgrade` | `systemupgrade.php` | setup | `kernel/setup/module.php:326` |
-| `/setup/logs` | `logs.php` | logs | `kernel/setup/module.php:342` |
-| `/setup/logsmanage` | `logsmanage.php` | managelogs | `kernel/setup/module.php:357` |
-| `/setup/logshealth` | `logshealth.php` | logs | `kernel/setup/module.php:367` |
-| `/setup/logsdigest` | `logsdigest.php` | logs | `kernel/setup/module.php:376` |
-| `/setup/logsfeed` | `logsfeed.php` | logs | `kernel/setup/module.php:384` |
-| `/setup/logsaction` | `logsaction.php` | logs | `kernel/setup/module.php:391` |
-| `/setup/toolbarlist` | `toolbarlist.php` | setup | `kernel/setup/module.php:400` |
-| `/setup/toolbar` | `toolbar.php` | setup | `kernel/setup/module.php:406` |
-| `/setup/menuconfig` | `menuconfig.php` | setup | `kernel/setup/module.php:414` |
-| `/setup/templatelist` | `templatelist.php` | setup | `kernel/setup/module.php:422` |
-| `/setup/templateview` | `templateview.php` | setup | `kernel/setup/module.php:429` |
-| `/setup/templateedit` | `templateedit.php` | setup | `kernel/setup/module.php:439` |
-| `/setup/templatecreate` | `templatecreate.php` | setup | `kernel/setup/module.php:448` |
 | `/shop/add` | `add.php` | buy | `kernel/shop/module.php:14` |
 | `/shop/orderview` | `orderview.php` | buy | `kernel/shop/module.php:20` |
 | `/shop/orderreceipt` | `orderreceipt.php` | – | `kernel/shop/module.php:28` |
-| `/shop/orderreciept` | `orderreciept.php` | – | `kernel/shop/module.php:35` |
-| `/shop/updatebasket` | `updatebasket.php` | buy | `kernel/shop/module.php:41` |
-| `/shop/basket` | `basket.php` | buy | `kernel/shop/module.php:47` |
-| `/shop/register` | `register.php` | buy | `kernel/shop/module.php:69` |
-| `/shop/userregister` | `userregister.php` | buy | `kernel/shop/module.php:79` |
-| `/shop/wishlist` | `wishlist.php` | buy | `kernel/shop/module.php:89` |
-| `/shop/dashboard` | `dashboard.php` | administrate | `kernel/shop/module.php:98` |
-| `/shop/orderlist` | `orderlist.php` | administrate | `kernel/shop/module.php:104` |
-| `/shop/archivelist` | `archivelist.php` | administrate | `kernel/shop/module.php:111` |
-| `/shop/removeorder` | `removeorder.php` | administrate | `kernel/shop/module.php:118` |
-| `/shop/archiveorder` | `archiveorder.php` | administrate | `kernel/shop/module.php:125` |
-| `/shop/unarchiveorder` | `unarchiveorder.php` | administrate | `kernel/shop/module.php:132` |
-| `/shop/customerlist` | `customerlist.php` | administrate | `kernel/shop/module.php:140` |
-| `/shop/customerorderview` | `customerorderview.php` | administrate | `kernel/shop/module.php:147` |
-| `/shop/statistics` | `orderstatistics.php` | administrate | `kernel/shop/module.php:153` |
-| `/shop/confirmorder` | `confirmorder.php` | buy | `kernel/shop/module.php:159` |
-| `/shop/checkout` | `checkout.php` | buy | `kernel/shop/module.php:165` |
-| `/shop/vattype` | `vattype.php` | setup | `kernel/shop/module.php:171` |
-| `/shop/vatrules` | `vatrules.php` | setup | `kernel/shop/module.php:184` |
-| `/shop/editvatrule` | `editvatrule.php` | setup | `kernel/shop/module.php:190` |
-| `/shop/productcategories` | `productcategories.php` | setup | `kernel/shop/module.php:208` |
-| `/shop/discountgroup` | `discountgroup.php` | setup | `kernel/shop/module.php:221` |
-| `/shop/discountgroupedit` | `discountgroupedit.php` | setup | `kernel/shop/module.php:227` |
-| `/shop/discountruleedit` | `discountruleedit.php` | setup | `kernel/shop/module.php:234` |
-| `/shop/discountgroupview` | `discountgroupmembershipview.php` | setup | `kernel/shop/module.php:242` |
-| `/shop/status` | `status.php` | edit_status | `kernel/shop/module.php:249` |
-| `/shop/setstatus` | `setstatus.php` | setstatus | `kernel/shop/module.php:255` |
-| `/shop/currencylist` | `currencylist.php` | setup | `kernel/shop/module.php:261` |
-| `/shop/editcurrency` | `editcurrency.php` | setup | `kernel/shop/module.php:278` |
-| `/shop/preferredcurrency` | `preferredcurrency.php` | buy | `kernel/shop/module.php:291` |
-| `/shop/productsoverview` | `productsoverview.php` | administrate | `kernel/shop/module.php:297` |
-| `/shop/setpreferredcurrency` | `setpreferredcurrency.php` | buy | `kernel/shop/module.php:311` |
-| `/shop/setusercountry` | `setusercountry.php` | buy | `kernel/shop/module.php:320` |
+| `/shop/orderreciept` | `orderreciept.php` | – | `kernel/shop/module.php:36` |
+| `/shop/updatebasket` | `updatebasket.php` | buy | `kernel/shop/module.php:42` |
+| `/shop/basket` | `basket.php` | buy | `kernel/shop/module.php:48` |
+| `/shop/register` | `register.php` | buy | `kernel/shop/module.php:70` |
+| `/shop/userregister` | `userregister.php` | buy | `kernel/shop/module.php:80` |
+| `/shop/wishlist` | `wishlist.php` | buy | `kernel/shop/module.php:90` |
+| `/shop/dashboard` | `dashboard.php` | administrate | `kernel/shop/module.php:99` |
+| `/shop/orderlist` | `orderlist.php` | administrate | `kernel/shop/module.php:105` |
+| `/shop/archivelist` | `archivelist.php` | administrate | `kernel/shop/module.php:112` |
+| `/shop/removeorder` | `removeorder.php` | administrate | `kernel/shop/module.php:119` |
+| `/shop/archiveorder` | `archiveorder.php` | administrate | `kernel/shop/module.php:126` |
+| `/shop/unarchiveorder` | `unarchiveorder.php` | administrate | `kernel/shop/module.php:133` |
+| `/shop/customerlist` | `customerlist.php` | administrate | `kernel/shop/module.php:141` |
+| `/shop/customerorderview` | `customerorderview.php` | administrate | `kernel/shop/module.php:148` |
+| `/shop/statistics` | `orderstatistics.php` | administrate | `kernel/shop/module.php:154` |
+| `/shop/confirmorder` | `confirmorder.php` | buy | `kernel/shop/module.php:160` |
+| `/shop/checkout` | `checkout.php` | buy | `kernel/shop/module.php:166` |
+| `/shop/vattype` | `vattype.php` | setup | `kernel/shop/module.php:172` |
+| `/shop/vatrules` | `vatrules.php` | setup | `kernel/shop/module.php:185` |
+| `/shop/editvatrule` | `editvatrule.php` | setup | `kernel/shop/module.php:191` |
+| `/shop/productcategories` | `productcategories.php` | setup | `kernel/shop/module.php:209` |
+| `/shop/discountgroup` | `discountgroup.php` | setup | `kernel/shop/module.php:222` |
+| `/shop/discountgroupedit` | `discountgroupedit.php` | setup | `kernel/shop/module.php:228` |
+| `/shop/discountruleedit` | `discountruleedit.php` | setup | `kernel/shop/module.php:235` |
+| `/shop/discountgroupview` | `discountgroupmembershipview.php` | setup | `kernel/shop/module.php:243` |
+| `/shop/status` | `status.php` | edit_status | `kernel/shop/module.php:250` |
+| `/shop/setstatus` | `setstatus.php` | setstatus | `kernel/shop/module.php:256` |
+| `/shop/currencylist` | `currencylist.php` | setup | `kernel/shop/module.php:262` |
+| `/shop/editcurrency` | `editcurrency.php` | setup | `kernel/shop/module.php:279` |
+| `/shop/preferredcurrency` | `preferredcurrency.php` | buy | `kernel/shop/module.php:292` |
+| `/shop/productsoverview` | `productsoverview.php` | administrate | `kernel/shop/module.php:298` |
+| `/shop/setpreferredcurrency` | `setpreferredcurrency.php` | buy | `kernel/shop/module.php:312` |
+| `/shop/setusercountry` | `setusercountry.php` | buy | `kernel/shop/module.php:321` |
 | `/state/assign` | `assign.php` | assign | `kernel/state/module.php:15` |
 | `/state/groups` | `groups.php` | administrate | `kernel/state/module.php:26` |
 | `/state/group` | `group.php` | administrate | `kernel/state/module.php:37` |
@@ -1250,16 +1347,18 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 | `/user/setting` | `setting.php` | preferences | `kernel/user/module.php:34` |
 | `/user/preferences` | `preferences.php` | login | `kernel/user/module.php:40` |
 | `/user/megamenu` | `megamenu.php` | login | `kernel/user/module.php:52` |
-| `/user/password` | `password.php` | password | `kernel/user/module.php:58` |
-| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:65` |
-| `/user/edit` | `edit.php` | login | `kernel/user/module.php:76` |
-| `/user/register` | `register.php` | register | `kernel/user/module.php:86` |
-| `/user/activate` | `activate.php` | login | `kernel/user/module.php:96` |
-| `/user/success` | `success.php` | register | `kernel/user/module.php:103` |
-| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:110` |
-| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:135` |
-| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:148` |
-| `/user/registration` | `registration.php` | login | `kernel/user/module.php:161` |
+| `/user/passkeys` | `passkeys.php` | login | `kernel/user/module.php:61` |
+| `/user/password` | `password.php` | password | `kernel/user/module.php:67` |
+| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:74` |
+| `/user/edit` | `edit.php` | login | `kernel/user/module.php:85` |
+| `/user/register` | `register.php` | register | `kernel/user/module.php:95` |
+| `/user/activate` | `activate.php` | login | `kernel/user/module.php:105` |
+| `/user/success` | `success.php` | register | `kernel/user/module.php:112` |
+| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:119` |
+| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:144` |
+| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:157` |
+| `/user/registration` | `registration.php` | login | `kernel/user/module.php:170` |
+| `/user/sessions` | `sessions.php` | login | `kernel/user/module.php:187` |
 | `/visual/toolbarlist` | `toolbarlist.php` | – | `kernel/visual/module.php:15` |
 | `/visual/toolbar` | `toolbar.php` | – | `kernel/visual/module.php:20` |
 | `/visual/menuconfig` | `menuconfig.php` | – | `kernel/visual/module.php:33` |

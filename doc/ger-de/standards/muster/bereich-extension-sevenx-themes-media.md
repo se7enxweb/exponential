@@ -2,7 +2,7 @@
 title: Muster in extension/sevenx_themes_media
 audience: developer
 category: standards
-order: 470
+order: 475
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/sevenx_themes_media mit den Entwurfsmustern.
 keywords: extension/sevenx_themes_media, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/httpcache
 audience: developer
 category: standards
-order: 520
+order: 533
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/httpcache mit den Entwurfsmustern.
 keywords: kernel/private/classes/httpcache, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -19,7 +19,7 @@ Jede Klasse, Schnittstelle und jeder Trait von `kernel/private/classes/httpcache
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
-| `ezpHttpCacheContract` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/private/classes/httpcache/ezphttpcachecontract.php:38` | Der rollenbewusste HTTP-Cache-Vertrag: Schlüssel, Kontext-Hashes, die Eintrags- und Datensatzformate, Tag-Validierung und Platzhalterersetzung. |
+| `ezpHttpCacheContract` | class | [Fabrik und statische Fabrikmethoden](fabrik.md) | `kernel/private/classes/httpcache/ezphttpcachecontract.php:37` | Der rollenbewusste HTTP-Cache-Vertrag: Schlüssel, Kontext-Hashes, die Eintrags- und Datensatzformate, Tag-Validierung und Platzhalterersetzung. |
 | `ezpHttpCacheListener` | class | [Beobachter / Listener / Ereignis](beobachter.md), [Registry](registry.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `kernel/private/classes/httpcache/ezphttpcachelistener.php:27` | Die Kernel-Seite des rollenbewussten HTTP-Caches: speichert gerenderte Inhaltsansichten, damit der frühe Ausstieg und der Elternprozess von Velocity sie ausliefern, und macht aus den… |
 
 ## Ereignis-Hooks (1)

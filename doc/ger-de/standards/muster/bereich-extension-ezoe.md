@@ -2,7 +2,7 @@
 title: Muster in extension/ezoe
 audience: developer
 category: standards
-order: 447
+order: 451
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezoe mit den Entwurfsmustern.
 keywords: extension/ezoe, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

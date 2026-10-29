@@ -2,7 +2,7 @@
 title: Muster in lib/ezpdf
 audience: developer
 category: standards
-order: 536
+order: 549
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezpdf mit den Entwurfsmustern.
 keywords: lib/ezpdf, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

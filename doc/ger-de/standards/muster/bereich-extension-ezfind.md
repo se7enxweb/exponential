@@ -2,7 +2,7 @@
 title: Muster in extension/ezfind
 audience: developer
 category: standards
-order: 438
+order: 442
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezfind mit den Entwurfsmustern.
 keywords: extension/ezfind, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

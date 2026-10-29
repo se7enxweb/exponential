@@ -2,7 +2,7 @@
 title: Muster in extension/ezdemo
 audience: developer
 category: standards
-order: 437
+order: 441
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezdemo mit den Entwurfsmustern.
 keywords: extension/ezdemo, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

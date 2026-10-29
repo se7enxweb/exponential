@@ -2,7 +2,7 @@
 title: Muster in extension/ezautosave
 audience: developer
 category: standards
-order: 436
+order: 440
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezautosave mit den Entwurfsmustern.
 keywords: extension/ezautosave, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
@@ -15,10 +15,11 @@ type: catalogue
 
 Jede Klasse, Schnittstelle und jeder Trait von `extension/ezautosave` mit den Mustern, als die sie erkannt wurden, gefolgt von den Modulansichten, Richtlinienfunktionen, Fetch-Funktionen, Template-Operatoren, Cronjobs, Ereignis-Hooks und INI-Plugin-Punkten des Bereichs. [Alle Muster](README.md).
 
-## Klassen (1)
+## Klassen (2)
 
 | Klasse | Art | Muster | Datei | Beschreibung |
 | --- | --- | --- | --- | --- |
+| `ezautosaveInfo` | class | [Wertobjekt / Struktur](wertobjekt.md) | `extension/ezautosave/ezinfo.php:7` | – |
 | `ezjscServerFunctionsAutosave` | class extends ezjscServerFunctions | [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md), [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | `extension/ezautosave/classes/ezjscserverfunctionsautosave.php:16` | Diese Klasse verarbeitet AJAX-Aufrufe für die Funktion zum automatischen Speichern |
 
 ## Ereignis-Hooks (1)

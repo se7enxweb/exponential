@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/mail
 audience: developer
 category: standards
-order: 496
+order: 503
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/mail mit den Entwurfsmustern.
 keywords: kernel/classes/mail, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

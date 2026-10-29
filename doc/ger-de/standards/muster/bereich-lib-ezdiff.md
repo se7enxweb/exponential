@@ -2,7 +2,7 @@
 title: Muster in lib/ezdiff
 audience: developer
 category: standards
-order: 530
+order: 543
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezdiff mit den Entwurfsmustern.
 keywords: lib/ezdiff, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

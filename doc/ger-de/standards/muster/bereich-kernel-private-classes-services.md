@@ -2,7 +2,7 @@
 title: Muster in kernel/private/classes/services
 audience: developer
 category: standards
-order: 523
+order: 536
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/private/classes/services mit den Entwurfsmustern.
 keywords: kernel/private/classes/services, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/subitems
 audience: developer
 category: standards
-order: 507
+order: 517
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/subitems mit den Entwurfsmustern.
 keywords: kernel/classes/subitems, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

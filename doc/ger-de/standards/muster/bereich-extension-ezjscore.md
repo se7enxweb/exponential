@@ -2,7 +2,7 @@
 title: Muster in extension/ezjscore
 audience: developer
 category: standards
-order: 443
+order: 447
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezjscore mit den Entwurfsmustern.
 keywords: extension/ezjscore, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

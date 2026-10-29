@@ -2,7 +2,7 @@
 title: Muster in extension/ezurlmultisite
 audience: developer
 category: standards
-order: 458
+order: 463
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/ezurlmultisite mit den Entwurfsmustern.
 keywords: extension/ezurlmultisite, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

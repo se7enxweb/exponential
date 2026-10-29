@@ -2,7 +2,7 @@
 title: Muster in lib/ezsoap
 audience: developer
 category: standards
-order: 538
+order: 551
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezsoap mit den Entwurfsmustern.
 keywords: lib/ezsoap, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

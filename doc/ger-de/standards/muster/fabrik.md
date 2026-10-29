@@ -3,7 +3,7 @@ title: Fabrik und statische Fabrikmethoden
 audience: developer
 category: standards
 order: 321
-summary: Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodass der Aufrufer die konkrete Klasse nicht nennt. 352 Instanzen in Exponential.
+summary: Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodass der Aufrufer die konkrete Klasse nicht nennt. 443 Instanzen in Exponential.
 keywords: Entwurfsmuster, Fabrik, Erzeugung, Musterkatalog, design pattern, factory, pattern catalogue
 type: catalogue
 ---
@@ -15,10 +15,10 @@ type: catalogue
 
 Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodass der Aufrufer die konkrete Klasse nicht nennt.
 
-|  |  |
+| | |
 | --- | --- |
 | Gruppe | Anlegen |
-| Instanzen | 352 |
+| Instanzen | 443 |
 | Erkannt an | Der Klassenname endet auf Factory, oder die Klasse hat statische Methoden create*(), from*(), factory(), make*(), oder sie erzeugt new self/new static in einer statischen Methode. |
 | Erweiterungspunkt | Oft die INI-Einstellung, die die zu erzeugende Klasse nennt (siehe die INI-Plugin-Punkte). |
 
@@ -94,6 +94,35 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | `cjwTmvFeed` | class | `extension/cjw_tmv/classes/cjwtmvfeed.php:14` | Die TMV-Ereignisse eines Ereigniscontainers (ein tmv_container-Knoten), gelesen aus den Inhaltsobjekten, die der Importer (cjwTmvImporter, Cronjob-Teil cjw_tmv)… | – |
 | `cjwTmvImporter` | class | `extension/cjw_tmv/classes/cjwtmvimporter.php:28` | Importiert die Veranstaltungen der TMV-Veranstaltungsdatenbank als Inhaltsobjekte unterhalb ihres tmv_container, wie es die alte Extension cjw_tmv_veranstdb tat (TmvHelper::… | – |
 
+### extension/expai (22)
+
+[Alle Muster von extension/expai](area-extension-expai.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expAiAnthropicProvider` | class extends expAiProviderBase | `extension/expai/classes/expaianthropicprovider.php:16` | Die Anthropic Messages API (POST {Endpoint}, Standard https://api.anthropic.com/v1/messages) mit Tool-Nutzung, adaptivem Denken auf der konfigurierten Stufe… | – |
+| `expAiBatch` | class extends eZPersistentObject | `extension/expai/classes/lanes/expaibatch.php:17` | Ein Anbieter-Batch (Tabelle expai_batch): welcher Anbieter, welche Lane und welches Modell, die ID des Anbieters, der Zustand und die Zähler, wann er eingereicht wurde, endete, sein… | – |
+| `expAiChain` | class | `extension/expai/classes/chain/expaichain.php:23` | Die Definition einer KI-Kette (doc/chains.md): eine geordnete Liste von Schritten, jeder ein strukturierter Aufruf an ein Modell, ein menschlicher Kontrollpunkt oder eine Übergabe, gelesen… | – |
+| `expAiChangeStager` | class | `extension/expai/classes/vector/expaichangestager.php:22` | Gestufte Prüfung (doc/review.md): In einem Vector-Thread mit Review=staged rufen create_draft und update_draft diese Klasse auf, statt eine Version zu schreiben. | – |
+| `expAiCheckpoint` | class extends eZPersistentObject | `extension/expai/classes/vector/expaicheckpoint.php:28` | Kontrollstellen eines Threads (Tabelle expai_checkpoint, doc/checkpoints.md): der Zustand zu Beginn jedes Turns des Lead-Laufs und vor gestuften Änderungen… | – |
+| `expAiCompactPrompt` | class | `extension/expai/classes/expaicompactprompt.php:29` | Das kompakte Prompt-Profil für kleine und lokale Modelle (doc/local-models.md „Making a local model usable“). | – |
+| `expAiConversation` | class extends eZPersistentObject | `extension/expai/classes/expaiconversation.php:16` | Die Konversation eines Benutzers an einem Knoten (Tabelle expai_conversation). | – |
+| `expAiDataPolicy` | class | `extension/expai/classes/expaidatapolicy.php:31` | Wohin Inhalt gesendet werden darf: expai.ini [DataPolicy]. | – |
+| `expAiDraftLog` | class extends eZPersistentObject | `extension/expai/classes/expaidraftlog.php:20` | Eine vom Assistenten geschriebene Version (Tabelle expai_draft_log): das Objekt und die Version, der Benutzer, für den sie geschrieben wurde, wann, eine Zusammenfassung der Anfrage, das Mo… | – |
+| `expAiDraftRevert` | class | `extension/expai/classes/diff/expaidraftrevert.php:29` | „Was sich geändert hat“ bei einem Entwurf, den der Assistent direkt geschrieben hat (der Tab Intelligence, ein Vector-Thread mit Review: Direct; doc/review.md „Direct mode: what c… | – |
+| `expAiImageInput` | class | `extension/expai/classes/alttext/expaiimageinput.php:21` | Ein für ein Vision-Modell aufbereitetes Bild (doc/alt-text.md): gelesen aus einem Feld ezimage (die gespeicherte Datei der Version, nie ein Upload, der nicht gespeichert ist… | – |
+| `expAiLane` | class | `extension/expai/classes/lanes/expailane.php:37` | Eine Lane: eine Art, eine Anfrage an einen Anbieter zu senden, mit eigenem Preis, eigener Geschwindigkeit und eigener Aufbewahrung (expai.ini [Lane_.]). | – |
+| `expAiLinks` | class | `extension/expai/classes/expailinks.php:14` | Die Symbol-Links einer Zeile in expai/log und auf dem Dashboard: View, Edit, Prompt again, Intelligence tab. | – |
+| `expAiMcpBridgeTool` | class extends expAiTool | `extension/expai/classes/mcp/expaimcpbridgetool.php:22` | Ein brückensicheres Lese-Tool der Extension expmcp, im Prozess als aktueller Benutzer aufgerufen (exp__). | – |
+| `expAiMcpClient` | class | `extension/expai/classes/mcp/expaimcpclient.php:21` | Ein kleiner Client für einen MCP-Server über den Streamable-HTTP-Transport (JSON-RPC-2.0-POSTs; die Antwort ist JSON oder ein Event-Stream, dessen Datenzeilen… | – |
+| `expAiOllamaNativeProvider` | class | `extension/expai/classes/expaiollamanativeprovider.php:20` | Ein Modell eines lokalen Ollama-Servers (ein Anbieter mit Managed=ollama), das über Ollamas eigene API auf der Loopback-Adresse statt über dessen OpenAI-Ko… | – |
+| `expAiRichTextTokens` | class | `extension/expai/classes/expairichtexttokens.php:29` | Rich Text (ezxmltext) für ein Modell, ohne die Struktur zu verlieren (doc/configuration.md „[RichTextSettings]“). | – |
+| `expAiThread` | class extends eZPersistentObject | `extension/expai/classes/vector/expaithread.php:22` | Ein Thread (Tabelle expai_thread): eine Arbeitseinheit eines Redakteurs. | – |
+| `expAiThreadEvent` | class extends eZPersistentObject | `extension/expai/classes/vector/expaithreadevent.php:17` | Der nur anhängbare Ereignisstrom eines Threads (Tabelle expai_thread_event). | – |
+| `expAiWebGuard` | class | `extension/expai/classes/web/expaiwebguard.php:17` | Der SSRF-Schutz der Web-Tools. | – |
+| `expAiWebHtml` | class | `extension/expai/classes/web/expaiwebhtml.php:16` | HTML zu lesbarem Markdown für das Modell: der Titel, Überschriften (#), Absätze, Listen, Zitate, Code, Tabellen als Zeilen und Links als [text](absolute URL). | – |
+| `expAiWebSearchProvider` | abstract class | `extension/expai/classes/web/expaiwebsearchprovider.php:16` | Ein Websuchdienst für web_search. | extension/expai/settings/rad.ini [Registry_expai_search_providers] Entries[Class] |
+
 ### extension/explayouts (16)
 
 [Alle Muster von extension/explayouts](bereich-extension-explayouts.md)
@@ -132,6 +161,17 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expLayoutsUIApplicationApi` | class | `extension/explayouts_ui_api/classes/explayoutsuiapplicationapi.php:2` | – | – |
+
+### extension/expqueue (4)
+
+[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expQueue` | class | `extension/expqueue/classes/expqueue.php:26` | Die Job-Warteschlange: was Produzenten aufrufen (enqueue, groups, cancel, pause/resume, retry, results) und die Zustandswechsel, die die Worker und die Administration vornehmen. | – |
+| `expQueueCommand` | class | `extension/expqueue/classes/expqueuecommand.php:17` | Die Befehle ./console ext:expqueue: (extension/expqueue/bin/php/.php); jede Datei ruft nur expQueueCommand::main( '' ) auf. | – |
+| `expQueueEvent` | class extends eZPersistentObject | `extension/expqueue/classes/expqueueevent.php:15` | Der Verlauf eines Jobs (Tabelle expqueue_event), nur anhängbar, mit dem Job entfernt. | – |
+| `expQueueResult` | class | `extension/expqueue/classes/expqueueresult.php:18` | Was run() eines Handlers zurückgibt, wenn ein Array (done) nicht ausreicht. | – |
 
 ### extension/expservices (28)
 
@@ -232,6 +272,18 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | --- | --- | --- | --- | --- |
 | `expMultiuploadService` | class | `extension/ezmultiupload/classes/expmultiuploadservice.php:20` | Die Serverseite der Upload-Seite: Prüfungen vor einem Upload (der Zielort, die Inhaltsklasse, zu der jede Datei wird, die Berechtigung zum Anlegen dafür… | – |
 
+### extension/ezodf (5)
+
+[Alle Muster von extension/ezodf](bereich-extension-ezodf.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expOdfBatch` | class | `extension/ezodf/classes/converter/expodfbatch.php:25` | Ein Import von Dokumenten: Dateien, ein Ordner (sein Baum), ZIP-Archive und URLs, hochgeladen auf der Seite Dokumente importieren. | – |
+| `expOdfHtmlToOdt` | class | `extension/ezodf/classes/readers/expodfhtmltoodt.php:47` | Schreibt das HTML von expOdfReaders als ODT-Text, den der ODT-Parser von ezodf (eZOOImport) importiert: | – |
+| `expOdfInstallation` | class | `extension/ezodf/classes/converter/expodfinstallation.php:22` | Eine LibreOffice-Installation, die ezodf verwenden kann: | – |
+| `expOdfPhpConverter` | class | `extension/ezodf/classes/converter/expodfphpconverter.php:25` | Der letzte Fallback des Konverters: nur PHP, kein LibreOffice. | – |
+| `expOdfReaders` | class | `extension/ezodf/classes/readers/expodfreaders.php:39` | Liest Dokumente ohne LibreOffice und verwandelt sie in ein sicheres HTML-Fragment plus die darin enthaltenen Bilder: | – |
+
 ### extension/ezownerchange (1)
 
 [Alle Muster von extension/ezownerchange](bereich-extension-ezownerchange.md)
@@ -304,7 +356,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `sevenxAuthentication2fa` | class | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fa.php:22` | – | – |
+| `sevenxAuthentication2fa` | class | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fa.php:30` | – | – |
 
 ### extension/sevenx_dse (4)
 
@@ -316,6 +368,45 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | `AdminNeo\Driver` | abstract class | `extension/sevenx_dse/adminneo/core/Driver.php:5` | – | – |
 | `AdminNeo\Locale` | class | `extension/sevenx_dse/adminneo/core/Locale.php:5` | – | – |
 | `AdminNeo\Origin` | abstract class extends Plugin | `extension/sevenx_dse/adminneo/core/Origin.php:7` | – | – |
+
+### extension/sqliimport (32)
+
+[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expImportBoltClient` | class | `extension/sqliimport/classes/exp/nosql/expimportboltclient.php:37` | Ein minimaler Client des Bolt-Protokolls, Versionen 4.0 bis 4.4 (Neo4j 4 und 5, Memgraph), für ein PHP ohne Neo4j-Treiber: der Handshake, HELLO mit bas… | – |
+| `expImportCieSource` | class extends expImportCsvSource | `extension/sqliimport/classes/exp/sources/expimportciesource.php:17` | Der CSV-Export von CIE (bccie): die Formulareinsendungen eines Information Collectors, je eine Zeile. | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.cie] Arguments[] |
+| `expImportCommand` | class | `extension/sqliimport/classes/exp/expimportcommand.php:17` | Die Befehle ./console ext:sqliimport: (extension/sqliimport/bin/php/.php); jede Datei ruft nur expImportCommand::main( '' ) auf. | – |
+| `expImportCrawler` | class | `extension/sqliimport/classes/exp/crawl/expimportcrawler.php:25` | Der höfliche Leser öffentlicher Webseiten hinter den Formaten sitemap und webpage. | – |
+| `expImportDefinition` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportdefinition.php:24` | Ein Import (sqliimport_definition): woher die Daten kommen, was sie verarbeitet (die No-Code-Zuordnung oder ein Handler), wohin der Inhalt geht, wie er… | – |
+| `expImportExponentialSiteSource` | class extends expImportJsonSource | `extension/sqliimport/classes/exp/sources/expimportexponentialsitesource.php:26` | Inhalt einer anderen Exponential-Website über deren REST-API (v1, die API der mobilen Anwendungen, bereitgestellt von der Extension ezprestapi): die Quelle liest… | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.exponential_site] Arguments[] |
+| `expImportExternalFile` | class | `extension/sqliimport/classes/exp/expimportexternalfile.php:25` | Eine Datei, die ein anderes Tool an Imports übergibt: „Diese Datei erneut importieren“ bei einem Export, die Datei eines CIE-Exports. | – |
+| `expImportEzpkgSource` | class extends expImportAbstractSource | `extension/sqliimport/classes/exp/sources/expimportezpkgsource.php:26` | Ein Paket des Paketsystems von Exponential (.ezpkg: ein tar.gz mit package.xml, ezcontentobject/contentobjects.xml und je einer XML-Datei pro Inhaltsobjekt,… | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.ezpkg] Arguments[] |
+| `expImportMapping` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportmapping.php:14` | Das No-Code-Mapping eines Imports (sqliimport_mapping, eine Zeile) und seine Zeilen (sqliimport_mapping_field). | – |
+| `expImportMarkdown` | class | `extension/sqliimport/classes/exp/expimportmarkdown.php:22` | Markdown zu HTML für importierten Inhalt, ohne Bibliothek: das Markdown, das Notizen, Blogs und Dokumentation verwenden. | – |
+| `expImportOpmlSource` | class extends expImportAbstractSource | `extension/sqliimport/classes/exp/sources/expimportopmlsource.php:25` | OPML-Dateien (Gliederungslisten; meistens die Liste der Feeds, die ein Feed-Reader exportiert). | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.opml] Arguments[] |
+| `expImportOptionSchema` | class | `extension/sqliimport/classes/exp/expimportoptionschema.php:28` | Typisierte Optionen. | – |
+| `expImportRecord` | class | `extension/sqliimport/classes/exp/expimportrecord.php:17` | Ein aus einer Quelle gelesener Datensatz: seine stabile Referenz (ein Schlüssel oder eine Zeilennummer), seine Position, seine Daten und der Cursor, der die Quelle gleich danach fortsetzt… | – |
+| `expImportRobots` | class | `extension/sqliimport/classes/exp/crawl/expimportrobots.php:19` | Die Regeln der robots.txt eines Hosts (RFC 9309): Gruppen von User-agent-Zeilen mit ihren Allow- und Disallow-Regeln und Crawl-delay sowie die Sitemap-Zeilen. | – |
+| `expImportRowResult` | class | `extension/sqliimport/classes/exp/engine/expimportrowresult.php:14` | Was ein Handler mit einem Datensatz getan hat: das Ergebnis, das Objekt, seine Version davor und danach, die Nodes, die er hinzugefügt hat, und eine Meldung. | – |
+| `expImportSourceEntry` | class | `extension/sqliimport/classes/exp/expimportsourceentry.php:37` | Ein Eintrag des Katalogs der Formate: eine Quellklasse oder eine Variante davon (TSV ist die CSV-Quelle mit einem Tabulator, NDJSON die JSON-Quelle mit einem Objekt… | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.airtable] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.arangodb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.arrow] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.avro] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.baserow] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.bigquery] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.cassandra] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.cie] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.clickhouse] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.cosmosdb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.couchbase] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.couchdb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.csv] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.drupal] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.duckdb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.dynamodb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.elasticsearch] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.exponential_rss] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.exponential_site] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.ezpkg] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.firebase_rtdb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.firestore] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.google_merchant] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.google_sheets] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.hubspot] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.ical] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.imap] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.influxdb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.joomla] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.json] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.ldap] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.markdown] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.media] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.mongodb] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.ndjson] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.neo4j] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.notion] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.opml] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.podcast] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.redis] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.rest_api] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.rss] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.salesforce] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.shopify] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.sitemap] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.snowflake] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.spreadsheet] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.sql] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.supabase] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.toml] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.tsv] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.vcard] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.video_feed] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.webpage] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.woocommerce] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.wxr] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.xml] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.xrowextract] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.yaml] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.youtube] Class; extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.youtube_page] Class |
+| `expImportTemplates` | class | `extension/sqliimport/classes/exp/expimporttemplates.php:28` | Templates von Importen: eine Importdefinition ohne ihre Quelldaten (keine Datei, Adresse oder Serverpfad, keine Zeitpläne, Auslöser, Lauf-Benutzer oder Benachrichtigung… | – |
+| `expImportTrigger` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimporttrigger.php:23` | Der Webhook- bzw. API-Trigger eines Imports (sqliimport_trigger), eine Zeile je Import, aus, bis er im Zeitplan-Schritt des Editors eingeschaltet wird: | – |
+| `expImportTriggerKey` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimporttrigger.php:89` | Ein API-Schlüssel eines Triggers (sqliimport_trigger_key): seine Bezeichnung, seine Schlüssel-ID (der Teil des Schlüssels, der ihn findet) und der HMAC des Schlüssels (expImportTrigger… | – |
+| `expImportXrowextractSource` | class extends expImportAbstractSource | `extension/sqliimport/classes/exp/sources/expimportxrowextractsource.php:21` | Die Exportdateien von Export (xrowextract): ein Klassenexport als CSV, JSON oder XML, mit oder ohne sein typisiertes Spaltenmanifest. | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.source.xrowextract] Arguments[] |
+| `expImportYaml` | class | `extension/sqliimport/classes/exp/expimportyaml.php:22` | YAML und TOML für Datendateien und Front Matter, ohne Bibliothek und auf jedem Server gleich (die PHP-Extension yaml liest YAML 1.1, wo y und n… | – |
+| `SQLIContent` | class | `extension/sqliimport/classes/content/sqlicontent.php:54` | Proxy-Klasse für eZContentObject. | – |
+| `SQLIContentField` | class | `extension/sqliimport/classes/content/sqlicontentfield.php:15` | SQLIContentField ist ein Proxy und vereinfachtes Objekt für eZContentObjectAttribute | – |
+| `SQLIContentFieldset` | class | `extension/sqliimport/classes/content/sqlicontentfiedset.php:12` | SQLIContentFieldset | – |
+| `SQLIContentFieldsetHolder` | class | `extension/sqliimport/classes/content/sqlicontentfieldsetholder.php:12` | SQLIFieldsetHolder | – |
+| `SQLICSVRowSet` | class | `extension/sqliimport/classes/sourcehandlers/csv/sqlicsvrowset.php:13` | – | – |
+| `SQLIImportFactory` | class | `extension/sqliimport/classes/sqliimportfactory.php:12` | Import-Fabrik. Löst den Import für alle deklarierten und aktivierten Import-Handler aus | – |
+| `SQLIImportHandlerOptions` | class extends SQLIImportOptions | `extension/sqliimport/classes/sourcehandlers/options/sqliimporthandleroptions.php:16` | Optionsklasse für Import-Handler. | – |
+| `SQLIImportItem` | class extends eZPersistentObject | `extension/sqliimport/classes/sqliimportitem.php:15` | Klasse für die Verarbeitung von Items. Objekte dieser Klasse werden in der Tabelle ezpending_actions gespeichert und normalerweise per CRON verarbeitet, um einen Import auszulösen. | – |
+| `SQLIImportToken` | class extends eZPersistentObject | `extension/sqliimport/classes/sqliimporttoken.php:12` | Token-Klasse für SQLI Import, behandelt den Import-Status | – |
+| `SQLILocation` | class | `extension/sqliimport/classes/location/sqlilocation.php:12` | – | – |
+| `SQLIXMLException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/sourcehandlers/xml/sqlixmlexception.php:13` | – | – |
 
 ### extension/syndication (9)
 
@@ -355,18 +446,22 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | --- | --- | --- | --- | --- |
 | `xrowSitemapTools` | class | `extension/xrowmetadata/classes/xrowsitemaptools.php:3` | – | – |
 
-### kernel/classes (80)
+### kernel/classes (84)
 
 [Alle Muster von kernel/classes](bereich-kernel-classes.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
+| `expBookmarkView` | class extends eZPersistentObject | `kernel/classes/expbookmarkview.php:39` | Ein Lesezeichen auf eine Systemseite: eine Seite einer Modulansicht (setup/systemupgrade, exphelp/dashboard, audit/console/(user)/14 ...) statt eines Knotens. | – |
 | `expCacheCatalogue` | class | `kernel/classes/expcachecatalogue.php:22` | Die Caches von Setup › Caches, für einen Menschen beschrieben: was jeder enthält, seine ID und Tags, sein Verzeichnis, seine Größe und Dateianzahl, wann er zuletzt… | – |
 | `expCollaborationGroupManager` | class | `kernel/classes/expcollaborationgroupmanager.php:14` | Legt die Kollaborationsgruppen eines Benutzers an, benennt sie um, löscht sie und verschiebt Einträge zwischen ihnen. | – |
+| `expCrontabSetup` | class | `kernel/classes/expcrontabsetup.php:47` | Der Cronjob einer Installation: die Crontab-Zeilen, die ihre Cronjob-Teile ausführen (runcronjobs.php), geschrieben von den Installern und von bin/php/installcron… | – |
+| `expDemoMode` | class | `kernel/classes/expdemomode.php:38` | Demo-Modus: Die Umgebungsvariable EXP_DEMO_MODE=1 kennzeichnet eine Installation als öffentliche Demo. | – |
 | `expErrorHeaderList` | class | `kernel/classes/experrorheaderlist.php:25` | Die Antwort-Header einer Fehlerseite, aus error.ini [HTTPError-]: | – |
 | `expExtensionCatalogue` | class | `kernel/classes/expextensioncatalogue.php:20` | Was Setup › Extensions über jede Extension weiß: ihre Metadaten (expInfo), ihre deklarierten Abhängigkeiten (extension.xml ), die Designs und Einstellungsda… | – |
 | `expExtensionChangePlan` | class | `kernel/classes/expextensionchangeplan.php:33` | Der Änderungsplaner von Setup › Extensions: was aus einer Liste aktiver Extensions wird, wenn ein Administrator eine verschiebt, aktiviert oder deaktiviert, was di… | – |
 | `expJsonSchemaValidator` | class | `kernel/classes/expjsonschemavalidator.php:20` | Prüft dekodiertes JSON (json_decode( ..., true )) gegen ein JSON Schema (Draft 2020-12), für die Schlüsselwörter, die die eigenen Schemas des Kernels verwenden: type, enum, cons… | – |
+| `expKernelServiceCompiler` | class | `kernel/classes/expkernelservicecompiler.php:33` | Baut, prüft und entfernt den kompilierten Service-Container des Kernels (var/cache/kernelservices/). | – |
 | `expPackageConflictReport` | class | `kernel/classes/exppackageconflictreport.php:22` | Was die Installation eines Pakets auf dieser Installation vorfinden würde, nach Remote-ID, ohne etwas zu schreiben: für jedes Inhaltsobjekt des Pakets, ob ein… | – |
 | `expPhar` | class | `kernel/classes/expphar.php:21` | Packt die Engine – die Klassendateien von Kernel und Bibliotheken – in ein Phar, damit die Laufzeit sie aus einem Archiv statt aus tausend ein… | – |
 | `expPreloadAddress` | class | `kernel/classes/exppreloadaddress.php:26` | Wo der Cache-Preloader einen Siteaccess findet: die Adresse seiner Site, das URL-Präfix, das ihn auf diesem Host auswählt, und die Seiten, mit denen ein Lauf beginnt. | – |
@@ -457,10 +552,10 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expAudit` | class | `kernel/classes/audit/expaudit.php:26` | Das Audit: was in Exponential geschieht, aufgezeichnet als hash-verkettete JSON-Zeilen pro Kanal (doc/eng-us/bc/6.0/audit.md, „The developer API (Z3)“). | – |
-| `expAuditAlertState` | class | `kernel/classes/audit/alerts/expauditalertstate.php:19` | Der Fensterzustand einer Alarmregel (doc/eng-us/bc/6.0/audit.md, "Alerts (F5)"): /alerts/.json, gelesen und geschrieben unter flock() nur, wenn ein passender Datensatz … | – |
+| `expAuditAlertState` | class | `kernel/classes/audit/alerts/expauditalertstate.php:19` | Der Fensterzustand einer Alarmregel (doc/eng-us/bc/6.0/audit.md, „Alerts (F5)“): /alerts/.json, nur unter flock() gelesen und geschrieben, wenn ein passender… | – |
 | `expAuditConfig` | class | `kernel/classes/audit/expauditconfig.php:21` | Die Audit-Einstellungen (settings/audit.ini, doc/eng-us/bc/6.0/audit.md „The settings reference“), einmal in ein Array gelesen. | – |
 | `expAuditExportStream` | class | `kernel/classes/audit/console/expauditexportstream.php:28` | Die Audit-Datensätze eines Filters als CSV, JSON Lines oder JSON, neueste zuerst, Stück für Stück an einen Callback geschrieben, während sie gelesen werden: der Download von audit/… | – |
-| `expAuditIndexRow` | class | `kernel/classes/audit/index/expauditindexrow.php:12` | Ein Audit-Datensatz als Zeile von expaudit_event (doc/eng-us/bc/6.0/audit.md, „Tables“): die Spalten, nach denen die Konsole filtert, der Datensatz selbst (wie geschrieben, damit d… | – |
+| `expAuditIndexRow` | class | `kernel/classes/audit/index/expauditindexrow.php:12` | Ein Audit-Eintrag als Zeile von expaudit_event (doc/eng-us/bc/6.0/audit.md, „Tables“): die Spalten, nach denen die Konsole filtert, der Eintrag selbst (wie geschrieben… | – |
 | `expAuditSourceRegistry` | class | `kernel/classes/audit/console/expauditsourceregistry.php:16` | Die Registry der Quellen der Audit-Konsole (expAuditSource), aus audit.ini [AuditSourceSettings] Sources[]: welche registriert sind, welche hier funktionieren,… | – |
 
 ### kernel/classes/collaborationhandlers (1)
@@ -477,7 +572,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expContentCheckReferences` | class | `kernel/classes/contentcheck/expcontentcheckreferences.php:37` | Der Referenzindex der Liste nicht referenzierter Inhalte (doc/eng-us/features/6.0/content-checks.md, "What counts as a reference"): jede Objekt-ID, Knoten-ID, Remote-ID… | – |
+| `expContentCheckReferences` | class | `kernel/classes/contentcheck/expcontentcheckreferences.php:37` | Der Referenzindex der Liste nicht referenzierter Inhalte (doc/eng-us/features/6.0/content-checks.md, „What counts as a reference“): jede Objekt-ID, Node-ID, rem… | – |
 
 ### kernel/classes/contentjob (2)
 
@@ -487,6 +582,15 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | --- | --- | --- | --- | --- |
 | `expContentJob` | class | `kernel/classes/contentjob/expcontentjob.php:32` | Ein Inhaltsjob: ein großes Entfernen oder Kopieren eines Teilbaums, das in Stapeln in einem Hintergrund-Worker statt in der Web-Anfrage läuft, sodass es nie an einem Anfra… | – |
 | `expContentJobException` | class extends Exception | `kernel/classes/contentjob/expcontentjobexception.php:13` | Der Fehler, mit dem ein Inhaltsjob ablehnt oder fehlschlägt; seine Meldung wird dem Benutzer angezeigt. | – |
+
+### kernel/classes/datatable (2)
+
+[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expDataSync` | class | `kernel/classes/datatable/sync/expdatasync.php:39` | Die Synchronisation zwischen Inhalt und Datentabellen (doc/eng-us/features/6.0/data-tables.md, „Synchronisation“): | – |
+| `expDataTableSchema` | class | `kernel/classes/datatable/expdatatableschema.php:30` | Das Schema der Datentabellen auf jeder Verbindung (doc/eng-us/features/6.0/data-tables.md, „Schema“): ein .dba-Schema oder eines, das aus der einer persistenten Klasse… | – |
 
 ### kernel/classes/datatypes (17)
 
@@ -512,18 +616,26 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | `eZUserAccountKey` | class extends eZPersistentObject | `kernel/classes/datatypes/ezuser/ezuseraccountkey.php:19` | – | – |
 | `eZUserSetting` | class extends eZPersistentObject | `kernel/classes/datatypes/ezuser/ezusersetting.php:18` | – | – |
 
-### kernel/classes/help (7)
+### kernel/classes/help (15)
 
 [Alle Muster von kernel/classes/help](bereich-kernel-classes-help.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expHelpAllowlist` | class | `kernel/classes/help/exphelpallowlist.php:29` | Die Dateien, die das Hilfesystem anzeigen darf (doc/eng-us/features/6.0/help-system.md, "Which files are shown"). | – |
-| `expHelpAudience` | class | `kernel/classes/help/exphelpaudience.php:29` | Für wen eine Hilfeseite ist, zu welchem Abschnitt der Hilfe sie gehört und welche Art von Seite sie ist (doc/eng-us/features/6.0/help-system.md, "Audiences, categories… | – |
-| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Kontexthilfe: welche Hilfeseite „Hilfe zu dieser Seite“ beantwortet, für ein Modul, eine Ansicht und ein Design. | – |
-| `expHelpMarkdownRenderer` | class | `kernel/classes/help/exphelpmarkdownrenderer.php:50` | Rendert das Markdown der Dokumentation (doc/**.md) in das HTML des Hilfe-Viewers (exphelp/viewer, doc/eng-us/features/6.0/help-system.md): CommonMark-Bl… | – |
+| `expHelpAllowlist` | class | `kernel/classes/help/exphelpallowlist.php:37` | Die Dateien, die das Hilfesystem anzeigen darf (doc/eng-us/features/6.0/help-system.md, "Which files are shown"). | – |
+| `expHelpAudience` | class | `kernel/classes/help/exphelpaudience.php:34` | Für wen eine Hilfeseite ist, zu welchem Abschnitt der Hilfe sie gehört und was für eine Seite sie ist (doc/eng-us/features/6.0/help-system.md, „Audiences, cate… | – |
+| `expHelpCommitFeed` | class | `kernel/classes/help/exphelpcommitfeed.php:29` | Die neuesten Commits des Exponential-Repositorys für die Entwickler-Landingpage der Hilfe (exphelp/audience/developer, doc/eng-us/features/6.0/he… | – |
+| `expHelpContentAccess` | class | `kernel/classes/help/content/exphelpcontentaccess.php:18` | Wer ein Thema, Handbuch oder Kapitel der als Inhalt gepflegten Hilfe sehen darf, entschieden anhand der einfachen Daten, die das Repository zu jedem Objekt führt (expHelpContent… | – |
+| `expHelpContentEbooks` | class | `kernel/classes/help/content/exphelpcontentebooks.php:26` | E-Books von als Inhalt gespeicherten Hilfehandbüchern (doc/eng-us/specifications/6.0/help-system.md, Auslieferungsweg 3: „stored as a file object under E-books (sec… | – |
+| `expHelpContentPackage` | class | `kernel/classes/help/content/exphelpcontentpackage.php:23` | Die Hilfeklassen als Content-Klassen-Paket (doc/eng-us/specifications/6.0/help-content-package.md, CJW #16564): die acht help_*-Klassen von expHelpC… | – |
+| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:45` | Kontexthilfe: welche Hilfeseite „Hilfe zu dieser Seite“ beantwortet, für ein Modul, eine Ansicht und ein Design. | – |
+| `expHelpExamplesTranslation` | class | `kernel/classes/help/exphelpexamplestranslation.php:30` | Die Übersetzung der generierten Referenzbeispiele (expHelpExamplesGenerator) in eine Sprache der Hilfe, zum Beispiel Deutsch in doc/ger-de/ (doc/… | – |
+| `expHelpLanguage` | class | `kernel/classes/help/exphelplanguage.php:37` | Die Sprachen der Dokumentation (doc/eng-us/features/6.0/help-system.md, „The pages in the reader's language“; doc/eng-us/bc/6.0/translated-docume… | – |
+| `expHelpManualSource` | class | `kernel/classes/help/content/exphelpmanualsource.php:13` | Die Markdown-Hilfe als Quelle der erzeugten Handbücher (expHelpManualBuilder): die Ordner und Seiten des Index der Hilfe einer Sprache (expHelpDo… | – |
+| `expHelpMarkdownRenderer` | class | `kernel/classes/help/exphelpmarkdownrenderer.php:65` | Rendert das Markdown der Dokumentation (doc/**.md) zum HTML des Hilfe-Viewers (exphelp/viewer, doc/eng-us/features/6.0/help-system.md): Common… | – |
 | `expHelpPdf` | class | `kernel/classes/help/exphelppdf.php:18` | Eine Hilfeseite als PDF-Datei (doc/eng-us/features/6.0/help-system.md, „Print and PDF“): die Ansicht exphelp/pdf/ und `./console exp:help pdf ` fragen hier an. | – |
 | `expHelpPdfFontSubset` | class | `kernel/classes/help/exphelppdffontsubset.php:17` | Reduziert eine TrueType-Schrift auf die Glyphen, die ein PDF verwendet (doc/eng-us/features/6.0/help-system.md, „Print and PDF“). | – |
+| `expHelpProjectFiles` | class | `kernel/classes/help/exphelpprojectfiles.php:29` | Die Projektdateien der Hilfe (doc/eng-us/features/6.0/help-system.md, „Project files“): die Markdown-Dateien des Repositorys außerhalb von doc/, die doku… | – |
 | `expHelpSearch` | class | `kernel/classes/help/exphelpsearch.php:34` | expHelpSearch: die Volltextsuche des Hilfesystems (doc/eng-us/features/6.0/help-system.md, "Search"). | – |
 
 ### kernel/classes/ini (6)
@@ -545,10 +657,10 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expLogBundle` | class | `kernel/classes/logviewer/explogbundle.php:17` | „Alle Logs herunterladen“ (Setup › Logs verwalten; doc/eng-us/features/6.0/log-viewer.md, „Downloading every log“): ein Archiv aller Logs, die der Viewer auflistet, option… | – |
-| `expLogManagerFactory` | class | `kernel/classes/logviewer/explogmanagerfactory.php:12` | Der Log-Manager, den die Ansichten des Log-Viewers verwenden (doc/eng-us/features/6.0/log-viewer.md, "Managing logs"): der Dienst expLogManager des Kernels, wenn er vorhan… | – |
-| `expLogPermalink` | class | `kernel/classes/logviewer/explogpermalink.php:23` | Die Permalinks des Log-Viewers (doc/eng-us/features/6.0/log-viewer.md, „Permalinks“): jede Ansicht eines Logs als Pfad ohne Query-String, kurz genug, u… | – |
-| `expLogRateLimit` | class | `kernel/classes/logviewer/explogratelimit.php:16` | Das Anfragelimit des Feeds des Log-Viewers je Sitzung ([RateLimitSettings], doc/eng-us/features/6.0/log-viewer.md, "Cost") und das Gedächtnis, welche Dateien… | – |
+| `expLogBundle` | class | `kernel/classes/logviewer/explogbundle.php:17` | „Alle Logs herunterladen“ (Setup › Logs verwalten; doc/eng-us/features/6.0/log-viewer.md, „Downloading every log“): ein Archiv aller Logs, die der Viewer auflistet,… | – |
+| `expLogManagerFactory` | class | `kernel/classes/logviewer/explogmanagerfactory.php:12` | Der Log-Manager, den die Ansichten des Log-Viewers verwenden (doc/eng-us/features/6.0/log-viewer.md, „Managing logs“): der Kernel-Service expLogManager, wenn er… | – |
+| `expLogPermalink` | class | `kernel/classes/logviewer/explogpermalink.php:25` | Die Permalinks des Log-Viewers (doc/eng-us/features/6.0/log-viewer.md, „Permalinks“): jede Ansicht eines Logs als Pfad ohne Query-String, kurz e… | – |
+| `expLogRateLimit` | class | `kernel/classes/logviewer/explogratelimit.php:16` | Das Anfragelimit des Feeds des Log-Viewers, je Sitzung ([RateLimitSettings], doc/eng-us/features/6.0/log-viewer.md, „Cost“), und das Gedächtnis, welche… | – |
 | `expLogRedactor` | class | `kernel/classes/logviewer/explogredactor.php:16` | Was der Log-Viewer maskiert, bevor eine Zeile den Server verlässt (doc/eng-us/features/6.0/log-viewer.md, "Privacy"). | – |
 | `expLogViewer` | class | `kernel/classes/logviewer/explogviewer.php:16` | Der Log-Viewer (Setup › Log files, setup/logs; doc/eng-us/features/6.0/log-viewer.md): was seine Seite, sein Feed und seine Kommandozeile verwenden. | – |
 | `expLogViewerConfig` | class | `kernel/classes/logviewer/explogviewerconfig.php:11` | Die Einstellungen des Log-Viewers (settings/logviewer.ini, doc/eng-us/features/6.0/log-viewer.md, „Settings“), einmal pro Anfrage mit sicheren Grenzen gelesen. | – |
@@ -588,6 +700,23 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | --- | --- | --- | --- | --- |
 | `eZContentObjectPackageHandler` | class extends eZPackageHandler | `kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php:18` | – | settings/package.ini [PackageSettings] HandlerAlias[ezcontentobject] |
 
+### kernel/classes/passkey (2)
+
+[Alle Muster von kernel/classes/passkey](area-kernel-classes-passkey.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expPasskey` | class extends eZPersistentObject | `kernel/classes/passkey/exppasskey.php:22` | Ein Passkey eines Benutzers: eine Zeile von exppasskey (doc/eng-us/guides/passkeys.md). | – |
+| `expPasskeySettings` | class | `kernel/classes/passkey/exppasskeysettings.php:19` | site.ini [PasskeySettings], für eine Anfrage gelesen (doc/eng-us/guides/passkeys.md): ob Passkeys aktiv sind, die Relying Party (ID und Name), die Orig… | – |
+
+### kernel/classes/reauth (1)
+
+[Alle Muster von kernel/classes/reauth](area-kernel-classes-reauth.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expReauthSettings` | class | `kernel/classes/reauth/expreauthsettings.php:18` | Die Einstellungen von „Identität bestätigen“, wie die Seite setup/reauth sie bearbeitet (doc/eng-us/guides/verify-its-you.md): der Schalter der gesamten Funktion, die min… | – |
+
 ### kernel/classes/requestclassifier (1)
 
 [Alle Muster von kernel/classes/requestclassifier](bereich-kernel-classes-requestclassifier.md)
@@ -612,6 +741,27 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | --- | --- | --- | --- | --- |
 | `expSubitemsAttributeColumn` | class extends expSubitemsColumn | `kernel/classes/subitems/expsubitemsattributecolumn.php:16` | Eine automatische Unterelement-Spalte für ein Klassenattribut, Schlüssel attr:/. | – |
 
+### kernel/classes/syscard (5)
+
+[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expSysCardContext` | class | `kernel/classes/syscard/expsyscardcontext.php:31` | Alles, was ein Anbieter der Systemkarte von der Maschine liest, läuft über seinen Kontext, sodass ein Test einem Anbieter erfundene Werte statt der echten Ma… | – |
+| `expSysCardFact` | class | `kernel/classes/syscard/expsyscardfact.php:19` | Eine Zeile der Systemkarte (exp:expfetch, exp:info, exp:about): eine Bezeichnung, ein Wert, ein Schweregrad und der Abschnitt, zu dem sie gehört. | – |
+| `expSysCardLogo` | class | `kernel/classes/syscard/expsyscardlogo.php:23` | Das Logo der Systemkarte: das orangefarbene „e“ von Exponential in drei Größen, in Unicode-Blockgrafik und in reinem ASCII, und die Wortmarke „EXPONENTIAL“, die… | – |
+| `expSysCardRegistry` | class | `kernel/classes/syscard/expsyscardregistry.php:30` | Die Anbieter der Systemkarte und wie sie laufen (settings/syscard.ini [Providers] und [Runtime]): | – |
+| `expSysCardTheme` | class | `kernel/classes/syscard/expsyscardtheme.php:20` | Ein Farbschema der Systemkarte (syscard.ini [Theme-]): eine #RRGGBB-Farbe für jede Rolle, die Stopps des Verlaufs und dessen Richtung. | – |
+
+### kernel/classes/transfer (2)
+
+[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expKernelTransferRegistry` | class | `kernel/classes/transfer/expkerneltransferregistry.php:30` | Die Transfer-Registry: jedes Import- und Export-Werkzeug der Installation, wie es sich in kernelservices.ini selbst deklariert (ein [Service_transfer.]-Block t… | settings/kernelservices.ini [Service_transfer.registry] Class |
+| `expKernelTransferTool` | class | `kernel/classes/transfer/expkerneltransfertool.php:49` | Ein Import- oder Export-Tool der Transfer-Registry (expKernelTransferRegistry), wie es sich in einem Block [Service_transfer.] von kernelservice… | extension/bccie/settings/kernelservices.ini [Service_transfer.bccie] Class; extension/cjw_newsletter/settings/kernelservices.ini [Service_transfer.newsletter] Class; extension/ezodf/settings/kernelservices.ini [Service_transfer.ezodf] Class; extension/sqliimport/settings/kernelservices.ini [Service_transfer.sqliimport] Class; extension/syndication/settings/kernelservices.ini [Service_transfer.syndication] Class; extension/xrowextract/settings/kernelservices.ini [Service_transfer.xrowextract] Class; settings/kernelservices.ini [Service_transfer.audit] Class; settings/kernelservices.ini [Service_transfer.datatable] Class; settings/kernelservices.ini [Service_transfer.infocollector] Class; settings/kernelservices.ini [Service_transfer.package] Class; settings/kernelservices.ini [Service_transfer.pdf] Class; settings/kernelservices.ini [Service_transfer.rss_export] Class; settings/kernelservices.ini [Service_transfer.rss_import] Class |
+
 ### kernel/classes/uiswitch (1)
 
 [Alle Muster von kernel/classes/uiswitch](bereich-kernel-classes-uiswitch.md)
@@ -620,7 +770,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | --- | --- | --- | --- | --- |
 | `expUISwitch` | class | `kernel/classes/uiswitch/expuiswitch.php:28` | Das UI-Umschalt-Framework: eine Registry von Anbietern (uiswitch.ini [UISwitchSettings] ProviderList[]), die in der Sitzung gespeicherten Auswahlen des Benutzers und die ea… | – |
 
-### kernel/classes/user (5)
+### kernel/classes/user (6)
 
 [Alle Muster von kernel/classes/user](bereich-kernel-classes-user.md)
 
@@ -631,6 +781,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | `expUserAccountOverview` | class | `kernel/classes/user/expuseraccountoverview.php:22` | Die Kontoseite eines Benutzers (user/edit, user/edit/), für einen Menschen beschrieben: wer das Konto ist (Name, Login, E-Mail, Gruppen, Rollen), sein Zustand (aktiv… | – |
 | `expUserDeactivation` | class | `kernel/classes/user/expuserdeactivation.php:36` | „Deaktivieren und verschieben“ und „Reaktivieren und zurückverschieben“: statt ein Benutzerkonto zu entfernen (Benutzer kommen nie in den Papierkorb, daher lässt sich das Entfernen nicht rückgä… | – |
 | `expUserHygiene` | class | `kernel/classes/user/expuserhygiene.php:31` | Die Konten, die die Seite user/hygiene ("Check user accounts") auflistet: jedes Benutzerkonto oder die unterhalb einer Benutzergruppe, eingegrenzt durch einen Filter (nie angem… | – |
+| `expUserSessionTracker` | class | `kernel/classes/user/expusersessiontracker.php:44` | Die angemeldeten Sitzungen eines Benutzers („Ihre Geräte“, user/sessions): Jede Anmeldung erhält eine Zeile in expuser_session (expUserSession), der Benutzer sieht, wo… | – |
 
 ### kernel/classes/workflowtypes (2)
 
@@ -641,12 +792,13 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | `eZPaymentLogger` | class | `kernel/classes/workflowtypes/event/ezpaymentgateway/ezpaymentlogger.php:16` | – | – |
 | `eZWaitUntilDateValue` | class extends eZPersistentObject | `kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildatevalue.php:18` | – | – |
 
-### kernel/modules (7)
+### kernel/modules (8)
 
 [Alle Muster von kernel/modules](bereich-kernel-modules.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
+| `expModuleTableWizard` | class extends expExtensionWizard | `kernel/setup/expmoduletablewizard.php:34` | Der Modultabellen-Assistent (Setup › RAD › Module table, setup/moduletable; doc/eng-us/features/6.0/data-tables.md, „The module table wizard“): eine NEUE Datentabelle… | – |
 | `eZCurrencyData` | class extends eZPersistentObject | `kernel/shop/classes/ezcurrencydata.php:12` | – | – |
 | `eZExchangeRatesUpdateHandler` | class | `kernel/shop/classes/exchangeratehandlers/ezexchangeratesupdatehandler.php:12` | – | – |
 | `eZMultiEdit` | class | `kernel/content/multiedit_functions.php:16` | Die Arbeitsteile von content/multiedit. | – |
@@ -655,14 +807,15 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | `eZShopFunctions` | class | `kernel/shop/classes/ezshopfunctions.php:12` | – | – |
 | `eZStepCreateSites` | class extends eZStepInstaller | `kernel/setup/steps/ezstep_create_sites.php:52` | – | – |
 
-### kernel/private (15)
+### kernel/private (16)
 
 [Alle Muster von kernel/private](bereich-kernel-private.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `expFileConsistencyReport` | class | `kernel/private/classes/expfileconsistencyreport.php:36` | Vergleicht die Dateien einer Installation mit den Prüfsummenlisten, die mit ihr ausgeliefert werden: share/filelist.md5 von Exponential und die share/filelist.md5, die eine Exte… | – |
-| `expRestContentPermission` | class | `kernel/private/rest/classes/auth/content_permission.php:36` | Die Rechte des aktuellen Benutzers an den Inhalten, die ein REST-Aufruf liest oder schreibt, geprüft so, wie das Modul content sie prüft (doc/eng-us/guides/api-keys.md, „Permis… | – |
+| `expRestContentPermission` | class | `kernel/private/rest/classes/auth/content_permission.php:36` | Die Rechte des aktuellen Benutzers an dem Inhalt, den ein REST-Aufruf liest oder schreibt, geprüft so, wie das Content-Modul sie prüft (doc/eng-us/guides/api-keys.md,… | – |
+| `expRestCors` | class | `kernel/private/rest/classes/cors.php:29` | Cross-Origin Resource Sharing (CORS) für die REST-Schnittstelle (index_rest.php: die Inhalts-API, der OAuth-Token-Endpunkt und jede andere Route einer RE… | – |
 | `expSchemaConsistencyReport` | class | `kernel/private/classes/expschemaconsistencyreport.php:36` | Vergleicht die Datenbank mit dem Schema, das mit Exponential und seinen aktiven Extensions ausgeliefert wird (share/db_schema.dba der Wurzel und jeder Extension),… | – |
 | `eZAutoloadGenerator` | class | `kernel/private/classes/ezautoloadgenerator.php:19` | Hilfsklasse zum Erzeugen von Autoload-Arrays für Exponential. | – |
 | `ezpActiveExtensions` | class | `kernel/private/classes/ezpactiveextensions.php:26` | Ändert [ExtensionSettings] ActiveExtensions in settings/override/site.ini.append.php für Setup › Extensions und lässt alles andere in dieser… | – |
@@ -700,7 +853,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `ezpHttpCacheContract` | class | `kernel/private/classes/httpcache/ezphttpcachecontract.php:38` | Der rollenbewusste HTTP-Cache-Vertrag: Schlüssel, Kontext-Hashes, die Eintrags- und Datensatzformate, Tag-Validierung und Platzhalterersetzung. | – |
+| `ezpHttpCacheContract` | class | `kernel/private/classes/httpcache/ezphttpcachecontract.php:37` | Der rollenbewusste HTTP-Cache-Vertrag: Schlüssel, Kontext-Hashes, die Eintrags- und Datensatzformate, Tag-Validierung und Platzhalterersetzung. | – |
 
 ### kernel/private/classes/requestrules (2)
 
@@ -726,6 +879,14 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
 | `Exponential\View\Kernel\Content\Job` | class extends ModuleView | `kernel/private/classes/views/content/job.php:19` | Die Ansicht content/job/: die Fortschrittsseite eines Inhaltsjobs (ein großes Entfernen oder Kopieren eines Teilbaums, das im Hintergrund läuft, siehe kernel/classes/contentjob/… | – |
+
+### kernel/private/classes/webdav (1)
+
+[Alle Muster von kernel/private/classes/webdav](bereich-kernel-private-classes-webdav.md)
+
+| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
+| --- | --- | --- | --- | --- |
+| `expWebDAVPathFactory` | class extends ezcWebdavAutomaticPathFactory | `kernel/private/classes/webdav/expwebdavpathfactory.php:19` | Die Pfadfabrik von webdav.php: Pfade innerhalb des Servers sind einfacher (dekodierter) Text, URIs sind kodiert. | – |
 
 ### lib/ezfile (2)
 
@@ -791,7 +952,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | `eZTemplate` | class | `lib/eztemplate/classes/eztemplate.php:200` | – | – |
 | `eZTemplateCompiler` | class | `lib/eztemplate/classes/eztemplatecompiler.php:49` | – | – |
 | `eZTemplateNodeTool` | class | `lib/eztemplate/classes/eztemplatenodetool.php:19` | – | – |
-| `eZTemplateRoleOperator` | class | `lib/eztemplate/classes/eztemplateroleoperator.php:24` | Die Klasse eZTemplateRoleOperator stellt Template-Operatoren zur Prüfung der Rollenzugehörigkeit von Benutzern bereit | – |
+| `eZTemplateRoleOperator` | class | `lib/eztemplate/classes/eztemplateroleoperator.php:29` | Die Klasse eZTemplateRoleOperator stellt Template-Operatoren zur Prüfung der Rollenzugehörigkeit und der Richtlinien eines Benutzers bereit (doc/eng-us/features/6.0/role-and-policy-… | – |
 
 ### lib/ezutils (10)
 
@@ -801,8 +962,8 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 | --- | --- | --- | --- | --- |
 | `eZDebug` | class | `lib/ezutils/classes/ezdebug.php:59` | – | – |
 | `eZFatalUserError` | class extends Error | `lib/ezutils/classes/ezfatalusererror.php:35` | Ein schwerer Fehler, den der Kernel selbst auslöst, anstelle eines Benutzerfehlers der Stufe E_USER_ERROR, den PHP 8.4 für trigger_error() als veraltet markiert („throw a… | – |
-| `eZHTTPTool` | class | `lib/ezutils/classes/ezhttptool.php:25` | – | – |
-| `eZINI` | class | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - neue INI-Einstellung ext-siteaccess-override - - neue INI-Einstellung ext-siteaccess… | – |
+| `eZHTTPTool` | class | `lib/ezutils/classes/ezhttptool.php:25` | – | settings/kernelservices.ini [Service_http] Class |
+| `eZINI` | class | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - neue INI-Einstellung ext-siteaccess-override - - neue INI-Einstellung ext-siteaccess… | settings/kernelservices.ini [Service_ini.i18n] Class; settings/kernelservices.ini [Service_ini.site] Class |
 | `eZModule` | class | `lib/ezutils/classes/ezmodule.php:36` | Die Klasse eZModule dient zum Instanziieren und Verwenden von Modulen und Ansichten. | – |
 | `eZOperationMemento` | class extends eZPersistentObject | `lib/ezutils/classes/ezoperationmemento.php:18` | – | – |
 | `ezpRepairQueue` | class | `lib/ezutils/classes/ezprepairqueue.php:37` | Repariert eine Installation, deren Composer-Bibliotheken fehlen, von der Fehlerseite aus, die das meldet (eZExecution::renderErrorCasePage('dependencies')), d… | – |

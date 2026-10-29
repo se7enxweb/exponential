@@ -3,7 +3,7 @@ title: Katalog der Entwurfsmuster
 audience: developer
 category: standards
 order: 300
-summary: Jede Abstraktion und jedes Entwurfsmuster des Exponential-6-Stacks, im Quellcode gefunden: 5067 Vorkommen in 29 Kategorien über Kernel, lib und Extensions, mit Datei, Klasse, Beschreibung und Erweiterungspunkt.
+summary: Jede Abstraktion und jedes Entwurfsmuster des Exponential-6-Stacks, im Quellcode gefunden: 6206 Vorkommen in 29 Kategorien über Kernel, lib und Extensions, mit Datei, Klasse, Beschreibung und Erweiterungspunkt.
 keywords: Entwurfsmuster, Musterkatalog, Abstraktionen, Architektur, Fabrik, Erweiterungspunkt, Datentyp, Template-Operator, Fetch-Funktion, Modulansicht, Richtlinienfunktion, Workflow-Ereignis, design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI
 type: reference
 ---
@@ -18,76 +18,79 @@ Die Regeln, denen der Code folgt: [Standards](../README.md) und [Architektur des
 ## In Zahlen
 
 | | |
-|---|---|
-| Vorkommen (alle Kategorien) | 5067 |
-| Klassen, Interfaces, Traits und Enums | 2877 (2804 Klassen, 72 Interfaces, 1 Trait) |
-| ... mit mindestens einem Muster | 2297 |
-| Modulansichten | 491 |
-| Richtlinienfunktionen | 232 |
-| Fetch-Funktionen | 290 |
-| Template-Operatoren | 243 |
-| Cronjob-Teile | 36 |
-| Event-Hooks | 97 |
-| INI-Plugin-Punkte | 574 |
-| Gelesene Quelldateien | 3747 PHP, 509 INI |
-| Bereiche | 142 |
+| --- | --- |
+| Vorkommen (alle Kategorien) | 6206 |
+| Klassen, Interfaces, Traits und Enums | 3516 (3419 Klassen, 96 Interfaces, 1 Trait) |
+| ... mit mindestens einem Muster | 2871 |
+| Modulansichten | 532 |
+| Richtlinienfunktionen | 260 |
+| Fetch-Funktionen | 316 |
+| Template-Operatoren | 255 |
+| Cronjob-Teile | 49 |
+| Event-Hooks | 99 |
+| INI-Plugin-Punkte | 842 |
+| Gelesene Quelldateien | 4512 PHP, 577 INI |
+| Bereiche | 155 |
 
 ## Die Muster
 
 | Muster | Gruppe | Vorkommen | Erkannt an |
-|---|---|---|---|
-| [Active Record (eZPersistentObject)](active-record.md) | Datenzugriff | 194 | Erweitert eZPersistentObject, direkt oder über eine Elternklasse. |
-| [Datentyp (Strategy für Inhaltsfelder)](datentyp.md) | Plugins | 54 | Erweitert eZDataType, direkt oder über eine Elternklasse. |
-| [Workflow-Ereignistyp (Command, Plugin)](workflow-ereignis.md) | Plugins | 12 | Erweitert eZWorkflowEventType. |
-| [Template-Operator (Interpreter-Plugin)](template-operator.md) | Plugins | 321 | Registriert in einer eztemplateautoload.php ($eZTemplateOperatorArray[]) oder hat operatorList() und modify(). |
+| --- | --- | --- | --- |
+| [Active Record (eZPersistentObject)](active-record.md) | Datenzugriff | 234 | Erweitert eZPersistentObject, direkt oder über eine Elternklasse. |
+| [Datentyp (Strategie für Inhaltsfelder)](datentyp.md) | Plugins | 54 | Erweitert eZDataType, direkt oder über eine Elternklasse. |
+| [Workflow-Ereignistyp (Befehl, Plugin)](workflow-ereignis.md) | Plugins | 15 | Erweitert eZWorkflowEventType. |
+| [Template-Operator (Interpreter-Plugin)](template-operator.md) | Plugins | 338 | Registriert in einer eztemplateautoload.php ($eZTemplateOperatorArray[]) oder hat operatorList() und modify(). |
 | [Template-Funktion (Interpreter-Plugin)](template-funktion.md) | Plugins | 45 | Registriert in einer eztemplateautoload.php ($eZTemplateFunctionArray[]) oder hat functionList() und process(). |
-| [Fetch-Funktion (Query Object, Facade)](fetch-funktion.md) | Plugins | 319 | Ein Eintrag in der function_definition.php eines Moduls oder eine Klasse namens *FunctionCollection. |
-| [Modulansicht (Page Controller)](modulansicht.md) | Anfrageverarbeitung | 921 | Ein Eintrag von $ViewList in einer module.php oder eine Klasse, die ModuleView oder Page erweitert (die ausführbare Form einer Ansicht). |
-| [Richtlinienfunktion (Zugriffskontrolle)](richtlinienfunktion.md) | Anfrageverarbeitung | 232 | Ein Eintrag von $FunctionList in einer module.php. |
+| [Fetch-Funktion (Query Object, Fassade)](fetch-funktion.md) | Plugins | 354 | Ein Eintrag in der function_definition.php eines Moduls oder eine Klasse namens *FunctionCollection. |
+| [Modulansicht (Page Controller)](modulansicht.md) | Anfrageverarbeitung | 993 | Ein Eintrag von $ViewList in einer module.php oder eine Klasse, die ModuleView oder Page erweitert (die ausführbare Form einer Ansicht). |
+| [Richtlinienfunktion (Zugriffskontrolle)](richtlinienfunktion.md) | Anfrageverarbeitung | 260 | Ein Eintrag von $FunctionList in einer module.php. |
 | [Front Controller](front-controller.md) | Anfrageverarbeitung | 10 | Die Kernel-Klassen ezpKernel, ezpKernelWeb, ezpKernelTreeMenu, ezpKernelRest, eZModule und verwandte. |
-| [Command (Konsole, Skripte, Cronjobs)](befehl.md) | Anfrageverarbeitung | 221 | Erweitert Command, CronjobPart oder Runnable (die ausführbaren Konsolenbefehle und Cronjob-Teile) oder eine Datei cronjobs/*.php. |
-| [Singleton / instance()](singleton.md) | Erzeugung | 69 | Hat eine statische Methode instance() oder getInstance(). |
-| [Factory und statische Fabrikmethoden](fabrik.md) | Erzeugung | 352 | Klassenname endet auf Factory oder hat statische Methoden create*(), from*(), factory(), make*() oder erzeugt new self/new static in einer statischen Methode. |
-| [Builder](builder.md) | Erzeugung | 9 | Klassenname enthält Builder oder Generator. |
-| [Registry](registry.md) | Struktur | 30 | Klassenname enthält Registry oder hat statische Methoden register*(). |
-| [Strategy / Handler](strategie-handler.md) | Verhalten | 299 | Klassenname endet auf Handler, Backend, Driver, Transport, Engine oder Strategy oder implementiert ein Interface, dessen Name so endet. |
-| [Template Method / abstrakte Basisklasse](schablonenmethode.md) | Verhalten | 53 | Eine abstrakte Klasse mit abstrakten und konkreten Methoden. |
-| [Interface (Vertrag)](schnittstelle.md) | Struktur | 72 | Jedes Interface. |
-| [Observer / Listener / Ereignis](beobachter.md) | Verhalten | 8 | Klassenname enthält Listener, Observer oder Subscriber oder hat Methoden attach()/notify()/addListener(); jeder Aufruf von ezpEvent notify()/filter() (siehe die Seite zu den Hooks). |
-| [Event-Hook (ezpEvent)](ereignis-hook.md) | Verhalten | 97 | Ein Aufruf von ezpEvent::getInstance()-›notify( 'EVENT' ) oder -›filter( 'EVENT' ). |
-| [Adapter / Bridge / Wrapper](adapter.md) | Struktur | 4 | Klassenname enthält Adapter, Bridge, Wrapper oder Proxy. |
-| [Facade / Service](fassade.md) | Struktur | 37 | Klassenname endet auf Facade, Service, Manager, API oder Api. |
-| [Decorator / Filter](dekorierer.md) | Struktur | 62 | Klassenname enthält Decorator oder Filter. |
-| [Chain of Responsibility](kette.md) | Verhalten | 7 | Klassenname enthält LoginHandler, Chain, Pipeline, Middleware, Router oder Matcher. |
-| [Iterator](iterator.md) | Verhalten | 5 | Implementiert Iterator, IteratorAggregate oder ArrayAccess. |
-| [Value Object / Struct](wertobjekt.md) | Struktur | 95 | Klassenname endet auf Struct, Value, Result, Item, Info oder Definition und die Klasse hat wenige Methoden, oder sie erweitert ezcBaseStruct. |
-| [Exception-Hierarchie](ausnahme.md) | Struktur | 51 | Erweitert Exception, eine Klasse *Exception oder Error. |
+| [Befehl (Konsole, Skripte, Cronjobs)](befehl.md) | Anfrageverarbeitung | 247 | Erweitert Command, CronjobPart oder Runnable (die ausführbaren Konsolenbefehle und Cronjob-Teile) oder eine Datei cronjobs/*.php. |
+| [Singleton / instance()](singleton.md) | Erzeugung | 77 | Hat eine statische Methode instance() oder getInstance(). |
+| [Fabrik und statische Fabrikmethoden](fabrik.md) | Erzeugung | 443 | Klassenname endet auf Factory oder hat statische Methoden create*(), from*(), factory(), make*() oder erzeugt new self/new static in einer statischen Methode. |
+| [Builder](builder.md) | Erzeugung | 10 | Klassenname enthält Builder oder Generator. |
+| [Registry](registry.md) | Struktur | 39 | Klassenname enthält Registry oder hat statische Methoden register*(). |
+| [Strategie / Handler](strategie-handler.md) | Verhalten | 382 | Klassenname endet auf Handler, Backend, Driver, Transport, Engine oder Strategy oder implementiert ein Interface, dessen Name so endet. |
+| [Schablonenmethode / abstrakte Basisklasse](schablonenmethode.md) | Verhalten | 69 | Eine abstrakte Klasse mit abstrakten und konkreten Methoden. |
+| [Schnittstelle (Vertrag)](schnittstelle.md) | Struktur | 96 | Jedes Interface. |
+| [Beobachter / Listener / Ereignis](beobachter.md) | Verhalten | 10 | Klassenname enthält Listener, Observer oder Subscriber oder hat Methoden attach()/notify()/addListener(); jeder Aufruf von ezpEvent notify()/filter() (siehe die Seite zu den Hooks). |
+| [Ereignis-Hook (ezpEvent)](ereignis-hook.md) | Verhalten | 99 | Ein Aufruf von ezpEvent::getInstance()-›notify( 'EVENT' ) oder -›filter( 'EVENT' ). |
+| [Adapter / Bridge / Wrapper](adapter.md) | Struktur | 6 | Klassenname enthält Adapter, Bridge, Wrapper oder Proxy. |
+| [Fassade / Dienst](fassade.md) | Struktur | 40 | Klassenname endet auf Facade, Service, Manager, API oder Api. |
+| [Dekorierer / Filter](dekorierer.md) | Struktur | 64 | Klassenname enthält Decorator oder Filter. |
+| [Zuständigkeitskette (Chain of Responsibility)](kette.md) | Verhalten | 19 | Klassenname enthält LoginHandler, Chain, Pipeline, Middleware, Router oder Matcher. |
+| [Iterator](iterator.md) | Verhalten | 16 | Implementiert Iterator, IteratorAggregate oder ArrayAccess. |
+| [Wertobjekt / Struktur](wertobjekt.md) | Struktur | 106 | Klassenname endet auf Struct, Value, Result, Item, Info oder Definition und die Klasse hat wenige Methoden, oder sie erweitert ezcBaseStruct. |
+| [Ausnahmehierarchie](ausnahme.md) | Struktur | 73 | Erweitert Exception, eine Klasse *Exception oder Error. |
 | [Trait (Mixin)](trait.md) | Struktur | 1 | Jeder Trait. |
-| [Utility (statischer Helfer)](hilfsklasse.md) | Struktur | 540 | Eine konkrete Klasse, deren Methoden alle statisch sind (mindestens zwei). |
-| [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | Plugins | 947 | Eine Einstellung einer Datei settings/*.ini (oder der einer Extension), deren Wert der Name einer Klasse des Katalogs ist. |
+| [Hilfsklasse (statische Hilfsfunktionen)](hilfsklasse.md) | Struktur | 730 | Eine konkrete Klasse, deren Methoden alle statisch sind (mindestens zwei). |
+| [INI-Plugin-Punkt (Erweiterungspunkt)](ini-plugin-punkt.md) | Plugins | 1376 | Eine Einstellung einer Datei settings/*.ini (oder der einer Extension), deren Wert der Name einer Klasse des Katalogs ist. |
 
 ## Die Bereiche
 
 Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort definierten Ansichten, Funktionen, Operatoren und Plugin-Punkte.
 
 | Bereich | Klassen | Ansichten | Fetch-Funktionen | Operatoren | Plugin-Punkte |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | [extension/AdminAid](bereich-extension-adminaid.md) | 1 | 6 | 0 | 0 | 18 |
 | [extension/autorss](bereich-extension-autorss.md) | 2 | 0 | 0 | 0 | 0 |
-| [extension/bccie](bereich-extension-bccie.md) | 46 | 5 | 0 | 0 | 42 |
+| [extension/bccie](bereich-extension-bccie.md) | 48 | 5 | 0 | 0 | 44 |
 | [extension/bcgooglesitemaps](bereich-extension-bcgooglesitemaps.md) | 4 | 1 | 0 | 0 | 0 |
 | [extension/bcwebsitestatistics](bereich-extension-bcwebsitestatistics.md) | 4 | 0 | 0 | 6 | 0 |
 | [extension/birthday](bereich-extension-birthday.md) | 4 | 0 | 0 | 0 | 1 |
-| [extension/cjw_newsletter](bereich-extension-cjw-newsletter.md) | 197 | 57 | 16 | 13 | 20 |
+| [extension/cjw_newsletter](bereich-extension-cjw-newsletter.md) | 197 | 57 | 16 | 13 | 21 |
 | [extension/cjw_themes_jumper](bereich-extension-cjw-themes-jumper.md) | 6 | 2 | 0 | 0 | 2 |
 | [extension/cjw_tmv](bereich-extension-cjw-tmv.md) | 7 | 0 | 4 | 0 | 1 |
 | [extension/enhancedezbinaryfile](bereich-extension-enhancedezbinaryfile.md) | 3 | 0 | 0 | 1 | 0 |
 | [extension/enhancedselection2](bereich-extension-enhancedselection2.md) | 6 | 0 | 0 | 0 | 1 |
+| [extension/expai](area-extension-expai.md) | 186 | 9 | 12 | 6 | 69 |
 | [extension/expchangeclass](bereich-extension-expchangeclass.md) | 7 | 3 | 1 | 0 | 3 |
-| [extension/explayouts](bereich-extension-explayouts.md) | 146 | 9 | 8 | 0 | 85 |
+| [extension/exphelpsite](area-extension-exphelpsite.md) | 1 | 0 | 0 | 0 | 0 |
+| [extension/expimageeditor](area-extension-expimageeditor.md) | 5 | 1 | 1 | 0 | 0 |
+| [extension/explayouts](bereich-extension-explayouts.md) | 150 | 9 | 9 | 0 | 85 |
 | [extension/explayouts_api](bereich-extension-explayouts-api.md) | 10 | 0 | 0 | 0 | 0 |
 | [extension/explayouts_content_browser](bereich-extension-explayouts-content-browser.md) | 4 | 0 | 0 | 0 | 0 |
-| [extension/explayouts_content_browser_core](bereich-extension-explayouts-content-browser-core.md) | 2 | 0 | 0 | 0 | 0 |
+| [extension/explayouts_content_browser_core](bereich-extension-explayouts-content-browser-core.md) | 3 | 0 | 0 | 0 | 1 |
 | [extension/explayouts_content_browser_ui](bereich-extension-explayouts-content-browser-ui.md) | 2 | 1 | 0 | 0 | 0 |
 | [extension/explayouts_core](bereich-extension-explayouts-core.md) | 13 | 0 | 0 | 0 | 1 |
 | [extension/explayouts_relation_list_query](bereich-extension-explayouts-relation-list-query.md) | 4 | 0 | 0 | 0 | 0 |
@@ -97,6 +100,7 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [extension/explayouts_ui](bereich-extension-explayouts-ui.md) | 20 | 14 | 0 | 1 | 0 |
 | [extension/explayouts_ui_api](bereich-extension-explayouts-ui-api.md) | 6 | 4 | 0 | 0 | 0 |
 | [extension/expquery_translator](bereich-extension-expquery-translator.md) | 53 | 0 | 0 | 0 | 0 |
+| [extension/expqueue](area-extension-expqueue.md) | 27 | 5 | 0 | 0 | 5 |
 | [extension/expservices](bereich-extension-expservices.md) | 78 | 0 | 0 | 0 | 69 |
 | [extension/expsite_api](bereich-extension-expsite-api.md) | 7 | 0 | 0 | 0 | 0 |
 | [extension/expsite_app](bereich-extension-expsite-app.md) | 2 | 0 | 0 | 0 | 0 |
@@ -108,18 +112,19 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [extension/exp_enhanced_link](bereich-extension-exp-enhanced-link.md) | 3 | 0 | 0 | 0 | 0 |
 | [extension/exp_oe_tiptap](bereich-extension-exp-oe-tiptap.md) | 14 | 1 | 0 | 0 | 3 |
 | [extension/ezauthorize](bereich-extension-ezauthorize.md) | 5 | 2 | 0 | 0 | 0 |
-| [extension/ezautosave](bereich-extension-ezautosave.md) | 1 | 0 | 0 | 0 | 1 |
+| [extension/ezautosave](bereich-extension-ezautosave.md) | 2 | 0 | 0 | 0 | 1 |
 | [extension/ezdemo](bereich-extension-ezdemo.md) | 5 | 0 | 0 | 6 | 0 |
 | [extension/ezfind](bereich-extension-ezfind.md) | 51 | 3 | 7 | 2 | 8 |
 | [extension/ezflow](bereich-extension-ezflow.md) | 28 | 8 | 6 | 5 | 6 |
 | [extension/ezformtoken](bereich-extension-ezformtoken.md) | 1 | 0 | 0 | 0 | 0 |
-| [extension/ezgmaplocation](bereich-extension-ezgmaplocation.md) | 3 | 0 | 0 | 0 | 1 |
+| [extension/ezgmaplocation](bereich-extension-ezgmaplocation.md) | 4 | 0 | 0 | 0 | 1 |
 | [extension/ezie](bereich-extension-ezie.md) | 32 | 13 | 0 | 0 | 0 |
 | [extension/ezjscore](bereich-extension-ezjscore.md) | 21 | 3 | 0 | 12 | 11 |
 | [extension/ezmbpaex](bereich-extension-ezmbpaex.md) | 4 | 2 | 0 | 0 | 0 |
 | [extension/ezmultiupload](bereich-extension-ezmultiupload.md) | 8 | 2 | 3 | 0 | 0 |
-| [extension/ezodf](bereich-extension-ezodf.md) | 8 | 2 | 0 | 0 | 1 |
+| [extension/ezodf](bereich-extension-ezodf.md) | 39 | 11 | 0 | 0 | 14 |
 | [extension/ezoe](bereich-extension-ezoe.md) | 26 | 8 | 0 | 1 | 7 |
+| [extension/ezoracle](area-extension-ezoracle.md) | 8 | 0 | 0 | 0 | 3 |
 | [extension/ezownerchange](bereich-extension-ezownerchange.md) | 5 | 1 | 0 | 0 | 1 |
 | [extension/ezpaypal](bereich-extension-ezpaypal.md) | 4 | 1 | 0 | 0 | 0 |
 | [extension/ezpm](bereich-extension-ezpm.md) | 5 | 12 | 4 | 0 | 0 |
@@ -127,12 +132,12 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [extension/ezprestapi](bereich-extension-ezprestapi.md) | 9 | 0 | 0 | 0 | 2 |
 | [extension/ezprestapiprovider](bereich-extension-ezprestapiprovider.md) | 2 | 0 | 0 | 0 | 2 |
 | [extension/ezssp](bereich-extension-ezssp.md) | 2 | 0 | 0 | 0 | 0 |
-| [extension/ezstarrating](bereich-extension-ezstarrating.md) | 7 | 0 | 0 | 3 | 2 |
+| [extension/ezstarrating](bereich-extension-ezstarrating.md) | 8 | 0 | 0 | 3 | 2 |
 | [extension/eztags](bereich-extension-eztags.md) | 32 | 17 | 9 | 5 | 7 |
 | [extension/ezupdate](bereich-extension-ezupdate.md) | 17 | 0 | 0 | 0 | 0 |
 | [extension/ezurlmultisite](bereich-extension-ezurlmultisite.md) | 8 | 0 | 0 | 13 | 4 |
 | [extension/ezwebin](bereich-extension-ezwebin.md) | 1 | 0 | 0 | 6 | 0 |
-| [extension/ezwt](bereich-extension-ezwt.md) | 4 | 1 | 0 | 1 | 1 |
+| [extension/ezwt](bereich-extension-ezwt.md) | 5 | 1 | 0 | 1 | 1 |
 | [extension/git_manager](bereich-extension-git-manager.md) | 23 | 0 | 0 | 0 | 1 |
 | [extension/hcaptcha](bereich-extension-hcaptcha.md) | 5 | 0 | 0 | 0 | 0 |
 | [extension/ngclasslist](bereich-extension-ngclasslist.md) | 2 | 0 | 0 | 0 | 0 |
@@ -140,17 +145,18 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [extension/owsimpleoperator](bereich-extension-owsimpleoperator.md) | 5 | 0 | 0 | 0 | 0 |
 | [extension/powercontent](bereich-extension-powercontent.md) | 3 | 1 | 0 | 0 | 0 |
 | [extension/recaptcha](bereich-extension-recaptcha.md) | 4 | 0 | 0 | 0 | 0 |
-| [extension/sevenx_authentication_2fa](bereich-extension-sevenx-authentication-2fa.md) | 19 | 4 | 0 | 0 | 0 |
+| [extension/sevenx_authentication_2fa](bereich-extension-sevenx-authentication-2fa.md) | 21 | 4 | 0 | 0 | 1 |
 | [extension/sevenx_dse](bereich-extension-sevenx-dse.md) | 53 | 0 | 0 | 0 | 0 |
 | [extension/sevenx_themes_media](bereich-extension-sevenx-themes-media.md) | 7 | 2 | 0 | 0 | 3 |
 | [extension/sevenx_themes_simple](bereich-extension-sevenx-themes-simple.md) | 1 | 0 | 0 | 0 | 16 |
 | [extension/sevenx_themes_super](bereich-extension-sevenx-themes-super.md) | 1 | 0 | 0 | 0 | 0 |
+| [extension/sqliimport](area-extension-sqliimport.md) | 203 | 20 | 3 | 0 | 135 |
 | [extension/str_replace](bereich-extension-str-replace.md) | 2 | 0 | 0 | 1 | 0 |
 | [extension/swark](bereich-extension-swark.md) | 43 | 0 | 0 | 0 | 0 |
-| [extension/syndication](bereich-extension-syndication.md) | 34 | 13 | 0 | 0 | 0 |
-| [extension/xrowextract](bereich-extension-xrowextract.md) | 91 | 9 | 2 | 0 | 33 |
+| [extension/syndication](bereich-extension-syndication.md) | 34 | 13 | 0 | 0 | 1 |
+| [extension/xrowextract](bereich-extension-xrowextract.md) | 94 | 9 | 2 | 0 | 35 |
 | [extension/xrowmetadata](bereich-extension-xrowmetadata.md) | 38 | 2 | 0 | 7 | 1 |
-| [kernel/classes](bereich-kernel-classes.md) | 202 | 0 | 0 | 0 | 0 |
+| [kernel/classes](bereich-kernel-classes.md) | 217 | 0 | 0 | 0 | 0 |
 | [kernel/classes/apikey](bereich-kernel-classes-apikey.md) | 3 | 0 | 0 | 0 | 0 |
 | [kernel/classes/audit](bereich-kernel-classes-audit.md) | 54 | 0 | 0 | 0 | 0 |
 | [kernel/classes/basketinfohandlers](bereich-kernel-classes-basketinfohandlers.md) | 1 | 0 | 0 | 0 | 0 |
@@ -161,10 +167,11 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [kernel/classes/confirmorderhandlers](bereich-kernel-classes-confirmorderhandlers.md) | 1 | 0 | 0 | 0 | 0 |
 | [kernel/classes/contentcheck](bereich-kernel-classes-contentcheck.md) | 13 | 0 | 0 | 0 | 0 |
 | [kernel/classes/contentfinder](bereich-kernel-classes-contentfinder.md) | 3 | 0 | 0 | 0 | 0 |
-| [kernel/classes/contentjob](bereich-kernel-classes-contentjob.md) | 18 | 0 | 0 | 0 | 0 |
+| [kernel/classes/contentjob](bereich-kernel-classes-contentjob.md) | 20 | 0 | 0 | 0 | 0 |
+| [kernel/classes/datatable](area-kernel-classes-datatable.md) | 19 | 0 | 0 | 0 | 0 |
 | [kernel/classes/datatypes](bereich-kernel-classes-datatypes.md) | 81 | 0 | 0 | 0 | 0 |
 | [kernel/classes/debugbar](bereich-kernel-classes-debugbar.md) | 8 | 0 | 0 | 0 | 0 |
-| [kernel/classes/help](bereich-kernel-classes-help.md) | 31 | 0 | 0 | 0 | 0 |
+| [kernel/classes/help](bereich-kernel-classes-help.md) | 57 | 0 | 0 | 0 | 0 |
 | [kernel/classes/i18n](bereich-kernel-classes-i18n.md) | 1 | 0 | 0 | 0 | 0 |
 | [kernel/classes/ini](bereich-kernel-classes-ini.md) | 32 | 0 | 0 | 0 | 0 |
 | [kernel/classes/logviewer](bereich-kernel-classes-logviewer.md) | 19 | 0 | 0 | 0 | 0 |
@@ -174,33 +181,39 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [kernel/classes/packagecreators](bereich-kernel-classes-packagecreators.md) | 4 | 0 | 0 | 0 | 0 |
 | [kernel/classes/packagehandlers](bereich-kernel-classes-packagehandlers.md) | 7 | 0 | 0 | 0 | 0 |
 | [kernel/classes/packageinstallers](bereich-kernel-classes-packageinstallers.md) | 2 | 0 | 0 | 0 | 0 |
+| [kernel/classes/passkey](area-kernel-classes-passkey.md) | 5 | 0 | 0 | 0 | 0 |
 | [kernel/classes/pdfexport](bereich-kernel-classes-pdfexport.md) | 4 | 0 | 0 | 0 | 0 |
+| [kernel/classes/reauth](area-kernel-classes-reauth.md) | 5 | 0 | 0 | 0 | 0 |
 | [kernel/classes/requestclassifier](bereich-kernel-classes-requestclassifier.md) | 12 | 0 | 0 | 0 | 0 |
 | [kernel/classes/requestlog](bereich-kernel-classes-requestlog.md) | 1 | 0 | 0 | 0 | 0 |
 | [kernel/classes/role](bereich-kernel-classes-role.md) | 3 | 0 | 0 | 0 | 0 |
+| [kernel/classes/secrets](area-kernel-classes-secrets.md) | 3 | 0 | 0 | 0 | 0 |
 | [kernel/classes/shopaccounthandlers](bereich-kernel-classes-shopaccounthandlers.md) | 4 | 0 | 0 | 0 | 0 |
 | [kernel/classes/subitems](bereich-kernel-classes-subitems.md) | 24 | 0 | 0 | 0 | 0 |
+| [kernel/classes/syscard](area-kernel-classes-syscard.md) | 25 | 0 | 0 | 0 | 0 |
+| [kernel/classes/transfer](area-kernel-classes-transfer.md) | 10 | 0 | 0 | 0 | 0 |
 | [kernel/classes/uiswitch](bereich-kernel-classes-uiswitch.md) | 6 | 0 | 0 | 0 | 0 |
-| [kernel/classes/user](bereich-kernel-classes-user.md) | 7 | 0 | 0 | 0 | 0 |
+| [kernel/classes/user](bereich-kernel-classes-user.md) | 14 | 0 | 0 | 0 | 0 |
 | [kernel/classes/vathandlers](bereich-kernel-classes-vathandlers.md) | 1 | 0 | 0 | 0 | 0 |
-| [kernel/classes/workflowtypes](bereich-kernel-classes-workflowtypes.md) | 9 | 0 | 0 | 0 | 0 |
-| [kernel/common](bereich-kernel-common.md) | 23 | 0 | 0 | 42 | 0 |
-| [kernel/modules](bereich-kernel-modules.md) | 76 | 234 | 173 | 0 | 0 |
-| [kernel/private](bereich-kernel-private.md) | 177 | 8 | 1 | 1 | 0 |
+| [kernel/classes/webauthn](area-kernel-classes-webauthn.md) | 4 | 0 | 0 | 0 | 0 |
+| [kernel/classes/workflowtypes](bereich-kernel-classes-workflowtypes.md) | 11 | 0 | 0 | 0 | 0 |
+| [kernel/common](bereich-kernel-common.md) | 26 | 0 | 0 | 48 | 0 |
+| [kernel/modules](bereich-kernel-modules.md) | 78 | 231 | 182 | 0 | 0 |
+| [kernel/private](bereich-kernel-private.md) | 181 | 8 | 1 | 1 | 0 |
 | [kernel/private/classes/asynchronouspublisheroutput](bereich-kernel-private-classes-asynchronouspublisheroutput.md) | 2 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/clusterfilehandlers](bereich-kernel-private-classes-clusterfilehandlers.md) | 14 | 0 | 0 | 0 | 0 |
-| [kernel/private/classes/commands](bereich-kernel-private-classes-commands.md) | 97 | 0 | 0 | 0 | 0 |
-| [kernel/private/classes/cronjobs](bereich-kernel-private-classes-cronjobs.md) | 27 | 0 | 0 | 0 | 0 |
+| [kernel/private/classes/commands](bereich-kernel-private-classes-commands.md) | 105 | 0 | 0 | 0 | 0 |
+| [kernel/private/classes/cronjobs](bereich-kernel-private-classes-cronjobs.md) | 30 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/exceptions](bereich-kernel-private-classes-exceptions.md) | 14 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/httpcache](bereich-kernel-private-classes-httpcache.md) | 2 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/requestrules](bereich-kernel-private-classes-requestrules.md) | 44 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/runnable](bereich-kernel-private-classes-runnable.md) | 4 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/services](bereich-kernel-private-classes-services.md) | 8 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/urlaliasfilters](bereich-kernel-private-classes-urlaliasfilters.md) | 1 | 0 | 0 | 0 | 0 |
-| [kernel/private/classes/views](bereich-kernel-private-classes-views.md) | 255 | 0 | 0 | 0 | 0 |
-| [kernel/private/classes/webdav](bereich-kernel-private-classes-webdav.md) | 2 | 0 | 0 | 0 | 0 |
+| [kernel/private/classes/views](bereich-kernel-private-classes-views.md) | 272 | 0 | 0 | 0 | 0 |
+| [kernel/private/classes/webdav](bereich-kernel-private-classes-webdav.md) | 3 | 0 | 0 | 0 | 0 |
 | [lib](bereich-lib.md) | 2 | 0 | 0 | 0 | 0 |
-| [lib/ezdb](bereich-lib-ezdb.md) | 10 | 0 | 0 | 0 | 0 |
+| [lib/ezdb](bereich-lib-ezdb.md) | 11 | 0 | 0 | 0 | 0 |
 | [lib/ezdbschema](bereich-lib-ezdbschema.md) | 8 | 0 | 0 | 0 | 0 |
 | [lib/ezdiff](bereich-lib-ezdiff.md) | 10 | 0 | 0 | 0 | 0 |
 | [lib/ezfile](bereich-lib-ezfile.md) | 13 | 0 | 0 | 0 | 0 |
@@ -213,14 +226,14 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [lib/ezsoap](bereich-lib-ezsoap.md) | 10 | 0 | 0 | 0 | 0 |
 | [lib/eztemplate](bereich-lib-eztemplate.md) | 56 | 0 | 0 | 115 | 0 |
 | [lib/ezutils](bereich-lib-ezutils.md) | 47 | 0 | 0 | 0 | 0 |
-| [settings](bereich-settings.md) | 0 | 0 | 0 | 0 | 219 |
+| [settings](bereich-settings.md) | 0 | 0 | 0 | 0 | 254 |
 
 ## Was gelesen wurde
 
 Die von Git verfolgten PHP- und INI-Dateien unterhalb von `kernel/`, `lib/` und `extension/` des Exponential-Repositorys (ohne Tests und `vendor/`-Verzeichnisse) sowie diese Extensions:
 
 | Extension | Quelle |
-|---|---|
+| --- | --- |
 | `AdminAid` | eigenes Repository |
 | `autorss` | Composer-Paket |
 | `bccie` | Composer-Paket |
@@ -235,7 +248,10 @@ Die von Git verfolgten PHP- und INI-Dateien unterhalb von `kernel/`, `lib/` und 
 | `exp_adminui` | eigenes Repository |
 | `exp_enhanced_link` | Composer-Paket |
 | `exp_oe_tiptap` | eigenes Repository |
+| `expai` | eigenes Repository |
 | `expchangeclass` | eigenes Repository |
+| `exphelpsite` | mit dem Kernel ausgeliefert |
+| `expimageeditor` | mit dem Kernel ausgeliefert |
 | `explayouts` | eigenes Repository |
 | `explayouts_api` | eigenes Repository |
 | `explayouts_content_browser` | eigenes Repository |
@@ -249,6 +265,7 @@ Die von Git verfolgten PHP- und INI-Dateien unterhalb von `kernel/`, `lib/` und 
 | `explayouts_ui` | eigenes Repository |
 | `explayouts_ui_api` | eigenes Repository |
 | `expquery_translator` | eigenes Repository |
+| `expqueue` | eigenes Repository |
 | `expservices` | mit dem Kernel ausgeliefert |
 | `expsite_api` | eigenes Repository |
 | `expsite_app` | eigenes Repository |
@@ -269,6 +286,7 @@ Die von Git verfolgten PHP- und INI-Dateien unterhalb von `kernel/`, `lib/` und 
 | `ezmultiupload` | Composer-Paket |
 | `ezodf` | Composer-Paket |
 | `ezoe` | mit dem Kernel ausgeliefert |
+| `ezoracle` | eigenes Repository |
 | `ezownerchange` | eigenes Repository |
 | `ezpaypal` | Composer-Paket |
 | `ezpm` | Composer-Paket |
@@ -294,6 +312,7 @@ Die von Git verfolgten PHP- und INI-Dateien unterhalb von `kernel/`, `lib/` und 
 | `sevenx_themes_media` | eigenes Repository |
 | `sevenx_themes_simple` | Composer-Paket |
 | `sevenx_themes_super` | Composer-Paket |
+| `sqliimport` | eigenes Repository |
 | `str_replace` | Composer-Paket |
 | `swark` | Composer-Paket |
 | `syndication` | Composer-Paket |

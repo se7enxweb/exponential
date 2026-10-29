@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/mailpreferences
 audience: developer
 category: standards
-order: 497
+order: 504
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/mailpreferences mit den Entwurfsmustern.
 keywords: kernel/classes/mailpreferences, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

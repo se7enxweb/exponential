@@ -2,7 +2,7 @@
 title: Muster in kernel/classes/clusterfilehandlers
 audience: developer
 category: standards
-order: 484
+order: 490
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von kernel/classes/clusterfilehandlers mit den Entwurfsmustern.
 keywords: kernel/classes/clusterfilehandlers, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

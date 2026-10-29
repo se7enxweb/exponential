@@ -2,7 +2,7 @@
 title: Muster in extension/git_manager
 audience: developer
 category: standards
-order: 461
+order: 466
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von extension/git_manager mit den Entwurfsmustern.
 keywords: extension/git_manager, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue

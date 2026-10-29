@@ -2,7 +2,7 @@
 title: Muster in lib/ezimage
 audience: developer
 category: standards
-order: 533
+order: 546
 summary: Jede Klasse, Ansicht, Fetch-Funktion, jeder Operator und Plugin-Punkt von lib/ezimage mit den Entwurfsmustern.
 keywords: lib/ezimage, Entwurfsmuster, Klassen, Erweiterungspunkte, design patterns, classes, extension points
 type: catalogue
