@@ -61,11 +61,21 @@ class expUpgradeStepLibrariesInstall extends expUpgradeBaseStep
         return $args;
     }
 
+    /** @return array name => path of the packages to change that are git checkouts (refused without allow-vendor-changes) */
+    protected function checkouts( expUpgradeContext $context )
+    {
+        $root = (string)$context->option( 'root' );
+        return expUpgradeComposer::gitCheckouts( $root, array_keys( (array)expUpgradeComposer::lockDifferences( $root ) ) );
+    }
+
     public function plan( expUpgradeContext $context )
     {
         $lines = array();
+        $checkouts = $context->option( 'allow-vendor-changes', false ) ? array() : $this->checkouts( $context );
         foreach ( (array)expUpgradeComposer::lockDifferences( (string)$context->option( 'root' ) ) as $name => $change )
-            $lines[] = "$name: $change";
+            $lines[] = "$name: $change" . ( isset( $checkouts[$name] ) ? " REFUSED: {$checkouts[$name]} is a git checkout" : '' );
+        if ( $checkouts )
+            $lines[] = count( $checkouts ) . ' package(s) are git checkouts: the install is refused (move them with the code stage, --repos=; or --allow-vendor-changes)';
         $lines[] = 'run composer ' . implode( ' ', $this->installArguments( $context ) );
         if ( !$context->option( 'no-audit', false ) )
         {
@@ -89,6 +99,11 @@ class expUpgradeStepLibrariesInstall extends expUpgradeBaseStep
         if ( !$context->option( 'no-audit', false ) )
             foreach ( (array)expUpgradeComposer::audit( $context ) as $line )
                 $done[] = "audit before: $line";
+        $checkouts = $context->option( 'allow-vendor-changes', false ) ? array() : $this->checkouts( $context );
+        if ( $checkouts )
+            throw new RuntimeException( 'composer install would replace ' . count( $checkouts ) . ' git checkout(s), nothing was installed: '
+                                        . implode( ', ', array_map( function ( $n, $p ) { return "$n ($p)"; }, array_keys( $checkouts ), $checkouts ) )
+                                        . ' (move them with the code stage, --repos=; or --allow-vendor-changes)' );
         if ( is_dir( "$root/vendor" ) && !$context->option( 'allow-vendor-changes', false ) )
         {
             $status = expUpgradeComposer::run( $context, array( 'status', '--verbose' ) );

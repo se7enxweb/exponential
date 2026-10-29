@@ -23270,7 +23270,7 @@ f3e123acabebb7cd6c72627fc0419402  kernel/classes/uiswitch/expuiswitchprovider.ph
 0a351c639fca5c0e9a9aab3594792050  kernel/classes/upgrade/expupgradebackup.php
 c57d127c89bcbb753da4d18b769824d8  kernel/classes/upgrade/expupgradebasestep.php
 6e1e52e30464f35b4f94677f6446f781  kernel/classes/upgrade/expupgradecatalog.php
-f27d078cb3341c38f473b1b4d62566a6  kernel/classes/upgrade/expupgradecomposer.php
+16f296253d3e547e3e04b164c7885e83  kernel/classes/upgrade/expupgradecomposer.php
 6ad2eba18ba36ca69b0354b6fb392e27  kernel/classes/upgrade/expupgradecontext.php
 7223215ce1c13ac84653b6a588e62457  kernel/classes/upgrade/expupgradefinishstep.php
 38a3a9e26c7b9ac253af55836e6de5b7  kernel/classes/upgrade/expupgradegit.php
@@ -23294,7 +23294,7 @@ c0e6171dd63161a8c9f401106afdfd04  kernel/classes/upgrade/steps/expupgradestepfin
 32d5ab759aa7b06984bfd88d1438b572  kernel/classes/upgrade/steps/expupgradestepfinishsmoke.php
 573650cdebd7d101617d1a5fdb7cecaa  kernel/classes/upgrade/steps/expupgradestephelpcontenttables.php
 01c688e4b3233c450661ddf7883da38a  kernel/classes/upgrade/steps/expupgradestephelpreadpolicy.php
-a3e889c48f2882eb0b6e0caff11e881d  kernel/classes/upgrade/steps/expupgradesteplibrariesinstall.php
+bcfe153a6edf2a4448169155a1f04e66  kernel/classes/upgrade/steps/expupgradesteplibrariesinstall.php
 f94136270d7c74b43bb3e397ddfc9804  kernel/classes/upgrade/steps/expupgradesteplibrariesupdate.php
 2602bc1b1d54f8dd8a1e7264446b9ac7  kernel/classes/upgrade/steps/expupgradestepmailpreferencetables.php
 4458c446e5923c9c17d20fd82db954e6  kernel/classes/upgrade/steps/expupgradestepmembermanagement.php
@@ -26988,7 +26988,7 @@ f1df3a6b0e8d4e048219c7ebb80ceaaf  tests/tests/kernel/classes/updatesql/SixZeroPa
 cec5fbb54ca85b64799fb51a87f5d380  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
 eac86d9a712ea6628a39c0e8feb71ad6  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php
 cafb20605d74ce2968eed65c7a5d4465  tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php
-0e7451eac43483a19387c35aff4bacab  tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php
+af512bdb5571f85eff9ded526d6ef0da  tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php
 6fe8e87b68838aff774d60ef6241d38f  tests/tests/kernel/classes/urlalias/eZURLAliasMLHistoryLiveTest.php
 c18a432021e5a648ddcaaffb8177b9bb  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php
 fd13f368d0002af718e950c81b7708d1  tests/tests/kernel/classes/urlalias/eZURLAliasMLNameGenerationTest.php

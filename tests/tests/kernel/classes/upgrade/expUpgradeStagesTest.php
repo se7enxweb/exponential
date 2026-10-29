@@ -80,6 +80,24 @@ class expUpgradeStagesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'a/test' => 'not installed -> 9.0.0' ), expUpgradeComposer::lockDifferences( $this->dir ) );
     }
 
+    /** US-01: a package Composer would change that is a git checkout of its own is found */
+    public function testGitCheckoutsAreFound()
+    {
+        $made = array( 'extension/mine/.git', 'extension/other', 'vendor/a/lib/.git' );
+        foreach ( $made as $d )
+            @mkdir( $this->dir . '/' . $d, 0700, true );
+        $this->write( 'extension/mine/composer.json', array( 'name' => 'Me/Mine' ) );
+        $this->write( 'extension/other/composer.json', array( 'name' => 'me/other' ) );
+        $this->write( 'vendor/a/lib/composer.json', array( 'name' => 'a/lib' ) );
+        $found = expUpgradeComposer::gitCheckouts( $this->dir, array( 'me/mine', 'me/other', 'a/lib', 'a/none' ) );
+        foreach ( array( 'extension/mine/composer.json', 'extension/other/composer.json', 'vendor/a/lib/composer.json' ) as $f )
+            @unlink( $this->dir . '/' . $f );
+        foreach ( array( 'extension/mine/.git', 'extension/mine', 'extension/other', 'extension', 'vendor/a/lib/.git', 'vendor/a/lib', 'vendor/a' ) as $d )
+            @rmdir( $this->dir . '/' . $d );
+        $this->assertSame( array( 'a/lib' => 'vendor/a/lib', 'me/mine' => 'extension/mine' ), $found, 'only git checkouts, names compared without case' );
+        $this->assertSame( array(), expUpgradeComposer::gitCheckouts( $this->dir, array() ) );
+    }
+
     /** US-02 */
     public function testMergeReports()
     {

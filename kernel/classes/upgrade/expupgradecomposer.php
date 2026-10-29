@@ -119,6 +119,35 @@ class expUpgradeComposer
         return $diff;
     }
 
+    /**
+     * The packages Composer would change that live in a git checkout of their own (extension/<x>/ or
+     * vendor/<a>/<b>/ with a .git and a composer.json naming the package): kept by hand or by the code stage,
+     * and composer install would replace them. name => path.
+     *
+     * @param string $root
+     * @param string[] $names the package names Composer would change
+     * @return array
+     */
+    public static function gitCheckouts( $root, array $names )
+    {
+        if ( !$names )
+            return array();
+        $wanted = array_flip( array_map( 'strtolower', $names ) );
+        $found = array();
+        foreach ( array_merge( glob( "$root/extension/*/composer.json" ) ?: array(), glob( "$root/vendor/*/*/composer.json" ) ?: array() ) as $file )
+        {
+            $dir = dirname( $file );
+            if ( !file_exists( "$dir/.git" ) )
+                continue;
+            $data = self::json( $file );
+            $name = is_array( $data ) && isset( $data['name'] ) ? strtolower( (string)$data['name'] ) : '';
+            if ( $name !== '' && isset( $wanted[$name] ) )
+                $found[$name] = substr( $dir, strlen( $root ) + 1 );
+        }
+        ksort( $found );
+        return $found;
+    }
+
     /** Whether vendor/ was installed with the dev packages (installed.json "dev"); true when unknown. */
     public static function installedWithDev( $root )
     {
