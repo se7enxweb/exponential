@@ -15295,6 +15295,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ngā pūkete kāore e whakamahia ana e tētahi, me titiro rānei; whakawetohia, wetekia te raka, kaweakehia rānei.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rangitaki arotake kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ko wai i panoni, i takiuru, i whakakāhoretia rānei, mō ia pūkete; tātari, kaweake hoki.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>Open the page</source>
         <translation>Huakina te whārangi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki %to o %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>He ingoa takiuru, he ID kaiwhakamahi rānei: te pūkete i pā ai te takahanga, te kaiwhakamahi rānei nāna i mahi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Pūkete</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Mahi</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>I muri</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ngā hua katoa</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>I mua</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nā</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Ūkui</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kua oti</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ka puritia ngā takahanga mō te %days rā.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ka puritia ngā takahanga kia tangohia rā anō ā-ringa.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngā takahanga</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ngā mahi katoa</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ngā takahanga katoa o tēnei pūkete</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Kaweakehia te rārangi hei CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>I rahua</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai i</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Whakawhāitihia te rārangi</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Kāore he takahanga e ōrite ana.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ia whārangi</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kua whakawetohia te hopu i roto i te audit.ini ([UserAuditSettings] UserAudit); ka whakaatu te rārangi i ngā mea i hopukina i mua.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>I whakakāhoretia</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hua</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Whakaatu</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Kei te ngaro te tūtohi o te rangitaki arotake kaiwhakamahi. Waihangatia mā te php update/common/scripts/6.0/createuseraudittable.php; ā mohoa noa, ka puritia e ngā kōnae arotake ia takahanga.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Me whai pātengi raraunga SQL tēnei whārangi; kāore e wātea ana i runga i te MongoDB. Ka puritia e ngā kōnae arotake ia takahanga.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rangitaki arotake kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Āhea</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kei hea</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ko wai i panoni, i waihanga, i whakahohe, i whakaweto, i nuku, i tango rānei i tēhea pūkete, ko wai i takiuru, i whakakāhoretia rānei, ā, ko ēhea tūranga i tautapahia: kotahi te rārangi mō ia takahanga, me ngā āpure o mua, o muri hoki. Kāore rawa ngā kupuhipa me ngā mea muna e hopukina.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>rōpū</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>pūnaha</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>kāore e mōhiotia</translation>
     </message>
 </context>
 </TS>

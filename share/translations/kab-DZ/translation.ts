@@ -15295,6 +15295,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Imiḍanen ur yesseqdac yiwen neɣ yesran ad ttwaẓren; sens-iten, kkes-iten seg usekkur neɣ sifeḍ-iten.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Aɣmis n usenqed n yiseqdacen</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Anwa i ibeddlen, i ikecmen neɣ i yettwagin, i yal amiḍan; imsizdeg d usifeḍ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Open the page</source>
         <translation>Ldi asebter</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ɣer %to seg %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Isem n useqdac neɣ ID n useqdac: amiḍan ɣef i d-tella tedyant neɣ aseqdac i yexdmen tigawt.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Amiḍan</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tigawt</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Seld</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Yal agmuḍ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Send</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>S ɣur</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Sfeḍ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Yemmed</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Tidyanin ttwaḥrazent %days n wussan.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Tidyanin ttwaḥrazent alamma ttwakksent s ufus.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tidyanin</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Yal tigawt</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Akk tidyanin n umiḍan-a</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Sifeḍ tabdart s umasal CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ur yeddukkel ara</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Seg</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ssenqes tabdart</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ulac tadyant i yemṣadan.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>I yal asebter</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Asekles yensa deg audit.ini ([UserAuditSettings] UserAudit); tabdart tesken ayen yettwaskelsen yakan.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Yettwagi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Agmuḍ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sken</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tafelwit n uɣmis n usenqed n yiseqdacen ulac-itt. Snulfu-tt s php update/common/scripts/6.0/createuseraudittable.php; alamma d imir, ifuyla n usenqed ḥerzen yal tadyant.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Asebter-a yesra taffa n yisefka SQL; ur yelli ara deg MongoDB. Ifuyla n usenqed ḥerzen yal tadyant.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ɣer</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Aɣmis n usenqed n yiseqdacen</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Aseqdac</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Melmi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Anida</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Anwa i ibeddlen, i d-yesnulfan, i yermden, i yesnesen, i yesmuttin neɣ i yekksen amiḍan, anwa i ikecmen neɣ i yettwagin, akked timlilin i yettunefken: yiwen n yizirig i yal tadyant, s wurtiyen uqbel d seld. Awalen uffiren d yisefka uffiren ur ttwaskelsen ara akk.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>agraw</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>anagraw</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>arussin</translation>
     </message>
 </context>
 </TS>

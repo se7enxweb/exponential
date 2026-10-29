@@ -15238,6 +15238,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Λογαριασμοί που δεν χρησιμοποιεί κανείς ή που χρειάζονται έλεγχο· απενεργοποίηση, ξεκλείδωμα ή εξαγωγή τους.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Αρχείο καταγραφής ελέγχου χρηστών</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ποιος έκανε αλλαγές, συνδέθηκε ή απορρίφθηκε, ανά λογαριασμό· φιλτράρισμα και εξαγωγή.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Άνοιγμα της σελίδας</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from έως %to από %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ένα όνομα σύνδεσης ή ένα αναγνωριστικό χρήστη: ο λογαριασμός που αφορούσε το συμβάν ή ο χρήστης που ενήργησε.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Λογαριασμός</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ενέργεια</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Μετά</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Οποιοδήποτε αποτέλεσμα</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Πριν</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Απαλοιφή</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ολοκληρώθηκε</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Τα συμβάντα διατηρούνται για %days ημέρες.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Τα συμβάντα διατηρούνται μέχρι να αφαιρεθούν χειροκίνητα.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Συμβάντα</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Κάθε ενέργεια</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Όλα τα συμβάντα αυτού του λογαριασμού</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Εξαγωγή της λίστας ως CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Απέτυχε</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Περιορισμός της λίστας</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Κανένα συμβάν δεν ταιριάζει.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ανά σελίδα</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Η καταγραφή είναι απενεργοποιημένη στο audit.ini ([UserAuditSettings] UserAudit)· η λίστα εμφανίζει ό,τι καταγράφηκε πριν.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Απορρίφθηκε</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Αποτέλεσμα</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Ο πίνακας του αρχείου καταγραφής ελέγχου χρηστών λείπει. Δημιουργήστε τον με την εντολή php update/common/scripts/6.0/createuseraudittable.php· μέχρι τότε τα αρχεία ελέγχου διατηρούν κάθε συμβάν.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Αυτή η σελίδα χρειάζεται βάση δεδομένων SQL· δεν είναι διαθέσιμη σε MongoDB. Τα αρχεία ελέγχου διατηρούν κάθε συμβάν.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Έως</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Αρχείο καταγραφής ελέγχου χρηστών</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Χρήστης</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Πότε</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Πού</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ποιος άλλαξε, δημιούργησε, ενεργοποίησε, απενεργοποίησε, μετακίνησε ή αφαίρεσε ποιον λογαριασμό, ποιος συνδέθηκε ή απορρίφθηκε και ποιοι ρόλοι εκχωρήθηκαν: μία γραμμή ανά συμβάν, με τα πεδία πριν και μετά. Οι κωδικοί πρόσβασης και τα μυστικά δεν καταγράφονται ποτέ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ομάδα</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>σύστημα</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>άγνωστο</translation>
     </message>
 </context>
 </TS>

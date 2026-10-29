@@ -15295,6 +15295,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kaonty tsy ampiasain'ny olona na mila jerena; atsaharo, vohay na avoahy izy ireo.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Diarin&apos;ny fanaraha-maso ny mpampiasa</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Iza no nanova, niditra na nolavina, isaky ny kaonty; sivano sy avoahy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Open the page</source>
         <translation>Sokafy ny pejy</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka hatramin&apos;ny %to amin&apos;ny %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Anarana fidirana na ID mpampiasa: ny kaonty nikasika ilay zava-mitranga na ny mpampiasa nanao azy.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kaonty</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hetsika</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Taorian&apos;ny fanovana</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Valiny rehetra</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Talohan&apos;ny fanovana</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Mpanao</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Foano</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Vita</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Tehirizina mandritra ny andro %days ny zava-mitranga.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Tehirizina ny zava-mitranga mandra-pamafana azy amin&apos;ny tanana.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Zava-mitranga</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Hetsika rehetra</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ny zava-mitranga rehetra amin&apos;ity kaonty ity</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Avoahy ho CSV ny lisitra (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Tsy nahomby</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Avy amin&apos;ny</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Fanivanana ny lisitra</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Tsy misy zava-mitranga mifanaraka.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Isaky ny pejy</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Najanona ao amin&apos;ny audit.ini ([UserAuditSettings] UserAudit) ny firaketana; asehon&apos;ny lisitra izay voarakitra teo aloha.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nolavina</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Valiny</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Asehoy</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tsy hita ny tabilaon&apos;ny diarin&apos;ny fanaraha-maso ny mpampiasa. Amboary amin&apos;ny php update/common/scripts/6.0/createuseraudittable.php izany; mandra-pahatongan&apos;izany, ny rakitra fanaraha-maso no mitahiry ny zava-mitranga rehetra.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Mila tahiry angona SQL ity pejy ity; tsy azo ampiasaina amin&apos;ny MongoDB izy. Ny rakitra fanaraha-maso no mitahiry ny zava-mitranga rehetra.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hatramin&apos;ny</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Diarin&apos;ny fanaraha-maso ny mpampiasa</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mpampiasa</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Fotoana</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Toerana</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Iza no nanova, namorona, nandefa, nanatsahatra, namindra na nanala kaonty iza, iza no niditra na nolavina, ary anjara asa inona no nomena: andalana iray isaky ny zava-mitranga, miaraka amin&apos;ny saha talohan&apos;ny sy taorian&apos;ny fanovana. Tsy voarakitra mihitsy ny teny miafina sy ny tsiambaratelo.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>vondrona</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>rafitra</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tsy fantatra</translation>
     </message>
 </context>
 </TS>

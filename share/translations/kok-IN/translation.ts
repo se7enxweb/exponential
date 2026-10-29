@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>कोणूच वापरना वा नदर दिवपाजोगीं खातीं; तीं अक्षम करात, अनलॉक करात वा निर्यात करात.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>वापरपी ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>दरेक खात्या खातीर कोणें बदल केलो, कोणें लॉग इन केलें वा कोणाक न्हयकार दिलो; फिल्टर आनी निर्यात करात।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>पान उगडात</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count मदल्यान %from ते %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>लॉगिन नांव वा वापरपी ID: घडणूक जें खात्या विशीं आशिल्ली तें, वा कृती केल्लो वापरपी।</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>खातें</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>कृती</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>उपरांत</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>खंयचोय निकाल</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>आदीं</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>करपी</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>सोपें करात</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>जालें</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>घडणुकी %days दीस दवरतात।</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>घडणुकी हातान काडिनात तोमेरेन दवरतात।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>घडणुकी</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>सगळ्यो कृती</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ह्या खात्याच्यो सगळ्यो घडणुकी</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>वळेरी CSV म्हूण निर्यात करात (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>अपेशी</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>सावन</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>वळेरी मर्यादीत करात</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>खंयचीच घडणूक जुळना।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>दर पानाक</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini त रेकॉर्डिंग बंद आसा ([UserAuditSettings] UserAudit); वळेरी आदीं रेकॉर्ड जाल्लें दाखयता।</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>न्हयकारलें</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>निकाल</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दाखयात</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>वापरपी ऑडिट लॉगाचें टेबल ना। तें php update/common/scripts/6.0/createuseraudittable.php वरवीं तयार करात; तोमेरेन ऑडिट फायली दरेक घडणूक दवरतात।</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ह्या पानाक SQL डेटाबेस जाय; MongoDB चेर तें उपलब्ध ना। ऑडिट फायली दरेक घडणूक दवरतात।</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>मेरेन</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>वापरपी ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>वापरपी</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>केन्ना</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>खंय</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>कोणें खंयचें खातें बदललें, तयार केलें, सक्षम केलें, अक्षम केलें, हालयलें वा काडलें, कोणें लॉग इन केलें वा कोणाक न्हयकार दिलो, आनी खंयच्यो भूमिका दिल्ल्यो: दरेक घडणुके खातीर एक ओळ, आदलीं आनी उपरांतचीं फील्डां सयत। पासवर्ड आनी गुपीत म्हायती केन्नाच रेकॉर्ड जायना।</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>गट</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>सिस्टम</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञात</translation>
     </message>
 </context>
 </TS>

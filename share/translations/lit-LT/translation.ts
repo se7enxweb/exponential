@@ -15238,6 +15238,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Paskyros, kurių niekas nenaudoja arba kurias reikia peržiūrėti; išjunkite, atrakinkite arba eksportuokite jas.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Naudotojų audito žurnalas</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kas keitė, prisijungė ar buvo atmestas, pagal paskyrą; filtruoti ir eksportuoti.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Open the page</source>
         <translation>Atidaryti puslapį</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>Nuo %from iki %to iš %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Prisijungimo vardas arba naudotojo ID: paskyra, su kuria susijęs įvykis, arba naudotojas, kuris veikė.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Paskyra</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Veiksmas</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Po</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Bet koks rezultatas</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Prieš</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Atliko</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Išvalyti</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Atlikta</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Įvykiai saugomi tiek dienų: %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Įvykiai saugomi, kol pašalinami rankiniu būdu.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Įvykiai</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Bet koks veiksmas</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Visi šios paskyros įvykiai</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksportuoti sąrašą kaip CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nepavyko</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nuo</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Susiaurinti sąrašą</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Atitinkančių įvykių nėra.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Puslapyje</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Įrašymas išjungtas faile audit.ini ([UserAuditSettings] UserAudit); sąraše rodoma tai, kas buvo įrašyta anksčiau.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Atmesta</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultatas</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rodyti</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Trūksta naudotojų audito žurnalo lentelės. Sukurkite ją komanda php update/common/scripts/6.0/createuseraudittable.php; iki tol audito failai saugo kiekvieną įvykį.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Šiam puslapiui reikia SQL duomenų bazės; su MongoDB jis nepasiekiamas. Audito failai saugo kiekvieną įvykį.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Iki</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Naudotojų audito žurnalas</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Naudotojas</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kada</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kas keitė, sukūrė, įjungė, išjungė, perkėlė ar pašalino kurią paskyrą, kas prisijungė ar buvo atmestas ir kokie vaidmenys buvo priskirti: viena eilutė kiekvienam įvykiui, su laukais prieš ir po. Slaptažodžiai ir paslaptys niekada neįrašomi.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupė</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nežinomas</translation>
     </message>
 </context>
 </TS>

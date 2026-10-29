@@ -15295,6 +15295,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konten, déi keen notzt oder déi Opmierksamkeet brauchen; desaktivéieren, entspären oder exportéieren.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit-Protokoll vun de Benotzer</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Wien geännert huet, sech ugemellt huet oder ofgewise gouf, pro Kont; filteren an exportéieren.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Open the page</source>
         <translation>D'Säit opmaachen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to vun %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>E Login oder eng Benotzer-ID: de Kont, ëm deen et beim Evenement gaangen ass, oder de Benotzer, deen gehandelt huet.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aktioun</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Duerno</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>All Resultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Virdrun</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Zrécksetzen</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Erleedegt</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Evenementer ginn %days Deeg gehalen.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Evenementer gi gehalen, bis se mat der Hand ewechgeholl ginn.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Evenementer</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>All Aktioun</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>All Evenementer vun dësem Kont</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lëscht als CSV exportéieren (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gescheitert</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lëscht agrenzen</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Keen Evenement passt.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Säit</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>D&apos;Opzeechnung ass an audit.ini ausgeschalt ([UserAuditSettings] UserAudit); d&apos;Lëscht weist, wat virdru opgezeechent gouf.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ofgewisen</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>D&apos;Tabell vum Audit-Protokoll vun de Benotzer feelt. Leet se mat php update/common/scripts/6.0/createuseraudittable.php un; bis dohin halen d&apos;Audit-Fichieren all Evenement.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Dës Säit brauch eng SQL-Datebank; mat MongoDB ass se net disponibel. D&apos;Audit-Fichieren halen all Evenement.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Audit-Protokoll vun de Benotzer</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benotzer</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wéini</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wou</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Wien e Kont geännert, ugeluecht, aktivéiert, desaktivéiert, verréckelt oder ewechgeholl huet, wien sech ugemellt huet oder ofgewise gouf, a wéi eng Rollen zougewise goufen: eng Zeil pro Evenement, mat de Felder virdrun an duerno. Passwierder a Geheimnisser ginn ni opgezeechent.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>Grupp</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>de System</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekannt</translation>
     </message>
 </context>
 </TS>

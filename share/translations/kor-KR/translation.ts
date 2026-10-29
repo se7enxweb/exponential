@@ -15238,6 +15238,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>아무도 사용하지 않거나 확인이 필요한 계정입니다. 사용하지 않도록 설정하거나 잠금을 해제하거나 내보낼 수 있습니다.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>사용자 감사 로그</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>계정별로 누가 변경했는지, 누가 로그인했거나 거부되었는지 확인하고 필터링하거나 내보낼 수 있습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>페이지 열기</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / 전체 %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>사용자 이름 또는 사용자 ID: 이벤트의 대상이 된 계정 또는 작업을 수행한 사용자입니다.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>계정</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>변경 후</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>모든 결과</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>변경 전</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>수행자</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>지우기</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>완료</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>이벤트는 %days 일 동안 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>이벤트는 수동으로 제거할 때까지 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>이벤트</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>모든 작업</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>이 계정의 모든 이벤트</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>목록을 CSV로 내보내기 (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>시작</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>목록 범위 좁히기</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>일치하는 이벤트가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>페이지당</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini 파일에서 기록이 꺼져 있습니다([UserAuditSettings] UserAudit). 목록에는 이전에 기록된 내용이 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>거부됨</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>결과</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>사용자 감사 로그 테이블이 없습니다. php update/common/scripts/6.0/createuseraudittable.php 명령으로 만드십시오. 그때까지는 감사 파일에 모든 이벤트가 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>이 페이지에는 SQL 데이터베이스가 필요하며 MongoDB 환경에서는 사용할 수 없습니다. 감사 파일에 모든 이벤트가 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>종료</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>사용자 감사 로그</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>사용자</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>누가 어떤 계정을 변경, 생성, 사용 설정, 사용 중지, 이동 또는 제거했는지, 누가 로그인했거나 거부되었는지, 어떤 역할이 할당되었는지 기록합니다. 이벤트당 한 줄이며 변경 전후 필드가 함께 표시됩니다. 암호와 비밀 값은 기록되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>그룹</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>시스템</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>알 수 없음</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Cyfrifon nad oes neb yn eu defnyddio neu sydd angen golwg arnynt; eu hanalluogi, eu datgloi neu eu hallforio.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log archwilio defnyddwyr</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Pwy a newidiodd, a fewngofnododd neu a wrthodwyd, fesul cyfrif; hidlo ac allforio.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Open the page</source>
         <translation>Agor y dudalen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from i %to o %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Enw mewngofnodi neu ID defnyddiwr: y cyfrif yr oedd y digwyddiad yn ymwneud ag ef neu&apos;r defnyddiwr a weithredodd.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cyfrif</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gweithred</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Ar ôl</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Unrhyw ganlyniad</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Cyn</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gan</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clirio</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wedi&apos;i wneud</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Cedwir digwyddiadau am %days diwrnod.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Cedwir digwyddiadau nes iddynt gael eu tynnu â llaw.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Digwyddiadau</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Pob gweithred</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Pob digwyddiad ar gyfer y cyfrif hwn</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Allforio&apos;r rhestr fel CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Methwyd</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>O</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Cyfyngu&apos;r rhestr</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nid oes digwyddiad yn cyfateb.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fesul tudalen</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Mae cofnodi wedi&apos;i ddiffodd yn audit.ini ([UserAuditSettings] UserAudit); mae&apos;r rhestr yn dangos yr hyn a gofnodwyd cyn hynny.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Gwrthodwyd</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Canlyniad</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Dangos</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Mae tabl y log archwilio defnyddwyr ar goll. Crëwch ef gyda php update/common/scripts/6.0/createuseraudittable.php; tan hynny mae&apos;r ffeiliau archwilio yn cadw pob digwyddiad.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Mae angen cronfa ddata SQL ar y dudalen hon; nid yw ar gael ar MongoDB. Mae&apos;r ffeiliau archwilio yn cadw pob digwyddiad.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Log archwilio defnyddwyr</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Defnyddiwr</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Pryd</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ble</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Pwy a newidiodd, a greodd, a alluogodd, a analluogodd, a symudodd neu a dynnodd pa gyfrif, pwy a fewngofnododd neu a wrthodwyd, a pha rolau a neilltuwyd: un llinell fesul digwyddiad, gyda&apos;r meysydd cyn ac ar ôl. Ni chofnodir cyfrineiriau na chyfrinachau byth.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grŵp</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>y system</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anhysbys</translation>
     </message>
 </context>
 </TS>

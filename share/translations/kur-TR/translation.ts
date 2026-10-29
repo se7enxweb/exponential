@@ -15293,6 +15293,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Hesabên ku kes bikar nayîne an divê li wan were nêrîn; wan neçalak bikin, vekin an derxînin.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Tomara kontrolê ya bikarhêneran</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kê guherand, têket an hate redkirin, li gorî her hesabî; fîlterkirin û derxistin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Open the page</source>
         <translation>Vekirina rûpelê</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from heta %to ji %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Navê têketinê an nasnameya bikarhêner: hesabê ku bûyer li ser wî bû an bikarhênerê ku kiryar kir.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesab</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kiryar</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Paşê</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Her encam</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Berê</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ji aliyê</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Paqijkirin</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Pêk hat</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Bûyer %days rojan têne parastin.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Bûyer têne parastin heta ku bi destan werin rakirin.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Bûyer</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Her kiryar</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Hemû bûyerên vî hesabî</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lîsteyê wekî CSV derxistin (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Bi ser neket</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ji</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lîsteyê teng kirin</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Tu bûyer li hev nayê.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Li her rûpelê</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Tomarkirin di audit.ini de hatiye girtin ([UserAuditSettings] UserAudit); lîste tiştên ku berê hatine tomarkirin nîşan dide.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hate redkirin</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Encam</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nîşandan</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabloya tomara kontrolê ya bikarhêneran tune ye. Wê bi php update/common/scripts/6.0/createuseraudittable.php biafirînin; heta wê demê pelên kontrolê her bûyerê diparêzin.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ev rûpel danegeheke SQL hewce dike; li ser MongoDB ne berdest e. Pelên kontrolê her bûyerê diparêzin.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Heta</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Tomara kontrolê ya bikarhêneran</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bikarhêner</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kengê</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Li ku</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kê kîjan hesab guherand, afirand, çalak kir, neçalak kir, bar kir an rakir, kê têket an hate redkirin û kîjan rol hatin diyarkirin: ji bo her bûyerê rêzek, bi qadên berê û paşê. Şîfre û nepenî qet nayên tomarkirin.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>kom</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>pergal</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nenas</translation>
     </message>
 </context>
 </TS>

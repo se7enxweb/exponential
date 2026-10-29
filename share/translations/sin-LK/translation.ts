@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>කිසිවෙක් භාවිත නොකරන හෝ අවධානය අවශ්‍ය ගිණුම්; ඒවා අබල කරන්න, අගුලු හරින්න හෝ අපනයනය කරන්න.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>පරිශීලක විගණන ලොගය</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ගිණුම අනුව වෙනස් කළේ කවුද, පිවිසියේ කවුද හෝ ප්‍රතික්ෂේප වූයේ කවුද; පෙරහන් කර අපනයනය කරන්න.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>පිටුව විවෘත කරන්න</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from සිට %to දක්වා, මුළු %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>පිවිසුම් නාමයක් හෝ පරිශීලක ID එකක්: සිදුවීම අදාළ වූ ගිණුම හෝ ක්‍රියා කළ පරිශීලකයා.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ගිණුම</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ක්‍රියාව</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>පසු</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ඕනෑම ප්‍රතිඵලයක්</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>පෙර</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>කළේ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>හිස් කරන්න</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>සාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>සිදුවීම් දින %days ක් තබා ගැනේ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>සිදුවීම් අතින් ඉවත් කරන තෙක් තබා ගැනේ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>සිදුවීම්</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>සියලු ක්‍රියා</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>මෙම ගිණුමේ සියලු සිදුවීම්</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ලැයිස්තුව CSV ලෙස අපනයනය කරන්න (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>සිට</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ලැයිස්තුව සීමා කරන්න</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>කිසිදු සිදුවීමක් නොගැළපේ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>පිටුවකට</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ([UserAuditSettings] UserAudit) තුළ වාර්තා කිරීම අක්‍රිය කර ඇත; ලැයිස්තුව පෙර වාර්තා කළ දේ පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ප්‍රතික්ෂේපිතයි</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ප්‍රතිඵලය</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>පරිශීලක විගණන ලොගයේ වගුව නොමැත. php update/common/scripts/6.0/createuseraudittable.php මගින් එය සාදන්න; එතෙක් විගණන ගොනු සෑම සිදුවීමක්ම තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>මෙම පිටුවට SQL දත්ත සමුදායක් අවශ්‍යයි; එය MongoDB මත ලබා ගත නොහැක. විගණන ගොනු සෑම සිදුවීමක්ම තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>දක්වා</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>පරිශීලක විගණන ලොගය</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>පරිශීලකයා</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>කවදා</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>කොහේ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>කවුරුන් කුමන ගිණුම වෙනස් කළේද, සෑදුවේද, සබල කළේද, අබල කළේද, ගෙන ගියේද හෝ ඉවත් කළේද, කවුරුන් පිවිසියේද හෝ ප්‍රතික්ෂේප වූයේද, සහ කුමන භූමිකා පවරා දුන්නේද: සිදුවීමකට එක් පේළියක්, පෙර සහ පසු ක්ෂේත්‍ර සමඟ. මුරපද සහ රහස් කිසි විටෙක වාර්තා නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>සමූහය</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>පද්ධතිය</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>නොදන්නා</translation>
     </message>
 </context>
 </TS>

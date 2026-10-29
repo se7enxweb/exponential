@@ -15722,6 +15722,14 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Accounts die niemand gebruikt of die aandacht nodig hebben; uitschakelen, ontgrendelen of exporteren.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditlog van gebruikers</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Wie wijzigde, inlogde of werd geweigerd, per account; filteren en exporteren.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -78561,6 +78569,153 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Open the page</source>
         <translation>Pagina openen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tot %to van %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Een loginnaam of een gebruikers-id: het account waar de gebeurtenis over ging of de gebruiker die handelde.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Gebruikersaccount</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Actie</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Erna</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Elk resultaat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ervoor</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Door</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wissen</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gelukt</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Gebeurtenissen worden %days dagen bewaard.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Gebeurtenissen worden bewaard tot ze met de hand worden verwijderd.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Gebeurtenissen</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Elke actie</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Alle gebeurtenissen van dit account</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lijst exporteren als CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislukt</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Van</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lijst verfijnen</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Geen enkele gebeurtenis komt overeen.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registratie staat uit in audit.ini ([UserAuditSettings] UserAudit); de lijst toont wat eerder is vastgelegd.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Geweigerd</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tonen</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>De tabel van het auditlog van gebruikers ontbreekt. Maak die aan met php update/common/scripts/6.0/createuseraudittable.php; tot dan bewaren de auditbestanden elke gebeurtenis.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Deze pagina heeft een SQL-database nodig; ze is niet beschikbaar op MongoDB. De auditbestanden bewaren elke gebeurtenis.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Tot</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditlog van gebruikers</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Gebruiker</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wanneer</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Waar</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Wie welk account wijzigde, aanmaakte, inschakelde, uitschakelde, verplaatste of verwijderde, wie inlogde of werd geweigerd en welke rollen werden toegewezen: één regel per gebeurtenis, met de velden ervoor en erna. Wachtwoorden en geheimen worden nooit vastgelegd.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>groep</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systeem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
     </message>
 </context>
 </TS>

@@ -15295,6 +15295,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Hiç kimiň ulanmaýan ýa-da seredilmeli hasaplary; olary öçüriň, açyň ýa-da eksport ediň.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ulanyjy audit žurnaly</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Her hasap boýunça kim üýtgetdi, girdi ýa-da ret edildi; süzüň we eksport ediň.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Open the page</source>
         <translation>Sahypany aç</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to, jemi %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Login ýa-da ulanyjy ID: wakanyň degişli bolan hasaby ýa-da hereket eden ulanyjy.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hasap</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hereket</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Soň</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Islendik netije</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Öň</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ýerine ýetiren</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Arassala</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ýerine ýetirildi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Wakalar %days gün saklanýar.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Wakalar el bilen aýrylýança saklanýar.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Wakalar</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ähli hereketler</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Bu hasabyň ähli wakalary</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Sanawy CSV görnüşinde eksport et (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Şowsuz</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Başlangyç</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Sanawy daralt</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Gabat gelýän waka ýok.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Her sahypada</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ýazga almak audit.ini faýlynda öçürilen ([UserAuditSettings] UserAudit); sanaw öň ýazga alnanlary görkezýär.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ret edildi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Netije</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Görkez</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Ulanyjy audit žurnalynyň tablisasy ýok. Ony php update/common/scripts/6.0/createuseraudittable.php bilen dörediň; oňa çenli audit faýllary her bir wakany saklaýar.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Bu sahypa SQL maglumatlar binýadyny talap edýär; ol MongoDB-de elýeterli däl. Audit faýllary her bir wakany saklaýar.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Çenli</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Ulanyjy audit žurnaly</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Ulanyjy</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Haçan</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nirede</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kim haýsy hasaby üýtgetdi, döretdi, işjeňleşdirdi, öçürdi, geçirdi ýa-da aýyrdy, kim girdi ýa-da ret edildi we haýsy rollar bellenildi: her waka üçin bir setir, öňki we soňky meýdanlar bilen. Açar sözler we gizlin maglumatlar hiç haçan ýazga alynmaýar.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>topar</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ulgam</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>näbelli</translation>
     </message>
 </context>
 </TS>

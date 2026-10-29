@@ -15717,6 +15717,14 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Účty, které nikdo nepoužívá nebo které vyžadují pozornost; zakažte, odemkněte nebo exportujte je.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditní protokol uživatelů</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kdo měnil, přihlásil se nebo byl odmítnut, podle účtu; filtrování a export.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -78622,6 +78630,153 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Open the page</source>
         <translation>Otevřít stránku</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from až %to z %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Přihlašovací jméno nebo ID uživatele: účet, kterého se událost týkala, nebo uživatel, který jednal.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Účet</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Po</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Libovolný výsledek</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Před</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Provedl</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Vymazat</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hotovo</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Události se uchovávají %days dní.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Události se uchovávají, dokud je někdo ručně neodstraní.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Události</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Všechny akce</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Všechny události tohoto účtu</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportovat seznam jako CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neúspěšné</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Zúžit seznam</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Žádná událost neodpovídá.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stránku</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Zaznamenávání je vypnuto v audit.ini ([UserAuditSettings] UserAudit); seznam zobrazuje, co bylo zaznamenáno dříve.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odmítnuto</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Výsledek</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobrazit</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabulka auditního protokolu uživatelů chybí. Vytvořte ji pomocí php update/common/scripts/6.0/createuseraudittable.php; do té doby uchovávají auditní soubory každou událost.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Tato stránka vyžaduje databázi SQL; v MongoDB není k dispozici. Auditní soubory uchovávají každou událost.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditní protokol uživatelů</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Uživatel</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kdy</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kde</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kdo změnil, vytvořil, povolil, zakázal, přesunul nebo odstranil který účet, kdo se přihlásil nebo byl odmítnut a jaké role byly přiřazeny: jeden řádek na událost, s poli před změnou a po ní. Hesla a tajné údaje se nikdy nezaznamenávají.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>skupina</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systém</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznámý</translation>
     </message>
 </context>
 </TS>

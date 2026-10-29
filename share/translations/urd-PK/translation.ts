@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>وہ اکاؤنٹس جنہیں کوئی استعمال نہیں کرتا یا جنہیں دیکھنے کی ضرورت ہے؛ انہیں غیر فعال کریں، ان لاک کریں یا برآمد کریں۔</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>صارف آڈٹ لاگ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>کس نے تبدیلی کی، سائن ان کیا یا مسترد ہوا، ہر اکاؤنٹ کے لحاظ سے؛ فلٹر اور برآمد کریں۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>صفحہ کھولیں</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count میں سے %from تا %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>لاگ ان یا صارف ID: وہ اکاؤنٹ جس کے بارے میں ایونٹ تھا یا وہ صارف جس نے عمل کیا۔</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>اکاؤنٹ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>عمل</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>بعد میں</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>کوئی بھی نتیجہ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پہلے</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>کرنے والا</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>صاف کریں</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مکمل</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ایونٹس %days دن تک محفوظ رکھے جاتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ایونٹس اس وقت تک محفوظ رہتے ہیں جب تک انہیں دستی طور پر ہٹایا نہ جائے۔</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ایونٹس</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ہر عمل</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>اس اکاؤنٹ کے تمام ایونٹس</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>فہرست کو CSV کے طور پر برآمد کریں (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>سے</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>فہرست محدود کریں</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>کوئی ایونٹ مطابقت نہیں رکھتا۔</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>فی صفحہ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini میں ریکارڈنگ بند ہے ([UserAuditSettings] UserAudit)؛ فہرست وہ دکھاتی ہے جو پہلے ریکارڈ کیا گیا تھا۔</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>مسترد</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>دکھائیں</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>صارف آڈٹ لاگ کا ٹیبل موجود نہیں ہے۔ اسے php update/common/scripts/6.0/createuseraudittable.php سے بنائیں؛ تب تک آڈٹ فائلیں ہر ایونٹ محفوظ رکھتی ہیں۔</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>اس صفحے کو SQL ڈیٹا بیس درکار ہے؛ یہ MongoDB پر دستیاب نہیں۔ آڈٹ فائلیں ہر ایونٹ محفوظ رکھتی ہیں۔</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تک</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>صارف آڈٹ لاگ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>صارف</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>کب</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>کہاں</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>کس نے کون سا اکاؤنٹ تبدیل کیا، بنایا، فعال کیا، غیر فعال کیا، منتقل کیا یا ہٹایا، کس نے سائن ان کیا یا مسترد ہوا، اور کون سے کردار تفویض کیے گئے: ہر ایونٹ کی ایک سطر، فیلڈز کی پہلے اور بعد کی قدروں کے ساتھ۔ پاس ورڈ اور خفیہ معلومات کبھی ریکارڈ نہیں کی جاتیں۔</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>گروپ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سسٹم</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
     </message>
 </context>
 </TS>

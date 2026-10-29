@@ -15238,6 +15238,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Conturi pe care nu le folosește nimeni sau care trebuie verificate; dezactivați-le, deblocați-le sau exportați-le.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Jurnal de audit al utilizatorilor</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Cine a modificat, s-a conectat sau a fost refuzat, pe cont; filtrare și export.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Open the page</source>
         <translation>Deschidere pagină</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from până la %to din %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Un nume de autentificare sau un ID de utilizator: contul la care s-a referit evenimentul sau utilizatorul care a acționat.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acțiune</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>După</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Orice rezultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Înainte</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Efectuat de</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Golire</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Reușit</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Evenimentele sunt păstrate %days zile.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Evenimentele sunt păstrate până când sunt eliminate manual.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Evenimente</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Orice acțiune</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Toate evenimentele acestui cont</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportare listă ca CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nereușit</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De la</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Restrângeți lista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Niciun eveniment nu corespunde.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pe pagină</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Înregistrarea este dezactivată în audit.ini ([UserAuditSettings] UserAudit); lista arată ce a fost înregistrat anterior.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refuzat</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Afișare</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabelul jurnalului de audit al utilizatorilor lipsește. Creați-l cu php update/common/scripts/6.0/createuseraudittable.php; până atunci, fișierele de audit păstrează fiecare eveniment.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Această pagină necesită o bază de date SQL; nu este disponibilă pe MongoDB. Fișierele de audit păstrează fiecare eveniment.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Până la</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Jurnal de audit al utilizatorilor</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utilizator</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Când</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Unde</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Cine a modificat, creat, activat, dezactivat, mutat sau eliminat ce cont, cine s-a conectat sau a fost refuzat și ce roluri au fost atribuite: un rând pentru fiecare eveniment, cu câmpurile dinainte și de după. Parolele și secretele nu sunt niciodată înregistrate.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grup</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>necunoscut</translation>
     </message>
 </context>
 </TS>

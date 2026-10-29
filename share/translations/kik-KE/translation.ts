@@ -15295,6 +15295,14 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akaunti iria itihũthagĩrwo nĩ mũndũ o wothe kana ciabataraga kũrorwo; ciinge, ciahũre kana ciatũme nja.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rekodi ya gũthingata ya ahũthiri</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ũrĩa wacenjirie, wegingĩrire kana akĩregwo, akaunti o akaunti; thuurania na gũtũma nja.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Open the page</source>
         <translation>Hingũra ũrũa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nginya %to harĩ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Rĩĩtwa rĩa kwingĩra kana ID ya mũhũthiri: akaunti ĩrĩa ũndũ ũcio ũgwatanĩte nayo kana mũhũthiri ũrĩa wĩkire ũndũ ũcio.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaunti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ũndũ ũgwĩkwo</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Thutha</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ũthiĩ o wothe</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Mbere</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wĩkĩte</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Theria</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Nĩ gwĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Maũndũ mamenyagĩrwo mĩthenya %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Maũndũ mamenyagĩrwo nginya maehererio na guoko.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Maũndũ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ũndũ o wothe</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Maũndũ mothe ma akaunti ĩno</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Tũma nja mũtaratara ta CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nĩ ĩoire</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuuma</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Nyihia mũtaratara</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Gũtirĩ ũndũ ũringaine.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ũrũa o ũrũa</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kwandĩka nĩ gũhingĩtwo thĩinĩ wa audit.ini ([UserAuditSettings] UserAudit); mũtaratara uonanagia kĩrĩa kĩandĩkĩtwo mbere.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nĩ kũregetwo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ũthiĩ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rora</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tebo ya rekodi ya gũthingata ya ahũthiri ndĩrĩ kuo. Mĩumbe na php update/common/scripts/6.0/createuseraudittable.php; nginya hĩndĩ ĩyo, mafaili ma gũthingata nĩ mamenyagĩrĩra ũndũ o wothe.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ũrũa rũrũ nĩ rũbataraga kĩigĩro kĩa data kĩa SQL; rũtirĩ kuo harĩ MongoDB. Mafaili ma gũthingata nĩ mamenyagĩrĩra ũndũ o wothe.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nginya</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rekodi ya gũthingata ya ahũthiri</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mũhũthiri</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Hĩndĩ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Handũ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ũrĩa wacenjirie, woombire, wahingũrire, wahingire, wathamirie kana weheririe akaunti ĩrĩkũ, ũrĩa wegingĩrire kana akĩregwo, na marolo marĩa maheirwo: mũhari ũmwe harĩ o ũndũ, hamwe na mĩhari ya mbere na ya thutha. Ciugo cia hitho na maũndũ ma hitho matiandĩkagwo o na rĩ.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>gĩkundi</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>mũhaka</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>gĩtooĩkaine</translation>
     </message>
 </context>
 </TS>

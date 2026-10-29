@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Беркем дә кулланмый торган яки игътибар таләп итә торган хисап язмалары; аларны сүндерегез, бикләүдән чыгарыгыз яки экспортлагыз.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Кулланучылар аудиты журналы</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Кем үзгәрткән, кергән яки кире кагылган, һәр хисап язмасы буенча; фильтрлау һәм экспортлау.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Битне ачу</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count эченнән %from – %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Кулланучы исеме яки кулланучы ID: вакыйга кагылган хисап язмасы яки гамәл кылган кулланучы.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Хисап язмасы</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Гамәл</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Соңыннан</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Теләсә нинди нәтиҗә</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Алдан</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Башкаручы</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Чистарту</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Башкарылды</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Вакыйгаларның саклану вакыты (көннәрдә): %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Вакыйгалар кул белән бетерелгәнчегә кадәр саклана.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Вакыйгалар</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Теләсә нинди гамәл</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Бу хисап язмасының барлык вакыйгалары</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Исемлекне CSV итеп экспортлау (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Барып чыкмады</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Кайчаннан</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Исемлекне тарайту</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Туры килгән вакыйга юк.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Һәр биттә</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Язып бару audit.ini файлында сүндерелгән ([UserAuditSettings] UserAudit); исемлек элек язып алынганны күрсәтә.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Кире кагылды</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиҗә</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Күрсәтү</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Кулланучылар аудиты журналының таблицасы юк. Аны php update/common/scripts/6.0/createuseraudittable.php ярдәмендә булдырыгыз; шуңа кадәр аудит файллары һәр вакыйганы саклый.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Бу биткә SQL мәгълүмат базасы кирәк; MongoDB белән ул эшләми. Аудит файллары һәр вакыйганы саклый.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Кайчанга кадәр</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Кулланучылар аудиты журналы</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Кулланучы</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Кайчан</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Кайда</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кем кайсы хисап язмасын үзгәрткән, булдырган, кабызган, сүндергән, күчергән яки бетергән, кем кергән яки кире кагылган һәм нинди рольләр билгеләнгән: һәр вакыйгага бер юл, кырларның элекке һәм соңгы кыйммәтләре белән. Серсүзләр һәм серләр беркайчан да язылмый.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>төркем</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>система</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>билгесез</translation>
     </message>
 </context>
 </TS>

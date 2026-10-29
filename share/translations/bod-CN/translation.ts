@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>སུས་ཀྱང་མི་སྤྱོད་པའམ་ལྟ་དགོས་པའི་ཐོ་ཁོངས། དེ་དག་སྤྱོད་མཚམས་འཇོག་པ། སྒོ་འབྱེད་པ་ཡང་ན་ཕྱིར་འདྲེན་བྱོས།</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>སྤྱོད་མཁན་གྱི་ཞིབ་བཤེར་ཟིན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ཐོ་ཁོངས་རེ་རེར་སུས་བཟོ་བཅོས་བྱས་པ་དང་། ནང་འཛུལ་བྱས་པ། ཡང་ན་ཁས་མ་བླངས་པ། འཚག་འདེམས་དང་ཕྱིར་འདྲེན་བྱེད་ཐུབ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ཤོག་ངོས་ཁ་ཕྱེ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ནས་ %to བར། བསྡོམས་ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ནང་འཛུལ་མིང་ངམ་སྤྱོད་མཁན་གྱི་ ID ཞིག་སྟེ། བྱུང་རིམ་དེ་གང་ལ་འབྲེལ་བའི་ཐོ་ཁོངས་སམ་བྱ་བ་སྒྲུབ་མཁན་གྱི་སྤྱོད་མཁན།</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ཐོ་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>རྗེས།</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>འབྲས་བུ་གང་རུང་།</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>སྔོན།</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>སྒྲུབ་མཁན།</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>གཙང་སེལ།</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ལེགས་གྲུབ།</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>བྱུང་རིམ་རྣམས་ཉིན་ %days རིང་ཉར་ཚགས་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>བྱུང་རིམ་རྣམས་ལག་པས་མ་བསུབ་བར་དུ་ཉར་ཚགས་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>བྱུང་རིམ་རྣམས།</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>བྱ་བ་ཡོངས།</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ཐོ་ཁོངས་འདིའི་བྱུང་རིམ་ཡོངས།</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ཐོ་གཞུང་ CSV ལ་ཕྱིར་འདྲེན། (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ཕམ།</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ནས།</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ཐོ་གཞུང་ཉུང་དུ་གཏོང་།</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>མཐུན་པའི་བྱུང་རིམ་མེད།</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ཤོག་ངོས་རེར།</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ནང་ཟིན་འགོད་བཀག་ཡོད། ([UserAuditSettings] UserAudit) ཐོ་གཞུང་ནང་སྔོན་ལ་ཟིན་འགོད་བྱས་པ་དེ་མངོན།</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ཁས་མ་བླངས།</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>འབྲས་བུ།</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>མངོན།</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>སྤྱོད་མཁན་གྱི་ཞིབ་བཤེར་ཟིན་ཐོའི་རེའུ་མིག་མི་འདུག php update/common/scripts/6.0/createuseraudittable.php བེད་སྤྱད་དེ་གསར་བཟོ་གནང་རོགས། དེ་བར་དུ་ཞིབ་བཤེར་ཡིག་ཆས་བྱུང་རིམ་ཚང་མ་ཉར་ཚགས་བྱེད།</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ཤོག་ངོས་འདིར་ SQL གཞི་གྲངས་མཛོད་དགོས། MongoDB ཐོག་སྤྱོད་མི་ཐུབ། ཞིབ་བཤེར་ཡིག་ཆས་བྱུང་རིམ་ཚང་མ་ཉར་ཚགས་བྱེད།</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>བར།</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>སྤྱོད་མཁན་གྱི་ཞིབ་བཤེར་ཟིན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>སྤྱོད་མཁན།</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>དུས་ཚོད།</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>གནས་ས།</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>སུས་ཐོ་ཁོངས་གང་ལ་བཟོ་བཅོས་དང་། གསར་བཟོ། སྤྱོད་འགོ་འཛུགས་པ། སྤྱོད་མཚམས་འཇོག་པ། སྤོ་བ། ཡང་ན་ཕྱིར་འདོན་བྱས་པ། སུས་ནང་འཛུལ་བྱས་པའམ་ཁས་མ་བླངས་པ། འགན་ཁུར་གང་དག་བགོས་པ། བྱུང་རིམ་རེ་རེར་ཐིག་ཕྲེང་གཅིག་དང་སྔོན་རྗེས་ཀྱི་ཡིག་སྒྲོམ་བཅས། གསང་གྲངས་དང་གསང་བའི་ཆ་འཕྲིན་ནམ་ཡང་ཟིན་འགོད་མི་བྱེད།</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ཚོ་ཆུང་།</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>རྒྱུད་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>མི་ཤེས་པ།</translation>
     </message>
 </context>
 </TS>

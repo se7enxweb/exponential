@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Уліковыя запісы, якімі ніхто не карыстаецца або якія патрабуюць увагі; іх можна адключыць, разблакіраваць або экспартаваць.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Журнал аўдыту карыстальнікаў</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Хто ўносіў змены, уваходзіў у сістэму ці атрымаў адмову, па кожным уліковым запісе; фільтраванне і экспарт.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Адкрыць старонку</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to з %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Імя карыстальніка або ID карыстальніка: уліковы запіс, якога тычыцца падзея, або карыстальнік, які выканаў дзеянне.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Уліковы запіс</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дзеянне</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Пасля</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Любы вынік</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Выканаўца</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Скінуць</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Выканана</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Тэрмін захоўвання падзей у днях: %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Падзеі захоўваюцца, пакуль іх не выдаляць уручную.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Падзеі</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Любое дзеянне</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Усе падзеі гэтага ўліковага запісу</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Экспартаваць спіс у CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Не ўдалося</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>З</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Звузіць спіс</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Няма падзей, якія адпавядаюць умовам.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На старонку</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Запіс падзей выключаны ў audit.ini ([UserAuditSettings] UserAudit); у спісе паказана тое, што было запісана раней.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Адхілена</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Вынік</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Паказаць</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Табліца журнала аўдыту карыстальнікаў адсутнічае. Стварыце яе камандай php update/common/scripts/6.0/createuseraudittable.php; да таго часу ўсе падзеі захоўваюцца ў файлах аўдыту.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Для гэтай старонкі патрэбна база даных SQL; у MongoDB яна недаступная. Усе падзеі захоўваюцца ў файлах аўдыту.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Па</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Журнал аўдыту карыстальнікаў</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Карыстальнік</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Калі</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Дзе</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Хто змяніў, стварыў, уключыў, выключыў, перамясціў або выдаліў які ўліковы запіс, хто ўвайшоў у сістэму ці атрымаў адмову і якія ролі былі прызначаны: адзін радок на падзею, са значэннямі палёў да і пасля. Паролі і сакрэты ніколі не запісваюцца.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>група</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>сістэма</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>невядома</translation>
     </message>
 </context>
 </TS>

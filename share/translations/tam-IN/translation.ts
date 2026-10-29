@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>யாரும் பயன்படுத்தாத அல்லது கவனிக்க வேண்டிய கணக்குகள்; அவற்றை முடக்கலாம், திறக்கலாம் அல்லது ஏற்றுமதிசெய்யலாம்.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>பயனர் தணிக்கைப் பதிவு</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>கணக்கு வாரியாக யார் மாற்றினார், யார் உள்நுழைந்தார் அல்லது மறுக்கப்பட்டார்; வடிகட்டி ஏற்றுமதி செய்யுங்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>பக்கத்தைத் திற</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count இல் %from முதல் %to வரை</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>உள்நுழைவுப் பெயர் அல்லது பயனர் ஐடி: நிகழ்வு தொடர்புடைய கணக்கு அல்லது செயல்பட்ட பயனர்.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>கணக்கு</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>செயல்</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>பின்</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>எந்த முடிவும்</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>முன்</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>செய்தவர்</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>அழி</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>நிகழ்வுகள் %days நாட்களுக்கு வைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>நிகழ்வுகள் கைமுறையாக அகற்றப்படும் வரை வைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>நிகழ்வுகள்</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>எல்லாச் செயல்களும்</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>இந்தக் கணக்கின் எல்லா நிகழ்வுகளும்</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>பட்டியலை CSV ஆக ஏற்றுமதிசெய் (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>முதல்</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>பட்டியலைச் சுருக்கு</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>எந்த நிகழ்வும் பொருந்தவில்லை.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ஒரு பக்கத்துக்கு</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini இல் ([UserAuditSettings] UserAudit) பதிவுசெய்தல் முடக்கப்பட்டுள்ளது; முன்பு பதிவுசெய்யப்பட்டவற்றைப் பட்டியல் காட்டுகிறது.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>முடிவு</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>காட்டு</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>பயனர் தணிக்கைப் பதிவின் அட்டவணை இல்லை. php update/common/scripts/6.0/createuseraudittable.php மூலம் அதை உருவாக்குங்கள்; அதுவரை தணிக்கைக் கோப்புகள் ஒவ்வொரு நிகழ்வையும் வைத்திருக்கும்.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>இந்தப் பக்கத்துக்கு SQL தரவுத்தளம் தேவை; இது MongoDB இல் கிடைக்காது. தணிக்கைக் கோப்புகள் ஒவ்வொரு நிகழ்வையும் வைத்திருக்கும்.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>வரை</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>பயனர் தணிக்கைப் பதிவு</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>பயனர்</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>எப்போது</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>எங்கே</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>எந்தக் கணக்கை யார் மாற்றினார், உருவாக்கினார், இயக்கினார், முடக்கினார், நகர்த்தினார் அல்லது அகற்றினார், யார் உள்நுழைந்தார் அல்லது மறுக்கப்பட்டார், எந்தப் பங்குகள் ஒதுக்கப்பட்டன: ஒரு நிகழ்வுக்கு ஒரு வரி, முன் மற்றும் பின் புலங்களுடன். கடவுச்சொற்களும் ரகசியங்களும் ஒருபோதும் பதிவுசெய்யப்படுவதில்லை.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>குழு</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>கணினி</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>தெரியாதது</translation>
     </message>
 </context>
 </TS>

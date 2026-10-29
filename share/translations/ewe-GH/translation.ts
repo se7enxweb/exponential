@@ -15295,6 +15295,14 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akɔnta siwo ame aɖeke mezãa o alo siwo hiã be woakpɔ wo; tɔ wo te, ʋu wo alo tsɔ wo yi go.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Zãlawo ƒe dzodzro ŋutinya</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ame si trɔ nu, ge ɖe eme alo wogbe nɛ, le akɔnta ɖesiaɖe nu; tsotsonu kple tsɔtsɔ yi go.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>Open the page</source>
         <translation>Ʋu axa la</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from va se ɖe %to le %count me</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Zãla ƒe ŋkɔ alo zãla ƒe ID: akɔnta si ŋu nudzɔdzɔa ku ɖo alo zãla si wɔ dɔa.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akɔnta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Dɔwɔwɔ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Megbe</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Nyaʋiʋli ɖesiaɖe</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Do ŋgɔ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wɔla</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Ɖe ɖa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ewɔ dɔ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Wodzraa nudzɔdzɔwo ɖo ŋkeke %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Wodzraa nudzɔdzɔwo ɖo va se ɖe esime woaɖe wo ɖa kple asi.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Nudzɔdzɔwo</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Dɔwɔwɔ ɖesiaɖe</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Akɔnta sia ƒe nudzɔdzɔwo katã</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Tsɔ ŋkɔŋlɔa yi go abe CSV ene (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mewɔ dɔ o</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Tso</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ɖe ŋkɔŋlɔa dzi kpɔtɔ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nudzɔdzɔ aɖeke mesɔ o.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Le axa ɖesiaɖe dzi</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Wotɔ nuŋlɔɖi te le audit.ini me ([UserAuditSettings] UserAudit); ŋkɔŋlɔa fia nu siwo woŋlɔ ɖi do ŋgɔ.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wogbe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nyaʋiʋli</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fia</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Zãlawo ƒe dzodzro ŋutinya ƒe tabla meli o. Wɔe kple php update/common/scripts/6.0/createuseraudittable.php; va se ɖe ɣemaɣi la, dzodzro faɛlwo dzraa nudzɔdzɔ ɖesiaɖe ɖo.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Axa sia hiã SQL nyatakakadzraɖoƒe; meli le MongoDB dzi o. Dzodzro faɛlwo dzraa nudzɔdzɔ ɖesiaɖe ɖo.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Va se ɖe</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Zãlawo ƒe dzodzro ŋutinya</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Zãla</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ɣeyiɣi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Teƒe</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ame si trɔ asi le akɔnta si ŋu, wɔe, na wòwɔ dɔ, tɔe te, ɖee ɖe teƒe bubu alo ɖee ɖa, ame si ge ɖe eme alo wogbe nɛ, kple dɔdeasi siwo wotsɔ na: fli ɖeka ɖe nudzɔdzɔ ɖesiaɖe ta, kple teƒewo do ŋgɔ kple megbe. Womeŋlɔa mɔxenyawo kple nya ɣaɣlawo ɖi gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ƒuƒoƒo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ɖoɖoa</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>menya o</translation>
     </message>
 </context>
 </TS>

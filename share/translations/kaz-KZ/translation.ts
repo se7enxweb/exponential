@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ешкім қолданбайтын немесе назар аударуды қажет ететін тіркелгілер; оларды өшіруге, бұғаттан шығаруға немесе экспорттауға болады.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Пайдаланушылар аудитінің журналы</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Әр тіркелгі бойынша кім өзгертті, кім кірді немесе кімге бас тартылды; сүзу және экспорттау.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Бетті ашу</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, барлығы %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Логин немесе пайдаланушы ID: оқиға қатысты тіркелгі немесе әрекетті орындаған пайдаланушы.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Тіркелгі</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Әрекет</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Кейін</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Кез келген нәтиже</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Бұрын</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Орындаушы</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Тазалау</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Орындалды</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Оқиғалар %days күн сақталады.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Оқиғалар қолмен жойылғанша сақталады.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Оқиғалар</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Барлық әрекеттер</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Осы тіркелгінің барлық оқиғалары</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Тізімді CSV ретінде экспорттау (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Сәтсіз</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Бастап</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Тізімді тарылту</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Сәйкес оқиға жоқ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Бетке</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Жазу audit.ini файлында өшірілген ([UserAuditSettings] UserAudit); тізім бұрын жазылғанды көрсетеді.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Бас тартылды</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиже</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Көрсету</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Пайдаланушылар аудиті журналының кестесі жоқ. Оны php update/common/scripts/6.0/createuseraudittable.php арқылы жасаңыз; оған дейін аудит файлдары әр оқиғаны сақтайды.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Бұл бетке SQL дерекқоры қажет; MongoDB жүйесінде ол қолжетімсіз. Аудит файлдары әр оқиғаны сақтайды.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Дейін</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Пайдаланушылар аудитінің журналы</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Пайдаланушы</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Уақыты</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Орны</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кім қай тіркелгіні өзгерткені, жасағаны, қосқаны, өшіргені, жылжытқаны немесе жойғаны, кім кіргені немесе кімге бас тартылғаны және қандай рөлдер тағайындалғаны: әр оқиғаға бір жол, өрістердің бұрынғы және кейінгі мәндерімен. Құпиясөздер мен құпия деректер ешқашан жазылмайды.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>топ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>жүйе</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>белгісіз</translation>
     </message>
 </context>
 </TS>

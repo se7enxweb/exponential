@@ -15296,6 +15296,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>חושבנא דאנש לא מפלח להון או דסניקין לחזיא; מבטלא, פתחא דקפלא או מפקא דילהון.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>עקבא דבוקיא דמפלחנא</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>מנו שחלף, על או אתכלי, לכל חושבנא; צללא ומפקא.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77345,6 +77353,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>פתחא דפאתא</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from עד %to מן %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>שמא דמפלחנא או ID דמפלחנא: חושבנא דעלוהי הוא גדשא או מפלחנא דעבד סוערנא.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>חושבנא</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>סוערנא</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>בתר</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>כל פלטא</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>קדם</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>עבודא</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>סרקא</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>גמירא</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>גדשא מתנטרין %days יומתא.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>גדשא מתנטרין עדמא דמשתקלין באידא.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>גדשא</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>כל סוערנא</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>כלהון גדשא דהנא חושבנא</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>מפקא דרשימתא איך CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מן</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>צללא דרשימתא</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>לית גדשא דשוא.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>בכל פאתא</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>רשמא בטילא גו audit.ini ([UserAuditSettings] UserAudit); רשימתא מחויא מדם דאתרשם מן קדם.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>אתכלי</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>פלטא</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>מחויא</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>לוחא דעקבא דבוקיא דמפלחנא ליתוהי. ברון לה עם php update/common/scripts/6.0/createuseraudittable.php; עדמא להי עדנא פנקיתא דבוקיא נטרן כל גדשא.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>הדא פאתא סניקא לבית ידעתא ד SQL; לא מתמציא על MongoDB. פנקיתא דבוקיא נטרן כל גדשא.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>עקבא דבוקיא דמפלחנא</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>מפלחנא</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>אמתי</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>איכא</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>מנו שחלף, ברא, אפעל, אבטל, שנא או שקל אינא חושבנא, מנו על או אתכלי, ואילין דורא אתיהבו: סטרא חד לכל גדשא, עם חקלא קדם ובתר. מלא דעברא וארזא ממתום לא מתרשמין.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>כנשא</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>מטכסתא</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>לא ידיעא</translation>
     </message>
 </context>
 </TS>

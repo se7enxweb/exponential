@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>જે એકાઉન્ટનો કોઈ ઉપયોગ ન કરતું હોય અથવા જેને જોવાની જરૂર હોય; તેમને અક્ષમ કરો, અનલૉક કરો અથવા નિકાસ કરો.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>વપરાશકર્તા ઓડિટ લૉગ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>દરેક ખાતા માટે કોણે ફેરફાર કર્યો, સાઇન ઇન કર્યું અથવા કોને નકારવામાં આવ્યા; ફિલ્ટર કરો અને નિકાસ કરો.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>પૃષ્ઠ ખોલો</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count માંથી %from થી %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>લૉગિન અથવા વપરાશકર્તા ID: જે ખાતા વિશે ઘટના હતી તે, અથવા જે વપરાશકર્તાએ ક્રિયા કરી તે.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ખાતું</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ક્રિયા</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>પછી</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>કોઈપણ પરિણામ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>પહેલાં</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>કરનાર</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>સાફ કરો</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>પૂર્ણ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ઘટનાઓ %days દિવસ સુધી રાખવામાં આવે છે.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ઘટનાઓ હાથથી દૂર કરવામાં ન આવે ત્યાં સુધી રાખવામાં આવે છે.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ઘટનાઓ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>દરેક ક્રિયા</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>આ ખાતાની બધી ઘટનાઓ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>સૂચિને CSV તરીકે નિકાસ કરો (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>નિષ્ફળ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>તારીખથી</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>સૂચિ સાંકડી કરો</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>કોઈ ઘટના મેળ ખાતી નથી.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>પ્રતિ પૃષ્ઠ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini માં રેકોર્ડિંગ બંધ છે ([UserAuditSettings] UserAudit); સૂચિ પહેલાં રેકોર્ડ થયેલું બતાવે છે.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>નકારાયું</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>પરિણામ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>બતાવો</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>વપરાશકર્તા ઓડિટ લૉગનું કોષ્ટક ખૂટે છે. તેને php update/common/scripts/6.0/createuseraudittable.php વડે બનાવો; ત્યાં સુધી ઓડિટ ફાઇલો દરેક ઘટના સાચવે છે.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>આ પૃષ્ઠને SQL ડેટાબેઝની જરૂર છે; તે MongoDB પર ઉપલબ્ધ નથી. ઓડિટ ફાઇલો દરેક ઘટના સાચવે છે.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>તારીખ સુધી</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>વપરાશકર્તા ઓડિટ લૉગ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>વપરાશકર્તા</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ક્યારે</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ક્યાં</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>કોણે કયું ખાતું બદલ્યું, બનાવ્યું, સક્ષમ કર્યું, અક્ષમ કર્યું, ખસેડ્યું અથવા દૂર કર્યું, કોણે સાઇન ઇન કર્યું અથવા કોને નકારવામાં આવ્યા, અને કઈ ભૂમિકાઓ સોંપવામાં આવી: દરેક ઘટના માટે એક પંક્તિ, પહેલાં અને પછીના ફીલ્ડ સાથે. પાસવર્ડ અને ગુપ્ત માહિતી ક્યારેય રેકોર્ડ થતી નથી.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>સમૂહ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>સિસ્ટમ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>અજ્ઞાત</translation>
     </message>
 </context>
 </TS>

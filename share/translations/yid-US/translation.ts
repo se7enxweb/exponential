@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>קאָנטעס וואָס קיינער ניצט ניט אָדער וואָס דאַרפֿן אַ קוק; דעאַקטיווירן, אויפֿשליסן אָדער עקספּאָרטירן זיי.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>באַניצער־רעוויזיע־שפּור</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ווער האָט געענדערט, זיך אַרייַנלאָגירט אָדער איז אָפּגעוואָרפֿן געוואָרן, לויט קאָנטע; פֿילטרירן און עקספּאָרטירן.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>עפֿענען דעם בלאַט</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ביז %to פֿון %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>אַ באַניצער־נאָמען אָדער אַ באַניצער־ID: די קאָנטע וועגן וועלכער עס איז געווען די געשעעניש, אָדער דער באַניצער וואָס האָט געטאָן די אַקציע.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>קאָנטע</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>אַקציע</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>נאָך</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>יעדער רעזולטאַט</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>פֿאַר</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>דורך</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>אויסמעקן</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>געטאָן</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>געשעענישן ווערן אויפֿגעהיט %days טעג.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>געשעענישן ווערן אויפֿגעהיט ביז מען נעמט זיי אַוועק מיט דער האַנט.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>געשעענישן</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>יעדע אַקציע</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>אַלע געשעענישן פֿון דער קאָנטע</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>עקספּאָרטירן די רשימה ווי CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>פֿון</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>פֿאַרענגערן די רשימה</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>קיין געשעעניש פּאַסט ניט.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>פּער בלאַט</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>דאָס רעקאָרדירן איז אויסגעשאַלטן אין audit.ini ([UserAuditSettings] UserAudit); די רשימה ווייַזט וואָס איז פֿריִער רעקאָרדירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>אָפּגעוואָרפֿן</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>רעזולטאַט</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ווייַזן</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>די טאַבעלע פֿונעם באַניצער־רעוויזיע־שפּור פֿעלט. שאַפֿט זי מיט php update/common/scripts/6.0/createuseraudittable.php; ביז דעמאָלט היטן די רעוויזיע־טעקעס אויף יעדע געשעעניש.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>דער בלאַט דאַרף אַן SQL־דאַטנבאַזע; אויף MongoDB איז ער ניט צוטריטלעך. די רעוויזיע־טעקעס היטן אויף יעדע געשעעניש.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ביז</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>באַניצער־רעוויזיע־שפּור</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>באַניצער</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ווען</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>וווּ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ווער האָט געענדערט, געשאַפֿן, אַקטיווירט, דעאַקטיווירט, אַריבערגעפֿירט אָדער אַוועקגענומען וועלכע קאָנטע, ווער האָט זיך אַרייַנלאָגירט אָדער איז אָפּגעוואָרפֿן געוואָרן, און וועלכע ראָלעס זענען צוגעטיילט געוואָרן: איין שורה פּער געשעעניש, מיט די פֿעלדער פֿאַר און נאָך. פּאַראָלן און סודות ווערן קיינמאָל ניט רעקאָרדירט.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>גרופּע</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>סיסטעם</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>אומבאַקאַנט</translation>
     </message>
 </context>
 </TS>

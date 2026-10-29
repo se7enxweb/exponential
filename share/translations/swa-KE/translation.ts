@@ -15293,6 +15293,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akaunti zisizotumiwa na mtu yeyote au zinazohitaji kuangaliwa; zizime, zifungue au zihamishe.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kumbukumbu za ukaguzi wa watumiaji</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Nani alibadilisha, aliingia au alikataliwa, kwa kila akaunti; chuja na uhamishe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Open the page</source>
         <translation>Fungua ukurasa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hadi %to kati ya %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Jina la kuingia au kitambulisho cha mtumiaji: akaunti iliyohusika na tukio au mtumiaji aliyetenda.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaunti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kitendo</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Baadaye</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Matokeo yoyote</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Kabla</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Mtendaji</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Futa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Imefanikiwa</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Matukio huhifadhiwa kwa siku %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Matukio huhifadhiwa hadi yaondolewe kwa mkono.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Matukio</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kila kitendo</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Matukio yote ya akaunti hii</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Hamisha orodha kama CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Imeshindikana</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kutoka</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Punguza orodha</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Hakuna tukio linalolingana.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Kwa kila ukurasa</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kurekodi kumezimwa katika audit.ini ([UserAuditSettings] UserAudit); orodha inaonyesha kilichorekodiwa awali.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Imekataliwa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Matokeo</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Onyesha</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Jedwali la kumbukumbu za ukaguzi wa watumiaji halipo. Liunde kwa php update/common/scripts/6.0/createuseraudittable.php; hadi wakati huo faili za ukaguzi huhifadhi kila tukio.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ukurasa huu unahitaji hifadhidata ya SQL; haupatikani kwenye MongoDB. Faili za ukaguzi huhifadhi kila tukio.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hadi</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kumbukumbu za ukaguzi wa watumiaji</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mtumiaji</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Lini</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wapi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Nani alibadilisha, aliunda, aliwezesha, alizima, alihamisha au aliondoa akaunti gani, nani aliingia au alikataliwa, na majukumu gani yalikabidhiwa: mstari mmoja kwa kila tukio, pamoja na sehemu za data kabla na baada. Manenosiri na siri hayarekodiwi kamwe.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>kundi</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>mfumo</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>haijulikani</translation>
     </message>
 </context>
 </TS>

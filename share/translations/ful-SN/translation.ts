@@ -15295,6 +15295,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konte ɗe alaa huutinii walla ɗe ndaarteeɗe; ñif, hollu walla yaltin ɗe.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Daartol taskaano huutorɓe</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Moy waylii, moy naati walla moy salaa, e konte kala; sooɓ e yaltin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Open the page</source>
         <translation>Uddit hello ndee</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from haa %to e nder %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Innde naatgol walla ID kuutoro: konte nde huunde ndee fawii e mayre walla kuutoro gollirɗo ngol.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konte</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Baawo</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Njaɓɓi kala</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Adan</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gollirɗo</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Laɓɓin</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Waɗaama</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Geɗe waɗnde ina mooftee ñalɗi %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Geɗe waɗnde ina mooftee haa ittee e junngo.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Geɗe waɗnde</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Golle kala</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Geɗe waɗnde konte ndee fof</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Yaltin doggol ngol no CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Waɗaaki</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Diga</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ustu doggol ngol</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Alaa huunde waɗnde fotnde.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>E hello</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Winndugol ñifaama e audit.ini ([UserAuditSettings] UserAudit); doggol ngol ina hollira ko winndaa adii.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Salaama</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njaɓɓi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hollu</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabal daartol taskaano huutorɓe ngol alaa. Tagu ɗum e php update/common/scripts/6.0/createuseraudittable.php; haa ndeen, fichier taskaano ɗii ina moofta huunde waɗnde kala.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Hello ngoo ina sokli base de données SQL; hello ngoo alaa e MongoDB. Fichier taskaano ɗii ina moofta huunde waɗnde kala.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Haa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Daartol taskaano huutorɓe</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kuutoro</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Saa&apos;i</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nokku</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Moy waylii, tagii, huuɓnii, ñifii, dirtinii walla itti konte ndee, moy naati walla salaa, e darnde ɗe ndokkaa: gonngol gootol e huunde waɗnde kala, e geɗe ɗe adan e baawo. Finndeeji e sirruuji winndetaake abada.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>fedde</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anndaaka</translation>
     </message>
 </context>
 </TS>

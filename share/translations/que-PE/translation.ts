@@ -15295,6 +15295,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Mana pipas llamk'achisqan utaq qhawanapaq kuwintakuna; samachiy, kichay utaq apachiy.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Apaykachaqkunap chiqaqchay qillqan</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Pim tikrarqan, yaykurqan utaq mana chaskisqa karqan, sapa kuwintapi; suysuy hinaspa apachiy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Open the page</source>
         <translation>Raphita kichay</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, %count ukhumanta</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Apaykachaqpa sutin utaq apaykachaqpa ID: kuwinta pasakuypa rimasqan utaq apaykachaq ruraq.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kuwinta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ruray</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Qhipapi</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ima lluqsiynipas</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ñawpaqpi</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ruraq</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Pichay</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tukusqa</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Pasakuykunaqa %days p&apos;unchaw waqaychasqa kanku.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Pasakuykunaqa makiwan qichusqa kanankama waqaychasqa kanku.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Pasakuykuna</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ima ruraypas</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kay kuwintap llapan pasakuyninkuna</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Listata CSV hina apachiy (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mana atipasqa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Maymanta</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Listata k&apos;ichkichay</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Mana ima pasakuypas tupanchu.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sapa raphipi</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Qillqakuyqa audit.ini ukhupi wañuchisqa kachkan ([UserAuditSettings] UserAudit); listaqa ñawpaqta qillqasqakunata rikuchin.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Mana chaskisqa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Lluqsiyniy</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rikuchiy</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Apaykachaqkunap chiqaqchay qillqanpa tablan mana kanchu. Kaywan ruray: php update/common/scripts/6.0/createuseraudittable.php; chaykama chiqaqchay willañiqikuna sapa pasakuyta waqaychanku.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Kay raphiqa SQL willakuna waqaychanatam munan; MongoDB-pi mana kanchu. Chiqaqchay willañiqikuna sapa pasakuyta waqaychanku.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kayman</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Apaykachaqkunap chiqaqchay qillqan</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Apaykachaq</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Hayk&apos;aq</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Maypi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Pim mayqin kuwintata tikrarqan, ruwarqan, kichaykurqan, wichqarqan, astarqan utaq qichurqan, pim yaykurqan utaq mana chaskisqa karqan, hinaspa ima ruwanakuna quykusqa karqan: sapa pasakuypaq huk siq&apos;i, ñawpaq hinaspa qhipa pampakunawan. Pakasqa simikuna hinaspa pakasqa willakuna manam hayk&apos;aqpas qillqasqachu.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>huñu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistema</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>mana riqsisqa</translation>
     </message>
 </context>
 </TS>

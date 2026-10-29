@@ -15293,6 +15293,14 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akoonno aan qofna isticmaalin ama u baahan eegis; Disable ka dhig, fur ama dhoofi.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Diiwaanka hubinta isticmaalayaasha</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Cidda wax beddeshay, gashay ama la diiday, akoon kasta; shaandheyn iyo dhoofin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Open the page</source>
         <translation>Fur bogga</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ilaa %to oo ka mid ah %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Magaca gelitaanka ama aqoonsiga isticmaalaha: akoonka dhacdadu ku saabsanayd ama isticmaalaha ficilka sameeyay.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akoon</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ficil</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Ka dib</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Natiijo kasta</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ka hor</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Sameeyaha</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Nadiifi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Guulaystay</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Dhacdooyinka waxaa la hayaa muddo %days maalmood ah.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Dhacdooyinka waa la hayaa ilaa gacan lagu tirtiro.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dhacdooyin</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ficil kasta</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Dhammaan dhacdooyinka akoonkan</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>U dhoofi liiska sida CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Waa fashilantay</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Laga bilaabo</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Cidhiidhi liiska</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ma jirto dhacdo ku habboon.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Bog kasta</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Diiwaangelinta waa laga damiyay audit.ini ([UserAuditSettings] UserAudit); liisku wuxuu muujinayaa wixii hore loo diiwaangeliyay.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Waa la diiday</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natiijo</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Muuji</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Miiska diiwaanka hubinta isticmaalayaasha ma jiro. Ku samee php update/common/scripts/6.0/createuseraudittable.php; ilaa markaas faylasha hubintu waxay hayaan dhacdo kasta.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Boggani wuxuu u baahan yahay kaydka xogta SQL; laguma heli karo MongoDB. Faylasha hubintu waxay hayaan dhacdo kasta.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ilaa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Diiwaanka hubinta isticmaalayaasha</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Isticmaale</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Goorma</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Halkee</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Cidda beddeshay, abuurtay, awood gelisay, damisay, guurisay ama ka saartay akoonkee, cidda gashay ama la diiday, iyo doorarka la qoondeeyay: hal saf dhacdo kasta, iyadoo ay la socdaan goobaha ka hor iyo ka dib. Erayada sirta ah iyo siraha weligood lama diiwaangeliyo.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>koox</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>nidaam</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>aan la aqoon</translation>
     </message>
 </context>
 </TS>

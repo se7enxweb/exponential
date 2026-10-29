@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>မည်သူမျှ မသုံးသော သို့မဟုတ် ကြည့်ရန်လိုသော အကောင့်များ၊ ၎င်းတို့ကို ပိတ်ရန်၊ လော့ခ်ဖွင့်ရန် သို့မဟုတ် ထုတ်ယူရန်။</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>အသုံးပြုသူ စာရင်းစစ်မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>အကောင့်အလိုက် မည်သူ ပြောင်းလဲခဲ့သည်၊ ဝင်ရောက်ခဲ့သည် သို့မဟုတ် ငြင်းပယ်ခံခဲ့ရသည်ကို ပြသည်၊ စစ်ထုတ်ပြီး ထုတ်ယူနိုင်သည်။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>စာမျက်နှာကို ဖွင့်ရန်</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ခုအနက် %from မှ %to အထိ</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ဝင်ရောက်အမည် သို့မဟုတ် အသုံးပြုသူ ID: ဖြစ်ရပ်နှင့် သက်ဆိုင်သော အကောင့် သို့မဟုတ် လုပ်ဆောင်ခဲ့သော အသုံးပြုသူ။</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>အကောင့်</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>လုပ်ဆောင်ချက်</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>ပြောင်းလဲပြီးနောက်</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ရလဒ်အားလုံး</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ပြောင်းလဲမီ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>လုပ်ဆောင်သူ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ရှင်းရန်</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>အောင်မြင်သည်</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ဖြစ်ရပ်များကို %days ရက် သိမ်းဆည်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ဖြစ်ရပ်များကို လက်ဖြင့် ဖယ်ရှားသည်အထိ သိမ်းဆည်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ဖြစ်ရပ်များ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>လုပ်ဆောင်ချက်အားလုံး</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ဤအကောင့်၏ ဖြစ်ရပ်အားလုံး</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>စာရင်းကို CSV အဖြစ် ထုတ်ယူရန် (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>မှ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>စာရင်း စစ်ထုတ်ခြင်း</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ကိုက်ညီသော ဖြစ်ရပ် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>တစ်မျက်နှာလျှင်</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini ([UserAuditSettings] UserAudit) တွင် မှတ်တမ်းတင်ခြင်းကို ပိတ်ထားသည်၊ စာရင်းသည် ယခင်က မှတ်တမ်းတင်ခဲ့သည်များကို ပြသည်။</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ငြင်းပယ်ခံရသည်</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>အသုံးပြုသူ စာရင်းစစ်မှတ်တမ်း၏ ဇယား မရှိပါ။ php update/common/scripts/6.0/createuseraudittable.php ဖြင့် ဖန်တီးပါ၊ ထိုအချိန်အထိ စာရင်းစစ်ဖိုင်များတွင် ဖြစ်ရပ်တိုင်းကို သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ဤစာမျက်နှာသည် SQL ဒေတာဘေ့စ် လိုအပ်သည်၊ MongoDB တွင် မရနိုင်ပါ။ စာရင်းစစ်ဖိုင်များတွင် ဖြစ်ရပ်တိုင်းကို သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>အထိ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>အသုံးပြုသူ စာရင်းစစ်မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>အသုံးပြုသူ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>အချိန်</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>နေရာ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>မည်သူက မည်သည့်အကောင့်ကို ပြောင်းလဲ၊ ဖန်တီး၊ ဖွင့်၊ ပိတ်၊ ရွှေ့ သို့မဟုတ် ဖယ်ရှားခဲ့သည်၊ မည်သူ ဝင်ရောက်ခဲ့သည် သို့မဟုတ် ငြင်းပယ်ခံခဲ့ရသည်၊ မည်သည့် အခန်းကဏ္ဍများ သတ်မှတ်ပေးခဲ့သည်: ဖြစ်ရပ်တစ်ခုလျှင် တစ်ကြောင်း၊ ပြောင်းလဲမီနှင့် ပြောင်းလဲပြီးနောက် အကွက်များနှင့်အတူ။ စကားဝှက်များနှင့် လျှို့ဝှက်ချက်များကို ဘယ်တော့မှ မှတ်တမ်းမတင်ပါ။</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>အုပ်စု</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>စနစ်</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>မသိ</translation>
     </message>
 </context>
 </TS>

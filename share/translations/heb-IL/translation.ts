@@ -15240,6 +15240,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>חשבונות שאיש אינו משתמש בהם או שדורשים בדיקה; השבתה, שחרור חסימה או ייצוא שלהם.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>יומן ביקורת משתמשים</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>מי שינה, נכנס או נדחה, לפי חשבון; סינון וייצוא.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77368,6 +77376,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>פתיחת הדף</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from עד %to מתוך %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>שם התחברות או מזהה משתמש: החשבון שבו עסק האירוע או המשתמש שביצע את הפעולה.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>חשבון</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>פעולה</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>אחרי</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>כל התוצאות</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>לפני</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>מבצע</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ניקוי</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>בוצע</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>האירועים נשמרים למשך %days ימים.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>האירועים נשמרים עד שמסירים אותם ידנית.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>אירועים</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>כל הפעולות</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>כל האירועים של חשבון זה</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ייצוא הרשימה כ־CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>נכשל</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מתאריך</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>צמצום הרשימה</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>אין אירועים תואמים.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>בעמוד</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>הרישום כבוי ב־audit.ini ([UserAuditSettings] UserAudit); הרשימה מציגה את מה שנרשם קודם לכן.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>נדחה</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>תוצאה</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>הטבלה של יומן ביקורת המשתמשים חסרה. יש ליצור אותה באמצעות php update/common/scripts/6.0/createuseraudittable.php; עד אז קובצי הביקורת שומרים כל אירוע.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>דף זה דורש מסד נתונים SQL; הוא אינו זמין ב־MongoDB. קובצי הביקורת שומרים כל אירוע.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד תאריך</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>יומן ביקורת משתמשים</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>משתמש</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>מתי</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>היכן</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>מי שינה, יצר, הפעיל, השבית, העביר או הסיר איזה חשבון, מי נכנס או נדחה, ואילו תפקידים הוקצו: שורה אחת לכל אירוע, עם השדות לפני השינוי ואחריו. סיסמאות וסודות לעולם אינם נרשמים.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>קבוצה</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>מערכת</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>לא ידוע</translation>
     </message>
 </context>
 </TS>

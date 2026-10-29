@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>บัญชีที่ไม่มีใครใช้หรือที่ควรตรวจสอบ ปิดใช้งาน ปลดล็อก หรือส่งออกบัญชีเหล่านั้น.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ล็อกการตรวจสอบผู้ใช้</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ใครเปลี่ยนแปลง เข้าสู่ระบบ หรือถูกปฏิเสธ แยกตามบัญชี; กรองและส่งออกได้.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>เปิดหน้า</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ถึง %to จาก %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ชื่อเข้าสู่ระบบหรือ ID ผู้ใช้: บัญชีที่เหตุการณ์เกี่ยวข้อง หรือผู้ใช้ที่ดำเนินการ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>บัญชี</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>การดำเนินการ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>หลัง</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ทุกผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ก่อน</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>โดย</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ล้าง</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>สำเร็จ</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>เหตุการณ์จะถูกเก็บไว้ %days วัน.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>เหตุการณ์จะถูกเก็บไว้จนกว่าจะถูกนำออกด้วยตนเอง.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>เหตุการณ์</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ทุกการดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>เหตุการณ์ทั้งหมดของบัญชีนี้</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ส่งออกรายการเป็น CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>จาก</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>กรองรายการ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ไม่มีเหตุการณ์ที่ตรงกัน.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ต่อหน้า</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>การบันทึกถูกปิดใน audit.ini ([UserAuditSettings] UserAudit); รายการแสดงสิ่งที่บันทึกไว้ก่อนหน้านี้.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ถูกปฏิเสธ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ไม่มีตารางของล็อกการตรวจสอบผู้ใช้. สร้างตารางด้วย php update/common/scripts/6.0/createuseraudittable.php; ระหว่างนี้ไฟล์การตรวจสอบจะเก็บทุกเหตุการณ์ไว้.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>หน้านี้ต้องใช้ฐานข้อมูล SQL; ไม่สามารถใช้งานบน MongoDB ได้. ไฟล์การตรวจสอบจะเก็บทุกเหตุการณ์ไว้.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ถึง</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ล็อกการตรวจสอบผู้ใช้</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ผู้ใช้</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>เมื่อ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ที่ไหน</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ใครเปลี่ยนแปลง สร้าง เปิดใช้งาน ปิดใช้งาน ย้าย หรือนำบัญชีใดออก ใครเข้าสู่ระบบหรือถูกปฏิเสธ และมีการกำหนดบทบาทใดบ้าง: หนึ่งบรรทัดต่อหนึ่งเหตุการณ์ พร้อมฟิลด์ก่อนและหลังการเปลี่ยนแปลง. รหัสผ่านและข้อมูลลับจะไม่ถูกบันทึกเลย.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>กลุ่ม</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ระบบ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ไม่ทราบ</translation>
     </message>
 </context>
 </TS>

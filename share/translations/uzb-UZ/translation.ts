@@ -15295,6 +15295,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Hech kim ishlatmaydigan yoki koʻrib chiqishni talab qiladigan hisoblar; ularni oʻchirib qoʻying, blokdan chiqaring yoki eksport qiling.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Foydalanuvchilar audit jurnali</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kim oʻzgartirgan, tizimga kirgan yoki rad etilgan, har bir hisob boʻyicha; filtrlash va eksport qilish.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Open the page</source>
         <translation>Sahifani ochish</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to, jami %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Login nomi yoki foydalanuvchi ID: hodisa tegishli boʻlgan hisob yoki amalni bajargan foydalanuvchi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hisob</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Amal</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Keyin</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Har qanday natija</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Oldin</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Bajaruvchi</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Tozalash</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Bajarildi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Hodisalar %days kun saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Hodisalar qoʻlda olib tashlanmaguncha saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hodisalar</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Har qanday amal</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Bu hisobning barcha hodisalari</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Roʻyxatni CSV sifatida eksport qilish (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Boshlanish</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Roʻyxatni toraytirish</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Mos hodisa yoʻq.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Har bir sahifada</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini faylida yozib olish oʻchirilgan ([UserAuditSettings] UserAudit); roʻyxat avval yozib olinganlarni koʻrsatadi.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rad etildi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natija</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Koʻrsatish</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Foydalanuvchilar audit jurnali jadvali mavjud emas. Uni php update/common/scripts/6.0/createuseraudittable.php bilan yarating; ungacha audit fayllari har bir hodisani saqlaydi.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Bu sahifa SQL maʼlumotlar bazasini talab qiladi; MongoDB bilan u mavjud emas. Audit fayllari har bir hodisani saqlaydi.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gacha</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Foydalanuvchilar audit jurnali</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Foydalanuvchi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Qachon</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Qayerda</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kim qaysi hisobni oʻzgartirgan, yaratgan, yoqqan, oʻchirib qoʻygan, koʻchirgan yoki olib tashlagan, kim tizimga kirgan yoki rad etilgan va qaysi rollar tayinlangan: har bir hodisa uchun bitta qator, oldingi va keyingi maydonlar bilan. Parollar va maxfiy maʼlumotlar hech qachon yozib olinmaydi.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>guruh</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>tizim</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nomaʼlum</translation>
     </message>
 </context>
 </TS>

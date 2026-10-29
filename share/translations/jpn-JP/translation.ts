@@ -15238,6 +15238,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>誰も使用していないアカウントや確認が必要なアカウント。無効化、ロック解除、エクスポートができます。</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ユーザー監査ログ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>アカウントごとに、変更した人、ログインした人、拒否された人を確認できます。フィルターとエクスポートも可能です。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ページを開く</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count 件中 %from–%to 件</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>ユーザー名またはユーザー ID：イベントの対象となったアカウント、または操作を行ったユーザー。</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>アカウント</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>変更後</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>すべての結果</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>変更前</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>実行者</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>クリア</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>イベントは %days 日間保存されます。</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>イベントは手動で削除されるまで保存されます。</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>イベント</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>すべての操作</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>このアカウントのすべてのイベント</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>一覧を CSV でエクスポート（%count）</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>開始日時</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>一覧の絞り込み</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>一致するイベントはありません。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>1 ページの表示件数</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini で記録が無効になっています（[UserAuditSettings] UserAudit）。一覧には以前に記録された内容が表示されます。</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>拒否</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>ユーザー監査ログのテーブルがありません。php update/common/scripts/6.0/createuseraudittable.php で作成してください。それまでは、監査ファイルにすべてのイベントが保存されます。</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>このページには SQL データベースが必要です。MongoDB では利用できません。監査ファイルにはすべてのイベントが保存されます。</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>終了日時</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>ユーザー監査ログ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ユーザー</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>日時</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>場所</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>誰がどのアカウントを変更、作成、有効化、無効化、移動、または削除したか、誰がログインしたか拒否されたか、どのロールが割り当てられたか：イベントごとに 1 行、変更前と変更後のフィールド付きで記録されます。パスワードとシークレットが記録されることはありません。</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>グループ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>システム</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>不明</translation>
     </message>
 </context>
 </TS>

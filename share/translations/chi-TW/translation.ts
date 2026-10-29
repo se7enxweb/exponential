@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>無人使用或需要留意的帳號；可停用、解除鎖定或匯出。</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>使用者稽核日誌</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>依帳號查看誰做了變更、誰登入或遭拒絕；可篩選及匯出。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>開啟頁面</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>第 %from–%to 筆，共 %count 筆</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>使用者名稱或使用者 ID：事件所涉及的帳號，或執行動作的使用者。</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>帳號</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>之後</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>所有結果</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>之前</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>執行者</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>清除</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>已完成</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>事件保留 %days 天。</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>事件會一直保留，直到手動移除為止。</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>事件</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>所有動作</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>此帳號的所有事件</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>將清單匯出為 CSV（%count）</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>從</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>縮小清單範圍</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>沒有符合的事件。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>每頁</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>已在 audit.ini 中關閉記錄（[UserAuditSettings] UserAudit）；清單顯示的是先前記錄的內容。</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>已拒絕</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>使用者稽核日誌的資料表不存在。請使用 php update/common/scripts/6.0/createuseraudittable.php 建立；在此之前，稽核檔案會保留每個事件。</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>此頁面需要 SQL 資料庫，在 MongoDB 上無法使用。稽核檔案會保留每個事件。</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>至</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>使用者稽核日誌</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>使用者</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>誰變更、建立、啟用、停用、移動或移除了哪個帳號，誰登入或遭拒絕，以及指派了哪些角色：每個事件一行，並列出變更前後的欄位。密碼與祕密絕不會被記錄。</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>群組</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>系統</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>未知</translation>
     </message>
 </context>
 </TS>

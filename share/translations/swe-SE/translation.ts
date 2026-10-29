@@ -15738,6 +15738,14 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konton som ingen använder eller som behöver ses över; inaktivera, lås upp eller exportera dem.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Granskningslogg för användare</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Vem som ändrade, loggade in eller nekades, per konto; filtrera och exportera.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -78639,6 +78647,153 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Open the page</source>
         <translation>Öppna sidan</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from till %to av %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ett inloggningsnamn eller ett användar-ID: kontot som händelsen gällde eller användaren som agerade.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Åtgärd</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Efter</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Alla resultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Före</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Utförd av</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Rensa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Genomförd</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Händelser sparas i %days dagar.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Händelser sparas tills de tas bort manuellt.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Händelser</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Alla åtgärder</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Alla händelser för det här kontot</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportera listan som CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misslyckades</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Från</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Begränsa listan</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Inga händelser matchar.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per sida</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registreringen är avstängd i audit.ini ([UserAuditSettings] UserAudit); listan visar det som registrerades tidigare.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nekad</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Visa</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabellen för granskningsloggen för användare saknas. Skapa den med php update/common/scripts/6.0/createuseraudittable.php; till dess behåller granskningsfilerna alla händelser.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Den här sidan kräver en SQL-databas; den är inte tillgänglig med MongoDB. Granskningsfilerna behåller alla händelser.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Till</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Granskningslogg för användare</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Användare</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>När</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Var</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Vem som ändrade, skapade, aktiverade, inaktiverade, flyttade eller tog bort vilket konto, vem som loggade in eller nekades och vilka roller som tilldelades: en rad per händelse, med fälten före och efter. Lösenord och hemligheter registreras aldrig.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupp</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systemet</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>okänd</translation>
     </message>
 </context>
 </TS>

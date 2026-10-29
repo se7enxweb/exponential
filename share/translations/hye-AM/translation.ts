@@ -15295,6 +15295,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Հաշիվներ, որոնք ոչ ոք չի օգտագործում կամ որոնց պետք է հայացք նետել. անջատեք, ապաարգելափակեք կամ արտահանեք դրանք։</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Օգտատերերի աուդիտի մատյան</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ով է փոփոխել, մուտք գործել կամ մերժվել՝ ըստ հաշիվների, զտման և արտահանման հնարավորությամբ։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Բացել էջը</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, ընդամենը %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Մուտքանուն կամ օգտատիրոջ ID՝ այն հաշիվը, որին վերաբերում էր իրադարձությունը, կամ գործողությունը կատարած օգտատերը։</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Հաշիվ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Գործողություն</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Հետո</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ցանկացած արդյունք</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Մինչև</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Կատարող</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Մաքրել</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Կատարված</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Իրադարձությունները պահվում են %days օր։</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Իրադարձությունները պահվում են, մինչև դրանք ձեռքով հեռացվեն։</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Իրադարձություններ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Բոլոր գործողությունները</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Այս հաշվի բոլոր իրադարձությունները</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Արտահանել ցանկը CSV ձևաչափով (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ձախողված</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Սկսած</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Նեղացնել ցանկը</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Համապատասխան իրադարձություն չկա։</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Մեկ էջում</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Գրանցումն անջատված է audit.ini ֆայլում ([UserAuditSettings] UserAudit), ցանկը ցույց է տալիս նախկինում գրանցվածը։</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Մերժված</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Արդյունք</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ցուցադրել</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Օգտատերերի աուդիտի մատյանի աղյուսակը բացակայում է։ Ստեղծեք այն php update/common/scripts/6.0/createuseraudittable.php հրամանով, մինչ այդ աուդիտի ֆայլերը պահում են յուրաքանչյուր իրադարձություն։</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Այս էջին անհրաժեշտ է SQL տվյալների բազա, MongoDB համակարգում այն հասանելի չէ։ Աուդիտի ֆայլերը պահում են յուրաքանչյուր իրադարձություն։</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Մինչև</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Օգտատերերի աուդիտի մատյան</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Օգտատեր</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Երբ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Որտեղ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ով է փոփոխել, ստեղծել, միացրել, անջատել, տեղափոխել կամ հեռացրել որ հաշիվը, ով է մուտք գործել կամ մերժվել, և որ դերերն են նշանակվել՝ մեկ տող յուրաքանչյուր իրադարձության համար, դաշտերի նախկին և նոր արժեքներով։ Գաղտնաբառերը և գաղտնիքները երբեք չեն գրանցվում։</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>խումբ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>համակարգ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>անհայտ</translation>
     </message>
 </context>
 </TS>

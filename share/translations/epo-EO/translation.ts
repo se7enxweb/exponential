@@ -15295,6 +15295,14 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontoj, kiujn neniu uzas aŭ kiuj bezonas rigardon; malŝalti, malŝlosi aŭ eksporti ilin.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kontrola protokolo de uzantoj</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kiu ŝanĝis, ensalutis aŭ estis rifuzita, laŭ konto; filtri kaj eksporti.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Open the page</source>
         <translation>Malfermi la paĝon</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ĝis %to el %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Salutnomo aŭ uzant-identigilo: la konto, pri kiu temis la evento, aŭ la uzanto, kiu agis.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ago</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Poste</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ajna rezulto</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Antaŭe</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Fare de</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Malplenigi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Farita</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Eventoj estas konservataj dum %days tagoj.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Eventoj estas konservataj, ĝis oni forigas ilin permane.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventoj</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ĉiu ago</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ĉiuj eventoj de ĉi tiu konto</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksporti la liston kiel CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Malsukcesa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Malvastigi la liston</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Neniu evento kongruas.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po paĝo</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registrado estas malŝaltita en audit.ini ([UserAuditSettings] UserAudit); la listo montras tion, kio estis registrita antaŭe.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifuzita</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezulto</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Mankas la tabelo de la kontrola protokolo de uzantoj. Kreu ĝin per php update/common/scripts/6.0/createuseraudittable.php; ĝis tiam la kontrolaj dosieroj konservas ĉiun eventon.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ĉi tiu paĝo bezonas SQL-datumbazon; ĝi ne disponeblas ĉe MongoDB. La kontrolaj dosieroj konservas ĉiun eventon.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ĝis</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kontrola protokolo de uzantoj</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Uzanto</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kiam</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kie</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kiu ŝanĝis, kreis, ŝaltis, malŝaltis, movis aŭ forigis kiun konton, kiu ensalutis aŭ estis rifuzita kaj kiuj roloj estis atribuitaj: unu linio por ĉiu evento, kun la kampoj antaŭe kaj poste. Pasvortoj kaj sekretoj neniam estas registrataj.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistemo</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nekonata</translation>
     </message>
 </context>
 </TS>

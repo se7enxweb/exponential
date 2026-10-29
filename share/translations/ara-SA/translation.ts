@@ -15238,6 +15238,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>الحسابات التي لا يستخدمها أحد أو التي تحتاج إلى نظرة؛ عطّلها أو ألغِ قفلها أو صدّرها.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>سجل تدقيق المستخدمين</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>من غيّر أو سجّل الدخول أو رُفض، لكل حساب؛ مع التصفية والتصدير.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>فتح الصفحة</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from إلى %to من %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>اسم مستخدم أو معرّف مستخدم: الحساب الذي يخصه الحدث أو المستخدم الذي نفّذ الإجراء.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>الحساب</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>الإجراء</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>بعد</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>أي نتيجة</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>قبل</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>المنفّذ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>مسح</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تم</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>مدة الاحتفاظ بالأحداث بالأيام: %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>يُحتفظ بالأحداث إلى أن تُزال يدويًا.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>الأحداث</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>كل الإجراءات</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>كل أحداث هذا الحساب</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>تصدير القائمة بصيغة CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>من</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>تضييق القائمة</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>لا يوجد حدث مطابق.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>لكل صفحة</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>التسجيل متوقف في audit.ini ([UserAuditSettings] UserAudit)؛ تعرض القائمة ما سُجّل من قبل.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>جدول سجل تدقيق المستخدمين غير موجود. أنشئه باستخدام php update/common/scripts/6.0/createuseraudittable.php؛ وحتى ذلك الحين تحتفظ ملفات التدقيق بكل حدث.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>تحتاج هذه الصفحة إلى قاعدة بيانات SQL؛ وهي غير متاحة مع MongoDB. تحتفظ ملفات التدقيق بكل حدث.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>إلى</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>سجل تدقيق المستخدمين</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>المستخدم</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>الوقت</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>المكان</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>من غيّر أي حساب أو أنشأه أو فعّله أو عطّله أو نقله أو أزاله، ومن سجّل الدخول أو رُفض، وأي الأدوار أُسندت: سطر واحد لكل حدث، مع قيم الحقول قبل التغيير وبعده. لا تُسجَّل كلمات المرور والأسرار أبدًا.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>مجموعة</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>النظام</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>غير معروف</translation>
     </message>
 </context>
 </TS>

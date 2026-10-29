@@ -15295,6 +15295,14 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kont yu kenn jëfandikoowul walla yu soxla ñu xool leen; fey leen, ubbi leen walla génne leen.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Téereb saytu jëfandikukat yi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ku soppi, ku dugg walla ku ñu gàntal, ci kont bu nekk; sef ak génne.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77336,6 +77344,153 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>Open the page</source>
         <translation>Ubbil xët wi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ba %to ci %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Turu duggu walla ID jëfandikukat: kont bi xew-xew bi jëm walla jëfandikukat bi def jëf ji.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Jëf</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Gannaaw</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Njureel bu nekk</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Balaa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ki ko def</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Setal</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Antu na</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Xew-xew yi dañu leen di denc %days fan.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Xew-xew yi dañu leen di denc ba kenn far leen ak loxo.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Xew-xew yi</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Jëf bu nekk</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Xew-xew yépp yu kont bii</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Génne lim bi ni CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fakkastalu na</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dale</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Wàññi lim bi</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Amul benn xew-xew bu dëppoo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ci xët</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Bind gi dañu ko fey ci audit.ini ([UserAuditSettings] UserAudit); lim bi dafay wone li ñu bindoon balaa.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Dañu ko gàntal</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njureel</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wone</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tablo téereb saytu jëfandikukat yi amul. Sosal ko ak php update/common/scripts/6.0/createuseraudittable.php; ba ci kanam, fisie saytu yi dañuy denc xew-xew bu nekk.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Xët wii dafa soxla dénkukaayu done SQL; amul ci MongoDB. Fisie saytu yi dañuy denc xew-xew bu nekk.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ba</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Téereb saytu jëfandikukat yi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Jëfandikukat</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kañ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ku soppi, sos, taal, fey, toxal walla far ban kont, ku dugg walla ku ñu gàntal, ak ban wàll lañu jox: benn rëdd ci xew-xew bu nekk, ak tool yi balaa ak gannaaw. Baatu jàll yi ak kumpa yi duñu leen mukk bind.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>mbooloo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>xamuñu ko</translation>
     </message>
 </context>
 </TS>

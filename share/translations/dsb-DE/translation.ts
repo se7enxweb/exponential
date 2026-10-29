@@ -15238,6 +15238,14 @@ Pokazka: pakety se njewótinstalěruju.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konta, kótarež nichten njewužywa abo kótarež trjebaju pśeglědanje; znjemóžniś, wótwóriś abo eksportěrowaś.</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditowy protokol wužywarjow</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Chto jo změnił, se pśizjawił abo jo był wótpokazany, pó kontach; filtrowaś a eksportěrowaś.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77366,6 +77374,153 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Open the page</source>
         <translation>Bok wócyniś</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from až %to z %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Pśizjawjeńske mě abo ID wužywarja: konto, wó kótarež se w tšojenju jadnašo, abo wužywaŕ, kótaryž jo jadnał.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcija</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pó tom</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Kuždy wuslědk</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pjerwjej</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wót</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wuprozniś</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wuspěšny</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Tšojenja se %days dnjow wobchowaju.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Tšojenja se wobchowaju, daniž se z ruku njewótwónoźeju.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tšojenja</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kužda akcija</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Wšykne tšojenja togo konta</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lisćinu ako CSV eksportěrowaś (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njewuspěšny</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Wót</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lisćinu wobgranicowaś</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Žedne tšojenje njepasujo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na bok</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Zapisowanje jo w audit.ini wótšaltowane ([UserAuditSettings] UserAudit); lisćina pokazujo, což jo se pjerwjej zapisało.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wótpokazany</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wuslědk</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazaś</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabela auditowego protokola wužywarjow felujo. Napórajśo ju z php update/common/scripts/6.0/createuseraudittable.php; až do togo wobchowaju auditowe dataje kužde tšojenje.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Toś ten bok trjeba SQL-datowu banku; z MongoDB njejo k dispoziciji. Auditowe dataje wobchowaju kužde tšojenje.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditowy protokol wužywarjow</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Wužywaŕ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cas</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Źo</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Chto jo kótare konto změnił, napórał, zmóžnił, znjemóžnił, pśesunuł abo wótpórał, chto jo se pśizjawił abo jo był wótpokazany a kótare role su se pśipokazali: jadna smužka na tšojenje, z pólami pjerwjej a pó tom. Gronidła a pótajmstwa se nigda njezapisuju.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>kupka</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>pśez system</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>njeznaty</translation>
     </message>
 </context>
 </TS>

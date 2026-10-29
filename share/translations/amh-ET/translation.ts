@@ -15293,6 +15293,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ማንም የማይጠቀምባቸው ወይም ትኩረት የሚያስፈልጋቸው መለያዎች፤ ያሰናክሏቸው፣ ይክፈቱ ወይም ይላኳቸው።</translation>
     </message>
+    <message>
+        <source>User audit log</source>
+        <translation>የተጠቃሚ ኦዲት ምዝግብ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ማን እንደቀየረ፣ እንደገባ ወይም ውድቅ እንደተደረገ በእያንዳንዱ መለያ፤ ማጣራት እና መላክ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -77334,6 +77342,153 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>ገጹን ክፈት</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from እስከ %to ከ %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>የተጠቃሚ ስም ወይም የተጠቃሚ መታወቂያ፦ ክስተቱ የሚመለከተው መለያ ወይም እርምጃውን የወሰደው ተጠቃሚ።</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>መለያ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>እርምጃ</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>በኋላ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ማንኛውም ውጤት</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>በፊት</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ፈጻሚ</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>አጽዳ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ተከናውኗል</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ክስተቶች ለ %days ቀናት ይቀመጣሉ።</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ክስተቶች በእጅ እስኪወገዱ ድረስ ይቀመጣሉ።</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ክስተቶች</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ማንኛውም እርምጃ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>የዚህ መለያ ሁሉም ክስተቶች</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>ዝርዝሩን እንደ CSV ላክ (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>አልተሳካም</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ከ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>ዝርዝሩን አጥብብ</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ምንም ተዛማጅ ክስተት የለም።</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>በአንድ ገጽ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>መመዝገብ በ audit.ini ውስጥ ጠፍቷል ([UserAuditSettings] UserAudit)፤ ዝርዝሩ ከዚህ በፊት የተመዘገበውን ያሳያል።</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ውድቅ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጤት</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>አሳይ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>የተጠቃሚ ኦዲት ምዝግብ ሰንጠረዥ የለም። በ php update/common/scripts/6.0/createuseraudittable.php ይፍጠሩት፤ እስከዚያ ድረስ የኦዲት ፋይሎቹ እያንዳንዱን ክስተት ይይዛሉ።</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ይህ ገጽ የ SQL የውሂብ ጎታ ያስፈልገዋል፤ በ MongoDB ላይ አይገኝም። የኦዲት ፋይሎቹ እያንዳንዱን ክስተት ይይዛሉ።</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>እስከ</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>የተጠቃሚ ኦዲት ምዝግብ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>መቼ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>የት</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ማን የትኛውን መለያ እንደቀየረ፣ እንደፈጠረ፣ እንዳነቃ፣ እንዳሰናከለ፣ እንዳዛወረ ወይም እንዳስወገደ፣ ማን እንደገባ ወይም ውድቅ እንደተደረገ፣ እና የትኞቹ ሚናዎች እንደተመደቡ፦ ለእያንዳንዱ ክስተት አንድ መስመር፣ ከለውጡ በፊት እና በኋላ ካሉት መስኮች ጋር። የይለፍ ቃላት እና ሚስጥሮች በጭራሽ አይመዘገቡም።</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ቡድን</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ሲስተም</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ያልታወቀ</translation>
     </message>
 </context>
 </TS>
