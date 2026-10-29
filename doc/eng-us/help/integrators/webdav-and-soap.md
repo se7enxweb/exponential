@@ -4,13 +4,13 @@ audience: integrator, developer, admin
 category: integration
 order: 120
 summary: The two older protocols Exponential still speaks - WebDAV for mounting content as a drive, and a SOAP 1.1 server that extensions add functions to - how to switch each on, how they authenticate, their known gaps, and when to use them in a new integration.
-keywords: WebDAV, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, SOAP, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
+keywords: WebDAV, index_webdav.php, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, SOAP, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
 type: help
 ---
 # WebDAV and SOAP
 
 This page is for integrators who meet a requirement such as "editors save files from their desktop into the site" or
-"our middleware speaks SOAP". Exponential ships a WebDAV server (`webdav.php`) and a SOAP 1.1 server (`soap.php`).
+"our middleware speaks SOAP". Exponential ships a WebDAV server (`index_webdav.php`) and a SOAP 1.1 server (`soap.php`).
 Both are **off by default**, both have known gaps, and both are worth considering only when the other side cannot use
 something newer. Their status against the standards is in
 [API and protocol standards](../../standards/apis-and-protocols.md#webdav-rfc-4918).
@@ -24,7 +24,12 @@ something newer. Their status against the standards is in
 
 ## WebDAV
 
-The entry point is `webdav.php` at the installation root. It runs the Zeta Components WebDAV server
+> **Important: the entry script was renamed in 6.0.15**
+> The WebDAV server is `index_webdav.php` (it was `webdav.php` until 6.0.14). `webdav.php` only forwards to it,
+> writes a warning once a day, and will be removed in a later major version. Change your virtual host (HTTP **and**
+> HTTPS) and rewrite rules, then test them: [The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md).
+
+The entry point is `index_webdav.php` at the installation root. It runs the Zeta Components WebDAV server
 (`zetacomponents/webdav ~1.2`) with the content backend `kernel/private/classes/webdav/ezwebdavcontentbackend.php` and
 basic authentication against Exponential users (`ezwebdavcontentbackendauth.php`).
 
@@ -50,8 +55,13 @@ FolderClasses[]=folder
 | Known gaps | Locking (class 2) is incomplete: the lock authorizer's methods are empty; whether LOCK and UNLOCK work with real clients is unverified. The regression recordings are not run by CI |
 
 > **Note**
-> Your web server must send WebDAV requests to `webdav.php` (a rewrite rule or a separate virtual host). Test with the
-> client your customer will really use before promising it; desktop clients differ in how they handle locks.
+> Your web server must send WebDAV requests to `index_webdav.php`: on the main host a rule such as
+> `RewriteRule ^index_webdav\.php - [L]` (shipped commented out in `.htaccess_root`), or a separate virtual host such as
+> `webdav.example.com` that sends every request to it. The rules for Apache, Plesk, nginx and IIS, and a test with
+> `curl -X PROPFIND` (expect `207 Multi-Status`), are on
+> [the change page](../../bc/6.0/webdav-entry-script-index-webdav.md). Velocity does not serve WebDAV; use Apache or
+> nginx with PHP-FPM for it. Test with the client your customer will really use before promising it; desktop clients
+> differ in how they handle locks.
 
 ### Permissions (since 6.0.15)
 

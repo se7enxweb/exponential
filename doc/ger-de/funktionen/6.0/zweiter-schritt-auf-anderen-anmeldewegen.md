@@ -41,7 +41,7 @@ Weg aufgeführt ist.
 | Weg | Passwort allein, Konto braucht einen zweiten Schritt | Was anmeldet |
 |---|---|---|
 | REST, `AuthenticationStyle=ezpRestBasicAuthStyle` | `401` mit `WWW-Authenticate: Basic realm="Exponential REST"` und `{"error":"second_factor_required","error_description":"..."}`; `403` mit `second_factor_setup_required`, solange das Konto noch keinen zweiten Schritt hat | ein App-Passwort (für `rest`) als Passwort; ein persönlicher API-Schlüssel (`Authorization: Bearer expk_...`); ein OAuth-Token |
-| WebDAV (`webdav.php`) | `401` mit dem `WWW-Authenticate` des Servers und dem Grund in `X-Exp-Sign-In-Refused` | ein App-Passwort (für `webdav`) als Passwort |
+| WebDAV (`index_webdav.php`, früher `webdav.php`) | `401` mit dem `WWW-Authenticate` des Servers und dem Grund in `X-Exp-Sign-In-Refused` | ein App-Passwort (für `webdav`) als Passwort |
 | SOAP (`soap.php`) | `401` (`403` bei `second_factor_setup_required`) mit `WWW-Authenticate: Basic realm="Exponential SOAP"`, `X-Exp-Sign-In-Refused` und einem SOAP-Fault (`faultcode` `SOAP-ENV:Client`, `<detail><reason>`) | ein App-Passwort (für `soap`) als Passwort |
 | expservices `expsession::login` | `{"ok":false,"error":{"code":401,"message":"...","reason":"second_factor_required"}}` | Benutzername, Passwort und `otp` (der Code der App) |
 

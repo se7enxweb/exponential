@@ -19,6 +19,6 @@ Every class, interface and trait of `kernel/private/classes/webdav` with the pat
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
-| `expWebDAVPathFactory` | class extends ezcWebdavAutomaticPathFactory | [Factory and static factory methods](factory.md) | `kernel/private/classes/webdav/expwebdavpathfactory.php:19` | The path factory of webdav.php: paths inside the server are plain (decoded) text, URIs are encoded. |
+| `expWebDAVPathFactory` | class extends ezcWebdavAutomaticPathFactory | [Factory and static factory methods](factory.md) | `kernel/private/classes/webdav/expwebdavpathfactory.php:19` | The path factory of index_webdav.php: paths inside the server are plain (decoded) text, URIs are encoded. |
 | `eZWebDAVContentBackend` | class extends ezcWebdavSimpleBackend implements ezcWebdavLockBackend | [Strategy / handler](strategy-handler.md) | `kernel/private/classes/webdav/ezwebdavcontentbackend.php:30` | WebDAV backend for Exponential, based on eZ Components Webdav component. |
 | `eZWebDAVContentBackendAuth` | class implements ezcWebdavAnonymousAuthenticator, ezcWebdavBasicAuthenticator, ezcWebdavAuthorizer, ezcWebdavLockAuthorizer | – | `kernel/private/classes/webdav/ezwebdavcontentbackendauth.php:22` | Basic authentication for WebDAV. |

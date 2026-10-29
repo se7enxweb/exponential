@@ -66,6 +66,12 @@ tragen. Führen Sie dieselben Anfragen gegen Ihren eigenen Server mit den Befehl
   Beispielen für Apache und nginx tun; Caddy, FrankenPHP und die Engine `qbix` von Velocity beantworten
   ACME-Challenges selbst.
 
+**WebDAV** wird von keinem dieser Beispiele weitergeleitet: Es ist standardmäßig aus. Seit 6.0.15 ist sein
+Einstiegsskript `index_webdav.php` (`webdav.php` leitet bis zu einer späteren Hauptversion nur dorthin weiter). Um es
+auszuliefern, fügen Sie auf Apache, nginx oder IIS eine Regel für `index_webdav.php` hinzu oder richten einen eigenen
+WebDAV-Host ein; Velocity, Caddy und FrankenPHP führen es nicht aus. Regeln vorher/nachher für jeden Server und wie Sie
+sie testen: [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md).
+
 ## Ebenfalls in diesem Verzeichnis
 
 - [`../staticcache_offload.conf`](../../../eng-us/examples/staticcache_offload.conf): Apache-Regeln, die eine vom

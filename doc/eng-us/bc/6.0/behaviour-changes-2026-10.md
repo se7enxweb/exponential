@@ -125,8 +125,18 @@ See [SOAP calls over HTTPS](../../features/6.0/soap-client-tls.md).
 | With the MySQLi cluster backend (`eZDFSFileHandlerMySQLiBackend`) on PHP 8.1 and later, a cache file another process is generating is waited for again instead of generated a second time: `startCacheGeneration()` returns the remaining generation time and a timed-out generation is taken over. A failed `SELECT ... FOR UPDATE` at the end of a generation rolls back and reports failure instead of a `TypeError`. | Clustered sites under load: fewer duplicate generations of the same view cache. | Nothing. |
 | The tests of the group `database` run on throwaway MySQL/MariaDB databases `exp_test_<pid>_<hex>` and the live tests use `EXP_TEST_SITEACCESS` or `DefaultAccess` (they used `admin`). `tests/runtests.php --db-per-test --dsn=…` empties only a database with `test`, `tests` or `testdb` as a word of its name. | `vendor/bin/phpunit --group database` without an account with `CREATE` and `DROP` on `exp\_test\_%` skips with the reason. | For the test runs: `EXP_TEST_DB_USER` and `EXP_TEST_DB_PASSWORD`, see [TESTING.md](love/TESTING.md). |
 
+## The WebDAV entry script is index_webdav.php (29 October 2026)
+
+> **Change your vhost and rewrite rules.** Full before/after rules for Apache, Plesk, nginx and IIS, and the test
+> procedure: [The WebDAV entry script is now index_webdav.php](webdav-entry-script-index-webdav.md).
+
+| Change | How to check | What to do |
+|---|---|---|
+| The WebDAV server is `index_webdav.php`, named like `index_rest.php`, `index_treemenu.php` and `index_cluster.php`. `webdav.php` only includes it, writes one warning a day to `warning.log`, and will be removed in a later major version. `.htaccess_root` and `.htaccess_root_static` carry a commented rule `#RewriteRule ^index_webdav\.php - [L]`. | `grep -rn 'webdav\.php'` over the virtual hosts (HTTP **and** HTTPS), `.htaccess`, Plesk's additional directives, nginx and IIS configurations; `grep 'old name of the WebDAV entry script' var/log/warning.log`. | Name `index_webdav.php` in every rule (`RewriteRule`, nginx `location` and `fastcgi_param SCRIPT_FILENAME`, IIS rules, allowlists of root scripts), then test: `curl -i -X OPTIONS` (`DAV: 1`) and `curl -i -X PROPFIND -H 'Depth: 1'` (`207 Multi-Status`) against `/index_webdav.php/`. Clients mounted at `/webdav.php/...` keep working through the shim; mount them again at `/index_webdav.php/...`. WebDAV still never asks for a second sign-in step by default. |
+
 ## Related pages
 
+- [The WebDAV entry script is now index_webdav.php](webdav-entry-script-index-webdav.md)
 - [October 2026 chronicle](../../history/2026/2026-10.md)
 - [Behaviour changes of 16 to 30 September 2026](behaviour-changes-2026-09b.md)
 - [Behaviour changes of July and August 2026](behaviour-changes-2026-07-08.md)

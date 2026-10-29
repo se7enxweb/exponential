@@ -83,6 +83,9 @@ Was auch immer die Website ausliefert, es gelten dieselben Regeln
   setzen dieselbe Liste Regel für Regel um.
 - Keine PHP-Datei läuft, weil ihr Pfad angefragt wurde, außer den Front-Controllern in der Wurzel (`index.php`, `index_rest.php`,
   `index_treemenu.php`).
+- WebDAV braucht, wenn Sie es einschalten, eine eigene Regel für `index_webdav.php` (sein Name seit 6.0.15; `webdav.php`
+  leitet bis zu einer späteren Hauptversion nur dorthin weiter) auf Apache, nginx oder IIS, auch im HTTPS-Host.
+  Velocity liefert es nicht aus. Siehe [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../../bc/6.0/webdav-einstiegsskript-index-webdav.md).
 - Nur aufgeführte Asset-Pfade werden als Dateien gesendet; `settings/site.ini`, die SQLite-Datenbank oder eine Quelldatei des Kernels,
   die per Pfad angefragt werden, erreichen `index.php`, nie die Datei.
 - Der Benutzer, der PHP ausführt, muss `var/` und die Verzeichnisse unter `settings/` schreiben können, und **ein** Benutzer (oder eine

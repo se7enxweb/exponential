@@ -109,6 +109,12 @@ RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
+# WebDAV (settings/webdav.ini [GeneralSettings] EnableWebDAV=true): the server is
+# index_webdav.php, reached as https://www.example.com/index_webdav.php/<siteaccess>/.
+# Uncomment to let it answer on this host, or give it a host of its own that sends
+# every request to index_webdav.php. webdav.php, its old name, only forwards to it
+# and will be removed in a later major version: name index_webdav.php in new rules.
+#RewriteRule ^index_webdav\.php - [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 # SVG images are sanitized on upload; served from the storage they also run
 # nothing and load nothing when opened directly (needs mod_headers).
@@ -236,6 +242,7 @@ RewriteRule .* index.php
 | `RewriteCond %{REQUEST_FILENAME} -f` + `RewriteRule ^.+/[^/]+\.(php[0-9]?\|phtml\|phar)$ - [R=404,L]` | ein vorhandenes Skript unterhalb des Wurzelverzeichnisses beantwortet 404 | keine Bibliothek, kein Installer, keine Paketeinstellung und kein verirrtes Skript wird ausgeführt, nur weil sein Pfad angefragt wurde; nur die Front-Controller im Wurzelverzeichnis laufen |
 | `RewriteRule ^api/ index_rest.php [L]`, `^index_rest\.php - [L]` | die REST-API | `index_rest.php` ist der REST-Front-Controller |
 | `RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]` | das Baummenü der Administration, mit oder ohne vorangestellten Siteaccess | ein schlanker Front-Controller für das JSON des Baums |
+| `#RewriteRule ^index_webdav\.php - [L]` (auskommentiert) | WebDAV auf diesem Host, sobald einkommentiert | `index_webdav.php` ist seit 6.0.15 der WebDAV-Server; `webdav.php` leitet nur dorthin weiter ([was zu ändern ist](../../bc/6.0/webdav-einstiegsskript-index-webdav.md)) |
 | `^var/([^/]+/)?storage/images(-versioned)?/.*` | gespeicherte Bildvarianten werden als Datei gesendet | Bilder in Inhalten |
 | der Block `<FilesMatch "(?i)\.svgz?$">` | ein SVG wird mit `Content-Security-Policy: sandbox ...` gesendet | ein direkt geöffnetes SVG führt nichts aus und lädt nichts |
 | `^var/([^/]+/)?storage/pdf/...\.pdf$` | gespeicherte PDF-Exporte | Setup > PDF-Export |

@@ -205,6 +205,15 @@ locations of the 443 server). nginx passes every request header to PHP (`X-Forwa
 `site.ini [HTTPHeaderSettings] TrustedProxies[]`
 ([chapter 8, section 8.8](../../install/08-serving-the-site.md#88-behind-a-reverse-proxy)).
 
+## WebDAV
+
+This file does not route WebDAV (off by default). To serve it, add a `location ^~ /index_webdav.php` before the
+catch-all, with `fastcgi_param SCRIPT_FILENAME $document_root/index_webdav.php` and `SCRIPT_NAME /index_webdav.php`,
+or a `server` of its own for a WebDAV host. Since 6.0.15 the script is `index_webdav.php`; a block written for
+`webdav.php` keeps working through a forwarding shim until a later major version, but change **both** the `location`
+and `SCRIPT_FILENAME`. Before/after and the test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`):
+[The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md#nginx).
+
 ## Check it
 
 ```bash

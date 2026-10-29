@@ -33,7 +33,7 @@ zur Installation statt zum Code gehören.
 | `index_cluster.php` | die Auslieferung geclusterter Binärdateien |
 | `bin/php/*.php` | Kommandozeilenskripte; ein Dispatcher, `bin/php/console`, führt sie alle als `exp:<name>` aus |
 | `runcronjobs.php` | Cronjob-Teile (`php runcronjobs.php frequent`) |
-| `soap.php`, `webdav.php` | die SOAP- und WebDAV-Server |
+| `soap.php`, `index_webdav.php` | die SOAP- und WebDAV-Server (`webdav.php` leitet nur an `index_webdav.php` weiter, [bis zu einer späteren Hauptversion](../../bc/6.0/webdav-einstiegsskript-index-webdav.md)) |
 
 Jeder PHP-Einstiegspunkt beginnt mit `autoload.php`. Es definiert `EXP_ROOT_DIR` (das Wurzelverzeichnis der Installation,
 ein absoluter Pfad), lädt unter PHP älter als 8.1 `lib/phpcompat.php`, entscheidet über das Engine-Archiv und registriert

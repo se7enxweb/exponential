@@ -4,7 +4,7 @@ audience: editor
 category: manual
 order: 498
 summary: Wo ein Administrator WebDAV eingeschaltet hat, verbinden Sie Ihren Dateimanager mit Ihrem gewohnten Konto mit der WebDAV-Adresse der Website; Ordner sind Elemente, hineingezogene Dateien erzeugen Elemente, das Speichern einer gleichnamigen Datei erzeugt eine neue Version, und Löschen schickt Elemente in den Papierkorb.
-keywords: WebDAV, Netzlaufwerk, Dateimanager, viele Dateien hochladen, Ziehen und Ablegen, neue Version, Papierkorb, einbinden, webdav.php, Content, Media, siteaccess, network drive, file manager, upload many files, drag and drop, new version, trash, mount
+keywords: WebDAV, Netzlaufwerk, Dateimanager, viele Dateien hochladen, Ziehen und Ablegen, neue Version, Papierkorb, einbinden, index_webdav.php, webdav.php, Content, Media, siteaccess, network drive, file manager, upload many files, drag and drop, new version, trash, mount
 type: help
 ---
 # Wie arbeite ich über WebDAV mit Inhalten als Dateien?
@@ -23,7 +23,11 @@ entfernen dürfen.
 
 ## Schritte
 
-1. Lassen Sie sich die WebDAV-Adresse von Ihrem Administrator geben.
+1. Lassen Sie sich die WebDAV-Adresse von Ihrem Administrator geben. Sie ist entweder ein eigener Host, etwa
+   `https://webdav.example.com/<site>/`, oder die Adresse der Website, gefolgt von `/index_webdav.php/<site>/`. Eine
+   Adresse mit `/webdav.php/` funktioniert noch, aber dieser alte Name wird in einer späteren Hauptversion entfernt:
+   Fragen Sie nach der Adresse mit `index_webdav.php` und verbinden Sie sich neu
+   ([warum](../../bc/6.0/webdav-einstiegsskript-index-webdav.md)).
 2. Verbinden Sie Ihren Dateimanager damit und melden Sie sich mit Ihrem Benutzernamen und Passwort an:
    - Windows: **Dieser PC** > **Netzlaufwerk verbinden** oder **Netzwerkadresse hinzufügen**;
    - macOS: Finder > **Gehe zu** > **Mit Server verbinden**;
@@ -45,7 +49,9 @@ entfernen dürfen.
 ## Was schiefgehen kann
 
 - **Die Adresse antwortet nicht.** WebDAV ist nicht eingeschaltet, oder der Webserver reicht die Adresse nicht an
-  Exponential weiter. Fragen Sie einen Administrator.
+  Exponential weiter: Seit 6.0.15 müssen seine Regeln `index_webdav.php` nennen, siehe
+  [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md).
+  Fragen Sie einen Administrator.
 - **Neue Elemente sind in der falschen Sprache.** Über WebDAV erstellte Elemente erhalten die Sprache des
   Website-Ordners, den Sie verwendet haben. Wählen Sie den Ordner der Website in der gewünschten Sprache.
 - **Einige Einträge sind leere Dateien.** Elemente ohne eigene Datei, etwa ein Artikel, erscheinen als leere Einträge.

@@ -82,6 +82,9 @@ Whatever serves the site, the same rules apply ([Chapter 8, How a request is ser
   configuration implement the same list rule for rule.
 - No PHP file runs because its path was asked for, except the front controllers at the root (`index.php`,
   `index_rest.php`, `index_treemenu.php`).
+- WebDAV, when you switch it on, needs a rule of its own for `index_webdav.php` (its name since 6.0.15; `webdav.php`
+  only forwards to it until a later major version) on Apache, nginx or IIS, in the HTTPS virtual host too. Velocity
+  does not serve it. See [The WebDAV entry script is now index_webdav.php](../../../bc/6.0/webdav-entry-script-index-webdav.md).
 - Only listed asset paths are sent as files; `settings/site.ini`, the SQLite database or a kernel source requested by
   path reach `index.php`, never the file.
 - The user that runs PHP must be able to write `var/` and the `settings/` directories, and **one** user (or one
