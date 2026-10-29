@@ -23778,7 +23778,7 @@ bea60dcd11a4319482c5c0dab80f5afa  kernel/private/classes/views/datatable/sync.ph
 4bcf6093ddc72813ea7cada1962eeac7  kernel/private/classes/views/datatable/syncs.php
 b1606fd898f6e478fdcd946397240d26  kernel/private/classes/views/datatable/table.php
 6d71c9b30560afbeb8dca1a0955f6c00  kernel/private/classes/views/error/view.php
-8c8be18837630677d87b6b349531257a  kernel/private/classes/views/exphelp/asset.php
+e805910ff6c746c5c960cf45c714365f  kernel/private/classes/views/exphelp/asset.php
 3e05eb609d86ceb23a37a47aa6a92576  kernel/private/classes/views/exphelp/audience.php
 dae6b4492866c932a7da53ed250c830f  kernel/private/classes/views/exphelp/contents.php
 5416525820d820233d18d32fd5d4063c  kernel/private/classes/views/exphelp/context.php
@@ -25947,7 +25947,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-4d9ab499b140f5980c7f519b9dfd4ae1  tests/test-map.json
+737a6ff0fa109f5288e7f26e84c4cfd7  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -26610,6 +26610,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 6d55864478b562693e77197e4a5e94c1  tests/tests/kernel/classes/ezuserdiscountrule_test.php
 43a4eefe5f44077ad2e85271207b9890  tests/tests/kernel/classes/ezworkflowevent_regression.php
 8fbd06bc9fc3e0274f15646615e9b085  tests/tests/kernel/classes/ezxFormTokenCompareTest.php
+b4d39e863f28cf99272587d8229a88c8  tests/tests/kernel/classes/help/expHelpAssetRevalidationTest.php
 82ae7cde2c5b517fd6ccc515ab772c6e  tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php
 15ce983a094e9cdcc0d658817e44997c  tests/tests/kernel/classes/help/expHelpCachePruneTest.php
 ab48655d2b55173d9a7de603c97a4643  tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
