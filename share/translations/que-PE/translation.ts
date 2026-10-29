@@ -77213,6 +77213,82 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Yaykuna kichanata mana qhawayta atirqanchu. Huktawan yachapay.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Yaykuna kichanakunallawan yaykuq kuwintakunaqa kaypi pakasqa simita mana llamk&apos;achiyta atinkuchu: «Yaykuna kichanawan yaykuy» nisqata akllay.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login-pa yaykuna kichanankuna</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Kay kuwinta yaykunanpaq yaykuna kichanakuna. Chinkasqa utaq suwasqa aparatupi kaqta kutichiy: manañam yaykuyta atinqachu. Musuqkunataqa kuwinta dueñon kikin yapan.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Kuwintaykiqa yaykuna kichanata munan</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Kuwintaykiman yaykuna kichanata yapay</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Qatinaykipaq yaykuna kichanata yapay. Chaymantaqa chaywanmi yaykunki, mana pakasqa simillawanchu.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Yaykuna kichanawan yaykuyqa pakasqa simimanta aswan utqaylla, aswan allin waqaychasqa ima. Kunan hukta yapay, utaq mana chaywan qatiy.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Mana kunanchu</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>¿«%name» yaykuna kichanata kutichiyta munankichu?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Manañam kay kuwintaman yaykuyta atinqachu. Qhipa kaq kaptinqa, dueñonmi pakasqa simiwan yaykun, utaq qammi musuq pakasqa simita churanki.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Yaykuna kichanata kutichiy</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Kutichiy</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Kay kuwintaqa mana yaykuna kichanayuqchu.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Chiqaqchaq</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Mana riqsisqa</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Qhipa kaq yaykuna kichanayki: manaraq hurquspa huktawan yapay.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Kay kuwintaqa yaykuna kichanakunallawan yaykun (yaykuna kichana kamachiy): mana ni huk puchuptinqa, pakasqa siminwan yapamanta yaykun.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Kayqa qhipa kaq yaykuna kichanaykim, kuwintaykitaq mana chaywanqa yaykuyta atinchu. Ñawpaqta huk yaykuna kichanata yapay.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>«%name» yaykuna kichanaqa kutichisqañam. Manañam kay kuwintaman yaykuyta atinchu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Code from your authenticator app</source>
         <translation>Autentikasyun apliqasiyunniykip kudiqun</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Willakuykunata wiñaypaq chinkachiyta utaq huk qillqa hallch&apos;ata pichayta munachkanki.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Pakasqa simiyki hinaspa yaykuna kichana</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Pakasqa simiyki hinaspa chiqaqchaq app-niykimanta yupay</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Utaq:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Kay web puriqqa yaykuna kichanakunata mana llamk&apos;achiyta atinchu. Huk ñanta utaq huk web puriqta llamk&apos;achiy.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Qatiptiykiqa, web puriqniyki huk yaykuna kichanaykita mañakunqa.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Yaykuna kichanawan qatiy</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Setup</source>
         <translation>Wakichiy</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Kikinpa pakasqa siminta, correo electrónico tiyananta, yaykuna kichanakunata, iskay purinapi yaykuyta, kutichina kudikunata utaq API kichanakunata hukchay, hinaspa kikinpa huk aparatunkunamanta lluqsiy.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Apaykachaqkunata, pakasqa siminkunata, aparatunkunata, kuwinta allichaykunata paqarichiy hinaspa hukchay, musuq apaykachaq kuwintakunata chaskiy utaq mana chaskiy, ruraykunata quy hinaspa kamachiykunata hukchay.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Willakuykunata chinkachiy</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Q&apos;upata ch&apos;usaqyachiy, chaymanta imakunata hurquy hinaspa achka imakunata huk kutillapi hurquy.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Ukhunta hurquy, lluqsichiy hinaspa waqaychay</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Ukhunta hurquy (q&apos;upamanpas), lluqsichiy hinaspa borradorta waqaychay; formulario kachakuptin tapukun. Ñawpaqmantapacha wañuchisqa.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ancha chaniyuq ruraypa ñawpaqninpi, yaykusqa apaykachaqqa pis kasqanta yapamanta chiqaqchan: pakasqa siminwan yaykuna kichanawan ima, utaq mana yaykuna kichana kaptinqa pakasqa siminwan chiqaqchaq app-ninpa yupayninwan ima. Web raphikunallam tapunku: REST interfaz, SOAP, WebDAV, expservices yaykuy hinaspa kamachiy siqi mana hayk&apos;aqpas tapunkuchu.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Maypi allichaykuna llamk&apos;an</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Kaypaq allichaykuna</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Sapa web yaykuna</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Web yaykuna %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Kichay</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Pita tapukun: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Apaykachaqkunap huñunkunata markay, kamayuqninkunallata tapunapaq (editorkunata, kayhina). Mana imapas markasqa: llapan apaykachaqkuna.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php nisqapi waqaychasqa, sapa web yaykunapaq. Waqaychaspaqa qam kasqaykita chiqaqchanaykipaqmi mañakun.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php nisqapi waqaychasqa. settings/override nisqapi chaniqa kaymanta aswan atiyniyuqmi. Waqaychaspaqa qam kasqaykita chiqaqchanaykipaqmi mañakun.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Kuwintayki wichqasqa karqan</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site nisqapi %login kuwintaykimanmi huk yaykuna kichana yapakurqan.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Pipas kay yaykuna kichanayuqqa kuwintaykiman yaykuyta atin mana pakasqa simiykiwan. Mana qam yapakurqankichu chayqa, Yaykuna kichanakuna nisqapi hurquy hinaspa pakasqa simiykita hukchay.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site nisqapi %login kuwintaykimantam huk yaykuna kichana hurqukurqan.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Manañam kuwintaykiman yaykuyta atinchu. Mana qam hurqurqankichu chayqa, yaykuna kichanaykikunata aparatuykikunatawan qhaway.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Kuwintaykimanmi huk yaykuna kichana yapakurqan</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Kuwintaykimantam huk yaykuna kichana hurqukurqan</translation>
     </message>
 </context>
 <context>

@@ -2,14 +2,14 @@
 title: setup.ini [phpversion]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [phpversion] in setup.ini: MinimumVersion, UnstableVersions"
-keywords: Einstellung, setup.ini, phpversion, INI, setting, MinimumVersion, UnstableVersions
+summary: "Die Einstellungen von [phpversion] in setup.ini: MinimumVersion, SupportedVersion, UnstableVersions"
+keywords: Einstellung, setup.ini, phpversion, INI, setting, MinimumVersion, SupportedVersion, UnstableVersions
 type: generated
 generated: exp:help:examples
 ---
 # setup.ini [phpversion]
 
-Der Block `[phpversion]` von `settings/setup.ini`, mit 2 Einstellung(en).
+Der Block `[phpversion]` von `settings/setup.ini`, mit 3 Einstellung(en).
 
 Bearbeiten Sie `settings/setup.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -19,13 +19,30 @@ Bearbeiten Sie `settings/setup.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## MinimumVersion
 
-Standard: `8.0.0`.
+> Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).  
+> MinimumVersion: older PHP is refused. SupportedVersion: below it the check passes with an  
+> "unsupported" notice (no bug-fix or security commitment; the features that need PHP 8 are missing).  
+> doc/eng-us/help/why-exponential-supports-php-7-4.md  
+
+Standard: `7.4.0`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/setup.ini.append.php
 [phpversion]
 MinimumVersion=7.4.0
+*/ ?>
+```
+
+## SupportedVersion
+
+Standard: `8.0.0`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/setup.ini.append.php
+[phpversion]
+SupportedVersion=8.0.0
 */ ?>
 ```
 

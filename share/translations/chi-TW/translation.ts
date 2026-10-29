@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>無法驗證此密碼金鑰。請再試一次。</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>僅使用密碼金鑰登入的帳號無法在此使用密碼：請選擇「使用密碼金鑰登入」。</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login 的密碼金鑰</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>此帳號用於登入的密碼金鑰。請撤銷位於遺失或遭竊裝置上的密碼金鑰：它將無法再登入。新的密碼金鑰由擁有者自行新增。</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>您的帳號需要密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>為您的帳號新增密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>請新增密碼金鑰以繼續。之後您將使用它登入，而不只是使用密碼。</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>使用密碼金鑰登入比使用密碼更快、更安全。立即新增一個，或不新增直接繼續。</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>稍後再說</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>要撤銷密碼金鑰「%name」嗎？</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>它將無法再登入此帳號。如果這是最後一個，擁有者將使用密碼登入，或由您設定新密碼。</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>撤銷密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>撤銷</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>此帳號沒有密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>驗證器</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>未知</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>這是您的最後一個密碼金鑰：請先新增另一個，再將其移除。</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>此帳號僅使用密碼金鑰登入（密碼金鑰原則）：如果一個都不剩，將再次使用密碼登入。</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>這是您的最後一個密碼金鑰，沒有密碼金鑰您的帳號將無法登入。請先新增另一個密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>密碼金鑰「%name」已撤銷。它無法再登入此帳號。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>驗證器應用程式中的代碼</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>您即將永久刪除資料或清除日誌。</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>您的密碼和密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>您的密碼和驗證器應用程式中的代碼</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>或者：</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>此瀏覽器無法使用密碼金鑰。請使用其他方式或其他瀏覽器。</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>繼續後，瀏覽器會要求您提供其中一個密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>使用密碼金鑰繼續</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>設定</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>變更自己的密碼、電子郵件地址、密碼金鑰、兩步驟登入、復原碼或 API 金鑰，以及從自己的其他裝置登出。</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>建立和編輯使用者及其密碼和裝置、帳號設定、核准或拒絕新的使用者帳號、指派角色，以及編輯原則。</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>刪除資料</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>清空垃圾桶、從中移除項目，以及一次移除多個項目。</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>移除、發佈和儲存內容</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>移除內容（包括移至垃圾桶）、發佈和儲存草稿，在送出表單時詢問。預設為關閉。</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>在執行敏感動作之前，已登入的使用者必須再次確認身分：使用密碼和密碼金鑰；若沒有密碼金鑰，則使用密碼和驗證器應用程式中的代碼。只有網頁會詢問：REST 介面、SOAP、WebDAV、expservices 登入和命令列一律不會詢問。</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>設定的適用範圍</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>設定對象</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>所有網站存取</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>網站存取 %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>詢問對象：%group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>勾選使用者群組，僅詢問其成員（例如編輯）。未勾選任何群組：詢問所有使用者。</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>儲存至 settings/override/site.ini.append.php，適用於所有網站存取。儲存時會要求您確認是您本人。</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>儲存至 settings/siteaccess/%name/site.ini.append.php。settings/override 中的值優先於此處。儲存時會要求您確認是您本人。</translation>
     </message>
 </context>
 <context>
@@ -77756,6 +77924,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>您的帳號已鎖定</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>您在 %site 上的帳號 %login 已新增一個密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>持有此密碼金鑰的任何人都能在不使用您密碼的情況下登入您的帳號。如果不是您新增的，請在「密碼金鑰」中將其移除並變更密碼。</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>您在 %site 上的帳號 %login 已移除一個密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>它無法再登入您的帳號。如果不是您移除的，請檢查您的密碼金鑰和裝置。</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>您的帳號已新增一個密碼金鑰</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>您的帳號已移除一個密碼金鑰</translation>
     </message>
 </context>
 <context>

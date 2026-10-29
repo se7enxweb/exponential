@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Не удалось проверить ключ доступа. Повторите попытку.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Учетные записи, которые входят только с ключами доступа, не могут использовать здесь пароль: выберите «Войти с ключом доступа».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Ключи доступа %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Ключи доступа, с которыми входит эта учетная запись. Отзовите ключ, который находится на потерянном или украденном устройстве: с ним больше нельзя будет войти. Новые ключи владелец добавляет сам.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Вашей учетной записи нужен ключ доступа</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Добавьте ключ доступа к своей учетной записи</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Добавьте ключ доступа, чтобы продолжить. Затем вы будете входить с ним, а не только с паролем.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Вход с ключом доступа быстрее и безопаснее, чем с паролем. Добавьте его сейчас или продолжите без него.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Не сейчас</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Отозвать ключ доступа «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>С ним больше нельзя будет войти в эту учетную запись. Если это был последний ключ, владелец входит с паролем, или вы задаете новый пароль.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Отозвать ключ доступа</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Отозвать</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>У этой учетной записи нет ключа доступа.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Аутентификатор</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Неизвестно</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Ваш последний ключ доступа: добавьте другой, прежде чем удалять его.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Эта учетная запись входит только с ключами доступа (правило ключей доступа): если их не останется, она снова будет входить с паролем.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Это ваш последний ключ доступа, и без него ваша учетная запись не сможет войти. Сначала добавьте другой ключ доступа.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Ключ доступа «%name» отозван. С ним больше нельзя войти в эту учетную запись.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Код из приложения-аутентификатора</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Вы собираетесь окончательно удалить данные или очистить журнал.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ваш пароль и ключ доступа</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ваш пароль и код из приложения-аутентификатора</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Или:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Этот браузер не может использовать ключи доступа. Выберите другой способ или другой браузер.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Когда вы продолжите, браузер запросит один из ваших ключей доступа.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Продолжить с ключом доступа</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Настройка</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Изменение собственного пароля, адреса электронной почты, ключей доступа, двухэтапного входа, кодов восстановления или ключей API, а также выход из системы на других своих устройствах.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Создание и редактирование пользователей, их паролей и устройств, параметров учетных записей, одобрение или отклонение новых учетных записей, назначение ролей и редактирование правил доступа.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Удаление данных</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Очистка корзины, удаление элементов из нее и удаление нескольких элементов сразу.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Удаление, публикация и сохранение содержимого</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Удаление содержимого (в том числе в корзину), публикация и сохранение черновика; запрос появляется при отправке формы. По умолчанию выключено.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Перед важным действием вошедший пользователь еще раз подтверждает свою личность: паролем и ключом доступа или, без ключа доступа, паролем и кодом из приложения-аутентификатора. Спрашивают только веб-страницы: интерфейс REST, SOAP, WebDAV, вход expservices и командная строка никогда.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Где действуют параметры</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Параметры для</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Каждый доступ к сайту</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Доступ к сайту %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Открыть</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Кого спрашивать: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Отметьте группы пользователей, чтобы спрашивать только их участников (например, редакторов). Ничего не отмечено: каждого пользователя.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Сохраняется в settings/override/site.ini.append.php, для каждого доступа к сайту. При сохранении нужно подтвердить, что это вы.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Сохраняется в settings/siteaccess/%name/site.ini.append.php. Значение в settings/override имеет приоритет. При сохранении нужно подтвердить, что это вы.</translation>
     </message>
 </context>
 <context>
@@ -77788,6 +77956,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>Ваша учетная запись заблокирована</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>К вашей учетной записи %login на %site добавлен ключ доступа.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Тот, у кого есть этот ключ доступа, может войти в вашу учетную запись без пароля. Если вы его не добавляли, удалите его в разделе «Ключи доступа» и смените пароль.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Из вашей учетной записи %login на %site удален ключ доступа.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>С ним больше нельзя войти в вашу учетную запись. Если вы его не удаляли, проверьте свои ключи доступа и устройства.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>К вашей учетной записи добавлен ключ доступа</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Из вашей учетной записи удален ключ доступа</translation>
     </message>
 </context>
 <context>

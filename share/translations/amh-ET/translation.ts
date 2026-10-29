@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>የይለፍ ቁልፉ ሊረጋገጥ አልቻለም። እባክዎ እንደገና ይሞክሩ።</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>በይለፍ ቁልፎች ብቻ የሚገቡ መለያዎች እዚህ የይለፍ ቃል መጠቀም አይችሉም፦ «በይለፍ ቁልፍ ግባ»ን ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>የ%login የይለፍ ቁልፎች</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ይህ መለያ የሚገባባቸው የይለፍ ቁልፎች። በጠፋ ወይም በተሰረቀ መሣሪያ ላይ ያለውን ይሻሩ፦ ከዚያ በኋላ መግባት አይችልም። ባለቤቱ አዳዲሶችን ራሱ ያክላል።</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>መለያዎ የይለፍ ቁልፍ ያስፈልገዋል</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ለመለያዎ የይለፍ ቁልፍ ያክሉ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ለመቀጠል የይለፍ ቁልፍ ያክሉ። ከዚያ በይለፍ ቃል ብቻ ሳይሆን በእሱ ይገባሉ።</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>በይለፍ ቁልፍ መግባት ከይለፍ ቃል ይበልጥ ፈጣን እና ደህንነቱ የተጠበቀ ነው። አሁን አንዱን ያክሉ ወይም ያለ እሱ ይቀጥሉ።</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>አሁን አይደለም</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>የይለፍ ቁልፉ «%name» ይሻር?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ከዚህ በኋላ ወደዚህ መለያ መግባት አይችልም። የመጨረሻው ከነበረ ባለቤቱ በይለፍ ቃሉ ይገባል፣ ወይም እርስዎ አዲስ የይለፍ ቃል ያዘጋጃሉ።</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>የይለፍ ቁልፉን ሻር</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ሻር</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ይህ መለያ ምንም የይለፍ ቁልፍ የለውም።</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>አረጋጋጭ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>ያልታወቀ</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>የመጨረሻው የይለፍ ቁልፍዎ፦ ከማስወገድዎ በፊት ሌላ ያክሉ።</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ይህ መለያ በይለፍ ቁልፎች ብቻ ይገባል (የይለፍ ቁልፍ ፖሊሲ)፦ ምንም ካልቀረ እንደገና በይለፍ ቃሉ ይገባል።</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ይህ የመጨረሻው የይለፍ ቁልፍዎ ነው፣ እና መለያዎ ያለ የይለፍ ቁልፍ መግባት አይችልም። መጀመሪያ ሌላ የይለፍ ቁልፍ ያክሉ።</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>የይለፍ ቁልፉ «%name» ተሽሯል። ከዚህ በኋላ ወደዚህ መለያ መግባት አይችልም።</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ከማረጋገጫ መተግበሪያዎ የሚገኝ ኮድ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ውሂብን እስከመጨረሻው ሊሰርዙ ወይም የምዝግብ ማስታወሻን ባዶ ሊያደርጉ ነው።</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>የይለፍ ቃልዎ እና የይለፍ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>የይለፍ ቃልዎ እና ከማረጋገጫ መተግበሪያዎ የሚገኝ ኮድ</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ወይም፦</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ይህ አሳሽ የይለፍ ቁልፎችን መጠቀም አይችልም። ሌላ መንገድ ወይም ሌላ አሳሽ ይጠቀሙ።</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ሲቀጥሉ አሳሽዎ ከይለፍ ቁልፎችዎ አንዱን ይጠይቃል።</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>በይለፍ ቁልፍ ቀጥል</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ዝግጅት</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>የራስን የይለፍ ቃል፣ የኢሜይል አድራሻ፣ የይለፍ ቁልፎች፣ ባለሁለት ደረጃ መግቢያ፣ የመልሶ ማግኛ ኮዶች ወይም የAPI ቁልፎች መቀየር፣ እና ከራስ ሌሎች መሣሪያዎች መውጣት።</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ተጠቃሚዎችን፣ የይለፍ ቃሎቻቸውን እና መሣሪያዎቻቸውን መፍጠር እና ማርትዕ፣ የመለያ ቅንብሮች፣ አዲስ የተጠቃሚ መለያዎችን ማጽደቅ ወይም ውድቅ ማድረግ፣ ሚናዎችን መመደብ እና ፖሊሲዎችን ማርትዕ።</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ውሂብን መሰረዝ</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ቆሻሻውን ባዶ ማድረግ፣ ንጥሎችን ከእሱ ማስወገድ እና ብዙ ንጥሎችን በአንድ ጊዜ ማስወገድ።</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ይዘትን ማስወገድ፣ ማተም እና ማስቀመጥ</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ይዘትን ማስወገድ (ወደ ቆሻሻም ጭምር)፣ ማተም እና ረቂቅ ማስቀመጥ፤ ቅጹ ሲላክ ይጠየቃል። በነባሪ ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ከስሱ ድርጊት በፊት የገባ ተጠቃሚ ማንነቱን እንደገና ያረጋግጣል፦ በይለፍ ቃሉ እና በይለፍ ቁልፍ፣ ወይም የይለፍ ቁልፍ ከሌለ በይለፍ ቃሉ እና በማረጋገጫ መተግበሪያው ኮድ። የሚጠይቁት የድር ገጾቹ ብቻ ናቸው፦ የREST በይነገጽ፣ SOAP፣ WebDAV፣ የexpservices መግቢያ እና የትዕዛዝ መስመሩ በጭራሽ አይጠይቁም።</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ቅንብሮቹ የሚተገበሩበት ቦታ</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ቅንብሮች ለ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>እያንዳንዱ የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>የጣቢያ መዳረሻ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ክፈት</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>የሚጠየቁት፦ %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>አባላቶቻቸውን ብቻ ለመጠየቅ የተጠቃሚ ቡድኖችን ምልክት ያድርጉ (ለምሳሌ አርታኢዎች)። ምንም ምልክት ካልተደረገ፦ እያንዳንዱ ተጠቃሚ።</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>ወደ settings/override/site.ini.append.php ተቀምጧል፣ ለእያንዳንዱ የጣቢያ መዳረሻ። ማስቀመጥ እርስዎ መሆንዎን እንዲያረጋግጡ ይጠይቃል።</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>ወደ settings/siteaccess/%name/site.ini.append.php ተቀምጧል። በsettings/override ውስጥ ያለ እሴት ቅድሚያ ይወስዳል። ማስቀመጥ እርስዎ መሆንዎን እንዲያረጋግጡ ይጠይቃል።</translation>
     </message>
 </context>
 <context>
@@ -77756,6 +77924,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>መለያዎ ተቆልፏል</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>በ%site ላይ ባለው መለያዎ %login የይለፍ ቁልፍ ታክሏል።</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ይህን የይለፍ ቁልፍ የያዘ ማንኛውም ሰው ያለ የይለፍ ቃልዎ ወደ መለያዎ መግባት ይችላል። እርስዎ ካላከሉት በየይለፍ ቁልፎች ስር ያስወግዱት እና የይለፍ ቃልዎን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>በ%site ላይ ካለው መለያዎ %login የይለፍ ቁልፍ ተወግዷል።</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ከዚህ በኋላ ወደ መለያዎ መግባት አይችልም። እርስዎ ካላስወገዱት የይለፍ ቁልፎችዎን እና መሣሪያዎችዎን ያረጋግጡ።</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ለመለያዎ የይለፍ ቁልፍ ታክሏል</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ከመለያዎ የይለፍ ቁልፍ ተወግዷል</translation>
     </message>
 </context>
 <context>

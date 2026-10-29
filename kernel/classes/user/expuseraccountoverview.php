@@ -104,8 +104,8 @@ class expUserAccountOverview
             'twofactor' => self::twoFactorOf( $object ),
             'access' => self::accessOf( $viewer, $own ),
         );
-        // the passkeys card: the own account only, while passkeys can be used here
-        if ( $own && class_exists( 'expPasskeyService' ) )
+        // the passkeys card: the own account, or another one for a viewer with user/passkeys_manage, while passkeys can be used
+        if ( ( $own || !empty( $facts['access']['passkeys_admin'] ) ) && class_exists( 'expPasskeyService' ) )
         {
             $service = new expPasskeyService();
             if ( $service->available() )
@@ -223,7 +223,7 @@ class expUserAccountOverview
     {
         $f = $this->facts;
         $a = $f['access'] + array_fill_keys( array( 'password', 'settings', 'roles', 'twofactor_setup', 'apikeys_own',
-            'apikeys_admin', 'bookmarks', 'notifications', 'mail_own', 'mail_admin', 'sessions_admin' ), false );
+            'apikeys_admin', 'bookmarks', 'notifications', 'mail_own', 'mail_admin', 'sessions_admin', 'passkeys_admin' ), false );
         $id = (int)$f['user_id'];
         $own = (bool)$f['own'];
         $out = array();
@@ -258,11 +258,12 @@ class expUserAccountOverview
                     }
                     break;
                 case 'passkeys':
-                    // the user's own passkeys (user/passkeys); null: passkeys cannot be used here, or another user's account
-                    if ( $own && is_array( $f['passkeys'] ) )
+                    // the user's own passkeys (user/passkeys), another user's for an administrator (user/passkeys/<id>); null:
+                    // passkeys cannot be used here, or the viewer may not see them
+                    if ( is_array( $f['passkeys'] ) && ( $own || $a['passkeys_admin'] ) )
                     {
                         $total = (int)$f['passkeys']['total'];
-                        $card = array( 'how' => 'link', 'url' => 'user/passkeys',
+                        $card = array( 'how' => 'link', 'url' => $own ? 'user/passkeys' : 'user/passkeys/' . $id,
                                        'status' => array( 'key' => $total > 0 ? 'count' : 'none', 'level' => $total > 0 ? 'ok' : 'none', 'total' => $total ) );
                     }
                     break;
@@ -422,6 +423,7 @@ class expUserAccountOverview
             'mail_own' => $own && eZModule::exists( 'mailpreferences' ),
             'mail_admin' => $may( 'mailpreferences', 'administrate' ),
             'sessions_admin' => !$own && $may( 'user', 'sessions' ),
+            'passkeys_admin' => !$own && $may( 'user', 'passkeys_manage' ),
         );
     }
 

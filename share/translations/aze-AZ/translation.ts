@@ -77213,6 +77213,82 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Giriş açarı yoxlana bilmədi. Zəhmət olmasa yenidən cəhd edin.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Yalnız giriş açarları ilə daxil olan hesablar burada şifrədən istifadə edə bilməz: &quot;Giriş açarı ilə daxil ol&quot; seçin.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login istifadəçisinin giriş açarları</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Bu hesabın daxil olduğu giriş açarları. İtirilmiş və ya oğurlanmış cihazdakı açarı etibarsız edin: o, artıq daxil ola bilməyəcək. Yenilərini sahib özü əlavə edir.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Hesabınıza giriş açarı lazımdır</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Hesabınıza giriş açarı əlavə edin</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Davam etmək üçün giriş açarı əlavə edin. Bundan sonra yalnız şifrə ilə deyil, onunla daxil olacaqsınız.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Giriş açarı ilə daxil olmaq şifrədən daha sürətli və təhlükəsizdir. İndi birini əlavə edin və ya onsuz davam edin.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>İndi yox</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>&quot;%name&quot; giriş açarı etibarsız edilsin?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>O, artıq bu hesaba daxil ola bilməz. Əgər sonuncu idisə, sahib şifrə ilə daxil olur və ya siz yeni şifrə təyin edirsiniz.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Giriş açarını etibarsız et</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Etibarsız et</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Bu hesabın giriş açarı yoxdur.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentifikator</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Naməlum</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Sonuncu giriş açarınız: onu çıxarmazdan əvvəl başqasını əlavə edin.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Bu hesab yalnız giriş açarları ilə daxil olur (giriş açarı siyasəti): heç biri qalmasa, yenidən şifrəsi ilə daxil olur.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Bu, sonuncu giriş açarınızdır və hesabınız onsuz daxil ola bilməz. Əvvəlcə başqa giriş açarı əlavə edin.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>&quot;%name&quot; giriş açarı etibarsız edildi. O, artıq bu hesaba daxil ola bilməz.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Code from your authenticator app</source>
         <translation>Autentifikator tətbiqinizdəki kod</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Siz məlumatları birdəfəlik silmək və ya jurnalı təmizləmək üzrəsiniz.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Şifrəniz və giriş açarı</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Şifrəniz və autentifikator tətbiqinizdən kod</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Və ya:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Bu brauzer giriş açarlarından istifadə edə bilmir. Başqa üsuldan və ya başqa brauzerdən istifadə edin.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Davam etdikdə brauzeriniz giriş açarlarınızdan birini istəyəcək.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Giriş açarı ilə davam et</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>Setup</source>
         <translation>Quraşdırma</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Öz şifrənizi, e-poçt ünvanınızı, giriş açarlarınızı, iki addımlı girişi, bərpa kodlarını və ya API açarlarını dəyişdirmək və digər cihazlarınızdan çıxış etmək.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>İstifadəçiləri, onların şifrələrini və cihazlarını yaratmaq və redaktə etmək, hesab parametrləri, yeni istifadəçi hesablarını təsdiq etmək və ya rədd etmək, rolları təyin etmək və siyasətləri redaktə etmək.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Məlumatların silinməsi</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Zibil qutusunu boşaltmaq, ondan elementləri çıxarmaq və bir neçə elementi birdən çıxarmaq.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Məzmunun çıxarılması, dərci və yadda saxlanması</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Məzmunu çıxarmaq (zibil qutusuna da), dərc etmək və qaralamanı yadda saxlamaq; forma göndəriləndə soruşulur. Standart olaraq söndürülüb.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Həssas əməliyyatdan əvvəl daxil olmuş istifadəçi kim olduğunu yenidən təsdiq edir: şifrəsi və giriş açarı ilə, giriş açarı yoxdursa isə şifrəsi və autentifikator tətbiqinin kodu ilə. Yalnız veb səhifələr soruşur: REST interfeysi, SOAP, WebDAV, expservices girişi və əmr sətri heç vaxt soruşmur.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Parametrlərin tətbiq olunduğu yer</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Parametrlər:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hər sayt girişi</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Sayt girişi %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kimdən soruşulur: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Yalnız üzvlərindən soruşmaq üçün istifadəçi qruplarını işarələyin (məsələn, redaktorlar). Heç biri işarələnməyibsə: hər istifadəçi.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php faylına, hər sayt girişi üçün yadda saxlanılır. Yadda saxlayarkən sizdən özünüzü təsdiq etmək xahiş olunur.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php faylına yadda saxlanılır. settings/override içindəki dəyər ondan üstündür. Yadda saxlayarkən sizdən özünüzü təsdiq etmək xahiş olunur.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>Your account was locked</source>
         <translation>Hesabınız kilidləndi</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site saytındakı %login hesabınıza giriş açarı əlavə edildi.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Bu giriş açarına sahib olan hər kəs şifrəniz olmadan hesabınıza daxil ola bilər. Onu siz əlavə etməmisinizsə, Giriş açarları bölməsində çıxarın və şifrənizi dəyişin.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site saytındakı %login hesabınızdan giriş açarı çıxarıldı.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>O, artıq hesabınıza daxil ola bilməz. Onu siz çıxarmamısınızsa, giriş açarlarınızı və cihazlarınızı yoxlayın.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Hesabınıza giriş açarı əlavə edildi</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Hesabınızdan giriş açarı çıxarıldı</translation>
     </message>
 </context>
 <context>

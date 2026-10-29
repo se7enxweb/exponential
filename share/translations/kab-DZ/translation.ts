@@ -77213,6 +77213,82 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Tasarut n unekcum ur tezmir ara ad tettwasenqed. Ɛreḍ tikkelt-nniḍen.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Imiḍanen ikeččmen s tsura n unekcum kan ur zmiren ara ad sseqdecen awal uffir da: fren «Kcem s tsarut n unekcum».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Tisura n unekcum n %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Tisura n unekcum s wacu ikeččem umiḍan-a. Ḥbes tin yellan ɣef yibenk yeɣlin neɣ yettwakren: ur tettizmir ara ad tkecmeḍ yid-s. Bab n umiḍan yettarnu tijdidin s yiman-is.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Amiḍan-ik yesra tasarut n unekcum</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Rnu tasarut n unekcum ɣer umiḍan-ik</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Rnu tasarut n unekcum akken ad tkemmleḍ. Syin ad tkecmeḍ yid-s deg wadeg n wawal uffir kan.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Anekcum s tsarut n unekcum yugar awal uffir deg tɣawla d tɣellist. Rnu yiwet tura, neɣ kemmel war-s.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Mačči tura</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Ḥbes tasarut n unekcum «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ur tettizmir ara ad tekcem ɣer umiḍan-a. Ma d taneggarut, bab n umiḍan ad yekcem s wawal uffir, neɣ ad tesbaduḍ ajdid.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Ḥbes tasarut n unekcum</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Ḥbes</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Amiḍan-a ur yesɛi ara tasarut n unekcum.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Amsentem</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Arussin</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Tasarut-ik n unekcum taneggarut: rnu tayeḍ send ad tt-tekkseḍ.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Amiḍan-a ikeččem s tsura n unekcum kan (tasertit n tsura n unekcum): ma ulac tin d-yeqqimen, ad yekcem i tikkelt-nniḍen s wawal-is uffir.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Wa d tasarut-ik n unekcum taneggarut, amiḍan-ik ur yezmir ara ad yekcem war-s. Rnu qbel tasarut n unekcum-nniḍen.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Tasarut n unekcum «%name» tettwaḥbes. Ur tettizmir ara ad tekcem ɣer umiḍan-a.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Code from your authenticator app</source>
         <translation>Tangalt seg usnas-ik n usenqed</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Teqrib ad tekkseḍ isefka i lebda neɣ ad tesfeḍ aɣmis.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Awal-ik uffir d tsarut n unekcum</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Awal-ik uffir d tengalt seg usnas-ik n usentem</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Neɣ:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Iminig-a ur yezmir ara ad yesseqdec tisura n unekcum. Seqdec abrid-nniḍen, neɣ iminig-nniḍen.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ma tkemmleḍ, iminig-ik ad ak-d-yessuter yiwet seg tsura-k n unekcum.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Kemmel s tsarut n unekcum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Setup</source>
         <translation>Asbadu</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Abeddel n wawal uffir, n tansa n yimayl, n tsura n unekcum, n unekcum s snat n tikkal, n tengalin n tririt neɣ n tsura n API n yiman-is, d tuffɣa seg yibenkan-nniḍen n yiman-is.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Timerna d usnifel n iseqdacen, awalen-nsen uffiren d yibenkan-nsen, iɣewwaren n umiḍan, aqbal neɣ agi n yimiḍanen imaynuten n iseqdacen, amudd n timlilin d usnifel n tsertiyin.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Tukksa n yisefka</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Asfaḍ n iḍumman, tukksa n yiferdisen seg-sen d tukksa n waṭas n yiferdisen ɣef tikkelt.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Tukksa, asiẓreg d usekles n ugbur</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Tukksa n ugbur (ɣer iḍumman daɣen), asiẓreg d usekles n urewway; yettwasteqsa mi ara tettwazen tferkit. Yensa s wudem amezwer.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Send tigawt tamḥulfut, aseqdac ikecmen ad isentem tikkelt-nniḍen anwa i d netta: s wawal-is uffir d tsarut n unekcum, neɣ war tasarut n unekcum s wawal-is uffir d tengalt n usnas-is n usentem. Ala isebtar web i yesteqsayen: agrudem REST, SOAP, WebDAV, anekcum expservices d yizirig n tiludna ur steqsayen ara akk.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Anida i ttwasnasen yiɣewwaren</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Iɣewwaren i</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Yal anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Anekcum ɣer usmel %name kan</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ldi</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Anwa ara yettwasteqsin: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Ṛcem igrawen n iseqdacen akken ad steqsiḍ ala iɛeggalen-nsen (imaẓragen, amedya). Ulac ayen yettwaṛecmen: yal aseqdac.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Yettwasekles deg settings/override/site.ini.append.php, i yal anekcum ɣer usmel. Asekles ad ak-d-yessuter ad tesnetmeḍ belli d keččini.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Yettwasekles deg settings/siteaccess/%name/site.ini.append.php. Azal deg settings/override yugar-it. Asekles ad ak-d-yessuter ad tesnetmeḍ belli d keččini.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Your account was locked</source>
         <translation>Amiḍan-ik yettwasekker</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Tasarut n unekcum tettwarna ɣer umiḍan-ik %login deg %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Win yesɛan tasarut-a n unekcum yezmer ad yekcem ɣer umiḍan-ik war awal-ik uffir. Ma mačči d kečč i tt-yernan, kkes-itt ddaw Tisura n unekcum, tbeddleḍ awal-ik uffir.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Tasarut n unekcum tettwakkes seg umiḍan-ik %login deg %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ur tettizmir ara ad tekcem ɣer umiḍan-ik. Ma mačči d kečč i tt-yekksen, senqed tisura-k n unekcum d yibenkan-ik.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Tasarut n unekcum tettwarna ɣer umiḍan-ik</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Tasarut n unekcum tettwakkes seg umiḍan-ik</translation>
     </message>
 </context>
 <context>

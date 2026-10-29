@@ -14,8 +14,10 @@ A view of the `user` module, defined in `kernel/user/module.php` and run by `ker
 ## Address
 
 ```text
-/user/passkeys
+/user/passkeys/<UserID>
 ```
+
+Ordered parameters, in this order after the view name: `UserID`.
 
 ## Who may open it
 
@@ -36,13 +38,13 @@ A policy on `user/*` (every function) also grants it; limitations of the policy 
 A link in a template (`ezurl` adds the siteaccess and quotes the address); the parameter values are placeholders:
 
 ```tpl
-<a href={'/user/passkeys'|ezurl}>user/passkeys</a>
+<a href={'/user/passkeys/1'|ezurl}>user/passkeys</a>
 ```
 
 From PHP, the redirect a view gives after it has done its work:
 
 ```php
-return $Module->redirectTo( '/user/passkeys' );
+return $Module->redirectTo( '/user/passkeys/1' );
 ```
 
 ## Related

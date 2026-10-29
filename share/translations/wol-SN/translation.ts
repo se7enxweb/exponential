@@ -77213,6 +77213,82 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Mënuñu seetlu caabiy dugg bi. Jéemaatal.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Kontu yi di dugg ak caabiy dugg rekk mënuñu fii jëfandikoo baatu jàll: tànnal «Dugg ak caabiy dugg».</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Caabiy dugg yu %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Caabiy dugg yi kontu bii di dugg ak ñoom. Dindil sañ-sañu bi nekk ci jumtukaay bu réer walla ñu sàcc ko: dootul mën a dugg. Boroom bi moo koy yokk yu bees ci boppam.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Sa kontu soxla na benn caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Yokkal benn caabiy dugg ci sa kontu</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Yokkal benn caabiy dugg ngir wéy. Ginnaaw loolu, dangay dugg ak moom te du baatu jàll rekk.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Dugg ak caabiy dugg gaawe na te wóor na lu ëpp baatu jàll. Yokkal benn léegi, walla wéyal te amul.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Léegi déet</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Dindi sañ-sañu caabiy dugg «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Dootul mën a dugg ci kontu bii. Su doonoon bu mujj bi, boroom bi dina dugg ak baatu jàll bi, walla yaw nga teg bu bees.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Dindi sañ-sañu caabiy dugg bi</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Dindi sañ-sañ</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Kontu bii amul benn caabiy dugg.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Seetluwaay</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Xamuñu ko</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Sa caabiy dugg bu mujj: yokkal beneen balaa ngay dindi bii.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Kontu bii day dugg ak caabiy dugg rekk (politigu caabiy dugg): bu benn desul, dina waat dugg ak baatu jàllam.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Lii mooy sa caabiy dugg bu mujj, te sa kontu mënul a dugg bu amul benn. Yokkal beneen caabiy dugg ba pare.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Sañ-sañu caabiy dugg «%name» dindi nañu ko. Dootul mën a dugg ci kontu bii.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kood bu jóge ci sa app bu seetlu</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Yaa ngi waaj a far ay done ba fàww walla nga setal ab tëralinu jëf.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Sa baatu jàll ak benn caabiy dugg</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Sa baatu jàll ak kood bu jóge ci sa aplikaasiyoŋu seetlu</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Walla:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Bii wërlukaay mënul a jëfandikoo caabiy dugg. Jëfandikool beneen yoon, walla beneen wërlukaay.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Bu nga wéyee, sa wërlukaay dina laaj benn ci say caabiy dugg.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Wéy ak caabiy dugg</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>Setup</source>
         <translation>Defar</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Soppi sa baatu jàll, sa adrees imeel, say caabiy dugg, dugg ci ñaari tappal, kood yu delloo walla caabiy API, ak génn ci sa yeneen jumtukaay.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Sos ak soppi jëfandikukat yi, seeni baatu jàll ak seeni jumtukaay, tànneefi kontu, nangu walla bañ kontu yu bees, jox ay wàll ak soppi politig yi.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Far ay done</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Setal mbalit mi, dindi ci yëf yi ak dindi ay yëf yu bari benn yoon.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Dindi, siiwal ak denc ay li ci biir</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Dindi li ci biir (ba ci mbalit mi), siiwal ak denc ab tëral, ñu koy laaj bu formileer bi yónnee. Dafa fey ci njàlbéen.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Balaa jëf ju am solo, jëfandikukat bu dugg dina waat a dëggal kan la: ak baatu jàllam ak caabiy dugg, walla bu amul caabiy dugg ak baatu jàllam ak koodu aplikaasiyoŋu seetluwaayam. Xëti web yi rekk ñoo laaj: interfaasu REST, SOAP, WebDAV, duggu expservices ak rëdd ndigal du laaj mukk.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Fu tànneef yi di dox</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Tànneef yu</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Buntu sit bu nekk</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Buntu sit %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ubbi</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ñan lañuy laaj: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Tegal màndarga ci mbooloou jëfandikukat yi ngir laaj seeni waa rekk (ci misaal ñiy defar). Benn amul màndarga: jëfandikukat bu nekk.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Denc nañu ko ci settings/override/site.ini.append.php, ngir buntu sit bu nekk. Denc gi dina la laaj nga dëggal ne yaw la.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Denc nañu ko ci settings/siteaccess/%name/site.ini.append.php. Njëg ji nekk ci settings/override moo ko jiitu. Denc gi dina la laaj nga dëggal ne yaw la.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Sa kont tëj nañu ko</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Yokk nañu benn caabiy dugg ci sa kontu %login ci %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Ku am caabiy dugg bii mën na dugg ci sa kontu te soxlawul sa baatu jàll. Su dul yaw yokk ko, dindil ko ci Caabiy dugg te soppi sa baatu jàll.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Dindi nañu benn caabiy dugg ci sa kontu %login ci %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Dootul mën a dugg ci sa kontu. Su dul yaw dindi ko, seetal say caabiy dugg ak say jumtukaay.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Yokk nañu benn caabiy dugg ci sa kontu</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Dindi nañu benn caabiy dugg ci sa kontu</translation>
     </message>
 </context>
 <context>

@@ -77213,6 +77213,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߡߊ ߛߋ ߞߊ ߛߍߜ߳ߍߛߍߜ߳ߍ. ߤߊߞߍߕߏ߸ ߊ ߟߊߖߍ ߕߎߡߊ ߥߍߙߍ.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ߞߐ߲ߕߌ ߡߍ߲ ߟߎ ߓߋ ߘߏ߲ ߘߏ߲ߣߌ ߞߌߟߍߟߎ ߘߐߙߐ߲ ߟߊ߸ ߏ ߟߎ ߕߍ ߛߐ߲ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߟߊߓߊߙߊ ߦߊ߲: «ߘߏ߲ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ» ߛߎߜ߳ߊ߲ߘߌ.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ߟߊ ߘߏ߲ߣߌ ߞߌߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ߣߌ߲ ߞߐ߲ߕߌ ߓߋ ߘߏ߲ ߘߏ߲ߣߌ ߞߌߟߍ ߡߍ߲ ߟߎ ߟߊ. ߡߌ߲ ߓߍ ߡߌߣߍ߲ ߕߎ߲ߣߍ߲ ߥߊߟߌߡߊ ߛߏ߲ߦߊߣߍ߲ ߞߊ߲߸ ߏ ߟߊߛߊ: ߊ ߕߍ ߛߋ ߘߏ߲ ߟߊ ߕߎߡߊ ߥߍߙߍ. ߞߐ߲ߕߌ ߕߌ ߖߍߘߍ ߓߋ ߞߎߘߊ ߟߎ ߝߊߙߊ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߞߊߞߊ߲ ߌ ߞߊ ߞߐ߲ߕߌ ߝߍ</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߝߊߙߊ ߌ ߞߊ ߞߐ߲ߕߌ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߝߊߙߊ ߞߊ ߕߊ ߢߍ. ߏ ߞߐ ߌ ߓߘߊ ߘߏ߲ ߊ ߟߋ ߦߋ߸ ߌ ߕߍ ߘߏ߲ ߜ߳ߎ߲ߘߏߘߊߢߍ ߘߐߙߐ߲ ߦߋ ߕߎߡߊ ߥߍߙߍ.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ ߘߏ߲ ߞߊ ߘߌߦߊ ߞߏߛߓߍ ߊ ߟߊߕߊߡߊ߲ߣߍ߲ ߞߏߛߓߍ ߜ߳ߎ߲ߘߏߘߊߢߍ ߓߊߟߊ. ߞߋߟߋ߲ ߝߊߙߊ ߊ ߞߊ߲ ߛߌߣߊ߲߸ ߥߊߟߌߡߊ ߕߊ ߢߍ ߊ ߕߍ.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>ߛߌߣߊ߲ ߕߍ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ «%name» ߟߊߛߊ ߥߊ؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ߊ ߕߍ ߛߋ ߞߊ ߘߏ߲ ߣߌ߲ ߞߐ߲ߕߌ ߟߊ ߕߎߡߊ ߥߍߙߍ. ߣߌ ߊ ߕߎ߲ ߓߍ ߟߊߓߊ߲ ߘߌ߸ ߞߐ߲ߕߌ ߕߌ ߓߘߊ ߘߏ߲ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߋ߸ ߥߊߟߌߡߊ ߌ ߦߋ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߘߊ ߟߊߘߏ߲.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߟߊߛߊ</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>ߟߊߛߊ</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߕߍ ߣߌ߲ ߞߐ߲ߕߌ ߓߟߏ.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>ߘߐ߲ߣߊߓߊߜ߳ߊ</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>ߊ ߕߍ ߘߏ߲</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>ߌ ߞߊ ߘߏ߲ߣߌ ߞߌߟߍ ߟߊߓߊ߲: ߜ߳ߘߍ ߝߊߙߊ ߊ ߞߊ߲ ߣߌ ߌ ߡߊ ߣߌ߲ ߓߐߛߌ ߝߟߐ.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ߣߌ߲ ߞߐ߲ߕߌ ߓߋ ߘߏ߲ ߘߏ߲ߣߌ ߞߌߟߍߟߎ ߘߐߙߐ߲ ߟߊ (ߘߏ߲ߣߌ ߞߌߟߍ ߛߊߙߌߦߊ): ߣߌ ߞߋߟߋ߲ ߕߍ ߕߏߣߍ߲ ߦߋ߸ ߊ ߓߘߊ ߘߏ߲ ߊ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߋ ߕߎߣߌ.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ߣߌ߲ ߦߋ ߌ ߞߊ ߘߏ߲ߣߌ ߞߌߟߍ ߟߊߓߊ߲ ߘߌ߸ ߌ ߞߊ ߞߐ߲ߕߌ ߕߍ ߛߋ ߞߊ ߘߏ߲ ߊ ߕߍ. ߘߏ߲ߣߌ ߞߌߟߍ ߜ߳ߘߍ ߝߊߙߊ ߊ ߞߊ߲ ߝߟߐ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ «%name» ߟߊߛߊߣߍ߲ ߟߋ. ߊ ߕߍ ߛߋ ߞߊ ߘߏ߲ ߣߌ߲ ߞߐ߲ߕߌ ߟߊ ߕߎߡߊ ߥߍߙߍ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>ߞߏߘߋ ߡߌ߲ ߓߐߙߊ ߌ ߞߊ ߔߏߙߏߜ߳ߙߊߡߎ ߛߍߜ߳ߍߛߍߜ߳ߍߓߊߜ߳ߊ ߟߊ</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>ߌ ߓߋ ߕߊ ߘߊߕߊ ߖߐߛߌ ߟߊ ߓߊߓߎ߲ ߥߊߟߌߡߊ ߞߍߥߊߟߍ ߛߍߓߍ߲ ߘߏ ߖߐߛߌ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߘߏ</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߣߌ ߞߏߘߌ ߘߏ ߡߌ߲ ߓߐߙߊ ߌ ߞߊ ߘߐ߲ߣߊߓߊߜ߳ߊ ߊߔߟߌߞߊߛߌߦߐ߲ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>ߥߊߟߌߡߊ:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ߣߌ߲ ߥߍߓߎ ߦߊߟߊߟߊ߲ ߕߍ ߛߋ ߘߏ߲ߣߌ ߞߌߟߍߟߎ ߟߊߓߊߙߊ ߟߊ. ߛߌߟߊ ߜ߳ߘߍ ߓߊߙߊ ߕߊ߸ ߥߊߟߌߡߊ ߥߍߓߎ ߦߊߟߊߟߊ߲ ߜ߳ߘߍ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>ߣߌ ߌ ߓߊ ߕߊ ߢߍ߸ ߌ ߞߊ ߥߍߓߎ ߦߊߟߊߟߊ߲ ߓߋ ߌ ߞߊ ߘߏ߲ߣߌ ߞߌߟߍߟߎ ߞߋߟߋ߲ ߢߌߣߌ߲ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>ߕߊ ߢߍ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>ߟߊߓߍ߲ߣߌ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>ߌ ߖߘߍ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ߸ ߌߡߍߟߌ ߊߘߙߍߛߌ߸ ߘߏ߲ߣߌ ߞߌߟߍߟߎ߸ ߘߏ߲ߣߌ ߛߍ߲ ߝߌߟߊ ߟߊ߸ ߛߐߘߐ߲ ߞߏߘߌߟߎ ߥߊߟߌߡߊ API ߞߌߟߍߟߎ ߡߊߝߊߟߋ߲ ߟߌ߲߸ ߊ ߣߌ ߌ ߖߘߍ ߞߊ ߡߌߣߍ߲ ߜ߳ߘߍߟߎ ߓߐ ߟߌ߲.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ߓߊߙߊߞߍߟߊߟߎ߸ ߏ ߟߎ ߟߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߣߌ ߡߌߣߍ߲ߟߎ߸ ߞߐ߲ߕߌ ߟߊߓߍ߲ߟߎ ߘߊߟߌ߲ ߣߌ ߦߍߟߍߡߊߟߌ߸ ߓߊߙߊߞߍߟߊ ߞߐ߲ߕߌ ߞߎߘߊߟߎ ߓߊ߲ߓߊ߲ ߥߊߟߌߡߊ ߓߊߟߌ߸ ߖߐߦߐߙߐߟߎ ߘߌߟߌ ߣߌ ߛߊߙߌߦߊߟߎ ߦߍߟߍߡߊߟߌ.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>ߘߊߕߊ ߖߐߛߌߟߌ</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߘߊߝߊ߲ߞߊ߲ߓߐߟߌ߸ ߝߋ߲ߟߎ ߓߐߛߌߟߌ ߊ ߞߐߣߐ ߣߌ ߝߋ߲ ߛߌߦߊߡߊ߲ ߓߐߛߌߟߌ ߢߐ߲ߡߌ߲ߞߊ߲ ߘߐ.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>ߞߐߣߐߞߏߟߎ ߓߐߛߌߟߌ߸ ߓߌߟߊߟߌ ߞߍߣߍ ߞߊ߲ ߣߌ ߡߊߙߊߟߌ</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>ߞߐߣߐߞߏߟߎ ߓߐߛߌߟߌ (ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߘߐ ߝߣߊ)߸ ߓߌߟߊߟߌ ߞߍߣߍ ߞߊ߲ ߣߌ ߓߙߎߦߐ߲ ߡߊߙߊߟߌ߸ ߢߌߣߌ߲ߞߊߟߌ ߓߋ ߞߍ ߞߊ ߛߓߍߘߋ߲ ߗߌ ߕߎߡߊ ߟߊ. ߊ ߕߍ ߟߊߓߊߙߊ ߟߊ ߝߟߐ.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ߞߊ ߓߊ ߞߍߟߌ ߜ߳ߍߟߍ߲ ߢߍ߸ ߓߊߙߊߞߍߟߊ ߡߍ߲ ߘߏ߲ߣߍ߲ ߓߋ ߊ ߦߍߙߍ ߛߐ߲ ߕߎߡߊ ߥߍߙߍ: ߣߌ ߊ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߦߋ߸ ߥߊߟߌߡߊ ߣߌ ߘߏ߲ߣߌ ߞߌߟߍ ߕߍ ߦߋ߲߸ ߣߌ ߊ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߣߌ ߊ ߞߊ ߘߐ߲ߣߊߓߊߜ߳ߊ ߊߔߟߌߞߊߛߌߦߐ߲ ߞߏߘߌ ߦߋ. ߥߍߓߎ ߞߐߜ߳ߍߟߎ ߘߐߙߐ߲ ߓߋ ߢߌߣߌ߲ߞߊߟߌ ߞߍ ߟߊ: REST ߘߐ߲ߓߊߟߌ߸ SOAP߸ WebDAV߸ expservices ߘߏ߲ߣߌ ߣߌ ߓߊߘߌ ߛߌߘߌߙߌ ߕߍ ߢߌߣߌ߲ߞߊߟߌ ߞߍ ߝߋߎ.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>ߟߊߓߍ߲ߟߎ ߓߋ ߕߊ ߡߌ߲ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>ߟߊߓߍ߲ߟߎ ߓߊ ߡߍ߲ ߦߋ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ߛߌߕߌ ߘߏ߲ߘߊ ߓߍߦߊ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>ߛߌߕߌ ߘߏ߲ߘߊ %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ߘߊ ߦߍߟߍ</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>ߡߍ߲ ߢߌߣߌ߲ߞߊߣߍ߲: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>ߓߊߙߊߞߍߟߊߟߎ ߖߍߞߎߟߎߟߎ ߛߎߜ߳ߊ߲ߘߌ ߞߊ ߏ ߟߎ ߟߊ ߛߌ߲ߘߌߟߊߟߎ ߘߐߙߐ߲ ߢߌߣߌ߲ߞߊ (ߦߙߌߞߊ ߘߌ ߦߍߟߍߡߊߓߊߜ߳ߊߟߎ). ߞߋߟߋ߲ ߡߊ ߛߎߜ߳ߊ߲ߘߌ: ߓߊߙߊߞߍߟߊ ߓߍߦߊ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>ߊ ߡߊߙߊߣߍ߲ ߦߋ settings/override/site.ini.append.php ߘߐ߸ ߛߌߕߌ ߘߏ߲ߘߊ ߓߍߦߊ ߝߍ. ߡߊߙߊߟߌ ߓߋ ߌ ߢߌߣߌ߲ߞߊ ߞߊ ߌ ߦߍߙߍ ߛߐ߲.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>ߊ ߡߊߙߊߣߍ߲ ߦߋ settings/siteaccess/%name/site.ini.append.php ߘߐ. ߝߋ߲ ߡߍ߲ ߓߍ settings/override ߘߐ߸ ߏ ߟߋ ߓߋ ߛߋ߲ߘߐ ߟߊ. ߡߊߙߊߟߌ ߓߋ ߌ ߢߌߣߌ߲ߞߊ ߞߊ ߌ ߦߍߙߍ ߛߐ߲.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>ߌ ߞߊ ߞߐ߲ߕߌ ߘߊߕߎߜ߳ߎߙߊ</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߘߏ ߝߊߙߊߣߍ߲ ߌ ߞߊ ߞߐ߲ߕߌ %login ߞߊ߲ %site ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>ߡߍ߲ ߓߍߣߊ ߘߏ߲ߣߌ ߞߌߟߍ ߣߌ߲ ߡߊߙߊ߸ ߏ ߓߋ ߛߐ߲ ߞߊ ߘߏ߲ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߕߍ. ߣߌ ߌ ߕߍ ߊ ߝߊߙߊ ߟߊ߸ ߊ ߓߐߛߌ ߘߏ߲ߣߌ ߞߌߟߍߟߎ ߞߐߣߐ ߊ ߣߌ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߡߊߝߊߟߋ߲.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߘߏ ߓߐߛߌߣߍ߲ ߌ ߞߊ ߞߐ߲ߕߌ %login ߟߊ %site ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>ߊ ߕߍ ߛߋ ߞߊ ߘߏ߲ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊ ߕߎߡߊ ߥߍߙߍ. ߣߌ ߌ ߕߍ ߊ ߓߐߛߌ ߟߊ߸ ߌ ߞߊ ߘߏ߲ߣߌ ߞߌߟߍߟߎ ߣߌ ߌ ߞߊ ߡߌߣߍ߲ߟߎ ߝߛߍߝߛߍ.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߘߏ ߝߊߙߊߣߍ߲ ߌ ߞߊ ߞߐ߲ߕߌ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>ߘߏ߲ߣߌ ߞߌߟߍ ߘߏ ߓߐߛߌߣߍ߲ ߌ ߞߊ ߞߐ߲ߕߌ ߟߊ</translation>
     </message>
 </context>
 <context>

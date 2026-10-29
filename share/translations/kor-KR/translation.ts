@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>패스키를 확인할 수 없습니다. 다시 시도하십시오.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>패스키로만 로그인하는 계정은 여기에서 암호를 사용할 수 없습니다. “패스키로 로그인”을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login의 패스키</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>이 계정이 로그인에 사용하는 패스키입니다. 분실하거나 도난당한 장치에 있는 패스키는 해지하십시오. 해지된 패스키로는 더 이상 로그인할 수 없습니다. 새 패스키는 계정 소유자가 직접 추가합니다.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>계정에 패스키가 필요합니다</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>계정에 패스키 추가</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>계속하려면 패스키를 추가하십시오. 그러면 암호만이 아니라 패스키로 로그인하게 됩니다.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>패스키로 로그인하면 암호보다 빠르고 안전합니다. 지금 추가하거나 패스키 없이 계속하십시오.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>나중에</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>“%name” 패스키를 해지하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>이 패스키로 더 이상 이 계정에 로그인할 수 없습니다. 마지막 패스키였다면 소유자는 암호로 로그인합니다. 또는 새 암호를 설정하십시오.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>패스키 해지</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>해지</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>이 계정에는 패스키가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>인증자</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>알 수 없음</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>마지막 패스키입니다. 제거하기 전에 다른 패스키를 추가하십시오.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>이 계정은 패스키로만 로그인합니다(패스키 정책). 패스키가 하나도 남지 않으면 다시 암호로 로그인합니다.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>마지막 패스키이며, 계정은 패스키 없이 로그인할 수 없습니다. 먼저 다른 패스키를 추가하십시오.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>“%name” 패스키가 해지되었습니다. 이 패스키로 더 이상 이 계정에 로그인할 수 없습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>인증 앱의 코드</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>데이터를 영구적으로 삭제하거나 로그를 지우려고 합니다.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>암호와 패스키</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>암호와 인증 앱의 코드</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>또는:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>이 브라우저에서는 패스키를 사용할 수 없습니다. 다른 방법이나 다른 브라우저를 사용하십시오.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>계속하면 브라우저가 패스키 중 하나를 요청합니다.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>패스키로 계속</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>설정</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>자신의 암호, 이메일 주소, 패스키, 2단계 로그인, 복구 코드 또는 API 키 변경 및 자신의 다른 장치 로그아웃.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>사용자와 사용자의 암호 및 장치, 계정 설정의 생성과 편집, 새 사용자 계정의 승인 또는 거부, 역할 할당 및 정책 편집.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>데이터 삭제</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>휴지통 비우기, 휴지통에서 항목 제거 및 여러 항목 한꺼번에 제거.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>콘텐츠 제거, 게시 및 저장</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>콘텐츠 제거(휴지통으로 이동 포함), 게시 및 초안 저장. 양식을 보낼 때 묻습니다. 기본값은 꺼짐입니다.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>중요한 작업 전에 로그인한 사용자는 본인임을 다시 확인합니다. 암호와 패스키로, 또는 패스키가 없으면 암호와 인증 앱의 코드로 확인합니다. 웹 페이지에서만 묻습니다. REST 인터페이스, SOAP, WebDAV, expservices 로그인과 명령줄에서는 묻지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>설정 적용 범위</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>설정 대상</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>모든 사이트 액세스</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>사이트 액세스 %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>열기</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>확인 대상: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>구성원에게만 묻도록 사용자 그룹을 선택하십시오(예: 편집자). 선택하지 않으면 모든 사용자에게 묻습니다.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>모든 사이트 액세스에 대해 settings/override/site.ini.append.php에 저장됩니다. 저장할 때 본인 확인을 요청합니다.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php에 저장됩니다. settings/override의 값이 이 값보다 우선합니다. 저장할 때 본인 확인을 요청합니다.</translation>
     </message>
 </context>
 <context>
@@ -77788,6 +77956,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>계정이 잠겼습니다</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site의 %login 계정에 패스키가 추가되었습니다.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>이 패스키를 가진 사람은 암호 없이 계정에 로그인할 수 있습니다. 직접 추가하지 않았다면 패스키에서 제거하고 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site의 %login 계정에서 패스키가 제거되었습니다.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>이 패스키로 더 이상 계정에 로그인할 수 없습니다. 직접 제거하지 않았다면 패스키와 장치를 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>계정에 패스키가 추가되었습니다</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>계정에서 패스키가 제거되었습니다</translation>
     </message>
 </context>
 <context>

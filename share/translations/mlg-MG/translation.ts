@@ -77213,6 +77213,82 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Tsy azo hamarinina ny fanalahidy fidirana. Azafady andramo indray.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Ireo kaonty miditra amin&apos;ny fanalahidy fidirana ihany dia tsy afaka mampiasa teny miafina eto: safidio ny &quot;Miditra amin&apos;ny fanalahidy fidirana&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Fanalahidy fidirana an&apos;i %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Ireo fanalahidy fidirana iditran&apos;ity kaonty ity. Tsoahy izay ao amin&apos;ny fitaovana very na nangalarina: tsy afaka miditra intsony izy. Ny tompony ihany no manampy ireo vaovao.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Mila fanalahidy fidirana ny kaontinao</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ampio fanalahidy fidirana ny kaontinao</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ampio fanalahidy fidirana mba hanohizana. Avy eo dia hiditra amin&apos;izany ianao fa tsy amin&apos;ny teny miafina fotsiny.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Haingana kokoa sy azo antoka kokoa noho ny teny miafina ny fidirana amin&apos;ny fanalahidy fidirana. Ampio iray izao, na manohiza tsy misy izany.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Tsy izao</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Tsoahy ve ny fanalahidy fidirana &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Tsy afaka miditra amin&apos;ity kaonty ity intsony izy. Raha izy no farany, dia miditra amin&apos;ny teny miafina ny tompony, na mametraka teny miafina vaovao ianao.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Tsoahy ny fanalahidy fidirana</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Tsoahy</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Tsy manana fanalahidy fidirana ity kaonty ity.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Mpanamarina</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Tsy fantatra</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Ny fanalahidy fidiranao farany: ampio iray hafa alohan&apos;ny hanesoranao azy.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ity kaonty ity dia miditra amin&apos;ny fanalahidy fidirana ihany (politikan&apos;ny fanalahidy fidirana): rehefa tsy misy sisa, dia miditra amin&apos;ny teny miafiny indray izy.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ity no fanalahidy fidiranao farany ary tsy afaka miditra raha tsy misy izany ny kaontinao. Ampio fanalahidy fidirana hafa aloha.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Voatsoaka ny fanalahidy fidirana &quot;%name&quot;. Tsy afaka miditra amin&apos;ity kaonty ity intsony izy.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Code from your authenticator app</source>
         <translation>Kaody avy amin'ny rindranasa fanamarinana ampiasainao</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Efa hamafa angon-drakitra mandrakizay na hanadio diary ianao.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ny teny miafinao sy fanalahidy fidirana</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ny teny miafinao sy kaody avy amin&apos;ny app mpanamarina anao</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Na:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Tsy afaka mampiasa fanalahidy fidirana ity mpitety ity. Mampiasà fomba hafa, na mpitety hafa.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Rehefa manohy ianao, dia hangataka ny iray amin&apos;ireo fanalahidy fidiranao ny mpitetinao.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Hanohy amin&apos;ny fanalahidy fidirana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Setup</source>
         <translation>Fametrahana</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Fanovana ny teny miafin&apos;ny tena, ny adiresy mailaka, ny fanalahidy fidirana, ny fidirana roa dingana, ny kaody famerenana na ny fanalahidy API, ary fivoahana amin&apos;ireo fitaovana hafan&apos;ny tena.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Famoronana sy fanovana mpampiasa, ny teny miafiny sy ny fitaovany, ny fikirana kaonty, fankatoavana na fandavana kaonty mpampiasa vaovao, fanendrena andraikitra ary fanovana politika.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Famafana angon-drakitra</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Fanariana ny fako, fanesorana zavatra ao aminy ary fanesorana zavatra maromaro indray mandeha.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Fanesorana, famoahana ary fitehirizana votoaty</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Fanesorana votoaty (ho any amin&apos;ny fako koa), famoahana ary fitehirizana drafitra; anontaniana rehefa alefa ny taratasy fenoina. Maty raha tsy ovaina.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Alohan&apos;ny hetsika saro-pady, ny mpampiasa efa niditra dia manamarina indray hoe iza izy: amin&apos;ny teny miafiny sy fanalahidy fidirana, na raha tsy misy fanalahidy fidirana, amin&apos;ny teny miafiny sy ny kaody avy amin&apos;ny app mpanamarina azy. Ny pejy web ihany no manontany: ny fifandraisana REST, SOAP, WebDAV, ny fidirana expservices ary ny tsipika baiko dia tsy manontany mihitsy.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Toerana mihatra ny fikirana</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Fikirana ho an&apos;ny</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ny fidirana amin&apos;ny tranonkala rehetra</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Fidirana amin&apos;ny tranonkala %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Sokafy</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Iza no anontaniana: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Mariho ny vondron&apos;ny mpampiasa mba hanontaniana ny mpikambana ao aminy ihany (ohatra ireo mpanova). Tsy misy voamarika: ny mpampiasa rehetra.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Voatahiry ao amin&apos;ny settings/override/site.ini.append.php, ho an&apos;ny fidirana amin&apos;ny tranonkala rehetra. Rehefa mitahiry dia angatahina ianao hanamarina fa ianao izany.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Voatahiry ao amin&apos;ny settings/siteaccess/%name/site.ini.append.php. Ny sanda ao amin&apos;ny settings/override no manan-danja kokoa. Rehefa mitahiry dia angatahina ianao hanamarina fa ianao izany.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Your account was locked</source>
         <translation>Nohidiana ny kaontinao</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Nisy fanalahidy fidirana nampiana tamin&apos;ny kaontinao %login ao amin&apos;ny %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Izay manana ity fanalahidy fidirana ity dia afaka miditra amin&apos;ny kaontinao tsy misy ny teny miafinao. Raha tsy ianao no nanampy azy, esory ao amin&apos;ny Fanalahidin&apos;ny fidirana izy ary ovay ny teny miafinao.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Nisy fanalahidy fidirana nesorina tamin&apos;ny kaontinao %login ao amin&apos;ny %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Tsy afaka miditra amin&apos;ny kaontinao intsony izy. Raha tsy ianao no nanala azy, hamarino ny fanalahidy fidiranao sy ny fitaovanao.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Nisy fanalahidy fidirana nampiana tamin&apos;ny kaontinao</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Nisy fanalahidy fidirana nesorina tamin&apos;ny kaontinao</translation>
     </message>
 </context>
 <context>

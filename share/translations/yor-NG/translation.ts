@@ -77211,6 +77211,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>A kò lè ṣàyẹ̀wò kọ́kọ́rọ́ ìwọlé náà. Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Àwọn àkáǹtì tó ń wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé nìkan kò lè lo ọ̀rọ̀ aṣínà níbí: ẹ yan “Wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé”.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Àwọn kọ́kọ́rọ́ ìwọlé ti %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Àwọn kọ́kọ́rọ́ ìwọlé tí àkáǹtì yìí fi ń wọlé. Ẹ fagilé èyí tó wà lórí ẹ̀rọ tó sọnù tàbí tí wọ́n jí: kò ní lè wọlé mọ́. Ẹni tó ni àkáǹtì ni yóò fi àwọn tuntun kún un fúnra rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Àkáǹtì yín nílò kọ́kọ́rọ́ ìwọlé kan</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Ẹ fi kọ́kọ́rọ́ ìwọlé kan kún àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Ẹ fi kọ́kọ́rọ́ ìwọlé kan kún un láti tẹ̀síwájú. Lẹ́yìn náà ẹ ó máa fi í wọlé dípò ọ̀rọ̀ aṣínà nìkan.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Wíwọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé yára jù, ó sì ní ààbò ju ọ̀rọ̀ aṣínà lọ. Ẹ fi ọ̀kan kún un nísinsìnyí, tàbí kí ẹ tẹ̀síwájú láìsí i.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Kì í ṣe báyìí</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Ṣé kí a fagilé kọ́kọ́rọ́ ìwọlé “%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Kò lè wọlé sí àkáǹtì yìí mọ́. Tí ó bá jẹ́ èyí tó kẹ́yìn, ẹni tó ni àkáǹtì yóò wọlé pẹ̀lú ọ̀rọ̀ aṣínà, tàbí kí ẹ̀yin ṣètò tuntun.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Fagilé kọ́kọ́rọ́ ìwọlé náà</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Àkáǹtì yìí kò ní kọ́kọ́rọ́ ìwọlé.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Olùfìdí-ẹni-múlẹ̀</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Àìmọ̀</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Kọ́kọ́rọ́ ìwọlé yín tó kẹ́yìn: ẹ fi òmíràn kún un kí ẹ tó yọ ọ́ kúrò.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Àkáǹtì yìí ń wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé nìkan (ìlànà kọ́kọ́rọ́ ìwọlé): tí kò bá sí èyí tó kù, yóò tún máa wọlé pẹ̀lú ọ̀rọ̀ aṣínà rẹ̀.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Èyí ni kọ́kọ́rọ́ ìwọlé yín tó kẹ́yìn, àkáǹtì yín kò sì lè wọlé láìsí ọ̀kan. Ẹ kọ́kọ́ fi kọ́kọ́rọ́ ìwọlé mìíràn kún un.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>A ti fagilé kọ́kọ́rọ́ ìwọlé “%name”. Kò lè wọlé sí àkáǹtì yìí mọ́.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>Kóòdù láti inú áàpù ìfìdí-ẹni-múlẹ̀ yín</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Ẹ fẹ́ pa dátà rẹ́ títí láé tàbí kí ẹ pa àkọsílẹ̀ kan rẹ́.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ọ̀rọ̀ aṣínà yín àti kọ́kọ́rọ́ ìwọlé kan</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ọ̀rọ̀ aṣínà yín àti kóòdù láti inú áàpù ìfìdí-ẹni-múlẹ̀ yín</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Tàbí:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Aṣàwákiri yìí kò lè lo kọ́kọ́rọ́ ìwọlé. Ẹ lo ọ̀nà mìíràn, tàbí aṣàwákiri mìíràn.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Tí ẹ bá tẹ̀síwájú, aṣàwákiri yín yóò béèrè ọ̀kan nínú àwọn kọ́kọ́rọ́ ìwọlé yín.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Tẹ̀síwájú pẹ̀lú kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Yíyí ọ̀rọ̀ aṣínà ẹni padà, àdírẹ́sì ímeèlì, kọ́kọ́rọ́ ìwọlé, ìwọlé onípele méjì, kóòdù ìmúpadàbọ̀sípò tàbí kọ́kọ́rọ́ API, àti jíjáde lórí àwọn ẹ̀rọ mìíràn ẹni.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Ṣíṣẹ̀dá àti ṣíṣàtúnṣe àwọn olùlò, ọ̀rọ̀ aṣínà wọn àti ẹ̀rọ wọn, ètò àkáǹtì, fífọwọ́sí tàbí kíkọ àwọn àkáǹtì olùlò tuntun, yíyan ipa àti ṣíṣàtúnṣe àwọn ìlànà.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Pípa dátà rẹ́</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Síṣófo àpótí ìdọ̀tí, yíyọ àwọn nǹkan kúrò nínú rẹ̀ àti yíyọ ọ̀pọ̀ nǹkan kúrò lẹ́ẹ̀kan náà.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Yíyọ, títẹ̀jáde àti fífi àkóónú pamọ́</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Yíyọ àkóónú kúrò (bákan náà sí àpótí ìdọ̀tí), títẹ̀jáde àti fífi àkọsílẹ̀ àkọ́kọ́ pamọ́, a ń béèrè nígbà tí a bá fi fọ́ọ̀mù ránṣẹ́. Ó wà ní pípa ní àìyípadà.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Kí ó tó ṣe ìgbésẹ̀ tó ṣe pàtàkì, olùlò tó ti wọlé yóò tún fìdí ẹni tí òun jẹ́ múlẹ̀: pẹ̀lú ọ̀rọ̀ aṣínà rẹ̀ àti kọ́kọ́rọ́ ìwọlé kan, tàbí láìsí kọ́kọ́rọ́ ìwọlé pẹ̀lú ọ̀rọ̀ aṣínà rẹ̀ àti kóòdù áàpù ìfìdí-ẹni-múlẹ̀ rẹ̀. Àwọn ojú-ewé wẹ́ẹ̀bù nìkan ló ń béèrè: ojú-ìsopọ̀ REST, SOAP, WebDAV, ìwọlé expservices àti ìlà àṣẹ kì í béèrè rárá.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ibi tí ètò náà ti ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ètò fún</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gbogbo ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Ìwọlé sáìtì %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ṣí</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ẹni tí a ń béèrè lọ́wọ́ rẹ̀: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Ẹ sàmì sí àwọn ẹgbẹ́ olùlò láti béèrè lọ́wọ́ àwọn ọmọ ẹgbẹ́ wọn nìkan (fún àpẹẹrẹ, àwọn olóòtú). Kò sí èyí tí a sàmì sí: gbogbo olùlò.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>A fi pamọ́ sí settings/override/site.ini.append.php, fún gbogbo ìwọlé sáìtì. Fífi pamọ́ yóò ní kí ẹ fìdí rẹ̀ múlẹ̀ pé ẹ̀yin ni.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>A fi pamọ́ sí settings/siteaccess/%name/site.ini.append.php. Iye kan nínú settings/override ló borí rẹ̀. Fífi pamọ́ yóò ní kí ẹ fìdí rẹ̀ múlẹ̀ pé ẹ̀yin ni.</translation>
     </message>
 </context>
 <context>
@@ -77756,6 +77924,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>A ti tì àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>A fi kọ́kọ́rọ́ ìwọlé kan kún àkáǹtì yín %login lórí %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Ẹnikẹ́ni tó bá ní kọ́kọ́rọ́ ìwọlé yìí lè wọlé sí àkáǹtì yín láìsí ọ̀rọ̀ aṣínà yín. Tí kì í bá ṣe ẹ̀yin ló fi kún un, ẹ yọ ọ́ kúrò lábẹ́ Àwọn kọ́kọ́rọ́ ìwọlé kí ẹ sì yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>A yọ kọ́kọ́rọ́ ìwọlé kan kúrò nínú àkáǹtì yín %login lórí %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Kò lè wọlé sí àkáǹtì yín mọ́. Tí kì í bá ṣe ẹ̀yin ló yọ ọ́ kúrò, ẹ ṣàyẹ̀wò àwọn kọ́kọ́rọ́ ìwọlé àti ẹ̀rọ yín.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>A fi kọ́kọ́rọ́ ìwọlé kan kún àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>A yọ kọ́kọ́rọ́ ìwọlé kan kúrò nínú àkáǹtì yín</translation>
     </message>
 </context>
 <context>

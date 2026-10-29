@@ -20,6 +20,9 @@ The block `[ReauthGroup_account]` of `settings/site.ini`, with 2 setting(s).
 >                  pending account of an approval item of "Approve user accounts")  
 >   credentials    only when the POST changes the login, e-mail or password of a user  
 >   !module/view   never asked for this view (an exception to a module/\* rule)  
+>   bulk           only when several items are removed at once (BulkCount)  
+> A group may name UserGroups\[\] (content object ids of user groups): it then asks only  
+> their members; empty or missing: every user.  
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

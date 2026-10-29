@@ -50,7 +50,7 @@ Every module's policy functions and the limitations each can carry, from `$Funct
 | [trigger](trigger.md) | (none: `trigger/*`) |
 | [uiswitch](uiswitch.md) | `design`, `language` |
 | [url](url.md) | (none: `url/*`) |
-| [user](user.md) | `activation`, `audit`, `deactivate`, `hygiene`, `login`, `password`, `preferences`, `register`, `selfedit`, `sessions`, `sessions_manage` |
+| [user](user.md) | `activation`, `audit`, `deactivate`, `hygiene`, `login`, `passkeys_manage`, `password`, `preferences`, `register`, `selfedit`, `sessions`, `sessions_manage` |
 | [visual](visual.md) | (none: `visual/*`) |
 | [workflow](workflow.md) | (none: `workflow/*`) |
 

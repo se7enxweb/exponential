@@ -77213,6 +77213,82 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Donni kile ma se ka sɛgɛsɛgɛ. Hakɛto, a lajɛ tuma were.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Konti minnu bɛ don ni donni kilew dɔrɔn ye, olu tɛ se ka gundodaɲɛ kɛ yan: «Don ni donni kile ye» sugandi.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login ka donni kilew</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Donni kile minnu bɛ nin konti don. Min bɛ minɛn tununnen walima sonyalen kan, o bɔ baara la: a tɛ se ka don tun. Tigi yɛrɛ de bɛ kuraw fara a kan.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>I ka konti mago bɛ donni kile la</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Donni kile fara i ka konti kan</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Donni kile fara a kan ka taa ɲɛ. O kɔ, i bɛ don n&apos;a ye, gundodaɲɛ dɔrɔn nɔ na.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Ka don ni donni kile ye ka teli ani a ka lafiya ka tɛmɛ gundodaɲɛ kan. Kelen fara a kan sisan, walima taa ɲɛ a kɔ.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Sisan tɛ</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Donni kile «%name» bɔ baara la wa?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>A tɛ se ka don nin konti la tun. N&apos;o tun ye a laban ye, tigi bɛ don ni gundodaɲɛ ye, walima i bɛ kura dɔ sigi.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Donni kile bɔ baara la</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Bɔ baara la</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Donni kile si tɛ nin konti bolo.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Sɛgɛsɛgɛbaga</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>A tɛ dɔn</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>I ka donni kile laban: wɛrɛ fara a kan sani i k&apos;a bɔsi.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Nin konti bɛ don ni donni kilew dɔrɔn ye (donni kile sariya): ni foyi ma to, a bɛ don ni a ka gundodaɲɛ ye tugun.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Nin ye i ka donni kile laban ye, wa i ka konti tɛ se ka don ni kile tɛ. Donni kile wɛrɛ fara a kan fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Donni kile «%name» bɔra baara la. A tɛ se ka don nin konti la tun.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kode min bɔra i ka porogaramu sɛgɛsɛgɛbaga la</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>I bɛ kunnafoniw jɔsi pewu walima kɛwale sɛbɛn lankolon.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>I ka gundodaɲɛ ni donni kile</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>I ka gundodaɲɛ ni kode min bɔra i ka porogaramu sɛgɛsɛgɛbaga la</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Walima:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Nin wɛbu yaalalan tɛ se ka baara kɛ ni donni kilew ye. Sira wɛrɛ ta, walima wɛbu yaalalan wɛrɛ.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ni i taara ɲɛ, i ka wɛbu yaalalan bɛ i ka donni kile dɔ ɲini.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Taa ɲɛ ni donni kile ye</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Setup</source>
         <translation>Labɛnni</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>I yɛrɛ ka gundodaɲɛ, imɛli adiresi, donni kilew, donni sen fila la, lasegin kodew walima API kilew yɛlɛma, ani ka bɔ i yɛrɛ ka minɛn wɛrɛw kan.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Baarakɛlaw, u ka gundodaɲɛw ni u ka minɛnw dilan ni u yɛlɛma, konti labɛnw, baarakɛla konti kuraw sɔn walima u bali, jɔyɔrɔw di ani sariyaw yɛlɛma.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Kunnafoniw jɔsili</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Nɔgɔsigiyɔrɔ lankolon, fɛnw bɔsi a la ani fɛn caman bɔsi ɲɔgɔn fɛ.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Kɔnɔkow bɔsili, u bilali kɛnɛ kan ani u marali</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Kɔnɔkow bɔsili (nɔgɔsigiyɔrɔ la fana), bilali kɛnɛ kan ani bruyɔn marali; a bɛ ɲininka ni formilɛri cira. A tɛ baara la ka kɔrɔ sariyalen na.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Sani kɛwale sɛgɛlen dɔ, baarakɛla donnen b&apos;a yɛrɛ jira kokura: ni a ka gundodaɲɛ ni donni kile ye, walima ni donni kile t&apos;a bolo, ni a ka gundodaɲɛ ni kode ye min bɔra a ka porogaramu sɛgɛsɛgɛbaga la. Wɛbu ɲɛw dɔrɔn de b&apos;a ɲini: REST interfɛsi, SOAP, WebDAV, expservices donni ani komandi sira t&apos;a ɲini abada.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Labɛnw bɛ baara kɛ yɔrɔ min na</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Labɛnw min kama</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Siti donda bɛɛ</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Siti donda %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Da yɛlɛ</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ɲininkalenw: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Baarakɛlaw jɛkuluw taamasiyɛn walasa k&apos;u ka mɔgɔw dɔrɔn ɲininka (sɛbɛnnikɛlaw, misali la). Si ma taamasiyɛn: baarakɛla bɛɛ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Maralen bɛ settings/override/site.ini.append.php kɔnɔ, siti donda bɛɛ ye. Maraliw b&apos;i ɲini k&apos;i yɛrɛ jira.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Maralen bɛ settings/siteaccess/%name/site.ini.append.php kɔnɔ. Hakɛ min bɛ settings/override kɔnɔ, o de bɛ fanga sɔrɔ a kan. Maraliw b&apos;i ɲini k&apos;i yɛrɛ jira.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>I ka konti datugura</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Donni kile dɔ farala i ka konti %login kan %site kan.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Mɔgɔ o mɔgɔ ye nin donni kile ta, o bɛ se ka don i ka konti la ni i ka gundodaɲɛ tɛ. Ni i yɛrɛ ma a fara a kan, a bɔsi Donni kilew kɔnɔ ani i ka gundodaɲɛ yɛlɛma.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Donni kile dɔ bɔsira i ka konti %login la %site kan.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>A tɛ se ka don i ka konti la tun. Ni i yɛrɛ ma a bɔsi, i ka donni kilew ni i ka minɛnw lajɛ.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Donni kile dɔ farala i ka konti kan</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Donni kile dɔ bɔsira i ka konti la</translation>
     </message>
 </context>
 <context>

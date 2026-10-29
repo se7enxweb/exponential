@@ -74,6 +74,8 @@ class Login extends \Exponential\Runnable\ModuleView
                 \eZSession::rememberCookieLifetime( $http->hasPostVariable( 'Cookie' ) ? $rememberMeTimeout : 0 );
                 $passkeyUser = $passkeyResult['user'];
                 \expPasskeyLogin::signIn( $passkeyUser );
+                if ( class_exists( 'expReauth' ) )
+                    \expReauth::markFreshAfterSignIn( $passkeyUser, array( \expReauth::METHOD_PASSKEY ) );
                 $passkeyUserID = (int)$passkeyUser->attribute( 'contentobject_id' );
                 $http->setSessionVariable( 'eZUserLoggedInID', $passkeyUserID );
                 \eZContentObject::cleanupAllInternalDrafts( $passkeyUserID );
@@ -165,6 +167,11 @@ class Login extends \Exponential\Runnable\ModuleView
                 $rememberMeTimeout = $ini->hasVariable( 'Session', 'RememberMeTimeout' ) ? (int)$ini->variable( 'Session', 'RememberMeTimeout' ) : 0;
                 \eZSession::rememberCookieLifetime( $http->hasPostVariable( 'Cookie' ) ? $rememberMeTimeout : 0 );
 
+                // The passkey policy: an account that signs in with passkeys only ([PasskeySettings] PasswordSignIn)
+                // is refused here, before any login handler, exactly like a wrong password
+                if ( class_exists( 'expPasskeyPolicy' ) && \expPasskeyPolicy::refusesPasswordFor( $userLogin ) )
+                    $loginHandlers = array();
+
                 foreach ( array_keys ( $loginHandlers ) as $key )
                 {
                     $loginHandler = $loginHandlers[$key];
@@ -189,6 +196,10 @@ class Login extends \Exponential\Runnable\ModuleView
                 }
                 if ( !( $user instanceof \eZUser ) and $hasAccessToSite )
                     $loginWarning = true;
+                // a password sign-in that went through here asked for the password only (a two-step sign-in ends
+                // in its own view); it counts as "Verify it's you" only for an account that has nothing more
+                if ( $user instanceof \eZUser && class_exists( 'expReauth' ) )
+                    \expReauth::markFreshAfterSignIn( $user, array( \expReauth::METHOD_PASSWORD ) );
             }
             else
             {
@@ -363,6 +374,9 @@ class Login extends \Exponential\Runnable\ModuleView
         // the passkey sign-in: the options of the browser's dialog (a new challenge each time the form is shown)
         $tpl->setVariable( 'passkey_options', $passkeyOffered ? json_encode( $passkeyService->loginOptions(), JSON_UNESCAPED_SLASHES ) : '' );
         $tpl->setVariable( 'passkey_warning', $passkeyWarning );
+        // after any refused password sign-in alike, where some accounts sign in with passkeys only: the hint to use them
+        $tpl->setVariable( 'passkey_only_hint', $passkeyOffered && !empty( $loginWarning ) && class_exists( 'expPasskeyPolicy' )
+                                                && \expPasskeyPolicy::passwordOffAnywhere( \expPasskeyPolicy::settings() ) );
 
 
         $Result = array();

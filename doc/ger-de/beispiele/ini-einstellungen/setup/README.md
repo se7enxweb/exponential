@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # setup.ini
 
-Die ausgelieferten Einstellungen von `settings/setup.ini`: 24 Blöcke, 54 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/setup.ini`: 24 Blöcke, 55 Einstellungen.
 
 > Exponential-Konfigurationsdatei für eZ Setup  
 >
@@ -29,7 +29,7 @@ Die ausgelieferten Einstellungen von `settings/setup.ini`: 24 Blöcke, 54 Einste
 | Block | Einstellungen |
 |---|---|
 | [RegistrationSettings](RegistrationSettings.md) | 1 |
-| [phpversion](phpversion.md) | 2 |
+| [phpversion](phpversion.md) | 3 |
 | [ezcversion](ezcversion.md) | 3 |
 | [php_session](php_session.md) | 2 |
 | [memory_limit](memory_limit.md) | 1 |

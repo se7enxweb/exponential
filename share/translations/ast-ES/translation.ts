@@ -77213,6 +77213,82 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Nun se pudo comprobar la clave d'accesu. Volvi intentalo.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Les cuentes qu&apos;anicien sesión namái con claves d&apos;accesu nun puen usar equí una contraseña: esbilla &quot;Aniciar sesión con una clave d&apos;accesu&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Claves d&apos;accesu de %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Les claves d&apos;accesu coles qu&apos;anicia sesión esta cuenta. Revoca la que tea nun preséu perdíu o robáu: yá nun podrá aniciar sesión. El propietariu amiesta les nueves él mesmu.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>La to cuenta precisa una clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Amiesta una clave d&apos;accesu a la to cuenta</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Amiesta una clave d&apos;accesu pa siguir. Dempués anicies sesión con ella en cuenta de namái con una contraseña.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Aniciar sesión con una clave d&apos;accesu ye más rápido y seguro qu&apos;una contraseña. Amiesta una agora, o sigui ensin ella.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Agora non</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>¿Revocar la clave d&apos;accesu &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Yá nun podrá aniciar sesión nesta cuenta. Si yera la última, el propietariu anicia sesión cola contraseña, o tu configures una nueva.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revocar la clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revocar</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Esta cuenta nun tien denguna clave d&apos;accesu.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autenticador</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Desconocíu</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>La to última clave d&apos;accesu: amiesta otra enantes de quitala.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Esta cuenta anicia sesión namái con claves d&apos;accesu (política de claves d&apos;accesu): si nun-y queda denguna, anicia sesión otra vegada cola so contraseña.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Esta ye la to última clave d&apos;accesu y la to cuenta nun pue aniciar sesión ensin una. Amiesta primero otra clave d&apos;accesu.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Revocóse la clave d&apos;accesu &quot;%name&quot;. Yá nun pue aniciar sesión nesta cuenta.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Code from your authenticator app</source>
         <translation>Códigu de la to aplicación d'autenticación</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Tas a piques de desaniciar datos dafechu o vaciar un rexistru.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>La to contraseña y una clave d&apos;accesu</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>La to contraseña y un códigu de la to aplicación d&apos;autenticación</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>O:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Esti restolador nun pue usar claves d&apos;accesu. Usa otra manera, o otru restolador.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Al siguir, el restolador pídete una de les tos claves d&apos;accesu.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Siguir con una clave d&apos;accesu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>Setup</source>
         <translation>Configuración</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Camudar la contraseña propia, el corréu electrónicu, les claves d&apos;accesu, l&apos;aniciu de sesión en dos pasos, los códigos de recuperación o les claves d&apos;API, y zarrar la sesión nos otros preseos propios.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crear y editar usuarios, les sos contraseñes y preseos, los axustes de la cuenta, aprobar o refugar cuentes d&apos;usuariu nueves, asignar roles y editar polítiques.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Desaniciar datos</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Vaciar la papelera, quitar elementos d&apos;ella y quitar dellos elementos de vez.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Quitar, espublizar y guardar conteníu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Quitar conteníu (tamién a la papelera), espublizar y guardar un borrador, entrugáu al unviar el formulariu. Desactiváu de forma predeterminada.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Enantes d&apos;una aición sensible, un usuariu con sesión aniciada confirma otra vegada quién ye: cola so contraseña y una clave d&apos;accesu, o ensin clave d&apos;accesu cola so contraseña y el códigu de la so aplicación d&apos;autenticación. Namái preguntan les páxines web: la interfaz REST, SOAP, WebDAV, l&apos;aniciu de sesión d&apos;expservices y la llinia de comandos nunca lo faen.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ónde s&apos;apliquen los axustes</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Axustes pa</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Tolos accesos al sitiu</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Accesu al sitiu %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abrir</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>A quién se-y entruga: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Marca grupos d&apos;usuarios pa entrugar namái a los sos miembros (editores, por exemplu). Nengún marcáu: tolos usuarios.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Guárdase en settings/override/site.ini.append.php, pa tolos accesos al sitiu. Al guardar pídesete que confirmes que yes tu.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Guárdase en settings/siteaccess/%name/site.ini.append.php. Un valor en settings/override tien prioridá sobre él. Al guardar pídesete que confirmes que yes tu.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>La to cuenta bloquióse</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Amestóse una clave d&apos;accesu a la to cuenta %login en %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Quien tenga esta clave d&apos;accesu pue aniciar sesión na to cuenta ensin la to contraseña. Si nun la amestesti tu, quítala en Claves d&apos;accesu y camuda la to contraseña.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Quitóse una clave d&apos;accesu de la to cuenta %login en %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Yá nun pue aniciar sesión na to cuenta. Si nun la quitesti tu, revisa les tos claves d&apos;accesu y preseos.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Amestóse una clave d&apos;accesu a la to cuenta</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Quitóse una clave d&apos;accesu de la to cuenta</translation>
     </message>
 </context>
 <context>

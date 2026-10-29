@@ -77213,6 +77213,82 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>The passkey could not be checked. Please try again.</source>
         <translation>Passkey ntiyashoboye kugenzurwa. Turabasavye mugerageze kandi.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Konti zinjira na passkey gusa ntizishobora gukoresha ijambo ry&apos;ibanga ngaha: muhitemwo &quot;Kwinjira na passkey&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Passkey za %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Passkey iyi konti yinjiramwo. Mwambure ububasha iyiri ku gikoresho catakaye canke cibwe: ntishobora kongera kwinjira. Nyene konti ni we yongerako inshasha.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Konti yanyu ikeneye passkey</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Mwongere passkey kuri konti yanyu</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Mwongereko passkey kugira mubandanye. Hanyuma muzokwinjira nayo aho kwinjira n&apos;ijambo ry&apos;ibanga gusa.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Kwinjira na passkey birihuta kandi biratekanye kuruta ijambo ry&apos;ibanga. Mwongereko imwe ubu, canke mubandanye ata yo.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Si ubu</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Kwambura ububasha passkey &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ntishobora kongera kwinjira kuri iyi konti. Niba yari iya nyuma, nyene konti yinjira n&apos;ijambo ry&apos;ibanga, canke mwebwe mushiraho irishasha.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Kwambura ububasha passkey</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Kwambura ububasha</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Iyi konti nta passkey ifise.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Icemeza</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ntivyizwi</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Passkey yanyu ya nyuma: mwongereko iyindi imbere yo kuyikuraho.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Iyi konti yinjira na passkey gusa (politike ya passkey): iyo nta n&apos;imwe isigaye, yongera kwinjira n&apos;ijambo ryayo ry&apos;ibanga.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Iyi ni passkey yanyu ya nyuma kandi konti yanyu ntishobora kwinjira itayifise. Mubanze mwongereko iyindi passkey.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Passkey &quot;%name&quot; yambuwe ububasha. Ntishobora kongera kwinjira kuri iyi konti.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>Code from your authenticator app</source>
         <translation>Kode iva kuri porogaramu yanyu yo kwemeza</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Mugira gufuta amakuru burundu canke gusiba ivyanditswe vy&apos;ibikorwa.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Ijambo ry&apos;ibanga ryanyu na passkey</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Ijambo ry&apos;ibanga ryanyu n&apos;ikode iva muri porogaramu yanyu yemeza</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Canke:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Uyu mushakisha ntushobora gukoresha passkey. Mukoreshe ubundi buryo canke uwundi mushakisha.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Igihe mubandanije, umushakisha wanyu azobasaba imwe muri passkey zanyu.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Kubandanya na passkey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>Setup</source>
         <translation>Gutunganya</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Guhindura ijambo ry&apos;ibanga ryawe bwite, aderese ya imeyili, passkey, kwinjira mu ntambwe zibiri, kode zo gusubiza canke imfunguzo za API, no gusohora ibindi bikoresho vyawe bwite.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kurema no guhindura abakoresha, amajambo yabo y&apos;ibanga n&apos;ibikoresho vyabo, ingene konti zateguwe, kwemeza canke kwanka konti nshasha z&apos;abakoresha, gutanga uruhara no guhindura politike.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Gufuta amakuru</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Gusiba igiseke c&apos;imyanda, gukuramwo ibintu no gukuraho ibintu vyinshi icarimwe.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Gukuraho, gusohora no kubika ibirimwo</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Gukuraho ibirimwo (no mu giseke c&apos;imyanda), gusohora no kubika icandiko c&apos;agateganyo; birabazwa igihe urupapuro rurungitswe. Vyazimye mu ntango.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Imbere y&apos;igikorwa gikomeye, umukoresha yinjiye yongera kwemeza uwo ari we: n&apos;ijambo ryiwe ry&apos;ibanga na passkey, canke ata passkey n&apos;ijambo ryiwe ry&apos;ibanga n&apos;ikode ya porogaramu yiwe yemeza. Impapuro z&apos;urubuga gusa ni zo zibaza: uburyo bwa REST, SOAP, WebDAV, kwinjira kwa expservices n&apos;umurongo w&apos;amabwirizwa ntibibaza na rimwe.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Aho ingene vyateguwe bikora</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Ingene vyateguwe kuri</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Uburyo bwose bwo gushika ku rubuga</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Uburyo bwo gushika ku rubuga %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Gufungura</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Ababazwa: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Mushire akamenyetso ku migwi y&apos;abakoresha kugira hababazwe abanyamuryango bayo gusa (nk&apos;abahinduzi). Nta na kimwe kirangiwe: umukoresha wese.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Vyabitswe muri settings/override/site.ini.append.php, ku buryo bwose bwo gushika ku rubuga. Mu kubika muzosabwa kwemeza ko ari mwebwe.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Vyabitswe muri settings/siteaccess/%name/site.ini.append.php. Agaciro kari muri settings/override ni ko gatsinda. Mu kubika muzosabwa kwemeza ko ari mwebwe.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>Your account was locked</source>
         <translation>Konti yanyu yugaritswe</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Passkey yongewe kuri konti yanyu %login kuri %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Uwo wese afise iyi passkey arashobora kwinjira kuri konti yanyu ata jambo ry&apos;ibanga ryanyu. Niba atari mwebwe mwayongeyeko, muyikureho muri Passkey hanyuma muhindure ijambo ry&apos;ibanga ryanyu.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Passkey yakuwe kuri konti yanyu %login kuri %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ntishobora kongera kwinjira kuri konti yanyu. Niba atari mwebwe mwayikuyeho, murabe passkey zanyu n&apos;ibikoresho vyanyu.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Passkey yongewe kuri konti yanyu</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Passkey yakuwe kuri konti yanyu</translation>
     </message>
 </context>
 <context>

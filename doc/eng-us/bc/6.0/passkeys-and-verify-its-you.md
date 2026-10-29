@@ -67,3 +67,21 @@ Six new names (the catalogue has 186): `access.passkey.add`, `access.passkey.ren
 `access.passkey.use`, `access.passkey.use.failed`, `access.session.reauth.ask`. `access.session.reauth` and
 `access.session.reauth.failed` are raised by "Verify it's you" as well. A passkey sign-in is
 `access.session.login` with the handler `expPasskeyLogin`.
+
+## Later in 6.0.15: both ways together, a policy, and more groups
+
+Read this too if you upgrade from an earlier 6.0.15 pre-release.
+
+| | |
+|---|---|
+| What changed | "Verify it's you" asks for the password **and** a passkey (`[ReauthSettings] Factors[]`), without a passkey the password and the app's code; the form field `ExpReauthMethod` gave way to `ExpReauthFactors`. A new group `delete` (on): emptying the trash, removing from it, removing several items at once. Another user's devices in full and the sign-in report ask before the page opens. The content group also asks when a draft is stored. Groups may name `UserGroups[]`; `setup/reauth` edits every siteaccess or one (`setup/reauth/<siteaccess>`). A passkey policy (`[PasskeySettings] Policy`, `PasswordSignIn`, per group and account). Administrators see and revoke another account's passkeys (`user/passkeys/<user id>`, new policy `user/passkeys_manage`). Names of authenticators; `Attestation`, `RelyingPartyIDMap[]`, `AuthenticatorNames[]`, `ConsoleSlots[]`. Security mails when a passkey is added, removed or revoked. Four audit names: `access.passkey.revoke`, `access.passkey.password_refused`, `access.passkey.required`, `access.passkey.suggested` (the catalogue has 202). |
+| Who is affected | Users with a passkey: the question asks for the password and the passkey. Designs with their own `user/reauth.tpl` (they post `ExpReauthFactors` and loop over `$combinations`; see `design/standard/templates/user/reauth.tpl`). Designs with their own `user/passkeys.tpl` (new variables `own`, `account`, `action_uri`, `policy`, `sent_by_policy`, `last_locked`, `console_slots`; forms post to `$action_uri`). |
+| How to check | `/setup/reauth` lists six groups and has **Settings for**; the passkey list has an **Authenticator** column. |
+| How to fix | Regenerate the kernel autoloads (new classes `expPasskeyPolicy`, `expPasskeyPolicyHandler`, `expPasskeyAuthenticators`, `expReauthTriggerHandler`); clear the INI, template and template-override caches; reload PHP-FPM and restart Velocity. |
+| How to turn off | The old single way: `Factors[]` with `password`, `passkey` and `code` on lines of their own. The delete group on `setup/reauth`. The policy is `optional` by default. |
+
+For extensions: `expReauthTriggerHandler` (`[ReauthSettings] TriggerHandlers[]`), `expReauth::requireFresh()`,
+`expReauth::markFreshAfterSignIn()` (a sign-in that asked for as much counts as a confirmation; the second step of
+`sevenx_authentication_2fa` calls it), `expPasskeyPolicyHandler` (`[PasskeySettings] PolicyHandlers[]`),
+`expPasskeyService::revoke()` and `removeChecked()`. The second step of `sevenx_authentication_2fa` offers a passkey
+beside the app's code, and an account that must have a second step and has a passkey needs no app.

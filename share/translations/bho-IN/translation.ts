@@ -77221,6 +77221,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The passkey could not be checked. Please try again.</source>
         <translation>पासकी के जाँच ना हो सकल। किरिपा क के फेर से कोसिस करीं।</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>जवन खाता खाली पासकी से लॉग इन करेला, ऊ इहाँ पासवर्ड इस्तेमाल ना कर सकेला: &quot;पासकी से लॉग इन करीं&quot; चुनीं।</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login के पासकी</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>ऊ पासकी जेकरा से ई खाता लॉग इन करेला। जवन पासकी कवनो हेराइल भा चोरी भइल डिवाइस पर बा, ओकरा के निरस्त करीं: ऊ फेर लॉग इन ना कर सकी। नया पासकी मालिक खुदे जोड़ेला।</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>रउआ खाता के एगो पासकी चाहीं</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>आपन खाता में एगो पासकी जोड़ीं</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>आगे बढ़े खातिर एगो पासकी जोड़ीं। एकरा बाद रउआ खाली पासवर्ड के बदले एकरा से लॉग इन करब।</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>पासकी से लॉग इन कइल पासवर्ड से तेज आ सुरक्षित बा। अभी एगो जोड़ीं, भा एकरा बिना आगे बढ़ीं।</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>अभी ना</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>पासकी &quot;%name&quot; निरस्त करीं?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>ओकरा बाद ई एह खाता में लॉग इन ना कर सकी। अगर ई आखिरी रहे, त मालिक पासवर्ड से लॉग इन करेला, भा रउआ नया पासवर्ड सेट करीं।</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>पासकी निरस्त करीं</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>निरस्त करीं</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>एह खाता में कवनो पासकी नइखे।</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>प्रमाणक</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>अनजान</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>रउआ के आखिरी पासकी: एकरा के हटावे से पहिले दोसर जोड़ीं।</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>ई खाता खाली पासकी से लॉग इन करेला (पासकी नीति): जब कवनो ना बची, त ई फेर से आपन पासवर्ड से लॉग इन करी।</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>ई रउआ के आखिरी पासकी ह आ रउआ के खाता बिना पासकी के लॉग इन ना कर सकेला। पहिले दोसर पासकी जोड़ीं।</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>पासकी &quot;%name&quot; निरस्त हो गइल। अब ई एह खाता में लॉग इन ना कर सकेला।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77320,6 +77396,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Code from your authenticator app</source>
         <translation>रउआ के प्रमाणक ऐप के कोड</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>रउआ डेटा हमेशा खातिर मेटावे भा कवनो लॉग खाली करे वाला बानी।</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>रउआ के पासवर्ड आ एगो पासकी</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>रउआ के पासवर्ड आ रउआ के प्रमाणक ऐप के एगो कोड</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>भा:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>ई ब्राउज़र पासकी इस्तेमाल ना कर सकेला। कवनो दोसर तरीका, भा दोसर ब्राउज़र इस्तेमाल करीं।</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>जब रउआ आगे बढ़ब, तब रउआ के ब्राउज़र रउआ के कवनो एगो पासकी माँगी।</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>पासकी से आगे बढ़ीं</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77410,6 +77514,70 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>आपन पासवर्ड, ईमेल पता, पासकी, दू-चरण वाला लॉग इन, रिकवरी कोड भा API कुंजी बदलल, आ आपन दोसर डिवाइस से लॉग आउट कइल।</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>उपयोगकर्ता, उनकर पासवर्ड आ डिवाइस बनावल आ बदलल, खाता सेटिंग, नया उपयोगकर्ता खाता मंजूर भा नामंजूर करल, भूमिका सौंपल आ नीति बदलल।</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>डेटा मेटावल</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>कूड़ादान खाली करल, ओमें से चीज हटावल आ एके बेर कई गो चीज हटावल।</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>सामग्री हटावल, प्रकाशित करल आ सहेजल</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>सामग्री हटावल (कूड़ादान में डालल भी), प्रकाशित करल आ ड्राफ़्ट सहेजल; फ़ॉर्म भेजत घड़ी पूछल जाला। डिफ़ॉल्ट रूप से बंद।</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>कवनो संवेदनशील क्रिया से पहिले, लॉग इन कइल उपयोगकर्ता फेर से पुष्टि करेला कि ऊ के ह: आपन पासवर्ड आ एगो पासकी से, भा पासकी ना होखे त आपन पासवर्ड आ आपन प्रमाणक ऐप के कोड से। खाली वेब पन्ना पूछेलें: REST इंटरफ़ेस, SOAP, WebDAV, expservices लॉगिन आ कमांड लाइन कबो ना पूछेलें।</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>सेटिंग कहाँ लागू होला</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>एकरा खातिर सेटिंग</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>हर साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>साइट एक्सेस %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खोलीं</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>केकरा से पूछल जाला: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>खाली ओकर सदस्य से पूछे खातिर उपयोगकर्ता समूह पर निशान लगाईं (जइसे संपादक)। कवनो पर निशान ना: हर उपयोगकर्ता।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php में सहेजल जाला, हर साइट एक्सेस खातिर। सहेजत घड़ी रउआ से पुष्टि करे के कहल जाला कि ई रउआ हईं।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>settings/siteaccess/%name/site.ini.append.php में सहेजल जाला। settings/override में कवनो मान एकरा से ऊपर मानल जाला। सहेजत घड़ी रउआ से पुष्टि करे के कहल जाला कि ई रउआ हईं।</translation>
     </message>
 </context>
 <context>
@@ -77766,6 +77934,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your account was locked</source>
         <translation>रउआ खाता लॉक कइल गइल</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>%site पर रउआ खाता %login में एगो पासकी जोड़ल गइल।</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>जेकरा लगे ई पासकी बा, ऊ रउआ पासवर्ड के बिना रउआ खाता में लॉग इन कर सकेला। अगर ई रउआ ना जोड़नी, त पासकी में जाके एकरा के हटाईं आ आपन पासवर्ड बदलीं।</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>%site पर रउआ खाता %login से एगो पासकी हटावल गइल।</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>अब ई रउआ खाता में लॉग इन ना कर सकेला। अगर ई रउआ ना हटवनी, त आपन पासकी आ डिवाइस जाँचीं।</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>रउआ खाता में एगो पासकी जोड़ल गइल</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>रउआ खाता से एगो पासकी हटावल गइल</translation>
     </message>
 </context>
 <context>

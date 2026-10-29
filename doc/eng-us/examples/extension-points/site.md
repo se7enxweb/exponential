@@ -2,7 +2,7 @@
 title: Extension points in site.ini
 audience: developer, admin
 category: examples
-summary: Settings of site.ini that list handlers, classes or directories an extension can add to (28, found by name).
+summary: Settings of site.ini that list handlers, classes or directories an extension can add to (30, found by name).
 keywords: site.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -253,6 +253,18 @@ Handlers[]=expExampleHandler    # your class or value, added to the list
 */ ?>
 ```
 
+## PasskeySettings PolicyHandlers
+
+Shipped: an empty list. [The setting](../ini-settings/site/PasskeySettings.md#policyhandlers).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[PasskeySettings]
+PolicyHandlers[]=expExamplePolicyHandler    # your class or value, added to the list
+*/ ?>
+```
+
 ## ReauthSettings CodeHandlers
 
 Shipped: a list of 1: `expReauthTotpCode`. [The setting](../ini-settings/site/ReauthSettings.md#codehandlers).
@@ -262,6 +274,18 @@ Shipped: a list of 1: `expReauthTotpCode`. [The setting](../ini-settings/site/Re
 # extension/expexample/settings/site.ini.append.php
 [ReauthSettings]
 CodeHandlers[]=expExampleCodeHandler    # your class or value, added to the list
+*/ ?>
+```
+
+## ReauthSettings TriggerHandlers
+
+Shipped: an empty list. [The setting](../ini-settings/site/ReauthSettings.md#triggerhandlers).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[ReauthSettings]
+TriggerHandlers[]=expExampleTriggerHandler    # your class or value, added to the list
 */ ?>
 ```
 

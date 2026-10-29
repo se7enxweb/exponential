@@ -1,7 +1,8 @@
-{* "Security alert" (expUserSecurityAlerts::send()), sent to the account's address when two-step sign-in was turned on
+{* "Security alert" (expUserSecurityAlerts::send()), sent to the account's address when a passkey was added or removed, two-step sign-in was turned on
    or off, a recovery code was used, sign-ins failed several times in a row, or the account was locked. Essential mail
    (category security): it cannot be turned off by the user. Never a password, a code or the full address.
-   Variables: user (eZUser), alert (twofactor_on, twofactor_off, recovery_used, failures, locked), time (timestamp),
+   Variables: user (eZUser), alert (twofactor_on, twofactor_off, recovery_used, failures, locked, passkey_added,
+   passkey_removed), time (timestamp),
    ip (approximate: 203.0.113.x, or ''), method (totp, email ...), left (recovery codes left, -1 unknown), attempts,
    security_url, sessions_url, password_url (absolute), site_name.
    Sets subject, content_type (text/html) and body_text (the plain-text part).
@@ -27,6 +28,14 @@
     {set $sa_intro = 'Two-step sign-in was turned off for your account %login on %site.'|i18n( 'design/standard/user/security_mail',, hash( '%login', $user.login, '%site', $sa_site ) )
          $sa_paragraphs = array( 'Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.'|i18n( 'design/standard/user/security_mail' ) )}
 {/case}
+{case match='passkey_added'}
+    {set $sa_intro = 'A passkey was added to your account %login on %site.'|i18n( 'design/standard/user/security_mail',, hash( '%login', $user.login, '%site', $sa_site ) )
+         $sa_paragraphs = array( 'Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.'|i18n( 'design/standard/user/security_mail' ) )}
+{/case}
+{case match='passkey_removed'}
+    {set $sa_intro = 'A passkey was removed from your account %login on %site.'|i18n( 'design/standard/user/security_mail',, hash( '%login', $user.login, '%site', $sa_site ) )
+         $sa_paragraphs = array( 'It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.'|i18n( 'design/standard/user/security_mail' ) )}
+{/case}
 {case match='recovery_used'}
     {set $sa_intro = 'A recovery code was used to sign in to your account %login on %site.'|i18n( 'design/standard/user/security_mail',, hash( '%login', $user.login, '%site', $sa_site ) )
          $sa_paragraphs = array( 'Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.'|i18n( 'design/standard/user/security_mail' ) )}
@@ -49,7 +58,7 @@
 {if $ip|ne( '' )}
     {set $sa_rows = $sa_rows|append( hash( 'label', 'Approximate address'|i18n( 'design/standard/user/security_mail' ), 'value', $ip ) )}
 {/if}
-{set-block scope=root variable=subject}{switch match=$alert}{case match='twofactor_on'}{'Two-step sign-in was turned on'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='twofactor_off'}{'Two-step sign-in was turned off'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='recovery_used'}{'A recovery code was used'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='failures'}{'Failed sign-in attempts on your account'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='locked'}{'Your account was locked'|i18n( 'design/standard/user/security_mail' )}{/case}{case}{'Security alert'|i18n( 'design/standard/user/security_mail' )}{/case}{/switch} - {$sa_site}{/set-block}
+{set-block scope=root variable=subject}{switch match=$alert}{case match='twofactor_on'}{'Two-step sign-in was turned on'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='twofactor_off'}{'Two-step sign-in was turned off'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='recovery_used'}{'A recovery code was used'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='passkey_added'}{'A passkey was added to your account'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='passkey_removed'}{'A passkey was removed from your account'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='failures'}{'Failed sign-in attempts on your account'|i18n( 'design/standard/user/security_mail' )}{/case}{case match='locked'}{'Your account was locked'|i18n( 'design/standard/user/security_mail' )}{/case}{case}{'Security alert'|i18n( 'design/standard/user/security_mail' )}{/case}{/switch} - {$sa_site}{/set-block}
 {set-block scope=root variable=content_type}text/html{/set-block}
 {set-block scope=root variable=body_text}{include uri='design:mail/layout_text.tpl'
     mail_title=$sa_title mail_intro=$sa_intro mail_rows=$sa_rows mail_paragraphs=$sa_paragraphs mail_notice=$sa_notice

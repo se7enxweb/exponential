@@ -11,15 +11,18 @@ generated: exp:help:examples
 
 Der Block `[ReauthGroup_account]` von `settings/site.ini`, mit 2 Einstellung(en).
 
-> Regeln, in jeder Gruppe: "module/view \[token ...\]"  
->   module/view    die Ansicht (view \* für jede Ansicht des Moduls); ein POST darauf wird abgefragt  
->   \*              jede Anfrage, auch GET (eine Seite, die herunterlädt, oder ein Formular mit Datei-Upload)  
->   Name           nur ein POST, der dieses Feld enthält (eines von mehreren Namen)  
->   self, other    nur, wenn das angesprochene Konto das eigene des Benutzers / das eines anderen Benutzers ist  
->                  (content/edit eines Benutzerobjekts, user/password, user/setting; das  
->                  ausstehende Konto eines Freigabe-Elements von "Approve user accounts")  
->   credentials    nur, wenn der POST das Login, die E-Mail oder das Passwort eines Benutzers ändert  
->   !module/view   für diese Ansicht nie abgefragt (eine Ausnahme von einer module/\*-Regel)  
+> Rules, in every group: "module/view \[token ...\]"  
+>   module/view    the view (view \* for every view of the module); a POST to it is asked  
+>   \*              every request, GET too (a page that downloads, or a form with a file upload)  
+>   Name           only a POST that carries this field (any of several names)  
+>   self, other    only when the account addressed is the user's own / another user's  
+>                  (content/edit of a user object, user/password, user/setting; the  
+>                  pending account of an approval item of "Approve user accounts")  
+>   credentials    only when the POST changes the login, e-mail or password of a user  
+>   !module/view   never asked for this view (an exception to a module/\* rule)  
+>   bulk           only when several items are removed at once (BulkCount)  
+> A group may name UserGroups\[\] (content object ids of user groups): it then asks only  
+> their members; empty or missing: every user.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

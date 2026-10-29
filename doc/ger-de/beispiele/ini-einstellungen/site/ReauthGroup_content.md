@@ -2,14 +2,14 @@
 title: site.ini [ReauthGroup_content]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [ReauthGroup_content] in site.ini: Enabled, Rules"
-keywords: Einstellung, site.ini, ReauthGroup_content, INI, setting, Enabled, Rules
+summary: "Die Einstellungen von [ReauthGroup_content] in site.ini: Enabled, UserGroups, Rules"
+keywords: Einstellung, site.ini, ReauthGroup_content, INI, setting, Enabled, UserGroups, Rules
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [ReauthGroup_content]
 
-Der Block `[ReauthGroup_content]` von `settings/site.ini`, mit 2 Einstellung(en).
+Der Block `[ReauthGroup_content]` von `settings/site.ini`, mit 3 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -19,7 +19,10 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> Inhalt entfernen (auch in den Papierkorb) und Veröffentlichen. Standardmäßig aus; eingeschaltet unter setup/reauth.  
+> Removing content (also to the trash), publishing and storing a draft, asked when the form  
+> is sent, before the page goes on to the content. Off by default; switched on setup/reauth,  
+> for every siteaccess or one, and for every user or the members of some user groups.  
+> A confirmation counts for Minutes, so an editor is not asked at every save.  
 
 Standard: `false`.
 
@@ -31,9 +34,24 @@ Enabled=false
 */ ?>
 ```
 
+## UserGroups
+
+> Die Benutzergruppen (Content-Objekt-IDs), deren Mitglieder gefragt werden; leer: jeder Benutzer.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[ReauthGroup_content]
+# ein leeres "UserGroups[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+UserGroups[]
+*/ ?>
+```
+
 ## Rules
 
-Standard: eine Liste mit 6: `content/removeobject ConfirmButton`, `content/removenode ConfirmButton`, `content/trash EmptyButton RemoveButton`, `content/edit PublishButton PublishNotNotifyButton`, `content/versionview PreviewPublishButton PreviewPublishNotNotifyButton`, `content/multiedit MultiPublishButton`.
+Standard: eine Liste mit 5: `content/removeobject ConfirmButton`, `content/removenode ConfirmButton`, `content/edit PublishButton PublishNotNotifyButton StoreButton StoreExitButton`, `content/versionview PreviewPublishButton PreviewPublishNotNotifyButton`, `content/multiedit MultiPublishButton`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,8 +61,7 @@ Standard: eine Liste mit 6: `content/removeobject ConfirmButton`, `content/remov
 Rules[]
 Rules[]=content/removeobject ConfirmButton
 Rules[]=content/removenode ConfirmButton
-Rules[]=content/trash EmptyButton RemoveButton
-Rules[]=content/edit PublishButton PublishNotNotifyButton
+Rules[]=content/edit PublishButton PublishNotNotifyButton StoreButton StoreExitButton
 Rules[]=content/versionview PreviewPublishButton PreviewPublishNotNotifyButton
 Rules[]=content/multiedit MultiPublishButton
 */ ?>

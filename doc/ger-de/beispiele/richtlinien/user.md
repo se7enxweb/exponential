@@ -2,7 +2,7 @@
 title: Richtlinien des Moduls user
 audience: developer, admin
 category: examples
-summary: Die Richtlinienfunktionen des Moduls user (11) und ihre Einschränkungen.
+summary: Die Richtlinienfunktionen des Moduls user (12) und ihre Einschränkungen.
 keywords: Richtlinie, Richtlinien, Rolle, Einschränkung, Berechtigung, user, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -99,6 +99,24 @@ $role->appendPolicy( 'user', 'login', array( 'SiteAccess' => array( /* values */
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'login' ) )}
+    ...
+{/if}
+```
+
+## passkeys_manage
+
+Keine Ansicht des Moduls nennt sie; Code prüft sie (`eZUser::hasAccessTo( 'user', 'passkeys_manage' )` oder der Fetch `user/has_access_to`).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'user', 'passkeys_manage' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'passkeys_manage' ) )}
     ...
 {/if}
 ```

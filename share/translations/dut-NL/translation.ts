@@ -78438,6 +78438,82 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>De toegangssleutel kon niet worden gecontroleerd. Probeer het opnieuw.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Accounts die alleen met toegangssleutels inloggen, kunnen hier geen wachtwoord gebruiken: kies &quot;Inloggen met een toegangssleutel&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Toegangssleutels van %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>De toegangssleutels waarmee dit account inlogt. Trek een sleutel in die op een verloren of gestolen apparaat staat: die kan dan niet meer inloggen. De eigenaar voegt zelf nieuwe toe.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Je account heeft een toegangssleutel nodig</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Voeg een toegangssleutel toe aan je account</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Voeg een toegangssleutel toe om verder te gaan. Je logt daarna daarmee in in plaats van alleen met een wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>Inloggen met een toegangssleutel is sneller en veiliger dan met een wachtwoord. Voeg er nu een toe, of ga verder zonder.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Niet nu</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Toegangssleutel &quot;%name&quot; intrekken?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Hij kan dan niet meer inloggen op dit account. Als het de laatste was, logt de eigenaar in met het wachtwoord, of stel jij een nieuw in.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Toegangssleutel intrekken</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Intrekken</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Dit account heeft geen toegangssleutel.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Authenticatieapparaat</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Onbekend</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Je laatste toegangssleutel: voeg er nog een toe voordat je deze verwijdert.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Dit account logt alleen in met toegangssleutels (toegangssleutelbeleid): als er geen meer over is, logt het weer in met het wachtwoord.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Dit is je laatste toegangssleutel en je account kan niet zonder inloggen. Voeg eerst nog een toegangssleutel toe.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>Toegangssleutel &quot;%name&quot; is ingetrokken. Hij kan niet meer inloggen op dit account.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -78537,6 +78613,34 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Code from your authenticator app</source>
         <translation>Code uit je authenticator-app</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Je staat op het punt gegevens definitief te verwijderen of een log te wissen.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Je wachtwoord en een toegangssleutel</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Je wachtwoord en een code uit je authenticator-app</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Of:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Deze browser kan geen toegangssleutels gebruiken. Gebruik een andere manier of een andere browser.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Als je doorgaat, vraagt je browser om een van je toegangssleutels.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Doorgaan met een toegangssleutel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -78627,6 +78731,70 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Setup</source>
         <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Het eigen wachtwoord, e-mailadres, toegangssleutels, inloggen in twee stappen, herstelcodes of API-sleutels wijzigen en de eigen andere apparaten uitloggen.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Gebruikers aanmaken en bewerken, hun wachtwoorden en apparaten, accountinstellingen, nieuwe gebruikersaccounts goedkeuren of afwijzen, rollen toewijzen en beleidsregels bewerken.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Gegevens verwijderen</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>De prullenbak legen, items eruit verwijderen en meerdere items tegelijk verwijderen.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Inhoud verwijderen, publiceren en opslaan</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Inhoud verwijderen (ook naar de prullenbak), publiceren en een concept opslaan; gevraagd bij het verzenden van het formulier. Standaard uit.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Voor een gevoelige actie bevestigt een ingelogde gebruiker opnieuw wie hij is: met zijn wachtwoord en een toegangssleutel, of zonder toegangssleutel met zijn wachtwoord en de code van zijn authenticator-app. Alleen de webpagina&apos;s vragen dit: de REST-interface, SOAP, WebDAV, de expservices-aanmelding en de opdrachtregel vragen het nooit.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Waar de instellingen gelden</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Instellingen voor</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Elke siteaccess</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>De siteaccess %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Openen</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Wie wordt gevraagd: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Vink gebruikersgroepen aan om alleen hun leden te vragen (bijvoorbeeld redacteuren). Niets aangevinkt: elke gebruiker.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Opgeslagen in settings/override/site.ini.append.php, voor elke siteaccess. Bij het opslaan wordt je gevraagd te bevestigen dat jij het bent.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Opgeslagen in settings/siteaccess/%name/site.ini.append.php. Een waarde in settings/override gaat daarvoor. Bij het opslaan wordt je gevraagd te bevestigen dat jij het bent.</translation>
     </message>
 </context>
 <context>
@@ -78983,6 +79151,30 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Je account is vergrendeld</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Er is een toegangssleutel toegevoegd aan je account %login op %site.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Iedereen die deze toegangssleutel heeft, kan zonder je wachtwoord inloggen op je account. Heb je hem niet zelf toegevoegd, verwijder hem dan onder Toegangssleutels en wijzig je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Er is een toegangssleutel verwijderd van je account %login op %site.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Hij kan niet meer inloggen op je account. Heb je hem niet zelf verwijderd, controleer dan je toegangssleutels en apparaten.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Er is een toegangssleutel toegevoegd aan je account</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Er is een toegangssleutel verwijderd van je account</translation>
     </message>
 </context>
 <context>

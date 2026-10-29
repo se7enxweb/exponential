@@ -77211,6 +77211,82 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>A hozzáférési kulcsot nem sikerült ellenőrizni. Próbálja újra.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>A csak hozzáférési kulccsal bejelentkező fiókok itt nem használhatnak jelszót: válassza a „Bejelentkezés hozzáférési kulccsal” lehetőséget.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>%login hozzáférési kulcsai</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>A hozzáférési kulcsok, amelyekkel ez a fiók bejelentkezik. Vonja vissza azt, amelyik egy elveszett vagy ellopott eszközön van: azzal többé nem lehet bejelentkezni. Újakat a tulajdonos maga ad hozzá.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>A fiókjához hozzáférési kulcs szükséges</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Hozzáférési kulcs hozzáadása a fiókjához</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>A folytatáshoz adjon hozzá egy hozzáférési kulcsot. Ezután azzal jelentkezik be, nem csupán jelszóval.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>A hozzáférési kulccsal történő bejelentkezés gyorsabb és biztonságosabb, mint a jelszó. Adjon hozzá egyet most, vagy folytassa nélküle.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Most nem</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Visszavonja a(z) „%name” hozzáférési kulcsot?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Azzal többé nem lehet bejelentkezni ebbe a fiókba. Ha ez volt az utolsó, a tulajdonos a jelszóval jelentkezik be, vagy Ön állít be újat.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Hozzáférési kulcs visszavonása</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Visszavonás</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Ennek a fióknak nincs hozzáférési kulcsa.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Hitelesítő</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ismeretlen</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Az utolsó hozzáférési kulcsa: adjon hozzá egy másikat, mielőtt eltávolítja.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Ez a fiók csak hozzáférési kulccsal jelentkezik be (hozzáférésikulcs-házirend): ha egy sem marad, ismét a jelszavával jelentkezik be.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Ez az utolsó hozzáférési kulcsa, és a fiókja nem tud nélküle bejelentkezni. Előbb adjon hozzá egy másik hozzáférési kulcsot.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>A(z) „%name” hozzáférési kulcs visszavonva. Azzal többé nem lehet bejelentkezni ebbe a fiókba.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77310,6 +77386,34 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Code from your authenticator app</source>
         <translation>Kód a hitelesítő alkalmazásból</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Adatokat készül végleg törölni vagy egy naplót kiüríteni.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Az Ön jelszava és egy hozzáférési kulcs</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Az Ön jelszava és egy kód a hitelesítő alkalmazásából</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>Vagy:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Ez a böngésző nem tud hozzáférési kulcsokat használni. Válasszon másik módot vagy másik böngészőt.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Ha folytatja, a böngészője az egyik hozzáférési kulcsát kéri.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Folytatás hozzáférési kulccsal</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77400,6 +77504,70 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Setup</source>
         <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>A saját jelszó, e-mail-cím, hozzáférési kulcsok, kétlépéses bejelentkezés, helyreállítási kódok vagy API-kulcsok módosítása, valamint a saját többi eszköz kijelentkeztetése.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Felhasználók létrehozása és szerkesztése, jelszavaik és eszközeik, fiókbeállítások, új felhasználói fiókok jóváhagyása vagy elutasítása, szerepkörök hozzárendelése és házirendek szerkesztése.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Adatok törlése</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>A Lomtár kiürítése, elemek eltávolítása belőle és több elem egyszerre történő eltávolítása.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Tartalom eltávolítása, közzététele és mentése</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Tartalom eltávolítása (a Lomtárba is), közzététele és piszkozat mentése; az űrlap elküldésekor kérdezi. Alapértelmezés szerint ki van kapcsolva.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Egy érzékeny művelet előtt a bejelentkezett felhasználó ismét megerősíti, hogy ki ő: a jelszavával és egy hozzáférési kulccsal, vagy hozzáférési kulcs nélkül a jelszavával és a hitelesítő alkalmazása kódjával. Csak a weboldalak kérdeznek: a REST-felület, a SOAP, a WebDAV, az expservices-bejelentkezés és a parancssor soha.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Ahol a beállítások érvényesek</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Beállítások ehhez:</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Minden webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Csak a(z) %name webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Megnyitás</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Kit kérdez: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Jelöljön be felhasználócsoportokat, hogy csak azok tagjait kérdezze (például a szerkesztőket). Nincs bejelölve: minden felhasználót.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Mentve a settings/override/site.ini.append.php fájlba, minden webhely-hozzáféréshez. Mentéskor meg kell erősítenie, hogy Ön az.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Mentve a settings/siteaccess/%name/site.ini.append.php fájlba. A settings/override egy értéke elsőbbséget élvez vele szemben. Mentéskor meg kell erősítenie, hogy Ön az.</translation>
     </message>
 </context>
 <context>
@@ -77788,6 +77956,30 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>A fiókját zároltuk</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>Egy hozzáférési kulcsot adtak hozzá az Ön %login fiókjához a(z) %site webhelyen.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Aki birtokolja ezt a hozzáférési kulcsot, a jelszava nélkül bejelentkezhet a fiókjába. Ha nem Ön adta hozzá, távolítsa el a Hozzáférési kulcsok alatt, és változtassa meg a jelszavát.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Egy hozzáférési kulcsot eltávolítottak az Ön %login fiókjából a(z) %site webhelyen.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Azzal többé nem lehet bejelentkezni a fiókjába. Ha nem Ön távolította el, ellenőrizze a hozzáférési kulcsait és eszközeit.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>Egy hozzáférési kulcsot adtak hozzá a fiókjához</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Egy hozzáférési kulcsot eltávolítottak a fiókjából</translation>
     </message>
 </context>
 <context>

@@ -77213,6 +77213,82 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>The passkey could not be checked. Please try again.</source>
         <translation>La clav d'access n'ha betg pudì vegnir controlada. Empruvai danovamain.</translation>
     </message>
+    <message>
+        <source>Accounts that sign in with passkeys only cannot use a password here: choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Contos che s&apos;annunzian mo cun clavs d&apos;access na pon betg utilisar in pled-clav qua: tschernai &quot;S&apos;annunziar cun ina clav d&apos;access&quot;.</translation>
+    </message>
+    <message>
+        <source>Passkeys of %login</source>
+        <translation>Clavs d&apos;access da %login</translation>
+    </message>
+    <message>
+        <source>The passkeys this account signs in with. Revoke one that is on a lost or stolen device: it cannot sign in any more. The owner adds new ones themselves.</source>
+        <translation>Las clavs d&apos;access cun las qualas quest conto s&apos;annunzia. Revocai quella che sa chatta sin in apparat pers u engulà: ella na po lura betg pli s&apos;annunziar. Novas agiunta il possessur sez.</translation>
+    </message>
+    <message>
+        <source>Your account needs a passkey</source>
+        <translation>Voss conto dovra ina clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>Add a passkey to your account</source>
+        <translation>Agiuntai ina clav d&apos;access a Voss conto</translation>
+    </message>
+    <message>
+        <source>Add a passkey to go on. You then sign in with it instead of a password alone.</source>
+        <translation>Agiuntai ina clav d&apos;access per cuntinuar. Lura As annunziais Vus cun quella empè mo cun in pled-clav.</translation>
+    </message>
+    <message>
+        <source>Signing in with a passkey is faster and safer than a password. Add one now, or go on without it.</source>
+        <translation>S&apos;annunziar cun ina clav d&apos;access è pli svelt e pli segir che cun in pled-clav. Agiuntai ussa ina u cuntinuai senza.</translation>
+    </message>
+    <message>
+        <source>Not now</source>
+        <translation>Betg ussa</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey &quot;%name&quot;?</source>
+        <translation>Revocar la clav d&apos;access &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. If it was the last one, the owner signs in with the password, or you set a new one.</source>
+        <translation>Ella na po betg pli s&apos;annunziar en quest conto. Sch&apos;ella era l&apos;ultima, s&apos;annunzia il possessur cun il pled-clav, u Vus definis in nov.</translation>
+    </message>
+    <message>
+        <source>Revoke the passkey</source>
+        <translation>Revocar la clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>Revoke</source>
+        <translation>Revocar</translation>
+    </message>
+    <message>
+        <source>This account has no passkey.</source>
+        <translation>Quest conto n&apos;ha nagina clav d&apos;access.</translation>
+    </message>
+    <message>
+        <source>Authenticator</source>
+        <translation>Autentificatur</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nunenconuschent</translation>
+    </message>
+    <message>
+        <source>Your last passkey: add another before you remove it.</source>
+        <translation>Vossa ultima clav d&apos;access: agiuntai in&apos;autra avant che l&apos;allontanar.</translation>
+    </message>
+    <message>
+        <source>This account signs in with passkeys only (passkey policy): with none left, it signs in with its password again.</source>
+        <translation>Quest conto s&apos;annunzia mo cun clavs d&apos;access (directiva da clavs d&apos;access): sch&apos;i na resta nagina, s&apos;annunzia el puspè cun ses pled-clav.</translation>
+    </message>
+    <message>
+        <source>This is your last passkey and your account cannot sign in without one. Add another passkey first.</source>
+        <translation>Quai è Vossa ultima clav d&apos;access e Voss conto na po betg s&apos;annunziar senza. Agiuntai l&apos;emprim in&apos;autra clav d&apos;access.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is revoked. It cannot sign in to this account any more.</source>
+        <translation>La clav d&apos;access &quot;%name&quot; è vegnida revocada. Ella na po betg pli s&apos;annunziar en quest conto.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/reauth</name>
@@ -77312,6 +77388,34 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Code from your authenticator app</source>
         <translation>Code da Vossa app d'autentificaziun</translation>
     </message>
+    <message>
+        <source>You are about to delete data for good or clear a log.</source>
+        <translation>Vus essas sin il punct da stizzar datas definitivamain u da svidar in protocol.</translation>
+    </message>
+    <message>
+        <source>Your password and a passkey</source>
+        <translation>Voss pled-clav ed ina clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>Your password and a code from your authenticator app</source>
+        <translation>Voss pled-clav ed in code da Vossa app d&apos;autentificaziun</translation>
+    </message>
+    <message>
+        <source>Or:</source>
+        <translation>U:</translation>
+    </message>
+    <message>
+        <source>This browser cannot use passkeys. Use another way, or another browser.</source>
+        <translation>Quest navigatur na po betg utilisar clavs d&apos;access. Utilisai in auter mod u in auter navigatur.</translation>
+    </message>
+    <message>
+        <source>When you continue, your browser asks for one of your passkeys.</source>
+        <translation>Cura che Vus cuntinuais, dumonda Voss navigatur ina da Vossas clavs d&apos;access.</translation>
+    </message>
+    <message>
+        <source>Continue with a passkey</source>
+        <translation>Cuntinuar cun ina clav d&apos;access</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/reauth</name>
@@ -77402,6 +77506,70 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Setup</source>
         <translation>Configuraziun</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in, recovery codes or API keys, and signing out one&apos;s other devices.</source>
+        <translation>Midar l&apos;agen pled-clav, l&apos;adressa d&apos;e-mail, las clavs d&apos;access, l&apos;annunzia en duas stgalims, ils codes da recuperaziun u las clavs API e deconnectar ils agens auters apparats.</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, their passwords and devices, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crear e modifitgar utilisaders, lur pleds-clav ed apparats, parameters dal conto, approvar u refusar novs contos d&apos;utilisaders, attribuir rollas e modifitgar directivas.</translation>
+    </message>
+    <message>
+        <source>Deleting data</source>
+        <translation>Stizzar datas</translation>
+    </message>
+    <message>
+        <source>Emptying the trash, removing items from it and removing several items at once.</source>
+        <translation>Svidar il chanaster da ruments, allontanar elements da quel ed allontanar plirs elements a la giada.</translation>
+    </message>
+    <message>
+        <source>Removing, publishing and saving content</source>
+        <translation>Allontanar, publitgar e memorisar cuntegn</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), publishing and storing a draft, asked when the form is sent. Off by default.</source>
+        <translation>Allontanar cuntegn (er en il chanaster da ruments), publitgar e memorisar in sboz; dumandà cura ch&apos;il formular vegn tramess. Deactivà sco standard.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again: with their password and a passkey, or without a passkey with their password and the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Avant ina acziun sensibla conferma in utilisader annunzià danovamain tgi ch&apos;el è: cun ses pled-clav ed ina clav d&apos;access, u senza clav d&apos;access cun ses pled-clav ed il code da sia app d&apos;autentificaziun. Mo las paginas web dumondan: l&apos;interfatscha REST, SOAP, WebDAV, l&apos;annunzia expservices e la lingia da cumonds na dumondan mai.</translation>
+    </message>
+    <message>
+        <source>Where the settings apply</source>
+        <translation>Nua ch&apos;ils parameters valan</translation>
+    </message>
+    <message>
+        <source>Settings for</source>
+        <translation>Parameters per</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Mintga access a la website</translation>
+    </message>
+    <message>
+        <source>Siteaccess %name</source>
+        <translation>Access a la website %name</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Avrir</translation>
+    </message>
+    <message>
+        <source>Who is asked: %group</source>
+        <translation>Tgi vegn dumandà: %group</translation>
+    </message>
+    <message>
+        <source>Tick user groups to ask only their members (editors, for example). None ticked: every user.</source>
+        <translation>Marcai gruppas d&apos;utilisaders per dumandar mo lur commembers (per exempel redacturs). Nagina marcada: mintga utilisader.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php, for every siteaccess. Saving asks you to confirm it is you.</source>
+        <translation>Memorisà en settings/override/site.ini.append.php, per mintga access a la website. Cun memorisar vegnis Vus dumandà da confermar ch&apos;i saja Vus.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/siteaccess/%name/site.ini.append.php. A value in settings/override wins over it. Saving asks you to confirm it is you.</source>
+        <translation>Memorisà en settings/siteaccess/%name/site.ini.append.php. Ina valur en settings/override ha la precedenza. Cun memorisar vegnis Vus dumandà da confermar ch&apos;i saja Vus.</translation>
     </message>
 </context>
 <context>
@@ -77758,6 +77926,30 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Your account was locked</source>
         <translation>Voss conto è vegnì bloccà</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account %login on %site.</source>
+        <translation>A Voss conto %login sin %site è vegnida agiuntada ina clav d&apos;access.</translation>
+    </message>
+    <message>
+        <source>Whoever holds this passkey can sign in to your account without your password. If you did not add it, remove it under Passkeys and change your password.</source>
+        <translation>Tgi che ha questa clav d&apos;access po s&apos;annunziar en Voss conto senza Voss pled-clav. Sche Vus n&apos;avais betg agiuntà ella, allontanai ella sut Clavs d&apos;access e midai Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account %login on %site.</source>
+        <translation>Da Voss conto %login sin %site è vegnida allontanada ina clav d&apos;access.</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to your account. If you did not remove it, check your passkeys and devices.</source>
+        <translation>Ella na po betg pli s&apos;annunziar en Voss conto. Sche Vus n&apos;avais betg allontanà ella, controllai Vossas clavs d&apos;access ed apparats.</translation>
+    </message>
+    <message>
+        <source>A passkey was added to your account</source>
+        <translation>A Voss conto è vegnida agiuntada ina clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>A passkey was removed from your account</source>
+        <translation>Da Voss conto è vegnida allontanada ina clav d&apos;access</translation>
     </message>
 </context>
 <context>
