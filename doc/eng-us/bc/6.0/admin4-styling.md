@@ -111,8 +111,8 @@ Every colour, chart and depth token has a dark value; the radius, spacing, contr
 tokens are the same in both modes.
 
 **Weights, durations, letter spacing and line heights come from these tokens**, as colours and radii do: no
-`font-weight: 600`, no `transition: ... .15s`, no `letter-spacing: .05em`, no `border-radius: 4px` in `admin4.css`,
-`components.css`, `base.css` or `modules/*.css` (`AdminTokenUsageTest`; `0`, `50%` and `999px` as a radius, a negative
+`font-weight: 600`, no `transition: ... .15s`, no `letter-spacing: .05em`, no `border-radius: 4px` in any stylesheet of admin4,
+the classic admin, admin3 or the admin stylesheets of the extensions in this repository (`AdminTokenUsageTest`; `0`, `50%` and `999px` as a radius, a negative
 tracking and the two progress bars are the exceptions). A line height is one of the three `--a4-leading*` tokens unless a
 fixed pixel height depends on it.
 
@@ -427,6 +427,59 @@ text, links, literal blocks, custom tags and embeds take the tokens in both mode
 `editor_content.css` is scoped to `html[data-a4-theme]` and does nothing without the script. The editor's toolbar
 (the TinyMCE skin) is not part of this.
 
+## Every admin design
+
+The rules and tokens on this page apply to every administration design, not only to admin4:
+
+| Design | Stylesheets of its own | Tokens | Dark mode |
+|---|---|---|---|
+| `admin4` | `base.css`, `admin4.css`, `components.css`, `modules/*.css` (and `core.css`, `theme/modalwindow.css` for other designs' chains) | `components.css` | yes |
+| `admin4l` (the layout-driven admin4) | none: templates only, it loads admin4's stylesheets | admin4's | yes |
+| `editor` (the editor siteaccess) | none: `design/editor` falls back to admin4l or admin3, whichever the siteaccess names after it | that design's | as that design |
+| `admin` (classic) | `core.css`, `pagelayout.css`, `content.css`, `theme/rounded.css`, `theme/admin_datatable.css`, `theme/modalwindow.css`, `ezinfo.css`, `packagecompare.css`, `visual-templateview.css`; `components.css` and `modules/*.css` are admin4's copies | `components.css` (the copy) | no: light only |
+| `admin3` | `pagelayout.css`, `theme/rounded.css`, `responsive.css`; the rest from design/admin | design/admin's | no: light only |
+
+**The same contrast values everywhere.** The classic admin and admin3 read the same tokens as admin4's light mode,
+so a value there is a value everywhere:
+
+| Token | Light | Dark (admin4) | Reaches |
+|---|---|---|---|
+| `--a4-ink` | `#1f2430` | `#e8ebf0` | 4.5:1 on every surface |
+| `--a4-muted` | `#545c6a` | `#a3abb9` | 4.5:1 on card, soft, zebra, head and every state tint |
+| `--a4-line` | `#c9cfd8` | `#2e3644` | a divider, no contrast requirement |
+| `--a4-line-strong` | `#aab2bd` | `#434d5f` | column separators |
+| `--a4-soft` | `#eaedf1` | `#222936` | soft surfaces |
+| `--a4-zebra` | `#eceff3` | `#212734` | the even data rows |
+| `--a4-head-bg` | `#dce1e8` | `#283041` | the header row of data tables |
+| `--a4-field-line` | `#6e7588` | `#6f7a93` | 3:1 on every surface and on admin4's page colour |
+| `--a4-accent-text` | `#ad3809` | `#ff9a5c` | 4.5:1 as text, also on a hovered row |
+
+In the classic admin and admin3 the content area takes these tokens; the dark frame of those designs (header, top
+menu, footer, the textured page and the sign-in page) keeps its own colours, which are part of their look.
+
+- **List tables** in every design: the header row on `--a4-head-bg` with `--a4-ink` text (the classic grey bar with
+  `#eee` text was 4.4:1), separators in `--a4-line-strong` between the columns and none before the first, rounded top
+  corners (`--a4-radius-s`), even data rows on `--a4-zebra`, the hovered row on `--a4-info-bg`. The same for the
+  datatable theme (`.admin-dt`) and for expui's tables (`--exp-dt-*`, mapped in each design's frame stylesheet).
+- **Section headings**: the `.box-header` of a `div.context-block` has a solid `--a4-line` under it.
+- **Greys**: text greys are `--a4-ink` or `--a4-muted`, lines `--a4-line` or `--a4-line-strong`, light surfaces
+  `--a4-card` or `--a4-soft`. A raw text colour left in the content area of the classic designs (a brand blue, a
+  state colour on its own fill) reaches 4.5:1 on its background.
+- **Weights, durations, tracking, radii** come from the tokens in every design's stylesheets, as in admin4. A file
+  that is also loaded without `components.css` (`core.css`: the standard popup, print and setup layouts resolve it
+  through the design chain) names the old value as the fallback: `var(--a4-weight-bold, bold)`.
+- **The two layout fixes** reached the classic admin where its templates have the same markup: the content edit
+  page's Locations table scrolls inside its column (`.a4-content-locations-scroll`, `modules/content.css`). The node
+  view's tabs switch of admin4 (a grid row of its own) has no counterpart in the classic window controls, whose switch
+  is the small triangle before the tabs.
+
+**One base stylesheet** is admin4's rule: a design that draws its own frame keeps its base styles in one `base.css`.
+The classic admin and admin3 keep their split files: the files are shared down the design chains (admin3, admin2 and
+the editor resolve design/admin's `core.css`, `content.css`, `theme/admin_datatable.css` and `theme/modalwindow.css`
+one by one, the `admin_theme` preference names a theme file, design/standard's popup and print layouts load
+`core.css`), so merging them would either copy the same rules into several files or break those chains. The packer
+bundles them into one request either way.
+
 ## Dark mode
 
 admin4's mode is `html[data-a4-theme="light"|"dark"]`, set before the page is drawn by the script at the top of
@@ -514,7 +567,11 @@ fields use `--a4-text-l` (16px) so a phone does not zoom in on focus.
 tokens on card, surface and soft 4.5:1, each state's text on its own tint 4.5:1, the text of filled buttons (also
 hovered) 4.5:1, the ring and the field edge 3:1 on every surface and the page, the chart colours 3:1 on a card, a
 meter's fill on its track 3:1 (`.a4-meter` fills with `--a4-accent-text`: `--a4-accent` was 2.9:1 on the light track,
-`--a4-accent-strong` 2.8:1 on the dark one).
+`--a4-accent-strong` 2.8:1 on the dark one). It also checks every admin design: the classic admin's `components.css`
+carries admin4's tokens unchanged, the list tables of admin4, the classic admin and admin3 take `--a4-head-bg` and
+`--a4-ink` with separators, rounded corners, zebra and hover rows and the section heading's line (the datatable
+theme and expui's tables as well), and no raw text colour in the content area of the classic admin or admin3 falls
+below 4.5:1 on its background.
 
 Printing: `admin4.css` has an `@media print` block (the content on the full width, no frame, no shadows), and the
 head script switches `html[data-a4-theme]` to light before printing, so a print style needs no colours of its own.
