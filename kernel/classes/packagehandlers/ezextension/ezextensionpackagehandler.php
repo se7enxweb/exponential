@@ -67,10 +67,22 @@ class eZExtensionPackageHandler extends eZPackageHandler
 
         $extensionDir = eZExtension::extensionPath( $extensionName );
 
-        // TODO: don't delete modified files?
-
+        // A copy Composer or git manages is not the package's to delete (the install kept it, keepInstalled()):
+        // its files stay, only the activation below is undone.
         if ( $extensionDir !== false && file_exists( $extensionDir ) )
-            eZDir::recursiveDelete( $extensionDir );
+        {
+            $manager = self::extensionManager( $extensionDir );
+            if ( $manager !== '' )
+            {
+                $message = "Extension '$extensionName' of package '" . $package->attribute( 'name' ) . "' not deleted: " .
+                           ( $manager === 'composer' ? 'Composer installed it' : 'it is a git checkout' );
+                eZDebug::writeNotice( $message, __METHOD__ );
+                if ( class_exists( 'expSetupLog' ) )
+                    expSetupLog::note( $message );
+            }
+            else
+                eZDir::recursiveDelete( $extensionDir );
+        }
 
         // Deactivate extension
         $siteINI = eZINI::instance( 'site.ini', 'settings/override', null, null, false, true );
@@ -273,10 +285,12 @@ class eZExtensionPackageHandler extends eZPackageHandler
     /**
      * The keep-newer rule: true when the installed copy of an extension stays and the package's copy is not put
      * in its place. Pure.
-     *  - both state a release number: the package's copy replaces the installed one only when it is newer;
+     *  - Composer or git manages the installed copy: it always stays, whatever the package carries. Composer (or
+     *    the checkout) updates it; a package that replaced it would leave vendor/composer/installed.json and
+     *    composer.lock describing files that are no longer there, and the next Composer run would undo it;
+     *  - else both state a release number: the package's copy replaces the installed one only when it is newer;
      *  - only the installed copy states one: it stays (a copy without a number is never shown to be newer);
-     *  - the installed copy states none: it stays when Composer or git manages it, else the package's copy goes in
-     *    (as before: a copy an earlier package put there).
+     *  - neither: the package's copy goes in (as before: a copy an earlier package put there).
      *
      * @param string|null $installedVersion normalizeVersion() of the installed copy
      * @param string|null $packageVersion normalizeVersion() of the package's copy
@@ -285,11 +299,11 @@ class eZExtensionPackageHandler extends eZPackageHandler
      */
     static function keepInstalled( $installedVersion, $packageVersion, $manager = '' )
     {
+        if ( $manager !== '' )
+            return true;
         if ( $installedVersion !== null && $packageVersion !== null )
             return !version_compare( $packageVersion, $installedVersion, '>' );
-        if ( $installedVersion !== null )
-            return true;
-        return $manager !== '';
+        return $installedVersion !== null;
     }
 
     /**
