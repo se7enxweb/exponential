@@ -25,7 +25,7 @@ deshalb muss das Design einige Dinge ergänzen
 
 ## Welche Sprachen
 
-40 Locale-Dateien in `share/locale/` tragen `TextDirection=rtl`: Arabisch für viele Länder, Hebräisch, Jiddisch,
+43 Locale-Dateien in `share/locale/` tragen `TextDirection=rtl`: Arabisch für viele Länder, Hebräisch, Jiddisch,
 Persisch und Dari, Urdu, Paschtu, Westpanjabi, Sindhi, Kaschmiri, Uigurisch, Zentralkurdisch (Sorani), Syrisch, N'Ko
 und Dhivehi ([Sprachen in Exponential, Abschnitt 9](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden)). Sprachen, die
 in lateinischer Schrift geschrieben werden, wie das kurmandschische Kurdisch, laufen von links nach rechts.

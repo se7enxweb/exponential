@@ -64,7 +64,7 @@ Fallbacks decide what a visitor sees when a translation is missing ([Translation
 
 ## Right to left
 
-The text direction has one source: `share/locale/<locale>.ini [LanguageSettings] TextDirection=rtl` (40 locale files
+The text direction has one source: `share/locale/<locale>.ini [LanguageSettings] TextDirection=rtl` (43 locale files
 carry it). `eZLocale::textDirection()`, `isRightToLeft()` and the static `textDirectionOf( 'heb-IL' )` read it. When the
 interface language is right to left, the administration says `dir="rtl"` on `<html>` and mirrors its layout; content in
 a right-to-left content language is marked with `dir` where it is shown and edited, whatever the interface language. A

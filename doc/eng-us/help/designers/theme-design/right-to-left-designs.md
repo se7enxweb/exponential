@@ -24,7 +24,7 @@ This page is for designers who make a design work in right-to-left languages. Th
 
 ## Where the direction comes from
 
-- `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl` is the only source; 28 locale files carry it.
+- `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl` is the only source; 43 locale files carry it.
 - In templates, `$site.text_direction` is `rtl` or `ltr` for the current interface locale (set by the kernel for every
   page), and a locale object has `text_direction` and `is_right_to_left`.
 

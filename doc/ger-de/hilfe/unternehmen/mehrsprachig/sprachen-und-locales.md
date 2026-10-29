@@ -4,7 +4,7 @@ audience: businesses, project-manager, admin
 category: business-solutions
 order: 20
 summary: Was Exponential bei Sprachen unterstützt, erklärt für Entscheider – Locales, Inhaltssprachen, Übersetzungen der Administration und Website-Locales, die drei Unterstützungsstufen, die Grenze von 62 Sprachen und wie Sie eine Sprache prüfen, bevor Sie sich auf einen Markt festlegen.
-keywords: Sprachen, Locales, Inhaltssprachen, Übersetzung der Administration, Sprache der Oberfläche, Unterstützungsstufen, 268 Locales, Übersetzungen der Administration, Grenze von 62 Sprachen, Ausweichsprache, Unternehmen, languages, locales, content languages, administration translation, interface language, support levels, limit of 62 languages, fallback, business
+keywords: Sprachen, Locales, Inhaltssprachen, Übersetzung der Administration, Sprache der Oberfläche, Unterstützungsstufen, 355 Locales, Übersetzungen der Administration, Grenze von 62 Sprachen, Ausweichsprache, Unternehmen, languages, locales, content languages, administration translation, interface language, support levels, limit of 62 languages, fallback, business
 type: help
 ---
 # Sprachen und Locales
@@ -43,10 +43,10 @@ fügt keine Inhaltssprache hinzu, ändert keine Website und belegt keinen der Pl
 
 Gezählt in [Sprachen in Exponential](../../../sprachen.md) (Exponential 6.0.15, Oktober 2026):
 
-- **268 Locale-Dateien**: 261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten.
-- **32 Schriftsysteme**, von Lateinisch, Kyrillisch und Griechisch bis Arabisch, Hebräisch, Devanagari, Chinesisch und
+- **355 Locale-Dateien**: 348 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten.
+- **Viele Schriftsysteme**, von Lateinisch, Kyrillisch und Griechisch bis Arabisch, Hebräisch, Devanagari, Chinesisch und
   viele weitere.
-- **40 Locales mit Rechts-nach-links-Schrift** ([Märkte mit Rechts-nach-links-Schrift](maerkte-mit-rechts-nach-links-schrift.md)).
+- **43 Locales mit Rechts-nach-links-Schrift** ([Märkte mit Rechts-nach-links-Schrift](maerkte-mit-rechts-nach-links-schrift.md)).
 - **Übersetzungen der Administration** (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../../sprachen.md)), aufgeführt in
   [Sprachen in Exponential](../../../sprachen.md).
 - **Zur Laufzeit ist keine PHP-Erweiterung nötig**: Locales sind einfache INI-Dateien

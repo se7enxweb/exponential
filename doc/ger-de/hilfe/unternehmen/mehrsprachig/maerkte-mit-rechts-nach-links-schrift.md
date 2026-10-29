@@ -28,7 +28,7 @@ für Website-Ersteller und [Sprachen mit Rechts-nach-links-Schrift in der Admini
 
 ## Welche Sprachen
 
-[Sprachen in Exponential, Abschnitt 9](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden) führt 40 Locale-Dateien mit
+[Sprachen in Exponential, Abschnitt 9](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden) führt 43 Locale-Dateien mit
 Rechts-nach-links-Schrift auf. Darunter:
 
 | Sprache | Locales | Schrift |
@@ -46,10 +46,9 @@ TextDirection=rtl`; eine Datei ohne diese Zeile ist links nach rechts. Kurdisch 
 lateinischer Schrift werden von links nach rechts geschrieben.
 
 > **Hinweis**
-> Die Seite für Website-Ersteller und die Funktionsseite zur Administration sagen, dass 28 Locale-Dateien die
-> Einstellung tragen; die Referenzseite [Sprachen in Exponential](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden), die
-> die Locale-Dateien vom 18. Oktober 2026 zählt, führt 40 auf (40 Dateien in `share/locale/` tragen die Zeile).
-> Zitieren Sie die Referenzseite.
+> Die Zahl wächst, wenn Locales hinzukommen. Zitieren Sie die Referenzseite
+> [Sprachen in Exponential](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden) und nennen
+> Sie das Datum ihrer Zahlen.
 
 ## Was von selbst funktioniert
 

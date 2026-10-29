@@ -20,7 +20,7 @@ read 18 October 2026).
 |---|---|---|
 | Content model | Designs follow the structure of content, not the other way round | [Content modeling workshops](../leadership/content-modeling-workshops.md) |
 | Layouts | Editors arrange blocks in zones; designs must work in many arrangements | [The layouts editor](../layouts-editor.md) |
-| Languages and right to left | 268 locale files, 40 of them right to left (`doc/eng-us/languages.md`) | [Languages](../languages.md) |
+| Languages and right to left | 355 locale files, 43 of them right to left (`doc/eng-us/languages.md`) | [Languages](../languages.md) |
 | Media | Image variations and uploads | [Images and media](../media-and-uploads.md) |
 | Editor experience | The people who use the administration every day | [Editing content](../editing-content.md), [Admin tour](../admin-tour.md) |
 | Accessibility | The admin4 design follows WCAG rules checked by tests | `doc/eng-us/bc/6.0/admin4-styling.md` |

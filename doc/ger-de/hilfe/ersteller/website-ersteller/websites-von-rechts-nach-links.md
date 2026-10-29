@@ -25,7 +25,7 @@ ergänzen müssen.
 
 ## Woher die Richtung kommt
 
-Die einzige Quelle ist die Locale-Datei: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`. 28
+Die einzige Quelle ist die Locale-Datei: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`. 43
 Locale-Dateien tragen diesen Eintrag; die Liste steht unter [Sprachen in Exponential](../../../sprachen.md). Der Kernel
 stellt ihn bereit:
 

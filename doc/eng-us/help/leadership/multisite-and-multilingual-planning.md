@@ -143,8 +143,8 @@ For each public siteaccess decide:
 
 From [Languages in Exponential](../../languages.md):
 
-- **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations), in 32 scripts,
-  40 of them written right to left, can be chosen as content languages and siteaccess locales.
+- **355 locale files** (348 languages and countries, the test language Lorem Ipsum and 6 variations),
+  43 of them written right to left, can be chosen as content languages and siteaccess locales.
 - **administration translations** (the current totals are at the top of [Languages in Exponential](../../languages.md)), listed in
   [Languages in Exponential](../../languages.md).
 - **Support levels**:

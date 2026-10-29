@@ -299,7 +299,7 @@ publishing, media portals, intranets, e-commerce and extranets“ (<https://expo
 | Framework (CMF) | MVC-Architektur, Module und Views, eine Template-Engine, INI-Einstellungen, eine Datenbank-Abstraktionsschicht, CLI-Skripte, eine REST-API, eigenständige Bibliotheken | [Templates und Design](../anleitungen/templates-und-design.md), [REST API v1 und v2](../anleitungen/rest-api-v1-und-v2.md) |
 | E-Commerce | „Advanced e-Commerce Stores (Built in)“: Produkte, Warenkörbe, Bestellungen, Mehrwertsteuer, Währungen, PayPal | README, „Main Exponential features“; [Bestellbelege](../funktionen/6.0/bestellbelege.md), [Sortierung der Bestellliste](../funktionen/6.0/sortierung-der-bestellliste.md) |
 | Multisite | Mehrere Sites aus einer Installation, jede ein Siteaccess mit eigenem Host, Pfad, eigener Sprache und eigenem Design | [Zuordnung von Siteaccesses nach Host und Sprache](../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md), [Multisite-Einstellungen](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) |
-| Mehrsprachig | 268 Locale-Dateien (261 Sprachen und Länder) als Inhaltssprachen; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen) in `share/translations`, Englisch eingeschlossen | [Sprachen in Exponential](../sprachen.md) |
+| Mehrsprachig | 355 Locale-Dateien (348 Sprachen und Länder) als Inhaltssprachen; Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen) in `share/translations`, Englisch eingeschlossen | [Sprachen in Exponential](../sprachen.md) |
 | Rechts nach links | `dir="rtl"` in Inhalten und in der Administration für Sprachen, die von rechts nach links geschrieben werden | [Rechts nach links](../funktionen/6.0/rechts-nach-links.md) |
 | Seitenaufbau | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln, eine Portierung des Konzepts von Netgen Layouts | README, „Exponential Layouts“; [Der Layout-Editor](layout-editor.md) |
 | Schreibhilfe | Exponential Intelligence (`expai`): schreibt Entwürfe, veröffentlicht nie selbstständig, gehostete Anbieter in den USA oder der EU oder ein lokales Modell | [Exponential Intelligence](../funktionen/6.0/erweiterungen/expai.md) |
@@ -498,7 +498,7 @@ Wert.
 | Pakete des Vendors se7enxweb auf Packagist | 219 | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
 | Öffentliche Repositorys des GitHub-Kontos se7enxweb | 1.025, davon 95 keine Forks | `gh repo list se7enxweb --limit 1100` |
 | Änderungen in der Historie seit Dezember 2023 | 6.556 in 53 Repositorys, 1.037 vom se7enxweb-Team | [Ökosystem](../geschichte/oekosystem.md) |
-| Locale-Dateien | 268 | [Sprachen](../sprachen.md) |
+| Locale-Dateien | 355 | [Sprachen](../sprachen.md) |
 
 ## Wie Sie mitmachen können
 

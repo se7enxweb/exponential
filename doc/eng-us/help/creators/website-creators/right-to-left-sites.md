@@ -24,7 +24,7 @@ its templates and stylesheets say, so this page shows what to add.
 
 ## Where the direction comes from
 
-The only source is the locale file: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`. 28 locale
+The only source is the locale file: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`. 43 locale
 files carry it; the list is in [Languages in Exponential](../../../languages.md). The kernel exposes it:
 
 | Where | What |

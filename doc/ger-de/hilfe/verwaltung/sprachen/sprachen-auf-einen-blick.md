@@ -38,9 +38,9 @@ Stellen.
 
 ## Die Zahlen
 
-- **Locales**: 268 Locale-Dateien werden in `share/locale/` mitgeliefert; jede kann zu einer Inhaltssprache werden
+- **Locales**: 355 Locale-Dateien werden in `share/locale/` mitgeliefert; jede kann zu einer Inhaltssprache werden
   ([Sprachen in Exponential](../../../sprachen.md)).
-- **Von rechts nach links**: 40 davon tragen `TextDirection=rtl` (gezählt in `share/locale/`; die Liste steht in
+- **Von rechts nach links**: 43 davon tragen `TextDirection=rtl` (gezählt in `share/locale/`; die Liste steht in
   Abschnitt 9 von [Sprachen in Exponential](../../../sprachen.md#9-sprachen-die-von-rechts-nach-links-geschrieben-werden)).
 - **Inhaltssprachen pro Installation**: höchstens 62 unter 64-Bit-PHP (siehe „Die Grenze von 62 Sprachen“).
 - **Übersetzungen der Administration**: die Verzeichnisse von `share/translations/`, mit sehr unterschiedlicher

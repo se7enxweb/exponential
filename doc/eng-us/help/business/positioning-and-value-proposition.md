@@ -54,7 +54,7 @@ Sources: `README.md` ("What does Exponential provide", "License", "Requirements"
 | Six supported databases: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Database support](../database-support.md) |
 | "almost any" operating system "that runs PHP 8.0 or later" | [Operating system support](../os-support.md) |
 | PHP 8.0 to 8.5 supported | `README.md`, "What version of PHP is required" |
-| 268 locale files, 40 of them right to left; administration translations (the current totals are at the top of the languages page) | [Languages in Exponential](../../languages.md) |
+| 355 locale files, 43 of them right to left; administration translations (the current totals are at the top of the languages page) | [Languages in Exponential](../../languages.md) |
 | "The recommended way is to get the kernel and every se7enxweb extension as Git clones with their full history" | `README.md`, "Installation"; [Develop with Git](../develop-with-git.md) |
 | "A published tag is never changed" | `SECURITY.md` |
 | The documentation is free documentation under the GNU FDL 1.3 or later | [Free documentation](../free-documentation.md) |
@@ -78,7 +78,7 @@ do; that keeps them true even when the market changes. For comparisons, see
 | **No vendor lock-in** | Code under the GPL, packages on Composer and Packagist, documentation under the GFDL, any host: the customer can always continue with someone else | `README.md`; [Free documentation](../free-documentation.md); [Getting the code](../../install/03-getting-the-code.md) | [Licensing explained for buyers](licensing-for-buyers.md) |
 | **Continuity of nearly thirty years** | A content model and a way of working that have lasted; existing sites can move forward | [Who is 7x?](../who-is-7x.md#nearly-thirty-years-the-timeline); the migration chapters [14](../../install/14-migrating-from-4x.md), [15](../../install/15-migrating-from-5x-legacy.md), [16](../../install/16-migrating-from-ez-platform-and-ibexa.md) | [Handling objections](objection-handling.md) |
 | **CMS, framework and shop in one** | One installation for content, custom applications and an online store | [Who is 7x?](../who-is-7x.md#a-cms-a-cmf-and-a-shop-in-one) | [Feature highlights](feature-highlights-for-customers.md) |
-| **Many sites, many languages** | Several sites from one installation; content in 268 locales, right to left included | [Siteaccess host and language matching](../../features/6.0/siteaccess-host-and-language-matching.md), [Languages in Exponential](../../languages.md), [Right to left](../../features/6.0/right-to-left.md) | [Planning multisite and multilingual projects](../leadership/multisite-and-multilingual-planning.md) |
+| **Many sites, many languages** | Several sites from one installation; content in 355 locales, right to left included | [Siteaccess host and language matching](../../features/6.0/siteaccess-host-and-language-matching.md), [Languages in Exponential](../../languages.md), [Right to left](../../features/6.0/right-to-left.md) | [Planning multisite and multilingual projects](../leadership/multisite-and-multilingual-planning.md) |
 | **Editors in control** | Page building without template work; a writing assistant that only writes drafts | [The layouts editor](../layouts-editor.md); [Exponential Intelligence](../../features/6.0/extensions/expai.md) | [Demo scripts](demo-scripts.md) |
 | **Security you can see** | A Content Security Policy in the administration, two-step sign-in, a tamper-evident audit trail, a hardening guide, private vulnerability reporting | [Content Security Policy](../../features/6.0/content-security-policy.md), [The audit trail](../../features/6.0/audit-trail.md), [Security hardening](../security-hardening.md), `SECURITY.md` | [Handling objections](objection-handling.md) |
 | **Documentation inside the product** | The help is in the administration, searchable, per audience, downloadable as PDF, and free to adapt | [The help system](../../features/6.0/help-system.md), [Free documentation](../free-documentation.md) | this help |
@@ -110,7 +110,7 @@ customer actually tells you.
 | Exponential 6.0.x: CMS, CMF and built-in e-commerce (`README.md`) | Free under the GPL: no license fee (`README.md`, "License") | User-defined content classes: one item, many views (`README.md`, "Main Exponential features") |
 | Exponential Layouts, the visual page builder ([The layouts editor](../layouts-editor.md)) | Editors rearrange pages "without touching templates" (`README.md`) | Rules give each part of a site its own layout, by subtree, class, siteaccess or time (`README.md`) |
 | Exponential Intelligence, the writing assistant ([Exponential Intelligence](../../features/6.0/extensions/expai.md)) | "Drafts only. It never publishes on its own" (`README.md`) | Fields filled from a brief, translation sync, alt text from images (`README.md`) |
-| Multisite and 268 locales ([Languages in Exponential](../../languages.md)) | Right-to-left languages handled in content and administration ([Right to left](../../features/6.0/right-to-left.md)) | New markets added as siteaccesses of the same installation |
+| Multisite and 355 locales ([Languages in Exponential](../../languages.md)) | Right-to-left languages handled in content and administration ([Right to left](../../features/6.0/right-to-left.md)) | New markets added as siteaccesses of the same installation |
 | Six databases, almost any OS, many web servers or the bundled Velocity server | No forced database server: SQLite needs none (`README.md`) | Choice of hosting, and freedom to move |
 | The audit trail, CSP, two-step sign-in, hardening guide | "Every record carries the hash of the record before it" ([The audit trail](../../features/6.0/audit-trail.md)) | Proof for auditors of who did what |
 | The release and security policy (`SECURITY.md`) | Fixes arrive as the next release; a published version never changes | Predictable upgrades along the 6.0.x line |
@@ -145,7 +145,7 @@ Each sentence below can be backed by the source in brackets. Do not say the brac
 >    feature is a content model you define yourself. [README]
 > 2. News publishing, e-commerce and forums are built in, and it serves several sites and languages from one
 >    installation. [README]
-> 3. Content can be written in 268 locales, right-to-left languages included, and the administration speaks many
+> 3. Content can be written in 355 locales, right-to-left languages included, and the administration speaks many
 >    languages, with the current totals at the top of the languages page. [Languages in Exponential]
 > 4. Editors build pages themselves with Exponential Layouts, and Exponential Intelligence helps them write, but only
 >    ever as drafts that a person publishes. [README]

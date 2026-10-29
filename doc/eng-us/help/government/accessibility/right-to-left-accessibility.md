@@ -25,7 +25,7 @@ if `lang` is wrong, and punctuation jumps to the wrong end if direction is not i
 
 ## Where the direction comes from
 
-The only source is the locale file: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 28 locale
+The only source is the locale file: `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl`; 43 locale
 files carry it. Templates can ask `$site.text_direction`, or a locale's `is_right_to_left`.
 
 ## In the administration

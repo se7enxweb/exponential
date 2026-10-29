@@ -139,7 +139,7 @@ siteaccess." ([Which pages use a layout](../layouts-editor.md#which-pages-use-a-
    the side columns change places and text starts at the right." ([Right to left](../../features/6.0/right-to-left.md))
 5. Switch back to English.
 
-Talk track: "268 locale files can be used as content languages; administration translations exist (the current totals are at the top of the languages page)." ([Languages in Exponential](../../languages.md))
+Talk track: "355 locale files can be used as content languages; administration translations exist (the current totals are at the top of the languages page)." ([Languages in Exponential](../../languages.md))
 
 ### Part 4: help and proof (4 minutes)
 
@@ -258,7 +258,7 @@ sends nothing anywhere until a provider key is added (`README.md`).
 | The layouts editor asks whether to clear caches after a publish | The site does not clear its caches by itself | Choose **Clear caches** ([The layouts editor](../layouts-editor.md)) |
 | *Possible edit conflict* | A draft from an earlier demo exists | Open **Manage versions**, discard the old draft; clean drafts before each demo |
 | No **Interface** box in the right column | You are in the edit form, or the role lacks the permission | Leave the edit form; use the administrator account |
-| A language shows English texts | It has no complete administration translation | Say so: ten translations are complete ([Support levels](../../languages.md#2-support-levels)) |
+| A language shows English texts | It has no complete administration translation | Say so: it shows English until a translation exists; the complete ones are listed at the top of the languages page ([Support levels](../../languages.md#2-support-levels)) |
 | No **Intelligence** tab | Not activated for this siteaccess, no policy `expai/write`, or no key | Show the documentation page instead |
 | No **Help** button | The role lacks `exphelp/read` | Grant it ([Help system, Who may read it](../../features/6.0/help-system.md#who-may-read-it)) or use the administrator |
 | A page says *Something went wrong on our side* with a reference | A real error | Note the reference; say it is logged and findable ([When something goes wrong](../when-something-goes-wrong.md)); move on |

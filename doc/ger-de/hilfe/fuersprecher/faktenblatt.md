@@ -30,7 +30,7 @@ NEW            Exponential Velocity (PHP web server) - Exponential Layouts (page
                Exponential Intelligence (writes drafts only) - help inside the administration.
 SECURITY       Private reports (SECURITY.md), first answer within one business day, fixes in the next 6.0.x.
                Content Security Policy, audit trail, two-step sign-in, hardening guide.
-LANGUAGES      268 locale files (40 right to left); administration translations (the current totals are at the top of the languages page).
+LANGUAGES      355 locale files (43 right to left); administration translations (the current totals are at the top of the languages page).
 HISTORY        Code base developed since 1999, formerly as eZ Publish (discontinued by its creator after
                almost 18 years). Not associated with eZ Systems or Ibexa.
 TRY IT         ./console exp:install          (a complete site on SQLite, one command)

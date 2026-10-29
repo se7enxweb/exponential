@@ -210,7 +210,7 @@ do not give legal advice.
 
 | Objection | Answer | Source |
 |---|---|---|
-| "Our language is not supported." | 268 locale files exist; check the customer's language in the list. The administration is complete in ten translations; others are partial or content only. | [Languages in Exponential](../../languages.md) |
+| "Our language is not supported." | 355 locale files exist; check the customer's language in the list. Every administration translation is complete (the current totals are at the top of the languages page); a language without one shows English. | [Languages in Exponential](../../languages.md) |
 | "We need Arabic or Hebrew." | Right-to-left in content and in the administration; Hebrew and Arabic administration translations are complete. | [Right to left](../../features/6.0/right-to-left.md), [Support levels](../../languages.md#2-support-levels) |
 | "Is the administration accessible?" | Skip link, landmarks, keyboard patterns, labeled fields, contrast and target-size tests in admin4. | [The admin4 design](../../features/6.0/admin4-design.md#landmarks-and-names) |
 | "PHP is slow." | `README.md` documents 0.36 ms per cached page and 8,941 requests per second on a 12-core machine with Velocity, and states that most of the speed came from fixes that also apply on Apache or Nginx. Offer a measurement on the customer's hardware. | `README.md`, [Benchmarking](../../guides/benchmarking.md) |

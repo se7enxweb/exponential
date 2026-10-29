@@ -35,7 +35,7 @@ The project does not plan to raise it: it would change the database schema and e
 
 | Counts | Does not count |
 |---|---|
-| content languages added in Setup > Languages | the locale files in `share/locale/` (268 ship) |
+| content languages added in Setup > Languages | the locale files in `share/locale/` (355 ship) |
 | a language added and never used | interface translations |
 | the test language Lorem Ipsum while it is added | a locale chosen only as a siteaccess `Locale` for formats |
 

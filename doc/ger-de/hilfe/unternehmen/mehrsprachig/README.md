@@ -44,9 +44,8 @@ Aus [Sprachen in Exponential](../../../sprachen.md), der Referenzseite für alle
 
 | Was | Zahl |
 |---|---|
-| Locale-Dateien, die als Inhaltssprachen und Website-Locales gewählt werden können | 268 (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten) |
-| Schriftsysteme, die diese Locales abdecken | 32 |
-| Locales mit Rechts-nach-links-Schrift | 40 |
+| Locale-Dateien, die als Inhaltssprachen und Website-Locales gewählt werden können | 355 (348 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten) |
+| Locales mit Rechts-nach-links-Schrift | 43 |
 | Übersetzungen der Administration | siehe die Gesamtzahlen am Anfang der Seite Sprachen |
 | Inhaltssprachen, die eine Installation gleichzeitig enthalten kann | höchstens 62 unter 64-Bit-PHP, 30 unter 32-Bit-PHP |
 

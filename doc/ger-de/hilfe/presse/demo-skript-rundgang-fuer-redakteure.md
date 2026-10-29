@@ -85,7 +85,7 @@ Version unter **Meine Warteliste**.“
    und der Text beginnt rechts.“ ([Rechts nach links](../../funktionen/6.0/rechts-nach-links.md))
 4. Schalten Sie zurück auf Englisch.
 
-Wenn Sie Zahlen nennen, verwenden Sie die dokumentierten mit ihrer Quelle: 268 Locale-Dateien, die als Inhaltssprachen
+Wenn Sie Zahlen nennen, verwenden Sie die dokumentierten mit ihrer Quelle: 355 Locale-Dateien, die als Inhaltssprachen
 verwendet werden können, Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md))
 ([Sprachen in Exponential](../../sprachen.md)).
 

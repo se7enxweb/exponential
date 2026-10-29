@@ -90,7 +90,7 @@ per week. Everything here is in the help of your own installation, at `/exphelp/
 | [Getting started](../getting-started.md) | Sign in and make a first change |
 | [A tour of the administration](../admin-tour.md) | The screens you will show and talk about |
 | [The layouts editor](../layouts-editor.md) | The page builder editors use |
-| [Languages](../languages.md) and [Languages in Exponential](../../languages.md) | Translating content; the 268 locales and administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md)) |
+| [Languages](../languages.md) and [Languages in Exponential](../../languages.md) | Translating content; the 355 locales and administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md)) |
 | [Database support](../database-support.md) | The six supported databases, in order |
 | [Operating system support](../os-support.md) | Where Exponential runs |
 | [Security hardening](../security-hardening.md) | How Exponential defends a site |
