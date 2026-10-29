@@ -107,6 +107,7 @@
         "se7enxweb/sevenx-themes-media": "~1.5.80",
         "smarty/smarty": "^5",
         "symfony/polyfill-php73": "^1.9",
+        "twig/twig": "^3",
         "zetacomponents/archive": "~1.5.1",
         "zetacomponents/authentication": "~1.4.1",
         "zetacomponents/cache": "~1.6.3",
