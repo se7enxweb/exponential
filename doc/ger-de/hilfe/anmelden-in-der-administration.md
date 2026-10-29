@@ -169,6 +169,8 @@ Mehr dazu: [Sicherheitshärtung](sicherheitshaertung.md).
 - [Anmelden im Editor](anmelden-im-editor.md)
 - [Ihr Konto und die Anmeldung](konten-und-anmeldung.md)
 - [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md)
+- [Konten für Redakteure und Administratoren einrichten](konten-fuer-redakteure-und-administratoren-einrichten.md)
+- [Das Benutzer-Auditprotokoll](das-benutzer-auditprotokoll.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

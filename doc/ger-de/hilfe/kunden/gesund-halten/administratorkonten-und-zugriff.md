@@ -79,6 +79,8 @@ schicken. Eine jährliche, gründlichere Fassung mit einem Protokoll zum Aufbewa
 - [Sicherheitsgrundlagen](sicherheitsgrundlagen.md)
 - [Benutzerkonten und Passwörter](../../unternehmen/sicherheit/benutzerkonten-und-passwoerter.md)
 - [Konten und Anmeldung](../../konten-und-anmeldung.md)
+- [Konten für Redakteure und Administratoren einrichten](../../konten-fuer-redakteure-und-administratoren-einrichten.md)
+- [Das Benutzer-Auditprotokoll](../../das-benutzer-auditprotokoll.md)
 - [Das Standard-Administratorpasswort](../../standard-administratorpasswort.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

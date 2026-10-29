@@ -12617,7 +12617,7 @@ c278fda159a7fda59b2deed36dbd8176  doc/ger-de/.examples/descriptions/10-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-45d8872a2c7e817a002028a52b6019e3  doc/ger-de/.paths.json
+1325383d40ca5a0c27141dc9c574ca76  doc/ger-de/.paths.json
 bb3a945902ac11b7d40c047580f5b6b8  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 b58ded94c758f0e4cc4ec1c8b1e60ef7  doc/ger-de/UNINSTALL.md
@@ -15945,10 +15945,10 @@ b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
 e3ad212462012dd2d97c28fca761abae  doc/ger-de/glossar.md
-d31cdc3abe8498ffb5a7134eec953934  doc/ger-de/hilfe/README.md
+7f60224031283d10a5e3f174c9862f51  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
-aba818b7134733a653e1ff2e3e5bf4e8  doc/ger-de/hilfe/anmelden-im-editor.md
-787c31fd4b74e4c9574987ac720a6506  doc/ger-de/hilfe/anmelden-in-der-administration.md
+9d80999100f6fc01d6769705d3ac7e48  doc/ger-de/hilfe/anmelden-im-editor.md
+8bd0a5eb4b20867b8eedd184b9b7873b  doc/ger-de/hilfe/anmelden-in-der-administration.md
 c1f339d9f8303c7ff5ed088d00f50c9b  doc/ger-de/hilfe/anwender-umsteiger/bewerten/README.md
 fd64ef90dcec5caf7e773cd286268dd6  doc/ger-de/hilfe/anwender-umsteiger/bewerten/anhand-von-fakten-vergleichen.md
 801b5b757f1289c66b56422f348b934d  doc/ger-de/hilfe/anwender-umsteiger/bewerten/bewertungsbogen.md
@@ -16003,6 +16003,22 @@ d276a727e7000dabeacde1a7b24b7a63  doc/ger-de/hilfe/bilder/accounts/editor-sign-i
 04a1aef291d9c22c7f540732ddbbe3e5  doc/ger-de/hilfe/bilder/accounts/email-preferences.webp
 4a66c9e86d3470eafdfc695f331e1ef6  doc/ger-de/hilfe/bilder/accounts/my-bookmarks.webp
 30542aae2afc727d0e5559425938782a  doc/ger-de/hilfe/bilder/accounts/notification-settings.webp
+86bb12efa6a53a8532c72884759f250b  doc/ger-de/hilfe/bilder/accounts/onboarding/administrator-users-group.webp
+ecb0520841567e7e503dfd43375d3af1  doc/ger-de/hilfe/bilder/accounts/onboarding/change-password-done.webp
+c24727163d7020e7327aaeed00a60ed0  doc/ger-de/hilfe/bilder/accounts/onboarding/create-new-user-menu.webp
+fd563ed3483e8a58fd07cff35957f66a  doc/ger-de/hilfe/bilder/accounts/onboarding/editor-refused-admin.webp
+7720b499eac74ff6c3ef7e9c6431b9cb  doc/ger-de/hilfe/bilder/accounts/onboarding/editor-users-tab.webp
+34e6fc8131f3fe5c63d89efa46b3eb1b  doc/ger-de/hilfe/bilder/accounts/onboarding/editors-group.webp
+8d097ebdc0d60d0a296013c4b464c2d6  doc/ger-de/hilfe/bilder/accounts/onboarding/first-sign-in-change-password.webp
+2ab216ec892a845f7913d7ff942e0429  doc/ger-de/hilfe/bilder/accounts/onboarding/member-account.webp
+415118ca9f39a446b3430318e9096a71  doc/ger-de/hilfe/bilder/accounts/onboarding/member-setting.webp
+61901e47ad96f52e6fd2b63c9eee76b3  doc/ger-de/hilfe/bilder/accounts/onboarding/members-group.webp
+95a128c08d119bb18f9955d839842c9e  doc/ger-de/hilfe/bilder/accounts/onboarding/new-editor-dashboard.webp
+0886ce3ed293f7097de1200bbd0cfecf  doc/ger-de/hilfe/bilder/accounts/onboarding/new-editor-form.webp
+c7df814748f39fe33debe483a51de7a0  doc/ger-de/hilfe/bilder/accounts/onboarding/new-editor-in-list.webp
+fb9c089fccf1fc8990a0c40c7791e214  doc/ger-de/hilfe/bilder/accounts/onboarding/new-editor-roles.webp
+629b99f0fdcc2ee4e5d14c0d7aec3406  doc/ger-de/hilfe/bilder/accounts/onboarding/new-member-form.webp
+131299b080ea8ac77e331e6c96b41808  doc/ger-de/hilfe/bilder/accounts/onboarding/verify-its-you.webp
 4eae469151aadec51bad82da730698f8  doc/ger-de/hilfe/bilder/accounts/user-hygiene.webp
 a65adf15f497a0b17fd7195a41863462  doc/ger-de/hilfe/bilder/accounts/user-password-admin.webp
 ad3e2da7ffe88ec796a176983d2399e5  doc/ger-de/hilfe/bilder/accounts/users-sessions.webp
@@ -16620,6 +16636,7 @@ a006c16efec268bb2bcd620a9b237fb9  doc/ger-de/hilfe/cms-entwickler/umstieg-von-ty
 4a7ee49f0cb3229adfb5a83c0bb6651f  doc/ger-de/hilfe/cms-entwickler/url-aliase-und-routing.md
 9864b91414734c9054a5e35f3a3b2c36  doc/ger-de/hilfe/cms-entwickler/versionen-entwuerfe-und-veroeffentlichen.md
 a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-ausloeser.md
+de0839eec1c86fa4ba9b7706ca43d37a  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 a0a95170364184e6d1dc3132a010f634  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
@@ -17677,7 +17694,7 @@ ac052b4e07c861d57ce79f216b1c4677  doc/ger-de/hilfe/handbuch/wie-archiviere-ich-a
 3f777dfb14d205b915859b8ae85f4886  doc/ger-de/hilfe/handbuch/wie-baue-ich-eine-seite-mit-layouts.md
 29c7cebd15b05bcfb7b1d4d260ccb53b  doc/ger-de/hilfe/handbuch/wie-bearbeite-ich-inhalte-direkt-auf-der-website.md
 3f32eed5a7756f922d5d37299a0a2876  doc/ger-de/hilfe/handbuch/wie-bette-ich-ein-anderes-objekt-ein.md
-3368adcf4f19536788bc2a5f1fc2bae4  doc/ger-de/hilfe/handbuch/wie-deaktiviere-oder-entsperre-ich-ein-benutzerkonto.md
+46136065483c0079fc698a365ee92c6f  doc/ger-de/hilfe/handbuch/wie-deaktiviere-oder-entsperre-ich-ein-benutzerkonto.md
 fdc24bb141f3a49ec8a34142425eb819  doc/ger-de/hilfe/handbuch/wie-entferne-ich-ein-element.md
 624b2da33027fe4ba3ede019a993e5c4  doc/ger-de/hilfe/handbuch/wie-entferne-ich-eine-uebersetzung-oder-aendere-die-hauptsprache.md
 2c533f7cf4337094a92b321cbfad2421  doc/ger-de/hilfe/handbuch/wie-finde-ich-heraus-wer-was-geaendert-hat.md
@@ -17707,7 +17724,7 @@ da80f94ceaadd1d7816adafeb27283a3  doc/ger-de/hilfe/handbuch/wie-lasse-ich-einen-
 b3d423c78999fa45a12cde2742746443  doc/ger-de/hilfe/handbuch/wie-leere-ich-den-papierkorb.md
 21e5323c4cc0a1f6cd761dbbdc0a4f4e  doc/ger-de/hilfe/handbuch/wie-lege-ich-den-preis-eines-produkts-pro-waehrung-fest.md
 5c25c4bcb2f6325984febc5224bc5cb4  doc/ger-de/hilfe/handbuch/wie-lege-ich-eine-sektion-an-und-ordne-ihr-inhalte-zu.md
-495b7ff35558d06c7e8b3d19ba1b11ac  doc/ger-de/hilfe/handbuch/wie-lege-ich-einen-benutzer-oder-eine-benutzergruppe-an.md
+bb715e3cba2a7c15a3665f2f7256665e  doc/ger-de/hilfe/handbuch/wie-lege-ich-einen-benutzer-oder-eine-benutzergruppe-an.md
 af9ed714dbfd4c092194064282ec97da  doc/ger-de/hilfe/handbuch/wie-leite-ich-alte-adressen-um.md
 eb5d37c2a46516fd6d89b1b8fa79c0a9  doc/ger-de/hilfe/handbuch/wie-lese-ich-die-logdateien.md
 3af0540b8332453eb62492f175f14fef  doc/ger-de/hilfe/handbuch/wie-nutze-ich-den-ki-assistenten-im-editor.md
@@ -17722,7 +17739,7 @@ ef7e83fafbe0019aa669ef3f1405adc8  doc/ger-de/hilfe/handbuch/wie-sehe-ich-aktive-
 ca09acb8b1988b880614f2bf482b7dfd  doc/ger-de/hilfe/handbuch/wie-sehe-ich-formulareinsendungen.md
 44ee48246c3765d5ef8e801a57a15e4d  doc/ger-de/hilfe/handbuch/wie-sehe-ich-kunden-und-produkt-statistiken.md
 12ca0d5be2ae32b64034fcd37630d7a2  doc/ger-de/hilfe/handbuch/wie-sehe-ich-mir-einen-entwurf-in-der-vorschau-an.md
-452040e93c3e25777af0e6a3fd7dd6f0  doc/ger-de/hilfe/handbuch/wie-sehe-ich-was-ein-benutzer-tun-darf.md
+9c9f87a305265c23deaa1b02e7ec31f2  doc/ger-de/hilfe/handbuch/wie-sehe-ich-was-ein-benutzer-tun-darf.md
 8ac977055301364f8a3ae16a09bf2469  doc/ger-de/hilfe/handbuch/wie-sehe-ich-wonach-besucher-suchen.md
 093bb6855784cd9a46613c033cac804e  doc/ger-de/hilfe/handbuch/wie-sende-ich-inhalte-zur-freigabe.md
 b45708a856dc48f67abc1b974297e02e  doc/ger-de/hilfe/handbuch/wie-setze-ich-im-online-editor-einen-anker.md
@@ -18001,7 +18018,8 @@ c821ae403ac57746c7394b449baeaa50  doc/ger-de/hilfe/ki-agenten/steuerung/rollen-u
 30431e3986e4a3887b6bf31aba726efe  doc/ger-de/hilfe/ki-agenten/was-es-heute-gibt.md
 e08a29aaa847e7fa336e587d563e56d8  doc/ger-de/hilfe/ki-agenten/was-ki-in-exponential-nicht-tut.md
 5ec5de2fce836e60148280c377f564b1  doc/ger-de/hilfe/ki-agenten/welcher-weg-zu-ihrer-aufgabe-passt.md
-4e75d71105841e329e0289892b421a01  doc/ger-de/hilfe/konten-und-anmeldung.md
+2d64c2a86b88ab95dbf1a237dfaa765c  doc/ger-de/hilfe/konten-fuer-redakteure-und-administratoren-einrichten.md
+24a251ee89b4f4e7af9d0d589d733bc0  doc/ger-de/hilfe/konten-und-anmeldung.md
 b2a462db3e08f1a65deb6568f512bed6  doc/ger-de/hilfe/kunden/alltag/README.md
 b23b797b741bb507146f3fcd4da9d811  doc/ger-de/hilfe/kunden/alltag/analyse-und-was-sie-messen-sollten.md
 53aeb9f49f96ff9801161fe9da9dbbb5  doc/ger-de/hilfe/kunden/alltag/arbeitsblatt-teamrollen.md
@@ -18031,7 +18049,7 @@ f237c92c99cad8f9a42ab47787cf4218  doc/ger-de/hilfe/kunden/alltag/website-suche-u
 4cec6db47a42ac76629a00b74083681a  doc/ger-de/hilfe/kunden/das-jahr-des-betreibers.md
 3cbf1089fd25b08d1a865412ce406bb7  doc/ger-de/hilfe/kunden/faq-fuer-kunden.md
 845f98370c065598ba0e605749681ab7  doc/ger-de/hilfe/kunden/gesund-halten/README.md
-1ba39a59e3fe802ee65a34b7140d10c7  doc/ger-de/hilfe/kunden/gesund-halten/administratorkonten-und-zugriff.md
+180ed0143f1b524c7628385fdc9456de  doc/ger-de/hilfe/kunden/gesund-halten/administratorkonten-und-zugriff.md
 70df9a9bf7c2cca43c2314f3b6f5b347  doc/ger-de/hilfe/kunden/gesund-halten/backups.md
 f5b9a6cba2441e62b0eab5577b0fab45  doc/ger-de/hilfe/kunden/gesund-halten/checkliste-upgrade-tag.md
 90d564651c9b87cec055e452feb810a9  doc/ger-de/hilfe/kunden/gesund-halten/die-meldeseite-der-hilfe.md
@@ -18267,6 +18285,7 @@ e472d4b2d51dc9914132192819a82084  doc/ger-de/hilfe/lokale-unternehmen/marketing/
 32e882a58acdc61b0c606e2dfbd7a145  doc/ger-de/hilfe/medien-und-uploads.md
 5fb7f02546ca1addb410af99a1da5926  doc/ger-de/hilfe/mit-git-aktualisieren.md
 4c5b0549cc98f0b420deb3b1bd7582ac  doc/ger-de/hilfe/mit-git-entwickeln.md
+be7c5512bc75d60889faeb2117ad9874  doc/ger-de/hilfe/mitglieder-verwalten.md
 d68df7d91cd2e0698d0449fe4100aa2d  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/README.md
 35e379a9c9d3bb5abb4f6603698dd8ee  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/der-authorization-header-und-proxys.md
 08be1c77b39349f67196e4f7490b0f3b  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/ein-backend-fuer-ihre-app.md
@@ -20803,6 +20822,7 @@ a28a10d226bb20950b2d89e932a006ab  doc/ger-de/hilfe/verwaltung/transparenz-und-in
 b0538d6e09eff9b217f1ea5a6e82fae5  doc/ger-de/hilfe/verwaltung/transparenz-und-informationsfreiheit/versionsgeschichte-als-rechenschaft.md
 da6a75154dccea7f8c8ae10f6b4aebf0  doc/ger-de/hilfe/verwaltung/transparenz-und-informationsfreiheit/zeitgesteuertes-veroeffentlichen-und-sperrfristen.md
 a4cdd1d56743c3aee63cbc7d7017ce04  doc/ger-de/hilfe/verwaltung/verwaltungen-hier-beginnen.md
+eaf218cf108fef60292e0cfb369a6a16  doc/ger-de/hilfe/was-die-redakteursrolle-erlaubt.md
 bcefb0645cf813c8c539267f26ce550d  doc/ger-de/hilfe/web-framework-entwickler/authentifizierung-und-sitzungen.md
 4dabc94e5cc21ff125e998c68822cb75  doc/ger-de/hilfe/web-framework-entwickler/autorisierung-rollen-und-richtlinien.md
 644fac99914a8f18f7b9986ce872435f  doc/ger-de/hilfe/web-framework-entwickler/begriffswoerterbuch.md

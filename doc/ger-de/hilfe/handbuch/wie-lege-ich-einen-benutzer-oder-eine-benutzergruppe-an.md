@@ -12,12 +12,23 @@ type: help
 
 Benutzer und Benutzergruppen sind Inhaltsobjekte im Bereich **Benutzer** des Inhaltsbaums. Ein Benutzer erhält seine
 Rechte über die Rollen der Gruppen, in denen er liegt; der Ort, an dem Sie das Konto anlegen, entscheidet also darüber,
-was die Person tun darf.
+was die Person tun darf:
+
+- **Editors** für Personen, die Inhalte schreiben und veröffentlichen (die Rolle Editor und ihre Begleiter,
+  [Was die Redakteursrolle erlaubt](../was-die-redakteursrolle-erlaubt.md));
+- **Administrator users** nur für die Systemadministratoren, die Entwickler und die Eigentümer der Website;
+- **Members** für die Mitglieder der öffentlichen Website, die von Redakteuren verwaltet werden
+  ([Mitglieder verwalten](../mitglieder-verwalten.md)).
+
+Den ganzen Weg vom Konto eines neuen Redakteurs bis zu seiner ersten Anmeldung, mit einem Bildschirmfoto zu jedem
+Schritt, zeigt [Konten für Redakteure und Administratoren einrichten](../konten-fuer-redakteure-und-administratoren-einrichten.md).
 
 ## Wer das tun kann
 
 Benutzer, die im Benutzerbaum Objekte der Klassen **Benutzer** und **Benutzergruppe** anlegen (`content/create` mit
-diesen Klassen, meist auf die Sektion Users beschränkt) und den Baum lesen dürfen. Administratoren dürfen das.
+diesen Klassen, meist auf die Sektion Users beschränkt) und den Baum lesen dürfen. Administratoren dürfen das in jeder
+Gruppe. Redakteure dürfen es in Members (Rolle *Member management*) und können in Editors das Konto eines neuen
+Redakteurs beantragen, das ein Administrator freigibt (Rolle *Editor account requests*).
 
 ## Schritte
 
@@ -31,11 +42,16 @@ diesen Klassen, meist auf die Sektion Users beschränkt) und den Baum lesen dür
 5. Füllen Sie beim Benutzerkonto **Benutzername**, **E-Mail** und, falls das Formular danach fragt,
    **E-Mail-Adresse bestätigen** aus.
 6. Füllen Sie **Passwort** und **Passwort bestätigen** aus.
-   Das Passwort muss die Passwortregeln der Website erfüllen, zum Beispiel eine Mindestlänge.
+   Das Passwort muss die Passwortregeln der Website erfüllen, zum Beispiel eine Mindestlänge. Legen Sie das Konto für
+   jemand anderen an, geben Sie ihm ein vorläufiges Passwort und lassen Sie **Passwort bei der nächsten Anmeldung
+   ändern** angekreuzt: Die Person wählt dann bei der ersten Anmeldung ihr eigenes.
 7. Klicken Sie auf **Zur Veröffentlichung schicken**.
-   Das Konto wird angelegt und in der Gruppe aufgeführt.
+   **Bestätigen Sie, dass Sie es sind** fragt nach Ihrem eigenen Passwort, bevor ein Konto angelegt wird; geben Sie es
+   ein und klicken Sie auf **Bestätigen**. Das Konto wird angelegt und in der Gruppe aufgeführt.
 8. Öffnen Sie das neue Konto und sehen Sie sich seinen Tab **Rollen** an, um zu prüfen, was es von seiner Gruppe
    erhalten hat.
+9. Melden Sie sich ab und einmal als neuer Benutzer an, um Benutzername und vorläufiges Passwort zu prüfen; geben Sie
+   der Person dann den Benutzernamen und auf einem zweiten Weg das vorläufige Passwort.
 
 ## Was schiefgehen kann
 
@@ -59,6 +75,8 @@ ihre Arbeit auf der Website braucht, und entfernen oder deaktivieren Sie das Kon
 
 ## Verwandte Seiten
 
+- [Konten für Redakteure und Administratoren einrichten](../konten-fuer-redakteure-und-administratoren-einrichten.md)
+- [Mitglieder verwalten](../mitglieder-verwalten.md)
 - [Wie verschiebe ich einen Benutzer in eine andere Gruppe?](wie-verschiebe-ich-einen-benutzer-in-eine-andere-gruppe.md)
 - [Wie sehe ich, was ein Benutzer tun darf?](wie-sehe-ich-was-ein-benutzer-tun-darf.md)
 - [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)

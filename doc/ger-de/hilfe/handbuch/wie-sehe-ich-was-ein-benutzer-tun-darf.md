@@ -49,6 +49,7 @@ Jeder, der das Konto im Benutzerbaum lesen darf. Um einer Rolle auf ihre eigene 
 ## Verwandte Seiten
 
 - [Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)
+- [Was die Redakteursrolle erlaubt](../was-die-redakteursrolle-erlaubt.md)
 - [Wie gebe ich einer Gruppe Bearbeitungsrechte nur für eine Sektion?](wie-gebe-ich-einer-gruppe-bearbeitungsrechte-fuer-eine-sektion.md)
 - [Wie verschiebe ich einen Benutzer in eine andere Gruppe oder nehme ihn in zwei Gruppen auf?](wie-verschiebe-ich-einen-benutzer-in-eine-andere-gruppe.md)
 - [Sektionen, Rollen und Richtlinien](../../../eng-us/help/cms-developers/sections-roles-and-policies.md)
