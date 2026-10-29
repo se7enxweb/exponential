@@ -730,7 +730,7 @@ class Info extends \Exponential\Runnable\ModuleView
                         : (string)getenv( 'EXP_VELOCITY_ENGINE' );
         $serverSoftware = strtolower( isset( $_SERVER['SERVER_SOFTWARE'] ) ? (string)$_SERVER['SERVER_SOFTWARE'] : '' );
         $velocitySwitch = array(
-            'on'      => 'set [ServerSettings] EnginePhar=enabled (exp:velocity config set ServerSettings EnginePhar enabled), then exp:velocity restart',
+            'on'      => 'set [ServerSettings] EnginePhar=enabled (exp:velocity config set --apply ServerSettings EnginePhar enabled), then exp:velocity restart',
             'off'     => 'set [ServerSettings] EnginePhar=disabled, then exp:velocity restart',
             'restart' => 'exp:velocity restart',
         );

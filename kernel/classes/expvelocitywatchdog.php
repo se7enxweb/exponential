@@ -112,7 +112,7 @@ class expVelocityWatchdog
         if ( $s['running'] )
             return self::verdict( 'none', 'running', '' );
         if ( $s['paused'] )
-            return self::verdict( 'skip', 'paused', 'its configuration file is disabled (exp:velocity conf enable watchdog)' );
+            return self::verdict( 'skip', 'paused', 'its configuration file is disabled (exp:velocity conf enable watchdog --apply)' );
         if ( is_array( $s['stopped'] ) )
             return self::verdict( 'skip', 'intentionally-stopped',
                 'stopped on purpose' . self::since( $s['stopped'], 'since', $now ) . '; exp:velocity start starts it' );
@@ -677,6 +677,53 @@ class expVelocityWatchdog
             $actions[] = 'systemctl ' . $args;
         }
         return array( 'ok' => true, 'message' => 'installed: ' . $unit . '.timer every ' . $this->interval() . ' s', 'actions' => $actions );
+    }
+
+    /**
+     * What install() or remove() would do, without writing, linking or calling systemctl.
+     *
+     * @param string $action install or remove
+     * @return array( ok, message, actions )
+     */
+    public function plan( $action )
+    {
+        $actions = array();
+        $unit = $this->unitName();
+        $systemctl = $this->findExecutable( 'systemctl' );
+        if ( $action === 'install' )
+        {
+            if ( $systemctl === false )
+                return array( 'ok' => false, 'message' => 'needs systemd (systemctl not found); run `exp:velocity watchdog run` from cron instead, e.g. every minute', 'actions' => $actions );
+            if ( function_exists( 'posix_geteuid' ) && posix_geteuid() !== 0 )
+                return array( 'ok' => false, 'message' => 'needs root (it writes ' . $this->unitDir() . ')', 'actions' => $actions );
+            foreach ( array( '.service' => $this->serviceUnit(), '.timer' => $this->timerUnit() ) as $suffix => $text )
+            {
+                $file = $this->unitDir() . '/' . $unit . $suffix;
+                if ( @file_get_contents( $file ) !== $text )
+                    $actions[] = 'would write ' . $file;
+            }
+            $available = $this->confFile( false );
+            if ( $available !== null )
+            {
+                if ( !is_file( $available ) )
+                    $actions[] = 'would write ' . $available;
+                $enabled = $this->confFile( true );
+                if ( !is_file( $enabled ) )
+                    $actions[] = 'would enable ' . $enabled;
+            }
+            $actions[] = 'would run systemctl daemon-reload';
+            $actions[] = 'would run systemctl enable --now ' . $unit . '.timer';
+            return array( 'ok' => true, 'message' => 'would install ' . $unit . '.timer every ' . $this->interval() . ' s', 'actions' => $actions );
+        }
+        if ( $systemctl !== false )
+            $actions[] = 'would run systemctl disable --now ' . $unit . '.timer';
+        foreach ( array( $this->unitDir() . '/' . $unit . '.timer', $this->unitDir() . '/' . $unit . '.service',
+                         $this->confFile( true ), $this->confFile( false ) ) as $file )
+        {
+            if ( $file !== null && ( is_file( $file ) || is_link( $file ) ) )
+                $actions[] = 'would remove ' . $file;
+        }
+        return array( 'ok' => true, 'message' => count( $actions ) > 1 || ( $actions && $systemctl === false ) ? 'would remove the watchdog' : 'not installed; nothing to remove', 'actions' => $actions );
     }
 
     /**
