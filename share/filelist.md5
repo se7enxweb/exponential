@@ -12251,9 +12251,9 @@ b157c3ab90ba4fbce6c8fe089c88636b  doc/eng-us/history/velocity/2026-09d.md
 09fe66cfd7efc177b0979e16d00d9add  doc/eng-us/history/velocity/2026-10.md
 1b26aebfc51d07107cde582d6f105804  doc/eng-us/history/velocity/README.md
 6579cb3af6b13e98420cb492887ed497  doc/eng-us/history/velocity/installers-and-packages.md
-7a89e66896ab3159d4f9e449998f1b44  doc/eng-us/images/languages/coverage-map.svg
-8a12abcde020ecfb3271f8796820c935  doc/eng-us/images/languages/coverage-map.webp
-637835b26be6efc37035bcaa3f6eac01  doc/eng-us/images/languages/world-outline.svg
+7c68147ece96be0775ceaff08abec3e0  doc/eng-us/images/languages/coverage-map.svg
+7d57fd9a896f2c58faacaf33964f9c11  doc/eng-us/images/languages/coverage-map.webp
+6ccd8897deaf61af5fbf3624fef2a549  doc/eng-us/images/languages/world-outline.svg
 c2daac44615144bd3fdc43b77d02a7fb  doc/eng-us/install/01-introduction.md
 956503fceb5e35f318db4eb9f5388440  doc/eng-us/install/02-requirements.md
 eeed09f20f70df3689710abe9b8f4296  doc/eng-us/install/03-getting-the-code.md
@@ -15374,8 +15374,8 @@ a437b6de2cfeb8157ec0bd620cfe6f82  doc/ger-de/beispiele/workflow-ereignisse/ezfin
 010d0864d660a185840fd86c93621413  doc/ger-de/beispiele/workflow-ereignisse/ezpaymentgateway.md
 31755bce36887705ae2a3d02f2edd98f  doc/ger-de/beispiele/workflow-ereignisse/ezsimpleshipping.md
 65dddf148faeeed5b008171d5ecc92c8  doc/ger-de/beispiele/workflow-ereignisse/ezwaituntildate.md
-9db86790af7bdcf990e1ff315e6a97fd  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
-de7d3aa0d6d693ab16429ec5342deaea  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
+fb9057ebf2bbd3b63adb30efe4ab5f2b  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
+dc9da889cf75f46a0d5d0b0d1f3c2daa  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
 9f7389a3ca3afe0f68567c73bbdf3771  doc/ger-de/branch-uebersicht.md
 a5081b851a21e3aac6cb770c46462bbe  doc/ger-de/funktionen/4.7/cluster-ereignisse.md
 e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
