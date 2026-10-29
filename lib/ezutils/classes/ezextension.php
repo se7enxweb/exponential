@@ -37,7 +37,7 @@ class eZExtension
      * @param eZINI|null $siteINI Optional parameter to be able to only do change on specific instance of site.ini
      * @return string
      */
-    static function baseDirectory( eZINI|null $siteINI = null )
+    static function baseDirectory( ?eZINI $siteINI = null )
     {
         if ( $siteINI === null )
             $siteINI = eZINI::instance();
@@ -88,7 +88,7 @@ class eZExtension
      * @param eZINI|null $siteINI Optional site.ini instance
      * @return array
      */
-    static function extensionRootDirectories( eZINI|null $siteINI = null ) : array
+    static function extensionRootDirectories( ?eZINI $siteINI = null ) : array
     {
         if ( $siteINI === null )
             $siteINI = eZINI::instance();
@@ -135,7 +135,7 @@ class eZExtension
      * @param eZINI|null $siteINI
      * @return string|false Full path or false if not found
      */
-    public static function extensionPath( $name, eZINI|null $siteINI = null )
+    public static function extensionPath( $name, ?eZINI $siteINI = null )
     {
         if ( isset( self::$extensionPathCache[$name] ) )
             return self::$extensionPathCache[$name];
@@ -205,7 +205,7 @@ class eZExtension
      * @param eZINI|null $siteINI
      * @return array
      */
-    public static function requiredExtensions( eZINI|null $siteINI = null )
+    public static function requiredExtensions( ?eZINI $siteINI = null )
     {
         if ( $siteINI === null )
         {
@@ -241,7 +241,7 @@ class eZExtension
      * @param eZINI|null $siteINI Optional parameter to be able to only do change on specific instance of site.ini
      * @return array
      */
-    public static function activeExtensions( $extensionType = false, eZINI|null $siteINI = null )
+    public static function activeExtensions( $extensionType = false, ?eZINI $siteINI = null )
     {
         if ( $siteINI === null )
         {
@@ -824,7 +824,7 @@ class eZExtension
      *        ('anywhere' and 'inactive' are then null, 'missing' covers this siteaccess only)
      * @return array kind => list of extension names (null for a kind left out)
      */
-    public static function extensionLists( eZINI|null $siteINI = null, array|false|null $accessLists = null ) : array
+    public static function extensionLists( ?eZINI $siteINI = null, $accessLists = null ) : array
     {
         if ( $siteINI === null )
             $siteINI = eZINI::instance();
@@ -909,7 +909,7 @@ class eZExtension
      * @param array|false|null $accessLists
      * @return array
      */
-    public static function extensionCounts( eZINI|null $siteINI = null, array|false|null $accessLists = null ) : array
+    public static function extensionCounts( ?eZINI $siteINI = null, $accessLists = null ) : array
     {
         $counts = array();
         foreach ( self::extensionLists( $siteINI, $accessLists ) as $kind => $list )

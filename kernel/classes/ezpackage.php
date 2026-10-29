@@ -2562,7 +2562,8 @@ class eZPackage
             foreach ( $maintainerNodes as $maintainerNode )
             {
                 // the writer leaves out a maintainer's role when there is none
-                $maintainerName = $maintainerNode->getElementsByTagName( 'name' )->item( 0 )?->textContent ?? '';
+                $maintainerNameNode = $maintainerNode->getElementsByTagName( 'name' )->item( 0 );
+                $maintainerName = $maintainerNameNode ? $maintainerNameNode->textContent : '';
                 $maintainerEmailNode = $maintainerNode->getElementsByTagName( 'email' )->item( 0 );
                 $maintainerRoleNode = $maintainerNode->getElementsByTagName( 'role' )->item( 0 );
                 $this->appendMaintainer( $maintainerName,
@@ -2726,8 +2727,10 @@ class eZPackage
         $versionRelease = false;
         if ( $versionNode )
         {
-            $versionNumber = $versionNode->getElementsByTagName( 'number' )->item( 0 )?->textContent ?? false;
-            $versionRelease = $versionNode->getElementsByTagName( 'release' )->item( 0 )?->textContent ?? false;
+            $versionNumber = $versionNode->getElementsByTagName( 'number' )->item( 0 );
+            $versionNumber = $versionNumber ? $versionNumber->textContent : false;
+            $versionRelease = $versionNode->getElementsByTagName( 'release' )->item( 0 );
+            $versionRelease = $versionRelease ? $versionRelease->textContent : false;
             // A hand-written package.xml may wrap the values in white space (<number>\n  1.0\n</number>). It is
             // no part of the number, and the check below must not refuse such a package for it.
             $versionNumber = $versionNumber === false ? false : trim( $versionNumber );

@@ -50,7 +50,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        $this->db      = new StubSessionEZDB( connected: true, queryResult: false );
+        $this->db      = new StubSessionEZDB( true, false );
         eZDB::setInstance( $this->db );
         eZSession::setUserID( 0 );
         eZINI::instance()->setVariable( 'Session', 'SessionTimeout', 3600 );

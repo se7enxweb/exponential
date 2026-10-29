@@ -76,7 +76,7 @@ every extension a clone you can follow, change and contribute back from.
 | | |
 |---|---|
 | Version | **PHP 8.0 to 8.5**. `composer.json` declares `^8.0` (and accepts later 8.x). PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux 9, Rocky Linux 9) runs Exponential under Apache, PHP-FPM or Velocity. Use the newest PHP your system offers. See [PHP 8.0 support](bc/6.0/php-8.0-support.md). |
-| Exponential Velocity | part of Exponential as of 6.0.15: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.55`, so `composer install` installs it ([Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md)). It runs on **PHP 8.0 to 8.5** from its release 0.0.4.54 (until then it needed 8.1), with the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). On RHEL 9 the stock PHP 8.0 runs it; see [PHP 8.0 support](bc/6.0/php-8.0-support.md#exponential-velocity-on-php-80). |
+| Exponential Velocity | part of Exponential as of 6.0.15: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.57`, so `composer install` installs it ([Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md)). It runs on **PHP 8.0 to 8.5** from its release 0.0.4.54 (until then it needed 8.1), with the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). On RHEL 9 the stock PHP 8.0 runs it; see [PHP 8.0 support](bc/6.0/php-8.0-support.md#exponential-velocity-on-php-80). |
 | Release tags | `v6.0.8` to `v6.0.14` require PHP 8.1; on PHP 8.0 install the 6.0.15 line (`dev-main`, which Composer also knows as `6.0.x-dev`) until its tag is published. |
 | 64-bit PHP | needed for more than 30 languages (`composer.json`, `suggest`). |
 | `memory_limit` | at least `64M` (setup check `memory_limit`). Restart the web server or PHP-FPM after editing `php.ini`. |
@@ -180,12 +180,12 @@ php bin/php/console --version
 
 The first line names the version, for example `console (Exponential) 6.0.15stable`.
 
-**Exponential Velocity.** `composer.json` requires it at `~0.0.4.55`, so `composer install` installs it on every
+**Exponential Velocity.** `composer.json` requires it at `~0.0.4.57`, so `composer install` installs it on every
 supported PHP, 8.0 included. Until its release 0.0.4.54 it needed PHP 8.1 and was only suggested; an installation
 made in that time adds it with:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
 Why this matters, and what it brings: [Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md).
