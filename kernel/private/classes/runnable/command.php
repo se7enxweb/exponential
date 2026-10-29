@@ -180,6 +180,23 @@ abstract class Command extends Runnable
     }
 
     /**
+     * Whether a command that only shows what it would change unless --apply is given should write: true for
+     * --apply, false for no flag or --dry-run (accepted as a synonym of the default), null when both are given,
+     * which the command refuses as a usage error (exit 2).
+     *
+     * @param array $options the options of startup(), with the keys 'apply' and 'dry-run'
+     * @return bool|null
+     */
+    public static function applyRequested( array $options )
+    {
+        $apply = !empty( $options['apply'] );
+        $dryRun = !empty( $options['dry-run'] );
+        if ( $apply && $dryRun )
+            return null;
+        return $apply;
+    }
+
+    /**
      * Ends the command: eZScript::shutdown(), which exits with $exitCode.
      *
      * @param int|false $exitCode

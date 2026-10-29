@@ -30,7 +30,8 @@ und keine Rolle Member zuweist, konnte ein Redakteur außerdem das eigene Passwo
   `kernel/setup/steps/ezstep_create_sites.php`).
 - **Die Website-Pakete** `sevenx_multisite`, `sevenx_multisite_clean`, `sevenx_site`, `sevenx_site_clean` und
   `cjw_multisite` fügen die Richtlinien in ihrem Editor-Schritt selbst hinzu.
-- **`bin/php/addeditorpolicies.php`** vervollständigt die Rolle bei einer bestehenden Installation (unten).
+- **`bin/php/addeditorpolicies.php --apply`** vervollständigt die Rolle bei einer bestehenden Installation (unten;
+  ohne `--apply` zeigt es nur, was es ändern würde).
 - **`content/*` von plain_site wird eingeengt** (24. Oktober 2026). Bevor die Richtlinien oben geprüft werden, ersetzt
   der Setup-Schritt ein `content/*` ohne Begrenzungen der Rolle Editor, das `plain_site` aus den Grunddaten behält,
   durch die Inhaltsfunktionen, die die Website-Pakete ihren Redakteuren geben: `create`, `edit`, `read`,
@@ -66,13 +67,17 @@ einer Rolle von Hand gegeben wurden.
 
 ## Was beim Aktualisieren zu tun ist
 
-Das Skript zuerst mit `--dry-run` ausführen. Es listet jede Richtlinie, die es hinzufügen würde, und den Grund, warum
-eine wegfällt, dann die `WARN`-Zeilen:
+Das Skript zuerst ohne Optionen ausführen: Ohne `--apply` ändert es nichts (seit dem 28. Oktober 2026; vorher schrieb
+es standardmäßig und nahm `--dry-run`, das weiter angenommen wird und dasselbe bedeutet wie keine Option). Es listet
+jede Richtlinie, die es hinzufügen würde, und den Grund, warum eine wegfällt, dann die `WARN`-Zeilen. Danach mit
+`--apply` ausführen, um die Änderung vorzunehmen:
 
 ```bash
-php bin/php/addeditorpolicies.php --dry-run
-php bin/php/addeditorpolicies.php
+php bin/php/addeditorpolicies.php           # was es ändern würde; ändert nichts
+php bin/php/addeditorpolicies.php --apply   # ausführen; prüft das Ergebnis, gibt PASS oder FAIL aus
 ```
+
+`--apply` zusammen mit `--dry-run` wird abgelehnt (Exit-Code 2).
 
 Bei einer Rolle mit `content/*` ohne Begrenzungen (eine Installation von `plain_site`) ersetzt das Skript es zuerst, und
 der Probelauf sagt genau, was geht und was kommt:
@@ -81,12 +86,14 @@ der Probelauf sagt genau, was geht und was kommt:
 would remove content/*                    content/* also grants content/cleantrash, content/translations, content/urltranslator, content/jobs
 would add    content/create               in place of content/*
 ...
-PASS: content/* would be replaced by 16 content functions; 0 policies would be added to Editor (3) (dry run, nothing changed)
+PASS: content/* would be replaced by 16 content functions; 0 policies would be added to Editor (3) (dry run, nothing changed; --apply writes)
 ```
 
 Eine Funktion, die die Rolle schon als einzelne Richtlinie hat (auch begrenzt), bleibt und wird nicht noch einmal
 hinzugefügt; danach wird die gespeicherte Rolle geprüft. Rollen ohne `content/*` (jedes andere Website-Paket) bleiben
 unberührt. Ein zweiter Lauf ändert nichts.
+
+Die folgenden Optionen werden mit `--apply` kombiniert; ohne `--apply` zeigen sie, was sie tun würden:
 
 - `--keep-content-wildcard` lässt `content/*`, wie es ist.
 - `--skip=<Modul/Funktion>` lässt eine Richtlinie weg, wiederholbar; ein übersprungenes `content/hide`,
