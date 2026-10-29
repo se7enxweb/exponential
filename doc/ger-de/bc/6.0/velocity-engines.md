@@ -7,7 +7,7 @@ Webservern mit denselben Verben (`start`, `stop`, `graceful`, `restart`, `kill`,
 
 ## Velocity ist seit 6.0.15 Teil von Exponential
 
-Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.55`; vorher
+Seit 6.0.15 **verlangt** die `composer.json` im Wurzelverzeichnis `se7enxweb/exponential-velocity ~0.0.4.57`; vorher
 schlug sie das Paket nur vor. Was sich dadurch für eine bestehende Installation ändert:
 
 | | |
@@ -757,7 +757,7 @@ die Remote-Einstellung und das Passwort des Panels des laufenden Servers, statt 
 
 Die Engine `qbix` läuft ab dem Release 0.0.4.54 (20. Oktober 2026) unter PHP 8.0 bis 8.5; ihre `composer.json`
 verlangt `"php": ">=8.0"` (bisher `>=8.1`), und unter 8.0 wird nichts zusätzlich gebraucht, kein Polyfill-Paket und
-keine Erweiterung. Die `composer.json` von Exponential verlangt die Engine in `~0.0.4.55`, daher installiert
+keine Erweiterung. Die `composer.json` von Exponential verlangt die Engine in `~0.0.4.57`, daher installiert
 `composer install` unter PHP 8.0 sie ebenfalls.
 
 - **RHEL 9, AlmaLinux 9, Rocky Linux 9**: Das Standard-PHP 8.0 aus AppStream funktioniert, mit dem el9-rpm

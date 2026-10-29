@@ -41,8 +41,8 @@ Software ohne es nicht läuft.
 ## Erweiterungen sind Pakete
 
 Das `require` des Hauptprojekts listet die Erweiterungen, die jede Installation erhält, als Pakete `se7enxweb/*`, jede mit
-einer Tilde-Bedingung, zum Beispiel `se7enxweb/exponential-velocity` in `~0.0.4.55` und
-`se7enxweb/sevenx_authentication_2fa` in `~1.0.14`. Das Legacy-Installer-Plugin legt sie in `extension/` ab. `suggest`
+einer Tilde-Bedingung, zum Beispiel `se7enxweb/exponential-velocity` in `~0.0.4.57` und
+`se7enxweb/sevenx_authentication_2fa` in `~1.0.18`. Das Legacy-Installer-Plugin legt sie in `extension/` ab. `suggest`
 listet optionale, etwa `se7enxweb/sevenx_valkey_cache` und `se7enxweb/ezfind`, mit den PHP-Erweiterungen, die jede
 Datenbank braucht.
 

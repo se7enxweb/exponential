@@ -62,7 +62,7 @@ git tag -l 'v*' --sort=version:refname | tail -5      # inside a clone, after gi
 
 ## Tilde constraints
 
-The root `composer.json` pins extensions with `~`, for example `"se7enxweb/ezoracle": "~2.3.7"`. "The version
+The root `composer.json` pins extensions with `~`, for example `"se7enxweb/ezoracle": "~2.3.8"`. "The version
 constraints use `~`, which lets the last position float: `~6.0.8` accepts `6.0.9` and `6.0.10` but not `6.1.0`"
 ([Default extension distribution](../../features/6.0/default-extension-distribution.md#how-it-works)).
 
