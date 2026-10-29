@@ -20,14 +20,20 @@ class Upgradeverify extends UpgradeBase
         return 'exp:upgrade:verify';
     }
 
-    protected function description()
+    protected function begin()
     {
-        return "Upgrade verify\n"
-             . "Looks at every step again and lists drift: a step exp:upgrade recorded as done whose effect is missing\n"
-             . "now (a table dropped, a policy removed). Exit 1 when there is drift. Changes nothing.\n"
-             . "\n"
-             . "./console exp:upgrade:verify\n"
-             . "./console exp:upgrade:verify --format=json";
+        $this->script( array(
+            'description' => "Upgrade verify\n" .
+                             "Looks at every step again and lists drift: a step exp:upgrade recorded as done whose effect is\n" .
+                             "missing now (a table dropped, a policy removed). Exit 1 when there is drift. Changes nothing.\n" .
+                             "\n" .
+                             "./console exp:upgrade:verify\n" .
+                             "./console exp:upgrade:verify --format=json",
+        ) + self::SCRIPT );
+        return (array)$this->startup( '[stages:][format:]', '', array(
+            'stages' => 'Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)',
+            'format' => 'text (default) or json (the machine output exp-upgrade/1)',
+        ) );
     }
 
     public function run()

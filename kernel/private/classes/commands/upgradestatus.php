@@ -20,16 +20,24 @@ class Upgradestatus extends UpgradeBase
         return 'exp:upgrade:status';
     }
 
-    protected function description()
+    protected function begin()
     {
-        return "Upgrade status\n"
-             . "Every upgrade step, stage by stage, with its state as the installation shows it: done (applied by\n"
-             . "exp:upgrade), not-needed (in place without it, or not for this installation), pending, failed or\n"
-             . "unknown, and how it was told. Changes nothing, takes no lock.\n"
-             . "\n"
-             . "./console exp:upgrade:status\n"
-             . "./console exp:upgrade:status --stages=database --format=json\n"
-             . "./console exp:upgrade:status --fail-on-pending     (exit 1 when something is pending, for CI)";
+        $this->script( array(
+            'description' => "Upgrade status\n" .
+                             "Every upgrade step, stage by stage, with its state as the installation shows it: done (applied\n" .
+                             "by exp:upgrade), not-needed (in place without it, or not for this installation), pending, failed\n" .
+                             "or unknown, and how it was told. Changes nothing, takes no lock.\n" .
+                             "\n" .
+                             "./console exp:upgrade:status\n" .
+                             "./console exp:upgrade:status --stages=database --format=json\n" .
+                             "./console exp:upgrade:status --fail-on-pending     exit 1 when something is pending, for CI",
+        ) + self::SCRIPT );
+        return (array)$this->startup( '[stages:][only:*][format:][fail-on-pending]', '', array(
+            'stages' => 'Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)',
+            'only' => 'Only these steps (step ids, a comma list or repeated); an optional step runs only when named here',
+            'format' => 'text (default) or json (the machine output exp-upgrade/1)',
+            'fail-on-pending' => 'Exit 1 when steps are still pending (for CI)',
+        ) );
     }
 
     public function run()

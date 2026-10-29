@@ -20,15 +20,22 @@ class Upgradesteps extends UpgradeBase
         return 'exp:upgrade:steps';
     }
 
-    protected function description()
+    protected function begin()
     {
-        return "Upgrade steps\n"
-             . "The registered upgrade steps in the order they run: id, stage, version, engines, owner (kernel or the\n"
-             . "extension that registers it), whether it runs only when named (optional) and what it does. Reads the\n"
-             . "settings only, never the database.\n"
-             . "\n"
-             . "./console exp:upgrade:steps\n"
-             . "./console exp:upgrade:steps --stage=database --engine=postgresql --format=json";
+        $this->script( array(
+            'description' => "Upgrade steps\n" .
+                             "The registered upgrade steps in the order they run: id, stage, version, engines, owner (kernel\n" .
+                             "or the extension that registers it), whether it runs only when named (optional) and what it\n" .
+                             "does. Reads the settings only, never the database.\n" .
+                             "\n" .
+                             "./console exp:upgrade:steps\n" .
+                             "./console exp:upgrade:steps --stage=database --engine=postgresql --format=json",
+        ) + self::SCRIPT );
+        return (array)$this->startup( '[stage:][engine:][format:]', '', array(
+            'stage' => 'Only the steps of this stage',
+            'engine' => 'Only the steps for this engine: mysql, postgresql, sqlite, oracle, mongodb',
+            'format' => 'text (default) or json (the machine output exp-upgrade/1)',
+        ) );
     }
 
     public function run()

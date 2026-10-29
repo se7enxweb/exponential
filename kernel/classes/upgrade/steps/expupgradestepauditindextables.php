@@ -36,7 +36,7 @@ class expUpgradeStepAuditIndexTables extends expUpgradeTableInstallerStep
     {
         $missing = expAuditIndexSchema::missingTables( $context->db() );
         if ( $missing === null )
-            return self::effect( self::UNKNOWN, 'cannot tell from the database catalogue' );
+            return self::effect( self::UNKNOWN, 'cannot tell from the database catalog' );
         return $missing ? self::effect( self::MISSING, 'missing: table ' . implode( ', table ', $missing ) )
                         : self::effect( self::PRESENT, 'in place: ' . implode( ', ', $this->tables() ) );
     }

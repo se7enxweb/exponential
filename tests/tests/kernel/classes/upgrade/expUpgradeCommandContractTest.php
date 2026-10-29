@@ -128,4 +128,23 @@ class expUpgradeCommandContractTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/@description \S/', file_get_contents( $class ) );
         }
     }
+
+    /** UC-04: the literal option configuration and help of each command (what exp:help:examples reads) is the contract's */
+    public function testLiteralOptionsMatchTheContract()
+    {
+        require_once self::$root . '/kernel/classes/help/exphelpexamplesgenerator.php';
+        $contract = \Exponential\Command\Kernel\UpgradeBase::contract();
+        $help = \Exponential\Command\Kernel\UpgradeBase::optionHelp();
+        foreach ( self::ENTRY as $command => $file )
+        {
+            $code = file_get_contents( self::$root . "/kernel/private/classes/commands/$file.php" );
+            $this->assertSame( 1, preg_match( "/->startup\\( '([^']+)'/", $code, $m ), "$file: startup() with a literal configuration" );
+            $this->assertSame( $contract[$command], $m[1], "$command: the literal option configuration is the contract's" );
+            $parsed = expHelpExamplesGenerator::scriptHelp( $code );
+            $this->assertNotSame( '', $parsed['description'], "$command: a literal description" );
+            foreach ( $parsed['options'] as $name => $option )
+                $this->assertSame( $help[$name], $option['help'], "$command --$name: the help text of optionHelp()" );
+            $this->assertCount( count( self::options( $contract[$command] ) ), $parsed['options'], "$command: every option has its help" );
+        }
+    }
 }

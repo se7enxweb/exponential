@@ -9,11 +9,11 @@
 
 /**
  * What the database itself says about a table: its columns, the length of a text column, its indexes as lists of
- * columns. Asked of the engine's catalogue (information_schema, pg_indexes, PRAGMA, user_ind_columns), never inferred
+ * columns. Asked of the engine's catalog (information_schema, pg_indexes, PRAGMA, user_ind_columns), never inferred
  * from a query that fails. Indexes are compared by their columns, not their names: the schema handlers name an index
  * differently per engine (SQLite prefixes the table, Oracle shortens long names).
  *
- * Every method returns null when the catalogue cannot be read.
+ * Every method returns null when the catalog cannot be read.
  *
  * @since 6.0.15
  * @package kernel
@@ -25,7 +25,7 @@ class expUpgradeCatalog
      *
      * @param eZDBInterface $db
      * @param string $table
-     * @return string[]|null null when the table does not exist or the catalogue cannot be read
+     * @return string[]|null null when the table does not exist or the catalog cannot be read
      */
     public static function columns( $db, $table )
     {
@@ -41,7 +41,7 @@ class expUpgradeCatalog
     }
 
     /**
-     * Whether a table has a column: true, false, or null (no table, or the catalogue cannot be read).
+     * Whether a table has a column: true, false, or null (no table, or the catalog cannot be read).
      *
      * @param eZDBInterface $db
      * @param string $table

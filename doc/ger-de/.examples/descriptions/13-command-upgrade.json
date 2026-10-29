@@ -1,0 +1,242 @@
+{
+    "command:upgrade": {
+        "en": "Upgrade the installation in one call: every stage in order (dry run unless --apply)",
+        "de": "Aktualisiert die Installation in einem Aufruf: jede Stufe der Reihe nach (Probelauf ohne --apply)"
+    },
+    "command:upgrade --apply": {
+        "en": "Make the changes (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:upgrade --backup-dir": {
+        "en": "Where the backup goes (default var/backup/upgrade); a directory <time> is made in it",
+        "de": "Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt"
+    },
+    "command:upgrade --dry-run": {
+        "en": "The default, accepted for scripts that pass it: list what would change, change nothing",
+        "de": "Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:upgrade --fail-on-pending": {
+        "en": "Exit 1 when steps are still pending (for CI)",
+        "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
+    },
+    "command:upgrade --force-order": {
+        "en": "Run a stage although an earlier stage has pending steps",
+        "de": "Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat"
+    },
+    "command:upgrade --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgrade --no-backup": {
+        "en": "Write without making a backup first",
+        "de": "Schreiben, ohne vorher eine Sicherung zu machen"
+    },
+    "command:upgrade --no-deploy": {
+        "en": "Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only",
+        "de": "Ohne exp:velocity deploy abschließen: nur die Autoloads der Erweiterungen und die INI-, Template- und Inhalts-Caches"
+    },
+    "command:upgrade --only": {
+        "en": "Only these steps (step ids, a comma list or repeated); an optional step runs only when named here",
+        "de": "Nur diese Schritte (Schritt-IDs, als Komma-Liste oder wiederholt); ein optionaler Schritt läuft nur, wenn er hier genannt ist"
+    },
+    "command:upgrade --skip": {
+        "en": "Never these steps (step ids, a comma list or repeated)",
+        "de": "Diese Schritte nie (Schritt-IDs, als Komma-Liste oder wiederholt)"
+    },
+    "command:upgrade --stages": {
+        "en": "Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)",
+        "de": "Nur diese Stufen, eine Komma-Liste aus code, libraries, database, scripts, finish (in dieser Reihenfolge)"
+    },
+    "command:upgrade --url": {
+        "en": "The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL",
+        "de": "Die Adressen, die die Rauchprobe nach dem Deploy abruft (Komma-Liste oder wiederholt); Standard die Startseite von SiteURL"
+    },
+    "command:upgradebackup": {
+        "en": "Upgrade backup: the backup exp:upgrade makes before it writes, on its own (database dump and settings overrides)",
+        "de": "Upgrade-Sicherung: die Sicherung, die exp:upgrade vor dem ersten Schreiben macht, für sich allein (Datenbankabzug und Einstellungs-Overrides)"
+    },
+    "command:upgradebackup --backup-dir": {
+        "en": "Where the backup goes (default var/backup/upgrade); a directory <time> is made in it",
+        "de": "Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt"
+    },
+    "command:upgradebackup --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradedatabase": {
+        "en": "Upgrade stage 3, database: the schema and data steps on every engine (dry run unless --apply)",
+        "de": "Upgrade-Stufe 3, Datenbank: die Schema- und Datenschritte auf jeder Datenbank-Engine (Probelauf ohne --apply)"
+    },
+    "command:upgradedatabase --apply": {
+        "en": "Make the changes (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:upgradedatabase --backup-dir": {
+        "en": "Where the backup goes (default var/backup/upgrade); a directory <time> is made in it",
+        "de": "Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt"
+    },
+    "command:upgradedatabase --dry-run": {
+        "en": "The default, accepted for scripts that pass it: list what would change, change nothing",
+        "de": "Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:upgradedatabase --fail-on-pending": {
+        "en": "Exit 1 when steps are still pending (for CI)",
+        "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
+    },
+    "command:upgradedatabase --force-order": {
+        "en": "Run a stage although an earlier stage has pending steps",
+        "de": "Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat"
+    },
+    "command:upgradedatabase --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradedatabase --no-backup": {
+        "en": "Write without making a backup first",
+        "de": "Schreiben, ohne vorher eine Sicherung zu machen"
+    },
+    "command:upgradedatabase --only": {
+        "en": "Only these steps (step ids, a comma list or repeated); an optional step runs only when named here",
+        "de": "Nur diese Schritte (Schritt-IDs, als Komma-Liste oder wiederholt); ein optionaler Schritt läuft nur, wenn er hier genannt ist"
+    },
+    "command:upgradedatabase --skip": {
+        "en": "Never these steps (step ids, a comma list or repeated)",
+        "de": "Diese Schritte nie (Schritt-IDs, als Komma-Liste oder wiederholt)"
+    },
+    "command:upgradefinish": {
+        "en": "Upgrade stage 5, finish: deploy the changes (exp:velocity deploy --kernel) and check the site answers (dry run unless --apply)",
+        "de": "Upgrade-Stufe 5, Abschluss: die Änderungen bereitstellen (exp:velocity deploy --kernel) und prüfen, dass die Site antwortet (Probelauf ohne --apply)"
+    },
+    "command:upgradefinish --apply": {
+        "en": "Make the changes (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:upgradefinish --backup-dir": {
+        "en": "Where the backup goes (default var/backup/upgrade); a directory <time> is made in it",
+        "de": "Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt"
+    },
+    "command:upgradefinish --dry-run": {
+        "en": "The default, accepted for scripts that pass it: list what would change, change nothing",
+        "de": "Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:upgradefinish --fail-on-pending": {
+        "en": "Exit 1 when steps are still pending (for CI)",
+        "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
+    },
+    "command:upgradefinish --force-order": {
+        "en": "Run a stage although an earlier stage has pending steps",
+        "de": "Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat"
+    },
+    "command:upgradefinish --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradefinish --no-backup": {
+        "en": "Write without making a backup first",
+        "de": "Schreiben, ohne vorher eine Sicherung zu machen"
+    },
+    "command:upgradefinish --no-deploy": {
+        "en": "Finish without exp:velocity deploy: extension autoloads and the INI, template and content caches only",
+        "de": "Ohne exp:velocity deploy abschließen: nur die Autoloads der Erweiterungen und die INI-, Template- und Inhalts-Caches"
+    },
+    "command:upgradefinish --only": {
+        "en": "Only these steps (step ids, a comma list or repeated); an optional step runs only when named here",
+        "de": "Nur diese Schritte (Schritt-IDs, als Komma-Liste oder wiederholt); ein optionaler Schritt läuft nur, wenn er hier genannt ist"
+    },
+    "command:upgradefinish --skip": {
+        "en": "Never these steps (step ids, a comma list or repeated)",
+        "de": "Diese Schritte nie (Schritt-IDs, als Komma-Liste oder wiederholt)"
+    },
+    "command:upgradefinish --url": {
+        "en": "The addresses the smoke check requests after the deploy (a comma list or repeated); default the front page of SiteURL",
+        "de": "Die Adressen, die die Rauchprobe nach dem Deploy abruft (Komma-Liste oder wiederholt); Standard die Startseite von SiteURL"
+    },
+    "command:upgradescripts": {
+        "en": "Upgrade stage 4, scripts: the PHP upgrade steps, policies and repairs (dry run unless --apply)",
+        "de": "Upgrade-Stufe 4, Skripte: die PHP-Upgrade-Schritte, Richtlinien und Reparaturen (Probelauf ohne --apply)"
+    },
+    "command:upgradescripts --apply": {
+        "en": "Make the changes (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:upgradescripts --backup-dir": {
+        "en": "Where the backup goes (default var/backup/upgrade); a directory <time> is made in it",
+        "de": "Wohin die Sicherung geht (Standard var/backup/upgrade); darin wird ein Verzeichnis <Zeit> angelegt"
+    },
+    "command:upgradescripts --dry-run": {
+        "en": "The default, accepted for scripts that pass it: list what would change, change nothing",
+        "de": "Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:upgradescripts --fail-on-pending": {
+        "en": "Exit 1 when steps are still pending (for CI)",
+        "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
+    },
+    "command:upgradescripts --force-order": {
+        "en": "Run a stage although an earlier stage has pending steps",
+        "de": "Eine Stufe ausführen, obwohl eine frühere Stufe offene Schritte hat"
+    },
+    "command:upgradescripts --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradescripts --no-backup": {
+        "en": "Write without making a backup first",
+        "de": "Schreiben, ohne vorher eine Sicherung zu machen"
+    },
+    "command:upgradescripts --only": {
+        "en": "Only these steps (step ids, a comma list or repeated); an optional step runs only when named here",
+        "de": "Nur diese Schritte (Schritt-IDs, als Komma-Liste oder wiederholt); ein optionaler Schritt läuft nur, wenn er hier genannt ist"
+    },
+    "command:upgradescripts --skip": {
+        "en": "Never these steps (step ids, a comma list or repeated)",
+        "de": "Diese Schritte nie (Schritt-IDs, als Komma-Liste oder wiederholt)"
+    },
+    "command:upgradestatus": {
+        "en": "Upgrade status: every upgrade step with its state (done, pending, not-needed, failed, unknown)",
+        "de": "Upgrade-Status: jeder Upgrade-Schritt mit seinem Zustand (done, pending, not-needed, failed, unknown)"
+    },
+    "command:upgradestatus --fail-on-pending": {
+        "en": "Exit 1 when steps are still pending (for CI)",
+        "de": "Exit-Code 1, wenn noch Schritte offen sind (für CI)"
+    },
+    "command:upgradestatus --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradestatus --only": {
+        "en": "Only these steps (step ids, a comma list or repeated); an optional step runs only when named here",
+        "de": "Nur diese Schritte (Schritt-IDs, als Komma-Liste oder wiederholt); ein optionaler Schritt läuft nur, wenn er hier genannt ist"
+    },
+    "command:upgradestatus --stages": {
+        "en": "Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)",
+        "de": "Nur diese Stufen, eine Komma-Liste aus code, libraries, database, scripts, finish (in dieser Reihenfolge)"
+    },
+    "command:upgradesteps": {
+        "en": "Upgrade steps: the registered steps with id, stage, version, engines and description",
+        "de": "Upgrade-Schritte: die registrierten Schritte mit ID, Stufe, Version, Engines und Beschreibung"
+    },
+    "command:upgradesteps --engine": {
+        "en": "Only the steps for this engine: mysql, postgresql, sqlite, oracle, mongodb",
+        "de": "Nur die Schritte für diese Engine: mysql, postgresql, sqlite, oracle, mongodb"
+    },
+    "command:upgradesteps --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradesteps --stage": {
+        "en": "Only the steps of this stage",
+        "de": "Nur die Schritte dieser Stufe"
+    },
+    "command:upgradeverify": {
+        "en": "Upgrade verify: re-detect every step and report drift (a step recorded as done whose effect is missing)",
+        "de": "Upgrade prüfen: jeden Schritt neu erkennen und Abweichungen melden (ein als erledigt aufgezeichneter Schritt, dessen Wirkung fehlt)"
+    },
+    "command:upgradeverify --format": {
+        "en": "text (default) or json (the machine output exp-upgrade/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-upgrade/1)"
+    },
+    "command:upgradeverify --stages": {
+        "en": "Only these stages, a comma list of code, libraries, database, scripts, finish (in that order)",
+        "de": "Nur diese Stufen, eine Komma-Liste aus code, libraries, database, scripts, finish (in dieser Reihenfolge)"
+    }
+}

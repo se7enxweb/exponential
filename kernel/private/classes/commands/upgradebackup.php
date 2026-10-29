@@ -20,15 +20,22 @@ class Upgradebackup extends UpgradeBase
         return 'exp:upgrade:backup';
     }
 
-    protected function description()
+    protected function begin()
     {
-        return "Upgrade backup\n"
-             . "Makes the backup exp:upgrade --apply makes before its first write, into var/backup/upgrade/<time>/:\n"
-             . "SQLite a consistent copy (VACUUM INTO), MySQL/MariaDB mysqldump, PostgreSQL pg_dump, MongoDB mongodump,\n"
-             . "and a copy of settings/override. Oracle: make one with expdp. Passwords never reach the command line.\n"
-             . "\n"
-             . "./console exp:upgrade:backup\n"
-             . "./console exp:upgrade:backup --backup-dir=/srv/backup/site --format=json";
+        $this->script( array(
+            'description' => "Upgrade backup\n" .
+                             "Makes the backup exp:upgrade --apply makes before its first write, into\n" .
+                             "var/backup/upgrade/<time>/: SQLite a consistent copy (VACUUM INTO), MySQL/MariaDB mysqldump,\n" .
+                             "PostgreSQL pg_dump, MongoDB mongodump, and a copy of settings/override. Oracle: make one with\n" .
+                             "expdp. Passwords never reach a command line.\n" .
+                             "\n" .
+                             "./console exp:upgrade:backup\n" .
+                             "./console exp:upgrade:backup --backup-dir=/srv/backup/site --format=json",
+        ) + self::SCRIPT );
+        return (array)$this->startup( '[backup-dir:][format:]', '', array(
+            'backup-dir' => 'Where the backup goes (default var/backup/upgrade); a directory <time> is made in it',
+            'format' => 'text (default) or json (the machine output exp-upgrade/1)',
+        ) );
     }
 
     public function run()

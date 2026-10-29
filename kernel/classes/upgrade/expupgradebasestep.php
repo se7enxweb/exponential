@@ -56,7 +56,7 @@ abstract class expUpgradeBaseStep implements expUpgradeStep
     protected static function fromBool( $present, $detail = '' )
     {
         if ( $present === null )
-            return self::effect( self::UNKNOWN, $detail !== '' ? $detail : 'cannot tell from the database catalogue' );
+            return self::effect( self::UNKNOWN, $detail !== '' ? $detail : 'cannot tell from the database catalog' );
         return self::effect( $present ? self::PRESENT : self::MISSING, $detail );
     }
 }

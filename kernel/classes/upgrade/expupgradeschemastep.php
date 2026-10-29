@@ -19,7 +19,7 @@
  *   fields()  array( 'ezcontentbrowsebookmark' => array( 'folder_id', 'priority' ) )   added when missing
  *   indexes() array( 'ezcontentbrowsebookmark' => array( 'ezcontentbrowsebookmark_folder' ) )   by their columns
  *
- * Detection asks the catalogue, so a part applied by hand (the SQL update file) counts, and a half-applied step is
+ * Detection asks the catalog, so a part applied by hand (the SQL update file) counts, and a half-applied step is
  * completed: only what is missing is created. Columns and indexes of a table that does not exist (an optional
  * feature's table, e.g. ezprest_authcode without the REST extension's schema) are not applicable.
  *

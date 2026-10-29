@@ -20,16 +20,30 @@ class Upgradescripts extends UpgradeBase
         return 'exp:upgrade:scripts';
     }
 
-    protected function description()
+    protected function begin()
     {
-        return "Upgrade stage 4: the scripts\n"
-             . "The PHP upgrade steps: the scripts of update/common/scripts/ and the setup commands (editor policies,\n"
-             . "member management, user approval, ...), run through the same classes with their default options.\n"
-             . "Refused while the database stage has pending steps (--force-order runs anyway). Dry run unless --apply.\n"
-             . "\n"
-             . "./console exp:upgrade:scripts\n"
-             . "./console exp:upgrade:scripts --apply --skip=6.0.15-editor-policies\n"
-             . "Guide: doc/eng-us/guides/upgrading-with-the-console.md";
+        $this->script( array(
+            'description' => "Upgrade stage 4: the scripts\n" .
+                             "The PHP upgrade steps: the scripts of update/common/scripts/ and the setup commands (editor\n" .
+                             "policies, member management, user approval, ...), run through the same classes with their\n" .
+                             "default options. Refused while the database stage has pending steps (--force-order runs\n" .
+                             "anyway). Dry run unless --apply.\n" .
+                             "\n" .
+                             "./console exp:upgrade:scripts\n" .
+                             "./console exp:upgrade:scripts --apply --skip=6.0.15-editor-policies\n" .
+                             "Guide: doc/eng-us/guides/upgrading-with-the-console.md",
+        ) + self::SCRIPT );
+        return (array)$this->startup( '[apply][dry-run][only:*][skip:*][format:][no-backup][backup-dir:][force-order][fail-on-pending]', '', array(
+            'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
+            'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
+            'only' => 'Only these steps (step ids, a comma list or repeated); an optional step runs only when named here',
+            'skip' => 'Never these steps (step ids, a comma list or repeated)',
+            'format' => 'text (default) or json (the machine output exp-upgrade/1)',
+            'no-backup' => 'Write without making a backup first',
+            'backup-dir' => 'Where the backup goes (default var/backup/upgrade); a directory <time> is made in it',
+            'force-order' => 'Run a stage although an earlier stage has pending steps',
+            'fail-on-pending' => 'Exit 1 when steps are still pending (for CI)',
+        ) );
     }
 
     public function run()

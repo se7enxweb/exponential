@@ -66,30 +66,18 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
     /** @return string the command's name, e.g. exp:upgrade:status */
     abstract protected function name();
 
-    /** @return string the description shown by --help */
-    abstract protected function description();
-
     /**
-     * Starts the script with the command's options from contract().
+     * Starts the script: $this->script( array( 'description' => "...", ... ) ) and $this->startup( '<config>', '',
+     * <help> ), written out literally in each command, so ./console exp:help:examples reads the help text and the
+     * options from the code. The option configuration must equal contract() and every help text optionHelp()
+     * (expUpgradeCommandContractTest checks both).
      *
      * @return array the options
      */
-    protected function begin()
-    {
-        $this->script( array(
-            'description' => $this->description(),
-            'use-session' => false,
-            'use-modules' => true,
-            'use-extensions' => true,
-        ) );
-        $contract = self::contract();
-        $config = $contract[$this->name()];
-        $help = array();
-        preg_match_all( '/\[([a-z-]+)/', $config, $m );
-        foreach ( $m[1] as $option )
-            $help[$option] = self::optionHelp()[$option];
-        return (array)$this->startup( $config, '', $help );
-    }
+    abstract protected function begin();
+
+    /** The script settings every command shares besides its description. */
+    const SCRIPT = array( 'use-session' => false, 'use-modules' => true, 'use-extensions' => true );
 
     /**
      * The output format, or null (after an error, exit 2) when it is not text or json.

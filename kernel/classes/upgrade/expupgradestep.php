@@ -29,7 +29,7 @@ interface expUpgradeStep
     const MISSING = 'missing';
     /** The step does not apply to this installation (engine, missing feature, extension not active). */
     const NOT_APPLICABLE = 'not-applicable';
-    /** It cannot be told (catalogue not readable, settings incomplete). */
+    /** It cannot be told (catalog not readable, settings incomplete). */
     const UNKNOWN = 'unknown';
 
     /**
