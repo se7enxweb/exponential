@@ -35,7 +35,7 @@ Demo-Website.
 ## Eine schnelle, in sich geschlossene Installation
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 installiert "das Multisite-Paket auf **SQLite**, in `eng-US`, mit den Siteaccesses `site` und `admin`, erreichbar per
@@ -56,7 +56,7 @@ die Entwicklung ([Velocity-Engines](../../bc/6.0/velocity-engines.md#kurz-gesagt
 
 - Mit `exp:install`: Führen Sie es erneut mit `--force` aus; die Standard-Datenbankaktion `remove` leert zuerst die
   Datenbank.
-- Mit dem Kickstarter: "Dieselbe `kickstart.ini` mit `DatabaseAction=remove` und `run --force` ersetzt die Datenbank
+- Mit dem Kickstarter: "Dieselbe `kickstart.ini` mit `DatabaseAction=remove` und `run --apply` ersetzt die Datenbank
   und die Einstellungen erneut. Verwenden Sie das, um eine Test- oder Schulungswebsite zurückzusetzen"
   ([6.10](../../installation/06-kickstarter.md#610-erneut-ausführen-und-fortsetzen)).
 - Mit Images: Stellen Sie den Snapshot des Images wieder her.

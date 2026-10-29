@@ -391,12 +391,12 @@ maintenance is on (`kernel/private/classes/commands/velocity-warmup.php`).
 
 - Switching on and off moves the HTTP cache's directories (`var/<site>/cache/exphttpcache`) aside to
   `var/tmp/<site>-exphttpcache-before-maintenance-<time>-<pid>`, instead of deleting them. They can be removed later.
-- Velocity's response cache is cleared by `./console exp:velocity cache clear` when maintenance is switched on or
+- Velocity's response cache is cleared by `./console exp:velocity cache clear --apply` when maintenance is switched on or
   off by the command, or by the page when Velocity serves the administration. When Apache serves the administration
   page, run it yourself after switching off, so a change made during the window is seen at once:
 
   ```bash
-  ./console exp:velocity cache clear --allow-root-user
+  ./console exp:velocity cache clear --apply --allow-root-user
   ```
 
 - A CDN or reverse proxy in front of the site does not store the maintenance page (`no-store`), but it may still
@@ -404,7 +404,7 @@ maintenance is on (`kernel/private/classes/commands/velocity-warmup.php`).
 
 ## 10. Installations, cronjobs and deploys
 
-**The kickstarter** (`php bin/php/kickstarter.php run`) switches maintenance on for its run with reason `setup` and
+**The kickstarter** (`php bin/php/kickstarter.php run --apply`) switches maintenance on for its run with reason `setup` and
 its run id, and off at the end when the site is installed and checked. If maintenance is **already on** when it
 starts, it keeps that window exactly as it is (`expMaintenance::beginRun()` returns `existing`) and leaves it on
 afterwards; it prints "Maintenance mode was already on: kept as it is, and left on after the installation (php
@@ -568,7 +568,7 @@ After switching off:
 | The site is still offline long after the expected end | The expected end is not a timer | Switch it off on the page or with `off`. The banner shows **Past the expected end**. |
 | An allowed tester still gets the maintenance page | Their address is not the one PHP sees (proxy, IPv6 instead of IPv4, a changed address), or it was mistyped in `--allow-ip` | Look up the address in the web server's access log; switch on again with it. The page's address check names entries that are not addresses. |
 | "Maintenance could not be switched on: var/maintenance.json is not writable." | `var/` is not writable by the web server's user, or a marker owned by another user cannot be replaced | Make `var/` writable for the web server's user; check the owner of an existing marker. |
-| The site comes back but shows old pages | A cache in front of PHP kept pages from before the window | `./console exp:velocity cache clear --allow-root-user`; purge the CDN; see section 9. |
+| The site comes back but shows old pages | A cache in front of PHP kept pages from before the window | `./console exp:velocity cache clear --apply --allow-root-user`; purge the CDN; see section 9. |
 | The banner says **Unreadable marker** | `var/maintenance.json` is not valid JSON (edited by hand, disk full while writing) | Switch off, then on again with the values you want. |
 | The banner says **An installation is running** and nothing is installing | A kickstarter run stopped after a failed step and left maintenance on on purpose | Read the setup log, finish or repair the installation, then `php bin/php/maintenance.php off`. |
 | **Setup wizard running** after the wizard was closed | The wizard's lease (30 minutes after its last request) has not run out | Wait for the lease shown in the banner, or switch off. |

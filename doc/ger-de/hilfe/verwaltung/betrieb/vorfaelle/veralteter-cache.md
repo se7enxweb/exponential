@@ -44,7 +44,7 @@ Rollen, daher können sich beide Ansichten unterscheiden.
 | Das Aussehen jeder Seite nach einer Template-Änderung | `./console exp:cache clear --id=template --allow-root-user` |
 | Ein neues Template oder eine neue Erweiterung wird nicht erkannt | `php bin/php/ezcache.php --clear-id=template-override --allow-root-user` und `--clear-id=design_base` |
 | Eine geänderte Einstellung wirkt nicht | `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`, dann PHP neu laden oder bereitstellen |
-| Von Velocity ausgelieferte Seiten | `./console exp:velocity cache clear --allow-root-user` |
+| Von Velocity ausgelieferte Seiten | `./console exp:velocity cache clear --apply --allow-root-user` |
 | Der rollenabhängige HTTP-Cache | `php bin/php/cache.php httpcache clear --allow-root-user` |
 | Dateien des statischen Caches (bei `StaticCache=enabled`) | neu erzeugen, oder `php bin/php/cache.php static clear --allow-root-user` |
 | Unsicher | `php bin/php/ezcache.php --clear-all --allow-root-user` (dann die vorgeschalteten Caches, dann vorwärmen) |
@@ -58,7 +58,7 @@ neuen Code ausführen; sonst wird eine Seite, die der alte Code in der Zwischenz
 die Änderung „hat nicht funktioniert“. Nach einer Code- oder Einstellungsänderung erledigt
 `./console exp:velocity deploy --allow-root-user` jeden Schritt in der richtigen Reihenfolge
 ([Bereitstellung, Abschnitt 7](../../../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern)). Wärmen Sie die
-Website dann vor: `php bin/php/preload.php --siteaccess=site --allow-root-user`.
+Website dann vor: `php bin/php/preload.php --apply --siteaccess=site --allow-root-user`.
 
 ## Außerhalb von Exponential
 

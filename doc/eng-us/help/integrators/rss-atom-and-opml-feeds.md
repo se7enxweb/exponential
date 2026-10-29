@@ -81,7 +81,7 @@ imported objects by that prefix. This is the same idea every integration should 
 source record ([Idempotent imports keyed by remote_id](idempotent-imports-keyed-by-remote-id.md)).
 
 An import adds objects and never removes or updates them. To keep a busy feed from growing without limit, switch on
-the cleanup (`content.ini [RSSImportCleanupSettings]`, command `php bin/php/cleanuprss.php`, cronjob part
+the cleanup (`content.ini [RSSImportCleanupSettings]`, command `php bin/php/cleanuprss.php --apply`, cronjob part
 `cleanuprss`), which keeps the newest *N* items of each active import ([RSS import cleanup](../../bc/6.0/cleanuprss.md)).
 
 ## Caching and freshness

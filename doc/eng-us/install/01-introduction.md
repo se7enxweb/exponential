@@ -275,10 +275,10 @@ differ in where the answers come from, which is what decides which one suits you
   `settings/site.ini`, which sends every request to the wizard until its last step writes `CheckValidity=false` to
   `settings/override/site.ini.append.php`. You answer one page per step, each with an explanation. It needs a working
   web server first. Best for a first install and for hosts without shell access.
-- **The kickstarter** (`php bin/php/console exp:kickstarter run --force`) runs the same steps on the command line and
+- **The kickstarter** (`php bin/php/console exp:kickstarter run --apply --force`) runs the same steps on the command line and
   reads every answer from `kickstart.ini` in the installation root. The file is the specification of the install:
   it can be reviewed, kept and used again. Best for repeatable and unattended installs.
-- **The console install** (`php bin/php/console exp:install`) builds the kickstart configuration from command line
+- **The console install** (`php bin/php/console exp:install --apply`) builds the kickstart configuration from command line
   options, every one of which has a default, and runs the kickstarter with it. Best for the fastest install and for
   scripts, CI and containers.
 

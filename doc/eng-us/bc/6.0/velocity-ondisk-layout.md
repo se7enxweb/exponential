@@ -58,8 +58,8 @@ passes the same filtered values itself too, for older engines (`expVelocityConfi
 
 ```bash
 ./console exp:velocity layout                      # resolved paths and migration state
-./console exp:velocity site enable <name>          # also: site disable, conf enable|disable, mod enable|disable
-./console exp:velocity layout migrate              # run the migration explicitly
+./console exp:velocity site enable --apply <name>          # also: site disable, conf enable|disable, mod enable|disable
+./console exp:velocity layout migrate --apply              # run the migration explicitly
 ```
 
 Enabling creates the relative symlink in the `*-enabled` directory. Disabling removes only the symlink; the file in

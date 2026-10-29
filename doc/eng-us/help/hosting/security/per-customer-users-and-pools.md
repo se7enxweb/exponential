@@ -96,8 +96,8 @@ One Velocity per site, each as the customer's user, bound to `127.0.0.1` behind 
 ([Velocity beside Apache or nginx](../servers/velocity-beside-apache-or-nginx.md)):
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings User site-a --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Group site-a --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings User site-a --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Group site-a --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 ```
 

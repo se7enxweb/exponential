@@ -51,7 +51,7 @@ COURSE: <name>                          DATES: <dates>               TRAINER: <n
 Release:            v6.0.<n>            (git describe --tags)
 Site package:       sevenx_multisite | sevenx_multisite_clean
 Lab design:         one installation per learner | shared site <address>
-Install command:    php bin/php/console exp:install --url=http://127.0.0.1:8087 ...
+Install command:    php bin/php/console exp:install --apply --url=http://127.0.0.1:8087 ...
 Serve command:      php bin/php/console exp:velocity start
 Learner accounts:   learner01 .. learnerNN @example.invalid, group <group>, role <role>
 Reset routine:      <golden copy | reinstall>, takes <minutes>

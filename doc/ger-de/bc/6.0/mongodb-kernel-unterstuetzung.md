@@ -4716,7 +4716,7 @@ MySQL. Siehe auch [die Chronik vom 16. bis 30. September 2026](../../geschichte/
 | Die Prüfungen der Bildreferenzen verwendeten einen Join, den MongoDB nicht hat. | Die Anzahl wurde als null gelesen, und 59 noch verwendete Bilddateien wurden gelöscht. | Ein Pfad ohne Join liest zuerst die Bildzeilen und filtert die Attribute, die sie nennen. Das Verschieben eines Bildes verschiebt auch die Referenzen seiner Übersetzungen. |
 | Der unbeaufsichtigte Installer gab `iso-8859-1` an; das Such-Plugin wurde als fehlerhaft gemeldet, wenn es absichtlich abgeschaltet war; das Laden der URL-Aliase ignorierte den Sprachfilter. | | Gibt `utf-8` an; wird richtig gemeldet; der Filter wird angewendet. |
 
-Der Installer akzeptiert jetzt außerdem `mongodb` als `--db` für `php bin/php/console exp:install`.
+Der Installer akzeptiert jetzt außerdem `mongodb` als `--db` für `php bin/php/console exp:install --apply`.
 
 ## Verwandte Seiten
 

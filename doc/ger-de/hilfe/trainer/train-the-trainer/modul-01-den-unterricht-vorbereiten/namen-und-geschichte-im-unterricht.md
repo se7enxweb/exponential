@@ -52,7 +52,7 @@ Nach dieser Lektion können die Teilnehmenden:
 ### Häufige Fragen
 
 **Warum beginnen manche Befehle mit `ez`?** Es sind die echten Skriptnamen, aus Kompatibilitätsgründen beibehalten.
-Neuere Befehle verwenden den Namensraum `exp:` der Konsole (`php bin/php/console exp:install`).
+Neuere Befehle verwenden den Namensraum `exp:` der Konsole (`php bin/php/console exp:install --apply`).
 
 **Hat Exponential etwas mit eZ Systems oder Ibexa zu tun?** Nein. Exponential ist nicht mit ihnen verbunden
 ([Marken- und Namensregeln](../../../geschaeft/marken-und-namensregeln.md)).

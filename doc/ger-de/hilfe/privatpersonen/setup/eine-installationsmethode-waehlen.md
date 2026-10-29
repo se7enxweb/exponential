@@ -46,7 +46,7 @@ Mit installiertem PHP und Composer und geholtem Code ([Den Code beschaffen](../.
 
 ```bash
 php bin/php/console exp:install --dry-run
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 Die Standardwerte sind SQLite und das Standard-Seitenpaket `sevenx_multisite`, mit Demo-Inhalten zum Erkunden

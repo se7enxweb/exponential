@@ -65,7 +65,7 @@ constant there does nothing (`config.env.php.example`).
 ## Installing with a published password
 
 ```bash
-EXP_DEMO_MODE=1 php bin/php/console exp:install --db=sqlite --password='<the published demo password>'
+EXP_DEMO_MODE=1 php bin/php/console exp:install --apply --db=sqlite --password='<the published demo password>'
 ```
 
 The same works for the kickstarter (`[site_admin] Password`) and the setup wizard. "Only the administrator password

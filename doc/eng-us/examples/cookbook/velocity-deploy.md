@@ -35,7 +35,7 @@ machine with several PHP versions the one serving the site is often not the one 
 | An ezjscore server function, or the settings of the packer | `exp:velocity deploy --packer` |
 | A style sheet or script of a design | `exp:velocity deploy --packer` (the packed files and the template blocks that link them) |
 | An INI file | `exp:velocity deploy` (it clears the INI caches and restarts Velocity) |
-| A template only | no deploy: `php bin/php/ezcache.php --clear-tag=template --allow-root-user` (a new template file also `--clear-id=template-override`), then `./console exp:velocity cache clear` |
+| A template only | no deploy: `php bin/php/ezcache.php --clear-tag=template --allow-root-user` (a new template file also `--clear-id=template-override`), then `./console exp:velocity cache clear --apply` |
 | Content | nothing: publishing expires what it touches |
 
 ```bash

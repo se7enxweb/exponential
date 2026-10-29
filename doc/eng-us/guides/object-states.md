@@ -262,8 +262,8 @@ eZOperationHandler::execute( 'content', 'updateobjectstate',
     array( 'object_id' => $objectID, 'state_id_list' => array( $stateID ) ) );
 ```
 
-`./console exp:adddefaultstates --allow-root-user` gives every object that lacks a state in some group that group's
-default. It is a repair tool: objects imported by SQL, or a group whose links were deleted by hand.
+`./console exp:adddefaultstates --allow-root-user` lists per group how many objects lack a state of it (a dry run);
+`./console exp:adddefaultstates --apply --allow-root-user` gives each of them that group's default. It is a repair tool: objects imported by SQL, or a group whose links were deleted by hand.
 
 ## 8. States in roles and policies
 
@@ -404,7 +404,7 @@ objects and says what will happen, then **Remove for good** removes them.
 - Objects in a removed state are moved to the **first state that stays**, in the group's order. If you remove the
   default, the next state becomes the default.
 - Removing every state leaves the objects without a state in the group, and new objects get none until a state is
-  added again (`exp:adddefaultstates` fills the gaps afterwards).
+  added again (`exp:adddefaultstates --apply` fills the gaps afterwards).
 - Policies whose `StateGroup_...` or `NewState` limitations name a removed state no longer match it: check the roles
   listed on the group's page first.
 
@@ -431,7 +431,7 @@ Neither can be undone. To pause a group instead, leave it: a group nobody's poli
 | "The order could not be saved" | A state was added or removed since the page was opened | Look at the list again and save once more |
 | A fetch with `attribute_filter` `state` returns nothing | It needs the state **id**, not its identifier | Take the id from the state's page |
 | A policy still lists a removed group's limitation | It was saved with that limitation and keeps it | Edit the policy and remove the limitation |
-| Objects created by an import have no state in some group | They were inserted without the kernel | `./console exp:adddefaultstates --allow-root-user` |
+| Objects created by an import have no state in some group | They were inserted without the kernel | `./console exp:adddefaultstates --apply --allow-root-user` |
 | Content stays locked | The `ez_lock` state was not released | `./console cron:unlock --allow-root-user` |
 
 ## 15. Reference
@@ -475,7 +475,7 @@ removes, as the confirmation's own button does.
 
 | What | Where |
 |---|---|
-| Give objects missing states their default | `./console exp:adddefaultstates` |
+| Give objects missing states their default | `./console exp:adddefaultstates --apply` |
 | Release locked objects | `./console cron:unlock`, cronjob part `unlock` |
 | Subtree size done in the request | `content.ini [ContentJobSettings] NowLimit` |
 | Workflow triggers on state changes | `workflow.ini [OperationSettings] AvailableOperationList[]=content_updateobjectstate` |

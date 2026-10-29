@@ -146,7 +146,7 @@ After a change to a PHP class, an operator or an INI file, the steps **must** ru
    `auto` shipped) and restart Velocity (`./console exp:velocity restart`), whose workers keep the classes loaded at
    warm-up.
 5. **Clear the page caches last**: the content view cache (`--clear-id=content`), the HTTP cache, and Velocity's
-   response cache (`./console exp:velocity cache clear`). Clearing them before step 4 lets old code cache a page again.
+   response cache (`./console exp:velocity cache clear --apply`). Clearing them before step 4 lets old code cache a page again.
 
 `./console exp:velocity deploy` runs all of this in order (fourteen steps, PASS, FAIL or SKIP per step, exit status
 1 on the first failure); `--dry-run` shows the steps, `--kernel` adds the kernel class map, `--packer` clears packed

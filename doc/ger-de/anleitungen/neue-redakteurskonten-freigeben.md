@@ -15,7 +15,7 @@ Editors) und für den Test Mails, die in Dateien geschrieben statt gesendet werd
 Eine neue Installation hat sie. Auf einer bestehenden im Wurzelverzeichnis der Installation:
 
 ```bash
-php bin/php/adduserapproval.php --dry-run --allow-root-user
+php bin/php/adduserapproval.php --allow-root-user            # Probelauf
 ```
 
 Erwartet auf einer Installation ohne sie:
@@ -31,11 +31,11 @@ requests           Editors (node 14, object 13)
   would add policy content/read Node=14
   would add policy content/create Class=4 Node=14 ParentClass=3
   would assign the role to Editors (no limitation)
-PASS: 7 change(s) would be made (dry run, nothing changed)
+PASS: 7 change(s) would be made (dry run, nothing changed; --apply writes)
 ```
 
 Auf einer, die sie hat: `has everything: ...` und `PASS: 0 change(s)`. Führt content/publish (vorher) schon einen anderen
-Workflow aus, sagt die Zeile das, und das Ereignis kommt an die erste Stelle dieses Workflows. Ohne `--dry-run`
+Workflow aus, sagt die Zeile das, und das Ereignis kommt an die erste Stelle dieses Workflows. Mit `--apply`
 ausführen; die letzte Zeile ist `PASS: the approval of new accounts is set up`. Danach:
 
 ```bash
@@ -112,7 +112,7 @@ Redakteur, das Konto, das Freigabeelement), `access.user.approval.approve` oder 
 Setup > Workflows > *Approve new editor accounts* > **Bearbeiten**: das Formular des Ereignisses hat vier Listen mit
 *Hinzufügen* und *Ausgewählte entfernen* und das Kästchen für die E-Mail. Den Workflow speichern. Für eine andere Gruppe
 als Editors brauchen die Anfragenden dort auch `content/create`: geben Sie ihrer Rolle eine Richtlinie wie die Rolle
-*Editor account requests*, oder führen Sie `adduserapproval.php --required=... --approvers=... --requesters=...` aus.
+*Editor account requests*, oder führen Sie `adduserapproval.php --apply --required=... --approvers=... --requesters=...` aus.
 
 Beispiele mit demselben Mechanismus, selbst registrierte Mitglieder, die Moderatoren freigeben, und zwei Freigebende für
 einen neuen Administrator, stehen unter
@@ -144,7 +144,7 @@ no approval       Administrator users (node 13, object 12)
   would assign the section to Administrator users and below (3 object(s))
   would assign the section to Editors and below (2 object(s))
   would add the approval event first into the workflow "Approve new editor accounts" that content/publish/before runs
-PASS: 4 change(s) would be made (dry run, nothing changed; --apply makes them)
+PASS: 4 change(s) would be made (dry run, nothing changed; --apply writes)
 ```
 
 Die Zahlen zählen die Gruppe und die Konten darin. Eine Zeile `check:` nennt jede Richtlinie, die auf den Abschnitt eingeschränkt ist, den die Konten verlassen (*Users*);
@@ -164,7 +164,7 @@ Weg nicht.
 
 | Was Sie sehen | Warum, und was zu tun ist |
 | --- | --- |
-| Der Redakteur kann in Editors keinen Benutzer anlegen | Die Rolle *Editor account requests* fehlt oder ist Editors nicht zugewiesen: `adduserapproval.php` ausführen |
+| Der Redakteur kann in Editors keinen Benutzer anlegen | Die Rolle *Editor account requests* fehlt oder ist Editors nicht zugewiesen: `adduserapproval.php --apply` ausführen |
 | Das Konto wurde ohne Freigabe veröffentlicht | Der Redakteur gibt selbst frei oder ist in einer Gruppe ohne Freigabe, oder das Ereignis steht nicht im Workflow, den content/publish (vorher) ausführt: Setup > Trigger und das Ereignis prüfen |
 | Keine Mail | Freigebende ohne E-Mail-Adresse bekommen keine; der Transport in `[MailSettings]`; ist die E-Mail aus, gibt es keine. Das Freigabeelement ist trotzdem da |
 | Der Link zeigt auf den falschen Host | `[UserSettings] RegistrationAdminBaseURL` setzen |

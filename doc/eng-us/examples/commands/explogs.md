@@ -2,14 +2,14 @@
 title: exp:explogs
 audience: developer, admin
 category: examples
-summary: "The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives."
+summary: "The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives (dry run unless --apply)."
 keywords: exp:explogs, explogs, console, command, CLI, explogs.php, exp:logs
 type: generated
 generated: exp:help:examples
 ---
 # exp:explogs
 
-The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives.
+The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives (dry run unless --apply).
 
 Script `bin/php/explogs.php`, code in `kernel/private/classes/commands/explogs.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -34,12 +34,15 @@ The log viewer on the command line (read only; e-mail and IP addresses and secre
 
 Log management (doc/eng-us/features/6.0/log-rotation.md):
 ./console exp:logs --archives                              each log with its archives and their sizes
-./console exp:logs --rotate=error,debug                    rotate these logs now (keys as in --archives, or ids)
-./console exp:logs --rotate-all                            rotate every log that is not empty
-./console exp:logs --prune --dry-run                       the archives beyond site.ini [FileSettings] limits
-./console exp:logs --prune=error                           remove them (all logs, or these)
-./console exp:logs --compress                              compress the archives from .2 on
-./console exp:logs --truncate=debug [--in-place]           empty a log (rotated, or in place)
+./console exp:logs --rotate=error,debug --apply            rotate these logs now (keys as in --archives, or ids)
+./console exp:logs --rotate-all --apply                    rotate every log that is not empty
+./console exp:logs --prune                                 the archives beyond site.ini [FileSettings] limits
+./console exp:logs --prune=error --apply                   remove them (all logs, or these)
+./console exp:logs --compress --apply                      compress the archives from .2 on
+./console exp:logs --truncate=debug [--in-place] --apply   empty a log (rotated, or in place)
+--rotate, --rotate-all, --prune, --compress and --truncate change files only with --apply; without it
+they print the plan. --dry-run means the same as no --apply; --apply together with --dry-run is a usage
+error (exit 2).
 
 Exit code: 0 something listed or found, 1 nothing found, 2 error.
 ```
@@ -58,7 +61,8 @@ Exit code: 0 something listed or found, 1 nothing found, 2 error.
 | `--compress` | optional | Compress the plain archives from .2 on: of every log, or of these keys |
 | `--truncate` | required | Empty these logs: rotate them (the content stays in .1), or with --in-place empty the file itself |
 | `--in-place` |  | With --truncate: empty the file in place, keeping no copy |
-| `--dry-run` |  | With --rotate, --rotate-all, --prune, --compress or --truncate: only print the plan |
+| `--apply` |  | With --rotate, --rotate-all, --prune, --compress or --truncate: change the files (the default is a dry run that prints the plan) |
+| `--dry-run` |  | The default, kept for scripts that pass it: only print the plan |
 | `--tail` | required | The last entries of a file (its path relative to the root, e.g. var/log/error.log) |
 | `--lines` | required | With --tail: how many entries (default 20) |
 | `--follow` |  | With --tail: go on printing what the file gains, polling with backoff (Ctrl-C ends) |

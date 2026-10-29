@@ -50,7 +50,7 @@ Voraussetzungen: [Voraussetzungen](../../installation/02-voraussetzungen.md). Di
 | 3 | `cd exponential` und `git switch -c my-demo` | „Mein eigener Branch auf main, der Entwicklungslinie.“ (Für das Release: `git switch -c my-demo v6.0.14`.) |
 | 4 | `composer install` | „Composer holt die Erweiterungen und Bibliotheken. Exponential braucht diesen Schritt, bevor es laufen kann.“ |
 | 5 | `php bin/php/console exp:install --dry-run` | „Ein Probelauf prüft die Konfiguration und die Pakete und installiert nichts.“ |
-| 6 | `php bin/php/console exp:install` | „Ohne Optionen: das Multisite-Paket, auf SQLite, in amerikanischem Englisch, ohne Datenbankserver.“ |
+| 6 | `php bin/php/console exp:install --apply` | „Ohne Optionen: das Multisite-Paket, auf SQLite, in amerikanischem Englisch, ohne Datenbankserver.“ |
 | 7 | Nur die erste Zeile der Ausgabe zeigen | „Es sagt, was es gleich tun wird.“ Dann zum Ende schneiden |
 | 8 | Die Zusammenfassung mit unkenntlich gemachten Passwortzeilen zeigen | „Adresse der Website, Anmeldung zur Administration, Benutzername, Datenbank, Paket und Siteaccesses. Das erzeugte Passwort wird einmal ausgegeben und in eine Datei geschrieben, die nur der Eigentümer lesen kann.“ |
 | 9 | Die Website ausliefern: Ihr Webserver oder `php bin/php/console exp:velocity start` | „Das Installationsprogramm startet keinen Webserver; ich liefere den Ordner aus.“ |
@@ -98,7 +98,7 @@ Gezeigte Befehle:
   git clone https://github.com/se7enxweb/exponential.git exponential
   composer install
   php bin/php/console exp:install --dry-run
-  php bin/php/console exp:install
+  php bin/php/console exp:install --apply
 Installation mit einem Befehl: <Link zu „Exponential mit einem Befehl installieren“>
 Das erzeugte Passwort nach der ersten Anmeldung ändern: <Link zu „Das Standard-Administratorpasswort“>
 ```

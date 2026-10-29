@@ -69,7 +69,7 @@ signierten Manifest aufgeführt. Werkzeuge für den Datenschutz (Pseudonymisieru
 ./console exp:logs --archives                # each log, its archives, sizes and limits
 ./console exp:logs --rotate-all --dry-run    # what would be rotated
 ./console exp:logs --prune --dry-run         # archives beyond Keep and MaxAgeDays
-./console exp:logs --prune                   # remove them
+./console exp:logs --apply --prune                   # remove them
 ```
 
 Der Cronjob-Teil `logs` (in keinem Standardteil enthalten) rotiert, bereinigt und komprimiert nach Zeitplan:

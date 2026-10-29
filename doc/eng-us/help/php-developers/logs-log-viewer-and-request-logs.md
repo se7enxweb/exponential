@@ -98,7 +98,7 @@ when Velocity and PHP-FPM write the same file ([Log rotation](../../features/6.0
 
 ```bash
 php bin/php/explogs.php --archives
-php bin/php/explogs.php --rotate=error
+php bin/php/explogs.php --apply --rotate=error
 php bin/php/explogs.php --prune --dry-run
 ```
 

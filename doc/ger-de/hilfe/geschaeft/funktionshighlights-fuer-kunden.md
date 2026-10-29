@@ -124,7 +124,7 @@ zwischen Sites eines Inhaltsbaums führen mit der Erweiterung `ezurlmultisite` z
 ([Links zwischen Sites](../../funktionen/6.0/websiteuebergreifende-links-im-multisite.md)).
 
 **Was Sie zeigen.** Die Globus-Schaltfläche in der Kopfzeile (**Website oder einen anderen Siteaccess öffnen**) und, auf
-einer mit `./console exp:install` angelegten Installation, die Sites des Multisite-Pakets
+einer mit `./console exp:install --apply` angelegten Installation, die Sites des Multisite-Pakets
 ([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 **Grenzen, die Sie nennen sollten.**

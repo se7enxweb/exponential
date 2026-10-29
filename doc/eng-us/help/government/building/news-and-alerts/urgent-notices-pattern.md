@@ -90,7 +90,7 @@ Clear the INI cache. `hide.php` runs in the global cronjob part; a notice is hid
 | View cache of content pages | a notice in the pagelayout is outside the view cache of content | fine |
 | Cache blocks in the pagelayout | a cached notice list stays until the block expires | give the block a short expiry or a subtree expiry on the Notices folder ([View cache and cache blocks](../../../creators/website-creators/view-cache-and-cache-blocks.md)) |
 | Static cache | static pages keep the old notice until refreshed | add the main pages to `AlwaysUpdateArray[]`, or regenerate |
-| Velocity response cache, CDN | copies until their lifetime ends | clear: `./console exp:velocity cache clear`; CDN purge |
+| Velocity response cache, CDN | copies until their lifetime ends | clear: `./console exp:velocity cache clear --apply`; CDN purge |
 
 Rehearse: publish a test notice and time how long until an anonymous visitor sees it everywhere.
 

@@ -57,7 +57,7 @@ New tutorial: <task> with Exponential, step by step, tested on <6.0.x>. <link>
 
 TRY IT
 Want to try Exponential? One command gives you a complete site on SQLite, no database server:
-./console exp:install   Docs: <link to Install in one command>
+./console exp:install --apply   Docs: <link to Install in one command>
 
 FEATURE
 Editors in Exponential can <feature>, without a developer. 2-minute walkthrough: <link>

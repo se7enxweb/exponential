@@ -122,7 +122,7 @@ sie entsprechend kennzeichnen.
 ## Nach einer Änderung
 
 - Nach einer Änderung an Template, Stylesheet oder Einstellungen:
-  `php bin/php/console exp:velocity cache clear --allow-root-user`. `exp:velocity deploy` leert ihn als letzten Schritt
+  `php bin/php/console exp:velocity cache clear --apply --allow-root-user`. `exp:velocity deploy` leert ihn als letzten Schritt
   ([Statischer Cache und Antwortcache von Velocity](../../ersteller/website-ersteller/statischer-cache-und-velocity.md#nach-einer-änderung)).
 - Dateien des statischen Caches werden beim Veröffentlichen aktualisiert; alle entfernen Sie mit
   `php bin/php/cache.php static clear --allow-root-user`.

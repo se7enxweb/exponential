@@ -105,7 +105,7 @@ gesichert haben.
 
    ```bash
    php bin/php/console exp:velocity start
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 9. Schalten Sie den Wartungsmodus aus: `php bin/php/maintenance.php off`.

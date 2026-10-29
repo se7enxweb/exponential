@@ -36,7 +36,7 @@ PHP 8.0 or later (from its release 0.0.4.54; until then 8.1), so the stock PHP o
 ## Starting and stopping
 
 ```bash
-./console exp:velocity config set ServerSettings Engine qbix --allow-root-user
+./console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user
 ./console exp:velocity start --allow-root-user
 ./console exp:velocity status --allow-root-user
 ./console exp:velocity graceful --allow-root-user    # re-exec, listening socket kept, no request dropped
@@ -59,7 +59,7 @@ The optional **watchdog** starts the engine again after a crash, an out-of-memor
 never stops or restarts a running server, and it is off until installed:
 
 ```bash
-./console exp:velocity watchdog install --allow-root-user
+./console exp:velocity watchdog install --apply --allow-root-user
 ./console exp:velocity watchdog status --allow-root-user
 ```
 

@@ -116,7 +116,7 @@ content tree go to the right site with the `ezurlmultisite` extension
 ([Cross-site links](../../features/6.0/multisite-cross-site-links.md)).
 
 **What to show.** The globe button in the header (**Open the site or another siteaccess**) and, on an installation
-made with `./console exp:install`, the sites of the multisite package
+made with `./console exp:install --apply`, the sites of the multisite package
 ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
 
 **Limits to state.**

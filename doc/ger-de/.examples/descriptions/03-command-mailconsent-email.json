@@ -188,12 +188,16 @@
         "de": "Nur diesen Siteaccess erzeugen. Für mehrere wiederholen; weglassen für jeden öffentlichen."
     },
     "command:notificationevents": {
-        "en": "List the notification events, or remove the old ones",
-        "de": "Listet die Benachrichtigungsereignisse auf oder entfernt die alten"
+        "en": "List the notification events, or remove the old ones (dry run unless --apply)",
+        "de": "Die Benachrichtigungsereignisse auflisten oder die alten entfernen (Probelauf, außer mit --apply)"
+    },
+    "command:notificationevents --apply": {
+        "en": "cleanup: remove the events (the default counts them and removes nothing)",
+        "de": "cleanup: die Ereignisse entfernen (Standard zählt sie und entfernt nichts)"
     },
     "command:notificationevents --dry-run": {
-        "en": "cleanup: count, remove nothing",
-        "de": "cleanup: zählen, nichts entfernen"
+        "en": "cleanup: the default, kept for scripts that pass it: count, remove nothing",
+        "de": "cleanup: der Standard, beibehalten für Skripte, die die Option übergeben: zählen, nichts entfernen"
     },
     "command:notificationevents --include-unknown": {
         "en": "cleanup: also remove events whose age cannot be told",
@@ -208,20 +212,24 @@
         "de": "list, cleanup --older-than: pending oder handled (Standard beide)"
     },
     "command:notificationrun": {
-        "en": "Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them)",
-        "de": "Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten)"
+        "en": "Run the notification filter: send the notifications of the pending events and the due digests (dry run unless --apply)",
+        "de": "Den Benachrichtigungsfilter ausführen: die Benachrichtigungen der wartenden Ereignisse und die fälligen Zusammenfassungen senden (Probelauf, außer mit --apply)"
     },
     "command:notificationrun --addresses": {
         "en": "Show whole recipient addresses in the dry run (they are masked by default)",
         "de": "Im Probelauf die ganzen Empfängeradressen zeigen (standardmäßig maskiert)"
+    },
+    "command:notificationrun --apply": {
+        "en": "Send the messages, mark and remove the events (the default lists what would be sent)",
+        "de": "Die Nachrichten senden, die Ereignisse markieren und entfernen (Standard listet, was gesendet würde)"
     },
     "command:notificationrun --at": {
         "en": "The time of the time event: a date (2026-10-05 08:00) or a timestamp, default now",
         "de": "Der Zeitpunkt des Zeitereignisses: ein Datum (2026-10-05 08:00) oder ein Zeitstempel, Standard jetzt"
     },
     "command:notificationrun --dry-run": {
-        "en": "List what would be sent and change nothing",
-        "de": "Auflisten, was gesendet würde, und nichts ändern"
+        "en": "The default, kept for scripts that pass it: list what would be sent and change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was gesendet würde, nichts ändern"
     },
     "command:notificationrun --event": {
         "en": "Only these events (ids, comma separated); no time event is made then",
@@ -248,20 +256,24 @@
         "de": "Zeigt das Benachrichtigungssystem: anstehende Ereignisse, Einträge der Zusammenfassungen, Abonnements, die letzten Läufe und Probleme"
     },
     "command:notificationsubscriptions": {
-        "en": "List the subtree notification subscriptions per user and subtree, or remove those whose content is gone",
-        "de": "Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert"
+        "en": "List the subtree notification subscriptions per user and subtree, or remove those whose content is gone (dry run unless --apply)",
+        "de": "Die Teilbaum-Benachrichtigungsabonnements je Benutzer und Teilbaum auflisten oder die entfernen, deren Inhalt fehlt (Probelauf, außer mit --apply)"
     },
     "command:notificationsubscriptions --addresses": {
         "en": "also show the user's e-mail address (hidden by default)",
         "de": "auch die E-Mail-Adresse des Benutzers zeigen (standardmäßig verborgen)"
+    },
+    "command:notificationsubscriptions --apply": {
+        "en": "remove-missing: remove the subscriptions (the default lists them and removes nothing)",
+        "de": "remove-missing: die Abonnements entfernen (Standard listet sie und entfernt nichts)"
     },
     "command:notificationsubscriptions --class": {
         "en": "only nodes of this class identifier",
         "de": "nur Knoten dieses Klassenbezeichners"
     },
     "command:notificationsubscriptions --dry-run": {
-        "en": "remove-missing: count, remove nothing",
-        "de": "remove-missing: zählen, nichts entfernen"
+        "en": "remove-missing: the default, kept for scripts that pass it: list, remove nothing",
+        "de": "remove-missing: der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, nichts entfernen"
     },
     "command:notificationsubscriptions --limit": {
         "en": "how many (default 50)",
@@ -300,8 +312,12 @@
         "de": "Das Archiv an einen anderen Ort als dist/engine.phar schreiben."
     },
     "command:preload": {
-        "en": "Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones",
-        "de": "Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten"
+        "en": "Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones (dry run unless --apply)",
+        "de": "Die Seiten-Caches einer Site vorwärmen: ihre Abschnittsseiten abrufen, dann ihren Links folgen und die defekten melden (Probelauf, außer mit --apply)"
+    },
+    "command:preload --apply": {
+        "en": "request the pages (the default is a dry run that prints the plan and requests nothing)",
+        "de": "die Seiten abrufen (Standard ist ein Probelauf, der den Plan ausgibt und nichts abruft)"
     },
     "command:preload --max-pages": {
         "en": "most pages to request (default ",
@@ -348,8 +364,16 @@
         "de": "Auch die Größe von var/, jedes Cache-Verzeichnisses und der Datenbank messen"
     },
     "command:trashpurge": {
-        "en": "Permanently delete all objects in the trash",
-        "de": "Löscht alle Objekte im Papierkorb endgültig"
+        "en": "Permanently delete all objects in the trash (dry run unless --apply)",
+        "de": "Löscht alle Objekte im Papierkorb endgültig (Probelauf, außer mit --apply)"
+    },
+    "command:trashpurge --apply": {
+        "en": "Purge the objects (the default is a dry run that lists them and deletes nothing)",
+        "de": "Die Objekte löschen (Standard ist ein Probelauf, der sie auflistet und nichts löscht)"
+    },
+    "command:trashpurge --dry-run": {
+        "en": "The default: count and list what would be purged, change nothing",
+        "de": "Der Standard: zählen und auflisten, was gelöscht würde, nichts ändern"
     },
     "command:trashpurge --memory-monitoring": {
         "en": "If set, memory usage will be logged in var/log/trashpurge.log.",
@@ -443,9 +467,13 @@
         "en": "Show the logins in full instead of shortened",
         "de": "Die Logins vollständig statt gekürzt zeigen"
     },
+    "command:velocity --apply": {
+        "en": "config set|unset, cache clear, layout migrate, site|conf|mod, ssl renew, watchdog install|remove, install: make the change (without it they are a dry run that changes nothing)",
+        "de": "config set|unset, cache clear, layout migrate, site|conf|mod, ssl renew, watchdog install|remove, install: die Änderung vornehmen (ohne die Option sind sie ein Probelauf, der nichts ändert)"
+    },
     "command:velocity --dry-run": {
-        "en": "deploy: print the steps and what each would do, and do nothing",
-        "de": "deploy: die Schritte ausgeben und was jeder täte, und nichts tun"
+        "en": "the default of the commands that write (kept for scripts that pass it); deploy: print the steps and what each would do, and do nothing",
+        "de": "der Standard der schreibenden Befehle (beibehalten für Skripte, die die Option übergeben); deploy: die Schritte ausgeben und was jeder täte, und nichts tun"
     },
     "command:velocity --engine": {
         "en": "php, frankenphp or qbix -- or several, comma-separated -- for this command only, instead of [ServerSettings] Engine",
@@ -519,13 +547,17 @@
         "en": "Control the Exponential web server (php, frankenphp or qbix engines)",
         "de": "Steuert den Exponential-Webserver (Engines php, frankenphp oder qbix)"
     },
+    "command:webserver --apply": {
+        "en": "configure, and the commands that write (config set|unset, cache clear, layout migrate, site|conf|mod, ssl renew, install): make the change; without it they are a dry run",
+        "de": "configure und die schreibenden Befehle (config set|unset, cache clear, layout migrate, site|conf|mod, ssl renew, install): die Änderung vornehmen; ohne die Option sind sie ein Probelauf"
+    },
     "command:webserver --docroot": {
         "en": "configure/reconfigure: the document root to persist for the engine",
         "de": "configure/reconfigure: das Dokumentenverzeichnis, das für die Engine gespeichert wird"
     },
     "command:webserver --dry-run": {
-        "en": "configure/reconfigure: show what would be written, without writing it",
-        "de": "configure/reconfigure: zeigen, was geschrieben würde, ohne es zu schreiben"
+        "en": "the default of configure and the commands that write (kept for scripts); start: show the configuration it would write, without writing or running it",
+        "de": "der Standard von configure und den schreibenden Befehlen (beibehalten für Skripte); start: die Konfiguration zeigen, die er schreiben würde, ohne sie zu schreiben oder auszuführen"
     },
     "command:webserver --engine": {
         "en": "php, frankenphp or qbix for this command only (or several, comma-separated, or --all), instead of the configured default",

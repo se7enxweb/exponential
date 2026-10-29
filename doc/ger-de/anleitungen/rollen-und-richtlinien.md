@@ -248,8 +248,8 @@ optional auf bestimmte Siteaccesses eingeschränkt; ein Benutzer ohne sie wird m
 Anwendung zurückgeschickt.
 
 - Neue Installationen geben sie der Rolle **Editor**; Administratoren haben sie über vollen Zugriff.
-- Führen Sie auf einer aktualisierten Site `php bin/php/addoauthauthorizepolicy.php --dry-run` aus, dann ohne
-  `--dry-run`: Jede Rolle, die Benutzern das Anmelden erlaubt, erhält die Richtlinie für dieselben Siteaccesses,
+- Führen Sie auf einer aktualisierten Site `php bin/php/addoauthauthorizepolicy.php` aus (ein Probelauf), dann mit
+  `--apply`: Jede Rolle, die Benutzern das Anmelden erlaubt, erhält die Richtlinie für dieselben Siteaccesses,
   sodass niemand verliert, was er vorher tun konnte. Die ganze Geschichte und wie Sie das alte Verhalten eine Zeit lang
   beibehalten, steht in
   [dem Upgrade-Hinweis](../bc/6.0/oauth-autorisierungsrichtlinie.md).

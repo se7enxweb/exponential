@@ -77,7 +77,7 @@ W.7 Remedy. If a warranty in this clause is found to be untrue, the Supplier
 |---|---|
 | W.1 | Vergleichen Sie `ActiveExtensions[]` und `composer.json` mit der Komponentenliste; Lizenzen der Erweiterungen auf der About-Seite (`/ezinfo/about`) ([About- und Paketseiten](../../../../funktionen/6.0/info-und-paketseiten.md)). Der Kernel steht unter der GPL Version 2 oder neuer ([Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md)) |
 | W.2 | Führen Sie einen Export des Website-Archivs aus und öffnen Sie das Manifest ([Von Exponential migrieren](../../../../installation/migration/exponential-verlassen.md)); REST API für den laufenden Zugriff ([REST API v1 und v2](../../../../anleitungen/rest-api-v1-und-v2.md)) |
-| W.3 | Lassen Sie Ihr eigenes Personal oder einen Dritten der Dokumentation zum Deployment auf einem Testrechner folgen; `./console exp:install` gibt mit einem Befehl eine saubere Basis ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)) |
+| W.3 | Lassen Sie Ihr eigenes Personal oder einen Dritten der Dokumentation zum Deployment auf einem Testrechner folgen; `./console exp:install --apply` gibt mit einem Befehl eine saubere Basis ([Exponential mit einem Befehl installieren](../../../../funktionen/6.0/installation-mit-einem-befehl.md)) |
 | W.4 | Verlangen Sie die Liste der Konten und ihrer Inhaber |
 | W.5, W.6 | Lesen Sie das Preisblatt und die Lizenzbedingungen |
 

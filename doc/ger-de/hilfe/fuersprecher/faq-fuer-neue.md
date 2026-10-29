@@ -27,7 +27,7 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 
 | Frage | Antwort | Seite |
 |---|---|---|
-| Wie probiere ich es aus? | `./console exp:install`: eine vollständige Website auf SQLite mit einem Befehl | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
+| Wie probiere ich es aus? | `./console exp:install --apply`: eine vollständige Website auf SQLite mit einem Befehl | [Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md) |
 | Was braucht es? | PHP 8.0 oder später; eine Datenbank (SQLite braucht keinen Server) | [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md), [Datenbankunterstützung](../datenbankunterstuetzung.md) |
 | Welcher Webserver? | Velocity wird empfohlen; FrankenPHP oder Apache/nginx mit PHP-FPM funktionieren auch | [Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md) |
 | Shared Hosting? | Möglich mit Apache oder LiteSpeed; Velocity meist nicht | [Container, Cloud und Hosting-Panels](../betriebssystemunterstuetzung.md#container-cloud-und-hosting-panels) |

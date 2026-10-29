@@ -81,7 +81,7 @@ Velocity:
 cat > /etc/vc/conf-available/reverse-proxy.conf <<'EOF'
 { "Q": { "webserver": { "proxy": { "trusted": ["127.0.0.1", "::1", "192.0.2.10", "10.0.0.0/8"] } } } }
 EOF
-php bin/php/console exp:velocity conf enable reverse-proxy --allow-root-user
+php bin/php/console exp:velocity conf enable --apply reverse-proxy --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 ```
 

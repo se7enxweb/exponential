@@ -48,7 +48,7 @@ from holding personal data forever, while leaving time to restore mistakes ([The
 
 ## Check that it worked
 
-- On the command line the same purge for a test: `php bin/php/trashpurge.php --trashed-days=90` on a copy first.
+- On the command line the same purge for a test: `php bin/php/trashpurge.php --apply --trashed-days=90` on a copy first.
 - `var/log/trashpurge.log` (Setup > Log files) shows each run; the trash keeps items younger than 90 days.
 - The audit records what was purged.
 

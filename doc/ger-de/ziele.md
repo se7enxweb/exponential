@@ -100,7 +100,7 @@ zusätzliche Arbeit, jeweils mit der Seite, die es beschreibt:
 
 | Das Problem | Was schon da ist | Mehr dazu |
 |---|---|---|
-| Eine funktionierende Site bekommen | `./console exp:install` installiert ein Multisite-Paket auf SQLite und gibt die Adressen und die Anmeldung aus: eine funktionierende Exponential-Site in wenigen Minuten, ohne `kickstart.ini` und ohne Datenbankserver | [Exponential mit einem Befehl installieren](funktionen/6.0/installation-mit-einem-befehl.md) |
+| Eine funktionierende Site bekommen | `./console exp:install --apply` installiert ein Multisite-Paket auf SQLite und gibt die Adressen und die Anmeldung aus: eine funktionierende Exponential-Site in wenigen Minuten, ohne `kickstart.ini` und ohne Datenbankserver | [Exponential mit einem Befehl installieren](funktionen/6.0/installation-mit-einem-befehl.md) |
 | Eine Datenbank wählen | Sechs unterstützte Datenbanken, in der Reihenfolge der Empfehlung: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL; dokumentierte Werkzeuge ziehen eine Site von einer zur anderen um | [Datenbankunterstützung](hilfe/datenbankunterstuetzung.md) |
 | Eine Maschine wählen | Betriebssysteme in dokumentierten Stufen, Apache, Nginx und andere, oder der mitgelieferte Server Velocity | [Betriebssystemunterstützung](hilfe/betriebssystemunterstuetzung.md) |
 | Viele Sprachen | Locale-Dateien für Inhalte, viele davon von rechts nach links, und Übersetzungen der Administration; die Gesamtzahlen stehen am Anfang der Seite Sprachen | [Sprachen in Exponential](sprachen.md) |

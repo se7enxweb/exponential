@@ -2,14 +2,14 @@
 title: exp:exphelpcontent
 audience: developer, admin
 category: examples
-summary: "Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall."
+summary: "Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall (the changing actions are a dry run unless --apply)."
 keywords: exp:exphelpcontent, exphelpcontent, console, command, CLI, exphelpcontent.php, exp:help:content
 type: generated
 generated: exp:help:examples
 ---
 # exp:exphelpcontent
 
-Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall.
+Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall (the changing actions are a dry run unless --apply).
 
 Script `bin/php/exphelpcontent.php`, code in `kernel/private/classes/commands/exphelpcontent.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -24,16 +24,16 @@ php bin/php/exphelpcontent.php --help
 ```text
 Help maintained as content (topics, manuals, glossary in the content tree)
 
-./console exp:help:content install -s <admin siteaccess> [--dry-run]   tables, classes, tree and roles (all four steps)
+./console exp:help:content install -s <admin siteaccess> [--apply]   tables, classes, tree and roles (all four steps)
 ./console exp:help:content tables -s ...     the tables exphelp_help_id (released help_ids) and exphelp_feedback
                                               ("Was this helpful?"), when an older installation lacks them
 ./console exp:help:content classes -s ...    the eight help_* classes in the class group Help (create_classes.php)
 ./console exp:help:content tree -s ...       sections, the state group help_status, the folder tree (create_tree.php)
 ./console exp:help:content roles -s ...      the roles Help editor, Help release and the Anonymous policy (create_roles.php)
-./console exp:help:content check -s ... [--fix]   the validator (check_help.php); --fix sets the sections from the audience
+./console exp:help:content check -s ... [--fix --apply]   the validator (check_help.php); --fix sets the sections from the audience
 ./console exp:help:content seed-glossary -s ... [--file=] [--update]   the glossary (seed_glossary.php)
 ./console exp:help:content seed-topics -s ... [--file=] [--update] [--release]   topics and manuals (seed_topics.php)
-./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--dry-run] [--queue]
+./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--queue] [--apply]
                                               the manuals of the Markdown help (exphelp.ini [ManualSettings]):
                                               made, updated and removed so they match the pages (help-gen-...)
 ./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state
@@ -44,8 +44,8 @@ Help maintained as content (topics, manuals, glossary in the content tree)
                                               the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a
                                               directory, checked after writing (also: export --format=dita);
                                               --commit records it in git (the cronjob part exphelp does it regularly)
-./console exp:help:content feedback -s ... [--prune] [--json]   the answers to "Was this helpful?" per topic
-./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--dry-run]   build the e-books of the
+./console exp:help:content feedback -s ... [--prune --apply] [--json]   the answers to "Was this helpful?" per topic
+./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--apply]   build the e-books of the
                                               Released manuals and store them as file objects under E-books
 ./console exp:help:content review -s ... [--json]   the topics whose review is overdue
 ./console exp:help:content cache -s ... [--json]   fill the cache of the help rows and search words of the
@@ -54,11 +54,15 @@ Help maintained as content (topics, manuals, glossary in the content tree)
                                               class package exp_help_classes (a directory and an .ezpkg)
 ./console exp:help:content verify-package -s ... --file=<.ezpkg or directory>   compare a package with the
                                               classes of this release (no database)
-./console exp:help:content uninstall -s ... [--with-content] [--dry-run]   take the roles away (and the tree, classes,
+./console exp:help:content uninstall -s ... [--with-content] [--apply]   take the roles away (and the tree, classes,
                                               state group and sections with --with-content)
 
 -s (--siteaccess) is required: one tree may serve several installations with different databases. Every
-step is idempotent: a second run prints "No change.". --dry-run shows what would change and changes nothing.
+step is idempotent: a second run prints "No change.". The actions that change the installation (install,
+tables, classes, tree, roles, check --fix, seed-glossary, seed-topics, build-manuals, ebooks, feedback --prune,
+uninstall) only show what would change unless --apply is given; --dry-run means the same as no --apply, both
+together are a usage error (exit 2). export, dita, package and cache write their files as before (--dry-run
+still shows the plan of export and dita); report, review and verify-package only read.
 Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error.
 ```
 
@@ -66,7 +70,8 @@ Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | Show what would change, change nothing |
+| `--apply` |  | install, tables, classes, tree, roles, check --fix, seed-*, build-manuals, ebooks, feedback --prune, uninstall: make the changes (the default is a dry run) |
+| `--dry-run` |  | Show what would change, change nothing (the default of the changing actions; export and dita: their plan) |
 | `--check` |  | export: check the EPUB with epubcheck and Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); exit 1 when one fails |
 | `--prune` |  | feedback: remove the answers older than [ContentSettings] FeedbackKeepDays |
 | `--commit` |  | dita: commit the written files when the directory is a git repository (the history of delivery path 4) |

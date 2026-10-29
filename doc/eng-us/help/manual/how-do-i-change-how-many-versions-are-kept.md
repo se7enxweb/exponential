@@ -37,7 +37,7 @@ site's settings files. Running the cleanup script needs shell access.
 4. If you lowered a limit, remove the versions over it from existing objects:
 
    ```bash
-   php bin/php/cleanupversions.php
+   php bin/php/cleanupversions.php --apply
    ```
 
    The script waits 10 seconds before it starts; `-n` skips the wait. It removes only archived versions.

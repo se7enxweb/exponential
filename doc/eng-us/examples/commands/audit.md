@@ -28,19 +28,23 @@ Audit log: the records of the audit channels and their hash chains
   exp:audit show <event id> [--json]
   exp:audit search [filters] [--files] [--limit=50] [--json]
   exp:audit verify [--channel=<c>] [--date=YYYY-MM-DD] [--archives] [--json]
-  exp:audit rotate [--channel=<c>] [--dry-run]
-  exp:audit archive [--channel=<c>] [--before=YYYY-MM-DD] [--format=gzip|bzip2|xz|zstd|zip] [--dry-run]
-  exp:audit restore --channel=<c> --date=YYYY-MM-DD [--to=<dir>]
-  exp:audit purge [--channel=<c>] [--dry-run]
-  exp:audit reindex [--incremental] [--archives] [--channel=<c>]
-  exp:audit pseudonymise [--dry-run]
+  exp:audit rotate [--channel=<c>] [--apply]
+  exp:audit archive [--channel=<c>] [--before=YYYY-MM-DD] [--format=gzip|bzip2|xz|zstd|zip] [--apply]
+  exp:audit restore --channel=<c> --date=YYYY-MM-DD [--to=<dir>] [--apply]
+  exp:audit purge [--channel=<c>] [--apply]
+  exp:audit reindex [--incremental] [--archives] [--channel=<c>] [--apply]
+  exp:audit pseudonymise [--apply]
   exp:audit export [filters] [--subject-user=<id>] [--format=jsonl|csv|bundle] --out=<path>
-  exp:audit import [--dir=<old log dir>] [--file=login.log] [--dry-run] [--keep-originals]
-  exp:audit key list|rotate|fingerprint [--pseudonym]
-  exp:audit checkpoint
-  exp:audit sinks list|test <name>|flush [<name>]
+  exp:audit import [--dir=<old log dir>] [--file=login.log] [--keep-originals] [--apply]
+  exp:audit key list|rotate [--apply]|fingerprint [--pseudonym]
+  exp:audit checkpoint [--apply]
+  exp:audit sinks list|test <name>|flush [<name>] [--apply]
   exp:audit alerts list|test <rule> [--replay=YYYY-MM-DD]|recipients [--rule=<rule>]
-  exp:audit cron [--daily]           one run of the cronjob part (--daily: the daily tasks now)
+  exp:audit cron [--daily] [--apply]  one run of the cronjob part (--daily: the daily tasks now)
+
+The manage actions (rotate, archive, restore, purge, reindex, pseudonymise, import, key rotate,
+checkpoint, sinks flush, cron) only say what they would do unless --apply is given. --dry-run means
+the same as no --apply; --apply together with --dry-run is a usage error (exit 2).
 
 Filters (search, export): --name=<pattern> --user=<id> --login= --object=<type:id> --target=<type:id>
   --result=success|refused|failed --severity=<min> --request= --job= --run= --ip=<network>
@@ -61,7 +65,8 @@ Name patterns: * | <domain>.* | a prefix ending in .* (access.session.*) | a who
 | `--json` |  | Print records and results as JSON |
 | `--date` | required | verify: only that day's files; restore: the archived day (YYYY-MM-DD, UTC) |
 | `--archives` |  | verify: also the archives (manifests, HMAC, checksums, the chain through them); reindex: also the archives |
-| `--dry-run` |  | rotate, archive, purge, import, pseudonymise: only say what would be done |
+| `--apply` |  | rotate, archive, restore, purge, reindex, pseudonymise, import, key rotate, checkpoint, sinks flush, cron: do it (the default is a dry run) |
+| `--dry-run` |  | The default, kept for scripts that pass it: only say what would be done |
 | `--before` | required | archive: the days before this date (default: older than LiveDays) |
 | `--format` | required | archive: the format handler; export: jsonl, csv or bundle |
 | `--to` | required | restore: the directory (default <LogDir>/restored); search, export: up to and including this time (as --from) |

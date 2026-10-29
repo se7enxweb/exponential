@@ -152,7 +152,7 @@ ziehen, den Sie migrieren.
 - **Optionale Aufräumarbeiten, die den Dump verkleinern:** interne Entwürfe entfernen (`content.ini [ContentSettings]
   InternalDraftsCleanUpLimit` und `InternalDraftsDuration` niedrig setzen und den Cronjob `internal_drafts_cleanup.php`
   ausführen), alte archivierte Versionen, abgelaufene Sitzungen. Dieselben Werkzeuge gibt es danach in Exponential:
-  `php runcronjobs.php --script=internal_drafts_cleanup.php`, `php bin/php/cleanupversions.php`,
+  `php runcronjobs.php --script=internal_drafts_cleanup.php`, `php bin/php/cleanupversions.php --apply`,
   `php update/common/scripts/cleanup.php session`.
 - **Sichern** Sie die Datenbank und das gesamte alte Verzeichnis, einschließlich `var/`. Die Befehle stehen in
   [11.1](11-aktualisieren.md#111-bevor-sie-beginnen). Spielen Sie die Sicherung einmal auf einer Testmaschine zurück.
@@ -434,7 +434,7 @@ Seiten 4.5 und 4.6 des Herstellers setzen `define( 'STORAGE_BACKEND', 'dfsmysqli
 `index_cluster.php`; dieser Name wird nicht mehr gelesen, und die alten Dateien `index_cluster_*` und `index_image_*`
 sind aus dem Document Root zu entfernen (Hinweise zu 4.7). Die Werkzeuge für eine DFS-Website:
 `php bin/php/clusterize.php` (`-u` verschiebt Dateien zurück ins einfache Dateisystem), `php bin/php/dfscleanup.php`
-(Konsistenz zwischen `ezdfsfile` und dem Mount), `php bin/php/clusterpurge.php`.
+(Konsistenz zwischen `ezdfsfile` und dem Mount), `php bin/php/clusterpurge.php --apply`.
 
 ## 14.7 Einstellungen und Siteaccesses
 

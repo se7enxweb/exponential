@@ -4,14 +4,14 @@ This page is for anyone who wants a working Exponential site in a few minutes, w
 without a database server.
 
 ```bash
-./console exp:install
+./console exp:install --apply
 ```
 
 That installs the multisite package on **SQLite**, in `eng-US`, with the
 siteaccesses `site` and `admin` reached by URL, and prints a summary with the
 site and administration login addresses, the user name, the e-mail, database,
 package and siteaccesses, plus a short block you can copy and paste. `exp:install`
-is the same as `php bin/php/install.php`.
+is the same as `php bin/php/install.php --apply`.
 
 ## Choose a database
 
@@ -34,9 +34,9 @@ puts it first in the new site's `ActiveExtensions`, and talks UTF-8 to Oracle
 during the checks.
 
 ```bash
-./console exp:install --db=mysql --db-host=127.0.0.1 --db-name=mysite \
+./console exp:install --apply --db=mysql --db-host=127.0.0.1 --db-name=mysite \
                       --db-user=root --db-action=remove
-EXP_INSTALL_DB_PASSWORD='...' ./console exp:install --db=pgsql
+EXP_INSTALL_DB_PASSWORD='...' ./console exp:install --apply --db=pgsql
 ```
 
 Give the database password with `--db-password` or, better, with the
@@ -130,7 +130,7 @@ stopped on (`eZSiteInstaller::abortedStep()`).
   package's `SiteURL` kept.
 - **Maintenance mode** wraps every run: see [Maintenance mode](maintenance-mode.md).
 
-**Public demos.** `EXP_DEMO_MODE=1 ./console exp:install --password=publishing` installs the published demo password as given; in demo mode a well-known or short administrator password (`publish` too) is kept, an empty one is still refused. Keep the variable for the running site. [Demo mode](../../bc/6.0/demo-mode.md), [Recipe: run a public demo on LiteSpeed and Plesk](../../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md).
+**Public demos.** `EXP_DEMO_MODE=1 ./console exp:install --apply --password=publishing` installs the published demo password as given; in demo mode a well-known or short administrator password (`publish` too) is kept, an empty one is still refused. Keep the variable for the running site. [Demo mode](../../bc/6.0/demo-mode.md), [Recipe: run a public demo on LiteSpeed and Plesk](../../help/hosting/servers/run-a-public-demo-on-litespeed-and-plesk.md).
 
 ## Related pages
 

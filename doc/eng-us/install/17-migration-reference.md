@@ -667,8 +667,8 @@ where the database lacks it ([11.3](11-upgrading.md#the-612-72-and-73-directorie
 | `updateniceurls.php` | Imports pre-4.0 URL aliases and rebuilds node aliases | `--import`, `--no-import`, `--import-nodes`, `--import-aliases`, `--import-redirections`, `--import-wildcards`, `--update-nodes`, `--no-update-nodes`, `--verify-data`, `--interactive`, `--backup-tables`, `--column-width`, `--fetch-limit`, `--db-*`, `--sql` |
 | `verify_aliases.php` | Checks `ezurlalias_ml` | `--fix`, `--verbose`, `--sql` |
 | `updatesearchindex.php` | Rebuilds the search index | `--clean`, `--db-*`, `--sql` |
-| `adddefaultstates.php` | Gives every object the default object states | none |
-| `cleanuppolicies.php` | Removes policies of modules that no longer exist | `--dry-run`, `-n` |
+| `adddefaultstates.php` | Gives every object the default object states (dry run unless `--apply`) | `--apply` |
+| `cleanuppolicies.php` | Removes policies of modules that no longer exist (dry run unless `--apply`) | `--apply`, `-n` |
 | `cleanupversions.php` | Removes archived versions beyond the limits | `-n` |
 | `flatten.php` | Removes unused data: `contentobject`, `contentclass`, `workflow`, `role`, `all` | `--db-*`, `--sql`, name |
 | `trashpurge.php` | Empties the trash | `--iteration-sleep`, `--iteration-limit`, `--memory-monitoring`, `--trashed-days` |

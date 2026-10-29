@@ -107,7 +107,7 @@ Edits to a template or a stylesheet need less: clear the caches without a restar
 
 ```bash
 ./console exp:cache clear --id=template --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 ```
 
 After an extension is activated, its templates are not found until the design_base cache is cleared: the page

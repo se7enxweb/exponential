@@ -83,7 +83,7 @@ php bin/php/console exp:velocity deploy --allow-root-user
 | `./console exp:cache <group> [action]` | jede Aktion von Setup > Caches, dazu statische, HTTP-, Abfrage- und Velocity-Caches; endet mit `PASS` oder `FAIL` |
 | `./console exp:cache clear --tag=ini --dry-run` | was geleert würde, mit Größen, ohne etwas zu ändern |
 | `./console exp:cache status` | jede Gruppe auf einem Bildschirm |
-| `php bin/php/console exp:velocity cache clear` | der Antwort-Cache von Velocity |
+| `php bin/php/console exp:velocity cache clear --apply` | der Antwort-Cache von Velocity |
 | `php bin/php/console exp:velocity restart` | Velocity, nachdem sich Einstellungen geändert haben |
 
 Führen Sie sie als Benutzer der Website aus, damit das, was sie neu anlegen, für den Webserver beschreibbar bleibt; als root brauchen
@@ -126,18 +126,18 @@ Planen Sie ihn für jede Kunden-Website, sonst wächst `var/`. Siehe [Cronjobs](
 | Werkzeug | Was es tut | Wann |
 |---|---|---|
 | `php bin/php/console exp:warm` (`bin/php/warm.php`) | fragt jede veröffentlichte Seite an, damit kein Besucher für ein Rendering bezahlt; `--limit`, `--verbose`, `--json` | nach einem Leeren und mit einem Zeitgeber, der kürzer ist als das Cache-Fenster |
-| `php bin/php/preload.php --siteaccess=<site>` (Setup > Seiten vorladen) | durchläuft eine Website von ihren Bereichsseiten aus bis zu einer Seitengrenze und Linktiefe, wärmt View-Cache, Bild-Aliase und kompilierte Templates vor, listet defekte Links auf | nach einem Ausrollen oder einem nächtlichen Leeren; immer nur ein Lauf |
+| `php bin/php/preload.php --apply --siteaccess=<site>` (Setup > Seiten vorladen) | durchläuft eine Website von ihren Bereichsseiten aus bis zu einer Seitengrenze und Linktiefe, wärmt View-Cache, Bild-Aliase und kompilierte Templates vor, listet defekte Links auf | nach einem Ausrollen oder einem nächtlichen Leeren; immer nur ein Lauf |
 | `[DeploySettings] WarmUpURL[]` | Seiten, die am Ende von `exp:velocity deploy` von einem Hintergrundprozess je einmal angefragt werden | immer, für die Startseite und die Anmeldung der Administration |
 
 Beispiele aus den Quellen:
 
 ```bash
 php bin/php/preload.php --siteaccess=site --dry-run
-php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1
+php bin/php/preload.php --apply --siteaccess=site --max-pages=20 --max-depth=1
 ```
 
 ```text
-30 4 * * * cd /path/to/exponential && php bin/php/preload.php --siteaccess=site -q
+30 4 * * * cd /path/to/exponential && php bin/php/preload.php --apply --siteaccess=site -q
 */4 * * * * cd /path/to/exponential && php bin/php/warm.php --allow-root-user >> var/log/cache-warm.log 2>&1
 ```
 

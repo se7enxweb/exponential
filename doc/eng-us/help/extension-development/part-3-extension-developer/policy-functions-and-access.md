@@ -122,7 +122,7 @@ Hiding a link is a courtesy; the view's `'functions'` is the protection.
 
 Roles are configured in the administration. For an extension that needs its function granted on installation (for
 example to the Editor role), ship a command or document the step. The kernel's own example is
-`./console exp:addexphelpreadpolicy`, which grants `exphelp/read` and lists the roles first with `--dry-run`.
+`./console exp:addexphelpreadpolicy`, which lists the roles it would grant `exphelp/read` to and grants it with `--apply`.
 
 ## Checking a user
 

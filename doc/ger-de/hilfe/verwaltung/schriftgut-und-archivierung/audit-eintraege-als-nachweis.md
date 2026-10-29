@@ -32,7 +32,7 @@ als Nachweis hängt davon ab, wie die Einträge ausgewählt, geprüft und überg
 
 - Prüfen Sie, ob der Zeitraum noch innerhalb der Aufbewahrung liegt (standardmäßig 90 Tage aktiv, 730 archiviert);
   stellen Sie archivierte Tage zuerst wieder her:
-  `./console exp:audit restore --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
+  `./console exp:audit restore --apply --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
 - Beziehen Sie Ihre Rechtsberatung ein und bei Personalangelegenheiten die Personen, die Ihre Verfahren benennen.
 
 ## Die Einträge auswählen

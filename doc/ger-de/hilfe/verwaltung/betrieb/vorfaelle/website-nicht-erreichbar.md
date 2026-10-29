@@ -65,7 +65,7 @@ Wartungsmodus mit einer klaren Meldung besser als eine Fehlerseite.
 ## Nach der Behebung
 
 1. Leeren Sie die Caches, die die Behebung erfordert; unter Velocity dessen Antwortcache **nach** jedem Neustart:
-   `./console exp:velocity cache clear --allow-root-user`.
+   `./console exp:velocity cache clear --apply --allow-root-user`.
 2. Bestätigen Sie das Ergebnis von außen; beobachten Sie die Fehlerübersicht eine Stunde lang.
 3. Dokumentieren Sie Ursache, Zeitablauf und Behebung; halten Sie bei Schweregrad 1 eine
    [Nachbetrachtung des Vorfalls](nachbetrachtung-eines-vorfalls.md) ab.

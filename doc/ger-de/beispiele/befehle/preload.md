@@ -2,14 +2,14 @@
 title: exp:preload
 audience: developer, admin
 category: examples
-summary: "Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten."
+summary: "Die Seiten-Caches einer Site vorwärmen: ihre Abschnittsseiten abrufen, dann ihren Links folgen und die defekten melden (Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:preload, preload, console, command, CLI, preload.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:preload
 
-Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten.
+Die Seiten-Caches einer Site vorwärmen: ihre Abschnittsseiten abrufen, dann ihren Links folgen und die defekten melden (Probelauf, außer mit --apply).
 
 Skript `bin/php/preload.php`, Code in `kernel/private/classes/commands/preload.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -29,19 +29,26 @@ Requests the section pages of a site, then follows its links, so the caches are 
 before a visitor arrives, and reports the broken links with the pages that link to them.
 The site is the one of --siteaccess (or --target). One preload runs at a time; the run is
 listed in Setup > Preload.
+Without --apply nothing is requested: the script prints the address, the starting pages and
+the limits. --dry-run means the same as no flag; --apply together with --dry-run is a usage
+error (exit 2).
 
-Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--dry-run]
+Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--apply]
+
+Example: php bin/php/preload.php --siteaccess=site
+         php bin/php/preload.php --siteaccess=site --apply
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
+| `--apply` |  | die Seiten abrufen (Standard ist ein Probelauf, der den Plan ausgibt und nichts abruft) |
+| `--dry-run` |  |  |
 | `--target` | erforderlich | der Siteaccess, dessen Website vorgewärmt wird (Standard: der von --siteaccess) |
 | `--max-pages` | erforderlich | höchstens so viele Seiten anfordern (Standard  |
 | `--max-depth` | erforderlich |  |
 | `--images` |  |  |
-| `--dry-run` |  |  |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

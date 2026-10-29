@@ -99,7 +99,7 @@ audit trail ([Audit trail](../../../../features/6.0/audit-trail.md)).
 | Archived versions | remove them as above |
 | The trash | an object in the trash still holds its files; empty it when the decision must be deleted |
 | Search index | hiding and removing update the index; with eZ Find, check the decision is gone from search |
-| Caches | publishing clears the object's view cache; if you use the static cache, Velocity's response cache (`./console exp:velocity cache clear`) or a CDN, clear those too ([Caches](../../../../guides/caches.md), [Velocity response cache](../../../../features/6.0/velocity-response-cache.md)) |
+| Caches | publishing clears the object's view cache; if you use the static cache, Velocity's response cache (`./console exp:velocity cache clear --apply`) or a CDN, clear those too ([Caches](../../../../guides/caches.md), [Velocity response cache](../../../../features/6.0/velocity-response-cache.md)) |
 | Backups | the decision remains in backups until they expire; your retention rules decide |
 | Copies elsewhere | search engines, archives and people who downloaded it; request removal where the law provides for it |
 

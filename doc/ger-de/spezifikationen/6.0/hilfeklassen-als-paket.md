@@ -17,7 +17,7 @@ Hilfeklassen über **Setup > Pakete** statt über die Kommandozeile auf eine Web
 - `./console exp:help:content verify-package -s <admin siteaccess> --file=<.ezpkg>` vergleicht ein gebautes Paket mit den
   Klassen des Releases, **ohne Datenbank**.
 - Das Paket ist **nicht** das ganze Hilfesystem. Sektionen, die Objektzustandsgruppe, der Ordnerbaum und die Rollen
-  enthalten IDs der Installation; `./console exp:help:content install` legt sie an und ergänzt die Klassen, die ein Paket
+  enthalten IDs der Installation; `./console exp:help:content install --apply` legt sie an und ergänzt die Klassen, die ein Paket
   installiert hat. Der Befehl ist idempotent: Nach dem Paket gibt er nur die Teile aus, die das Paket nicht mitbringt.
 - Gebaut wird hier; **das Veröffentlichen auf dem Paketserver ist der Schritt des Eigentümers** (unten).
 
@@ -64,8 +64,8 @@ Auf einer Installation des Releases (am besten eine Wegwerfinstallation; nie ein
 Hilfeeinstellungen):
 
 ```bash
-./console exp:help:content classes -s <admin siteaccess>             # the classes, if not yet there
-./console exp:help:content classes -s <admin siteaccess>             # "No change." (the acceptance test)
+./console exp:help:content classes --apply -s <admin siteaccess>             # the classes, if not yet there
+./console exp:help:content classes --apply -s <admin siteaccess>             # "No change." (the acceptance test)
 ./console exp:help:content package -s <admin siteaccess> --dry-run   # what would be written
 ./console exp:help:content package -s <admin siteaccess> [--output=<dir>] [--version=6.0.15]
 ```
@@ -105,9 +105,9 @@ Der Abnahmetest eines Releases, auf einer **neuen Wegwerfinstallation** (nie auf
 
 1. Installieren Sie das Paket (**Setup > Pakete > Hochladen**, dann **Installieren**, oder `php ezpm.php import <file>` und
    `php ezpm.php install exp_help_classes`);
-2. `./console exp:help:content classes -s <admin siteaccess>` gibt **No change.** aus: Das Paket hat jede Klasse, jedes
+2. `./console exp:help:content classes --apply -s <admin siteaccess>` gibt **No change.** aus: Das Paket hat jede Klasse, jedes
    Attribut und jede Option installiert, die der Befehl angelegt hätte;
-3. `./console exp:help:content install -s <admin siteaccess>` legt dann die Sektionen, Zustände, den Baum und die Rollen
+3. `./console exp:help:content install --apply -s <admin siteaccess>` legt dann die Sektionen, Zustände, den Baum und die Rollen
    an, und ein zweiter Lauf gibt **No change.** aus;
 4. entfernen Sie die Wegwerfinstallation.
 
@@ -150,7 +150,7 @@ Ein Administrator, der Pakete der Kommandozeile vorzieht:
 
 1. **Setup > Pakete > Hochladen**, wählen Sie `exp_help_classes-<version>.ezpkg`, dann auf seiner Seite **Installieren**.
    Die Klassen erscheinen in der Klassengruppe **Help**.
-2. Führen Sie einmal `./console exp:help:content install -s <admin siteaccess>` aus (Sektionen, Zustände, Baum, Rollen). Der
+2. Führen Sie einmal `./console exp:help:content install --apply -s <admin siteaccess>` aus (Sektionen, Zustände, Baum, Rollen). Der
    Befehl findet die Klassen, die das Paket installiert hat, und ändert nichts an ihnen.
 3. Optional `seed-glossary` und `seed-topics` für die Startinhalte, wie auf jeder Installation.
 

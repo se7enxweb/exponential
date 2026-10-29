@@ -77,7 +77,7 @@ Do these before the site starts serving:
 
    ```bash
    php bin/php/console exp:velocity start --allow-root-user
-   php bin/php/console exp:velocity cache clear --allow-root-user
+   php bin/php/console exp:velocity cache clear --apply --allow-root-user
    php bin/php/maintenance.php off --allow-root-user
    ```
 

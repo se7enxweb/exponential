@@ -131,6 +131,43 @@ See [SOAP calls over HTTPS](../../features/6.0/soap-client-tls.md).
 |---|---|---|
 | `bin/php/addeditorpolicies.php` and `bin/php/addmembermanagement.php` only show what they would change unless `--apply` is given; they wrote by default and took `--dry-run`. `--dry-run` is still accepted and means the same as no flag; `--apply` together with `--dry-run` is a usage error (exit 2). The setup step of a new installation is not affected: it calls the classes, not the commands. | Run either command without options: it lists what it would change and ends with `PASS: ... (dry run, nothing changed; --apply writes)`. | Add `--apply` to a script or runbook that ran a command without `--dry-run` to make the change. A call with `--dry-run` alone stays a dry run. See [Editor role policies](editor-role-policies.md#what-to-do-when-you-upgrade) and [Member management](member-management.md#what-to-do-on-an-installation-that-exists). |
 
+## Commands only change things with --apply (28 October 2026)
+
+The commands below change an installation that exists: its roles, workflows, content, logs, mail, crontab, the
+Velocity configuration or a whole database. Until 28 October 2026 a run without options made the change, so a run
+typed to look at the plan already changed the installation. Each of them now only shows what it would change and
+ends with `PASS: ... (dry run, nothing changed; --apply writes)`; `--apply` makes the change and checks it. A
+`--dry-run` the command had is still accepted and means the same as no option; `--apply` together with `--dry-run` is
+a usage error and ends the command with exit code 2 before it reads the database. The setup wizard, the kickstarter
+and the cronjob parts call the classes, not the commands, and are not affected.
+
+| Commands | What only `--apply` does now |
+|---|---|
+| `addeditorpolicies`, `addmembermanagement`, `addanonymouspublicpolicies`, `addexphelpreadpolicy` (`exp:help-grant`), `addoauthauthorizepolicy`, `adduserapproval` (both modes, group and section), `cleanuppolicies`, `adddefaultstates` | Add, grant, remove or assign policies, roles, workflow events and sections; give objects their default states. `adddefaultstates` had no dry run before. |
+| `install` (`exp:install`), `kickstarter run` | Install. The dry run checks `kickstart.ini`, the database and the remote packages and shows the plan, including "would DROP every table" for `DatabaseAction=remove`. `--force` alone is now a usage error (exit 2); it is accepted together with `--apply`. |
+| `audit` (rotate, archive, restore, purge, reindex, pseudonymise, import, checkpoint, `key rotate`, `sinks flush`, cron), `explogs` (`--rotate`, `--rotate-all`, `--prune`, `--compress`, `--truncate`), `contentcheck` (`--fix`, `--quarantine`, `--fix-permissions`), `exphelpcontent` (install, tables, classes, tree, roles, `check --fix`, seed-glossary, seed-topics, build-manuals, ebooks, `feedback --prune`, uninstall) | The writing actions; the reading ones (status, tail, search, report, verify, export ...) are as before. |
+| `exploremipsumfill`, `collaborationsampledata` (also `--remove`), `cleanuprss`, `clusterpurge`, `ezsubtreecopy`, `ezsubtreeremove`, `trashpurge`, `cleanupversions` | Fill, create, remove, purge or copy content and files. |
+| `mailbounces`, `mailconsent cleanup`, `notificationevents cleanup`, `notificationsubscriptions remove-missing`, `notificationrun` (`exp:notification:run`) | Suppress addresses, remove rows, send notification mail. A dry run never sends mail. |
+| `installcrontab --add`, `--remove` | Write the crontab block; the dry run shows the block and the lines that would change. `--show` is as before. |
+| `preload` (`exp:preload`); `velocity` `config set` and `unset`, `cache clear`, `layout migrate`, `site`, `conf` and `mod` `enable` and `disable`, `ssl renew`, `watchdog install` and `remove`, `install` of the FrankenPHP engine; `webserver configure`; `frankenphp install` | Crawl the site; write the Velocity settings and the `/etc/vc` links, clear its response cache, install the watchdog units or the engine. |
+
+Deliberately not changed:
+
+| Command | Why |
+|---|---|
+| `ezpgenerateautoloads`, `cache` (`exp:cache`) and `bin/php/ezcache.php` | They work like build tools: they regenerate files that can always be regenerated, and composer, the deploy (`exp:velocity deploy`), CI and countless notes run them. They still act at once. |
+| `velocity` and `webserver` `start`, `stop`, `graceful`, `restart`, `kill`, `status`, `watchdog run`, `ctl`, `ext`; `exp:velocity deploy` | Process control, which installed systemd units and the watchdog call; `deploy` keeps its own `--dry-run`. |
+| `dfscleanup` | It already writes only with `-D`. |
+| `resetuserpassword`, `userpasswordchangerequired` | The write is what they are called for. |
+| `updatesearchindex`, `updateniceurls`, `makestaticcache`, `ezgeneratetranslationcache`, `warm`, `preloadjob` | They rebuild caches and indexes that can be rebuilt; the cache page, the setup wizard and cron call them. |
+| The one-time upgrade converters (`convertezenumtoezselection`, `convertprice2multiprice`, `ezconvert2isbn13`, `updateisbn13`, `ezconvertdbcharset`, `ezconvertmysqltabletype`, `ezflowupgrade`, `ezwebininstall`, `ezwebinupgrade`) | Each is one step of a documented upgrade; they change with those steps. |
+| Imports and schema tools (`ezimportdbafile`, `ezsqlinsertschema`, `ezcsvimport`, `publish_content`, `ezcreatedeactivatedusergroup`, `flatten`, `ezsessiongc`) | Their job is the write; installers, admin pages and cron call them. |
+| `ini set`, `expcontentjob`, `maintenance`, `services`, `i18n`, `solr`, `phar` | Commands of subcommands that admin pages, the deploy and cron call; not changed in this round. |
+
+| How to check | What to do |
+|---|---|
+| Run one of the commands without options: it lists what it would change and ends with `PASS: ... (dry run, nothing changed; --apply writes)`. | Add `--apply` to every script, crontab line and runbook that runs one of these commands to make the change; a call with `--dry-run` alone stays a dry run. In particular: a demo or test rebuild script that runs `exp:install`, `collaborationsampledata` or `preload` (the examples in [demo mode](../../examples/demo-mode/README.md) pass `--apply` and stop when nothing was installed), and an operator's crontab line that calls a command directly (the crontab block of an installation runs only `runcronjobs.php` and is not affected). Run a script against an older version without `--apply`: before 28 October 2026 the commands refuse it as an unknown option. |
+
 ## Related pages
 
 - [October 2026 chronicle](../../history/2026/2026-10.md)

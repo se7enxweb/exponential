@@ -38,7 +38,7 @@ spätere Start läuft direkt daraus. Um das zu ändern, ohne die INI-Datei zu be
 
 ```bash
 ./console exp:webserver configure --engine=frankenphp --port=8089 --dry-run --allow-root-user   # plan only
-./console exp:webserver configure --engine=frankenphp --port=8089 --allow-root-user             # persist, start nothing
+./console exp:webserver configure --apply --engine=frankenphp --port=8089 --allow-root-user             # persist, start nothing
 ./console exp:webserver start --reconfigure --engine=php --port=8087 --allow-root-user          # persist, then run
 ```
 

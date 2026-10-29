@@ -36,7 +36,7 @@ das Aussehen einer Seite; es geht ums Lesen vor dem Schreiben.
 ## Dieses Modul vorbereiten
 
 - Eine Schulungsinstallation pro Teilnehmerin oder Teilnehmer mit Shell-Zugang im Stammverzeichnis der Installation,
-  zum Beispiel installiert mit `php bin/php/console exp:install` ([7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md));
+  zum Beispiel installiert mit `php bin/php/console exp:install --apply` ([7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md));
   siehe [Modul 2: Die Übungsumgebung aufbauen](../../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md) von Train
   the Trainer.
 - Jede Installation im Browser erreichbar (zum Beispiel mit `php bin/php/console exp:velocity start`).

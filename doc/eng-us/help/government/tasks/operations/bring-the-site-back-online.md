@@ -35,12 +35,12 @@ fresh caches, and the window is recorded. Reference: [Maintenance mode, section 
 2. If content or code changed, clear the caches in front of the site, after PHP and Velocity run the new code:
 
    ```bash
-   ./console exp:velocity cache clear --allow-root-user
+   ./console exp:velocity cache clear --apply --allow-root-user
    php bin/php/cache.php httpcache clear --allow-root-user
    ```
 
    Purge a CDN if you use one.
-3. Warm the main pages: `php bin/php/preload.php --siteaccess=site --allow-root-user`.
+3. Warm the main pages: `php bin/php/preload.php --apply --siteaccess=site --allow-root-user`.
 4. Resume paused cronjob parts on **Setup > Cronjobs** and run the frequent part once.
 
 ## Check it worked

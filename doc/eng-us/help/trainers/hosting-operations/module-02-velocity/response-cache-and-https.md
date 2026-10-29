@@ -92,7 +92,7 @@ Use your own training installation, served by Velocity on the shipped ports (808
    ```
 
 2. Show the cache's state: `php bin/php/console exp:velocity cache stats`.
-3. Clear it: `php bin/php/console exp:velocity cache clear`, then repeat step 1 once.
+3. Clear it: `php bin/php/console exp:velocity cache clear --apply`, then repeat step 1 once.
 4. Make a self-signed pair for the exercise in a directory of your installation:
 
    ```bash
@@ -104,9 +104,9 @@ Use your own training installation, served by Velocity on the shipped ports (808
 5. Point Velocity at the pair and switch HTTPS on:
 
    ```bash
-   php bin/php/console exp:velocity config set HTTPSSettings Certificate var/training-tls/cert.pem
-   php bin/php/console exp:velocity config set HTTPSSettings Key var/training-tls/key.pem
-   php bin/php/console exp:velocity config set HTTPSSettings Enabled true
+   php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate var/training-tls/cert.pem
+   php bin/php/console exp:velocity config set --apply HTTPSSettings Key var/training-tls/key.pem
+   php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true
    php bin/php/console exp:velocity restart
    ```
 

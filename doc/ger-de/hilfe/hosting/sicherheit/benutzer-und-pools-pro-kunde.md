@@ -96,8 +96,8 @@ Ein Velocity-Server pro Website, jeder als Benutzer des Kunden, an `127.0.0.1` g
 ([Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md)):
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings User site-a --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Group site-a --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings User site-a --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Group site-a --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 ```
 

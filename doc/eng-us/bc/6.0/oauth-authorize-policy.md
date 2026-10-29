@@ -37,9 +37,9 @@ Users who sign in to REST clients today would be refused after the upgrade unles
 script `bin/php/addoauthauthorizepolicy.php` gives it to exactly those roles:
 
 ```bash
-php bin/php/addoauthauthorizepolicy.php --dry-run        # lists what it would grant, changes nothing
-php bin/php/addoauthauthorizepolicy.php                  # grants it
-php bin/php/addoauthauthorizepolicy.php --role=Editor --role=12 --dry-run   # only the roles named
+php bin/php/addoauthauthorizepolicy.php                  # dry run: lists what it would grant, changes nothing
+php bin/php/addoauthauthorizepolicy.php --apply          # grants it
+php bin/php/addoauthauthorizepolicy.php --role=Editor --role=12   # only the roles named (dry run)
 ```
 
 - Every role with `user/login` (or `user/*`) gets `oauth/authorize` with the same siteaccesses: an unlimited

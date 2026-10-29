@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Install
 
-> The cron job of the installation: the setup wizard, the kickstarter and exp:install write the  
-> crontab lines that run the parts below, in the crontab of the system user that owns the  
-> installation directory (never root's crontab), between the marker lines  
-> "# BEGIN Exponential cronjobs: <root>" and "# END Exponential cronjobs: <root>".  
-> bin/php/installcrontab.php --show, --add, --remove (with --dry-run) does the same on an  
-> installation that exists. Without a crontab (a container, no crontab command, another user)  
-> the installer prints the lines to add and carries on.  
-> Guide: doc/eng-us/bc/6.0/installer-crontab.md  
+> Der Cronjob der Installation: Der Setup-Assistent, der Kickstarter und exp:install schreiben die  
+> Crontab-Zeilen, die die Teile unten ausführen, in die Crontab des Systembenutzers, dem das  
+> Installationsverzeichnis gehört (nie in die Crontab von root), zwischen die Markierungszeilen  
+> "# BEGIN Exponential cronjobs: <root>" und "# END Exponential cronjobs: <root>".  
+> bin/php/installcrontab.php --show, --add, --remove tut dasselbe bei einer bestehenden  
+> Installation (--add und --remove zeigen, was sich ändern würde; mit --apply schreiben sie). Ohne Crontab (ein Container, kein Befehl crontab, ein anderer Benutzer)  
+> gibt der Installer die hinzuzufügenden Zeilen aus und macht weiter.  
+> Anleitung: doc/eng-us/bc/6.0/installer-crontab.md  
 >
-> disabled: the installers write nothing and print the lines instead (for one exp:install run:  
-> --no-crontab, or the environment variable EXP\_INSTALL\_CRONTAB=0).  
+> disabled: Die Installer schreiben nichts und geben die Zeilen stattdessen aus (für einen Lauf von exp:install:  
+> --no-crontab oder die Umgebungsvariable EXP\_INSTALL\_CRONTAB=0).  
 
 Standard: `enabled`.
 

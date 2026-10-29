@@ -35,7 +35,7 @@ Then the page caches:
 
 ```bash
 php bin/php/ezcache.php --clear-tag=content --allow-root-user
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 ```
 
 In the browser: **Setup > Cache management** has the groups *Templates* (Template cache, Template block cache,

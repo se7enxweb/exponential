@@ -4,7 +4,7 @@ audience: bundler, hosting, developer
 category: bundling
 order: 220
 summary: Wie Sie die Installation eines Bundles als geprüfte kickstart.ini-Vorlage mit Platzhaltern führen, sie zur Installationszeit mit Modus 0600 erzeugen, einen Probelauf und die Installation ausführen und sie danach entfernen - mit einer vollständigen SQLite-Vorlage und einer PostgreSQL-Variante.
-keywords: kickstart.ini, Vorlage, Platzhalter, Probelauf, Starter-Kit, template, placeholder, envsubst, umask 077, 0600, dry run, run --force, SQLite, PostgreSQL, DatabaseAction, Site_package, bundle, starter kit
+keywords: kickstart.ini, Vorlage, Platzhalter, Probelauf, Starter-Kit, template, placeholder, envsubst, umask 077, 0600, dry run, run --apply, SQLite, PostgreSQL, DatabaseAction, Site_package, bundle, starter kit
 type: help
 ---
 # kickstart.ini-Vorlagen für Bundles
@@ -121,7 +121,7 @@ cd /srv/exponential
 umask 077
 envsubst < deploy/kickstart.ini.template > kickstart.ini
 php bin/php/console exp:kickstarter run --dry-run
-php bin/php/console exp:kickstarter run --force
+php bin/php/console exp:kickstarter run --apply --force
 rm -f kickstart.ini
 ```
 

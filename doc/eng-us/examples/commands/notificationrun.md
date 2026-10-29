@@ -2,14 +2,14 @@
 title: exp:notificationrun
 audience: developer, admin
 category: examples
-summary: "Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them)."
+summary: "Run the notification filter: send the notifications of the pending events and the due digests (dry run unless --apply)."
 keywords: exp:notificationrun, notificationrun, console, command, CLI, notificationrun.php, exp:notification:run, exp:notify:run
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationrun
 
-Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them).
+Run the notification filter: send the notifications of the pending events and the due digests (dry run unless --apply).
 
 Script `bin/php/notificationrun.php`, code in `kernel/private/classes/commands/notificationrun.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -29,22 +29,25 @@ every handler (subtree, collaboration, general digest), messages are sent or kep
 events nothing waits for are removed. The run is locked (a second one is refused while one runs),
 recorded (exp:notification:status shows it) and audited.
 
---dry-run lists what would be sent (subject, number of recipients, masked addresses) and changes
-nothing: the pass runs in a transaction that is rolled back and no mail is handed to the transport.
+Without --apply the command lists what would be sent (subject, number of recipients, masked
+addresses) and changes nothing: the pass runs in a transaction that is rolled back and no mail is
+handed to the transport. --apply sends. --dry-run is still accepted and means the same as no flag;
+--apply together with --dry-run is a usage error (exit 2).
 --mail-file-dir=<dir> forces the file transport for this process: the mail is written to <dir>
 instead of being sent, whatever site.ini says. Use it for every trial.
 --at=<time> sets the time of the time event (a date or timestamp), to try digest windows.
 
-./console exp:notification:run --dry-run
-./console exp:notification:run --mail-file-dir=var/tmp/notification-mail
 ./console exp:notification:run
+./console exp:notification:run --apply --mail-file-dir=var/tmp/notification-mail
+./console exp:notification:run --apply
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | List what would be sent and change nothing |
+| `--apply` |  | Send the messages, mark and remove the events (the default lists what would be sent) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list what would be sent and change nothing |
 | `--at` | required | The time of the time event: a date (2026-10-05 08:00) or a timestamp, default now |
 | `--event` | required | Only these events (ids, comma separated); no time event is made then |
 | `--no-time-event` |  | Make no time event: only the pending events are handled (no digest is due because of this run) |

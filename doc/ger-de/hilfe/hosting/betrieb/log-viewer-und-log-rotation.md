@@ -145,8 +145,8 @@ Grenzen pro Log gehören in `settings/logviewer.ini [RotationSettings]`, nach de
 ./console exp:logs --archives                    # each log, its archives, sizes and limits
 ./console exp:logs --rotate-all --dry-run        # what would be rotated
 ./console exp:logs --prune --dry-run             # archives beyond the limits
-./console exp:logs --prune                       # remove them
-./console exp:logs --compress                    # compress plain archives from .2 on
+./console exp:logs --apply --prune                       # remove them
+./console exp:logs --apply --compress                    # compress plain archives from .2 on
 ```
 
 Exit-Codes: `0` erledigt, `1` nichts zu tun, `2` ein unbekannter Name oder ein Fehler. Rotationen und Bereinigungen werden im

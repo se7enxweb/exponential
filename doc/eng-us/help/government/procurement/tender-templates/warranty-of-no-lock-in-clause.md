@@ -77,7 +77,7 @@ W.7 Remedy. If a warranty in this clause is found to be untrue, the Supplier
 |---|---|
 | W.1 | Compare `ActiveExtensions[]` and `composer.json` with the component list; extension licenses on the about page (`/ezinfo/about`) ([About and package pages](../../../../features/6.0/about-and-package-pages.md)). The kernel is GPL version 2 or later ([Licensing questions](../../../project/licensing-faq.md)) |
 | W.2 | Run a site archive export and open the manifest ([Migrating away from Exponential](../../../../install/migration/leaving-exponential.md)); REST API for live access ([REST API v1 and v2](../../../../guides/rest-api-v1-and-v2.md)) |
-| W.3 | Have your own staff or a third party follow the deployment documentation on a test machine; `./console exp:install` gives a clean base in one command ([Installing Exponential in one command](../../../../features/6.0/install-in-one-command.md)) |
+| W.3 | Have your own staff or a third party follow the deployment documentation on a test machine; `./console exp:install --apply` gives a clean base in one command ([Installing Exponential in one command](../../../../features/6.0/install-in-one-command.md)) |
 | W.4 | Ask for the list of accounts and their registrant |
 | W.5, W.6 | Read the pricing schedule and license terms |
 

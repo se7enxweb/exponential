@@ -28,7 +28,7 @@ one command and no file to write first. This lesson teaches trainers to run it, 
 
 After this lesson, learners can:
 
-- install Exponential with `php bin/php/console exp:install` and its most useful options;
+- install Exponential with `php bin/php/console exp:install --apply` and its most useful options;
 - check the configuration with `--print` and the whole run with `--dry-run` before installing;
 - find the administrator login and the generated password, and remove the password file after the first login;
 - explain why the command refuses to install over an existing installation without `--force`.
@@ -37,7 +37,7 @@ After this lesson, learners can:
 
 ### How to present it
 
-1. Show the command in its simplest form (3 minutes): `php bin/php/console exp:install` installs the
+1. Show the command in its simplest form (3 minutes): `php bin/php/console exp:install --apply` installs the
    `sevenx_multisite` site package on SQLite (`var/storage/sqlite3/exponential.db`) with the administrator `admin`
    and a generated password, shown once at the end.
 2. Show `--print` (2 minutes): it prints the configuration, passwords masked, and writes nothing.
@@ -76,7 +76,7 @@ In the `editor-course` directory from lesson 2.2 (or any fresh code directory):
    printed configuration: find `Site_package`, `Type=sqlite3` and `EditorAccess`.
 2. `php bin/php/console exp:install --dry-run --url=http://127.0.0.1:8087 --title="Training site"`. Wait for the
    "Dry-run completed" line.
-3. Install: `php bin/php/console exp:install --url=http://127.0.0.1:8087 --title="Training site"`.
+3. Install: `php bin/php/console exp:install --apply --url=http://127.0.0.1:8087 --title="Training site"`.
 4. Read the summary: the site address, the administration login and the password. Copy the password to a safe place.
 5. `ls -l var/log/initial-admin-password` and `ls -l var/storage/sqlite3/`: the password file (owner-only) and the
    database file exist.

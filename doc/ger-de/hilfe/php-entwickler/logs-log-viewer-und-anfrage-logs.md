@@ -101,7 +101,7 @@ rotiert, und zwar sicher, selbst wenn Velocity und PHP-FPM dieselbe Datei schrei
 
 ```bash
 php bin/php/explogs.php --archives
-php bin/php/explogs.php --rotate=error
+php bin/php/explogs.php --apply --rotate=error
 php bin/php/explogs.php --prune --dry-run
 ```
 

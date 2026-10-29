@@ -101,7 +101,7 @@ Overrides.
 
 ## Praktische Übung
 
-Verwenden Sie Ihre eigene Schulungsinstallation (zum Beispiel installiert mit `php bin/php/console exp:install`, siehe
+Verwenden Sie Ihre eigene Schulungsinstallation (zum Beispiel installiert mit `php bin/php/console exp:install --apply`, siehe
 [7. Die Installation über die Konsole](../../../../installation/07-installation-ueber-die-konsole.md)). Arbeiten Sie im Stammverzeichnis
 der Installation, dem Verzeichnis mit der `index.php`. Nichts in dieser Übung ändert eine Datei.
 

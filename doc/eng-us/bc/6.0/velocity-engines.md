@@ -235,11 +235,11 @@ second safety net for what still can: a crash, an out-of-memory kill, or a stop 
 It is off until you install it (root, systemd):
 
 ```
-./console exp:velocity watchdog install --allow-root-user   # vc-watchdog.service + .timer, conf-available/watchdog.conf, enabled
+./console exp:velocity watchdog install --apply --allow-root-user   # vc-watchdog.service + .timer, conf-available/watchdog.conf, enabled
 ./console exp:velocity watchdog status --allow-root-user    # timer, markers, last check and last start
 ./console exp:velocity watchdog run --allow-root-user       # one check now (--json for a script)
-./console exp:velocity conf disable watchdog --allow-root-user   # pause it (conf enable: resume)
-./console exp:velocity watchdog remove --allow-root-user    # timer off, units and configuration file removed
+./console exp:velocity conf disable --apply watchdog --allow-root-user   # pause it (conf enable: resume)
+./console exp:velocity watchdog remove --apply --allow-root-user    # timer off, units and configuration file removed
 ```
 
 Every `Interval` seconds (45 by default) the timer runs one check of the default engine (or the engine named with
@@ -507,7 +507,7 @@ headers).
 ## FrankenPHP
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity install --allow-root-user     # optional: start installs it
 php bin/php/console exp:velocity start --allow-root-user
 ```

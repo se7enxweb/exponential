@@ -54,7 +54,7 @@ does not.
 ## Lab setup
 
 - A training installation reachable from every learner's computer (for example installed with
-  `php bin/php/console exp:install`, [7. The console install](../../../install/07-console-install.md)); how to build and
+  `php bin/php/console exp:install --apply`, [7. The console install](../../../install/07-console-install.md)); how to build and
   reset it: [Module 2: Building the lab](../train-the-trainer/module-02-building-the-lab/README.md) of Train the
   trainer.
 - One Editor account per learner, plus approver and reviewer accounts for the pair exercises; e-mail addresses at

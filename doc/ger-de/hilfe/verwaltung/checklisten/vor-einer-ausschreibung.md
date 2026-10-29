@@ -41,7 +41,7 @@ bevor die Ausschreibung veröffentlicht wird. Sie verweist für jeden Schritt au
 
 ## Markt und Nachweise
 
-- [ ] Eine Testinstallation von Ihrem eigenen Team ausprobiert: `./console exp:install` mit SQLite ([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)).
+- [ ] Eine Testinstallation von Ihrem eigenen Team ausprobiert: `./console exp:install --apply` mit SQLite ([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - [ ] Die Standardseiten gelesen: [Barrierefreiheit](../../../standards/barrierefreiheit.md), [Sicherheit](../../../standards/sicherheit.md), [Datenschutz](../../../standards/datenschutz.md).
 - [ ] Unterstützte Versionen und Release-Richtlinie verstanden ([Unterstützte Versionen](../beschaffung/lebenszyklus/unterstuetzte-versionen.md)).
 - [ ] Mögliche Anbieter und Partner bekannt ([Partner: hier beginnen](../../partner/partner-hier-beginnen.md)); Markterkundung im Rahmen Ihrer Regeln durchgeführt.

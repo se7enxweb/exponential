@@ -67,7 +67,7 @@ Die eigenen Fakten und Zahlen von Velocity, mit ihren Messbedingungen, stehen un
   history" ([Git zuerst](../wer-ist-die-exponential-foundation.md#git-zuerst)).
 - **Drei Wege zum Code**: `git clone` plus `composer install` (empfohlen), `composer create-project` oder
   `composer require` ([Den Code beschaffen](../../installation/03-den-code-beschaffen.md#32-drei-wege-zum-code)).
-- **Installation mit einem Befehl** auf der Entwicklungslinie: `./console exp:install` baut eine vollständige Website auf
+- **Installation mit einem Befehl** auf der Entwicklungslinie: `./console exp:install --apply` baut eine vollständige Website auf
   SQLite ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 - **Veröffentlichte Tags ändern sich nie** ([Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md)).
 

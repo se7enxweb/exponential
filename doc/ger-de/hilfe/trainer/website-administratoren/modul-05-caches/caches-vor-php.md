@@ -122,7 +122,7 @@ Auf Ihrer Schulungsinstallation, mit einem Terminal im Wurzelverzeichnis und ein
 7. Leeren Sie den Antwort-Cache und laden Sie neu:
 
    ```bash
-   php bin/php/console exp:velocity cache clear
+   php bin/php/console exp:velocity cache clear --apply
    ```
 
 8. Öffnen Sie **Setup > Cache-Verwaltung**, Gruppe **Seiten, Abfragen und der Server**, und lesen Sie die Zeilen für

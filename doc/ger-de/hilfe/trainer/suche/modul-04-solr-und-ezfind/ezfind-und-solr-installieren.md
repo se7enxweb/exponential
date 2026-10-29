@@ -85,7 +85,7 @@ eigene Installations-ID im Index.
 ## Praktische Übung
 
 Verwenden Sie Ihre eigene Schulungsinstallation auf MySQL oder PostgreSQL (zum Beispiel installiert mit
-`php bin/php/console exp:install --db=mysql`, siehe [Installation über die Kommandozeile](../../../../installation/07-installation-ueber-die-konsole.md))
+`php bin/php/console exp:install --apply --db=mysql`, siehe [Installation über die Kommandozeile](../../../../installation/07-installation-ueber-die-konsole.md))
 und zwei Terminals in ihrem Wurzelverzeichnis. Fügen Sie `--allow-root-user` nur hinzu, wenn Sie als root arbeiten.
 
 1. Fügen Sie das Paket hinzu:

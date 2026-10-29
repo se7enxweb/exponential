@@ -60,7 +60,7 @@ Installations that run the Velocity application server have one command that run
 
 - Hard-reload (Shift with the reload button, or the developer tools' "Empty cache and hard reload") if a browser still
   shows the old file.
-- On sites that run Velocity, its response cache is separate: `./console exp:velocity cache clear`.
+- On sites that run Velocity, its response cache is separate: `./console exp:velocity cache clear --apply`.
 - Open the pages in a private window, signed out, to see what visitors see.
 
 ## Related pages

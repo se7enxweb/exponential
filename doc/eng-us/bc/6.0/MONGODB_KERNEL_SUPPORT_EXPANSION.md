@@ -4711,7 +4711,7 @@ MySQL. See also [the chronicle for 16 to 30 September 2026](../../history/2026/2
 | The image reference checks used a join MongoDB lacks. | The count read as zero and 59 image files still in use were deleted. | A join-free path reads the image rows first and filters the attributes they name. Moving an image also moves its sibling translations' references. |
 | The unattended installer declared `iso-8859-1`; the search plugin was reported failing when switched off on purpose; URL alias fetch ignored the language filter. | | Declared `utf-8`; reported correctly; filter applied. |
 
-The installer now also accepts `mongodb` as `--db` for `php bin/php/console exp:install`.
+The installer now also accepts `mongodb` as `--db` for `php bin/php/console exp:install --apply`.
 
 ## Related pages
 

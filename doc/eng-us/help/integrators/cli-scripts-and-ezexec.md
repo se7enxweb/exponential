@@ -115,7 +115,7 @@ and a test. The body of such an importer is on [Writing an import script](writin
 | `php bin/php/updatesearchindex.php` | Rebuild the search index after a bulk change |
 | `php bin/php/ezcache.php --clear-id=<ids>` | Clear caches after a bulk change ([which](caching-after-imports.md)) |
 | `php bin/php/expcontentjob.php list` | Run, list, resume and cancel content jobs (large removes, copies, moves) |
-| `php bin/php/ezsubtreeremove.php` | Remove subtrees by node id, to the trash unless `--ignore-trash` |
+| `php bin/php/ezsubtreeremove.php --apply` | Remove subtrees by node id, to the trash unless `--ignore-trash` |
 | `php bin/php/console exp:logs` | Search and follow the log files |
 | `php bin/php/console exp:audit tail` | Read the audit trail |
 | `php bin/php/maintenance.php on\|off\|status` | Take the site offline for a migration window |

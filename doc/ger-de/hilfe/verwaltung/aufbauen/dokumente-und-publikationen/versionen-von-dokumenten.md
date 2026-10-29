@@ -41,7 +41,7 @@ behält ihre Adresse, und die vorherige Datei bleibt in der Versionshistorie. Qu
 
 Setzen Sie eigene Grenzen in `settings/override/content.ini.append.php`, wenn Dokumente jede Version behalten müssen,
 zum Beispiel für die Klasse File oder eine Klasse Publication, und leeren Sie den INI-Cache. Der Aufräumbefehl
-`./console exp:cleanupversions` entfernt alte Versionen; lesen Sie zuerst seine `--help`
+`./console exp:cleanupversions --apply` entfernt alte Versionen; lesen Sie zuerst seine `--help`
 ([Inhaltsmodell und Bearbeitung](../../../../anleitungen/inhaltsmodell-und-bearbeitung.md#3-ein-objekt-erstellen-und-bearbeiten)).
 
 ## An Ort und Stelle ersetzen oder ein neues Dokument veröffentlichen?

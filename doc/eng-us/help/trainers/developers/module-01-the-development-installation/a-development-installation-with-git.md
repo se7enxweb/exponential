@@ -34,7 +34,7 @@ After this lesson, learners can:
 
 - configure Composer to install the `se7enxweb/*` packages as Git clones;
 - clone the kernel, start a branch of their own and run `composer install`;
-- install a site with `php bin/php/console exp:install` and find the generated administrator password;
+- install a site with `php bin/php/console exp:install --apply` and find the generated administrator password;
 - start the built-in web server with `exp:velocity start` and sign in to the administration;
 - explain why the development installation never shares settings or data with a live site.
 
@@ -107,7 +107,7 @@ Each learner works on their own machine (or their own folder on a shared trainin
    php bin/php/console exp:install --print --url=http://127.0.0.1:8087 --title="Developer course"
    ```
 
-6. Install: `php bin/php/console exp:install --url=http://127.0.0.1:8087 --title="Developer course"`.
+6. Install: `php bin/php/console exp:install --apply --url=http://127.0.0.1:8087 --title="Developer course"`.
 7. Copy the password from the summary to a safe place.
 8. Start the web server: `php bin/php/console exp:velocity start`.
 9. Open the administration login address from the summary and sign in as `admin`.

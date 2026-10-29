@@ -56,7 +56,7 @@ From [What the one click must do](../hosting/provisioning/one-click-installers.m
    sudo -u <site user> env EXP_INSTALL_DB_PASSWORD='<from your secret store>' \
      php bin/php/console exp:install --dry-run --db=pgsql --db-user=<db user> --url=https://www.example.com
    sudo -u <site user> env EXP_INSTALL_DB_PASSWORD='<from your secret store>' \
-     php bin/php/console exp:install --db=pgsql --db-user=<db user> --url=https://www.example.com \
+     php bin/php/console exp:install --apply --db=pgsql --db-user=<db user> --url=https://www.example.com \
      --email=<customer contact>
    ```
 

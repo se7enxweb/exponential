@@ -1939,7 +1939,7 @@ Wie es über Server hinweg funktioniert: Jede Sperrdatei (`.<channel>.lock`, `.k
 unter der Sperre aus der Datei gelesen, nie aus dem Speicher. So schreiben beliebig viele Server eine Kette pro Kanal,
 und der Cronjob-Teil darf auf allen laufen: Jeweils ein Lauf erledigt die Arbeit, und die täglichen Aufgaben laufen
 einmal am Tag für den Cluster. **Erzeugen Sie die Schlüssel einmal, bevor die anderen Server aufzeichnen**
-(`./console exp:audit checkpoint` auf einem Server), dann teilen oder kopieren Sie
+(`./console exp:audit checkpoint --apply` auf einem Server), dann teilen oder kopieren Sie
 `settings/override/audit.ini.append.php` auf jeden Server. Zwei Server mit unterschiedlichen Schlüsseln würden
 unterschiedliche Genesis-Werte schreiben und bei der Prüfung scheitern. Was auf der Referenzinstallation geprüft
 wurde: Die Konfiguration lädt, und jeder Teil akzeptiert sie, und zehn gleichzeitige Schreiber in einen Kanal halten

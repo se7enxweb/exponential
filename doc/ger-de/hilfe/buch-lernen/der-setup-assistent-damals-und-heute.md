@@ -63,7 +63,7 @@ ergänzen, entfernen, unverändert lassen. Erstellen Sie eine Sicherung, bevor S
 
 ## Den Assistenten überspringen
 
-- `./console exp:install` installiert von der Kommandozeile, mit der Datenbank als Optionen
+- `./console exp:install --apply` installiert von der Kommandozeile, mit der Datenbank als Optionen
   ([Installation über die Konsole](../../installation/07-installation-ueber-die-konsole.md)).
 - Der Kickstarter liest `kickstart.ini` und beantwortet die Seiten des Assistenten für Sie
   ([Kickstarter](../../installation/06-kickstarter.md)).

@@ -105,7 +105,7 @@ Auch ein stark genutzter Bestellvorgang im Shop schreibt; siehe
    ([Caches vorwärmen](../../../anleitungen/caches-vorwaermen.md)):
 
    ```bash
-   php bin/php/preload.php --siteaccess=site --allow-root-user
+   php bin/php/preload.php --apply --siteaccess=site --allow-root-user
    ```
 
    Verwenden Sie den Namen Ihres eigenen öffentlichen Siteaccess.

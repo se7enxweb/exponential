@@ -103,7 +103,7 @@ Die Installer schreiben dies nach `settings/override/site.ini.append.php`. Eine 
 Passwort aus der Umgebung, damit es nicht in der Shell-Historie landet:
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=pgsql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=pgsql \
     --db-host=127.0.0.1 --db-name=<customer> --db-user=<customer> --allow-root-user
 ```
 

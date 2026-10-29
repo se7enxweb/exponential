@@ -44,7 +44,7 @@ Geprüft mit der Hilfe des Befehls unter 6.0.15 (`kernel/private/classes/command
 | Befehl | Optionen |
 |---|---|
 | `php bin/php/console exp:kickstarter ini` | `--yes` (eingebaute Standardwerte), `--defaults` (kopiert `kickstart.ini-dist`), `--from-installed` (übernimmt Datenbankserver, Name und Benutzer, nicht das Passwort, eines installierten Siteaccess) |
-| `php bin/php/console exp:kickstarter run` | `--dry-run`, `--list-steps`, `--start-step`, `--stop-step`, `--force` |
+| `php bin/php/console exp:kickstarter run --apply` | `--dry-run`, `--list-steps`, `--start-step`, `--stop-step`, `--force` |
 
 `bin/php/kickstarter.php` ist dasselbe Programm ohne die Konsole. `--force` "ist immer dann erforderlich, wenn der
 Bereich der Schritte `CreateSites` enthält". Ein Aufruf ohne Befehl zeigt die Hilfe und endet mit `0`, "damit ein
@@ -91,10 +91,10 @@ ausliefern, ausdrücklich hinein
 
 ## Erneute Läufe und Aufräumen
 
-- "Dieselbe `kickstart.ini` mit `DatabaseAction=remove` und `run --force` ersetzt die Datenbank und die Einstellungen
+- "Dieselbe `kickstart.ini` mit `DatabaseAction=remove` und `run --apply` ersetzt die Datenbank und die Einstellungen
   erneut. Verwenden Sie das, um eine Test- oder Schulungswebsite zurückzusetzen." So setzt sich ein Schulungs-Bundle
   zurück.
-- `DatabaseAction=skip` mit `run --force` "schreibt `settings/siteaccess/` und `settings/override/` aus der Datei neu
+- `DatabaseAction=skip` mit `run --apply` "schreibt `settings/siteaccess/` und `settings/override/` aus der Datei neu
   und lässt die Datenbank in Ruhe".
 - Nach der Installation: "Verschieben Sie `kickstart.ini` aus dem Wurzelverzeichnis der Installation oder löschen Sie
   sie", und übergeben und entfernen Sie `var/log/initial-admin-password`.

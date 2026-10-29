@@ -494,14 +494,14 @@ Weitere Werkzeuge, die nach einem Upgrade helfen:
 | `php bin/php/ezsqldiff.php --type=mysql --user=USER --password=PASS share/db_schema.dba <database>` | Vergleich Ihrer Datenbank mit dem Referenzschema, das **zuerst** angegeben wird. Die Ausgabe ist das SQL, das das zweite Argument (Ihre Datenbank) in das erste (die Referenz) überführen würde: Eine Zeile mit `CREATE TABLE` oder `ADD` nennt etwas, das ein Update-Schritt hätte anlegen sollen, eine Zeile mit `DROP TABLE` eine Tabelle, die nur Ihre Datenbank hat (die Tabellen Ihrer eigenen Extensions erscheinen so). Lesen Sie es, führen Sie es nicht aus. Exit-Code 0, wenn die Schemas übereinstimmen, 1, wenn sie sich unterscheiden (`--type` ist `mysql` oder `postgresql`). Die Kapitel 14 bis 16 verwenden es auf dieselbe Weise |
 | `php bin/php/updateniceurls.php` | die URL-Aliase neu aufbauen (`--update-nodes`) |
 | `php bin/php/updatesearchindex.php` | alle Inhalte in der Suchmaschine neu indizieren |
-| `php bin/php/cleanupversions.php` | archivierte Versionen jenseits der Grenzen von `VersionManagement` entfernen |
+| `php bin/php/cleanupversions.php --apply` | archivierte Versionen jenseits der Grenzen von `VersionManagement` entfernen |
 
 Leeren Sie zuletzt den Content-Cache und, unter Velocity, dessen Antwort-Cache, und zwar **nach** dem Neuladen von
 PHP-FPM oder dem Neustart von Velocity, damit keine vom alten Code dargestellte Seite erneut ausgeliefert wird:
 
 ```bash
 php bin/php/ezcache.php --clear-tag=content
-php bin/php/console exp:velocity cache clear
+php bin/php/console exp:velocity cache clear --apply
 ```
 
 ## 11.8 Wenn etwas schiefgeht

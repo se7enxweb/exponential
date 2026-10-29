@@ -2,14 +2,14 @@
 title: exp:addoauthauthorizepolicy
 audience: developer, admin
 category: examples
-summary: Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf).
+summary: Gewährt oauth/authorize den Rollen, die Benutzern das Anmelden erlauben (Upgrade auf 6.0.15; Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:addoauthauthorizepolicy, addoauthauthorizepolicy, console, command, CLI, addoauthauthorizepolicy.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addoauthauthorizepolicy
 
-Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf).
+Gewährt oauth/authorize den Rollen, die Benutzern das Anmelden erlauben (Upgrade auf 6.0.15; Probelauf, außer mit --apply).
 
 Skript `bin/php/addoauthauthorizepolicy.php`, Code in `kernel/private/classes/commands/addoauthauthorizepolicy.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -26,16 +26,21 @@ Was `--help` ausgibt, so wie der Befehl es schreibt:
 Grant the policy oauth/authorize to every role that lets users sign in (user/login),
 with the same siteaccess limitation, so the users who could authorize OAuth clients before 6.0.15
 still can. Roles that have the policy already are left alone; the script can run again.
+Prints PASS or FAIL at the end. Without --apply nothing is written: the script lists the roles it
+would grant the policy to. --dry-run is still accepted and means the same as no flag; --apply
+together with --dry-run is a usage error (exit 2).
 
-Example: php bin/php/addoauthauthorizepolicy.php --dry-run
-         php bin/php/addoauthauthorizepolicy.php --role=Editor --role=5
+Example: php bin/php/addoauthauthorizepolicy.php
+         php bin/php/addoauthauthorizepolicy.php --apply
+         php bin/php/addoauthauthorizepolicy.php --apply --role=Editor --role=5
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Auflisten, was gewährt würde, nichts ändern |
+| `--apply` |  | Die Änderungen schreiben (Standard ist ein Probelauf, der sie auflistet und nichts ändert) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was gewährt würde, nichts ändern |
 | `--role` | erforderlich | Nur diese Rolle (ID oder Name), kann wiederholt werden; eine genannte Rolle ohne user/login erhält eine unbeschränkte Richtlinie |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

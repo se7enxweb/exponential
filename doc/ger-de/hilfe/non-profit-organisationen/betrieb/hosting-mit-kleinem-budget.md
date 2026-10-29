@@ -53,7 +53,7 @@ Ausführlicher Vergleich: [Ein Hosting-Modell wählen](../../hosting/modelle/ein
 
 ## Zuerst kostenlos ausprobieren
 
-`./console exp:install` „installs the multisite package on **SQLite**, in `eng-US`“, installiert also das
+`./console exp:install --apply` „installs the multisite package on **SQLite**, in `eng-US`“, installiert also das
 Multisite-Paket auf **SQLite** in `eng-US`, mit einer Website und einer Administrationsoberfläche
 ([Exponential mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)). Ehrenamtliche können
 das ganze Produkt auf einem Laptop ausprobieren, bevor etwas gekauft wird, und es dem Vorstand zeigen.

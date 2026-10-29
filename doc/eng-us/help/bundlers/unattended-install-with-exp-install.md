@@ -10,7 +10,7 @@ type: help
 # Unattended install with exp:install
 
 This page is for bundlers who install the site from a script: an image's first boot, a panel installer, a CI job.
-`exp:install` (also `php bin/php/install.php`) "writes a `kickstart.ini` from its options and runs the kickstarter"
+`exp:install` (also `php bin/php/install.php --apply`) "writes a `kickstart.ini` from its options and runs the kickstarter"
 ([The default administrator password](../default-administrator-password.md#the-console-install-expinstall)). The full
 reference is [Chapter 7: The console install](../../install/07-console-install.md).
 
@@ -26,7 +26,7 @@ reference is [Chapter 7: The console install](../../install/07-console-install.m
 ## The shortest install
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 "That installs the multisite package on **SQLite**, in `eng-US`, with the siteaccesses `site` and `admin` reached by
@@ -95,14 +95,14 @@ set -euo pipefail
 export EXP_INSTALL_DB_PASSWORD="$(cat /run/secrets/db_password)"
 php bin/php/console exp:install --dry-run --db=pgsql --db-host=db --db-name=site --db-user=site \
     --url=https://www.example.com --email=webmaster@example.com
-php bin/php/console exp:install --db=pgsql --db-host=db --db-name=site --db-user=site \
+php bin/php/console exp:install --apply --db=pgsql --db-host=db --db-name=site --db-user=site \
     --url=https://www.example.com --email=webmaster@example.com
 ```
 
 Separate hosts for the site and the administration:
 
 ```bash
-php bin/php/console exp:install --access=host --host=www.example.com --admin-host=admin.example.com
+php bin/php/console exp:install --apply --access=host --host=www.example.com --admin-host=admin.example.com
 ```
 
 Run it as the site's user, never as root: "Files created by `root` cannot be changed by the web server later"
