@@ -6561,7 +6561,7 @@ edeb2f28aeb2ba6d540160c9627ab70d  doc/eng-us/features/6.0/velocity-web-server.md
 23df52c07833d30d0694ff992c35b85d  doc/eng-us/goals.md
 f530f12f4c06427ded2f29fb3e53119a  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
-fd7f663129458af0e908193206ccee47  doc/eng-us/guides/approving-new-editor-accounts.md
+9c6f4438d91b2ec4d04c072c32f43e87  doc/eng-us/guides/approving-new-editor-accounts.md
 999db87a75423e3f7ae175009db335cc  doc/eng-us/guides/benchmarking.md
 8b3a846f7fd5ad263c395ed1be3831d0  doc/eng-us/guides/bookmarks.md
 c5752961abcc29736767f009d11ec545  doc/eng-us/guides/caches.md
@@ -6580,6 +6580,10 @@ a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
 24521ba35e99771f8f0afb9e4c127129  doc/eng-us/guides/extensions.md
 cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-reference.md
 0208d5a0aba42d09a762e8a480ac2485  doc/eng-us/guides/getting-started.md
+fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
+8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
+4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
+6a3bbfb4c16423954954cbfd78546898  doc/eng-us/guides/images/account-approval/verify-its-you.png
 b53242f489a852760b7b824ee3e042a2  doc/eng-us/guides/images/cronjobs/available-scripts.png
 2e5094f1511066d9fac842cb2464db9c  doc/eng-us/guides/images/cronjobs/controls.png
 9b8b55dca42ceb77acdd90b243ce29eb  doc/eng-us/guides/images/cronjobs/need-attention.png
@@ -12612,6 +12616,10 @@ d7e4c01611f59ac95dc616e0387be15c  doc/ger-de/anleitungen/README.md
 7c7eaa2f3bb513231a024b8807697bda  doc/ger-de/anleitungen/benchmarking.md
 b69e8c5a0f3bc09a59b98b3a600b00fd  doc/ger-de/anleitungen/bereitstellung.md
 6fc5f73f0a7f589c62e06ce46a7e08ba  doc/ger-de/anleitungen/betrieb-einer-website.md
+fbcbc9cf7bbfb1f95906327d9513b2c6  doc/ger-de/anleitungen/bilder/account-approval/approval-item.png
+8bcb3ac63cc2341e4ef7d3045867af4b  doc/ger-de/anleitungen/bilder/account-approval/approved.png
+4a8739c9f2f5b65580e85608c8d2f948  doc/ger-de/anleitungen/bilder/account-approval/section-workflow.png
+6a3bbfb4c16423954954cbfd78546898  doc/ger-de/anleitungen/bilder/account-approval/verify-its-you.png
 0bab4fafe82be3790d49d282efdbdbb0  doc/ger-de/anleitungen/bilder/cronjobs/available-scripts.png
 bce46dbfde9e7cd9cb5f753a0e4aed4a  doc/ger-de/anleitungen/bilder/cronjobs/controls.png
 9757ef9b842fc66ef045aa5c2492d93d  doc/ger-de/anleitungen/bilder/cronjobs/need-attention.png
@@ -12658,7 +12666,7 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 685402cae0368bdb5c5a3f6fcfd71143  doc/ger-de/anleitungen/lesezeichen.md
 19ad3fdd043c1d4d4d203bb6dd95c158  doc/ger-de/anleitungen/mail-einstellungen-administrator.md
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
-4078fc81eca0649de15b310f95029685  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
+a344b5c958353a4a7aa89a8fd94e23bf  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 9344648c41667ae1d220726e8760d1da  doc/ger-de/anleitungen/objektzustaende.md
 c88a68ff0b56f324e4301df5540cfdd1  doc/ger-de/anleitungen/pakete.md
 fcd4791370e2165c8800e7148e0bf2c7  doc/ger-de/anleitungen/passkeys.md
