@@ -15302,6 +15302,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -33604,6 +33612,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -76808,6 +76824,10 @@ You will need to change the class of the node by using the swap functionality.</
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>
@@ -77916,6 +77936,197 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No security activity recorded yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

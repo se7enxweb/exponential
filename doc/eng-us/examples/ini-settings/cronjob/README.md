@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # cronjob.ini
 
-The shipped settings of `settings/cronjob.ini`: 23 blocks, 48 settings.
+The shipped settings of `settings/cronjob.ini`: 24 blocks, 49 settings.
 
 > Exponential configuration file for cronjobs.  
 >
@@ -41,6 +41,7 @@ The shipped settings of `settings/cronjob.ini`: 23 blocks, 48 settings.
 | [CronjobPart-mailpreferences](CronjobPart-mailpreferences.md) | 1 |
 | [CronjobPart-mailbounces](CronjobPart-mailbounces.md) | 1 |
 | [CronjobPart-usersessions](CronjobPart-usersessions.md) | 1 |
+| [CronjobPart-useraudit](CronjobPart-useraudit.md) | 1 |
 | [CronjobPart-exphelp](CronjobPart-exphelp.md) | 1 |
 | [linkCheckSettings](linkCheckSettings.md) | 9 |
 | [CronjobPart-unlock](CronjobPart-unlock.md) | 1 |

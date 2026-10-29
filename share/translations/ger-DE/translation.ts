@@ -18052,6 +18052,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Wer geändert hat, sich angemeldet hat oder abgewiesen wurde, je Konto; filtern und exportieren.</translation>
     </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Anmeldebericht</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Wer angemeldet ist, Anmeldungen und Fehlschläge je Tag; einen Benutzer überall abmelden.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -36841,6 +36849,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Abgelaufene Sitzungen des PHP-Handlers entfernt PHP selbst (session.gc_maxlifetime), nicht diese Seite oder der Cronjob-Teil session_gc.</translation>
+    </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Die angemeldeten Sitzungen aller Benutzer listet der Anmeldebericht auf und meldet sie ab; er arbeitet mit jedem Session-Handler.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Anmeldebericht öffnen</translation>
     </message>
 </context>
 <context>
@@ -83956,6 +83972,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser unter %os</translation>
     </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Anmeldebericht</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>
@@ -85065,6 +85085,197 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>No security activity recorded yet.</source>
         <translation>Noch keine Sicherheitsaktivität aufgezeichnet.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Passwort und Code der Zwei-Schritt-Anmeldung</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-Schnittstelle</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-Schnittstelle</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single Sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Angemeldet, bevor Sitzungen aufgezeichnet wurden</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Anmeldebericht</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Wer auf der Website angemeldet ist, wie oft sich Konten anmelden und daran scheitern, und einen Benutzer überall abmelden. Arbeitet mit jedem Session-Handler.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Die Sitzung wurde abgemeldet. Das Gerät muss sich neu anmelden.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login wurde von %count Sitzungen abgemeldet.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login hatte keine laufende Sitzung.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Kein Konto hat diese ID, diesen Benutzernamen oder diese E-Mail-Adresse.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Das ist die Sitzung, die Sie benutzen. Um sie zu beenden, melden Sie sich ab.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Diese Sitzung war bereits beendet.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die Seite war abgelaufen. Nichts wurde geändert; bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sitzungen werden auf dieser Website nicht aufgezeichnet (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Die Tabelle expuser_session fehlt</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sitzungen werden aufgezeichnet, sobald sie angelegt ist: php update/common/scripts/6.0/createusersessiontable.php oder das Datenbank-Update von 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Jetzt und heute</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Laufende Sitzungen</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Angemeldete Benutzer</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Anmeldungen heute</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Fehlgeschlagene Versuche heute</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Einen Benutzer überall abmelden</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Jede Sitzung des Kontos endet bei ihrer nächsten Anfrage, auch die mit „Angemeldet bleiben“. Benutzen Sie das, wenn ein Konto in falschen Händen sein könnte; setzen Sie dann sein Passwort zurück.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Benutzer-ID, Benutzername oder E-Mail-Adresse</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Überall abmelden</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Jetzt angemeldet</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Die %limit zuletzt benutzten werden angezeigt.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gerät</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Angemeldet</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Zuletzt aktiv</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dieses Gerät</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nicht gespeichert</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Abmelden</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Keine Sitzung ist angemeldet.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Die letzten %days Tage</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Anmeldungen und fehlgeschlagene Versuche werden aus dem Benutzer-Auditprotokoll gezählt, das fehlt; die neuen Sitzungen werden gezählt.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Tag</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Anmeldungen</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Fehlgeschlagene Versuche</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Neue Sitzungen</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Session-Handler: %handler. Die Sitzungen werden aus der Tabelle expuser_session gelesen, deshalb arbeitet der Bericht mit jedem Handler.</translation>
     </message>
 </context>
 </TS>

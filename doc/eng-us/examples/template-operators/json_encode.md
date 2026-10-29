@@ -28,7 +28,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin4/templates/children_detailed.tpl` line 220:
+The first use in the templates of this installation, `design/admin4/templates/children_detailed.tpl` line 237:
 
 ```tpl
 data-create-groups="{json_encode( $subitems_create_groups )|wash}"

@@ -50,7 +50,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [trigger](trigger/README.md) | 1 | `kernel/trigger/module.php` |
 | [uiswitch](uiswitch/README.md) | 2 | `kernel/uiswitch/module.php` |
 | [url](url/README.md) | 3 | `kernel/url/module.php` |
-| [user](user/README.md) | 17 | `kernel/user/module.php` |
+| [user](user/README.md) | 20 | `kernel/user/module.php` |
 | [visual](visual/README.md) | 7 | `kernel/visual/module.php` |
 | [workflow](workflow/README.md) | 11 | `kernel/workflow/module.php` |
 

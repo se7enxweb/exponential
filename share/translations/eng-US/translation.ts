@@ -15634,6 +15634,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Who changed, signed in or was refused, per account; filter and export.</source>
         <translation>Who changed, signed in or was refused, per account; filter and export.</translation>
     </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sign-in report</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/visual/menu</name>
@@ -33937,6 +33945,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</translation>
+    </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Open the sign-in report</translation>
     </message>
 </context>
 <context>
@@ -76988,6 +77004,10 @@ You will need to change the class of the node by using the swap functionality.</
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser on %os</translation>
     </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sign-in report</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>
@@ -78097,6 +78117,197 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>No security activity recorded yet.</source>
         <translation>No security activity recorded yet.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password and two-step code</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Signed in before sessions were recorded</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sign-in report</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>The session was signed out. The device has to sign in again.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login was signed out of %count sessions.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login had no running session.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>No account has that ID, username or e-mail address.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>This is the session you are using. To end it, sign out.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>That session had already ended.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>The page had expired. Nothing was changed; please try again.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>The table expuser_session is missing</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Now and today</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sessions running</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Users signed in</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Sign-ins today</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Failed attempts today</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Sign a user out everywhere</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>User ID, username or e-mail address</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sign out everywhere</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Signed in now</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>The %limit most recently used are shown.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Signed in</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Last active</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>This device</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Not recorded</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sign out</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>No session is signed in.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>The last %days days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Day</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Sign-ins</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Failed attempts</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>New sessions</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</translation>
     </message>
 </context>
 </TS>

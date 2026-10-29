@@ -128,6 +128,27 @@ nennt (Methode, Browser, System, Ort, Zahl der Sitzungen, verbleibende Codes); n
 Die Zwei-Schritt-Ereignisse `access.user.two_factor.*` zeichnet die Zwei-Schritt-Erweiterung über
 `expSignInSecondFactor::audit()` auf.
 
+## Anmeldebericht
+
+**Benutzer > Anmeldebericht** (`user/sessionreport`, die neue Richtlinienfunktion **user/sessions_manage**) ist die
+Sicht des Administrators auf die ganze Website:
+
+- die jetzt laufenden Sitzungen und die Zahl der Benutzer, denen sie gehören, die Anmeldungen und fehlgeschlagenen
+  Versuche von heute;
+- **Einen Benutzer überall abmelden**: eine Benutzer-ID, ein Benutzername oder eine E-Mail-Adresse; jede Sitzung dieses
+  Kontos endet bei ihrer nächsten Anfrage, auch die mit „Angemeldet bleiben“ (`revokeAll()`, aufgezeichnet als
+  `access.session.revoke`, scope `all`; mit dem Datenbank-Session-Handler werden seine Sitzungen sofort gelöscht);
+- die laufenden Sitzungen aller Benutzer, die zuletzt benutzten zuerst (die 100 neuesten), mit dem Benutzer (Link zu
+  seiner Sitzungsseite), Gerät, gespeicherter Adresse und Ort, Anmeldezeit und -methode, letzter Benutzung und einer
+  Schaltfläche zum Abmelden;
+- die letzten 14 Tage: Anmeldungen und fehlgeschlagene Versuche (aus dem Benutzer-Auditprotokoll, wenn es da ist) und
+  neue Sitzungen, mit Balken.
+
+Der Bericht liest `expuser_session` und arbeitet deshalb mit jedem Session-Handler, auch mit den PHP-Dateien des
+Standard-Handlers. **Setup > Sitzungen** (`setup/session`) behält seine eigenen Listen für den Datenbank-Handler; mit
+einem anderen Handler verlinkt es jetzt auf den Bericht. „Bestätigen Sie, dass Sie es sind“ fragt, bevor hier eine
+Sitzung oder ein Benutzer abgemeldet wird (`[ReauthGroup_users]`).
+
 ## Einstellungen: site.ini [UserSessionSettings]
 
 | Einstellung | Standard | Bedeutung |
@@ -151,6 +172,11 @@ Die Zwei-Schritt-Ereignisse `access.user.two_factor.*` zeichnet die Zwei-Schritt
 - **Die Sitzungen eines anderen Benutzers**: die Richtlinienfunktion **user/sessions** („sehen, wo andere Benutzer
   angemeldet sind, und sie abmelden“). Die Kontoseite eines Benutzers (`user/edit/<id>`) zeigt einem Betrachter, der sie
   hat, die Karte **Sitzungen**. Administratoren mit allen Rechten haben sie.
+- **Der Anmeldebericht** und das Abmelden eines beliebigen Benutzers überall: die Richtlinienfunktion
+  **user/sessions_manage**.
+- **Alle anderen Sitzungen abmelden** im eigenen Konto fragt zuerst „Bestätigen Sie, dass Sie es sind“
+  (`[ReauthGroup_account]`), mit dem Passwort, einem Passkey oder dem Code der Authentifizierungs-App; ein einzelnes
+  anderes Gerät abzumelden fragt nicht.
 
 Jede Änderung ist ein POST mit einem Token der Seite (ein HMAC des Tokens der Sitzung), neben dem Formular-Token von
 ezformtoken; danach leitet die Seite auf sich selbst um und zeigt das Ergebnis einmal.

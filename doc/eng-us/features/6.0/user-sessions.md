@@ -121,6 +121,25 @@ host and what the event names (method, browser, system, place, number of session
 The two-step events `access.user.two_factor.*` are recorded by the two-step extension through
 `expSignInSecondFactor::audit()`.
 
+## Sign-in report
+
+**Users > Sign-in report** (`user/sessionreport`, the new policy function **user/sessions_manage**) is the
+administrator's view of the whole site:
+
+- the sessions running now and the number of users they belong to, the sign-ins and failed attempts of today;
+- **Sign a user out everywhere**: a user ID, username or e-mail address; every session of that account ends at its
+  next request, also those kept by Remember me (`revokeAll()`, recorded as `access.session.revoke`, scope `all`; with
+  the database session handler its sessions are deleted at once);
+- the running sessions of every user, most recently used first (the 100 latest), with the user (linking to that
+  user's sessions page), device, stored address and place, sign-in time and method, last use, and a button to sign
+  one out;
+- the last 14 days: sign-ins and failed attempts (from the user audit log, when it is there) and new sessions, with
+  bars.
+
+The report reads `expuser_session`, so it works with every session handler, PHP's files of the default handler too.
+**Setup > Sessions** (`setup/session`) keeps its own lists for the database handler; with another handler it now
+links to the report. "Verify it's you" asks before signing a session or a user out here (`[ReauthGroup_users]`).
+
 ## Settings: site.ini [UserSessionSettings]
 
 | Setting | Default | Meaning |
@@ -144,6 +163,9 @@ The two-step events `access.user.two_factor.*` are recorded by the two-step exte
 - **Another user's sessions**: the policy function **user/sessions** ("see where other users are signed in, and sign
   them out"). The account page of a user (`user/edit/<id>`) shows the card **Sessions** to a viewer who has it.
   Administrators with all rights have it.
+- **The sign-in report** and signing any user out everywhere: the policy function **user/sessions_manage**.
+- **Sign out all other sessions** of one's own account asks "Verify it's you" first (`[ReauthGroup_account]`), with
+  the password, a passkey or the code of the authenticator app; signing out one other device does not.
 
 Every change is a POST with a token of the page's own (an HMAC of the session's token), besides the form token of
 ezformtoken; after it the page redirects to itself and shows the result once.

@@ -29,6 +29,7 @@ A policy on `setup/*` (every function) also grants it; limitations of the policy
 
 | Key | Value |
 |---|---|
+| Navigation part | `ezsetupnavigationpart` |
 | Single POST actions | SetButton: Set |
 | POST action parameters | Set (SiteAccess: SiteAccess, AllSettingsList: AllSettingsList, SelectedList: SelectedList) |
 
