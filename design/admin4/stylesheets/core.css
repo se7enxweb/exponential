@@ -1,3 +1,6 @@
+/* admin4 itself loads base.css, which holds these rules (restyled). This file stays because the standard popup,
+   print, redirect and setup layouts name core.css and resolve it through the design chain into admin4. */
+
 /* CORE CSS 20100126 */
 
 /* BODY */

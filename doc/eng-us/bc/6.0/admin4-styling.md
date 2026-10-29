@@ -56,7 +56,7 @@ AdminComponentCSSFileList[]=modules/workflow.css
 ```
 
 `page_head_style.tpl` of `admin`, `admin3` and `admin4` loads the list after the design's own stylesheets (and, in
-admin4, after `admin4.css`) and before `BackendCSSFileList`, so an extension still has the last word on its own
+admin4, after `base.css`, `debug.css` and `admin4.css`) and before `BackendCSSFileList`, so an extension still has the last word on its own
 markup. Every file is named in the INI: every admin page gets the same bundle, packed and cached once, instead of a
 bundle per module.
 
@@ -73,6 +73,15 @@ Each module file exists in `design/admin4/stylesheets/modules/` and `design/admi
 finds the `design/admin` files through its fallback). `admin4.css` stays the frame of admin4 (header,
 columns, dashboard, sign-in page).
 
+`base.css` is admin4's own base: the element defaults, the frame layout, the content classes, the rounded theme, the
+data tables and the modal window. Until October 2026 these were six files inherited from admin3 (`core.css`,
+`pagelayout.css`, `content.css`, `theme/rounded.css`, `theme/admin_datatable.css`, `theme/modalwindow.css`); they are
+one file in the same cascade order, and a declaration that a later rule of `base.css`, `admin4.css` or `components.css`
+sets again for the same selector was removed. `core.css` and `theme/modalwindow.css` remain as files in
+`design/admin4/stylesheets/` only because other designs resolve them through the design chain (the standard popup,
+print and redirect layouts name `core.css`; `exp_adminui` loads `theme/modalwindow.css`); admin4's own pages do not
+load them.
+
 **Extensions** keep their stylesheet in their own design folder and add it to `BackendCSSFileList[]`, not to
 `AdminComponentCSSFileList`. In admin4 they can use the `.a4-*` classes and the `--a4-*` tokens; their own classes
 take their own prefix and the same rules (tokens only, a dark value for every colour).
@@ -84,7 +93,7 @@ All `var(--a4-...)`, defined in `components.css`.
 | Group | Tokens |
 |---|---|
 | Accent | `--a4-accent` (`#f26a21`), `--a4-accent-hover`, `--a4-accent-strong` (filled controls with white text, 5.2:1), `--a4-accent-press` (their hovered fill), `--a4-accent-text` (the accent as text or link), `--a4-accent-soft` (tint), `--a4-on-accent`, `--a4-on-accent-hover` (text on the `-press` fill), `--a4-ring` (focus ring, opaque: 3:1 on every surface) |
-| Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-zebra` (the even rows of data tables), `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
+| Neutral | `--a4-ink`, `--a4-muted`, `--a4-line`, `--a4-line-strong`, `--a4-soft`, `--a4-card`, `--a4-surface`, `--a4-zebra` (the even rows of data tables), `--a4-head-bg` (the header row of data tables), `--a4-field`, `--a4-field-line`, `--a4-disabled`, `--a4-overlay`, `--a4-code-bg`, `--a4-code-ink` |
 | States | `--a4-ok`, `--a4-ok-bg`, `--a4-ok-line`; `--a4-warn`, `--a4-warn-bg`, `--a4-warn-line`; `--a4-bad`, `--a4-bad-bg`, `--a4-bad-line`, `--a4-bad-hover`; `--a4-info`, `--a4-info-bg`, `--a4-info-line` |
 | Charts | `--a4-chart-1` to `--a4-chart-8`, a categorical palette in this order |
 | Depth | `--a4-shadow-s`, `--a4-shadow-m`, `--a4-shadow-up` |
@@ -92,11 +101,20 @@ All `var(--a4-...)`, defined in `components.css`.
 | Spacing | `--a4-space-1` to `--a4-space-7` (4, 8, 12, 16, 24, 32, 48 px); a length between two steps takes the nearer one (3 and 5 → 4, 6 to 9 → 8, 10 to 14 → 12, 15 to 20 → 16, 22 to 28 → 24) |
 | Controls | `--a4-control-h` (32 px): one height for every control: `.a4-btn` (`.a4-btn-large` 44 px, `.a4-btn-small` 30 px aside), `.a4-input` and the fields of `.a4-field`, `.a4-tabs`, `.a4-chip`, the pager sizes, the legacy buttons and fields, the node's actions and the sub-items toolbar. Field text is `--a4-text-m` (14 px), button text `--a4-text-s` (13 px) |
 | Layout | `--a4-content-max` (1680 px): the widest the content column grows on a very wide window, so a page's actions stay near what they act on; `--a4-gutter` (24 px): the one gap between the frame's cards (side columns and content, under the header, at the bottom); the window's edges keep 24 px for the side columns' tabs |
-| Spacing of lists and cards | `--a4-list-pad` (the cells of `table.list`: 8 px above and below like `.a4-table`, 6 px a side so a list of ten columns still fits a 944 px content column; core.css had `.4em`), `--a4-cell-pad-y`/`-x` (8/12 px, `.a4-table`), `--a4-card-pad-y`/`-x` (12/16 px, `.a4-card`). admin4 has one density: the compact view and its header switch were removed in October 2026 (`AdminDensityTest` keeps them out) |
-| Type | `--a4-font`, `--a4-mono`, `--a4-text-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl` (12, 13, 14, 16, 22, 26, 32 px; nothing below 12); `--a4-text-body` (the body text: `--a4-text-s` up to a 1920px window, growing to `--a4-text-m` at 2560px, a clamp between two steps of the scale, so the em sizes of the base stylesheets never fall below 12px), `--a4-leading` (1.5, every block that can wrap), `--a4-leading-tight` (1.25, headings only) |
+| Spacing of lists and cards | `--a4-list-pad` (the cells of `table.list`: 8 px above and below like `.a4-table`, 6 px a side so a list of ten columns still fits a 944 px content column; the old base stylesheet had `.4em`), `--a4-cell-pad-y`/`-x` (8/12 px, `.a4-table`), `--a4-card-pad-y`/`-x` (12/16 px, `.a4-card`). admin4 has one density: the compact view and its header switch were removed in October 2026 (`AdminDensityTest` keeps them out) |
+| Type | `--a4-font`, `--a4-mono`, `--a4-text-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl` (12, 13, 14, 16, 22, 26, 32 px; nothing below 12); `--a4-text-body` (the body text: `--a4-text-s` up to a 1920px window, growing to `--a4-text-m` at 2560px, a clamp between two steps of the scale, so the em sizes of the base stylesheets never fall below 12px), `--a4-leading` (1.5, every block that can wrap), `--a4-leading-tight` (1.25, headings and single-line controls that may wrap), `--a4-leading-none` (1: icons, badges, a box whose height is the font size) |
+| Weight | `--a4-weight-medium` (500), `--a4-weight-strong` (600: controls, buttons, navigation), `--a4-weight-heading` (650: headings, table heads, labels of facts), `--a4-weight-bold` (700: figures, counts, emphasis); 400 is the keyword `normal` |
+| Motion | `--a4-duration` (.15s: every hover and focus feedback), `--a4-duration-slow` (.3s: the phone menu opening and closing); a progress bar that grows with real progress (`.a4-content-job-bar`, `.a4-setup-progress`) keeps its own .4s |
+| Tracking | `--a4-tracking` (.04em: uppercase labels); a negative tracking of a large heading stays a value of its own |
 
-Every colour, chart and depth token has a dark value; the radius, spacing, control and type tokens are the same in both
-modes.
+Every colour, chart and depth token has a dark value; the radius, spacing, control, type, weight, motion and tracking
+tokens are the same in both modes.
+
+**Weights, durations, letter spacing and line heights come from these tokens**, as colours and radii do: no
+`font-weight: 600`, no `transition: ... .15s`, no `letter-spacing: .05em`, no `border-radius: 4px` in `admin4.css`,
+`components.css`, `base.css` or `modules/*.css` (`AdminTokenUsageTest`; `0`, `50%` and `999px` as a radius, a negative
+tracking and the two progress bars are the exceptions). A line height is one of the three `--a4-leading*` tokens unless a
+fixed pixel height depends on it.
 
 **Tables.** Every data table is striped the same way: `table.list`, the `.a4-table` component and the sub-items table
 (`exp/datatable`, through `--exp-dt-row-alt`) paint every second data row with `--a4-zebra`, the hovered row with
@@ -111,7 +129,7 @@ admin4 stylesheet paints rows in a colour of its own (`AdminStylingRulesTest::te
 Cells of a data table sit in the middle of their row (`.a4-plain` form tables keep their labels at the top). A row
 whose selection checkbox (a checkbox straight in one of its cells) is ticked takes `--a4-accent-soft` without a script
 (`tr:has(> td > input[type="checkbox"]:checked)`), over stripe and hover. List headers are not sticky: almost every
-table sits in a horizontally scrolling wrapper (`pagelayout.css`, `div:has(> table)`), and a sticky header binds to
+table sits in a horizontally scrolling wrapper (`base.css`, `div:has(> table)`), and a sticky header binds to
 that wrapper, not to the page. An empty list says so in `.a4-empty`, never in a plain paragraph
 (`AdminStylingRulesTest::testEmptyListsUseTheEmptyState`).
 `--a4-orange`, `--a4-orange-dark` and `--a4-orange-soft` are the accent's former names, kept for the extensions that
@@ -144,7 +162,7 @@ number (0, 1 and -1 for order inside one component excepted). Theme-independent,
 | `--a4-z-header` | 1020 | the fixed header |
 | `--a4-z-sidebar-toggle` | 1030 | the tabs on the window edges (inside the fixed header: ordered among its children) |
 | `--a4-z-menu` / `--a4-z-menu-sub` | 1040 / 1050 | context menus and their submenus, above the header |
-| `--a4-z-overlay` / `--a4-z-modal` | 1060 / 1070 | a dialog's mask and the dialog (also the base rule of `theme/modalwindow.css`) |
+| `--a4-z-overlay` / `--a4-z-modal` | 1060 / 1070 | a dialog's mask and the dialog (also the base rule of the modal window in `base.css`) |
 | `--a4-z-toast` | 1080 | short-lived notices |
 | `--a4-z-drag` / `--a4-z-drag-mask` | 9000 / 9500 | column drag and resize proxies of the data tables |
 | `--a4-z-skip-link` | 10000 | the skip link while it is focused, over everything |
@@ -370,7 +388,7 @@ they stay. `modules/content.css` draws them as the components instead, inside tw
 The attribute's own name is a `label` or `legend` of the class `.a4-content-attr-label` (13 px, semibold, no trailing
 colon), and a grouped input's fieldset has the class `.a4-content-attr-group`: no edge, background or padding of its
 own. The selectors are the scope class plus the element (`.a4-content-attr :is(input, select, textarea)`), so they
-beat `core.css` (`input.box`, `label`, `fieldset`) by loading later, while the invalid edge
+beat `base.css` (`input.box`, `label`, `fieldset`) by loading later, while the invalid edge
 (`.a4-content-attr input[aria-invalid="true"]`), the sticky button bars (`#controlbar-top ...`) and any rule with one
 more class still win. An extension's datatype template that wants its own look gives its control such a class.
 
@@ -386,7 +404,7 @@ checkbox by its row's object or by the action, a single control without a label 
 `.a4-check` rows, its invert-selection control is an `.a4-icon-btn`, and empty lists are `.a4-empty`. Each copy posts
 the same field names and ids and keeps the template blocks and table structure of design/standard's
 (`AdminContentEditFormsTest`), so a fix there has to be carried over by hand. The other datatypes take the look
-through the stylesheet alone. admin4's `theme/rounded.css` no longer styles `.datepicker-icon` (the calendar is an
+through the stylesheet alone. admin4's `base.css` no longer styles `.datepicker-icon` (the calendar is an
 `.a4-btn` now); the class stays in `design/admin`, whose calendar is still the image.
 `tests/tests/design/AdminContentEditFormsTest.php` checks the rules and the templates.
 
@@ -430,7 +448,7 @@ Inline CSS that stays, each documented where it is:
 | admin3 `pagelayout.tpl`: a two-line script | the hand-dragged left column width, as above (admin3 has no theme script) |
 | `design/admin/templates/pagelayout.tpl`: one `<style>` block | the column widths of the editor's preferences, in em from `menu.ini [LeftMenuSettings] MenuWidth` or a dragged width, which a stylesheet cannot know, needed before the page is drawn |
 
-The left column's preset sizes (small, medium, large) are `html[data-a4-left-size]` rules in `pagelayout.css`. They
+The left column's preset sizes (small, medium, large) are `html[data-a4-left-size]` rules in `base.css`. They
 set the width only (`--left-sidebar-width`): the column's text keeps the body's size at every width
 (`AdminLeftColumnFontTest`).
 
@@ -449,8 +467,7 @@ set the width only (`--left-sidebar-width`): the column's text keeps the body's 
 - a colour token in `components.css` has no dark value, or the admin and admin4 copies differ;
 - `admin4.css` or one of admin4's page stylesheets (`ezinfo.css`, `packagecompare.css`, `visual-templateview.css`)
   has a colour literal outside a token definition;
-- one of admin4's base stylesheets (`core.css`, `content.css`, `pagelayout.css`, `theme/rounded.css`,
-  `theme/admin_datatable.css`, `theme/modalwindow.css`) has a colour literal outside a token definition. A legacy
+- admin4's base stylesheet (`base.css`) has a colour literal outside a token definition. A legacy
   literal kept on purpose would go into `BASE_COLOUR_ALLOWLIST`, which only shrinks; it is empty. A rule admin4.css
   overrides today still takes a token, so the next selector that slips past the override cannot show an old colour;
 - a `:focus` or `:focus-visible` rule of an admin4 stylesheet removes the outline (`none`, `hidden` or a width of
@@ -471,8 +488,8 @@ set the width only (`--left-sidebar-width`): the column's text keeps the body's 
   (`1px` and `2px` aside; a layout length is a token of its own);
 - a file named in `AdminComponentCSSFileList` is missing.
 
-No text is smaller than 12px on an admin4 page. The base and page stylesheets (core.css, pagelayout.css, content.css,
-the Info, package and template pages) size text in em of the body, which core.css sets to `var(--a4-text-s)` (13px);
+No text is smaller than 12px on an admin4 page. The base and page stylesheets (`base.css`,
+the Info, package and template pages) size text in em of the body, which `admin4.css` sets to `var(--a4-text-body)` (13px, growing to 14px on a very wide window);
 an em size that would land below 12px is `var(--a4-text-xs)` instead
 (`AdminStylingRulesTest::testBaseAndPageStylesheetsDrawNoTextBelowTwelvePixels`).
 

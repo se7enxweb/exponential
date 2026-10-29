@@ -1,8 +1,8 @@
 /*
  * admin4: the admin3 frame in the look of the 2026 setup wizard, in a light mode (the default) and a dark mode.
  *
- * Loaded after admin4's base stylesheets (core, pagelayout, content, the theme, the table and modal window
- * styles) and before the extensions' BackendCSSFileList, so an extension keeps the last word on its own markup.
+ * Loaded after admin4's base stylesheet (base.css: element defaults, frame, content classes, theme, tables and
+ * modal window) and before the extensions' BackendCSSFileList, so an extension keeps the last word on its own markup.
  * The mode is html[data-a4-theme="light"|"dark"], set before the page is drawn by the script at the top of
  * page_head_style.tpl from this browser's choice (localStorage "exp-admin4-theme"); the header's toggle switches it.
  *
@@ -33,10 +33,12 @@
   --a4-orange-dark: var(--a4-accent-hover);
   --a4-orange-soft: var(--a4-accent-soft);
 
-  --a4-page-color: #eef1f5;
+  /* the page two steps darker than until 2026-10 (#eef1f5, gradient #f6f8fb-#edf0f4), the columns' edge almost three
+     times as strong: the white columns stand clearly off the page, as the classic admin's framed boxes did */
+  --a4-page-color: #d8dee6;
   --a4-page-image: radial-gradient(1100px 620px at 88% -14%, rgba(242, 106, 33, 0.10), transparent 62%),
                    radial-gradient(900px 560px at -12% 108%, rgba(64, 120, 192, 0.09), transparent 60%),
-                   linear-gradient(165deg, #f6f8fb 0%, #edf0f4 100%);
+                   linear-gradient(165deg, #e0e5eb 0%, #d5dbe3 100%);
   --a4-header-bg: rgba(255, 255, 255, 0.82);
   --a4-header-line: rgba(16, 24, 40, 0.07);
   --a4-header-shadow: 0 1px 0 rgba(16, 24, 40, 0.03), 0 10px 28px rgba(16, 24, 40, 0.06);
@@ -45,15 +47,16 @@
   --a4-header-field: var(--a4-field);
   --a4-header-field-line: rgba(16, 24, 40, 0.14);
   --a4-card-bg: var(--a4-surface);   /* the three columns: white in light mode, slate in dark mode (components.css) */
-  --a4-card-edge: rgba(16, 24, 40, 0.06);
+  --a4-side-bg: #f3f5f8;             /* the side columns, a shade off the white middle: navigation and content apart */
+  --a4-card-edge: rgba(16, 24, 40, 0.16);
   /* explayouts' own navigation column: navy in both modes, with a faint light edge */
   --a4-explayouts-nav: #1f2937;
   --a4-explayouts-nav-edge: rgba(255, 255, 255, 0.04);
   /* the password field's room for its show/hide toggle: a layout length, the same in both modes */
   --a4-pw-toggle-room: 98px;
-  --a4-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px -6px rgba(16, 24, 40, 0.09);
-  --a4-footer-ink: #5d6573;   /* 5.1:1 on the page colour (#6b7280 was 4.3:1) */
-  --a4-footer-link: #4b5563;
+  --a4-card-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 12px 32px -6px rgba(16, 24, 40, 0.12);
+  --a4-footer-ink: #4f5765;   /* 5.2:1 on the page colour, also at the gradient's darkest end */
+  --a4-footer-link: #434b59;
   --a4-footer-link-hover: #1f2430;
   --a4-brand: #f15a28;        /* the logo's orange square (parts/a4_logo.tpl), the artwork's brand color */
   /* the environment badge (site.ini [AdminEnvironment]): fill, text and edge per level; the text 4.5:1 on the fill,
@@ -86,6 +89,7 @@ html[data-a4-theme="dark"] {
   --a4-header-hover: rgba(255, 255, 255, 0.08);
   --a4-header-field: var(--a4-field);
   --a4-header-field-line: rgba(255, 255, 255, 0.18);
+  --a4-side-bg: var(--a4-card-bg);   /* dark mode: the columns stay alike */
   --a4-card-edge: rgba(255, 255, 255, 0.04);
   --a4-explayouts-nav: #1f2937;
   --a4-explayouts-nav-edge: rgba(255, 255, 255, 0.04);
@@ -172,7 +176,7 @@ body,
     background-color: transparent;
     pointer-events: none;
     visibility: hidden;
-    transition: max-height 300ms ease, visibility 0s linear 300ms;
+    transition: max-height var(--a4-duration-slow) ease, visibility 0s linear var(--a4-duration-slow);
   }
 }
 /* the phone menu's own items (page_topmenu.tpl: its user actions and close button) are drawn below 576px only */
@@ -209,7 +213,7 @@ body,
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
   color: var(--a4-header-ink);
-  transition: background-color .15s ease, color .15s ease;
+  transition: background-color var(--a4-duration) ease, color var(--a4-duration) ease;
 }
 .navbar-menu li a > .a4-icon { margin-inline-end: 0.4em; }   /* menu.ini [Topmenu_<tab>] Icon */
 /* The tabs show their icons at every width: in the one-line row, in "More" and in the phone menu's tiles. A tab that
@@ -354,7 +358,7 @@ body,
     height: 36px;
     margin: 0;
     padding: 0;
-    line-height: 1;
+    line-height: var(--a4-leading-none);
   }
   /* the menu (Bootstrap Icons list) and, while it is open, the cross (x-lg): the icons of the header's other tools */
   #header .navbar-icon > .a4-icon { width: 24px; height: 24px; }
@@ -388,7 +392,7 @@ body,
     border-radius: 0 0 var(--a4-radius) var(--a4-radius);
     box-shadow: var(--a4-shadow-m);
     visibility: visible;
-    transition: max-height 300ms ease, visibility 0s;
+    transition: max-height var(--a4-duration-slow) ease, visibility 0s;
   }
   body.navbar-open {
     overflow: hidden;
@@ -442,7 +446,7 @@ body,
     border: 1px solid var(--a4-line);
     border-radius: var(--a4-radius-s);
     font-size: var(--a4-text-m);
-    line-height: 1.25;
+    line-height: var(--a4-leading-tight);
     text-align: center;
     white-space: normal;
     overflow-wrap: break-word;
@@ -453,7 +457,7 @@ body,
     border-color: var(--a4-line-strong);
     background-color: var(--a4-header-hover);
   }
-  .navbar-menu .navbar-bar > li > a.selected { border-color: var(--a4-accent-strong); font-weight: 600; }
+  .navbar-menu .navbar-bar > li > a.selected { border-color: var(--a4-accent-strong); font-weight: var(--a4-weight-strong); }
   .navbar-menu .navbar-bar a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
   /* a tab with an icon (menu.ini [Topmenu_<tab>] Icon) stacks it above its name, like the user's action tiles below,
      so a wrapped name never leaves the icon alone at a line's end */
@@ -470,7 +474,7 @@ body,
     display: flex;
     margin: 0 0 var(--a4-space-2);
     font-size: var(--a4-text-m);
-    font-weight: 600;
+    font-weight: var(--a4-weight-strong);
     color: var(--a4-ink);
   }
   .a4-phone-user-name > a,
@@ -484,7 +488,7 @@ body,
     color: var(--a4-ink);
     white-space: normal;
   }
-  .a4-phone-user-login { color: var(--a4-muted); font-weight: 400; }
+  .a4-phone-user-login { color: var(--a4-muted); font-weight: normal; }
   .a4-phone-user-links {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 8rem), 1fr));
@@ -512,7 +516,7 @@ body,
     color: var(--a4-ink);
     font: inherit;
     font-size: var(--a4-text-m);
-    line-height: 1.25;
+    line-height: var(--a4-leading-tight);
     text-align: center;
     white-space: normal;
     overflow-wrap: break-word;
@@ -526,7 +530,7 @@ body,
     gap: var(--a4-space-1);
     padding: var(--a4-space-2);
   }
-  .a4-phone-close-cross { font-size: var(--a4-text-xl); line-height: 1; }
+  .a4-phone-close-cross { font-size: var(--a4-text-xl); line-height: var(--a4-leading-none); }
   .navbar-menu .a4-phone-user-links a:hover,
   .a4-phone-close-button:hover {
     border-color: var(--a4-accent);
@@ -603,9 +607,9 @@ body,
   color: var(--a4-env-fg);
   font-family: var(--a4-font);
   font-size: var(--a4-text-xs);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-bold);
+  line-height: var(--a4-leading-none);
+  letter-spacing: var(--a4-tracking);
   white-space: nowrap;
   cursor: default;
 }
@@ -633,7 +637,7 @@ body,
   flex: 0 1000 auto;
   padding-inline-start: var(--a4-space-1);
   border-inline-start: 1px solid currentColor;
-  font-weight: 500;
+  font-weight: var(--a4-weight-medium);
   letter-spacing: 0;
 }
 .header-logo:has(> .a4-env-always) { gap: var(--a4-space-2); }
@@ -821,7 +825,7 @@ body,
 .a4-nav-more-toggle:hover,
 .a4-nav-more-toggle[aria-expanded="true"] { background-color: var(--a4-header-hover); }
 .a4-nav-more-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-.a4-nav-more-toggle .a4-icon { width: 12px; height: 12px; transition: transform .15s ease; }
+.a4-nav-more-toggle .a4-icon { width: 12px; height: 12px; transition: transform var(--a4-duration) ease; }
 .a4-nav-more-toggle[aria-expanded="true"] .a4-icon { transform: rotate(180deg); }
 .a4-nav-more-toggle:disabled { opacity: .45; cursor: default; background-color: transparent; }
 .a4-nav-more-toggle.has-current {
@@ -893,7 +897,7 @@ body,
   color: var(--a4-header-ink);
   text-decoration: none;
   cursor: pointer;
-  transition: border-color .15s ease, box-shadow .15s ease;
+  transition: border-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease;
 }
 .a4-header-btn:hover { border-color: var(--a4-orange); color: var(--a4-header-ink); }
 .a4-header-btn:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
@@ -908,7 +912,7 @@ body,
   padding: var(--a4-space-2) var(--a4-space-3);
   border-bottom: 1px solid var(--a4-line);
 }
-.a4-user-menu-display { font-weight: 600; overflow-wrap: anywhere; }
+.a4-user-menu-display { font-weight: var(--a4-weight-strong); overflow-wrap: anywhere; }
 .a4-user-menu-login { color: var(--a4-muted); font-size: var(--a4-text-xs); }
 /* The name as a link to the user's own object: the whole name block is the target, hover and focus as the links below */
 .a4-user-menu-self {
@@ -982,7 +986,7 @@ body,
   margin-bottom: var(--a4-space-1);
   background-color: var(--a4-accent-soft);
 }
-.a4-site-menu .a4-site-menu-front .a4-site-menu-name { font-weight: 600; }
+.a4-site-menu .a4-site-menu-front .a4-site-menu-name { font-weight: var(--a4-weight-strong); }
 .a4-site-menu a[aria-current="true"] { box-shadow: inset 3px 0 0 var(--a4-accent); }
 :where([dir="rtl"]) .a4-site-menu a[aria-current="true"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
 .a4-site-menu-name { overflow-wrap: anywhere; }
@@ -992,15 +996,15 @@ body,
   font-size: var(--a4-text-xs);
   overflow-wrap: anywhere;
 }
-.a4-site-menu-here { font-weight: 600; color: var(--a4-ink); }
+.a4-site-menu-here { font-weight: var(--a4-weight-strong); color: var(--a4-ink); }
 .a4-site-menu-heading {
   margin: var(--a4-space-2) 0 0;
   padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-1);
   border-top: 1px solid var(--a4-line);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 600;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-strong);
+  letter-spacing: var(--a4-tracking);
   text-transform: uppercase;
 }
 .a4-site-menu-list { margin: 0; padding: 0; list-style: none; }
@@ -1028,7 +1032,7 @@ body,
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
   font-size: var(--a4-text-xs);
-  font-weight: 700;
+  font-weight: var(--a4-weight-bold);
   line-height: 16px;
   text-align: center;
   pointer-events: none;
@@ -1067,7 +1071,7 @@ body,
   margin-bottom: var(--a4-space-1);
   border-bottom: 1px solid var(--a4-line);
   border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
 }
 /* Phones: the globe stands mid-row, so the panel is placed under the header, the window's width less the gutters */
 @media screen and (max-width: 575.98px) {
@@ -1145,7 +1149,7 @@ body,
   .a4-mega-toggle:hover,
   .a4-mega-toggle[aria-expanded="true"] { background-color: var(--a4-header-hover); }
   .a4-mega-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-  .a4-mega-toggle .a4-icon { width: 12px; height: 12px; transition: transform .15s ease; }
+  .a4-mega-toggle .a4-icon { width: 12px; height: 12px; transition: transform var(--a4-duration) ease; }
   .a4-mega-toggle[aria-expanded="true"] .a4-icon { transform: rotate(180deg); }
   .a4-nav-more-list .a4-mega-toggle,
   .a4-nav-more-list .a4-mega-panel { display: none; }
@@ -1227,8 +1231,8 @@ body,
     padding: 0 var(--a4-space-2);
     color: var(--a4-muted);
     font-size: var(--a4-text-xs);
-    font-weight: 700;
-    letter-spacing: .04em;
+    font-weight: var(--a4-weight-heading);
+    letter-spacing: var(--a4-tracking);
     line-height: var(--a4-leading-tight);
     text-transform: uppercase;
   }
@@ -1271,7 +1275,7 @@ body,
     background-color: transparent;
     color: var(--a4-ink);
     font-size: inherit;
-    font-weight: 600;
+    font-weight: var(--a4-weight-strong);
     text-decoration: none;
     white-space: normal;
     justify-content: flex-start;
@@ -1316,7 +1320,7 @@ body,
     padding: var(--a4-space-1) var(--a4-space-2);
     color: var(--a4-accent-text);
     font-size: var(--a4-text-s);
-    font-weight: 600;
+    font-weight: var(--a4-weight-strong);
   }
   .navbar-menu .a4-mega-all a:hover { background-color: var(--a4-soft); }
   .navbar-menu .a4-mega-all a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
@@ -1369,10 +1373,10 @@ body,
   border-radius: 999px;
   background-color: var(--a4-header-field);
   color: var(--a4-ink);
-  font: 600 var(--a4-text-s)/1.2 var(--a4-font);
+  font: var(--a4-weight-strong) var(--a4-text-s)/var(--a4-leading-tight) var(--a4-font);
   white-space: nowrap;
   cursor: pointer;
-  transition: border-color .15s ease, box-shadow .15s ease;
+  transition: border-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease;
 }
 .a4-theme-toggle:hover {
   border-color: var(--a4-orange);
@@ -1408,6 +1412,10 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   background-color: var(--a4-card-bg);
   border-radius: var(--a4-radius);
   box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-card-shadow);
+}
+#leftmenu-design,
+#rightmenu-design {
+  background-color: var(--a4-side-bg);
 }
 #maincolumn {
   background-color: transparent;
@@ -1520,13 +1528,13 @@ html.a4-preload *::after { transition: none !important; }
   height: 2.5rem;
 }
 .sidebar-control.left {
-  border-radius: 0 0.75rem 0.75rem 0;
+  border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;
 }
-:where([dir="rtl"]) .sidebar-control.left { border-radius: 0.75rem 0 0 0.75rem; }
+:where([dir="rtl"]) .sidebar-control.left { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
 .sidebar-control.right {
-  border-radius: 0.75rem 0 0 0.75rem;
+  border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s);
 }
-:where([dir="rtl"]) .sidebar-control.right { border-radius: 0 0.75rem 0.75rem 0; }
+:where([dir="rtl"]) .sidebar-control.right { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
 .sidebar-control:focus-visible {
   outline: 3px solid var(--a4-ring);
   outline-offset: 2px;
@@ -1558,16 +1566,22 @@ html.a4-preload *::after { transition: none !important; }
 :where(#leftmenu, #rightmenu) h4 {
   color: var(--a4-ink);
   font-family: var(--a4-font);
-  font-weight: 650;
-  letter-spacing: .005em;
+  font-weight: var(--a4-weight-heading);
+  letter-spacing: 0;
 }
 :where(#path, #path-design) {
   color: var(--a4-muted);
 }
-/* No rule between blocks (the base drew a dashed line above every .box-header): spacing separates them. The base
-   rule's own selector, so an extension's own header rule still wins. */
+/* No dashed rule above every .box-header (the base drew one); a page section's title row (div.context-block's
+   .box-header: the page title, Sub items, Relations ...) has a solid line under it instead, so the sections of a
+   page read at a glance. The base rule's own selector, so an extension's own header rule still wins. */
 .box-header {
   border-top: 0;
+}
+div.context-block .box-header {
+  margin-bottom: var(--a4-space-3);
+  padding-bottom: var(--a4-space-2);
+  border-bottom: 1px solid var(--a4-line);
 }
 :focus-visible {
   outline: 3px solid var(--a4-ring);
@@ -1581,7 +1595,7 @@ ul.tabs li span.current {
   border-radius: var(--a4-radius-s);
   color: var(--a4-muted);
   text-decoration: none;
-  transition: background-color .15s ease, color .15s ease;
+  transition: background-color var(--a4-duration) ease, color var(--a4-duration) ease;
 }
 ul.tabs li a:hover {
   background-color: var(--a4-soft);
@@ -1609,16 +1623,16 @@ ul.tabs li.selected span.current {
 input.button, input.defaultbutton, input.button-disabled {
   border-radius: var(--a4-radius-s);
   font-family: var(--a4-font);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
   text-shadow: none;
-  transition: background-color .15s ease, border-color .15s ease;
+  transition: background-color var(--a4-duration) ease, border-color var(--a4-duration) ease;
 }
 input.button {
   background-color: var(--a4-card);
   border: 1px solid var(--a4-line-strong);
   color: var(--a4-ink);
 }
-/* a focused button looks hovered (theme/rounded.css paints both); the ring marks the keyboard focus */
+/* a focused button looks hovered (base.css paints both); the ring marks the keyboard focus */
 input.button:hover,
 input.button:focus {
   background-color: var(--a4-soft);
@@ -1629,7 +1643,7 @@ input.defaultbutton {
   border: 1px solid var(--a4-accent-strong);
   color: var(--a4-on-accent);
 }
-/* theme/rounded.css paints a focused default button teal with yellow text: keep the accent, the ring shows the focus */
+/* base.css paints a focused default button teal with yellow text: keep the accent, the ring shows the focus */
 input.defaultbutton:focus {
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
@@ -1654,7 +1668,7 @@ input.defaultbutton:active {
    take the size of the .a4-btn components and of the node's action row: --a4-control-h high (32px), the type
    scale's small step, the space tokens. Selectors keep the base rules' weight, element plus class
    (:where(#page *) adds none and keeps the login page and the editor's dialogs, which have no #page, out of it), so
-   they win over core.css, pagelayout.css and theme/rounded.css by loading later, and every rule with one more class
+   they win over base.css by loading later, and every rule with one more class
    (the node's action row, the edit bars, an extension's own button) still wins. A minimum height, never a fixed one:
    a long label may still wrap. */
 :is(input.button, input.defaultbutton, input.button-disabled, button.button):where(#page *) {
@@ -1663,7 +1677,7 @@ input.defaultbutton:active {
   margin: var(--a4-space-1) var(--a4-space-1) var(--a4-space-1) 0;
   padding: 0 var(--a4-space-3);
   font-size: var(--a4-text-s);
-  line-height: 1.2;
+  line-height: var(--a4-leading-tight);
   vertical-align: middle;
 }
 :where([dir="rtl"]) :is(input.button, input.defaultbutton, input.button-disabled, button.button):where(#page *) { margin: var(--a4-space-1) 0 var(--a4-space-1) var(--a4-space-1); }
@@ -1673,7 +1687,7 @@ button.button:where(#page *) {
   background-color: var(--a4-card);
   color: var(--a4-ink);
   font-family: var(--a4-font);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
   cursor: pointer;
 }
 button.button:where(#page *):is(:hover, :focus):not(:disabled) { background-color: var(--a4-soft); border-color: var(--a4-field-line); }
@@ -1696,7 +1710,7 @@ input:where(#page *):where(:not([type]), [type=text], [type=password], [type=ema
   margin-block: var(--a4-space-1);
   padding: 0 var(--a4-space-2);
   font-size: var(--a4-text-m);   /* field text as .a4-input's */
-  line-height: 1.2;
+  line-height: var(--a4-leading-tight);
   vertical-align: middle;
 }
 select:where(#page *):where(:not([class])):where(:not([multiple]):not([size]), [size="1"]) {
@@ -1760,23 +1774,43 @@ select:where(#page *):where(:not([class])):disabled { color: var(--a4-disabled);
 }
 
 /* List tables (table.list, the kernel's and most extensions'): a light header in place of the black bar.
-   Their cells take --a4-list-pad: the same 8/12px as .a4-table (core.css had .4em). */
+   Their cells take --a4-list-pad: the same 8/12px as .a4-table (base.css had .4em). */
 table.list th, table.list td { padding: var(--a4-list-pad); }
 table.list th, table.special th {
-  background-color: var(--a4-soft);
+  background-color: var(--a4-head-bg);
   color: var(--a4-ink);
+  border-left: 0;   /* base.css's line, physical: replaced by the logical one below */
+  border-inline-start: 1px solid var(--a4-line-strong);   /* the column separators: the eye needs them */
   border-bottom: 1px solid var(--a4-line);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
+/* no separator before the first column: the header's rounded edge stands free */
+table.list tr > th:first-child, table.special tr > th:first-child { border-inline-start: 0; }
+/* The header row in the shape of the rest (fields, buttons, cards): rounded top corners, as .a4-table in a card.
+   A collapsed table (base.css) ignores a cell's radius, so the cells are separate with no spacing; the cells
+   draw only a bottom line (th) or none (td), so no line doubles. */
+table.list, table.special {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table.list > :is(thead, tbody):first-of-type > tr:first-child > th:first-child,
+table.special > :is(thead, tbody):first-of-type > tr:first-child > th:first-child { border-start-start-radius: var(--a4-radius-s); }
+table.list > :is(thead, tbody):first-of-type > tr:first-child > th:last-child,
+table.special > :is(thead, tbody):first-of-type > tr:first-child > th:last-child { border-start-end-radius: var(--a4-radius-s); }
 table.list th a, table.special th a {
   color: var(--a4-ink);
 }
 /* The sorted column of a list table (trash: "Date trashed" ...): a soft orange keeps it marked and readable, over
-   the datatable theme's own header colours (theme/admin_datatable.css, tokens as well since 2026-10). A list table
+   the datatable theme's own header colours (base.css, tokens as well since 2026-10). A list table
    inside an .admin-dt wrapper (trash) takes the light header on its sortable headers too. */
 .admin-dt table.list th.admin-dt-sortable {
-  background-color: var(--a4-soft);
+  background-color: var(--a4-head-bg);
 }
+.admin-dt th {
+  border-left: 0;   /* base.css's line, physical: replaced by the logical one, not before the first column */
+  border-inline-start: 1px solid var(--a4-line-strong);
+}
+.admin-dt th:first-child { border-inline-start: 0; }
 table.list th.admin-dt-asc, table.list th.admin-dt-desc {
   background-color: var(--a4-accent-soft) !important;
   color: var(--a4-ink);
@@ -1802,8 +1836,8 @@ table.list:not(.a4-plain) > tbody > tr:has(> td > input[type="checkbox"]:checked
 html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { background-color: var(--a4-accent-soft); }
 
 /* Messages: the classic div.message-* (the result of an action, rendered by the module) look like .a4-notice: a
-   state tint, a 4px edge in the state's colour, the heading's icon (core.css) in that colour too. The #page id
-   outweighs core.css, which cleared border and background inside div.box-content. */
+   state tint, a 4px edge in the state's colour, the heading's icon (base.css) in that colour too. The #page id
+   outweighs base.css, which cleared border and background inside div.box-content. */
 #page div:is(.message-warning, .message-error, .message-feedback, .message-confirmation) {
   margin: 0 0 var(--a4-space-3);
   padding: var(--a4-space-2) var(--a4-space-3);
@@ -1893,29 +1927,29 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
   background: linear-gradient(135deg, var(--a4-accent-soft), transparent 70%), var(--a4-soft);
   box-shadow: inset 0 0 0 1px var(--a4-line);
 }
-.a4-dash-hero h1 { margin: 2px 0 var(--a4-space-1); font-size: var(--a4-text-xl); font-weight: 650; line-height: var(--a4-leading-tight); }
-.a4-dash-date { margin: 0; font-size: var(--a4-text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--a4-muted); }
+.a4-dash-hero h1 { margin: 2px 0 var(--a4-space-1); font-size: var(--a4-text-xl); font-weight: var(--a4-weight-heading); line-height: var(--a4-leading-tight); }
+.a4-dash-date { margin: 0; font-size: var(--a4-text-xs); font-weight: var(--a4-weight-bold); letter-spacing: var(--a4-tracking); text-transform: uppercase; color: var(--a4-muted); }
 .a4-dash-sub { margin: 0; color: var(--a4-muted); }
 .a4-dash-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
 :where(.a4-dash-actions) .a4-dash-action {
   display: inline-flex; align-items: center; gap: var(--a4-space-2); padding: var(--a4-space-2) var(--a4-space-3); border-radius: 999px;
-  background-color: var(--a4-card); color: var(--a4-ink); font-weight: 600; text-decoration: none;
+  background-color: var(--a4-card); color: var(--a4-ink); font-weight: var(--a4-weight-strong); text-decoration: none;
   box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
-  transition: box-shadow .15s ease, transform .15s ease;
+  transition: box-shadow var(--a4-duration) ease, transform var(--a4-duration) ease;
 }
 :where(.a4-dash-actions) .a4-dash-action:hover { color: var(--a4-ink); transform: translateY(-1px); box-shadow: 0 0 0 1px var(--a4-accent), 0 6px 16px var(--a4-accent-soft); }
 :where(.a4-dash-actions) .a4-dash-action.a4-primary { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); box-shadow: 0 6px 16px var(--a4-accent-soft); }
-.a4-dash-ico { font-size: var(--a4-text-m); line-height: 1; opacity: .85; }
+.a4-dash-ico { font-size: var(--a4-text-m); line-height: var(--a4-leading-none); opacity: .85; }
 
 .a4-dash-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: var(--a4-space-3); }
 :where(.a4-dash-figures) .a4-dash-figure {
   display: flex; flex-direction: column; gap: var(--a4-space-1); padding: var(--a4-space-3) var(--a4-space-4); border-radius: var(--a4-radius);
   background-color: var(--a4-card); color: var(--a4-muted); text-decoration: none;
   box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
-  transition: box-shadow .15s ease;
+  transition: box-shadow var(--a4-duration) ease;
 }
 :where(.a4-dash-figures) a.a4-dash-figure:hover { color: var(--a4-muted); box-shadow: 0 0 0 1px var(--a4-accent), var(--a4-shadow-m); }
-.a4-dash-figure strong { font-size: var(--a4-text-2xl); line-height: 1.1; font-weight: 700; color: var(--a4-ink); font-variant-numeric: tabular-nums; }
+.a4-dash-figure strong { font-size: var(--a4-text-2xl); line-height: var(--a4-leading-tight); font-weight: var(--a4-weight-bold); color: var(--a4-ink); font-variant-numeric: tabular-nums; }
 .a4-dash-figure span { font-size: var(--a4-text-xs); }
 .a4-dash-figure.a4-accent { background: linear-gradient(135deg, var(--a4-card), var(--a4-accent-soft)); }
 .a4-dash-figure.a4-accent strong { color: var(--a4-accent-text); }
@@ -1935,7 +1969,7 @@ html #page.ezexplayoutsuinavigationpart #leftmenu.sidebar {
 .a4-dash-figure > span:not(.a4-dash-figure-ico):not(.a4-dash-trend) { grid-column: 2; }
 .a4-dash-figure > .a4-dash-trend {
   grid-column: 1 / -1; display: inline-flex; align-items: center; gap: var(--a4-space-1);
-  margin-top: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600;
+  margin-top: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-strong);
 }
 a.a4-dash-figure:has(> .a4-dash-figure-ico)::after {
   content: ""; position: absolute; top: var(--a4-space-3); inset-inline-end: var(--a4-space-3); width: 14px; height: 14px;
@@ -1959,26 +1993,26 @@ a.a4-dash-figure:is(:hover, :focus-visible) > span:not(.a4-dash-figure-ico):not(
   min-width: 0; padding: var(--a4-space-4) var(--a4-space-4) var(--a4-space-4); border-radius: var(--a4-radius); background-color: var(--a4-card); color: var(--a4-ink);
   box-shadow: 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
 }
-.a4-dash-card > header h2, .a4-dash-card h2 { margin: 0 0 var(--a4-space-3); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-dash-card > header h2, .a4-dash-card h2 { margin: 0 0 var(--a4-space-3); font-size: var(--a4-text-l); font-weight: var(--a4-weight-heading); }
 .a4-dash-card table.list { width: 100%; }
 
 .a4-dash-bars { display: flex; align-items: flex-end; gap: var(--a4-space-2); height: 170px; padding-top: var(--a4-space-4); }
 .a4-dash-bar { position: relative; flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
 .a4-dash-bar-fill { width: 100%; max-width: 26px; min-height: 0; border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0; background: linear-gradient(180deg, var(--a4-accent), var(--a4-accent-strong)); }
-.a4-dash-bar-value { font-size: var(--a4-text-xs); font-weight: 700; color: var(--a4-muted); margin-bottom: var(--a4-space-1); overflow-wrap: anywhere; text-align: center; }
+.a4-dash-bar-value { font-size: var(--a4-text-xs); font-weight: var(--a4-weight-bold); color: var(--a4-muted); margin-bottom: var(--a4-space-1); overflow-wrap: anywhere; text-align: center; }
 .a4-dash-bar-day { margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); color: var(--a4-muted); overflow-wrap: anywhere; text-align: center; }
-.a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-accent-text); font-weight: 700; }
+.a4-dash-bar:last-child .a4-dash-bar-day { color: var(--a4-accent-text); font-weight: var(--a4-weight-bold); }
 /* The chart's numbers as a table, folded under it */
 .a4-dash-data { margin-top: var(--a4-space-3); }
-.a4-dash-data > summary { cursor: pointer; color: var(--a4-accent-text); font-size: var(--a4-text-s); font-weight: 600; }
+.a4-dash-data > summary { cursor: pointer; color: var(--a4-accent-text); font-size: var(--a4-text-s); font-weight: var(--a4-weight-strong); }
 .a4-dash-data > .a4-table { margin-top: var(--a4-space-2); }
 
 .a4-dash-system #dashboard-logo { display: none; }
 .a4-dash-system #mainteinance-text h2 { display: none; }
-.a4-dash-system #mainteinance-text p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); line-height: 1.5; }
+.a4-dash-system #mainteinance-text p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); line-height: var(--a4-leading); }
 .a4-dash-facts { display: grid; grid-template-columns: auto 1fr; gap: var(--a4-space-2) var(--a4-space-3); margin: var(--a4-space-3) 0; }
 .a4-dash-facts dt { color: var(--a4-muted); }
-.a4-dash-facts dd { margin: 0; font-weight: 600; unicode-bidi: plaintext; text-align: left; } /* a value (6.0.15stable, ezmysqli) takes the direction of its own first letter */
+.a4-dash-facts dd { margin: 0; font-weight: var(--a4-weight-strong); unicode-bidi: plaintext; text-align: left; } /* a value (6.0.15stable, ezmysqli) takes the direction of its own first letter */
 :where([dir="rtl"]) .a4-dash-facts dd { text-align: right; }   /* and stands beside its label whatever its own direction (plaintext would align it to its own start) */
 .a4-dash-links { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-3); margin: 0; }
 
@@ -2005,11 +2039,11 @@ a.a4-dash-figure:is(:hover, :focus-visible) > span:not(.a4-dash-figure-ico):not(
 .a4-dash-steps > li { display: flex; gap: var(--a4-space-3); padding: var(--a4-space-3) var(--a4-space-4); border-radius: var(--a4-radius-s); background-color: var(--a4-card); box-shadow: 0 0 0 1px var(--a4-line); }
 .a4-dash-step-no {
   flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
-  width: 28px; height: 28px; border-radius: 50%; background-color: var(--a4-ok); color: var(--a4-card); font-weight: 700;
+  width: 28px; height: 28px; border-radius: 50%; background-color: var(--a4-ok); color: var(--a4-card); font-weight: var(--a4-weight-bold);
 }
-.a4-dash-steps h3 { margin: 2px 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 650; }
-.a4-dash-steps p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); line-height: 1.5; }
-:where(.a4-dash-steps) .a4-dash-step-link { font-weight: 650; text-decoration: none; }
+.a4-dash-steps h3 { margin: 2px 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); }
+.a4-dash-steps p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); line-height: var(--a4-leading); }
+:where(.a4-dash-steps) .a4-dash-step-link { font-weight: var(--a4-weight-heading); text-decoration: none; }
 .a4-dash-step-note { font-style: italic; }
 
 /* ---- The main body chrome, every admin page (node views, Design, extensions' module pages) ------------------
@@ -2022,7 +2056,7 @@ a.a4-dash-figure:is(:hover, :focus-visible) > span:not(.a4-dash-figure-ico):not(
 h1.context-title {
   margin: 0 0 var(--a4-space-1);
   font-size: var(--a4-text-xl);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   letter-spacing: -.01em;
   line-height: var(--a4-leading-tight);
   color: var(--a4-ink);
@@ -2034,7 +2068,7 @@ h1.context-title {
 }
 h2.context-title {
   font-size: 1.2em;
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   color: var(--a4-ink);
 }
 div.context-block h1.context-title img,
@@ -2220,17 +2254,19 @@ div.context-information.a4-node-meta {
 #window-controls.a4-node-tabs {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
 }
 #window-controls.a4-node-tabs > * { min-width: 0; }   /* a wide table in a tab scrolls inside it, never widens the box */
-#window-controls.a4-node-tabs > ul.tabs { grid-column: 1; grid-row: 1; }
-#window-controls.a4-node-tabs > .button-left { grid-column: 2; grid-row: 1; align-self: start; }
-#window-controls.a4-node-tabs > .a4-tabs-switch-label { grid-column: 3; grid-row: 1; align-self: start; }
+/* The tabs switch and its label on a row of their own above the tabs, at its end: beside the tab row they took it
+   some 170px, and a node's tabs (with Ordering, an extension's Layouts ...) wrapped onto a second line */
+#window-controls.a4-node-tabs > ul.tabs { grid-column: 1 / -1; grid-row: 2; }
+#window-controls.a4-node-tabs > .button-left { grid-column: 2; grid-row: 1; align-self: center; margin-bottom: var(--a4-space-2); }
+#window-controls.a4-node-tabs > .a4-tabs-switch-label { grid-column: 3; grid-row: 1; align-self: center; margin-bottom: var(--a4-space-2); }
 #window-controls.a4-node-tabs > .tabs-content {
   display: flex;
   flex-direction: column;
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: 3;
   height: auto;
   min-height: 0;
 }
@@ -2243,7 +2279,7 @@ div.context-information.a4-node-meta {
 /* The tab box's height (parts/a4_tabs_height.tpl, admin4.js): one height of the user's own for every node, the
    eZPreference admin_node_preview_height (localStorage on an anonymous page), set by admin4.js on <html> as
    --a4-node-tabs-height before the page is drawn. It holds from 576px only (a phone keeps the default) and while the
-   tabs are on, between 10em (half the default 20em of pagelayout.css) and 60em (three times), and never taller than
+   tabs are on, between 10em (half the default 20em of base.css) and 60em (three times), and never taller than
    85% of the window, so a height saved on a large screen still fits a small one. With admin4.js the grip below takes
    the place of the browser's resize grip: it works with the keyboard and on touch screens too. */
 @media screen and (min-width: 576px) {
@@ -2325,7 +2361,7 @@ body.a4-login-page {
   min-height: 100dvh;
   background-color: var(--a4-surface);
   color: var(--a4-ink);
-  font: var(--a4-text-m)/1.5 var(--a4-font);
+  font: var(--a4-text-m)/var(--a4-leading) var(--a4-font);
   text-shadow: none;
 }
 html:has(body.a4-login-page) { background: var(--a4-surface); }
@@ -2339,7 +2375,7 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login-legal p { margin: var(--a4-space-1) 0; }
 .a4-login-legal a { color: var(--a4-muted); text-decoration: underline; text-underline-offset: 2px; }
 
-.a4-login-title { margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-2xl); line-height: 1.2; font-weight: 700; letter-spacing: -.01em; text-align: center; color: var(--a4-ink); }
+.a4-login-title { margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-2xl); line-height: var(--a4-leading-tight); font-weight: var(--a4-weight-heading); letter-spacing: -.01em; text-align: center; color: var(--a4-ink); }
 .a4-login-sub { margin: 0 0 var(--a4-space-5); text-align: center; color: var(--a4-muted); font-size: var(--a4-text-m); }
 
 .a4-login-alert.message-warning {
@@ -2348,10 +2384,10 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 }
 .a4-login-alert p { margin: 0; }
 .a4-login-alert p + p { margin-top: var(--a4-space-1); }
-.a4-login-alert-title { font-weight: 700; }
+.a4-login-alert-title { font-weight: var(--a4-weight-heading); }
 
 .a4-login-form { display: flex; flex-direction: column; }
-.a4-field-label { display: block; margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 600; color: var(--a4-ink); }
+.a4-field-label { display: block; margin: 0 0 var(--a4-space-2); font-size: var(--a4-text-m); font-weight: var(--a4-weight-strong); color: var(--a4-ink); }
 .a4-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--a4-space-3); margin-top: var(--a4-space-4); }
 .a4-field-head .a4-field-label { margin-bottom: var(--a4-space-2); }
 .a4-login-forgot-row { margin: var(--a4-space-3) 0 0; text-align: center; }
@@ -2361,7 +2397,7 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
   box-shadow: none; outline: none;
   box-sizing: border-box; width: 100%; height: 46px; margin: 0; padding: 0 var(--a4-space-3);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
-  font: var(--a4-text-l)/1.2 var(--a4-font); transition: border-color .15s ease, box-shadow .15s ease;
+  font: var(--a4-text-l)/var(--a4-leading-tight) var(--a4-font); transition: border-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease;
 }
 .a4-login-form #logintext:focus, .a4-login-form #passwordtext:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
 .a4-field-wrap { position: relative; }
@@ -2376,14 +2412,14 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-reveal[aria-pressed="true"] .a4-eye { display: none; }
 .a4-reveal[aria-pressed="true"] .a4-eye-off { display: inline-block; }
 /* scoped to the form: a bare .a4-check here reached every checkbox row of the admin (components.css only overrides part of it) */
-.a4-login-form .a4-check { display: flex; align-items: center; gap: var(--a4-space-3); margin: var(--a4-space-4) 0 0; font-size: var(--a4-text-m); font-weight: 500; color: var(--a4-ink); cursor: pointer; }
+.a4-login-form .a4-check { display: flex; align-items: center; gap: var(--a4-space-3); margin: var(--a4-space-4) 0 0; font-size: var(--a4-text-m); font-weight: var(--a4-weight-medium); color: var(--a4-ink); cursor: pointer; }
 .a4-login-form .a4-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
 .a4-login-note { margin: var(--a4-space-3) 0 0; font-size: var(--a4-text-s); color: var(--a4-muted); }
 .a4-login-form #loginbutton {
   box-sizing: border-box; width: 100%; height: 48px; margin: var(--a4-space-5) 0 0; padding: 0 var(--a4-space-4);
   border: 0; border-radius: var(--a4-radius-s); background-color: var(--a4-accent-strong); color: var(--a4-on-accent);
-  font: 600 var(--a4-text-l)/1 var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
-  transition: background-color .15s ease, box-shadow .15s ease;
+  font: var(--a4-weight-strong) var(--a4-text-l)/var(--a4-leading-none) var(--a4-font); cursor: pointer; box-shadow: 0 6px 16px var(--a4-accent-soft);
+  transition: background-color var(--a4-duration) ease, box-shadow var(--a4-duration) ease;
 }
 .a4-login-form #loginbutton:hover { background-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 .a4-login-form #loginbutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
@@ -2393,15 +2429,15 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
   display: inline-flex; align-items: center; justify-content: center; gap: var(--a4-space-2);
   box-sizing: border-box; width: 100%; height: 48px; margin: var(--a4-space-3) 0 0; padding: 0 var(--a4-space-4);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); color: var(--a4-ink);
-  font: 600 var(--a4-text-l)/1 var(--a4-font); cursor: pointer;
-  transition: border-color .15s ease, background-color .15s ease;
+  font: var(--a4-weight-strong) var(--a4-text-l)/var(--a4-leading-none) var(--a4-font); cursor: pointer;
+  transition: border-color var(--a4-duration) ease, background-color var(--a4-duration) ease;
 }
 .a4-login-form #passkeybutton:hover { border-color: var(--a4-accent); background-color: var(--a4-soft); }
 .a4-login-form #passkeybutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-login-form #passkeybutton[hidden] { display: none; }
 .a4-login-form .a4-notice { margin: var(--a4-space-3) 0 0; font-size: var(--a4-text-s); }
 .a4-login-alt { margin: var(--a4-space-4) 0 0; text-align: center; font-size: var(--a4-text-m); color: var(--a4-muted); }
-.a4-login-alt a { color: var(--a4-accent-text); font-weight: 600; text-decoration: none; }
+.a4-login-alt a { color: var(--a4-accent-text); font-weight: var(--a4-weight-strong); text-decoration: none; }
 
 /* the brand panel: the wizard's orange, a quiet pattern, one line of text */
 .a4-login-brand {
@@ -2413,8 +2449,8 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
   background-color: var(--a4-accent-strong);   /* white text on every part of the panel at least 5.2:1 */
 }
 .a4-login-brand-inner { max-width: 440px; }
-.a4-login-brand-kicker { margin: 0 0 var(--a4-space-3); font: 600 var(--a4-text-s)/1.4 var(--a4-mono); letter-spacing: .04em; opacity: .9; }
-.a4-login-brand-title { margin: 0 0 var(--a4-space-3); font-size: var(--a4-text-3xl); line-height: 1.15; font-weight: 700; letter-spacing: -.01em; }
+.a4-login-brand-kicker { margin: 0 0 var(--a4-space-3); font: var(--a4-weight-strong) var(--a4-text-s)/var(--a4-leading) var(--a4-mono); letter-spacing: var(--a4-tracking); opacity: .9; }
+.a4-login-brand-title { margin: 0 0 var(--a4-space-3); font-size: var(--a4-text-3xl); line-height: var(--a4-leading-tight); font-weight: var(--a4-weight-heading); letter-spacing: -.01em; }
 .a4-login-brand-sub { margin: 0; font-size: var(--a4-text-m); opacity: .9; }
 
 /* phones and narrow windows: the form alone */
@@ -2686,7 +2722,7 @@ html {
 .a4pw [hidden] { display: none !important; }
 .a4pw h1, .a4pw h2 { margin: 0; padding: 0; border: 0; background: none; color: inherit; }
 .a4pw-head { margin: 0 0 var(--a4-space-4); }
-.a4pw-head h1 { font-size: 1.5em; line-height: 1.2; font-weight: 700; }
+.a4pw-head h1 { font-size: 1.5em; line-height: var(--a4-leading-tight); font-weight: var(--a4-weight-heading); }
 .a4pw-head p { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); }
 
 .a4pw-card { margin: 0; padding: var(--a4-space-4); border: 1px solid var(--a4-line); border-radius: var(--a4-radius); background-color: var(--a4-card); }
@@ -2695,12 +2731,12 @@ html {
 
 .a4pw-field { margin: 0 0 var(--a4-space-4); }
 .a4pw-label-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--a4-space-1) var(--a4-space-3); }
-.a4pw label.a4pw-label { display: block; margin: 0 0 var(--a4-space-2); padding: 0; font-size: var(--a4-text-m); font-weight: 650; color: var(--a4-ink); }
+.a4pw label.a4pw-label { display: block; margin: 0 0 var(--a4-space-2); padding: 0; font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); color: var(--a4-ink); }
 .a4pw-input { position: relative; display: flex; align-items: stretch; }
 .a4pw-input input {
   flex: 1 1 auto; min-width: 0; width: 100%; height: 44px; margin: 0; padding: 0 var(--a4-space-3);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-field); color: var(--a4-ink);
-  font: var(--a4-text-l)/1.2 var(--a4-font); box-shadow: none;
+  font: var(--a4-text-l)/var(--a4-leading-tight) var(--a4-font); box-shadow: none;
 }
 .exp-pw-js .a4pw-input input { padding-inline-end: var(--a4-pw-toggle-room); }   /* room for .a4pw-toggle (two 12px insets, 8px gap, icon and "Show") */
 .a4pw-input input:focus { outline: 2px solid transparent; border-color: var(--a4-accent); box-shadow: 0 0 0 3px var(--a4-ring); }
@@ -2708,7 +2744,7 @@ html {
 .a4pw-toggle {
   position: absolute; top: 4px; inset-inline-end: 4px; bottom: 4px; display: inline-flex; align-items: center; gap: var(--a4-space-2);
   margin: 0; padding: 0 var(--a4-space-3); border: 1px solid transparent; border-radius: var(--a4-radius-s); background: transparent;
-  color: var(--a4-muted); font: 600 var(--a4-text-s)/1 var(--a4-font); cursor: pointer;
+  color: var(--a4-muted); font: var(--a4-weight-strong) var(--a4-text-s)/var(--a4-leading-none) var(--a4-font); cursor: pointer;
 }
 .a4pw-toggle:hover { background: var(--a4-soft); color: var(--a4-ink); }
 .a4pw-toggle:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 0; }
@@ -2716,10 +2752,10 @@ html {
 .a4pw-toggle .a4pw-eye-off, .a4pw-toggle[aria-pressed="true"] .a4pw-eye { display: none; }
 .a4pw-toggle[aria-pressed="true"] .a4pw-eye-off { display: inline-block; }
 
-.a4pw-link { margin: 0 0 var(--a4-space-2); padding: 2px 0; border: 0; background: none; color: var(--a4-accent-text); font: 600 var(--a4-text-s)/1.3 var(--a4-font); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.a4pw-link { margin: 0 0 var(--a4-space-2); padding: 2px 0; border: 0; background: none; color: var(--a4-accent-text); font: var(--a4-weight-strong) var(--a4-text-s)/var(--a4-leading-tight) var(--a4-font); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
 .a4pw-link:hover { color: var(--a4-ink); }
 
-.a4pw-error { margin: var(--a4-space-2) 0 0; color: var(--a4-bad); font-size: var(--a4-text-m); font-weight: 600; }
+.a4pw-error { margin: var(--a4-space-2) 0 0; color: var(--a4-bad); font-size: var(--a4-text-m); font-weight: var(--a4-weight-strong); }
 .a4pw-error span { display: block; }
 .a4pw-error span::before { content: "! "; }
 
@@ -2734,7 +2770,7 @@ html {
 .a4pw-meter-label b { color: var(--a4-ink); }
 .a4pw-meter:not([data-score]) .a4pw-meter-label, .a4pw-meter[data-score=""] .a4pw-meter-label { visibility: hidden; }
 
-.a4pw-rules-title { margin: var(--a4-space-3) 0 var(--a4-space-1); font-size: var(--a4-text-s); font-weight: 650; color: var(--a4-muted); }
+.a4pw-rules-title { margin: var(--a4-space-3) 0 var(--a4-space-1); font-size: var(--a4-text-s); font-weight: var(--a4-weight-heading); color: var(--a4-muted); }
 .a4pw-rules { margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-m); }
 .a4pw-rules li { display: flex; align-items: flex-start; gap: var(--a4-space-2); margin: var(--a4-space-1) 0; padding: 0; color: var(--a4-ink); background: none; }
 .a4pw-rule-icon { position: relative; flex: 0 0 auto; width: 16px; height: 16px; margin-top: 2px; border: 2px solid var(--a4-field-line); border-radius: 50%; }
@@ -2753,10 +2789,10 @@ html {
 .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4-field-line); }
 .a4pw-field.invalid .a4pw-rules li[data-state="unmet"] { color: var(--a4-bad); }
 .a4pw-field.invalid .a4pw-rules li[data-state="unmet"] .a4pw-rule-icon { border-color: var(--a4-bad); }
-.a4pw-rules li[data-failed="true"]:not([data-state="met"]) { color: var(--a4-bad); font-weight: 600; }
+.a4pw-rules li[data-failed="true"]:not([data-state="met"]) { color: var(--a4-bad); font-weight: var(--a4-weight-strong); }
 .a4pw-rules li[data-failed="true"]:not([data-state="met"]) .a4pw-rule-icon { border-color: var(--a4-bad); }
 
-.a4pw-match { margin: var(--a4-space-2) 0 0; font-size: var(--a4-text-m); font-weight: 600; }
+.a4pw-match { margin: var(--a4-space-2) 0 0; font-size: var(--a4-text-m); font-weight: var(--a4-weight-strong); }
 .a4pw-match[data-state="match"] { color: var(--a4-ok); }
 .a4pw-match[data-state="match"]::before { content: "\2713  "; }
 .a4pw-match[data-state="nomatch"] { color: var(--a4-muted); }
@@ -2766,7 +2802,7 @@ html {
 .a4pw-btn {
   display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin: 0; padding: 0 var(--a4-space-4);
   border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); color: var(--a4-ink);
-  font: 600 var(--a4-text-m)/1.2 var(--a4-font); text-decoration: none; cursor: pointer; text-shadow: none;
+  font: var(--a4-weight-strong) var(--a4-text-m)/var(--a4-leading-tight) var(--a4-font); text-decoration: none; cursor: pointer; text-shadow: none;
 }
 .a4pw a.a4pw-btn { color: var(--a4-ink); }
 .a4pw-btn:hover { border-color: var(--a4-accent); }
@@ -2776,16 +2812,16 @@ html {
 
 .a4pw-summary { margin: 0 0 var(--a4-space-4); padding: var(--a4-space-3) var(--a4-space-4); border: 1px solid var(--a4-bad-line); border-inline-start: 4px solid var(--a4-bad); border-radius: var(--a4-radius-s); background-color: var(--a4-bad-bg); color: var(--a4-bad); }
 .a4pw-summary:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-.a4pw-summary h2 { font-size: var(--a4-text-l); font-weight: 700; color: var(--a4-bad); }
+.a4pw-summary h2 { font-size: var(--a4-text-l); font-weight: var(--a4-weight-heading); color: var(--a4-bad); }
 .a4pw-summary ul { margin: var(--a4-space-2) 0 0; padding: 0 0 0 var(--a4-space-4); }
 :where([dir="rtl"]) .a4pw-summary ul { padding: 0 var(--a4-space-4) 0 0; }
 .a4pw-summary li { margin: 2px 0; }
-.a4pw .a4pw-summary a { color: var(--a4-bad); text-decoration: underline; font-weight: 600; }
+.a4pw .a4pw-summary a { color: var(--a4-bad); text-decoration: underline; font-weight: var(--a4-weight-strong); }
 
 .a4pw-done { display: flex; gap: var(--a4-space-3); align-items: flex-start; padding: var(--a4-space-4) var(--a4-space-4); border: 1px solid var(--a4-ok-line); border-radius: var(--a4-radius); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
 .a4pw-done:focus { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4pw-done-icon { flex: 0 0 auto; color: var(--a4-ok); }
-.a4pw-done h2 { font-size: var(--a4-text-l); font-weight: 700; color: var(--a4-ok); }
+.a4pw-done h2 { font-size: var(--a4-text-l); font-weight: var(--a4-weight-heading); color: var(--a4-ok); }
 .a4pw-done p { margin: var(--a4-space-2) 0 0; }
 .a4pw-done-actions { padding-top: var(--a4-space-2); }
 
@@ -2820,13 +2856,18 @@ html .exp-upload :focus-visible, html .exp-upload-select:focus-within, html .exp
 html img.datepicker-icon:focus-visible { box-shadow: 0 0 0 3px var(--a4-ring); }
 html .exp-dt-menu [role=menuitem]:focus-visible { box-shadow: inset 0 0 0 2px var(--a4-ring); }
 html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
-  --exp-dt-head: var(--a4-soft); --exp-dt-head-sortable: var(--a4-soft); --exp-dt-head-sorted: var(--a4-accent-soft);
-  --exp-dt-head-ink: var(--a4-ink); --exp-dt-head-line: var(--a4-line); --exp-dt-row: var(--a4-surface);
+  --exp-dt-head: var(--a4-head-bg); --exp-dt-head-sortable: var(--a4-head-bg); --exp-dt-head-sorted: var(--a4-accent-soft);
+  --exp-dt-head-ink: var(--a4-ink); --exp-dt-head-line: var(--a4-line-strong); --exp-dt-row: var(--a4-surface);
   --exp-dt-row-alt: var(--a4-zebra); --exp-dt-row-hover: var(--a4-info-bg); --exp-dt-line: var(--a4-line);
   --exp-dt-link: var(--a4-accent-text); --exp-dt-button-ink: var(--a4-accent-text); --exp-dt-button-line: var(--a4-line-strong);
   --exp-dt-button-hover: var(--a4-field-line); --exp-dt-disabled: var(--a4-disabled); --exp-dt-panel: var(--a4-soft);
   --exp-dt-frame: var(--a4-line-strong);
 }
+/* the table's header in the shape of the list tables (table.list above): separators between the columns, none
+   before the first, the top corners rounded; logical, so a right-to-left table matches */
+html .exp-dt-table thead th { border-left: 0; border-inline-start: 1px solid var(--exp-dt-head-line); }
+html .exp-dt-table thead th:first-child { border-inline-start: 0; border-start-start-radius: var(--a4-radius-s); }
+html .exp-dt-table thead th:last-child { border-start-end-radius: var(--a4-radius-s); }
 html .exp-dt-action { background-color: var(--a4-card); background-image: none; color: var(--a4-ink); text-shadow: none; }
 html .exp-dt-button { background-color: var(--a4-soft); }
 html .exp-dt-button:disabled { color: var(--a4-disabled); }
@@ -2869,7 +2910,7 @@ html #action-controls .exp-dt-button {
   color: var(--a4-ink);
   font-family: var(--a4-font);
   font-size: var(--a4-text-s);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
 }
 html #action-controls .exp-dt-button:disabled { color: var(--a4-disabled); }
 html #action-controls .exp-dt-button:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
@@ -2897,8 +2938,8 @@ html .exp-dt-first, html .exp-dt-prev, html .exp-dt-next, html .exp-dt-last, htm
   color: var(--a4-ink);
   font-family: var(--a4-font);
   font-size: var(--a4-text-m);
-  font-weight: 600;
-  line-height: 1;
+  font-weight: var(--a4-weight-strong);
+  line-height: var(--a4-leading-none);
   vertical-align: middle;
 }
 html:where([dir="rtl"]) .exp-dt-first, html:where([dir="rtl"]) .exp-dt-prev, html:where([dir="rtl"]) .exp-dt-next, html:where([dir="rtl"]) .exp-dt-last, html:where([dir="rtl"]) .exp-dt-page { margin: 0 var(--a4-space-1) 0 0; }
@@ -2908,7 +2949,7 @@ html .exp-dt-first:hover, html .exp-dt-prev:hover, html .exp-dt-next:hover, html
 html .exp-dt-first:disabled, html .exp-dt-prev:disabled, html .exp-dt-next:disabled, html .exp-dt-last:disabled {
   border-color: var(--a4-line); color: var(--a4-disabled);
 }
-/* the arrows are IcoMoon glyphs ([data-icon]::before, core.css), which keep their own font family */
+/* the arrows are IcoMoon glyphs ([data-icon]::before, base.css), which keep their own font family */
 html .exp-dt-first [data-icon], html .exp-dt-prev [data-icon], html .exp-dt-next [data-icon], html .exp-dt-last [data-icon] { font-size: var(--a4-text-l); }
 html .exp-dt-page.exp-dt-current { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
 html .exp-dt-first:focus-visible, html .exp-dt-prev:focus-visible, html .exp-dt-next:focus-visible, html .exp-dt-last:focus-visible,
@@ -3052,7 +3093,7 @@ div#contentstructure ul#content_tree_menu a.nodeicon::after {
   font-family: inherit;
   line-height: var(--a4-leading-tight);
   cursor: pointer;
-  transition: background-color .15s ease, color .15s ease;
+  transition: background-color var(--a4-duration) ease, color var(--a4-duration) ease;
 }
 #currentuserpreferences .a4-pref-tabs ul.tabs li button:hover {
   background-color: var(--a4-soft);
@@ -3076,7 +3117,7 @@ div#contentstructure ul#content_tree_menu a.nodeicon::after {
   margin: 0;
   padding: 0 var(--a4-space-2);
   font-size: var(--a4-text-s);
-  font-weight: 700;
+  font-weight: var(--a4-weight-bold);
   white-space: nowrap;
 }
 
@@ -3143,7 +3184,7 @@ html.a4-js .a4-uiswitch-toggle[data-a4-disclosure][aria-expanded="false"] + .a4-
   background-color: var(--a4-accent-soft);
   box-shadow: inset 3px 0 0 var(--a4-accent);
   color: var(--a4-accent-text);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
 }
 :where([dir="rtl"]) .a4-uiswitch-option[aria-current="true"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
 /* A long grouped list (uiswitch/grouped.tpl, the interface languages) is a native select: as wide as the column,
@@ -3171,11 +3212,11 @@ div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, sp
   background-color: var(--a4-accent-soft);
   box-shadow: inset 3px 0 0 var(--a4-accent);
   color: var(--a4-ink);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
 }
 :where([dir="rtl"]) div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) { padding: 0 var(--a4-space-2) 0 var(--a4-space-1); border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); box-shadow: inset -3px 0 0 var(--a4-accent); }
 div#contentstructure li:has(li.currentnode) > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) {
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
 }
 @media (forced-colors: active) {
   div#contentstructure li.currentnode > a.image-text :is(span.node-name-normal, span.node-name-hidden, span.node-name-hiddenbyparent) {
@@ -3267,7 +3308,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
 .a4-tabs-switch-label {
   color: var(--a4-muted);
   font-size: var(--a4-text-s);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
 }
 .tab-block .show-hide-tabs {
   position: relative;
@@ -3302,7 +3343,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   -webkit-mask: none;
   mask: none;
 }
-/* theme/rounded.css draws the old icon through a#maincontent-hide::before (an id): no mask on the track */
+/* base.css draws the old icon through a#maincontent-hide::before (an id): no mask on the track */
 .tab-block #maincontent-show.show-hide-tabs::before,
 .tab-block #maincontent-hide.show-hide-tabs::before {
   -webkit-mask: none;
@@ -3317,7 +3358,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   height: 12px;
   border-radius: 50%;
   background-color: var(--a4-muted);
-  transition: left .15s ease, background-color .15s ease;
+  transition: left var(--a4-duration) ease, background-color var(--a4-duration) ease;
 }
 .tab-block .show-hide-tabs[aria-pressed="true"]::before,
 .tab-block #maincontent-hide.show-hide-tabs:not([aria-pressed="false"])::before {
@@ -3374,8 +3415,8 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   cursor: pointer;
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 700;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-heading);
+  letter-spacing: var(--a4-tracking);
   text-transform: uppercase;
 }
 #leftmenu details.a4-navgroup > summary.a4-nav-title::-webkit-details-marker { display: none; }
@@ -3387,7 +3428,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   background-color: currentColor;
   -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
   mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
-  transition: transform .15s ease;
+  transition: transform var(--a4-duration) ease;
 }
 :where([dir="rtl"]) #leftmenu details.a4-navgroup > summary.a4-nav-title::before { scale: -1 1; }
 #leftmenu details.a4-navgroup[open] > summary.a4-nav-title::before { transform: rotate(90deg); }
@@ -3449,7 +3490,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   background-color: var(--a4-accent-soft);
   box-shadow: inset 3px 0 0 var(--a4-accent-text);
   color: var(--a4-accent-text);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
   text-decoration: none;
 }
 :where([dir="rtl"]) #leftmenu ul.leftmenu-items li > div > a[aria-current] { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); box-shadow: inset -3px 0 0 var(--a4-accent-text); }
@@ -3552,6 +3593,7 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   #window-controls.a4-node-tabs { grid-template-rows: auto auto minmax(0, 1fr); }
   #window-controls.a4-node-tabs > ul.tabs {
     grid-column: 1 / -1;
+    grid-row: 1;   /* on a phone the tabs come first, the switch under them */
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: thin;
@@ -3617,8 +3659,8 @@ html #content-sub-items-list .exp-dt-message td { box-sizing: border-box; height
 #header .searchtextwrapper { border: 0; border-radius: 999px; background-color: transparent; }
 #header .searchblock .searchbuttonfield { border-radius: 999px; }
 
-/* The body text grows a little on very wide windows (--a4-text-body: 13px up to 1920px, 14px at 2560px). core.css
-   keeps var(--a4-text-s) for the body; this later rule takes over in admin4 only. */
+/* The body text grows a little on very wide windows (--a4-text-body: 13px up to 1920px, 14px at 2560px). this
+   rule is the body text of admin4 (base.css has none; its var(--a4-text-s) is the floor of the clamp). */
 body { font-size: var(--a4-text-body); }
 
 /* Search results: the path of each result under its name; on a phone the type stands under them too, so no column

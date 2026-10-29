@@ -34,7 +34,8 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<table class="list" cellspacing="0" >
+<div class="a4-content-locations-scroll">
+<table class="list a4-content-locations" cellspacing="0" >
 <tr>
 {* JB TODO: The alt/title fields should get different text descriptions when they are disabled *}
     <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/admin/content/edit' )|wash}" data-a4-toggle-checkboxes="AssignmentIDSelection[]" data-a4-form="editform"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
@@ -171,6 +172,7 @@
     {/let}
     {/section}
  </table>
+</div>
 
 
 {* DESIGN: Content END *}</div></div></div>

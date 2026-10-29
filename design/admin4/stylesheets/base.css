@@ -1,0 +1,3943 @@
+/*
+ * admin4's own base stylesheet: the element defaults, the frame layout, the content classes, the rounded theme,
+ * the data tables and the modal window. Until October 2026 these were six files inherited from admin3 (core,
+ * pagelayout, content, theme/rounded, theme/admin_datatable, theme/modalwindow); they are one file now, in the
+ * order the page loaded them, so the cascade is unchanged.
+ *
+ * Loaded by page_head_style.tpl before admin4.css and the components, which restyle these rules with the same
+ * selector and win by loading later. A declaration that a later rule of base.css, admin4.css or components.css
+ * sets again for every one of its selectors was removed. Values come from the --a4-* tokens of components.css.
+ * theme/modalwindow.css stays as a file only for the design chain of exp_adminui; admin4 itself does not load it.
+ */
+
+/* ======== from base.css ======== */
+
+/* CORE CSS 20100126 */
+
+/* BODY */
+
+html
+{
+    height: 100%; /* To be able to have full page designs in themes */
+}
+
+body /* These becomes the initial settings for most other elements */
+{
+    background-color: var(--a4-surface);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height:100%;
+}
+
+/* HEADINGS */
+
+h1, h2, h3, h4, h5, h6 /* Set general styles for all headings; some may be overridden later */
+{
+    font-family: var(--a4-font, Arial, Helvetica, sans-serif);
+    margin: 0.5em 0 0.2em 0;
+    padding: 0;
+}
+
+h1
+{
+    font-size: 1.8em;
+}
+
+h2
+{
+    font-size: 1.4em;
+}
+
+h3
+{
+    font-size: 1.1em;
+}
+
+h4, h5, h6
+{
+    font-size: 1em;
+}
+
+h6
+{
+    margin: 0.4em 0 0.1em 0;
+}
+
+
+/* PARAGRAPHS */
+
+p
+{
+    margin: 0.5em 0 0.5em 0;
+    line-height: 1.25em; /* This is aprox. default line height in most popular browsers; set explicitly to ensure consitency. */
+}
+
+/* LINKS */
+
+a
+{
+    color: var(--a4-accent-text);
+    text-decoration: underline;
+}
+
+a:hover
+{
+    color: var(--a4-ink);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a img
+{
+    border: none; /* Some browsers may display a border around a linked image without this attribute set to _none_. */
+}
+
+
+/* PRE TEXT */
+
+pre, code
+{
+    font-family: var(--a4-mono, monospace);
+    font-size: 1em; /* Setting this exact size may also help visual consistency */
+}
+
+pre
+{
+    margin: 1em 0 1em 0;
+    padding: 0.2em;
+}
+
+pre.wordwrap /* Style for ensuring long lines in pre field won't break the design; use &nbsp; instead to preserve white-space where desired */
+{
+    white-space: normal;
+}
+
+pre.wordwrap span.line /* Style for tag wrapping around each line of text */
+{
+    display: block;
+}
+
+/* Typography & Font Icons*/
+@font-face
+{
+    font-family: 'IcoMoon';
+    /* woff only: every browser admin4 supports reads it (the eot, svg and ttf files are no longer referenced) */
+    src: url('../fonts/IcoMoon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block; /* icons: no fallback letter is drawn while the font loads */
+}
+
+/* a 1em box from the first paint (an IcoMoon glyph is 1em wide): the arrows do not change width when the font
+   arrives after the fallback glyph has been drawn */
+[data-icon]:before
+{
+    display: inline-block;
+    inline-size: 1em;
+    text-align: center;
+    font-family: 'IcoMoon';
+    content: attr(data-icon);
+    content: attr(data-icon) / "";   /* a glyph from the private-use area: no text for a screen reader */
+}
+/* right to left the data table pagers' arrows point the other way, so "previous" points to the right */
+:where([dir="rtl"]) .exp-dt-first [data-icon]:before, :where([dir="rtl"]) .exp-dt-prev [data-icon]:before,
+:where([dir="rtl"]) .exp-dt-next [data-icon]:before, :where([dir="rtl"]) .exp-dt-last [data-icon]:before
+{
+    display: inline-block;
+    scale: -1 1;
+}
+
+
+/* TABLES */
+
+table
+{
+    font-size: 1em; /* Fix for size "loss" in tables in IE; redundant for most other browsers */
+    margin: 0;
+    padding: 0;
+}
+
+tr
+{
+    background: var(--a4-surface);
+}
+
+th, td
+{
+    padding: 0;
+}
+th
+{
+    font-size:1.1em;
+}
+
+table.list td
+{
+font-size:1.05em;
+}
+
+table.list, table.special /* Standard class usable for most regular tables presenting lists, with additional related styles */
+{
+    width: 100%;
+    empty-cells: show;
+}
+
+table.list th, table.list td, table.special th, table.special td
+{
+    padding: 0.4em;
+    text-align: start;
+    vertical-align: middle;
+}
+
+table.list th, table.special th
+{
+    white-space: nowrap;
+}
+
+table.list td
+{
+    font-weight: normal;
+}
+
+table.list tr:first-child td
+{
+   border-top: 0 none;
+}
+
+/* 'not available rate' */
+table.list td.na-rate, table.special td.na-rate
+{
+    text-align: end;
+    font-style: italic;
+    color: var(--a4-disabled);
+}
+
+table.special tr.bgdark
+{
+    background-color: var(--a4-soft);
+}
+
+table.list tr.bglight:hover, table.list tr.bgdark:hover /* This has no effect in IE6 and below */
+{
+    background-color: var(--a4-soft);
+}
+
+th.tight, td.tight
+{
+    width: 1%;
+}
+
+td.nowrap
+{
+    white-space: nowrap;
+}
+
+td.number, table.list td.number, table.special td.number, table.list td.right
+{
+    text-align: end;
+}
+
+
+/* ORDERED AND UNORDERED LISTS */
+
+ul, ol
+{
+    margin: 0.75em 0 1em 2.5em;
+    padding: 0;
+}
+:where([dir="rtl"]) ul, :where([dir="rtl"]) ol { margin: 0.75em 2.5em 1em 0; }
+
+ul ul, ol ul
+{
+    margin: 0.3em 0 0.5em 1.3em;
+}
+:where([dir="rtl"]) ul ul, :where([dir="rtl"]) ol ul { margin: 0.3em 1.3em 0.5em 0; }
+
+ul ol, ol ol
+{
+    margin: 0.3em 0 0.5em 1.9em;
+}
+:where([dir="rtl"]) ul ol, :where([dir="rtl"]) ol ol { margin: 0.3em 1.9em 0.5em 0; }
+
+ul, ul ul
+{
+    list-style-type: disc;
+}
+
+li
+{
+    margin: 0 0 0.3em 0;
+    padding: 0;
+    line-height: 1.25em;
+}
+
+/* DEFINITION LISTS */
+
+dl
+{
+    margin: 0.25em 0 0.25em 0;
+    padding: 0;
+}
+
+dt, dd
+{
+    font-style: normal;
+    margin: 0 0 0.25em 0;
+}
+
+dt
+{
+    font-weight: var(--a4-weight-heading);
+}
+
+dd
+{
+    margin: 0 1em 0.5em 2.5em;
+}
+:where([dir="rtl"]) dd { margin: 0 2.5em 0.5em 1em; }
+
+
+/* FORM ELEMENTS */
+
+form
+{
+    margin: 0;
+    padding: 0;
+}
+
+label
+{
+    font-weight: var(--a4-weight-heading);
+    padding-inline-end: 0.5em;
+    display: block;
+    white-space: nowrap;
+    font-size:1.1em;
+}
+
+input, select
+{
+    font-family: var(--a4-font, Arial, Helvetica, sans-serif); /* Needs to be set for some browsers, to prevent other default font from being used */
+    font-size: 1em;
+}
+
+input.box, input.halfbox
+{
+    font-size: 1em;
+}
+
+textarea
+{
+    font-family: var(--a4-font, Arial, Helvetica, sans-serif); /* Usually defaulted to monospaced font; so it needs to be set if to change */
+    font-size: 1em; /* Needs to be specified for IE */
+}
+
+optgroup
+{
+    font-weight: var(--a4-weight-heading);
+    font-style: normal;
+}
+
+input.button, button, input.defaultbutton, input.button-disabled
+{
+    font-family: var(--a4-font, Arial, Helvetica, sans-serif);
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: var(--a4-text-xs);
+    font-weight: normal;
+    padding-inline-start: 0.25em;
+    padding-inline-end: 0.25em;
+}
+
+input.defaultbutton
+{
+    padding-inline-start: 0.45em;
+    padding-inline-end: 0.45em;
+}
+
+input.button-disabled, input.button[disabled="disabled"]
+{
+    cursor: default;
+}
+
+input.disabled[type="image"]
+{
+	opacity: 0.7;
+	cursor: default;
+}
+
+input.box, textarea.box
+{
+    width: 100%;
+}
+
+input.halfbox, textarea.halfbox
+{
+    width: 48%;
+}
+
+td input.halfbox, td textarea.halfbox
+{
+    width: 98%;
+}
+
+fieldset
+{
+    border: 1px solid var(--a4-line);
+    background-color: var(--a4-soft);
+    margin: 0em;
+}
+
+fieldset.block
+{
+    padding-bottom: 0em;
+}
+
+legend
+{
+    font-weight: var(--a4-weight-heading);
+    color: var(--a4-ink);
+    padding: 0 0.35em 0 0.35em;
+    font-size:1.1em;
+}
+
+/* Make sure long legend texts do not overflow */
+/* IE8, IE9 */
+fieldset legend 
+{
+    white-space: normal;
+    display: table;
+}
+/* IE7/ IE6 */
+legend span.long-legend-wrap
+{
+    white-space: normal;
+    display: block;
+    width: 100%;
+}
+
+fieldset label
+{
+    color: var(--a4-ink);
+    font-size:1em;
+}
+
+label select
+{
+font-size:var(--a4-text-xs);
+}
+
+
+/* HORIZONTAL RULERS */
+
+hr /* General formatting for all horizontal rulers */
+{
+    border: none; /* All borders must be removed as they are default for Opera */
+    border-top: 1px solid var(--a4-line); /* This single top border is the one replacing the default look of the ruler */
+    height: 1px;
+    margin: 0.35em 0 0.35em 0; /* Be aware that these margins may not be calculated consistently across browsers */
+}
+
+
+/* MESSAGES TO THE USER */
+
+div.message-confirmation, div.message-feedback, div.message-warning, div.message-error
+{
+    margin: 0.5em 0 1em 0;
+    border: 6px solid var(--a4-line-strong);
+}
+
+div.box-content div.message-confirmation, div.box-content div.message-feedback, div.box-content  div.message-warning, div.box-content  div.message-error
+{
+    margin-top: 0;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    border: none;
+    background-color: transparent;
+}
+
+div.message-feedback h2, div.message-warning h2, div.message-error h2
+{
+    position: relative;
+    margin-inline-start: 0.5em;
+    padding: 0.25em 0.5em 0.5em 2.5em;
+}
+:where([dir="rtl"]) div.message-feedback h2, :where([dir="rtl"]) div.message-warning h2, :where([dir="rtl"]) div.message-error h2 { padding: 0.25em 2.5em 0.5em 0.5em; }
+
+/* The icon left of the heading: a Bootstrap icon (share/icons/bootstrap-icons) in the colour of the state */
+div.message-feedback h2::before, div.message-warning h2::before, div.message-error h2::before
+{
+    content: "";
+    position: absolute;
+    inset-inline-start: 0.5em;
+    top: 0.25em;
+    width: 1.25em;
+    height: 1.25em;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+div.message-feedback
+{
+    border-color: var(--a4-ok);
+}
+
+div.message-feedback h2::before
+{
+    background-color: var(--a4-ok);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/check-circle-fill.svg);
+}
+
+div.message-warning
+{
+    border-color: var(--a4-warn);
+    background: var(--a4-surface);
+}
+
+div.message-warning h2::before
+{
+    background-color: var(--a4-warn);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg);
+}
+
+div.message-error
+{
+    border-color: var(--a4-bad);
+}
+
+div.message-error h2::before
+{
+    background-color: var(--a4-bad);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
+}
+
+div.message-feedback span.time, div.message-warning span.time, div.message-error span.time
+{
+    font-size: var(--a4-text-xs);
+    margin-top: 0.15em;
+    display: block;
+    float: right;
+}
+:where([dir="rtl"]) div.message-feedback span.time, :where([dir="rtl"]) div.message-warning span.time, :where([dir="rtl"]) div.message-error span.time { float: left; }
+
+label.message-error, legend.message-error
+{
+    color: var(--a4-bad);
+}
+
+
+/* The remaining styles are important for proper content rendering in Exponential - Do not remove or alter them without proper knowledge of the possible consequences */
+
+/* POSITION CONTROL */
+
+div.block /* Used around groups of objects which are connected in some way, and requires extra margins to the surroundings */
+{
+    margin: 0.5em 0 0.5em 0;
+    padding: 0;
+    clear: both;
+}
+
+div.block div.element, div.block div.halfelement /* Used if several objects are to be stacked horizontally within the same block */
+{
+    padding-inline-end: 1em;
+    float: left;
+}
+:where([dir="rtl"]) div.block div.element, :where([dir="rtl"]) div.block div.halfelement { float: right; }
+
+div.halfelement
+{
+    width: 48%;
+}
+
+div.block div.left /* Floats elements to the left in a block */
+{
+    width: 48%;
+    float: left;
+    clear: left;
+}
+:where([dir="rtl"]) div.block div.left { float: right; clear: right; }
+
+div.block div.right /* Floats elements to the right in a block */
+{
+    width: 48%;
+    float: right;
+    clear: right;
+}
+:where([dir="rtl"]) div.block div.right { float: left; clear: left; }
+
+div.button-left
+{
+    float: left;
+}
+:where([dir="rtl"]) div.button-left { float: right; }
+
+div.button-right
+{
+    float: right;
+    margin-inline-start: 1em;
+}
+:where([dir="rtl"]) div.button-right { float: left; }
+
+div.button-header
+{
+    margin-top: 1em;
+}
+
+p.text-left, td.text-left, th.text-left, *.text-left
+{
+    text-align: left;
+}
+
+p.text-right, td.text-right, th.text-right, *.text-right
+{
+    text-align: right;
+}
+
+p.text-center, td.text-center, th.text-center, *.text-center
+{
+    text-align: center;
+}
+
+p.text-justify, td.text-justify, th.text-justify, *.text-justify
+{
+    text-align: justify;
+}
+
+div.object-left, table.object-left /* Used for floating images and other content elements to the left inside other content */
+{
+    margin: 0.25em 0.25em 0.25em 0;
+    float: left;
+    clear: left;
+}
+
+div.object-right, table.object-right /* Used for floating images and other content elements to the right inside other content */
+{
+    margin: 0.25em 0 0.25em 0.25em;
+    float: right;
+    clear: right;
+}
+
+div.object-center, table.object-center
+{
+    margin: 0.25em auto 0.25em auto;
+    text-align: center;
+}
+
+.embed-inline-left
+{
+    float: left;
+}
+
+.embed-inline-right
+{
+    float: right;
+}
+
+.float-break
+{
+    height: 1%; /* Fix for IE */
+}
+
+.float-break:after /* Terminate floating elements flow */
+{
+    content: "-";
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+div.break /* Old method for terminating floating elements flow; kept for backwards compatibility */
+{
+    clear: both;
+    font-size: 1px; /* Fix for IE */
+    height: 1px;
+    margin-bottom: -1px;
+}
+
+
+/* SPLIT THREE */
+
+div.split
+{
+    clear: both;
+}
+
+div.split div.three-left
+{
+    width: 31%;
+    float: left;
+}
+:where([dir="rtl"]) div.split div.three-left { float: right; }
+
+div.split div.three-right
+{
+    width: 31%;
+    float: right;
+}
+:where([dir="rtl"]) div.split div.three-right { float: left; }
+
+div.split div.three-center
+{
+    margin: 0 35% 0 35%;
+}
+
+
+/* MISCELLANEOUS STYLES */
+
+div.oe-window /* Needed by OE 5.0 when translating content */
+{
+    clear: both;
+}
+
+.small
+{
+    font-size: var(--a4-text-xs);   /* 85% of 13px was 11px, below the 12px floor */
+}
+
+.hide /* Used on elements which should only be visible if CSS in disabled or unavailable */
+{
+    display: none;
+}
+
+.spamfilter /* Simple fix for stopping spambots from getting correct e-mail addresses from a web page: info<span class="spamfilter>SPAMFILTER</span>@ez.no <span class="spamfilter>(Remove SPAMFILTER to reply)</span> */
+{
+    display: none;
+}
+
+/* multioption */
+table.multioption
+{
+    font-size:1em;
+}
+table.multioption input.button
+{
+    margin-inline-start:0;
+}
+table.multioption, table.multioption table
+{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+}
+
+table.multioption table
+{
+    margin-top: 0.5em;
+}
+
+table.multioption th, table.multioption td
+{
+    padding:0.35em 0.7em;
+    border: 1px solid var(--a4-line-strong);
+    vertical-align: middle;
+    text-align: start;
+}
+table.multioption table.options-list th, table.multioption table.options-list td
+{
+    border: 1px solid var(--a4-line-strong);
+}
+
+table.multioption th
+{
+    vertical-align:top;
+    background-color: var(--a4-soft);
+}
+
+table.multioption table.options-list th
+{
+    padding:0.35em 0.5em;
+    vertical-align:middle;
+    background-color: var(--a4-soft);
+}
+
+table.multioption div.controlbar div.block
+{
+    padding: 0;
+}
+
+table.multioption input.box
+{
+    width: 98%;
+}
+
+.multioption label
+{
+    font-weight: var(--a4-weight-heading);
+    padding: 0.5em 0;
+}
+
+.multioption .toolbar
+{
+    padding:0.4em 0 0.2em 0;
+}
+
+option.disabled
+{
+    color: var(--a4-disabled);
+}
+
+div.attribute-multioption ul
+{
+    margin: 0 0 0 1em;
+    padding: 0;
+}
+:where([dir="rtl"]) div.attribute-multioption ul { margin: 0 1em 0 0; }
+
+div.attribute-multioption li
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* ======== from base.css ======== */
+
+/* ADMIN2 LAYOUT CSS 20100107 */
+
+
+/* GENERIC */
+
+.inline {
+    display: inline;
+}
+
+label.inline {
+    padding-inline-end: 0.1em;
+}
+
+div.widthcontrol-grippy {
+    position: absolute;
+    top: 320px;
+    inset-inline-start: -15px;
+    height: 33px;
+    width: 15px;
+    background: url('../images/3/sprite.png') no-repeat 0 -505px;
+    z-index: var(--a4-z-frame-grip);
+}
+
+div.widthcontrol-grippy:hover,
+div.widthcontrol-grippy:focus,
+div.widthcontrol-grippy:active {
+    background: url('../images/3/sprite.png') no-repeat -20px -505px;
+}
+
+.sidebar.left a.show-hide-control {
+    display: none;
+}
+
+.exp-js .sidebar.left a.show-hide-control {
+    display: block;
+}
+
+form#editform .sidebar.left a.show-hide-control {
+    inset-inline-end: -28px;
+    background: url('../images/3/sprite.png') no-repeat 0 -422px;
+}
+
+
+a.show-hide-control {
+    position: absolute;
+    height: 33px;
+    width: 15px;
+    top: 133px;
+    background: url('../images/3/sprite.png') no-repeat 0 -422px;
+    transition: none;
+    z-index: var(--a4-z-frame-control);
+}
+
+a.show-hide-control:hover,
+a.show-hide-control:focus,
+a.show-hide-control:active {
+    background: url('../images/3/sprite.png') no-repeat -20px -422px;
+}
+
+a.show-hide-control-right {
+    position: absolute;
+    top: 133px;
+    height: 40px;
+    width: 25px;
+    background: url('../images/3/sprite.png') no-repeat -20px -458px;
+    transition: none;
+    z-index: var(--a4-z-frame-control);
+}
+
+a.show-hide-control-right:hover,
+a.show-hide-control-right:focus,
+a.show-hide-control-right:active {
+    background: url('../images/3/sprite.png') no-repeat -20px -458px;
+}
+
+/* link with image and text (in a span) inside it */
+a.image-text {
+    text-decoration: none;
+}
+
+a.image-text img {
+    vertical-align: middle;
+}
+
+a.image-text:hover>span {
+    text-decoration: underline;
+}
+
+
+/* HEADER */
+#header-logo .brand,
+#header-logo .brand {
+    text-decoration: none;
+}
+
+
+/* TOP MENU (TABS) */
+a {
+    transition: color var(--a4-duration) ease;
+}
+
+ul.tabs {
+    margin: 0;
+    width: 100%;
+}
+
+ul.tabs li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+}
+:where([dir="rtl"]) ul.tabs li { float: right; }
+
+ul.tabs li a,
+ul.tabs li span.disabled {
+    display: block;
+    font-weight: var(--a4-weight-strong);
+    padding: 2px 15px;
+    margin: 2px 0 5px 1px;
+    min-height: 16px;
+}
+:where([dir="rtl"]) ul.tabs li a, :where([dir="rtl"]) ul.tabs li span.disabled { margin: 2px 1px 5px 0; }
+
+ul.tabs li.selected a {
+    margin-bottom: -1px;
+}
+
+span.disabled,
+ul.tabs.disabled li a {
+    color: var(--a4-muted);
+}
+
+ul.tabs li.first a,
+ul.tabs li.first span.disabled {
+    margin-inline-start: 0;
+}
+
+div.tab-content {
+    height: 20em;
+    overflow-y: scroll;
+    padding: 1em;
+}
+
+div.tabs-content.disabled div.tab-content {
+    display: none;
+}
+
+#window-controls .tab-content.hide {
+    display: none;
+}
+
+#window-controls {
+    resize: vertical;
+    overflow: hidden;
+    height: 20em;
+    min-height: 20em;
+    display: block;
+}
+
+#window-controls .tabs-content {
+    height: calc(100% - 2.5em);
+    width: 100%;
+    overflow: hidden;
+}
+
+#window-controls .tab-content {
+    padding: 1em;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#window-controls.layouts-active {
+    height: 22em;
+    min-height: 22em;
+}
+
+/* The toggler left of the tabs switches them off (tabs-content.disabled): the rules above give #window-controls a
+   fixed height and its tab content display: block, which outweigh the general "disabled" rule, so the off state is
+   repeated here at their weight and the box shrinks to the tab bar. */
+#window-controls .tabs-content.disabled .tab-content {
+    display: none;
+}
+
+#window-controls:has(.tabs-content.disabled),
+#window-controls.layouts-active:has(.tabs-content.disabled) {
+    height: auto;
+    min-height: 0;
+    resize: none;
+}
+
+#window-controls .tabs-content.disabled {
+    height: auto;
+}
+
+/* PATH */
+#path {
+    padding: 0;
+    text-align: start;
+    min-height: 24px;
+}
+
+#path p {
+    margin: 0 0 0.5rem 0;
+}
+
+/* COLUMNS */
+#columns {
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto -1px;
+}
+
+.leftmenu-items {
+    font-size: 1.05em;
+}
+
+.leftmenu-items li {
+    margin-bottom: 0.4em;
+}
+
+.sidebar.left input[type="text"] {
+    width: 90%;
+}
+
+/* PANELS SEPARATORS */
+#left-panels-separator {
+    position: absolute;
+    width: 50px;
+    background: url(../images/3/logo_separator_sprite.png) repeat-y 0 0;
+    top: 0;
+    inset-inline-start: -30px;
+    bottom: 0;
+    z-index: 1;
+}
+
+#right-panels-separator {
+    position: absolute;
+    width: 52px;
+    background: url(../images/3/logo_separator_sprite.png) repeat-y 0 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.panels-separator-top {
+    background: url(../images/3/logo_separator_sprite.png) no-repeat -57px 0;
+    width: 50px;
+    height: 21px;
+    position: absolute;
+    top: 0;
+}
+
+.panels-separator-bottom {
+    background: url(../images/3/logo_separator_sprite.png) no-repeat -57px -79px;
+    width: 50px;
+    height: 21px;
+    position: absolute;
+    bottom: 0;
+}
+
+ul.leftmenu-items li a {
+    text-decoration: none;
+}
+
+ul.leftmenu-items li a:hover {
+    text-decoration: underline;
+}
+
+ul.leftmenu-items li.current a {
+    color: var(--a4-accent-text);
+    font-weight: var(--a4-weight-strong);
+}
+
+/* WIDTH CONTROL */
+#widthcontrol-handler {
+    position: absolute;
+    inset-inline-end: -7px;
+    top: 0;
+    bottom: 0;
+    /* strech div to full width of relative box */
+    width: 10px;
+    z-index: var(--a4-z-frame-control);
+}
+
+/* FOOTER */
+#footer {
+    padding: 0 0.8em;
+    position: relative;
+    display: block;
+    float: none;
+    clear: both;
+}
+
+#footer p {
+    display: block;
+    text-align: center;
+}
+
+#footer.hidden {
+    display: none;
+}
+
+/* CONTENTSTRUCTURE TREE MENU STYLES */
+div#contentstructure {
+    padding-top: 0.5em;
+}
+
+div#contentstructure ul#content_tree_menu {
+    margin-top: 0;
+    margin-inline-start: 0.25em;
+    padding-inline-start: 0.5em;
+}
+
+div#contentstructure ul#content_tree_menu ul {
+    margin: 0;
+    padding-top: 4px;
+    padding-bottom: 0;
+}
+
+div#contentstructure ul#content_tree_menu ul ul {
+    margin-inline-start: 0;
+}
+
+div#contentstructure ul#content_tree_menu li {
+    list-style-type: none;
+    position: relative;
+}
+
+div#contentstructure ul#content_tree_menu ul li {
+    margin: 0;
+    padding-top: 0;
+    padding-inline-start: 20px;
+    padding-bottom: 4px;
+    /* the tree's lines, drawn in the line token (was an opaque white image with a grey line, a white strip on the
+       dark page): the vertical line at 8px and the elbow at 7px */
+    background-image: linear-gradient(var(--a4-line-strong), var(--a4-line-strong)),
+                      linear-gradient(var(--a4-line-strong), var(--a4-line-strong));
+    background-size: 1px 100%, 9px 1px;
+    background-repeat: no-repeat;
+}
+
+div#contentstructure ul#content_tree_menu ul li.lastli {
+    padding-bottom: 2px;
+}
+
+div#contentstructure ul#content_tree_menu li img {
+    vertical-align: middle;
+}
+
+div#contentstructure a.nodeicon {
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+}
+
+div#contentstructure li span.node-name-normal {
+    font-weight: normal;
+    font-size: 1.05em;
+}
+
+div#contentstructure li.currentnode>a.image-text span.node-name-normal,
+div#contentstructure li.currentnode>a.image-text span.node-name-hidden,
+div#contentstructure li.currentnode>a.image-text span.node-name-hiddenbyparent
+
+/* Highlighting of current node */
+div#contentstructure li a.image-text span.node-name-hidden,
+div#contentstructure li.currentnode li a.image-text span.node-name-hidden {
+    font-weight: normal;
+    font-style: normal;
+    background-color: var(--a4-soft);
+    padding: 0 0.2em 0 0.2em;
+}
+
+div#contentstructure li a.image-text span.node-name-hiddenbyparent,
+div#contentstructure li.currentnode li a.image-text span.node-name-hiddenbyparent {
+    font-weight: normal;
+    font-style: normal;
+    background-color: var(--a4-soft);
+    padding: 0 0.2em 0 0.2em;
+}
+
+/* the state as text for screen readers; the status mark before it (components.css .a4-mark) shows it */
+div#contentstructure span.node-hidden,
+div#contentstructure span.node-hiddenbyparent {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+a.openclose,
+span.openclose {
+    text-decoration: none;
+}
+
+a.openclose img,
+span.openclose img {
+    margin: 0;
+    cursor: default;
+}
+
+div#contentstructure span.openclose {
+    visibility: hidden;
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-open,
+div#contentstructure ul#content_tree_menu ul a.openclose-close,
+div#contentstructure ul#content_tree_menu ul a.openclose-busy,
+div#contentstructure ul#content_tree_menu ul a.openclose-error {
+    position: absolute;
+    inset-inline-start: 0;
+    _left: -20px;
+    /* to fix a bug in IE 6 */
+    width: 16px;
+    height: 16px;
+}
+
+/* open, close, loading and failed: a Bootstrap icon (share/icons/bootstrap-icons) on the column's own background, so
+   the connector line of the tree does not run through it; a caret right while closed and down while open */
+div#contentstructure ul#content_tree_menu ul a.openclose-open,
+div#contentstructure ul#content_tree_menu ul a.openclose-close,
+div#contentstructure ul#content_tree_menu ul a.openclose-busy,
+div#contentstructure ul#content_tree_menu ul a.openclose-error {
+    background-color: var(--a4-card-bg);
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-open::before,
+div#contentstructure ul#content_tree_menu ul a.openclose-close::before,
+div#contentstructure ul#content_tree_menu ul a.openclose-busy::before,
+div#contentstructure ul#content_tree_menu ul a.openclose-error::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 2px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--a4-ink);
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-open::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg);
+}
+/* right to left the closed caret points along the line, to the left */
+:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul a.openclose-open::before { scale: -1 1; }
+
+div#contentstructure ul#content_tree_menu ul a.openclose-close::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-error::before {
+    background-color: var(--a4-bad);
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg);
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-busy {
+    cursor: progress;
+}
+
+div#contentstructure ul#content_tree_menu ul a.openclose-busy::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/hourglass-split.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/hourglass-split.svg);
+}
+
+div#contentstructure ul#content_tree_menu div.loaded {
+    display: block;
+}
+
+div#contentstructure ul#content_tree_menu div.error {
+    white-space: normal;
+    color: var(--a4-muted);
+    margin: 10px 0;
+    padding: 4px;
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+}
+
+div#contentstructure ul#content_tree_menu div.error>span {
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    border-radius: var(--a4-radius-s);
+    margin-inline-end: 6px;
+    background-color: var(--a4-bad);
+}
+
+div#contentstructure ul#content_tree_menu div.hidden {
+    display: none;
+}
+
+/* POPUP MENU
+   The context menus of ezpopupmenu.js (content tree, sub-items, class menu, bookmarks and their submenus), drawn
+   from the admin tokens like the other admin4 popovers: compact rows of at least 24px (the WCAG 2.2 target size) in
+   the body text size, a quiet title row, the accent tint for the hovered, focused and opened row. ezpopupmenu.js gives the menus their roles
+   (menu, menuitem, separator) and keyboard handling. */
+div.popupmenu {
+    box-sizing: border-box;
+    min-width: 13.5rem;
+    width: max-content;
+    max-width: min(22rem, calc(100vw - 2 * var(--a4-space-3)));
+    margin: 0;
+    padding: var(--a4-space-1);
+    background-color: var(--a4-card);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    box-shadow: var(--a4-shadow-m);
+    font-size: var(--a4-text-m);
+    line-height: var(--a4-leading);
+    color: var(--a4-ink);
+
+    /* These three are essential */
+    position: absolute;
+    z-index: var(--a4-z-menu);   /* above the header and the sidebar tabs: a menu that opens upwards is not cut off */
+    /* a menu taller than the window scrolls inside itself */
+    max-height: calc(100vh - 2 * var(--a4-space-3));
+    max-height: calc(100dvh - 2 * var(--a4-space-3));
+    overflow-y: auto;
+    display: none;
+}
+
+div.popupmenu div.popupmenuheader {
+    margin: 0 0 var(--a4-space-1);
+    background: none;
+    color: var(--a4-muted);
+    border-bottom: 1px solid var(--a4-line);
+}
+
+div.popupmenu h3 {
+    float: none;
+    margin: 0;
+    padding: var(--a4-space-1) var(--a4-space-3);
+    overflow: hidden;
+    font-size: var(--a4-text-s);
+    font-weight: var(--a4-weight-strong);
+    line-height: var(--a4-leading-tight);
+    color: var(--a4-muted);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+div.popupmenu div.window-close {
+    float: right;
+    padding: var(--a4-space-1);
+}
+:where([dir="rtl"]) div.popupmenu div.window-close { float: left; }
+
+div.popupmenu div.window-close p {
+    margin: 0;
+    padding: 0 var(--a4-space-2);
+    color: var(--a4-ink);
+    font-weight: var(--a4-weight-bold);
+    background-color: var(--a4-soft);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+}
+
+div.popupmenu a {
+    display: block;
+    box-sizing: border-box;
+    min-height: var(--a4-space-5);
+    padding: var(--a4-space-1) var(--a4-space-3);
+    line-height: var(--a4-leading-tight);
+    border-radius: calc(var(--a4-radius-s) - var(--a4-space-1));
+    color: var(--a4-ink);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: none;
+}
+
+div.popupmenu a.more {
+    position: relative;
+    padding-inline-end: var(--a4-space-6);
+}
+
+div.popupmenu a.more::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: var(--a4-space-3);
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    background-color: currentColor;
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/caret-right-fill.svg) no-repeat center / contain;
+}
+:where([dir="rtl"]) div.popupmenu a.more::after { scale: -1 1; }
+
+div.popupmenu a:hover,
+div.popupmenu a:focus-visible,
+div.popupmenu a[aria-expanded="true"] {
+    background-color: var(--a4-accent-soft);
+    color: var(--a4-ink);
+    text-decoration: none;
+}
+
+div.popupmenu a:focus-visible {
+    outline: 2px solid var(--a4-ring);
+    outline-offset: -2px;
+}
+
+div.popupmenu a.menu-item-disabled,
+div.popupmenu a[aria-disabled="true"] {
+    color: var(--a4-muted);
+    background: none;
+    cursor: not-allowed;
+}
+
+div.popupmenu hr {
+    height: 0;
+    margin: calc(var(--a4-space-1) / 2) 0;
+    border: none;
+    border-top: 1px solid var(--a4-line);
+}
+
+@media (forced-colors: active) {
+    div.popupmenu { border-color: CanvasText; }
+    div.popupmenu a:hover,
+    div.popupmenu a:focus-visible,
+    div.popupmenu a[aria-expanded="true"] { outline: 2px solid Highlight; outline-offset: -2px; }
+    div.popupmenu a[aria-disabled="true"] { color: GrayText; }
+}
+
+/* BOX MODEL */
+.box-content div.context-toolbar.block {
+    padding: 0 0.5em 0 0.5em;
+}
+
+.box-content div.block {
+    padding-bottom: 1em;
+}
+
+.box-bc .box-ml,
+.box-ml {
+    padding: 0em;
+}
+
+#controlbar-top .box-bc {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#controlbar-top .block {
+    margin: 0;
+}
+
+div.context-information,
+span.classattribute-description {
+    font-size: var(--a4-text-xs);
+    padding: 0 0.5em 0 0.5em;
+    margin-bottom: 1.5em;
+    position: relative;
+}
+
+span.classattribute-description,
+p.class-description {
+    font-weight: normal;
+    white-space: normal;
+    min-height: 15px;
+}
+
+span.classattribute-description:hover,
+p.class-description:hover,
+div.context-information p:hover {
+    color: var(--a4-ink);
+}
+
+div.context-information p.left {
+    width: 48.5%;
+    margin-top: 0;
+    float: left;
+}
+:where([dir="rtl"]) div.context-information p.left { float: right; }
+
+div.context-information p.right {
+    width: 48.5%;
+    margin-top: 0;
+    float: right;
+    text-align: end;
+}
+:where([dir="rtl"]) div.context-information p.right { float: left; }
+
+div.context-information p.center {
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 0.3em 0 0.3em 0;
+}
+
+
+div.content-navigation div.context-information p.left {
+    width: 68%;
+    font-size: 1.15em;
+}
+
+div.content-navigation div.context-information p.right {
+    position: absolute;
+    width: 30%;
+    inset-inline-end: 0em;
+}
+
+div.context-block h1.context-title img,
+div.context-block h2.context-title img {
+    margin: -4px 8px 2px 0;
+}
+:where([dir="rtl"]) div.context-block h1.context-title img, :where([dir="rtl"]) div.context-block h2.context-title img { margin: -4px 0 2px 8px; }
+
+/* MENU-BLOCK */
+.menu-block {
+    padding: 0.5em 0 1em 0;
+}
+
+.menu-block ul {
+    margin: 0;
+    width: 100%;
+}
+
+.menu-block li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+:where([dir="rtl"]) .menu-block li { float: right; }
+
+.menu-block li a {
+    padding: 0 0.5em;
+    margin-inline-start: 4px;
+    text-decoration: none;
+    display: block;
+    border: 1px solid var(--a4-line-strong);
+}
+
+.menu-block li:first-child a {
+    margin-inline-start: 0;
+}
+
+.menu-block li.disabled a {
+    background-color: var(--a4-soft);
+}
+
+
+/* BUTTONS */
+p.table-preferences {
+    margin: 0 0 1.2em;
+}
+
+p.table-preferences .current {
+    padding: 1px 10px;
+    font-weight: var(--a4-weight-bold);
+}
+
+p.table-preferences a {
+    padding: 1px 10px;
+    text-decoration: none;
+}
+
+input.button,
+input.defaultbutton,
+input.button-disabled {
+    width: auto;
+    overflow: visible;
+}
+
+input.button:hover {
+    border: 1px solid var(--a4-line-strong);
+}
+
+/* SEARCH: design:page_search.tpl, in the header and in the narrow screen menu (classes, not ids: two copies) */
+.searchblock {
+    position: relative;
+    float: left;
+}
+:where([dir="rtl"]) .searchblock { float: right; }
+
+.searchblock form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.searchtextwrapper {
+    position: relative;
+    border: 4px solid transparent;
+    border-radius: var(--a4-radius-s);
+}
+
+.searchblock input.searchtext {
+    height: 35px;
+    width: 230px;
+    padding: 0 8px 0 30px;
+    border: none;
+    border-radius: var(--a4-radius-s);
+    line-height: 18px !important;
+    font-size: 1.1em;
+    background-color: var(--a4-field);
+    -webkit-appearance: none;
+    appearance: none;
+}
+:where([dir="rtl"]) .searchblock input.searchtext { padding: 0 30px 0 8px; }
+
+.searchblock input.searchtext::placeholder {
+    color: var(--a4-muted);
+    font-style: italic;
+}
+
+.searchblock input.searchtext:focus {
+    outline: 3px solid var(--a4-ring);
+    outline-offset: 2px;
+    background-color: var(--a4-field);
+}
+
+.searchblock .searchbuttonfield {
+    height: 43px;
+    width: 43px;
+    padding: 0;
+    border: 4px solid transparent;
+    border-radius: var(--a4-radius-s);
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.searchblock .searchbuttonfield::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    background-color: var(--a4-header-ink);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/search.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/search.svg) no-repeat center / contain;
+}
+
+.searchblock .searchbuttonfield:hover,
+.searchblock .searchbuttonfield:focus-visible {
+    border-color: var(--a4-line-strong);
+    background-color: var(--a4-header-hover);
+}
+
+.searchblock .searchscope {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 6px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--a4-radius-s);
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.searchblock .searchscope::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/funnel.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/funnel.svg) no-repeat center / contain;
+}
+
+.searchblock .searchscope:hover,
+.searchblock .searchscope[aria-expanded="true"],
+.searchblock .searchscope:focus-visible {
+    background-color: var(--a4-soft);
+}
+
+.searchscope-pane {
+    position: absolute;
+    top: calc(100% + 8px);
+    inset-inline-end: 0;
+    width: min(300px, calc(100vw - 2 * var(--a4-space-4)));
+    z-index: var(--a4-z-popover);
+    text-align: start;
+    color: var(--a4-ink);
+    background: var(--a4-surface);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    box-shadow: var(--a4-shadow-m);
+}
+
+.searchscope-pane[hidden] {
+    display: none;
+}
+
+.searchscope-pane > .searchscope-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 10px 8px 12px;
+    font-weight: var(--a4-weight-heading);
+    font-size: 13px;
+    color: var(--a4-ink);
+    background: var(--a4-soft);
+    border-bottom: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
+}
+:where([dir="rtl"]) .searchscope-pane > .searchscope-title { padding: 9px 12px 8px 10px; }
+
+.searchscope-pane .close {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--a4-radius-s);
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.searchscope-pane .close::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    background-color: var(--a4-ink);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/x-lg.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/x-lg.svg) no-repeat center / contain;
+}
+
+.searchscope-pane .close:hover,
+.searchscope-pane .close:focus-visible {
+    background-color: var(--a4-line);
+}
+
+.searchscope-pane > .searchscope-body {
+    padding: 10px 12px 12px;
+}
+
+.searchscope-body label {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: var(--a4-leading-tight);
+}
+
+.searchscope-body .searchscope-section {
+    margin-bottom: 10px;
+    font-weight: var(--a4-weight-heading);
+}
+
+.searchscope-body .searchscope-section select {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 4px;
+    font-weight: normal;
+}
+
+.searchscope-body fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+.searchscope-body legend {
+    margin-bottom: 4px;
+    padding: 0;
+    font-size: 13px;
+    font-weight: var(--a4-weight-heading);
+}
+
+.searchscope-body fieldset label {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+.searchscope-body fieldset label input {
+    margin: 2px 0 0;
+    accent-color: var(--a4-accent-strong);
+}
+
+.searchscope-body label.disabled {
+    color: var(--a4-disabled);
+    cursor: default;
+}
+
+.searchscope-advanced {
+    margin: 10px 0 0;
+    padding-top: 8px;
+    border-top: 1px solid var(--a4-line);
+    font-size: 13px;
+}
+
+/* The narrow screen menu: the field full width, the popup under it in the flow */
+.header-search-mobile .searchblock {
+    float: none;
+    width: 100%;
+}
+
+.header-search-mobile .searchtextwrapper {
+    flex: 1;
+}
+
+.header-search-mobile .searchblock input.searchtext {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-search-mobile .searchblock form {
+    flex-wrap: wrap;
+}
+
+.header-search-mobile .searchscope-pane {
+    position: static;
+    flex-basis: 100%;
+    width: auto;
+    margin-top: 4px;
+    box-shadow: var(--a4-shadow-m);
+}
+
+input::placeholder {
+    color: var(--a4-muted);
+    font-style: italic;
+}
+
+/* FIXED CONTROLBAR DEPENDING ON SCROLL */
+.exp-js .controlbar-fixed {
+    z-index: var(--a4-z-controlbar);
+    position: fixed;
+    width: 100%;
+    top: -0.6em;
+    inset-inline-start: 0;
+    border-radius: 0;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 0;
+    inset-inline-end: 0;
+    background-color: var(--a4-ink);
+    opacity: 0;
+    padding: 0.5em;
+    border-start-start-radius: var(--a4-radius-s);
+    color: var(--a4-card);
+    text-decoration: none;
+    display: none;
+    z-index: var(--a4-z-scroll-top);
+}
+
+.exp-js .scroll-to-top {
+    display: block;
+}
+
+.scroll-to-top:hover {
+    color: var(--a4-card);
+}
+
+#dashboard-logo {
+    width: 265px;
+    aspect-ratio: 151/48;
+    /* the sprite's large Exponential logo (x 240-500), scaled to fit the box */
+    background: url(../images/3/logo_separator_sprite.png) no-repeat -139px 6px;
+    background-size: 290px auto;
+    margin-top: 20px;
+}
+
+#mainteinance-text {
+    font-size: var(--a4-text-xs);
+}
+
+#mainteinance-text #ez-version,
+#mainteinance-text .edition-info,
+#footer-design .edition-info {
+    font-weight: var(--a4-weight-bold);
+    color: var(--a4-accent-text);
+}
+
+/* BEGIN::Fix Dashboard Layout */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* --header-height: the space the page leaves for the fixed header, on the root so everything that keeps clear of the
+   header reads the same value (the side columns, the sticky edit bar, scroll-margin-top in modules/content.css).
+   admin4.css sets the header's drawn height per width as the default; admin4.js sets the measured height. */
+.dashboard-flex {
+    padding-top: var(--header-height);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--a4-surface);
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    z-index: var(--a4-z-sidebar);
+    border-image-slice: 30;
+    border-image-width: 1.25rem;
+    border-image-repeat: repeat;
+    box-shadow: var(--a4-shadow-m);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar>div {
+    margin: 2rem;
+    overflow: auto;
+}
+
+/* The left column's size (the admin_left_menu_size preference), named on <html> by the pagelayout; a width dragged
+   by hand is set as --left-sidebar-width on <html> by a script in the head (no inline CSS in the templates).
+   The size is a width only: the column's text keeps the body's size (--a4-text-body, as the right column) at every
+   width. admin3 also scaled the font with the size (0.8225rem, 1rem, 1.305rem); admin4 does not. */
+:root {
+    --left-sidebar-width: 16rem;
+}
+html[data-a4-left-size="medium"] {
+    --left-sidebar-width: 22rem;
+}
+html[data-a4-left-size="large"] {
+    --left-sidebar-width: 30rem;
+}
+
+.sidebar.left {
+    inset-inline-start: 0;
+    width: var(--left-sidebar-width, 15rem);
+    font-size: inherit;
+}
+
+/* Ensure menu items inherit the sidebar font size */
+.sidebar.left ul li,
+.sidebar.left a,
+.sidebar.left p {
+    font-size: inherit;
+}
+
+/* Drag handle for resizing left sidebar */
+.leftmenu-resize-handle {
+    position: absolute;
+    top: 20%;
+    z-index: var(--a4-z-sidebar-handle);
+    touch-action: none;
+    /* drawn in admin4.css: a small card with a grip, in the tokens */
+}
+
+.sidebar.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar.right {
+    inset-inline-end: 0;
+}
+
+.sidebar-controls {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    pointer-events: none;
+}
+
+.sidebar-control {
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--a4-field-line);   /* 3.2:1 (light) and 4.0:1 (dark) on the page */
+    color: var(--a4-card);
+    transition: background-color var(--a4-duration) ease;
+}
+
+.sidebar-control:hover {
+    background-color: var(--a4-muted);
+}
+
+.sidebar-control .a4-icon {
+    width: 0.75rem;
+    height: 0.751rem;
+    transition: transform var(--a4-duration) ease;
+    color: var(--a4-card);   /* 3.6:1 (light) and 3.8:1 (dark) on the tab */
+}
+
+.sidebar-control.left .a4-icon {
+    transform: rotate(180deg);
+}
+
+.sidebar-control.left.rotate .a4-icon {
+    transform: rotate(0deg);
+}
+
+.sidebar-control.right.rotate .a4-icon {
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width: 1024px) {
+    .sidebar-control {
+        width: 1.25rem;
+        height: 2.5rem;
+    }
+
+    .sidebar-controls {
+        position: fixed;
+        top: 50%;
+        inset-inline-start: 0;
+        inset-inline-end: 0;
+        transform: translateY(-50%);
+    }
+
+    .sidebar-control.left {
+        border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0;
+        inset-inline-start: 0;
+    }
+    :where([dir="rtl"]) .sidebar-control.left { border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s); }
+
+    .sidebar-control.right {
+        border-radius: var(--a4-radius-s) 0 0 var(--a4-radius-s);
+        inset-inline-end: 0;
+    }
+    :where([dir="rtl"]) .sidebar-control.right { border-radius: 0 var(--a4-radius-s) var(--a4-radius-s) 0; }
+}
+
+.content-wrapper {
+    flex: 1;
+    background-color: var(--a4-surface);
+    border-image-slice: 30;
+    border-image-width: 1.25rem;
+    border-image-repeat: repeat;
+    transition: width var(--a4-duration) ease;
+    min-width: 260px !important;
+}
+
+.content-dashboard .box-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+#dashboard-logo,
+#mainteinance-text {
+    float: none;
+}
+
+@media screen and (max-width: 1023.98px) {
+    .content-wrapper {
+        border-image-width: 0rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body:has(.sidebar.left.show) {
+        margin-inline-start: calc(var(--left-sidebar-width, 15rem) + 0.5rem);
+    }
+
+    body:has(.sidebar.right.show) {
+        margin-inline-end: calc(15rem + 0.5rem);
+    }
+
+    .content-dashboard .box-header {
+        padding-top: 1rem;
+    }
+
+    
+
+    #mainteinance-text {
+        flex: 1;
+        width: auto;
+    }
+
+
+}
+
+.content-dashboard .block {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-dashboard .block .left,
+.content-dashboard .block .right {
+    width: auto;
+    flex: 0 0 100%;
+    float: none;
+}
+
+@media screen and (min-width: 768px) {
+    .content-dashboard .block .left {
+        flex: 0 0 30%;
+        padding-inline-end: 1.5rem;
+    }
+
+    .content-dashboard .block .right {
+        flex: 1;
+    }
+}
+
+.navbar-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    position: relative;
+    z-index: var(--a4-z-navbar);
+}
+
+.navbar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: auto;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--a4-header-ink);
+    padding: 0 0.5rem;
+    user-select: none;
+    margin-inline-end: -0.875rem;
+}
+
+.header-search {
+    display: none;
+}
+
+.navbar-open {
+    overflow: hidden;
+}
+
+.navbar-menu {
+    flex: 0 0 100%;
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: -1;
+    background: url('../images/3/dark_back.png');
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--a4-duration-slow) ease;
+}
+
+.navbar-bar {
+    flex: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    overflow-y: auto;
+    padding-block: 0.5rem 7rem;
+}
+
+.navbar-menu.show {
+    max-height: 100vh;
+}
+
+.navbar-menu li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar-menu li a.disabled {
+    pointer-events: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar-icon {
+        display: none;
+    }
+
+    .header-search {
+        display: block;
+    }
+
+    .header-search-mobile {
+        display: none;
+    }
+
+    .navbar-menu {
+        max-height: 100%;
+        position: static;
+        inset: auto;
+        background: none;
+        padding: 0;
+    }
+
+    .navbar-bar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.375rem 1rem;
+        overflow: hidden;
+        padding: 0;
+    }
+}
+
+.table-responsive {
+    overflow-x: auto;
+    display: block;
+    clear: both;
+    max-width: calc(100vw - 2rem);
+}
+
+div:has(> table) {
+    overflow-x: auto;
+    display: block;
+    clear: both;
+    max-width: calc(100vw - 1rem);
+}
+
+@media screen and (min-width: 576px) {
+    .table-responsive {
+        max-width: auto;
+    }
+}
+
+
+.header-logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.draft-list {
+    margin-block: 1.5rem;
+    font-weight: var(--a4-weight-medium);
+    font-size: 0.875rem;
+}
+
+.draft-list-head {
+    display: none;
+    font-weight: var(--a4-weight-strong);
+}
+
+.draft-list-head .draft-list-cell {
+    border-top: 1px solid var(--a4-line-strong);
+}
+
+.draft-list-cell {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--a4-line-strong);
+    border-inline-end: 1px solid var(--a4-line-strong);
+    border-inline-start: 1px solid var(--a4-line-strong);
+}
+
+.draft-list-cell-inner {
+    text-align: end;
+}
+
+.draft-list-row.active {
+    background: url('../images/3/textile.png')
+}
+
+.draft-list-body .draft-list-row:first-of-type .draft-list-cell:first-of-type {
+    border-top: 1px solid var(--a4-line-strong);
+}
+
+@media screen and (min-width: 1024px) {
+    .draft-list {
+        display: table;
+        width: 100%;
+    }
+
+    .draft-list-head {
+        display: table-header-group;
+        background-color: var(--a4-soft);
+        color: var(--a4-ink);
+    }
+
+    .draft-list-body {
+        display: table-row-group;
+    }
+
+    .draft-list-row {
+        display: table-row;
+    }
+
+    .draft-list-cell {
+        display: table-cell;
+        vertical-align: middle;
+        border-inline-start: none;
+    }
+
+    .draft-list-row .draft-list-cell:first-of-type {
+        width: 1.5rem;
+        border-inline-start: 1px solid var(--a4-line-strong);
+    }
+
+    .draft-list-body .draft-list-row:first-of-type .draft-list-cell:first-of-type {
+        border-top: none;
+    }
+
+    .draft-list-cell-inner {
+        display: none;
+    }
+}
+
+div.message-confirmation,
+div.message-feedback,
+div.message-warning,
+div.message-error {
+    margin-top: -0.375rem;
+    padding: 0 1rem;
+}
+
+.form-control::placeholder {
+    color: var(--a4-ink);
+}
+
+#header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: var(--a4-z-header);
+}
+
+div.popupmenu#EditSubmenu {
+    z-index: var(--a4-z-menu-sub);
+}
+
+input.button,
+input.defaultbutton,
+input.button-disabled {
+    margin: 0.25rem 0 0.25rem;
+}
+
+fieldset {
+    padding: 0.5rem;
+}
+
+/* END::Fix Dashboard Layout */
+
+/* =============================== */
+/* 01-05-2024 */
+/* =============================== */
+#overlay-mask {
+    z-index: var(--a4-z-overlay) !important;
+}
+
+/* The legacy YUI modal window (div:has(.modal-window), fixed and centred by !important) is removed: nothing writes
+   .modal-window any more (exp::dialog replaced it), and :has() matched every ancestor of one. */
+/* =============================== */
+/* 01-05-2024 */
+/* =============================== */
+
+
+#debug {
+    padding: 1rem;
+    max-width: 100%;
+}
+
+/* Side columns: long names wrap instead of being cut off at the column's edge (the left column scrolls
+   sideways and hid the end of a long node name; Quick settings labels inherited base.css's nowrap). */
+div#contentstructure ul#content_tree_menu li {
+    white-space: normal;
+    overflow-wrap: break-word;   /* "anywhere" broke words mid-syllable; a long word now breaks with a hyphen */
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+div#contentstructure ul#content_tree_menu li > a.image-text {
+    display: inline-block;
+    max-width: calc(100% - 2.25em);
+    vertical-align: top;
+}
+#leftmenu label,
+#rightmenu label {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+#leftmenu label:has(> input[type="checkbox"]),
+#rightmenu label:has(> input[type="checkbox"]) {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3em;
+}
+
+/* The status messages outside the frame's columns (a label or legend with message-error): no margin, a little
+   padding. Until 2026-10 this was the one rule of responsive.css, loaded through BackendCSSFileList. */
+.message-confirmation,
+.message-feedback,
+.message-warning,
+.message-error {
+    padding: 0.5rem;
+    margin: 0;
+}
+
+/* ======== from content.css ======== */
+
+/* ADMIN2 CONTENT CSS 20100107 */
+
+/* GENERIC */
+
+pre
+{
+    background-color: var(--a4-soft);
+    border: 1px solid var(--a4-line);
+}
+
+
+/* CONTENT */
+
+div.mainobject-window iframe
+{
+    border: 1px solid var(--a4-line);
+}
+
+div#maincontent div.content-translation div.block div.original
+{
+    background-color: var(--a4-soft);
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.2em;
+    border: 1px dashed var(--a4-line);
+}
+
+div.content-translation div.translation
+{
+    margin: 0.5em 0 0.5em 0;
+}
+
+div.notranslations li
+{
+    width: 20%;
+}
+
+table.list, table.special, table.list th, table.special th
+{
+    border-collapse: collapse;
+}
+
+table.list th, table.special th
+{
+    height: 30px;
+    vertical-align: middle;
+}
+
+table.list label
+{
+font-weight:normal;
+font-size:1em;
+}
+
+table.list th a
+{
+text-decoration:none;
+}
+
+table.special th
+{
+    border-top: 1px solid var(--a4-line);
+}
+
+table.list tr.bgdark th
+{
+    background-color: var(--a4-soft);
+}
+
+div.content-navigation-childlist table.list th,
+table.list th.icon, table.list td.icon, table.list th.class, table.list td.class, table.list th.checkbox, table.list td.checkbox
+{
+    width:1%;
+}
+
+div.content-navigation-childlist table.list th.name, div.content-edit table.list th.name
+{
+    width: auto;
+}
+
+table.list img
+{
+    vertical-align: middle;
+}
+
+table.list tr.object-cannot-remove td
+{
+    color: var(--a4-bad);
+}
+
+table.list td.modifier, table.list td.modified, table.list td.class, div.content-edit table.list td.filesize
+{
+    white-space: nowrap;
+}
+
+div.list-thumbnails div.list-thumbnails-item
+{
+    border: 4px solid var(--a4-surface);
+    padding: 0.5em;
+    vertical-align: middle;
+    background-color: var(--a4-soft);
+    width: 155px;
+    height: 155px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+div.list-thumbnails div.list-thumbnails-item:hover
+{
+    background-color: var(--a4-soft);
+}
+
+div.list-thumbnails-item div.controls
+{
+    position: absolute;
+    bottom: 0;
+    width: 155px;
+    overflow-x: hidden;
+}
+
+div.list-thumbnails-item div.controls input, div.list-thumbnails-item div.controls img
+{
+    vertical-align: middle;
+}
+
+table tbody tr.ezasi-sort-drag-handler
+{
+    cursor: move;
+}
+
+
+/* DASHBOARD */
+
+#ez-version
+{
+    font-weight: var(--a4-weight-bold);
+    /* a version such as 6.0-stable is read left to right also inside a right-to-left sentence */
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* GENERIC DIFF STYLES: added text in the ok colour, removed text in the bad colour, both readable on every surface
+   in both modes; the version views mark the shown side's changes with the warn tint (as modules/content.css does
+   for the history page) */
+
+ins
+{
+    color: var(--a4-ok);
+    text-decoration: none;
+    border-bottom: 1px solid var(--a4-ok);
+}
+
+del
+{
+    color: var(--a4-bad);
+    text-decoration: line-through;
+}
+
+ins:hover, del:hover
+{
+    background-color: var(--a4-surface);
+}
+
+ins:hover
+{
+    border-bottom-width: 0;
+}
+
+del:hover
+{
+    text-decoration: none;
+}
+
+div.blockchanges ins, div.blockchanges del
+{
+    color: var(--a4-ink);
+    padding-left: 0.5em;
+    text-decoration: none;
+    border-bottom-width: 0;
+    display: block;
+}
+
+div.blockchanges ins
+{
+    border-left: 0.5em solid var(--a4-ok);
+    background-color: var(--a4-ok-bg);
+}
+
+div.blockchanges del
+{
+    border-left: 0.5em solid var(--a4-bad);
+    background-color: var(--a4-bad-bg);
+}
+
+div.previous ins
+{
+    display: none;
+}
+
+div.previous del
+{
+    color: var(--a4-ink);
+    background-color: var(--a4-warn-bg);
+    border-bottom-width: 0;
+    text-decoration: none
+}
+
+div.latest del
+{
+    display: none;
+}
+
+div.latest ins
+{
+    color: var(--a4-ink);
+    background-color: var(--a4-warn-bg);
+    border-bottom-width: 0;
+    text-decoration: none;
+}
+
+/* CLASS ATTRIBUTE GROUPING */
+
+/* a named group of attributes (content.ini [ClassAttributeSettings] CategoryList, the class attribute's category):
+   a heading line over its attribute cards; collapsed it is the line alone */
+#page fieldset.ezcca-collapsible { min-width: 0; margin: 0 0 var(--a4-space-5); padding: var(--a4-space-2) 0 0; border: 0; border-top: 1px solid var(--a4-line-strong); background: none; }
+#page fieldset.ezcca-collapsible > legend { padding: 0; padding-inline-end: var(--a4-space-2); font-size: var(--a4-text-m); font-weight: var(--a4-weight-heading); }
+#page fieldset.ezcca-collapsible.ezcca-collapsed { height: auto; margin-bottom: var(--a4-space-4); }
+
+fieldset.ezcca-collapsible legend a
+{
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+fieldset.ezcca-collapsible.ezcca-collapsed
+{
+    border-width: 1px 0 0 0;
+    height: 1em;
+    background-color: var(--a4-surface);
+}
+
+fieldset.ezcca-collapsible.ezcca-collapsed legend
+{
+    margin-left: 1px;
+}
+
+fieldset.ezcca-collapsible legend a
+{
+    /* minus in a box: the group is open. Drawn from the tokens (bar, box, edge from top to bottom), so it follows
+       the dark mode */
+    background:
+        linear-gradient(var(--a4-muted), var(--a4-muted)) no-repeat 3px 6px / 8px 2px,
+        linear-gradient(var(--a4-card), var(--a4-card)) no-repeat 1px 1px / 12px 12px,
+        linear-gradient(var(--a4-line-strong), var(--a4-line-strong)) no-repeat 0 0 / 14px 14px;
+}
+
+fieldset.ezcca-collapsible.ezcca-collapsed legend a
+{
+    /* plus in a box: the group is collapsed */
+    background:
+        linear-gradient(var(--a4-muted), var(--a4-muted)) no-repeat 6px 3px / 2px 8px,
+        linear-gradient(var(--a4-muted), var(--a4-muted)) no-repeat 3px 6px / 8px 2px,
+        linear-gradient(var(--a4-card), var(--a4-card)) no-repeat 1px 1px / 12px 12px,
+        linear-gradient(var(--a4-line-strong), var(--a4-line-strong)) no-repeat 0 0 / 14px 14px;
+}
+
+@media (forced-colors: active) {
+    fieldset.ezcca-collapsible legend a { forced-color-adjust: none; }
+}
+
+/* OBJECTRELATIONLIST */
+
+.ezcca-edit-datatype-ezobjectrelationlist h4, .ezcca-edit-datatype-ezobjectrelation h4
+{
+    padding-bottom:2px;
+    border-bottom: 1px solid var(--a4-line);
+    margin-bottom:1em;
+    color:var(--a4-ink);
+    font-size:1.1em;
+}
+
+/* Sortable column headings.
+
+   Shared by the rss list and the locations tab of an item, both of which sort
+   in the database because they are shown a page at a time. The heading keeps
+   the ordinary heading colour - the column being sorted is marked by the bold
+   label and the arrow, not by repainting the cell. */
+table.list th.sortable { cursor: pointer; white-space: nowrap; }
+table.list th.sortable a.sort-link { display: block; text-decoration: none; color: inherit; }
+table.list th.sortable:hover a.sort-link { text-decoration: underline; }
+table.list th.sorted a.sort-link { font-weight: var(--a4-weight-heading); }
+/* The arrow is the heading's own colour, a little dimmed: a fixed grey could not
+   be seen on the dark heading bar of the admin3 design. */
+.sort-arrow { display: inline-block; width: 1em; font-size: var(--a4-text-xs); color: inherit; opacity: .85; }
+
+/* The role list's id column: a number, read against the name beside it. */
+table.list td.role-id { text-align: right; color: var(--a4-muted); white-space: nowrap; }
+
+/* PACKAGE VIEW (package/view/full)
+
+   Everything below is scoped to .package-view-full: the package's header badges, its metadata,
+   the install/export actions and the package contents browser (filter, file list, viewed file,
+   pager). Colours are the admin's own: the list heading grey, the default button's green, the
+   top menu's highlight for the file being viewed. */
+.package-view-full .pvf-badges { margin: 0.25em 0 0.5em; display: flex; flex-wrap: wrap; gap: 0.35em; align-items: center; }
+.package-view-full .pvf-badge { display: inline-block; padding: 0 0.5em; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background: var(--a4-soft); color: var(--a4-ink); font-size: var(--a4-text-xs); line-height: var(--a4-leading); white-space: nowrap; }
+.package-view-full .pvf-badge-version { font-weight: var(--a4-weight-bold); }
+.package-view-full .pvf-badge-ok { background: var(--a4-ok-bg); border-color: var(--a4-ok-line); color: var(--a4-ok); }
+.package-view-full .pvf-badge-muted { color: var(--a4-muted); }
+.package-view-full .pvf-badge-info { background: var(--a4-info-bg); border-color: var(--a4-info-line); color: var(--a4-info); }
+.package-view-full .pvf-date { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+
+.package-view-full .pvf-overview { display: flex; gap: 1.5em; align-items: flex-start; }
+.package-view-full dl.pvf-meta { flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.35em 1.25em; margin: 0.5em 0 1em; }
+.package-view-full dl.pvf-meta dt { margin: 0; font-weight: var(--a4-weight-heading); color: var(--a4-ink); }
+.package-view-full dl.pvf-meta dd { margin: 0; overflow-wrap: anywhere; }
+.package-view-full .pvf-filelist-link { margin-left: 0.75em; }
+.package-view-full .pvf-licence-id { color: var(--a4-muted); white-space: nowrap; }
+.package-view-full .pvf-thumbnail { flex: 0 0 auto; max-width: 30%; }
+.package-view-full .pvf-thumbnail img { max-width: 100%; height: auto; border: 1px solid var(--a4-line); }
+
+.package-view-full .pvf-changelog { border-top: 1px solid var(--a4-line); padding-top: 0.5em; }
+.package-view-full .pvf-changelog h2,
+.package-view-full .pvf-browser-head h2 { font-size: 1.15em; margin: 0.25em 0; }
+.package-view-full .pvf-changelog-byline { margin: 0.25em 0 0; color: var(--a4-muted); }
+.package-view-full .pvf-changelog ul { margin: 0.25em 0 0.75em 1.25em; }
+
+.package-view-full .pvf-actions { display: flex; flex-wrap: wrap; gap: 0.5em; padding: 0.5em 0; margin: 0.5em 0 1em; border-top: 1px solid var(--a4-line); border-bottom: 1px solid var(--a4-line); }
+.package-view-full .pvf-actions input { margin: 0; }
+.package-view-full .pvf-noinstall { margin: 0.5em 0 1em; padding: 0.5em 0.75em; border-left: 3px solid var(--a4-line-strong); background: var(--a4-soft); color: var(--a4-ink); overflow-wrap: anywhere; }
+/* Compare: a link (package/compare only reads), drawn like the admin's input.button beside it */
+.package-view-full a.pvf-button-link { display: inline-block; padding: 3px 6px; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background: var(--a4-surface); color: var(--a4-ink); font-size: 1em; line-height: normal; text-decoration: none; font-family: var(--a4-font); vertical-align: middle; transition: background-color var(--a4-duration) ease, border-color var(--a4-duration) ease, color var(--a4-duration) ease; }
+.package-view-full a.pvf-button-link:hover,
+.package-view-full a.pvf-button-link:focus { background-color: var(--a4-soft); color: var(--a4-ink); }
+.package-view-full a.pvf-button-link:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.package-view-full input.pvf-button-danger { margin-left: auto; color: var(--a4-bad); border-color: var(--a4-bad-line); }
+.package-view-full input.pvf-button-danger:hover { background: var(--a4-bad-bg); }
+
+.package-view-full .pvf-browser-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25em 1em; }
+.package-view-full .pvf-count { color: var(--a4-muted); }
+
+.package-view-full .pvf-filter { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.5em 1em; margin: 0.5em 0 1em; padding: 0.6em 0.75em; background: var(--a4-soft); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
+.package-view-full .pvf-field { display: flex; flex-direction: column; gap: 0.2em; min-width: 0; }
+.package-view-full .pvf-field label { font-weight: var(--a4-weight-heading); font-size: var(--a4-text-xs); margin: 0; }
+.package-view-full .pvf-field-search { flex: 1 1 14em; }
+.package-view-full .pvf-field-search input { width: 100%; box-sizing: border-box; }
+.package-view-full .pvf-field-submit { flex-direction: row; align-items: center; gap: 0.75em; }
+.package-view-full .pvf-field-submit input { margin: 0; }
+
+.package-view-full .pvf-scroll { max-width: 100%; overflow-x: auto; }
+.package-view-full table.pvf-files { border-collapse: collapse; }
+.package-view-full table.pvf-files .pvf-name { overflow-wrap: anywhere; }
+.package-view-full .pvf-path { overflow-wrap: anywhere; }
+.package-view-full table.pvf-files .pvf-col-size { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.package-view-full table.pvf-files .pvf-col-type,
+.package-view-full table.pvf-files .pvf-col-actions { white-space: nowrap; }
+.package-view-full table.pvf-files .pvf-col-actions { text-align: right; }
+.package-view-full table.pvf-files .pvf-col-type,
+.package-view-full table.pvf-files .pvf-col-size,
+.package-view-full table.pvf-files .pvf-col-actions { width: 1%; }
+.package-view-full table.list tr.pvf-current,
+.package-view-full table.list tr.pvf-current:hover { background: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); }
+.package-view-full .pvf-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.package-view-full .pvf-kind { display: inline-block; padding: 0 0.45em; border-radius: var(--a4-radius-s); font-size: var(--a4-text-xs); line-height: var(--a4-leading); background: var(--a4-soft); color: var(--a4-ink); }
+.package-view-full .pvf-kind-object { background: var(--a4-ok-bg); color: var(--a4-ok); }
+.package-view-full .pvf-kind-class { background: var(--a4-info-bg); color: var(--a4-info); }
+.package-view-full .pvf-kind-image { background: var(--a4-warn-bg); color: var(--a4-warn); }
+.package-view-full .pvf-kind-package { background: var(--a4-soft); color: var(--a4-ink); }
+
+.package-view-full a.pvf-link-button,
+.package-view-full span.pvf-link-button { display: inline-block; padding: 0.1em 0.55em; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); background: var(--a4-surface); color: var(--a4-ink); text-decoration: none; line-height: var(--a4-leading); white-space: nowrap; }
+.package-view-full a.pvf-link-button:hover,
+.package-view-full a.pvf-link-button:focus { background: var(--a4-soft); }
+.package-view-full span.pvf-disabled { color: var(--a4-disabled); background: var(--a4-soft); }
+
+.package-view-full .pvf-viewer { margin: 0 0 1em; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); overflow: hidden; }
+.package-view-full .pvf-viewer-head { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: center; justify-content: space-between; padding: 0.5em 0.75em; background: var(--a4-soft); color: var(--a4-ink); border-bottom: 1px solid var(--a4-line); }
+.package-view-full .pvf-viewer-title { min-width: 0; flex: 1 1 20em; }
+.package-view-full .pvf-viewer-head .pvf-path { display: block; font-weight: var(--a4-weight-heading); color: var(--a4-ink); }
+.package-view-full .pvf-viewer-meta { display: flex; gap: 0.75em; align-items: center; margin-top: 0.2em; }
+.package-view-full .pvf-viewer-actions { display: flex; gap: 0.4em; }
+.package-view-full .pvf-viewer-body { padding: 0.75em; }
+/* soft wrap by default (long JSON and XML lines stay readable at any width); "No wrap" keeps the lines and scrolls inside the box */
+.package-view-full pre.pvf-code { margin: 0; padding: 0.75em; max-height: 32em; max-width: 100%; box-sizing: border-box; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; font-size: var(--a4-text-xs); line-height: var(--a4-leading); background: var(--a4-soft); }
+.package-view-full pre.pvf-code.pvf-nowrap { white-space: pre; overflow-wrap: normal; word-break: normal; }
+.package-view-full .pvf-viewer-body { min-width: 0; }
+.package-view-full table.pvf-object { border-collapse: collapse; }
+.package-view-full table.pvf-object th { width: 9em; background: var(--a4-soft); color: var(--a4-ink); border-left: 0; font-weight: var(--a4-weight-heading); font-size: 1em; }
+.package-view-full table.pvf-object th,
+.package-view-full table.pvf-object td { padding: 0.4em 0.6em; line-height: var(--a4-leading); border-bottom: 1px solid var(--a4-line); }
+.package-view-full h3.pvf-language { font-size: 1em; margin: 1em 0 0.35em; }
+.package-view-full td.pvf-value { overflow-wrap: anywhere; min-width: 12em; }
+.package-view-full .pvf-image { text-align: center; background: var(--a4-soft); padding: 0.75em; }
+.package-view-full .pvf-image img { max-width: 100%; max-height: 32em; height: auto; }
+.package-view-full .pvf-note { color: var(--a4-muted); margin: 0.5em 0 0; }
+
+.package-view-full table.pvf-attributes td,
+.package-view-full table.pvf-object td,
+.package-view-full table.pvf-object th { vertical-align: top; }
+
+/* The file list's path: the directory small and grey on a line of its own, above the file name,
+   which is only broken inside when it does not fit on one line. */
+.package-view-full table.pvf-files td { vertical-align: middle; }
+.package-view-full table.pvf-files code { font-size: 0.95em; }
+.package-view-full .pvf-dir { display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); line-height: var(--a4-leading-tight); overflow-wrap: anywhere; }
+.package-view-full .pvf-name { color: var(--a4-ink); }
+.package-view-full a.pvf-link-button.pvf-active { background: var(--a4-accent-strong); border-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.package-view-full a.pvf-link-button.pvf-active:hover { background: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
+
+/* The pager, above the list (compact) and below it. */
+.package-view-full .pvf-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4em 1em; }
+.package-view-full .pvf-pager-top { margin: 0 0 0.4em; }
+.package-view-full .pvf-pager-bottom { margin: 0.6em 0 0.25em; padding-top: 0.6em; border-top: 1px solid var(--a4-line); }
+.package-view-full .pvf-pager-status { display: flex; flex-wrap: wrap; gap: 0.2em 0.75em; align-items: baseline; }
+.package-view-full .pvf-pager-range { color: var(--a4-muted); }
+.package-view-full .pvf-pager-links { display: flex; flex-wrap: wrap; gap: 0.35em; }
+
+/* A phone: the file list's rows become two lines, the path on its own full width and the type,
+   size and actions below it, so the path is never squeezed into a sliver. */
+@media (max-width: 640px) {
+    .package-view-full .pvf-overview { flex-direction: column; }
+    .package-view-full .pvf-thumbnail { max-width: 100%; }
+    .package-view-full dl.pvf-meta { grid-template-columns: 1fr; gap: 0 0; }
+    .package-view-full dl.pvf-meta dd { margin-bottom: 0.5em; }
+    .package-view-full input.pvf-button-danger { margin-left: 0; }
+    .package-view-full .pvf-field,
+    .package-view-full .pvf-field-search { flex: 1 1 100%; }
+    .package-view-full .pvf-field select { width: 100%; }
+    .package-view-full table.pvf-files thead { display: none; }
+    .package-view-full table.pvf-files,
+    .package-view-full table.pvf-files tbody { display: block; }
+    .package-view-full table.pvf-files tr { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35em 0.75em; padding: 0.5em 0.4em; border-bottom: 1px solid var(--a4-line); }
+    .package-view-full table.pvf-files td { display: block; padding: 0; width: auto; }
+    .package-view-full table.pvf-files td.pvf-col-path { flex: 1 1 100%; }
+    .package-view-full table.pvf-files td.pvf-col-actions { margin-left: auto; }
+    .package-view-full .pvf-pager-top .pvf-pager-label { display: none; }
+    .package-view-full .pvf-viewer-body { padding: 0.5em; }
+    .package-view-full table.pvf-files td.pvf-col-type,
+    .package-view-full table.pvf-files td.pvf-col-size,
+    .package-view-full table.pvf-files td.pvf-col-actions { width: auto; }
+    /* The object summary and its attributes: each row a label line over its value. */
+    .package-view-full table.pvf-object,
+    .package-view-full table.pvf-object tbody,
+    .package-view-full table.pvf-object tr,
+    .package-view-full table.pvf-object th,
+    .package-view-full table.pvf-object td,
+    .package-view-full table.pvf-attributes,
+    .package-view-full table.pvf-attributes tbody,
+    .package-view-full table.pvf-attributes tr { display: block; width: auto; }
+    .package-view-full table.pvf-object th { padding-bottom: 0.1em; }
+    .package-view-full table.pvf-object td { padding-top: 0; overflow-wrap: anywhere; }
+    .package-view-full table.pvf-attributes thead { display: none; }
+    .package-view-full table.pvf-attributes tr { display: flex; flex-wrap: wrap; gap: 0 0.75em; padding: 0.35em 0.4em; }
+    .package-view-full table.pvf-attributes td { display: block; padding: 0; }
+    .package-view-full table.pvf-attributes td:nth-child(2) { color: var(--a4-muted); }
+    .package-view-full table.pvf-attributes td.pvf-value { flex: 1 1 100%; min-width: 0; }
+}
+
+/* No file on this page: a plain message in place of an empty table. */
+.package-view-full .pvf-empty-state { margin: 0.25em 0 0.5em; padding: 1.5em 1em; text-align: center; color: var(--a4-muted); background: var(--a4-soft); border: 1px dashed var(--a4-line); border-radius: var(--a4-radius-s); }
+.package-view-full .pvf-empty-state p { margin: 0.25em 0; }
+
+/* Keyboard focus on the page's own link buttons and fields, in the admin's highlight colour. */
+.package-view-full a.pvf-link-button:focus-visible,
+.package-view-full .pvf-filter select:focus-visible,
+.package-view-full .pvf-filter input:focus-visible,
+.package-view-full .pvf-actions input:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+
+@media (max-width: 640px) {
+    .package-view-full table.pvf-object th { background: none; color: var(--a4-muted); font-size: var(--a4-text-xs); border: 0; }
+    .package-view-full pre.pvf-code { font-size: var(--a4-text-xs); padding: 0.5em; }
+    .package-view-full table.pvf-object td { border-bottom: 1px solid var(--a4-line); }
+}
+
+/* ======== from base.css ======== */
+
+/* ADMIN2 ROUNDED CSS 20100107 */
+/*
+   This stylesheet uses CSS3 features for some styling, this is done in such a way to
+   make sure it falls back gracefully in older browsers with almost the same style.
+*/
+
+/* WHOLE PAGE */
+
+#page
+{
+    margin: 0 auto -1px;
+    min-height: 100%;
+}
+
+/* HEADER */
+#header
+{
+    border-top: 1px solid var(--a4-header-line);
+}
+
+/* TABS */
+
+#searchtext.disabled {
+    background: transparent url(../images/3/diagonal_pattern.png) repeat center left;
+    color: var(--a4-ink);
+    text-shadow: none;
+    text-decoration: none;
+}
+
+ul.tabs li a, ul.tabs li span.disabled
+{
+    font-size: 1.1em;
+}
+
+ul.tabs li.selected a
+{
+    background: var(--a4-accent-soft) none;
+    border-radius: var(--a4-radius-s);
+    text-decoration: none;
+}
+
+.tab-content
+{
+    border: 1px solid var(--a4-line);
+}
+
+.tabs-content.disabled
+{
+    border-top: 1px solid var(--a4-line);
+}
+
+/* BOX MODEL */
+
+a.show-hide-control:hover
+{
+    border-color: var(--a4-line-strong);
+}
+
+#leftmenu a.show-hide-control
+{
+position:relative;
+z-index: var(--a4-z-frame-control);
+float:right;
+width:19px;
+background: url(../images/3/sprite.png) no-repeat -20px -461px;
+}
+#leftmenu a.show-hide-control:hover,
+#leftmenu a.show-hide-control:focus,
+#leftmenu a.show-hide-control:active
+{
+background: url(../images/3/sprite.png) no-repeat 0 -461px;
+}
+
+a.show-hide-tabs
+{
+    position: relative;
+    display: inline-block;
+    min-width: 16px;
+    border:none;
+    padding: 0 5px;
+    cursor: pointer;
+    overflow: visible;
+    width: auto;
+    text-decoration: none;
+}
+
+/* the icon shows the state the tabs are in: stacked while they are off, tabs while they are on */
+a.show-hide-tabs::before
+{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    background-color: currentColor;
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/view-stacked.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/view-stacked.svg) no-repeat center / contain;
+}
+
+a#maincontent-hide::before /* the icon of the other state */
+{
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/segmented-nav.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/segmented-nav.svg);
+}
+
+
+
+.tab-block
+{
+    padding-top: 0.8em;
+    border-top: 1px dashed var(--a4-line);
+}
+
+.tab-block .button-left
+{
+    margin: 5px 5px 0 0;
+}
+
+#controlbar-top .box-bc
+{
+    background: var(--a4-soft);
+    background-clip: padding-box;
+}
+
+.box-bc .box-ml, .box-header .box-ml
+{
+    border: 0 none;
+    background-color: transparent;
+}
+
+.box-header
+{
+    font-size:1.5em;
+}
+.box-header select, .box-header input.button
+{
+margin-top:7px;
+font-size:13px;
+}
+
+#controlbar-top .box-bc .box-ml
+{
+    border-top-width: 0;
+}
+
+
+.subitems-controlbar
+{
+    padding: 0px 5px;
+    margin: 0 0 5px 0;
+}
+
+.subitems-context-toolbar
+{
+    padding: 3px;
+}
+
+
+/* MENU-BLOCK */
+
+.menu-block li a
+{
+    border-radius: var(--a4-radius-s);
+    background-clip: padding-box;
+}
+
+/* BUTTONS */
+
+/* The choices above a list (10 | 25 | 50 items, a sort field or order, a filter): a segmented control on the
+   tokens, so it follows the colour scheme; the current choice is a span.current, the others are links. */
+p.table-preferences
+{
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    max-width: 100%;
+    padding: 0;
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    background-color: var(--a4-surface);
+    overflow: hidden;
+}
+
+p.table-preferences > a, p.table-preferences > span
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 28px;
+    padding: 2px var(--a4-space-2);
+    border: solid var(--a4-line);
+    border-width: 0 1px 0 0;
+    line-height: 1.5em;
+    text-decoration: none;
+}
+
+p.table-preferences > :last-child { border-right: 0; }
+p.table-preferences > a { color: var(--a4-accent-text); }
+p.table-preferences > a:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+p.table-preferences > a:focus-visible { outline-offset: -2px; }
+p.table-preferences > span.current
+{
+    background-color: var(--a4-accent-soft);
+    color: var(--a4-ink);
+    font-weight: var(--a4-weight-heading);
+}
+
+@media (forced-colors: active)
+{
+    p.table-preferences, p.table-preferences > a, p.table-preferences > span { border-color: CanvasText; }
+    p.table-preferences > span.current { forced-color-adjust: none; background-color: Highlight; color: HighlightText; }
+}
+
+input.button, input.defaultbutton, input.button-disabled
+{
+    background: var(--a4-surface);
+    font-size: 1em;
+    margin-left: 5px;
+    padding: 3px 6px;
+}
+
+input.button:hover, input.button:focus {
+    color: var(--a4-ink);
+}
+
+input.defaultbutton:active {
+    box-shadow: inset 0 0 3px var(--a4-overlay);
+}
+
+input.button-disabled, input.button[disabled="disabled"]
+{
+    background: var(--a4-surface);
+
+
+}
+
+
+/* DASHBOARD */
+#ez-version
+{
+    color: var(--a4-accent-text);
+}
+
+#Exponential-community-project-is-innovative-and-cutting-edge
+{
+    color: var(--a4-accent-text);
+    font-style: italic;
+}
+
+div.community-block-title h2,
+div.community-block-title span
+{
+    float: left;
+}
+
+div.community-block-title span
+{
+    margin-top: 1.5em;
+    margin-left: 4px;
+}
+
+div.community-block-title span.first
+{
+    margin-left: 8px;
+}
+
+div.community-activity
+{
+    border: 1px solid var(--a4-line-strong);
+    padding: 1em 1em;
+    border-radius: var(--a4-radius-s);
+}
+
+div.community-activity div.loading
+{
+    font-style: italic;
+}
+
+div.community-activity #feed-elements ul h5
+{
+    margin-top: 0.5em;
+}
+
+div.community-activity #feed-elements ul
+{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+
+div.community-activity #feed-elements ul li p
+{
+    margin: 0.2em 0;
+    font-size: var(--a4-text-xs);
+}
+
+.dashboard-item
+{
+    margin: 1.5em 0 0.5em 0;
+    overflow-x: auto;
+    border-top: 1px dashed var(--a4-line);
+    border-bottom: 1px dashed var(--a4-line);
+    padding-bottom: 1em;
+}
+
+.dashboard-item h2
+{
+    font-size:1.7em;
+}
+
+
+/* PAGENAVIGATOR */
+
+div.pagenavigator
+{
+    text-align: center;
+    margin-top: 1em;
+}
+
+div.pagenavigator a
+{
+    text-decoration: none;
+}
+
+div.pagenavigator p
+{
+    margin: 0em;
+}
+
+div.pagenavigator span.previous
+{
+    display: block;
+    float: left;
+}
+
+div.pagenavigator span.next
+{
+    display: block;
+    float: right;
+}
+
+div.pagenavigator span.disabled
+{
+    color: var(--a4-muted);   /* readable (4.5:1); not a link, so it does not look like one */
+}
+
+div.pagenavigator span.pages span.other, div.pagenavigator span.pages span.current
+{
+    font-size: 1em;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: var(--a4-surface);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+}
+
+div.pagenavigator span.pages span.current
+{
+    background-color: var(--a4-soft);
+}
+
+div.alphabetical
+{
+    margin-top: 1.25em;
+}
+
+/* FOOTER */
+
+#footer-design
+{
+    color:var(--a4-disabled);
+}
+
+#footer-design a
+{
+    color: var(--a4-footer-link);
+}
+#footer-design a:hover
+{
+    color: var(--a4-footer-link-hover);
+}
+
+
+/* MISC */
+table.list th, table.special th
+{
+    padding-top:0;
+    padding-bottom:0;
+}
+
+#leftmenu-design ul
+{
+    color: var(--a4-ink);
+}
+
+.settings .current
+{
+    font-weight: var(--a4-weight-bold);
+}
+
+
+
+/* asynchronous publishing queued page */
+.ezap-placeholder h1 {
+    margin-bottom: 0.8em;
+}
+
+#ezap-message-publishing {
+    border-color: var(--a4-line-strong);
+}
+
+#ezap-message-publishing h1:before {
+    content: "\021BB";
+    color: var(--a4-ink);
+}
+
+#ezap-message-finished h1:before, #ezap-message-deferred h1:before {
+    content: "\02713";
+    color: var(--a4-ok);
+    font-weight: var(--a4-weight-heading);
+}
+
+#ezap-error {
+    font-size: 1.4em;
+    padding: 0.5em;
+}
+
+/* ======== from base.css ======== */
+
+/* The tables of the grey admin designs that are not Exponential UI tables (the trash list): the look the
+   classic admin had, under the admin-dt class names. */
+/* DATA TABLE */
+
+thead .admin-dt-sortable {
+    cursor: pointer;
+}
+
+.admin-dt table {
+    padding: 0;
+    font-size: inherit;
+    border-collapse: separate; *
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    clear: both;
+}
+
+.admin-dt thead {
+    border-spacing: 0;
+}
+
+.admin-dt caption {
+    color: var(--a4-ink);
+    font-size: var(--a4-text-xs);   /* 85% was 11px */
+    font-weight: normal;
+    font-style: italic;
+    line-height: var(--a4-leading-none);
+    padding: 1em 0;
+    text-align: center;
+}
+
+.admin-dt th,.admin-dt th a {
+    text-decoration: none;
+    text-align: left;
+    vertical-align: bottom;
+    color: var(--a4-ink);
+}
+
+.admin-dt th {
+    background-color: var(--a4-soft);
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.admin-dt th.admin-dt-sortable
+{
+    background: var(--a4-soft);
+}
+
+.admin-dt th .admin-dt-liner {
+    white-space: nowrap;
+}
+
+.admin-dt-liner {
+    margin: 0;
+    padding: 0;
+    padding: 4px 10px 4px 10px;
+}
+
+.admin-dt td {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+    vertical-align:middle;
+}
+
+.admin-dt img {
+    vertical-align: middle;
+}
+
+th.admin-dt-asc,th.admin-dt-desc {
+    background-color: var(--a4-accent-soft);
+}
+
+th.admin-dt-sortable .admin-dt-label {
+    margin-right: 10px;
+}
+
+th.admin-dt-desc .admin-dt-liner,
+th.admin-dt-asc .admin-dt-liner {
+    position: relative;
+}
+
+th.admin-dt-desc .admin-dt-liner::after,
+th.admin-dt-asc .admin-dt-liner::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+th.admin-dt-desc .admin-dt-liner::after {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+}
+
+th.admin-dt-asc .admin-dt-liner::after {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-up-fill.svg);
+}
+
+.admin-dt tbody tr:hover {
+    background-color:var(--a4-info-bg);
+}
+
+#action-controls {
+    display: block;
+    float: left;
+    margin: 10px 0px;
+}
+
+#tpg {
+    display: block;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#ezbtn-more button {
+    position: relative;
+    padding-right: 1.7em;
+}
+
+#ezbtn-items-button,
+#ezbtn-new-button,
+#ezbtn-options-button {
+    position: relative;
+    padding-left: 2em;
+}
+
+#ezbtn-more button::after,
+#ezbtn-items-button::before,
+#ezbtn-new-button::before,
+#ezbtn-options-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    pointer-events: none;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+#ezbtn-more button::after {
+    right: 0.45em;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/caret-down-fill.svg);
+}
+
+#ezbtn-items-button::before,
+#ezbtn-new-button::before,
+#ezbtn-options-button::before {
+    left: 6px;
+}
+
+#ezbtn-items-button::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check2-square.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/check2-square.svg);
+}
+
+#ezbtn-new-button::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/plus-lg.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/plus-lg.svg);
+}
+
+#ezbtn-options-button::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/sliders.svg);
+}
+
+/* The icon of each menu item: a Bootstrap icon (share/icons/bootstrap-icons) 5% from the item's left edge, in the
+   item's colour; remove in the danger colour, hide muted and unhide in the success colour */
+#ezopt-menu-remove,
+#ezopt-menu-move,
+#ezopt-menu-edit,
+#ezopt-menu-preview,
+#ezopt-menu-check,
+#ezopt-menu-uncheck,
+#ezopt-menu-toggle,
+#ezopt-menu-view,
+#ezopt-menu-copy,
+#ezopt-menu-copy-subtree,
+#ezopt-menu-multiupload,
+#ezopt-menu-addlocation,
+#ezopt-menu-list,
+#ezopt-menu-multiedit,
+#ezopt-menu-hide,
+#ezopt-menu-unhide {
+    position: relative;
+    padding-left: 1em;
+}
+
+#ezopt-menu-remove::before,
+#ezopt-menu-move::before,
+#ezopt-menu-edit::before,
+#ezopt-menu-preview::before,
+#ezopt-menu-check::before,
+#ezopt-menu-uncheck::before,
+#ezopt-menu-toggle::before,
+#ezopt-menu-view::before,
+#ezopt-menu-copy::before,
+#ezopt-menu-copy-subtree::before,
+#ezopt-menu-multiupload::before,
+#ezopt-menu-addlocation::before,
+#ezopt-menu-list::before,
+#ezopt-menu-multiedit::before,
+#ezopt-menu-hide::before,
+#ezopt-menu-unhide::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 13px;
+    height: 13px;
+    margin-top: -6.5px;
+    pointer-events: none;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+#ezopt-menu-remove::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/trash.svg);
+}
+
+#ezopt-menu-move::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/arrows-move.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/arrows-move.svg);
+}
+
+#ezopt-menu-edit::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil.svg);
+}
+
+#ezopt-menu-preview::before,
+#ezopt-menu-unhide::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/eye.svg);
+}
+
+#ezopt-menu-check::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/check2-square.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/check2-square.svg);
+}
+
+#ezopt-menu-uncheck::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/square.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/square.svg);
+}
+
+#ezopt-menu-toggle::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/toggles.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/toggles.svg);
+}
+
+#ezopt-menu-view::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/box-arrow-up-right.svg);
+}
+
+#ezopt-menu-copy::before,
+#ezopt-menu-copy-subtree::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/files.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/files.svg);
+}
+
+#ezopt-menu-multiupload::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/upload.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/upload.svg);
+}
+
+#ezopt-menu-addlocation::before,
+#ezopt-menu-list::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-3.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/diagram-3.svg);
+}
+
+#ezopt-menu-multiedit::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil-square.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/pencil-square.svg);
+}
+
+#ezopt-menu-hide::before {
+    -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg);
+    mask-image: url(../../../share/icons/bootstrap-icons/svg/eye-slash.svg);
+}
+
+#ezopt-menu-remove::before {
+    background-color: var(--a4-bad);
+}
+
+#ezopt-menu-hide::before {
+    background-color: var(--a4-muted);
+}
+
+#ezopt-menu-unhide::before {
+    background-color: var(--a4-ok);
+}
+
+
+/* ---- masks and the table options dialog ---- */
+.mask {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mask.block-scrollbars {
+    overflow: auto;
+}
+
+.masked select,
+.drag select,
+.hide-select select {
+    _visibility: hidden;
+}
+
+.hide-scrollbars,
+.hide-scrollbars * {
+    overflow: hidden;
+}
+
+.hide-scrollbars select {
+    display: none;
+}
+
+.show-scrollbars {
+    overflow: auto;
+}
+
+.mask {
+    background-color: var(--a4-overlay);
+}
+
+.table-options-row {
+    clear: both;
+}
+
+.table-options-key {
+    float: left;
+}
+
+.table-options-value {
+    float: right;
+}
+
+.table-options-custom-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.table-options-custom-input {
+    width: 100px;
+    padding: 4px;
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
+    font-size: 12px;
+}
+
+#table-option-custom-radio {
+    vertical-align: middle;
+}
+
+
+/* ---- the crank and thumbnail fields of the tables ---- */
+.crankfield,
+.crankfield-disabled {
+    height: 16px;
+    width: 16px;
+}
+
+.crankfield,
+.crankfield-disabled {
+    position: relative;
+}
+
+/* the row's menu: three dots, muted; the accent while its link is hovered or focused */
+.crankfield::before,
+.crankfield-disabled::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
+}
+
+a:hover > .crankfield::before,
+a:focus-visible > .crankfield::before {
+    background-color: var(--a4-accent-text);
+}
+
+.crankfield-disabled::before {
+    background-color: var(--a4-disabled);
+}
+
+/* the row menu's button is the 16px icon alone: an invisible ::after makes it a 24 x 24px target (WCAG 2.5.8) without
+   moving the icon; a click on it reaches the <a role="button"> around the field */
+.crankfield::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+}
+
+.thumbfield {
+    height: 16px;
+    width: 16px;
+}
+
+.thumbview {
+    position: relative;
+    z-index: 0;
+}
+
+/* an image's preview: the image icon on the empty .thumbfield */
+.thumbview > .thumbfield {
+    position: relative;
+}
+
+.thumbview > .thumbfield::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: var(--a4-muted);
+    -webkit-mask: url(../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
+    mask: url(../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
+}
+
+.thumbview:hover {
+    background-color: transparent;
+    z-index: var(--a4-z-hover-preview);
+}
+
+.thumbview span {
+    position: absolute;
+    background-color: var(--a4-surface);
+    padding: 5px;
+    left: -1000px;
+    border: 1px solid var(--a4-line-strong);
+    visibility: hidden;
+    color: var(--a4-ink);
+    text-decoration: none;
+}
+
+.thumbview:hover span {
+    visibility: visible;
+    top: 0;
+    left: 25px;
+}
+
+/* Forced colours: the browser replaces background-color with Canvas, and these icons are masks drawn with it, so they
+   were Canvas on Canvas: the row menu's button was invisible. CanvasText (GrayText while disabled) keeps them. */
+@media (forced-colors: active) {
+    .crankfield::before,
+    .crankfield-disabled::before,
+    a:hover > .crankfield::before,
+    a:focus-visible > .crankfield::before,
+    .thumbview > .thumbfield::before {
+        forced-color-adjust: none;
+        background-color: CanvasText;
+    }
+    .crankfield-disabled::before {
+        background-color: GrayText;
+    }
+}
+
+/* ======== from theme/modalwindow.css ======== */
+
+/* GENERIC MODAL WINDOW STYLE */
+
+#overlay-mask
+{
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: var(--a4-z-overlay);
+    background: var(--a4-overlay);
+    opacity:0;
+    width:100%;
+    height:100%;
+}
+
+.modal-window
+{
+    background:var(--a4-surface);
+    border:1px solid var(--a4-line-strong);
+    padding:2px;
+}
+
+.modal-window .window-close
+{
+    float:right;
+    display:block;
+}
+
+.modal-window h2
+{
+    background-color: var(--a4-soft);
+    margin-top:0;
+    font-size:1.1em;
+    padding:4px 3px 4px 6px;
+    color: var(--a4-ink);
+}
+
+.modal-window fieldset
+{
+    margin:1em 1em 2em 1em;
+}
+
+.modal-window .window-content
+{
+    min-height:64px;
+}
+
+div.box-content .modal-window div.message-error
+{
+    margin:1em;
+    padding:1em;
+    background: var(--a4-bad-bg);
+    border: 2px solid var(--a4-bad);
+    border-radius:var(--a4-radius-s);
+}
+
+.window-close
+{
+    float:right;
+    display:block;
+    margin-top:-1px;
+    /* the cross in a grey with 3:1 on the light and the dark card (a data URI cannot read the tokens) */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13'%3E%3Cpath d='M3.5 3.5l6 6M9.5 3.5l-6 6' stroke='%238a8a8a' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E") no-repeat 0 0;
+    text-indent:-1000em;
+    border:1px solid var(--a4-line-strong);
+    font-size:1px;
+}
+
+
+/* AJAX UPLOADER STYLES */
+
+.ajaxuploader-locations label
+{
+    font-weight:normal;
+    white-space: normal;
+}
+
+.ajaxuploader-button-bar
+{
+    margin-top:1.5em;
+}
+
+.ajaxuploader-error
+{
+    color: var(--a4-bad);
+    font-weight:var(--a4-weight-bold);
+    padding-left:1em;
+}
+
+.ajaxuploader-preview h3
+{
+    padding-bottom:2px;
+    border-bottom: 1px solid var(--a4-line);
+    margin-bottom:1em;
+    color:var(--a4-ink);
+}
+.ajaxuploader-preview dt
+{
+    font-size:1em;
+}
+
+.ajaxuploader-preview dd
+{
+    margin-left:0;
+}
+
+.ajaxuploader-browse .pagination span
+{
+    color:var(--a4-muted);
+}
+
+.has-default-value
+{
+    color:var(--a4-muted);
+}
