@@ -17006,6 +17006,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Diese Installation ist eine öffentliche Demo: Jeder kann ihr Administratorpasswort kennen, und Administratorpasswörter können nicht geändert oder zurückgesetzt werden. Geben Sie hier nichts Privates ein.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -41421,6 +41429,26 @@ Konto zu aktivieren.</translation>
     <message>
         <source>None yet</source>
         <translation>Noch keine</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ihre letzten Anmeldungen, fehlgeschlagenen Versuche und Änderungen an Passwort, E-Mail-Adresse und Zwei-Schritt-Anmeldung.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Die letzten Anmeldungen, fehlgeschlagenen Versuche und Sicherheitsänderungen dieses Kontos.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Aktivität prüfen</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count fehlgeschlagene Anmeldungen</translation>
     </message>
 </context>
 <context>
@@ -84580,6 +84608,463 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Secure your account</source>
         <translation>Konto absichern</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sicherheitsaktivität von %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Angemeldet</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Fehlgeschlagener Anmeldeversuch</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Abgemeldet</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sitzungen abgemeldet</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Anmeldung von einem neuen Gerät</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Anmeldung von einem neuen Ort</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identität bestätigt („Bestätigen Sie, dass Sie es sind“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitätsprüfung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mit einem Passkey angemeldet</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Anmeldung mit Passkey fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Anmeldung abgelehnt: Code der Zwei-Schritt-Anmeldung fehlt oder ist falsch</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Falscher Code der Zwei-Schritt-Anmeldung</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto nach fehlgeschlagenen Anmeldungen gesperrt</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto entsperrt</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Passwort geändert</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Passwortänderung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Passwort zurückgesetzt</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Neues Passwort angefordert</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-Mail-Adresse geändert</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Benutzername geändert</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Zwei-Schritt-Anmeldung eingeschaltet</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Zwei-Schritt-Anmeldung ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Wiederherstellungscode benutzt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Neue Wiederherstellungscodes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-Passwort angelegt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-Passwort widerrufen</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey entfernt</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto aktiviert</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto deaktiviert</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Anmeldungen und Sitzungen</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontoänderungen</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Braucht Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>von Ihnen</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>vom Benutzer</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>von %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Methode</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Browser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gerät</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sitzungen</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Welche</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Fehlgeschlagene Versuche</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Verbleibende Codes</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Login-Handler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sicherheitsaktivität von %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Anmeldungen und Änderungen an der Sicherheit Ihres Kontos. Wenn Sie etwas sehen, das Sie nicht getan haben, ändern Sie Ihr Passwort und melden Sie die Geräte ab, die Sie nicht kennen.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Anmeldungen und Änderungen an der Sicherheit dieses Kontos.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Passwort ändern</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Zurück zum Konto</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Die Sicherheitsaktivität wird nicht aufgezeichnet</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Sie wird aus dem Benutzer-Auditprotokoll gelesen, dessen Tabelle expuser_audit fehlt oder auf dieser Datenbank nicht unterstützt wird. Führen Sie php update/common/scripts/6.0/createuseraudittable.php oder das Datenbank-Update von 6.0.15 aus.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Die letzten %days Tage</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Anmeldungen in den letzten %days Tagen</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Letzte Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Anzeigen</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>abgelehnt</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Noch keine Sicherheitsaktivität aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Sicherheitsereignisse werden %days Tage aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Sicherheitsereignisse werden aufbewahrt, bis ein Administrator sie entfernt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Angemeldet</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Fehlgeschlagener Anmeldeversuch</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Abgemeldet</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sitzungen abgemeldet</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Anmeldung von einem neuen Gerät</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Anmeldung von einem neuen Ort</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identität bestätigt („Bestätigen Sie, dass Sie es sind“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitätsprüfung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Mit einem Passkey angemeldet</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Anmeldung mit Passkey fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Anmeldung abgelehnt: Code der Zwei-Schritt-Anmeldung fehlt oder ist falsch</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Falscher Code der Zwei-Schritt-Anmeldung</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto nach fehlgeschlagenen Anmeldungen gesperrt</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto entsperrt</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Passwort geändert</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Passwortänderung fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Passwort zurückgesetzt</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Neues Passwort angefordert</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-Mail-Adresse geändert</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Benutzername geändert</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Zwei-Schritt-Anmeldung eingeschaltet</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Zwei-Schritt-Anmeldung ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Wiederherstellungscode benutzt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Neue Wiederherstellungscodes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-Passwort angelegt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-Passwort widerrufen</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey entfernt</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto aktiviert</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto deaktiviert</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Anmeldungen und Sitzungen</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontoänderungen</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Braucht Aufmerksamkeit</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sicherheitsaktivität von %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Anmeldungen und Änderungen an der Sicherheit Ihres Kontos. Wenn Sie etwas sehen, das Sie nicht getan haben, ändern Sie Ihr Passwort und melden Sie die Geräte ab, die Sie nicht kennen.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Passwort ändern</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Die Sicherheitsaktivität wird auf dieser Website noch nicht aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Anmeldungen in den letzten %days Tagen</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Fehlgeschlagene Versuche</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Noch keine Sicherheitsaktivität aufgezeichnet.</translation>
     </message>
 </context>
 </TS>

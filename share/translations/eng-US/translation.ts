@@ -14640,6 +14640,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Security activity</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -38254,6 +38262,26 @@ your account.</translation>
     <message>
         <source>None yet</source>
         <translation>None yet</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Security activity</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>The recent sign-ins, failed attempts and security changes of this account.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Review activity</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count failed sign-ins</translation>
     </message>
 </context>
 <context>
@@ -77612,6 +77640,463 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Secure your account</source>
         <translation>Secure your account</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Security activity</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Security activity of %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Signed in</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Failed sign-in attempt</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Signed out</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessions signed out</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sign-in from a new device</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sign-in from a new location</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identity confirmed (&quot;Verify it is you&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identity check failed</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Signed in with a passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey sign-in failed</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Sign-in refused: two-step code missing or wrong</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Wrong two-step code</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Account locked after failed sign-ins</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Account unlocked</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Password changed</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Password change failed</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Password reset</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>New password requested</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mail address changed</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Username changed</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Two-step sign-in turned on</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Two-step sign-in turned off</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Recovery code used</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>New recovery codes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App password created</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App password revoked</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey added</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey removed</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Account enabled</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Account disabled</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sign-ins and sessions</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Account changes</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Needs attention</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>by you</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>by the user</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>by %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Method</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Browser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Place</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Country</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Which</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Channel</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Failed attempts</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Codes left</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Sign-in handler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Security activity</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Security activity of %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Sign-ins and changes to the security of this account.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Change password</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Back to the account</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>The security activity is not recorded</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>The last %days days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sign-ins in the last %days days</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Recent security activity</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>failed</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refused</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>No security activity recorded yet.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Security events are kept for %days days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Security events are kept until an administrator removes them.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Signed in</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Failed sign-in attempt</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Signed out</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessions signed out</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sign-in from a new device</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sign-in from a new location</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identity confirmed (&quot;Verify it is you&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identity check failed</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Signed in with a passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey sign-in failed</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Sign-in refused: two-step code missing or wrong</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Wrong two-step code</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Account locked after failed sign-ins</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Account unlocked</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Password changed</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Password change failed</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Password reset</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>New password requested</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mail address changed</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Username changed</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Two-step sign-in turned on</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Two-step sign-in turned off</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Recovery code used</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>New recovery codes</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App password created</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App password revoked</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey added</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey removed</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Account enabled</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Account disabled</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sign-ins and sessions</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Account changes</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Needs attention</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Security activity</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Security activity of %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Change password</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>The security activity is not recorded on this site yet.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sign-ins in the last %days days</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Failed attempts</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>No security activity recorded yet.</translation>
     </message>
 </context>
 </TS>

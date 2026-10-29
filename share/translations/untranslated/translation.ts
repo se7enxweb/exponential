@@ -14374,6 +14374,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -37919,6 +37927,26 @@ your account.</source>
     </message>
     <message>
         <source>None yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -77431,6 +77459,463 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/user/security_mail</name>
     <message>
         <source>Secure your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -52,3 +52,15 @@
 .us-table th, .us-table td { padding: .4em .6em; border-bottom: 1px solid var(--us-line); text-align: left; vertical-align: top; }
 .us-account-link { display: flex; flex-wrap: wrap; gap: .4em 1em; align-items: center; justify-content: space-between; margin: 0 0 1em; padding: .7em .95em; border: 1px solid var(--us-line); border-radius: 9px; background: var(--us-soft); }
 .us-account-link p { margin: 0; flex: 1 1 18em; }
+/* "Security activity" (user/security): the counts, the filter and the events, newest first */
+.us-figures { display: flex; flex-wrap: wrap; gap: .6em; margin: 0 0 1em; padding: 0; list-style: none; }
+.us-figures li { flex: 1 1 10em; padding: .6em .9em; border: 1px solid var(--us-line); border-radius: 9px; background: var(--us-card); color: var(--us-muted); }
+.us-figures li strong { display: block; color: var(--us-ink); font-size: 1.5em; }
+.us-figures li.is-bad strong { color: var(--us-bad); }
+.us-filter { margin: 0 0 1em; }
+.us-events { margin: 0 0 1em; padding: 0; list-style: none; border-left: 2px solid var(--us-line); }
+.us-events li { display: flex; flex-wrap: wrap; gap: .2em .8em; align-items: baseline; padding: .45em 0 .45em .9em; }
+.us-events li time { color: var(--us-muted); font-size: .9em; min-width: 9em; }
+.us-events li.is-bad strong { color: var(--us-bad); }
+.us-events li.is-warn strong { color: var(--us-accent); }
+.us-events li.is-ok strong { color: var(--us-ok); }

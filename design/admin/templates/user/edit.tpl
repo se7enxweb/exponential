@@ -147,6 +147,13 @@
              $badge = cond( $action.status, '%count signed in'|i18n( 'design/admin/user/edit',, hash( '%count', $action.status.active ) ), '' )
              $icon = '<rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/>'}
     {/case}
+    {case match='security'}
+        {set $title = 'Security activity'|i18n( 'design/admin/user/edit' )
+             $text = cond( $own, 'Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.'|i18n( 'design/admin/user/edit' ), 'The recent sign-ins, failed attempts and security changes of this account.'|i18n( 'design/admin/user/edit' ) )
+             $label = 'Review activity'|i18n( 'design/admin/user/edit' )
+             $badge = cond( $action.status.failures|gt( 0 ), '%count failed sign-ins'|i18n( 'design/admin/user/edit',, hash( '%count', $action.status.failures ) ), '' )
+             $icon = '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>'}
+    {/case}
     {case match='apikeys'}
         {set $title = 'API keys'|i18n( 'design/admin/user/edit' )
              $text = cond( $own, 'Personal keys for your own scripts and tools to publish through the REST interface.'|i18n( 'design/admin/user/edit' ), 'Show and revoke the API keys of this user.'|i18n( 'design/admin/user/edit' ) )

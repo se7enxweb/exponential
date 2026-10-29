@@ -103,6 +103,31 @@ die ungefähre Adresse und die Links zu Ihre Geräte und zur Sicherheitsaktivit�
 - Die Mail geht wie jede andere durch das Mail-Gate; mit `[MailSettings] Transport=file` wird sie nach `var/log/mail`
   geschrieben und nie verschickt.
 
+## Sicherheitsaktivität
+
+**Sicherheitsaktivität** (`user/security`) ist die „letzte Sicherheitsaktivität“ des Kontos: eine Zeitleiste seiner
+Sicherheitsereignisse, die neuesten zuerst, oben die Anmeldungen, fehlgeschlagenen Versuche und Kontoänderungen der
+letzten 30 Tage. Jeder angemeldete Benutzer hat sie für das eigene Konto; `user/security/<Benutzer-ID>` zeigt einem
+Betrachter mit der Richtlinie `user/sessions` ein anderes Konto. Verlinkt von Ihre Geräte, der Kontoseite (die Karte
+**Sicherheitsaktivität** mit den fehlgeschlagenen Anmeldungen der letzten 30 Tage), dem Benutzermenü der Kopfzeile und
+dem Kasten „Aktueller Benutzer“. Nur lesend.
+
+| Angezeigt | Ereignisse |
+|---|---|
+| Anmeldungen und Sitzungen | `access.session.login`, `.login.failed`, `.logout`, `.revoke`, `.new_device`, `.new_location`, `.reauth`, `.reauth.failed`, `access.passkey.use`, `.use.failed`, `access.user.second_factor.refused`, `access.user.two_factor.verify.failed` |
+| Kontoänderungen | `access.user.lock`, `.unlock`, `.password.change`, `.password.change.failed`, `.password.reset`, `.password.reset.request`, `.email.change`, `.login.change`, `.two_factor.enroll`, `.two_factor.remove`, `.two_factor.recovery_used`, `.two_factor.recovery_issued`, `.app_password.create`, `.app_password.revoke`, `.enable`, `.disable`, `access.passkey.add`, `.remove` |
+| Braucht Aufmerksamkeit | Fehlschläge, Ablehnungen, Sperren, neue Geräte und Orte sowie Änderungen an Passwort, E-Mail, Zwei-Schritt-Anmeldung und Passkeys |
+
+Für die Seite wird nichts aufgezeichnet: Sie liest das [Benutzer-Auditprotokoll](benutzer-auditprotokoll.md)
+(`expuser_audit`), das die Senke `useraudit` des Audits aus denselben Ereignissen füllt (`expUserSecurityActivity`).
+Ohne diese Tabelle und auf MongoDB sagt die Seite das. Die Ereignisse bleiben `audit.ini [UserAuditSettings]
+RetentionDays` (730) Tage. Jede Zeile zeigt die Zeit, wer gehandelt hat (der Benutzer, ein Administrator mit Login
+oder niemand Angemeldetes bei einem fehlgeschlagenen Versuch), die ungefähre Adresse, den Host und was das Ereignis
+nennt (Methode, Browser, System, Ort, Zahl der Sitzungen, verbleibende Codes); nie ein Geheimnis.
+
+Die Zwei-Schritt-Ereignisse `access.user.two_factor.*` zeichnet die Zwei-Schritt-Erweiterung über
+`expSignInSecondFactor::audit()` auf.
+
 ## Einstellungen: site.ini [UserSessionSettings]
 
 | Einstellung | Standard | Bedeutung |

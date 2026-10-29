@@ -192,6 +192,19 @@ $ViewList['sessions'] = array(
     'params' => array( 'UserID' ),
 );
 
+// "Security activity" (doc/eng-us/features/6.0/user-sessions.md): the recent security events of the signed-in user's
+// own account (sign-ins, failed attempts, new devices and places, password, e-mail, two-step sign-in), read from the
+// user audit log; user/security/<user id> for another account needs the policy user/sessions, which the view checks.
+// Read only. See kernel/private/classes/views/user/security.php
+$ViewList['security'] = array(
+    'functions' => array( 'login' ),
+    'script' => 'security.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezmynavigationpart',
+    'unordered_params' => array( 'offset' => 'Offset' ),
+    'params' => array( 'UserID' ),
+);
+
 // The user audit log (doc/eng-us/features/6.0/user-audit.md): the security events about user accounts and groups
 // (table expuser_audit) filtered by user, action, result and date, paged, and the CSV of the filtered list (POST).
 // Needs the policy user/audit. See kernel/private/classes/views/user/audit.php

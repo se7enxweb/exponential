@@ -98,6 +98,29 @@ of an account is not new: there is nothing to compare it with (`FirstSignInMail=
 - The mail goes through the mail gate like every other mail; with `[MailSettings] Transport=file` it is written to
   `var/log/mail` and never sent.
 
+## Security activity
+
+**Security activity** (`user/security`) is the account's "recent security activity": a timeline of its security
+events, newest first, with the sign-ins, failed attempts and account changes of the last 30 days on top. Every
+signed-in user has it for the own account; `user/security/<user id>` shows another account to a viewer with the policy
+`user/sessions`. It is linked from Your devices, the account page (the card **Security activity**, with the failed
+sign-ins of the last 30 days), the user menu of the header and the "Current user" box. Read only.
+
+| Shown | Events |
+|---|---|
+| Sign-ins and sessions | `access.session.login`, `.login.failed`, `.logout`, `.revoke`, `.new_device`, `.new_location`, `.reauth`, `.reauth.failed`, `access.passkey.use`, `.use.failed`, `access.user.second_factor.refused`, `access.user.two_factor.verify.failed` |
+| Account changes | `access.user.lock`, `.unlock`, `.password.change`, `.password.change.failed`, `.password.reset`, `.password.reset.request`, `.email.change`, `.login.change`, `.two_factor.enroll`, `.two_factor.remove`, `.two_factor.recovery_used`, `.two_factor.recovery_issued`, `.app_password.create`, `.app_password.revoke`, `.enable`, `.disable`, `access.passkey.add`, `.remove` |
+| Needs attention | The failures, refusals, locks, new devices and places, and the changes of password, e-mail, two-step sign-in and passkeys |
+
+Nothing is recorded for the page: it reads the [user audit log](user-audit.md) (`expuser_audit`), which the audit's
+sink `useraudit` fills from the same events (`expUserSecurityActivity`). Without that table, and on MongoDB, the page
+says so. The events are kept for `audit.ini [UserAuditSettings] RetentionDays` (730). Each row shows the time, who
+acted (the user, an administrator by login, or nobody signed in for a failed attempt), the approximate address, the
+host and what the event names (method, browser, system, place, number of sessions, codes left); never a secret.
+
+The two-step events `access.user.two_factor.*` are recorded by the two-step extension through
+`expSignInSecondFactor::audit()`.
+
 ## Settings: site.ini [UserSessionSettings]
 
 | Setting | Default | Meaning |
