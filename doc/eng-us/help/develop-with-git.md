@@ -93,6 +93,22 @@ composer install
 Then install the site as usual: [Choosing an install method](../install/04-choosing-an-install-method.md) or the
 one command `php bin/php/console exp:install --apply` from [the console install](../install/07-console-install.md).
 
+For a local development site under Apache, put the rules and the constants into place from the console. A copy of
+`config.php-RECOMMENDED` sets nothing, so the built-in defaults apply, which suit development (INI changes are seen at
+once); `exp:config:list` shows what could be set:
+
+```bash
+php bin/php/console exp:setup:status
+php bin/php/console exp:setup:htaccess --apply
+php bin/php/console exp:setup:config --apply
+php bin/php/console exp:config:list
+```
+
+The clone tracks only the templates (`.htaccess_root`, `.htaccess_root_static`, `config.php-RECOMMENDED`); the copies
+show up as untracked files in `git status`. Never commit `config.php`: it can hold a password. In a repository of
+your own site, add `/config.php` to its `.gitignore`. Details:
+[Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
+
 **Prefer `composer create-project`?** It can make clones too, but you need two options together:
 
 ```bash
@@ -351,6 +367,8 @@ Three more things worth knowing:
 - [Getting the code](../install/03-getting-the-code.md): every way to install, versions and tags, extensions as
   Composer packages.
 - [Extensions](../guides/extensions.md) and the [extension pages](../features/6.0/extensions/README.md).
+- [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md): the local
+  `.htaccess` and `config.php`.
 - [git_manager](../features/6.0/extensions/git_manager.md): see and change the state of a Git checkout from the
   administration, and make backups before you change anything.
 - [When something goes wrong](when-something-goes-wrong.md#filing-a-bug-in-exponential): which issue tracker to use

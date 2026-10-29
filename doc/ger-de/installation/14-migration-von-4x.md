@@ -452,6 +452,21 @@ und gehen Sie sie anschließend mit der folgenden Liste durch. Kopieren Sie niem
 Schritt 1 (`settings/siteaccess`, `settings/override` und die eigenen `design/<site>`-Verzeichnisse der Website in die
 entpackte neue Release kopieren).
 
+Um eine übernommene `config.php` ohne Editor mit der Vorlage zu vergleichen, führen Sie im neuen
+Wurzelverzeichnis aus:
+
+```bash
+./console exp:setup:status                 # config.php: wie viele Einstellungen sie setzt, oder dass sie nicht kompiliert
+./console exp:setup:config                 # der Diff zwischen config.php und config.php-RECOMMENDED (ändert nichts)
+./console exp:config:list                  # jede dokumentierte Einstellung: der Wert in config.php, oder (not set)
+./console exp:config:set CLUSTER_STORAGE_BACKEND dfsmysqli --apply    # einen Wert setzen oder korrigieren, vorher Sicherung
+```
+
+Eine Einstellung, die die alte Datei innerhalb eines `if` definiert, wird als `conditional` gemeldet und Ihnen
+überlassen. Ohne alte `config.php` legt `./console exp:setup:config --apply` eine aus der Vorlage an; für `.htaccess`
+nehmen Sie die neue `.htaccess_root` mit `./console exp:setup:htaccess --apply` statt der Kopie der alten Website.
+Siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+
 ### Zu ändernde Einstellungen
 
 | Alte Einstellung | Was zu tun ist |

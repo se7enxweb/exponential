@@ -424,6 +424,20 @@ then go through them with the list below. Never copy the old `settings/*.ini` fi
 defaults are part of the code. The vendor's pages said the same in their step 1 (copy `settings/siteaccess`,
 `settings/override` and the site's own `design/<site>` directories into the unpacked new release).
 
+To compare a carried-over `config.php` with the template without an editor, run in the new root:
+
+```bash
+./console exp:setup:status                 # config.php: how many settings it sets, or that it does not compile
+./console exp:setup:config                 # the diff between config.php and config.php-RECOMMENDED (changes nothing)
+./console exp:config:list                  # every documented setting: the value config.php has, or (not set)
+./console exp:config:set CLUSTER_STORAGE_BACKEND dfsmysqli --apply    # set or correct one value, backup first
+```
+
+A setting the old file defines inside an `if` is reported as `conditional` and left to you. Without an old
+`config.php`, `./console exp:setup:config --apply` creates one from the template; for `.htaccess`, take the new
+`.htaccess_root` with `./console exp:setup:htaccess --apply` rather than the old site's copy. See
+[Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
+
 ### Settings to change
 
 | Old setting | What to do |

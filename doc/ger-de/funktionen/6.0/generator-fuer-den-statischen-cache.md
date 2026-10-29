@@ -62,6 +62,10 @@ Dateien zu erzeugen ist die halbe Arbeit. Die andere Hälfte ist, dem Webserver 
 
 - **Apache mit `.htaccess`**: Kopieren Sie `.htaccess_root_static` statt `.htaccess_root` nach `.htaccess`. Es ist
   `.htaccess_root` plus die Regeln zum Entlasten, sodass das Zurückwechseln das Kopieren der anderen Datei darüber ist.
+  Von der Konsole aus: `./console exp:setup:htaccess --static` zeigt den Unterschied zu Ihrer jetzigen `.htaccess`,
+  `--static --force --apply` wechselt (die alte Datei wird vorher nach `var/backup/setup/<Zeit>/` gesichert), und
+  `./console exp:setup:htaccess --force --apply` wechselt zurück
+  ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md#auf-die-regeln-für-den-statischen-cache-umstellen)).
   Prüfen Sie die eine Zeile `RewriteRule ^ - [E=EZ_VAR_SITE:site]`: Der Wert ist `site.ini` `[FileSettings] VarDir` ohne
   das führende `var/`; eine Standardinstallation (`var/site`) braucht keine Änderung.
 - **Apache oder ein anderer virtueller Host**: Ein vhost liest keine `.htaccess`; verwenden Sie dieselben Regeln aus
@@ -118,6 +122,7 @@ Die Standards haben sich geändert; siehe [bc: Standards des statischen Caches](
 - [Cache aus der Konsole](../../bc/6.0/cache-konsole.md) (Gruppe statischer Cache von `exp:cache`), [HTTP-Caching](../../bc/6.0/http-caching.md)
 - [Velocity und der Opcode-Cache](velocity-opcode-cache-und-profil.md), [Leeren von Caches, das Verzeichnisse beiseiteschiebt](cache-leeren-durch-umbenennen.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../bc/6.0/verhaltensaenderungen-2026-10.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:setup:htaccess --static`
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [September 2026, erste Hälfte: Caches, die Sie sehen können](../../geschichte/2026/2026-09a.md#13-september-caches-die-sie-sehen-cronjobs-die-sie-ausführen-können), [Oktober 2026](../../geschichte/2026/2026-10.md)
 

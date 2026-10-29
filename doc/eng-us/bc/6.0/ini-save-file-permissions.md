@@ -81,6 +81,17 @@ Both are commented out in `config.php-RECOMMENDED`, with these defaults. If your
 `EZP_INI_FILE_PERMISSION` as `0666`, change it to `0644`: it no longer affects settings files, but it still makes the
 cache files world-writable.
 
+Both can be read and set from the console; `exp:config:set` shows the change first and writes it only with `--apply`,
+after a backup:
+
+```bash
+./console exp:config:get EZP_INI_FILE_PERMISSION
+./console exp:config:set EZP_INI_FILE_PERMISSION 0644 --apply
+./console exp:config:set EZP_INI_SAVE_FILE_PERMISSION 0640 --apply
+```
+
+See [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 ## Fixing an installation once
 
 ```bash
@@ -111,3 +122,4 @@ reload PHP-FPM and restart Velocity so both use the new code.
 - [Installation guide, 13.11 File permissions and ownership](../../install/13-security-hardening.md#1311-file-permissions-and-ownership)
 - [eZINI keeps comments when it saves](eZINI_PRESERVES_COMMENTS.md)
 - [exp:ini](console-exp-ini.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:config:*` for the constants in `config.php`

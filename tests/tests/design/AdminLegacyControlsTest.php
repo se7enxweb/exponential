@@ -450,8 +450,13 @@ class AdminLegacyControlsTest extends PHPUnit\Framework\TestCase
     public function testTheNodeTabBoxFillsItsHeightAndClearsTheGrip()
     {
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
-        $this->assertStringContainsString( "#window-controls.a4-node-tabs {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) auto auto;\n  grid-template-rows: auto minmax(0, 1fr);\n}",
-            self::css( 'admin4.css' ), 'the tab row, then the panel in what is left' );
+        $this->assertStringContainsString( "#window-controls.a4-node-tabs {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) auto auto;\n  grid-template-rows: auto auto minmax(0, 1fr);\n}",
+            self::css( 'admin4.css' ), 'the tabs switch row, the tab row, then the panel in what is left' );
+        // the tabs switch above the tabs, so the tab row has the box's whole width (it wrapped beside the switch)
+        $this->assertStringContainsString( '#window-controls.a4-node-tabs > ul.tabs { grid-column: 1 / -1; grid-row: 2; }', self::css( 'admin4.css' ) );
+        $this->assertSame( '1', $rules['#window-controls.a4-node-tabs > .button-left']['grid-row'] );
+        $this->assertSame( '1', $rules['#window-controls.a4-node-tabs > .a4-tabs-switch-label']['grid-row'] );
+        $this->assertSame( '3', $rules['#window-controls.a4-node-tabs > .tabs-content']['grid-row'] );
         $panel = $rules['#window-controls.a4-node-tabs > .tabs-content'];
         $this->assertSame( 'auto', $panel['height'], 'not the base\'s 100% - 2.5em' );
         $this->assertSame( '0', $panel['min-height'] );

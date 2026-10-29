@@ -10,9 +10,11 @@
  * Rules (doc/eng-us/bc/6.0/admin4-styling.md):
  * - no <style> block and no style="" attribute in a template: CSS lives here or in stylesheets/modules/;
  * - colours, radius, spacing and fonts only from the --a4-* tokens below; no hard-coded values, no local aliases;
- * - every colour token has a value for html[data-a4-theme="dark"]; spacing, size, radius and font tokens are the
- *   same in both modes and are listed once (the test knows the --a4-space-, --a4-text-, --a4-radius, --a4-font,
- *   --a4-mono and --a4-leading names);
+ * - every colour token has a value for html[data-a4-theme="dark"]; spacing, size, radius, font, weight, duration and
+ *   tracking tokens are the same in both modes and are listed once (the test knows the --a4-space-, --a4-text-,
+ *   --a4-radius, --a4-font, --a4-mono, --a4-leading, --a4-weight-, --a4-duration and --a4-tracking names);
+ * - weights, durations, letter spacing and line heights come from those tokens, never as raw numbers (a test
+ *   keeps them out; the two progress bars keep their .4s);
  * - one accent (#f26a21; a fill carrying white text takes its darker --a4-accent-strong) and one component radius (--a4-radius-s);
  *   --a4-radius (18px) is the frame's three columns only;
  * - a module's own CSS goes in stylesheets/modules/<group>.css as .a4-<module>-*, for what these classes cannot do.
@@ -40,16 +42,20 @@
 
   /* text and surfaces */
   --a4-ink: #1f2430;
-  --a4-muted: #5d6573;
-  --a4-line: #e3e6eb;
-  --a4-line-strong: #c9ced6;
-  --a4-soft: #f6f7f9;
+  --a4-muted: #545c6a;   /* 5:1 also on the table header (--a4-head-bg); #5d6573 until 2026-10 */
+  /* lines, soft surface and zebra two steps darker than until 2026-10 (#e3e6eb, #c9ced6, #f6f7f9, #f2f4f7): the
+     sections, tables and toolbars of a page stood too faintly apart from the white card */
+  --a4-line: #c9cfd8;
+  --a4-line-strong: #aab2bd;
+  --a4-soft: #eaedf1;
   --a4-card: #fff;
   --a4-surface: #fff;
   /* the even body rows of every data table (zebra); text on it keeps the soft surface's contrast */
-  --a4-zebra: #f2f4f7;
+  --a4-zebra: #eceff3;
+  /* the header row of a data table (table.list th, .a4-table th): darker than the soft surface, still light */
+  --a4-head-bg: #dce1e8;
   --a4-field: #fff;
-  --a4-field-line: #80879a;
+  --a4-field-line: #6e7588;   /* 3:1 also on the darker page colour (admin4.css); #80879a until 2026-10 */
   --a4-disabled: #9aa1ad;
   --a4-overlay: rgba(16, 24, 40, 0.45);
   --a4-code-bg: #1f2430;
@@ -128,11 +134,24 @@
   --a4-text-xl: 22px;
   --a4-text-2xl: 26px;
   --a4-text-3xl: 32px;
-  /* the body text (core.css's em sizes follow it): 13px up to a 1920px window, growing to 14px at 2560px, never
+  /* the body text (the base stylesheet's em sizes follow it): 13px up to a 1920px window, growing to 14px at 2560px, never
      more; a modest step for very wide screens that keeps every em size at or above the 12px floor */
   --a4-text-body: clamp(var(--a4-text-s), calc(var(--a4-text-s) - 3px + 0.15625vw), var(--a4-text-m));
   --a4-leading: 1.5;
   --a4-leading-tight: 1.25;
+  --a4-leading-none: 1;   /* icons, badges and single-line controls, where the box height is the font size */
+  /* weights: one scale. medium: quiet emphasis; strong: controls, buttons, navigation; heading: headings, table
+     heads and the labels of facts; bold: figures, counts and emphasis. 400 is the keyword `normal` */
+  --a4-weight-medium: 500;
+  --a4-weight-strong: 600;
+  --a4-weight-heading: 650;
+  --a4-weight-bold: 700;
+  /* motion: --a4-duration for every hover and focus feedback, --a4-duration-slow for the phone menu opening and
+     closing; a bar that grows with real progress (.a4-content-job-bar, .a4-setup-progress) keeps its own .4s */
+  --a4-duration: .15s;
+  --a4-duration-slow: .3s;
+  /* the letter spacing of uppercase labels (a negative heading tracking stays a value of its own) */
+  --a4-tracking: .04em;
   /* one height for the buttons, selects and pager buttons that stand in a row (node actions, sub-items toolbar) */
   --a4-control-h: 32px;
   /* the widest the content column grows on a very wide window, so its actions stay near what they act on */
@@ -244,6 +263,7 @@ html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   --a4-card: #1b212c;
   --a4-surface: #171c25;
   --a4-zebra: #212734;
+  --a4-head-bg: #283041;
   --a4-field: #121720;
   --a4-field-line: #6f7a93;
   --a4-disabled: #6b7486;
@@ -398,7 +418,7 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
   background-color: var(--a4-card);
   box-shadow: var(--a4-shadow-m);
   color: var(--a4-ink);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
   text-decoration: none;
   transform: translateY(calc(-100% - var(--a4-space-4)));
 }
@@ -418,7 +438,7 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
   background: none;
   color: var(--a4-ink);
   font-family: var(--a4-font);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   overflow-wrap: anywhere;
 }
 .a4-h2 { font-size: var(--a4-text-l); }
@@ -460,15 +480,15 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
 .a4-pagehead-pre {
   margin: 0 0 var(--a4-space-1);
   font-size: var(--a4-text-xs);
-  font-weight: 600;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-strong);
+  letter-spacing: var(--a4-tracking);
   text-transform: uppercase;
   color: var(--a4-muted);
 }
 .a4-pagehead-title {
   margin: 0;
   font-size: var(--a4-text-xl);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   line-height: var(--a4-leading-tight);
   color: var(--a4-ink);
   overflow-wrap: anywhere;
@@ -519,7 +539,7 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
   white-space: nowrap;
   vertical-align: bottom;
 }
-.a4-crumbs > li > [aria-current="page"] { max-width: 48ch; font-weight: 600; color: var(--a4-ink); }
+.a4-crumbs > li > [aria-current="page"] { max-width: 48ch; font-weight: var(--a4-weight-strong); color: var(--a4-ink); }
 .a4-crumbs > li.is-fold { display: none; }
 @media (max-width: 600px) {
   .a4-crumbs > li.is-middle:not(:focus-within) {
@@ -621,7 +641,7 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
 
 /* .a4-card.is-flush: a table (or list) that runs to the card's edges; head and foot keep their padding. */
 .a4-card.is-flush { padding: 0; }
-.a4-card.is-flush > .a4-card-head { padding: var(--a4-card-pad-y, var(--a4-space-3)) var(--a4-card-pad-x, var(--a4-space-4)); border-bottom: 1px solid var(--a4-line); }
+.a4-card.is-flush > .a4-card-head { padding: var(--a4-card-pad-y, var(--a4-space-3)) var(--a4-card-pad-x, var(--a4-space-4)); border-bottom: 1px solid var(--a4-line); border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0; background-color: var(--a4-soft); }   /* a flush card's title row: a soft bar inside the card's rounded top, so its sections read at a glance */
 .a4-card.is-flush > .a4-card-body { margin: 0; }
 .a4-card.is-flush > .a4-card-foot { margin: 0; }
 .a4-card.is-flush > table,
@@ -713,8 +733,8 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
 .a4-figure strong {
   color: var(--a4-ink);
   font-size: var(--a4-text-xl);
-  font-weight: 700;
-  line-height: 1.15;
+  font-weight: var(--a4-weight-bold);
+  line-height: var(--a4-leading-tight);
   font-variant-numeric: tabular-nums;
   overflow-wrap: anywhere;
 }
@@ -738,8 +758,8 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
   margin: 0;
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-heading);
+  letter-spacing: var(--a4-tracking);
   text-transform: uppercase;
 }
 .a4-facts dd { margin: 2px 0 0; overflow-wrap: anywhere; }
@@ -768,19 +788,19 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
   background-color: var(--a4-soft);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   line-height: var(--a4-leading);
   white-space: nowrap;
   text-decoration: none;
 }
-.a4-tag { border: 1px solid var(--a4-line); font-weight: 400; color: var(--a4-ink); }
+.a4-tag { border: 1px solid var(--a4-line); font-weight: normal; color: var(--a4-ink); }
 .a4-tag.is-ok, .a4-badge.is-ok { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
 .a4-tag.is-warn, .a4-badge.is-warn { background-color: var(--a4-warn-bg); color: var(--a4-warn); }
 .a4-tag.is-bad, .a4-badge.is-bad { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
 .a4-tag.is-info, .a4-badge.is-info { background-color: var(--a4-info-bg); color: var(--a4-info); }
 .a4-tag.is-accent, .a4-badge.is-accent { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
 .a4-tag.is-ok, .a4-tag.is-warn, .a4-tag.is-bad, .a4-tag.is-info, .a4-tag.is-accent { border-color: transparent; }
-.a4-tag.is-mono, .a4-badge.is-mono { font-family: var(--a4-mono); font-weight: 400; }
+.a4-tag.is-mono, .a4-badge.is-mono { font-family: var(--a4-mono); font-weight: normal; }
 
 /* ---- Status mark ------------------------------------------------------------------------------------------------
    A 10px mark for the state of an item, shown before its name in lists and in a badge beside a title: a node's
@@ -810,7 +830,7 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
 .a4-mark.is-hidden,
 .a4-mark.is-hidden-by-parent { color: var(--a4-bad); }
 .a4-mark.is-disabled { color: var(--a4-muted); }
-.a4-mark.is-locked { color: var(--a4-warn); border-radius: 2px; background-color: currentColor; }
+.a4-mark.is-locked { color: var(--a4-warn); border-radius: calc(var(--a4-radius-s) / 4); background-color: currentColor; }   /* a square: a quarter of the radius keeps it one, the full radius would make it a disc */
 .a4-mark.is-hidden-by-parent::after,
 .a4-mark.is-disabled::after {
   content: "";
@@ -851,7 +871,7 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
   background-color: transparent;
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   line-height: var(--a4-leading);
   text-align: center;
   text-decoration: none;
@@ -860,11 +880,11 @@ html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
 }
 a.a4-lang:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 a.a4-lang:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
-.a4-lang.is-current { border-color: var(--a4-accent); color: var(--a4-accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
+.a4-lang.is-current { border-color: var(--a4-accent); color: var(--a4-accent-text); font-weight: var(--a4-weight-bold); text-decoration: underline; text-underline-offset: 2px; }
 .a4-lang.is-current:not(.is-main) { background-color: var(--a4-accent-soft); }
 .a4-lang.is-main { border-color: var(--a4-ink); background-color: var(--a4-ink); color: var(--a4-card); }
 a.a4-lang.is-main:hover, .a4-lang.is-main.is-current { border-color: var(--a4-accent); background-color: var(--a4-ink); color: var(--a4-card); }
-.a4-lang.is-missing { border-style: dashed; color: var(--a4-muted); font-weight: 500; }
+.a4-lang.is-missing { border-style: dashed; color: var(--a4-muted); font-weight: var(--a4-weight-medium); }
 a.a4-lang.is-missing:hover { border-style: solid; }
 /* a badge in front of the language's name in a table cell (the Translations tab) keeps a gap to the name */
 td > .a4-lang { margin-inline-end: var(--a4-space-1); }
@@ -888,7 +908,7 @@ td > .a4-lang { margin-inline-end: var(--a4-space-1); }
 }
 
 /* A status with a dot: .a4-status > .a4-dot + text; .is-running pulses */
-.a4-status { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 700; }
+.a4-status { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: var(--a4-weight-bold); }
 .a4-dot {
   flex: 0 0 auto;
   width: 10px;
@@ -927,8 +947,8 @@ td > .a4-lang { margin-inline-end: var(--a4-space-1); }
   color: var(--a4-ink);
   font-family: var(--a4-font);
   font-size: var(--a4-text-s);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: var(--a4-weight-strong);
+  line-height: var(--a4-leading-tight);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
@@ -1040,14 +1060,14 @@ fieldset.a4-field > legend + * { clear: both; }
   padding: 0;
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
 .a4-field-wide { grid-column: 1 / -1; }
-.a4-field-error { color: var(--a4-bad); font-size: var(--a4-text-s); font-weight: 650; }
+.a4-field-error { color: var(--a4-bad); font-size: var(--a4-text-s); font-weight: var(--a4-weight-heading); }
 
 /* Required fields: a mark beside the label (the word itself is in .a4-sr-only for screen readers) and one hint
    above the form that says what the mark means. A field error may lead with an icon. */
-.a4-required-mark { margin-inline-start: var(--a4-space-1); color: var(--a4-bad); font-weight: 700; }
+.a4-required-mark { margin-inline-start: var(--a4-space-1); color: var(--a4-bad); font-weight: var(--a4-weight-bold); }
 .a4-required-hint { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-required-hint .a4-required-mark { margin: 0 var(--a4-space-1) 0 0; }
 :where([dir="rtl"]) .a4-required-hint .a4-required-mark { margin: 0 0 0 var(--a4-space-1); }
@@ -1120,18 +1140,18 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-searchrow input[type="search"], .a4-searchrow input[type="text"], .a4-searchrow .a4-input { flex: 1 1 220px; width: auto; min-width: 0; }
 
 /* A checkbox or radio with its text */
-.a4-check { display: flex; align-items: flex-start; gap: var(--a4-space-2); font-weight: 400; white-space: normal; }
+.a4-check { display: flex; align-items: flex-start; gap: var(--a4-space-2); font-weight: normal; white-space: normal; }
 .a4-check input { flex: 0 0 auto; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--a4-accent-strong); }
 .a4-check > span { flex: 1 1 auto; min-width: 0; }
-.a4-check strong { font-weight: 650; }
+.a4-check strong { font-weight: var(--a4-weight-heading); }
 .a4-check .a4-help { display: block; }
 /* a check as the child of a field is not the field's label: .a4-field > label (one element heavier) would make its text
    and help bold and small */
-.a4-field > .a4-check { font-size: inherit; font-weight: 400; }
+.a4-field > .a4-check { font-size: inherit; font-weight: normal; }
 
 /* A label around text that was plain before: an inline radio or checkbox with its text, or the words in front of a
    control in a table cell. It names the control and widens its click area, and looks like the text around it
-   (core.css draws every label bold, larger and as a block of its own). */
+   (the base stylesheet draws every label bold, larger and as a block of its own). */
 .a4-inline-label { display: inline; padding: 0; font-size: inherit; font-weight: inherit; white-space: normal; }
 .a4-page input[type="checkbox"], .a4-page input[type="radio"] { accent-color: var(--a4-accent-strong); }
 
@@ -1154,13 +1174,13 @@ fieldset.a4-field > legend + * { clear: both; }
   border-radius: var(--a4-radius-s);
   background-color: var(--a4-card);
   cursor: pointer;
-  /* core.css draws every label on one line: a choice with a description (the package wizard's creators) or a long
+  /* the base stylesheet draws every label on one line: a choice with a description (the package wizard's creators) or a long
      word wraps inside its card instead of running out of the grid cell */
   white-space: normal;
   overflow-wrap: break-word;
 }
 .a4-radios input { width: 18px; height: 18px; margin: 0; }
-.a4-radios input:checked + span { font-weight: 650; }
+.a4-radios input:checked + span { font-weight: var(--a4-weight-heading); }
 
 /* Chips: checkboxes or radios drawn as toggles */
 .a4-chips { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
@@ -1176,14 +1196,14 @@ fieldset.a4-field > legend + * { clear: both; }
   background-color: var(--a4-card);
   color: var(--a4-ink);
   font-size: var(--a4-text-s);
-  font-weight: 400;
+  font-weight: normal;
   cursor: pointer;
 }
 .a4-chip input:checked + span {
   border-color: var(--a4-accent-strong);
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
 .a4-chip input:focus-visible + span { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 
@@ -1207,11 +1227,11 @@ fieldset.a4-field > legend + * { clear: both; }
   vertical-align: middle;
 }
 .a4-table th {
-  background-color: var(--a4-soft);
+  background-color: var(--a4-head-bg);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
-  letter-spacing: .04em;
+  font-weight: var(--a4-weight-heading);
+  letter-spacing: var(--a4-tracking);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -1256,7 +1276,7 @@ fieldset.a4-field > legend + * { clear: both; }
   border-color: var(--a4-accent-strong);
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
 .a4-pager { min-width: 0; }
 .a4-pager .pagenavigator { margin: 0; }
@@ -1297,7 +1317,7 @@ fieldset.a4-field > legend + * { clear: both; }
   border-color: var(--a4-accent-strong);
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
 .a4-tabs .a4-count { font-variant-numeric: tabular-nums; opacity: .9; }
 /* A segmented switch (on | off, small | medium | large): one pill as high as the other controls (--a4-control-h), for
@@ -1331,7 +1351,7 @@ fieldset.a4-field > legend + * { clear: both; }
   background-color: transparent;
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
-  font-weight: 400;
+  font-weight: normal;
   white-space: nowrap;
 }
 .a4-tabs.is-segmented > :is(a, button):hover {
@@ -1345,7 +1365,7 @@ fieldset.a4-field > legend + * { clear: both; }
   background-color: var(--a4-card);   /* the tint over the card, not over the track: the text keeps 4.5:1 */
   background-image: linear-gradient(var(--a4-accent-soft), var(--a4-accent-soft));
   color: var(--a4-accent-text);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
 }
 .a4-tabs.is-segmented > :is(a, button):focus-visible {
   position: relative;
@@ -1436,7 +1456,7 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-notice.is-warn::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/exclamation-triangle-fill.svg); }
 .a4-notice.is-info::before { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/info-circle-fill.svg); }
 li.a4-notice { list-style: none; }   /* a notice as a list item: no marker next to its icon */
-.a4-notice-title { display: block; margin-bottom: var(--a4-space-1); font-weight: 700; color: inherit; }
+.a4-notice-title { display: block; margin-bottom: var(--a4-space-1); font-weight: var(--a4-weight-heading); color: inherit; }
 
 /* ---- Toasts: short feedback of an action done in the page (copied, saved), announced by a live region ------- */
 /* One stack per page (.a4-toasts in the frame) holding two live regions: #a4-toasts, polite, and for errors
@@ -1475,7 +1495,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   box-shadow: var(--a4-shadow-m);
   color: var(--a4-ink);
   font-size: var(--a4-text-m);
-  line-height: 1.4;
+  line-height: var(--a4-leading);
   pointer-events: auto;
   animation: a4-toast-in .18s ease-out;
 }
@@ -1498,7 +1518,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   color: var(--a4-muted);
   font: inherit;
   font-size: var(--a4-text-l);
-  line-height: 1;
+  line-height: var(--a4-leading-none);
   cursor: pointer;
 }
 .a4-toast .a4-toast-close:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
@@ -1513,7 +1533,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   background-color: var(--a4-soft);
   color: var(--a4-accent-text);
   font: inherit;
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   cursor: pointer;
 }
 .a4-toast .a4-toast-action:hover { border-color: var(--a4-accent); }
@@ -1546,7 +1566,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   min-height: 40px;
   padding: var(--a4-space-2) var(--a4-space-3);
   color: var(--a4-ink);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   list-style: none;
   cursor: pointer;
 }
@@ -1559,7 +1579,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
 .a4-fold > summary:hover { color: var(--a4-accent-text); }
 .a4-fold-body { padding: 0 var(--a4-space-3) var(--a4-space-3); }
 .a4-confirm { flex: 1 1 100%; }
-.a4-confirm > summary { display: inline-flex; align-items: center; gap: var(--a4-space-2); min-height: var(--a4-control-h); padding: var(--a4-space-1) var(--a4-space-3); color: var(--a4-bad); font-weight: 650; list-style: none; cursor: pointer; }
+.a4-confirm > summary { display: inline-flex; align-items: center; gap: var(--a4-space-2); min-height: var(--a4-control-h); padding: var(--a4-space-1) var(--a4-space-3); color: var(--a4-bad); font-weight: var(--a4-weight-heading); list-style: none; cursor: pointer; }
 .a4-confirm > div {
   display: flex;
   flex-wrap: wrap;
@@ -1606,10 +1626,10 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   border-radius: 50%;
   background-color: var(--a4-soft);
   color: var(--a4-ink);
-  font-weight: 700;
+  font-weight: var(--a4-weight-bold);
 }
 .a4-steps li.is-done::before { content: "\2713"; background-color: var(--a4-ok-bg); color: var(--a4-ok); }
-.a4-steps li.is-current { border-color: var(--a4-accent); color: var(--a4-ink); font-weight: 650; }
+.a4-steps li.is-current { border-color: var(--a4-accent); color: var(--a4-ink); font-weight: var(--a4-weight-heading); }
 .a4-steps li.is-current::before { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 @media (max-width: 600px) {
   .a4-steps li { flex: 1 1 100%; }
@@ -1731,7 +1751,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   background-color: var(--a4-soft);
   color: var(--a4-muted);
   font-size: var(--a4-text-l);
-  line-height: 1;
+  line-height: var(--a4-leading-none);
   cursor: grab;
   touch-action: none;
 }
@@ -1834,7 +1854,7 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   background: none;
   color: var(--a4-muted);
   font-size: var(--a4-text-l);
-  line-height: 1;
+  line-height: var(--a4-leading-none);
   vertical-align: middle;
   cursor: pointer;
 }
@@ -2030,7 +2050,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
    .a4-btn-primary), the place the current one lies in is outlined (.is-within). Used by design:contentcheck/scope.tpl
    (links) and the upload page's target location (buttons). Put .a4-toolbar on it for the framed look. */
 .a4-quickpick { display: flex; flex-direction: column; align-items: stretch; gap: var(--a4-space-2); margin: var(--a4-space-2) 0 0; }
-.a4-quickpick-label { flex: 0 0 auto; min-width: 9rem; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; }
+.a4-quickpick-label { flex: 0 0 auto; min-width: 9rem; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-strong); }
 .a4-quickpick .a4-btn:is([aria-pressed="true"], [aria-current="true"]) {
   border-color: var(--a4-accent-strong);
   background-color: var(--a4-accent-strong);
@@ -2051,7 +2071,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-end { text-align: end; }
 .a4-inset { padding: var(--a4-space-2) var(--a4-space-3); }
 .a4-overflow-visible { overflow: visible; }
-a.a4-current-user-name { color: var(--a4-ink); font-weight: 400; text-decoration: none; }
+a.a4-current-user-name { color: var(--a4-ink); font-weight: normal; text-decoration: none; }
 
 /* request H1: a folded group holding problems or notes; a summary with a heading, badges and a note wraps */
 .a4-fold.is-bad { box-shadow: inset 4px 0 0 var(--a4-bad); }

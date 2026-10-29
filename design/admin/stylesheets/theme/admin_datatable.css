@@ -122,7 +122,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt caption {
-    color: #000;
+    color: var(--a4-ink);
     font-size: 85%;
     font-weight: normal;
     font-style: italic;
@@ -135,24 +135,24 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
     text-decoration: none;
     text-align: left;
     vertical-align: bottom;
-    color: #fff;   /* white on the grey header row: 5.0:1 (#eee was 4.4:1), as table.list th */
+    color: var(--a4-ink);   /* ink on the header token, as table.list th (theme/rounded.css) */
 }
 
 .admin-dt th {
-    background-color: #6f6e6b;
+    background-color: var(--a4-head-bg);
     margin: 0;
     padding: 0;
     border: none;
-    border-left: 1px solid #a9a9a9;
+    border-left: 1px solid var(--a4-line-strong);
 }
 
 .admin-dt th.admin-dt-sortable
 {
-    background: #44484d;
+    background: var(--a4-head-bg);
 }
 
 .admin-dt tr.admin-dt-first td {
-    border-top: 1px solid #CCCCCC;
+    border-top: 1px solid var(--a4-line);
 }
 
 .admin-dt th .admin-dt-liner {
@@ -202,7 +202,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt-message {
-    background-color: #FFF;
+    background-color: var(--a4-card);
 }
 
 .admin-dt-scrollable table {
@@ -210,24 +210,24 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 }
 
 .admin-dt-scrollable .admin-dt-hd {
-    border-left: 1px solid #CCCCCC;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
+    border-left: 1px solid var(--a4-line);
+    border-top: 1px solid var(--a4-line);
+    border-right: 1px solid var(--a4-line);
 }
 
 .admin-dt-scrollable .admin-dt-bd {
-    border-left: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    background-color: #FFF;
+    border-left: 1px solid var(--a4-line);
+    border-bottom: 1px solid var(--a4-line);
+    border-right: 1px solid var(--a4-line);
+    background-color: var(--a4-card);
 }
 
 .admin-dt-scrollable .admin-dt-data tr.admin-dt-last td {
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid var(--a4-line);
 }
 
 th.admin-dt-asc,th.admin-dt-desc {
-    background-color: #6f6e6b;
+    background-color: var(--a4-accent-soft);   /* the sorted column, as in admin4 */
 }
 
 th.admin-dt-sortable .admin-dt-label {
@@ -255,7 +255,7 @@ tbody .admin-dt-editable {
 
 .admin-dt-editor {
     text-align: left;
-    background-color: #F2F2F2;
+    background-color: var(--a4-soft);
     border: 1px solid #808080;
     padding: 6px;
 }
@@ -269,15 +269,15 @@ tbody .admin-dt-editable {
     padding-top: 6px;
     text-align: right;
 }tr.admin-dt-even {
-    background-color: #FFF;
+    background-color: var(--a4-card);
 }
 
 tr.admin-dt-odd {
-    background-color: #f3f3f3;
+    background-color: var(--a4-soft);
 }
 
 .admin-dt tbody tr:hover {
-    background-color:#D1DFE9;
+    background-color: var(--a4-info-bg);
 /*    cursor: pointer;*/
 }
 
@@ -293,78 +293,78 @@ tr.admin-dt-odd {
 }
 
 .admin-dt-list tr.admin-dt-even {
-    background-color: #FFF;
+    background-color: var(--a4-card);
 }
 
 .admin-dt-list tr.admin-dt-odd {
-    background-color: #FFF;
+    background-color: var(--a4-card);
 }
 
 /*
 tr.admin-dt-even td.admin-dt-asc,tr.admin-dt-even td.admin-dt-desc
     {
-    background-color: #F8F8F8;
+    background-color: var(--a4-card);
 }
 
 tr.admin-dt-odd td.admin-dt-asc,tr.admin-dt-odd td.admin-dt-desc
     {
-    background-color: #EEEEEE;
+    background-color: var(--a4-zebra);
 }
 
 .admin-dt-list tr.admin-dt-even td.admin-dt-asc,.admin-dt-list tr.admin-dt-even td.admin-dt-desc
     {
-    background-color: #F5F5F5;
+    background-color: var(--a4-zebra);
 }
 
 .admin-dt-list tr.admin-dt-odd td.admin-dt-asc,.admin-dt-list tr.admin-dt-odd td.admin-dt-desc
     {
-    background-color: #F5F5F5;
+    background-color: var(--a4-zebra);
 }
 */
 th.admin-dt-highlighted,th.admin-dt-highlighted a
 {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 tr.admin-dt-highlighted,tr.admin-dt-highlighted td.admin-dt-asc,tr.admin-dt-highlighted td.admin-dt-desc,tr.admin-dt-even td.admin-dt-highlighted,tr.admin-dt-odd td.admin-dt-highlighted
 {
     cursor: pointer;
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 
 .admin-dt-list th.admin-dt-highlighted,.admin-dt-list th.admin-dt-highlighted a {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list tr.admin-dt-highlighted,.admin-dt-list tr.admin-dt-highlighted td.admin-dt-asc,.admin-dt-list tr.admin-dt-highlighted td.admin-dt-desc,.admin-dt-list tr.admin-dt-even td.admin-dt-highlighted,.admin-dt-list tr.admin-dt-odd td.admin-dt-highlighted
 {
     cursor: pointer;
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 th.admin-dt-selected,th.admin-dt-selected a {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 tr.admin-dt-selected td,tr.admin-dt-selected td.admin-dt-asc,tr.admin-dt-selected td.admin-dt-desc {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 tr.admin-dt-even td.admin-dt-selected,tr.admin-dt-odd td.admin-dt-selected {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list th.admin-dt-selected,.admin-dt-list th.admin-dt-selected a {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list tr.admin-dt-selected td,.admin-dt-list tr.admin-dt-selected td.admin-dt-asc,.admin-dt-list tr.admin-dt-selected td.admin-dt-desc {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-list tr.admin-dt-even td.admin-dt-selected,.admin-dt-list tr.admin-dt-odd td.admin-dt-selected {
-    background-color: #D1DFE9;
+    background-color: var(--a4-info-bg);
 }
 
 .admin-dt-paginator {
@@ -389,15 +389,15 @@ tr.admin-dt-even td.admin-dt-selected,tr.admin-dt-odd td.admin-dt-selected {
 }
 
 a.admin-dt-page {
-    border: 1px solid #CBCBCB;
+    border: 1px solid var(--a4-line);
     padding: 2px 6px;
     text-decoration: none;
-    background-color: #fff;
+    background-color: var(--a4-card);
 }
 
 .admin-dt-selected {
-    border: 1px solid #fff;
-    background-color: #fff;
+    border: 1px solid var(--a4-card);
+    background-color: var(--a4-card);
 }
 
 /* PAGINATOR */
@@ -416,15 +416,15 @@ a.admin-dt-page {
 }
 
 .admin-pg-first,.admin-pg-previous,.admin-pg-next,.admin-pg-last {
-    color: black;
-    background: #fff;
+    color: var(--a4-ink);
+    background: var(--a4-card);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#eee));
     background-image: -moz-linear-gradient(top,  #fff,  #eee);
     background-image: -ms-linear-gradient(top,  #fff,  #eee);
     background-image: -o-linear-gradient(top,  #fff,  #eee);
     background-image: linear-gradient(top,  #fff,  #eee);
-    border: 1px solid #cfd1d3;
-    border-radius: 3px;
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
     width: 31px;
     height:25px;
     cursor: pointer;
@@ -436,12 +436,12 @@ a.admin-dt-page {
 
 span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 {
-    color: #A6A6A6;
+    color: var(--a4-muted);
     background-image: url('../../images/3/diagonal_pattern.png');
 }
 
 a.admin-pg-first:hover,a.admin-pg-previous:hover,a.admin-pg-next:hover,a.admin-pg-last:hover,a.admin-pg-page:hover{
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
 }
 
 .admin-pg-previous span
@@ -466,19 +466,19 @@ a.admin-pg-first:hover,a.admin-pg-previous:hover,a.admin-pg-next:hover,a.admin-p
 
 span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
     {
-    color: #a6a6a6;
+    color: var(--a4-muted);
 }
 
 .admin-pg-page {
-    background-color: #fff;
-    border: 1px solid #CBCBCB;
-    border-radius: 2px;
+    background-color: var(--a4-card);
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
     padding: 0.3em 0.5em;
     text-decoration: none;
 }
 
 .admin-pg-current-page {
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
 }
 
 .admin-pg-page {
@@ -524,12 +524,12 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 
 .thumbview span {
     position: absolute;
-    background-color: white;
+    background-color: var(--a4-card);
     padding: 5px;
     left: -1000px;
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
     visibility: hidden;
-    color: black;
+    color: var(--a4-ink);
     text-decoration: none;
 }
 
@@ -612,7 +612,7 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
     height: 11px;
     margin-top: -6px;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: var(--a4-radius-s);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
     box-sizing: border-box;
 }
@@ -780,8 +780,8 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 .table-options-custom-input {
     width: 100px;
     padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius-s);
     font-size: 12px;
 }
 
@@ -823,12 +823,12 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
 
 .thumbview span {
     position: absolute;
-    background-color: white;
+    background-color: var(--a4-card);
     padding: 5px;
     left: -1000px;
-    border: 1px solid #999;
+    border: 1px solid var(--a4-line-strong);
     visibility: hidden;
-    color: black;
+    color: var(--a4-ink);
     text-decoration: none;
 }
 
@@ -837,3 +837,9 @@ span.admin-pg-first,span.admin-pg-previous,span.admin-pg-next,span.admin-pg-last
     top: 0;
     left: 25px;
 }
+
+/* the header's column separators, logical and not before the first column; the top corners rounded, as table.list
+   (theme/rounded.css) */
+.admin-dt th { border-left: 0; border-inline-start: 1px solid var(--a4-line-strong); }
+.admin-dt th:first-child { border-inline-start: 0; border-start-start-radius: var(--a4-radius-s); }
+.admin-dt th:last-child { border-start-end-radius: var(--a4-radius-s); }

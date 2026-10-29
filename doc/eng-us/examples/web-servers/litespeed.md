@@ -11,11 +11,15 @@ type: example
 
 **LiteSpeed Web Server (Enterprise)** is a drop-in replacement for Apache: it reads Apache's configuration and
 `.htaccess` files, including `mod_rewrite` rules. Serve Exponential exactly as with Apache: `cp .htaccess_root
-.htaccess` ([Apache .htaccess](apache-htaccess.md)), PHP through LiteSpeed's LSAPI. Nothing on this page is needed.
+.htaccess` or `./console exp:setup:htaccess --apply` ([Apache .htaccess](apache-htaccess.md),
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)), PHP through
+LiteSpeed's LSAPI. Nothing on this page is needed.
 
 **OpenLiteSpeed**, the open source edition, reads only the rewrite rules of a `.htaccess`, only when
 `autoLoadHtaccess` is on, and only after a restart when the file changes. The example below puts the rules in the
-virtual host instead, where they are read once.
+virtual host instead, where they are read once. `./console exp:setup:htaccess --apply` still copies the file, but on
+OpenLiteSpeed that alone does not protect the site; after an upgrade, `./console exp:setup:htaccess` shows the diff
+between your copy and the new `.htaccess_root`, which tells you which rules of this virtual host to update.
 
 > **Note:** This example is derived, not tested on OpenLiteSpeed: there is no OpenLiteSpeed on the machine the
 > examples are verified on. Its rewrite rules use Apache's `mod_rewrite` syntax, which OpenLiteSpeed implements, and
@@ -208,6 +212,7 @@ curl -sI https://example.com/design/admin4/stylesheets/components.css | head -1 
 ## Related pages
 
 - [Apache .htaccess](apache-htaccess.md): the rules explained one by one; LiteSpeed Enterprise uses this file.
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:setup:htaccess` and which servers read the file.
 - [Chapter 13, section 13.2: What the web server must never hand out](../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out).
 - [Operating system support](../../help/os-support.md): web servers and PHP SAPIs by platform.
 - [Web server examples](README.md) and [all examples](../README.md).

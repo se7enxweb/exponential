@@ -327,6 +327,19 @@ of rendered pages cleared before PHP runs the new code fills up again with pages
 [chapter 8](08-serving-the-site.md#8314-deploying-a-change-expvelocity-deploy) and
 [Velocity engines](../bc/6.0/velocity-engines.md).
 
+**Compare your files with the new templates.** A release can change `.htaccess_root`, `.htaccess_root_static` and
+`config.php-RECOMMENDED`; your `.htaccess` and `config.php` stay as they are:
+
+```bash
+php bin/php/console exp:setup:status                     # is .htaccess still a copy of a template?
+php bin/php/console exp:setup:htaccess                   # the diff between your .htaccess and the new template
+php bin/php/console exp:setup:htaccess --force --apply   # take the new rules (backup first), when the diff holds nothing of yours
+php bin/php/console exp:config:list                      # settings new in config.php-RECOMMENDED show up as (not set)
+```
+
+Set the new settings you want with `exp:config:set <NAME> <value> --apply`; the settings you had keep their values.
+See [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md#12-after-an-upgrade).
+
 ### Step 2: apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql`, for MySQL, PostgreSQL and SQLite.
@@ -505,6 +518,7 @@ changelog: [6.0.0 to 6.0.15](../../changelogs/6.0/6.0.15.md).
 In this repository:
 
 - [Upgrading](../guides/upgrading.md): the step-by-step guide this chapter extends.
+- [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md): compare both files with the new templates.
 - Release notes: [changelogs of 6.0](../../changelogs/6.0/6.0.15.md) ([6.0.0](../../changelogs/6.0/6.0.0.md) to
   [6.0.14](../../changelogs/6.0/6.0.14.md)), the [extensions' release notes](../../changelogs/extensions/README.md),
   [all changelogs](../../changelogs/README.md).

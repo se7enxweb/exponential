@@ -92,7 +92,7 @@
   overflow-wrap: anywhere;
 }
 .a4-content-bookmark .a4-content-bookmark-nav a:hover { background-color: var(--a4-soft); color: var(--a4-accent-text); }
-.a4-content-bookmark .a4-content-bookmark-nav span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); font-weight: 650; }
+.a4-content-bookmark .a4-content-bookmark-nav span.current { background-color: var(--a4-accent-soft); box-shadow: inset 3px 0 0 var(--a4-accent-text); font-weight: var(--a4-weight-heading); }
 :where([dir="rtl"]) .a4-content-bookmark .a4-content-bookmark-nav span.current { box-shadow: inset -3px 0 0 var(--a4-accent-text); }
 .a4-content-bookmark .a4-content-bookmark-navname { flex: 1 1 auto; min-width: 0; }
 .a4-content-bookmark .a4-content-bookmark-nav .a4-count {
@@ -103,7 +103,7 @@
   background-color: var(--a4-soft);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
@@ -127,7 +127,7 @@
   background-color: var(--a4-accent-strong);
   color: var(--a4-on-accent);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   pointer-events: none;
 }
 .a4-content-bookmark .a4-content-bookmark-nav li.is-before { box-shadow: inset 0 3px 0 var(--a4-accent); }
@@ -147,7 +147,7 @@
 .a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-facts,
 .a4-content-bookmark .a4-content-bookmark-cardfoot > .a4-content-bookmark-note { flex: 1 1 320px; margin: 0; padding-inline-start: 0; }
 .a4-content-bookmark .a4-content-bookmark-position { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-2); margin: 0; font-size: var(--a4-text-s); }
-.a4-content-bookmark .a4-content-bookmark-position label { color: var(--a4-ink); font-weight: 650; }
+.a4-content-bookmark .a4-content-bookmark-position label { color: var(--a4-ink); font-weight: var(--a4-weight-heading); }
 .a4-content-bookmark .a4-content-bookmark-position .a4-input { width: 4.6em; min-height: 30px; padding: 2px var(--a4-space-1); }
 
 /* a folder's head, its actions and the move form */
@@ -159,7 +159,7 @@
 .a4-content-bookmark .a4-content-bookmark-folderacts > details[open] { grid-column: 1 / -1; }
 .a4-content-bookmark .a4-content-bookmark-folderfacts { grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); padding-inline-start: 0; }
 .a4-content-bookmark .a4-content-bookmark-choice { display: grid; gap: var(--a4-space-2); min-width: 0; margin: 0; padding: 0; border: 0; }
-.a4-content-bookmark .a4-content-bookmark-choice legend { margin: 0 0 var(--a4-space-1); padding: 0; font-weight: 650; }
+.a4-content-bookmark .a4-content-bookmark-choice legend { margin: 0 0 var(--a4-space-1); padding: 0; font-weight: var(--a4-weight-heading); }
 .a4-content-bookmark .a4-section-head .a4-content-bookmark-selectall { display: inline-flex; align-items: center; gap: var(--a4-space-1); margin-inline-start: auto; }
 .a4-content-bookmark .a4-section-head .a4-content-bookmark-selectall input { width: 18px; height: 18px; margin: 0; }
 .a4-content-bookmark .a4-section-head .a4-content-bookmark-addtop { margin-inline-start: var(--a4-space-1); }
@@ -231,7 +231,7 @@
 .a4-content-languages h1.context-title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
 .a4-content-languages h1 .a4-content-languages-title-text { color: var(--a4-ink); text-decoration: none; }
 .a4-content-languages .a4-figure.is-wide { grid-column: 1 / -1; }
-.a4-content-languages .a4-figure.is-wide strong { font-size: var(--a4-text-l); line-height: 1.35; }
+.a4-content-languages .a4-figure.is-wide strong { font-size: var(--a4-text-l); line-height: var(--a4-leading-tight); }
 .a4-content-languages .a4-content-languages-title img { flex: 0 0 auto; border-radius: 0; box-shadow: 0 0 0 1px var(--a4-line-strong); }
 .a4-content-languages .a4-pick.is-disabled { cursor: not-allowed; }
 .a4-content-languages .a4-facts > .a4-content-languages-fact-wide { grid-column: 1 / -1; }
@@ -247,7 +247,7 @@
 .a4-content-languages .a4-content-languages-steps li { margin: 0 0 var(--a4-space-1); }
 .a4-content-languages .a4-content-languages-locale-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--a4-space-2) var(--a4-space-5); margin: 0; }
 .a4-content-languages .a4-content-languages-locale-grid > div { min-width: 0; padding: var(--a4-space-1) 0; border-bottom: 1px dashed var(--a4-line); }
-.a4-content-languages .a4-content-languages-locale-grid dt { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-content-languages .a4-content-languages-locale-grid dt { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 .a4-content-languages .a4-content-languages-locale-grid dd { margin: 2px 0 0; overflow-wrap: anywhere; }
 .a4-content-languages .a4-content-languages-field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0 var(--a4-space-4); }
 
@@ -259,7 +259,7 @@
 .a4-content-job .a4-content-job-state.done { background-color: var(--a4-ok-bg); color: var(--a4-ok); }
 .a4-content-job .a4-content-job-state.failed { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
 .a4-content-job .a4-content-job-bar { min-width: 4em; margin-bottom: var(--a4-space-1); }
-.a4-content-job .a4-content-job-bar > span { transition: width .4s; }
+.a4-content-job .a4-content-job-bar > span { transition: width .4s; }   /* a bar grows in steps of real progress: slower than a hover, not a token */
 .a4-content-job .a4-content-job-bar.done > span { background-color: var(--a4-ok); }
 .a4-content-job .a4-content-job-bar.failed > span { background-color: var(--a4-bad); }
 .a4-content-job .a4-content-job-table { width: 100%; overflow-x: auto; }
@@ -268,28 +268,28 @@
 .a4-content-job td.a4-content-job-user,
 .a4-content-job th a { color: inherit; white-space: nowrap; }
 .a4-content-job .a4-content-job-scope { margin: 0 0 var(--a4-space-2); }
-.a4-content-job .a4-content-job-scope .current { font-weight: 700; }
+.a4-content-job .a4-content-job-scope .current { font-weight: var(--a4-weight-bold); }
 .a4-content-job .a4-content-job-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2) var(--a4-space-3); margin: var(--a4-space-1) 0 var(--a4-space-3); }
 .a4-content-job .a4-content-job-filters label { display: flex; flex-direction: column; font-size: var(--a4-text-s); }
 .a4-content-job .a4-content-job-totals { display: flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-3); margin: 0 0 var(--a4-space-3); padding: 0; list-style: none; }
 .a4-content-job .a4-content-job-totals a { text-decoration: none; }
 /* the job page */
 .a4-content-job .a4-content-job-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-1) var(--a4-space-3); margin: var(--a4-space-1) 0 var(--a4-space-1); }
-.a4-content-job .a4-content-job-counts { font-weight: 700; }
+.a4-content-job .a4-content-job-counts { font-weight: var(--a4-weight-bold); }
 .a4-content-job .a4-content-job-elapsed { color: var(--a4-muted); }
 .a4-content-job .a4-content-job-head + .a4-content-job-bar { max-width: 46em; height: 14px; margin: var(--a4-space-2) 0 var(--a4-space-1); }
 .a4-content-job .a4-content-job-message { margin: var(--a4-space-1) 0 var(--a4-space-3); overflow-wrap: anywhere; }
 .a4-content-job .a4-content-job-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(22em, 1fr)); gap: 0 var(--a4-space-5); }
 .a4-content-job .a4-content-job-group h2 { margin: var(--a4-space-2) 0 var(--a4-space-1); font-size: var(--a4-text-l); }
-.a4-content-job .a4-content-job-download { margin-inline-start: var(--a4-space-3); font-size: var(--a4-text-xs); font-weight: 400; }
+.a4-content-job .a4-content-job-download { margin-inline-start: var(--a4-space-3); font-size: var(--a4-text-xs); font-weight: normal; }
 .a4-content-job table.a4-content-job-details { width: 100%; margin-bottom: var(--a4-space-3); }
-.a4-content-job table.a4-content-job-details th { padding-inline-end: var(--a4-space-5); background-color: transparent; color: var(--a4-muted); font-weight: 400; text-align: start; white-space: nowrap; }
+.a4-content-job table.a4-content-job-details th { padding-inline-end: var(--a4-space-5); background-color: transparent; color: var(--a4-muted); font-weight: normal; text-align: start; white-space: nowrap; }
 .a4-content-job table.a4-content-job-details td { overflow-wrap: anywhere; }
 .a4-content-job .a4-content-job-log { max-height: 18em; margin: var(--a4-space-1) 0 0; }
 .a4-content-job .a4-content-job-error pre { margin: var(--a4-space-1) 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 /* "run now or in the background", on a confirmation page */
 .a4-content-job-mode { margin: var(--a4-space-3) 0; padding: var(--a4-space-2) var(--a4-space-3) var(--a4-space-1); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
-.a4-content-job-mode legend { padding: 0 var(--a4-space-1); font-weight: 700; }
+.a4-content-job-mode legend { padding: 0 var(--a4-space-1); font-weight: var(--a4-weight-heading); }
 .a4-content-job-mode label { display: block; margin: var(--a4-space-1) 0; }
 .a4-content-job-mode label.disabled { color: var(--a4-disabled); }
 .a4-content-job-mode .a4-content-job-why { display: block; margin-inline-start: var(--a4-space-5); }
@@ -308,7 +308,7 @@
 .a4-content-trash .a4-content-trash-foot { margin-top: var(--a4-space-4); }
 .a4-content-trash .a4-content-trash-summary { margin: 0 0 var(--a4-space-2); }
 .a4-content-trash .a4-content-trash-filter { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-1) var(--a4-space-3); margin: 0 0 var(--a4-space-3); }
-.a4-content-trash .a4-content-trash-filter label { display: block; font-size: var(--a4-text-s); font-weight: 700; }
+.a4-content-trash .a4-content-trash-filter label { display: block; font-size: var(--a4-text-s); font-weight: var(--a4-weight-heading); }
 .a4-content-trash .a4-content-trash-filter select,
 .a4-content-trash .a4-content-trash-filter input.a4-content-trash-date { max-width: 14em; }
 .a4-content-trash .a4-content-trash-meta { margin-top: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-s); }
@@ -318,7 +318,7 @@
 .a4-content-trash details.a4-content-trash-details { margin-top: var(--a4-space-1); font-size: var(--a4-text-s); }
 .a4-content-trash details.a4-content-trash-details summary { cursor: pointer; }
 .a4-content-trash details.a4-content-trash-details dl { display: grid; grid-template-columns: auto 1fr; gap: 2px var(--a4-space-2); margin: var(--a4-space-1) 0 0; }
-.a4-content-trash details.a4-content-trash-details dt { margin: 0; font-weight: 700; }
+.a4-content-trash details.a4-content-trash-details dt { margin: 0; font-weight: var(--a4-weight-heading); }
 .a4-content-trash details.a4-content-trash-details dd { margin: 0; }
 
 /* ---- multiedit ---- content/multiedit, in the frame of the content/action pages (box header, box, control bar).
@@ -328,9 +328,9 @@
 .a4-content-multiedit-create { max-width: 640px; margin-bottom: var(--a4-space-4); }
 .a4-content-multiedit-group { margin-bottom: var(--a4-space-5); }
 .a4-content-multiedit-group .a4-section-head { margin-bottom: var(--a4-space-3); }
-.a4-content-multiedit-group .a4-section-head .a4-meta { font-weight: 400; }
+.a4-content-multiedit-group .a4-section-head .a4-meta { font-weight: normal; }
 .a4-content-multiedit-object + .a4-content-multiedit-object { margin-top: var(--a4-space-3); }
-.a4-content-multiedit-object > summary .a4-meta { font-weight: 400; }
+.a4-content-multiedit-object > summary .a4-meta { font-weight: normal; }
 .a4-content-multiedit-name { min-width: 0; overflow-wrap: anywhere; }
 .a4-content-multiedit-object[open] > summary { margin-bottom: var(--a4-space-3); border-bottom: 1px solid var(--a4-line); }
 .a4-content-multiedit-invalid > summary { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
@@ -378,7 +378,7 @@ div.block.a4-content-attr.is-invalid { border-color: var(--a4-bad); border-inlin
   background: none;
   color: var(--a4-ink);
   font-size: var(--a4-text-s);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   white-space: normal;
 }
 .a4-content-attr-label .classattribute-description,
@@ -387,7 +387,7 @@ div.block.a4-content-attr.is-invalid { border-color: var(--a4-bad); border-inlin
   margin-inline-start: var(--a4-space-1);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 400;
+  font-weight: normal;
 }
 /* ---- edit ---- each attribute is a card: its edge shows where one datatype's controls end and the next
    begin, a rich text editor's toolbar included. Its corner names the kind of input (.a4-content-attr-kind, from
@@ -423,8 +423,8 @@ div.block.a4-content-attr {
   background-color: var(--a4-soft);
   color: var(--a4-muted);
   font-size: var(--a4-text-xs);
-  font-weight: 600;
-  line-height: 1.4;
+  font-weight: var(--a4-weight-strong);
+  line-height: var(--a4-leading);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -483,7 +483,7 @@ div.block.a4-content-attr {
   padding: 0;
   color: var(--a4-ink);
   font-size: var(--a4-text-xs);
-  font-weight: 650;
+  font-weight: var(--a4-weight-heading);
   white-space: normal;
 }
 .a4-content-attr div.block { margin: 0; padding: 0; }
@@ -563,7 +563,7 @@ div.block.a4-content-attr {
   margin: 0 0 var(--a4-space-1);
   padding: 0;
   font-size: var(--a4-text-s);
-  font-weight: 400;
+  font-weight: normal;
   white-space: normal;
 }
 .a4-content-attr label:has(> input:is([type=checkbox], [type=radio])) > input { flex: 0 0 auto; margin: 2px 0 0; }
@@ -581,8 +581,8 @@ div.block.a4-content-attr {
   color: var(--a4-ink);
   font-family: var(--a4-font);
   font-size: var(--a4-text-s);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: var(--a4-weight-strong);
+  line-height: var(--a4-leading-tight);
   text-shadow: none;
   vertical-align: middle;
   cursor: pointer;
@@ -625,7 +625,7 @@ div.block.a4-content-attr {
   gap: var(--a4-space-1) var(--a4-space-2);
   margin: var(--a4-space-2) 0 0;
 }
-.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-content-attr .ezoe-engine-switch .ezoe-engine-switch-label { color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 .a4-content-attr .ezoe-engine-switch .a4-tabs.is-segmented > button.ezoe-engine-switch-option:hover:not(:disabled) {
   border-color: var(--a4-line-strong);
   background-color: var(--a4-card);
@@ -655,7 +655,7 @@ div.block.a4-content-attr {
   color: var(--a4-ink);
   font-family: var(--a4-font);
   font-size: var(--a4-text-s);
-  font-weight: 600;
+  font-weight: var(--a4-weight-strong);
   cursor: pointer;
 }
 :where([dir="rtl"]) .a4-content-attr input[type=file]::file-selector-button { margin: 0 0 0 var(--a4-space-3); }
@@ -666,7 +666,7 @@ div.block.a4-content-attr {
 .a4-content-attr table.list { width: 100%; margin: 0 0 var(--a4-space-2); }
 .a4-content-attr table.list td :is(input, select):where(:not([type]), [type=text], [type=email], [type=number], select) { width: 100%; }
 .a4-content-attr table.list td :is(input, select)[size]:where(:not(.box, .halfbox)) { width: auto; }
-:where(.a4-content-attr) h4 { margin: var(--a4-space-3) 0 var(--a4-space-2); font-size: var(--a4-text-s); font-weight: 650; }
+:where(.a4-content-attr) h4 { margin: var(--a4-space-3) 0 var(--a4-space-2); font-size: var(--a4-text-s); font-weight: var(--a4-weight-heading); }
 :where(.a4-content-attr) p { margin: 0 0 var(--a4-space-2); }
 
 /* the calendar of a date field: an icon button beside the day */
@@ -693,7 +693,7 @@ div.block.a4-content-attr {
 .a4-content-drag-on tr.a4-content-drag-placeholder > td:first-child { box-shadow: inset 3px 0 0 var(--a4-accent); }
 :where([dir="rtl"]) .a4-content-drag-on tr.a4-content-drag-placeholder > td:first-child { box-shadow: inset -3px 0 0 var(--a4-accent); }
 .a4-content-drag-on tr.a4-content-drag-placeholder { outline: 2px dashed var(--a4-accent); outline-offset: -2px; }
-.a4-content-drag-saving .exp-dt-body { opacity: .7; transition: opacity .15s ease-out; }
+.a4-content-drag-saving .exp-dt-body { opacity: .7; transition: opacity var(--a4-duration) ease-out; }
 .a4-content-drag-ghost {
   position: fixed;
   top: var(--a4-content-drag-y, 0);
@@ -716,7 +716,7 @@ div.block.a4-content-attr {
   transform: rotate(-.6deg);
 }
 .a4-content-drag-ghost .a4-icon { color: var(--a4-accent-text); }
-.a4-content-drag-ghost-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 650; }
+.a4-content-drag-ghost-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: var(--a4-weight-heading); }
 @media (pointer: coarse) {
   .a4-content-drag-on .a4-content-drag-grip { width: var(--a4-space-7); min-height: var(--a4-space-7); }
 }
@@ -851,3 +851,12 @@ html.a4-js .a4-content-preview-stage .a4-content-preview-device iframe { width: 
   font-weight: normal;
   vertical-align: middle;
 }
+
+/* ---- locations ---- content/edit, the Locations table (content/edit_locations.tpl) --------------------------- */
+
+/* Eight columns with long headings: kept on one line (core.css) they made the table wider than its column, the last
+   column was cut off and the location's path broke after every word. The headings wrap, the path keeps a readable
+   width, and a table still too wide for a narrow window scrolls sideways inside its column. */
+.a4-content-locations-scroll { max-width: 100%; overflow-x: auto; }
+.a4-content-locations th { white-space: normal; }
+.a4-content-locations td:nth-child(2) { min-width: 16em; }

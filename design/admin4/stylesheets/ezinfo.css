@@ -40,7 +40,7 @@
     gap: 0.3em 1em;
     padding: 0.6em 0.9em;
     border: 1px solid var(--a4-line);
-    border-radius: 6px;
+    border-radius: var(--a4-radius-s);
     background: var(--a4-soft);
 }
 .ezinfo-page .ezinfo-toc-label { color: var(--a4-muted); }
@@ -57,7 +57,7 @@
 }
 .ezinfo-page .ezinfo-section h3 { margin: 1em 0 0.4em 0; font-size: 1em; }
 .ezinfo-page .ezinfo-count { color: var(--a4-muted); font-weight: normal; }
-.ezinfo-page .ezinfo-prose p { max-width: 46em; margin: 0 0 0.7em 0; line-height: 1.5; }
+.ezinfo-page .ezinfo-prose p { max-width: 46em; margin: 0 0 0.7em 0; line-height: var(--a4-leading); }
 .ezinfo-page .ezinfo-links a { margin-right: 1em; }
 .ezinfo-page .ezinfo-none { color: var(--a4-muted); font-style: italic; }
 
@@ -68,11 +68,11 @@
     padding: 1em 1.2em;
     overflow: auto;
     border: 1px solid var(--a4-line);
-    border-radius: 6px;
+    border-radius: var(--a4-radius-s);
     background: var(--a4-soft);
     color: var(--a4-ink);
     font-size: var(--a4-text-xs);
-    line-height: 1.55;
+    line-height: var(--a4-leading);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
@@ -85,7 +85,7 @@
 .ezinfo-page .ezinfo-table-wrap { max-width: 100%; }
 .ezinfo-page table.list { width: 100%; table-layout: auto; }
 .ezinfo-page table.list th { white-space: nowrap; }
-.ezinfo-page table.list td { vertical-align: top; overflow-wrap: anywhere; line-height: 1.4; }
+.ezinfo-page table.list td { vertical-align: top; overflow-wrap: anywhere; line-height: var(--a4-leading); }
 .ezinfo-page table.list td.ezinfo-cell-name { min-width: 11em; }
 .ezinfo-page table.list td.ezinfo-cell-version { white-space: nowrap; overflow-wrap: normal; }
 .ezinfo-page table.list td.ezinfo-cell-identifier { font-family: var(--a4-mono); font-size: 1em; overflow-wrap: anywhere; }
@@ -106,16 +106,16 @@
 .ezinfo-page table.ezinfo-extensions td.ezinfo-cell-version { white-space: normal; overflow-wrap: anywhere; }
 .ezinfo-page table.ezinfo-extensions td.ezinfo-cell-website { overflow-wrap: anywhere; }
 
-.ezinfo-page .ezinfo-extension-name { display: block; font-weight: bold; color: var(--a4-ink); }
+.ezinfo-page .ezinfo-extension-name { display: block; font-weight: var(--a4-weight-bold); color: var(--a4-ink); }
 .ezinfo-page .ezinfo-meta { display: block; margin-top: 0.2em; color: var(--a4-muted); font-size: var(--a4-text-xs); }
 .ezinfo-page .ezinfo-position {
     display: inline-block;
     min-width: 1.9em;
     padding: 0.05em 0.3em;
-    border-radius: 3px;
+    border-radius: var(--a4-radius-s);
     background: var(--a4-ok-bg);
     color: var(--a4-ok);
-    font-weight: bold;
+    font-weight: var(--a4-weight-bold);
     text-align: center;
 }
 .ezinfo-page .ezinfo-includes {
@@ -133,23 +133,23 @@
 .ezinfo-page .ezinfo-sortbar { display: none; }
 
 /* The copyright page. */
-.ezinfo-page .ezinfo-notice-holder { font-size: 1.1em; font-weight: bold; color: var(--a4-ink); }
+.ezinfo-page .ezinfo-notice-holder { font-size: 1.1em; font-weight: var(--a4-weight-bold); color: var(--a4-ink); }
 .ezinfo-page .ezinfo-warranty {
     max-width: 46em;
     padding: 0.7em 1em;
     border-left: 4px solid var(--a4-accent);
     background: var(--a4-warn-bg);
-    line-height: 1.5;
+    line-height: var(--a4-leading);
 }
 .ezinfo-page .ezinfo-plain-notice summary { cursor: pointer; color: var(--a4-info); }
 .ezinfo-page .ezinfo-plain-notice[open] summary { margin-bottom: 0.6em; }
 .ezinfo-page .ezinfo-plain-notice .ezinfo-plain-notice-text {
     padding: 0.8em 1em;
     border: 1px solid var(--a4-line);
-    border-radius: 6px;
+    border-radius: var(--a4-radius-s);
     background: var(--a4-soft);
 }
-.ezinfo-page .ezinfo-plain-notice .ezinfo-plain-notice-text p { max-width: 46em; line-height: 1.5; }
+.ezinfo-page .ezinfo-plain-notice .ezinfo-plain-notice-text p { max-width: 46em; line-height: var(--a4-leading); }
 
 @container ezinfo (max-width: 44em) {
     .ezinfo-page .ezinfo-sortbar {
@@ -159,7 +159,7 @@
         margin: 0 0 0.6em 0;
     }
     .ezinfo-page .ezinfo-sortbar span { color: var(--a4-muted); }
-    .ezinfo-page .ezinfo-sortbar-current { font-weight: bold; }
+    .ezinfo-page .ezinfo-sortbar-current { font-weight: var(--a4-weight-bold); }
 
     .ezinfo-page table.list,
     .ezinfo-page table.list tbody,
@@ -170,7 +170,7 @@
         margin: 0 0 0.6em 0;
         padding: 0.5em 0.7em;
         border: 1px solid var(--a4-line);
-        border-radius: 6px;
+        border-radius: var(--a4-radius-s);
     }
     .ezinfo-page table.list td { padding: 0.15em 0; border: 0; }
     .ezinfo-page table.list td[data-label]::before {

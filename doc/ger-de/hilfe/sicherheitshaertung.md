@@ -161,7 +161,9 @@ die im Browser Skript ausführt (SVG, HTML), oder eine riesige oder fehlerhafte 
 - Paket-Uploads brauchen die `package`-Richtlinien, und `ManagedByDeployment` sperrt sie.
 
 **Härten.** Halten Sie die Rewrite-Regeln nach jedem Upgrade aktuell (`.htaccess_root` oder der daraus abgeleitete
-nginx-Block). Geben Sie Upload-Rechte nur den Rollen, die sie brauchen. Halten Sie `TemporaryDir` privat für die Site
+nginx-Block; `./console exp:setup:htaccess` zeigt den Unterschied zwischen Ihrer `.htaccess` und den mitgelieferten
+Regeln und endet mit Exit-Code 1, solange sie abweichen, siehe
+[.htaccess und config.php von der Konsole einrichten](../anleitungen/setup-dateien-von-der-konsole.md)). Geben Sie Upload-Rechte nur den Rollen, die sie brauchen. Halten Sie `TemporaryDir` privat für die Site
 ([13.11](../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)).
 
 ### Path Traversal und Zugriff auf interne Dateien
@@ -179,6 +181,16 @@ einem Punkt beginnen, liefern 404. Velocity weist symbolische Links ab, die aus 
 aus. Führen Sie die Prüfung aus
 [13.2](../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf) nach jeder Änderung an der
 Konfiguration des Webservers von außen aus.
+
+**`config.php` und ihre Sicherungen.** `config.php` kann das Passwort der Cluster-Datenbank enthalten. Committen Sie sie
+nie (tragen Sie `/config.php` in die `.gitignore` Ihres Projekts ein; das Repository von Exponential enthält nur
+`config.php-RECOMMENDED`) und schränken Sie ihren Modus ein: `chmod 0640 config.php`, mit der Gruppe des Webservers.
+Bearbeiten Sie sie mit `./console exp:config:set`: Der Wert jedes Namens mit `PASS`, `SECRET`, `KEY`, `TOKEN`,
+`CREDENTIAL` oder `PWD` erscheint als `********`, außer Sie verlangen `--show-secrets`, und ein Geheimnis, das in eine
+für alle Benutzer lesbare `config.php` geschrieben wird, erzeugt eine `WARN:`-Zeile, die das sagt. Jede Änderung
+sichert die alte Datei nach `var/backup/config/<zeit>/` (Verzeichnisse mit Modus `0700`, von den mitgelieferten Regeln
+nicht ausgeliefert): Schützen Sie `var/backup/` mit und löschen Sie alte Sicherungen
+([.htaccess und config.php von der Konsole einrichten](../anleitungen/setup-dateien-von-der-konsole.md)).
 
 ### Cross-Site-Scripting (XSS) und die Content Security Policy
 
@@ -462,7 +474,8 @@ vorgeschalteten Schutzschilds, des Webservers oder eines Listeners, den Sie in
 - [ ] Die Administration auf einem eigenen Host, beschränkt per Netzwerk, VPN oder die Browserprüfung des Schutzschilds.
 - [ ] `CheckValidity=false`, `AllowWizardOnInstalledSite=disabled`; `ManagedByDeployment`, wo die Konfiguration
       aus der Versionsverwaltung kommt.
-- [ ] Rewrite-Regeln aktuell; die Prüfung von außen aus 13.2 liefert keine Datei.
+- [ ] Rewrite-Regeln aktuell (`./console exp:setup:htaccess` endet mit 0); die Prüfung von außen aus 13.2 liefert keine Datei.
+- [ ] `config.php` nicht in der Versionsverwaltung, Modus `0640`; alte Sicherungen in `var/backup/` entfernt.
 - [ ] `ezformtoken` aktiv; Content Security Policy auf der Administration durchgesetzt, danach auf den Sites.
 - [ ] Debug-Ausgabe aus; PHP `display_errors=Off`.
 - [ ] HTTPS überall, HSTS, `CookieSecure=true`.
@@ -486,6 +499,8 @@ Passwörter, Geheimnisse und personenbezogene Daten weg. Die Richtlinie und die 
 
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../installation/13-sicherheitshaertung.md)
 - [Sicherheit und Audit: absichern und sehen, wer was getan hat](../anleitungen/sicherheit-und-audit.md), der Rundgang in 30 Minuten
+- [.htaccess und config.php von der Konsole einrichten](../anleitungen/setup-dateien-von-der-konsole.md): die
+  Regeldatei, `config.php`, maskierte Geheimnisse und Sicherungen
 - [Das Administratorpasswort ändern](administratorpasswort-aendern.md),
   [Das Standardpasswort des Administrators](standard-administratorpasswort.md)
 - [Sicherheitsvorgaben vom September 2026](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md),

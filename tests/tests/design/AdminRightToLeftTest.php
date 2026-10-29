@@ -90,7 +90,7 @@ class AdminRightToLeftTest extends PHPUnit\Framework\TestCase
         $css = self::read( 'design/admin4/stylesheets/admin4.css' );
         $this->assertMatchesRegularExpression( '/\.a4-dash-facts dd \{[^}]*unicode-bidi: plaintext/', $css, 'a fact takes the direction of its own text' );
         $this->assertMatchesRegularExpression( '/\[dir="rtl"\]\)? \.a4-dash-facts dd \{[^}]*text-align: right/', $css, 'and stays beside its label' );
-        $content = self::read( 'design/admin4/stylesheets/content.css' );
+        $content = self::read( 'design/admin4/stylesheets/base.css' );
         $this->assertMatchesRegularExpression( '/#ez-version\s*\{[^}]*direction: ltr;[^}]*unicode-bidi: isolate/', $content );
         $this->assertMatchesRegularExpression( '/#debug \.exp-debug-chip \{[^}]*unicode-bidi: plaintext/', self::read( 'design/standard/stylesheets/expdebugbar.css' ) );
         $this->assertMatchesRegularExpression( '/\.exp-debug-chip-text \{[^}]*unicode-bidi: plaintext/', self::read( 'design/standard/stylesheets/expdebugbar-toolbar.css' ) );

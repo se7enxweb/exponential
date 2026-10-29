@@ -586,7 +586,10 @@ cp .htaccess_root .htaccess
 ```
 
 und „Falls Sie keinen Zugriff auf eine Shell haben, müssen Sie die Datei per FTP kopieren oder Ihren Webhoster fragen,
-dies für Sie zu tun.“ Diese Seite schreibt nichts. Die Konfiguration des Webservers steht in
+dies für Sie zu tun.“ Diese Seite schreibt nichts. Mit Shell-Zugang erledigt `./console exp:setup:htaccess --apply`
+dieselbe Kopie mit Modus und Eigentümer der Vorlage und lehnt es ab (mit einem Diff), eine abweichende `.htaccess` zu
+ersetzen; siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+Die Konfiguration des Webservers steht in
 [Kapitel 8](08-die-website-ausliefern.md), die Härtung in [Kapitel 13](13-sicherheitshaertung.md).
 
 ### 5.3.14 Registrierung
@@ -699,7 +702,8 @@ Zwei Vorsichtshinweise:
   `config.php` die Prüfung der Änderungszeit von INI-Dateien abschaltet (`define( 'EZP_INI_FILEMTIME_CHECK', false );`,
   aus Geschwindigkeitsgründen in `config.php-RECOMMENDED` angeboten), wird eine bearbeitete `kickstart.ini` nicht
   bemerkt. Löschen Sie diese Dateien, nachdem Sie `kickstart.ini` für den Browser-Assistenten von Hand bearbeitet haben.
-  (Der Kickstarter löscht sie selbst.)
+  (Der Kickstarter löscht sie selbst.) `./console exp:config:get EZP_INI_FILEMTIME_CHECK` zeigt, ob die Prüfung
+  abgeschaltet ist.
 
 Wenn Sie jede Seite selbst beantworten möchten, verschieben Sie `kickstart.ini`, bevor Sie den Assistenten starten.
 

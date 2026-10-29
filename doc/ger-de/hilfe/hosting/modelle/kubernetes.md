@@ -146,6 +146,12 @@ Quellen:
 - Leeren Sie nach dem Ausrollen die Caches, die sich die Replikate teilen
   ([Caches leeren und vorwärmen](../leistung/caches-leeren-und-vorwaermen.md)).
 
+Jeder Pod braucht dieselbe `config.php`, zum Beispiel die `CLUSTER_*`-Konstanten eines gemeinsamen Cluster-Speichers.
+Erzeugen Sie sie im Image oder im Entry Point mit `exp:setup:config --apply` und `exp:config:set ... --apply`, mit
+Passwörtern aus den Secrets des Pods (`--value="$CLUSTER_DB_PASS"`), nie im Image. `exp:config:list --only-set
+--format=json`, in jedem Pod ausgeführt, zeigt, ob sie übereinstimmen
+([.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md#11-in-skripten-containern-und-ci)).
+
 ## Checkliste
 
 - [ ] Ein Replikat mit SQLite, oder mehrere mit einem Datenbankserver (zuerst PostgreSQL).
@@ -161,6 +167,7 @@ Quellen:
 - [Container: Docker und Podman](container-docker-und-podman.md)
 - [Mehrere Web-Knoten](../betrieb/mehrere-web-knoten.md), [Clustering und gemeinsamer Speicher](../betrieb/clustering-und-gemeinsamer-speicher.md)
 - [Varnish und Reverse Proxys](../leistung/varnish-und-reverse-proxys.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

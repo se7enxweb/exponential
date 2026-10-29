@@ -24,6 +24,11 @@ apachectl configtest             # Syntax OK
 systemctl reload httpd           # apache2 on Debian and Ubuntu
 ```
 
+Or let the console make the copy: `./console exp:setup:htaccess --apply` copies `.htaccess_root` to `.htaccess`
+(`--static` takes `.htaccess_root_static`), keeps the template's mode and owner, backs up a file that is already there
+and refuses to replace one that differs unless you add `--force`. Without `--apply` it only shows what it would do.
+See [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#3-put-htaccess-into-place).
+
 Apache needs `mod_rewrite` (Debian: `a2enmod rewrite`), and the virtual host must let it read the file:
 
 ```apache
@@ -38,7 +43,9 @@ Apache needs `mod_rewrite` (Debian: `a2enmod rewrite`), and the virtual host mus
 caching block `Indexes`; with neither allowed, Apache answers 500 for every request, and its error log names the line.
 
 To use the optional blocks, copy `doc/eng-us/examples/htaccess` instead of `.htaccess_root` and enable what you need. After
-every upgrade, compare your `.htaccess` with the new `.htaccess_root` and take over new rules.
+every upgrade, compare your `.htaccess` with the new `.htaccess_root` and take over new rules. `./console
+exp:setup:htaccess` shows that difference as a diff and exits 1 while the two differ; `./console exp:setup:status`
+says which template `.htaccess` is a copy of.
 
 ## The file
 
@@ -305,4 +312,5 @@ used it as `.htaccess` for a test document root and answered every request of th
 - [Chapter 8, section 8.5: Apache with PHP-FPM](../../install/08-serving-the-site.md#85-apache-with-php-fpm).
 - [Chapter 13, section 13.2: What the web server must never hand out](../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out).
 - [LiteSpeed](litespeed.md): LiteSpeed Enterprise reads this file as Apache does.
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:setup:htaccess`, `exp:setup:status`.
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

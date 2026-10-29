@@ -35,6 +35,13 @@ rules of `.htaccess_root` sit in the virtual host itself. Apache then reads no `
 
 Using a hosting panel such as Plesk? It writes the virtual host itself: do not edit its files; keep `.htaccess` instead
 ([Apache .htaccess](apache-htaccess.md)) and see [chapter 8, section 8.5.3](../../install/08-serving-the-site.md#853-plesk).
+There, `./console exp:setup:htaccess --apply` puts `.htaccess_root` into place as `.htaccess`
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
+With this virtual host (`AllowOverride None`) a `.htaccess` in the root is not read, but copying it does no harm and
+keeps the rules in force should the tree ever be served with `AllowOverride All`. After an upgrade, `./console
+exp:setup:htaccess` shows the diff between your `.htaccess` and the new `.htaccess_root`, which is also the list of
+rules to carry over into this virtual host.
 
 ## The file
 

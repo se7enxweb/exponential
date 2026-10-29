@@ -34,7 +34,9 @@
 
 {* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
 
-<table class="list" cellspacing="0" >
+{* the table scrolls inside its column instead of overflowing it, and its headings wrap (modules/content.css, as in admin4) *}
+<div class="a4-content-locations-scroll">
+<table class="list a4-content-locations" cellspacing="0" >
 <tr>
 {* JB TODO: The alt/title fields should get different text descriptions when they are disabled *}
     <th class="tight"><img src={'toggle-button-16x16.gif'|ezimage} width="16" height="16" alt="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" title="{'Invert selection.'|i18n( 'design/admin/content/edit' )}" data-a4-toggle-checkboxes="AssignmentIDSelection[]" data-a4-form="editform" /></th>
@@ -171,6 +173,7 @@
     {/let}
     {/section}
  </table>
+</div>
 
 
 {* DESIGN: Content END *}</div></div></div>

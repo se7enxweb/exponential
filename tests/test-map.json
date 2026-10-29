@@ -30,7 +30,8 @@
     ],
     "bin/php/console": [
       "tests/tests/bin/ConsoleExtensionAliasTest.php",
-      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
     ],
     "*.ini": [
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
@@ -499,7 +500,8 @@
     ],
     "config.php-RECOMMENDED": [
       "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php",
-      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
     ],
     "lib/eztemplate/classes/eztemplatephpoperator.php": [
       "tests/tests/kernel/common/eZTemplateRawURLEncodeOperatorTest.php"
@@ -683,12 +685,14 @@
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminHeaderTabOrderTest.php"
     ],
-    "design/admin4/stylesheets/pagelayout.css": [
+    "design/admin4/stylesheets/base.css": [
       "tests/tests/design/AdminHeaderTest.php",
       "tests/tests/design/AdminVisibilityStatusTest.php",
       "tests/tests/design/AdminLeftColumnFontTest.php",
       "tests/tests/design/AdminCssReviewFixesTest.php",
-      "tests/tests/design/AdminResponsiveTest.php"
+      "tests/tests/design/AdminResponsiveTest.php",
+      "tests/tests/design/AdminRightToLeftTest.php",
+      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
       "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
@@ -1383,12 +1387,6 @@
     "design/admin4/templates/page_search.tpl": [
       "tests/tests/design/AdminSearchTest.php"
     ],
-    "design/admin4/stylesheets/core.css": [
-      "tests/tests/design/AdminCssReviewFixesTest.php"
-    ],
-    "design/admin4/stylesheets/theme/admin_datatable.css": [
-      "tests/tests/design/AdminCssReviewFixesTest.php"
-    ],
     "tests/tests/design/js/first_paint.js": [
       "tests/tests/design/AdminFirstPaintColumnsTest.php"
     ],
@@ -1642,10 +1640,6 @@
       "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
     ],
     "design/admin4/javascript/page/content_edit_attribute.js": [
-      "tests/tests/design/AdminContentEditAttributeKindsTest.php"
-    ],
-    "design/admin4/stylesheets/content.css": [
-      "tests/tests/design/AdminRightToLeftTest.php",
       "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin4/stylesheets/modules/people.css": [
@@ -2069,6 +2063,18 @@
       "tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php",
       "tests/tests/kernel/private/classes/commands/expApplyFlagInstallerCommandsTest.php",
       "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php"
+    ],
+    "kernel/classes/expsetupfilecopy.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+    ],
+    "kernel/classes/expconfigphpeditor.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+    ],
+    "kernel/classes/expconfigphpcatalogue.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
+    ],
+    "autoload.php": [
+      "tests/tests/kernel/private/classes/commands/expSetupFilesAndConfigPhpCommandsTest.php"
     ],
     "kernel/private/classes/runnable/command.php": [
       "tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php"

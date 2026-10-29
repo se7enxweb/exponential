@@ -106,10 +106,12 @@ Was die mitgelieferten Regeln garantieren (`.htaccess_root` und
 
 Was Sie tun:
 
-1. **Apache:** `cp .htaccess_root .htaccess` und die Sicherheitsregeln darin belassen. Löschen Sie keine Regeln, damit
-   etwas funktioniert; suchen Sie stattdessen die Ursache. Wenn Sie eine eigene `.htaccess` oder eigene
-   Virtual-Host-Regeln pflegen, vergleichen Sie sie nach jedem Upgrade mit `.htaccess_root` und übernehmen Sie neue
-   Regeln.
+1. **Apache:** `./console exp:setup:htaccess --apply` (oder `cp .htaccess_root .htaccess`) und die Sicherheitsregeln
+   darin belassen. Löschen Sie keine Regeln, damit etwas funktioniert; suchen Sie stattdessen die Ursache. Wenn Sie
+   eine eigene `.htaccess` oder eigene Virtual-Host-Regeln pflegen, vergleichen Sie sie nach jedem Upgrade mit
+   `.htaccess_root` und übernehmen Sie neue Regeln: `./console exp:setup:htaccess` zeigt den Diff zwischen Ihrer
+   `.htaccess` und der Vorlage und endet mit 1, wenn sie abweichen, sodass eine Überwachung oder die CI eine
+   Abweichung bemerkt ([.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md)).
 2. **nginx:** Verwenden Sie den abgeleiteten Server-Block aus
    [Kapitel 8, Abschnitt 8.6](08-die-website-ausliefern.md#86-nginx-mit-php-fpm) oder eine gleichwertige Konfiguration,
    die die ersten beiden Regeln (Punktdateien, Skripte unterhalb des Wurzelverzeichnisses) vor jede statische
@@ -833,6 +835,10 @@ Vollständige Anleitung: [Audit](../bc/6.0/audit.md).
 
 - [ ] Rewrite-Regeln: `.htaccess` ist eine aktuelle Kopie von `.htaccess_root` (oder der abgeleitete nginx-Block,
       oder Velocity); `/.git/config`, `/settings/site.ini`, `/composer.json` liefern nicht die Datei aus.
+      `./console exp:setup:status` nennt die Vorlage.
+- [ ] `config.php` nicht in der Versionsverwaltung; Modus `0640` mit der Gruppe des Webservers, wenn sie ein
+      Passwort enthält (`exp:config:set` warnt, wenn nicht); `var/backup/` (frühere Kopien von `config.php`)
+      geschützt und aufgeräumt.
 - [ ] `settings/override/` nicht in der Versionsverwaltung, als Geheimnis gesichert, Modus `0640` oder strenger.
 - [ ] Das erzeugte Administratorpasswort geändert; `var/log/initial-admin-password` gelöscht.
 - [ ] Ein persönliches Administratorkonto pro Person; `admin` als Anmeldung stillgelegt; ein getestetes

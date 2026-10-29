@@ -55,7 +55,8 @@ annimmt, die andere decke sie ab.
 
 | Bereich | Exponential stellt bereit | Der Hoster stellt bereit | Der Kunde entscheidet |
 |---|---|---|---|
-| Ausgelieferte Dateien | die Rewrite-Regeln aus `.htaccess_root` und die Liste von Velocity | eine Konfiguration des Webservers, die sie einhält | nichts, es sei denn, er bringt eigene Regeln mit |
+| Ausgelieferte Dateien | die Rewrite-Regeln aus `.htaccess_root` und die Liste von Velocity; `exp:setup:htaccess`, um sie zu kopieren und Abweichungen zu zeigen | eine Konfiguration des Webservers, die sie einhält | nichts, es sei denn, er bringt eigene Regeln mit |
+| `config.php` | `exp:config:*` mit maskierten Geheimnissen, Sicherungen und einer Prüfung mit `php -l` | Modus `0640`, außerhalb der Versionsverwaltung, `var/backup/` geschützt und aufgeräumt | die Werte, die seine Website braucht |
 | Transport | HSTS und Zertifikatsverwaltung in Velocity; sichere Cookies | Zertifikate, Erneuerung, Umleitungen, die Stelle, die TLS beendet | welche Hostnamen es gibt |
 | Konten | bcrypt-Hashes, Passwortregeln, die Prüfung auf schwache Passwörter, zweistufige Anmeldung | einen Ablauf der Bereitstellung, der nie ein bekanntes Passwort hinterlässt | wer welche Rolle bekommt |
 | Abschottung | nichts zwischen Installationen: das ist Aufgabe des Betriebssystems | ein Benutzer, ein Pool, ein Datenbankbenutzer pro Kunde | nichts |
@@ -87,6 +88,7 @@ Wenn bereits etwas schiefgegangen ist, ist das Runbook [Kompromittierte Website]
 - [Kapitel 13: Sicherheitshärtung für die Produktion](../../../installation/13-sicherheitshaertung.md)
 - [Checkliste für die Sicherheitsprüfung](../checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Kompromittierte Website](../runbooks/kompromittierte-website.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
