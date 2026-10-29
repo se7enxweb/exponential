@@ -8,4 +8,4 @@
  */
 
 // The code is in kernel/private/classes/views/class/classlist.php (#207); this file is the entry point.
-return \Exponential\View\Kernel\Class\Classlist::main( __FILE__, get_defined_vars() );
+return \Exponential\View\Kernel\ContentClass\Classlist::main( __FILE__, get_defined_vars() );

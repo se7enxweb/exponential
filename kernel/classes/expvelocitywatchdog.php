@@ -83,7 +83,7 @@ class expVelocityWatchdog
      * @param expVelocity|null $velocity the engine to watch; null = the default engine
      * @param string|null $runDir the markers' directory; null = beside the engine's pid file
      */
-    public function __construct( expVelocity $velocity = null, $runDir = null )
+    public function __construct( ?expVelocity $velocity = null, $runDir = null )
     {
         $this->velocity = $velocity !== null ? $velocity : expVelocity::create( 'velocity.ini' );
         $this->ini = eZINI::instance( 'velocity.ini' );
