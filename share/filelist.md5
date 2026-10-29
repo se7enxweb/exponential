@@ -23440,7 +23440,7 @@ f3e123acabebb7cd6c72627fc0419402  kernel/classes/uiswitch/expuiswitchprovider.ph
 5e10be7e8536534c478ca8527bd1b43e  kernel/classes/upgrade/expupgrade.php
 104dca20f28c6ab75df5c0130f2ee374  kernel/classes/upgrade/expupgradebackup.php
 c57d127c89bcbb753da4d18b769824d8  kernel/classes/upgrade/expupgradebasestep.php
-a827df9408b9fa928f2d60e15a084c0a  kernel/classes/upgrade/expupgradecaption.php
+5781be4c39e9e82c03f9f7202174f622  kernel/classes/upgrade/expupgradecaption.php
 6e1e52e30464f35b4f94677f6446f781  kernel/classes/upgrade/expupgradecatalog.php
 16f296253d3e547e3e04b164c7885e83  kernel/classes/upgrade/expupgradecomposer.php
 6ad2eba18ba36ca69b0354b6fb392e27  kernel/classes/upgrade/expupgradecontext.php
