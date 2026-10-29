@@ -14,6 +14,10 @@ RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
+# The SOAP server (settings/soap.ini EnableSOAP=true) is index_soap.php since
+# Exponential 6.0.15; soap.php, its old name, only forwards to it. Uncomment
+# when SOAP is switched on, and let the SOAP clients call index_soap.php:
+#RewriteRule ^index_soap\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 # SVG images are sanitized on upload; served from the storage they also run

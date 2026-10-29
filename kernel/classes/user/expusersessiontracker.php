@@ -152,7 +152,7 @@ class expUserSessionTracker
             return $method;
         }
         $script = basename( (string)eZSys::serverVariable( 'SCRIPT_NAME', true ) );
-        if ( $script === 'soap.php' )
+        if ( $script === 'index_soap.php' || $script === 'soap.php' )
             return 'soap';
         if ( $script === 'webdav.php' )
             return 'webdav';

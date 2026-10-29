@@ -42,6 +42,10 @@ RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
 RewriteRule ^ - [E=EZ_VAR_SITE:site]
 RewriteRule ^api/ index_rest.php [L]
 RewriteRule ^index_rest\.php - [L]
+# The SOAP server (settings/soap.ini EnableSOAP=true) is index_soap.php since
+# Exponential 6.0.15; soap.php, its old name, only forwards to it. Uncomment
+# when SOAP is switched on, and let the SOAP clients call index_soap.php:
+#RewriteRule ^index_soap\.php - [L]
 RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
 RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
 # Of the originals only the images (SVG images are shown from there);

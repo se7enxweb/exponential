@@ -237,7 +237,7 @@ class eZSiteAccessSitePathsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'var/log/', eZDebug::instance()->logDirectory() );
     }
 
-    /** soap.php and webdav.php declare their own eZUpdateDebugSettings(); the log directory must not depend on it */
+    /** index_soap.php and webdav.php declare their own eZUpdateDebugSettings(); the log directory must not depend on it */
     public function testTheLogDirectoryIsSetWithoutTheDebugSettingsFunctions()
     {
         list( $site, $siteDir ) = $this->site( 'l', array( 'UseGlobalLogDir' => 'disabled', 'LogDir' => '{dir}/log' ) );

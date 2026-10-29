@@ -13,8 +13,8 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 9454f46c8c1ff874ff4bb885d4df67f6  .github/workflows/phpunit.yml
 692e6ce024fd955a05c570ddd093b0f9  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
-fe07d4527019a2f7527aba8b09d4634c  .htaccess_root
-35ec6a4f64582da7d8b9014f92e28d22  .htaccess_root_static
+cd54e19e370c3ee854483a8afba2bf58  .htaccess_root
+5cf42426a5f567a752d485064a9d6180  .htaccess_root_static
 6f1b96d8c290abdef88145a2d5c34a83  .travis.yml
 b7034e90e1a71f18582da6f6945a14d0  CODE_OF_CONDUCT.md
 7f633edbac0ce0ba02f84af70e552b85  CONTRIBUTING.md
@@ -22513,6 +22513,7 @@ e65182a8e462ca0d7bd99f6011003023  extension/ezoe/translations/zul-ZA/translation
 0f318fda6f42f27dcf41b60e1987ba64  index.php
 5254b19223a98222ccaf6ad6034ae185  index_cluster.php
 0a572c564715b36fba2fee75bdce44eb  index_rest.php
+076669e4e947889b6bcfa7fcddc4724f  index_soap.php
 746ef5d35fdf5c67bef32b18f91f49b2  index_treemenu.php
 cf11ee78adaa1d9d758eb5ebfaede75c  kernel/apikey/function_definition.php
 f5e15de77d3bd83723253dea5113f441  kernel/apikey/list.php
@@ -22944,7 +22945,7 @@ f305bb4e3607dc4a202b51a847db9af1  kernel/classes/ezsection.php
 fdfd9b8f7952710061316b8c7d7c4d4c  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
-db259eaa0bd7d33f5d216101986ad969  kernel/classes/ezsiteaccess.php
+79f012c61e2c18a5e04efc4eb630319f  kernel/classes/ezsiteaccess.php
 ebcba5714a295eef01ac74d076b1f321  kernel/classes/ezsitedata.php
 8500b77a23ed8d674edc1ef590fe56c1  kernel/classes/ezsiteinstaller.php
 d5472916c1f931c0dec703689a6e41ef  kernel/classes/ezsslzone.php
@@ -23248,7 +23249,7 @@ bc8d1f4ffb19f111bd4276f0bb08afc9  kernel/classes/user/expuserapproval.php
 885251530a15938c095c306fd0ce6715  kernel/classes/user/expuserdeactivation.php
 f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
 87d8847635396f1f4e351881b8e3bf89  kernel/classes/user/expusersession.php
-119a6fbb8ca7cf4487479f1f52c7e3d6  kernel/classes/user/expusersessiontracker.php
+11fd4fa581486d4aecafa73e773803ba  kernel/classes/user/expusersessiontracker.php
 194684543d849fdaf2e36ecb0e670180  kernel/classes/user/expusersettingrepair.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
 00603cb976aa7f1079309ce30c35d19a  kernel/classes/webauthn/expwebauthn.php
@@ -25900,7 +25901,7 @@ efa109c57a453a97fe317a64e5eb0b34  share/translations/yor-NG/translation.ts
 bbcaee7d6b2ef6ab88083b67f083a64e  share/translations/zul-ZA/GUIDE.md
 0a04a3bbdc9b2aacbe1cc2b536fe09a5  share/translations/zul-ZA/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
-44e5568bf3339959aeafdbec6bae3246  soap.php
+c3531d477920b762452d70c5ab5b8a01  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
 ab60ea05084ce8056f4194c4641527a6  support/ezlupdate-qt4.5/corelib/kernel/qtranslator_p.h
 ccd9e2283327590ac30caf6fbfb22613  support/ezlupdate-qt4.5/ezlupdate/ezlupdate.pro
@@ -26285,7 +26286,7 @@ a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapi
 2abc7e0d7ab556d758e40d7c95bc1dbb  tests/tests/extension/sevenx_dse/fixtures/adminneo_ends_with_ezexit.php
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php
 89b118c6d391cbf19c7af686e98794a2  tests/tests/extension/sevenx_dse/fixtures/adminneo_throws_other.php
-f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
+9d9a6f60bced94b91f4eefbfb62da97f  tests/tests/extension/syndication/ezSyndicationTest.php
 3c9e9b7ebf97541ce712bc065ea8b8e4  tests/tests/kernel/classes/SettingsToolbarViewTest.php
 d8aef2fead647bf588799e969b3627e3  tests/tests/kernel/classes/SiteAccessDesignAndAdminViewWarningsTest.php
 94e110c5205488d8c6b08cfe9136eeca  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
@@ -26474,7 +26475,7 @@ f54782a8f10898bc22d75eaf1c33d2de  tests/tests/kernel/classes/eZSectionTest.php
 4191385b59cae3b5ac73a6da4acbf405  tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php
 e3cae9e3155eb2630b26d1e4b63fadfb  tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php
 d2b2aa97184624a1b60cebe09319e82a  tests/tests/kernel/classes/eZSiteAccessMatchHostUriTest.php
-d61e47486ee9a916d28189fd4e6aba6d  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
+e2b9adbecd0cfaaf139ffbf7a1dd01bc  tests/tests/kernel/classes/eZSiteAccessSitePathsTest.php
 d3640c0812da0b4776d03987703bf832  tests/tests/kernel/classes/eZSiteDataCreateNewLiveTest.php
 701e47e83c834e38a17999aa4c5e306e  tests/tests/kernel/classes/eZSiteDataCreateTest.php
 aec17c87e108b370bb8d629a55864026  tests/tests/kernel/classes/eZSiteDataTest.php
@@ -26537,6 +26538,7 @@ cf5d5388e5242328fbc1f6c199a8afd8  tests/tests/kernel/classes/expSectionOverviewT
 50e70542d10e85700415c8a12177c2b3  tests/tests/kernel/classes/expSettingsPageTest.php
 e85cd857ca31994bea49b35db2ab078f  tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php
 85e0c9b1c40e97739e2025446d0111be  tests/tests/kernel/classes/expSiteAccessOverviewTest.php
+077733ae1329a5840e7e5d07b248acab  tests/tests/kernel/classes/expSoapEntryScriptTest.php
 c513b931571a3dd56abff2cfcdd557c6  tests/tests/kernel/classes/expSystemReportMaskTest.php
 0e63665c6be316de4385ab860a4aeff3  tests/tests/kernel/classes/expSystemReportTest.php
 c46fd8ef85c10a50ff801cd31cba5ed6  tests/tests/kernel/classes/expTestLanguageTest.php
@@ -26813,7 +26815,7 @@ cd0df33127aea30289ff55824df77907  tests/tests/kernel/classes/runnable/fixtures/r
 fdb21b66365e5254b9daaa9d4a2dfec1  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
 0e5af3fe697e0efec0f52ff6c815982e  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
 83e5d0248cb3a7fdd605f728629f8214  tests/tests/kernel/classes/security/expIniPhpWrapperTest.php
-c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
+d6a3861acb8eb1a350c763f3612fdf1b  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
 01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php
 e0b9bf7b359936c21de518237b23374d  tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php
 7e6b4523a39875330fdd94382fd0f3d8  tests/tests/kernel/classes/setup/AutoloadGeneratorOptionsTest.php
@@ -26903,13 +26905,13 @@ b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 57f51350ebeed6595fdf7dc68bf7d310  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
 e2291de73280bd41607650559cf969bc  tests/tests/kernel/classes/user/expDemoModeTest.php
 cd40ea30567dd7782c94647b71f0d2bd  tests/tests/kernel/classes/user/expLastSeenWhileDatabaseBusyTest.php
-edf9f20d427dfc090c269f8a3f7bf188  tests/tests/kernel/classes/user/expPasswordChangeRequiredTest.php
+826929461e0c6384513943864da468c0  tests/tests/kernel/classes/user/expPasswordChangeRequiredTest.php
 ce0dccf22b28774e6e7caacfac27098c  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 c7a5edf71b5db67fed879faef8e98286  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
 f673ec91908450c171ed3372b6fe86b5  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
 9d8efd686f8d700dc0ea739ff30fa782  tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php
 fc63055bcb0f1d48ebb5c64f8a116fb7  tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php
-2419959e2f29106a2429f1d962a251f6  tests/tests/kernel/classes/user/expSignInSecondFactorTest.php
+d172e90c67fae41ed2c8769726e406ed  tests/tests/kernel/classes/user/expSignInSecondFactorTest.php
 e37052a60a7505894ef08b7e9e591334  tests/tests/kernel/classes/user/expUserAccountOverviewTest.php
 64d742541700bf64eaf55cfe5dc25040  tests/tests/kernel/classes/user/expUserAccountStatusTest.php
 01b1943af0aaef0cdda611ceaa1f1506  tests/tests/kernel/classes/user/expUserAgentLabelTranslationTest.php

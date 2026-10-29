@@ -902,7 +902,7 @@ class eZSiteAccess
      * (eZSys::logDirectory()) when site.ini [FileSettings] UseGlobalLogDir is disabled, and back at var/log otherwise.
      *
      * change() calls it for every front controller and every script, whether or not that has loaded the function
-     * file of eZUpdateDebugLogDirectory() (soap.php and webdav.php declare their own eZUpdateDebugSettings()).
+     * file of eZUpdateDebugLogDirectory() (index_soap.php and webdav.php declare their own eZUpdateDebugSettings()).
      *
      * @param eZINI $ini site.ini of the siteaccess
      * @return string|false The log directory used, false for var/log
