@@ -48,6 +48,15 @@ from your authenticator app (or from the e-mail the site sent; the code is also 
 ends, and you start again with your password. Setting it up is explained in
 [Your account and signing in](accounts-and-sign-in.md#two-step-sign-in).
 
+## Your first sign-in
+
+An administrator creates your account in the **Editors** group and gives you the address, your username and a
+temporary password (the password by a second way, such as a phone call). At your first sign-in the site asks you to
+replace the temporary password before anything else: enter it as the current password, choose your own, and confirm
+once more with the temporary one. Every step, with screenshots, is in
+[Setting up accounts for editors and administrators](setting-up-editor-and-admin-accounts.md#9-the-editors-first-sign-in).
+What your account then allows is described in [What the Editor role allows](what-the-editor-role-allows.md).
+
 ## After signing in
 
 The Editor opens on its **Dashboard**: a greeting with your name, buttons to **Content structure** and the **Media
@@ -110,6 +119,8 @@ editing it is grayed out: store or discard your draft first. Always sign out on 
 - [Getting started](getting-started.md)
 - [Your account and signing in](accounts-and-sign-in.md)
 - [Logging into the admin](logging-into-the-admin.md), for administrators
+- [Setting up accounts for editors and administrators](setting-up-editor-and-admin-accounts.md), for administrators
+- [Managing members](managing-members.md)
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
