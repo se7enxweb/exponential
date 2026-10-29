@@ -247,7 +247,7 @@ warning in the debug output.
 
 ## Related pages
 
-- Previous: [Moving a template from Smarty](moving-from-smarty.md)
+- Previous: [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md)
 - Next: [Values and literals](values-and-literals.md)
 - [TPL syntax basics](../designers/templates/tpl-syntax-basics.md)
 - [Comments](../designers/templates/comments.md)

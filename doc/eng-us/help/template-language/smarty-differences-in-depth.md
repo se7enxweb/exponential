@@ -13,6 +13,11 @@ type: help
 they do not, explains each from the code of the template engine and shows what happens on a development installation when a Smarty habit
 meets the template language.
 
+> **Exponential runs Smarty templates itself:** a design can hold Smarty 5 templates (`.stpl`) next to its `.tpl`
+> templates, with every operator, fetch function, template function, override rule and cache of the template system.
+> If you would rather keep writing Smarty, see [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md)
+> and [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md), which also converts templates in both directions.
+
 ## Contents
 
 1. [No infix arithmetic](#no-infix-arithmetic)
@@ -277,6 +282,7 @@ without adding blank lines to the HTML. See [Lexical structure](lexical-structur
 
 ## Related pages
 
+- [Moving from Exponential templates (.tpl) to Exponential Smarty templates (.stpl)](moving-from-tpl-to-stpl.md) and [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md): Smarty templates run by Exponential itself
 - Previous: [Smarty and the template language side by side](smarty-side-by-side.md)
 - Next: [Moving a template from Smarty](moving-from-smarty.md)
 - [Common template mistakes](../designers/templates/common-template-mistakes.md)

@@ -52,6 +52,16 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:explovestack](explovestack.md) | exp:lovestack | Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate) |
 | [exp:exppatterncatalogue](exppatterncatalogue.md) |  |  |
 | [exp:exprepair](exprepair.md) |  | Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run |
+| [exp:exptemplatecheck](exptemplatecheck.md) | exp:template:check, exp:template:lint, exp:template:convert:check | Check templates of every engine (.tpl, .stpl, .twig, .html.twig) for valid syntax: files, directories, designs, extensions, siteaccesses; levels syntax/compile/strict; text, json, jsonl, junit, checkstyle, github and sarif output |
+| [exp:exptemplateconvert](exptemplateconvert.md) | exp:template:convert | Convert the templates of a design from one template engine to another (--from-engine, --to-engine: tpl, stpl, twig); --dry-run, --file, --force, --override-ini, --twig-suffix |
+| [exp:exptemplateconvertdiff](exptemplateconvertdiff.md) | exp:template:convert:diff | Print the conversion of one template to another engine on stdout, without writing anything (--file, --to-engine, --from-engine) |
+| [exp:exptemplateconvertstpltotpl](exptemplateconvertstpltotpl.md) | exp:template:convert:stpl-to-tpl | Convert the Smarty templates (.stpl) of a design to Exponential templates (.tpl); --dry-run, --file, --force, --override-ini |
+| [exp:exptemplateconvertstpltotwig](exptemplateconvertstpltotwig.md) | exp:template:convert:stpl-to-twig | Convert the Smarty templates (.stpl) of a design to Twig templates (.twig); --dry-run, --file, --force, --override-ini, --twig-suffix |
+| [exp:exptemplateconverttpltostpl](exptemplateconverttpltostpl.md) | exp:template:convert:tpl-to-stpl | Convert the Exponential templates (.tpl) of a design to Smarty templates (.stpl); --dry-run, --file, --force, --override-ini |
+| [exp:exptemplateconverttpltotwig](exptemplateconverttpltotwig.md) | exp:template:convert:tpl-to-twig | Convert the Exponential templates (.tpl) of a design to Twig templates (.twig); --dry-run, --file, --force, --override-ini, --twig-suffix |
+| [exp:exptemplateconverttwigtostpl](exptemplateconverttwigtostpl.md) | exp:template:convert:twig-to-stpl | Convert the Twig templates (.twig) of a design to Smarty templates (.stpl); --dry-run, --file, --force, --override-ini |
+| [exp:exptemplateconverttwigtotpl](exptemplateconverttwigtotpl.md) | exp:template:convert:twig-to-tpl | Convert the Twig templates (.twig) of a design to Exponential templates (.tpl); --dry-run, --file, --force, --override-ini |
+| [exp:exptemplateengines](exptemplateengines.md) | exp:template:engines | List the template engines: library found or not, version, file endings, settings, security policy, compiled-template cache |
 | [exp:ezapplytemplate](ezapplytemplate.md) |  | Apply the template blocks found in files and write the files back (exit code 0, 1 or 2) |
 | [exp:ezasynchronouspublisher](ezasynchronouspublisher.md) |  |  |
 | [exp:ezcache](ezcache.md) |  | Clear Exponential caches by tag or id (--clear-tag, --clear-id, --clear-all, --list-tags) |

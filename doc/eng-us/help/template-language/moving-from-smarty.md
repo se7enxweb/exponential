@@ -12,6 +12,16 @@ type: help
 This page ports one small Smarty template to the template language, step by step, and ends with a checklist for your
 own templates. Each step was rendered on a development installation against the "Fit & Healthy" front page (node 89).
 
+> **Exponential runs Smarty templates itself:** a design can hold Smarty 5 templates (`.stpl`) next to its `.tpl`
+> templates, with every operator, fetch function, template function, override rule and cache of the template system.
+> If you would rather keep writing Smarty, see [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md)
+> and [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md), which also converts templates in both directions.
+
+> **Exponential runs Smarty templates itself:** a design can hold Smarty 5 templates (`.stpl`) next to its `.tpl`
+> templates, with every operator, fetch function, template function, override rule and cache of the template system.
+> If you would rather keep writing Smarty, see [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md)
+> and [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md), which also converts templates in both directions.
+
 ## Contents
 
 1. [The Smarty template](#the-smarty-template)
@@ -155,8 +165,9 @@ After porting, render the template with debug output on and read the warnings: a
 
 ## Related pages
 
+- [Moving from Exponential templates (.tpl) to Exponential Smarty templates (.stpl)](moving-from-tpl-to-stpl.md) and [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md): Smarty templates run by Exponential itself
 - Previous: [Smarty and the template language: the differences in depth](smarty-differences-in-depth.md)
-- Next: [Lexical structure](lexical-structure.md)
+- Next: [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md)
 - [Fetching nodes and lists](../designers/templates/fetching-nodes-and-lists.md)
 - [URL operators](../designers/templates/url-operators.md)
 - [Dates, numbers and localization](../designers/templates/dates-numbers-and-l10n.md)

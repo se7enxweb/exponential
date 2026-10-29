@@ -12,6 +12,18 @@ type: help
 Diese Seite portiert ein kleines Template aus Smarty Schritt für Schritt in die Template-Sprache und endet mit einer Checkliste für Ihre
 eigenen Templates. Jeder Schritt wurde auf einer Entwicklungsinstallation gegen die Startseite „Fit & Healthy“ (Knoten 89) gerendert.
 
+> **Exponential führt Smarty-Templates selbst aus:** Ein Design kann Smarty-5-Templates (`.stpl`) neben seinen
+> `.tpl`-Templates enthalten, mit jedem Operator, jeder Fetch-Funktion, jeder Template-Funktion, jeder Override-Regel
+> und jedem Cache des Template-Systems. Wenn Sie lieber weiter Smarty schreiben, lesen Sie
+> [Von .tpl zu .stpl umziehen](von-tpl-zu-stpl-umziehen.md) und (Englisch)
+> [Smarty templates (.stpl) next to .tpl](../../../eng-us/features/6.0/smarty-templates.md); die Konverter wandeln auch in beide Richtungen um.
+
+> **Exponential führt Smarty-Templates selbst aus:** Ein Design kann Smarty-5-Templates (`.stpl`) neben seinen
+> `.tpl`-Templates enthalten, mit jedem Operator, jeder Fetch-Funktion, jeder Template-Funktion, jeder Override-Regel
+> und jedem Cache des Template-Systems. Wenn Sie lieber weiter Smarty schreiben, lesen Sie
+> [Von .tpl zu .stpl umziehen](von-tpl-zu-stpl-umziehen.md) und (Englisch)
+> [Smarty templates (.stpl) next to .tpl](../../../eng-us/features/6.0/smarty-templates.md); die Konverter wandeln auch in beide Richtungen um.
+
 ## Inhalt
 
 1. [Das Template aus Smarty](#das-template-aus-smarty)
@@ -155,8 +167,9 @@ und ein `set` auf eine nie definierte Variable scheitern beide stillschweigend i
 
 ## Verwandte Seiten
 
+- [Von Exponential-Templates (.tpl) zu Exponential-Smarty-Templates (.stpl) umziehen](von-tpl-zu-stpl-umziehen.md): Smarty-Templates, von Exponential selbst ausgeführt
 - Zurück: [Smarty und die Template-Sprache: die Unterschiede im Detail](smarty-unterschiede-im-detail.md)
-- Weiter: [Lexikalische Struktur](lexikalische-struktur.md)
+- Weiter: [Von .tpl zu .stpl umziehen](von-tpl-zu-stpl-umziehen.md)
 - [Knoten und Listen holen](../designer/vorlagen/knoten-und-listen-abrufen.md)
 - [URL-Operatoren](../designer/vorlagen/url-operatoren.md)
 - [Daten, Zahlen und Lokalisierung](../designer/vorlagen/datum-zahlen-und-l10n.md)

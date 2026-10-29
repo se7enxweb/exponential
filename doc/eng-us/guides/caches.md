@@ -124,6 +124,22 @@ clear.
 
 **Measure sizes says "≥".** The three-second budget ran out before every file was counted.
 
+## Smarty templates
+
+Pages made of Smarty templates (`.stpl`) use the same caches, plus Smarty's compiled templates in
+`<cache directory>/smarty/` (cleared with `--clear-id=smarty` and with the template caches). How the caches work for
+them, the whole page kept in one cache block with the visitor's own parts fresh, and what was measured:
+[Smarty templates: caching and performance](smarty-templates-caching.md) and
+[Smarty templates: performance (Speed)](smarty-templates-performance.md).
+
+## Twig templates
+
+Pages made of Twig templates (`.twig`) use the same caches, plus Twig's compiled templates in
+`<cache directory>/twig/` (cleared with `--clear-id=twig` and with the template caches). A cached page never reaches
+the template engine. The cache layers for `.twig`, `{% expcacheblock %}` and the whole page in one block with a fresh
+user menu: [Twig templates: caching](twig-templates-caching.md); the measurements:
+[Twig templates: performance (Speed)](twig-templates-performance.md).
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

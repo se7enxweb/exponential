@@ -1,0 +1,194 @@
+{
+    "command:exptemplateconvert": {
+        "en": "Convert the templates of a design from one template engine to another (--from-engine, --to-engine: tpl, stpl, twig); --dry-run, --file, --force, --override-ini, --twig-suffix",
+        "de": "Konvertiert die Templates eines Designs von einer Template-Engine in eine andere (--from-engine, --to-engine: tpl, stpl, twig); --dry-run, --file, --force, --override-ini, --twig-suffix"
+    },
+    "command:exptemplateconvert --from-engine": {
+        "en": "the engine of the templates to convert: tpl, stpl or twig",
+        "de": "die Engine der zu konvertierenden Templates: tpl, stpl oder twig"
+    },
+    "command:exptemplateconvert --to-engine": {
+        "en": "the engine to convert them to: tpl, stpl or twig",
+        "de": "die Engine, in die konvertiert wird: tpl, stpl oder twig"
+    },
+    "command:exptemplateconvert --from": {
+        "en": "design directory with the templates to convert (every template of --from-engine below it)",
+        "de": "Design-Verzeichnis mit den zu konvertierenden Templates (jedes Template der --from-engine darunter)"
+    },
+    "command:exptemplateconvert --to": {
+        "en": "design directory for the converted templates (default: the --from directory, next to the sources)",
+        "de": "Design-Verzeichnis für die konvertierten Templates (Standard: das --from-Verzeichnis, neben den Quellen)"
+    },
+    "command:exptemplateconvert --file": {
+        "en": "convert this one template only (below --from, or a file of its own: then --to is the target file)",
+        "de": "nur dieses eine Template konvertieren (unterhalb von --from, oder eine einzelne Datei: dann ist --to die Zieldatei)"
+    },
+    "command:exptemplateconvert --override-ini": {
+        "en": "override.ini.append.php to write for the --to design (the -s siteaccess's override rules, MatchFile pointing at the converted templates)",
+        "de": "die override.ini.append.php, die für das --to-Design geschrieben wird (die Override-Regeln des Siteaccess von -s, MatchFile zeigt auf die konvertierten Templates)"
+    },
+    "command:exptemplateconvert --dry-run": {
+        "en": "show what would be written; nothing is written",
+        "de": "zeigt, was geschrieben würde; nichts wird geschrieben"
+    },
+    "command:exptemplateconvert --force": {
+        "en": "also replace a target that was changed or written by hand (no marker, or not matching it)",
+        "de": "ersetzt auch ein Ziel, das von Hand geändert oder geschrieben wurde (keine Markierung, oder sie passt nicht mehr)"
+    },
+    "command:exptemplateconverttpltostpl": {
+        "en": "Convert the Exponential templates (.tpl) of a design to Smarty templates (.stpl); --dry-run, --file, --force, --override-ini",
+        "de": "Konvertiert die Exponential-Templates (.tpl) eines Designs in Smarty-Templates (.stpl); --dry-run, --file, --force, --override-ini"
+    },
+    "command:exptemplateconverttpltostpl --from": {
+        "en": "design directory with the .tpl templates (every .tpl below it is converted)",
+        "de": "Design-Verzeichnis mit den .tpl-Templates (jede .tpl darunter wird konvertiert)"
+    },
+    "command:exptemplateconverttpltostpl --to": {
+        "en": "design directory for the .stpl templates (default: the --from directory, next to the sources)",
+        "de": "Design-Verzeichnis für die .stpl-Templates (Standard: das --from-Verzeichnis, neben den Quellen)"
+    },
+    "command:exptemplateconverttpltostpl --file": {
+        "en": "convert this one .tpl only (below --from, or a file of its own: then --to is the target file)",
+        "de": "nur diese eine .tpl konvertieren (unterhalb von --from, oder eine einzelne Datei: dann ist --to die Zieldatei)"
+    },
+    "command:exptemplateconverttpltostpl --override-ini": {
+        "en": "override.ini.append.php to write for the --to design (the -s siteaccess's override rules, MatchFile pointing at the converted .stpl)",
+        "de": "die override.ini.append.php, die für das --to-Design geschrieben wird (die Override-Regeln des Siteaccess von -s, MatchFile zeigt auf die konvertierte .stpl)"
+    },
+    "command:exptemplateconverttpltostpl --dry-run": {
+        "en": "show what would be written; nothing is written",
+        "de": "zeigt, was geschrieben würde; nichts wird geschrieben"
+    },
+    "command:exptemplateconverttpltostpl --force": {
+        "en": "also replace a .stpl that was changed or written by hand (no marker, or not matching it)",
+        "de": "ersetzt auch eine .stpl, die von Hand geändert oder geschrieben wurde (keine Markierung, oder sie passt nicht mehr)"
+    },
+    "command:exptemplateconvertstpltotpl": {
+        "en": "Convert the Smarty templates (.stpl) of a design to Exponential templates (.tpl); --dry-run, --file, --force, --override-ini",
+        "de": "Konvertiert die Smarty-Templates (.stpl) eines Designs in Exponential-Templates (.tpl); --dry-run, --file, --force, --override-ini"
+    },
+    "command:exptemplateconvertstpltotpl --from": {
+        "en": "design directory with the .stpl templates (every .stpl below it is converted)",
+        "de": "Design-Verzeichnis mit den .stpl-Templates (jede .stpl darunter wird konvertiert)"
+    },
+    "command:exptemplateconvertstpltotpl --to": {
+        "en": "design directory for the .tpl templates (default: the --from directory, next to the sources)",
+        "de": "Design-Verzeichnis für die .tpl-Templates (Standard: das --from-Verzeichnis, neben den Quellen)"
+    },
+    "command:exptemplateconvertstpltotpl --file": {
+        "en": "convert this one .stpl only (below --from, or a file of its own: then --to is the target file)",
+        "de": "nur diese eine .stpl konvertieren (unterhalb von --from, oder eine einzelne Datei: dann ist --to die Zieldatei)"
+    },
+    "command:exptemplateconvertstpltotpl --override-ini": {
+        "en": "override.ini.append.php to write for the --to design (the -s siteaccess's override rules, MatchFile pointing at the converted .tpl)",
+        "de": "die override.ini.append.php, die für das --to-Design geschrieben wird (die Override-Regeln des Siteaccess von -s, MatchFile zeigt auf die konvertierte .tpl)"
+    },
+    "command:exptemplateconvertstpltotpl --dry-run": {
+        "en": "show what would be written; nothing is written",
+        "de": "zeigt, was geschrieben würde; nichts wird geschrieben"
+    },
+    "command:exptemplateconvertstpltotpl --force": {
+        "en": "also replace a .tpl that was changed or written by hand (no marker, or not matching it)",
+        "de": "ersetzt auch eine .tpl, die von Hand geändert oder geschrieben wurde (keine Markierung, oder sie passt nicht mehr)"
+    },
+    "command:exptemplatecheck": {
+        "en": "Check templates of every engine (.tpl, .stpl, .twig, .html.twig) for valid syntax: files, directories, designs, extensions, siteaccesses; levels syntax/compile/strict; text, json, jsonl, junit, checkstyle, github and sarif output",
+        "de": "Prüft Templates jeder Engine (.tpl, .stpl, .twig, .html.twig) auf gültige Syntax: Dateien, Verzeichnisse, Designs, Erweiterungen, Siteaccesses; Stufen syntax/compile/strict; Ausgabe als Text, json, jsonl, junit, checkstyle, github und sarif"
+    },
+    "command:exptemplateconvert --twig-suffix": {
+        "en": "the ending of written Twig templates: .twig (the default) or .html.twig",
+        "de": "die Endung geschriebener Twig-Templates: .twig (Standard) oder .html.twig"
+    },
+    "command:exptemplateconvertdiff": {
+        "en": "Print the conversion of one template to another engine on stdout, without writing anything (--file, --to-engine, --from-engine)",
+        "de": "Gibt die Konvertierung eines Templates in eine andere Engine auf stdout aus, ohne etwas zu schreiben (--file, --to-engine, --from-engine)"
+    },
+    "command:exptemplateconvertdiff --against": {
+        "en": "compare the conversion with this file and print a unified diff",
+        "de": "die Konvertierung mit dieser Datei vergleichen und einen Unified Diff ausgeben"
+    },
+    "command:exptemplateconvertdiff --file": {
+        "en": "the template to convert",
+        "de": "das zu konvertierende Template"
+    },
+    "command:exptemplateconvertdiff --from-engine": {
+        "en": "its engine: tpl, stpl or twig (default: from the file ending)",
+        "de": "seine Engine: tpl, stpl oder twig (Standard: aus der Dateiendung)"
+    },
+    "command:exptemplateconvertdiff --to-engine": {
+        "en": "the engine to convert it to: tpl, stpl or twig",
+        "de": "die Engine, in die es konvertiert wird: tpl, stpl oder twig"
+    },
+    "command:exptemplateconvertstpltotwig": {
+        "en": "Convert the Smarty templates (.stpl) of a design to Twig templates (.twig); --dry-run, --file, --force, --override-ini, --twig-suffix",
+        "de": "Konvertiert die Smarty-Templates (.stpl) eines Designs in Twig-Templates (.twig); --dry-run, --file, --force, --override-ini, --twig-suffix"
+    },
+    "command:exptemplateconvertstpltotwig --force": {
+        "en": "also replace a .twig that was changed or written by hand (no marker, or not matching it)",
+        "de": "auch eine .twig ersetzen, die geändert oder von Hand geschrieben wurde (keine Markierung, oder sie passt nicht)"
+    },
+    "command:exptemplateconvertstpltotwig --override-ini": {
+        "en": "override.ini.append.php to write for the --to design (the -s siteaccess's override rules, MatchFile pointing at the converted .twig)",
+        "de": "override.ini.append.php, die für das --to-Design geschrieben wird (die Override-Regeln des Siteaccess von -s, MatchFile zeigt auf die konvertierte .twig)"
+    },
+    "command:exptemplateconvertstpltotwig --to": {
+        "en": "design directory for the .twig templates (default: the --from directory, next to the sources)",
+        "de": "Design-Verzeichnis für die .twig-Templates (Standard: das --from-Verzeichnis, neben den Quellen)"
+    },
+    "command:exptemplateconvertstpltotwig --twig-suffix": {
+        "en": "the ending of the written Twig templates: .twig (the default) or .html.twig",
+        "de": "die Endung der geschriebenen Twig-Templates: .twig (Standard) oder .html.twig"
+    },
+    "command:exptemplateconverttpltotwig": {
+        "en": "Convert the Exponential templates (.tpl) of a design to Twig templates (.twig); --dry-run, --file, --force, --override-ini, --twig-suffix",
+        "de": "Konvertiert die Exponential-Templates (.tpl) eines Designs in Twig-Templates (.twig); --dry-run, --file, --force, --override-ini, --twig-suffix"
+    },
+    "command:exptemplateconverttpltotwig --force": {
+        "en": "also replace a .twig that was changed or written by hand (no marker, or not matching it)",
+        "de": "auch eine .twig ersetzen, die geändert oder von Hand geschrieben wurde (keine Markierung, oder sie passt nicht)"
+    },
+    "command:exptemplateconverttpltotwig --override-ini": {
+        "en": "override.ini.append.php to write for the --to design (the -s siteaccess's override rules, MatchFile pointing at the converted .twig)",
+        "de": "override.ini.append.php, die für das --to-Design geschrieben wird (die Override-Regeln des Siteaccess von -s, MatchFile zeigt auf die konvertierte .twig)"
+    },
+    "command:exptemplateconverttpltotwig --to": {
+        "en": "design directory for the .twig templates (default: the --from directory, next to the sources)",
+        "de": "Design-Verzeichnis für die .twig-Templates (Standard: das --from-Verzeichnis, neben den Quellen)"
+    },
+    "command:exptemplateconverttpltotwig --twig-suffix": {
+        "en": "the ending of the written Twig templates: .twig (the default) or .html.twig",
+        "de": "die Endung der geschriebenen Twig-Templates: .twig (Standard) oder .html.twig"
+    },
+    "command:exptemplateconverttwigtostpl": {
+        "en": "Convert the Twig templates (.twig) of a design to Smarty templates (.stpl); --dry-run, --file, --force, --override-ini",
+        "de": "Konvertiert die Twig-Templates (.twig) eines Designs in Smarty-Templates (.stpl); --dry-run, --file, --force, --override-ini"
+    },
+    "command:exptemplateconverttwigtostpl --file": {
+        "en": "convert this one .twig only (below --from, or a file of its own: then --to is the target file)",
+        "de": "nur diese eine .twig konvertieren (unter --from, oder eine eigene Datei: dann ist --to die Zieldatei)"
+    },
+    "command:exptemplateconverttwigtostpl --from": {
+        "en": "design directory with the .twig templates (every .twig below it is converted)",
+        "de": "Design-Verzeichnis mit den .twig-Templates (jede .twig darunter wird konvertiert)"
+    },
+    "command:exptemplateconverttwigtotpl": {
+        "en": "Convert the Twig templates (.twig) of a design to Exponential templates (.tpl); --dry-run, --file, --force, --override-ini",
+        "de": "Konvertiert die Twig-Templates (.twig) eines Designs in Exponential-Templates (.tpl); --dry-run, --file, --force, --override-ini"
+    },
+    "command:exptemplateconverttwigtotpl --file": {
+        "en": "convert this one .twig only (below --from, or a file of its own: then --to is the target file)",
+        "de": "nur diese eine .twig konvertieren (unter --from, oder eine eigene Datei: dann ist --to die Zieldatei)"
+    },
+    "command:exptemplateconverttwigtotpl --from": {
+        "en": "design directory with the .twig templates (every .twig below it is converted)",
+        "de": "Design-Verzeichnis mit den .twig-Templates (jede .twig darunter wird konvertiert)"
+    },
+    "command:exptemplateengines": {
+        "en": "List the template engines: library found or not, version, file endings, settings, security policy, compiled-template cache",
+        "de": "Listet die Template-Engines: Bibliothek gefunden oder nicht, Version, Dateiendungen, Einstellungen, Sicherheitsrichtlinie, Cache der kompilierten Templates"
+    },
+    "command:exptemplateengines --format": {
+        "en": "text (the default) or json",
+        "de": "text (Standard) oder json"
+    }
+}

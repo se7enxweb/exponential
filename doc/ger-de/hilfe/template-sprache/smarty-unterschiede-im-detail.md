@@ -13,6 +13,12 @@ type: help
 denen sie es nicht tun, erklärt jede aus dem Code der Template-Engine und zeigt, was auf einer Entwicklungsinstallation geschieht, wenn eine Gewohnheit aus Smarty auf
 die Template-Sprache trifft.
 
+> **Exponential führt Smarty-Templates selbst aus:** Ein Design kann Smarty-5-Templates (`.stpl`) neben seinen
+> `.tpl`-Templates enthalten, mit jedem Operator, jeder Fetch-Funktion, jeder Template-Funktion, jeder Override-Regel
+> und jedem Cache des Template-Systems. Wenn Sie lieber weiter Smarty schreiben, lesen Sie
+> [Von .tpl zu .stpl umziehen](von-tpl-zu-stpl-umziehen.md) und (Englisch)
+> [Smarty templates (.stpl) next to .tpl](../../../eng-us/features/6.0/smarty-templates.md); die Konverter wandeln auch in beide Richtungen um.
+
 ## Inhalt
 
 1. [Keine Arithmetik in Infixschreibweise](#keine-arithmetik-in-infixschreibweise)
@@ -275,6 +281,7 @@ um Ausgabe-Tags wie `{$x}`. Templates können also jede Funktion in eine eigene 
 
 ## Verwandte Seiten
 
+- [Von Exponential-Templates (.tpl) zu Exponential-Smarty-Templates (.stpl) umziehen](von-tpl-zu-stpl-umziehen.md): Smarty-Templates, von Exponential selbst ausgeführt
 - Zurück: [Smarty und die Template-Sprache nebeneinander](smarty-nebeneinander.md)
 - Weiter: [Ein Template von Smarty umziehen](ein-template-von-smarty-umziehen.md)
 - [Häufige Fehler in Templates](../designer/vorlagen/haeufige-template-fehler.md)

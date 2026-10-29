@@ -1,0 +1,86 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:exponential:schema:exp-template-check:1",
+    "title": "exp:template:check machine output, schema exp-template-check/1",
+    "description": "The document exp:template:check --format=json writes (also with --output). Fields are never removed or changed in type; new fields may be added, so readers must ignore fields they do not know. An incompatible change would be exp-template-check/2 behind --schema=2. --format=jsonl writes the objects of 'findings' one per line with \"type\": \"finding\" and the 'summary' as the last line with \"type\": \"summary\", each line with 'schema'. Guide: doc/eng-us/guides/template-syntax-check.md; rules: doc/eng-us/reference/template-check-rules.md.",
+    "type": "object",
+    "required": [ "schema", "summary", "findings", "files" ],
+    "properties": {
+        "schema": {
+            "const": "exp-template-check/1"
+        },
+        "summary": {
+            "type": "object",
+            "required": [ "files", "ok", "failed", "skipped", "errors", "warnings", "notes", "engines", "unavailable", "seconds", "level", "exit", "result" ],
+            "properties": {
+                "files": { "type": "integer", "minimum": 0, "description": "files checked (and skipped)" },
+                "ok": { "type": "integer", "minimum": 0, "description": "files without any finding" },
+                "failed": { "type": "integer", "minimum": 0, "description": "files with a finding (error, warning or note), after the baseline" },
+                "skipped": { "type": "integer", "minimum": 0, "description": "files of an unavailable engine" },
+                "errors": { "type": "integer", "minimum": 0, "description": "findings of severity ERROR" },
+                "warnings": { "type": "integer", "minimum": 0, "description": "findings of severity WARN" },
+                "notes": { "type": "integer", "minimum": 0, "description": "findings of severity NOTE" },
+                "engines": {
+                    "type": "object",
+                    "description": "files per engine: tpl, stpl, twig",
+                    "additionalProperties": { "type": "integer", "minimum": 0 }
+                },
+                "unavailable": {
+                    "type": "array",
+                    "description": "engines whose library is not available",
+                    "items": { "type": "string" }
+                },
+                "seconds": { "type": "number", "minimum": 0 },
+                "level": { "enum": [ "syntax", "compile", "strict" ] },
+                "exit": { "type": "integer", "minimum": 0, "description": "the exit code of the run: 0 to 4" },
+                "result": { "enum": [ "PASS", "FAIL" ] }
+            }
+        },
+        "findings": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/finding" }
+        },
+        "files": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/file" }
+        }
+    },
+    "$defs": {
+        "severity": { "enum": [ "ERROR", "WARN", "NOTE" ] },
+        "engine": {
+            "type": "string",
+            "description": "tpl, stpl or twig; an engine added by an extension has a value of its own"
+        },
+        "finding": {
+            "type": "object",
+            "required": [ "rule", "severity", "engine", "file", "line", "column", "message", "hint", "source", "belongs" ],
+            "properties": {
+                "rule": { "type": "string", "pattern": "^[A-Z0-9-]+$", "description": "a rule id of doc/eng-us/reference/template-check-rules.md" },
+                "severity": { "$ref": "#/$defs/severity" },
+                "engine": { "$ref": "#/$defs/engine" },
+                "file": { "type": "string", "description": "relative to the installation root; '-' for stdin; a settings file for an override rule" },
+                "line": { "type": "integer", "minimum": 0, "description": "0 when the engine reports no line" },
+                "column": { "type": "integer", "minimum": 0, "description": "0 when the engine reports no column" },
+                "message": { "type": "string" },
+                "hint": { "type": [ "string", "null" ] },
+                "source": { "type": [ "string", "null" ], "description": "the source line the finding is on" },
+                "belongs": {
+                    "type": "array",
+                    "description": "where the file belongs: designs, extensions, siteaccesses, the name given with --stdin-name",
+                    "items": { "type": "string" }
+                }
+            }
+        },
+        "file": {
+            "type": "object",
+            "required": [ "file", "engine", "status", "ms", "belongs" ],
+            "properties": {
+                "file": { "type": "string" },
+                "engine": { "$ref": "#/$defs/engine" },
+                "status": { "enum": [ "OK", "ERROR", "WARN", "NOTE", "SKIP" ], "description": "the worst severity of the file's findings, OK without any, SKIP for an unavailable engine" },
+                "ms": { "type": "integer", "minimum": 0 },
+                "belongs": { "type": "array", "items": { "type": "string" } }
+            }
+        }
+    }
+}

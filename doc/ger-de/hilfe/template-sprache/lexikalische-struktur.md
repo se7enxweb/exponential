@@ -247,7 +247,7 @@ der Debug-Ausgabe nach einer solchen Warnung.
 
 ## Verwandte Seiten
 
-- Zurück: [Ein Template von Smarty umziehen](ein-template-von-smarty-umziehen.md)
+- Zurück: [Von .tpl zu .stpl umziehen](von-tpl-zu-stpl-umziehen.md)
 - Weiter: [Werte und Literale](werte-und-literale.md)
 - [Grundlagen der TPL-Syntax](../designer/vorlagen/tpl-syntax-grundlagen.md)
 - [Kommentare](../designer/vorlagen/kommentare.md)

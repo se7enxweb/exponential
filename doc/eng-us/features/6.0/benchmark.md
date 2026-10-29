@@ -390,6 +390,7 @@ Run the tests: `php vendor/bin/phpunit tests/tests/kernel/classes/benchmark/`.
 
 ## Related pages
 
+- [Smarty templates: performance (Speed)](../../guides/smarty-templates-performance.md): `.stpl` pages on Velocity and PHP-FPM, measured
 - [Benchmarking Exponential](../../guides/benchmarking.md): the guide, from the first run to the CI check.
 - [Console](../../bc/6.0/console.md): every command.
 - [Velocity engines](../../bc/6.0/velocity-engines.md): the servers you will want to compare.

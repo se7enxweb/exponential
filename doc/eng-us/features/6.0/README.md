@@ -100,6 +100,35 @@ nginx with PHP-FPM keep working as before.
 - [Template editor: create, order and edit overrides without touching INI files](template-editor-overrides.md)
 - [Design > Templates: drag and drop override order](template-override-ordering.md)
 - [Template path comments: see which template wrote which markup](template-path-comments.md)
+- [Smarty templates (.stpl) next to .tpl, with a converter for whole designs](smarty-templates.md); the guides:
+  [a first .stpl, step by step](../../guides/smarty-templates-tutorial.md),
+  [writing and running .stpl templates](../../guides/smarty-templates.md),
+  [operators and fetch functions](../../guides/smarty-templates-operators.md),
+  [operator reference](../../guides/smarty-templates-operator-reference.md),
+  [template functions and blocks](../../guides/smarty-templates-functions.md),
+  [caching and performance](../../guides/smarty-templates-caching.md),
+  [performance (Speed)](../../guides/smarty-templates-performance.md),
+  [moving from .tpl to .stpl](../../help/template-language/moving-from-tpl-to-stpl.md),
+  [the converter](../../guides/smarty-templates-converter.md),
+  [migrating a design](../../guides/smarty-templates-migrating.md),
+  [troubleshooting and FAQ](../../guides/smarty-templates-troubleshooting.md),
+  [writing operators and functions](../../guides/smarty-templates-plugins.md),
+  [security and escaping](../../guides/smarty-templates-security.md)
+- [Twig templates (.twig) next to .tpl and .stpl, with converters in every direction](twig-templates.md); the guides:
+  [a first .twig, step by step](../../guides/twig-templates-tutorial.md),
+  [writing and running .twig templates](../../guides/twig-templates.md),
+  [operators and fetch functions](../../guides/twig-templates-operators.md),
+  [operator reference](../../guides/twig-templates-operator-reference.md),
+  [template functions and tags](../../guides/twig-templates-functions.md),
+  [caching](../../guides/twig-templates-caching.md),
+  [performance (Speed)](../../guides/twig-templates-performance.md),
+  [moving from .tpl to .twig](../../help/template-language/moving-from-tpl-to-twig.md),
+  [the converter](../../guides/twig-templates-converter.md),
+  [migrating a design](../../guides/twig-templates-migrating.md),
+  [troubleshooting and FAQ](../../guides/twig-templates-troubleshooting.md),
+  [writing operators and functions](../../guides/twig-templates-plugins.md),
+  [security and escaping](../../guides/twig-templates-security.md),
+  [the three template engines compared](../../guides/template-engines.md)
 - [Debug output you can read at a glance and style](debug-output-improvements.md)
 - [The Exp Debug bar](exp-debug-bar.md)
 

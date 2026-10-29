@@ -73,6 +73,7 @@ tail -n 3 var/tmp/opcache_profile.log
 
 ## Related pages
 
+- [Smarty templates: performance (Speed)](../../guides/smarty-templates-performance.md): `.stpl` pages on Velocity and PHP-FPM, measured
 - [Velocity persistent worker server](velocity-persistent-worker-server.md)
 - [Velocity response cache](velocity-response-cache.md)
 - [Static cache generator](static-cache-generator.md)

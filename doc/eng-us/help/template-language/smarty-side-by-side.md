@@ -14,6 +14,16 @@ are the same idea. The details differ, and the details are what break a template
 other. The Smarty column is there for comparison only and was not run here; every template-language example was
 rendered on a development installation.
 
+> **Exponential runs Smarty templates itself:** a design can hold Smarty 5 templates (`.stpl`) next to its `.tpl`
+> templates, with every operator, fetch function, template function, override rule and cache of the template system.
+> If you would rather keep writing Smarty, see [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md)
+> and [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md), which also converts templates in both directions.
+
+> **Exponential runs Smarty templates itself:** a design can hold Smarty 5 templates (`.stpl`) next to its `.tpl`
+> templates, with every operator, fetch function, template function, override rule and cache of the template system.
+> If you would rather keep writing Smarty, see [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md)
+> and [Moving from .tpl to .stpl](moving-from-tpl-to-stpl.md), which also converts templates in both directions.
+
 ## Contents
 
 1. [The table](#the-table)
@@ -193,6 +203,7 @@ Fields: 18
 
 ## Related pages
 
+- [Moving from Exponential templates (.tpl) to Exponential Smarty templates (.stpl)](moving-from-tpl-to-stpl.md) and [Smarty templates (.stpl) next to .tpl](../../features/6.0/smarty-templates.md): Smarty templates run by Exponential itself
 - Previous: [History of the template language](history.md)
 - Next: [Smarty and the template language: the differences in depth](smarty-differences-in-depth.md)
 - [Moving a template from Smarty](moving-from-smarty.md)

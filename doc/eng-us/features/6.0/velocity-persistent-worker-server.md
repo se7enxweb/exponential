@@ -263,6 +263,7 @@ the request, as under PHP-FPM.
 
 ## Related pages
 
+- [Smarty templates: performance (Speed)](../../guides/smarty-templates-performance.md): `.stpl` pages on Velocity and PHP-FPM, measured
 - Guides: [Velocity engines](../../bc/6.0/velocity-engines.md), [HTTP/2 and cache warming](../../bc/6.0/http2-and-cache-warming.md), [response cache and navigation cache](../../bc/6.0/response-cache-and-navigation.md), [HTTP cache](../../bc/6.0/httpcache.md), [SQL query cache](../../bc/6.0/sql-query-cache.md)
 - Features: [Velocity web server](velocity-web-server.md), [Velocity response cache](velocity-response-cache.md), [opcode cache and profile](velocity-opcode-cache-and-profile.md), [server control commands](web-server-and-solr-commands.md), [maintenance mode](maintenance-mode.md) (Velocity pauses its caches while it is on)
 - Specifications: [Velocity worker pool](../../specifications/6.0/velocity-worker-pool.md), [Velocity engine settings](../../specifications/6.0/velocity-engine-settings.md), [security defaults of September 2026](../../specifications/6.0/security-defaults-2026-09.md)
