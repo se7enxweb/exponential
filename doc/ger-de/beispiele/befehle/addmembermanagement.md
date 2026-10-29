@@ -2,14 +2,14 @@
 title: exp:addmembermanagement
 audience: developer, admin
 category: examples
-summary: "Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (--dry-run lists it first)."
+summary: "Richtet die Mitgliederverwaltung nach membermanagement.ini ein: die Rolle, mit der eine Gruppe (Standard Editors) die Konten einer anderen (Standard Members) verwaltet, nie Administrator users oder Editors (Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:addmembermanagement, addmembermanagement, console, command, CLI, addmembermanagement.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addmembermanagement
 
-Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (--dry-run lists it first).
+Richtet die Mitgliederverwaltung nach membermanagement.ini ein: die Rolle, mit der eine Gruppe (Standard Editors) die Konten einer anderen (Standard Members) verwaltet, nie Administrator users oder Editors (Probelauf, außer mit --apply).
 
 Skript `bin/php/addmembermanagement.php`, Code in `kernel/private/classes/commands/addmembermanagement.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -28,18 +28,21 @@ rule's policy set (each content policy limited to the managed groups), assigned 
 The defaults give the Editors group the role "Member management" over Members. A rule whose managed
 groups reach a protected group (default Administrator users and Editors) is refused. What a role already
 has is left alone, so the script can run again. Prints PASS or FAIL at the end.
+Without --apply nothing is written: the script lists what it would create, add and assign. --dry-run
+is still accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
-Example: php bin/php/addmembermanagement.php --dry-run
-         php bin/php/addmembermanagement.php
-         php bin/php/addmembermanagement.php --rule=editors_manage_members
+Example: php bin/php/addmembermanagement.php
+         php bin/php/addmembermanagement.php --apply
+         php bin/php/addmembermanagement.php --apply --rule=editors_manage_members
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | List what would be created, added and assigned; change nothing |
-| `--rule` | erforderlich | Only this rule ([MemberRule_<name>]), may be repeated |
+| `--apply` |  | Die Änderungen schreiben (Standard ist ein Probelauf, der sie auflistet und nichts ändert) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was angelegt, hinzugefügt und zugewiesen würde; nichts ändern |
+| `--rule` | erforderlich | Nur diese Regel ([MemberRule_<name>]), kann wiederholt werden |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

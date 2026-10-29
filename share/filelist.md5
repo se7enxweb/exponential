@@ -3301,7 +3301,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4054d53d911a262d4a4c9754c024327c  doc/changelogs/6.0/6.0.15.md
+50e9f95d42d3318b0ff54c1740386ed9  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3434,7 +3434,7 @@ f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 2d12f47a5cd7477f143f9e677de4b9e8  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 b8a4ee939fef98f95e90c899e9718e96  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08.md
 7f48c053c6ee255a85130fcc69c31355  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
-d978849c185c42dd24172d734d3af4dd  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
+458f443a25168ce1de8e57fe49adc728  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/eng-us/bc/6.0/bookmark-folders.md
 7e4247374ae24bc79c71dae504e4d3c0  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
 103eb43b7b3b7a7162e0a1cc7d050273  doc/eng-us/bc/6.0/cache-console.md
@@ -3450,7 +3450,7 @@ bd7e17c4ad79edba44858d93f629b015  doc/eng-us/bc/6.0/debug-bar.md
 6f1d64a6fd8be380d4fb385f1c015a95  doc/eng-us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/eng-us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
-78bd2d5d93207e9dcc7fa9f8d4679880  doc/eng-us/bc/6.0/editor-role-policies.md
+cfcd49b5cc2cee458566f58c357432a0  doc/eng-us/bc/6.0/editor-role-policies.md
 6f84e346bd4e6b717ec6e552f2d152c6  doc/eng-us/bc/6.0/expinfo-operator.md
 dde90f374f5c726818094a022c0d5a7b  doc/eng-us/bc/6.0/exponentialsdk-and-exponential-cron.md
 e03549b98a5316616e86c5e6aea94193  doc/eng-us/bc/6.0/extension-package-secret-check.md
@@ -3485,7 +3485,7 @@ b391e7ce000d0e9ed0b90cea39a33b16  doc/eng-us/bc/6.0/love/TESTING.md
 e40c1ca0b6538667b83f53bd62fbf28f  doc/eng-us/bc/6.0/lovestack.md
 f054a9274f0d3b50ef6c1d5f52e2dac0  doc/eng-us/bc/6.0/mail-preferences.md
 3d45c53c2a2042c728464efc1b060838  doc/eng-us/bc/6.0/mail-transport-hardening.md
-09980ac13f3aa5b7177cdc5512b2b4a8  doc/eng-us/bc/6.0/member-management.md
+f6a9d147d841d381621bd07436774c95  doc/eng-us/bc/6.0/member-management.md
 abb94091360a905fee43c0792bbf9d39  doc/eng-us/bc/6.0/middle-out-compression.md
 aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands.md
@@ -3538,13 +3538,13 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 95bc38bf0cec95ddc63f35b731feea0c  doc/eng-us/examples/README.md
-b3622d1c608a7d195a937c4594000452  doc/eng-us/examples/commands/README.md
+5da466ec2f712c62f5b4b3496d923aec  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 3a3d675348fbb63d894460045948ee23  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
 60ea9630aa930608496845e80188b40c  doc/eng-us/examples/commands/adddefaultstates.md
-621de53559e464fcd2bf74a2214a0184  doc/eng-us/examples/commands/addeditorpolicies.md
+199788d0ada0cebf6bbe9a8e8919ac19  doc/eng-us/examples/commands/addeditorpolicies.md
 e00ee3f40ecadf389044748b011af3c0  doc/eng-us/examples/commands/addexphelpreadpolicy.md
-998f10a6ef44b62daf8be72c5552d651  doc/eng-us/examples/commands/addmembermanagement.md
+4187f8ffe6d0812bd77ad8d040853aef  doc/eng-us/examples/commands/addmembermanagement.md
 70bf56671997c92b558eb61e6cbbfdd3  doc/eng-us/examples/commands/addoauthauthorizepolicy.md
 7eb6392e77c6a9c88126d993089afa11  doc/eng-us/examples/commands/adduserapproval.md
 104f192d2bf7cc6e63600186305d7fef  doc/eng-us/examples/commands/audit.md
@@ -4728,7 +4728,7 @@ d61b36cefb5f82c31fa9cd9b79ee5dcc  doc/eng-us/examples/ini-settings/membermanagem
 603069c043da1e2752573058db81228e  doc/eng-us/examples/ini-settings/membermanagement/MemberManagementSettings.md
 071c9db923d72890cc9100e265392834  doc/eng-us/examples/ini-settings/membermanagement/MemberPolicySet_member_management.md
 63dc8fd1b37c87b9ba94374bbcd3f30b  doc/eng-us/examples/ini-settings/membermanagement/MemberRule_editors_manage_members.md
-f448df74f13be50f17cddbaf2e68a9c6  doc/eng-us/examples/ini-settings/membermanagement/README.md
+d41e2755ed2891bec1cae2df54c0c297  doc/eng-us/examples/ini-settings/membermanagement/README.md
 23c257575bdc275e72766eb8cebba855  doc/eng-us/examples/ini-settings/menu/DoubleTop.md
 ed77189ed59fc37c26274b6b31086e72  doc/eng-us/examples/ini-settings/menu/LeftMenuSettings.md
 301375fa675b8553394799626dfe7dd5  doc/eng-us/examples/ini-settings/menu/LeftOnly.md
@@ -12616,9 +12616,9 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-ca454f8be8c18c773d50d0d1f1c0243d  doc/eng-us/translation-waves.md
+a5400f7e4a7cb05711d5df851251bfca  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
-f0c5d59a6f5587bc85853690b6843331  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
+5e7c9a06f83fbc4b1861c1656b1c69a2  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 e4a54d3e1cddb8942c104eb777e90ad9  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 20a5b83b04efe02e2e54eaf74249f68b  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 a2cdb6d91f08e7a03fa339d5428ce4a6  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
@@ -12804,7 +12804,7 @@ d2f8403906212d10b165b1b9653b9193  doc/ger-de/bc/6.0/phpunitv13-fuer-php841.md
 0d24bd9aa00e8964eda6de52b645cf59  doc/ger-de/bc/6.0/rad-erweiterungsoberflaeche.md
 a87249b7de03c3604d96098437fbb7b9  doc/ger-de/bc/6.0/rad-erweiterungspunkte.md
 d4b8fa2c2bb2774894e82becbb64ef1a  doc/ger-de/bc/6.0/rad-sicherheit.md
-566dcfb4cb1516d4b1f525adaae0c420  doc/ger-de/bc/6.0/redakteur-rolle-richtlinien.md
+f106fcef3bb101abeee203852c228415  doc/ger-de/bc/6.0/redakteur-rolle-richtlinien.md
 a1f06eaaed77feadea50b05555c358e6  doc/ger-de/bc/6.0/reparatur.md
 6ad31ed1e21c597ad6650e1278be2ccf  doc/ger-de/bc/6.0/schutz-fuer-weiterleitungs-query-und-bildaliase.md
 40828a6a1fabb215580f471d7f4631c5  doc/ger-de/bc/6.0/schwache-passwoerter-und-gueltigkeit-von-reset-links.md
@@ -12826,7 +12826,7 @@ b42965a73e2c78316d71be2a662ccb38  doc/ger-de/bc/6.0/velocity-engines.md
 49f042040eb5d4a84e4376a52b330e66  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
 370c2a1fff3d2d6bce27361c8ac9ae5c  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-07-08.md
 55c5b5417bdcece86dcb502387b92142  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-09b.md
-391b32488081175598bb7e5841197419  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-10.md
+e2589e02a7dd190b1878255cfffb2452  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-10.md
 de06444ae64c1f7da28439138625ca17  doc/ger-de/bc/6.0/verhaltensaenderungen-von-erweiterungen.md
 a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 45d36688020334839b661bb980c6f6ce  doc/ger-de/bc/6.0/view-name-des-shop-warenkorbs.md
@@ -12834,13 +12834,13 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 0ad668da2bd726246806af66e6fd019b  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 bb96faa8eec1f544d841b3d0c1b4cf44  doc/ger-de/beispiele/README.md
-36ae91b184ac0b80d15e7263bbc02729  doc/ger-de/beispiele/befehle/README.md
+0e4d8fd7efa45e61b6e22e2f94b1dc89  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
-d6525d9f05cdefd7bf1b3cb6dc68c39e  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
+166d9b086d5d436e546ace3ecd648ef0  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 983ee1ecad54a1270436c8cde8fd109a  doc/ger-de/beispiele/befehle/adddefaultstates.md
-072db9e987921c7ff85e40253704e668  doc/ger-de/beispiele/befehle/addeditorpolicies.md
+ca97cf06d2d49392060cee5055c8f447  doc/ger-de/beispiele/befehle/addeditorpolicies.md
 5974b6ec7776cd53a0b356893a18caf5  doc/ger-de/beispiele/befehle/addexphelpreadpolicy.md
-4ba14a51c5b77c77dfd597af68dbc27e  doc/ger-de/beispiele/befehle/addmembermanagement.md
+e33d80436822bf5ec26da303cc28a959  doc/ger-de/beispiele/befehle/addmembermanagement.md
 7d8d849d9a0dba2a45d2aa840add44f3  doc/ger-de/beispiele/befehle/addoauthauthorizepolicy.md
 3302aba81f5d419155930b9264c57c5d  doc/ger-de/beispiele/befehle/adduserapproval.md
 d10f01a64513c57eeaca2b83cde1cb36  doc/ger-de/beispiele/befehle/audit.md
@@ -13998,7 +13998,7 @@ c3f825c4e5e078655d293ef7d8bf85eb  doc/ger-de/beispiele/ini-einstellungen/memberm
 db73bbe4595b1b842fadf4905ec15340  doc/ger-de/beispiele/ini-einstellungen/membermanagement/MemberManagementSettings.md
 7ccd90791ee2360753c0842a3f36b9cd  doc/ger-de/beispiele/ini-einstellungen/membermanagement/MemberPolicySet_member_management.md
 d57302b0d636525beb76599f47832640  doc/ger-de/beispiele/ini-einstellungen/membermanagement/MemberRule_editors_manage_members.md
-5ebed58836f1f6a7d730c6dcb224f9be  doc/ger-de/beispiele/ini-einstellungen/membermanagement/README.md
+6cd28f5092eff2624a7872a654e253a7  doc/ger-de/beispiele/ini-einstellungen/membermanagement/README.md
 9a14ebba7deb7e542424004fca42fbb2  doc/ger-de/beispiele/ini-einstellungen/menu/DoubleTop.md
 013b3cf524820459326e1d669a601dce  doc/ger-de/beispiele/ini-einstellungen/menu/LeftMenuSettings.md
 394529f436010a1c391065287fb12ba7  doc/ger-de/beispiele/ini-einstellungen/menu/LeftOnly.md
@@ -21510,7 +21510,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-cb4fb70fe0b8c12b2c1d0d16e5263120  doc/ger-de/uebersetzungswellen.md
+dfe44ac341b995ea50c9e2671116ca1d  doc/ger-de/uebersetzungswellen.md
 aafefe33be1a1d56beba6d5a7b7aacca  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -22838,7 +22838,7 @@ cf9939957167c71adbb8488217528eaf  kernel/classes/expcontentpendinglist.php
 3883f366ebecfccb5323bdae8da93a31  kernel/classes/expcronjobpause.php
 4f128af24293118e44082a150b3cb58b  kernel/classes/expcrontabsetup.php
 c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
-66ac6b986ba97e409e6cbdb61becbbeb  kernel/classes/expeditorpolicies.php
+31675d3b1037bbba15f00d7a6b52e7ca  kernel/classes/expeditorpolicies.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
 9c40fee608343760c047cc95aa0b3a8f  kernel/classes/expextensioncatalogue.php
 95932f51d7d355d00e9b99257b1f6425  kernel/classes/expextensionchangeplan.php
@@ -23556,9 +23556,9 @@ b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/int
 7b075fff6b1e2111d3f2b9f83e59c705  kernel/private/classes/commands/accesscheck.php
 91d04418cc1cd00a2325aee9a76299dd  kernel/private/classes/commands/addanonymouspublicpolicies.php
 9e4a9c8c5c45c9d1cc7090536dd814aa  kernel/private/classes/commands/adddefaultstates.php
-fa7c7cfa1d7781cb8bc20fb717001f86  kernel/private/classes/commands/addeditorpolicies.php
+49fab6ac52c3a0dcc1e3cc150100a75c  kernel/private/classes/commands/addeditorpolicies.php
 0557d1bc715f90b7705b9f2a94ba0ddb  kernel/private/classes/commands/addexphelpreadpolicy.php
-73c461b9768a64430af0105ac246d152  kernel/private/classes/commands/addmembermanagement.php
+63cc15d504e89d1615031d6d9170cd74  kernel/private/classes/commands/addmembermanagement.php
 496a9a93c1f6cdc29cfb505e9743d77c  kernel/private/classes/commands/addoauthauthorizepolicy.php
 d17cae0e4ed6e63dfa3ff2954b47e8aa  kernel/private/classes/commands/adduserapproval.php
 fd48c5e9ce5d0aff44ba778d817f6bc7  kernel/private/classes/commands/audit.php
@@ -23757,7 +23757,7 @@ cf329f956e76e9209f4ad81179bff380  kernel/private/classes/httpcache/ezphttpcachel
 bdb0ad9204cf376e3e303b8ae2796e88  kernel/private/classes/requestrules/ezprequestruleinterfaces.php
 4b716f4bc43d05d2f7b3632c0a702494  kernel/private/classes/requestrules/ezprequestrulekernel.php
 8d2e3bc0f0f90ea7dd1930014d51441b  kernel/private/classes/requestrules/ezprequestruleresult.php
-00c13c28d7896355ea68350ed5c38019  kernel/private/classes/runnable/command.php
+5d13b7d58b506351948af6240939962d  kernel/private/classes/runnable/command.php
 a565ef695304c6f4cad4562f91d4f042  kernel/private/classes/runnable/cronjobpart.php
 843cb9e759c5a71fbfd24612115a1435  kernel/private/classes/runnable/moduleview.php
 7f123df88d6c9c32da6739fe75db54dc  kernel/private/classes/runnable/runnable.php
@@ -24718,7 +24718,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-86ce3d03ff684ed85043e17057f9c529  settings/membermanagement.ini
+c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
 1b5d6b8b67cfe12c5cfd60f9106eafde  settings/menu.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 3ebb85a2b5557e6e96d53251b2ba2c2b  settings/module.ini
@@ -26585,7 +26585,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 4aa8729ed24e4daafb1546cee1942e99  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 487e832749fab3848ed2ef2c039cf0c8  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 0e82974abf98bd4c2554c42b1b8e71c2  tests/tests/kernel/classes/expCrontabSetupTest.php
-6a75e222b1f1ace574393f14fca4aba2  tests/tests/kernel/classes/expEditorPoliciesTest.php
+3de563246d65aa4e5f9520d9b6fcc513  tests/tests/kernel/classes/expEditorPoliciesTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 542c5b062ea819d9409cc7af9d3b4f5a  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
 59410c14cc7dd043faea8eabf885b694  tests/tests/kernel/classes/expKernelCallFixesTest.php
@@ -26596,7 +26596,7 @@ e1dbfe3ec87a005729f7ad910d6ff647  tests/tests/kernel/classes/expKernelServicesTe
 8e2cf124d80d40e3228e49c616a36389  tests/tests/kernel/classes/expLoveStackFixture.php
 b96df7eebf3dbbb88f9463398353a91a  tests/tests/kernel/classes/expLoveStackMigrateTest.php
 444217136fa0dc34c6612b58675a1526  tests/tests/kernel/classes/expManagedConfigurationTest.php
-8cd70fa82c4726679bec076aeb350482  tests/tests/kernel/classes/expMemberManagementTest.php
+a8e3d9e6d6d9bf9a5e1a6181395ad5d8  tests/tests/kernel/classes/expMemberManagementTest.php
 64c24c6c801055316bbafc3aaabe243b  tests/tests/kernel/classes/expNodeQuickPickTest.php
 d7f7252f8a4021c0896627188449e9aa  tests/tests/kernel/classes/expPDFExportTest.php
 3bdd28bd003091155ce34cc6c77145e9  tests/tests/kernel/classes/expPolicyOmitListTest.php
