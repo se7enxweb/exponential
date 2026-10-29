@@ -26,7 +26,7 @@
  *  NT-12  The service: status, problems, plan (rolled back, nothing sent), the lock, the run record
  *  NT-13  The subscription list: paging, name and class filter, a node that is gone
  *  NT-14  An event of content that is gone, or of an unknown type, does not stop the run
- *  NT-15  The commands: --help, status, run --dry-run, run, events, subscriptions
+ *  NT-15  The commands: --help, status, run (a dry run), run --apply, events, subscriptions (dry run unless --apply)
  *  NT-17  A digest the transport refuses is kept and sent by the next run; the failure is in the run and in the problems
  *  NT-18  A message sent at once that the transport refuses is kept and sent by the next run
  *  NT-19  A message that could not be sent for longer than RetryHours is given up and counted
@@ -1012,7 +1012,7 @@ class NotificationSystemTest extends PHPUnit\Framework\TestCase
         $this->subscribe( 'c', self::$folder->attribute( 'main_node' ) );
         $object = $this->articleUnderFolder( 'NOTTEST run article' );
         $runs = count( expNotificationService::lastRuns( 500 ) );
-        list( $code, $out ) = $this->command( 'notificationrun', array( '--event=' . implode( ',', $this->eventsOf( $object ) ), '--mail-file-dir=' . self::$mailDir ) );
+        list( $code, $out ) = $this->command( 'notificationrun', array( '--apply', '--event=' . implode( ',', $this->eventsOf( $object ) ), '--mail-file-dir=' . self::$mailDir ) );
         $this->assertSame( 0, $code, $out );
         $this->assertStringContainsString( 'PASS', $out );
         $this->assertCount( 1, $this->mailsTo( $this->address( 'c' ) ), $out );
@@ -1040,7 +1040,12 @@ class NotificationSystemTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 0, $code, $out );
         $this->assertStringContainsString( 'would be removed', $out );
         $this->assertSame( 1, expNotificationService::subscriptions( (int)self::$users['a']->attribute( 'id' ), array( 'missing' => true ) )['total'] );
+        // without --apply nothing is removed
         list( $code, $out ) = $this->command( 'notificationsubscriptions', array( 'remove-missing', '--user=nottest-a' ) );
+        $this->assertSame( 0, $code, $out );
+        $this->assertStringContainsString( '(dry run, nothing changed; --apply writes)', $out );
+        $this->assertSame( 1, expNotificationService::subscriptions( (int)self::$users['a']->attribute( 'id' ), array( 'missing' => true ) )['total'] );
+        list( $code, $out ) = $this->command( 'notificationsubscriptions', array( 'remove-missing', '--user=nottest-a', '--apply' ) );
         $this->assertSame( 0, $code, $out );
         $this->assertSame( 0, expNotificationService::subscriptions( (int)self::$users['a']->attribute( 'id' ), array( 'missing' => true ) )['total'] );
         list( $code ) = $this->command( 'notificationsubscriptions', array( 'list', '--user=nottest-nobody-here' ) );
