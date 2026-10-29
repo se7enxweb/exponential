@@ -15,7 +15,7 @@
  *
  */
 
-namespace Exponential\View\Kernel\Class
+namespace Exponential\View\Kernel\ContentClass
 {
 
 class Grouplist extends \Exponential\Runnable\ModuleView
@@ -265,4 +265,11 @@ class Grouplist extends \Exponential\Runnable\ModuleView
     }
 }
 
+}
+
+// The namespace was Exponential\View\Kernel\Class until 6.0.15. "Class" is a reserved word
+// before PHP 8.0, so it was renamed for PHP 7.4; the old name keeps working.
+namespace
+{
+    class_alias( 'Exponential\\View\\Kernel\\ContentClass\\Grouplist', 'Exponential\\View\\Kernel\\Class\\Grouplist' );
 }

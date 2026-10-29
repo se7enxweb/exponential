@@ -8,4 +8,4 @@
  */
 
 // The code is in kernel/private/classes/views/class/groupedit.php (#207); this file is the entry point.
-return \Exponential\View\Kernel\Class\Groupedit::main( __FILE__, get_defined_vars() );
+return \Exponential\View\Kernel\ContentClass\Groupedit::main( __FILE__, get_defined_vars() );
