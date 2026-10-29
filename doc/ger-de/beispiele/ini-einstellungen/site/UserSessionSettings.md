@@ -2,14 +2,14 @@
 title: site.ini [UserSessionSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [UserSessionSettings] in site.ini: Tracking, TouchInterval, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail"
-keywords: Einstellung, site.ini, UserSessionSettings, INI, setting, Tracking, TouchInterval, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail
+summary: "Die Einstellungen von [UserSessionSettings] in site.ini: Tracking, TouchInterval, RecordIP, GeoIPDatabase, GeoIPLanguage, RetentionDays, NewDeviceMail, NewDeviceAdminMail ..."
+keywords: Einstellung, site.ini, UserSessionSettings, INI, setting, Tracking, TouchInterval, RecordIP, GeoIPDatabase, GeoIPLanguage, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail, SecurityAlertMail, FailedSignInAlertThreshold
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [UserSessionSettings]
 
-Der Block `[UserSessionSettings]` von `settings/site.ini`, mit 7 Einstellung(en).
+Der Block `[UserSessionSettings]` von `settings/site.ini`, mit 12 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -40,13 +40,60 @@ Tracking=enabled
 
 > The last use and address of a session are written at most this often (seconds), or when the address changes.  
 
-Standard: `300`.
+Standard: `60`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/site.ini.append.php
 [UserSessionSettings]
-TouchInterval=300
+TouchInterval=60
+*/ ?>
+```
+
+## RecordIP
+
+> How the addresses of sessions are kept: full, truncated (the network only: 203.0.113.x, 2001:db8:85a3::/48),  
+> disabled (none), or audit: as audit.ini says for the audit (\[UserAuditSettings\] RecordIP=disabled: none,  
+> \[AuditPrivacySettings\] Field\[actor.ip\]=off: none, truncate or hash: the network, full: the address).  
+
+Standard: `audit`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+RecordIP=audit
+*/ ?>
+```
+
+## GeoIPDatabase
+
+> The approximate place of a sign-in, from a GeoIP database on this server in the MaxMind DB format (.mmdb, e.g.  
+> GeoLite2-City.mmdb), relative to the installation or absolute; empty: no places. Needs the PHP extension maxminddb  
+> or the Composer package maxmind-db/reader. Nothing is ever asked of another server. With it, a sign-in from a  
+> country the account has not signed in from within RetentionDays is a "new location" (event and mail).  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+GeoIPDatabase=
+*/ ?>
+```
+
+## GeoIPLanguage
+
+> The language of the place names the database holds (en when a name is not in it).  
+
+Standard: `en`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+GeoIPLanguage=en
 */ ?>
 ```
 
@@ -119,6 +166,35 @@ Standard: `disabled`.
 # settings/override/site.ini.append.php
 [UserSessionSettings]
 FirstSignInMail=disabled
+*/ ?>
+```
+
+## SecurityAlertMail
+
+> "Security alert" to the owner of an account when two-step sign-in is turned on or off, a recovery code is used, sign-ins  
+> fail FailedSignInAlertThreshold times in a row (0: never) or the account is locked (category security, design:user/  
+> security\_alert\_mail.tpl, links to user/security). A user cannot turn these off; disabled turns them off for the site.  
+> Sent from the user audit log (audit.ini \[UserAuditSettings\]): without it no alert is sent.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+SecurityAlertMail=enabled
+*/ ?>
+```
+
+## FailedSignInAlertThreshold
+
+Standard: `5`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+FailedSignInAlertThreshold=5
 */ ?>
 ```
 

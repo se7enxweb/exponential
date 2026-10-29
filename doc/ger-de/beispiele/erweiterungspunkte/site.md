@@ -2,7 +2,7 @@
 title: Erweiterungspunkte in site.ini
 audience: developer, admin
 category: examples
-summary: Einstellungen von site.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung erg채nzen kann (28, am Namen erkannt).
+summary: Einstellungen von site.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung erg채nzen kann (30, am Namen erkannt).
 keywords: Erweiterungspunkt, Erweiterung, site.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -253,6 +253,18 @@ Handlers[]=expExampleHandler    # Ihre Klasse oder Ihr Wert, zur Liste hinzugef�
 */ ?>
 ```
 
+## PasskeySettings PolicyHandlers
+
+Ausgeliefert: eine leere Liste. [Die Einstellung](../ini-einstellungen/site/PasskeySettings.md#policyhandlers).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[PasskeySettings]
+PolicyHandlers[]=expExamplePolicyHandler    # Ihre Klasse oder Ihr Wert, zur Liste hinzugef체gt
+*/ ?>
+```
+
 ## ReauthSettings CodeHandlers
 
 Ausgeliefert: eine Liste mit 1: `expReauthTotpCode`. [Die Einstellung](../ini-einstellungen/site/ReauthSettings.md#codehandlers).
@@ -262,6 +274,18 @@ Ausgeliefert: eine Liste mit 1: `expReauthTotpCode`. [Die Einstellung](../ini-ei
 # extension/expexample/settings/site.ini.append.php
 [ReauthSettings]
 CodeHandlers[]=expExampleCodeHandler    # Ihre Klasse oder Ihr Wert, zur Liste hinzugef체gt
+*/ ?>
+```
+
+## ReauthSettings TriggerHandlers
+
+Ausgeliefert: eine leere Liste. [Die Einstellung](../ini-einstellungen/site/ReauthSettings.md#triggerhandlers).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[ReauthSettings]
+TriggerHandlers[]=expExampleTriggerHandler    # Ihre Klasse oder Ihr Wert, zur Liste hinzugef체gt
 */ ?>
 ```
 

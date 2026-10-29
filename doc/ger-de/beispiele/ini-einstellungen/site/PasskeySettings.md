@@ -3,13 +3,13 @@ title: site.ini [PasskeySettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [PasskeySettings] in site.ini: Passkeys, SignInForm, RelyingPartyID, RelyingPartyName, AllowedOrigins, UserVerification, Algorithms, ChallengeSeconds ..."
-keywords: Einstellung, site.ini, PasskeySettings, INI, setting, Passkeys, SignInForm, RelyingPartyID, RelyingPartyName, AllowedOrigins, UserVerification, Algorithms, ChallengeSeconds, MaxPerUser
+keywords: Einstellung, site.ini, PasskeySettings, INI, setting, Passkeys, SignInForm, RelyingPartyID, RelyingPartyName, AllowedOrigins, UserVerification, Algorithms, ChallengeSeconds, MaxPerUser, Attestation, RelyingPartyIDMap, AuthenticatorNames, Policy, PasswordSignIn, GroupPolicy, GroupPasswordSignIn, UserPolicy, UserPasswordSignIn, PolicyHandlers, ExemptViews, ConsoleSlots
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [PasskeySettings]
 
-Der Block `[PasskeySettings]` von `settings/site.ini`, mit 9 Einstellung(en).
+Der Block `[PasskeySettings]` von `settings/site.ini`, mit 21 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Passkeys
 
-> Passkeys (WebAuthn): a user registers passkeys on user/passkeys (My account > Passkeys)  
-> and signs in with one on the web sign-in form, next to the password; a passkey also  
-> answers "Verify it's you" (\[ReauthSettings\]). Only the web pages use passkeys: REST,  
-> SOAP, WebDAV and the expservices login do not change.  
-> Guide: doc/eng-us/guides/passkeys.md  
+> Passkeys (WebAuthn): Ein Benutzer registriert Passkeys auf user/passkeys (Mein Konto > Passkeys)  
+> und meldet sich im Anmeldeformular des Webs neben dem Passwort mit einem an; ein Passkey  
+> beantwortet auch „Identität bestätigen“ (\[ReauthSettings\]). Nur die Webseiten benutzen Passkeys: REST,  
+> SOAP, WebDAV und die expservices-Anmeldung ändern sich nicht.  
+> Anleitung: doc/ger-de/anleitungen/passkeys.md  
 >
-> enabled or disabled. Disabled: no passkey can be added or used; the stored ones stay.  
+> enabled oder disabled. Disabled: Kein Passkey kann hinzugefügt oder benutzt werden; die gespeicherten bleiben.  
 
 Standard: `enabled`.
 
@@ -39,7 +39,7 @@ Passkeys=enabled
 
 ## SignInForm
 
-> Offer "Sign in with a passkey" on the sign-in form (and the browser's passkey autofill).  
+> „Mit einem Passkey anmelden“ im Anmeldeformular anbieten (und das Passkey-Autofill des Browsers).  
 
 Standard: `enabled`.
 
@@ -53,9 +53,9 @@ SignInForm=enabled
 
 ## RelyingPartyID
 
-> The relying party id: a host name, the passkeys are bound to it. Empty: the host name of  
-> the request. A shared parent domain (example.com) lets the passkeys of www.example.com  
-> work on admin.example.com too; it must be the host or a parent of it.  
+> Die Relying-Party-ID: ein Hostname, an den die Passkeys gebunden sind. Leer: der Hostname  
+> der Anfrage. Eine gemeinsame übergeordnete Domain (example.com) lässt die Passkeys von www.example.com  
+> auch auf admin.example.com gelten; sie muss der Host oder eine übergeordnete Domain davon sein.  
 
 Standard: leer.
 
@@ -69,7 +69,7 @@ RelyingPartyID=
 
 ## RelyingPartyName
 
-> The name the browser shows. Empty: \[SiteSettings\] SiteName.  
+> Der Name, den der Browser zeigt. Leer: \[SiteSettings\] SiteName.  
 
 Standard: leer.
 
@@ -83,8 +83,8 @@ RelyingPartyName=
 
 ## AllowedOrigins
 
-> The origins (scheme://host\[:port\]) answers may come from. Empty: the origin of the  
-> request. List every host the passkeys are used on when RelyingPartyID is a parent domain.  
+> Die Origins (schema://host\[:port\]), von denen Antworten kommen dürfen. Leer: der Origin der  
+> Anfrage. Nennen Sie jeden Host, auf dem die Passkeys benutzt werden, wenn RelyingPartyID eine übergeordnete Domain ist.  
 
 Standard: eine leere Liste.
 
@@ -99,8 +99,8 @@ AllowedOrigins[]
 
 ## UserVerification
 
-> required (default; the authenticator checks a PIN, fingerprint or face), preferred or  
-> discouraged. Signing in with a passkey always requires it; this applies to re-authentication.  
+> required (Standard; der Authentifikator prüft PIN, Fingerabdruck oder Gesicht), preferred oder  
+> discouraged. Die Anmeldung mit Passkey verlangt sie immer; dies gilt für die Bestätigung der Identität.  
 
 Standard: `required`.
 
@@ -114,8 +114,8 @@ UserVerification=required
 
 ## Algorithms
 
-> COSE algorithms offered, most preferred first: -7 ES256, -257 RS256, -8 Ed25519 (needs  
-> PHP's sodium extension), -35 ES384, -36 ES512.  
+> Angebotene COSE-Verfahren, bevorzugte zuerst: -7 ES256, -257 RS256, -8 Ed25519 (braucht  
+> PHPs sodium-Erweiterung), -35 ES384, -36 ES512.  
 
 Standard: eine Liste mit 5: `-7`, `-257`, `-8`, `-35`, `-36`.
 
@@ -135,7 +135,7 @@ Algorithms[]=-36
 
 ## ChallengeSeconds
 
-> Seconds a challenge may be answered.  
+> Sekunden, in denen eine Challenge beantwortet werden kann.  
 
 Standard: `300`.
 
@@ -149,7 +149,7 @@ ChallengeSeconds=300
 
 ## MaxPerUser
 
-> Passkeys one account may have.  
+> Passkeys je Konto.  
 
 Standard: `20`.
 
@@ -158,6 +158,198 @@ Standard: `20`.
 # settings/override/site.ini.append.php
 [PasskeySettings]
 MaxPerUser=20
+*/ ?>
+```
+
+## Attestation
+
+> Die Attestierung, um die beim Hinzufügen eines Passkeys gebeten wird: none (Standard), indirect oder direct.  
+> Mit indirect behält jeder Browser die Modellkennung des Authentifikators (AAGUID), die ihn in  
+> der Liste benennt („iCloud Keychain“, „YubiKey 5 Series“); der Nachweis selbst wird nie herangezogen.  
+
+Standard: `none`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+Attestation=none
+*/ ?>
+```
+
+## RelyingPartyIDMap
+
+> Eine Installation mit mehreren Hosts: die Relying-Party-ID je Host, RelyingPartyIDMap\[<host>\]=<id>.  
+> Die ID muss der Host oder eine übergeordnete Domain davon sein; ein nicht genannter Host benutzt RelyingPartyID.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "RelyingPartyIDMap[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+RelyingPartyIDMap[]
+*/ ?>
+```
+
+## AuthenticatorNames
+
+> Namen von Authentifikatormodellen, die die eingebaute Liste nicht kennt oder anders nennt:  
+> AuthenticatorNames\[<aaguid>\]=<Name>  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "AuthenticatorNames[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+AuthenticatorNames[]
+*/ ?>
+```
+
+## Policy
+
+> Die Passkey-Richtlinie (doc/ger-de/anleitungen/passkeys.md, „Richtlinie“). Nur die Webseiten wenden sie an;  
+> REST, SOAP, WebDAV und die expservices-Anmeldung behalten ihre eigene Anmeldung.  
+> optional (Standard): Benutzer dürfen Passkeys hinzufügen. preferred: Ein Benutzer ohne Passkey wird  
+> einmal je Sitzung gebeten, einen hinzuzufügen, und darf weitermachen. required: Ein Benutzer ohne Passkey fügt  
+> vor jeder anderen Seite einen hinzu.  
+
+Standard: `optional`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+Policy=optional
+*/ ?>
+```
+
+## PasswordSignIn
+
+> enabled (Standard) oder disabled: disabled lehnt im Anmeldeformular das Passwort eines  
+> Kontos ab, das einen Passkey hat (beantwortet wie ein falsches Passwort). Ein Konto ohne Passkey  
+> meldet sich weiter mit seinem Passwort an, niemand wird ausgesperrt.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+PasswordSignIn=enabled
+*/ ?>
+```
+
+## GroupPolicy
+
+> Je Benutzergruppe (Content-Objekt-ID): Die strengste Angabe der Gruppen des Benutzers und Policy gilt;  
+> disabled in irgendeiner Gruppe gilt. GroupPolicy\[13\]=required, GroupPasswordSignIn\[13\]=disabled  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "GroupPolicy[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+GroupPolicy[]
+*/ ?>
+```
+
+## GroupPasswordSignIn
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "GroupPasswordSignIn[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+GroupPasswordSignIn[]
+*/ ?>
+```
+
+## UserPolicy
+
+> Je Konto (Content-Objekt-ID), vor den Gruppen.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "UserPolicy[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+UserPolicy[]
+*/ ?>
+```
+
+## UserPasswordSignIn
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "UserPasswordSignIn[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+UserPasswordSignIn[]
+*/ ?>
+```
+
+## PolicyHandlers
+
+> Klassen, die expPasskeyPolicyHandler umsetzen: Erweiterungen ändern die Richtlinie eines Kontos.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "PolicyHandlers[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PolicyHandlers[]
+*/ ?>
+```
+
+## ExemptViews
+
+> Die Ansichten, die offen bleiben, solange ein Passkey verlangt ist („modul“ oder „modul/ansicht“).  
+
+Standard: eine Liste mit 7: `user/passkeys`, `user/logout`, `user/login`, `user/password`, `user2fa`, `ezjscore`, `user/preferences`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "ExemptViews[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+ExemptViews[]
+ExemptViews[]=user/passkeys
+ExemptViews[]=user/logout
+ExemptViews[]=user/login
+ExemptViews[]=user/password
+ExemptViews[]=user2fa
+ExemptViews[]=ezjscore
+ExemptViews[]=user/preferences
+*/ ?>
+```
+
+## ConsoleSlots
+
+> Templates unter der Liste der Passkeys auf user/passkeys (ein eigener Abschnitt einer Erweiterung):  
+> ConsoleSlots\[\]=design:myextension/passkeys\_slot.tpl  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[PasskeySettings]
+# ein leeres "ConsoleSlots[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+ConsoleSlots[]
 */ ?>
 ```
 

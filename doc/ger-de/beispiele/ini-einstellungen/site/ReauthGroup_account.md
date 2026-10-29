@@ -11,15 +11,18 @@ generated: exp:help:examples
 
 Der Block `[ReauthGroup_account]` von `settings/site.ini`, mit 2 Einstellung(en).
 
-> Rules, in every group: "module/view \[token ...\]"  
->   module/view    the view (view \* for every view of the module); a POST to it is asked  
->   \*              every request, GET too (a page that downloads, or a form with a file upload)  
->   Name           only a POST that carries this field (any of several names)  
->   self, other    only when the account addressed is the user's own / another user's  
->                  (content/edit of a user object, user/password, user/setting; the  
->                  pending account of an approval item of "Approve user accounts")  
->   credentials    only when the POST changes the login, e-mail or password of a user  
->   !module/view   never asked for this view (an exception to a module/\* rule)  
+> Regeln, in jeder Gruppe: "modul/ansicht \[token ...\]"  
+>   modul/ansicht  die Ansicht (ansicht \* für jede Ansicht des Moduls); ein POST an sie wird gefragt  
+>   \*              jede Anfrage, auch GET (eine Seite, die herunterlädt, oder ein Formular mit Datei-Upload)  
+>   Name           nur ein POST, der dieses Feld trägt (einen von mehreren Namen)  
+>   self, other    nur wenn das betroffene Konto das eigene / das eines anderen Benutzers ist  
+>                  (content/edit eines Benutzerobjekts, user/password, user/setting; das  
+>                  wartende Konto eines Freigabe-Elements von „Benutzerkonten freigeben“)  
+>   credentials    nur wenn der POST Login, E-Mail oder Passwort eines Benutzers ändert  
+>   !modul/ansicht für diese Ansicht nie gefragt (eine Ausnahme zu einer modul/\*-Regel)  
+>   bulk           nur wenn mehrere Elemente auf einmal entfernt werden (BulkCount)  
+> Eine Gruppe kann UserGroups\[\] nennen (Content-Objekt-IDs von Benutzergruppen): Sie fragt dann nur  
+> deren Mitglieder; leer oder fehlend: jeden Benutzer.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -29,7 +32,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> The security settings of one's own account.  
+> Die Sicherheitseinstellungen des eigenen Kontos.  
 
 Standard: `true`.
 
@@ -43,7 +46,9 @@ Enabled=true
 
 ## Rules
 
-Standard: eine Liste mit 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton`.
+> „Alle anderen Sitzungen abmelden“ fragt ebenfalls zuerst: Jemand an einem unbeaufsichtigten Bildschirm darf den Inhaber nicht aussperren  
+
+Standard: eine Liste mit 6: `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton RevokeOthersButton`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -56,7 +61,7 @@ Rules[]=user/passkeys *
 Rules[]=user2fa/setup
 Rules[]=apikey/list
 Rules[]=content/edit self credentials
-Rules[]=user/sessions self SaveMailButton
+Rules[]=user/sessions self SaveMailButton RevokeOthersButton
 */ ?>
 ```
 

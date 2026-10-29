@@ -44,7 +44,7 @@ Name `eZSetup`, definiert in `kernel/setup/module.php`. 45 Ansichten.
 | [preloadstream](preloadstream.md) | `/setup/preloadstream` | preload |
 | [rad](rad.md) | `/setup/rad` | setup |
 | [radsurvey](radsurvey.md) | `/setup/radsurvey` | setup |
-| [reauth](reauth.md) | `/setup/reauth` | setup |
+| [reauth](reauth.md) | `/setup/reauth/<SiteAccess>` | setup |
 | [session](session.md) | `/setup/session/<UserID>` | administrate |
 | [settingsextension](settingsextension.md) | `/setup/settingsextension` | setup |
 | [settingstoolbar](settingstoolbar.md) | `/setup/settingstoolbar` | setup |

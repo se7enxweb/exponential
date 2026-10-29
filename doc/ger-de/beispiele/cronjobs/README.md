@@ -17,7 +17,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | Teil | Skripte | Ausführen |
 |---|---|---|
 | (Standard) | [unpublish.php](unpublish.md), [rssimport.php](rssimport.md), [indexcontent.php](indexcontent.md), [hide.php](hide.md), [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | `php runcronjobs.php` |
-| `infrequent` | [basket_cleanup.php](basket_cleanup.md), [linkcheck.php](linkcheck.md), [mailpreferences.php](mailpreferences.md), [usersessions.php](usersessions.md), [exphelp.php](exphelp.md) | `php runcronjobs.php infrequent` |
+| `infrequent` | [basket_cleanup.php](basket_cleanup.md), [linkcheck.php](linkcheck.md), [mailpreferences.php](mailpreferences.md), [usersessions.php](usersessions.md), [useraudit.php](useraudit.md), [exphelp.php](exphelp.md) | `php runcronjobs.php infrequent` |
 | `frequent` | [notification.php](notification.md), [workflow.php](workflow.md), [contentjobs.php](contentjobs.md), [datatablesync.php](datatablesync.md), [audit.php](audit.md), [mailbounces.php](mailbounces.md) | `php runcronjobs.php frequent` |
 | `contentcheck` | [contentcheck.php](contentcheck.md) | `php runcronjobs.php contentcheck` |
 | `contentjobs` | [contentjobs.php](contentjobs.md) | `php runcronjobs.php contentjobs` |
@@ -28,6 +28,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | `mailpreferences` | [mailpreferences.php](mailpreferences.md) | `php runcronjobs.php mailpreferences` |
 | `mailbounces` | [mailbounces.php](mailbounces.md) | `php runcronjobs.php mailbounces` |
 | `usersessions` | [usersessions.php](usersessions.md) | `php runcronjobs.php usersessions` |
+| `useraudit` | [useraudit.php](useraudit.md) | `php runcronjobs.php useraudit` |
 | `exphelp` | [exphelp.php](exphelp.md) | `php runcronjobs.php exphelp` |
 | `unlock` | [unlock.php](unlock.md) | `php runcronjobs.php unlock` |
 | `cluster_maintenance` | [clusterpurge.php](clusterpurge.md) | `php runcronjobs.php cluster_maintenance` |
@@ -66,6 +67,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [unlock.php](unlock.md) | Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen | unlock |
 | [unpublish.php](unpublish.md) | Führt geplante Aktionen zum Zurückziehen von Inhaltsobjekten aus | (Standard) |
 | [updateviewcount.php](updateviewcount.md) | Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank |  |
+| [useraudit.php](useraudit.md) | User audit log: removes the rows of expuser_audit older than audit.ini [UserAuditSettings] RetentionDays | infrequent, useraudit |
 | [usersessions.php](usersessions.md) | Signed-in sessions ("Your devices"): ends the sessions not used for [Session] SessionTimeout, removes ended ones after [UserSessionSettings] RetentionDays | infrequent, usersessions |
 | [workflow.php](workflow.md) | Verarbeitet anstehende Workflow-Ereignisse und bringt hängende Workflows weiter | frequent |
 
