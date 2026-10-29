@@ -208,14 +208,14 @@ class expUpgradeStepCodeUpdate extends expUpgradeBaseStep
         if ( $dir === '' )
         {
             $dir = rtrim( (string)$context->option( 'backup-dir', '' ) ?: expUpgradeBackup::baseDir(), '/' ) . '/' . date( 'Ymd-His' ) . '-code';
-            @mkdir( $dir, 0700, true );
+            @mkdir( $dir, eZDir::dirMode( 0700 ), true );
         }
         $heads = array( 'format' => 'exp-upgrade-code/1', 'created' => date( 'c' ), 'repos' => array() );
         foreach ( $states as $label => $s )
             $heads['repos'][$label] = array( 'path' => $s['path'], 'head' => $s['head'], 'branch' => $s['branch'], 'target' => $s['target'] );
         if ( file_put_contents( "$dir/code.json", json_encode( $heads, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
             throw new RuntimeException( "cannot write $dir/code.json, nothing was moved" );
-        @chmod( "$dir/code.json", 0600 );
+        @chmod( "$dir/code.json", eZFile::fileMode( 0600 ) );
         $lines[] = "the commits before the move: $dir/code.json";
         // git_manager's caption dumps MySQL/MariaDB only; on the other engines the upgrade's own backup holds the database
         if ( !$context->option( 'no-backup', false ) && class_exists( 'BackupManager' ) && $context->engine() !== 'mysql' )

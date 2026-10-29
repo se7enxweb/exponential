@@ -87,6 +87,15 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
     abstract protected function name();
 
     /**
+     * The command's work: by default the stages of --stages, as exp:upgrade runs them; the commands of one stage and
+     * the reading commands override it.
+     */
+    public function run()
+    {
+        $this->runStages();
+    }
+
+    /**
      * Starts the script: $this->script( array( 'description' => "...", ... ) ) and $this->startup( '<config>', '',
      * <help> ), written out literally in each command, so ./console exp:help:examples reads the help text and the
      * options from the code. The option configuration must equal contract() and every help text optionHelp()
