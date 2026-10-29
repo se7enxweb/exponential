@@ -263,4 +263,130 @@ class expOrderSiteaccess
         }
         return self::$storeNames[$siteaccess] = $name;
     }
+
+    /**
+     * The address the front page of the siteaccess is served at, as the siteaccess menu of the administration
+     * links it (ezpSiteAccessURL::root(): host and/or URI as the siteaccess is matched, the scheme and port of this
+     * request). The order view links it below the siteaccess of the order.
+     *
+     * @param string $siteaccess
+     * @return string|false the URL (ending in /), or false for '' and a siteaccess that is not configured
+     */
+    public static function frontURL( $siteaccess )
+    {
+        $siteaccess = self::normalize( $siteaccess );
+        if ( $siteaccess === '' )
+            return false;
+        try
+        {
+            return ezpSiteAccessURL::root( $siteaccess );
+        }
+        catch ( \Throwable $e )
+        {
+            eZDebug::writeWarning( $e->getMessage(), __METHOD__ );
+            return false;
+        }
+    }
+
+    /**
+     * The address a node is served at on the siteaccess an order was placed in, so the administrator sees the
+     * product as the customer saw it: the siteaccess's front page address and the node's URL alias in the
+     * siteaccess's languages ([RegionalSettings] SiteLanguageList, as the language switcher fetches it), without
+     * the siteaccess's [SiteAccessSettings] PathPrefix.
+     *
+     * @param eZContentObjectTreeNode $node
+     * @param string $siteaccess
+     * @return string|false false when the siteaccess is unknown or does not serve the node (outside its PathPrefix)
+     */
+    public static function nodeURL( $node, $siteaccess )
+    {
+        if ( !$node instanceof eZContentObjectTreeNode )
+            return false;
+        $front = self::frontURL( $siteaccess );
+        if ( $front === false )
+            return false;
+        $ini = expSubitemsURLColumn::publicSiteIni( self::normalize( $siteaccess ) );
+        if ( !$ini instanceof eZINI )
+            return false;
+        return self::servedURL( $front, self::nodePath( $node, $ini ), $ini );
+    }
+
+    /**
+     * The address $path (a URL alias from the content root) is served at on a siteaccess: its front page address
+     * $front and the path without the siteaccess's PathPrefix (expSubitemsURLColumn::servedPath()).
+     *
+     * @param string|false $front the siteaccess's front page address (frontURL())
+     * @param string $path
+     * @param eZINI|null $ini the site.ini of the siteaccess
+     * @return string|false false without a front page address or for a path outside the PathPrefix
+     */
+    public static function servedURL( $front, $path, $ini )
+    {
+        if ( !is_string( $front ) || $front === '' )
+            return false;
+        $served = expSubitemsURLColumn::servedPath( $path, $ini );
+        if ( $served === null )
+            return false;
+        return rtrim( $front, '/' ) . '/' . ( $served !== '' ? eZURI::encodeIRI( $served ) : '' );
+    }
+
+    /**
+     * The product addresses of the order view: where the main node of each product is served on the siteaccess
+     * of the order, per content object of the order's product items.
+     *
+     * @param string $siteaccess
+     * @param array $productItems eZOrder::productItems(): hashes with item_object (eZProductCollectionItem)
+     * @return array contentobject id => URL; products without one are left out
+     */
+    public static function productURLs( $siteaccess, array $productItems )
+    {
+        $urls = array();
+        if ( self::frontURL( $siteaccess ) === false )
+            return $urls;
+        foreach ( $productItems as $item )
+        {
+            $collectionItem = is_array( $item ) && isset( $item['item_object'] ) ? $item['item_object'] : null;
+            if ( !$collectionItem instanceof eZProductCollectionItem )
+                continue;
+            $objectID = (int)$collectionItem->attribute( 'contentobject_id' );
+            if ( $objectID <= 0 || isset( $urls[$objectID] ) )
+                continue;
+            $object = $collectionItem->attribute( 'contentobject' );
+            $node = $object instanceof eZContentObject ? $object->attribute( 'main_node' ) : null;
+            $url = self::nodeURL( $node, $siteaccess );
+            if ( $url !== false )
+                $urls[$objectID] = $url;
+        }
+        return $urls;
+    }
+
+    /**
+     * The node's URL alias from the content root in the languages of the siteaccess whose site.ini is $ini, as
+     * ezpLanguageSwitcher fetches it for another siteaccess; the alias of the administration's languages when the
+     * node has none in them.
+     *
+     * @return string
+     */
+    protected static function nodePath( eZContentObjectTreeNode $node, eZINI $ini )
+    {
+        $languages = $ini->hasVariable( 'RegionalSettings', 'SiteLanguageList' )
+                   ? array_values( array_filter( (array)$ini->variable( 'RegionalSettings', 'SiteLanguageList' ) ) ) : array();
+        $locale = $ini->hasVariable( 'RegionalSettings', 'ContentObjectLocale' )
+                ? (string)$ini->variable( 'RegionalSettings', 'ContentObjectLocale' ) : null;
+        if ( $languages )
+        {
+            eZContentLanguage::setPrioritizedLanguages( $languages );
+            try
+            {
+                $elements = eZURLAliasML::fetchByAction( 'eznode', (int)$node->attribute( 'node_id' ), false, true );
+            }
+            finally
+            {
+                eZContentLanguage::clearPrioritizedLanguages();
+            }
+            if ( is_array( $elements ) && isset( $elements[0] ) && $elements[0] instanceof eZURLAliasML )
+                return (string)$elements[0]->getPath( $locale !== '' ? $locale : null, $languages );
+        }
+        return (string)$node->pathWithNames();
+    }
 }

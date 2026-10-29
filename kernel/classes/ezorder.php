@@ -144,7 +144,9 @@ class eZOrder extends eZPersistentObject
                                                       'receipt_url' => 'receiptURL',
                                                       'link_url' => 'linkURL',
                                                       'siteaccess_name' => 'siteaccessName',
-                                                      'store_name' => 'storeName' ),
+                                                      'store_name' => 'storeName',
+                                                      'siteaccess_url' => 'siteaccessURL',
+                                                      'siteaccess_product_urls' => 'siteaccessProductURLs' ),
                       "keys" => array( "id" ),
                       "increment_key" => "id",
                       "class_name" => "eZOrder",
@@ -242,6 +244,29 @@ class eZOrder extends eZPersistentObject
     {
         // the property, not attribute(): asking attribute() for a field the definition left out logs an error
         return expOrderSiteaccess::normalize( $this->Siteaccess );
+    }
+
+    /**
+     * The address the front page of the siteaccess the order was placed in is served at
+     * (expOrderSiteaccess::frontURL()), '' when the order has no siteaccess or it is no longer configured.
+     *
+     * @return string
+     */
+    function siteaccessURL()
+    {
+        $url = expOrderSiteaccess::frontURL( $this->siteaccessName() );
+        return $url === false ? '' : $url;
+    }
+
+    /**
+     * Where each product of the order is served on the siteaccess the order was placed in, as the customer saw it
+     * (expOrderSiteaccess::productURLs()): contentobject id => URL; a product without one is left out.
+     *
+     * @return array
+     */
+    function siteaccessProductURLs()
+    {
+        return expOrderSiteaccess::productURLs( $this->siteaccessName(), $this->productItems() );
     }
 
     /*!
