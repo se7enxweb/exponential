@@ -670,6 +670,17 @@ define( 'CUSTOM_LOG_MAX_FILE_SIZE', 10485760 );       // logs written through eZ
 define( 'CUSTOM_LOG_ROTATE_FILES', 10 );
 ```
 
+Without an editor, the console writes the same lines (a backup of `config.php` first, a `php -l` check before it
+lands); `./console exp:setup:config --apply` creates `config.php` from the template when there is none yet:
+
+```bash
+./console exp:config:set EZPUBLISH_LOG_MAX_FILE_SIZE 10485760 --apply
+./console exp:config:set EZPUBLISH_LOG_ROTATE_FILES 10 --apply
+./console exp:config:list --only-set
+```
+
+See [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
+
 **System rotation.** Files the kernel does not write itself (your `cron-*.log` files) need the system's logrotate.
 If you switch the built-in rotation off, logrotate takes over the kernel's logs as well:
 
@@ -905,7 +916,7 @@ and after a change to a `.ts` file clear `--clear-tag=i18n`. See
 5. A backup was taken **and restored** on another machine.
 6. `var/log/error.log` holds nothing you cannot explain.
 7. A benchmark baseline is saved in `var/benchmark/`.
-8. Logs rotate (built-in limits in `config.php`, logrotate for cron logs).
+8. Logs rotate (built-in limits in `config.php`, see `./console exp:config:list --only-set`; logrotate for cron logs).
 9. Behind a proxy on another machine: its address is in `TrustedProxies[]`, and HTTPS pages link to `https://`.
 10. `./console exp:expfetch --allow-root-user` shows the expected versions and engine, and its Hints block has no
     `error` ([The system card](../features/6.0/system-card.md)).
@@ -955,7 +966,7 @@ In this repository:
 - [Benchmark](../features/6.0/benchmark.md), [Maintenance mode](../features/6.0/maintenance-mode.md),
   [Reset a user password](../features/6.0/reset-user-password.md), [Changing your password](../features/6.0/modern-password-change.md),
   [Audit trail](../features/6.0/audit-trail.md).
-- [Trusted proxies](../bc/6.0/trusted-proxies.md), [exp:ini](../features/6.0/exp-ini-command.md), [Extension loading order](../features/6.0/extension-loading-order.md),
+- [Trusted proxies](../bc/6.0/trusted-proxies.md), [exp:ini](../features/6.0/exp-ini-command.md), [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md), [Extension loading order](../features/6.0/extension-loading-order.md),
   [Additional extension directories](../bc/6.0/AdditionalExtensionDirectories.md),
   [Per-site settings inside extensions](../features/6.0/multi-site-ini-overrides.md),
   [Translations and languages](../features/6.0/translations-and-languages.md).

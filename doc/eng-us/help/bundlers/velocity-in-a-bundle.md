@@ -82,6 +82,11 @@ php bin/php/console exp:velocity deploy --kernel --allow-root-user   # a kernel 
 Source: [Velocity engines](../../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy). In containers
 "the usual equivalent is a new image and a new container".
 
+`config.php` is read once per worker as well. A bundle that sets a value with `exp:config:set ... --apply` restarts
+Velocity afterwards (`exp:velocity restart`). Velocity does not read `.htaccess`; a bundle copies it
+(`exp:setup:htaccess --apply`) only when Apache may serve the same tree
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
 ## Checks
 
 ```bash
@@ -97,6 +102,7 @@ what is missing. Velocity needs `ext-sockets` (`pcntl` and `openssl` recommended
 - [Web server and engine choices](web-server-and-engine-choices.md)
 - [Velocity for hosts](../hosting/servers/velocity-for-hosts.md), [Velocity will not start](../hosting/runbooks/velocity-will-not-start.md)
 - [Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

@@ -140,6 +140,11 @@ Was das Kapitel dazu erklärt:
   Geheimnisspeicher ([Erste Anmeldung und Standardpasswörter](../sicherheit/erste-anmeldung-und-standardpasswoerter.md)).
 - Backen Sie `settings/override` nie in ein Image ein: Es enthält die Zugangsdaten zur Datenbank
   ([13.3 Geheimnisse in settings/override](../../../installation/13-sicherheitshaertung.md#133-geheimnisse-in-settingsoverride)).
+- `config.php` kann im Image entstehen (`exp:setup:config --apply --allow-root-user --owner=www-data:www-data` im
+  Build-Schritt), aber ein Passwort darin, etwa `CLUSTER_STORAGE_PASS`, wird beim Start aus der Umgebung gesetzt:
+  `php bin/php/console exp:config:set CLUSTER_STORAGE_PASS --value="$CLUSTER_DB_PASS" --apply --allow-root-user`. Die
+  Ausgabe zeigt es als `********`. In der CI zeigt `exp:config:list --only-set --format=json`, was ein Image oder ein
+  laufender Container setzt ([.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md#11-in-skripten-containern-und-ci)).
 
 ## Betrieb in Containern
 
@@ -168,6 +173,7 @@ Was das Kapitel dazu erklärt:
 - [Kubernetes](kubernetes.md), [Platform as a Service](platform-as-a-service.md)
 - [exp:install](../bereitstellung/exp-install-fuer-hoster.md), [Bereitstellung automatisieren](../bereitstellung/bereitstellung-automatisieren.md)
 - [Mit einem Befehl installieren](../../../funktionen/6.0/installation-mit-einem-befehl.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

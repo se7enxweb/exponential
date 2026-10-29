@@ -55,8 +55,11 @@ tmpfs  /srv/www/exponential/var_cache  tmpfs  size=8g,mode=0775,uid=www-data,gid
   INI-Cache in `ini/`), `expiry.php` in `var/example/expiry/`. Der Speicher bleibt in `var/example/storage`.
 - Velocity liefert die öffentlichen Caches unterhalb von `var_cache/` aus (gepackte Skripte und Stylesheets, Text als
   Bild) und sonst nichts dort: `expVelocity::staticPaths()` fügt sie den Pfaden aller drei Engines hinzu, wenn
-  `CacheVarDir` gesetzt ist. Für Apache aktivieren Sie die auskommentierte `var_cache`-Regel in `.htaccess_root`, für
-  nginx die auskommentierte `location` in [Website ausliefern](../../installation/08-die-website-ausliefern.md).
+  `CacheVarDir` gesetzt ist. Für Apache aktivieren Sie die auskommentierte `var_cache`-Regel von `.htaccess_root` in
+  Ihrer Kopie, `.htaccess` (kopiert mit `./console exp:setup:htaccess --apply`; nach einem Upgrade zeigt dieser Befehl
+  die Regel unter den Unterschieden und kopiert nur mit `--force`, aktivieren Sie sie danach also wieder), für
+  nginx die auskommentierte `location` in [Website ausliefern](../../installation/08-die-website-ausliefern.md). Siehe
+  [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
 - Mit einem Cluster-Datei-Handler siehe [Cluster](#cluster-dfs) weiter unten.
 - Setzen Sie die Einstellungen dort, wo jeder Siteaccess jeder Website sie liest (die globale Überschreibung). Velocity
   schreibt seine Liste der ausgelieferten Pfade beim Start, ohne Siteaccess: Es liest `CacheVarDir` aus den globalen

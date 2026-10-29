@@ -86,6 +86,14 @@ php bin/php/console exp:velocity deploy --dry-run --allow-root-user  # what it w
 | 9 | Velocity's response cache | `exp:velocity cache clear` |
 | 10 | warm-up: `[DeploySettings] WarmUpURL[]` requested once each by a background process | `curl URL...` |
 
+**`config.php` counts as a PHP change.** The qbix engine's persistent workers
+read it once, when they start. After `./console exp:config:set <NAME> <value>
+--apply` (or `exp:setup:config --force --apply`), run `exp:velocity restart`,
+or `deploy`, which restarts in step 7. FrankenPHP in classic mode and PHP-FPM
+read it on every request once OPcache sees the new file; with
+`opcache.validate_timestamps=0`, reload PHP-FPM
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
 **The order is the point.** The caches that hold rendered output (8 and 9)
 are cleared only after PHP-FPM and Velocity run the new code. Cleared before,
 every page requested in between is rendered by the old code and cached again,
@@ -732,6 +740,11 @@ The three Qbix keys need a qbix-webserver that has them; an older one ignores
 them, runs any `.php` file requested by name and sends every file with a
 served extension — `.htaccess` is not read on its pooled path.
 
+None of the three engines reads `.htaccess`. Copy it anyway
+(`./console exp:setup:htaccess --apply`) when Apache may serve the same tree,
+for example beside Velocity or during a move
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
 ## Symbolic links out of the document root
 
 `[ServerSettings] FollowSymlinks=disabled` (the default) refuses a file that a
@@ -874,4 +887,5 @@ file can set `PATH`, `LD_*`, `PHPRC` and the other loader and shell variables ([
 - [FrankenPHP](frankenphp.md)
 - [Engine archive (phar)](phar.md)
 - [Deploying guide](../../guides/deploying.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)
 - [Benchmarking guide](../../guides/benchmarking.md): measuring the engines against each other

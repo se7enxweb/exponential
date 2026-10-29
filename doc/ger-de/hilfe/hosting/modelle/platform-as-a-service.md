@@ -115,6 +115,13 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
   (`EXP_INSTALL_DB_PASSWORD`) ([4.6](../../../installation/04-installationsweg-waehlen.md#46-unbeaufsichtigte-installationen-ci-und-container)).
 - Jedes spätere Release: neuer Code, dasselbe persistente `var/` und dieselbe Datenbank, die Schema-Update-Dateien, wenn ein
   Upgrade sie verlangt, dann ein Leeren des Caches ([Änderungen ausrollen](../betrieb/aenderungen-ausrollen.md)).
+- `.htaccess` und `config.php` im Build oder beim Start, unbeaufsichtigt: `./console exp:setup:htaccess --apply`,
+  `./console exp:setup:config --apply`, dann `./console exp:config:set <NAME> <Wert> --apply` mit Werten aus den
+  Umgebungsvariablen der Plattform (`--value="$CLUSTER_DB_PASS"` für ein Geheimnis). Jeder Befehl fragt nichts, endet
+  mit `PASS:` oder `FAIL:`, beendet sich mit 0, 1 oder 2 und ändert bei einem zweiten Lauf nichts. Ein Build-Schritt,
+  der als root läuft, braucht `--allow-root-user` und, damit die Dateien nicht root gehören,
+  `--owner=www-data:www-data`
+  ([.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 ## Fragen an eine Plattform
 
@@ -134,6 +141,7 @@ zwischen ihnen teilen. Nutzen Sie die verwaltete Datenbank der Plattform, zuerst
 - [Ein Hosting-Modell wählen](ein-hosting-modell-waehlen.md), [Container: Docker und Podman](container-docker-und-podman.md)
 - [Beschreibbare Verzeichnisse und Berechtigungen](../grundlagen/beschreibbare-verzeichnisse-und-berechtigungen.md)
 - [Aufbau des Speichers](../betrieb/aufbau-des-speichers.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -181,6 +181,20 @@ Do not use `-k` on an installation that keeps extra working copies of the code i
 Then reload the PHP-FPM that serves the site (`systemctl reload <your-php-fpm-service>`), and, if you run Velocity,
 `./console exp:velocity deploy --dry-run --allow-root-user` shows every step the real command would run.
 
+Then compare `.htaccess` and `config.php` with the new templates. A release can change `.htaccess_root`,
+`.htaccess_root_static` and `config.php-RECOMMENDED`, and your copies stay as they are:
+
+```bash
+./console exp:setup:status                     # is .htaccess still a copy of a template?
+./console exp:setup:htaccess                   # the diff between your .htaccess and the new template
+./console exp:setup:htaccess --force --apply   # take the new rules (backup first), when the diff holds nothing of yours
+./console exp:config:list                      # settings new in config.php-RECOMMENDED show up as (not set)
+```
+
+Set the new settings you want with `./console exp:config:set <NAME> <value> --apply`; the settings you had keep their
+values. The same applies after Parts A and B. See
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md#12-after-an-upgrade).
+
 ### C2. Apply the database update
 
 The file for the line is `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` (MySQL, PostgreSQL and SQLite
@@ -313,6 +327,7 @@ and test an order before going live. [Changelog 6.0.15](../../changelogs/6.0/6.0
 - [Operating a site](operating-a-site.md): backups, caches and repairs after the upgrade.
 - [Deploying](deploying.md) and [Velocity engines](../bc/6.0/velocity-engines.md): reload the right PHP-FPM, or move to a faster server.
 - [Extensions](extensions.md): versions, loading order and releases of your own extensions.
+- [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md): compare both files with the new templates.
 - Release notes: [Exponential 6.0 changelogs](../../changelogs/6.0/6.0.15.md) and [the extensions' release notes](../../changelogs/extensions/README.md).
 
 <!-- exp-partner-block:start -->

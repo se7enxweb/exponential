@@ -20,6 +20,12 @@ FrankenPHP is the Caddy web server with PHP built in, as one binary. There are t
 > **Warning:** Never use FrankenPHP's `php_server` directive for Exponential. It serves every file that exists,
 > `settings/*.ini` and the SQLite database included. Both ways below route like `.htaccess_root` instead.
 
+FrankenPHP never reads `.htaccess`, so `exp:setup:htaccess` does not change how it routes. `config.php` is put into
+place and edited with `./console exp:setup:config --apply` and `./console exp:config:set ... --apply`, as on every
+server. In classic mode (the only one Exponential uses) each request reads it again once OPcache sees the new file;
+if a change does not show, restart the server (through Velocity: `exp:velocity restart`). See
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 ## Through Velocity
 
 ```bash
@@ -223,4 +229,5 @@ generated configuration it follows is the one Velocity validates and serves with
   [FrankenPHP as the Exponential web engine](../../bc/6.0/frankenphp.md) and
   [Velocity engines](../../bc/6.0/velocity-engines.md).
 - [Velocity](velocity.md), [Web server examples](README.md) and [all examples](../README.md).
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

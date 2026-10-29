@@ -88,6 +88,11 @@ php bin/php/console exp:velocity deploy --kernel --allow-root-user   # a kernel 
 Quelle: [Velocity-Engines](../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy). In Containern
 "ist die übliche Entsprechung ein neues Image und ein neuer Container".
 
+Auch `config.php` wird von jedem Worker einmal gelesen. Ein Bundle, das einen Wert mit `exp:config:set ... --apply`
+setzt, startet Velocity danach neu (`exp:velocity restart`). Velocity liest `.htaccess` nicht; ein Bundle kopiert sie
+(`exp:setup:htaccess --apply`) nur, wenn Apache denselben Baum ausliefern kann
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ## Prüfungen
 
 ```bash
@@ -103,6 +108,7 @@ Installation braucht, und was fehlt. Velocity braucht `ext-sockets` (`pcntl` und
 - [Webserver- und Engine-Wahl](webserver-und-engine-wahl.md)
 - [Velocity für Hoster](../hosting/server/velocity-fuer-hoster.md), [Velocity startet nicht](../hosting/runbooks/velocity-startet-nicht.md)
 - [Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -11,12 +11,16 @@ type: example
 
 **LiteSpeed Web Server (Enterprise)** ist ein direkter Ersatz für Apache: Er liest die Konfiguration von Apache und
 `.htaccess`-Dateien, einschließlich der Regeln von `mod_rewrite`. Liefern Sie Exponential genauso aus wie mit Apache:
-`cp .htaccess_root .htaccess` ([Apache .htaccess](apache-htaccess.md)), PHP über LSAPI von LiteSpeed. Nichts auf dieser
-Seite wird dafür gebraucht.
+`cp .htaccess_root .htaccess` oder `./console exp:setup:htaccess --apply` ([Apache .htaccess](apache-htaccess.md),
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)), PHP über
+LSAPI von LiteSpeed. Nichts auf dieser Seite wird dafür gebraucht.
 
 **OpenLiteSpeed**, die Open-Source-Ausgabe, liest von einer `.htaccess` nur die Umschreiberegeln, nur wenn
 `autoLoadHtaccess` eingeschaltet ist, und nach einer Änderung der Datei erst nach einem Neustart. Das Beispiel unten
-legt die Regeln stattdessen in den virtuellen Host, wo sie einmal gelesen werden.
+legt die Regeln stattdessen in den virtuellen Host, wo sie einmal gelesen werden. `./console exp:setup:htaccess --apply`
+kopiert die Datei zwar weiterhin, unter OpenLiteSpeed schützt das allein die Site aber nicht; nach einem Upgrade zeigt
+`./console exp:setup:htaccess` den Diff zwischen Ihrer Kopie und der neuen `.htaccess_root` und damit, welche Regeln
+dieses virtuellen Hosts Sie anpassen müssen.
 
 > **Hinweis:** Dieses Beispiel ist abgeleitet, nicht unter OpenLiteSpeed getestet: Auf dem Rechner, auf dem die
 > Beispiele geprüft werden, gibt es kein OpenLiteSpeed. Seine Umschreiberegeln verwenden die Syntax von `mod_rewrite`
@@ -210,6 +214,7 @@ curl -sI https://example.com/design/admin4/stylesheets/components.css | head -1 
 ## Verwandte Seiten
 
 - [Apache .htaccess](apache-htaccess.md): die Regeln, eine nach der anderen erklärt; LiteSpeed Enterprise verwendet diese Datei.
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:setup:htaccess` und welche Server die Datei lesen.
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).
 - [Betriebssystemunterstützung](../../hilfe/betriebssystemunterstuetzung.md): Webserver und PHP-SAPIs nach Plattform.
 - [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).

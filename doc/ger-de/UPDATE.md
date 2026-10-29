@@ -121,6 +121,22 @@ composer install
 aktualisiert. Nachdem sich der Code geändert hat, müssen `composer.json` und `composer.lock` zusammenpassen: ein
 `composer install`, das ohne Fehler endet, beweist es.
 
+**Vergleichen Sie Ihre Dateien mit den neuen Vorlagen.** Eine Release kann `.htaccess_root`,
+`.htaccess_root_static` und `config.php-RECOMMENDED` ändern; Ihre `.htaccess` und `config.php` bleiben, wie sie sind.
+Prüfen Sie sie (ohne `--apply` wird nichts geschrieben):
+
+```bash
+./console exp:setup:status                     # ist .htaccess noch eine Kopie einer Vorlage?
+./console exp:setup:htaccess                   # der Diff zwischen Ihrer .htaccess und der neuen Vorlage
+./console exp:setup:htaccess --force --apply   # die neuen Regeln übernehmen (vorher Sicherung), wenn der Diff nichts Eigenes enthält
+./console exp:config:list                      # Einstellungen, die neu in config.php-RECOMMENDED sind, erscheinen als (not set)
+```
+
+Setzen Sie die neuen Einstellungen, die Sie möchten, mit `./console exp:config:set <NAME> <value> --apply`; die
+Einstellungen, die Sie hatten, behalten ihre Werte. Verwenden Sie `--static` mit `exp:setup:htaccess`, wenn die
+Website den statischen Cache ausliefert. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](anleitungen/setup-dateien-von-der-konsole.md).
+
 ## 5. Die Datenbank aktualisieren
 
 Die Dateien der Datenbankaktualisierung liegen in `update/database/<engine>/6.0/`:
@@ -239,6 +255,7 @@ das nächste Release, nicht über eine geflickte Kopie dieses Releases.
 - [Upgrade](anleitungen/aktualisieren.md): von 4.x, 5.x, 5.90 oder LoveStack, und jede Checkliste je Zeitraum von 6.0.
 - [Exponential 6.0 deinstallieren](UNINSTALL.md): der vollständige Datenexport, dann das Entfernen.
 - [Die Upgrade-Prüfung](anleitungen/upgrade-pruefung.md) und [das Datei-Manifest](funktionen/6.0/dateikonsistenzpruefung.md).
+- [.htaccess und config.php von der Konsole aus einrichten](anleitungen/setup-dateien-von-der-konsole.md): beide Dateien mit den neuen Vorlagen vergleichen.
 - [Betrieb einer Website](anleitungen/betrieb-einer-website.md): Sicherungen, Caches, Cronjobs und Reparaturen.
 - [Bereitstellung](anleitungen/bereitstellung.md) und [Velocity-Engines](bc/6.0/velocity-engines.md): das richtige PHP-FPM neu laden.
 - Das Installationsbuch: [Aktualisieren](installation/11-aktualisieren.md).

@@ -15,6 +15,12 @@ Server-Block aus [Kapitel 8, Abschnitt 8.6](../../installation/08-die-website-au
 HTTPS, HTTP/2, eine Weiterleitung auf Port 80 und die Sicherheits-Header. Vergleichen Sie sie nach jedem Upgrade mit
 `.htaccess_root`.
 
+nginx liest `.htaccess` nie, deshalb schützt `./console exp:setup:htaccess --apply` eine nginx-Site nicht: Das tun die
+Regeln unten. Nützlich ist die Konsole trotzdem: `./console exp:setup:config --apply` bringt `config.php` an ihren
+Platz, und nach einem Upgrade zeigt `./console exp:setup:htaccess` an einer mit `exp:setup:htaccess` kopierten
+`.htaccess` als Diff, welche Regeln von `.htaccess_root` sich geändert haben. Siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 ## Installieren
 
 1. Kopieren Sie die Datei nach `/etc/nginx/conf.d/example.com.conf`. Sie wird innerhalb des Blocks `http {}` gelesen:
@@ -253,5 +259,6 @@ lieferte auf Port 80 eine ACME-Challenge-Datei aus.
 - [Kapitel 8, Abschnitt 8.6: nginx mit PHP-FPM](../../installation/08-die-website-ausliefern.md#86-nginx-mit-php-fpm).
 - [Kapitel 13, Abschnitt 13.2: Was der Webserver niemals ausliefern darf](../../installation/13-sicherheitshaertung.md#132-was-der-webserver-niemals-ausliefern-darf).
 - [PHP-FPM-Pool](php-fpm.md), [Apache .htaccess](apache-htaccess.md) (die Regeln, eine nach der anderen erklärt).
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): welche Server `.htaccess` lesen, und `config.php`.
 - [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite dürfen Sie frei kopieren, übersetzen und verbessern.

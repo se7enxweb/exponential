@@ -22,6 +22,13 @@ darauf zu betreiben:
 > vorhandene Datei aus, `settings/*.ini` und die SQLite-Datenbank eingeschlossen. Beide Wege unten routen stattdessen
 > wie `.htaccess_root`.
 
+FrankenPHP liest `.htaccess` nie, deshalb ändert `exp:setup:htaccess` nichts an seinem Routing. `config.php` wird wie
+auf jedem Server mit `./console exp:setup:config --apply` und `./console exp:config:set ... --apply` an ihren Platz
+gebracht und bearbeitet. Im klassischen Modus (dem einzigen, den Exponential nutzt) liest jede Anfrage sie erneut,
+sobald OPcache die neue Datei bemerkt; zeigt sich eine Änderung nicht, starten Sie den Server neu (über Velocity:
+`exp:velocity restart`). Siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 ## Über Velocity
 
 ```bash
@@ -228,4 +235,5 @@ erzeugte Konfiguration, der es folgt, ist die, die Velocity mit seiner Engine `f
   [FrankenPHP als Web-Engine von Exponential](../../bc/6.0/frankenphp.md) und
   [Velocity-Engines](../../bc/6.0/velocity-engines.md) (auf Englisch).
 - [Velocity](velocity.md), [Webserver-Beispiele](README.md) und [alle Beispiele](../README.md).
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

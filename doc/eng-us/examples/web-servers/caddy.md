@@ -15,6 +15,10 @@ shipped by the kernel; its routing is the one of the Caddyfile that `exp:velocit
 (`kernel/classes/expvelocityfrankenphp.php`, `caddyfileText()`), with PHP handed to PHP-FPM instead of FrankenPHP's
 built-in PHP, plus the first two rules of `.htaccess_root`.
 
+Caddy never reads `.htaccess`: `./console exp:setup:htaccess --apply` does not protect a Caddy site, the Caddyfile
+does. `./console exp:setup:config --apply` still puts `config.php` into place; see
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 > **Warning:** Do not use Caddy's `php_fastcgi` (or FrankenPHP's `php_server`) for Exponential. Both serve every file
 > that exists before they fall back to `index.php`: `settings/site.ini`, `settings/override/*.ini.append.php`, the
 > SQLite database and the logs would be downloadable.
@@ -168,4 +172,5 @@ serves with its `frankenphp` engine.
   [FrankenPHP as the Exponential web engine](../../bc/6.0/frankenphp.md).
 - [Chapter 13, section 13.2: What the web server must never hand out](../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out).
 - [PHP-FPM pool](php-fpm.md), [Web server examples](README.md) and [all examples](../README.md).
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): which servers read `.htaccess`, and `config.php`.
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

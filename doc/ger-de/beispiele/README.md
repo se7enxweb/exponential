@@ -46,6 +46,12 @@ und wiederholt sie nicht.
 `staticcache_offload.conf` ergänzt Regeln, die Seiten direkt aus dem statischen Cache ausliefern. Siehe
 [Apache .htaccess](webserver/apache-htaccess.md).
 
+Die mitgelieferten Vorlagen `.htaccess_root` (oder `.htaccess_root_static`) und `config.php-RECOMMENDED` bringen
+`./console exp:setup:htaccess --apply` und `./console exp:setup:config --apply` an ihren Platz, und `config.php` wird
+mit `./console exp:config:set` bearbeitet: siehe
+[.htaccess und config.php von der Konsole einrichten](../anleitungen/setup-dateien-von-der-konsole.md) und die
+erzeugten Seiten [exp:setupfiles](befehle/setupfiles.md) und [exp:configphp](befehle/configphp.md).
+
 ## Aus dem Code erzeugte Referenzbeispiele
 
 | Bereich | Was jede Seite enthält |

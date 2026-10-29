@@ -35,8 +35,8 @@ bedeutet das praktisch: Lockern Sie keinen Standardwert, damit etwas funktionier
 
 | Schicht | Tun | Seite in diesem Bereich |
 |---|---|---|
-| 1. Webserver | aktuelle Umschreiberegeln (`.htaccess_root` oder der abgeleitete nginx-Block); unterhalb des Wurzelverzeichnisses wird nichts ausgeführt; Punktdateien ergeben 404 | Datei-Uploads und SVG; HTTPS und HSTS |
-| 2. Geheimnisse | `settings/override/` nie in der Versionsverwaltung, Modus 0640, als Geheimnis gesichert | Geheimnisse in settings/override |
+| 1. Webserver | aktuelle Umschreiberegeln (`.htaccess_root` oder der abgeleitete nginx-Block; `./console exp:setup:htaccess` endet mit 1, wenn `.htaccess` abgewichen ist); unterhalb des Wurzelverzeichnisses wird nichts ausgeführt; Punktdateien ergeben 404 | Datei-Uploads und SVG; HTTPS und HSTS |
+| 2. Geheimnisse | `settings/override/` und `config.php` nie in der Versionsverwaltung, Modus 0640, als Geheimnis gesichert; alte Kopien in `var/backup/` entfernt | Geheimnisse in settings/override; [config.php von der Konsole](../../../anleitungen/setup-dateien-von-der-konsole.md) |
 | 3. Administration | eigener Hostname, eingeschränkt per Netzwerk oder zweiter Authentifizierung, `RequireUserLogin=true`, Einrichtungsassistent geschlossen | Die Administration abtrennen |
 | 4. Konten | ein persönliches Konto je Person, `admin` stillgelegt, Rollen mit minimalen Rechten | Rollen und minimale Rechte |
 | 5. Anmeldung | zweistufige Anmeldung, Passwortrichtlinie, Entscheidung zur Kontosperre | Zweistufige Anmeldung; Passwortrichtlinie; Kontosperre |
@@ -68,6 +68,7 @@ bedeutet das praktisch: Lockern Sie keinen Standardwert, damit etwas funktionier
 - [Kapitel 13: Sicherheitshärtung für den Produktivbetrieb](../../../installation/13-sicherheitshaertung.md)
 - [Sicherheit und Audit: absichern und sehen, wer was getan hat](../../../anleitungen/sicherheit-und-audit.md)
 - [Sicherheit für Hoster](../../hosting/sicherheit/README.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

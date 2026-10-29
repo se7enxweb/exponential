@@ -87,7 +87,21 @@ Bei Exit-Status 1 bewahren Sie `var/log/setup.log` auf und halten die Pipeline a
 ### 6. Ausliefern
 
 Konfigurieren Sie den Webserver für die Website, oder setzen Sie die Engine von Velocity und starten Sie sie
-([Einen Webserver wählen](../server/einen-webserver-waehlen.md)). Prüfen Sie dann von außen:
+([Einen Webserver wählen](../server/einen-webserver-waehlen.md)). Unter Apache oder LiteSpeed bringen Sie `.htaccess`
+an ihren Platz, und `config.php` mit den Werten, die dieser Server braucht, von der Konsole aus. Als root ausgeführt,
+braucht jeder Befehl `--allow-root-user`, und `--owner` gibt eine neue Datei dem Benutzer der Website:
+
+```bash
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=<benutzer der website>:<gruppe der website>
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=<benutzer der website>:<gruppe der website>
+php bin/php/console exp:config:set EZP_DIR_MODE_MAX 0750 --apply --allow-root-user
+php bin/php/console exp:config:set EZP_FILE_MODE_MAX 0640 --apply --allow-root-user
+php bin/php/console exp:config:list --only-set --allow-root-user
+```
+
+Jeder Befehl endet mit `PASS:` oder `FAIL:` und dem Exit-Code 0, 1 oder 2; ein zweiter Lauf meldet `nothing to do`
+([.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md#11-in-skripten-containern-und-ci)).
+Prüfen Sie dann von außen:
 
 ```bash
 curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/
@@ -121,7 +135,12 @@ Website in der Überwachung ([Was gesichert werden muss](../betrieb/backups-was-
 - **Halten Sie `--db-action=remove` von Datenbanken mit Daten fern.** Eine Pipeline sollte für eine neue Website immer eine neue
   Datenbank anlegen.
 - **Halten Sie Geheimnisse aus Logs heraus.** Geben Sie die Umgebung nicht aus; die gespeicherte Konfiguration in `var/log/` maskiert
-  Passwörter.
+  Passwörter, und die Befehle `exp:config:*` geben für jedes Passwort und jeden Schlüssel `********` aus, solange
+  `--show-secrets` fehlt. Übergeben Sie ein Geheimnis als `--value="$VARIABLE"`, nicht getippt auf der Befehlszeile.
+- **`.htaccess` und `config.php` vertragen Wiederholung.** `exp:setup:htaccess` und `exp:setup:config` ersetzen eine
+  Datei, die von ihrer Vorlage abweicht, nie ohne `--force`, und `exp:config:set` ändert nichts, wenn der Wert schon
+  dasteht. In einer Drift-Prüfung endet `exp:setup:htaccess` ohne `--apply` mit Exit-Code 1, wenn `.htaccess`
+  geändert wurde, und `exp:config:list --only-set --format=json` liefert ein Dokument zum Vergleichen.
 
 ## Eine Website entfernen
 
@@ -140,6 +159,7 @@ brauchen ihn beim ersten Anruf.
 - [Ein-Klick-Installer](ein-klick-installer-fuer-exponential.md)
 - [Container: Docker und Podman](../modelle/container-docker-und-podman.md)
 - [Checkliste für einen neuen Server](../checklisten/checkliste-fuer-einen-neuen-server.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -117,7 +117,25 @@ if ( file_exists( __DIR__ . '/config.env.php' ) )
     require_once __DIR__ . '/config.env.php';
 }
 
-if ( file_exists( __DIR__ . '/config.php' ) )
+// A config.php that does not compile stops every request and every script here with a parse error. The scripts that
+// show and replace it (bin/php/console, bin/php/setupfiles.php, bin/php/configphp.php) define
+// EXP_CONFIG_PHP_TOLERATE first: for them the file is checked, and when it does not compile it is not read and
+// EXP_CONFIG_PHP_SKIP holds the error, so ./console exp:config:list and exp:setup:config --force can still say so
+// and repair it. Every other entry point reads config.php as before.
+if ( file_exists( __DIR__ . '/config.php' ) && defined( 'EXP_CONFIG_PHP_TOLERATE' ) && !defined( 'EXP_CONFIG_PHP_SKIP' ) )
+{
+    try
+    {
+        token_get_all( (string)file_get_contents( __DIR__ . '/config.php' ), TOKEN_PARSE );
+    }
+    catch ( ParseError $ezpConfigError )
+    {
+        define( 'EXP_CONFIG_PHP_SKIP', 'config.php does not compile: ' . $ezpConfigError->getMessage() . ' on line ' . $ezpConfigError->getLine() );
+        unset( $ezpConfigError );
+    }
+}
+
+if ( file_exists( __DIR__ . '/config.php' ) && !defined( 'EXP_CONFIG_PHP_SKIP' ) )
 {
     require_once __DIR__ . '/config.php';
 }

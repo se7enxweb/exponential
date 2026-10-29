@@ -66,6 +66,14 @@ tragen. Führen Sie dieselben Anfragen gegen Ihren eigenen Server mit den Befehl
   Beispielen für Apache und nginx tun; Caddy, FrankenPHP und die Engine `qbix` von Velocity beantworten
   ACME-Challenges selbst.
 
+**Welche Server `.htaccess` lesen.** Apache (mit `AllowOverride All`) und LiteSpeed Enterprise lesen sie bei der
+nächsten Anfrage: Dort kopiert `./console exp:setup:htaccess --apply` die Datei `.htaccess_root` an ihren Platz
+(`--static` kopiert `.htaccess_root_static`), mehr ist nicht nötig. OpenLiteSpeed liest nur ihre Rewrite-Regeln, nur
+mit eingeschaltetem `autoLoadHtaccess` und erst nach einem Neustart. nginx, Caddy, FrankenPHP und IIS lesen sie nie:
+Ihre Regeln stehen in den Konfigurationen dieser Seiten. Velocity hat die Regeln von `.htaccess_root` eingebaut;
+kopieren Sie die Datei trotzdem, wenn Apache denselben Baum ausliefern könnte. Siehe
+[.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 **WebDAV** wird von keinem dieser Beispiele weitergeleitet: Es ist standardmäßig aus. Seit 6.0.15 ist sein
 Einstiegsskript `index_webdav.php` (`webdav.php` leitet bis zu einer späteren Hauptversion nur dorthin weiter). Um es
 auszuliefern, fügen Sie auf Apache, nginx oder IIS eine Regel für `index_webdav.php` hinzu oder richten einen eigenen
@@ -87,4 +95,5 @@ finden Sie unter [Beispiele für den Demomodus](../demomodus/README.md).
 - [Kapitel 8, Die Site ausliefern](../../installation/08-die-website-ausliefern.md): Velocity, Apache, nginx und FrankenPHP Schritt für Schritt.
 - [Kapitel 13, Sicherheitshärtung](../../installation/13-sicherheitshaertung.md): was der Webserver niemals ausliefern darf, Header, HTTPS.
 - [Velocity-Engines](../../bc/6.0/velocity-engines.md) und [FrankenPHP](../../bc/6.0/frankenphp.md) (auf Englisch).
+- [.htaccess und config.php von der Konsole einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:setup:htaccess`, `exp:setup:config`, `exp:config:*`.
 - [Freie Dokumentation](../../hilfe/freie-dokumentation.md): Diese Seite darf frei kopiert, übersetzt und verbessert werden.

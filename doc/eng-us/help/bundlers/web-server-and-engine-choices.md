@@ -31,6 +31,12 @@ is answered by `index.php`**, which never hands out a file. That is what keeps `
 The list is written once in `.htaccess_root`, and Velocity implements it rule for rule. A bundle that writes its own
 web server configuration must implement the same list, in the same order; the examples do.
 
+Only Apache (with `AllowOverride All`) and LiteSpeed Enterprise read `.htaccess` as it ships; for them a bundle copies
+the template with `php bin/php/console exp:setup:htaccess --apply` (`--static` for `.htaccess_root_static`). OpenLiteSpeed
+reads only its rewrite rules, with `autoLoadHtaccess` and after a restart; nginx, Caddy, FrankenPHP and IIS never read
+it; Velocity has the rules built in
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
+
 ## The choices
 
 | Server | Example to start from | How the example was checked |
@@ -77,7 +83,8 @@ The hosting section compares them in more depth: [Choosing a web server](../host
 ## Before you ship a server configuration
 
 - [ ] It routes exactly as `.htaccess_root` does; the test requests of the examples page (`/.git/config`, `/.env`,
-      scripts below the root) return 404 in your bundle.
+      scripts below the root) return 404 in your bundle. For an Apache bundle, `exp:setup:htaccess` exits 0 (the
+      `.htaccess` is a copy of the template).
 - [ ] The document root is the installation root.
 - [ ] HTTPS is configured or clearly left to the recipient.
 - [ ] The PHP that serves the site has the extensions `exp:velocity ext check` asks for.
@@ -88,6 +95,7 @@ The hosting section compares them in more depth: [Choosing a web server](../host
 - [Chapter 8: Serving the site](../../install/08-serving-the-site.md)
 - [Velocity in a bundle](velocity-in-a-bundle.md)
 - [Velocity for hosts](../hosting/servers/velocity-for-hosts.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

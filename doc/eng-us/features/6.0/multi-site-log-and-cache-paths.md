@@ -54,8 +54,11 @@ tmpfs  /srv/www/exponential/var_cache  tmpfs  size=8g,mode=0775,uid=www-data,gid
   in `ini/`), `expiry.php` in `var/example/expiry/`. The storage stays in `var/example/storage`.
 - Velocity serves the public caches below `var_cache/` (packed scripts and style sheets, text to image) and nothing
   else there: `expVelocity::staticPaths()` adds them to the paths of all three engines when `CacheVarDir` is set. For
-  Apache, enable the commented `var_cache` rule in `.htaccess_root`; for nginx the commented `location` in
-  [serving the site](../../install/08-serving-the-site.md).
+  Apache, enable the commented `var_cache` rule of `.htaccess_root` in your copy, `.htaccess` (copied with
+  `./console exp:setup:htaccess --apply`; after an upgrade that command shows the rule among the differences and
+  copies only with `--force`, so enable it again afterwards); for nginx the commented `location` in
+  [serving the site](../../install/08-serving-the-site.md). See
+  [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
 - With a cluster file handler, see [cluster](#cluster-dfs) below.
 - Set the settings where every siteaccess of every site reads them (the global override). Velocity writes its list of
   served paths when it starts, without a siteaccess: it reads `CacheVarDir` from the global settings and from the

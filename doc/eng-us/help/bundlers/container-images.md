@@ -51,6 +51,26 @@ A generic build, in words rather than a Dockerfile:
 5. Set ownership of the writable directories ([File permissions](file-permissions-and-var-ownership.md)).
 6. Add the entry point below; do not run the installer during the build.
 
+Steps 4 and 5 are also the place for `.htaccess` (when the image runs Apache) and `config.php`. The commands ask
+nothing, end with `PASS:` or `FAIL:` and change nothing on a second run; a build step usually runs as root, so give
+`--allow-root-user` and the site's user:
+
+```bash
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=www-data:www-data
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data
+php bin/php/console exp:config:set EZP_INI_FILEMTIME_CHECK false --apply --allow-root-user
+```
+
+Never bake a password into `config.php` in the image. Set such values at start, in the entry point, from the
+container's environment:
+
+```bash
+php bin/php/console exp:config:set CLUSTER_STORAGE_HOST "$CLUSTER_DB_HOST" --apply --allow-root-user
+php bin/php/console exp:config:set CLUSTER_STORAGE_PASS --value="$CLUSTER_DB_PASS" --apply --allow-root-user
+```
+
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
+
 ## Image or volume
 
 | Path | Where |
@@ -104,6 +124,7 @@ exit 1
 - [ ] Base image pinned by tag or digest; Composer from the lock file; `--no-dev`.
 - [ ] `exp:velocity ext check` passes in the image.
 - [ ] No `settings/override`, `settings/siteaccess`, `kickstart.ini`, logs or caches from the build in the image.
+- [ ] `config.php` in the image holds no secret (set at start with `exp:config:set`); `exp:config:list --only-set --format=json` checked in CI.
 - [ ] Volumes documented: `var/`, `settings/override`, `settings/siteaccess`.
 - [ ] The entry point installs once and keeps the main process alive.
 - [ ] The source of every GPL component is offered ([GPL obligations](gpl-obligations-when-distributing.md)).
@@ -114,6 +135,7 @@ exit 1
 - [Containers: Docker and Podman](../hosting/models/containers-docker-and-podman.md)
 - [First boot and install once](first-boot-and-install-once.md)
 - [Velocity in a bundle](velocity-in-a-bundle.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

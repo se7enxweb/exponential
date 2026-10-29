@@ -40,6 +40,8 @@ server, has its own module next.
 - Both command lists ready for Debian style (`apache2`, `a2enmod`) and Red Hat style (`httpd`) systems if the class
   mixes them.
 - Rehearse every exercise on the same operating system and PHP version the learners use.
+- Check that `./console exp:setup:status` runs on each training installation: lesson 1.2 copies `.htaccess` with
+  `exp:setup:htaccess` ([Setting up .htaccess and config.php from the console](../../../../guides/setup-files-from-the-console.md)).
 - Print the routing diagram of [Chapter 8, section 8.2](../../../../install/08-serving-the-site.md#82-how-a-request-is-served)
   as a handout.
 

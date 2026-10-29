@@ -57,6 +57,11 @@ Was das für ein Paket bedeutet:
   hinzufügen ([Zusätzliche Erweiterungsverzeichnisse](../../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md)). Auf diese
   Einstellungen kann sich ein Aufbau stützen.
 - Die Webserver-Konfiguration, die Sie ausliefern, muss das Routing von `.htaccess_root` beibehalten.
+- `.htaccess` und `config.php` sind Dateien der Installation, nicht des Pakets: Liefern Sie die Vorlagen aus
+  (`.htaccess_root`, `.htaccess_root_static`, `config.php-RECOMMENDED`) und lassen Sie den Administrator oder Ihren
+  Post-Install-Schritt sie mit `exp:setup:htaccess` und `exp:setup:config` kopieren. Ein Update überschreibt dann nie
+  eine geänderte Kopie: Die Befehle zeigen den Diff und verweigern ohne `--force`
+  ([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 ## Composer und die Richtlinien der Distribution
 
@@ -75,7 +80,14 @@ Ein Distributionspaket sollte nicht von sich aus eine Website installieren:
 
 - **Tun Sie:** den Systembenutzer anlegen, die Besitzrechte der beschreibbaren Verzeichnisse setzen, eine deaktivierte
   Webserver- und Cron-Konfiguration installieren, die Autoloads neu erzeugen, ausgeben, wo die Dokumentation und der
-  Installationsbefehl zu finden sind.
+  Installationsbefehl zu finden sind. `.htaccess` und `config.php` an ihren Platz zu bringen ist hier unbedenklich,
+  denn beide Befehle lassen eine vorhandene Datei in Ruhe und ändern bei einem zweiten Lauf nichts; als root brauchen
+  sie `--allow-root-user` und `--owner=<benutzer>:<gruppe>` für den Benutzer der Website:
+
+  ```bash
+  php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=www-data:www-data
+  php bin/php/console exp:setup:config --apply --allow-root-user --owner=www-data:www-data
+  ```
 - **Tun Sie nicht:** eine Datenbank anlegen, `exp:install` mit Standardwerten ausführen oder einen Webserver starten.
   Der Administrator führt die Installation einmal aus, mit seiner eigenen URL, Datenbank und E-Mail
   ([Unbeaufsichtigte Installation mit exp:install](unbeaufsichtigte-installation-mit-exp-install.md)).
@@ -87,6 +99,9 @@ Checkliste jedes Zeitraums ([Kapitel 11.6](../../installation/11-aktualisieren.m
 
 - nach dem Update die Caches leeren und die Autoloads neu erzeugen
   ([Caches und Autoloads](caches-und-autoloads-nach-dem-bauen.md));
+- dem Administrator mitteilen, wenn `.htaccess` nicht mehr zur neuen `.htaccess_root` passt: `exp:setup:htaccess`
+  ohne `--apply` endet mit Exit-Code 1 und gibt den Diff aus, und `exp:config:list` zeigt Einstellungen, die neu in
+  `config.php-RECOMMENDED` sind, als `(not set)`;
 - dem Administrator mitteilen, dass ein Datenbank-Update fällig sein könnte, mit dem Link;
 - nie Datenbank-Updates unbeaufsichtigt auf einer Website ausführen, die es nicht kennt.
 
@@ -104,6 +119,7 @@ Checkliste jedes Zeitraums ([Kapitel 11.6](../../installation/11-aktualisieren.m
 - [Betriebssystemunterstützung](../betriebssystemunterstuetzung.md)
 - [Velocity-Pakete, Docker-Images und Binärdateien](../../funktionen/6.0/velocity-pakete-und-binaerdateien.md)
 - [GPL-Pflichten beim Weitergeben](gpl-pflichten-beim-weitergeben.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -71,7 +71,24 @@ php bin/php/console exp:ezsessiongc
 php bin/php/console exp:benchmark
 php bin/php/console exp:benchmark --compare=https://www.example.com,https://www.example.com:8080
 php bin/php/console exp:benchmark kernel --save=var/benchmark/base.json
+
+# Put .htaccess and config.php into place from the shipped templates (nothing is written without --apply)
+php bin/php/console exp:setup:status
+php bin/php/console exp:setup:htaccess --apply              # .htaccess_root -> .htaccess (--static: .htaccess_root_static)
+php bin/php/console exp:setup:config --apply                # config.php-RECOMMENDED -> config.php
+
+# Read and change the constants in config.php
+php bin/php/console exp:config:list --only-set
+php bin/php/console exp:config:get EZP_INI_FILEMTIME_CHECK
+php bin/php/console exp:config:set EZP_INI_FILEMTIME_CHECK false --apply
+php bin/php/console exp:config:unset EZP_INI_FILEMTIME_CHECK --apply
 ```
+
+The setup and config commands are described in
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md) and listed with
+every option in [exp:setupfiles](../../examples/commands/setupfiles.md) and [exp:configphp](../../examples/commands/configphp.md).
+`exp:setup:*` and `exp:config:*` are aliases of `exp:setupfiles <htaccess|config|status>` and
+`exp:configphp <list|get|set|unset>`.
 
 The benchmark command is described in [Benchmark](../../features/6.0/benchmark.md) and taught in the guide
 [Benchmarking Exponential](../../guides/benchmarking.md).
@@ -224,6 +241,7 @@ A cronjob script uses the same tag, for example `@description Remove expired bas
 |---|---|
 | `PHP Fatal error: ... autoload.php` | You are not in the Exponential root directory. `cd /path/to/your/exponential-root` and run the command again. |
 | `Running scripts as root may be dangerous` | The script runs as `root`. Add `--allow-root-user` to confirm, for example `php bin/php/console exp:ezcache --clear-all --allow-root-user`. |
+| `Warning: config.php does not compile: ...` | `config.php` has a syntax error; the site is down too. Commands other than `exp:setup:*` and `exp:config:*` stop on it. Fix the line it names, or replace the file with `php bin/php/console exp:setup:config --force --apply` (the broken file is backed up first). |
 | `Unknown command: exp:myscript` | The file is not where the namespace expects it. Check that `bin/php/myscript.php` exists and is readable, then run `php bin/php/console list`. |
 | No colours | The terminal does not support ANSI codes, or output is redirected; colours are switched off automatically. |
 
@@ -237,6 +255,7 @@ A cronjob script uses the same tag, for example `@description Remove expired bas
 ## Related pages
 
 - [Cache console (`exp:cache`)](cache-console.md)
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md) (`exp:setup:*`, `exp:config:*`)
 - [Commands, cronjob parts and module views as classes](cli_cronjob_view_abstractions.md)
 - [Cronjobs console](../../features/6.0/cronjobs-console.md)
 - [June 2026, first half (1 to 15 June)](../../history/2026/2026-06a.md)

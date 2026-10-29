@@ -129,7 +129,11 @@ SiteLanguageList[]=eng-US
 their own with one line each, use `LogVarDir`, `CacheVarDir` and `INICacheDir=site` in the global override:
 [Logs, INI cache and expiry timestamps per site](../../features/6.0/multi-site-log-and-cache-paths.md). With
 `CacheVarDir`, the web server must also serve the public caches below it: enable the commented `var_cache` rule of
-`.htaccess_root` (or the matching rule of your server's example).
+`.htaccess_root` (or the matching rule of your server's example). Do that in your copy, `.htaccess` (put into place
+with `./console exp:setup:htaccess --apply`), never in the template. From then on your `.htaccess` differs from
+`.htaccess_root`: after an upgrade, `./console exp:setup:htaccess` shows that line among the differences and refuses to
+copy without `--force`; after `--force --apply`, enable the rule again
+([Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md)).
 
 **Settings carried by an extension.** A site extension can ship `extension/<ext>/settings/siteaccess/<name>/` instead,
 so the settings are in version control; see

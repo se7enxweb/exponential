@@ -722,6 +722,13 @@ to serve it in [chapter 8](08-serving-the-site.md): Exponential Velocity
 PHP-FPM using the rewrite rules of `.htaccess_root` ([8.5](08-serving-the-site.md#85-apache-with-php-fpm)). Do not
 reuse the 5.x virtual host: its rewrite rules point at `web/` and at Symfony's front controller.
 
+The rewrite rules are put into place with `./console exp:setup:htaccess --apply` (a copy of `.htaccess_root`, or
+`cp .htaccess_root .htaccess`). Compare the `config.php` you copied from `ezpublish_legacy/` with the new template the
+same way: `./console exp:setup:status`, `./console exp:setup:config` (the diff, nothing changed) and
+`./console exp:config:list` (settings new in `config.php-RECOMMENDED` show up as `(not set)`); set one with
+`./console exp:config:set <NAME> <value> --apply`. See
+[Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
+
 ## 15.19 Verify
 
 ```bash
