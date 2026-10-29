@@ -22042,7 +22042,7 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 42ea162998c72daf52fdd7bd897a2166  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-a675ce93fc4bd22a1ab1d3b78c7d372a  extension/ezjscore/CHANGELOG
+ba5ada44ebf6e6a0ac123f00f07e3bbc  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 9208e7b829680078ee72389d8a71c152  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
@@ -22079,8 +22079,8 @@ a7bf61ace40268bc56e89998941eec49  extension/ezjscore/design/standard/templates/e
 a2a8b366e1eca7ce170c33b9eeed6135  extension/ezjscore/design/standard/templates/ezjsctemplate/test.tpl
 4f71f4fd05bd14ecadea3d748f370a5c  extension/ezjscore/doc/FAQ
 693f3589fef421f20391f7f19ee241fb  extension/ezjscore/doc/INSTALL
-dfabcf72be9a9443d2b31a541d2e3c85  extension/ezjscore/extension.xml
-0c75ce1420476712b40303f086891d2b  extension/ezjscore/ezinfo.php
+fa155b38403676c0488ffb4474885c0e  extension/ezjscore/extension.xml
+cb1f0862f4c6ea0793348c45f1e89806  extension/ezjscore/ezinfo.php
 4864060f09ab9beae7b1761197a400ee  extension/ezjscore/modules/ezjscore/call.php
 67fb855578cd62d8e021b5ff7db1ed42  extension/ezjscore/modules/ezjscore/hello.php
 563fbe1fd62e6db633a5118301456507  extension/ezjscore/modules/ezjscore/module.php
