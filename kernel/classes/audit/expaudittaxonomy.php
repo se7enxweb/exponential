@@ -241,6 +241,7 @@ class expAuditTaxonomy
         'commerce.discount.change' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'commerce' ),
         'data.export.csv' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'commerce' ),
         'data.export.package' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'commerce' ),
+        'data.export.json' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'commerce', 'label' => 'Data export as JSON' ),
         'data.export.pdf' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'commerce' ),
         'data.import.csv' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'commerce' ),
         'data.import.dba' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'commerce' ),

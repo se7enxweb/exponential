@@ -3,13 +3,13 @@ title: site.ini [UserSessionSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [UserSessionSettings] in site.ini: Tracking, TouchInterval, RecordIP, GeoIPDatabase, GeoIPLanguage, RetentionDays, NewDeviceMail, NewDeviceAdminMail ..."
-keywords: site.ini, UserSessionSettings, INI, setting, Tracking, TouchInterval, RecordIP, GeoIPDatabase, GeoIPLanguage, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail
+keywords: site.ini, UserSessionSettings, INI, setting, Tracking, TouchInterval, RecordIP, GeoIPDatabase, GeoIPLanguage, RetentionDays, NewDeviceMail, NewDeviceAdminMail, AdminMailReceivers, FirstSignInMail, SecurityAlertMail, FailedSignInAlertThreshold
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [UserSessionSettings]
 
-The block `[UserSessionSettings]` of `settings/site.ini`, with 10 setting(s).
+The block `[UserSessionSettings]` of `settings/site.ini`, with 12 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -166,6 +166,35 @@ Default: `disabled`.
 # settings/override/site.ini.append.php
 [UserSessionSettings]
 FirstSignInMail=disabled
+*/ ?>
+```
+
+## SecurityAlertMail
+
+> "Security alert" to the owner of an account when two-step sign-in is turned on or off, a recovery code is used, sign-ins  
+> fail FailedSignInAlertThreshold times in a row (0: never) or the account is locked (category security, design:user/  
+> security\_alert\_mail.tpl, links to user/security). A user cannot turn these off; disabled turns them off for the site.  
+> Sent from the user audit log (audit.ini \[UserAuditSettings\]): without it no alert is sent.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+SecurityAlertMail=enabled
+*/ ?>
+```
+
+## FailedSignInAlertThreshold
+
+Default: `5`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSessionSettings]
+FailedSignInAlertThreshold=5
 */ ?>
 ```
 

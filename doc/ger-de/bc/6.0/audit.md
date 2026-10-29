@@ -2388,6 +2388,7 @@ Hier ein (yes/no) und Geschrieben (immediate/buffered) sind die Werte des Genera
 | `commerce.discount.change` | sich Rabattgruppen oder -regeln ändern | Regel → Regel | `ezdiscountrule.php:store`, `ezdiscountrule.php:removeByID`, `ezdiscountsubrule.php:store`, `ezdiscountsubrule.php:remove` | change | info | on | yes | commerce | buffered |
 | `data.export.csv` | Inhalte als CSV exportiert werden | – → Knoten, Zeilen, Spalten | `commands/ezcsvexport.php:run`, `views/content/subitemsexport.php:run` | export | info | on | yes | commerce | buffered |
 | `data.export.package` | ein Paket exportiert wird | – → Name, Datei, Format (xml oder json), sha256 | `views/package/export.php:run` | export | info | on | yes | commerce | buffered |
+| `data.export.json` | ein Benutzer seine Anmeldedaten herunterlädt (user/security) | – → sessions, events, file, source | `views/user/security.php:download` | export | info | on | yes | commerce | buffered |
 | `data.export.pdf` | ein PDF-Export erzeugt wird | – | `views/content/pdf.php:expModuleViewContentPdfPassthrough` | export | info | off | no | commerce | buffered |
 | `data.import.csv` | CSV importiert wird | – → Zeilen, angelegt | `commands/ezcsvimport.php:run` | import | info | on | yes | commerce | buffered |
 | `data.import.dba` | eine .dba-Datei importiert wird | – → Tabellen, Zeilen | `commands/ezimportdbafile.php:run` | import | info | on | yes | commerce | buffered |

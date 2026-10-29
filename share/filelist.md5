@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6b46d9fc07327c0fe9cb81e5b1e79674  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-ccc9fb0f7ef81523dc3a2cddcb8db5bb  autoload/ezp_kernel.php
+3e69fbdbbeff933f854ce57791e5bd67  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -835,7 +835,7 @@ d4fd04ff2e30c797b228adfc4f1486d8  design/admin/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
 1ed4a834ffa2cd6dc1460064a4227c63  design/admin/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin/templates/user/register.tpl
-89a5eb06f1e12e15948ec60d8c78e5e9  design/admin/templates/user/security.tpl
+778d3f72c9fe051134f363eac52146b4  design/admin/templates/user/security.tpl
 ebed41ef7a1c5f2c72b365e01b6e2bb3  design/admin/templates/user/sessionreport.tpl
 3badcf2678c549bee0543bfed0a7400a  design/admin/templates/user/sessions.tpl
 bd1b035ba64fbf2073d452b0f16c0c72  design/admin/templates/user/setting.tpl
@@ -1648,7 +1648,7 @@ c95c10e6f71a175f38c500e1183a4286  design/admin4/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl
 1ed4a834ffa2cd6dc1460064a4227c63  design/admin4/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin4/templates/user/register.tpl
-89a5eb06f1e12e15948ec60d8c78e5e9  design/admin4/templates/user/security.tpl
+778d3f72c9fe051134f363eac52146b4  design/admin4/templates/user/security.tpl
 ebed41ef7a1c5f2c72b365e01b6e2bb3  design/admin4/templates/user/sessionreport.tpl
 3badcf2678c549bee0543bfed0a7400a  design/admin4/templates/user/sessions.tpl
 08301adf55d7ea9d5985d6d76e3c4d62  design/admin4/templates/user/setting.tpl
@@ -3114,7 +3114,8 @@ a31eca132c1aa9d51bcf5825b31dcb5c  design/standard/templates/user/registration.tp
 be1ed870602e97378284d47a65ab8fb5  design/standard/templates/user/registrationapproved.tpl
 291f26bc12b3d0d3e050ee693489fdfe  design/standard/templates/user/registrationfeedback.tpl
 1cfd990147a2ddb88d6e21689efdb4a9  design/standard/templates/user/registrationinfo.tpl
-6bd7cb406c12aa89991e6ffe6c7edb2b  design/standard/templates/user/security.tpl
+7a1b547f4ac4afcd28b142e960b6a3e0  design/standard/templates/user/security.tpl
+3d9505d65862b27f05801f559618f3a8  design/standard/templates/user/security_alert_mail.tpl
 b5bb7a38eb84bed3dee85746f08ddca7  design/standard/templates/user/sessions.tpl
 8412dae6c061eee19a51c9769f12f5c8  design/standard/templates/user/setting.tpl
 db5aaf4f1986ccca4a9ec45676077566  design/standard/templates/user/success.tpl
@@ -3300,7 +3301,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-9ad6d9327f03c2e11bb21a7b1b2dbfd0  doc/changelogs/6.0/6.0.15.md
+0effe75ae055ed83b4fc3eab3a81eaf9  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3429,7 +3430,7 @@ d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_M
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
 ae6e928910a0204356104d574f8bf3b2  doc/eng-us/bc/6.0/anonymous-public-policies.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
-0e529e64b592ff243ee323e9f1f32f69  doc/eng-us/bc/6.0/audit.md
+15db63863d9bd1e05e88bcaa26b2b8ad  doc/eng-us/bc/6.0/audit.md
 2d12f47a5cd7477f143f9e677de4b9e8  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 b8a4ee939fef98f95e90c899e9718e96  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08.md
 7f48c053c6ee255a85130fcc69c31355  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
@@ -5142,11 +5143,11 @@ a60fb9a1c249c2538a0d76b5b6d8f194  doc/eng-us/examples/ini-settings/site/MailSett
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-e3f736addaa424e2804910bb24b49806  doc/eng-us/examples/ini-settings/site/README.md
+630ac5242234e19e6c522855f8eda68c  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 e114d55e484936e47b7968c04adaaa8c  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 b89eb204ce0e15c96b84ce973881a6b3  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
-4242137001027c03af6892be2289d35b  doc/eng-us/examples/ini-settings/site/ReauthGroup_export.md
+14465b5c0056e1a428e985fbbe2dd8ff  doc/eng-us/examples/ini-settings/site/ReauthGroup_export.md
 0a3273edc95ac044559f70cfd9571d5a  doc/eng-us/examples/ini-settings/site/ReauthGroup_system.md
 1d38d59eaa24b31039d1ee4422b96941  doc/eng-us/examples/ini-settings/site/ReauthGroup_users.md
 c7894b0166fdbcde47ebb3b6c59d1f1f  doc/eng-us/examples/ini-settings/site/ReauthSettings.md
@@ -5170,7 +5171,7 @@ d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteData
 f71ee5c2e368a56f3de8ca5747acc89e  doc/eng-us/examples/ini-settings/site/TipAFriend.md
 79013d607c265d5f841acddc0eaf32ca  doc/eng-us/examples/ini-settings/site/URLTranslator.md
 daa5454492380b74d1f3f81dc57185f5  doc/eng-us/examples/ini-settings/site/UnitSettings.md
-72bc7da433d70e830aeed117cb520559  doc/eng-us/examples/ini-settings/site/UserSessionSettings.md
+74dfa7874556808e069f7144e2f09302  doc/eng-us/examples/ini-settings/site/UserSessionSettings.md
 235745de29002f93c9874c9c09352cce  doc/eng-us/examples/ini-settings/site/UserSettings.md
 f242aaf0d866300b0ad778b33a97d64d  doc/eng-us/examples/ini-settings/site/eZINISettings.md
 6ec5340a58634f23d35eb668e0d4f94f  doc/eng-us/examples/ini-settings/soap/ExtensionSettings.md
@@ -5768,7 +5769,7 @@ feea2561db3203d94e853d5bf8d9e07f  doc/eng-us/examples/module-views/user/preferen
 ec6426c2f1686d1b282051a886f74185  doc/eng-us/examples/module-views/user/register.md
 c49af29e61156a558b368b646a82e8bd  doc/eng-us/examples/module-views/user/registration.md
 d840769bb6cac95329adad8f948bce50  doc/eng-us/examples/module-views/user/security.md
-aaad902e11f9af4d9765545e2094df04  doc/eng-us/examples/module-views/user/sessionreport.md
+87094b1d1168e181def7f5dc2890e8c8  doc/eng-us/examples/module-views/user/sessionreport.md
 3843a3bafbcbbc2f81b8e39de572fc72  doc/eng-us/examples/module-views/user/sessions.md
 65ffad87e99455d0213893cc41724c91  doc/eng-us/examples/module-views/user/setting.md
 b18409d99678424a332fdb6d7846528a  doc/eng-us/examples/module-views/user/success.md
@@ -6549,7 +6550,7 @@ c1d35c36ad8001ff08accbbb4dcb4b7f  doc/eng-us/features/6.0/transfer-registry.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 e4ef7f86ac46e99ef7922dd6e0715833  doc/eng-us/features/6.0/user-audit.md
 86e455aa2147f5763a183b396caab8c7  doc/eng-us/features/6.0/user-hygiene.md
-e50fff7bcc3a745e317b8f9bcb5b1404  doc/eng-us/features/6.0/user-sessions.md
+f813bd2ffac93c8a4a60542d522bbc00  doc/eng-us/features/6.0/user-sessions.md
 1c8d79710d70799c57b2d0ad69b30bd7  doc/eng-us/features/6.0/valkey-cache-hooks.md
 aeab614b104ddc5b03384aa3e24a56d5  doc/eng-us/features/6.0/velocity-control-panel.md
 40fc877ab6272ca916936ec4b376d6c9  doc/eng-us/features/6.0/velocity-discovery-federation-and-deploy.md
@@ -6643,7 +6644,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 70aa7fc3b92e519f91f2dd1a19c12ddb  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
-82774d9f6439304349535e4a1d8e50b7  doc/eng-us/guides/verify-its-you.md
+36f4aa4778c5e94ba84a9655f877dab0  doc/eng-us/guides/verify-its-you.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
 4cbebf2bd60b1f1a46332294a0844551  doc/eng-us/guides/your-devices-and-sessions.md
 645a3abe9387c61021e40fe447bc942a  doc/eng-us/help/README.md
@@ -12657,7 +12658,7 @@ a18906c2d024747be98c7252b5dcdda6  doc/ger-de/anleitungen/extensions.md
 9826e0a53c279a9875a563ec8c6ca13f  doc/ger-de/anleitungen/fehlende-dateien.md
 df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-referenz-finden.md
 01c462f0c79a43b1f70a945e62a60dd8  doc/ger-de/anleitungen/gesammelte-informationen.md
-3671641f7a2b2eb291b3a2b732c7f0c0  doc/ger-de/anleitungen/identitaet-bestaetigen.md
+aaca8c009295f6869bdc79842e9962ff  doc/ger-de/anleitungen/identitaet-bestaetigen.md
 e6ca3f7504b9e3f26e732979a4f53092  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
 4b4a46f8ae9a91c52163809cda939c5c  doc/ger-de/anleitungen/inhaltsmodell-und-bearbeitung.md
 9c5433e8c63c63c0e0fabc41db46b29e  doc/ger-de/anleitungen/inhaltssprachen.md
@@ -12697,7 +12698,7 @@ dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md
 89b8a355c68197ec7dff10f92a5d34db  doc/ger-de/bc/6.0/admin4l.md
 693eca963756cd0b335bee8289bc4022  doc/ger-de/bc/6.0/antwort-cache-und-navigation.md
 0e9a9f2936d696af431fdd512833676e  doc/ger-de/bc/6.0/api-schluessel.md
-9c21b8f682ee0d658e076012774c4c89  doc/ger-de/bc/6.0/audit.md
+fa7c4cd3470d5592f9fe6c50f29b200a  doc/ger-de/bc/6.0/audit.md
 0b96cc7ba2b41e430e4d0d1b5e5426f1  doc/ger-de/bc/6.0/backend-dienste-ueber-ezjscore.md
 43f9ce151bcebf6673bf6d7de63ad9ae  doc/ger-de/bc/6.0/benachrichtigungen-oberflaeche-und-befehle.md
 562c6fd94209969fdefa16a00e413b4c  doc/ger-de/bc/6.0/benutzerpasswort-aendern.md
@@ -15420,7 +15421,7 @@ b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
 692555817d40569b86bb87ae26b6d746  doc/ger-de/funktionen/6.0/benutzer-auditprotokoll.md
 2cd14aa43f6df51b06e567996df18b8e  doc/ger-de/funktionen/6.0/benutzerpasswort-zuruecksetzen.md
 6acd0f6b0631a8ac42b4a3aa53b7d50e  doc/ger-de/funktionen/6.0/benutzerpflege.md
-ff20a0756c766ba5fa49a9a67c47479c  doc/ger-de/funktionen/6.0/benutzersitzungen.md
+ac341342e6d5c4f8d60b45e0f1b9de27  doc/ger-de/funktionen/6.0/benutzersitzungen.md
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
@@ -22553,7 +22554,7 @@ e1c011181f414da6dd11368fc1b72389  kernel/classes/audit/expauditguard.php
 04a6d04aa62aa43b56cbcde3a45691c3  kernel/classes/audit/expauditprivacy.php
 5e11c8a014e57c9ad66817fe5592c092  kernel/classes/audit/expauditreader.php
 545f51853556b7300dddc922606ce116  kernel/classes/audit/expauditsink.php
-4270636d14629eec63aeedc78df55a7a  kernel/classes/audit/expaudittaxonomy.php
+38440a04ca3a8696aeab6ad44d793807  kernel/classes/audit/expaudittaxonomy.php
 9b2514f9f4d25c7feac5790675aac2ae  kernel/classes/audit/expaudittaxonomybranch.php
 be11c9b15bcbf259779d631eb1c742d4  kernel/classes/audit/expauditverifier.php
 1926b9e38f1e1c9cc6a4f3b41c4e3e3c  kernel/classes/audit/expauditwriter.php
@@ -22708,7 +22709,7 @@ ab95b25629ede0ba7aaf6fa166250fcb  kernel/classes/datatypes/ezurl/ezurltype.php
 502c16d973bd9cd475cb5f5803d414a2  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 303b9b3fcd92348310a194e3e48da982  kernel/classes/datatypes/ezuser/ezldapuser.php
 ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser.php
-9a8efd7eb62e0fee01b90a9ac941756b  kernel/classes/datatypes/ezuser/ezuser.php
+9ab369cd28f889493fe1f63eef28a1ad  kernel/classes/datatypes/ezuser/ezuser.php
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -23223,11 +23224,12 @@ d14e09a7f3bb40ffa6eaf0dd37dae59a  kernel/classes/user/expuseraccountstatus.php
 a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
 f54a7ee5b5b359afe464a291d6220ab2  kernel/classes/user/expuseragent.php
 bc8d1f4ffb19f111bd4276f0bb08afc9  kernel/classes/user/expuserapproval.php
-4e5388e3e848288d567ad6083f1a8ea3  kernel/classes/user/expuseraudit.php
+c102d333857147ec849cec23550f8b89  kernel/classes/user/expuseraudit.php
 885251530a15938c095c306fd0ce6715  kernel/classes/user/expuserdeactivation.php
 9d0eb3676999e99d197587e692bcb39a  kernel/classes/user/expusergeoip.php
 f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
 75a8d891007bf0bf1f246621d3fa71e1  kernel/classes/user/expusersecurityactivity.php
+fc84351fe3644487096598a79d88ea15  kernel/classes/user/expusersecurityalerts.php
 87d8847635396f1f4e351881b8e3bf89  kernel/classes/user/expusersession.php
 c6e18e41e16835c7ce4262475fc043dc  kernel/classes/user/expusersessioninfo.php
 acf8d7195206c995cffb9c58c91b3c9b  kernel/classes/user/expusersessionreport.php
@@ -23940,7 +23942,7 @@ bc43716833fd5d583680b5f64cd9557f  kernel/private/classes/views/user/password.php
 c595ef20ad039ddef3e0d042420e1498  kernel/private/classes/views/user/preferences.php
 6f8d12174344ffa2654294e32a58344d  kernel/private/classes/views/user/register.php
 a7b60c9d389123d76e4d53a16a6bf55c  kernel/private/classes/views/user/registration.php
-4182786b77213e2f0ca93e377749ba39  kernel/private/classes/views/user/security.php
+9640282506ee5fe3587f6f2b640c11d5  kernel/private/classes/views/user/security.php
 0fc61a320c3f03e4bf64bd2c90f2d8fc  kernel/private/classes/views/user/sessionreport.php
 dd9e72ce25ec15717296bca0f466f0cd  kernel/private/classes/views/user/sessions.php
 5fed20a4d845c37c85d1353ee74580e7  kernel/private/classes/views/user/setting.php
@@ -24651,7 +24653,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-870801ed3835ebba23f6b01e92cfaabe  settings/site.ini
+c04472eacb4f06bda34eda28e3b2b052  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -25636,7 +25638,7 @@ fc099df4fee30eda0199e062cf3545f2  share/translations/dzo-BT/translation.ts
 27c0828353fe98bea13c97a1d808551c  share/translations/ell-GR/GUIDE.md
 86dfe0157eb0db01776b5f0c8d519441  share/translations/ell-GR/translation.ts
 dbbb57247e376cc857ac9319cbc7f540  share/translations/eng-AU/translation.ts
-c20ab3cf993cef913bad70e6d14800de  share/translations/eng-US/translation.ts
+66999c78d98fb5453fff7ac1d2488586  share/translations/eng-US/translation.ts
 c4aefd9911e5b7b7646f05df605f6902  share/translations/epo-EO/GUIDE.md
 a5a5de7114f07465bec6e79461bd5795  share/translations/epo-EO/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
@@ -25668,7 +25670,7 @@ a74658da7bef6e827cac7076d0269943  share/translations/fry-NL/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-dc069ff57cdd7bff45f6012d4c1bd5de  share/translations/ger-DE/translation.ts
+9168c6e465355c7279401c17b8b0865b  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 a2c54b1ba89aef6cf774ad099186a9dc  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md
@@ -25863,7 +25865,7 @@ f04b044f6b3e0f07ebe13f4431541b47  share/translations/tuk-TM/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 deed757764355809b30ba231235d96e8  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-f2eb853af3be9b513af4fd06c4e62d24  share/translations/untranslated/translation.ts
+828124c4d5bbe7e5164460a0f3b01659  share/translations/untranslated/translation.ts
 50c0423066d265dc70107a85555ec431  share/translations/urd-PK/GUIDE.md
 ba65fb9624c279e49f3c509135eec2e8  share/translations/urd-PK/translation.ts
 9e9e7eefce4bcdac8cdf37ea44206f6e  share/translations/uzb-UZ/GUIDE.md
@@ -26293,7 +26295,7 @@ cf8fc76d38f1db1b11f47a6aa1e7f33a  tests/tests/kernel/classes/audit/expAuditForkT
 42e8e45e571a7a385b561f7b4150f6b9  tests/tests/kernel/classes/audit/expAuditPrivacyTest.php
 95b5c571bce2d71de41ee87cb0f34108  tests/tests/kernel/classes/audit/expAuditReaderChunkTest.php
 e5a45657eb985ea8445c68b47ede63ad  tests/tests/kernel/classes/audit/expAuditRecentChannelsTest.php
-302c8d22f53137a85162789c99fffd5b  tests/tests/kernel/classes/audit/expAuditRecordTest.php
+6c780874068ff612e094443f067418ca  tests/tests/kernel/classes/audit/expAuditRecordTest.php
 baea57e5bf9da3f12e56e0bb1e5fcc73  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 1e2d12f0d0eae7d2bdd941d75b9631bc  tests/tests/kernel/classes/audit/expAuditSourceTest.php
 48b46955f2d2754be10ad2ea72e3687d  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
@@ -26667,7 +26669,7 @@ ca41032b1c1c8e298f38c4c948bf48ec  tests/tests/kernel/classes/ini/expIniLocatorTe
 161aa7e74f13a3c60c46b5d2a9a63a1f  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
 bd25076f8b7ba02a3816eb1c5ffc7ed0  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 854ed28cc23b9fd79329399790ab423b  tests/tests/kernel/classes/installationdetails/ExpInstallationDetailsTest.php
-80ccfe7b80fb2d518687d04935cbf54e  tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php
+f058aacdd46c350494519bd2d912e414  tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php
 f139dc99615218f7e796feb6321fc16e  tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php
 8f8998af3c997ce3a3d6aab9b9d34546  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
 dcf6a5bc8e3672ab612c608c9b5889cd  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php
@@ -26899,6 +26901,7 @@ dff03a58accdae7a511ca92c6c1eaf06  tests/tests/kernel/classes/user/expUserDeactiv
 0e4f544bc052c59d86f11776f6248fde  tests/tests/kernel/classes/user/expUserDeactivationTest.php
 c89d1f48bdd4ae3dac8ad01160445051  tests/tests/kernel/classes/user/expUserHygieneTest.php
 a81bdbe0030aeec3871176f473fdda34  tests/tests/kernel/classes/user/expUserSecurityActivityTest.php
+60b41b10b021c48f6a7546089ed6af49  tests/tests/kernel/classes/user/expUserSecurityAlertsTest.php
 b4a6294a24cd804d971815d002058496  tests/tests/kernel/classes/user/expUserSessionInfoTest.php
 fa17769c3044b62d53d575fe73b30abb  tests/tests/kernel/classes/user/expUserSessionReportTest.php
 1ad1f133231002dcde01c2a1b115788d  tests/tests/kernel/classes/user/expUserSessionTest.php

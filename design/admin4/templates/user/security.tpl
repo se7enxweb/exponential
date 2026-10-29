@@ -124,6 +124,14 @@
         </div>
     </div>
 </section>
+{if $security_own}
+<form class="a4-toolbar is-bottom" method="post" action={$security_action|ezurl}>
+    <div class="a4-actions">
+        <button type="submit" class="a4-btn" name="DownloadButton" value="1"><span class="a4-icon a4-bi-download" aria-hidden="true"></span> {'Download my sign-in data'|i18n( 'design/admin/user/security' )}</button>
+    </div>
+    <p class="a4-meta">{'Your sessions and security events as a JSON file.'|i18n( 'design/admin/user/security' )}</p>
+</form>
+{/if}
 <p class="a4-meta">{if $security_retention_days|gt( 0 )}{'Security events are kept for %days days.'|i18n( 'design/admin/user/security',, hash( '%days', $security_retention_days ) )}{else}{'Security events are kept until an administrator removes them.'|i18n( 'design/admin/user/security' )}{/if}</p>
 
 {/if}

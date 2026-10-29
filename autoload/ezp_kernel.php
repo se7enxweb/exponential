@@ -1497,6 +1497,7 @@ return array(
       'expUserHygiene'                                               => 'kernel/classes/user/expuserhygiene.php',
       'expUserLoginIntegrity'                                        => 'kernel/classes/expuserloginintegrity.php',
       'expUserSecurityActivity'                                      => 'kernel/classes/user/expusersecurityactivity.php',
+      'expUserSecurityAlerts'                                        => 'kernel/classes/user/expusersecurityalerts.php',
       'expUserSession'                                               => 'kernel/classes/user/expusersession.php',
       'expUserSessionInfo'                                           => 'kernel/classes/user/expusersessioninfo.php',
       'expUserSessionReport'                                         => 'kernel/classes/user/expusersessionreport.php',

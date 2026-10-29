@@ -42,6 +42,11 @@ class Security extends \Exponential\Runnable\ModuleView
         if ( !$account instanceof \eZUser )
             return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
+        // "Download my sign-in data" (own account only, a POST with the form token of ezformtoken): the sessions with
+        // their details and the security events, as JSON (the right of access)
+        if ( $own && \eZSys::serverVariable( 'REQUEST_METHOD', true ) === 'POST' && \eZHTTPTool::instance()->hasPostVariable( 'DownloadButton' ) )
+            return $this->download( $account );
+
         $filter = isset( $_GET['filter'] ) && is_string( $_GET['filter'] ) && in_array( $_GET['filter'], \expUserSecurityActivity::FILTERS, true )
             ? $_GET['filter'] : 'all';
         $available = \expUserSecurityActivity::available();
@@ -78,6 +83,34 @@ class Security extends \Exponential\Runnable\ModuleView
                    'url' => false ),
         );
         return $this->viewResult( $Result, $Result );
+    }
+
+    /**
+     * Sends the account's sign-in data as JSON and ends the request: every session row with its details (never the
+     * token's hash) and every security event of the user audit log about the account. Recorded as data.export.json
+     * with the numbers of rows, never the data.
+     */
+    protected function download( \eZUser $account )
+    {
+        $userID = (int)$account->attribute( 'contentobject_id' );
+        $data = array( 'account' => array( 'user_id' => $userID, 'login' => (string)$account->attribute( 'login' ) ),
+                       'generated' => gmdate( 'Y-m-d\TH:i:s\Z' ),
+                       'sessions' => \expUserSessionTracker::exportForUser( $userID ),
+                       'security_events' => \expUserSecurityActivity::exportForUser( $userID ) );
+        $fileName = 'sign-in-data-' . gmdate( 'Ymd-His' ) . '.json';
+        header( 'Content-Type: application/json; charset=utf-8' );
+        header( 'Content-Disposition: attachment; filename="' . $fileName . '"' );
+        header( 'Cache-Control: private, no-store, max-age=0' );
+        header( 'X-Content-Type-Options: nosniff' );
+        while ( @ob_end_clean() );
+        echo json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR );
+        if ( class_exists( 'expAuditHook' ) )
+            \expAuditHook::emit( 'data.export.json', array( 'object' => array( 'type' => 'view', 'id' => 'user/security' ), 'verb' => 'export',
+                'after' => array( 'sessions' => count( $data['sessions'] ), 'events' => count( $data['security_events'] ), 'file' => $fileName,
+                                  'source' => 'user_security' ) ) );
+        // no catch( Exception ) around the download and cleanExit(): under Velocity cleanExit() throws
+        \eZExecution::cleanExit();
+        return $this->viewResult( null, null );
     }
 }
 

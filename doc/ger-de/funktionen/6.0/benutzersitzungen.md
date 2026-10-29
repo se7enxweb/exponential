@@ -128,6 +128,40 @@ nennt (Methode, Browser, System, Ort, Zahl der Sitzungen, verbleibende Codes); n
 Die Zwei-Schritt-Ereignisse `access.user.two_factor.*` zeichnet die Zwei-Schritt-Erweiterung über
 `expSignInSecondFactor::audit()` auf.
 
+## Sicherheitswarnungen
+
+Neben „Neue Anmeldung“ (oben) und „Ihr Passwort wurde geändert“ (`[PasswordSettings] ChangeNotificationMail`) bekommt
+der Inhaber eines Kontos eine **Sicherheitswarnung** (Template `design:user/security_alert_mail.tpl`, Mail-Kategorie
+`security`), wenn:
+
+| Warnung | Ereignis |
+|---|---|
+| Die Zwei-Schritt-Anmeldung wurde ein- / ausgeschaltet | `access.user.two_factor.enroll`, `.remove` |
+| Ein Wiederherstellungscode wurde benutzt (mit den verbleibenden Codes) | `access.user.two_factor.recovery_used` |
+| Fehlgeschlagene Anmeldeversuche | `access.session.login.failed`, einmal, wenn die Fehlschläge in Folge `FailedSignInAlertThreshold` (5) erreichen |
+| Das Konto wurde gesperrt | `access.user.lock` (eine E-Mail, auch wenn die Fehlschläge gleichzeitig die Schwelle erreichten) |
+
+Jede Warnung sagt, was geschah, wann und aus welchem Netz, und verlinkt auf **Konto absichern** (die
+Sicherheitsaktivität) und Ihre Geräte; die Sperr-Warnung auch auf „Neues Passwort anfordern“. Ein Benutzer kann diese
+Warnungen nicht abschalten; die Website kann es (`SecurityAlertMail=disabled`). Sie werden aus dem
+Benutzer-Auditprotokoll gesendet (`expUserSecurityAlerts`): Wenn die Senke `useraudit` die Ereignisse einer Anfrage
+speichert, werden die neuen Zeilen geprüft; ein erneut aus dem Spool zugestellter Stapel warnt niemanden doppelt, und
+Zeilen, die älter als eine Stunde sind, warnen nie. Ohne Benutzer-Auditprotokoll wird keine Warnung gesendet. Die
+E-Mail geht durch das Mail-Gate; mit `[MailSettings] Transport=file` wird sie nach `var/log/mail` geschrieben.
+
+## Datenexport und Löschung
+
+- **Meine Anmeldedaten herunterladen** auf der Sicherheitsaktivität (nur das eigene Konto, zuerst „Bestätigen Sie,
+  dass Sie es sind“, `[ReauthGroup_export]`): eine JSON-Datei mit jeder Sitzung des Kontos und ihren Details (nie dem
+  Hash des Tokens) und jedem Sicherheitsereignis des Benutzer-Auditprotokolls dazu; aufgezeichnet als
+  `data.export.json` mit der Zahl der Zeilen.
+- **Ein Konto entfernen** (`eZUser::removeUser()`) löscht seine Sitzungen und ihre Details (`eraseForUser()`); seine
+  Sicherheitsereignisse bleiben im Benutzer-Auditprotokoll bis zu dessen `RetentionDays`, als Nachweis der Entfernung.
+- **Aufbewahrung**: Der Cronjob `usersessions.php` beendet Sitzungen, die `[Session] SessionTimeout` lang nicht benutzt
+  wurden (eine mit „Angemeldet bleiben“ bleibt bis zu ihrem Datum, 360 Tage), entfernt beendete Sitzungen nach
+  `RetentionDays` und die Sitzungen entfernter Benutzer; der Cronjob-Teil `useraudit` entfernt Sicherheitsereignisse nach
+  `audit.ini [UserAuditSettings] RetentionDays`.
+
 ## Anmeldebericht
 
 **Benutzer > Anmeldebericht** (`user/sessionreport`, die neue Richtlinienfunktion **user/sessions_manage**) ist die
@@ -158,6 +192,8 @@ Sitzung oder ein Benutzer abgemeldet wird (`[ReauthGroup_users]`).
 | `RecordIP` | `audit` | Wie Adressen gespeichert werden: `audit`, `full`, `truncated`, `disabled` |
 | `GeoIPDatabase` | (leer) | Eine lokale `.mmdb`-Datenbank für den Ort einer Anmeldung; leer: keine |
 | `GeoIPLanguage` | `en` | Die Sprache der Ortsnamen |
+| `SecurityAlertMail` | `enabled` | Die Sicherheitswarnungen (Zwei-Schritt-Anmeldung, Wiederherstellungscode, Fehlschläge, Sperre); ein Benutzer kann sie nicht abschalten |
+| `FailedSignInAlertThreshold` | `5` | Fehlgeschlagene Anmeldungen in Folge, die eine Warnung senden; `0`: nie |
 | `RetentionDays` | `90` | Tage, die eine beendete Sitzung aufbewahrt wird (Kürzlich beendet, die Prüfung auf neue Geräte) |
 | `NewDeviceMail` | `enabled` | Die E-Mail an den Benutzer über eine Anmeldung von einem neuen Gerät |
 | `NewDeviceAdminMail` | `disabled` | Derselbe Hinweis an die Administratoren |

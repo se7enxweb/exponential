@@ -73,6 +73,12 @@
 {else}
 <p class="us-meta">{'No security activity recorded yet.'|i18n( 'design/standard/user/security' )}</p>
 {/if}
+{if $security_own}
+<form method="post" action={$security_action|ezurl}>
+    <p><button type="submit" class="us-button" name="DownloadButton" value="1">{'Download my sign-in data'|i18n( 'design/standard/user/security' )}</button>
+    <span class="us-meta">{'Your sessions and security events as a JSON file.'|i18n( 'design/standard/user/security' )}</span></p>
+</form>
+{/if}
 
 {/if}
 </div>

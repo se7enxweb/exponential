@@ -84629,6 +84629,106 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Secure your account</source>
         <translation>Konto absichern</translation>
     </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Mit einem Wiederherstellungscode wurde sich bei Ihrem Konto %login auf %site angemeldet.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Ein Wiederherstellungscode wurde benutzt</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Ungefähre Adresse</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Fordern Sie ein neues Passwort an, um sich wieder anzumelden, oder wenden Sie sich an die Administratoren der Website.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Neues Passwort anfordern</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Jeder Wiederherstellungscode funktioniert einmal. Wenn Sie Ihr Telefon verloren haben, richten Sie Ihre Authentifizierungs-App neu ein und bewahren Sie die neuen Wiederherstellungscodes sicher auf.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Fehlgeschlagene Anmeldeversuche bei Ihrem Konto</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Ab jetzt fragt die Anmeldung neben Ihrem Passwort nach einem Code. Wenn Sie das waren, müssen Sie nichts tun.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Wenn Sie es waren und Ihr Passwort vergessen haben, fordern Sie ein neues an. Wenn nicht, wählen Sie ein stärkeres Passwort und schalten Sie die Zwei-Schritt-Anmeldung ein.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Wenn Sie das nicht waren, kennt vielleicht jemand Ihr Passwort: Ändern Sie es jetzt und prüfen Sie, wo Ihr Konto angemeldet ist.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Verbleibende Wiederherstellungscodes</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Ihre Geräte prüfen</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Sicherheitswarnung</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Jemand hat versucht, sich %count Mal hintereinander mit einem falschen Passwort bei Ihrem Konto %login auf %site anzumelden.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Bei Ihrem Konto %login auf %site gab es ein Sicherheitsereignis.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Dies ist eine Sicherheitswarnung zu Ihrem Konto. Sie wird bei jeder solchen Änderung gesendet und kann nicht abgeschaltet werden.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zeit</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Die Zwei-Schritt-Anmeldung wurde für Ihr Konto %login auf %site ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Die Zwei-Schritt-Anmeldung wurde ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Die Zwei-Schritt-Anmeldung wurde für Ihr Konto %login auf %site eingeschaltet.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Die Zwei-Schritt-Anmeldung wurde eingeschaltet</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Ihr Konto %login auf %site wurde nach zu vielen fehlgeschlagenen Anmeldungen gesperrt.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ihr Konto ist jetzt nur noch durch Ihr Passwort geschützt. Wenn Sie das nicht waren, schalten Sie die Zwei-Schritt-Anmeldung wieder ein, nachdem Sie Ihr Passwort geändert haben.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Ihr Konto wurde gesperrt</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/security</name>
@@ -84911,6 +85011,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Security events are kept until an administrator removes them.</source>
         <translation>Sicherheitsereignisse werden aufbewahrt, bis ein Administrator sie entfernt.</translation>
     </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Meine Anmeldedaten herunterladen</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ihre Sitzungen und Sicherheitsereignisse als JSON-Datei.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -85085,6 +85193,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>No security activity recorded yet.</source>
         <translation>Noch keine Sicherheitsaktivität aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Meine Anmeldedaten herunterladen</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ihre Sitzungen und Sicherheitsereignisse als JSON-Datei.</translation>
     </message>
 </context>
 <context>
@@ -85276,6 +85392,17 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Session-Handler: %handler. Die Sitzungen werden aus der Tabelle expuser_session gelesen, deshalb arbeitet der Bericht mit jedem Handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Sicherheitswarnung zu Ihrem Konto</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Bei Ihrem Konto %login gab es ein Sicherheitsereignis: %event. Wenn Sie das nicht waren, sichern Sie Ihr Konto unter %url ab.</translation>
     </message>
 </context>
 </TS>

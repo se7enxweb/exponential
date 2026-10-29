@@ -77661,6 +77661,106 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Secure your account</source>
         <translation>Secure your account</translation>
     </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>A recovery code was used to sign in to your account %login on %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>A recovery code was used</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Approximate address</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Ask for a new password to sign in again, or contact the administrators of the site.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Ask for a new password</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Failed sign-in attempts on your account</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>If this was not you, someone may know your password: change it now and check where your account is signed in.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Recovery codes left</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Review your devices</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Security alert</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>There was a security event on your account %login on %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>This is a security alert about your account. It is sent for every such change and cannot be turned off.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Time</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Two-step sign-in was turned off for your account %login on %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Two-step sign-in was turned off</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Two-step sign-in was turned on for your account %login on %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Two-step sign-in was turned on</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Your account %login on %site was locked after too many failed sign-ins.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Your account was locked</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/security</name>
@@ -77943,6 +78043,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Security events are kept until an administrator removes them.</source>
         <translation>Security events are kept until an administrator removes them.</translation>
     </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Download my sign-in data</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Your sessions and security events as a JSON file.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78117,6 +78225,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>No security activity recorded yet.</source>
         <translation>No security activity recorded yet.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Download my sign-in data</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Your sessions and security events as a JSON file.</translation>
     </message>
 </context>
 <context>
@@ -78308,6 +78424,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Security alert for your account</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</translation>
     </message>
 </context>
 </TS>

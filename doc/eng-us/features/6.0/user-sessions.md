@@ -121,6 +121,38 @@ host and what the event names (method, browser, system, place, number of session
 The two-step events `access.user.two_factor.*` are recorded by the two-step extension through
 `expSignInSecondFactor::audit()`.
 
+## Security alerts
+
+Besides "New sign-in" (above) and "Your password was changed" (`[PasswordSettings] ChangeNotificationMail`), the owner
+of an account gets a **Security alert** (template `design:user/security_alert_mail.tpl`, mail category `security`)
+when:
+
+| Alert | Event |
+|---|---|
+| Two-step sign-in was turned on / off | `access.user.two_factor.enroll`, `.remove` |
+| A recovery code was used (with the codes left) | `access.user.two_factor.recovery_used` |
+| Failed sign-in attempts | `access.session.login.failed`, once, when the failures in a row reach `FailedSignInAlertThreshold` (5) |
+| The account was locked | `access.user.lock` (one mail, also when the failures reached the threshold at the same time) |
+
+Each alert says what happened, when and from which network, and links to **Secure your account** (the security
+activity) and Your devices; the lock alert also to "Ask for a new password". A user cannot turn these alerts off;
+the site can (`SecurityAlertMail=disabled`). They are sent from the user audit log (`expUserSecurityAlerts`): when
+the sink `useraudit` stores the events of a request, the new rows are checked, so a batch delivered again from the
+spool alerts nobody twice, and rows older than an hour never alert. Without the user audit log no alert is sent. The
+mail goes through the mail gate; with `[MailSettings] Transport=file` it is written to `var/log/mail`.
+
+## Data export and erasure
+
+- **Download my sign-in data** on the security activity (own account only, "Verify it's you" first,
+  `[ReauthGroup_export]`): a JSON file with every session of the account and its details (never the token's hash) and
+  every security event of the user audit log about it; recorded as `data.export.json` with the numbers of rows.
+- **Removing an account** (`eZUser::removeUser()`) erases its sessions and their details (`eraseForUser()`); its
+  security events stay in the user audit log until `RetentionDays` there, as the record of the removal.
+- **Retention**: the cronjob `usersessions.php` ends sessions not used for `[Session] SessionTimeout` (a session kept
+  by Remember me stays until its date, 360 days), removes ended sessions after `RetentionDays` and the sessions of
+  removed users; the cronjob part `useraudit` removes security events after `audit.ini [UserAuditSettings]
+  RetentionDays`.
+
 ## Sign-in report
 
 **Users > Sign-in report** (`user/sessionreport`, the new policy function **user/sessions_manage**) is the
@@ -149,6 +181,8 @@ links to the report. "Verify it's you" asks before signing a session or a user o
 | `RecordIP` | `audit` | How addresses are stored: `audit`, `full`, `truncated`, `disabled` |
 | `GeoIPDatabase` | (empty) | A local `.mmdb` database for the place of a sign-in; empty: none |
 | `GeoIPLanguage` | `en` | The language of the place names |
+| `SecurityAlertMail` | `enabled` | The security alerts (two-step sign-in, recovery code, failures, lock); a user cannot turn them off |
+| `FailedSignInAlertThreshold` | `5` | Failed sign-ins in a row that send an alert; `0`: never |
 | `RetentionDays` | `90` | Days an ended session is kept (Recently ended, the new-device check) |
 | `NewDeviceMail` | `enabled` | The user's e-mail about a sign-in from a new device |
 | `NewDeviceAdminMail` | `disabled` | The same note to the administrators |
