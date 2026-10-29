@@ -62,7 +62,7 @@
     <td class="number" align="right">{$Orders.item.total_inc_vat|l10n( 'currency', $locale, $symbol )}</td>
 
     <td>{$Orders.item.created|l10n( shortdatetime )}</td>
-    <td>{if $Orders.item.siteaccess_name}{$Orders.item.siteaccess_name|wash}{else}<span class="a4-muted">{'Unknown'|i18n( 'design/admin/settings' )}</span>{/if}</td>
+    <td>{if $Orders.item.siteaccess_name}{$Orders.item.siteaccess_name|wash}{if ne( $Orders.item.store_name, $Orders.item.siteaccess_name )} ({$Orders.item.store_name|wash}){/if}{else}<span class="a4-muted">{'Unknown'|i18n( 'design/admin/settings' )}</span>{/if}</td>
     <td>
     {let order_status_list=$Orders.status_modification_list}
 
