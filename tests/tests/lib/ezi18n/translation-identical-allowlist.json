@@ -263,7 +263,8 @@
         "vertScrollState": "OPML attribute name, kept as code",
         "xmlUrl": "OPML attribute name, kept as code",
         "Tablet": "the Croatian word for a tablet",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "Font": "spelled the same in Croatian (font, the standard word for a typeface)"
     },
     "cze-CZ": {
         "#level1 - #level2": "code, unit, key name or product name",
@@ -645,7 +646,11 @@
         "Integration": "Danish word spelled the same",
         "Computer": "standard Danish word",
         "Tablet": "standard Danish word",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "Original": "spelled the same in Danish",
+        "Sepia": "spelled the same in Danish",
+        "Ellipse": "spelled the same in Danish",
+        "Zoom: %1 %": "zoom is the Danish word, spelled the same"
     },
     "dut-NL": {
         "#level1 - #level2": "code, file or setting name",
@@ -1001,7 +1006,11 @@
         "intact": "the Dutch word for an unbroken chain",
         "Computer": "the Dutch word for a computer",
         "Tablet": "the Dutch word for the device",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "%1 × %2 pixels": "pixels is the Dutch plural, spelled the same",
+        "Contrast": "spelled the same in Dutch",
+        "Sepia": "spelled the same in Dutch",
+        "Zoom: %1 %": "zoom is the Dutch noun, spelled the same"
     },
     "esl-ES": {
         "#level1 - #level2": "format placeholders only",
@@ -1177,7 +1186,8 @@
         "YYYY-MM-DDTHH:MM:SS+00:00": "date format code, glossary says leave unchanged",
         "Z-A": "alphabetical sort order, same in Spanish",
         "Zoom": "Zoom is the standard Spanish word for zooming in image editors (RAE: zum/zoom), same as existing catalogue",
-        "%size/h": "placeholder and the hour symbol h, the same in Spanish"
+        "%size/h": "placeholder and the hour symbol h, the same in Spanish",
+        "Original": "spelled the same in Spanish"
     },
     "esl-MX": {
         "#level1 - #level2": "PDF numbering placeholders only",
@@ -1350,7 +1360,8 @@
         "YYYY-MM-DDTHH:MM:SS+00:00": "Spelled-out date format, kept unchanged per glossary",
         "Z-A": "Reverse alphabetical sort order, the same letters in Spanish.",
         "Zoom": "Zoom is the usual Spanish word for this image tool",
-        "%size/h": "placeholder and the hour symbol h, the same in Spanish"
+        "%size/h": "placeholder and the hour symbol h, the same in Spanish",
+        "Original": "spelled the same in Spanish"
     },
     "fas-IR": {
         "#level1 - #level2": "format placeholders only",
@@ -1711,7 +1722,10 @@
         "version %v": "placeholder and unit text, the same in French",
         "version %version": "placeholder and unit text, the same in French",
         "vertScrollState": "OPML attribute name, code identifier",
-        "xmlUrl": "OPML attribute name, code identifier"
+        "xmlUrl": "OPML attribute name, code identifier",
+        "%1 × %2 pixels": "pixel is the French word too, plural pixels",
+        "Rectangle": "spelled the same in French",
+        "Ellipse": "spelled the same in French"
     },
     "ger-DE": {
         "Zoom: %1 %": "Zoom is the usual German term",
@@ -2427,7 +2441,8 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "Windows Media Player": "product name",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "Z-A": "reverse alphabetical order, the same letters in Latin"
+        "Z-A": "reverse alphabetical order, the same letters in Latin",
+        "Sepia": "a Latin word (sepia, the cuttlefish and its ink), spelled the same"
     },
     "nor-NO": {
         "#level1 - #level2": "template code",
@@ -2581,7 +2596,10 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "Sepia": "spelled the same in Norwegian",
+        "Ellipse": "spelled the same in Norwegian",
+        "Zoom: %1 %": "zoom is the Norwegian word, spelled the same"
     },
     "pol-PL": {
         "#level1 - #level2": "code, setting, file name, unit or placeholder text without words to translate",
@@ -2713,7 +2731,8 @@
         "vertScrollState": "code, setting, file name, unit or placeholder text without words to translate",
         "xmlUrl": "code, setting, file name, unit or placeholder text without words to translate",
         "Tablet": "the Polish word for a tablet",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "Sepia": "spelled the same in Polish (sepia, the brown photo tone)"
     },
     "por-BR": {
         "#level1 - #level2": "code, setting, unit or placeholder text without words to translate",
@@ -2907,7 +2926,9 @@
         "vertScrollState": "code, setting, unit or placeholder text without words to translate",
         "xmlUrl": "code, setting, unit or placeholder text without words to translate",
         "Tablet": "the device name Brazilian Portuguese uses",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "%1 × %2 pixels": "pixel is the Brazilian Portuguese word too, plural pixels",
+        "Original": "spelled the same in Portuguese"
     },
     "pus-AF": {
         "#level1 - #level2": "format placeholders only",
@@ -3274,7 +3295,9 @@
         "vertScrollState": "OPML attribute name, code identifier",
         "xmlUrl": "OPML attribute name, code identifier",
         "Integration": "Swedish word spelled the same",
-        "WebDAV": "protocol name"
+        "WebDAV": "protocol name",
+        "Sepia": "spelled the same in Swedish",
+        "Zoom: %1 %": "zoom is the Swedish noun, spelled the same"
     },
     "tlh-QO": {
         "%ms ms": "SI unit symbol for milliseconds after a number placeholder",
@@ -3819,7 +3842,8 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
-        "Tablet": "same word in Bosnian (a tablet computer)"
+        "Tablet": "same word in Bosnian (a tablet computer)",
+        "Font": "spelled the same in Bosnian (font, the standard word for a typeface)"
     },
     "dsb-DE": {
         "#level1 - #level2": "format placeholders only",
@@ -4845,7 +4869,11 @@
         "vertScrollState": "OPML attribute name (code identifier)",
         "xmlUrl": "OPML attribute name (code identifier)",
         "intact": "same word in Romanian (an intact audit chain)",
-        "Computer": "same word in Romanian (a desktop computer)"
+        "Computer": "same word in Romanian (a desktop computer)",
+        "Original": "spelled the same in Romanian",
+        "Contrast": "spelled the same in Romanian",
+        "Sepia": "spelled the same in Romanian",
+        "Font": "the Romanian word for a typeface, spelled the same"
     },
     "sqi-AL": {
         "#level1 - #level2": "format placeholders only",
@@ -19703,7 +19731,8 @@
         "Http": "protocol name",
         "Https": "protocol name",
         "Div": "HTML element name",
-        "Literal": "same word in Galician"
+        "Literal": "same word in Galician",
+        "Sepia": "spelled the same in Galician"
     },
     "eus-ES": {
         "iPhone": "product name",
@@ -19793,7 +19822,8 @@
         "Href": "HTML attribute name",
         "eznode": "link type identifier",
         "ezobject": "link type identifier",
-        "Div": "HTML element name"
+        "Div": "HTML element name",
+        "Sepia": "spelled the same in Basque"
     },
     "cym-GB": {
         "ID %id": "acronym and placeholder",
