@@ -1383,6 +1383,7 @@ return array(
       'expReauthRules'                                               => 'kernel/classes/reauth/expreauthrules.php',
       'expReauthSettings'                                            => 'kernel/classes/reauth/expreauthsettings.php',
       'expReauthTotpCode'                                            => 'kernel/classes/reauth/expreauthtotpcode.php',
+      'expReauthTriggerHandler'                                      => 'kernel/classes/reauth/expreauthtriggerhandler.php',
       'expRegistrationAdminAction'                                   => 'kernel/classes/user/expregistrationadminaction.php',
       'expRenderStats'                                               => 'kernel/classes/debugbar/exprenderstats.php',
       'expRequestClassifier'                                         => 'kernel/classes/requestclassifier/exprequestclassifier.php',

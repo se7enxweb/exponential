@@ -188,7 +188,7 @@
         } ).catch( function () {} );
     }
 
-    // ---- verify it's you
+    // ---- verify it's you: the form's other fields (the password) are typed first and sent with the passkey's answer
     function reauth( form ) {
         var o = options( form );
         if ( !o ) {
@@ -198,14 +198,21 @@
         status( form, message( form, 'working', 'Follow the steps of your browser or device.' ), false );
         navigator.credentials.get( { publicKey: requestOptions( o ) } ).then( function ( credential ) {
             fillAssertion( form, credential );
-            setField( form, 'ExpReauthMethod', 'passkey' );
             setField( form, 'ExpReauthConfirmButton', '1' );
-            Array.prototype.forEach.call( form.querySelectorAll( 'input[type="password"], input[name="ExpReauthCode"]' ), function ( p ) {
-                p.disabled = true;
-            } );
             form.submit();
         } ).catch( function ( e ) {
             failed( form, e );
+        } );
+    }
+
+    function reauthOnSubmit( form ) {
+        form.addEventListener( 'submit', function ( event ) {
+            // sent once the browser's checks of the fields passed: the passkey dialog comes last
+            event.preventDefault();
+            if ( form.getAttribute( 'aria-busy' ) === 'true' ) {
+                return;
+            }
+            reauth( form );
         } );
     }
 
@@ -218,6 +225,10 @@
             Array.prototype.forEach.call( forms, function ( form ) {
                 status( form, form.getAttribute( 'data-msg-unsupported' ) || '', false );
             } );
+            // a form that cannot be answered without a passkey is not sent
+            Array.prototype.forEach.call( document.querySelectorAll( '[data-exp-passkey-needed]' ), function ( button ) {
+                button.disabled = true;
+            } );
             return;
         }
         Array.prototype.forEach.call( document.querySelectorAll( '[data-exp-passkey-only]' ), function ( el ) {
@@ -225,7 +236,11 @@
         } );
         Array.prototype.forEach.call( forms, function ( form ) {
             var kind = form.getAttribute( 'data-exp-passkey' );
-            var run = kind === 'register' ? register : ( kind === 'login' ? login : ( kind === 'reauth' ? reauth : null ) );
+            if ( kind === 'reauth' ) {
+                reauthOnSubmit( form );
+                return;
+            }
+            var run = kind === 'register' ? register : ( kind === 'login' ? login : null );
             if ( !run ) {
                 return;
             }

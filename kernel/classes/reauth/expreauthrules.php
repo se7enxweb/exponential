@@ -19,6 +19,8 @@
  *   self, other   only when the account the request addresses is the user's own, or another user's (content/edit
  *                 of a user object, user/password, user/setting); a request that addresses no account never matches
  *   credentials   only when the POST changes the login, e-mail address or password of a user
+ *   bulk          only when the request removes several items at once ([ReauthSettings] BulkCount or more: the
+ *                 selection content/removeobject is asked to remove)
  *   !module/view  an exception: the view never matches in this group
  *
  * The decision is a pure function: what it needs to know about the request beyond module, view, method and POST
@@ -49,13 +51,15 @@ class expReauthRules
         if ( !preg_match( '#^([A-Za-z0-9_]+)/([A-Za-z0-9_]+|\*)$#', $target, $m ) )
             return null;
         $out = array( 'module' => $m[1], 'view' => $m[2], 'every' => false, 'fields' => array(), 'who' => null,
-                      'credentials' => false, 'exception' => $exception );
+                      'credentials' => false, 'conditions' => array(), 'exception' => $exception );
         foreach ( $tokens as $t )
         {
             if ( $t === '*' )
                 $out['every'] = true;
             elseif ( $t === 'self' || $t === 'other' )
                 $out['who'] = $t;
+            elseif ( $t === 'bulk' )
+                $out['conditions'][] = $t;
             elseif ( $t === 'credentials' )
                 $out['credentials'] = true;
             elseif ( preg_match( '/^[A-Za-z_][A-Za-z0-9_\-]*$/', $t ) )
@@ -76,9 +80,10 @@ class expReauthRules
      * @param array $post the POST fields
      * @param callable|null $whose function(): 'self', 'other' or null, the account the request addresses
      * @param callable|null $credentials function(): bool, whether the POST changes the credentials of a user
+     * @param callable[] $conditions the conditions of the rules by name (bulk => function(): bool)
      * @return string|null the rule that matched, null for none
      */
-    public static function match( array $rules, $module, $view, $method, array $post, $whose = null, $credentials = null )
+    public static function match( array $rules, $module, $view, $method, array $post, $whose = null, $credentials = null, array $conditions = array() )
     {
         $parsed = array();
         foreach ( $rules as $rule )
@@ -94,6 +99,7 @@ class expReauthRules
         }
         $isPost = strtoupper( (string)$method ) === 'POST';
         $who = false;
+        $known = array();
         foreach ( $parsed as $rule => $p )
         {
             if ( !$p['every'] && !$isPost )
@@ -115,6 +121,15 @@ class expReauthRules
                     continue;
             }
             if ( $p['credentials'] && !( $isPost && $credentials && call_user_func( $credentials ) ) )
+                continue;
+            $holds = true;
+            foreach ( $p['conditions'] as $name )
+            {
+                if ( !isset( $known[$name] ) )
+                    $known[$name] = isset( $conditions[$name] ) && is_callable( $conditions[$name] ) && (bool)call_user_func( $conditions[$name] );
+                $holds = $holds && $known[$name];
+            }
+            if ( !$holds )
                 continue;
             return $rule;
         }

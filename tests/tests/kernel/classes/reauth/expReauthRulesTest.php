@@ -9,7 +9,7 @@
  *  RA-03 self and other ask whose account the request addresses, only when a rule needs it
  *  RA-04 credentials: a changed e-mail address, login or password counts, "_ezpassword" and unchanged values do not
  *  RA-05 an exception (!module/view) wins over module/* in its group
- *  RA-06 the shipped groups: account, users, system, export on; content off; every rule parses
+ *  RA-06 the shipped groups: account, users, system, export, delete on; content off; every rule parses
  *  RA-07 matchGroup(): only switched-on groups; user/login and user/logout never; the switch of the whole feature
  *  RA-08 the shipped rules ask for the four groups' typical actions and not for reading pages
  *  RA-09 the replayed POST: nested fields flattened to name[key], the form token left out; the form's own fields (its passkey fields only in its answer)
@@ -62,7 +62,7 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
     public function testParse()
     {
         $this->assertSame( array( 'module' => 'user', 'view' => 'password', 'every' => false, 'fields' => array(), 'who' => 'self',
-                                  'credentials' => false, 'exception' => false ), expReauthRules::parse( 'user/password self' ) );
+                                  'credentials' => false, 'conditions' => array(), 'exception' => false ), expReauthRules::parse( 'user/password self' ) );
         $p = expReauthRules::parse( 'content/edit other credentials PublishButton' );
         $this->assertSame( array( 'other', true, array( 'PublishButton' ) ), array( $p['who'], $p['credentials'], $p['fields'] ) );
         $p = expReauthRules::parse( 'package/upload *' );
@@ -133,8 +133,8 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
     public function testShippedGroups()
     {
         $g = self::$shipped['groups'];
-        $this->assertSame( array( 'account', 'users', 'system', 'export', 'content' ), array_keys( $g ) );
-        foreach ( array( 'account', 'users', 'system', 'export' ) as $on )
+        $this->assertSame( array( 'account', 'users', 'system', 'export', 'delete', 'content' ), array_keys( $g ) );
+        foreach ( array( 'account', 'users', 'system', 'export', 'delete' ) as $on )
             $this->assertTrue( $g[$on]['enabled'], "$on is on by default" );
         $this->assertFalse( $g['content']['enabled'], 'content is off by default' );
         foreach ( $g as $name => $group )
@@ -208,7 +208,10 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'account', expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeOthersButton' => 1 ), $self )['group'] );
         $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeSessionButton' => 3 ), $self ) );
         $this->assertSame( 'users', expReauth::matchGroup( $s, 'user', 'sessionreport', 'POST', array( 'ForceSignOutButton' => 1 ) )['group'] );
-        $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'GET', array(), $other ) );
+        // another user's devices in full (task 273: "full device details") ask before the page opens; one's own list does not
+        $this->assertSame( 'users', expReauth::matchGroup( $s, 'user', 'sessions', 'GET', array(), $other )['group'] );
+        $this->assertSame( 'users', expReauth::matchGroup( $s, 'user', 'sessionreport', 'GET', array() )['group'] );
+        $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'GET', array(), $self ) );
     }
 
     /** RA-09 */

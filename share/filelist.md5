@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 4a1fbecdc069860129cd4ef52a1728f2  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-8eee42c7ff9e81a75641cf35d54c961a  autoload/ezp_kernel.php
+78101b3e669455decfe466d9682b0114  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -756,7 +756,7 @@ f2044be74b16cbb4babf165313b3e226  design/admin/templates/setup/quick_settings.tp
 0942a31eb2b762a8233c1fba0368ff08  design/admin/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin/templates/setup/rad_licence_select.tpl
 c88a198803d60da7eda1e6c2c97d51c1  design/admin/templates/setup/radsurvey.tpl
-38ec6b169be6fe87ecc4a2debee4b38e  design/admin/templates/setup/reauth.tpl
+f0bfea9f8c69f6f0c9e3b3640fbd48c9  design/admin/templates/setup/reauth.tpl
 3ea729476de8af048dd5f728a93f039e  design/admin/templates/setup/session.tpl
 7ac886628ae8c89bf549779933e623f5  design/admin/templates/setup/session_confirmremove.tpl
 f5531f22c722420147e5ca79e2c153f0  design/admin/templates/setup/session_no_db.tpl
@@ -833,7 +833,7 @@ e5e953ee80f84a7674036a48be9f2ed9  design/admin/templates/user/login.tpl
 9c6f1cab8257a04de4589368497de65a  design/admin/templates/user/passkeys.tpl
 d4fd04ff2e30c797b228adfc4f1486d8  design/admin/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
-1ed4a834ffa2cd6dc1460064a4227c63  design/admin/templates/user/reauth.tpl
+04c503c3fa0ae0adcfd3e5693b5fcb53  design/admin/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin/templates/user/register.tpl
 778d3f72c9fe051134f363eac52146b4  design/admin/templates/user/security.tpl
 ebed41ef7a1c5f2c72b365e01b6e2bb3  design/admin/templates/user/sessionreport.tpl
@@ -1568,7 +1568,7 @@ c87483db8a45c77e8dc13482d4f07bc8  design/admin4/templates/setup/preload.tpl
 1a2302762cd8162e9811e736f7d2f996  design/admin4/templates/setup/rad.tpl
 eb714f7b1282b93e98977398e0dd30ec  design/admin4/templates/setup/rad_licence_select.tpl
 8916c401b865d7c20f04e4bc7bb8cfc0  design/admin4/templates/setup/radsurvey.tpl
-38ec6b169be6fe87ecc4a2debee4b38e  design/admin4/templates/setup/reauth.tpl
+f0bfea9f8c69f6f0c9e3b3640fbd48c9  design/admin4/templates/setup/reauth.tpl
 6c40ee40bfecd9b3f4d64065e29123b9  design/admin4/templates/setup/session.tpl
 7ac886628ae8c89bf549779933e623f5  design/admin4/templates/setup/session_confirmremove.tpl
 f5531f22c722420147e5ca79e2c153f0  design/admin4/templates/setup/session_no_db.tpl
@@ -1646,7 +1646,7 @@ d1fffd0c49056ac1aa8d266284eed3ec  design/admin4/templates/user/edit.tpl
 9c6f1cab8257a04de4589368497de65a  design/admin4/templates/user/passkeys.tpl
 c95c10e6f71a175f38c500e1183a4286  design/admin4/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl
-1ed4a834ffa2cd6dc1460064a4227c63  design/admin4/templates/user/reauth.tpl
+04c503c3fa0ae0adcfd3e5693b5fcb53  design/admin4/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin4/templates/user/register.tpl
 778d3f72c9fe051134f363eac52146b4  design/admin4/templates/user/security.tpl
 ebed41ef7a1c5f2c72b365e01b6e2bb3  design/admin4/templates/user/sessionreport.tpl
@@ -2151,7 +2151,7 @@ ebe33174e80d86a38f8a0d3047aafe97  design/standard/javascript/contentcheck_fixfil
 b655d63df595652ef926f853aff526c0  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
 e22910a715086e56c6865ecfd9caa7c3  design/standard/javascript/dashboard_community_activity.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
-bce91bdd3d03e8cefa1b4c0db2035d9c  design/standard/javascript/exp_passkey.js
+62a7c379e25854e1098916ba777f67be  design/standard/javascript/exp_passkey.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
 5c5a2fac8ac63b43eabb82a5ec4e59f2  design/standard/javascript/expdebugbar.js
@@ -3107,7 +3107,7 @@ fb1d2354f4b41f0c55a0f35ce61faca3  design/standard/templates/user/parts/sessions_
 2d736615acf9e2ed3393e4d9dac74e69  design/standard/templates/user/password.tpl
 12094ca1cd1f3d2ec15cf8729c552837  design/standard/templates/user/password_changed_mail.tpl
 0df6c6679df5971b6ce443d1bd0fe421  design/standard/templates/user/preferences_confirm.tpl
-4afad28b0a52aa2ddf0dfa4a0807beca  design/standard/templates/user/reauth.tpl
+7f22497d3ade71c1bea689a901cd8e41  design/standard/templates/user/reauth.tpl
 7d62aeac7ad3b7636d3429748085c159  design/standard/templates/user/register.tpl
 ed5856b59fd9402bdad145c9c129582b  design/standard/templates/user/register_user_not_valid.tpl
 a31eca132c1aa9d51bcf5825b31dcb5c  design/standard/templates/user/registration.tpl
@@ -23201,20 +23201,21 @@ b427d6c90f94788d54c369d9e1c15295  kernel/classes/packagecreators/ezcontentobject
 9293334bc191a66cd75a0f72469ac6ef  kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php
 9382ef58fd3c1d7729e692ff57231292  kernel/classes/packageinstallers/ezcontentobject/ezcontentobjectpackageinstaller.php
 abe2da30aaff0ef9c3a55b266294cffe  kernel/classes/packageinstallers/ezinstallscript/ezinstallscriptpackageinstaller.php
-84a146cf0b852db77b42337c4a80846e  kernel/classes/passkey/exppasskey.php
+b573c483a54b30912a53b3140842cce3  kernel/classes/passkey/exppasskey.php
 2d913c2e3288d7508e6d6c277481bae6  kernel/classes/passkey/exppasskeylogin.php
 ff94a2c76d29705bf2183e9c4dbacfe5  kernel/classes/passkey/exppasskeyschema.php
-8f79f8bd38be6e4cda702c3bbe4ed0a3  kernel/classes/passkey/exppasskeyservice.php
-d29f649ebc46085bce90cc71ab44fe7d  kernel/classes/passkey/exppasskeysettings.php
+140774036087daf4ad3706ddbbdc5e8c  kernel/classes/passkey/exppasskeyservice.php
+7f50993d0a6b2e099c70ff897949bb6d  kernel/classes/passkey/exppasskeysettings.php
 aa09f022b74459a414678e90c8269f9b  kernel/classes/pdfexport/exppdfexportfile.php
 920886acb9f7d977ad659830ea7b6768  kernel/classes/pdfexport/exppdfexportform.php
 87a226885083db2cd6e271751f78d51f  kernel/classes/pdfexport/exppdfexportgenerator.php
 548985a9262bf7a561b129457e88f367  kernel/classes/pdfexport/exppdfexportinfo.php
-f43e6bc39100018397fb5818738eeb04  kernel/classes/reauth/expreauth.php
+388650f901c9944a1c673bbebaa2c746  kernel/classes/reauth/expreauth.php
 13c838a5288e289edb9923b15f349737  kernel/classes/reauth/expreauthcodehandler.php
-14320828f186481ec32703f32b8d2199  kernel/classes/reauth/expreauthrules.php
-b906808c148420c8098064603852cdc3  kernel/classes/reauth/expreauthsettings.php
+66612d0718da144232f968c7780ce93e  kernel/classes/reauth/expreauthrules.php
+bb885d17559f8f039461d004fcb74ddf  kernel/classes/reauth/expreauthsettings.php
 aaeb4a271a0885c78d8aa87d5c5e6c8c  kernel/classes/reauth/expreauthtotpcode.php
+10303e464c4436ae39cfbcb2a2970e25  kernel/classes/reauth/expreauthtriggerhandler.php
 1b68facba98fc75248f5237d1ff435dc  kernel/classes/requestclassifier/exprequestclassifier.php
 06f4444fcae22ecc481875a1a47dc311  kernel/classes/requestclassifier/exprequestcontext.php
 4890ae073b9bd6026eac87db44f7f543  kernel/classes/requestclassifier/exprequestpatternruleset.php
@@ -23325,7 +23326,7 @@ acf8d7195206c995cffb9c58c91b3c9b  kernel/classes/user/expusersessionreport.php
 823745db8df52111731a5b73dd9d4aa1  kernel/classes/user/expusersessiontracker.php
 194684543d849fdaf2e36ecb0e670180  kernel/classes/user/expusersettingrepair.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
-00603cb976aa7f1079309ce30c35d19a  kernel/classes/webauthn/expwebauthn.php
+1bb04c780322a87c05a51c38c943f9af  kernel/classes/webauthn/expwebauthn.php
 7ed8c6c60ac161bebbdc28adf7e12ce0  kernel/classes/webauthn/expwebauthncbor.php
 f0bb8d4ea2e98212843fe5682c067018  kernel/classes/webauthn/expwebauthnchallenge.php
 e13142d6f81b46d8d4c14e5a82ea8eb9  kernel/classes/webauthn/expwebauthncose.php
@@ -24274,7 +24275,7 @@ f5c3ac3287cc41ffd8436e5874d5787d  kernel/setup/logshealth.php
 cee49ff6dec89a7c29a22fc24f59da51  kernel/setup/logsmanage.php
 52e7621ffe33cd09606c50406d16a4ed  kernel/setup/maintenance.php
 55ee736cdd6ac1037e93af940d9b33c1  kernel/setup/menuconfig.php
-e668f100778185f761460f28ae79ad6b  kernel/setup/module.php
+ef294e4a87a1841e75e66c720bd9b9aa  kernel/setup/module.php
 e29ec70a985ee0e4961c6b216dbc6d19  kernel/setup/moduleextension.php
 eb2415031ecaa6b3487a7e2840c8d483  kernel/setup/moduletable.php
 6b23c64b22f573e384f9bc710880a4b4  kernel/setup/modulewizard.php
@@ -24283,7 +24284,7 @@ eb2415031ecaa6b3487a7e2840c8d483  kernel/setup/moduletable.php
 1dd0af493209c302a7e54387edeaff8d  kernel/setup/preloadstream.php
 582d7d7cd020e84023c30f6ec6f0f5a0  kernel/setup/rad.php
 e4ff6934b21338c7a03ea332852402d5  kernel/setup/radsurvey.php
-d8495d0a96f1f2822174d6943b28f73d  kernel/setup/reauth.php
+713bf273b08a07a0fe081507686aa406  kernel/setup/reauth.php
 5317e1d09f0e5627b45f91ad357cb48f  kernel/setup/session.php
 8346226cfe31858ebf76ff63e3b6b8a6  kernel/setup/settingsextension.php
 dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
@@ -24743,7 +24744,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-e9abf4da3b190ac0aea14c1d6fbe6ed3  settings/site.ini
+7af475a2be458e94d3573fef53244b58  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -26868,7 +26869,9 @@ e709c9fd48714bf8671939837b81cb81  tests/tests/kernel/classes/radwizards/expRadWi
 e414caf421b6c9adec37d5cae73c38c0  tests/tests/kernel/classes/radwizards/expRadWizardPaymentGatewayIsFoundTest.php
 439fb99a6b841e5fe4b26659fb14b01b  tests/tests/kernel/classes/radwizards/expRadWizardTestHelper.php
 74e872122daba48572e05606bca781cc  tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php
-9b1a4415ea77dba7b7c039b2ae2a58fc  tests/tests/kernel/classes/reauth/expReauthRulesTest.php
+f30d519d8aa68a3d9939c20d7cebe11a  tests/tests/kernel/classes/reauth/expReauthFactorsTest.php
+87b76f1349cee15e48dcdec13b314b37  tests/tests/kernel/classes/reauth/expReauthGroupsTest.php
+f18ca5e964866c77f668baa72d71a8e1  tests/tests/kernel/classes/reauth/expReauthRulesTest.php
 7083b8e7ffc52109d89f3ddd560c0568  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
 109e3d2ff709b1176a1c828322cfb192  tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php
 ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpRequestParserTest.php
