@@ -26237,7 +26237,7 @@ f0c37580307c0934ffc1da326ab7313d  tests/tests/design/AdminSubitemsWithoutExpUITe
 598356dd8c4c4db4c1610c27c343efcb  tests/tests/design/AdminThemeSwitchTest.php
 3eb8fb7c869a0f17499082c8d2e327fa  tests/tests/design/AdminTimelineTest.php
 61fbe58dd0880d1c74c890b8eb7c500b  tests/tests/design/AdminTokenContrastTest.php
-b290842042c8c1b69c2896f4bb1b31f9  tests/tests/design/AdminTokenUsageTest.php
+c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 ca25a4b93b231cb5ebc3f04b2d1c61d8  tests/tests/design/AdminTopNodeNameTest.php
 f6e41c5a5fdd938ab353a014424e2d00  tests/tests/design/AdminTreeMenuEscapingTest.php
 8b1138729281fbcf159078ec6d707a29  tests/tests/design/AdminTreeViewTest.php

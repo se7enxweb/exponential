@@ -23,6 +23,12 @@ require_once __DIR__ . '/AdminFiles.php';
 
 class AdminTokenUsageTest extends PHPUnit\Framework\TestCase
 {
+    /**
+     * The extensions this repository ships (share/filelist.md5 lists their files). Any other directory in extension/
+     * is a checkout of its own repository, whose stylesheets are checked there, not here.
+     */
+    const REPOSITORY_EXTENSIONS = array( 'exphelpsite', 'expimageeditor', 'expservices', 'ezformtoken', 'ezjscore', 'ezoe' );
+
     /** The two rules whose transition is a progress, not a feedback */
     const PROGRESS_BARS = '/\.a4-(?:content-job-bar|setup-progress) > span\s*\{[^}]*\}/';
 
@@ -50,7 +56,7 @@ class AdminTokenUsageTest extends PHPUnit\Framework\TestCase
             AdminFiles::files( "$root/design/admin/stylesheets/theme/*.css" ),
             AdminFiles::files( "$root/design/admin3/stylesheets/*.css" ),
             AdminFiles::files( "$root/design/admin3/stylesheets/theme/*.css" ),
-            AdminFiles::files( "$root/extension/*/design/admin{,3,4,4l}/stylesheets/*.css", GLOB_BRACE )
+            AdminFiles::files( "$root/extension/{" . implode( ',', self::REPOSITORY_EXTENSIONS ) . "}/design/admin{,3,4,4l}/stylesheets/*.css", GLOB_BRACE )
         );
         $css = array();
         foreach ( $files as $file )
@@ -75,6 +81,12 @@ class AdminTokenUsageTest extends PHPUnit\Framework\TestCase
         {
             $this->assertDirectoryDoesNotExist( self::root() . "/design/$design/stylesheets",
                 "$design loads admin4's stylesheets; a stylesheet of its own needs to be added to this scan" );
+        }
+        // the extensions scanned are the ones this repository ships, never another repository's checkout
+        $manifest = AdminFiles::read( self::root() . '/share/filelist.md5' );
+        foreach ( self::REPOSITORY_EXTENSIONS as $extension )
+        {
+            $this->assertStringContainsString( "  extension/$extension/", $manifest, "$extension is shipped by this repository" );
         }
     }
 
