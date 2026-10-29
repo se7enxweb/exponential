@@ -787,3 +787,24 @@ CREATE TABLE IF NOT EXISTS expuser_audit (
   KEY expuser_audit_name ( event_name, created ),
   KEY expuser_audit_created ( created )
 ) ENGINE=InnoDB;
+
+-- expupgrade_step: the record of exp:upgrade (doc/eng-us/guides/upgrading-with-the-console.md). One
+-- row per upgrade step it applied or tried: the step id, its stage and version, done or failed, when,
+-- how long, by whom (the system user, never a password), on which engine, the checksum of the step's
+-- code and the last message. ./console exp:upgrade:status reads it to tell "done" (applied by
+-- exp:upgrade) from "not-needed" (in place without it); the steps themselves always look at the
+-- database. Written with IF NOT EXISTS, so running this statement again changes nothing.
+
+CREATE TABLE IF NOT EXISTS expupgrade_step (
+  applied_at int(11) NOT NULL DEFAULT '0',
+  applied_by varchar(150) NOT NULL DEFAULT '',
+  checksum varchar(64) NOT NULL DEFAULT '',
+  duration_ms int(11) NOT NULL DEFAULT '0',
+  engine varchar(30) NOT NULL DEFAULT '',
+  message varchar(1000) NOT NULL DEFAULT '',
+  stage varchar(20) NOT NULL DEFAULT '',
+  state varchar(20) NOT NULL DEFAULT '',
+  step_id varchar(150) NOT NULL DEFAULT '',
+  version varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY ( step_id )
+) ENGINE=InnoDB;

@@ -675,3 +675,19 @@ CREATE INDEX IF NOT EXISTS expuser_audit_target ON expuser_audit ( target_id, cr
 CREATE INDEX IF NOT EXISTS expuser_audit_actor ON expuser_audit ( actor_id, created );
 CREATE INDEX IF NOT EXISTS expuser_audit_name ON expuser_audit ( event_name, created );
 CREATE INDEX IF NOT EXISTS expuser_audit_created ON expuser_audit ( created );
+
+-- expupgrade_step: the record of exp:upgrade (doc/eng-us/guides/upgrading-with-the-console.md). One
+-- row per upgrade step it applied or tried. Written with IF NOT EXISTS, so running this statement
+-- again changes nothing.
+CREATE TABLE IF NOT EXISTS expupgrade_step (
+  applied_at integer NOT NULL DEFAULT '0',
+  applied_by varchar(150) NOT NULL DEFAULT '',
+  checksum varchar(64) NOT NULL DEFAULT '',
+  duration_ms integer NOT NULL DEFAULT '0',
+  engine varchar(30) NOT NULL DEFAULT '',
+  message varchar(1000) NOT NULL DEFAULT '',
+  stage varchar(20) NOT NULL DEFAULT '',
+  state varchar(20) NOT NULL DEFAULT '',
+  step_id varchar(150) NOT NULL DEFAULT '' PRIMARY KEY,
+  version varchar(30) NOT NULL DEFAULT ''
+);

@@ -999,3 +999,23 @@ BEGIN
     END IF;
 END
 $$;
+
+-- expupgrade_step: the record of exp:upgrade (doc/eng-us/guides/upgrading-with-the-console.md). One
+-- row per upgrade step it applied or tried: the step id, its stage and version, done or failed, when,
+-- how long, by whom (the system user, never a password), on which engine, the checksum of the step's
+-- code and the last message. No sequence: the step id is the key. Written with IF NOT EXISTS, so
+-- running these statements again changes nothing.
+
+CREATE TABLE IF NOT EXISTS expupgrade_step (
+    applied_at integer DEFAULT 0 NOT NULL,
+    applied_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    checksum character varying(64) DEFAULT ''::character varying NOT NULL,
+    duration_ms integer DEFAULT 0 NOT NULL,
+    engine character varying(30) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    stage character varying(20) DEFAULT ''::character varying NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    step_id character varying(150) DEFAULT ''::character varying NOT NULL,
+    "version" character varying(30) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT expupgrade_step_pkey PRIMARY KEY ( step_id )
+);

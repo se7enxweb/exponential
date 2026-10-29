@@ -8173,6 +8173,94 @@ $schema = array (
       ),
     ),
   ),
+  'expupgrade_step' =>
+  array (
+    'name' => 'expupgrade_step',
+    'fields' =>
+    array (
+      'applied_at' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'applied_by' =>
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'checksum' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'duration_ms' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'engine' =>
+      array (
+        'length' => 30,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'message' =>
+      array (
+        'length' => 1000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'stage' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'state' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'step_id' =>
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'version' =>
+      array (
+        'length' => 30,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'step_id',
+        ),
+      ),
+    ),
+  ),
   'ezproductcategory' =>
   array (
     'name' => 'ezproductcategory',

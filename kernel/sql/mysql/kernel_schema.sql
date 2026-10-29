@@ -1488,6 +1488,24 @@ CREATE TABLE expuser_audit (
 
 
 
+CREATE TABLE expupgrade_step (
+  applied_at int(11) NOT NULL default '0',
+  applied_by varchar(150) NOT NULL default '',
+  checksum varchar(64) NOT NULL default '',
+  duration_ms int(11) NOT NULL default '0',
+  engine varchar(30) NOT NULL default '',
+  message varchar(1000) NOT NULL default '',
+  stage varchar(20) NOT NULL default '',
+  state varchar(20) NOT NULL default '',
+  step_id varchar(150) NOT NULL default '',
+  version varchar(30) NOT NULL default '',
+  PRIMARY KEY  (step_id)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE exphelp_help_id (
   help_id varchar(80) NOT NULL default '',
   object_id int(11) NOT NULL default '0',
