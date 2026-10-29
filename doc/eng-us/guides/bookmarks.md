@@ -90,11 +90,14 @@ The page size comes from `admininterface.ini [PaginationSettings] ItemsPerPageLi
 
 Pages of the administration itself (System information, the cache page, the help dashboard, the audit trail filtered
 to a user, a list opened at a page) are bookmarked from the page: **Bookmark this page** above the breadcrumb, or the
-same button in the Bookmarks box. The form takes a name (the page title by default) and a folder. Such bookmarks have a
-gear icon, a card with their address, **Open** and **Rename**, and are arranged, moved and removed like every other
-bookmark; a page you may no longer open is shown without a link and marked **No access**. Step by step, with
-pictures: [Bookmarking system pages](../help/bookmarking-system-pages.md); details:
-[Bookmarks of system pages](../features/6.0/bookmarks-of-system-pages.md).
+same button in the Bookmarks box. The form takes a name (the page title by default) and a folder. A search is
+bookmarked the same way and keeps its search text. Such bookmarks have the icon of their area (a magnifier for a
+search), a card with their address, **Open** and **Rename**, and are arranged, moved and removed like every other
+bookmark. They keep no host name and no siteaccess, so they open in every administration of the installation; where
+a page cannot be opened (switched off in that siteaccess, not allowed by your roles, removed) the bookmark is greyed,
+without a link, and says why. Pages that only act on a form (saving, removing, signing out, the edit forms) cannot be
+bookmarked. Step by step, with pictures of every design: [Bookmarking system pages](../help/bookmarking-system-pages.md);
+details and settings: [Bookmarks of system pages](../features/6.0/bookmarks-of-system-pages.md).
 
 ## 4. Arranging bookmarks and folders
 
