@@ -2,7 +2,7 @@
 title: Richtlinien des Moduls user
 audience: developer, admin
 category: examples
-summary: Die Richtlinienfunktionen des Moduls user (9) und ihre Einschränkungen.
+summary: Die Richtlinienfunktionen des Moduls user (11) und ihre Einschränkungen.
 keywords: Richtlinie, Richtlinien, Rolle, Einschränkung, Berechtigung, user, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -25,6 +25,24 @@ $role->appendPolicy( 'user', 'activation' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'activation' ) )}
+    ...
+{/if}
+```
+
+## audit
+
+Geprüft von den Ansichten: [audit](../modulansichten/user/audit.md).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'user', 'audit' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'audit' ) )}
     ...
 {/if}
 ```
@@ -67,7 +85,7 @@ $role->appendPolicy( 'user', 'hygiene' );
 
 ## login
 
-Geprüft von den Ansichten: [activate](../modulansichten/user/activate.md), [edit](../modulansichten/user/edit.md), [login](../modulansichten/user/login.md), [logout](../modulansichten/user/logout.md), [megamenu](../modulansichten/user/megamenu.md), [passkeys](../modulansichten/user/passkeys.md), [preferences](../modulansichten/user/preferences.md), [registration](../modulansichten/user/registration.md), [sessions](../modulansichten/user/sessions.md).
+Geprüft von den Ansichten: [activate](../modulansichten/user/activate.md), [edit](../modulansichten/user/edit.md), [login](../modulansichten/user/login.md), [logout](../modulansichten/user/logout.md), [megamenu](../modulansichten/user/megamenu.md), [passkeys](../modulansichten/user/passkeys.md), [preferences](../modulansichten/user/preferences.md), [registration](../modulansichten/user/registration.md), [security](../modulansichten/user/security.md), [sessions](../modulansichten/user/sessions.md).
 
 | Einschränkung | Werte stammen aus |
 |---|---|
@@ -171,6 +189,24 @@ $role->appendPolicy( 'user', 'sessions' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'sessions' ) )}
+    ...
+{/if}
+```
+
+## sessions_manage
+
+Geprüft von den Ansichten: [sessionreport](../modulansichten/user/sessionreport.md).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'user', 'sessions_manage' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'sessions_manage' ) )}
     ...
 {/if}
 ```

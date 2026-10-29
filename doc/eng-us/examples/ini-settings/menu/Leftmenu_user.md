@@ -2,14 +2,14 @@
 title: menu.ini [Leftmenu_user]
 audience: developer, admin
 category: examples
-summary: "The settings of [Leftmenu_user] in menu.ini: Name, Links, LinkNames, PolicyList_roles_and_policies, PolicyList_unactivated, PolicyList_user_hygiene, PolicyList_user_audit, LinkIcons ..."
-keywords: menu.ini, Leftmenu_user, INI, setting, Name, Links, LinkNames, PolicyList_roles_and_policies, PolicyList_unactivated, PolicyList_user_hygiene, PolicyList_user_audit, LinkIcons, LinkDescriptions
+summary: "The settings of [Leftmenu_user] in menu.ini: Name, Links, LinkNames, PolicyList_roles_and_policies, PolicyList_unactivated, PolicyList_user_hygiene, PolicyList_user_audit, PolicyList_session_report ..."
+keywords: menu.ini, Leftmenu_user, INI, setting, Name, Links, LinkNames, PolicyList_roles_and_policies, PolicyList_unactivated, PolicyList_user_hygiene, PolicyList_user_audit, PolicyList_session_report, LinkIcons, LinkDescriptions
 type: generated
 generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_user]
 
-The block `[Leftmenu_user]` of `settings/menu.ini`, with 9 setting(s).
+The block `[Leftmenu_user]` of `settings/menu.ini`, with 10 setting(s).
 
 Never edit `settings/menu.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -33,8 +33,10 @@ Name=access_controll
 
 > Check user accounts (doc/eng-us/features/6.0/user-hygiene.md), also a tile of the Setup overview under the same key  
 > The user audit log (doc/eng-us/features/6.0/user-audit.md): who changed, signed in or was refused, per account  
+> The sign-in report (doc/eng-us/features/6.0/user-sessions.md): who is signed in, sign-ins and failures per day,  
+> signing a user out everywhere; works with every session handler  
 
-Default: a hash of 4: `roles_and_policies=role/list`, `unactivated=user/unactivated`, `user_hygiene=user/hygiene`, `user_audit=user/audit`.
+Default: a hash of 5: `roles_and_policies=role/list`, `unactivated=user/unactivated`, `user_hygiene=user/hygiene`, `user_audit=user/audit`, `session_report=user/sessionreport`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -46,12 +48,13 @@ Links[roles_and_policies]=role/list
 Links[unactivated]=user/unactivated
 Links[user_hygiene]=user/hygiene
 Links[user_audit]=user/audit
+Links[session_report]=user/sessionreport
 */ ?>
 ```
 
 ## LinkNames
 
-Default: a hash of 2: `user_hygiene=Check user accounts`, `user_audit=User audit log`.
+Default: a hash of 3: `user_hygiene=Check user accounts`, `user_audit=User audit log`, `session_report=Sign-in report`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -61,6 +64,7 @@ Default: a hash of 2: `user_hygiene=Check user accounts`, `user_audit=User audit
 LinkNames[]
 LinkNames[user_hygiene]=Check user accounts
 LinkNames[user_audit]=User audit log
+LinkNames[session_report]=Sign-in report
 */ ?>
 ```
 
@@ -120,12 +124,26 @@ PolicyList_user_audit[]=user/audit
 */ ?>
 ```
 
+## PolicyList_session_report
+
+Default: a list of 1: `user/sessions_manage`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_user]
+# an empty "PolicyList_session_report[]" first replaces the shipped list; without it the items are added
+PolicyList_session_report[]
+PolicyList_session_report[]=user/sessions_manage
+*/ ?>
+```
+
 ## LinkIcons
 
 > Icons and descriptions of these links in admin4's mega menu of the Users tab (\[Leftmenu\_user\_mega\] adds this menu  
 > to its group "access"); descriptions are translated in design/admin/parts/user/menu  
 
-Default: a hash of 4: `roles_and_policies=shield-lock`, `unactivated=person-slash`, `user_hygiene=person-badge`, `user_audit=journal-text`.
+Default: a hash of 5: `roles_and_policies=shield-lock`, `unactivated=person-slash`, `user_hygiene=person-badge`, `user_audit=journal-text`, `session_report=bar-chart-line`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -137,12 +155,13 @@ LinkIcons[roles_and_policies]=shield-lock
 LinkIcons[unactivated]=person-slash
 LinkIcons[user_hygiene]=person-badge
 LinkIcons[user_audit]=journal-text
+LinkIcons[session_report]=bar-chart-line
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Default: a hash of 4: `roles_and_policies=Who may do what, and where.`, `unactivated=Accounts not yet activated; activate or remove them.`, `user_hygiene=Accounts nobody uses or that need a look; disable, unlock or export them.`, `user_audit=Who changed, signed in or was refused, per account; filter and export.`.
+Default: a hash of 5: `roles_and_policies=Who may do what, and where.`, `unactivated=Accounts not yet activated; activate or remove them.`, `user_hygiene=Accounts nobody uses or that need a look; disable, unlock or export them.`, `user_audit=Who changed, signed in or was refused, per account; filter and export.`, `session_report=Who is signed in, sign-ins and failures per day; sign a user out everywhere.`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -154,6 +173,7 @@ LinkDescriptions[roles_and_policies]=Who may do what, and where.
 LinkDescriptions[unactivated]=Accounts not yet activated; activate or remove them.
 LinkDescriptions[user_hygiene]=Accounts nobody uses or that need a look; disable, unlock or export them.
 LinkDescriptions[user_audit]=Who changed, signed in or was refused, per account; filter and export.
+LinkDescriptions[session_report]=Who is signed in, sign-ins and failures per day; sign a user out everywhere.
 */ ?>
 ```
 

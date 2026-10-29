@@ -25,7 +25,7 @@ class expUserAccountOverview
     const PASSWORD_AGE_HINT_DAYS = 365;
 
     /** The cards, in the order the page shows them */
-    const ACTIONS = array( 'profile', 'password', 'settings', 'twofactor', 'passkeys', 'sessions', 'apikeys', 'bookmarks', 'notifications', 'mail' );
+    const ACTIONS = array( 'profile', 'password', 'settings', 'twofactor', 'passkeys', 'sessions', 'security', 'apikeys', 'bookmarks', 'notifications', 'mail' );
 
     /** @var array */
     protected $facts;
@@ -50,6 +50,8 @@ class expUserAccountOverview
      * twofactor_setup, apikeys_own, apikeys_admin, bookmarks, notifications, mail_own, mail_admin). twofactor:
      * null when the user class has no two-step field or the extension is not active, else array( active, method ).
      * sessions: null when sessions are not tracked (user/sessions), else array( active ): the running sessions.
+     * security: null when the security activity cannot be read (user/security: no user audit log), else
+     * array( failures ): the failed sign-ins of the last 30 days.
      * apikeys: null when not readable, else the counts of the apikey module (active, total). password_changed: the
      * time of the last password change the audit index knows, else null. hash_type: eZUser::PASSWORD_HASH_*.
      *
@@ -62,7 +64,7 @@ class expUserAccountOverview
             'own' => false, 'enabled' => true, 'locked' => false, 'failed_attempts' => 0, 'max_failed_attempts' => 0,
             'login_count' => 0, 'last_visit' => null, 'hash_type' => eZUser::PASSWORD_HASH_PHP_DEFAULT,
             'password_changed' => null, 'groups' => array(), 'roles' => array(), 'twofactor' => null, 'passkeys' => null, 'apikeys' => null,
-            'can_create_apikeys' => false, 'access' => array(), 'sessions' => null,
+            'can_create_apikeys' => false, 'access' => array(), 'sessions' => null, 'security' => null,
         );
     }
 
@@ -119,6 +121,18 @@ class expUserAccountOverview
             catch ( Throwable $e )
             {
                 $facts['sessions'] = null;
+            }
+        }
+        if ( class_exists( 'expUserSecurityActivity' ) && expUserSecurityActivity::available() )
+        {
+            try
+            {
+                $summary = expUserSecurityActivity::summary( $id );
+                $facts['security'] = array( 'failures' => (int)$summary['failures'] );
+            }
+            catch ( Throwable $e )
+            {
+                $facts['security'] = null;
             }
         }
         if ( class_exists( 'expApiKeyFunctionCollection' ) )
@@ -261,6 +275,18 @@ class expUserAccountOverview
                             $card = array( 'how' => 'link', 'url' => 'user/sessions', 'status' => $status );
                         elseif ( $a['sessions_admin'] )
                             $card = array( 'how' => 'link', 'url' => 'user/sessions/' . $id, 'status' => $status );
+                    }
+                    break;
+                case 'security':
+                    // "Security activity": the user's own, or another account's with the policy user/sessions
+                    if ( is_array( $f['security'] ) )
+                    {
+                        $failures = isset( $f['security']['failures'] ) ? (int)$f['security']['failures'] : 0;
+                        $status = array( 'key' => $failures > 0 ? 'failures' : 'none', 'level' => $failures > 0 ? 'warn' : 'none', 'failures' => $failures );
+                        if ( $own )
+                            $card = array( 'how' => 'link', 'url' => 'user/security', 'status' => $status );
+                        elseif ( $a['sessions_admin'] )
+                            $card = array( 'how' => 'link', 'url' => 'user/security/' . $id, 'status' => $status );
                     }
                     break;
                 case 'apikeys':

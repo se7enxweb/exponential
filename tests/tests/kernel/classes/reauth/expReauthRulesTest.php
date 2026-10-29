@@ -201,10 +201,13 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
         $this->assertNull( expReauth::matchGroup( $s, 'content', 'edit', 'POST', array( 'PublishButton' => 1 ), $self, $no ),
                            'publishing one\'s own profile without a credential change' );
         // "Your devices": switching off one's own sign-in mail asks (account), signing another user out asks (users);
-        // signing out one's own other devices never waits for a question
+        // signing out all one's other devices asks too (task 270: a step-up, so a stolen session cannot lock the owner
+        // out); signing out one other device does not wait for a question
         $this->assertSame( 'account', expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'SaveMailButton' => 1 ), $self )['group'] );
         $this->assertSame( 'users', expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeOthersButton' => 1 ), $other )['group'] );
-        $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeOthersButton' => 1 ), $self ) );
+        $this->assertSame( 'account', expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeOthersButton' => 1 ), $self )['group'] );
+        $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeSessionButton' => 3 ), $self ) );
+        $this->assertSame( 'users', expReauth::matchGroup( $s, 'user', 'sessionreport', 'POST', array( 'ForceSignOutButton' => 1 ) )['group'] );
         $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'GET', array(), $other ) );
     }
 

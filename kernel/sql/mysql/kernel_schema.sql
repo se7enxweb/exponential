@@ -1456,6 +1456,21 @@ CREATE TABLE expuser_session (
 
 
 
+CREATE TABLE expuser_session_info (
+  auth_detail varchar(32) NOT NULL default '',
+  country varchar(2) NOT NULL default '',
+  host varchar(255) NOT NULL default '',
+  location varchar(128) NOT NULL default '',
+  session_id int(11) NOT NULL default '0',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (session_id),
+  KEY expuser_session_info_user (user_id)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE expuser_audit (
   actor_id int(11) NOT NULL default '0',
   actor_login varchar(150) NOT NULL default '',

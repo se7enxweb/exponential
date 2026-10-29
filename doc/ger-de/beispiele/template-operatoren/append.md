@@ -28,10 +28,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/class/classlist.tpl` Zeile 106:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/children_detailed.tpl` Zeile 217:
 
 ```tpl
-<td>{def $others = array()}{foreach $class.ingroup_list as $link}{if ne( $link.group_id, $group.id )}{set $others = $others|append( $link )}{/if}{/foreach}
+{set $create_ordered_groups = $create_ordered_groups|append( $create_group )}
 ```
 
 ## Siehe auch

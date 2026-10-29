@@ -52,6 +52,7 @@
     'unactivated',        'Unactivated users'|i18n( 'design/admin/parts/user/menu' ),
     'user_hygiene',       'Check user accounts'|i18n( 'design/admin/parts/user/menu' ),
     'user_audit',         'User audit log'|i18n( 'design/admin/parts/user/menu' ),
+    'session_report',     'Sign-in report'|i18n( 'design/admin/parts/user/menu' ),
 )}
 
 {* Left menu width control. *}

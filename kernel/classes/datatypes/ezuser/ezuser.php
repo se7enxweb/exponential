@@ -894,6 +894,21 @@ WHERE user_id = '" . $userID . "' AND
         if ( class_exists( 'expPasskeyService' ) )
             expPasskeyService::removeForRemovedAccount( $user );
 
+        // Signed-in sessions (doc/eng-us/features/6.0/user-sessions.md): the rows of the account and their details are
+        // erased, so its sessions end at their next request; the security events stay in the user audit log until its
+        // retention, as the audit's own record of the removal
+        if ( class_exists( 'expUserSessionTracker' ) )
+        {
+            try
+            {
+                expUserSessionTracker::eraseForUser( (int)$userID );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeError( 'The sessions of the removed user could not be erased: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
+
         eZSubtreeNotificationRule::removeByUserID( $userID );
         eZCollaborationNotificationRule::removeByUserID( $userID );
         eZUserSetting::removeByUserID( $userID );

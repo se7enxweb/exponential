@@ -33,7 +33,7 @@ Enabled=true
 
 ## Rules
 
-Standard: eine Liste mit 9: `infocollector/export *`, `audit/export *`, `content/subitemsexport *`, `mailpreferences/export *`, `bccie/export *`, `bccie/doexport *`, `newsletter/subscription_list_csvexport *`, `newsletter/subscriber_export *`, `newsletter/statistics_export *`.
+Standard: eine Liste mit 11: `infocollector/export *`, `audit/export *`, `content/subitemsexport *`, `mailpreferences/export *`, `user/security DownloadButton`, `user/audit ExportButton`, `bccie/export *`, `bccie/doexport *`, `newsletter/subscription_list_csvexport *`, `newsletter/subscriber_export *`, `newsletter/statistics_export *`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +45,8 @@ Rules[]=infocollector/export *
 Rules[]=audit/export *
 Rules[]=content/subitemsexport *
 Rules[]=mailpreferences/export *
+Rules[]=user/security DownloadButton
+Rules[]=user/audit ExportButton
 Rules[]=bccie/export *
 Rules[]=bccie/doexport *
 Rules[]=newsletter/subscription_list_csvexport *
