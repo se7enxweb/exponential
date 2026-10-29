@@ -22623,9 +22623,9 @@ ecca6929c314e7d3e2781c1667d0658b  kernel/classes/audit/archive/expauditarchiver.
 b217a11dee01df8ccf8a312bc7dd966c  kernel/classes/audit/archive/expauditimporter.php
 bb03af74a7a80bb3971ae45d18b9e399  kernel/classes/audit/archive/expauditmaintenance.php
 bf1db747d63c5be7e2700bd3fae277c9  kernel/classes/audit/bridge/expauditbridge.php
-d255ba2899cd2e0d740f297d32b42dd7  kernel/classes/audit/console/expauditconsole.php
+c0d95d419d2fe60ca4702bba624fcbe6  kernel/classes/audit/console/expauditconsole.php
 bbab68e970ac3a7b0643f71e35a5a08a  kernel/classes/audit/console/expauditexportstream.php
-cb5fa808409dfdd517fef2b100e50109  kernel/classes/audit/console/expauditfunctioncollection.php
+16b7c5e2f8e98d329e9585bb899ccf8e  kernel/classes/audit/console/expauditfunctioncollection.php
 67981c317e2ae9643e236bc76a9e62c5  kernel/classes/audit/console/expauditreauth.php
 3ae980d6f05bf9f8f1bbb02d38bd7cb0  kernel/classes/audit/console/expauditsource.php
 4a45594d0dda20f7f515c980fc1114f3  kernel/classes/audit/console/expauditsourcebase.php
@@ -22658,7 +22658,7 @@ a0bdfa8c91b0d6d63d1bf2804d7be333  kernel/classes/audit/hook/expaudithook.php
 4725a07286e37ca44d72a1355b849e20  kernel/classes/audit/index/expauditindexrow.php
 f2c4f3576bb259efe81028664c3ffb16  kernel/classes/audit/index/expauditindexschema.php
 d9587388a3c51e513b1e0c04e30f02a7  kernel/classes/audit/index/expauditindexsettings.php
-1b93a39f0951d584ffa15d807c98729f  kernel/classes/audit/index/expauditquery.php
+79ded0a85639daff2d638968bd8da3df  kernel/classes/audit/index/expauditquery.php
 bd3adecb302c4153cfc6934c36fde2bf  kernel/classes/audit/sinks/expauditmailrecipients.php
 1aa66025806154bb1c882f9fb6a4db73  kernel/classes/audit/sinks/expauditmailsink.php
 e2c15d2e737dee9378e3ce28fd5aed05  kernel/classes/audit/sinks/expauditsinkbase.php
@@ -26393,7 +26393,7 @@ a48b08c74ddfa9c37ced8933e3a87b49  tests/tests/kernel/classes/audit/expAuditCompa
 cf8fc76d38f1db1b11f47a6aa1e7f33a  tests/tests/kernel/classes/audit/expAuditForkTest.php
 2945cd0c1bfc2ccdeeaab3371ee1482c  tests/tests/kernel/classes/audit/expAuditHookTest.php
 8edba7db342f042c78550eaed681d50e  tests/tests/kernel/classes/audit/expAuditImportTest.php
-75ea8a010a961f72100d8b9efee8655a  tests/tests/kernel/classes/audit/expAuditIndexTest.php
+b702b27bdcac786185f680bf46d7e588  tests/tests/kernel/classes/audit/expAuditIndexTest.php
 45b4d96cb4d1350c350ed2c120389bff  tests/tests/kernel/classes/audit/expAuditMailRecipientsTest.php
 42e8e45e571a7a385b561f7b4150f6b9  tests/tests/kernel/classes/audit/expAuditPrivacyTest.php
 95b5c571bce2d71de41ee87cb0f34108  tests/tests/kernel/classes/audit/expAuditReaderChunkTest.php
