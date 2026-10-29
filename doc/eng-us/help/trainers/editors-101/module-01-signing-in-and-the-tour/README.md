@@ -33,7 +33,7 @@ the screen.
 ## Preparing this module
 
 - A training installation that every learner can reach from the classroom, for example one installed with
-  `php bin/php/console exp:install` ([7. The console install](../../../../install/07-console-install.md)).
+  `php bin/php/console exp:install --apply` ([7. The console install](../../../../install/07-console-install.md)).
 - One account per learner with the **Editor** role, e-mail addresses at `example.invalid`, written on cards; one
   extra account for yourself with the same role, for the projector.
 - The address of the administration (and of the Editor, if the installation has one) on the board.

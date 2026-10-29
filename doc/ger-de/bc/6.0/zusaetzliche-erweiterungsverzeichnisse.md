@@ -273,7 +273,7 @@ Jede Aufrufstelle im Kernel, die früher `extension/` fest eingetragen oder eine
 | i18n | `lib/ezi18n/classes/eztstranslator.php` | `expandedPathList()` |
 | RSS | `kernel/classes/ezrssimport.php` | `extensionPath()` |
 | Icons | `kernel/common/ezwordtoimageoperator.php` | `expandedPathList()` |
-| SOAP | `soap.php` | `extensionPath()` |
+| SOAP | `index_soap.php` (`soap.php` leitet nur dorthin weiter) | `extensionPath()` |
 | Paketverwaltung | `kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php`, `kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php`, `kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php`, `kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php` | `extensionRootDirectories()`, `extensionPath()`, `baseDirectory()` |
 | Setup / Upgrade | `kernel/setup/extensions.php`, `kernel/setup/systemupgrade.php` | `extensionRootDirectories()`, `extensionPath()` |
 | Test-Toolkit | `tests/toolkit/ezptestrunner.php`, `tests/toolkit/ezpextensionhelper.php` | `extensionRootDirectories()`, `extensionPath()` |

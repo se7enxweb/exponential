@@ -51,7 +51,7 @@ After this lesson, learners can:
 ### Common questions
 
 **Why do some commands start with `ez`?** They are the real script names, kept for compatibility. Newer commands
-use the `exp:` namespace of the console (`php bin/php/console exp:install`).
+use the `exp:` namespace of the console (`php bin/php/console exp:install --apply`).
 
 **Is Exponential related to eZ Systems or Ibexa?** No. Exponential is not associated with them
 ([Brand and naming rules](../../../business/brand-and-naming-rules.md)).

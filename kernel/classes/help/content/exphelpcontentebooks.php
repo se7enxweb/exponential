@@ -125,7 +125,7 @@ class expHelpContentEbooks
         $folderNode = $folder instanceof eZContentObject ? $folder->attribute( 'main_node' ) : null;
         if ( !$folderNode instanceof eZContentObjectTreeNode )
         {
-            $this->change( 'error', 'the folder E-books (remote_id ' . expHelpContentSchema::EBOOKS . ') does not exist (run exp:help:content install)' );
+            $this->change( 'error', 'the folder E-books (remote_id ' . expHelpContentSchema::EBOOKS . ') does not exist (run exp:help:content install --apply)' );
             return 0;
         }
         if ( !eZContentClass::fetchByIdentifier( self::FILE_CLASS, false ) )

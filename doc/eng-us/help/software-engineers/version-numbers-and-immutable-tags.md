@@ -67,7 +67,7 @@ Any script that picks "the newest tag" must sort by version.
 
 Composer and Packagist compare each position numerically, so `0.0.4.10` is newer than `0.0.4.9`. A tilde constraint
 floats the last position: `~0.0.4.9` means `>=0.0.4.9 <0.0.5.0`, which already accepts `0.0.4.10`. The root
-`composer.json`, for example, requires `se7enxweb/exponential-velocity` at `~0.0.4.55`. Repinning to a higher minimum
+`composer.json`, for example, requires `se7enxweb/exponential-velocity` at `~0.0.4.57`. Repinning to a higher minimum
 is for clarity, and must wait until the version is on Packagist ([Dependency management with Composer](dependency-management-with-composer.md)).
 
 ## Related pages

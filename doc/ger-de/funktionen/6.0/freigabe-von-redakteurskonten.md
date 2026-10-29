@@ -20,7 +20,7 @@ zur Freigabe; sie melden sich an und geben in der Administration frei oder lehne
 - Alles steht im Prüfprotokoll: Anfrage, Freigabe, Ablehnung, abgewiesene Versuche.
 - Welche Gruppen eine Freigabe brauchen, wer freigibt und wer keine braucht, sind die Einstellungen des
   Workflow-Ereignisses *Approve user accounts* unter Setup > Workflows. Eine neue Installation hat sie; eine bestehende
-  führt `php bin/php/adduserapproval.php` aus.
+  führt `php bin/php/adduserapproval.php --apply` aus.
 
 ## Für Redakteure
 

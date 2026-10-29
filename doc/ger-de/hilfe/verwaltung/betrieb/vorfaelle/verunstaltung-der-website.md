@@ -68,7 +68,7 @@ Hosting-Runbooks.
 
 1. Leeren Sie jeden Cache, damit keine verunstaltete Seite ausgeliefert wird:
    `php bin/php/ezcache.php --clear-all --allow-root-user`, dann
-   `./console exp:velocity cache clear --allow-root-user`; leeren Sie ein CDN, falls Sie eines nutzen.
+   `./console exp:velocity cache clear --apply --allow-root-user`; leeren Sie ein CDN, falls Sie eines nutzen.
 2. Bringen Sie die Website wieder online und prüfen Sie sie von außen.
 3. Öffentliche Erklärung wie mit der Kommunikation vereinbart; wenn personenbezogene Daten betroffen sein könnten,
    siehe [Meldung von Datenschutzverletzungen](meldung-von-datenschutzverletzungen.md).

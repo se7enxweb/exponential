@@ -2,14 +2,14 @@
 title: exp:trashpurge
 audience: developer, admin
 category: examples
-summary: Permanently delete all objects in the trash.
+summary: Permanently delete all objects in the trash (dry run unless --apply).
 keywords: exp:trashpurge, trashpurge, console, command, CLI, trashpurge.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:trashpurge
 
-Permanently delete all objects in the trash.
+Permanently delete all objects in the trash (dry run unless --apply).
 
 Script `bin/php/trashpurge.php`, code in `kernel/private/classes/commands/trashpurge.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -23,14 +23,20 @@ php bin/php/trashpurge.php --help
 ```text
 Empty Exponential trash.
 Permanently deletes all objects in the trash.
+Without --apply nothing is deleted: the script counts and lists what it would purge. --dry-run
+means the same as no flag; --apply together with --dry-run is a usage error (exit 2). The cronjob
+part trashpurge purges as before.
 
 ./bin/php/trashpurge.php
+./bin/php/trashpurge.php --apply
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
+| `--apply` |  | Purge the objects (the default is a dry run that lists them and deletes nothing) |
+| `--dry-run` |  | The default: count and list what would be purged, change nothing |
 | `--iteration-sleep` | required | Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. Default is one second. |
 | `--iteration-limit` | required | Amount of items to remove in each iteration when performing a purge operation. Default is 100. |
 | `--memory-monitoring` |  | If set, memory usage will be logged in var/log/trashpurge.log. |

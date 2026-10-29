@@ -39,7 +39,7 @@ The simplest reproducible start is a fresh installation on SQLite
 
 ```bash
 ./console exp:install --dry-run
-./console exp:install
+./console exp:install --apply
 ```
 
 For tutorials about extensions, start from a Git installation so readers can contribute later

@@ -2,14 +2,14 @@
 title: exp:addanonymouspublicpolicies
 audience: developer, admin
 category: examples
-summary: "Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Ansichten des Newsletters (--dry-run listet sie zuerst auf)."
+summary: "Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Views des Newsletters (Probelauf, außer mit --apply)."
 keywords: Konsole, Befehl, exp:addanonymouspublicpolicies, addanonymouspublicpolicies, console, command, CLI, addanonymouspublicpolicies.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addanonymouspublicpolicies
 
-Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Ansichten des Newsletters (--dry-run listet sie zuerst auf).
+Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Views des Newsletters (Probelauf, außer mit --apply).
 
 Skript `bin/php/addanonymouspublicpolicies.php`, Code in `kernel/private/classes/commands/addanonymouspublicpolicies.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -28,20 +28,24 @@ it lacks: user/register (a new installation takes it out of PolicyOmitList[]), r
 the module exists tags/view (eztags) and newsletter subscribe, configure, unsubscribe and archive
 (cjw_newsletter). A policy the role has in any form (also limited, or module/*) is left alone, so
 the script can run again. Prints PASS or FAIL at the end.
+Without --apply nothing is written: the script lists what it would add. --dry-run is still accepted
+and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
-Example: php bin/php/addanonymouspublicpolicies.php --dry-run
-         php bin/php/addanonymouspublicpolicies.php --only=user/register
-         php bin/php/addanonymouspublicpolicies.php --skip=user/register --role=Visitors
+Example: php bin/php/addanonymouspublicpolicies.php
+         php bin/php/addanonymouspublicpolicies.php --apply
+         php bin/php/addanonymouspublicpolicies.php --apply --only=user/register
+         php bin/php/addanonymouspublicpolicies.php --apply --skip=user/register --role=Visitors
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Listet auf, was hinzugefügt würde, ändert nichts |
+| `--apply` |  | Die Änderungen schreiben (Standard ist ein Probelauf, der sie auflistet und nichts ändert) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was hinzugefügt würde, nichts ändern |
 | `--role` | erforderlich | Die zu ergänzende Rolle (ID oder Name); Standard Anonymous |
 | `--only` | erforderlich | Nur diese Richtlinie (Modul/Funktion), kann wiederholt werden |
-| `--skip` | erforderlich | Nie diese Richtlinie (module/function), darf wiederholt werden; z. B. hält --skip=user/register die Registrierung geschlossen |
+| `--skip` | erforderlich | Diese Richtlinie nie (Modul/Funktion), kann wiederholt werden; z. B. hält --skip=user/register die Registrierung geschlossen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

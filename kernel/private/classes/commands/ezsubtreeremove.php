@@ -14,7 +14,7 @@
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
  * @package kernel
- * @description Remove content subtrees by node ID, to the trash unless --ignore-trash is given
+ * @description Remove content subtrees by node ID, to the trash unless --ignore-trash is given (dry run unless --apply)
  * @long-description Permanently removes all content objects under the specified subtree nodes. This operation is irreversible. Use --dry-run first to preview what will be deleted.
  *
  */
@@ -33,16 +33,30 @@ class Ezsubtreeremove extends \Exponential\Runnable\Command
 
         $cli = $this->cli();
         $script = $this->script( array( 'description' => ( "\n" .
-                                                                 "This script will make a remove of a content object subtrees.\n\nExample: ./bin/php/ezsubtreeremove.php --nodes-id=70,71 --ignore-trash\n" ),
+                                                                 "This script will make a remove of a content object subtrees.\n"
+                                                                 . "Without --apply nothing is removed: the script lists the subtrees, their child and object\n"
+                                                                 . "counts and whether they may be removed. --dry-run means the same as no flag; --apply together\n"
+                                                                 . "with --dry-run is a usage error (exit 2).\n\n"
+                                                                 . "Example: ./bin/php/ezsubtreeremove.php --nodes-id=70,71 --ignore-trash\n"
+                                                                 . "         ./bin/php/ezsubtreeremove.php --nodes-id=70,71 --ignore-trash --apply\n" ),
                                               'use-session' => false,
                                               'use-modules' => true,
                                               'use-extensions' => true ) );
-        $scriptOptions = $this->startup( "[nodes-id:][ignore-trash]",
+        $scriptOptions = $this->startup( "[apply][dry-run][nodes-id:][ignore-trash]",
                                               "",
-                                              array( 'nodes-id' => "Subtree nodes ID (separated by comma ',').",
+                                              array( 'apply' => "Remove the subtrees (the default is a dry run that lists them and removes nothing)",
+                                                     'dry-run' => "The default: list what would be removed, change nothing",
+                                                     'nodes-id' => "Subtree nodes ID (separated by comma ',').",
                                                      'ignore-trash' => "Ignore trash ('move to trash' by default)."
                                                      ),
                                               false );
+        $apply = self::applyRequested( $scriptOptions );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $srcNodesID  = $scriptOptions[ 'nodes-id' ] ? trim( $scriptOptions[ 'nodes-id' ] ) : false;
         $moveToTrash = $scriptOptions[ 'ignore-trash' ] ? false : true;
         $deleteIDArray = $srcNodesID ? explode( ',', $srcNodesID ) : false;
@@ -96,7 +110,9 @@ class Ezsubtreeremove extends \Exponential\Runnable\Command
         $cli->output( "Move to trash: $moveToTrashStr" );
         $cli->output( "Reverse related count: $reverseRelatedCount\n" );
 
-        $cli->output( "Removing subtrees:\n" );
+        $cli->output( $dryRun ? "Subtrees that would be removed:\n" : "Removing subtrees:\n" );
+        $planned = 0;
+        $failed = 0;
 
         foreach ( $deleteResult as $deleteItem )
         {
@@ -118,13 +134,21 @@ class Ezsubtreeremove extends \Exponential\Runnable\Command
             if ( !$canRemove )
             {
                 $cli->error( "\nSubtree remove Error!\nInsufficient permissions. You do not have permissions to remove the subtree with nodeID: $nodeID\n" );
+                $failed++;
                 continue;
             }
             $cli->output( "Child count: $childCount" );
             $cli->output( "Object node count: $objectNodeCount" );
+            $planned++;
+            if ( $dryRun )
+            {
+                $cli->output( "would be removed" . ( $moveToTrash ? ' (moved to the trash)' : '' ) . "\n" );
+                continue;
+            }
 
             // Remove subtrees
-            \eZContentObjectTreeNode::removeSubtrees( array( $nodeID ), $moveToTrash );
+            if ( !$dryRun )
+                \eZContentObjectTreeNode::removeSubtrees( array( $nodeID ), $moveToTrash );
 
             // We should make sure that all subitems have been removed.
             $itemInfo = \eZContentObjectTreeNode::subtreeRemovalInformation( array( $nodeID ) );
@@ -132,12 +156,26 @@ class Ezsubtreeremove extends \Exponential\Runnable\Command
             $itemDeleteList = $itemInfo['delete_list'];
 
             if ( count( $itemDeleteList ) != 0 or ( $childCount != 0 and $itemTotalChildCount != 0 ) )
+            {
                 $cli->error( "\nWARNING!\nSome subitems have not been removed.\n" );
+                $failed++;
+            }
             else
                 $cli->output( "Successfuly DONE.\n" );
         }
 
-        $cli->output( "Done." );
+        if ( $dryRun )
+        {
+            $cli->output( "PASS: $planned subtree(s) would be removed (dry run, nothing changed; --apply writes)" );
+            $script->shutdown( $failed ? 1 : 0 );
+            return;
+        }
+        if ( $failed )
+        {
+            $cli->error( "FAIL: $failed subtree(s) not removed or not completely" );
+            $script->shutdown( 1 );
+        }
+        $cli->output( "PASS: $planned subtree(s) removed" );
         $script->shutdown();
     }
 }

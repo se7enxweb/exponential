@@ -131,12 +131,21 @@ What can go wrong: a `200` for the `.git` or kernel request means the rules are 
 `.htaccess` or `AllowOverride`, an nginx block that is not this chapter's); stop and fix that before the site is
 reachable from outside. A `404` for every asset under `design/` means the document root is not the installation root.
 
+**WebDAV is not in this list.** It is off by default, and the shipped rules send `/index_webdav.php` to `index.php`
+like any other script. To serve WebDAV, uncomment `RewriteRule ^index_webdav\.php - [L]` in `.htaccess` (or write the
+same rule into the HTTPS virtual host), or give WebDAV a host of its own that sends every request to
+`index_webdav.php`. Velocity and the FrankenPHP configuration do not serve WebDAV; use Apache or nginx with PHP-FPM
+for it. **Since 6.0.15 the script is `index_webdav.php`, not `webdav.php`:** rules written for the old name keep
+working through a forwarding shim that will be removed in a later major version. The rules for each server and the
+test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`) are in
+[The WebDAV entry script is now index_webdav.php](../bc/6.0/webdav-entry-script-index-webdav.md).
+
 ---
 
 ## 8.3 Exponential Velocity, the recommended way
 
 **Velocity is part of Exponential as of 6.0.15.** The root `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.55`, so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
+`se7enxweb/exponential-velocity ~0.0.4.57`, so the `composer install` of [chapter 3](03-getting-the-code.md#34-the-velocity-package)
 has already installed it, on the same PHP as the kernel (8.0 and later, the stock PHP 8.0 of Red Hat Enterprise Linux 9
 included). There is nothing extra to download before the first `exp:velocity start`. This is the turning point of the
 6.0 line: the Internet / Web Application Server is a cornerstone of the core product, so serving, caching, HTTPS and
@@ -149,7 +158,7 @@ The four commands of daily work:
 ./console exp:velocity deploy --allow-root-user       # after a change: autoloads, settings, caches, PHP-FPM, Velocity
 ./console exp:velocity start --allow-root-user
 ./console exp:velocity restart --allow-root-user      # workers load changed classes and settings
-./console exp:velocity cache clear --allow-root-user  # empty the response cache
+./console exp:velocity cache clear --apply --allow-root-user  # empty the response cache
 ```
 
 Velocity is an application server written for Exponential. A parent process loads the application once and forks
@@ -180,16 +189,16 @@ and `php` (PHP's built-in development server).
 
 ### 8.3.1 Install the engine package
 
-Exponential's `composer.json` requires the engine at `~0.0.4.55`, so `composer install` installs it on every
+Exponential's `composer.json` requires the engine at `~0.0.4.57`, so `composer install` installs it on every
 supported PHP, 8.0 included. Until its release 0.0.4.54 the engine needed PHP 8.1 and was only suggested; an
 installation made in that time adds it with Composer:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
 It lands in `vendor/se7enxweb/exponential-velocity` (the former package name `se7enxweb/qbix-webserver` is still
-found). The tilde constraint follows the engine's last version position, so `~0.0.4.55` accepts later `0.0.4.x`
+found). The tilde constraint follows the engine's last version position, so `~0.0.4.57` accepts later `0.0.4.x`
 releases.
 
 The package's `composer.json` requires PHP 8.0 (`"php": ">=8.0"`, from release 0.0.4.54; it was `>=8.1`) and the
@@ -219,7 +228,7 @@ For an Exponential installation the Composer package is what `exp:velocity` driv
 real site set `qbix`:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 ```
 
 | Engine | Role | Shipped ports (HTTP / HTTPS) | Notes |
@@ -244,8 +253,8 @@ pid file and logs, so they can run side by side for tests. A site is served by o
 php bin/php/console exp:velocity config list                 # every setting; * marks the ones you set
 php bin/php/console exp:velocity config list HTTPSSettings   # one block
 php bin/php/console exp:velocity config get ServerSettings Workers
-php bin/php/console exp:velocity config set ServerSettings Workers 16
-php bin/php/console exp:velocity config unset ServerSettings Workers   # back to the shipped value
+php bin/php/console exp:velocity config set --apply ServerSettings Workers 16
+php bin/php/console exp:velocity config unset --apply ServerSettings Workers   # back to the shipped value
 php bin/php/console exp:velocity config paths                # which file is which
 ```
 
@@ -292,9 +301,9 @@ The start-up lines, including the worker user (`Workers as: ...`) and the TLS st
 To serve visitors directly, bind to all addresses on the standard ports:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Host 0.0.0.0 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Port 80 --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings HTTPSPort 443 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Host 0.0.0.0 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Port 80 --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings HTTPSPort 443 --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 ```
 
@@ -326,8 +335,8 @@ workers stay root and the start says so: give the installation its own user (sec
 Set them to the user the files belong to:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings User example --allow-root-user
-php bin/php/console exp:velocity config set ServerSettings Group example --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings User example --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Group example --allow-root-user
 ```
 
 Started as an ordinary user, the server runs entirely as that user; use ports above 1024 then, and put a reverse proxy
@@ -432,7 +441,7 @@ Signed-in visitors are never served from the cache, and a page carrying a form t
 template or stylesheet change:
 
 ```bash
-php bin/php/console exp:velocity cache clear     # every cached page is rendered again on its next request
+php bin/php/console exp:velocity cache clear --apply     # every cached page is rendered again on its next request
 php bin/php/console exp:velocity cache stats     # where it is, how much it holds, when it was cleared
 ```
 
@@ -458,9 +467,9 @@ ignored. See section 8.8.
 Any PEM certificate from a CA or a hosting panel (leaf with chain, and the private key; one file may hold both):
 
 ```bash
-php bin/php/console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
-php bin/php/console exp:velocity config set HTTPSSettings Enabled true --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem --allow-root-user
+php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 php bin/php/console exp:velocity ssl show --allow-root-user
 curl -sI https://example.com/ | head -1      # expect HTTP/2 200 or a redirect
@@ -529,7 +538,7 @@ cat > /etc/vc/conf-available/https-acme.conf <<'EOF'
   }
 } } } }
 EOF
-php bin/php/console exp:velocity conf enable https-acme --allow-root-user
+php bin/php/console exp:velocity conf enable --apply https-acme --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 php bin/php/console exp:velocity ssl show --allow-root-user
 ```
@@ -561,7 +570,7 @@ with `"bundle": "<file>"` and a `password`, `passwordFile` or `passwordEnv`. For
 ```bash
 php bin/php/console exp:velocity ssl show --allow-root-user          # served certificate, every known one by expiry
 php bin/php/console exp:velocity ssl show --json --allow-root-user   # for monitoring: watch daysLeft
-php bin/php/console exp:velocity ssl renew example.com --allow-root-user
+php bin/php/console exp:velocity ssl renew --apply example.com --allow-root-user
 ```
 
 A 90-day CA certificate is renewed when about 30 days are left, so one with fewer than 14 days left means renewal has
@@ -627,11 +636,11 @@ Differences you made on purpose (a disabled module, an enabled snippet) are hono
 
 ```bash
 php bin/php/console exp:velocity layout --allow-root-user                 # every path, what is enabled, the files in use
-php bin/php/console exp:velocity layout migrate --allow-root-user         # write the tree now
-php bin/php/console exp:velocity site enable <name> --allow-root-user     # sites-enabled/<name>.conf -> ../sites-available/
-php bin/php/console exp:velocity site disable <name> --allow-root-user    # removes only the symlink
-php bin/php/console exp:velocity conf enable|disable <name> --allow-root-user
-php bin/php/console exp:velocity mod enable|disable <name> --allow-root-user
+php bin/php/console exp:velocity layout migrate --apply --allow-root-user         # write the tree now
+php bin/php/console exp:velocity site enable --apply <name> --allow-root-user     # sites-enabled/<name>.conf -> ../sites-available/
+php bin/php/console exp:velocity site disable --apply <name> --allow-root-user    # removes only the symlink
+php bin/php/console exp:velocity conf enable --apply|disable <name> --allow-root-user
+php bin/php/console exp:velocity mod enable --apply|disable <name> --allow-root-user
 php bin/php/console exp:velocity ctl configtest --allow-root-user         # the engine's own check of the tree
 ```
 
@@ -804,7 +813,7 @@ faster once OPcache is warm.
 php bin/php/console exp:phar build                      # build (only when something changed; --force always)
 php bin/php/console exp:phar check                      # is the archive current?
 php bin/php/console exp:phar info
-php bin/php/console exp:velocity config set ServerSettings EnginePhar enabled
+php bin/php/console exp:velocity config set --apply ServerSettings EnginePhar enabled
 php bin/php/console exp:velocity restart
 ```
 
@@ -852,7 +861,7 @@ with the same commands. It runs in classic mode: a pool of PHP threads, each req
 under PHP-FPM, so `ForkPerRequest`, `KeepGlobals` and the response cache do not apply.
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity install --allow-root-user    # optional: start installs it when missing
 php bin/php/console exp:velocity start --allow-root-user
 ```
@@ -1243,7 +1252,7 @@ it. Name the loopback addresses too, so a local proxy keeps working:
 cat > /etc/vc/conf-available/reverse-proxy.conf <<'EOF'
 { "Q": { "webserver": { "proxy": { "trusted": ["127.0.0.1", "::1", "192.0.2.10", "10.0.0.0/8"] } } } }
 EOF
-php bin/php/console exp:velocity conf enable reverse-proxy --allow-root-user
+php bin/php/console exp:velocity conf enable --apply reverse-proxy --allow-root-user
 php bin/php/console exp:velocity restart --allow-root-user
 ```
 

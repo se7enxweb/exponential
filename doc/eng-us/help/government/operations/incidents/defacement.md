@@ -61,7 +61,7 @@ credential the site holds. Follow the hosting runbook's "Eradicate and rebuild" 
 ## Communicate and close
 
 1. Clear every cache so no defaced page is served: `php bin/php/ezcache.php --clear-all --allow-root-user`, then
-   `./console exp:velocity cache clear --allow-root-user`; purge a CDN if you use one.
+   `./console exp:velocity cache clear --apply --allow-root-user`; purge a CDN if you use one.
 2. Bring the site back online and check from outside.
 3. Public statement as agreed with communications; if personal data may be involved, see
    [Data breach notification framing](data-breach-notification-framing.md).

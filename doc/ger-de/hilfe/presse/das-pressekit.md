@@ -103,7 +103,7 @@ Repository Vorrang:
 
 Das Kit ist älter als die Nachricht vom 20. Oktober 2026 und erwähnt sie deshalb nicht: **Seit 6.0.15 ist der
 Velocity Internet / Web Application Server Teil von Exponential.** Die `composer.json` im Wurzelverzeichnis verlangt
-`se7enxweb/exponential-velocity ~0.0.4.55` (bis dahin wurde es nur vorgeschlagen), und Velocity 0.0.4.54 läuft auf
+`se7enxweb/exponential-velocity ~0.0.4.57` (bis dahin wurde es nur vorgeschlagen), und Velocity 0.0.4.54 läuft auf
 PHP 8.0 und neuer. Fakten, die Sie drucken können, jeweils mit Quelle:
 
 | Fakt | Quelle |

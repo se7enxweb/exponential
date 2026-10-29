@@ -15,18 +15,18 @@ Die ausgelieferten Einstellungen von `settings/membermanagement.ini`: 4 Blöcke,
 > Mitgliederverwaltung: welche Benutzergruppen die Benutzerkonten welcher anderen Gruppen verwalten dürfen, mit welchen Richtlinien, und  
 > welche Gruppen niemand über eine solche Regel verwaltet. Gelesen vom Rollen-Schritt des Setup-Assistenten und vom Kickstarter (eine neue  
 > Installation), von bin/php/addmembermanagement.php --apply (eine bestehende Installation; ohne --apply zeigt es nur,  
-> was es ändern würde) und von der Zugriffsprüfung, die die Konten der geschützten Gruppen außer Reichweite hält  
+> was es ändern würde) und von der Zugriffsprüfung, die die Konten der geschützten Gruppen unerreichbar hält  
 > (doc/eng-us/bc/6.0/member-management.md).  
 >
-> Die Standardwerte geben der Gruppe Editors die Rolle "Member management": die Konten unterhalb von Members anlegen, bearbeiten (Name, E-Mail, Passwort), aktivieren und  
+> Die Standards geben der Gruppe Editors die Rolle "Member management": die Konten unter Members anlegen, bearbeiten (Name, E-Mail, Passwort), aktivieren und  
 > deaktivieren, verschieben und entfernen. Die Konten von Administrator users und Editors bleiben bei den  
-> Administratoren, und niemand erhält dadurch Rollen, Sektionen oder Setup.  
+> Administratoren, und niemand erhält dadurch Rollen, Abschnitte oder Setup.  
 >
-> Gruppen werden in einer dieser Formen benannt, damit dieselbe Datei in jede Installation passt:  
->   remote:<remote id>   die remote id des Gruppenobjekts oder seines Haupt-Knotens (die Standardgruppen behalten ihre überall)  
+> Gruppen werden in einer dieser Formen genannt, sodass dieselbe Datei zu jeder Installation passt:  
+>   remote:<remote id>   die Remote-ID des Gruppenobjekts oder seines Hauptknotens (die Standardgruppen behalten ihre überall)  
 >   node:<node id>       der Knoten der Gruppe  
->   name:<name>          die Benutzergruppe der obersten Ebene mit diesem Namen unterhalb des Benutzer-Roots  
-> Regeln hinzufügen oder ändern in settings/override/membermanagement.ini.append.php oder in den Einstellungen einer Erweiterung.  
+>   name:<name>          die Benutzergruppe dieses Namens auf oberster Ebene unter der Benutzerwurzel  
+> Regeln in settings/override/membermanagement.ini.append.php oder in den Einstellungen einer Erweiterung hinzufügen oder ändern.  
 
 | Block | Einstellungen |
 |---|---|

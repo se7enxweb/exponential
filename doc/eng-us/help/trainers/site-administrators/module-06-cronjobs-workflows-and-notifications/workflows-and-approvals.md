@@ -60,7 +60,7 @@ to 7.
 
 ### Common questions
 
-**Can I try workflows without building one?** Yes. `php bin/php/console exp:collaborationsampledata` creates a
+**Can I try workflows without building one?** Yes. `php bin/php/console exp:collaborationsampledata --apply` creates a
 sample approval workflow, sample editors and three articles waiting for approval; `--remove` takes it all away
 again. Run it with `--dry-run` first to see what it would create.
 

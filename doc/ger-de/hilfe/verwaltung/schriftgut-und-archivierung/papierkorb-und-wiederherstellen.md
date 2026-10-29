@@ -52,7 +52,7 @@ Wiederherstellungen werden im Audit als `content.object.restore` aufgezeichnet, 
 - Der Teil `trashpurge` gehört standardmäßig zu keinem Cronjob-Teil. Mit
   `content.ini [TrashSettings] KeepItemsForDays=<days>` löscht er nur Einträge, die vor mindestens so vielen Tagen in den
   Papierkorb gelegt wurden; leer oder 0 löscht alles.
-- Auf der Kommandozeile: `php bin/php/trashpurge.php --trashed-days=<days>`.
+- Auf der Kommandozeile: `php bin/php/trashpurge.php --apply --trashed-days=<days>`.
 
 ```ini
 # settings/override/content.ini.append.php

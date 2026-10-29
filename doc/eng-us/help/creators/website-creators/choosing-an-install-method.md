@@ -79,7 +79,7 @@ An example for a production-style install by host names, run as the web server's
 
 ```bash
 EXP_INSTALL_DB_PASSWORD='<database password>' \
-sudo -u www-data php bin/php/console exp:install \
+sudo -u www-data php bin/php/console exp:install --apply \
   --db=pgsql --db-user=exponential --db-name=exponential \
   --package=sevenx_multisite_clean --language=eng-US --languages=ger-DE \
   --title="Example" --url=https://www.example.com \

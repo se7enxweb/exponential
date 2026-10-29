@@ -14326,6 +14326,14 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Þessi uppsetning er opin kynningarútgáfa: hver sem er getur vitað aðgangsorð kerfisstjórans og ekki er hægt að breyta eða endurstilla aðgangsorð kerfisstjóra. Sláðu ekki inn neitt einkamál hér.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Reikningar sem enginn notar eða þarf að skoða; gera óvirka, aflæsa eða flytja út.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Endurskoðunarskrá notenda</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hver breytti, skráði sig inn eða var hafnað, eftir reikningum; sía og flytja út.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Innskráningaskýrsla</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Hver er innskráður, innskráningar og mistök á dag; skrá notanda út alls staðar.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Útrunnar setur PHP-meðhöndlarans eru fjarlægðar af PHP sjálfu (session.gc_maxlifetime), ekki af þessari síðu eða cron-verkhlutanum session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Innskráðar setur allra notenda eru birtar og skráðar út í innskráningaskýrslunni, sem virkar með öllum setumeðhöndlurum.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Opna innskráningaskýrsluna</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ reikninginn þinn.</translation>
     <message>
         <source>None yet</source>
         <translation>Enginn enn</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Nýlegar innskráningar þínar, misheppnaðar tilraunir og breytingar á aðgangsorði, netfangi og tveggja þrepa innskráningu.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Nýlegar innskráningar, misheppnaðar tilraunir og öryggisbreytingar þessa reiknings.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Fara yfir virkni</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Misheppnaðar innskráningar: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ Nánari upplýsingar eru á síðunni um kerfiskröfur.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab var ekki skrifað (%reason). Bættu þessum línum við crontab notandans sem vefsvæðið keyrir sem, annars keyra biðröðin, innflutningarnir, tilkynningarnar og leitarskráin aldrei:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Enduruppsetning fer fram með kickstarter (%file, síðan php bin/php/kickstarter.php run --apply) eða með nýrri uppsetningu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Póstflutningurinn hafnaði skilaboðum í síðustu keyrslu: %count. Athugaðu póstþjóninn og site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Atburðir í bið: %count, og engin keyrsla tilkynninga-cron-verksins er skráð. Bættu verkhlutanum „frequent“ við crontab eða keyrðu exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Velja annan vef eða hluta með hnútavalinu</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Aðeins kerfisstjórinn getur breytt eigandanum: keyrðu ./console exp:content-check --fix-permissions --apply sem root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>tómt</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Undirritunarlykillinn er eldri en eins árs: skiptu um hann með exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>ekki sent</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Tilkynninga-cron-verkið skráir hér hverja keyrslu sína. Bættu verkhlutanum frequent við crontab eða keyrðu exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Notaðu skipanalínuna: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Setup &gt; Cronjobs</source>
         <translation>Uppsetning &gt; Cron-verk</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Enginn cron-verkhluti hefur keyrt enn: verkbiðröðin, innflutningurinn, tilkynningarnar og leitarskráin bíða. Keyrðu php bin/php/installcrontab.php --add --apply eða bættu línunum úr --show við crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Engar.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>með auðkenningarforriti</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>með kóða í tölvupósti</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>með endurheimtarkóða</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>með aðgangslykli</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>með ytri reikningi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Birt sem netkerfi þess; vistfangið er geymt eins og persónuverndarstillingar vefsvæðisins segja til um.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ekki skráð</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Staðsetning</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>áætluð</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Stjórna tækjum</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>með auðkenningarforriti</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>með kóða í tölvupósti</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>með endurheimtarkóða</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>með aðgangslykli</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>með ytri reikningi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ekki skráð</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Staðsetning</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>áætluð</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Skoða setur þessa notanda</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Reikningurinn þinn %login á %site var rétt í þessu notaður til að skrá inn frá stað sem ekki hefur verið skráð inn frá nýlega:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Áætluð staðsetning</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser á %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Innskráningaskýrsla</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Opna síðuna</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to af %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Innskráningarnafn eða notandaauðkenni: reikningurinn sem atburðurinn varðaði eða notandinn sem framkvæmdi aðgerðina.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Reikningur</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aðgerð</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Á eftir</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Allar niðurstöður</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Á undan</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Framkvæmt af</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Hreinsa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Lokið</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Atburðir eru geymdir í %days daga.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Atburðir eru geymdir þar til þeir eru fjarlægðir handvirkt.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Atburðir</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Allar aðgerðir</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Allir atburðir þessa reiknings</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Flytja listann út sem CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mistókst</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Frá</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Þrengja listann</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Enginn atburður passar.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Á síðu</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Skráning er óvirk í audit.ini ([UserAuditSettings] UserAudit); listinn sýnir það sem var skráð áður.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hafnað</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Niðurstaða</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sýna</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Töflu endurskoðunarskrár notenda vantar. Búðu hana til með php update/common/scripts/6.0/createuseraudittable.php; þangað til geyma endurskoðunarskrárnar alla atburði.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Þessi síða þarf SQL-gagnagrunn; hún er ekki í boði með MongoDB. Endurskoðunarskrárnar geyma alla atburði.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Endurskoðunarskrá notenda</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Notandi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Hvenær</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hvar</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Hver breytti, stofnaði, virkjaði, gerði óvirkan, færði eða fjarlægði hvaða reikning, hver skráði sig inn eða var hafnað og hvaða hlutverkum var úthlutað: ein lína fyrir hvern atburð, með reitunum á undan og á eftir. Lykilorð og leyndarmál eru aldrei skráð.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>hópur</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>kerfið</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>óþekkt</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Tryggja reikninginn</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Endurheimtarkóði var notaður til að skrá inn á reikninginn þinn %login á %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Endurheimtarkóði var notaður</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Reikningur</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Áætlað vistfang</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Biddu um nýtt aðgangsorð til að skrá þig inn aftur eða hafðu samband við stjórnendur vefsvæðisins.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Biðja um nýtt aðgangsorð</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Hver endurheimtarkóði virkar einu sinni. Ef þú týndir símanum skaltu setja auðkenningarforritið upp aftur og geyma nýju endurheimtarkóðana á öruggum stað.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Misheppnaðar innskráningartilraunir á reikninginn þinn</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Héðan í frá biður innskráningin um kóða til viðbótar við aðgangsorðið þitt. Ef þú gerðir þetta þarftu ekki að gera neitt.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ef þetta varst þú og þú gleymdir aðgangsorðinu skaltu biðja um nýtt. Ef ekki skaltu velja sterkara aðgangsorð og kveikja á tveggja þrepa innskráningu.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ef þetta varst ekki þú gæti einhver vitað aðgangsorðið þitt: breyttu því strax og athugaðu hvar reikningurinn þinn er innskráður.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Endurheimtarkóðar eftir</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Fara yfir tækin þín</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Öryggisviðvörun</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Einhver reyndi að skrá sig inn á reikninginn þinn %login á %site með röngu aðgangsorði mörgum sinnum í röð (tilraunir: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Öryggisatburður átti sér stað á reikningnum þínum %login á %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Þetta er öryggisviðvörun um reikninginn þinn. Hún er send við hverja slíka breytingu og ekki er hægt að slökkva á henni.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tími</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Slökkt var á tveggja þrepa innskráningu fyrir reikninginn þinn %login á %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Slökkt var á tveggja þrepa innskráningu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kveikt var á tveggja þrepa innskráningu fyrir reikninginn þinn %login á %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kveikt var á tveggja þrepa innskráningu</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Reikningnum þínum %login á %site var læst eftir of margar misheppnaðar innskráningar.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Reikningurinn þinn er nú aðeins varinn með aðgangsorðinu. Ef þú gerðir þetta ekki skaltu kveikja aftur á tveggja þrepa innskráningu eftir að þú hefur breytt aðgangsorðinu.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Reikningnum þínum var læst</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Öryggisvirkni notandans %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Innskráð</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Misheppnuð innskráningartilraun</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Skráð út</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Setur skráðar út</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Innskráning úr nýju tæki</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Innskráning frá nýjum stað</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Auðkenni staðfest („Staðfestu að þetta sért þú“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Auðkennisathugun mistókst</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Innskráð með aðgangslykli</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Innskráning með aðgangslykli mistókst</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Innskráningu hafnað: tveggja þrepa kóða vantar eða hann er rangur</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Rangur tveggja þrepa kóði</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Reikningi læst eftir misheppnaðar innskráningar</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Reikningur opnaður</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Aðgangsorði breytt</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Breyting aðgangsorðs mistókst</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Aðgangsorð endurstillt</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Beðið um nýtt aðgangsorð</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Netfangi breytt</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Notandanafni breytt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kveikt á tveggja þrepa innskráningu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Slökkt á tveggja þrepa innskráningu</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Endurheimtarkóði notaður</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nýir endurheimtarkóðar</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Forritsaðgangsorð búið til</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Forritsaðgangsorð afturkallað</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Aðgangslykli bætt við</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Aðgangslykill fjarlægður</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Reikningur virkur</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Reikningur óvirkur</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Allt</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Innskráningar og setur</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Breytingar á reikningi</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Þarfnast athygli</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>af þér</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>af notandanum</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>af %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Aðferð</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Vafri</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Stýrikerfi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Tæki</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Staður</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Setur</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Hverjar</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Rás</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Misheppnaðar tilraunir</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kóðar eftir</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Innskráningarmeðhöndlari</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Öryggisvirkni notandans %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Innskráningar og breytingar á öryggi reikningsins þíns. Ef þú sérð eitthvað sem þú gerðir ekki skaltu breyta aðgangsorðinu og skrá út þau tæki sem þú þekkir ekki.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Innskráningar og breytingar á öryggi þessa reiknings.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Breyta aðgangsorði</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Aftur í reikninginn</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Öryggisvirknin er ekki skráð</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Hún er lesin úr endurskoðunarskrá notenda, en töfluna expuser_audit vantar eða hún er ekki studd í þessum gagnagrunni. Keyrðu php update/common/scripts/6.0/createuseraudittable.php eða gagnagrunnsuppfærslu 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Síðustu dagar: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Innskráningar síðustu daga (dagar: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Nýleg öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sýna</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mistókst</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>hafnað</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Engin öryggisvirkni skráð enn.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Öryggisatburðir eru geymdir í takmarkaðan tíma (dagar: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Öryggisatburðir eru geymdir þar til kerfisstjóri fjarlægir þá.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Sækja innskráningargögnin mín</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Seturnar þínar og öryggisatburðir sem JSON-skrá.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Innskráð</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Misheppnuð innskráningartilraun</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Skráð út</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Setur skráðar út</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Innskráning úr nýju tæki</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Innskráning frá nýjum stað</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Auðkenni staðfest („Staðfestu að þetta sért þú“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Auðkennisathugun mistókst</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Innskráð með aðgangslykli</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Innskráning með aðgangslykli mistókst</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Innskráningu hafnað: tveggja þrepa kóða vantar eða hann er rangur</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Rangur tveggja þrepa kóði</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Reikningi læst eftir misheppnaðar innskráningar</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Reikningur opnaður</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Aðgangsorði breytt</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Breyting aðgangsorðs mistókst</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Aðgangsorð endurstillt</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Beðið um nýtt aðgangsorð</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Netfangi breytt</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Notandanafni breytt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kveikt á tveggja þrepa innskráningu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Slökkt á tveggja þrepa innskráningu</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Endurheimtarkóði notaður</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nýir endurheimtarkóðar</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Forritsaðgangsorð búið til</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Forritsaðgangsorð afturkallað</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Aðgangslykli bætt við</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Aðgangslykill fjarlægður</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Reikningur virkur</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Reikningur óvirkur</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Allt</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Innskráningar og setur</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Breytingar á reikningi</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Þarfnast athygli</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Öryggisvirkni</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Öryggisvirkni notandans %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Innskráningar og breytingar á öryggi reikningsins þíns. Ef þú sérð eitthvað sem þú gerðir ekki skaltu breyta aðgangsorðinu og skrá út þau tæki sem þú þekkir ekki.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Breyta aðgangsorði</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Öryggisvirkni er ekki enn skráð á þessu vefsvæði.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Innskráningar síðustu daga (dagar: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Misheppnaðar tilraunir</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Engin öryggisvirkni skráð enn.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Sækja innskráningargögnin mín</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Seturnar þínar og öryggisatburðir sem JSON-skrá.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Aðgangsorð</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Aðgangsorð og tveggja þrepa kóði</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-viðmót</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-viðmót</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Einföld innskráning</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Innskráð áður en farið var að skrá setur</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Innskráningaskýrsla</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Hver er innskráður á vefsvæðið, hversu oft reikningar skrá sig inn og mistekst það, og útskráning notanda alls staðar. Virkar með öllum setumeðhöndlurum.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Setan var skráð út. Tækið þarf að skrá sig inn aftur.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Notandinn %login var skráður út úr setum (fjöldi: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Notandinn %login var ekki með neina virka setu.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Enginn reikningur er með þetta auðkenni, notandanafn eða netfang.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Þetta er setan sem þú ert að nota. Skráðu þig út til að ljúka henni.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Þeirri setu var þegar lokið.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Síðan var útrunnin. Engu var breytt; reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Setur eru ekki skráðar á þessu vefsvæði (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Töfluna expuser_session vantar</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Setur eru skráðar þegar hún hefur verið stofnuð: php update/common/scripts/6.0/createusersessiontable.php, eða gagnagrunnsuppfærsla 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Núna og í dag</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Virkar setur</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Innskráðir notendur</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Innskráningar í dag</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Misheppnaðar tilraunir í dag</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Skrá notanda út alls staðar</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Hver seta reikningsins lýkur við næstu beiðni sína, einnig þær sem „Muna eftir mér“ heldur við. Notaðu þetta þegar reikningur gæti verið í röngum höndum; endurstilltu síðan aðgangsorð hans.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Auðkenni notanda, notandanafn eða netfang</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Skrá út alls staðar</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Innskráð núna</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Sýndar eru þær sem síðast voru notaðar (hámark: %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Notandi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Tæki</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Vistfang</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Innskráð</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Síðast virkt</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aðgerðir</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Þetta tæki</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ekki skráð</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Skrá út</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Engin seta er innskráð.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Síðustu dagar: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Innskráningar og misheppnaðar tilraunir eru taldar úr endurskoðunarskrá notenda, sem er ekki til staðar; nýju seturnar eru taldar.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dagur</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Innskráningar</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Misheppnaðar tilraunir</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nýjar setur</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Setumeðhöndlari: %handler. Seturnar eru lesnar úr töflunni expuser_session, svo skýrslan virkar með öllum meðhöndlurum.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Öryggisviðvörun um reikninginn þinn</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Öryggisatburður átti sér stað á reikningnum þínum %login: %event. Ef þetta varst ekki þú skaltu tryggja reikninginn þinn á %url.</translation>
     </message>
 </context>
 </TS>

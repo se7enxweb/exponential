@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Habeyn &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Weli ma jiro qayb shaqada cron ah oo socotay: safka shaqooyinka, soo dejinta, ogeysiisyada iyo tusmada raadinta ayaa sugaya. Socodsii php bin/php/installcrontab.php --add --apply, ama ku dar xariiqyada --show crontab-ka.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Rakibaaddan waa tijaabo dadweyne: qof kasta ayaa laga yaabaa inuu ogaado erayga sirta ah ee maamulaha, erayada sirta ah ee maamulayaashana lama beddeli karo lamana dib u dejin karo. Fadlan halkan ha gelin wax gaar ah.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Qalabkaaga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Akoonno aan qofna isticmaalin ama u baahan eegis; Disable ka dhig, fur ama dhoofi.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Diiwaanka hubinta isticmaalayaasha</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Cidda wax beddeshay, gashay ama la diiday, akoon kasta; shaandheyn iyo dhoofin.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Warbixinta gelitaanka</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Cidda gashan, gelitaannada iyo fashilka maalin kasta; isticmaale meel kasta ka saar.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Fadhiyada PHP handler-ka ee waqtigoodu dhammaaday waxaa tirtira PHP laftiisu (session.gc_maxlifetime), ma aha bogga ama qaybta cronjob-ka session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Fadhiyada gashan ee isticmaale kasta waxaa lagu taxaa, laguna saaraa, warbixinta gelitaanka, taas oo la shaqaysa maamule kasta oo fadhi.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Fur warbixinta gelitaanka</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ hawlgeliso akoonkaaga.</translation>
     <message>
         <source>None yet</source>
         <translation>Weli midna</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Gelitaannadaadii u dambeeyay, isku dayadii fashilmay iyo isbeddellada erayga sirta ah, cinwaanka iimaylka iyo gelitaanka laba-tallaabo ah.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Gelitaannadii u dambeeyay, isku dayadii fashilmay iyo isbeddellada amniga ee akoonkan.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Dib u eeg dhaqdhaqaaqa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Gelitaanno fashilmay: %count</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ Fadlan eeg bogga shuruudaha si aad macluumaad dheeraad ah u hesho.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab-ka lama qorin (%reason). Ku dar sadarradan crontab-ka isticmaalaha goobtu ku shaqeyso, haddii kale safka, soo dhoofsiyada, ogeysiisyada iyo tusmada raadinta weligood ma socon doonaan:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Dib u rakibidda waxaa lagu sameeyaa Kickstarter (%file, kadib php bin/php/kickstarter.php run --apply) ama rakibid cusub.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Gaadiidka boostada ayaa diiday %count fariin socodkii ugu dambeeyay. Hubi server-ka boostada iyo site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count dhacdo ayaa sugaya mana jiro socod la diiwaangeliyay oo shaqada cron ee ogeysiisyada ah. Ku dar qaybta shaqada cron “frequent” crontab-ka, ama socodsii exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Choose another site or section with the node picker</source>
         <translation>Dooro goob ama qayb kale adigoo isticmaalaya doorashada node-ka</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Maamulaha nidaamka oo keliya ayaa beddeli kara milkiilaha: socodsii ./console exp:content-check --fix-permissions --apply adigoo ah root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>empty</source>
         <translation>madhan</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Furaha saxiixa wuxuu jiray in ka badan sannad: ku beddel exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>not sent</source>
         <translation>lama dirin</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Shaqada cron ee ogeysiisyadu halkan ayay ku diiwaangelisaa socod kasta oo ay samayso. Ku dar qaybta frequent crontab-ka, ama socodsii exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Isticmaal console-ka: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>None.</source>
         <translation>Midna.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>iyadoo la adeegsaday app xaqiijin</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>iyadoo la adeegsaday koodh iimayl lagu soo diray</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>iyadoo la adeegsaday koodh soo celin ah</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>iyadoo la adeegsaday furaha gelitaanka (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>iyadoo la adeegsaday akoon dibadeed</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Waxaa loo muujiyaa sida shabakaddiisa; cinwaanka waxaa loo kaydiyaa sida ay dejimaha ilaalinta xogta ee goobtu sheegaan.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Lama diiwaangelin</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Goobta</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>qiyaas ahaan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Manage devices</source>
         <translation>Maamul qalabka</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>iyadoo la adeegsaday app xaqiijin</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>iyadoo la adeegsaday koodh iimayl lagu soo diray</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>iyadoo la adeegsaday koodh soo celin ah</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>iyadoo la adeegsaday furaha gelitaanka (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>iyadoo la adeegsaday akoon dibadeed</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Lama diiwaangelin</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Goobta</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>qiyaas ahaan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>View the sessions of this user</source>
         <translation>Eeg fadhiyada isticmaalahan</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Akoonkaaga %login ee %site hadda ayaa loo isticmaalay in lagu galo meel aanu dhawaanahan ka soo gelin:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Goobta qiyaasta ah</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ku shaqeeya %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Warbixinta gelitaanka</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Open the page</source>
         <translation>Fur bogga</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ilaa %to oo ka mid ah %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Magaca gelitaanka ama aqoonsiga isticmaalaha: akoonka dhacdadu ku saabsanayd ama isticmaalaha ficilka sameeyay.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akoon</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ficil</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Ka dib</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Natiijo kasta</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ka hor</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Sameeyaha</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Nadiifi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Guulaystay</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Dhacdooyinka waxaa la hayaa muddo %days maalmood ah.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Dhacdooyinka waa la hayaa ilaa gacan lagu tirtiro.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dhacdooyin</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ficil kasta</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Dhammaan dhacdooyinka akoonkan</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>U dhoofi liiska sida CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Waa fashilantay</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Laga bilaabo</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Cidhiidhi liiska</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ma jirto dhacdo ku habboon.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Bog kasta</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Diiwaangelinta waa laga damiyay audit.ini ([UserAuditSettings] UserAudit); liisku wuxuu muujinayaa wixii hore loo diiwaangeliyay.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Waa la diiday</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natiijo</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Muuji</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Miiska diiwaanka hubinta isticmaalayaasha ma jiro. Ku samee php update/common/scripts/6.0/createuseraudittable.php; ilaa markaas faylasha hubintu waxay hayaan dhacdo kasta.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Boggani wuxuu u baahan yahay kaydka xogta SQL; laguma heli karo MongoDB. Faylasha hubintu waxay hayaan dhacdo kasta.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ilaa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Diiwaanka hubinta isticmaalayaasha</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Isticmaale</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Goorma</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Halkee</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Cidda beddeshay, abuurtay, awood gelisay, damisay, guurisay ama ka saartay akoonkee, cidda gashay ama la diiday, iyo doorarka la qoondeeyay: hal saf dhacdo kasta, iyadoo ay la socdaan goobaha ka hor iyo ka dib. Erayada sirta ah iyo siraha weligood lama diiwaangeliyo.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>koox</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>nidaam</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>aan la aqoon</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sug akoonkaaga</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Koodh soo celin ah ayaa loo isticmaalay in lagu galo akoonkaaga %login ee %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Koodh soo celin ah ayaa la isticmaalay</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akoon</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Cinwaanka qiyaasta ah</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Codso eray sir ah oo cusub si aad mar kale u gasho, ama la xiriir maamulayaasha goobta.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Codso eray sir ah oo cusub</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Koodh kasta oo soo celin ah hal mar oo keliya ayuu shaqeeyaa. Haddii aad lumisay taleefankaaga, mar kale deji app-kaaga xaqiijinta oo koodhadhka cusub ee soo celinta meel ammaan ah ku kaydi.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Isku dayo gelitaan oo fashilmay oo akoonkaaga ah</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Hadda wixii ka dambeeya, gelitaanku wuxuu weydiinayaa koodh marka lagu daro erayga sirta ah. Haddii adigu tan samaysay, waxba uma baahnid inaad samayso.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Haddii ay adiga ahayd oo aad illowday erayga sirta ah, codso mid cusub. Haddii kale, dooro eray sir ah oo ka adag oo shid gelitaanka laba-tallaabo ah.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Haddii aysan adiga ahayn, qof ayaa laga yaabaa inuu yaqaan erayga sirta ah: hadda beddel oo hubi meelaha akoonkaagu ku gashan yahay.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Koodhadhka soo celinta ee haray</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Dib u eeg qalabkaaga</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Digniin amni</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Qof ayaa isku dayay inuu galo akoonkaaga %login ee %site isagoo isticmaalaya eray sir ah oo khaldan %count jeer oo isku xiga.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Dhacdo amni ayaa ka dhacday akoonkaaga %login ee %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Tani waa digniin amni oo ku saabsan akoonkaaga. Waxaa loo diraa isbeddel kasta oo noocan ah lamana demin karo.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waqti</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Gelitaanka laba-tallaabo ah waa laga demiyay akoonkaaga %login ee %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Gelitaanka laba-tallaabo ah waa la demiyay</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Gelitaanka laba-tallaabo ah waa laga shiday akoonkaaga %login ee %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Gelitaanka laba-tallaabo ah waa la shiday</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Akoonkaaga %login ee %site waa la xiray kadib gelitaanno badan oo fashilmay.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Akoonkaaga hadda waxaa ilaaliya erayga sirta ah oo keliya. Haddii aadan adigu tan samayn, mar kale shid gelitaanka laba-tallaabo ah kadib marka aad beddesho erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Akoonkaaga waa la xiray</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Dhaqdhaqaaqa amniga ee %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Galay</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Isku day gelitaan oo fashilmay</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ka baxay</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Fadhiyo waa laga saaray</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Gelitaan qalab cusub</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Gelitaan goob cusub</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Aqoonsiga waa la xaqiijiyay (“Xaqiiji inay adiga tahay”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Hubinta aqoonsiga way fashilantay</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Wuxuu ku galay furaha gelitaanka</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Gelitaanka furaha gelitaanka wuu fashilmay</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gelitaanka waa la diiday: koodhka tallaabada labaad ma jiro ama waa khalad</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodhka tallaabada labaad waa khalad</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akoonka waa la xiray kadib gelitaanno fashilmay</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akoonka waa la furay</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Erayga sirta ah waa la beddelay</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Beddelidda erayga sirta ah way fashilantay</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Erayga sirta ah dib ayaa loo dejiyay</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Eray sir ah oo cusub ayaa la codsaday</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Cinwaanka iimaylka waa la beddelay</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Magaca isticmaalaha waa la beddelay</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Gelitaanka laba-tallaabo ah waa la shiday</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Gelitaanka laba-tallaabo ah waa la demiyay</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koodh soo celin ah ayaa la isticmaalay</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodhad cusub oo soo celin ah</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Erayga sirta ah ee app-ka waa la sameeyey</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Erayga sirta ah ee app-ka waa la buriyey</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Furaha gelitaanka waa lagu daray</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Furaha gelitaanka waa laga saaray</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akoonka waa la hawlgeliyay</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akoonka waa la joojiyay</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Dhammaan</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Gelitaannada iyo fadhiyada</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Isbeddellada akoonka</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Wuxuu u baahan yahay fiiro</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>adiga ayaa sameeyay</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>isticmaalaha ayaa sameeyay</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login ayaa sameeyay</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Habka</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Biraawsar</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Nidaamka hawlgelinta</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Qalab</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Goob</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Dal</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Fadhiyada</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Kuwee</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Habka loo diray</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Isku dayo fashilmay</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Koodhadhka haray</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Maamulaha gelitaanka</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Dhaqdhaqaaqa amniga ee %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Gelitaannada iyo isbeddellada amniga akoonkaaga. Haddii aad aragto wax aadan samayn, beddel erayga sirta ah oo ka saar qalabka aadan aqoon.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Gelitaannada iyo isbeddellada amniga akoonkan.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Qalabkaaga</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Beddel erayga sirta ah</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Ku noqo akoonka</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Dhaqdhaqaaqa amniga lama diiwaangeliyo</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Waxaa laga akhriyaa log-ka hubinta isticmaalayaasha, kaas oo miiskiisa expuser_audit maqan yahay ama aan lagu taageerin kaydkan xogta. Socodsii php update/common/scripts/6.0/createuseraudittable.php, ama cusboonaysiinta kaydka xogta ee 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days maalmood ee la soo dhaafay</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Gelitaannada %days maalmood ee la soo dhaafay</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Dhaqdhaqaaqii amniga ee u dambeeyay</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Muuji</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>waa fashilantay</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>waa la diiday</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Weli dhaqdhaqaaq amni lama diiwaangelin.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Dhacdooyinka amniga waxaa la hayaa %days maalmood.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Dhacdooyinka amniga waxaa la hayaa ilaa maamule ka saaro.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Soo deji xogtayda gelitaanka</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Fadhiyadaada iyo dhacdooyinka amniga oo ah fayl JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Galay</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Isku day gelitaan oo fashilmay</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ka baxay</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Fadhiyo waa laga saaray</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Gelitaan qalab cusub</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Gelitaan goob cusub</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Aqoonsiga waa la xaqiijiyay (“Xaqiiji inay adiga tahay”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Hubinta aqoonsiga way fashilantay</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Wuxuu ku galay furaha gelitaanka</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Gelitaanka furaha gelitaanka wuu fashilmay</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Gelitaanka waa la diiday: koodhka tallaabada labaad ma jiro ama waa khalad</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodhka tallaabada labaad waa khalad</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akoonka waa la xiray kadib gelitaanno fashilmay</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Akoonka waa la furay</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Erayga sirta ah waa la beddelay</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Beddelidda erayga sirta ah way fashilantay</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Erayga sirta ah dib ayaa loo dejiyay</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Eray sir ah oo cusub ayaa la codsaday</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Cinwaanka iimaylka waa la beddelay</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Magaca isticmaalaha waa la beddelay</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Gelitaanka laba-tallaabo ah waa la shiday</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Gelitaanka laba-tallaabo ah waa la demiyay</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koodh soo celin ah ayaa la isticmaalay</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodhad cusub oo soo celin ah</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Erayga sirta ah ee app-ka waa la sameeyey</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Erayga sirta ah ee app-ka waa la buriyey</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Furaha gelitaanka waa lagu daray</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Furaha gelitaanka waa laga saaray</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Akoonka waa la hawlgeliyay</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Akoonka waa la joojiyay</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Dhammaan</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Gelitaannada iyo fadhiyada</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Isbeddellada akoonka</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Wuxuu u baahan yahay fiiro</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Dhaqdhaqaaqa amniga ee %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Gelitaannada iyo isbeddellada amniga akoonkaaga. Haddii aad aragto wax aadan samayn, beddel erayga sirta ah oo ka saar qalabka aadan aqoon.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Qalabkaaga</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Beddel erayga sirta ah</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Dhaqdhaqaaqa amniga weli laguma diiwaangeliyo goobtan.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Gelitaannada %days maalmood ee la soo dhaafay</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Isku dayo fashilmay</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Weli dhaqdhaqaaq amni lama diiwaangelin.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Soo deji xogtayda gelitaanka</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Fadhiyadaada iyo dhacdooyinka amniga oo ah fayl JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Erayga sirta ah</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Erayga sirta ah iyo koodhka tallaabada labaad</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interface-ka REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interface-ka SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Hal gelitaan (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Wuxuu galay ka hor intaan fadhiyada la diiwaangelin</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Warbixinta gelitaanka</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Cidda goobta gashan, inta jeer ee akoonnadu galaan iyo inta ay ku fashilmaan, iyo in isticmaale meel kasta laga saaro. Waxay la shaqaysaa maamule kasta oo fadhi.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Fadhiga waa laga saaray. Qalabku waa inuu mar kale galo.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login waxaa laga saaray %count fadhi.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ma lahayn fadhi socda.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ma jiro akoon leh ID-gaas, magaca isticmaalahaas ama cinwaanka iimaylkaas.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Kani waa fadhiga aad isticmaalayso. Si aad u dhammayso, ka bax.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Fadhigaas horay ayuu u dhammaaday.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bogga waqtigiisii wuu dhammaaday. Waxba lama beddelin; fadlan isku day mar kale.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Fadhiyada laguma diiwaangeliyo goobtan (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Miiska expuser_session ma jiro</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Fadhiyada waa la diiwaangeliyaa marka la abuuro: php update/common/scripts/6.0/createusersessiontable.php, ama cusboonaysiinta kaydka xogta ee 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Hadda iyo maanta</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Fadhiyada socda</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Isticmaalayaasha gashan</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Gelitaannada maanta</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Isku dayada fashilmay ee maanta</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Isticmaale meel kasta ka saar</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Fadhi kasta oo akoonka ah wuxuu ku dhammaadaa codsigiisa xiga, xitaa kuwa lagu hayo “I xasuuso”. Isticmaal marka akoon laga yaabo inuu gacan khaldan ku jiro; kadib dib u deji erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID-ga isticmaalaha, magaca isticmaalaha ama cinwaanka iimaylka</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Meel kasta ka saar</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Hadda gashan</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Waxaa la muujiyay %limit kuwa ugu dambeeyay ee la isticmaalay.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Isticmaale</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Qalab</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cinwaan</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Galay</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ugu dambeyntii firfircoon</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ficillo</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Qalabkan</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Lama diiwaangelin</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ka saar</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Fadhi gashan ma jiro.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days maalmood ee la soo dhaafay</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Gelitaannada iyo isku dayada fashilmay waxaa laga tiriyaa log-ka hubinta isticmaalayaasha, kaas oo aan jirin; fadhiyada cusub ayaa la tiriyaa.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Maalin</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Gelitaanno</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Isku dayo fashilmay</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Fadhiyo cusub</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Maamulaha fadhiga: %handler. Fadhiyada waxaa laga akhriyaa miiska expuser_session, sidaa darteed warbixintu waxay la shaqaysaa maamule kasta.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Digniin amni oo ku saabsan akoonkaaga</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Dhacdo amni ayaa ka dhacday akoonkaaga %login: %event. Haddii aysan adiga ahayn, ku sug akoonkaaga %url.</translation>
     </message>
 </context>
 </TS>

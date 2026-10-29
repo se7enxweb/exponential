@@ -40,7 +40,7 @@ stylesheet, and remove every reason for inline code so their theme can run under
   lesson 3.4.
 - Check on a copy of the lab that `extension/ezjscore/settings/ezjscore.ini` has `Packer` commented out and that
   `DevelopmentMode` is `disabled`, so the packer is on at the start of lesson 3.2.
-- If the lab runs on Velocity, have `php bin/php/console exp:velocity cache clear` on the board for lesson 3.3.
+- If the lab runs on Velocity, have `php bin/php/console exp:velocity cache clear --apply` on the board for lesson 3.3.
 
 ## Timing plan
 

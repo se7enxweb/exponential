@@ -68,7 +68,7 @@ wird wie unten von Hand eingerichtet.
 3. Fügen Sie `AvailableSiteAccessList[]=adminui` in `settings/override/site.ini.append.php` hinzu.
 4. Leeren Sie die Caches: `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`, dann
    `--clear-id=template,template-override,template-block,content,translation`; unter Velocity außerdem
-   `./console exp:velocity cache clear --allow-root-user`.
+   `./console exp:velocity cache clear --apply --allow-root-user`.
 
 Öffnen Sie `https://<host>/adminui` und melden Sie sich wie bei der Administrationsoberfläche an.
 

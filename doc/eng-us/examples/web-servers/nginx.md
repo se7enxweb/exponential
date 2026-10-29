@@ -127,6 +127,14 @@ server {
         fastcgi_param SCRIPT_NAME /index_rest.php;
         fastcgi_pass unix:/run/php-fpm/www.sock;
     }
+    # The SOAP server (soap.ini EnableSOAP=true) is index_soap.php since
+    # Exponential 6.0.15; soap.php only forwards to it. Uncomment with SOAP on:
+    #location = /index_soap.php {
+    #    include fastcgi_params;
+    #    fastcgi_param SCRIPT_FILENAME $document_root/index_soap.php;
+    #    fastcgi_param SCRIPT_NAME /index_soap.php;
+    #    fastcgi_pass unix:/run/php-fpm/www.sock;
+    #}
     location ~ ^/([^/]+/)?content/treemenu {
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root/index_treemenu.php;
@@ -186,6 +194,10 @@ server {
   catches the rest, like the final `RewriteRule .* index.php`.
 - The front controllers are named in `SCRIPT_FILENAME`; the request is not rewritten, so `REQUEST_URI` (from
   `fastcgi_params`) still carries the address the visitor asked for, as with Apache.
+- The SOAP server is `index_soap.php` since Exponential 6.0.15 (`soap.php` before, now a shim that forwards to it).
+  Its location is commented out, as SOAP is off by default; uncomment it when you switch SOAP on, and change a
+  `location = /soap.php` of an older configuration to it. The test with `curl` is on
+  [the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md#test-it).
 - The static locations have no `fastcgi_pass`, so no PHP runs there, and the script rule before them makes sure a
   `.php` below an asset directory is not sent as text either. The script rule answers 404 for any such path, existing
   or not, which is a little stricter than `.htaccess_root`.
@@ -204,6 +216,15 @@ locations of the 443 server). nginx passes every request header to PHP (`X-Forwa
 `HTTP_X_FORWARDED_PROTO`); the kernel believes it only from an address listed in
 `site.ini [HTTPHeaderSettings] TrustedProxies[]`
 ([chapter 8, section 8.8](../../install/08-serving-the-site.md#88-behind-a-reverse-proxy)).
+
+## WebDAV
+
+This file does not route WebDAV (off by default). To serve it, add a `location ^~ /index_webdav.php` before the
+catch-all, with `fastcgi_param SCRIPT_FILENAME $document_root/index_webdav.php` and `SCRIPT_NAME /index_webdav.php`,
+or a `server` of its own for a WebDAV host. Since 6.0.15 the script is `index_webdav.php`; a block written for
+`webdav.php` keeps working through a forwarding shim until a later major version, but change **both** the `location`
+and `SCRIPT_FILENAME`. Before/after and the test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`):
+[The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md#nginx).
 
 ## Check it
 

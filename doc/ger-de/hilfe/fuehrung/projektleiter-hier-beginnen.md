@@ -59,7 +59,7 @@ Reihenfolge Sie sie lesen.
 Der folgende Plan setzt voraus, dass Sie ein Konto in der Administration mit mindestens der Rolle Editor haben und eine
 Demonstrations- oder Testinstallation, die Sie verändern dürfen. Wenn Sie noch keine Installation haben, bitten Sie
 einen Administrator oder Entwickler darum: Eine vollständige Demonstrationssite wird mit einem einzigen Befehl
-installiert, `./console exp:install`, auf SQLite und ohne Datenbankserver
+installiert, `./console exp:install --apply`, auf SQLite und ohne Datenbankserver
 ([Exponential mit einem Befehl installieren](../../funktionen/6.0/installation-mit-einem-befehl.md)).
 
 ### Tag 1: das Produkt und die Menschen dahinter kennenlernen

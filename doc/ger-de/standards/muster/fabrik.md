@@ -886,7 +886,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
-| `expWebDAVPathFactory` | class extends ezcWebdavAutomaticPathFactory | `kernel/private/classes/webdav/expwebdavpathfactory.php:19` | Die Pfadfabrik von webdav.php: Pfade innerhalb des Servers sind einfacher (dekodierter) Text, URIs sind kodiert. | – |
+| `expWebDAVPathFactory` | class extends ezcWebdavAutomaticPathFactory | `kernel/private/classes/webdav/expwebdavpathfactory.php:19` | Die Pfadfabrik von index_webdav.php: Pfade innerhalb des Servers sind einfacher (dekodierter) Text, URIs sind kodiert. | – |
 
 ### lib/ezfile (2)
 

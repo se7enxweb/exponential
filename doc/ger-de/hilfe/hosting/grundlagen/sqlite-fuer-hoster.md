@@ -141,7 +141,7 @@ php bin/php/maintenance.php on --message="Restoring" --allow-root-user
 sqlite3 var/storage/sqlite3/exponential.db ".restore '/backup/exponential-2026-10-05.db'"
 php bin/php/maintenance.php off --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 ```
 
 Wenn `.restore` einen Fehler meldet, ist die Live-Datenbank unverändert; halten Sie dann jeden Prozess an, der die Datei

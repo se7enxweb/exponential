@@ -2,14 +2,14 @@
 title: exp:addoauthauthorizepolicy
 audience: developer, admin
 category: examples
-summary: Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first).
+summary: Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; dry run unless --apply).
 keywords: exp:addoauthauthorizepolicy, addoauthauthorizepolicy, console, command, CLI, addoauthauthorizepolicy.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addoauthauthorizepolicy
 
-Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first).
+Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; dry run unless --apply).
 
 Script `bin/php/addoauthauthorizepolicy.php`, code in `kernel/private/classes/commands/addoauthauthorizepolicy.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -24,16 +24,21 @@ php bin/php/addoauthauthorizepolicy.php --help
 Grant the policy oauth/authorize to every role that lets users sign in (user/login),
 with the same siteaccess limitation, so the users who could authorize OAuth clients before 6.0.15
 still can. Roles that have the policy already are left alone; the script can run again.
+Prints PASS or FAIL at the end. Without --apply nothing is written: the script lists the roles it
+would grant the policy to. --dry-run is still accepted and means the same as no flag; --apply
+together with --dry-run is a usage error (exit 2).
 
-Example: php bin/php/addoauthauthorizepolicy.php --dry-run
-         php bin/php/addoauthauthorizepolicy.php --role=Editor --role=5
+Example: php bin/php/addoauthauthorizepolicy.php
+         php bin/php/addoauthauthorizepolicy.php --apply
+         php bin/php/addoauthauthorizepolicy.php --apply --role=Editor --role=5
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--dry-run` |  | List what would be granted, change nothing |
+| `--apply` |  | Write the changes (the default is a dry run that lists them and changes nothing) |
+| `--dry-run` |  | The default, kept for scripts that pass it: list what would be granted, change nothing |
 | `--role` | required | Only this role (ID or name), may be repeated; a listed role without user/login gets an unlimited policy |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

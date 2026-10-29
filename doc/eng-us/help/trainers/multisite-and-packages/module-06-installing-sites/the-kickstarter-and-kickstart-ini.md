@@ -4,7 +4,7 @@ audience: trainer, admin, developer
 category: training
 order: 63
 summary: Learners write kickstart.ini with exp:kickstarter ini --yes, review the values marked REVIEW, set port matching for three siteaccesses, run a dry run and an install, and read kickstart.log and setup.log. 55 minutes.
-keywords: multisite and site packages, kickstarter, exp:kickstarter, kickstart.ini, ini --yes, run --dry-run, run --force, --list-steps, REVIEW, Continue=true, site_details, site_access, DatabaseAction, kickstart.log, setup.log, maintenance mode
+keywords: multisite and site packages, kickstarter, exp:kickstarter, kickstart.ini, ini --yes, run --dry-run, run --apply, --list-steps, REVIEW, Continue=true, site_details, site_access, DatabaseAction, kickstart.log, setup.log, maintenance mode
 type: help
 ---
 # Lesson 6.3: The kickstarter and kickstart.ini
@@ -34,7 +34,7 @@ After this lesson, learners can:
 
 - write `kickstart.ini` with `exp:kickstarter ini --yes` and review the values marked `# REVIEW`;
 - explain the sections, `Continue=true` and the keys of `[site_access]` and `[site_details]`;
-- check a file with `run --list-steps` and `run --dry-run`, and install with `run --force`;
+- check a file with `run --list-steps` and `run --dry-run`, and install with `run --apply`;
 - read `var/log/kickstart.log` and `var/log/setup.log`, and handle the maintenance page after a failure.
 
 ## Trainer's notes
@@ -56,7 +56,7 @@ Source: [6. The kickstarter](../../../../install/06-kickstarter.md).
    paths; `AccessPort`, `AdminAccessPort`, `EditorAccessPort` for ports; the `...Hostname` keys for hosts. Give all
    three of a type to be sure.
 4. **Running** (4 minutes). `run --list-steps` prints the step table; `run --dry-run` runs `DatabaseChoice` to
-   `SiteDetails`, imports the package into a temporary repository and writes nothing; `run --force` installs.
+   `SiteDetails`, imports the package into a temporary repository and writes nothing; `run --apply` installs.
    Without `--force` a run that includes `CreateSites` stops. While it works the site shows the maintenance page; after
    a failed step it stays in maintenance mode until the next successful run or `php bin/php/maintenance.php off`.
 
@@ -95,9 +95,9 @@ In a second fresh code directory, for example `kickstart-course`, as the user th
      `AdminAccessPort=9001`, `EditorAccessPort=9002`;
    - `[site_admin]`: `Email=webmaster@example.invalid`, `Password` left empty.
 4. Show the steps: `php bin/php/console exp:kickstarter run --list-steps`.
-5. Run without `--force`: `php bin/php/console exp:kickstarter run`. Read the message and the exit status.
+5. Run without `--force`: `php bin/php/console exp:kickstarter run --apply`. Read the message and the exit status.
 6. Dry run: `php bin/php/console exp:kickstarter run --dry-run`. Wait for "Dry-run completed".
-7. Install: `php bin/php/console exp:kickstarter run --force`. Note "Maintenance mode on" at the start and the summary
+7. Install: `php bin/php/console exp:kickstarter run --apply --force`. Note "Maintenance mode on" at the start and the summary
    at the end, with the generated password.
 8. Read the port settings the run wrote:
    `php bin/php/console exp:ini list site.ini/PortAccessSettings global` and

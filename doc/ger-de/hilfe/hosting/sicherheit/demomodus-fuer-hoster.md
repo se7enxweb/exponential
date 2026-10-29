@@ -66,7 +66,7 @@ veröffentlichte Administratorpasswort, obwohl es ein bekanntes Wort und kürzer
 zu ersetzen:
 
 ```sh
-EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password='<the published demo password>' ...
+EXP_DEMO_MODE=1 ./console exp:install --apply --db=sqlite --password='<the published demo password>' ...
 ```
 
 Jedes nicht leere Passwort funktioniert, also sowohl `publish` (sieben Zeichen) als auch `publishing`; ein leeres wird weiterhin

@@ -65,7 +65,7 @@ tools (pseudonymization, purge) are in [the audit guide, section 4.12](../../../
 ./console exp:logs --archives                # each log, its archives, sizes and limits
 ./console exp:logs --rotate-all --dry-run    # what would be rotated
 ./console exp:logs --prune --dry-run         # archives beyond Keep and MaxAgeDays
-./console exp:logs --prune                   # remove them
+./console exp:logs --apply --prune                   # remove them
 ```
 
 The cronjob part `logs` (in no default part) rotates, prunes and compresses on a schedule:

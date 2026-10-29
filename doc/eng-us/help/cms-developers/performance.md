@@ -87,7 +87,7 @@ The order of these steps with commands: [Make it fast](../../guides/deploying.md
 
 After a deployment or a cache clear, the first visitors pay for building caches. `exp:velocity deploy` requests
 warm-up pages, and the preloader requests a site's pages as an anonymous visitor would
-(**Setup** > **Preload**, `php bin/php/preload.php`), listing broken links on the way
+(**Setup** > **Preload**, `php bin/php/preload.php --apply`), listing broken links on the way
 ([Preloading caches](../../guides/preloading-caches.md)).
 
 ## A short checklist

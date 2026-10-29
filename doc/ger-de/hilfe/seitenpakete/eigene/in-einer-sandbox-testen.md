@@ -81,7 +81,7 @@ dasselbe ([6.7](../../../installation/06-kickstarter.md#67-probeläufe)).
 ## Runde 3: eine vollständige Installation
 
 ```bash
-php bin/php/console exp:install --package=acme_site --url=http://localhost:8080 --random-password
+php bin/php/console exp:install --apply --package=acme_site --url=http://localhost:8080 --random-password
 ```
 
 Führen Sie es als der Benutzer aus, als der das PHP des Webservers läuft, damit die angelegten Dateien beschreibbar bleiben

@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Qopheessa &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Kutaan cronjob tokkollee ammallee hin hojjenne: tarree hojiiwwanii, galchiiwwan, beeksisoonnii fi indeeksiin barbaacha eeggachaa jiru. php bin/php/installcrontab.php --add --apply hojjechiisaa, yookiin sararoota --show crontab keessatti ida&apos;aa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Dhaabbanni kun agarsiisa ummataati: nama kamiyyuu jecha icciitii bulchaa isaa beekuu danda'a, jechi icciitii bulchaa jijjiiramuu yookiin haaromfamuu hin danda'u. Asitti wanta dhuunfaa homaa hin galchinaa.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Meeshaalee keessan</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Herregoota nama tokkollee hin fayyadamne yookiin ilaalamuu barbaadan; dhaabi, banii yookiin al ergi.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Galmee odiitii fayyadamtootaa</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Eenyutu jijjiire, seene yookiin dhorkame, herrega tokkoon tokkoon; calaqqisuu fi al erguu.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Gabaasa seensaa</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Eenyutu seene, seensaa fi kufaatii guyyaa guyyaan; fayyadamaa bakka hundaa baasi.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sashaawwan hojjettuu PHP kan yeroon isaanii darbe PHP mataa isaatiin (session.gc_maxlifetime) baafamu, fuula kanaan yookiin kutaa cronjob session_gc'n miti.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Sashaawwan seenan kan fayyadamtoota hundaa gabaasa seensaa irratti tarreeffamu, akkasumas ni baafamu; gabaasni kun hojjettaa sashaa kamiin iyyuu ni hojjeta.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Gabaasa seensaa bani</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ herrega keessan hojii irra oolchaa.</translation>
     <message>
         <source>None yet</source>
         <translation>Ammallee hin jiru</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Seensota keessan dhihoo, yaaliiwwan hin milkoofne fi jijjiirama jecha icciitii, teessoo imeelii fi seensa tarkaanfii lamaa keessanii.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Seensota dhihoo, yaaliiwwan hin milkoofne fi jijjiirama nageenyaa herrega kanaa.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Sochii ilaali</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Seensota hin milkoofne: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Ibsa dabalataaf fuula barbaachisummaa ilaalaa.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab hin barreeffamne (%reason). Sarara kana crontab fayyadamaa marsariitiin itti hojjetuu keessatti dabaluu; yoo kana hin goone, tarreen, galchiin, beeksisni fi indeeksiin barbaachaa gonkumaa hin hojjetu:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Irra deebiin fe&apos;uun Kickstarter&apos;iin (%file, achiis php bin/php/kickstarter.php run --apply) yookiin fe&apos;iinsa haaraadhaan raawwatama.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Geejjibni imeelii hojii dhumaa keessatti ergaawwan %count dideera. Sarvarii imeelii fi site.ini MailSettings mirkaneessaa.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Taateewwan %count eeggachaa jiru, hojjechiisni cronjob beeksisaa tokkollee hin galmeeffamne. Kutaa cronjob &quot;frequent&quot; crontab keessatti ida&apos;aa, yookiin exp:notification:run --apply hojjechiisaa.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Filaa noodii fayyadamuun marsariitii yookiin kutaa biraa filadhaa</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Abbaa qabeenyaa jijjiiruu kan danda&apos;u bulchaa sirnaa qofa: ./console exp:content-check --fix-permissions --apply akka root hojjechiisaa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>empty</source>
         <translation>duwwaa</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Furtuun mallattoo waggaa tokkoo ol turee jira: exp:audit key rotate --apply fayyadamuun jijjiiraa.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>not sent</source>
         <translation>hin ergamne</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob beeksisaa hojjechiisa isaa hunda asitti galmeessa. Kutaa frequent crontab keessatti ida&apos;aa, yookiin exp:notification:run --apply hojjechiisaa.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsoolii fayyadamaa: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>None.</source>
         <translation>Homaa.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>appii mirkaneessaatiin</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>koodii imeeliidhaan ergameen</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>koodii deebisaatiin</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>furtuu darbiitiin (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>herrega alaatiin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Akka neetworkii isaatti agarsiifama; teessoon akkuma qindaa&apos;inni eegumsa deetaa marsariitichaa jedhutti kuufama.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Hin galmeeffamne</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Bakka</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>tilmaamaan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Manage devices</source>
         <translation>Meeshaalee to'adhu</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>appii mirkaneessaatiin</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>koodii imeeliidhaan ergameen</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>koodii deebisaatiin</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>furtuu darbiitiin (passkey)</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>herrega alaatiin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Hin galmeeffamne</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Bakka</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>tilmaamaan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>View the sessions of this user</source>
         <translation>Sashaawwan fayyadamaa kanaa ilaali</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Herregni keessan %login marsariitii %site irratti amma bakka dhihoo kana irraa hin seenin irraa seenuuf fayyadameera:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Bakka tilmaamaa</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser %os irratti</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Gabaasa seensaa</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Open the page</source>
         <translation>Fuula bani</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanga %to, %count keessaa</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Maqaa seensaa yookiin ID fayyadamaa: herrega taateen ilaallate yookiin fayyadamaa tarkaanfii fudhate.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Herrega</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tarkaanfii</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Booda</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Bu&apos;aa kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Dura</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Raawwataa</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Qulqulleessi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Milkaa&apos;e</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Taatewwan guyyoota %days olkaa&apos;amu.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Taatewwan hanga harkaan haqamanitti olkaa&apos;amu.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Taatewwan</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Tarkaanfii kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Taatewwan herrega kanaa hunda</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Tarree akka CSV tti al ergi (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Hin milkoofne</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Irraa</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Tarree calaqqisuu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Taateen walsimu hin jiru.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fuula tokkotti</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Galmeessuun audit.ini keessatti dhaabbateera ([UserAuditSettings] UserAudit); tarreen kan dura galmaa&apos;e agarsiisa.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Dhorkame</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bu&apos;aa</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Gabateen galmee odiitii fayyadamtootaa hin jiru. php update/common/scripts/6.0/createuseraudittable.php fayyadamaa uumaa; hanga sanaatti faayiloonni odiitii taatee hunda olkaa&apos;u.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Fuulli kun kuusaa deetaa SQL barbaada; MongoDB irratti hin argamu. Faayiloonni odiitii taatee hunda olkaa&apos;u.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanga</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Galmee odiitii fayyadamtootaa</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Fayyadamaa</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Yeroo</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Bakka</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Eenyutu herrega kam jijjiire, uume, dandeessise, dhaabe, socho&apos;se yookiin haqe, eenyutu seene yookiin dhorkame, akkasumas gaheewwan kamtu ramadame: taatee tokkoof sarara tokko, dirreewwan dura fi booda wajjin. Jechoonni icciitii fi iccitiiwwan gonkumaa hin galmaa&apos;an.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>garee</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sirna</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hin beekamu</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Herrega keessan eegaa</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Koodiin deebisaa herrega keessan %login marsariitii %site irratti seenuuf fayyadameera.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Koodiin deebisaa fayyadameera</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Herrega</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Teessoo tilmaamaa</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Irra deebitanii seenuuf jecha icciitii haaraa gaafadhaa, yookiin bulchitoota marsariitichaa qunnamaa.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Jecha icciitii haaraa gaafadhu</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Koodiin deebisaa tokkoon tokkoon isaa yeroo tokko qofa hojjeta. Yoo bilbila keessan dhabdan, appii mirkaneessaa keessan irra deebitanii qindeessaa, koodii deebisaa haaraas bakka nagaa ta&apos;e kaa&apos;aa.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Yaalii seensaa hin milkoofne herrega keessan irratti</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Amma booda, seensi jecha icciitii keessanii malees koodii gaafata. Yoo kana isin gootan, homaa gochuun isin hin barbaachisu.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Yoo isin taatanii fi jecha icciitii keessan irraanfattan, haaraa gaafadhaa. Yoo isin hin taane, jecha icciitii cimaa filadhaatii seensa tarkaanfii lamaa banaa.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Yoo isin hin taane, namni tokko jecha icciitii keessan beekuu danda&apos;a: amma jijjiiraatii herregni keessan eessatti akka seene ilaalaa.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Koodii deebisaa hafan</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Meeshaalee keessan ilaali</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Akeekkachiisa nageenyaa</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Namni tokko jecha icciitii dogoggoraatiin yeroo %count walitti aansee herrega keessan %login marsariitii %site irratti seenuuf yaaleera.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Herrega keessan %login marsariitii %site irratti taateen nageenyaa tokko uumameera.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Kun akeekkachiisa nageenyaa waa&apos;ee herrega keessanii ti. Jijjiirama akkasii hundaaf ni ergama, cufamuus hin danda&apos;u.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Yeroo</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Seensi tarkaanfii lamaa herrega keessan %login marsariitii %site irratti cufameera.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Seensi tarkaanfii lamaa cufameera</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Seensi tarkaanfii lamaa herrega keessan %login marsariitii %site irratti baname.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Seensi tarkaanfii lamaa baname</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Herregni keessan %login marsariitii %site irratti seensa hin milkoofne baay&apos;ee booda cufameera.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Herregni keessan amma jecha icciitii keessan qofaan eegama. Yoo kana isin hin goone, jecha icciitii keessan erga jijjiirtanii booda seensa tarkaanfii lamaa irra deebitanii banaa.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Herregni keessan cufameera</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sochii nageenyaa kan %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Seenameera</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Yaalii seensaa hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ba&apos;ameera</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sashaawwan baafamaniiru</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Seensa meeshaa haaraa irraa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Seensa bakka haaraa irraa</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Eenyummaan mirkanaa&apos;eera (&quot;Isin akka taatan mirkaneessi&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Mirkaneessi eenyummaa hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Furtuu darbiitiin seenameera</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Seensi furtuu darbiitiin hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Seensi didameera: koodiin tarkaanfii lammaffaa hin jiru yookiin dogoggora</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodii tarkaanfii lammaffaa dogoggoraa</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Herregni seensa hin milkoofne booda cufameera</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Herregni baname</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Jechi icciitii jijjiirameera</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Jijjiirraan jecha icciitii hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Jechi icciitii irra deebiin qindaa&apos;eera</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Jechi icciitii haaraan gaafatameera</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Teessoon imeelii jijjiirameera</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Maqaan fayyadamaa jijjiirameera</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Seensi tarkaanfii lamaa baname</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Seensi tarkaanfii lamaa cufameera</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koodiin deebisaa fayyadameera</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodii deebisaa haaraa</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Jecha icciitii app uumameera</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Jecha icciitii app haqameera</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Furtuun darbii ida&apos;ameera</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Furtuun darbii baafameera</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Herregni hojii irra oolfameera</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Herregni dhaabbateera</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hunda</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Seensotaa fi sashaawwan</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Jijjiirama herregaa</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Xiyyeeffannaa barbaada</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>isiniin</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>fayyadamaadhaan</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login tiin</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Mala</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Biraawuzarii</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sirna hojii</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Meeshaa</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Bakka</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Biyya</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sashaawwan</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Kamfaa</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Karaa ergaa</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Yaaliiwwan hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Koodii hafan</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Hojjettaa seensaa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sochii nageenyaa kan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Seensotaa fi jijjiirama nageenya herrega keessanii. Yoo waan isin hin goone argitan, jecha icciitii keessan jijjiiraatii meeshaalee isin hin beekne baasaa.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Seensotaa fi jijjiirama nageenya herrega kanaa.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Meeshaalee keessan</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Jecha icciitii jijjiiri</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Gara herregaatti deebi&apos;i</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Sochiin nageenyaa hin galmeeffamu</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Galmee odiitii fayyadamtootaa irraa dubbifama; gabateen isaa expuser_audit hin jiru yookiin kuusaa deetaa kana irratti hin deeggaramu. php update/common/scripts/6.0/createuseraudittable.php, yookiin haaromsa kuusaa deetaa 6.0.15 hojjechiisaa.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Guyyoota %days darban</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Seensota guyyoota %days darban keessatti</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Sochii nageenyaa dhihoo</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>hin milkoofne</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>didame</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Sochiin nageenyaa tokkollee ammallee hin galmeeffamne.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Taateewwan nageenyaa guyyoota %days ni turu.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Taateewwan nageenyaa hanga bulchaan tokko haqutti ni turu.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Deetaa seensa kootii buusi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sashaawwanii fi taateewwan nageenyaa keessan akka faayilii JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Seenameera</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Yaalii seensaa hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ba&apos;ameera</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sashaawwan baafamaniiru</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Seensa meeshaa haaraa irraa</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Seensa bakka haaraa irraa</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Eenyummaan mirkanaa&apos;eera (&quot;Isin akka taatan mirkaneessi&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Mirkaneessi eenyummaa hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Furtuu darbiitiin seenameera</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Seensi furtuu darbiitiin hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Seensi didameera: koodiin tarkaanfii lammaffaa hin jiru yookiin dogoggora</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Koodii tarkaanfii lammaffaa dogoggoraa</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Herregni seensa hin milkoofne booda cufameera</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Herregni baname</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Jechi icciitii jijjiirameera</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Jijjiirraan jecha icciitii hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Jechi icciitii irra deebiin qindaa&apos;eera</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Jechi icciitii haaraan gaafatameera</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Teessoon imeelii jijjiirameera</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Maqaan fayyadamaa jijjiirameera</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Seensi tarkaanfii lamaa baname</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Seensi tarkaanfii lamaa cufameera</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Koodiin deebisaa fayyadameera</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Koodii deebisaa haaraa</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Jecha icciitii app uumameera</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Jecha icciitii app haqameera</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Furtuun darbii ida&apos;ameera</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Furtuun darbii baafameera</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Herregni hojii irra oolfameera</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Herregni dhaabbateera</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hunda</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Seensotaa fi sashaawwan</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Jijjiirama herregaa</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Xiyyeeffannaa barbaada</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sochii nageenyaa kan %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Seensotaa fi jijjiirama nageenya herrega keessanii. Yoo waan isin hin goone argitan, jecha icciitii keessan jijjiiraatii meeshaalee isin hin beekne baasaa.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Meeshaalee keessan</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Jecha icciitii jijjiiri</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Sochiin nageenyaa marsariitii kana irratti ammallee hin galmeeffamu.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Seensota guyyoota %days darban keessatti</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Yaaliiwwan hin milkoofne</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Sochiin nageenyaa tokkollee ammallee hin galmeeffamne.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Deetaa seensa kootii buusi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Sashaawwanii fi taateewwan nageenyaa keessan akka faayilii JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Jecha icciitii</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Jecha icciitii fi koodii tarkaanfii lammaffaa</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Intarfeesii REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Intarfeesii SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Seensa tokkichaa (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Utuu sashaawwan hin galmeeffamin dura seenameera</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Gabaasa seensaa</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Eenyutu marsariitii irratti seene, herregoonni hammam akka seenanii fi hammam akka kufan, akkasumas fayyadamaa bakka hundaa baasuu. Hojjettaa sashaa kamiin iyyuu ni hojjeta.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sashaan baafameera. Meeshaan irra deebi&apos;ee seenuu qaba.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login sashaawwan %count irraa baafameera.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login sashaa hojii irra jiru hin qabu ture.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Herregni ID, maqaa fayyadamaa yookiin teessoo imeelii sana qabu hin jiru.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Kun sashaa isin fayyadamaa jirtanii dha. Xumuruuf, ba&apos;aa.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sashaan sun duraanuu xumurameera ture.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Yeroon fuulichaa darbee ture. Homtuu hin jijjiiramne; maaloo irra deebi&apos;aa yaalaa.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sashaawwan marsariitii kana irratti hin galmeeffaman (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Gabateen expuser_session hin jiru</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sashaawwan akkuma inni uumameen galmeeffamu: php update/common/scripts/6.0/createusersessiontable.php, yookiin haaromsa kuusaa deetaa 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Amma fi har&apos;a</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sashaawwan hojii irra jiran</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Fayyadamtoota seenan</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Seensota har&apos;aa</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Yaaliiwwan hin milkoofne har&apos;aa</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Fayyadamaa bakka hundaa baasi</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Sashaan herregichaa hundi gaaffii isaa itti aanu irratti xumurama, warra &quot;Na yaadadhu&quot;&apos;n turan illee. Yeroo herregni harka dogoggoraa keessa jiraachuu danda&apos;u kana fayyadamaa; achiis jecha icciitii isaa irra deebisaa qindeessaa.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID fayyadamaa, maqaa fayyadamaa yookiin teessoo imeelii</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Bakka hundaa baasi</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Amma seenameera</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Kanneen dhihoo fayyadaman %limit agarsiifamaniiru.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Fayyadamaa</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Meeshaa</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Teessoo</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Seenameera</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Yeroo dhumaaf hojii irra</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gocawwan</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Meeshaa kana</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Hin galmeeffamne</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Baasi</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Sashaan seenameera tokkollee hin jiru.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Guyyoota %days darban</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Seensotaa fi yaaliiwwan hin milkoofne galmee odiitii fayyadamtootaa, kan hin jirre, irraa lakkaa&apos;amu; sashaawwan haaraan lakkaa&apos;amu.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Guyyaa</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Seensota</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Yaaliiwwan hin milkoofne</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sashaawwan haaraa</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Hojjettaa sashaa: %handler. Sashaawwan gabatee expuser_session irraa dubbifamu, kanaaf gabaasni hojjettaa kamiin iyyuu ni hojjeta.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Akeekkachiisa nageenyaa herrega keessaniif</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Herrega keessan %login irratti taateen nageenyaa tokko uumameera: %event. Yoo isin hin taane, herrega keessan %url irratti eegaa.</translation>
     </message>
 </context>
 </TS>

@@ -39,7 +39,8 @@ Funktionen der Administration als API, jede hinter ihrer Richtlinie.
 REST-API.
 
 **Gibt es SOAP noch?** Ja, SOAP 1.1 ohne WSDL, standardmäßig aus (`soap.ini EnableSOAP=false`)
-([WebDAV und SOAP](webdav-und-soap.md)).
+([WebDAV und SOAP](webdav-und-soap.md)). Seine Adresse ist seit 6.0.15 `/index_soap.php`; `/soap.php` antwortet weiter
+als weiterleitendes Shim ([Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md)).
 
 ## Authentifizierung und Identität
 

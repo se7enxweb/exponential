@@ -9,7 +9,7 @@
  *
  * File containing the web server control script.
  *
- * @description Control the Exponential web server (php, frankenphp or qbix engines)
+ * @description Control the Exponential web server (php, frankenphp or qbix engines); what writes is a dry run unless --apply
  * @copyright Copyright (C) 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  * @version //autogentag//
@@ -172,7 +172,7 @@ class Webserver extends \Exponential\Runnable\Command
     public function run()
     {
         // the script's variables were globals; functions of the script read them with "global"
-        foreach ( array( 'a', 'asJson', 'cli', 'dryRun', 'exitCode', 'flag', 'forward', 'mustConfigure', 'options', 'parts', 'pipes', 'proc', 'res', 'script', 'velocityScript', 'verb', 'verbs', 'wsArgs', 'wsTail' ) as $__name )
+        foreach ( array( 'a', 'apply', 'asJson', 'cli', 'dryRun', 'exitCode', 'flag', 'forward', 'mustConfigure', 'options', 'parts', 'pipes', 'proc', 'res', 'script', 'velocityScript', 'verb', 'verbs', 'wsArgs', 'wsTail' ) as $__name )
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
@@ -193,7 +193,7 @@ class Webserver extends \Exponential\Runnable\Command
             "  kill        stop without asking, for a wedged worker\n" .
             "  configure   resolve and persist the engine, port, document root and\n" .
             "              HTTPS port into settings/override/velocity.ini.append.php,\n" .
-            "              without starting anything (--dry-run shows the plan only)\n" .
+            "              without starting anything (with --apply; without it the plan only)\n" .
             "  command     print the command line it would run, and exit\n" .
             "  config      read and write the settings it runs on\n" .
             "  cache       cache clear: re-render every cached page on its next request\n" .
@@ -211,16 +211,20 @@ class Webserver extends \Exponential\Runnable\Command
             "  document root and HTTPS port and writes them to this installation's\n" .
             "  override, then runs. Every later start runs straight from that saved\n" .
             "  configuration. To change it without hand-editing the ini:\n" .
-            "  configure [--engine=] [--port=] [--docroot=] [--https-port=]   persist and stop\n" .
+            "  configure [--engine=] [--port=] [--docroot=] [--https-port=]   show the plan\n" .
+            "  configure ... --apply                                          persist and stop\n" .
             "  start --reconfigure [--engine=] [--port=] ...                  persist, then run\n" .
-            "  --dry-run                                                      show, do not write\n" .
+            "  start ... --dry-run                                            show, do not write or run\n" .
+            "  config set|unset, cache clear, layout migrate, site|conf|mod, ssl renew and install\n" .
+            "  are a dry run unless --apply, as with exp:velocity; --apply with --dry-run: exit 2.\n" .
             "  Only the engine/port/docroot/HTTPS-port keys are touched; [HTTPSSettings]\n" .
             "  certificates and [PHPSettings] IniOptions the installation set are left\n" .
             "  exactly as they are.\n\n" .
             "Through the console:\n" .
             "  ./bin/php/console exp:webserver status --allow-root-user\n" .
             "  ./bin/php/console exp:webserver start --engine=php --allow-root-user\n" .
-            "  ./bin/php/console exp:webserver configure --engine=frankenphp --dry-run --allow-root-user\n\n" .
+            "  ./bin/php/console exp:webserver configure --engine=frankenphp --allow-root-user\n" .
+            "  ./bin/php/console exp:webserver configure --engine=frankenphp --apply --allow-root-user\n\n" .
             "Settings come from velocity.ini; override per installation in\n" .
             "settings/override/velocity.ini.append.php." ),
             'use-session' => false,
@@ -236,10 +240,10 @@ class Webserver extends \Exponential\Runnable\Command
             array_slice( $_SERVER['argv'], 1 ),
             array( 'engine', 'port', 'docroot', 'https-port', 'from', 'keep-global', 'siteaccess', 'login', 'password' ),
             array( 'json', 'help', 'quiet', 'verbose', 'colors', 'no-colors', 'allow-root-user', 'debug',
-                   'all', 'reconfigure', 'dry-run', 'force', 'check', 'trust-github-digest', 'https', 'no-https' ) );
+                   'all', 'reconfigure', 'apply', 'dry-run', 'force', 'check', 'trust-github-digest', 'https', 'no-https' ) );
 
         $options = $this->options(
-            '[json][engine:][port:][docroot:][https-port:][reconfigure][dry-run][all][force][check][trust-github-digest][from:][keep-global:][https][no-https]',
+            '[json][engine:][port:][docroot:][https-port:][reconfigure][apply][dry-run][all][force][check][trust-github-digest][from:][keep-global:][https][no-https]',
             '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',
                    'engine' => 'php, frankenphp or qbix for this command only (or several, comma-separated, or --all), '
@@ -248,7 +252,10 @@ class Webserver extends \Exponential\Runnable\Command
                    'docroot' => 'configure/reconfigure: the document root to persist for the engine',
                    'https-port' => 'configure/reconfigure: the HTTPS port to persist (frankenphp or qbix; php has no TLS)',
                    'reconfigure' => 'start: resolve and persist the engine/port/docroot/HTTPS port again before running',
-                   'dry-run' => 'configure/reconfigure: show what would be written, without writing it',
+                   'apply' => 'configure, and the commands that write (config set|unset, cache clear, layout migrate, '
+                            . 'site|conf|mod, ssl renew, install): make the change; without it they are a dry run',
+                   'dry-run' => 'the default of configure and the commands that write (kept for scripts); start: show the '
+                              . 'configuration it would write, without writing or running it',
                    'all' => 'start, stop, restart, graceful, kill or status every engine, one after the other',
                    'from' => 'install: take the binary from this file instead of downloading it',
                    'force' => 'install: download again even if the binary is already there',
@@ -259,7 +266,14 @@ class Webserver extends \Exponential\Runnable\Command
         $script->initialize();
 
         $asJson = !empty( $options['json'] );
-        $dryRun = !empty( $options['dry-run'] );
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        // configure is a dry run unless --apply. start keeps writing its first configuration (or --reconfigure)
+        // before it runs, as before: it controls a process, and --dry-run there shows the plan without running.
 
         $verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status',
                         'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod',
@@ -276,6 +290,7 @@ class Webserver extends \Exponential\Runnable\Command
         // A plain `configure` persists and stops. A `start` persists first when the
         // operator asked (--reconfigure) or when the installation has never been
         // configured, then falls through to run.
+        $dryRun = $verb === 'configure' ? !$apply : !empty( $options['dry-run'] );
         $mustConfigure = ( $verb === 'configure' )
                       || ( $verb === 'start' && ( !empty( $options['reconfigure'] ) || !webserverIsConfigured() ) );
 
@@ -283,6 +298,8 @@ class Webserver extends \Exponential\Runnable\Command
         {
             $res = webserverConfigure( $options, $dryRun );
             webserverReportConfigure( $cli, $res, $asJson );
+            if ( $dryRun && !empty( $res['ok'] ) && !$asJson )
+                $cli->output( 'PASS: webserver configure (dry run, nothing changed; --apply writes)' );
             if ( $verb === 'configure' || $dryRun || empty( $res['ok'] ) )
                 $script->shutdown( empty( $res['ok'] ) ? 1 : 0 );
             // start: configuration written, now run the engine below.
@@ -302,9 +319,12 @@ class Webserver extends \Exponential\Runnable\Command
             $forward[] = '--all';
         if ( $asJson )
             $forward[] = '--json';
-        foreach ( array( 'force', 'check', 'trust-github-digest', 'https', 'no-https' ) as $flag )
+        foreach ( array( 'force', 'check', 'trust-github-digest', 'https', 'no-https', 'apply' ) as $flag )
             if ( !empty( $options[$flag] ) )
                 $forward[] = '--' . $flag;
+        // the commands that write take --dry-run as their default, so it passes on to them
+        if ( !empty( $options['dry-run'] ) && in_array( $verb, array( 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ssl', 'install' ), true ) )
+            $forward[] = '--dry-run';
         if ( !empty( $options['from'] ) )
             $forward[] = '--from=' . $options['from'];
         if ( !empty( $options['keep-global'] ) )

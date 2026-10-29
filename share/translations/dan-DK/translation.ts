@@ -7688,6 +7688,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Opsætning &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Ingen cronjob-del har kørt endnu: jobkøen, importerne, notifikationerne og søgeindekset venter. Kør php bin/php/installcrontab.php --add --apply, eller tilføj linjerne fra --show til crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14591,6 +14595,14 @@ Navigeringsdel</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Denne installation er en offentlig demo: alle kan kende dens administratoradgangskode, og administratoradgangskoder kan ikke ændres eller nulstilles. Indtast ikke noget privat her.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15502,6 +15514,22 @@ Navigeringsdel</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konti, som ingen bruger, eller som bør ses på; deaktiver, lås op eller eksporter dem.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Revisionslog for brugere</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Hvem der har ændret, logget ind eller er blevet afvist, pr. konto; filtrer og eksporter.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Loginrapport</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Hvem der er logget ind, logins og fejl pr. dag; log en bruger ud overalt.</translation>
     </message>
 </context>
 <context>
@@ -33818,6 +33846,14 @@ Exponential-version</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Udløbne sessioner i PHP-handleren fjernes af PHP selv (session.gc_maxlifetime), ikke af denne side eller cronjob-delen session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Alle brugeres sessioner, der er logget ind, vises og logges ud i loginrapporten, som virker med enhver sessionshandler.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Åbn loginrapporten</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -38150,6 +38186,26 @@ din konto.</translation>
     <message>
         <source>None yet</source>
         <translation>Ingen endnu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Dine seneste logins, mislykkede forsøg og ændringer af din adgangskode, e-mailadresse og totrinslogin.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Denne kontos seneste logins, mislykkede forsøg og sikkerhedsændringer.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Gennemgå aktivitet</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count mislykkede logins</translation>
     </message>
 </context>
 <context>
@@ -51344,6 +51400,10 @@ Se siden med krav for at få flere oplysninger.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontabben blev ikke skrevet (%reason). Føj disse linjer til crontabben for den bruger, sitet kører som, ellers kører køen, importerne, notifikationerne og søgeindekset aldrig:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Geninstallation sker med kickstarteren (%file, derefter php bin/php/kickstarter.php run --apply) eller med en ny installation.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -57192,6 +57252,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Mailtransporten afviste %count beskeder i den seneste kørsel. Kontroller mailserveren og site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count hændelser venter, og der er ikke registreret nogen kørsel af notifikations-cronjobbet. Tilføj cronjob-delen &quot;frequent&quot; til crontab, eller kør exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63456,6 +63520,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Vælg et andet site eller en anden sektion med knudevælgeren</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Kun systemadministratoren kan ændre ejeren: kør ./console exp:content-check --fix-permissions --apply som root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64989,6 +65057,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>empty</source>
         <translation>tom</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Signeringsnøglen er over et år gammel: udskift den med exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -69249,6 +69321,14 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>not sent</source>
         <translation>ikke sendt</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Notifikations-cronjobbet registrerer hver af sine kørsler her. Tilføj delen frequent til crontab, eller kør exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Brug konsollen: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -77157,6 +77237,46 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>None.</source>
         <translation>Ingen.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>med en godkendelsesapp</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>med en kode via e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>med en gendannelseskode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>med en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>med en ekstern konto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Vises som sit netværk; adressen gemmes, som sitets databeskyttelsesindstillinger angiver.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ikke registreret</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Placering</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>omtrentlig</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -77400,6 +77520,42 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Manage devices</source>
         <translation>Administrer enheder</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>med en godkendelsesapp</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>med en kode via e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>med en gendannelseskode</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>med en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>med en ekstern konto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ikke registreret</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Placering</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>omtrentlig</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -77479,6 +77635,14 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>View the sessions of this user</source>
         <translation>Vis denne brugers sessioner</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Din konto %login på %site er netop blevet brugt til at logge ind fra et sted, den ikke har logget ind fra på det seneste:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Omtrentlig placering</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77517,6 +77681,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser på %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Loginrapport</translation>
     </message>
 </context>
 <context>
@@ -78016,6 +78184,935 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Open the page</source>
         <translation>Åbn siden</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to af %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Et login eller et bruger-id: den konto, hændelsen drejede sig om, eller den bruger, der handlede.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Handling</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Efter</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Alle resultater</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Før</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Udført af</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Ryd</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Udført</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Hændelser gemmes i %days dage.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Hændelser gemmes, indtil de fjernes manuelt.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hændelser</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Alle handlinger</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Alle hændelser for denne konto</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksporter listen som CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislykkedes</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fra</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Indsnævr listen</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ingen hændelser matcher.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pr. side</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registrering er slået fra i audit.ini ([UserAuditSettings] UserAudit); listen viser, hvad der blev registreret før.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Afvist</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabellen til brugernes revisionslog mangler. Opret den med php update/common/scripts/6.0/createuseraudittable.php; indtil da gemmer revisionsfilerne alle hændelser.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Denne side kræver en SQL-database; den er ikke tilgængelig med MongoDB. Revisionsfilerne gemmer alle hændelser.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Revisionslog for brugere</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bruger</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Hvornår</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hvor</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Hvem der har ændret, oprettet, aktiveret, deaktiveret, flyttet eller fjernet hvilken konto, hvem der har logget ind eller er blevet afvist, og hvilke roller der er blevet tildelt: én linje pr. hændelse med felterne før og efter. Adgangskoder og hemmeligheder registreres aldrig.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>gruppe</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systemet</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukendt</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Beskyt din konto</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Der er brugt en gendannelseskode til at logge ind på din konto %login på %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Der er brugt en gendannelseskode</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Omtrentlig adresse</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Bed om en ny adgangskode for at logge ind igen, eller kontakt sitets administratorer.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Bed om en ny adgangskode</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Hver gendannelseskode virker én gang. Hvis du har mistet din telefon, så konfigurer din godkendelsesapp igen, og opbevar de nye gendannelseskoder et sikkert sted.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Mislykkede loginforsøg på din konto</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Fra nu af beder login om en kode ud over din adgangskode. Hvis det var dig, behøver du ikke gøre noget.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Hvis det var dig, og du har glemt din adgangskode, så bed om en ny. Hvis ikke, så vælg en stærkere adgangskode, og slå totrinslogin til.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Hvis det ikke var dig, kender nogen måske din adgangskode: skift den nu, og tjek, hvor din konto er logget ind.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Resterende gendannelseskoder</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Gennemgå dine enheder</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Sikkerhedsadvarsel</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Nogen har forsøgt at logge ind på din konto %login på %site med en forkert adgangskode %count gange i træk.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Der var en sikkerhedshændelse på din konto %login på %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Dette er en sikkerhedsadvarsel om din konto. Den sendes ved hver sådan ændring og kan ikke slås fra.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tid</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Totrinslogin blev slået fra for din konto %login på %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Totrinslogin blev slået fra</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Totrinslogin blev slået til for din konto %login på %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Totrinslogin blev slået til</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Din konto %login på %site blev låst efter for mange mislykkede logins.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Din konto er nu kun beskyttet af din adgangskode. Hvis det ikke var dig, så slå totrinslogin til igen, når du har skiftet din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Din konto blev låst</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sikkerhedsaktivitet for %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Logget ind</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mislykket loginforsøg</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Logget ud</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessioner logget ud</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Login fra en ny enhed</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Login fra en ny placering</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitet bekræftet (&quot;Bekræft, at det er dig&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitetskontrol mislykkedes</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Logget ind med en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Login med adgangsnøgle mislykkedes</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Login afvist: totrinskode mangler eller er forkert</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Forkert totrinskode</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto låst efter mislykkede logins</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto låst op</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Adgangskode ændret</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ændring af adgangskode mislykkedes</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Adgangskode nulstillet</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ny adgangskode anmodet</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mailadresse ændret</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Brugernavn ændret</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Totrinslogin slået til</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Totrinslogin slået fra</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Gendannelseskode brugt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nye gendannelseskoder</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Appadgangskode oprettet</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Appadgangskode tilbagekaldt</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Adgangsnøgle tilføjet</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Adgangsnøgle fjernet</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto aktiveret</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto deaktiveret</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Logins og sessioner</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontoændringer</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kræver opmærksomhed</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>af dig</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>af brugeren</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>af %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metode</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Webbrowser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhed</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Sted</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessioner</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Hvilke</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislykkede forsøg</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Resterende koder</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Loginhandler</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sikkerhedsaktivitet for %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Logins og ændringer af din kontos sikkerhed. Hvis du ser noget, du ikke har gjort, så skift din adgangskode, og log de enheder ud, du ikke genkender.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Logins og ændringer af denne kontos sikkerhed.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Skift adgangskode</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Tilbage til kontoen</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Sikkerhedsaktiviteten registreres ikke</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Den læses fra revisionsloggen for brugere, hvis tabel expuser_audit mangler eller ikke understøttes på denne database. Kør php update/common/scripts/6.0/createuseraudittable.php eller databaseopdateringen for 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>De seneste %days dage</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Logins de seneste %days dage</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Seneste sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mislykkedes</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>afvist</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ingen sikkerhedsaktivitet registreret endnu.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Sikkerhedshændelser gemmes i %days dage.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Sikkerhedshændelser gemmes, indtil en administrator fjerner dem.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Hent mine logindata</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Dine sessioner og sikkerhedshændelser som en JSON-fil.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Logget ind</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Mislykket loginforsøg</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Logget ud</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sessioner logget ud</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Login fra en ny enhed</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Login fra en ny placering</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitet bekræftet (&quot;Bekræft, at det er dig&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitetskontrol mislykkedes</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Logget ind med en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Login med adgangsnøgle mislykkedes</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Login afvist: totrinskode mangler eller er forkert</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Forkert totrinskode</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto låst efter mislykkede logins</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto låst op</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Adgangskode ændret</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ændring af adgangskode mislykkedes</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Adgangskode nulstillet</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Ny adgangskode anmodet</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mailadresse ændret</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Brugernavn ændret</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Totrinslogin slået til</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Totrinslogin slået fra</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Gendannelseskode brugt</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nye gendannelseskoder</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Appadgangskode oprettet</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Appadgangskode tilbagekaldt</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Adgangsnøgle tilføjet</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Adgangsnøgle fjernet</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto aktiveret</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto deaktiveret</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Logins og sessioner</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontoændringer</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Kræver opmærksomhed</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sikkerhedsaktivitet</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sikkerhedsaktivitet for %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Logins og ændringer af din kontos sikkerhed. Hvis du ser noget, du ikke har gjort, så skift din adgangskode, og log de enheder ud, du ikke genkender.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Skift adgangskode</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Sikkerhedsaktiviteten registreres endnu ikke på dette site.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Logins de seneste %days dage</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislykkede forsøg</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ingen sikkerhedsaktivitet registreret endnu.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Hent mine logindata</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Dine sessioner og sikkerhedshændelser som en JSON-fil.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Adgangskode</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Adgangskode og totrinskode</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-grænseflade</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-grænseflade</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Fælles login</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Logget ind, før sessioner blev registreret</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Loginrapport</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Hvem der er logget ind på sitet, hvor ofte konti logger ind og fejler, og log en bruger ud overalt. Virker med enhver sessionshandler.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessionen blev logget ud. Enheden skal logge ind igen.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login blev logget ud af %count sessioner.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login havde ingen aktiv session.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ingen konto har det id, brugernavn eller den e-mailadresse.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dette er den session, du bruger. Log ud for at afslutte den.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Den session var allerede afsluttet.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siden var udløbet. Intet blev ændret; prøv igen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessioner registreres ikke på dette site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabellen expuser_session mangler</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessioner registreres, når den er oprettet: php update/common/scripts/6.0/createusersessiontable.php eller databaseopdateringen for 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nu og i dag</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Aktive sessioner</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Brugere logget ind</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Logins i dag</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Mislykkede forsøg i dag</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Log en bruger ud overalt</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Hver session på kontoen slutter ved sin næste forespørgsel, også dem, der holdes af &quot;Husk mig&quot;. Brug det, når en konto kan være i de forkerte hænder; nulstil derefter dens adgangskode.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Bruger-id, brugernavn eller e-mailadresse</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Log ud overalt</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Logget ind nu</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>De %limit senest brugte vises.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bruger</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhed</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Logget ind</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Senest aktiv</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Denne enhed</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ikke registreret</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Log ud</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ingen session er logget ind.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>De seneste %days dage</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Logins og mislykkede forsøg tælles fra revisionsloggen for brugere, som ikke findes; de nye sessioner tælles.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dag</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Logins</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Mislykkede forsøg</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nye sessioner</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sessionshandler: %handler. Sessionerne læses fra tabellen expuser_session, så rapporten virker med enhver handler.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Sikkerhedsadvarsel om din konto</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Der var en sikkerhedshændelse på din konto %login: %event. Hvis det ikke var dig, så beskyt din konto på %url.</translation>
     </message>
 </context>
 </TS>

@@ -40,7 +40,7 @@ Der einfachste nachvollziehbare Start ist eine frische Installation auf SQLite
 
 ```bash
 ./console exp:install --dry-run
-./console exp:install
+./console exp:install --apply
 ```
 
 Beginnen Sie bei Tutorials über Erweiterungen mit einer Installation aus Git, damit Leser später beitragen können

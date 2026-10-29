@@ -64,7 +64,7 @@ For integrations this means:
 - **Anonymous** `GET` calls (a public RSS feed, an anonymous `ezjscore` call) may be answered from the cache for the
   page's lifetime; the `X-Cache: HIT` and `Age` headers say so. Send `Cache-Control: no-store` from endpoints of your
   own that must always be fresh.
-- After an import, clear the response cache (`php bin/php/console exp:velocity cache clear`) if anonymous clients
+- After an import, clear the response cache (`php bin/php/console exp:velocity cache clear --apply`) if anonymous clients
   must see the change at once ([Caching after imports](caching-after-imports.md)).
 
 ## Where the load should run

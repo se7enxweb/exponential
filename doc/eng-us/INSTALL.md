@@ -51,7 +51,7 @@ site with the PHP server that Exponential can start for you:
 ```bash
 composer create-project se7enxweb/exponential exponential
 cd exponential
-php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
 
@@ -76,7 +76,7 @@ every extension a clone you can follow, change and contribute back from.
 | | |
 |---|---|
 | Version | **PHP 8.0 to 8.5**. `composer.json` declares `^8.0` (and accepts later 8.x). PHP 8.0 is the oldest supported version, so the stock PHP of Red Hat Enterprise Linux 9 (and AlmaLinux 9, Rocky Linux 9) runs Exponential under Apache, PHP-FPM or Velocity. Use the newest PHP your system offers. See [PHP 8.0 support](bc/6.0/php-8.0-support.md). |
-| Exponential Velocity | part of Exponential as of 6.0.15: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.55`, so `composer install` installs it ([Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md)). It runs on **PHP 8.0 to 8.5** from its release 0.0.4.54 (until then it needed 8.1), with the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). On RHEL 9 the stock PHP 8.0 runs it; see [PHP 8.0 support](bc/6.0/php-8.0-support.md#exponential-velocity-on-php-80). |
+| Exponential Velocity | part of Exponential as of 6.0.15: `composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.57`, so `composer install` installs it ([Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md)). It runs on **PHP 8.0 to 8.5** from its release 0.0.4.54 (until then it needed 8.1), with the `sockets` extension (`pcntl` and `openssl` for the worker pool and HTTPS). On RHEL 9 the stock PHP 8.0 runs it; see [PHP 8.0 support](bc/6.0/php-8.0-support.md#exponential-velocity-on-php-80). |
 | Release tags | `v6.0.8` to `v6.0.14` require PHP 8.1; on PHP 8.0 install the 6.0.15 line (`dev-main`, which Composer also knows as `6.0.x-dev`) until its tag is published. |
 | 64-bit PHP | needed for more than 30 languages (`composer.json`, `suggest`). |
 | `memory_limit` | at least `64M` (setup check `memory_limit`). Restart the web server or PHP-FPM after editing `php.ini`. |
@@ -180,12 +180,12 @@ php bin/php/console --version
 
 The first line names the version, for example `console (Exponential) 6.0.15stable`.
 
-**Exponential Velocity.** `composer.json` requires it at `~0.0.4.55`, so `composer install` installs it on every
+**Exponential Velocity.** `composer.json` requires it at `~0.0.4.57`, so `composer install` installs it on every
 supported PHP, 8.0 included. Until its release 0.0.4.54 it needed PHP 8.1 and was only suggested; an installation
 made in that time adds it with:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
 Why this matters, and what it brings: [Velocity is part of Exponential 6.0.15](help/velocity-is-part-of-exponential-6-0-15.md).
@@ -198,7 +198,7 @@ All three methods run the same setup steps (`kernel/setup/steps/`) and produce t
 
 | | Setup wizard | Kickstarter | Console install |
 |---|---|---|---|
-| Started by | opening the site in a browser | `php bin/php/console exp:kickstarter run --force` | `php bin/php/console exp:install` |
+| Started by | opening the site in a browser | `php bin/php/console exp:kickstarter run --apply --force` | `php bin/php/console exp:install --apply` |
 | Answers come from | the forms, one page per step | `kickstart.ini` in the installation root | command-line options, every one with a default |
 | Best for | a first install, trying Exponential | repeatable, scripted or unattended installs | the fastest install; scripts and CI |
 | Needs a web server during install | yes | no | no |
@@ -277,7 +277,7 @@ browser and reads every answer from `kickstart.ini` in the installation root. Th
 php bin/php/console exp:kickstarter ini            # write kickstart.ini in an interactive editor
 php bin/php/console exp:kickstarter ini --yes      # write it with the built-in defaults, no questions
 php bin/php/console exp:kickstarter run --dry-run  # check kickstart.ini, the database and the packages
-php bin/php/console exp:kickstarter run --force    # install
+php bin/php/console exp:kickstarter run --apply --force    # install
 ```
 
 `php bin/php/kickstarter.php` takes the same subcommands and options.
@@ -289,12 +289,12 @@ php bin/php/console exp:kickstarter run --force    # install
 | `ini --defaults`, `-d` | Copy the example values of `kickstart.ini-dist`. |
 | `ini --from-installed` | Take the database server, name and user (never the password) of an installed siteaccess as defaults. The file then points at a live database. |
 | `run` | Run the steps from `Welcome` to `Final`. |
-| `run --force` | Required whenever the steps include `CreateSites`, the step that writes the database and settings. Without it `run` stops with "Re-run with --force to confirm you want to install the site package." |
+| `run --apply` | Required whenever the steps include `CreateSites`, the step that writes the database and settings. Without it `run` stops with "Re-run with --force to confirm you want to install the site package." |
 | `run --dry-run` | Validate `kickstart.ini`, run `DatabaseChoice` to `SiteDetails`, download the site package and its dependencies into a temporary `var/storage/packages/dryrun/` (removed again), and stop. The database must be reachable; nothing is written to it, no password is generated and no mail sent. |
 | `run --list-steps` | List the steps and exit. Changes nothing. |
 | `run --start-step=<step>`, `--stop-step=<step>` | Run part of the steps, for diagnosis. A run cannot resume an earlier one: a start step whose later steps need the results of earlier ones is refused, with the step to start at. After a failure, fix the cause and run the whole sequence again. |
 
-While `run --force` rebuilds the database, the site answers every visitor with the maintenance page; a maintenance
+While `run --apply` rebuilds the database, the site answers every visitor with the maintenance page; a maintenance
 window that was already open is kept, and after a failed step the page stays until you run again or
 `php bin/php/maintenance.php off`. Every run is logged to `var/log/kickstart.log` with passwords masked (earlier runs
 are kept as `kickstart.log.1` to `.9`; `EXP_KICKSTART_LOG=0` turns the log off). The site package is taken from
@@ -415,13 +415,13 @@ the same process, and puts back any `kickstart.ini` that was there. Everything h
 installs the `sevenx_multisite` package on SQLite with the user `admin` and a generated password:
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 Other databases (keep the password out of the shell history with `EXP_INSTALL_DB_PASSWORD`):
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='secret' php bin/php/console exp:install --db=mysql --db-host=127.0.0.1 \
+EXP_INSTALL_DB_PASSWORD='secret' php bin/php/console exp:install --apply --db=mysql --db-host=127.0.0.1 \
     --db-name=mysite --db-user=mysite --url=https://www.example.com --random-password
 ```
 
@@ -466,7 +466,7 @@ persistent workers and has its own response cache. It serves HTTP and HTTPS itse
 no Apache, nginx or PHP-FPM is needed. Install it with Composer ([section 3](#3-get-the-code)), then:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 php bin/php/console exp:velocity start
 php bin/php/console exp:velocity status
 ```
@@ -477,9 +477,9 @@ The `qbix` engine serves plain HTTP on `[ServerSettings] Port` (8088) and HTTPS 
 `Host` (`127.0.0.1`). To serve the network:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Host 0.0.0.0
-php bin/php/console exp:velocity config set ServerSettings Port 80
-php bin/php/console exp:velocity config set ServerSettings HTTPSPort 443
+php bin/php/console exp:velocity config set --apply ServerSettings Host 0.0.0.0
+php bin/php/console exp:velocity config set --apply ServerSettings Port 80
+php bin/php/console exp:velocity config set --apply ServerSettings HTTPSPort 443
 php bin/php/console exp:velocity restart
 ```
 
@@ -491,9 +491,9 @@ root unless `AllowRootWorkers=enabled`.
 **HTTPS with a certificate you have** (one PEM file may hold both):
 
 ```bash
-php bin/php/console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem
-php bin/php/console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem
-php bin/php/console exp:velocity config set HTTPSSettings Enabled true
+php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem
+php bin/php/console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem
+php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true
 php bin/php/console exp:velocity restart
 php bin/php/console exp:velocity ssl show
 ```
@@ -514,8 +514,8 @@ the site is on HTTPS for good.
 
 ```bash
 php bin/php/console exp:velocity layout                 # show every file the server uses
-php bin/php/console exp:velocity site enable <name>
-php bin/php/console exp:velocity site disable <name>
+php bin/php/console exp:velocity site enable --apply <name>
+php bin/php/console exp:velocity site disable --apply <name>
 ```
 
 **Day to day:**
@@ -700,7 +700,7 @@ More: [SQLite database support](features/6.0/sqlite-database.md),
    | added a template or an extension | `php bin/php/ezcache.php --clear-id=template-override` |
    | unsure | `php bin/php/ezcache.php --clear-all` |
 
-   With Velocity, also `php bin/php/console exp:velocity cache clear`; after a class or INI change, `exp:velocity
+   With Velocity, also `php bin/php/console exp:velocity cache clear --apply`; after a class or INI change, `exp:velocity
    deploy` does all of it in order.
 5. **Regenerate autoloads** after adding or renaming a class in an extension:
    `php bin/php/ezpgenerateautoloads.php -e` (`-k` for the kernel).
@@ -709,8 +709,8 @@ More: [SQLite database support](features/6.0/sqlite-database.md),
 7. **The help's manuals.** The kickstarter and `exp:install` have queued the build of the help's manuals from the
    Markdown help (the last lines of their output): a background job makes them over the next 20 to 30 minutes, and
    `./console exp:help:content report -s admin` says "Manuals are being built (n of 52)" until it is done. After the
-   setup wizard, or when queueing reported a problem, run `./console exp:help:content build-manuals -s admin --queue`.
-   Run `./console exp:help:content build-manuals -s admin --release` after each upgrade
+   setup wizard, or when queueing reported a problem, run `./console exp:help:content build-manuals --apply -s admin --queue`.
+   Run `./console exp:help:content build-manuals --apply -s admin --release` after each upgrade
    ([Manuals from the Markdown help](features/6.0/help-content.md#manuals-from-the-markdown-help)).
 8. **Optional: the job queue and Exponential Intelligence.** `composer.json` brings the job queue `expqueue` and
    the writing assistant `expai` into `extension/`, both inactive. To use them:

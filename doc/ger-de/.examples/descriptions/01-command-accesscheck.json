@@ -27,6 +27,34 @@
         "en": "The user: its content object ID or its login; \"anonymous\" for the anonymous user",
         "de": "Der Benutzer: seine Inhaltsobjekt-ID oder sein Login; \"anonymous\" für den anonymen Benutzer"
     },
+    "command:addanonymouspublicpolicies": {
+        "en": "Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (dry run unless --apply)",
+        "de": "Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Views des Newsletters (Probelauf, außer mit --apply)"
+    },
+    "command:addanonymouspublicpolicies --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would be added, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was hinzugefügt würde, nichts ändern"
+    },
+    "command:addanonymouspublicpolicies --role": {
+        "en": "The role to complete (ID or name); default Anonymous",
+        "de": "Die zu ergänzende Rolle (ID oder Name); Standard Anonymous"
+    },
+    "command:addanonymouspublicpolicies --skip": {
+        "en": "Never this policy (module/function), may be repeated; e.g. --skip=user/register keeps registration closed",
+        "de": "Diese Richtlinie nie (Modul/Funktion), kann wiederholt werden; z. B. hält --skip=user/register die Registrierung geschlossen"
+    },
+    "command:adddefaultstates": {
+        "en": "Give every content object the default state of each state group it has no state of (dry run unless --apply)",
+        "de": "Gibt jedem Inhaltsobjekt den Standardzustand jeder Zustandsgruppe, aus der es keinen Zustand hat (Probelauf, außer mit --apply)"
+    },
+    "command:adddefaultstates --apply": {
+        "en": "Add the states (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Zustände hinzufügen (Standard ist ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:adddefaultstates --dry-run": {
+        "en": "The default: list how many objects would get a default state, change nothing",
+        "de": "Der Standard: auflisten, wie viele Objekte einen Standardzustand erhielten, nichts ändern"
+    },
     "command:addeditorpolicies": {
         "en": "Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply)",
         "de": "Gibt der Rolle Editor die alltäglichen Richtlinien, die ihr fehlen: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, den Bildeditor, das eigene Konto (Probelauf, außer mit --apply)"
@@ -56,12 +84,12 @@
         "de": "Nie diese Richtlinie (Modul/Funktion), kann wiederholt werden; z. B. hält --skip=content/restore den Papierkorb geschlossen"
     },
     "command:addexphelpreadpolicy": {
-        "en": "Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first)",
-        "de": "Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf)"
+        "en": "Grant exphelp/read (the help system) to the Editor role or the roles named (dry run unless --apply)",
+        "de": "Gewährt exphelp/read (das Hilfesystem) der Rolle Editor oder den genannten Rollen (Probelauf, außer mit --apply)"
     },
     "command:addexphelpreadpolicy --dry-run": {
-        "en": "List what would be granted, change nothing",
-        "de": "Auflisten, was gewährt würde, nichts ändern"
+        "en": "The default, kept for scripts that pass it: list what would be granted, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was gewährt würde, nichts ändern"
     },
     "command:addexphelpreadpolicy --role": {
         "en": "This role (ID or name), may be repeated; the Editor role when none is named",
@@ -84,16 +112,68 @@
         "de": "Nur diese Regel ([MemberRule_<name>]), kann wiederholt werden"
     },
     "command:addoauthauthorizepolicy": {
-        "en": "Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first)",
-        "de": "Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf)"
+        "en": "Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; dry run unless --apply)",
+        "de": "Gewährt oauth/authorize den Rollen, die Benutzern das Anmelden erlauben (Upgrade auf 6.0.15; Probelauf, außer mit --apply)"
+    },
+    "command:addoauthauthorizepolicy --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would be granted, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was gewährt würde, nichts ändern"
     },
     "command:addoauthauthorizepolicy --role": {
         "en": "Only this role (ID or name), may be repeated; a listed role without user/login gets an unlimited policy",
         "de": "Nur diese Rolle (ID oder Name), kann wiederholt werden; eine genannte Rolle ohne user/login erhält eine unbeschränkte Richtlinie"
     },
+    "command:adduserapproval": {
+        "en": "Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts; --mode=section sets up the optional alternative, a section Staff with the plain approval event (both a dry run unless --apply)",
+        "de": "Richtet die Freigabe neuer Konten in einer Benutzergruppe ein (Standard: neue Editors warten auf die Administrator users): das Workflow-Ereignis auf content/publish vorher und die Rolle, mit der die Anfragenden solche Konten anlegen dürfen; --mode=section richtet die optionale Alternative ein, einen Abschnitt Staff mit dem einfachen Freigabe-Ereignis (beides ein Probelauf, außer mit --apply)"
+    },
+    "command:adduserapproval --admin-id": {
+        "en": "The user the workflow is created by (default 14)",
+        "de": "Der Benutzer, von dem der Workflow angelegt wird (Standard 14)"
+    },
+    "command:adduserapproval --apply": {
+        "en": "Make the changes, in either mode (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Änderungen vornehmen, in beiden Modi (Standard ist ein Probelauf, der sie auflistet und nichts ändert)"
+    },
+    "command:adduserapproval --approvers": {
+        "en": "A group whose members approve (default Administrator users), may be repeated",
+        "de": "Eine Gruppe, deren Mitglieder freigeben (Standard Administrator users), kann wiederholt werden"
+    },
+    "command:adduserapproval --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would be created and changed, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was angelegt und geändert würde, nichts ändern"
+    },
+    "command:adduserapproval --exempt": {
+        "en": "--mode=section: a group whose members need no approval (default Administrator users), may be repeated",
+        "de": "--mode=section: eine Gruppe, deren Mitglieder keine Freigabe brauchen (Standard Administrator users), kann wiederholt werden"
+    },
+    "command:adduserapproval --mode": {
+        "en": "group (default: the event \"Approve user accounts\") or section (the section Staff and the plain approval event)",
+        "de": "group (Standard: das Ereignis \"Approve user accounts\") oder section (der Abschnitt Staff und das einfache Freigabe-Ereignis)"
+    },
+    "command:adduserapproval --no-role": {
+        "en": "Do not create or assign the requesters' role (the requesters have their policies already)",
+        "de": "Die Rolle der Anfragenden nicht anlegen oder zuweisen (die Anfragenden haben ihre Richtlinien bereits)"
+    },
+    "command:adduserapproval --requesters": {
+        "en": "A group that may create accounts in the required groups and waits for approval (default Editors), may be repeated",
+        "de": "Eine Gruppe, die Konten in den Gruppen mit Freigabe anlegen darf und auf die Freigabe wartet (Standard Editors), kann wiederholt werden"
+    },
+    "command:adduserapproval --required": {
+        "en": "A group whose new accounts need approval (default Editors), may be repeated",
+        "de": "Eine Gruppe, deren neue Konten eine Freigabe brauchen (Standard Editors), kann wiederholt werden"
+    },
+    "command:adduserapproval --staff": {
+        "en": "--mode=section: a group whose accounts go into the section Staff (default Administrator users and Editors), may be repeated",
+        "de": "--mode=section: eine Gruppe, deren Konten in den Abschnitt Staff kommen (Standard Administrator users und Editors), kann wiederholt werden"
+    },
     "command:audit": {
         "en": "Audit log: tail, show one event, verify the hash chains, list the channels",
         "de": "Audit-Log: die letzten Einträge, ein Ereignis anzeigen, die Hash-Ketten prüfen, die Kanäle auflisten"
+    },
+    "command:audit --apply": {
+        "en": "rotate, archive, restore, purge, reindex, pseudonymise, import, key rotate, checkpoint, sinks flush, cron: do it (the default is a dry run)",
+        "de": "rotate, archive, restore, purge, reindex, pseudonymise, import, key rotate, checkpoint, sinks flush, cron: ausführen (Standard ist ein Probelauf)"
     },
     "command:audit --archives": {
         "en": "verify: also the archives (manifests, HMAC, checksums, the chain through them); reindex: also the archives",
@@ -120,8 +200,8 @@
         "de": "import: das Verzeichnis der Audit-Dateien von 4.x (Standard: das LogDir des Audits)"
     },
     "command:audit --dry-run": {
-        "en": "rotate, archive, purge, import, pseudonymise: only say what would be done",
-        "de": "rotate, archive, purge, import, pseudonymise: nur sagen, was getan würde"
+        "en": "The default, kept for scripts that pass it: only say what would be done",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: nur sagen, was getan würde"
     },
     "command:audit --file": {
         "en": "import: only this 4.x file (login.log)",
@@ -464,32 +544,52 @@
         "de": "Den Inhalt der Dateien nicht mit früheren Branches vergleichen (um SVN zu vermeiden)"
     },
     "command:cleanuppolicies": {
-        "en": "Remove policies of modules that no longer exist (--dry-run lists them first)",
-        "de": "Entfernt Richtlinien von Modulen, die es nicht mehr gibt (--dry-run listet sie zuerst auf)"
+        "en": "Remove policies of modules that no longer exist (dry run unless --apply)",
+        "de": "Entfernt Richtlinien von Modulen, die es nicht mehr gibt (Probelauf, außer mit --apply)"
+    },
+    "command:cleanuppolicies --apply": {
+        "en": "Remove the policies (the default is a dry run that lists them and changes nothing)",
+        "de": "Die Richtlinien entfernen (Standard ist ein Probelauf, der sie auflistet und nichts ändert)"
     },
     "command:cleanuppolicies --dry-run": {
-        "en": "Test mode, output the list of affected policies without removing them",
-        "de": "Testmodus: die Liste der betroffenen Richtlinien ausgeben, ohne sie zu entfernen"
+        "en": "The default, kept for scripts that pass it: list the policies that would be removed, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: die Richtlinien auflisten, die entfernt würden, nichts ändern"
     },
     "command:cleanuppolicies -n": {
-        "en": "Do not wait",
-        "de": "Nicht warten"
+        "en": "With --apply: do not wait 10 seconds before removing",
+        "de": "Mit --apply: vor dem Entfernen nicht 10 Sekunden warten"
     },
     "command:cleanuprss": {
-        "en": "Trim RSS-imported content, keeping the newest items of each active import",
-        "de": "Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports"
+        "en": "Trim RSS-imported content, keeping the newest items of each active import (dry run unless --apply)",
+        "de": "Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports (Probelauf, außer mit --apply)"
+    },
+    "command:cleanuprss --apply": {
+        "en": "Remove the items (the default is a dry run that lists them and removes nothing)",
+        "de": "Die Einträge entfernen (Standard ist ein Probelauf, der sie auflistet und nichts entfernt)"
     },
     "command:cleanuprss --dry-run": {
-        "en": "List what would be removed, and remove nothing",
-        "de": "Auflisten, was entfernt würde, und nichts entfernen"
+        "en": "The default, kept for scripts that pass it: list what would be removed, remove nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: auflisten, was entfernt würde, nichts entfernen"
     },
     "command:cleanuprss --keep": {
         "en": "Keep this many items per feed instead of the configured number",
         "de": "So viele Einträge pro Feed behalten statt der konfigurierten Anzahl"
     },
     "command:cleanupversions": {
-        "en": "Remove archived content versions beyond the VersionManagement limits (-n: do not wait)",
-        "de": "Entfernt archivierte Inhaltsversionen über die Grenzen von VersionManagement hinaus (-n: nicht warten)"
+        "en": "Remove archived content versions beyond the VersionManagement limits (dry run unless --apply; -n: do not wait)",
+        "de": "Entfernt archivierte Inhaltsversionen jenseits der Grenzen von VersionManagement (Probelauf, außer mit --apply; -n: nicht warten)"
+    },
+    "command:cleanupversions --apply": {
+        "en": "Remove the versions (the default is a dry run that lists them and removes nothing)",
+        "de": "Die Versionen entfernen (Standard ist ein Probelauf, der sie auflistet und nichts entfernt)"
+    },
+    "command:cleanupversions --dry-run": {
+        "en": "The default: list how many archived versions of each object would be removed",
+        "de": "Der Standard: auflisten, wie viele archivierte Versionen jedes Objekts entfernt würden"
+    },
+    "command:cleanupversions -n": {
+        "en": "With --apply: do not wait 10 seconds",
+        "de": "Mit --apply: nicht 10 Sekunden warten"
     },
     "command:clusterize": {
         "en": "Move var files into the database cluster storage (-u moves them back)",
@@ -507,6 +607,10 @@
         "en": "Skip copying media files",
         "de": "Mediendateien nicht kopieren"
     },
+    "command:clusterize -n": {
+        "en": "Do not wait",
+        "de": "Nicht warten"
+    },
     "command:clusterize -r": {
         "en": "Remove files after copying",
         "de": "Dateien nach dem Kopieren entfernen"
@@ -516,12 +620,16 @@
         "de": "Aus dem Cluster zurückholen"
     },
     "command:clusterpurge": {
-        "en": "Physically purge the cluster files of the given scopes (--scopes=scope1,scope2)",
-        "de": "Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2)"
+        "en": "Physically purge the cluster files of the given scopes (--scopes=scope1,scope2; dry run unless --apply)",
+        "de": "Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2; Probelauf, außer mit --apply)"
+    },
+    "command:clusterpurge --apply": {
+        "en": "Purge the files (the default is a dry run that lists them and purges nothing)",
+        "de": "Die Dateien löschen (Standard ist ein Probelauf, der sie auflistet und nichts löscht)"
     },
     "command:clusterpurge --dry-run": {
-        "en": "Test mode, output the list of affected files without removing them",
-        "de": "Testmodus: die Liste der betroffenen Dateien ausgeben, ohne sie zu entfernen"
+        "en": "The default, kept for scripts that pass it: list the affected files without removing them",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: die betroffenen Dateien auflisten, ohne sie zu entfernen"
     },
     "command:clusterpurge --expiry": {
         "en": "Number of days since the file was expired. Only files older than this will be purged. Default is 30, minimum is 1.",
@@ -544,20 +652,28 @@
         "de": "Durch Kommas getrennte Liste der zu löschenden Dateitypen. Mögliche Werte: classattridentifiers, classidentifiers, content, expirycache, statelimitations, user-info-cache, viewcache, wildcard-cache-index, image, binaryfile, media."
     },
     "command:collaborationsampledata": {
-        "en": "Build sample content for the collaboration tool (approvals, comments, groups), or remove it again",
-        "de": "Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder"
+        "en": "Build sample content for the collaboration tool (approvals, comments, groups), or remove it again (dry run unless --apply)",
+        "de": "Legt Beispielinhalte für das Kollaborationswerkzeug an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder (Probelauf, außer mit --apply)"
+    },
+    "command:collaborationsampledata --apply": {
+        "en": "Make the changes (the default is a dry run that shows them and changes nothing)",
+        "de": "Die Änderungen vornehmen (Standard ist ein Probelauf, der sie zeigt und nichts ändert)"
     },
     "command:collaborationsampledata --dry-run": {
-        "en": "Show what would be done and change nothing",
-        "de": "Zeigen, was getan würde, und nichts ändern"
+        "en": "The default, kept for scripts that pass it: show what would be done and change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: zeigen, was getan würde, nichts ändern"
     },
     "command:collaborationsampledata --remove": {
         "en": "Delete the sample data (and only that)",
         "de": "Die Beispieldaten löschen (und nur sie)"
     },
     "command:contentcheck": {
-        "en": "Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run)",
-        "de": "Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Verknüpfungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur ein Bericht, außer mit --fix, --quarantine oder --fix-permissions ohne --dry-run)"
+        "en": "Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only; --fix, --quarantine and --fix-permissions are a dry run unless --apply)",
+        "de": "Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Beziehungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur Bericht; --fix, --quarantine und --fix-permissions sind ein Probelauf, außer mit --apply)"
+    },
+    "command:contentcheck --apply": {
+        "en": "With --fix, --quarantine or --fix-permissions: do it (the default is a dry run that shows the plan)",
+        "de": "Mit --fix, --quarantine oder --fix-permissions: ausführen (Standard ist ein Probelauf, der den Plan zeigt)"
     },
     "command:contentcheck --broken": {
         "en": "List the broken relations below --node (all pages) and in the layouts",
@@ -568,8 +684,8 @@
         "de": "Den Referenzindex aufbauen und im Cache behalten"
     },
     "command:contentcheck --dry-run": {
-        "en": "With --fix, --quarantine or --fix-permissions: show what would be done, change nothing",
-        "de": "Mit --fix, --quarantine oder --fix-permissions: zeigen, was getan würde, nichts ändern"
+        "en": "The default, kept for scripts that pass it: show what would be done, change nothing",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: zeigen, was getan würde, nichts ändern"
     },
     "command:contentcheck --fix": {
         "en": "Resolve: regenerate, restore, replace, remove or review (the findings of --missing-files, or --items)",
@@ -780,12 +896,24 @@
         "de": "search, index --list: nur Seiten dieses Typs (guide, feature, bc, changelog ...)"
     },
     "command:exphelpcontent": {
-        "en": "Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall",
-        "de": "Hilfe als Inhalt gepflegt: die Hilfeklassen, Sektionen, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Styleguide prüfen, das Glossar und die Themen befüllen, berichten und deinstallieren"
+        "en": "Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall (the changing actions are a dry run unless --apply)",
+        "de": "Hilfe als Inhalt: die Hilfeklassen, Abschnitte, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Stilleitfaden prüfen, das Glossar und Themen anlegen, berichten und deinstallieren (die ändernden Aktionen sind ein Probelauf, außer mit --apply)"
+    },
+    "command:exphelpcontent --apply": {
+        "en": "install, tables, classes, tree, roles, check --fix, seed-*, build-manuals, ebooks, feedback --prune, uninstall: make the changes (the default is a dry run)",
+        "de": "install, tables, classes, tree, roles, check --fix, seed-*, build-manuals, ebooks, feedback --prune, uninstall: die Änderungen vornehmen (Standard ist ein Probelauf)"
+    },
+    "command:exphelpcontent --check": {
+        "en": "export: check the EPUB with epubcheck and Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); exit 1 when one fails",
+        "de": "export: das EPUB mit epubcheck und Ace by DAISY prüfen ([ContentSettings] EpubCheckCommand, AceCommand); Exit-Code 1, wenn eines scheitert"
+    },
+    "command:exphelpcontent --commit": {
+        "en": "dita: commit the written files when the directory is a git repository (the history of delivery path 4)",
+        "de": "dita: die geschriebenen Dateien committen, wenn das Verzeichnis ein Git-Repository ist (die Geschichte des Auslieferungswegs 4)"
     },
     "command:exphelpcontent --dry-run": {
-        "en": "Show what would change, change nothing",
-        "de": "Zeigen, was sich ändern würde, nichts ändern"
+        "en": "Show what would change, change nothing (the default of the changing actions; export and dita: their plan)",
+        "de": "Zeigen, was sich ändern würde, nichts ändern (der Standard der ändernden Aktionen; export und dita: ihr Plan)"
     },
     "command:exphelpcontent --file": {
         "en": "seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)",
@@ -793,11 +921,15 @@
     },
     "command:exphelpcontent --fix": {
         "en": "check: set the section of each topic, figure, chapter and manual from the audience, and record the help_ids of Released topics",
-        "de": "check: setzt die Sektion jedes Themas, jeder Abbildung, jedes Kapitels und jedes Handbuchs anhand der Zielgruppe und hält die help_ids der Released-Themen fest"
+        "de": "check: den Abschnitt jedes Themas, jeder Abbildung, jedes Kapitels und jedes Handbuchs aus der Zielgruppe setzen und die help_ids der freigegebenen Themen speichern"
     },
     "command:exphelpcontent --format": {
         "en": "export: epub, pdf or dita",
         "de": "export: epub, pdf oder dita"
+    },
+    "command:exphelpcontent --language": {
+        "en": "build-manuals: the translations to write (default [ManualSettings] Languages[]; \"none\" for none); ebooks, export: the language of the edition (default: the default language)",
+        "de": "build-manuals: die zu schreibenden Übersetzungen (Standard [ManualSettings] Languages[]; \"none\" für keine); ebooks, export: die Sprache der Ausgabe (Standard: die Standardsprache)"
     },
     "command:exphelpcontent --login": {
         "en": "The user who creates the classes and objects (default admin)",
@@ -805,15 +937,23 @@
     },
     "command:exphelpcontent --manual": {
         "en": "export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual; build-manuals: the key of one manual of [ManualSettings] Manuals[]",
-        "de": "export, dita, ebooks: die remote_id des Handbuchs (help-manual-...); dita und ebooks ohne diese Option: jedes Handbuch; build-manuals: der Schlüssel eines Handbuchs aus [ManualSettings] Manuals[]"
+        "de": "export, dita, ebooks: die remote_id des Handbuchs (help-manual-...); dita und ebooks ohne sie: jedes Handbuch; build-manuals: der Schlüssel eines Handbuchs aus [ManualSettings] Manuals[]"
     },
     "command:exphelpcontent --output": {
         "en": "export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages)",
         "de": "export: die zu schreibende Datei (Standard <cache>/exphelp/ebooks/<remote_id>.<format>); dita: das Verzeichnis (Standard <cache>/exphelp/dita/all oder /<remote_id>); package: das Verzeichnis (Standard <cache>/exphelp/packages)"
     },
+    "command:exphelpcontent --prune": {
+        "en": "feedback: remove the answers older than [ContentSettings] FeedbackKeepDays",
+        "de": "feedback: die Antworten entfernen, die älter sind als [ContentSettings] FeedbackKeepDays"
+    },
+    "command:exphelpcontent --queue": {
+        "en": "build-manuals: queue the build as a background content job (helpmanuals) and return at once; nothing is queued while one runs",
+        "de": "build-manuals: den Aufbau als Inhaltsjob im Hintergrund einreihen (helpmanuals) und sofort zurückkehren; solange einer läuft, wird nichts eingereiht"
+    },
     "command:exphelpcontent --release": {
         "en": "seed-topics: set new topics, chapters and manuals to Released; build-manuals: set every generated one to Released",
-        "de": "seed-topics: setzt neue Themen, Kapitel und Handbücher auf Released; build-manuals: setzt jedes erzeugte auf Released"
+        "de": "seed-topics: neue Themen, Kapitel und Handbücher auf Released setzen; build-manuals: jedes erzeugte auf Released setzen"
     },
     "command:exphelpcontent --update": {
         "en": "seed-*: also update existing objects that differ from the file",
@@ -856,8 +996,12 @@
         "de": "Mit --language: die Quelltexte ohne Übersetzung in diese Datei schreiben, als auszufüllenden Beschreibungskatalog"
     },
     "command:explogs": {
-        "en": "The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives",
-        "de": "Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen"
+        "en": "The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives (dry run unless --apply)",
+        "de": "Der Log-Viewer auf der Kommandozeile: die Log-Dateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive aufräumen (Probelauf, außer mit --apply)"
+    },
+    "command:explogs --apply": {
+        "en": "With --rotate, --rotate-all, --prune, --compress or --truncate: change the files (the default is a dry run that prints the plan)",
+        "de": "Mit --rotate, --rotate-all, --prune, --compress oder --truncate: die Dateien ändern (Standard ist ein Probelauf, der den Plan ausgibt)"
     },
     "command:explogs --archives": {
         "en": "List the logs that can be rotated, with their archives (.1 .. .N, .gz) and sizes, and the limits",
@@ -884,7 +1028,7 @@
         "de": "Mit --prune: Archive entfernen, die älter als so viele Tage sind, statt MaxAgeDays"
     },
     "command:explogs --dry-run": {
-        "en": "With --rotate, --rotate-all, --prune, --compress or --truncate: only print the plan",
-        "de": "Mit --rotate, --rotate-all, --prune, --compress oder --truncate: nur den Plan ausgeben"
+        "en": "The default, kept for scripts that pass it: only print the plan",
+        "de": "Der Standard, beibehalten für Skripte, die die Option übergeben: nur den Plan ausgeben"
     }
 }

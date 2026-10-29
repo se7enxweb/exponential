@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Saitin farko &gt; Ayyukan cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Babu wani ɓangaren cronjob da ya gudana tukuna: layin ayyuka, shigo da bayanai, sanarwa da fihirisar bincike suna jira. Gudanar da php bin/php/installcrontab.php --add --apply, ko ƙara layukan --show cikin crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Wannan shigarwa gwajin jama&apos;a ce: kowa na iya sanin kalmar sirri ta mai gudanarwa, kuma ba za a iya canza ko sake saita kalmomin sirri na masu gudanarwa ba. Kada a shigar da wani abu na sirri a nan.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Na&apos;urorinku</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Asusun da babu mai amfani da su ko masu buƙatar dubawa; a kashe, a buɗe ko a fitar da su.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Tarihin binciken masu amfani</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Wanda ya canza, ya shiga ko aka ƙi shi, a kowane asusu; tacewa da fitarwa.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rahoton shiga</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Waɗanda suka shiga, shiga da gazawa a kowace rana; fitar da mai amfani a ko&apos;ina.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP da kansa yake cire zaman aiki da lokacinsu ya ƙare na mai sarrafa PHP (session.gc_maxlifetime), ba wannan shafi ba ko ɓangaren session_gc na cronjob.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Rahoton shiga yana jera zaman aiki na shiga na kowane mai amfani kuma yana fitar da su; yana aiki da kowane mai sarrafa zaman aiki.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Buɗe rahoton shiga</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ asusunka.</translation>
     <message>
         <source>None yet</source>
         <translation>Babu tukuna</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Shigarku na baya-bayan nan, yunƙurin da suka gaza da sauye-sauye ga kalmar sirrinku, adireshin imel ɗinku da shiga ta matakai biyu.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Shiga na baya-bayan nan, yunƙurin da suka gaza da sauye-sauyen tsaro na wannan asusu.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Duba ayyuka</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Shiga da suka gaza: %count</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ Duba shafin buƙatu don ƙarin bayani.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Ba a rubuta crontab ba (%reason). Ƙara waɗannan layuka cikin crontab na mai amfanin da shafin ke gudana da shi, in ba haka ba layin ayyuka, shigo da kaya, sanarwoyi da fihirisar bincike ba za su taɓa gudana ba:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ana sake shigarwa da Kickstarter (%file, sannan php bin/php/kickstarter.php run --apply) ko da sabuwar shigarwa.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Hanyar aika wasiku ta ƙi saƙonni guda %count a gudanarwar ƙarshe. Duba sabar wasiku da site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Abubuwa %count suna jira kuma ba a rubuta wani gudanar da cronjob na sanarwa ba. Ƙara ɓangaren cronjob “frequent” cikin crontab, ko gudanar da exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Zaɓi wani shafi ko sashe ta amfani da mai zaɓar kumburi</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Mai gudanar da tsarin kaɗai ne zai iya canza mamallaki: gudanar da ./console exp:content-check --fix-permissions --apply a matsayin root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>empty</source>
         <translation>fanko</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Maɓallin sa hannu ya wuce shekara ɗaya: maye gurbinsa da sabo ta exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>not sent</source>
         <translation>ba a aika ba</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob na sanarwa yana rubuta kowane gudanarsa a nan. Ƙara ɓangaren frequent cikin crontab, ko gudanar da exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Yi amfani da layin umarni: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>None.</source>
         <translation>Babu.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>da manhajar tantancewa</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>da lamba ta imel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>da lambar farfaɗowa</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>da maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>da asusun waje</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ana nuna shi a matsayin hanyar sadarwarsa; ana adana adireshin kamar yadda saitunan kariyar bayanai na shafin suka tanada.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ba a rubuta ba</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wuri</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kimanin</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Manage devices</source>
         <translation>Sarrafa na&apos;urori</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>da manhajar tantancewa</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>da lamba ta imel</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>da lambar farfaɗowa</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>da maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>da asusun waje</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ba a rubuta ba</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wuri</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>kimanin</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>View the sessions of this user</source>
         <translation>Duba zaman aikin wannan mai amfani</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>An yi amfani da asusunku %login a %site yanzu don shiga daga wurin da ba a shiga daga gare shi ba kwanan nan:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Kimanin wuri</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser a kan %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rahoton shiga</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Open the page</source>
         <translation>Buɗe shafin</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from zuwa %to cikin %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Sunan shiga ko ID na mai amfani: asusun da abin ya shafa ko mai amfanin da ya yi aikin.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Asusu</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Bayan</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Kowane sakamako</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Kafin</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wanda ya yi</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Share</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>An gama</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ana ajiye abubuwan da suka faru na kwanaki %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ana ajiye abubuwan da suka faru har sai an cire su da hannu.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Abubuwan da suka faru</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kowane aiki</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Duk abubuwan da suka faru na wannan asusu</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Fitar da jerin a matsayin CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ya kasa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Taƙaita jerin</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Babu abin da ya dace.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>A kowane shafi</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>An kashe rikodi a audit.ini ([UserAuditSettings] UserAudit); jerin yana nuna abin da aka rubuta a baya.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>An ƙi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sakamako</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Teburin tarihin binciken masu amfani babu shi. Ƙirƙira shi da php update/common/scripts/6.0/createuseraudittable.php; kafin nan fayilolin bincike suna ajiye kowane abu da ya faru.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Wannan shafin yana buƙatar ma&apos;adanar bayanai ta SQL; ba ya samuwa a MongoDB. Fayilolin bincike suna ajiye kowane abu da ya faru.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Zuwa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Tarihin binciken masu amfani</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mai amfani</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Lokaci</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wuri</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Wanda ya canza, ya ƙirƙira, ya kunna, ya kashe, ya matsar ko ya cire wane asusu, wanda ya shiga ko aka ƙi shi, da waɗanne ayyuka aka bayar: layi ɗaya ga kowane abu da ya faru, tare da filaye kafin da bayan canji. Ba a taɓa rubuta kalmomin sirri da asirai ba.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ƙungiya</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>tsarin</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ba a sani ba</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kare asusunku</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>An yi amfani da lambar farfaɗowa don shiga asusunku %login a %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>An yi amfani da lambar farfaɗowa</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Asusu</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Kimanin adireshi</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Nemi sabuwar kalmar sirri don sake shiga, ko tuntuɓi masu gudanar da shafin.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Nemi sabuwar kalmar sirri</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kowace lambar farfaɗowa tana aiki sau ɗaya. Idan kun rasa wayarku, sake saita manhajar tantancewarku kuma ku ajiye sabbin lambobin farfaɗowa a wuri mai aminci.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Yunƙurin shiga da suka gaza a asusunku</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Daga yanzu, shiga zai nemi lamba baya ga kalmar sirrinku. Idan ku ne kuka yi wannan, ba sai kun yi komai ba.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Idan ku ne kuma kun manta kalmar sirrinku, nemi sabuwa. Idan ba ku ba ne, zaɓi kalmar sirri mai ƙarfi kuma ku kunna shiga ta matakai biyu.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Idan ba ku ne kuka yi wannan ba, wani yana iya sanin kalmar sirrinku: canza ta yanzu kuma ku duba inda asusunku yake a shiga.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Lambobin farfaɗowa da suka rage</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Duba na&apos;urorinku</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Gargaɗin tsaro</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Wani ya yi ƙoƙarin shiga asusunku %login a %site da kalmar sirri mara daidai sau %count a jere.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>An samu wani lamarin tsaro a asusunku %login a %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Wannan gargaɗin tsaro ne game da asusunku. Ana aika shi duk lokacin da aka yi irin wannan canji kuma ba za a iya kashe shi ba.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Lokaci</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>An kashe shiga ta matakai biyu don asusunku %login a %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>An kashe shiga ta matakai biyu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>An kunna shiga ta matakai biyu don asusunku %login a %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>An kunna shiga ta matakai biyu</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>An kulle asusunku %login a %site bayan shiga da yawa da suka gaza.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Yanzu kalmar sirrinku kaɗai ce ke kare asusunku. Idan ba ku ne kuka yi wannan ba, sake kunna shiga ta matakai biyu bayan kun canza kalmar sirrinku.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>An kulle asusunku</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ayyukan tsaro na %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ya shiga</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Yunƙurin shiga da ya gaza</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ya fita</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>An fitar da zaman aiki</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Shiga daga sabuwar na&apos;ura</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Shiga daga sabon wuri</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>An tabbatar da shaida (“Tabbatar cewa ku ne”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Tabbatar da shaida ya gaza</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ya shiga da maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Shiga da maɓallin shiga ya gaza</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>An ƙi shiga: lambar mataki na biyu ba ta nan ko ba daidai ba ce</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Lambar mataki na biyu ba daidai ba ce</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>An kulle asusu bayan shiga da suka gaza</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>An buɗe asusu</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>An canza kalmar sirri</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Canza kalmar sirri ya gaza</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>An sake saita kalmar sirri</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>An nemi sabuwar kalmar sirri</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>An canza adireshin imel</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>An canza sunan mai amfani</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>An kunna shiga ta matakai biyu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>An kashe shiga ta matakai biyu</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>An yi amfani da lambar farfaɗowa</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Sabbin lambobin farfaɗowa</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>An ƙirƙiri kalmar sirrin manhaja</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>An soke kalmar sirrin manhaja</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>An ƙara maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>An cire maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>An kunna asusu</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>An kashe asusu</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Duka</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Shiga da zaman aiki</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Sauye-sauyen asusu</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Yana buƙatar kulawa</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>daga gare ku</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>daga mai amfanin</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>daga %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Hanya</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Mai bincike</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Tsarin aiki</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Na&apos;ura</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Wuri</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ƙasa</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Zaman aiki</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Wanne</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Hanyar aikawa</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Yunƙurin da suka gaza</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Lambobin da suka rage</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Mai sarrafa shiga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ayyukan tsaro na %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Shiga da sauye-sauye ga tsaron asusunku. Idan kun ga wani abu da ba ku yi ba, canza kalmar sirrinku kuma ku fitar da na&apos;urorin da ba ku gane ba.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Shiga da sauye-sauye ga tsaron wannan asusu.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Na&apos;urorinku</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Canja kalmar sirri</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Koma zuwa asusu</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Ba a rubuta ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ana karanta su daga tarihin binciken masu amfani, wanda teburinsa expuser_audit ba ya nan ko ba a goyan bayansa a wannan ma&apos;adanar bayanai. Gudanar da php update/common/scripts/6.0/createuseraudittable.php, ko sabunta ma&apos;adanar bayanai na 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Kwanaki %days na ƙarshe</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Shiga a kwanaki %days na ƙarshe</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ayyukan tsaro na baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ya gaza</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>an ƙi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ba a rubuta wani aikin tsaro ba tukuna.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Ana ajiye abubuwan tsaro na kwanaki %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Ana ajiye abubuwan tsaro har sai mai gudanarwa ya cire su.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Saukar da bayanan shigata</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Zaman aikinku da abubuwan tsaronku a matsayin fayil na JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ya shiga</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Yunƙurin shiga da ya gaza</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ya fita</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>An fitar da zaman aiki</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Shiga daga sabuwar na&apos;ura</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Shiga daga sabon wuri</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>An tabbatar da shaida (“Tabbatar cewa ku ne”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Tabbatar da shaida ya gaza</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ya shiga da maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Shiga da maɓallin shiga ya gaza</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>An ƙi shiga: lambar mataki na biyu ba ta nan ko ba daidai ba ce</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Lambar mataki na biyu ba daidai ba ce</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>An kulle asusu bayan shiga da suka gaza</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>An buɗe asusu</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>An canza kalmar sirri</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Canza kalmar sirri ya gaza</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>An sake saita kalmar sirri</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>An nemi sabuwar kalmar sirri</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>An canza adireshin imel</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>An canza sunan mai amfani</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>An kunna shiga ta matakai biyu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>An kashe shiga ta matakai biyu</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>An yi amfani da lambar farfaɗowa</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Sabbin lambobin farfaɗowa</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>An ƙirƙiri kalmar sirrin manhaja</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>An soke kalmar sirrin manhaja</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>An ƙara maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>An cire maɓallin shiga</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>An kunna asusu</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>An kashe asusu</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Duka</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Shiga da zaman aiki</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Sauye-sauyen asusu</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Yana buƙatar kulawa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ayyukan tsaro</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ayyukan tsaro na %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Shiga da sauye-sauye ga tsaron asusunku. Idan kun ga wani abu da ba ku yi ba, canza kalmar sirrinku kuma ku fitar da na&apos;urorin da ba ku gane ba.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Na&apos;urorinku</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Canja kalmar sirri</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Ba a rubuta ayyukan tsaro a wannan shafin tukuna.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Shiga a kwanaki %days na ƙarshe</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Yunƙurin da suka gaza</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ba a rubuta wani aikin tsaro ba tukuna.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Saukar da bayanan shigata</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Zaman aikinku da abubuwan tsaronku a matsayin fayil na JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Kalmar sirri</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Kalmar sirri da lambar mataki na biyu</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Mu&apos;amalar REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Mu&apos;amalar SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Shiga guda ɗaya (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ya shiga kafin a fara rubuta zaman aiki</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rahoton shiga</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Waɗanda suka shiga shafin, sau nawa asusu ke shiga da kuma gazawa, da fitar da mai amfani a ko&apos;ina. Yana aiki da kowane mai sarrafa zaman aiki.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>An fitar da zaman aikin. Dole na&apos;urar ta sake shiga.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>An fitar da %login daga zaman aiki %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ba shi da zaman aiki mai gudana.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Babu asusun da ke da wannan ID, sunan mai amfani ko adireshin imel.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Wannan shi ne zaman aikin da kuke amfani da shi. Don kawo ƙarshensa, ku fita.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Wannan zaman aikin ya riga ya ƙare.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Shafin ya ƙare. Ba a canza komai ba; don Allah sake gwadawa.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ba a rubuta zaman aiki a wannan shafin (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Teburin expuser_session ba ya nan</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Za a rubuta zaman aiki da zarar an ƙirƙira shi: php update/common/scripts/6.0/createusersessiontable.php, ko sabunta ma&apos;adanar bayanai na 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Yanzu da yau</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Zaman aiki masu gudana</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Masu amfani da suka shiga</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Shiga na yau</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Yunƙurin da suka gaza a yau</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Fitar da mai amfani a ko&apos;ina</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kowane zaman aiki na asusun yana ƙarewa a buƙatarsa ta gaba, har da waɗanda “Tuna da ni” ke riƙewa. Yi amfani da wannan idan asusu na iya kasancewa a hannun da ba daidai ba; sannan sake saita kalmar sirrinsa.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID na mai amfani, sunan mai amfani ko adireshin imel</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Fita a ko&apos;ina</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ya shiga yanzu</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Ana nuna %limit da aka fi amfani da su kwanan nan.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mai amfani</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Na&apos;ura</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adireshi</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ya shiga</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Aiki na ƙarshe</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ayyuka</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Wannan na&apos;ura</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ba a rubuta ba</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Fita</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Babu wani zaman aiki da aka shiga.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Kwanaki %days na ƙarshe</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Ana ƙidaya shiga da yunƙurin da suka gaza daga tarihin binciken masu amfani, wanda ba ya nan; sabbin zaman aiki kuwa ana ƙidaya su.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Rana</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Lokutan shiga</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Yunƙurin da suka gaza</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sabbin zaman aiki</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Mai sarrafa zaman aiki: %handler. Ana karanta zaman aiki daga teburin expuser_session, don haka rahoton yana aiki da kowane mai sarrafawa.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Gargaɗin tsaro game da asusunku</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>An samu lamarin tsaro a asusunku %login: %event. Idan ba ku ba ne, ku kare asusunku a %url.</translation>
     </message>
 </context>
 </TS>

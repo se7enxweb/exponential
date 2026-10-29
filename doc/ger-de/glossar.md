@@ -147,7 +147,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **INI file** (INI-Datei): eine Einstellungsdatei (`site.ini`, `content.ini`, ...) in Blöcken von `Key=Value`; gelesen in der Reihenfolge, eine spätere Datei gewinnt: Standards, Siteaccess, Extensions, Überschreibung. [Platzierungen von INI-Überschreibungen](spezifikationen/6.0/ini-override-platzierungen.md), [exp:ini](funktionen/6.0/exp-ini-befehl.md).
 - **install type** (Installationstyp): ein benannter Installer der **Exponential Platform** (`exponential-oss`, `ibexa-oss`, `exponential-media`, `exponential-cjw`), ausgeführt mit `exponential:install <type>`. [SQLite-Installer der Plattform](spezifikationen/6.0/platform-sqlite-installer.md).
 - **installation name** (Installationsname): der Name, der auf Seiten außerhalb der Produktion angezeigt wird, damit Staging nie für die Produktion gehalten wird. [Installationsname](funktionen/6.0/installationsname-in-seiten.md).
-- **installer / install** (Installer): `./console exp:install` installiert eine ganze Website mit einem Befehl. [Installation mit einem Befehl](funktionen/6.0/installation-mit-einem-befehl.md).
+- **installer / install** (Installer): `./console exp:install --apply` installiert eine ganze Website mit einem Befehl. [Installation mit einem Befehl](funktionen/6.0/installation-mit-einem-befehl.md).
 - **interface language** (Oberflächensprache): die Sprache, in der die Administration selbst angezeigt wird, pro Benutzer in der rechten Werkzeugleiste gewählt (Richtlinie `uiswitch/language`); sie setzt das Locale für die Anfragen dieses Benutzers und ändert nie die Inhaltssprachen. [Oberflächensprache](funktionen/6.0/ui-umschalter.md), [Einstellungen](anleitungen/ui-umschalter-einstellungen.md).
 
 ## J
@@ -194,7 +194,7 @@ nutzen Sie [die Anleitungen](anleitungen/README.md); für die Geschichte hinter 
 - **OPcache**: der Cache für kompilierten Code von PHP; Velocity hält umgeschriebene Cache-Dateien darin. [Opcode-Cache und Profil](funktionen/6.0/velocity-opcode-cache-und-profil.md).
 - **operator (template)** (Template-Operator): eine Funktion, die mit einer Pipe angewendet wird (`$text|wash`). [String-Template-Operatoren](funktionen/6.0/template-operatoren-fuer-zeichenketten.md), [Operatoren für Rollen und Richtlinien](funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md), [owsimpleoperator](funktionen/6.0/erweiterungen/owsimpleoperator.md), [swark](funktionen/6.0/erweiterungen/swark.md).
 - **OPML**: eine Liste von Feeds, exportierbar aus dem RSS-Modul. [OPML-Exporte](bc/6.0/opml.md).
-- **Oracle**: eine unterstützte Datenbank, über die Extension `ezoracle`; Installation mit `./console exp:install --db=oracle`. [Datenbanktreiber und Installer](spezifikationen/6.0/datenbanktreiber-2026-09.md#oracle).
+- **Oracle**: eine unterstützte Datenbank, über die Extension `ezoracle`; Installation mit `./console exp:install --apply --db=oracle`. [Datenbanktreiber und Installer](spezifikationen/6.0/datenbanktreiber-2026-09.md#oracle).
 - **override** (Überschreibung): eine Regel, die sagt „für diese Klasse, diesen Knoten oder diese Sektion verwende dieses Template statt des Standards“, gespeichert in `override.ini`. [Template-Editor](funktionen/6.0/template-editor-ueberschreibungen.md), [Reihenfolge der Überschreibungen](funktionen/6.0/reihenfolge-der-template-ueberschreibungen.md).
 
 ## P

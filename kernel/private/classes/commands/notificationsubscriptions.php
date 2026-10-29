@@ -1,6 +1,6 @@
 <?php
 /**
- * @description List the subtree notification subscriptions per user and subtree, or remove those whose content is gone
+ * @description List the subtree notification subscriptions per user and subtree, or remove those whose content is gone (dry run unless --apply)
  * @alias exp:notification:subscriptions
  * @alias exp:notify:subscriptions
  *
@@ -23,18 +23,22 @@ class Notificationsubscriptions extends \Exponential\Runnable\Command
             array(
                 'description' => "Notification subscriptions\n" .
                                  "  list                      the subtree subscriptions: user, node, path, class, last change below the node\n" .
-                                 "  remove-missing            remove the subscriptions whose node no longer exists (--dry-run counts)\n" .
+                                 "  remove-missing            remove the subscriptions whose node no longer exists (lists them; --apply removes)\n" .
+                                 "\n" .
+                                 "remove-missing without --apply removes nothing: it lists what it would remove. --dry-run is still\n" .
+                                 "accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n" .
                                  "\n" .
                                  "./console exp:notification:subscriptions list --user=editor --limit=20\n" .
                                  "./console exp:notification:subscriptions list --missing\n" .
-                                 "./console exp:notification:subscriptions remove-missing --dry-run",
+                                 "./console exp:notification:subscriptions remove-missing\n" .
+                                 "./console exp:notification:subscriptions remove-missing --apply",
                 'use-session'    => false,
                 'use-modules'    => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            '[user:][q:][class:][missing][limit:][offset:][addresses][dry-run][json]', '',
+            '[user:][q:][class:][missing][limit:][offset:][addresses][apply][dry-run][json]', '',
             array( 'user'      => 'only this user: a login or the user\'s content object id',
                    'q'         => 'only nodes whose name contains this',
                    'class'     => 'only nodes of this class identifier',
@@ -42,8 +46,17 @@ class Notificationsubscriptions extends \Exponential\Runnable\Command
                    'limit'     => 'how many (default 50)',
                    'offset'    => 'skip this many',
                    'addresses' => 'also show the user\'s e-mail address (hidden by default)',
-                   'dry-run'   => 'remove-missing: count, remove nothing',
+                   'apply'     => 'remove-missing: remove the subscriptions (the default lists them and removes nothing)',
+                   'dry-run'   => 'remove-missing: the default, kept for scripts that pass it: list, remove nothing',
                    'json'      => 'list: JSON' ) );
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $dryRun = !$apply;
         $args = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
         $action = $args ? strtolower( (string)$args[0] ) : 'list';
 
@@ -98,14 +111,27 @@ class Notificationsubscriptions extends \Exponential\Runnable\Command
         if ( $action === 'remove-missing' )
         {
             $data = \expNotificationService::subscriptions( $userID, array( 'missing' => true ), 0, 100000 );
-            $dry = !empty( $options['dry-run'] );
             foreach ( $data['rows'] as $row )
             {
-                $cli->output( sprintf( '%s #%d (user %d, node %d)', $dry ? 'would remove' : 'removing', $row['id'], $row['user_id'], $row['node_id'] ) );
-                if ( !$dry )
+                $cli->output( sprintf( '%s #%d (user %d, node %d)', $dryRun ? 'would remove' : 'removing', $row['id'], $row['user_id'], $row['node_id'] ) );
+                if ( !$dryRun )
                     \eZPersistentObject::removeObject( \eZSubtreeNotificationRule::definition(), array( 'id' => $row['id'] ) );
             }
-            $cli->output( sprintf( 'PASS: %d subscription(s) %s', count( $data['rows'] ), $dry ? 'would be removed' : 'removed' ) );
+            if ( $dryRun )
+            {
+                $cli->output( sprintf( 'PASS: %d subscription(s) would be removed (dry run, nothing changed; --apply writes)', count( $data['rows'] ) ) );
+                $this->shutdown( 0 );
+                return;
+            }
+            // Check what was stored: no subscription of a missing node is left.
+            $left = \expNotificationService::subscriptions( $userID, array( 'missing' => true ), 0, 100000 );
+            if ( $left['total'] > 0 )
+            {
+                $cli->error( sprintf( 'FAIL: %d subscription(s) of missing nodes still there', $left['total'] ) );
+                $this->shutdown( 1 );
+                return;
+            }
+            $cli->output( sprintf( 'PASS: %d subscription(s) removed', count( $data['rows'] ) ) );
             $this->shutdown( 0 );
             return;
         }

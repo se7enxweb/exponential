@@ -384,10 +384,10 @@ RegistrationActionTTL=604800
 
 > Wie das Setup (Setup-Assistent, Kickstarter) die Freigabe neuer Redakteurskonten  
 > einrichtet: group (der Standard: das Workflow-Ereignis "Approve user accounts",  
-> entschieden von der Gruppe, in die ein Konto eingeordnet wird), section (die Sektion Staff für  
+> entschieden nach der Gruppe, in die ein Konto kommt), section (der Abschnitt Staff für  
 > Administrator users und Editors und das einfache Freigabe-Ereignis darauf) oder none.  
-> Wählen Sie eines, nie beide: ein Konto würde doppelt gefragt. Eine bestehende  
-> Installation: bin/php/adduserapproval.php \[--mode=section\].  
+> Wählen Sie eines, nie beides: Ein Konto würde zweimal angefragt. Eine bestehende  
+> Installation: bin/php/adduserapproval.php --apply \[--mode=section\].  
 > Anleitung: doc/eng-us/bc/6.0/user-account-approval.md  
 
 Standard: `group`.

@@ -92,7 +92,7 @@ script and compare by primary key) instead of reading the diff.
 
 ## Testing on more than one engine
 
-The quickest real test is a fresh SQLite installation (`./console exp:install`) with your extension switched on and its
+The quickest real test is a fresh SQLite installation (`./console exp:install --apply`) with your extension switched on and its
 schema installed. If your extension claims support for other databases, test there too; the kernel's CI runs MySQL and
 PostgreSQL for this reason ([Continuous integration](../../../bc/6.0/ci.md)).
 

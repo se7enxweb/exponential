@@ -158,6 +158,38 @@ class expVelocityFrankenPHPInstaller
     }
 
     /**
+     * What install() would do, without downloading or writing: the same checks, then the file it would fetch and
+     * where it would put it, or that the binary is there already.
+     *
+     * @param array $options as install() takes them
+     * @return array result
+     */
+    public function plan( array $options = array() )
+    {
+        $path = trim( (string)$this->engine->frankenSetting( 'BinaryPath', '' ) );
+        if ( $path !== '' && empty( $options['from'] ) )
+            return $this->checkBinaryPath( $this->engine->absolutePath( $path ) );
+        if ( $this->version() === '' )
+            return $this->result( false, '[FrankenPHPSettings] Version is not set' );
+        list( $asset, $error ) = $this->assetName();
+        if ( $asset === null )
+            return $this->result( false, $error );
+        $target = $this->targetPath();
+        if ( is_file( $target ) && is_executable( $target ) && empty( $options['force'] ) && empty( $options['from'] ) )
+            return $this->result( true, "already installed: $target; nothing to do", array( 'binary' => $target ) );
+        $expected = $this->pinnedSha256( $asset );
+        $source = !empty( $options['from'] ) ? (string)$options['from']
+                : $this->url( $this->engine->frankenSetting( 'DownloadUrl',
+                      'https://github.com/php/frankenphp/releases/download/v{version}/{asset}' ), $asset );
+        if ( $expected === '' && ( empty( $options['trustGithubDigest'] ) || !empty( $options['from'] ) ) )
+            return $this->result( false, "velocity.ini pins no SHA-256 for $asset of version " . $this->version()
+                . ': add [FrankenPHPSettings] Sha256[' . $asset . ']=<hex>, or run install --trust-github-digest' );
+        return $this->result( true, "would install FrankenPHP " . $this->version() . " ($asset) from $source to $target, "
+            . ( $expected !== '' ? "checked against SHA-256 $expected" : 'checked against the digest GitHub publishes' ),
+            array( 'binary' => $target, 'source' => $source ) );
+    }
+
+    /**
      * Download, verify and put the binary in place.
      *
      * @param array $options force: download even if present; from: install
@@ -239,7 +271,7 @@ class expVelocityFrankenPHPInstaller
             {
                 @unlink( $part );
                 return $this->result( false, 'download failed (' . $downloaded . '). Without network access: fetch '
-                    . "$url elsewhere, check it has SHA-256 $expected, and run exp:velocity install --from=<file>;"
+                    . "$url elsewhere, check it has SHA-256 $expected, and run exp:velocity install --from=<file> --apply;"
                     . ' or name an own binary with [FrankenPHPSettings] BinaryPath' );
             }
         }

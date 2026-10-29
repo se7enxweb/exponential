@@ -14326,6 +14326,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Installationi una tamanut demo-uvoq: kinaluunniit aqutsisup isissutissaa ilisimasinnaavaa, aqutsisullu isissutissai allanngortinneqarsinnaanngillat aallaqqaataanulluunniit utertinneqarsinnaanngillat. Maani namminiussamik sumilluunniit allassanngilatit.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontot kimilluunniit atorneqanngitsut imaluunniit misissorneqartariaqartut; atorunnaarsikkit, parnaarunnaarsikkit imaluunniit anitsikkit.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Atuisut misissuinermut nalunaarsuiffiat</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kina allanngortitsisimanersoq, iserfigisimanersoq imaluunniit itigartinneqarsimanersoq, kontomut ataatsimut; filterigit aamma anitsiguk.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Iseriarnernut nalunaarusiaq</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kikkut isersimanersut, ulluinnarni iseriarnerit kukkunerillu; atuisoq sumiluunniit anitsiguk.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP-p suliarinnittuata isersimanerai piffissaa qaangiunneqarsimasut PHP-mit nammineq peerneqartarput (session.gc_maxlifetime), quppernermit matumannga cron-illu suliassaata ilaanit session_gc-mit pinnatik.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Atuisut tamarmik isersimanerisa iseriarnernut nalunaarusiami allattorneqarput anitsinneqarsinnaallutillu; isersimanermik suliarinnittut tamaasa atorlugit atuuppoq.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Iseriarnernut nalunaarusiaq ammaruk</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ ilitsersuutit malikkit.</translation>
     <message>
         <source>None yet</source>
         <translation>Suli peqanngilaq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Kingullermik iseriarnerit, iserniarnerit kukkusut aamma isissutissap, e-mail-imut najukkap marlunnillu alloriarluni isernerup allanngortinneqarneri.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Konto manna kingullermik iseriarfia, iserniarnerit kukkusut isumannaallisaanermilu allannguutit.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Iliuusit misissukkit</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Iseriarnerit kukkusut: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ Paasissutissat amerlanerusut piumasaqaatinut quppernermi takukkit.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab allanneqanngilaq (%reason). Titarnerit uku atuisup nittartakkamit atorneqartup crontab-ianut ilakkit, taamaanngippat utaqqiffik, isertitsinerit, nalunaarutit ujarlernermullu indeksi ingerlanngisaannassapput:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ikkuteqqinneq kickstarter atorlugu pisarpoq (%file, tassanngaanniit php bin/php/kickstarter.php run --apply) imaluunniit ikkussinikkut nutaamik.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Ingerlatsinermi kingullermi e-mail-inik nassiussiffiup e-mail-it %count itigartippai. E-mail-inut serveri aamma site.ini MailSettings misissukkit.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Pisut utaqqisut: %count, nalunaarutinullu cron-ip suliassaata ingerlanneqarnera nalunaarsorneqanngilaq. Cron-ip suliassaata ilaa »frequent« crontab-imut ilaguk, imaluunniit exp:notification:run --apply aallartiguk.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Choose another site or section with the node picker</source>
         <translation>Nittartagaq imaluunniit immikkoortoq alla inissisimaffinnik toqqaaffik atorlugu toqqaruk</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Systemimik aqutsisoq kisimi piginnittumik allanngortitsisinnaavoq: ./console exp:content-check --fix-permissions --apply root-itut aallartiguk.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>empty</source>
         <translation>imaqanngitsoq</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Atsiornermut matuersaat ukioq ataaseq sinnerlugu pisoqaassuseqarpoq: exp:audit key rotate --apply atorlugu taarseruk.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>not sent</source>
         <translation>nassiunneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Nalunaarutinut cron-ip suliassaa ingerlanerminik tamaginnik maani nalunaarsuisarpoq. Ilaa frequent crontab-imut ilaguk, imaluunniit exp:notification:run --apply aallartiguk.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsoli atoruk: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Setup &gt; Cronjobs</source>
         <translation>Aaqqissuussineq &gt; Cron-ip suliassai</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron-ip suliassaata ilaa suli ingerlanneqanngilaq: suliassat utaqqiffiat, eqqussinerit, nalunaarutit ujarlernermullu indeksi utaqqipput. php bin/php/installcrontab.php --add --apply aallartiguk, imaluunniit titarnerit --show atorlugu takutinneqartut crontab-imut ilakkit.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>None.</source>
         <translation>Peqanngilaq.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>authenticator-ip app-ia atorlugu</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kodi e-mail-ikkut atorlugu</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>uteqqiinermut kodi atorlugu</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>passkey atorlugu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>konto avataaneersoq atorlugu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Attaveqaasersuutaa takutinneqarpoq; najugaq nittartakkap paasissutissanik illersuinermut aaqqissuussinerisut toqqorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nalunaarsorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Inissisimaffik</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>missiliorneqartoq</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Manage devices</source>
         <translation>Atortut aqukkit</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>authenticator-ip app-ia atorlugu</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>kodi e-mail-ikkut atorlugu</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>uteqqiinermut kodi atorlugu</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>passkey atorlugu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>konto avataaneersoq atorlugu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nalunaarsorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Inissisimaffik</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>missiliorneqartoq</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>View the sessions of this user</source>
         <translation>Atuisup matuma isersimanerai takukkit</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Kontut %login nittartakkami %site sumiiffimmiit kingullermi iserfigisimanngisaaniit massakkut iserfigineqarpoq:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Inissisimaffik missiliorneqartoq</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser (%os)</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Iseriarnernut nalunaarusiaq</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Open the page</source>
         <translation>Qupperneq ammaruk</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, katillugit %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Iserfissaq imaluunniit atuisup ID-ia: konto pisup pineqartup imaluunniit atuisoq iliuuseqartoq.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iliuuseq</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Kingornagut</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Inernerit tamarmik</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Siornagut</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Iliuuseqartoq</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Saliguk</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Naammassineqarpoq</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Pisut ulluni %days toqqorneqartarput.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Pisut toqqorneqartarput assammik peerneqarnissamik tungaanut.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Pisut</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Iliuutsit tamarmik</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kontop matuma pisui tamarmik</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Allattorsimaffik CSV-mik anitsiguk (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Iluatsinngitsoq</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Pissarfia</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Allattorsimaffik killiliiguk</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Pisoqanngilaq naapertuuttumik.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Quppernermut ataatsimut</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Nalunaarsuineq audit.ini-mi matoqqavoq ([UserAuditSettings] UserAudit); allattorsimaffiup siusinnerusukkut nalunaarsorneqarsimasut takutippai.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Itigartitaq</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Inernera</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Takutiguk</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Atuisut misissuinermut nalunaarsuiffiata tabelia amigaatigineqarpoq. Pilersiguk php update/common/scripts/6.0/createuseraudittable.php atorlugu; tamatuma tungaanut misissuinermut fiilit pisut tamaasa toqqortarpaat.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Quppernerup matuma SQL-imik paasissutissaateqarfik pisariaqartippaa; MongoDB atorlugu atorneqarsinnaanngilaq. Misissuinermut fiilit pisut tamaasa toqqortarpaat.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Unga</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Atuisut misissuinermut nalunaarsuiffiat</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Atuisoq</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Qaqugu</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Sumi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kina konto sorleq allanngortissimaneraa, pilersissimaneraa, atortuulersissimaneraa, atortuujunnaarsissimaneraa, nuussimaneraa imaluunniit peersissimaneraa, kina iserfigisimanersoq imaluunniit itigartinneqarsimanersoq, aamma inissisimaffiit suut tunniunneqarsimanersut: pisoq ataaseq titarnermik ataatsimik, immersugassat siornagut kingornagullu. Isissutit isertuussallu nalunaarsorneqanngisaannartarput.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>eqimattaq</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>systemi</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ilisimaneqanngitsoq</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kontut isumannaallisaruk</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Kontunnut %login nittartakkami %site iserniarluni uteqqiinermut kodi atorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Uteqqiinermut kodi atorneqarpoq</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Najugaq missiliorneqartoq</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Iseqqinniarlutit isissutissamik nutaamik qinnutigisaqarit, imaluunniit nittartakkap aqutsisuinut attaveqarit.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Isissutissaq nutaaq qinnutigiuk</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Uteqqiinermut kodi ataatsimut atorneqarsinnaavoq. Oqarasuaatit tammarsimappat authenticator-ip app-ia aaqqissoqqiguk uteqqiinermullu kodit nutaat isumannaatsumi toqqorlugit.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Kontunnut iserniarnerit kukkusut</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Maanngaanniit iserniarnermi isissutissat saniatigut kodi piumasaqaataassaaq. Illit taamaaliorsimaguit, iliuuseqartariaqanngilatit.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Illit iserniarsimaguit isissutissallu puigorsimagukku, nutaamik qinnutigisaqarit. Taamaanngippat isissutissaq nakussanerusoq toqqaruk marlunnillu alloriarluni iserneq atuutilerlugu.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Illit taamaaliorsimanngikkuit, allap isissutissat ilisimasinnaavaa: massakkut allanngortiguk kontullu sumi isersimanera misissoruk.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Uteqqiinermut kodit sinneruttut</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Atortutit misissukkit</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Isumannaallisaanermut kalerrisaarut</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kontunnut %login nittartakkami %site isissutissaq kukkusoq atorlugu arlaleriarluni tulleriiaarlugu iserniartoqarpoq (iserniarnerit: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Kontunni %login nittartakkami %site isumannaallisaanermut tunngasumik pisoqarpoq.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Una kontunnut tunngasumik isumannaallisaanermut kalerrisaarutaavoq. Allannguuteqaraangat tamatigut nassiunneqartarpoq, atorunnaarsinneqarsinnaananilu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Piffissaq</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Kontunni %login nittartakkami %site marlunnik alloriarluni iserneq atorunnaarsinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Marlunnik alloriarluni iserneq atorunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kontunni %login nittartakkami %site marlunnik alloriarluni iserneq atuutilersinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Marlunnik alloriarluni iserneq atuutilersinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Kontut %login nittartakkami %site iserniarnerit kukkusut amerlavallaarmata parnaarneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Kontut massakkut isissutissannik kisimi illersorneqarpoq. Illit taamaaliorsimanngikkuit, isissutissat allanngortereerukku marlunnik alloriarluni iserneq atuutilersiteqqiguk.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Kontut parnaarneqarpoq</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Isumannaallisaanermi iliuusit: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Iserfia</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Iserniarneq kukkusoq</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Isersimanerit anitinneqarput</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Atortumit nutaamit iserneq</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Inissisimaffimmit nutaamit iserneq</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kinaassuseq uppernarsarneqarpoq (»Kinaassutsit uppernarsaruk«)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kinaassutsip misissorneqarnera iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Passkey atorlugu iserpoq</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey atorlugu iserniarneq iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Iserneq itigartitaavoq: marlunnik alloriarluni kodi amigaatigineqarpoq imaluunniit kukkuvoq</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Marlunnik alloriarluni kodi kukkusoq</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto iserniarnerit kukkusut kingorna parnaarneqarpoq</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto parnaarunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Isissutissaq allanngortinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Isissutissap allanngortinnissaa iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Isissutissaq nutarterneqarpoq</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Isissutissaq nutaaq qinnutigineqarpoq</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mail-imut najugaq allanngortinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Atuisup aqqa allanngortinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Marlunnik alloriarluni iserneq atuutilersinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Marlunnik alloriarluni iserneq atorunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Uteqqiinermut kodi atorneqarpoq</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Uteqqiinermut kodit nutaat</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-imut isissutissaq pilersinneqarpoq</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-imut isissutissaq atorunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ilanngunneqarpoq</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey piiarneqarpoq</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto atuuttoq</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kontoa atuutinngilaq</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tamarmik</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Iseriarnerit isersimanerillu</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontomi allannguutit</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Misissortariaqarpoq</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>illit</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>atuisumit</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>atuisumit %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Periaaseq</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Internetimut isaariaq</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Ingerlatsinermut systemi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Atortoq</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Sumiiffik</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Isersimanerit</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Suut</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanaali</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Iserniarnerit kukkusut</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kodit sinneruttut</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Isernermik suliarinnittoq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Isumannaallisaanermi iliuusit: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kontuup isumannaallisaanerani iseriarnerit allannguutillu. Iliuuseqarsimanngitsutit takugukku isissutissat allanngortiguk atortullu ilisarisinngisatit anitsikkit.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Konto manna isumannaallisaanerani iseriarnerit allannguutillu.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Isissutissaq allanngortiguk</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Kontomut uterit</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Isumannaallisaanermi iliuusit nalunaarsorneqanngillat</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Atuisut misissuinermut nalunaarsuiffiannit atuarneqartarput, tabeli expuser_audit amigaatigineqarpoq imaluunniit paasissutissaateqarfimmi matumani tapersersorneqanngilaq. php update/common/scripts/6.0/createuseraudittable.php aallartiguk, imaluunniit 6.0.15-ip paasissutissaateqarfiata nutarterneqarnera.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ullut kingulliit: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ullut kingullerni iseriarnerit (ullut: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Kingullermik isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Takutiguk</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>iluatsinngitsoq</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>itigartitaasoq</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Isumannaallisaanermi iliuusit suli nalunaarsorneqanngillat.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Isumannaallisaanermut tunngasut pisut toqqorneqartarput (ullut: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Isumannaallisaanermut tunngasut pisut aqutsisup piiarnissaata tungaanut toqqorneqartarput.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Iseriarnerma paasissutissai aaguk</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Isersimanitit isumannaallisaanermullu tunngasut pisut JSON-fiilitut.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Iserfia</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Iserniarneq kukkusoq</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Isersimanerit anitinneqarput</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Atortumit nutaamit iserneq</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Inissisimaffimmit nutaamit iserneq</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kinaassuseq uppernarsarneqarpoq (»Kinaassutsit uppernarsaruk«)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kinaassutsip misissorneqarnera iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Passkey atorlugu iserpoq</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Passkey atorlugu iserniarneq iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Iserneq itigartitaavoq: marlunnik alloriarluni kodi amigaatigineqarpoq imaluunniit kukkuvoq</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Marlunnik alloriarluni kodi kukkusoq</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto iserniarnerit kukkusut kingorna parnaarneqarpoq</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto parnaarunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Isissutissaq allanngortinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Isissutissap allanngortinnissaa iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Isissutissaq nutarterneqarpoq</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Isissutissaq nutaaq qinnutigineqarpoq</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mail-imut najugaq allanngortinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Atuisup aqqa allanngortinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Marlunnik alloriarluni iserneq atuutilersinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Marlunnik alloriarluni iserneq atorunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Uteqqiinermut kodi atorneqarpoq</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Uteqqiinermut kodit nutaat</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>App-imut isissutissaq pilersinneqarpoq</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-imut isissutissaq atorunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ilanngunneqarpoq</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey piiarneqarpoq</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto atuuttoq</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kontoa atuutinngilaq</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tamarmik</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Iseriarnerit isersimanerillu</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Kontomi allannguutit</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Misissortariaqarpoq</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Isumannaallisaanermi iliuusit</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Isumannaallisaanermi iliuusit: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Kontuup isumannaallisaanerani iseriarnerit allannguutillu. Iliuuseqarsimanngitsutit takugukku isissutissat allanngortiguk atortullu ilisarisinngisatit anitsikkit.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Isissutissaq allanngortiguk</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Nittartakkami matumani isumannaallisaanermi iliuusit suli nalunaarsorneqanngillat.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ullut kingullerni iseriarnerit (ullut: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Iserniarnerit kukkusut</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Isumannaallisaanermi iliuusit suli nalunaarsorneqanngillat.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Iseriarnerma paasissutissai aaguk</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Isersimanitit isumannaallisaanermullu tunngasut pisut JSON-fiilitut.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Isissutissaq</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Isissutissaq marlunnillu alloriarluni kodi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-imut atassut</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-imut atassut</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ataasiarluni iserneq</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Isersimanerit nalunaarsorneqartalernginnerini iserpoq</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Iseriarnernut nalunaarusiaq</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kikkut nittartakkamut isersimanersut, kontut qanoq akulikitsigisumik iseriartarnersut iluatsinngitsoortarnersullu, atuisorlu sumiluunniit anitsinneqarsinnaavoq. Isersimanermik suliarinnittut tamaasa atorlugit atuuppoq.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Isersimaneq anitinneqarpoq. Atortoq iseqqittariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Atuisoq %login isersimanernit anitinneqarpoq (amerlassusaat: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Atuisoq %login isersimanngilaq.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Kontoqanngilaq ID-mik, atuisup aqqanik imaluunniit e-mail-imut najugamik taassuminnga.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Isersimaneq una massakkut atukkat. Naammassiniarukku anigit.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Isersimaneq taanna naammassereersimavoq.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Quppernerup piffissaa qaangiuppoq. Allanngortitsisoqanngilaq; misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Nittartakkami matumani isersimanerit nalunaarsorneqartanngillat (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabeli expuser_session amigaatigineqarpoq</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Pilersinneqareerpat isersimanerit nalunaarsorneqartalissapput: php update/common/scripts/6.0/createusersessiontable.php, imaluunniit 6.0.15-ip paasissutissaateqarfiata nutarterneqarnera.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Massakkut ullumilu</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Isersimanerit ingerlasut</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Atuisut isersimasut</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Ullumi iseriarnerit</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Ullumi iserniarnerit kukkusut</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Atuisoq sumiluunniit anitsiguk</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kontup isersimanerisa tamarmik qinnuteqarfissatik tulliat naammassisarpaat, aamma »Eqqaamallanga« atorlugu isersimanerit. Konto allamit tigusimaneqarsinnaappat una atoruk; tamatuma kingorna isissutissaa nutarteruk.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Atuisup ID-ia, atuisup aqqa imaluunniit e-mail-imut najugaq</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sumiluunniit anitsiguk</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Massakkut isersimasoq</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Kingullermik atorneqartut takutinneqarput (annerpaamik: %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Atuisoq</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Atortoq</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Najugaq</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Iserfia</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Iliuuseq kingulleq</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Iliuusissat</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Atortoq una</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nalunaarsorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Anigit</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Isersimasoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ullut kingulliit: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Iseriarnerit iserniarnerillu kukkusut atuisut misissuinermut nalunaarsuiffiannit kisinneqartarput, tamanna amigaatigineqarpoq; isersimanerit nutaat kisinneqartarput.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ulloq</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Iseriarnerit</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Iserniarnerit kukkusut</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Isersimanerit nutaat</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Isersimanermik suliarinnittoq: %handler. Isersimanerit tabelimit expuser_session atuarneqartarput, taamaattumik nalunaarusiaq suliarinnittut tamaasa atorlugit atuuppoq.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Kontunnut tunngasumik isumannaallisaanermut kalerrisaarut</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Kontunni %login isumannaallisaanermut tunngasumik pisoqarpoq: %event. Illit taamaaliorsimanngikkuit, kontut %url-imi isumannaallisaruk.</translation>
     </message>
 </context>
 </TS>

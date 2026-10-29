@@ -84,7 +84,7 @@ installation id in the index.
 ## Hands-on exercise
 
 Use your own training installation on MySQL or PostgreSQL (for example installed with
-`php bin/php/console exp:install --db=mysql`, see [Installing from the command line](../../../../install/07-console-install.md)),
+`php bin/php/console exp:install --apply --db=mysql`, see [Installing from the command line](../../../../install/07-console-install.md)),
 and two terminals in its root. Add `--allow-root-user` only if you work as root.
 
 1. Add the package:

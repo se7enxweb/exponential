@@ -53,7 +53,7 @@ Die drei Änderungen, bei denen die meisten Websites handeln müssen:
 | Der Kickstarter und der Setup-Assistent verwenden standardmäßig SQLite. | `kickstart.ini [database_choice] Type` | Nennen Sie Ihre Engine ausdrücklich. |
 | Kickstart endet nicht mehr mit einem erratbaren Administratorpasswort. | `var/log/initial-admin-password` | Lesen Sie es nach der Installation einmal und löschen Sie die Datei. |
 | `DatabaseImplementation` wird aus der laufenden `site.ini` übernommen, nicht aus `Type`. | `settings/override/site.ini.append.php` | Wenn Sie auf eine andere Engine installieren, setzen Sie es zuerst (siehe [Seite zur Installation](../../funktionen/6.0/installation-mit-einem-befehl.md)). |
-| `./console exp:install` installiert mit einem Befehl. | `exp:install --help` | Neu; nichts zu migrieren. |
+| `./console exp:install --apply` installiert mit einem Befehl. | `exp:install --help` | Neu; nichts zu migrieren. |
 | Der Wartungsmodus umschließt Installationen. | `var/maintenance.json` | Ist ein Lauf fehlgeschlagen, beenden Sie ihn mit `php bin/php/maintenance.php off`. Siehe [Wartungsmodus](../../funktionen/6.0/wartungsmodus.md). |
 | Eine Standardinstallation konvertiert Bilder zuerst mit GD. | `image.ini [ImageConverterSettings] ImageConverters[]` (ausgelieferte Reihenfolge `GD`, `ImageMagick`) | Stellen Sie ImageMagick in `settings/override/image.ini.append.php` an die erste Stelle, wenn Sie seine Filter brauchen. |
 | Neue Installationen beginnen mit den Ordnern Konfiguration und Archive und der Klassengruppe Konfiguration; Setup hat den Alias `x-setup`. | Seed-Daten | Bestehende Installationen werden nicht angefasst. Siehe [Seed-Daten](../../spezifikationen/6.0/installer-protokolle-und-startdaten.md). |

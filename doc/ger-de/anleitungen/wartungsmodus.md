@@ -418,13 +418,13 @@ Vorwärmen von Velocity überspringt seine Arbeit, solange der Wartungsmodus ein
 - Ein- und Ausschalten verschiebt die Verzeichnisse des HTTP-Caches (`var/<site>/cache/exphttpcache`) nach
   `var/tmp/<site>-exphttpcache-before-maintenance-<time>-<pid>`, statt sie zu löschen. Sie können später entfernt
   werden.
-- Der Antwort-Cache von Velocity wird durch `./console exp:velocity cache clear` geleert, wenn der Wartungsmodus über
+- Der Antwort-Cache von Velocity wird durch `./console exp:velocity cache clear --apply` geleert, wenn der Wartungsmodus über
   den Befehl ein- oder ausgeschaltet wird, oder durch die Seite, wenn Velocity die Administration ausliefert. Wenn
   Apache die Administrationsseite ausliefert, führen Sie den Befehl nach dem Ausschalten selbst aus, damit eine
   während des Fensters vorgenommene Änderung sofort sichtbar ist:
 
   ```bash
-  ./console exp:velocity cache clear --allow-root-user
+  ./console exp:velocity cache clear --apply --allow-root-user
   ```
 
 - Ein CDN oder Reverse Proxy vor der Site speichert die Wartungsseite nicht (`no-store`), hält aber womöglich noch
@@ -432,7 +432,7 @@ Vorwärmen von Velocity überspringt seine Arbeit, solange der Wartungsmodus ein
 
 ## 10. Installationen, Cronjobs und Bereitstellungen
 
-**Der Kickstarter** (`php bin/php/kickstarter.php run`) schaltet den Wartungsmodus für seinen Lauf mit dem Grund
+**Der Kickstarter** (`php bin/php/kickstarter.php run --apply`) schaltet den Wartungsmodus für seinen Lauf mit dem Grund
 `setup` und seiner Lauf-ID ein und am Ende aus, wenn die Site installiert und geprüft ist. Ist der Wartungsmodus beim
 Start **bereits eingeschaltet**, behält er dieses Fenster genau so bei (`expMaintenance::beginRun()` gibt `existing`
 zurück) und lässt es danach eingeschaltet; er gibt aus: „Maintenance mode was already on: kept as it is, and left on
@@ -607,7 +607,7 @@ Nach dem Ausschalten:
 | Die Site ist lange nach dem erwarteten Ende noch offline | Das erwartete Ende ist kein Zeitschalter | Schalten Sie ihn auf der Seite oder mit `off` aus. Das Banner zeigt **Erwartetes Ende überschritten**. |
 | Ein zugelassener Tester erhält trotzdem die Wartungsseite | Seine Adresse ist nicht die, die PHP sieht (Proxy, IPv6 statt IPv4, eine geänderte Adresse), oder sie wurde in `--allow-ip` falsch eingegeben | Schlagen Sie die Adresse im Zugriffslog des Webservers nach; schalten Sie mit ihr erneut ein. Die Adressprüfung der Seite nennt Einträge, die keine Adressen sind. |
 | „Der Wartungsmodus konnte nicht eingeschaltet werden: var/maintenance.json ist nicht beschreibbar.“ | `var/` ist für den Benutzer des Webservers nicht beschreibbar, oder eine Markierungsdatei eines anderen Benutzers kann nicht ersetzt werden | Machen Sie `var/` für den Benutzer des Webservers beschreibbar; prüfen Sie den Eigentümer einer vorhandenen Markierungsdatei. |
-| Die Site ist zurück, zeigt aber alte Seiten | Ein Cache vor PHP hat Seiten von vor dem Fenster behalten | `./console exp:velocity cache clear --allow-root-user`; leeren Sie das CDN; siehe Abschnitt 9. |
+| Die Site ist zurück, zeigt aber alte Seiten | Ein Cache vor PHP hat Seiten von vor dem Fenster behalten | `./console exp:velocity cache clear --apply --allow-root-user`; leeren Sie das CDN; siehe Abschnitt 9. |
 | Das Banner sagt **Unlesbare Markierungsdatei** | `var/maintenance.json` ist kein gültiges JSON (von Hand bearbeitet, Festplatte beim Schreiben voll) | Ausschalten, dann mit den gewünschten Werten wieder einschalten. |
 | Das Banner sagt **Eine Installation läuft**, aber nichts wird installiert | Ein Kickstarter-Lauf hat nach einem fehlgeschlagenen Schritt angehalten und den Wartungsmodus absichtlich eingeschaltet gelassen | Lesen Sie das Setup-Log, schließen Sie die Installation ab oder reparieren Sie sie, dann `php bin/php/maintenance.php off`. |
 | **Einrichtungsassistent läuft**, nachdem der Assistent geschlossen wurde | Die Frist des Assistenten (30 Minuten nach seiner letzten Anfrage) ist noch nicht abgelaufen | Warten Sie die im Banner angezeigte Frist ab, oder schalten Sie aus. |

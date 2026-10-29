@@ -2,14 +2,14 @@
 title: exp:ezsubtreecopy
 audience: developer, admin
 category: examples
-summary: Copy a content subtree to a new location (--src-node-id, --dst-node-id).
+summary: Copy a content subtree to a new location (--src-node-id, --dst-node-id; dry run unless --apply).
 keywords: exp:ezsubtreecopy, ezsubtreecopy, console, command, CLI, ezsubtreecopy.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsubtreecopy
 
-Copy a content subtree to a new location (--src-node-id, --dst-node-id).
+Copy a content subtree to a new location (--src-node-id, --dst-node-id; dry run unless --apply).
 
 Script `bin/php/ezsubtreecopy.php`, code in `kernel/private/classes/commands/ezsubtreecopy.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -22,6 +22,8 @@ php bin/php/ezsubtreecopy.php --help
 
 | Option | Value | Help |
 |---|---|---|
+| `--apply` |  | Copy the subtree (the default is a dry run that lists it and copies nothing) |
+| `--dry-run` |  | The default: list the nodes that would be copied, change nothing |
 | `--src-node-id` | required | Source subtree parent node ID. |
 | `--dst-node-id` | required | Destination node ID. |
 | `--all-versions` |  | Copy all versions for each contentobject being copied. |

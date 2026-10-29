@@ -47,7 +47,7 @@ work in the Editor.
 ## Lab setup
 
 - One training installation reachable from every learner's computer, for example installed with
-  `php bin/php/console exp:install` ([7. The console install](../../../install/07-console-install.md)); with the
+  `php bin/php/console exp:install --apply` ([7. The console install](../../../install/07-console-install.md)); with the
   editor siteaccess if you want to teach module 9 hands-on. How to build and reset a lab:
   [Module 2: Building the lab](../train-the-trainer/module-02-building-the-lab/README.md) of Train the trainer.
 - One account per learner with the **Editor** role, e-mail addresses at `example.invalid`, and a folder **Training**

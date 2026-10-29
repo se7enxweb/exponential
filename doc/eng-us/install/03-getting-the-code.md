@@ -268,7 +268,7 @@ stage, is part of Exponential. It is the package
 `composer.json` **requires** it (it was only suggested before 6.0.15):
 
 ```json
-"se7enxweb/exponential-velocity": "~0.0.4.55"
+"se7enxweb/exponential-velocity": "~0.0.4.57"
 ```
 
 Velocity 0.0.4.54 runs on PHP 8.0 and later (`"php": ">=8.0"`) and needs the `sockets` extension
@@ -277,10 +277,10 @@ Linux 9 included. A plain `composer install` installs it; nothing more is needed
 PHP 8.1, and `composer.json` only suggested it; an installation made in that time adds it with:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
-`~0.0.4.55` accepts every later `0.0.4.x` release (`>=0.0.4.55 <0.0.5.0`), so Composer installs the newest of them.
+`~0.0.4.57` accepts every later `0.0.4.x` release (`>=0.0.4.57 <0.0.5.0`), so Composer installs the newest of them.
 The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...), so a version sort, not a name
 sort, finds the newest.
 
@@ -398,7 +398,9 @@ Git repository; the others are created by Composer or at run time.
 | `index_rest.php` | The front controller of the REST API (`/api/`). |
 | `index_cluster.php` | Serves files from the database cluster. |
 | `index_treemenu.php` | The fast endpoint of the admin's content tree menu. |
-| `soap.php`, `webdav.php` | The SOAP and WebDAV entry points. |
+| `index_soap.php`, `index_webdav.php` | The SOAP and WebDAV entry points. |
+| `soap.php` | Forwards to `index_soap.php`, its name until 6.0.14; removed in a later major version ([what to change](../bc/6.0/soap-entry-script-index-soap.md)). |
+| `webdav.php` | Forwards to `index_webdav.php`, its name until 6.0.14; removed in a later major version ([what to change](../bc/6.0/webdav-entry-script-index-webdav.md)). |
 | `runcronjobs.php` | Runs cronjob parts: `php runcronjobs.php --list`. |
 | `autoload.php` | Loads Composer's autoloader and the kernel's; every entry point starts with it. |
 | `ezpm.php` | The package manager on the command line. |

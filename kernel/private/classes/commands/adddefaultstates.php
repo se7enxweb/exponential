@@ -1,6 +1,7 @@
 <?php
 /**
  * The code of bin/php/adddefaultstates.php, moved into a class (#207 stage 1). The file bin/php/adddefaultstates.php is one call to it.
+ * @description Give every content object the default state of each state group it has no state of (dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
@@ -24,57 +25,99 @@ class Adddefaultstates extends \Exponential\Runnable\Command
 {
     public function run()
     {
-        // the script's variables were globals; functions of the script read them with "global"
-        foreach ( array( 'allObjectIDs', 'argumentConfig', 'arguments', 'cli', 'config', 'db', 'defaultStateID', 'defaultStateRows', 'group', 'groupID', 'groups', 'linkedObjectIDs', 'missingObjectIDs', 'objID', 'optionHelp', 'options', 'script', 'scriptSettings', 'useStandardOptions' ) as $__name )
-            ${$__name} = &$GLOBALS[$__name];
-        unset( $__name );
-
         $cli = $this->cli();
 
-        $scriptSettings = array();
-        $scriptSettings['description'] = 'Adds default states to content objects';
-        $scriptSettings['use-session'] = true;
-        $scriptSettings['use-modules'] = false;
-        $scriptSettings['use-extensions'] = true;
-
-        $script = $this->script( $scriptSettings );
+        $script = $this->script(
+            array(
+                'description' => "Adds default states to content objects: every object that has no state of a state group gets\n"
+                    . "the group's default state (the state with priority 0). Objects with a state of the group are left\n"
+                    . "alone, so the script can run again. Prints PASS or FAIL at the end.\n"
+                    . "Without --apply nothing is written: the script lists per state group how many objects would get\n"
+                    . "its default state. --dry-run means the same as no flag; --apply together with --dry-run is a usage\n"
+                    . "error (exit 2).\n\n"
+                    . "Example: php bin/php/adddefaultstates.php\n"
+                    . "         php bin/php/adddefaultstates.php --apply",
+                'use-session' => true,
+                'use-modules' => false,
+                'use-extensions' => true
+            )
+        );
         $script->startup();
-
-        $config = '';
-        $argumentConfig = '';
-        $optionHelp = false;
-        $arguments = false;
-        $useStandardOptions = true;
-
-        $options = $this->options( $config, $argumentConfig, $optionHelp, $arguments, $useStandardOptions );
+        $options = $this->options(
+            "[apply][dry-run]",
+            '',
+            array(
+                'apply' => "Add the states (the default is a dry run that lists them and changes nothing)",
+                'dry-run' => "The default: list how many objects would get a default state, change nothing"
+            )
+        );
+        // before initialize(): a usage error ends the script before any database access
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $script->initialize();
 
-        $cli->output( 'Adding default states to content objects...' );
-
         $db = \eZDB::instance();
+        $plan = self::plan( $db );
+        $total = 0;
+        foreach ( $plan as $group )
+        {
+            $cli->output( sprintf( '%s %-24s default state %-20s %d object(s)',
+                                   $dryRun ? 'would add' : 'add      ', $group['group_identifier'], $group['state_identifier'], $group['missing'] ) );
+            $total += $group['missing'];
+        }
 
-        $db->begin();
+        if ( $total && !$dryRun )
+        {
+            if ( !$dryRun )
+                self::apply( $db, $plan );
+            // Check what was stored: no object lacks a state of a group now.
+            foreach ( self::plan( $db ) as $group )
+            {
+                if ( $group['missing'] )
+                {
+                    $cli->error( "FAIL: {$group['missing']} object(s) still have no state of the group {$group['group_identifier']}" );
+                    $script->shutdown( 1 );
+                }
+            }
+        }
 
+        $cli->output();
+        if ( $dryRun )
+            $cli->output( "PASS: $total default state(s) would be added (dry run, nothing changed; --apply writes)" );
+        else
+            $cli->output( "PASS: $total default state(s) added" );
+        $script->shutdown( 0 );
+    }
+
+    /**
+     * What is missing, read only: one entry per state group with a default state.
+     *
+     * @param \eZDBInterface $db
+     * @return array each group_id, group_identifier, state_id, state_identifier, missing (the number of objects
+     *               without a state of the group) and, on MongoDB, missing_ids
+     */
+    public static function plan( $db )
+    {
+        $plan = array();
         if ( $db->databaseName() === 'mongo' )
         {
-            // Fetch all state groups
-            $groups = $db->aggregate( 'ezcobj_state_group', [
-                [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
-            ] );
-
+            $allObjectIDs = array_map( 'intval', array_column(
+                $db->aggregate( 'ezcontentobject', [ [ '$project' => [ '_id' => 0, 'id' => 1 ] ] ] ), 'id' ) );
+            $groups = $db->aggregate( 'ezcobj_state_group', [ [ '$project' => [ '_id' => 0, 'id' => 1, 'identifier' => 1 ] ] ] );
             foreach ( $groups as $group )
             {
                 $groupID = (int)$group['id'];
-
-                // Find the default state for this group (priority = 0)
                 $defaultStateRows = $db->aggregate( 'ezcobj_state', [
                     [ '$match'   => [ 'group_id' => $groupID, 'priority' => 0 ] ],
-                    [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
+                    [ '$project' => [ '_id' => 0, 'id' => 1, 'identifier' => 1 ] ],
                 ] );
-                if ( empty( $defaultStateRows ) ) continue;
-                $defaultStateID = (int)$defaultStateRows[0]['id'];
-
-                // Find all content object IDs that already have a state link for this group
+                if ( empty( $defaultStateRows ) )
+                    continue;
                 $linkedObjectIDs = array_map( 'intval', array_column(
                     $db->aggregate( 'ezcobj_state_link', [
                         [ '$lookup' => [
@@ -88,24 +131,55 @@ class Adddefaultstates extends \Exponential\Runnable\Command
                     ] ),
                     'contentobject_id'
                 ) );
+                $missing = array_values( array_diff( $allObjectIDs, $linkedObjectIDs ) );
+                $plan[] = array( 'group_id' => $groupID, 'group_identifier' => (string)( isset( $group['identifier'] ) ? $group['identifier'] : $groupID ),
+                                 'state_id' => (int)$defaultStateRows[0]['id'],
+                                 'state_identifier' => (string)( isset( $defaultStateRows[0]['identifier'] ) ? $defaultStateRows[0]['identifier'] : '' ),
+                                 'missing' => count( $missing ), 'missing_ids' => $missing );
+            }
+            return $plan;
+        }
 
-                // Fetch all content object IDs
-                $allObjectIDs = array_map( 'intval', array_column(
-                    $db->aggregate( 'ezcontentobject', [
-                        [ '$project' => [ '_id' => 0, 'id' => 1 ] ],
-                    ] ),
-                    'id'
-                ) );
+        $rows = $db->arrayQuery(
+            "SELECT g.id AS group_id, g.identifier AS group_identifier, s0.id AS state_id, s0.identifier AS state_identifier
+             FROM ezcobj_state_group g, ezcobj_state s0
+             WHERE g.id=s0.group_id AND s0.priority=0
+             ORDER BY g.id" );
+        foreach ( (array)$rows as $row )
+        {
+            $groupID = (int)$row['group_id'];
+            $count = $db->arrayQuery(
+                "SELECT COUNT(*) AS missing
+                 FROM ezcontentobject o
+                 WHERE NOT EXISTS (
+                  SELECT l.contentobject_id
+                  FROM ezcobj_state_link l, ezcobj_state s
+                  WHERE l.contentobject_state_id=s.id
+                    AND l.contentobject_id=o.id
+                    AND s.group_id=$groupID
+                 )" );
+            $plan[] = array( 'group_id' => $groupID, 'group_identifier' => (string)$row['group_identifier'],
+                             'state_id' => (int)$row['state_id'], 'state_identifier' => (string)$row['state_identifier'],
+                             'missing' => (int)$count[0]['missing'] );
+        }
+        return $plan;
+    }
 
-                // Insert a default state link for each object that is missing one
-                $missingObjectIDs = array_diff( $allObjectIDs, $linkedObjectIDs );
-                foreach ( $missingObjectIDs as $objID )
-                {
-                    $db->insert( 'ezcobj_state_link', [
-                        'contentobject_id'       => (int)$objID,
-                        'contentobject_state_id' => $defaultStateID,
-                    ] );
-                }
+    /**
+     * Adds the default states plan() found missing.
+     *
+     * @param \eZDBInterface $db
+     * @param array $plan as plan() returns it
+     */
+    public static function apply( $db, array $plan )
+    {
+        $db->begin();
+        if ( $db->databaseName() === 'mongo' )
+        {
+            foreach ( $plan as $group )
+            {
+                foreach ( $group['missing_ids'] as $objID )
+                    $db->insert( 'ezcobj_state_link', [ 'contentobject_id' => (int)$objID, 'contentobject_state_id' => (int)$group['state_id'] ] );
             }
         }
         else
@@ -124,12 +198,7 @@ class Adddefaultstates extends \Exponential\Runnable\Command
             AND s.group_id=g.id
         )" );
         }
-
         $db->commit();
-
-        $cli->output( 'Finished!' );
-
-        $script->shutdown( 0 );
     }
 }
 

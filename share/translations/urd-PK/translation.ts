@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>سیٹ اپ &gt; کرون جابز</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ابھی تک کرون جاب کا کوئی حصہ نہیں چلا: جاب کی قطار، درآمدات، اطلاعات اور سرچ انڈیکس انتظار میں ہیں۔ php bin/php/installcrontab.php --add --apply چلائیں، یا --show کی لائنیں crontab میں شامل کریں۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>یہ انسٹالیشن ایک عوامی ڈیمو ہے: کوئی بھی اس کے منتظم کا پاس ورڈ جان سکتا ہے، اور منتظم کے پاس ورڈ تبدیل یا ری سیٹ نہیں کیے جا سکتے۔ یہاں کوئی نجی معلومات درج نہ کریں۔</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>آپ کے آلات</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>وہ اکاؤنٹس جنہیں کوئی استعمال نہیں کرتا یا جنہیں دیکھنے کی ضرورت ہے؛ انہیں غیر فعال کریں، ان لاک کریں یا برآمد کریں۔</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>صارف آڈٹ لاگ</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>کس نے تبدیلی کی، سائن ان کیا یا مسترد ہوا، ہر اکاؤنٹ کے لحاظ سے؛ فلٹر اور برآمد کریں۔</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>سائن ان رپورٹ</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>کون سائن ان ہے، فی دن سائن ان اور ناکامیاں؛ کسی صارف کو ہر جگہ سے سائن آؤٹ کریں۔</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ہینڈلر کے ختم ہو چکے سیشن PHP خود ہٹاتا ہے (session.gc_maxlifetime)، نہ کہ یہ صفحہ یا session_gc کرون جاب کا حصہ۔</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>ہر صارف کے سائن ان سیشنز سائن ان رپورٹ میں درج ہوتے ہیں، اور وہیں سے سائن آؤٹ کیے جاتے ہیں؛ یہ رپورٹ ہر سیشن ہینڈلر کے ساتھ کام کرتی ہے۔</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>سائن ان رپورٹ کھولیں</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ابھی کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>آپ کے حالیہ سائن ان، ناکام کوششیں اور آپ کے پاس ورڈ، ای میل ایڈریس اور دو مرحلوں میں سائن اِن میں تبدیلیاں۔</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>اس اکاؤنٹ کے حالیہ سائن ان، ناکام کوششیں اور سلامتی کی تبدیلیاں۔</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>سرگرمی کا جائزہ لیں</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count ناکام سائن ان</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab نہیں لکھا گیا (%reason)۔ یہ سطریں اس صارف کے crontab میں شامل کریں جس کے طور پر سائٹ چلتی ہے، ورنہ قطار، درآمدات، اطلاعات اور تلاش کا انڈیکس کبھی نہیں چلیں گے:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>دوبارہ انسٹال kickstarter کے ذریعے کیا جاتا ہے (%file، پھر php bin/php/kickstarter.php run --apply) یا نئی انسٹالیشن کے ذریعے۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>پچھلے رن میں میل ٹرانسپورٹ نے %count پیغامات مسترد کر دیے۔ میل سرور اور site.ini MailSettings چیک کریں۔</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count واقعات انتظار میں ہیں اور اطلاعات کی کرون جاب کا کوئی رن درج نہیں۔ کرون جاب کا حصہ &quot;frequent&quot; crontab میں شامل کریں، یا exp:notification:run --apply چلائیں۔</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>نوڈ پکر کے ذریعے کوئی دوسری سائٹ یا سیکشن منتخب کریں</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>صرف سسٹم منتظم ہی مالک تبدیل کر سکتا ہے: ./console exp:content-check --fix-permissions --apply کو root کے طور پر چلائیں۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>خالی</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>دستخطی کلید ایک سال سے زیادہ پرانی ہے: اسے exp:audit key rotate --apply سے تبدیل کریں۔</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>نہیں بھیجا گیا</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>اطلاعات کی کرون جاب اپنا ہر رن یہاں درج کرتی ہے۔ حصہ frequent کو crontab میں شامل کریں، یا exp:notification:run --apply چلائیں۔</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>کنسول استعمال کریں: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>کوئی نہیں۔</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>توثیقی ایپ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ای میل کے ذریعے کوڈ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>بازیابی کوڈ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>پاس کی کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بیرونی اکاؤنٹ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>اس کے نیٹ ورک کے طور پر دکھایا گیا؛ پتہ سائٹ کی ڈیٹا تحفظ کی ترتیبات کے مطابق رکھا جاتا ہے۔</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ریکارڈ نہیں کیا گیا</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>مقام</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تقریبی</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>آلات کا انتظام کریں</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>توثیقی ایپ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ای میل کے ذریعے کوڈ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>بازیابی کوڈ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>پاس کی کے ساتھ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>بیرونی اکاؤنٹ کے ساتھ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ریکارڈ نہیں کیا گیا</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>مقام</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>تقریبی</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>اس صارف کے سیشنز دیکھیں</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>آپ کا اکاؤنٹ %login، %site پر، ابھی ابھی ایک ایسی جگہ سے سائن ان کے لیے استعمال ہوا جہاں سے یہ حال میں سائن ان نہیں ہوا تھا:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>تقریبی مقام</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os پر %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>سائن ان رپورٹ</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>صفحہ کھولیں</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count میں سے %from تا %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>لاگ ان یا صارف ID: وہ اکاؤنٹ جس کے بارے میں ایونٹ تھا یا وہ صارف جس نے عمل کیا۔</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>اکاؤنٹ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>عمل</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>بعد میں</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>کوئی بھی نتیجہ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پہلے</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>کرنے والا</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>صاف کریں</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مکمل</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ایونٹس %days دن تک محفوظ رکھے جاتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ایونٹس اس وقت تک محفوظ رہتے ہیں جب تک انہیں دستی طور پر ہٹایا نہ جائے۔</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ایونٹس</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ہر عمل</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>اس اکاؤنٹ کے تمام ایونٹس</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>فہرست کو CSV کے طور پر برآمد کریں (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>سے</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>فہرست محدود کریں</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>کوئی ایونٹ مطابقت نہیں رکھتا۔</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>فی صفحہ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini میں ریکارڈنگ بند ہے ([UserAuditSettings] UserAudit)؛ فہرست وہ دکھاتی ہے جو پہلے ریکارڈ کیا گیا تھا۔</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>مسترد</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>دکھائیں</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>صارف آڈٹ لاگ کا ٹیبل موجود نہیں ہے۔ اسے php update/common/scripts/6.0/createuseraudittable.php سے بنائیں؛ تب تک آڈٹ فائلیں ہر ایونٹ محفوظ رکھتی ہیں۔</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>اس صفحے کو SQL ڈیٹا بیس درکار ہے؛ یہ MongoDB پر دستیاب نہیں۔ آڈٹ فائلیں ہر ایونٹ محفوظ رکھتی ہیں۔</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تک</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>صارف آڈٹ لاگ</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>صارف</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>کب</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>کہاں</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>کس نے کون سا اکاؤنٹ تبدیل کیا، بنایا، فعال کیا، غیر فعال کیا، منتقل کیا یا ہٹایا، کس نے سائن ان کیا یا مسترد ہوا، اور کون سے کردار تفویض کیے گئے: ہر ایونٹ کی ایک سطر، فیلڈز کی پہلے اور بعد کی قدروں کے ساتھ۔ پاس ورڈ اور خفیہ معلومات کبھی ریکارڈ نہیں کی جاتیں۔</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>گروپ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>سسٹم</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>اپنا اکاؤنٹ محفوظ کریں</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site پر آپ کے اکاؤنٹ %login میں سائن ان کے لیے ایک بازیابی کوڈ استعمال کیا گیا۔</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ایک بازیابی کوڈ استعمال کیا گیا</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>اکاؤنٹ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>تقریبی پتہ</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>دوبارہ سائن ان کرنے کے لیے نیا پاس ورڈ طلب کریں، یا سائٹ کے منتظمین سے رابطہ کریں۔</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>نیا پاس ورڈ طلب کریں</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ہر بازیابی کوڈ ایک بار کام کرتا ہے۔ اگر آپ کا فون گم ہو گیا ہے تو اپنی توثیقی ایپ دوبارہ سیٹ اپ کریں اور نئے بازیابی کوڈ کسی محفوظ جگہ پر رکھیں۔</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>آپ کے اکاؤنٹ میں سائن ان کی ناکام کوششیں</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>اب سے سائن ان کے وقت آپ کے پاس ورڈ کے علاوہ ایک کوڈ بھی مانگا جائے گا۔ اگر یہ آپ نے کیا ہے تو آپ کو کچھ کرنے کی ضرورت نہیں۔</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>اگر یہ آپ تھے اور آپ اپنا پاس ورڈ بھول گئے ہیں تو نیا پاس ورڈ طلب کریں۔ اگر نہیں، تو ایک مضبوط پاس ورڈ چنیں اور دو مرحلوں میں سائن اِن آن کریں۔</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>اگر یہ آپ نہیں تھے تو ممکن ہے کوئی آپ کا پاس ورڈ جانتا ہو: اسے ابھی تبدیل کریں اور دیکھیں کہ آپ کا اکاؤنٹ کہاں سائن ان ہے۔</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>باقی بازیابی کوڈ</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>اپنے آلات کا جائزہ لیں</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>سلامتی کا انتباہ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>کسی نے %site پر آپ کے اکاؤنٹ %login میں غلط پاس ورڈ کے ساتھ لگاتار %count بار سائن ان کرنے کی کوشش کی۔</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site پر آپ کے اکاؤنٹ %login میں سلامتی کا ایک واقعہ پیش آیا۔</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>یہ آپ کے اکاؤنٹ کے بارے میں سلامتی کا انتباہ ہے۔ یہ ہر ایسی تبدیلی پر بھیجا جاتا ہے اور اسے بند نہیں کیا جا سکتا۔</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وقت</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site پر آپ کے اکاؤنٹ %login کے لیے دو مرحلوں میں سائن اِن بند کر دیا گیا۔</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>دو مرحلوں میں سائن اِن بند کر دیا گیا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site پر آپ کے اکاؤنٹ %login کے لیے دو مرحلوں میں سائن اِن آن کر دیا گیا۔</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>دو مرحلوں میں سائن اِن آن کر دیا گیا</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site پر آپ کا اکاؤنٹ %login بہت زیادہ ناکام سائن ان کے بعد مقفل کر دیا گیا۔</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>آپ کا اکاؤنٹ اب صرف آپ کے پاس ورڈ سے محفوظ ہے۔ اگر یہ آپ نے نہیں کیا تو اپنا پاس ورڈ تبدیل کرنے کے بعد دو مرحلوں میں سائن اِن دوبارہ آن کریں۔</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>آپ کا اکاؤنٹ مقفل کر دیا گیا</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name کی سلامتی کی سرگرمی</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>سائن ان</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>سائن ان کی ناکام کوشش</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>سائن آؤٹ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سیشنز سائن آؤٹ کیے گئے</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>نئے آلے سے سائن ان</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>نئے مقام سے سائن ان</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>شناخت کی تصدیق ہو گئی (&quot;تصدیق کریں کہ یہ آپ ہیں&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>شناخت کی جانچ ناکام</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>پاس کی کے ساتھ سائن ان</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>پاس کی سے سائن ان ناکام</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>سائن ان مسترد: دو مرحلوں کا کوڈ موجود نہیں یا غلط ہے</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>دو مرحلوں کا غلط کوڈ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ناکام سائن ان کے بعد اکاؤنٹ مقفل</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>اکاؤنٹ غیر مقفل</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>پاس ورڈ تبدیل ہو گیا</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>پاس ورڈ کی تبدیلی ناکام</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>پاس ورڈ ری سیٹ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>نیا پاس ورڈ طلب کیا گیا</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ای میل ایڈریس تبدیل ہو گیا</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>صارف نام تبدیل ہو گیا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>دو مرحلوں میں سائن اِن آن</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>دو مرحلوں میں سائن اِن بند</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>بازیابی کوڈ استعمال ہوا</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>نئے بازیابی کوڈ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ایپ پاس ورڈ بنایا گیا</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ایپ پاس ورڈ منسوخ کیا گیا</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>پاس کی شامل کی گئی</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>پاس کی ہٹائی گئی</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>اکاؤنٹ فعال کیا گیا</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>اکاؤنٹ غیر فعال کیا گیا</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سب</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>سائن ان اور سیشنز</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>اکاؤنٹ کی تبدیلیاں</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>توجہ درکار ہے</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>آپ کی طرف سے</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>صارف کی طرف سے</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login کی طرف سے</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>طریقہ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>براؤزر</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>آپریٹنگ سسٹم</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>آلہ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>جگہ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>ملک</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>سیشنز</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>کون سے</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>چینل</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکام کوششیں</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>باقی کوڈ</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>سائن ان ہینڈلر</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name کی سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>آپ کے اکاؤنٹ کی سلامتی میں سائن ان اور تبدیلیاں۔ اگر آپ کو کوئی ایسی چیز نظر آئے جو آپ نے نہیں کی تو اپنا پاس ورڈ تبدیل کریں اور ان آلات کو سائن آؤٹ کریں جنہیں آپ نہیں پہچانتے۔</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>اس اکاؤنٹ کی سلامتی میں سائن ان اور تبدیلیاں۔</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>آپ کے آلات</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>پاس ورڈ تبدیل کریں</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>اکاؤنٹ پر واپس</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>سلامتی کی سرگرمی ریکارڈ نہیں کی جاتی</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>یہ صارف آڈٹ لاگ سے پڑھی جاتی ہے، جس کا ٹیبل expuser_audit موجود نہیں یا اس ڈیٹا بیس پر معاون نہیں۔ php update/common/scripts/6.0/createuseraudittable.php چلائیں، یا 6.0.15 کی ڈیٹا بیس اپ ڈیٹ۔</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>پچھلے %days دن</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>پچھلے %days دنوں میں سائن ان</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>حالیہ سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>دکھائیں</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>مسترد</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ابھی تک سلامتی کی کوئی سرگرمی ریکارڈ نہیں ہوئی۔</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>سلامتی کے واقعات %days دن تک رکھے جاتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>سلامتی کے واقعات اس وقت تک رکھے جاتے ہیں جب تک کوئی منتظم انہیں ہٹا نہ دے۔</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>میرا سائن ان ڈیٹا ڈاؤن لوڈ کریں</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>آپ کے سیشنز اور سلامتی کے واقعات ایک JSON فائل کے طور پر۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>سائن ان</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>سائن ان کی ناکام کوشش</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>سائن آؤٹ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>سیشنز سائن آؤٹ کیے گئے</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>نئے آلے سے سائن ان</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>نئے مقام سے سائن ان</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>شناخت کی تصدیق ہو گئی (&quot;تصدیق کریں کہ یہ آپ ہیں&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>شناخت کی جانچ ناکام</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>پاس کی کے ساتھ سائن ان</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>پاس کی سے سائن ان ناکام</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>سائن ان مسترد: دو مرحلوں کا کوڈ موجود نہیں یا غلط ہے</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>دو مرحلوں کا غلط کوڈ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ناکام سائن ان کے بعد اکاؤنٹ مقفل</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>اکاؤنٹ غیر مقفل</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>پاس ورڈ تبدیل ہو گیا</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>پاس ورڈ کی تبدیلی ناکام</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>پاس ورڈ ری سیٹ</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>نیا پاس ورڈ طلب کیا گیا</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ای میل ایڈریس تبدیل ہو گیا</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>صارف نام تبدیل ہو گیا</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>دو مرحلوں میں سائن اِن آن</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>دو مرحلوں میں سائن اِن بند</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>بازیابی کوڈ استعمال ہوا</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>نئے بازیابی کوڈ</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ایپ پاس ورڈ بنایا گیا</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ایپ پاس ورڈ منسوخ کیا گیا</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>پاس کی شامل کی گئی</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>پاس کی ہٹائی گئی</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>اکاؤنٹ فعال کیا گیا</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>اکاؤنٹ غیر فعال کیا گیا</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سب</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>سائن ان اور سیشنز</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>اکاؤنٹ کی تبدیلیاں</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>توجہ درکار ہے</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name کی سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>آپ کے اکاؤنٹ کی سلامتی میں سائن ان اور تبدیلیاں۔ اگر آپ کو کوئی ایسی چیز نظر آئے جو آپ نے نہیں کی تو اپنا پاس ورڈ تبدیل کریں اور ان آلات کو سائن آؤٹ کریں جنہیں آپ نہیں پہچانتے۔</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>آپ کے آلات</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>پاس ورڈ تبدیل کریں</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>اس سائٹ پر ابھی سلامتی کی سرگرمی ریکارڈ نہیں کی جاتی۔</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>پچھلے %days دنوں میں سائن ان</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکام کوششیں</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ابھی تک سلامتی کی کوئی سرگرمی ریکارڈ نہیں ہوئی۔</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>میرا سائن ان ڈیٹا ڈاؤن لوڈ کریں</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>آپ کے سیشنز اور سلامتی کے واقعات ایک JSON فائل کے طور پر۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>پاس ورڈ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>پاس ورڈ اور دو مرحلوں کا کوڈ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST انٹرفیس</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP انٹرفیس</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>سنگل سائن ان</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>سیشنز ریکارڈ ہونے سے پہلے سائن ان</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>سائن ان رپورٹ</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>سائٹ پر کون سائن ان ہے، اکاؤنٹس کتنی بار سائن ان کرتے ہیں اور ناکام ہوتے ہیں، اور کسی صارف کو ہر جگہ سے سائن آؤٹ کرنا۔ یہ ہر سیشن ہینڈلر کے ساتھ کام کرتی ہے۔</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>سیشن سائن آؤٹ کر دیا گیا۔ آلے کو دوبارہ سائن ان کرنا ہوگا۔</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login کو %count سیشنز سے سائن آؤٹ کر دیا گیا۔</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login کا کوئی چلتا ہوا سیشن نہیں تھا۔</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>کسی اکاؤنٹ کا یہ ID، صارف نام یا ای میل ایڈریس نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>یہ وہ سیشن ہے جو آپ استعمال کر رہے ہیں۔ اسے ختم کرنے کے لیے سائن آؤٹ کریں۔</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>وہ سیشن پہلے ہی ختم ہو چکا تھا۔</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحے کی میعاد ختم ہو گئی تھی۔ کچھ تبدیل نہیں ہوا؛ براہ کرم دوبارہ کوشش کریں۔</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>اس سائٹ پر سیشنز ریکارڈ نہیں کیے جاتے (site.ini [UserSessionSettings] Tracking=disabled)۔</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ٹیبل expuser_session موجود نہیں</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>اس کے بنتے ہی سیشنز ریکارڈ ہونے لگتے ہیں: php update/common/scripts/6.0/createusersessiontable.php، یا 6.0.15 کی ڈیٹا بیس اپ ڈیٹ۔</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>اب اور آج</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>چلتے ہوئے سیشنز</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>سائن ان صارفین</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>آج کے سائن ان</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>آج کی ناکام کوششیں</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>کسی صارف کو ہر جگہ سے سائن آؤٹ کریں</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>اکاؤنٹ کا ہر سیشن اپنی اگلی درخواست پر ختم ہو جاتا ہے، وہ بھی جو &quot;مجھے یاد رکھیں&quot; سے رکھے گئے ہیں۔ اسے اس وقت استعمال کریں جب کوئی اکاؤنٹ غلط ہاتھوں میں ہو سکتا ہو؛ پھر اس کا پاس ورڈ ری سیٹ کریں۔</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>صارف ID، صارف نام یا ای میل ایڈریس</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ہر جگہ سے سائن آؤٹ کریں</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ابھی سائن ان</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>حال ہی میں سب سے زیادہ استعمال ہونے والے %limit دکھائے گئے ہیں۔</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>صارف</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>آلہ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پتہ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>سائن ان</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخری بار فعال</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کارروائیاں</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>یہ آلہ</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>ریکارڈ نہیں کیا گیا</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>سائن آؤٹ کریں</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>کوئی سیشن سائن ان نہیں ہے۔</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>پچھلے %days دن</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>سائن ان اور ناکام کوششیں صارف آڈٹ لاگ سے گنی جاتی ہیں، جو موجود نہیں؛ نئے سیشنز گنے جاتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>دن</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>سائن ان</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>ناکام کوششیں</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>نئے سیشنز</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>سیشن ہینڈلر: %handler۔ سیشنز ٹیبل expuser_session سے پڑھے جاتے ہیں، اس لیے رپورٹ ہر ہینڈلر کے ساتھ کام کرتی ہے۔</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>آپ کے اکاؤنٹ کے لیے سلامتی کا انتباہ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>آپ کے اکاؤنٹ %login میں سلامتی کا ایک واقعہ پیش آیا: %event۔ اگر یہ آپ نہیں تھے تو %url پر اپنا اکاؤنٹ محفوظ کریں۔</translation>
     </message>
 </context>
 </TS>

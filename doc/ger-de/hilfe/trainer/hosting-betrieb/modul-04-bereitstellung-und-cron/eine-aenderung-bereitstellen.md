@@ -113,7 +113,7 @@ Installation.
 
     ```bash
     php bin/php/console exp:cache clear --id=template
-    php bin/php/console exp:velocity cache clear
+    php bin/php/console exp:velocity cache clear --apply
     ```
 
 ## Erwartetes Ergebnis

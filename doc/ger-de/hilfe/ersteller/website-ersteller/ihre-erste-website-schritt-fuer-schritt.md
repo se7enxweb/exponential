@@ -48,7 +48,7 @@ Prüfen: `ls index.php kernel settings` listet alle drei auf.
 Administrator `admin` und einem erzeugten Passwort ([Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md)):
 
 ```bash
-php bin/php/console exp:install --url=http://127.0.0.1:8088
+php bin/php/console exp:install --apply --url=http://127.0.0.1:8088
 ```
 
 Prüfen: Die Zusammenfassung am Ende sagt "Exponential is installed" und zeigt das Passwort einmal an. Notieren Sie es;
@@ -59,7 +59,7 @@ es steht außerdem in `var/log/initial-admin-password` (nur für Sie lesbar), bi
 
 ```bash
 composer require se7enxweb/exponential-velocity
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 php bin/php/console exp:velocity start
 php bin/php/console exp:velocity status
 ```

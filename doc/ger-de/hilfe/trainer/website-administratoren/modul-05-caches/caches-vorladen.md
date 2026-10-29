@@ -51,7 +51,7 @@ Quelle: [Caches vorab füllen](../../../../anleitungen/caches-vorwaermen.md).
    die letzten Läufe.
 3. **Immer nur ein Lauf** (1 Minute). Ein zweiter Lauf, ob über die Seite, die Shell oder Cron, wird abgelehnt,
    solange einer läuft.
-4. **Die Shell** (2 Minuten). `php bin/php/preload.php --siteaccess=site`, mit `--dry-run`, `--max-pages`,
+4. **Die Shell** (2 Minuten). `php bin/php/preload.php --apply --siteaccess=site`, mit `--dry-run`, `--max-pages`,
    `--max-depth`, `--images`, `-q`. Die letzten drei Zeilen fassen den Lauf zusammen; der Exit-Code 0 bedeutet
    beendet.
 
@@ -90,7 +90,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 7. Führen Sie im Terminal ein kleines Vorladen mit Bildprüfung aus:
 
    ```bash
-   php bin/php/preload.php --siteaccess=site --max-pages=20 --max-depth=1 --images
+   php bin/php/preload.php --apply --siteaccess=site --max-pages=20 --max-depth=1 --images
    ```
 
 8. Lesen Sie seine letzten drei Zeilen.

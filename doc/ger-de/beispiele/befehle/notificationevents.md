@@ -2,14 +2,14 @@
 title: exp:notificationevents
 audience: developer, admin
 category: examples
-summary: Listet die Benachrichtigungsereignisse auf oder entfernt die alten.
+summary: Die Benachrichtigungsereignisse auflisten oder die alten entfernen (Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:notificationevents, notificationevents, console, command, CLI, notificationevents.php, exp:notification:events, exp:notify:events
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationevents
 
-Listet die Benachrichtigungsereignisse auf oder entfernt die alten.
+Die Benachrichtigungsereignisse auflisten oder die alten entfernen (Probelauf, außer mit --apply).
 
 Skript `bin/php/notificationevents.php`, Code in `kernel/private/classes/commands/notificationevents.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -33,10 +33,12 @@ Notification events
 An event has no date of its own; its age is read from what it is about (the published version, the
 collaboration item, the time of a time event). Events whose age cannot be told, because the content
 is gone, are listed as unknown and removed only with --include-unknown.
+cleanup without --apply removes nothing: it counts what it would remove. --dry-run is still
+accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
 ./console exp:notification:events list --status=pending --limit=20
-./console exp:notification:events cleanup --older-than=30d --dry-run
 ./console exp:notification:events cleanup --older-than=30d
+./console exp:notification:events cleanup --older-than=30d --apply
 ```
 
 ## Optionen
@@ -47,7 +49,8 @@ is gone, are listed as unknown and removed only with --include-unknown.
 | `--limit` | erforderlich | list: wie viele (Standard 50) |
 | `--older-than` | erforderlich | cleanup: 90s, 15m, 12h, 30d, 2w oder ein Datum (2026-09-01) |
 | `--include-unknown` |  | cleanup: auch Ereignisse entfernen, deren Alter sich nicht bestimmen lässt |
-| `--dry-run` |  | cleanup: zählen, nichts entfernen |
+| `--apply` |  | cleanup: die Ereignisse entfernen (Standard zählt sie und entfernt nichts) |
+| `--dry-run` |  | cleanup: der Standard, beibehalten für Skripte, die die Option übergeben: zählen, nichts entfernen |
 | `--json` |  | list: JSON |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

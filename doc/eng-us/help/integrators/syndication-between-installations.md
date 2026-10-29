@@ -11,7 +11,7 @@ type: help
 
 This page is for integrators whose landscape has **several Exponential installations** that must share content: a
 group site and its member sites, a portal network, a central product catalog published on several shops. The
-`syndication` extension (required by the root `composer.json` as `~1.3.10`) exports part of one installation's
+`syndication` extension (required by the root `composer.json` as `~1.3.14`) exports part of one installation's
 content tree as a feed and lets another installation import it, kept in step by cron. The feature page is
 [syndication](../../features/6.0/extensions/syndication.md); every option is in the
 [specification](../../specifications/6.0/syndication.md).
@@ -34,7 +34,7 @@ content tree as a feed and lets another installation import it, kept in step by 
    |  cronjob part export_feed                          ^  cronjob part import_feed
    v                                                    |
  cached XML + binary files, one file per object  --->  SOAP request to the main installation
- served through soap.php (EnableSOAP=true)
+ served through index_soap.php (EnableSOAP=true)
 ```
 
 - **One-way syndication**: shared content or authentication data between separate databases and client sites.
@@ -56,6 +56,13 @@ On **both** installations:
    SOAPExtensions[]=syndication
    ```
 
+3. Let the SOAP server through the exporting side's web server. It is `index_soap.php` since Exponential 6.0.15
+   (`soap.php` before; that name only forwards now): uncomment `RewriteRule ^index_soap\.php - [L]` in `.htaccess`, or
+   add the line to the HTTPS virtual host, or a `location = /index_soap.php` in nginx. `curl -i
+   https://<host>/index_soap.php` must answer "only understand POST methods", not `404` or a page of the site. The
+   lines for each server and the full test are on
+   [the SOAP entry script is now index_soap.php](../../bc/6.0/soap-entry-script-index-soap.md).
+
 On the **main** installation: open `/syndication/menu`, choose **Export**, then **New Feed**, and complete the wizard.
 A subtree source includes the subtree root. Schedule the export part; every 3 minutes is suggested:
 
@@ -63,8 +70,9 @@ A subtree source includes the subtree root. Schedule the export part; every 3 mi
 php runcronjobs.php export_feed
 ```
 
-On the **second** installation: open `/syndication/menu`, choose **Import**, give the feed's server address and the
-node that receives the content, and run the import part by hand first:
+On the **second** installation: open `/syndication/menu`, choose **Import**, give the feed's server address
+(`https://export.example.com/index_soap.php`, or `.../soap.php` when the main installation runs 6.0.14 or older) and
+the node that receives the content, and run the import part by hand first:
 
 ```bash
 php runcronjobs.php import_feed
@@ -77,7 +85,8 @@ Review the first import, then schedule it. After the first run, imports are fast
 Since 1.2.0 the import sends a login and password, so the exporting site's SOAP endpoint can sit behind HTTP access
 control. Give them in the server address (`https://<login>:<password>@<host>/`) or in the **Login** and **Password**
 fields of the import's first step. The port defaults to 443 for `https`. Keep these credentials out of version
-control, and restrict `soap.php` to the addresses of the importing installations at the web server.
+control, and restrict `index_soap.php` (and `soap.php`, while any import still calls it) to the addresses of the
+importing installations at the web server.
 
 ## Operating it
 

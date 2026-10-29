@@ -32,7 +32,7 @@ gebeten werden, was auf der Site geschehen ist. Die Methode steht in
 ## Schritte
 
 1. Wenn der Zeitraum älter als 90 Tage ist, stellen Sie diese Tage je Kanal wieder her:
-   `./console exp:audit restore --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
+   `./console exp:audit restore --apply --channel=<channel> --date=<YYYY-MM-DD> --allow-root-user`.
 2. Verifizieren Sie: `./console exp:audit verify --allow-root-user` (fügen Sie `--archives` für archivierte Tage hinzu).
    Speichern Sie die Ausgabe.
 3. Probieren Sie die Auswahl zuerst mit `search` aus, dann exportieren Sie:

@@ -43,7 +43,7 @@ After this lesson, learners can:
 2. Start a site and run `status` (3 minutes). The status lists every address to open: the site paths, the
    administration login, Setup > System information and Setup > Caches.
 3. Show the port change (3 minutes):
-   `php bin/php/console exp:velocity config set PHPServerSettings Port 8091`, then restart.
+   `php bin/php/console exp:velocity config set --apply PHPServerSettings Port 8091`, then restart.
 
 ### Common questions
 
@@ -73,9 +73,9 @@ On the machine with the installation from lesson 2.3:
 3. `curl -sI http://127.0.0.1:8087/ | head -1` and expect `HTTP/1.1 200 OK` or a redirect.
 4. Open the administration address from the status in a browser and sign in as `admin` with the generated password.
 5. Stop the server: `php bin/php/console exp:velocity stop`.
-6. Move the installation to another port: `php bin/php/console exp:velocity config set PHPServerSettings Port 8091`,
+6. Move the installation to another port: `php bin/php/console exp:velocity config set --apply PHPServerSettings Port 8091`,
    then start again and check with `status`.
-7. Put the port back with `php bin/php/console exp:velocity config unset PHPServerSettings Port`, and stop the server.
+7. Put the port back with `php bin/php/console exp:velocity config unset --apply PHPServerSettings Port`, and stop the server.
 
 ## Expected result
 

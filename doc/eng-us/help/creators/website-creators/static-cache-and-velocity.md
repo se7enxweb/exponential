@@ -45,7 +45,7 @@ page has the exact settings and the order in which configuration files win.
 ## After a change
 
 ```bash
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 ```
 
 after template, stylesheet or setting changes, and after the content cache was cleared. `exp:velocity deploy` clears

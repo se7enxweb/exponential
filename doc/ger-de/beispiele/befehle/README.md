@@ -15,13 +15,13 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | Befehl | Aliase | Was er tut |
 |---|---|---|
 | [exp:accesscheck](accesscheck.md) | exp:access:check | Prüft, was ein Benutzer mit einem Knoten oder Objekt tun darf (content/read, edit, ...) und welche Einschränkung es verweigert |
-| [exp:addanonymouspublicpolicies](addanonymouspublicpolicies.md) |  | Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Ansichten des Newsletters (--dry-run listet sie zuerst auf) |
-| [exp:adddefaultstates](adddefaultstates.md) |  |  |
+| [exp:addanonymouspublicpolicies](addanonymouspublicpolicies.md) |  | Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Views des Newsletters (Probelauf, außer mit --apply) |
+| [exp:adddefaultstates](adddefaultstates.md) |  | Gibt jedem Inhaltsobjekt den Standardzustand jeder Zustandsgruppe, aus der es keinen Zustand hat (Probelauf, außer mit --apply) |
 | [exp:addeditorpolicies](addeditorpolicies.md) |  | Gibt der Rolle Editor die alltäglichen Richtlinien, die ihr fehlen: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, den Bildeditor, das eigene Konto (Probelauf, außer mit --apply) |
-| [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf) |
+| [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Gewährt exphelp/read (das Hilfesystem) der Rolle Editor oder den genannten Rollen (Probelauf, außer mit --apply) |
 | [exp:addmembermanagement](addmembermanagement.md) |  | Richtet die Mitgliederverwaltung nach membermanagement.ini ein: die Rolle, mit der eine Gruppe (Standard Editors) die Konten einer anderen (Standard Members) verwaltet, nie Administrator users oder Editors (Probelauf, außer mit --apply) |
-| [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf) |
-| [exp:adduserapproval](adduserapproval.md) |  | Richtet die Freigabe neuer Konten in einer Benutzergruppe ein (Standard: neue Redakteure warten auf die Administrator users): das Workflow-Ereignis vor content/publish und die Rolle, mit der die Anfragenden solche Konten anlegen dürfen (--dry-run listet es zuerst auf); --mode=section richtet die optionale Alternative ein, eine Sektion Staff mit dem einfachen Freigabe-Ereignis (ein Probelauf, außer mit --apply) |
+| [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Gewährt oauth/authorize den Rollen, die Benutzern das Anmelden erlauben (Upgrade auf 6.0.15; Probelauf, außer mit --apply) |
+| [exp:adduserapproval](adduserapproval.md) |  | Richtet die Freigabe neuer Konten in einer Benutzergruppe ein (Standard: neue Editors warten auf die Administrator users): das Workflow-Ereignis auf content/publish vorher und die Rolle, mit der die Anfragenden solche Konten anlegen dürfen; --mode=section richtet die optionale Alternative ein, einen Abschnitt Staff mit dem einfachen Freigabe-Ereignis (beides ein Probelauf, außer mit --apply) |
 | [exp:audit](audit.md) |  | Audit-Log: die letzten Einträge, ein Ereignis anzeigen, die Hash-Ketten prüfen, die Kanäle auflisten |
 | [exp:benchmark](benchmark.md) | exp:bench | Misst diese Installation: Seitenzeiten über HTTP, A/B zwischen Servern, Kernel-Messungen, Regressionsprüfung |
 | [exp:cache](cache.md) |  | Caches nach Tag, ID oder alle leeren und untersuchen: Inhalte, statisch, HTTP, Velocity, OPcache, APCu |
@@ -30,13 +30,13 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:checkcodestyle](checkcodestyle.md) |  |  |
 | [exp:checkdbfiles](checkdbfiles.md) |  | Prüft die Datenbank-Update-Dateien gegen den Upgrade-Pfad; meldet fehlende oder überzählige Dateien |
 | [exp:checkmanifest](checkmanifest.md) |  |  |
-| [exp:cleanuppolicies](cleanuppolicies.md) |  | Entfernt Richtlinien von Modulen, die es nicht mehr gibt (--dry-run listet sie zuerst auf) |
-| [exp:cleanuprss](cleanuprss.md) |  | Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports |
-| [exp:cleanupversions](cleanupversions.md) |  | Entfernt archivierte Inhaltsversionen über die Grenzen von VersionManagement hinaus (-n: nicht warten) |
+| [exp:cleanuppolicies](cleanuppolicies.md) |  | Entfernt Richtlinien von Modulen, die es nicht mehr gibt (Probelauf, außer mit --apply) |
+| [exp:cleanuprss](cleanuprss.md) |  | Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports (Probelauf, außer mit --apply) |
+| [exp:cleanupversions](cleanupversions.md) |  | Entfernt archivierte Inhaltsversionen jenseits der Grenzen von VersionManagement (Probelauf, außer mit --apply; -n: nicht warten) |
 | [exp:clusterize](clusterize.md) |  | Verschiebt die Dateien aus var in den Cluster-Speicher der Datenbank (-u verschiebt sie zurück) |
-| [exp:clusterpurge](clusterpurge.md) |  | Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2) |
-| [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder |
-| [exp:contentcheck](contentcheck.md) | exp:content-check | Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Verknüpfungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur ein Bericht, außer mit --fix, --quarantine oder --fix-permissions ohne --dry-run) |
+| [exp:clusterpurge](clusterpurge.md) |  | Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2; Probelauf, außer mit --apply) |
+| [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Legt Beispielinhalte für das Kollaborationswerkzeug an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder (Probelauf, außer mit --apply) |
+| [exp:contentcheck](contentcheck.md) | exp:content-check | Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Beziehungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur Bericht; --fix, --quarantine und --fix-permissions sind ein Probelauf, außer mit --apply) |
 | [exp:convertezenumtoezselection](convertezenumtoezselection.md) |  |  |
 | [exp:convertprice2multiprice](convertprice2multiprice.md) |  | Wandelt Inhaltsobjekte mit Attributen vom Datentyp 'price' in 'multiprice' um |
 | [exp:dfscleanup](dfscleanup.md) |  | Gleicht Datenbank und DFS-Dateien miteinander ab (-S, -B) und löscht nicht vorhandene (-D) |
@@ -44,10 +44,10 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:expcontentjob](expcontentjob.md) |  | Inhaltsaufträge ausführen, auflisten, fortsetzen und abbrechen: große Teilbäume stapelweise entfernen und kopieren |
 | [exp:expfetch](expfetch.md) | exp:info, exp:about | Die Systemkarte: das Exponential-„e“ neben den Fakten dieser Installation, ihrer Engine und ihres Rechners, mit Hinweisen zum Zustand (exp:info ergänzt ein Inventar, exp:about das Projekt) |
 | [exp:exphelp](exphelp.md) | exp:help | Das Hilfesystem auf der Kommandozeile: den Index von doc/ aufbauen und beschreiben, darin suchen, die Metadaten einer Seite zeigen, ihre Links und Bilder prüfen |
-| [exp:exphelpcontent](exphelpcontent.md) | exp:help:content | Hilfe als Inhalt gepflegt: die Hilfeklassen, Sektionen, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Styleguide prüfen, das Glossar und die Themen befüllen, berichten und deinstallieren |
+| [exp:exphelpcontent](exphelpcontent.md) | exp:help:content | Hilfe als Inhalt: die Hilfeklassen, Abschnitte, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Stilleitfaden prüfen, das Glossar und Themen anlegen, berichten und deinstallieren (die ändernden Aktionen sind ein Probelauf, außer mit --apply) |
 | [exp:exphelpexamples](exphelpexamples.md) | exp:help:examples | Erzeugt die Referenzbeispiele der Hilfe unter doc/eng-us/examples/ aus dem Code: Template-Operatoren und -Funktionen, Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs, Konsolenbefehle und Erweiterungspunkte |
-| [exp:explogs](explogs.md) | exp:logs | Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen |
-| [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-Ipsum-Text |
+| [exp:explogs](explogs.md) | exp:logs | Der Log-Viewer auf der Kommandozeile: die Log-Dateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive aufräumen (Probelauf, außer mit --apply) |
+| [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Füllt eine Übersetzung von Objekten in einer Testsprache (Lorem Ipsum, qlo-ZZ) mit Lorem-ipsum-Text (Probelauf, außer mit --apply) |
 | [exp:explovestack](explovestack.md) | exp:lovestack | Prüft eine von LoveStack kommende Installation (nur lesend) und trägt ihre Datenbank als die von Exponential ein (migrate) |
 | [exp:exppatterncatalogue](exppatterncatalogue.md) |  |  |
 | [exp:exprepair](exprepair.md) |  | Reparaturwarteschlange der Fehlerseite für fehlende Bibliotheken: --create-key, --disable, --status, --run |
@@ -75,8 +75,8 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:ezsqldumpisbndata](ezsqldumpisbndata.md) |  | Schreibt die ISBN-Gruppen- und -Bereichstabellen als SQL in eine Datei oder auf die Standardausgabe |
 | [exp:ezsqldumpschema](ezsqldumpschema.md) |  | Schreibt das Datenbankschema in eine Datei oder auf die Standardausgabe (--type, --user) |
 | [exp:ezsqlinsertschema](ezsqlinsertschema.md) |  | Fügt ein Datenbankschema und Daten aus einer .dba-Datei in eine Datenbank ein (--type, --user) |
-| [exp:ezsubtreecopy](ezsubtreecopy.md) |  | Kopiert einen Teilbaum von Inhalten an einen neuen Ort (--src-node-id, --dst-node-id) |
-| [exp:ezsubtreeremove](ezsubtreeremove.md) |  | Entfernt Teilbäume von Inhalten nach Knoten-ID, in den Papierkorb, außer --ignore-trash ist angegeben |
+| [exp:ezsubtreecopy](ezsubtreecopy.md) |  | Kopiert einen Inhaltsteilbaum an einen neuen Ort (--src-node-id, --dst-node-id; Probelauf, außer mit --apply) |
+| [exp:ezsubtreeremove](ezsubtreeremove.md) |  | Entfernt Inhaltsteilbäume nach Knoten-ID, in den Papierkorb, außer mit --ignore-trash (Probelauf, außer mit --apply) |
 | [exp:eztc](eztc.md) |  | Kompiliert die Templates eines Siteaccess in den Template-Cache (--force kompiliert alle neu) |
 | [exp:eztemplatecheck](eztemplatecheck.md) |  | Prüft die Syntax der Templates eines Siteaccess oder eines Design-Verzeichnisses |
 | [exp:ezwebincommon](ezwebincommon.md) |  | Hilfsbibliothek von ezwebininstall und ezwebinupgrade, nicht zum direkten Ausführen gedacht |
@@ -86,30 +86,30 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:frankenphp](frankenphp.md) | exp:fp | Steuert die FrankenPHP-Engine des Exponential-Webservers |
 | [exp:i18n](i18n.md) |  | Die Übersetzungs-Fallbacks: pro Locale die Kette der Übersetzungen, auf die sie zurückfällt, und wie viel vom Kernel und von jeder Erweiterung übersetzt angezeigt wird; --check für CI |
 | [exp:ini](ini.md) |  | INI-Einstellungen in jedem Bereich lesen und ändern: get, set, add, rem, clear, toggle, copy, move, where, list, scopes |
-| [exp:install](install.md) | exp:names | Installation mit einem Befehl, standardmäßig mit SQLite, ohne kickstart.ini |
-| [exp:installcrontab](installcrontab.md) |  | Zeigt den Cronjob der Installation an, fügt ihn hinzu oder entfernt ihn: die Crontab-Zeilen, die ihre cronjob-Teile ausführen (--dry-run sagt, was sich ändern würde) |
-| [exp:kickstarter](kickstarter.md) |  | Kickstarter-Runner. Unterstützt die Unterbefehle "ini" zum Erzeugen und "run" für die vollständige Einrichtung |
-| [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste |
-| [exp:mailconsent](mailconsent.md) | exp:mail:consent | Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen |
+| [exp:install](install.md) | exp:names | Installation mit einem Befehl, standardmäßig SQLite, keine kickstart.ini nötig (ein Probelauf, außer mit --apply) |
+| [exp:installcrontab](installcrontab.md) |  | Den Cronjob der Installation zeigen, hinzufügen oder entfernen: die Crontab-Zeilen, die ihre Cronjob-Teile ausführen (--add und --remove: Probelauf, außer mit --apply) |
+| [exp:kickstarter](kickstarter.md) |  | Kickstarter: "ini" schreibt kickstart.ini, "run" installiert daraus (ein Probelauf, außer mit --apply) |
+| [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Liest das Bounce-Postfach: harte Bounces und Spam-Beschwerden kommen auf die Sperrliste (Probelauf, außer mit --apply) |
+| [exp:mailconsent](mailconsent.md) | exp:mail:consent | Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist aufräumen (Probelauf, außer mit --apply) |
 | [exp:mailgate](mailgate.md) | exp:mail:gate | Testet das Mail-Gate: wer von den angegebenen Adressen eine Mail einer Kategorie bekäme und wie die ergänzte Mail aussieht |
 | [exp:mailpreferences](mailpreferences.md) | exp:mail:preferences | Zeigt und ändert die E-Mail-Einstellungen eines Benutzers oder einer Adresse: Kategorien, Hauptschalter, Häufigkeit, Export, Löschen |
 | [exp:mailstatus](mailstatus.md) | exp:mail:status | Zeigt das System der E-Mail-Einstellungen: Tabellen, Gate, Fußzeile, Kategorien, Sperrliste, Einwilligungsprotokoll, die letzten Entscheidungen des Gates und Probleme |
 | [exp:mailsuppression](mailsuppression.md) | exp:mail:suppression | Die Sperrliste des E-Mail-Gates: Einträge auflisten, prüfen, hinzufügen und aufheben (es werden nur Hashes gespeichert) |
 | [exp:maintenance](maintenance.md) |  | Nimmt die Website für Wartungsarbeiten vom Netz und wieder zurück: on, off oder status |
 | [exp:makestaticcache](makestaticcache.md) |  | Durchläuft die öffentlichen Siteaccesses und erzeugt statische Seiten (--site, --max-pages, --max-depth) |
-| [exp:notificationevents](notificationevents.md) | exp:notification:events, exp:notify:events | Listet die Benachrichtigungsereignisse auf oder entfernt die alten |
-| [exp:notificationrun](notificationrun.md) | exp:notification:run, exp:notify:run | Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten) |
+| [exp:notificationevents](notificationevents.md) | exp:notification:events, exp:notify:events | Die Benachrichtigungsereignisse auflisten oder die alten entfernen (Probelauf, außer mit --apply) |
+| [exp:notificationrun](notificationrun.md) | exp:notification:run, exp:notify:run | Den Benachrichtigungsfilter ausführen: die Benachrichtigungen der wartenden Ereignisse und die fälligen Zusammenfassungen senden (Probelauf, außer mit --apply) |
 | [exp:notificationstatus](notificationstatus.md) | exp:notification:status, exp:notify:status | Zeigt das Benachrichtigungssystem: anstehende Ereignisse, Einträge der Zusammenfassungen, Abonnements, die letzten Läufe und Probleme |
-| [exp:notificationsubscriptions](notificationsubscriptions.md) | exp:notification:subscriptions, exp:notify:subscriptions | Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert |
+| [exp:notificationsubscriptions](notificationsubscriptions.md) | exp:notification:subscriptions, exp:notify:subscriptions | Die Teilbaum-Benachrichtigungsabonnements je Benutzer und Teilbaum auflisten oder die entfernen, deren Inhalt fehlt (Probelauf, außer mit --apply) |
 | [exp:phar](phar.md) |  | Baut und untersucht das Engine-Archiv dist/engine.phar (Verben build, check, clean, info) |
-| [exp:preload](preload.md) |  | Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten |
+| [exp:preload](preload.md) |  | Die Seiten-Caches einer Site vorwärmen: ihre Abschnittsseiten abrufen, dann ihren Links folgen und die defekten melden (Probelauf, außer mit --apply) |
 | [exp:preloadjob](preloadjob.md) |  |  |
 | [exp:publish_content](publish_content.md) |  |  |
 | [exp:resetuserpassword](resetuserpassword.md) |  | Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung |
 | [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Kompiliert, listet, zeigt und prüft den Service-Container des Kernels (Verben compile, list, show, check) |
 | [exp:solr](solr.md) | exp:search | Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist |
 | [exp:systeminfo](systeminfo.md) | exp:system:info | Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes) |
-| [exp:trashpurge](trashpurge.md) |  | Löscht alle Objekte im Papierkorb endgültig |
+| [exp:trashpurge](trashpurge.md) |  | Löscht alle Objekte im Papierkorb endgültig (Probelauf, außer mit --apply) |
 | [exp:updateisbn13](updateisbn13.md) |  | Aktualisiert die ISBN-Bereichsdaten in der Datenbank aus einer XML-Datei (--url ist erforderlich) |
 | [exp:updateniceurls](updateniceurls.md) |  | Importiert alte URL-Aliase und aktualisiert die URL-Aliase aller Knoten (--update-nodes) |
 | [exp:updatesearchindex](updatesearchindex.md) |  | Indiziert alle Inhaltsobjekte in der Suchmaschine neu |

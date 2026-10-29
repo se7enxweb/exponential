@@ -7,7 +7,7 @@ PHP changes to a site that Velocity serves. Velocity drives one of three web ser
 
 ## Velocity is part of Exponential as of 6.0.15
 
-As of 6.0.15 the root `composer.json` **requires** `se7enxweb/exponential-velocity ~0.0.4.55`; before, it only
+As of 6.0.15 the root `composer.json` **requires** `se7enxweb/exponential-velocity ~0.0.4.57`; before, it only
 suggested it. What that changes for an existing installation:
 
 | | |
@@ -235,11 +235,11 @@ second safety net for what still can: a crash, an out-of-memory kill, or a stop 
 It is off until you install it (root, systemd):
 
 ```
-./console exp:velocity watchdog install --allow-root-user   # vc-watchdog.service + .timer, conf-available/watchdog.conf, enabled
+./console exp:velocity watchdog install --apply --allow-root-user   # vc-watchdog.service + .timer, conf-available/watchdog.conf, enabled
 ./console exp:velocity watchdog status --allow-root-user    # timer, markers, last check and last start
 ./console exp:velocity watchdog run --allow-root-user       # one check now (--json for a script)
-./console exp:velocity conf disable watchdog --allow-root-user   # pause it (conf enable: resume)
-./console exp:velocity watchdog remove --allow-root-user    # timer off, units and configuration file removed
+./console exp:velocity conf disable --apply watchdog --allow-root-user   # pause it (conf enable: resume)
+./console exp:velocity watchdog remove --apply --allow-root-user    # timer off, units and configuration file removed
 ```
 
 Every `Interval` seconds (45 by default) the timer runs one check of the default engine (or the engine named with
@@ -507,7 +507,7 @@ headers).
 ## FrankenPHP
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity install --allow-root-user     # optional: start installs it
 php bin/php/console exp:velocity start --allow-root-user
 ```
@@ -815,7 +815,7 @@ rather than assuming velocity.ini's.
 
 The `qbix` engine runs on PHP 8.0 to 8.5 from release 0.0.4.54 (20 October 2026); its `composer.json` requires
 `"php": ">=8.0"` (it was `>=8.1`), and nothing extra is needed on 8.0, no polyfill package and no extension.
-Exponential's `composer.json` requires the engine at `~0.0.4.55`, so `composer install` on PHP 8.0 installs it too.
+Exponential's `composer.json` requires the engine at `~0.0.4.57`, so `composer install` on PHP 8.0 installs it too.
 
 - **RHEL 9, AlmaLinux 9, Rocky Linux 9**: the default AppStream PHP 8.0 works, with the el9 rpm
   (`exponential-velocity-<release>-1.el9.noarch.rpm`, which depends on `php-cli >= 8.0`) or with Composer; no module

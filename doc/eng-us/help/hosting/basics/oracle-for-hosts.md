@@ -85,7 +85,7 @@ ActiveExtensions[]=ezoracle
 ```
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=oracle \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=oracle \
     --db-host=db.example.com --db-port=1521 --db-name=<service> --db-user=<customer> --allow-root-user
 ```
 

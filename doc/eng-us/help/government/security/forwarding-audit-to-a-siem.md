@@ -86,7 +86,7 @@ in PHP the check is `expAuditWebhookSink::verify( $body, $headers, $secret )`.
 
 - Forward the daily signed checkpoints (`system.audit.checkpoint`) as a minimum: they let you prove later that the
   local chain was not recomputed.
-- Monitor the spool: `./console exp:audit sinks flush --allow-root-user` sends what waits; the dashboard's Operations card
+- Monitor the spool: `./console exp:audit sinks flush --apply --allow-root-user` sends what waits; the dashboard's Operations card
   shows the sinks.
 - Remember the privacy settings apply before forwarding: addresses truncated, sessions hashed. Agree the retention in
   the SIEM with your data protection officer.

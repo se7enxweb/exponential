@@ -69,7 +69,7 @@ safely because the key is their permission context.
 Velocity can answer repeat requests for public pages inside the server process, before a worker is chosen: conditional
 requests (`304`), `ETag`, `Age`, stale-while-revalidate and invalidation, like a small reverse proxy built into the
 server. It is off until a setting enables it ([Velocity response cache](../../features/6.0/velocity-response-cache.md)).
-Clear it last in a deploy: `./console exp:velocity cache clear`.
+Clear it last in a deploy: `./console exp:velocity cache clear --apply`.
 
 ## Behind a proxy or CDN
 

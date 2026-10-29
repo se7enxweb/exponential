@@ -93,7 +93,7 @@ Was das für ein Intranet bedeutet:
 ## Was laufen muss
 
 Nichts wird verschickt, bevor ein **Lauf** der Benachrichtigungen stattfindet. Den Lauf startet die Cronjob-Gruppe
-`frequent`, die Schaltfläche **Jetzt ausführen** auf der Statusseite oder `./console exp:notification:run`
+`frequent`, die Schaltfläche **Jetzt ausführen** auf der Statusseite oder `./console exp:notification:run --apply`
 ([How it works in one minute](../../../anleitungen/benachrichtigungen-administrator.md#1-wie-es-funktioniert-in-einer-minute)).
 
 **Setup > Benachrichtigungen** (`/notification/status`, Richtlinie `notification/administrate`) zeigt wartende

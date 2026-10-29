@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Zarjadowanje &gt; Nadawki cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Hišće žadyn dźěl cron-nadawkow njeje běžał: rynk nadawkow, importy, zdźělenki a pytanski indeks čakaja. Wuwjedźće php bin/php/installcrontab.php --add --apply abo přidajće linki z --show do crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Tuta instalacija je zjawna demonstracija: kóždy móže jeje administratorowe hesło znać, a administratorowe hesła njedaja so změnić abo wróćo stajić. Njezapodajće tu ničo priwatneho.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše graty</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Pokazka: pakety so njewotinstaluja.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konta, kotrež nichtó njewužiwa abo kotrež přepruwowanje trjebaja; znjemóžnić, wotewrěć abo eksportować.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditowy protokol wužiwarjow</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Štó je změnił, so přizjewił abo bu wotpokazany, po kontach; filtrować a eksportować.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rozprawa wo přizjewjenjach</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Štó je přizjewjeny, přizjewjenja a zmylki na dźeń; wužiwarja wšudźe wotzjewić.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Spadnjene posedźenja PHP-wobdźěłowaka wotstronja PHP samo (session.gc_maxlifetime), nic tuta strona abo dźěl nadawkow cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Přizjewjene posedźenja wšěch wužiwarjow so w rozprawje wo přizjewjenjach nalistuja a tam wotzjewjeja; rozprawa dźěła z kóždym wobdźěłowakom posedźenjow.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Rozprawu wo přizjewjenjach wočinić</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ Waše konto aktiwizowali.</translation>
     <message>
         <source>None yet</source>
         <translation>Hišće žadyn</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Waše najnowše přizjewjenja, njewuspěšne pospyty a změny Wašeho hesła, Wašeje e-mejloweje adresy a dwustopoweho přizjewjenja.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Najnowše přizjewjenja, njewuspěšne pospyty a wěstotne změny tutoho konta.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Aktiwitu přepruwować</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Njewuspěšne přizjewjenja: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Dalše informacije namakaće na stronje z požadanjemi.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab njeje so napisał (%reason). Přidajće tute rjadki do crontab wužiwarja, pod kotrymž sydło běži, hewak čakanski rěd, importy, zdźělenki a pytanski indeks nihdy njeběža:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Znowa so instaluje z kickstarterom (%file, potom php bin/php/kickstarter.php run --apply) abo z nowej instalaciju.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transport e-mejlow je při poslednim běhu powěsće wotpokazał (ličba: %count). Přepruwujće e-mejlowy serwer a site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Čakace podawki: %count, a žadyn běh cron-nadawka za zdźělenki njeje zapisany. Přidajće dźěl cron-nadawkow &quot;frequent&quot; do crontab abo wuwjedźće exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Druhe sydło abo druhi wotrězk z wuběrom sukow wubrać</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Jenož systemowy administrator móže wobsedźerja změnić: wuwjedźće ./console exp:content-check --fix-permissions --apply jako root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>empty</source>
         <translation>prózdne</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Signowanski kluč je starši hač jedne lěto: wuměńće jón z exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>not sent</source>
         <translation>njepósłane</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cron-nadawk za zdźělenki tu kóždy swój běh zapisuje. Přidajće dźěl frequent do crontab abo wuwjedźće exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Wužiwajće konsolu: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>None.</source>
         <translation>Žane.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>z awtentifikaciskej aplikaciju</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>z kodom přez e-mejl</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>z wobnowjenskim kodom</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>z přistupnym klučom</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>z eksternym kontom</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Jako syć pokazane; adresa so tak składuje, kaž to nastajenja škita datow sydła předpisuja.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Njezapisane</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Městno</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>přibližnje</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>Manage devices</source>
         <translation>Graty zrjadować</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>z awtentifikaciskej aplikaciju</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>z kodom přez e-mejl</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>z wobnowjenskim kodom</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>z přistupnym klučom</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>z eksternym kontom</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Njezapisane</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Městno</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>přibližnje</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>View the sessions of this user</source>
         <translation>Posedźenja tutoho wužiwarja pokazać</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Waše konto %login na %site je so runje wužiło, zo by so z městna přizjewiło, z kotrehož njeje so w poslednim času přizjewiło:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Přibližne městno</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser na %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rozprawa wo přizjewjenjach</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>Open the page</source>
         <translation>Stronu wočinić</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hač %to z %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Přizjewjenske mjeno abo ID wužiwarja: konto, wo kotrež so w podawku jednaše, abo wužiwar, kotryž je jednał.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcija</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Po tym</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Kóždy wuslědk</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Prjedy</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wot</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wuprózdnić</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wuspěšny</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Podawki so %days dnjow chowaja.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Podawki so chowaja, doniž so z ruku njewotstronja.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Podawki</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kóžda akcija</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Wšě podawki tutoho konta</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lisćinu jako CSV eksportować (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njewuspěšny</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Wot</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lisćinu wobmjezować</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Žadyn podawk njepasuje.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stronu</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Zapisowanje je w audit.ini wupinjene ([UserAuditSettings] UserAudit); lisćina pokazuje, štož bu prjedy zapisane.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wotpokazany</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wuslědk</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tabela auditoweho protokola wužiwarjow faluje. Wutworće ju z php update/common/scripts/6.0/createuseraudittable.php; hač do toho chowaja auditowe dataje kóždy podawk.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Tuta strona trjeba SQL-datowu banku; z MongoDB k dispoziciji njeje. Auditowe dataje chowaja kóždy podawk.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Auditowy protokol wužiwarjow</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Wužiwar</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hdźe</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Štó je kotre konto změnił, wutworił, zmóžnił, znjemóžnił, přesunył abo wotstronił, štó je so přizjewił abo bu wotpokazany a kotre róle buchu přirjadowane: jedna linka na podawk, z polemi prjedy a po tym. Hesła a potajnstwa so ženje njezapisuja.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>skupina</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>přez system</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>njeznaty</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto zawěsćić</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Wobnowjenski kod je so wužił, zo by so pola Wašeho konta %login na %site přizjewiło.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Wobnowjenski kod je so wužił</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Přibližna adresa</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Žadajće sej nowe hesło, zo byšće so zaso přizjewił, abo wobroćće so na administratorow sydła.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Nowe hesło požadać</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kóždy wobnowjenski kod funguje jenož jónu. Jeli sće swój telefon zhubił, nastajće swoju awtentifikacisku aplikaciju znowa a wobchowajće nowe wobnowjenske kody na wěstym městnje.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Njewuspěšne pospyty přizjewjenja pola Wašeho konta</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Wot nětka přizjewjenje přidatnje k Wašemu hesłu za kodom so praša. Jeli sće to Wy činił, njetrjebaće ničo činić.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Jeli sće to Wy był a sće swoje hesło zabył, žadajće sej nowe. Jeli nic, wubjerće sylniše hesło a zmóžńće dwustopowe přizjewjenje.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Jeli to njejsće Wy był, něchtó snano Waše hesło znaje: změńće jo hnydom a přepruwujće, hdźe je Waše konto přizjewjene.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Zwostawace wobnowjenske kody</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Waše graty přepruwować</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Wěstotne warnowanje</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Něchtó je spytał, so pola Wašeho konta %login na %site z wopačnym hesłom přizjewić. Ličba pospytow jedyn za druhim: %count.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Pola Wašeho konta %login na %site je wěstotny podawk był.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>To je wěstotne warnowanje wo Wašim konće. Sćele so při kóždej tajkej změnje a njeda so znjemóžnić.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Dwustopowe přizjewjenje je so za Waše konto %login na %site znjemóžniło.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Dwustopowe přizjewjenje je so znjemóžniło</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Dwustopowe přizjewjenje je so za Waše konto %login na %site zmóžniło.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Dwustopowe přizjewjenje je so zmóžniło</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Waše konto %login na %site je so po přewjele njewuspěšnych přizjewjenjach zawrěło.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Waše konto je nětko jenož přez Waše hesło škitane. Jeli to njejsće Wy činił, změńće swoje hesło a zmóžńće potom dwustopowe přizjewjenje zaso.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Waše konto je so zawrěło</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Wěstotna aktiwita: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Přizjewjeny</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Njewuspěšny pospyt přizjewjenja</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wotzjewjeny</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Posedźenja wotzjewjene</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Přizjewjenje z noweho grata</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Přizjewjenje z noweho městna</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identita wobkrućena („Wobkrućće, zo sće to Wy“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Přepruwowanje identity njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Z přistupnym klučom přizjewjeny</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Přizjewjenje z přistupnym klučom njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Přizjewjenje wotpokazane: kod dwustopoweho přizjewjenja pobrachuje abo je wopačny</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Wopačny kod dwustopoweho přizjewjenja</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto po njewuspěšnych přizjewjenjach zawrěte</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto wotewrjene</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Hesło změnjene</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Změnjenje hesła njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Hesło wróćo stajene</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nowe hesło požadane</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mejlowa adresa změnjena</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Wužiwarske mjeno změnjene</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dwustopowe přizjewjenje zmóžnjene</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dwustopowe přizjewjenje znjemóžnjene</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Wobnowjenski kod wužity</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nowe wobnowjenske kody</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Hesło aplikacije wutworjene</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Hesło aplikacije wotwołane</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Přistupny kluč přidaty</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Přistupny kluč wotstronjeny</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto zmóžnjene</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto znjemóžnjene</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wšě</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Přizjewjenja a posedźenja</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Změny konta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Trjeba kedźbliwosć</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>wot Was</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>wot wužiwarja</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>wot %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metoda</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Wobhladowak</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Dźěłowy system</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Grat</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Městno</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Kraj</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Posedźenja</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Kotre</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Njewuspěšne pospyty</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Zwostawace kody</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Wobdźěłowak přizjewjenja</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Wěstotna aktiwita: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Přizjewjenja a změny wěstoty Wašeho konta. Jeli něšto widźiće, štož njejsće činił, změńće swoje hesło a wotzjewće graty, kotrež njespóznawaće.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Přizjewjenja a změny wěstoty tutoho konta.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše graty</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Hesło změnić</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Wróćo ke kontu</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Wěstotna aktiwita so njezapisuje</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Čita so z auditoweho protokola wužiwarjow, kotrehož tabela expuser_audit pobrachuje abo so w tutej datowej bance njepodpěruje. Wuwjedźće php update/common/scripts/6.0/createuseraudittable.php abo aktualizaciju datoweje banki 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Poslednje dny: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Přizjewjenja w poslednich dnjach: %days</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Najnowša wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>njewuspěšny</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wotpokazany</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hišće žana wěstotna aktiwita zapisana.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Wěstotne podawki so wobchowuja, ličba dnjow: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Wěstotne podawki so wobchowuja, doniž administrator je njewotstroni.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Moje přizjewjenske daty sćahnyć</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Waše posedźenja a wěstotne podawki jako JSON-dataja.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Přizjewjeny</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Njewuspěšny pospyt přizjewjenja</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wotzjewjeny</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Posedźenja wotzjewjene</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Přizjewjenje z noweho grata</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Přizjewjenje z noweho městna</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identita wobkrućena („Wobkrućće, zo sće to Wy“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Přepruwowanje identity njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Z přistupnym klučom přizjewjeny</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Přizjewjenje z přistupnym klučom njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Přizjewjenje wotpokazane: kod dwustopoweho přizjewjenja pobrachuje abo je wopačny</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Wopačny kod dwustopoweho přizjewjenja</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto po njewuspěšnych přizjewjenjach zawrěte</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto wotewrjene</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Hesło změnjene</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Změnjenje hesła njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Hesło wróćo stajene</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nowe hesło požadane</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-mejlowa adresa změnjena</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Wužiwarske mjeno změnjene</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dwustopowe přizjewjenje zmóžnjene</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dwustopowe přizjewjenje znjemóžnjene</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Wobnowjenski kod wužity</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Nowe wobnowjenske kody</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Hesło aplikacije wutworjene</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Hesło aplikacije wotwołane</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Přistupny kluč přidaty</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Přistupny kluč wotstronjeny</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto zmóžnjene</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto znjemóžnjene</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wšě</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Přizjewjenja a posedźenja</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Změny konta</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Trjeba kedźbliwosć</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wěstotna aktiwita</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Wěstotna aktiwita: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Přizjewjenja a změny wěstoty Wašeho konta. Jeli něšto widźiće, štož njejsće činił, změńće swoje hesło a wotzjewće graty, kotrež njespóznawaće.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše graty</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Hesło změnić</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Wěstotna aktiwita so na tutym sydle hišće njezapisuje.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Přizjewjenja w poslednich dnjach: %days</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Njewuspěšne pospyty</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Hišće žana wěstotna aktiwita zapisana.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Moje přizjewjenske daty sćahnyć</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Waše posedźenja a wěstotne podawki jako JSON-dataja.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Hesło</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Hesło a kod dwustopoweho přizjewjenja</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-interfejs</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-interfejs</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Jónkróćne přizjewjenje (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Přizjewjeny, prjedy hač so posedźenja zapisowachu</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rozprawa wo přizjewjenjach</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Štó je na sydle přizjewjeny, kak husto so konta přizjewjeja a kak husto so jim to njeporadźi, a wužiwarja wšudźe wotzjewić. Dźěła z kóždym wobdźěłowakom posedźenjow.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Posedźenje je so wotzjewiło. Grat dyrbi so znowa přizjewić.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login je so z posedźenjow wotzjewił. Ličba posedźenjow: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login njeje žane běžace posedźenje měł.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Žane konto nima tutón ID, tute wužiwarske mjeno abo tutu e-mejlowu adresu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To je posedźenje, kotrež wužiwaće. Zo byšće jo skónčił, wotzjewće so.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tute posedźenje bě hižo skónčene.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona bě spadnjena. Ničo njeje so změniło; prošu spytajće hišće raz.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Posedźenja so na tutym sydle njezapisuja (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabela expuser_session pobrachuje</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Posedźenja so zapisuja, hdyž je tabela wutworjena: php update/common/scripts/6.0/createusersessiontable.php abo aktualizacija datoweje banki 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nětko a dźensa</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Běžace posedźenja</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Přizjewjeni wužiwarjo</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Přizjewjenja dźensa</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Njewuspěšne pospyty dźensa</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Wužiwarja wšudźe wotzjewić</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Kóžde posedźenje konta so při swojim přichodnym naprašowanju skónči, tež te, kotrež „Wostać přizjewjeny“ dźerži. Wužiwajće to, hdyž móhło konto we wopačnych rukach być; stajće potom jeho hesło wróćo.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID wužiwarja, wužiwarske mjeno abo e-mejlowa adresa</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Wšudźe wotzjewić</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nětko přizjewjene</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Pokazuja so posledni wužite (maksimalnje %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Wužiwar</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Grat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Přizjewjeny</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Posledni raz aktiwny</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcije</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Tutón grat</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Njezapisane</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Wotzjewić</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Žane posedźenje njeje přizjewjene.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Poslednje dny: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Přizjewjenja a njewuspěšne pospyty so z auditoweho protokola wužiwarjow ličja, kotryž pobrachuje; nowe posedźenja so ličja.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Dźeń</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Přizjewjenja</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Njewuspěšne pospyty</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Nowe posedźenja</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Wobdźěłowak posedźenjow: %handler. Posedźenja so z tabele expuser_session čitaja, tohodla rozprawa z kóždym wobdźěłowakom dźěła.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Wěstotne warnowanje za Waše konto</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Pola Wašeho konta %login je wěstotny podawk był: %event. Jeli to njejsće Wy był, zawěsćće swoje konto na %url.</translation>
     </message>
 </context>
 </TS>

@@ -67,9 +67,9 @@ und [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md).
 **Brauche ich Apache davor?** Nein. Velocity liefert HTTP und HTTPS selbst aus. Ein Proxy davor ist weiterhin richtig,
 wenn ein Load Balancer oder CDN TLS terminiert (Abschnitt 8.8).
 
-**Ist das Engine-Paket schon installiert?** Ja: Die `composer.json` von Exponential verlangt es mit `~0.0.4.55`; 0.0.4.54 war das
+**Ist das Engine-Paket schon installiert?** Ja: Die `composer.json` von Exponential verlangt es mit `~0.0.4.57`; 0.0.4.54 war das
 erste Release, das auf PHP 8.0 läuft. Davor brauchte es PHP 8.1 und wurde nur vorgeschlagen; eine ältere Installation
-fügt es mit `composer require se7enxweb/exponential-velocity:~0.0.4.55` hinzu.
+fügt es mit `composer require se7enxweb/exponential-velocity:~0.0.4.57` hinzu.
 
 **Was macht `ext check`?** Es listet die PHP-Erweiterungen auf, die diesem PHP fehlen, mit dem Installationsbefehl für
 das Betriebssystem (`ext install-hint <extension>`).
@@ -107,7 +107,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Führen Sie jeden Befehl im Wur
    ```
 
 4. Wenn die Engine nicht `qbix` ist, setzen Sie sie:
-   `php bin/php/console exp:velocity config set ServerSettings Engine qbix`.
+   `php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix`.
 5. Zeigen Sie, welche Datei geschrieben wurde: `php bin/php/console exp:velocity config paths`.
 6. Starten Sie den Server: `php bin/php/console exp:velocity start`.
 7. Lesen Sie den Status: `php bin/php/console exp:velocity status`. Notieren Sie die Adresse der Website, die Adresse der

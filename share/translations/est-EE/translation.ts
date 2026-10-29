@@ -14326,6 +14326,14 @@ Märkus: pakette ei desinstallita.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>See installatsioon on avalik demo: administraatori parool võib olla kõigile teada ning administraatori paroole ei saa muuta ega lähtestada. Ärge sisestage siia midagi privaatset.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Turvategevus</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Märkus: pakette ei desinstallita.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontod, mida keegi ei kasuta või mis vajavad ülevaatamist; keela, ava lukust või ekspordi need.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kasutajate auditilogi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kes muutis, logis sisse või lükati tagasi, konto kaupa; filtreeri ja ekspordi.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sisselogimiste aruanne</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kes on sisse logitud, sisselogimised ja nurjumised päevade kaupa; kasutaja väljalogimine kõikjalt.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Märkus: pakette ei desinstallita.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP töötleja aegunud seansid eemaldab PHP ise (session.gc_maxlifetime), mitte see leht ega cron-töö osa session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Kõigi kasutajate sisselogitud seansid on loetletud sisselogimiste aruandes ja seal saab need välja logida; aruanne töötab iga seansitöötlejaga.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Ava sisselogimiste aruanne</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ juhiseid.</translation>
     <message>
         <source>None yet</source>
         <translation>Veel pole</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Turvategevus</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Teie hiljutised sisselogimised, nurjunud katsed ja muudatused teie paroolis, e-posti aadressis ja kaheastmelises sisselogimises.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Selle konto hiljutised sisselogimised, nurjunud katsed ja turvamuudatused.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Vaata tegevus üle</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Nurjunud sisselogimisi: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ Lisateavet leiate nõuete lehelt.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontabi ei kirjutatud (%reason). Lisage need read selle kasutaja crontabi, kellena sait töötab, muidu ei käivitu järjekord, impordid, teatised ega otsinguindeks kunagi:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Uuesti installimiseks kasutatakse kickstarterit (%file, seejärel php bin/php/kickstarter.php run --apply) või tehakse uus installimine.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Meilitransport keeldus viimasel käivitusel meilidest (%count). Kontrollige meiliserverit ja site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ootel sündmusi: %count ja teatiste cron-töö ühtegi käivitust pole registreeritud. Lisage cron-töö osa „frequent“ crontab-faili või käivitage exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Vali sõlmevalijaga muu sait või jaotis</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Omanikku saab muuta ainult süsteemiadministraator: käivitage ./console exp:content-check --fix-permissions --apply kasutajana root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>empty</source>
         <translation>tühi</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Allkirjastamisvõti on üle aasta vana: vahetage see käsuga exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>not sent</source>
         <translation>saatmata</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Teatiste cron-töö registreerib siin iga oma käivituse. Lisage osa frequent crontab-faili või käivitage exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Kasutage konsooli: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Häälestus &gt; Cron-tööd</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Ükski cron-töö osa pole veel käivitunud: tööde järjekord, impordid, teatised ja otsinguindeks ootavad. Käivitage php bin/php/installcrontab.php --add --apply või lisage --show ridad crontab-faili.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>None.</source>
         <translation>Puuduvad.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentimisrakendusega</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-postiga saadetud koodiga</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>taastekoodiga</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pääsuvõtmega</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>välise kontoga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Turvategevus</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Kuvatakse võrguna; aadressi säilitatakse nii, nagu saidi andmekaitsesätted ette näevad.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Pole salvestatud</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Asukoht</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ligikaudne</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Manage devices</source>
         <translation>Halda seadmeid</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>autentimisrakendusega</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>e-postiga saadetud koodiga</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>taastekoodiga</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pääsuvõtmega</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>välise kontoga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Turvategevus</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Pole salvestatud</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Asukoht</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ligikaudne</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>View the sessions of this user</source>
         <translation>Kuva selle kasutaja seansid</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Teie kontoga %login saidil %site logiti just sisse kohast, kust sellega pole viimasel ajal sisse logitud:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ligikaudne asukoht</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser operatsioonisüsteemis %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sisselogimiste aruanne</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Open the page</source>
         <translation>Ava leht</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kuni %to, kokku %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Kasutajanimi või kasutaja ID: konto, mida sündmus puudutas, või kasutaja, kes tegutses.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiming</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pärast</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Iga tulemus</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Enne</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Tegija</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Tühjenda</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tehtud</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Sündmusi säilitatakse %days päeva.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Sündmusi säilitatakse, kuni need käsitsi eemaldatakse.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Sündmused</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Iga toiming</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kõik selle konto sündmused</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Ekspordi loend vormingus CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ebaõnnestus</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alates</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Kitsenda loendit</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ükski sündmus ei sobi.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lehel</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Salvestamine on failis audit.ini välja lülitatud ([UserAuditSettings] UserAudit); loend näitab varem salvestatut.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Tagasi lükatud</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulemus</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Kasutajate auditilogi tabel puudub. Looge see käsuga php update/common/scripts/6.0/createuseraudittable.php; seni säilitavad auditifailid iga sündmuse.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>See leht vajab SQL-andmebaasi; andmebaasiga MongoDB pole see saadaval. Auditifailid säilitavad iga sündmuse.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuni</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kasutajate auditilogi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kasutaja</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Millal</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kus</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kes muutis, lõi, lubas, keelas, teisaldas või eemaldas millise konto, kes logis sisse või lükati tagasi ja millised rollid määrati: üks rida sündmuse kohta, väljadega enne ja pärast. Paroole ja saladusi ei salvestata kunagi.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>rühm</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>süsteem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tundmatu</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kaitse oma kontot</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Teie kontole %login saidil %site logiti sisse taastekoodiga.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Kasutati taastekoodi</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Ligikaudne aadress</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Uuesti sisselogimiseks taotlege uus parool või pöörduge saidi administraatorite poole.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Taotle uus parool</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Iga taastekood töötab ühe korra. Kui olete oma telefoni kaotanud, seadistage autentimisrakendus uuesti ja hoidke uusi taastekoode turvalises kohas.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Nurjunud sisselogimiskatsed teie kontole</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Edaspidi küsitakse sisselogimisel lisaks paroolile koodi. Kui tegite seda ise, ei pea te midagi tegema.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Kui see olite teie ja unustasite parooli, taotlege uus. Kui mitte, valige tugevam parool ja lülitage kaheastmeline sisselogimine sisse.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Kui see ei olnud teie, võib keegi teie parooli teada: muutke see kohe ja kontrollige, kus teie konto on sisse logitud.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Järelejäänud taastekoodid</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Vaata oma seadmed üle</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Turvahoiatus</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Keegi üritas teie kontole %login saidil %site mitu korda järjest vale parooliga sisse logida (katseid: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Teie kontol %login saidil %site toimus turvasündmus.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>See on turvahoiatus teie konto kohta. See saadetakse iga sellise muudatuse korral ja seda ei saa välja lülitada.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aeg</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Teie konto %login kaheastmeline sisselogimine saidil %site lülitati välja.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Kaheastmeline sisselogimine lülitati välja</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Teie konto %login kaheastmeline sisselogimine saidil %site lülitati sisse.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kaheastmeline sisselogimine lülitati sisse</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Teie konto %login saidil %site lukustati liiga paljude nurjunud sisselogimiste järel.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Teie kontot kaitseb nüüd ainult parool. Kui te seda ise ei teinud, lülitage kaheastmeline sisselogimine pärast parooli muutmist uuesti sisse.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Teie konto lukustati</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Turvategevus</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Kasutaja %name turvategevus</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Sisse logitud</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nurjunud sisselogimiskatse</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Välja logitud</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seansid välja logitud</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sisselogimine uuest seadmest</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sisselogimine uuest asukohast</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Isik kinnitatud („Kinnitage, et see olete teie“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Isiku kontroll nurjus</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Sisse logitud pääsuvõtmega</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sisselogimine pääsuvõtmega nurjus</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Sisselogimine keelatud: kaheastmelise sisselogimise kood puudub või on vale</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Vale kaheastmelise sisselogimise kood</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto lukustatud nurjunud sisselogimiste järel</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto lukust avatud</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parool muudetud</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Parooli muutmine nurjus</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parool lähtestatud</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Uus parool taotletud</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-posti aadress on muudetud</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kasutajanimi muudetud</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kaheastmeline sisselogimine sisse lülitatud</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kaheastmeline sisselogimine välja lülitatud</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Taastekood kasutatud</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Uued taastekoodid</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Rakenduse parool loodud</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Rakenduse parool tühistatud</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Pääsuvõti lisatud</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Pääsuvõti eemaldatud</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto lubatud</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto on keelatud</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kõik</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sisselogimised ja seansid</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Konto muudatused</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vajab tähelepanu</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>teie poolt</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>kasutaja poolt</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>tegija: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Meetod</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Brauser</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operatsioonisüsteem</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Seade</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Koht</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Riik</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seansid</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Millised</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nurjunud katsed</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Järelejäänud koodid</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Sisselogimise töötleja</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Turvategevus</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Kasutaja %name turvategevus</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sisselogimised ja muudatused teie konto turvalisuses. Kui näete midagi, mida te pole teinud, muutke oma parooli ja logige välja seadmed, mida te ei tunne.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Sisselogimised ja muudatused selle konto turvalisuses.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Muuda parooli</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Tagasi konto juurde</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Turvategevust ei salvestata</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Seda loetakse kasutajate auditilogist, mille tabel expuser_audit puudub või mida see andmebaas ei toeta. Käivitage php update/common/scripts/6.0/createuseraudittable.php või versiooni 6.0.15 andmebaasi uuendus.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Viimased päevad: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sisselogimised viimastel päevadel (päevi: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Hiljutine turvategevus</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nurjus</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>keelatud</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Turvategevust pole veel salvestatud.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Turvasündmusi säilitatakse piiratud aja (päevi: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Turvasündmusi säilitatakse, kuni administraator need eemaldab.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Laadi alla minu sisselogimisandmed</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Teie seansid ja turvasündmused JSON-failina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Sisse logitud</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Nurjunud sisselogimiskatse</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Välja logitud</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seansid välja logitud</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Sisselogimine uuest seadmest</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Sisselogimine uuest asukohast</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Isik kinnitatud („Kinnitage, et see olete teie“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Isiku kontroll nurjus</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Sisse logitud pääsuvõtmega</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Sisselogimine pääsuvõtmega nurjus</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Sisselogimine keelatud: kaheastmelise sisselogimise kood puudub või on vale</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Vale kaheastmelise sisselogimise kood</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto lukustatud nurjunud sisselogimiste järel</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto lukust avatud</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parool muudetud</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Parooli muutmine nurjus</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parool lähtestatud</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Uus parool taotletud</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-posti aadress on muudetud</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kasutajanimi muudetud</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kaheastmeline sisselogimine sisse lülitatud</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kaheastmeline sisselogimine välja lülitatud</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Taastekood kasutatud</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Uued taastekoodid</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Rakenduse parool loodud</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Rakenduse parool tühistatud</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Pääsuvõti lisatud</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Pääsuvõti eemaldatud</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto lubatud</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto on keelatud</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kõik</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Sisselogimised ja seansid</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Konto muudatused</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vajab tähelepanu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Turvategevus</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Kasutaja %name turvategevus</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Sisselogimised ja muudatused teie konto turvalisuses. Kui näete midagi, mida te pole teinud, muutke oma parooli ja logige välja seadmed, mida te ei tunne.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Muuda parooli</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Turvategevust sellel saidil veel ei salvestata.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Sisselogimised viimastel päevadel (päevi: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nurjunud katsed</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Turvategevust pole veel salvestatud.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Laadi alla minu sisselogimisandmed</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Teie seansid ja turvasündmused JSON-failina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Parool</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parool ja kaheastmelise sisselogimise kood</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-liides</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-liides</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ühekordne sisselogimine</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sisse logitud enne seansside salvestamist</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Sisselogimiste aruanne</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kes on saidile sisse logitud, kui sageli kontod sisse logivad ja selles nurjuvad, ning kasutaja väljalogimine kõikjalt. Töötab iga seansitöötlejaga.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seanss logiti välja. Seade peab uuesti sisse logima.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Kasutaja %login logiti seanssidest välja (seansse: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Kasutajal %login polnud käimasolevat seanssi.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ühelgi kontol pole sellist ID-d, kasutajanime ega e-posti aadressi.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>See on seanss, mida te kasutate. Selle lõpetamiseks logige välja.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>See seanss oli juba lõppenud.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Leht oli aegunud. Midagi ei muudetud; proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sellel saidil seansse ei salvestata (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabel expuser_session puudub</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seansse hakatakse salvestama, kui see on loodud: php update/common/scripts/6.0/createusersessiontable.php või versiooni 6.0.15 andmebaasi uuendus.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Praegu ja täna</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Käimasolevad seansid</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Sisselogitud kasutajad</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Sisselogimised täna</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Nurjunud katsed täna</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Logi kasutaja kõikjalt välja</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Konto iga seanss lõpeb selle järgmise päringu juures, ka need, mida hoiab alles „Jäta mind meelde“. Kasutage seda, kui konto võib olla valedes kätes; seejärel lähtestage selle parool.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Kasutaja ID, kasutajanimi või e-posti aadress</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Logi välja kõikjalt</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Praegu sisse logitud</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Kuvatakse viimati kasutatud (kõige rohkem: %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kasutaja</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Seade</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Aadress</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Sisse logitud</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Viimati aktiivne</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toimingud</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>See seade</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Pole salvestatud</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logi välja</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ükski seanss pole sisse logitud.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Viimased päevad: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Sisselogimised ja nurjunud katsed loetakse kasutajate auditilogist, mida pole olemas; uued seansid loetakse.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Päev</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Sisselogimised</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Nurjunud katsed</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Uued seansid</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Seansitöötleja: %handler. Seansid loetakse tabelist expuser_session, seega töötab aruanne iga töötlejaga.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Turvahoiatus teie konto kohta</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Teie kontol %login toimus turvasündmus: %event. Kui see ei olnud teie, kaitske oma kontot aadressil %url.</translation>
     </message>
 </context>
 </TS>

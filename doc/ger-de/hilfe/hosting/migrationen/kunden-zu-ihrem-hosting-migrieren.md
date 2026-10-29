@@ -88,7 +88,7 @@ vorbereiten, wie Sie mit möglichst wenig Ausfallzeit umschalten, wie Sie prüfe
 
    (`./console exp:maintenance on` ist dasselbe; siehe [Wartungsmodus](../betrieb/wartungsmodus.md)).
 3. Erstellen Sie das letzte Backup von Datenbank und Dateien, übertragen Sie es und stellen Sie es auf Ihrer Plattform wieder her.
-4. Leeren Sie die Caches; mit Velocity leeren Sie seinen Antwort-Cache (`php bin/php/console exp:velocity cache clear --allow-root-user`).
+4. Leeren Sie die Caches; mit Velocity leeren Sie seinen Antwort-Cache (`php bin/php/console exp:velocity cache clear --apply --allow-root-user`).
 5. Testen Sie vor der DNS-Änderung auf Ihrer Plattform über einen Eintrag in der hosts-Datei.
 6. Schalten Sie das DNS um. Lassen Sie den alten Hoster im Wartungsmodus, nicht gelöscht.
 

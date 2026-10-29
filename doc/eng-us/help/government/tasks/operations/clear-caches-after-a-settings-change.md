@@ -46,7 +46,7 @@ effect everywhere. Settings are cached, and long-running PHP processes keep what
 
    ```bash
    php bin/php/ezcache.php --clear-tag=content --allow-root-user
-   ./console exp:velocity cache clear --allow-root-user
+   ./console exp:velocity cache clear --apply --allow-root-user
    ```
 
 ## Check it worked

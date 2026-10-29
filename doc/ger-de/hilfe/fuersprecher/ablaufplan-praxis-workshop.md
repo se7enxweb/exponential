@@ -85,7 +85,7 @@ Korrektur (ein Tippfehler, ein klarerer Satz) ist ein besserer erster Beitrag.
 ```text
 EXPONENTIAL WORKSHOP                                               <date>, <place>
 
-Install            ./console exp:install --dry-run   then   ./console exp:install
+Install            ./console exp:install             then   ./console exp:install --apply
 First sign-in      change the generated password; delete var/log/initial-admin-password
 Help               the "?" in the header of every page; Help center: /exphelp/dashboard
 Exercises          (list with the help page of each)

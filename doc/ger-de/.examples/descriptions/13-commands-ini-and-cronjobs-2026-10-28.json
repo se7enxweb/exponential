@@ -1,87 +1,7 @@
 {
-    "command:addanonymouspublicpolicies": {
-        "en": "Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (--dry-run lists them first)",
-        "de": "Gibt der Rolle Anonymous die öffentlichen Richtlinien, die ihr fehlen: user/register, rss/feed, tags/view, die öffentlichen Ansichten des Newsletters (--dry-run listet sie zuerst auf)"
-    },
-    "command:addanonymouspublicpolicies --dry-run": {
-        "en": "List what would be added, change nothing",
-        "de": "Listet auf, was hinzugefügt würde, ändert nichts"
-    },
-    "command:addanonymouspublicpolicies --role": {
-        "en": "The role to complete (ID or name); default Anonymous",
-        "de": "Die zu ergänzende Rolle (ID oder Name); Standard Anonymous"
-    },
-    "command:addanonymouspublicpolicies --skip": {
-        "en": "Never this policy (module/function), may be repeated; e.g. --skip=user/register keeps registration closed",
-        "de": "Nie diese Richtlinie (module/function), darf wiederholt werden; z. B. hält --skip=user/register die Registrierung geschlossen"
-    },
-    "command:adduserapproval": {
-        "en": "Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first); --mode=section sets up the optional alternative, a section Staff with the plain approval event (a dry run unless --apply)",
-        "de": "Richtet die Freigabe neuer Konten in einer Benutzergruppe ein (Standard: neue Redakteure warten auf die Administrator users): das Workflow-Ereignis vor content/publish und die Rolle, mit der die Anfragenden solche Konten anlegen dürfen (--dry-run listet es zuerst auf); --mode=section richtet die optionale Alternative ein, eine Sektion Staff mit dem einfachen Freigabe-Ereignis (ein Probelauf, außer mit --apply)"
-    },
-    "command:adduserapproval --admin-id": {
-        "en": "The user the workflow is created by (default 14)",
-        "de": "Der Benutzer, durch den der Workflow angelegt wird (Standard 14)"
-    },
-    "command:adduserapproval --apply": {
-        "en": "--mode=section only: make the changes (without it the section setup is a dry run)",
-        "de": "Nur mit --mode=section: führt die Änderungen aus (ohne diese Option ist die Einrichtung der Sektion ein Probelauf)"
-    },
-    "command:adduserapproval --approvers": {
-        "en": "A group whose members approve (default Administrator users), may be repeated",
-        "de": "Eine Gruppe, deren Mitglieder freigeben (Standard Administrator users), darf wiederholt werden"
-    },
-    "command:adduserapproval --dry-run": {
-        "en": "List what would be created and changed; change nothing",
-        "de": "Listet auf, was angelegt und geändert würde; ändert nichts"
-    },
-    "command:adduserapproval --exempt": {
-        "en": "--mode=section: a group whose members need no approval (default Administrator users), may be repeated",
-        "de": "--mode=section: eine Gruppe, deren Mitglieder keine Freigabe brauchen (Standard Administrator users), darf wiederholt werden"
-    },
-    "command:adduserapproval --mode": {
-        "en": "group (default: the event \"Approve user accounts\") or section (the section Staff and the plain approval event)",
-        "de": "group (Standard: das Ereignis \"Approve user accounts\") oder section (die Sektion Staff und das einfache Freigabe-Ereignis)"
-    },
-    "command:adduserapproval --no-role": {
-        "en": "Do not create or assign the requesters' role (the requesters have their policies already)",
-        "de": "Legt die Rolle der Anfragenden nicht an und weist sie nicht zu (die Anfragenden haben ihre Richtlinien bereits)"
-    },
-    "command:adduserapproval --requesters": {
-        "en": "A group that may create accounts in the required groups and waits for approval (default Editors), may be repeated",
-        "de": "Eine Gruppe, die Konten in den erforderlichen Gruppen anlegen darf und auf Freigabe wartet (Standard Editors), darf wiederholt werden"
-    },
-    "command:adduserapproval --required": {
-        "en": "A group whose new accounts need approval (default Editors), may be repeated",
-        "de": "Eine Gruppe, deren neue Konten freigegeben werden müssen (Standard Editors), darf wiederholt werden"
-    },
-    "command:adduserapproval --staff": {
-        "en": "--mode=section: a group whose accounts go into the section Staff (default Administrator users and Editors), may be repeated",
-        "de": "--mode=section: eine Gruppe, deren Konten in die Sektion Staff kommen (Standard Administrator users und Editors), darf wiederholt werden"
-    },
     "command:expcontentjob --scope": {
         "en": "section: which objects below the node get the section: subtree (the default, all of them), inherited (those that have the section of the node's object, not branches in another section) or object (none)",
         "de": "section: welche Objekte unterhalb des Knotens die Sektion erhalten: subtree (Standard, alle), inherited (die, die die Sektion des Objekts des Knotens haben, nicht Zweige in einer anderen Sektion) oder object (keines)"
-    },
-    "command:exphelpcontent --check": {
-        "en": "export: check the EPUB with epubcheck and Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); exit 1 when one fails",
-        "de": "export: prüft das EPUB mit epubcheck und Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); Exit-Code 1, wenn eine Prüfung fehlschlägt"
-    },
-    "command:exphelpcontent --commit": {
-        "en": "dita: commit the written files when the directory is a git repository (the history of delivery path 4)",
-        "de": "dita: committet die geschriebenen Dateien, wenn das Verzeichnis ein Git-Repository ist (die Historie von Auslieferungsweg 4)"
-    },
-    "command:exphelpcontent --language": {
-        "en": "build-manuals: the translations to write (default [ManualSettings] Languages[]; \"none\" for none); ebooks, export: the language of the edition (default: the default language)",
-        "de": "build-manuals: die zu schreibenden Übersetzungen (Standard [ManualSettings] Languages[]; \"none\" für keine); ebooks, export: die Sprache der Ausgabe (Standard: die Standardsprache)"
-    },
-    "command:exphelpcontent --prune": {
-        "en": "feedback: remove the answers older than [ContentSettings] FeedbackKeepDays",
-        "de": "feedback: entfernt die Antworten, die älter sind als [ContentSettings] FeedbackKeepDays"
-    },
-    "command:exphelpcontent --queue": {
-        "en": "build-manuals: queue the build as a background content job (helpmanuals) and return at once; nothing is queued while one runs",
-        "de": "build-manuals: reiht den Build als Inhalts-Job im Hintergrund ein (helpmanuals) und kehrt sofort zurück; solange einer läuft, wird nichts eingereiht"
     },
     "command:i18n --list": {
         "en": "With waves: print the whole queue, one wave a line",
@@ -90,30 +10,6 @@
     "command:i18n --wave": {
         "en": "With waves: the pages, contexts or files of one wave (ara-SA/H-help) or work set (A03), and which are done",
         "de": "Mit waves: die Seiten, Kontexte oder Dateien einer Welle (ara-SA/H-help) oder eines Arbeitssatzes (A03) und welche davon erledigt sind"
-    },
-    "command:installcrontab": {
-        "en": "Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change)",
-        "de": "Zeigt den Cronjob der Installation an, fügt ihn hinzu oder entfernt ihn: die Crontab-Zeilen, die ihre cronjob-Teile ausführen (--dry-run sagt, was sich ändern würde)"
-    },
-    "command:installcrontab --add": {
-        "en": "Add or update the block",
-        "de": "Fügt den Block hinzu oder aktualisiert ihn"
-    },
-    "command:installcrontab --admin-siteaccess": {
-        "en": "The siteaccess of the admin parts (default: [CrontabSettings] AdminSiteAccess, else admin)",
-        "de": "Der Siteaccess der Admin-Teile (Standard: [CrontabSettings] AdminSiteAccess, sonst admin)"
-    },
-    "command:installcrontab --dry-run": {
-        "en": "With --add or --remove: show what would change, change nothing",
-        "de": "Mit --add oder --remove: zeigt, was sich ändern würde, ändert nichts"
-    },
-    "command:installcrontab --remove": {
-        "en": "Remove the block",
-        "de": "Entfernt den Block"
-    },
-    "command:installcrontab --show": {
-        "en": "The planned lines, the block in the crontab and the last runs (the default)",
-        "de": "Die geplanten Zeilen, der Block in der Crontab und die letzten Läufe (der Standard)"
     },
     "command:services": {
         "en": "Compile, list, show and check the kernel service container (verbs compile, list, show, check)",
@@ -230,10 +126,6 @@
     "ini:settings/cronjob.ini [CrontabSettings] CrontabCommand": {
         "en": "The crontab command: a name on the PATH or a full path.",
         "de": "Der Crontab-Befehl: ein Name im PATH oder ein vollständiger Pfad."
-    },
-    "ini:settings/cronjob.ini [CrontabSettings] Install": {
-        "en": "The cron job of the installation: the setup wizard, the kickstarter and exp:install write the\ncrontab lines that run the parts below, in the crontab of the system user that owns the\ninstallation directory (never root's crontab), between the marker lines\n\"# BEGIN Exponential cronjobs: <root>\" and \"# END Exponential cronjobs: <root>\".\nbin/php/installcrontab.php --show, --add, --remove (with --dry-run) does the same on an\ninstallation that exists. Without a crontab (a container, no crontab command, another user)\nthe installer prints the lines to add and carries on.\nGuide: doc/eng-us/bc/6.0/installer-crontab.md\n\ndisabled: the installers write nothing and print the lines instead (for one exp:install run:\n--no-crontab, or the environment variable EXP_INSTALL_CRONTAB=0).",
-        "de": "Der Cronjob der Installation: der Setup-Assistent, der Kickstarter und exp:install schreiben die\nCrontab-Zeilen, die die folgenden Teile ausführen, in die Crontab des Systembenutzers, dem das\nInstallationsverzeichnis gehört (nie in die Crontab von root), zwischen die Markierungszeilen\n\"# BEGIN Exponential cronjobs: <root>\" und \"# END Exponential cronjobs: <root>\".\nbin/php/installcrontab.php --show, --add, --remove (mit --dry-run) tut dasselbe in einer\nbestehenden Installation. Ohne Crontab (ein Container, kein crontab-Befehl, ein anderer Benutzer)\ngibt der Installer die hinzuzufügenden Zeilen aus und macht weiter.\nAnleitung: doc/eng-us/bc/6.0/installer-crontab.md\n\ndisabled: die Installer schreiben nichts und geben stattdessen die Zeilen aus (für einen exp:install-Lauf:\n--no-crontab oder die Umgebungsvariable EXP_INSTALL_CRONTAB=0)."
     },
     "ini:settings/cronjob.ini [CrontabSettings] Parts": {
         "en": "The parts the cron job runs, each only when the installation defines it with at least one\nscript (an extension's part when the extension is active). An extension can add its own in its\nsettings/cronjob.ini.append.php. The schedule is [AdminSettings] CrontabSchedule_<part>.",
@@ -410,10 +302,6 @@
     "ini:settings/kernelservices.ini [Tags] TagList": {
         "en": "The tags services may carry. exp:services:check warns about a tag that is\nnot listed here (an extension adds its own with TagList[]=<tag>).",
         "de": "Die Tags, die Services tragen dürfen. exp:services:check warnt vor einem Tag, der\nhier nicht aufgeführt ist (eine Erweiterung fügt eigene mit TagList[]=<tag> hinzu)."
-    },
-    "ini:settings/membermanagement.ini": {
-        "en": "Member management: which user groups may manage the user accounts of which other groups, with which policies, and\nwhich groups nobody manages through such a rule. Read by the setup wizard's role step and the kickstarter (a new\ninstallation), by bin/php/addmembermanagement.php --apply (an installation that exists; without --apply it only\nshows what it would change), and by the access check that keeps the protected groups' accounts out of reach\n(doc/eng-us/bc/6.0/member-management.md).\n\nThe defaults give the Editors group the role \"Member management\": create, edit (name, e-mail, password), enable and\ndisable, move and remove the accounts below Members. The accounts of Administrator users and Editors stay with the\nadministrators, and nobody gets roles, sections or setup from it.\n\nGroups are named in one of these forms, so the same file fits every installation:\n  remote:<remote id>   the group object's or its main node's remote id (the stock groups keep theirs everywhere)\n  node:<node id>       the group's node\n  name:<name>          the top-level user group of that name below the user root\nAdd or change rules in settings/override/membermanagement.ini.append.php or in an extension's settings.",
-        "de": "Mitgliederverwaltung: welche Benutzergruppen die Benutzerkonten welcher anderen Gruppen verwalten dürfen, mit welchen Richtlinien, und\nwelche Gruppen niemand über eine solche Regel verwaltet. Gelesen vom Rollen-Schritt des Setup-Assistenten und vom Kickstarter (eine neue\nInstallation), von bin/php/addmembermanagement.php --apply (eine bestehende Installation; ohne --apply zeigt es nur,\nwas es ändern würde) und von der Zugriffsprüfung, die die Konten der geschützten Gruppen außer Reichweite hält\n(doc/eng-us/bc/6.0/member-management.md).\n\nDie Standardwerte geben der Gruppe Editors die Rolle \"Member management\": die Konten unterhalb von Members anlegen, bearbeiten (Name, E-Mail, Passwort), aktivieren und\ndeaktivieren, verschieben und entfernen. Die Konten von Administrator users und Editors bleiben bei den\nAdministratoren, und niemand erhält dadurch Rollen, Sektionen oder Setup.\n\nGruppen werden in einer dieser Formen benannt, damit dieselbe Datei in jede Installation passt:\n  remote:<remote id>   die remote id des Gruppenobjekts oder seines Haupt-Knotens (die Standardgruppen behalten ihre überall)\n  node:<node id>       der Knoten der Gruppe\n  name:<name>          die Benutzergruppe der obersten Ebene mit diesem Namen unterhalb des Benutzer-Roots\nRegeln hinzufügen oder ändern in settings/override/membermanagement.ini.append.php oder in den Einstellungen einer Erweiterung."
     },
     "ini:settings/membermanagement.ini [MemberGuardSettings] Guard": {
         "en": "The access check: an account (an object of a class with a user account attribute, or of a class in GuardedClasses)\nthat has a location below a protected group may be edited, moved, removed, hidden or have its locations changed\nonly by someone who may do that at that location, not merely at another location of the same account (a policy\nlimited to Members otherwise reaches an administrator who also has a location below Members).\nenabled | disabled",
@@ -626,10 +514,6 @@
     "ini:settings/site.ini [UserSessionSettings] Tracking": {
         "en": "\"Your devices\": every sign-in is a row of the table expuser_session (when the table is there), with when it\nstarted and was last used, the address, the browser and system, the sign-in method and Remember me. The user sees\nthem at user/sessions and signs out one session or all others; an administrator with the policy user/sessions does\nthe same for any user (user/sessions/<user id>). A session signed out there ends on its next request, on every\nsession handler. Guide: doc/eng-us/features/6.0/user-sessions.md\ndisabled: no rows are written and no session is checked (the pages say so).",
         "de": "\"Ihre Geräte\": jede Anmeldung ist eine Zeile der Tabelle expuser_session (wenn die Tabelle da ist), mit Beginn und letzter\nNutzung, der Adresse, dem Browser und System, der Anmeldemethode und Angemeldet bleiben. Der Benutzer sieht\nsie unter user/sessions und meldet eine Sitzung oder alle anderen ab; ein Administrator mit der Richtlinie user/sessions\ntut dasselbe für jeden Benutzer (user/sessions/<user id>). Eine dort abgemeldete Sitzung endet bei ihrer nächsten Anfrage, bei jedem\nSession-Handler. Anleitung: doc/eng-us/features/6.0/user-sessions.md\ndisabled: es werden keine Zeilen geschrieben und keine Sitzung geprüft (die Seiten sagen es)."
-    },
-    "ini:settings/site.ini [UserSettings] AccountApprovalMode": {
-        "en": "How the setup (setup wizard, kickstarter) sets up the approval of new editor\naccounts: group (the default: the workflow event \"Approve user accounts\",\ndecided by the group an account is placed in), section (the section Staff for\nAdministrator users and Editors and the plain approval event on it) or none.\nChoose one, never both: an account would be asked for twice. An installation\nthat exists: bin/php/adduserapproval.php [--mode=section].\nGuide: doc/eng-us/bc/6.0/user-account-approval.md",
-        "de": "Wie das Setup (Setup-Assistent, Kickstarter) die Freigabe neuer Redakteurskonten\neinrichtet: group (der Standard: das Workflow-Ereignis \"Approve user accounts\",\nentschieden von der Gruppe, in die ein Konto eingeordnet wird), section (die Sektion Staff für\nAdministrator users und Editors und das einfache Freigabe-Ereignis darauf) oder none.\nWählen Sie eines, nie beide: ein Konto würde doppelt gefragt. Eine bestehende\nInstallation: bin/php/adduserapproval.php [--mode=section].\nAnleitung: doc/eng-us/bc/6.0/user-account-approval.md"
     },
     "ini:settings/transfer.ini": {
         "en": "The background runs and the run history of the import and export tools of the transfer registry\n(Export, CIE, Imports ...): doc/eng-us/features/6.0/transfer-runs.md.",

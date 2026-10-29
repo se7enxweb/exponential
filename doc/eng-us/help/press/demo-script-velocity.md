@@ -33,10 +33,10 @@ needs PHP 8.0 or later, and the `sockets` extension ([Serving the site, 8.3.1](.
 ```bash
 composer install                                                   # brings the engine the kernel's composer.json requires
 php bin/php/console exp:velocity ext check                         # missing PHP extensions, with the install command
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 ```
 
-Read the version from the `require` block of the kernel's `composer.json`: on 25 October 2026 it was `~0.0.4.55`, as
+Read the version from the `require` block of the kernel's `composer.json`: on 29 October 2026 it was `~0.0.4.57`, as
 the README and the installation book show. The tilde accepts every later 0.0.4.x.
 
 The shipped default engine is `php` (PHP's built-in server, for development only); `qbix` is the recommended engine
@@ -56,7 +56,7 @@ password never appears on screen ([Velocity control panel](../../features/6.0/ve
 | 3:00 | Browser developer tools, Network | Reload the front page twice | "The first answer is rendered; the second has `X-Cache: HIT`: answered from the server's response cache." ([Velocity response cache](../../features/6.0/velocity-response-cache.md#read-it-headers-and-health)) |
 | 4:00 | Browser | Open `/Q/dashboard` (signed in to the panel) | "The server's own dashboard: live requests, workers, memory, status codes, top paths, without a refresh." |
 | 5:00 | Terminal | `./console exp:velocity graceful` | "Workers reload one at a time; the port keeps answering." |
-| 5:45 | Terminal | `./console exp:velocity cache clear` | "After a template or stylesheet change, this clears every cache." |
+| 5:45 | Terminal | `./console exp:velocity cache clear --apply` | "After a template or stylesheet change, this clears every cache." |
 | 6:30 | Title card | | Speed, as below. Then: "The commands and the method are linked below." |
 
 `./console` is a shortcut you create with `ln -s bin/php/console console`; without it, type `php bin/php/console`.

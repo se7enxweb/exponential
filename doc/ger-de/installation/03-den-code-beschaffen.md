@@ -280,7 +280,7 @@ Teil von Exponential. Es ist das Paket
 `composer.json` im Wurzelverzeichnis **verlangt** es (vor 6.0.15 wurde es nur vorgeschlagen):
 
 ```json
-"se7enxweb/exponential-velocity": "~0.0.4.55"
+"se7enxweb/exponential-velocity": "~0.0.4.57"
 ```
 
 Velocity 0.0.4.54 läuft unter PHP 8.0 und höher (`"php": ">=8.0"`) und braucht die Erweiterung `sockets`
@@ -290,10 +290,10 @@ nötig. Bis 0.0.4.54 brauchte die Engine PHP 8.1, und `composer.json` schlug sie
 Zeit fügt sie so hinzu:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
-`~0.0.4.55` akzeptiert jede spätere Release `0.0.4.x` (`>=0.0.4.55 <0.0.5.0`), sodass Composer die neueste davon
+`~0.0.4.57` akzeptiert jede spätere Release `0.0.4.x` (`>=0.0.4.57 <0.0.5.0`), sodass Composer die neueste davon
 installiert. Die letzte Stelle einer Velocity-Version zählt über 9 hinaus weiter (`0.0.4.9`, `0.0.4.10`, ...), daher
 findet eine Versionssortierung die neueste, keine Namenssortierung.
 
@@ -415,7 +415,9 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `index_rest.php` | Der Front-Controller der REST-API (`/api/`). |
 | `index_cluster.php` | Liefert Dateien aus dem Datenbank-Cluster aus. |
 | `index_treemenu.php` | Der schnelle Endpunkt für das Inhaltsbaummenü der Administration. |
-| `soap.php`, `webdav.php` | Die Einstiegspunkte für SOAP und WebDAV. |
+| `index_soap.php`, `index_webdav.php` | Die Einstiegspunkte für SOAP und WebDAV. |
+| `soap.php` | Leitet an `index_soap.php` weiter, seinen Namen bis 6.0.14; wird in einer späteren Hauptversion entfernt ([was zu ändern ist](../bc/6.0/soap-einstiegsskript-index-soap.md)). |
+| `webdav.php` | Leitet an `index_webdav.php` weiter, seinen Namen bis 6.0.14; wird in einer späteren Hauptversion entfernt ([was zu ändern ist](../bc/6.0/webdav-einstiegsskript-index-webdav.md)). |
 | `runcronjobs.php` | Führt Cronjob-Teile aus: `php runcronjobs.php --list`. |
 | `autoload.php` | Lädt den Autoloader von Composer und den des Kernels; jeder Einstiegspunkt beginnt damit. |
 | `ezpm.php` | Der Paketmanager auf der Kommandozeile. |

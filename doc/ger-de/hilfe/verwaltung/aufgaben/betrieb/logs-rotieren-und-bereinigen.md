@@ -32,10 +32,10 @@ Diese Aufgabe ist für Administratoren, die Speicherplatz und Aufbewahrung verwa
 ```bash
 ./console exp:logs --archives                    # each log, its archives, sizes and limits
 ./console exp:logs --rotate-all --dry-run        # what would be rotated
-./console exp:logs --rotate-all                  # rotate the logs over their MaxSize
+./console exp:logs --apply --rotate-all                  # rotate the logs over their MaxSize
 ./console exp:logs --prune --dry-run             # archives beyond Keep and MaxAgeDays
-./console exp:logs --prune                       # remove them
-./console exp:logs --compress                    # compress plain archives from .2 on
+./console exp:logs --apply --prune                       # remove them
+./console exp:logs --apply --compress                    # compress plain archives from .2 on
 ```
 
 Nennen Sie Logs über ihren Schlüssel (`error`, `debug`, `<site>-storage`), um nur auf einige zu wirken:

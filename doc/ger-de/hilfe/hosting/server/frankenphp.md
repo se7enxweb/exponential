@@ -56,7 +56,7 @@ Sie `qbix`, wenn Sie persistente Worker und den Antwort-Cache wollen ([Velocity-
 ## Installieren und starten
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user
+php bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user
 php bin/php/console exp:velocity install --allow-root-user          # optional: start installs it when missing
 php bin/php/console exp:velocity install --check --allow-root-user  # is the pinned binary in place?
 php bin/php/console exp:velocity start --allow-root-user

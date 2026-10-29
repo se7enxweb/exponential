@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Suidheachadh &gt; Obraichean cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cha deach pàirt sam bith dhen cronjob a ruith fhathast: tha ciutha nan obraichean, na h-ion-phortaidhean, na brathan agus clàr-amais an luirg a&apos; feitheamh. Ruithibh php bin/php/installcrontab.php --add --apply, no cuiribh loidhnichean --show ris a&apos; crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>'S e taisbeanadh poblach a th' anns an stàladh seo: faodaidh fios a bhith aig duine sam bith air facal-faire an rianaire aige, agus cha ghabh faclan-faire rianairean atharrachadh no ath-shuidheachadh. Na cuiribh a-steach dad prìobhaideach an-seo.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ur n-uidheaman</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Cunntasan nach cleachd duine no a dh'fheumas sùil; cuiribh à comas iad, thoiribh a' ghlas dhiubh no às-phortaichibh iad.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Loga sgrùdaidh nan cleachdaichean</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Cò a dh&apos;atharraich, a chlàraich a-steach no a chaidh a dhiùltadh, a rèir cunntais; criathraich is às-phortaich.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aithisg a&apos; chlàraidh a-steach</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Cò tha air clàradh a-steach, clàraidhean a-steach agus fàilligidhean gach latha; cleachdaiche a chlàradh a-mach anns gach àite.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Thèid seiseanan làimhsichear PHP a dh'fhalbh à ùine a thoirt air falbh le PHP fhèin (session.gc_maxlifetime), chan ann leis an duilleag seo no le pàirt cronjob session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Tha seiseanan clàraichte a-steach gach cleachdaiche air an liostadh, agus air an clàradh a-mach, air aithisg a&apos; chlàraidh a-steach, a dh&apos;obraicheas le gach làimhsichear sheiseanan.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Fosgail aithisg a&apos; chlàraidh a-steach</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ ur cunntas a ghnìomhachadh.</translation>
     <message>
         <source>None yet</source>
         <translation>Chan eil gin fhathast</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Na clàraidhean a-steach as ùire agaibh, oidhirpean a dh&apos;fhàillig agus atharraichean air ur facal-faire, ur seòladh puist-d agus ur clàradh a-steach dà-cheumnach.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Na clàraidhean a-steach as ùire, oidhirpean a dh&apos;fhàillig agus atharraichean tèarainteachd a&apos; chunntais seo.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Dèan lèirmheas air a&apos; ghnìomhachd</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Clàraidhean a-steach a dh&apos;fhàillig: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Faicibh duilleag nan riatanasan airson tuilleadh fiosrachaidh.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Cha deach an crontab a sgrìobhadh (%reason). Cuiribh na loidhnichean seo ri crontab a' chleachdaiche air a bheil an làrach a' ruith, air neo cha ruith an ciutha, na h-ion-phortaidhean, na brathan agus clàr-amais an luirg a-chaoidh:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Thèid ath-stàladh a dhèanamh leis a&apos; kickstarter (%file, an uairsin php bin/php/kickstarter.php run --apply) no le stàladh ùr.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Dhiùlt an gluasad puist %count teachdaireachd san ruith mu dheireadh. Thoiribh sùil air am frithealaiche puist agus site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Tachartasan a&apos; feitheamh: %count, agus chan eil ruith sam bith de chronjob nam brathan air a chlàradh. Cuiribh pàirt “frequent” a&apos; chronjob ris a&apos; crontab, no ruithibh exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Taghaibh làrach no earrann eile leis an neach-taghaidh nòd</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Chan urrainn ach do rianaire an t-siostaim an sealbhadair atharrachadh: ruithibh ./console exp:content-check --fix-permissions --apply mar root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>empty</source>
         <translation>falamh</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Tha an iuchair-shoidhnidh nas sine na bliadhna: cuairtichibh i le exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>not sent</source>
         <translation>gun chur</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Clàraidh cronjob nam brathan gach ruith aige an-seo. Cuiribh am pàirt frequent ris a&apos; crontab, no ruithibh exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Cleachdaibh a&apos; chonsoil: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>None.</source>
         <translation>Chan eil gin.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>le aplacaid dearbhaiche</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>le còd air post-d</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>le còd aisig</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>le iuchair-faire</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>le cunntas taobh a-muigh</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ga shealltainn mar an lìonra aige; thèid an seòladh a chumail mar a dh&apos;iarras roghainnean dìon an dàta aig an làrach.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Gun chlàradh</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ionad</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>mu thuaiream</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Manage devices</source>
         <translation>Stiùir na h-uidheaman</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>le aplacaid dearbhaiche</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>le còd air post-d</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>le còd aisig</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>le iuchair-faire</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>le cunntas taobh a-muigh</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Gun chlàradh</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ionad</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>mu thuaiream</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>View the sessions of this user</source>
         <translation>Seall seiseanan a' chleachdaiche seo</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Chaidh ur cunntas %login air %site a chleachdadh an-dràsta fhèin airson clàradh a-steach o àite nach do chlàraich e a-steach uaithe o chionn greis:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ionad mu thuaiream</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser air %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aithisg a&apos; chlàraidh a-steach</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Open the page</source>
         <translation>Fosgail an duilleag</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from gu %to à %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Ainm clàraidh a-steach no ID cleachdaiche: an cunntas air an robh an tachartas no an cleachdaiche a rinn an gnìomh.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cunntas</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gnìomh</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Às dèidh</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Toradh sam bith</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ro</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Le</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Falamhaich</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Dèanta</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Thèid tachartasan a chumail fad %days là.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Thèid tachartasan a chumail gus an toirear air falbh iad le làimh.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tachartasan</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Gnìomh sam bith</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>A h-uile tachartas aig a&apos; chunntas seo</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Às-phortaich an liosta mar CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Dh&apos;fhàillig e</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Bho</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Cuingich an liosta</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Chan eil tachartas a&apos; freagairt.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Air gach duilleag</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Tha an clàradh dheth ann an audit.ini ([UserAuditSettings] UserAudit); seallaidh an liosta na chaidh a chlàradh roimhe.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Air a dhiùltadh</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Toradh</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Seall</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tha clàr loga sgrùdaidh nan cleachdaichean a dhìth. Cruthaichibh e le php update/common/scripts/6.0/createuseraudittable.php; gus an uairsin, cumaidh na faidhlichean sgrùdaidh a h-uile tachartas.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Feumaidh an duilleag seo stòr-dàta SQL; chan eil i ri làimh air MongoDB. Cumaidh na faidhlichean sgrùdaidh a h-uile tachartas.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gu</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Loga sgrùdaidh nan cleachdaichean</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Cleachdaiche</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cuin</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Càite</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Cò a dh&apos;atharraich, a chruthaich, a chuir an comas, a chuir à comas, a ghluais no a thug air falbh dè an cunntas, cò a chlàraich a-steach no a chaidh a dhiùltadh agus dè na dreuchdan a chaidh a shònrachadh: loidhne do gach tachartas, leis na raointean roimhe is às a dhèidh. Cha tèid faclan-faire no rùintean-dìomhair a chlàradh idir.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>buidheann</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>siostam</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neo-aithnichte</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Dìon ur cunntas</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Chaidh còd aisig a chleachdadh airson clàradh a-steach dhan chunntas agaibh %login air %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Chaidh còd aisig a chleachdadh</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cunntas</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Seòladh mu thuaiream</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Iarraibh facal-faire ùr gus clàradh a-steach a-rithist, no cuiribh fios gu rianairean na làraich.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Iarr facal-faire ùr</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Obraichidh gach còd aisig aon turas. Ma chaill sibh am fòn agaibh, suidhichibh an aplacaid dearbhaiche agaibh a-rithist agus cumaibh na còdan aisig ùra ann an àite sàbhailte.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Oidhirpean clàraidh a-steach a dh&apos;fhàillig air ur cunntas</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>O seo a-mach, iarraidh an clàradh a-steach còd a bharrachd air ur facal-faire. Mas e sibh fhèin a rinn seo, chan fheum sibh dad a dhèanamh.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Mas e sibh fhèin a bh&apos; ann agus ma dhìochuimhnich sibh ur facal-faire, iarraibh fear ùr. Mur e, taghaibh facal-faire nas làidire agus cuiribh air an clàradh a-steach dà-cheumnach.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Mur e sibh fhèin a bh&apos; ann, dh&apos;fhaoidte gu bheil cuideigin eòlach air ur facal-faire: atharraichibh e an-dràsta agus thoiribh sùil càite a bheil ur cunntas clàraichte a-steach.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Còdan aisig air fhàgail</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Dèan lèirmheas air ur n-uidheaman</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Rabhadh tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Dh&apos;fheuch cuideigin ri clàradh a-steach dhan chunntas agaibh %login air %site le facal-faire cearr iomadh turas an dèidh a chèile (àireamh: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Thachair tachartas tèarainteachd air ur cunntas %login air %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Seo rabhadh tèarainteachd mu ur cunntas. Thèid a chur airson gach atharrachadh dhen leithid agus cha ghabh a chur dheth.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àm</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Chaidh an clàradh a-steach dà-cheumnach a chur dheth airson ur cunntas %login air %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Chaidh an clàradh a-steach dà-cheumnach a chur dheth</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Chaidh an clàradh a-steach dà-cheumnach a chur air airson ur cunntas %login air %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Chaidh an clàradh a-steach dà-cheumnach a chur air</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Chaidh ur cunntas %login air %site a ghlasadh às dèidh cus chlàraidhean a-steach a dh&apos;fhàillig.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Chan eil ach ur facal-faire a&apos; dìon ur cunntais a-nis. Mur e sibh fhèin a rinn seo, cuiribh air an clàradh a-steach dà-cheumnach a-rithist às dèidh dhuibh ur facal-faire atharrachadh.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Chaidh ur cunntas a ghlasadh</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Gnìomhachd tèarainteachd a&apos; chleachdaiche %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Clàraichte a-steach</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Oidhirp clàraidh a-steach a dh&apos;fhàillig</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Clàraichte a-mach</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seiseanan air an clàradh a-mach</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Clàradh a-steach o uidheam ùr</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Clàradh a-steach o ionad ùr</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Dearbh-aithne air a dearbhadh (“Dearbhaibh gur e sibh a th&apos; ann”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Dh&apos;fhàillig dearbhadh na dearbh-aithne</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Clàraichte a-steach le iuchair-faire</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Dh&apos;fhàillig an clàradh a-steach le iuchair-faire</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Chaidh an clàradh a-steach a dhiùltadh: tha an còd dà-cheumnach a dhìth no cearr</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Còd dà-cheumnach cearr</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cunntas glaiste às dèidh chlàraidhean a-steach a dh&apos;fhàillig</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cunntas air a dhì-ghlasadh</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Facal-faire air atharrachadh</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Dh&apos;fhàillig atharrachadh an fhacail-fhaire</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Facal-faire air ath-shuidheachadh</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Facal-faire ùr air iarraidh</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Seòladh puist-d air atharrachadh</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ainm-cleachdaiche air atharrachadh</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Clàradh a-steach dà-cheumnach air a chur air</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Clàradh a-steach dà-cheumnach air a chur dheth</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Còd aisig air a chleachdadh</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Còdan aisig ùra</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Facal-faire aplacaid air a chruthachadh</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Facal-faire aplacaid air a chùl-ghairm</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Iuchair-faire air a cur ris</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Iuchair-faire air a toirt air falbh</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Cunntas air a chur an comas</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Cunntas air a chur à comas</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Na h-uile</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Clàraidhean a-steach is seiseanan</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Atharraichean cunntais</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Feumach air aire</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>leibhse</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>leis a&apos; chleachdaiche</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>le %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Dòigh</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Brabhsair</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Siostam-obrachaidh</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Uidheam</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Àite</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Dùthaich</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seiseanan</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Cò iad</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Seanail</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Oidhirpean a dh&apos;fhàillig</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Còdan air fhàgail</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Làimhsichear a&apos; chlàraidh a-steach</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Gnìomhachd tèarainteachd a&apos; chleachdaiche %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Clàraidhean a-steach agus atharraichean air tèarainteachd ur cunntais. Ma chì sibh rud nach do rinn sibh, atharraichibh ur facal-faire agus clàraichibh a-mach na h-uidheaman nach aithnich sibh.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Clàraidhean a-steach agus atharraichean air tèarainteachd a&apos; chunntais seo.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ur n-uidheaman</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Atharraich am facal-faire</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Air ais dhan chunntas</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Chan eil a&apos; ghnìomhachd tèarainteachd ga clàradh</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Thèid a leughadh o loga sgrùdaidh nan cleachdaichean, agus tha an clàr expuser_audit aige a dhìth no chan eil taic ris air an stòr-dàta seo. Ruithibh php update/common/scripts/6.0/createuseraudittable.php, no ùrachadh an stòir-dàta aig tionndadh 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Na làithean mu dheireadh: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Clàraidhean a-steach sna làithean mu dheireadh (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Gnìomhachd tèarainteachd o chionn goirid</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Seall</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>dh&apos;fhàillig e</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>air a dhiùltadh</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Cha deach gnìomhachd tèarainteachd sam bith a chlàradh fhathast.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Thèid tachartasan tèarainteachd a chumail fad àireamh de làithean: %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Thèid tachartasan tèarainteachd a chumail gus an toir rianaire air falbh iad.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Luchdaich a-nuas an dàta clàraidh a-steach agam</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ur seiseanan is ur tachartasan tèarainteachd mar fhaidhle JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Clàraichte a-steach</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Oidhirp clàraidh a-steach a dh&apos;fhàillig</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Clàraichte a-mach</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seiseanan air an clàradh a-mach</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Clàradh a-steach o uidheam ùr</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Clàradh a-steach o ionad ùr</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Dearbh-aithne air a dearbhadh (“Dearbhaibh gur e sibh a th&apos; ann”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Dh&apos;fhàillig dearbhadh na dearbh-aithne</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Clàraichte a-steach le iuchair-faire</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Dh&apos;fhàillig an clàradh a-steach le iuchair-faire</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Chaidh an clàradh a-steach a dhiùltadh: tha an còd dà-cheumnach a dhìth no cearr</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Còd dà-cheumnach cearr</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cunntas glaiste às dèidh chlàraidhean a-steach a dh&apos;fhàillig</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Cunntas air a dhì-ghlasadh</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Facal-faire air atharrachadh</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Dh&apos;fhàillig atharrachadh an fhacail-fhaire</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Facal-faire air ath-shuidheachadh</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Facal-faire ùr air iarraidh</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Seòladh puist-d air atharrachadh</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Ainm-cleachdaiche air atharrachadh</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Clàradh a-steach dà-cheumnach air a chur air</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Clàradh a-steach dà-cheumnach air a chur dheth</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Còd aisig air a chleachdadh</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Còdan aisig ùra</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Facal-faire aplacaid air a chruthachadh</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Facal-faire aplacaid air a chùl-ghairm</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Iuchair-faire air a cur ris</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Iuchair-faire air a toirt air falbh</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Cunntas air a chur an comas</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Cunntas air a chur à comas</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Na h-uile</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Clàraidhean a-steach is seiseanan</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Atharraichean cunntais</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Feumach air aire</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Gnìomhachd tèarainteachd a&apos; chleachdaiche %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Clàraidhean a-steach agus atharraichean air tèarainteachd ur cunntais. Ma chì sibh rud nach do rinn sibh, atharraichibh ur facal-faire agus clàraichibh a-mach na h-uidheaman nach aithnich sibh.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ur n-uidheaman</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Atharraich am facal-faire</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Chan eil a&apos; ghnìomhachd tèarainteachd ga clàradh air an làrach seo fhathast.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Clàraidhean a-steach sna làithean mu dheireadh (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Oidhirpean a dh&apos;fhàillig</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Cha deach gnìomhachd tèarainteachd sam bith a chlàradh fhathast.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Luchdaich a-nuas an dàta clàraidh a-steach agam</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ur seiseanan is ur tachartasan tèarainteachd mar fhaidhle JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Facal-faire</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Facal-faire agus còd dà-cheumnach</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Eadar-aghaidh REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Eadar-aghaidh SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Clàradh a-steach singilte</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Clàraichte a-steach mus deach seiseanan a chlàradh</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aithisg a&apos; chlàraidh a-steach</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Cò tha air clàradh a-steach dhan làrach, dè cho tric &apos;s a bhios cunntasan a&apos; clàradh a-steach is a&apos; fàilligeadh, agus cleachdaiche a chlàradh a-mach anns gach àite. Obraichidh e le gach làimhsichear sheiseanan.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Chaidh an seisean a chlàradh a-mach. Feumaidh an t-uidheam clàradh a-steach a-rithist.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Chaidh %login a chlàradh a-mach à seiseanan (àireamh: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Cha robh seisean a&apos; ruith aig %login.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Chan eil an ID, an t-ainm-cleachdaiche no an seòladh puist-d sin aig cunntas sam bith.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Seo an seisean a tha sibh a&apos; cleachdadh. Airson crìoch a chur air, clàraichibh a-mach.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Bha an seisean sin air crìochnachadh mu thràth.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bha an duilleag air falbh an ùine. Cha deach dad atharrachadh; feuchaibh ris a-rithist.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Chan eil seiseanan gan clàradh air an làrach seo (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tha an clàr expuser_session a dhìth</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Thèid seiseanan a chlàradh cho luath &apos;s a thèid a chruthachadh: php update/common/scripts/6.0/createusersessiontable.php, no ùrachadh an stòir-dàta aig tionndadh 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>An-dràsta is an-diugh</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Seiseanan a&apos; ruith</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Cleachdaichean clàraichte a-steach</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Clàraidhean a-steach an-diugh</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Oidhirpean a dh&apos;fhàillig an-diugh</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Clàraich cleachdaiche a-mach anns gach àite</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Thig crìoch air gach seisean dhen chunntas aig an ath-iarrtas aige, fiù &apos;s an fheadhainn a chumas “Cuimhnich orm”. Cleachdaibh seo nuair a dh&apos;fhaodadh cunntas a bhith anns na làmhan cearra; an uairsin ath-shuidhichibh am facal-faire aige.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID cleachdaiche, ainm-cleachdaiche no seòladh puist-d</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Clàraich a-mach anns gach àite</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Clàraichte a-steach an-dràsta</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Thathar a&apos; sealltainn an fheadhainn a chaidh a chleachdadh o chionn ghoirid, suas ri %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Cleachdaiche</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Uidheam</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Seòladh</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Clàraichte a-steach</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Gnìomhach mu dheireadh</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gnìomhan</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>An t-uidheam seo</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Gun chlàradh</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Clàraich a-mach</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Chan eil seisean sam bith clàraichte a-steach.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Na làithean mu dheireadh: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Thèid clàraidhean a-steach agus oidhirpean a dh&apos;fhàillig a chunntadh o loga sgrùdaidh nan cleachdaichean, nach eil ann; thèid na seiseanan ùra a chunntadh.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Latha</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Clàraidhean a-steach</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Oidhirpean a dh&apos;fhàillig</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Seiseanan ùra</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Làimhsichear sheiseanan: %handler. Thèid na seiseanan a leughadh on chlàr expuser_session, mar sin obraichidh an aithisg le gach làimhsichear.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Rabhadh tèarainteachd mu ur cunntas</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Thachair tachartas tèarainteachd air ur cunntas %login: %event. Mur e sibh fhèin a bh&apos; ann, dìonaibh ur cunntas aig %url.</translation>
     </message>
 </context>
 </TS>

@@ -18,7 +18,7 @@ letzten Schritt (`eZStepFinal`, Code `kernel/classes/expcrontabsetup.php`). Die 
 
 - **Wessen Crontab**: die Crontab des Systembenutzers, dem das Installationsverzeichnis gehört. Läuft das
   Installationsprogramm als dieser Benutzer (im Assistenten der Benutzer des Webservers, auf der Shell
-  `runuser -u <Eigentümer> -- php bin/php/console exp:install`), schreibt es die eigene Crontab; läuft es als root,
+  `runuser -u <Eigentümer> -- php bin/php/console exp:install --apply`), schreibt es die eigene Crontab; läuft es als root,
   schreibt es `crontab -u <Eigentümer>`. Die Crontab von root wird nie für eine Website geschrieben, und nie die eines
   anderen Benutzers: Eine Installation, die root gehört, oder ein Installationsprogramm, das als dritter Benutzer
   läuft, bekommt die Zeilen stattdessen ausgegeben.
@@ -101,9 +101,9 @@ Abgeschaltet gibt das Installationsprogramm die Zeilen aus, statt sie zu schreib
 ```bash
 php bin/php/installcrontab.php --show            # geplante Zeilen, der Block in der Crontab, die letzten Läufe
 php bin/php/installcrontab.php --add --dry-run   # was --add ändern würde
-php bin/php/installcrontab.php --add             # den Block schreiben oder aktualisieren
+php bin/php/installcrontab.php --add --apply             # den Block schreiben oder aktualisieren
 php bin/php/installcrontab.php --remove --dry-run
-php bin/php/installcrontab.php --remove          # den Block herausnehmen, sonst nichts
+php bin/php/installcrontab.php --remove --apply          # den Block herausnehmen, sonst nichts
 ```
 
 Als Eigentümer der Installation ausführen, oder als root mit `--allow-root-user` (dann wird `crontab -u <Eigentümer>`
@@ -151,7 +151,7 @@ Bei einer bestehenden Installation ändert sich nichts, bis der Befehl läuft. P
 ```bash
 php bin/php/installcrontab.php --show
 php bin/php/installcrontab.php --add --dry-run
-php bin/php/installcrontab.php --add
+php bin/php/installcrontab.php --add --apply
 ```
 
 Führt die Crontab die Teile schon aus, lässt `--add` diese Teile weg (oder schreibt nichts). Danach das Dashboard

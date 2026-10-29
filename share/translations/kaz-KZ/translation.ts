@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Баптау &gt; Cron тапсырмалары</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron тапсырмаларының бірде-бір бөлігі әлі іске қосылған жоқ: тапсырмалар кезегі, импорт, хабарландырулар және іздеу индексі күтіп тұр. php bin/php/installcrontab.php --add --apply командасын орындаңыз немесе --show жолдарын crontab файлына қосыңыз.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Бұл орнату — жалпыға ортақ демо: кез келген адам оның әкімші құпиясөзін біле алады, ал әкімші құпиясөздерін өзгерту немесе қалпына келтіру мүмкін емес. Мұнда жеке ештеңе енгізбеңіз.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Құрылғыларыңыз</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ешкім қолданбайтын немесе назар аударуды қажет ететін тіркелгілер; оларды өшіруге, бұғаттан шығаруға немесе экспорттауға болады.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Пайдаланушылар аудитінің журналы</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Әр тіркелгі бойынша кім өзгертті, кім кірді немесе кімге бас тартылды; сүзу және экспорттау.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Кірулер есебі</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Кім жүйеге кірген, күндер бойынша кірулер мен сәтсіз әрекеттер; пайдаланушыны барлық құрылғылардан шығару.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP өңдегішінің мерзімі өткен сеанстарын PHP өзі жояды (session.gc_maxlifetime), бұл бет немесе session_gc cron тапсырмасының бөлігі емес.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Барлық пайдаланушылардың кірген сеанстары кірулер есебінде көрсетіледі және сонда аяқталады; есеп кез келген сеанстар өңдегішімен жұмыс істейді.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Кірулер есебін ашу</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Әзірге жоқ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Сіздің соңғы кірулеріңіз, сәтсіз әрекеттер және құпиясөзге, электрондық пошта мекенжайына, екі қадамды кіруге енгізілген өзгерістер.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Осы тіркелгінің соңғы кірулері, сәтсіз әрекеттері және қауіпсіздік өзгерістері.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Әрекеттерді қарау</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Сәтсіз кірулер: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab жазылмады (%reason). Мына жолдарды сайт жұмыс істейтін пайдаланушының crontab файлына қосыңыз, әйтпесе кезек, импорттар, хабарландырулар және іздеу индексі ешқашан іске қосылмайды:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Қайта орнату kickstarter арқылы (%file, содан кейін php bin/php/kickstarter.php run --apply) немесе жаңа орнатумен жасалады.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Соңғы орындауда пошта тасымалы %count хабарламаны қабылдамады. Пошта серверін және site.ini MailSettings тексеріңіз.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Күтіп тұрған оқиғалар: %count, ал хабарландырулар cron тапсырмасының бірде-бір іске қосылуы тіркелмеген. «frequent» cron бөлігін crontab файлына қосыңыз немесе exp:notification:run --apply командасын орындаңыз.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Түйін таңдағышпен басқа сайтты немесе бөлімді таңдау</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Иесін тек жүйе әкімшісі өзгерте алады: ./console exp:content-check --fix-permissions --apply командасын root ретінде орындаңыз.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>бос</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Қолтаңба кілті бір жылдан ескі: оны exp:audit key rotate --apply командасымен ауыстырыңыз.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>жіберілмеген</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Хабарландырулар cron тапсырмасы мұнда өзінің әр іске қосылуын тіркейді. frequent бөлігін crontab файлына қосыңыз немесе exp:notification:run --apply командасын орындаңыз.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Консольді пайдаланыңыз: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Жоқ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>аутентификатор қолданбасы арқылы</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>электрондық поштаға келген код арқылы</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>қалпына келтіру коды арқылы</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>кіру кілті арқылы</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>сыртқы тіркелгі арқылы</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Желі ретінде көрсетіледі; мекенжай сайттың деректерді қорғау баптауларында көрсетілгендей сақталады.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Жазылмаған</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Орналасқан жері</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>шамамен</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Құрылғыларды басқару</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>аутентификатор қолданбасы арқылы</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>электрондық поштаға келген код арқылы</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>қалпына келтіру коды арқылы</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>кіру кілті арқылы</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>сыртқы тіркелгі арқылы</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Жазылмаған</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Орналасқан жері</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>шамамен</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Осы пайдаланушының сеанстарын қарау</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site сайтындағы %login тіркелгіңізге жақында кірілмеген жерден жаңа ғана кірді:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Шамамен орналасқан жері</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os жүйесіндегі %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Кірулер есебі</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Бетті ашу</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, барлығы %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Логин немесе пайдаланушы ID: оқиға қатысты тіркелгі немесе әрекетті орындаған пайдаланушы.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Тіркелгі</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Әрекет</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Кейін</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Кез келген нәтиже</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Бұрын</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Орындаушы</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Тазалау</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Орындалды</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Оқиғалар %days күн сақталады.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Оқиғалар қолмен жойылғанша сақталады.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Оқиғалар</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Барлық әрекеттер</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Осы тіркелгінің барлық оқиғалары</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Тізімді CSV ретінде экспорттау (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Сәтсіз</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Бастап</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Тізімді тарылту</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Сәйкес оқиға жоқ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Бетке</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Жазу audit.ini файлында өшірілген ([UserAuditSettings] UserAudit); тізім бұрын жазылғанды көрсетеді.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Бас тартылды</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиже</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Көрсету</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Пайдаланушылар аудиті журналының кестесі жоқ. Оны php update/common/scripts/6.0/createuseraudittable.php арқылы жасаңыз; оған дейін аудит файлдары әр оқиғаны сақтайды.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Бұл бетке SQL дерекқоры қажет; MongoDB жүйесінде ол қолжетімсіз. Аудит файлдары әр оқиғаны сақтайды.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Дейін</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Пайдаланушылар аудитінің журналы</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Пайдаланушы</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Уақыты</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Орны</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кім қай тіркелгіні өзгерткені, жасағаны, қосқаны, өшіргені, жылжытқаны немесе жойғаны, кім кіргені немесе кімге бас тартылғаны және қандай рөлдер тағайындалғаны: әр оқиғаға бір жол, өрістердің бұрынғы және кейінгі мәндерімен. Құпиясөздер мен құпия деректер ешқашан жазылмайды.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>топ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>жүйе</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>белгісіз</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Тіркелгіні қорғау</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site сайтындағы %login тіркелгіңізге қалпына келтіру коды арқылы кірді.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Қалпына келтіру коды пайдаланылды</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Тіркелгі</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Шамамен мекенжай</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Қайта кіру үшін жаңа құпиясөз сұраңыз немесе сайт әкімшілеріне хабарласыңыз.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Жаңа құпиясөз сұрау</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Әр қалпына келтіру коды бір рет қана жұмыс істейді. Телефоныңызды жоғалтсаңыз, аутентификатор қолданбасын қайта баптаңыз және жаңа қалпына келтіру кодтарын сенімді жерде сақтаңыз.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Тіркелгіңізге сәтсіз кіру әрекеттері</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Бұдан былай кіру кезінде құпиясөзден бөлек код сұралады. Мұны Сіз жасасаңыз, ештеңе істеудің қажеті жоқ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Бұл Сіз болсаңыз және құпиясөзіңізді ұмытсаңыз, жаңасын сұраңыз. Олай болмаса, күштірек құпиясөз таңдап, екі қадамды кіруді қосыңыз.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Бұл Сіз болмасаңыз, құпиясөзіңізді біреу білуі мүмкін: оны қазір өзгертіңіз және тіркелгіңіз қай жерде кіргенін тексеріңіз.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Қалған қалпына келтіру кодтары</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Құрылғыларыңызды тексеру</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Қауіпсіздік ескертуі</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Біреу %site сайтындағы %login тіркелгіңізге қате құпиясөзбен қатарынан бірнеше рет кіруге тырысты (әрекеттер: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site сайтындағы %login тіркелгіңізде қауіпсіздік оқиғасы болды.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Бұл — тіркелгіңіз туралы қауіпсіздік ескертуі. Ол әрбір осындай өзгеріс кезінде жіберіледі және оны өшіру мүмкін емес.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Уақыты</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site сайтындағы %login тіркелгіңіз үшін екі қадамды кіру өшірілді.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Екі қадамды кіру өшірілді</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site сайтындағы %login тіркелгіңіз үшін екі қадамды кіру қосылды.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Екі қадамды кіру қосылды</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site сайтындағы %login тіркелгіңіз тым көп сәтсіз кіруден кейін бұғатталды.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Енді тіркелгіңіз тек құпиясөзбен қорғалған. Мұны Сіз жасамасаңыз, құпиясөзді өзгерткеннен кейін екі қадамды кіруді қайта қосыңыз.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Тіркелгіңіз бұғатталды</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Қауіпсіздік әрекеттері: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Кірген</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Сәтсіз кіру әрекеті</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Шыққан</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сеанстар аяқталды</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Жаңа құрылғыдан кіру</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Жаңа жерден кіру</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Жеке басы расталды («Өзіңіз екеніңізді растаңыз»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Жеке басын тексеру сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Кіру кілті арқылы кірді</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Кіру кілті арқылы кіру сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Кіру қабылданбады: екі қадамды кіру коды жоқ немесе қате</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Екі қадамды кірудің қате коды</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Тіркелгі сәтсіз кірулерден кейін бұғатталды</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Тіркелгі бұғаттан шығарылды</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Құпиясөз өзгертілді</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Құпиясөзді өзгерту сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Құпиясөз қалпына келтірілді</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Жаңа құпиясөз сұралды</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Электрондық пошта мекенжайы өзгертілді</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Пайдаланушы аты өзгертілді</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Екі қадамды кіру қосылды</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Екі қадамды кіру өшірілді</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Қалпына келтіру коды пайдаланылды</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Жаңа қалпына келтіру кодтары</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Қолданба құпиясөзі жасалды</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Қолданба құпиясөзі кері қайтарылды</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Кіру кілті қосылды</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Кіру кілті алып тасталды</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Тіркелгі іске қосылды</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Тіркелгі өшірілді</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барлығы</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Кірулер мен сеанстар</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Тіркелгі өзгерістері</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Назар аударуды қажет етеді</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>Сіз жасаған</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>пайдаланушы жасаған</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login жасаған</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Әдіс</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Браузер</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Операциялық жүйе</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Құрылғы</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Жер</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ел</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеанстар</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Қайсылары</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Арна</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Сәтсіз әрекеттер</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Қалған кодтар</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Кіру өңдегіші</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Қауіпсіздік әрекеттері: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Тіркелгіңізге кірулер және оның қауіпсіздігіне енгізілген өзгерістер. Өзіңіз жасамаған нәрсені көрсеңіз, құпиясөзіңізді өзгертіңіз және танымайтын құрылғыларды шығарыңыз.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Осы тіркелгіге кірулер және оның қауіпсіздігіне енгізілген өзгерістер.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Құрылғыларыңыз</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Құпиясөзді өзгерту</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Тіркелгіге оралу</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Қауіпсіздік әрекеттері тіркелмейді</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Олар пайдаланушылар аудиті журналынан оқылады, ал оның expuser_audit кестесі жоқ немесе бұл дерекқорда қолдау көрсетілмейді. php update/common/scripts/6.0/createuseraudittable.php командасын немесе 6.0.15 дерекқор жаңартуын орындаңыз.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Соңғы күндер: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Соңғы күндердегі кірулер (күндер: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Соңғы қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Көрсету</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>сәтсіз</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>қабылданбады</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Әзірге бірде-бір қауіпсіздік әрекеті тіркелмеген.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Қауіпсіздік оқиғалары сақталады (күндер: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Қауіпсіздік оқиғалары әкімші оларды алып тастағанша сақталады.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Кірулерім туралы деректерді жүктеп алу</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Сеанстарыңыз бен қауіпсіздік оқиғалары JSON файлы ретінде.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Кірген</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Сәтсіз кіру әрекеті</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Шыққан</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сеанстар аяқталды</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Жаңа құрылғыдан кіру</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Жаңа жерден кіру</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Жеке басы расталды («Өзіңіз екеніңізді растаңыз»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Жеке басын тексеру сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Кіру кілті арқылы кірді</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Кіру кілті арқылы кіру сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Кіру қабылданбады: екі қадамды кіру коды жоқ немесе қате</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Екі қадамды кірудің қате коды</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Тіркелгі сәтсіз кірулерден кейін бұғатталды</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Тіркелгі бұғаттан шығарылды</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Құпиясөз өзгертілді</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Құпиясөзді өзгерту сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Құпиясөз қалпына келтірілді</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Жаңа құпиясөз сұралды</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Электрондық пошта мекенжайы өзгертілді</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Пайдаланушы аты өзгертілді</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Екі қадамды кіру қосылды</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Екі қадамды кіру өшірілді</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Қалпына келтіру коды пайдаланылды</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Жаңа қалпына келтіру кодтары</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Қолданба құпиясөзі жасалды</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Қолданба құпиясөзі кері қайтарылды</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Кіру кілті қосылды</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Кіру кілті алып тасталды</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Тіркелгі іске қосылды</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Тіркелгі өшірілді</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барлығы</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Кірулер мен сеанстар</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Тіркелгі өзгерістері</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Назар аударуды қажет етеді</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Қауіпсіздік әрекеттері: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Тіркелгіңізге кірулер және оның қауіпсіздігіне енгізілген өзгерістер. Өзіңіз жасамаған нәрсені көрсеңіз, құпиясөзіңізді өзгертіңіз және танымайтын құрылғыларды шығарыңыз.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Құрылғыларыңыз</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Құпиясөзді өзгерту</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Бұл сайтта қауіпсіздік әрекеттері әлі тіркелмейді.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Соңғы күндердегі кірулер (күндер: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Сәтсіз әрекеттер</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Әзірге бірде-бір қауіпсіздік әрекеті тіркелмеген.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Кірулерім туралы деректерді жүктеп алу</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Сеанстарыңыз бен қауіпсіздік оқиғалары JSON файлы ретінде.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Құпиясөз</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Құпиясөз және екі қадамды кіру коды</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST интерфейсі</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP интерфейсі</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Бірыңғай кіру</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Сеанстарды тіркеу басталғанға дейін кірген</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Кірулер есебі</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Сайтқа кім кірген, тіркелгілер қаншалықты жиі кіреді және кіре алмайды, сондай-ақ пайдаланушыны барлық құрылғылардан шығару. Кез келген сеанстар өңдегішімен жұмыс істейді.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сеанс аяқталды. Құрылғыға қайта кіру қажет.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login пайдаланушысы шығарылды, аяқталған сеанстар: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login пайдаланушысының жұмыс істеп тұрған сеансы болмады.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Мұндай ID, пайдаланушы аты немесе электрондық пошта мекенжайы бар тіркелгі жоқ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Бұл — Сіз пайдаланып отырған сеанс. Оны аяқтау үшін жүйеден шығыңыз.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Бұл сеанс бұрын аяқталған.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Беттің мерзімі өтіп кеткен. Ештеңе өзгертілмеді; қайталап көріңіз.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Бұл сайтта сеанстар тіркелмейді (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session кестесі жоқ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ол жасалғаннан кейін сеанстар тіркеле бастайды: php update/common/scripts/6.0/createusersessiontable.php немесе 6.0.15 дерекқор жаңартуы.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Қазір және бүгін</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Жұмыс істеп тұрған сеанстар</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Кірген пайдаланушылар</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Бүгінгі кірулер</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Бүгінгі сәтсіз әрекеттер</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Пайдаланушыны барлық құрылғылардан шығару</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Тіркелгінің әр сеансы келесі сұрауда аяқталады, «Мені есте сақтау» арқылы сақталғандары да. Тіркелгі бөгде қолға түсуі мүмкін болғанда пайдаланыңыз; содан кейін оның құпиясөзін қалпына келтіріңіз.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Пайдаланушы ID, пайдаланушы аты немесе электрондық пошта мекенжайы</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Барлық құрылғылардан шығу</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Қазір кірген</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Соңғы пайдаланылғандары көрсетіледі (ең көбі %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Пайдаланушы</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Құрылғы</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Мекенжайы</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Кірген</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Соңғы белсенділік</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Әрекеттер</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Осы құрылғы</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Жазылмаған</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Шығу</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Кірген сеанс жоқ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Соңғы күндер: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Кірулер мен сәтсіз әрекеттер пайдаланушылар аудиті журналынан саналады, ал ол жоқ; жаңа сеанстар саналады.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Күн</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Кірулер</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Сәтсіз әрекеттер</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Жаңа сеанстар</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Сеанстар өңдегіші: %handler. Сеанстар expuser_session кестесінен оқылады, сондықтан есеп кез келген өңдегішпен жұмыс істейді.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Тіркелгіңізге қатысты қауіпсіздік ескертуі</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>%login тіркелгіңізде қауіпсіздік оқиғасы болды: %event. Бұл Сіз болмасаңыз, тіркелгіңізді %url мекенжайында қорғаңыз.</translation>
     </message>
 </context>
 </TS>

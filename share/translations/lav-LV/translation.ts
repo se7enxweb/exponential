@@ -14326,6 +14326,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Šī instalācija ir publiska demonstrācija: tās administratora paroli var zināt ikviens, un administratoru paroles nevar mainīt vai atiestatīt. Neievadiet šeit neko privātu.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konti, ko neviens neizmanto vai kas jāpārbauda; atspējojiet, atbloķējiet vai eksportējiet tos.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lietotāju audita žurnāls</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kas mainīja, pierakstījās vai tika noraidīts, pa kontiem; filtrēt un eksportēt.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Pierakstīšanās atskaite</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kas ir pierakstījies, pierakstīšanās un neveiksmes pa dienām; lietotāja izrakstīšana visur.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP apdarinātāja sesijas, kurām beidzies laiks, noņem pats PHP (session.gc_maxlifetime), nevis šī lapa vai cron uzdevuma daļa session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Visu lietotāju aktīvās sesijas ir uzskaitītas pierakstīšanās atskaitē, un tur tās var arī izrakstīt; atskaite darbojas ar jebkuru sesiju apdarinātāju.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Atvērt pierakstīšanās atskaiti</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ tajā sniegtos norādījumus.</translation>
     <message>
         <source>None yet</source>
         <translation>Vēl nav</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Jūsu nesenās pierakstīšanās, neveiksmīgie mēģinājumi un paroles, e-pasta adreses un divpakāpju pierakstīšanās izmaiņas.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Šī konta nesenās pierakstīšanās, neveiksmīgie mēģinājumi un drošības izmaiņas.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Pārskatīt darbības</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Neveiksmīgas pierakstīšanās: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ Plašāku informāciju skatiet prasību lapā.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab netika ierakstīts (%reason). Pievienojiet šīs rindas tā lietotāja crontab, ar kura tiesībām darbojas vietne, citādi rinda, importēšana, paziņojumi un meklēšanas indekss nekad netiks palaisti:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Atkārtota instalēšana notiek ar kickstarter (%file, pēc tam php bin/php/kickstarter.php run --apply) vai ar jaunu instalāciju.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>E-pasta transports pēdējā izpildē noraidīja ziņojumus: %count. Pārbaudiet e-pasta serveri un site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Gaida %count notikumi, un nav reģistrēta neviena paziņojumu cron uzdevuma izpilde. Pievienojiet crontab cron uzdevuma daļu „frequent“ vai palaidiet exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Izvēlēties citu vietni vai sadaļu ar mezglu atlasītāju</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Īpašnieku var mainīt tikai sistēmas administrators: palaidiet ./console exp:content-check --fix-permissions --apply kā root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>empty</source>
         <translation>tukšs</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Parakstīšanas atslēga ir vecāka par gadu: nomainiet to ar exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>not sent</source>
         <translation>nav nosūtīts</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Paziņojumu cron uzdevums šeit reģistrē katru savu izpildi. Pievienojiet crontab daļu frequent vai palaidiet exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Izmantojiet konsoli: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Iestatīšana &gt; Cron uzdevumi</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Neviena cron uzdevuma daļa vēl nav izpildīta: darbu rinda, importēšana, paziņojumi un meklēšanas indekss gaida. Palaidiet php bin/php/installcrontab.php --add --apply vai pievienojiet --show izvadītās rindas crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>None.</source>
         <translation>Nav.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ar autentificētāja lietotni</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ar kodu e-pastā</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ar atkopšanas kodu</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ar piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ar ārēju kontu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Tiek rādīts tās tīkls; adrese tiek glabāta tā, kā nosaka vietnes datu aizsardzības iestatījumi.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nav reģistrēts</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Atrašanās vieta</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aptuveni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Manage devices</source>
         <translation>Pārvaldīt ierīces</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ar autentificētāja lietotni</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ar kodu e-pastā</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ar atkopšanas kodu</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ar piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ar ārēju kontu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nav reģistrēts</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Atrašanās vieta</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>aptuveni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>View the sessions of this user</source>
         <translation>Skatīt šī lietotāja sesijas</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Jūsu konts %login vietnē %site tikko tika izmantots, lai pierakstītos no vietas, no kuras tas pēdējā laikā nav pierakstījies:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Aptuvenā atrašanās vieta</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser operētājsistēmā %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Pierakstīšanās atskaite</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Open the page</source>
         <translation>Atvērt lapu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from līdz %to no %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Pieteikšanās vārds vai lietotāja ID: konts, uz kuru attiecās notikums, vai lietotājs, kurš rīkojās.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konts</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Darbība</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Pēc</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Jebkurš rezultāts</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pirms</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Izpildītājs</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Notīrīt</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Izdevās</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Notikumi tiek glabāti %days d.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Notikumi tiek glabāti, līdz tos noņem manuāli.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Notikumi</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Jebkura darbība</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Visi šī konta notikumi</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksportēt sarakstu kā CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neizdevās</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Sašaurināt sarakstu</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Neviens notikums neatbilst.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lapā</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Ierakstīšana ir izslēgta failā audit.ini ([UserAuditSettings] UserAudit); sarakstā redzams tas, kas tika ierakstīts iepriekš.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Noraidīts</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultāts</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rādīt</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Trūkst lietotāju audita žurnāla tabulas. Izveidojiet to ar php update/common/scripts/6.0/createuseraudittable.php; līdz tam audita faili glabā katru notikumu.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Šai lapai nepieciešama SQL datubāze; ar MongoDB tā nav pieejama. Audita faili glabā katru notikumu.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Līdz</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Lietotāju audita žurnāls</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Lietotājs</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kad</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kas mainīja, izveidoja, iespējoja, atspējoja, pārvietoja vai noņēma kuru kontu, kas pierakstījās vai tika noraidīts un kādas lomas tika piešķirtas: viena rinda katram notikumam, ar laukiem pirms un pēc. Paroles un noslēpumi nekad netiek ierakstīti.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupa</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistēma</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nezināms</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Aizsargāt kontu</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Jūsu kontā %login vietnē %site tika veikta pierakstīšanās ar atkopšanas kodu.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Tika izmantots atkopšanas kods</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konts</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Aptuvenā adrese</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Pieprasiet jaunu paroli, lai atkal pierakstītos, vai sazinieties ar vietnes administratoriem.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Pieprasīt jaunu paroli</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Katrs atkopšanas kods darbojas vienu reizi. Ja esat pazaudējis tālruni, vēlreiz iestatiet autentificētāja lietotni un glabājiet jaunos atkopšanas kodus drošā vietā.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Neveiksmīgi pierakstīšanās mēģinājumi jūsu kontā</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Turpmāk pierakstoties papildus parolei tiks prasīts kods. Ja to izdarījāt jūs, nekas nav jādara.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ja tas bijāt jūs un esat aizmirsis paroli, pieprasiet jaunu. Ja ne, izvēlieties stiprāku paroli un ieslēdziet divpakāpju pierakstīšanos.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ja tas nebijāt jūs, kāds varētu zināt jūsu paroli: nomainiet to tūlīt un pārbaudiet, kur jūsu konts ir pierakstījies.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Atlikušie atkopšanas kodi</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Pārskatīt savas ierīces</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Drošības brīdinājums</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Kāds %count reizes pēc kārtas mēģināja pierakstīties jūsu kontā %login vietnē %site ar nepareizu paroli.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Jūsu kontā %login vietnē %site notika drošības notikums.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Šis ir drošības brīdinājums par jūsu kontu. Tas tiek sūtīts par katru šādu izmaiņu, un to nevar izslēgt.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laiks</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Divpakāpju pierakstīšanās tika izslēgta jūsu kontam %login vietnē %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Divpakāpju pierakstīšanās tika izslēgta</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Divpakāpju pierakstīšanās tika ieslēgta jūsu kontam %login vietnē %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Divpakāpju pierakstīšanās tika ieslēgta</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Jūsu konts %login vietnē %site tika bloķēts pēc pārāk daudzām neveiksmīgām pierakstīšanās reizēm.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Jūsu kontu tagad aizsargā tikai parole. Ja to neizdarījāt jūs, pēc paroles nomaiņas atkal ieslēdziet divpakāpju pierakstīšanos.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Jūsu konts tika bloķēts</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Lietotāja %name drošības darbības</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Pierakstījies</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Neveiksmīgs pierakstīšanās mēģinājums</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Izrakstījies</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesijas izrakstītas</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Pierakstīšanās no jaunas ierīces</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Pierakstīšanās no jaunas atrašanās vietas</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitāte apstiprināta („Apstipriniet, ka tas esat jūs“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitātes pārbaude neizdevās</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Pierakstījies ar piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Pierakstīšanās ar piekļuves atslēgu neizdevās</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Pierakstīšanās noraidīta: divpakāpju kods trūkst vai ir nepareizs</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Nepareizs divpakāpju kods</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konts bloķēts pēc neveiksmīgām pierakstīšanās reizēm</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konts atbloķēts</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parole nomainīta</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Paroles nomaiņa neizdevās</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parole atiestatīta</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Pieprasīta jauna parole</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-pasta adrese mainīta</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Lietotājvārds mainīts</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Divpakāpju pierakstīšanās ieslēgta</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Divpakāpju pierakstīšanās izslēgta</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Izmantots atkopšanas kods</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Jauni atkopšanas kodi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Izveidota lietotnes parole</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Atsaukta lietotnes parole</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Pievienota piekļuves atslēga</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Noņemta piekļuves atslēga</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konts iespējots</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konts atspējots</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Pierakstīšanās un sesijas</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Konta izmaiņas</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Prasa uzmanību</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>to veicāt jūs</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>to veica lietotājs</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>to veica %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metode</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Pārlūkprogramma</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operētājsistēma</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ierīce</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Vieta</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Valsts</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesijas</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Kuras</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanāls</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Neveiksmīgi mēģinājumi</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Atlikušie kodi</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Pierakstīšanās apdarinātājs</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Lietotāja %name drošības darbības</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Pierakstīšanās un jūsu konta drošības izmaiņas. Ja redzat kaut ko, ko neesat darījis, nomainiet paroli un izrakstiet ierīces, kuras neatpazīstat.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Pierakstīšanās un šī konta drošības izmaiņas.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Mainīt paroli</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Atpakaļ uz kontu</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Drošības darbības netiek reģistrētas</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Tās tiek nolasītas no lietotāju audita žurnāla, kura tabula expuser_audit trūkst vai netiek atbalstīta šajā datubāzē. Palaidiet php update/common/scripts/6.0/createuseraudittable.php vai 6.0.15 datubāzes atjauninājumu.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Pēdējās dienas: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Pierakstīšanās pēdējās dienās (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Nesenās drošības darbības</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rādīt</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>neizdevās</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>noraidīts</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Vēl nav reģistrētas drošības darbības.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Drošības notikumi tiek glabāti %days dienas.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Drošības notikumi tiek glabāti, līdz administrators tos noņem.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Lejupielādēt manus pierakstīšanās datus</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Jūsu sesijas un drošības notikumi kā JSON fails.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Pierakstījies</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Neveiksmīgs pierakstīšanās mēģinājums</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Izrakstījies</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesijas izrakstītas</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Pierakstīšanās no jaunas ierīces</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Pierakstīšanās no jaunas atrašanās vietas</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitāte apstiprināta („Apstipriniet, ka tas esat jūs“)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Identitātes pārbaude neizdevās</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Pierakstījies ar piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Pierakstīšanās ar piekļuves atslēgu neizdevās</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Pierakstīšanās noraidīta: divpakāpju kods trūkst vai ir nepareizs</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Nepareizs divpakāpju kods</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konts bloķēts pēc neveiksmīgām pierakstīšanās reizēm</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konts atbloķēts</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Parole nomainīta</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Paroles nomaiņa neizdevās</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Parole atiestatīta</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Pieprasīta jauna parole</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>E-pasta adrese mainīta</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Lietotājvārds mainīts</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Divpakāpju pierakstīšanās ieslēgta</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Divpakāpju pierakstīšanās izslēgta</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Izmantots atkopšanas kods</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Jauni atkopšanas kodi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Izveidota lietotnes parole</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Atsaukta lietotnes parole</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Pievienota piekļuves atslēga</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Noņemta piekļuves atslēga</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konts iespējots</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konts atspējots</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Pierakstīšanās un sesijas</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Konta izmaiņas</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Prasa uzmanību</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Lietotāja %name drošības darbības</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Pierakstīšanās un jūsu konta drošības izmaiņas. Ja redzat kaut ko, ko neesat darījis, nomainiet paroli un izrakstiet ierīces, kuras neatpazīstat.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Mainīt paroli</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Šajā vietnē drošības darbības vēl netiek reģistrētas.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Pierakstīšanās pēdējās dienās (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Neveiksmīgi mēģinājumi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Vēl nav reģistrētas drošības darbības.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Lejupielādēt manus pierakstīšanās datus</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Jūsu sesijas un drošības notikumi kā JSON fails.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Parole</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parole un divpakāpju kods</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST saskarne</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP saskarne</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Vienotā pierakstīšanās</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Pierakstījies, pirms sesijas tika reģistrētas</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Pierakstīšanās atskaite</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kas ir pierakstījies vietnē, cik bieži konti pierakstās un cik bieži tas neizdodas, kā arī lietotāja izrakstīšana visur. Darbojas ar jebkuru sesiju apdarinātāju.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesija tika izrakstīta. Ierīcei jāpierakstās no jauna.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login tika izrakstīts no sesijām: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Lietotājam %login nebija aktīvas sesijas.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Nevienam kontam nav šāda ID, lietotājvārda vai e-pasta adreses.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Šī ir sesija, kuru izmantojat. Lai to beigtu, izrakstieties.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Šī sesija jau bija beigusies.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lapai bija beidzies derīgums. Nekas netika mainīts; lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Šajā vietnē sesijas netiek reģistrētas (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Trūkst tabulas expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesijas tiek reģistrētas, tiklīdz tā ir izveidota: php update/common/scripts/6.0/createusersessiontable.php vai 6.0.15 datubāzes atjauninājums.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Tagad un šodien</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Aktīvās sesijas</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Pierakstījušies lietotāji</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Pierakstīšanās šodien</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Neveiksmīgi mēģinājumi šodien</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Izrakstīt lietotāju visur</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Katra konta sesija beidzas pie tās nākamā pieprasījuma, arī tās, kuras saglabā „Atcerēties mani“. Izmantojiet to, ja konts varētu būt nonācis nepareizās rokās; pēc tam atiestatiet tā paroli.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Lietotāja ID, lietotājvārds vai e-pasta adrese</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Izrakstīt visur</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Pierakstījušies tagad</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Tiek rādītas pēdējās izmantotās, ne vairāk kā %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Lietotājs</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ierīce</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrese</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Pierakstījies</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Pēdējo reizi aktīvs</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Darbības</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Šī ierīce</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Nav reģistrēts</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Izrakstīt</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Neviena sesija nav pierakstījusies.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Pēdējās dienas: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Pierakstīšanās un neveiksmīgie mēģinājumi tiek skaitīti no lietotāju audita žurnāla, kura nav; jaunās sesijas tiek skaitītas.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Diena</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Pierakstīšanās</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Neveiksmīgi mēģinājumi</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Jaunas sesijas</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sesiju apdarinātājs: %handler. Sesijas tiek nolasītas no tabulas expuser_session, tāpēc atskaite darbojas ar jebkuru apdarinātāju.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Drošības brīdinājums par jūsu kontu</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Jūsu kontā %login notika drošības notikums: %event. Ja tas nebijāt jūs, aizsargājiet savu kontu adresē %url.</translation>
     </message>
 </context>
 </TS>

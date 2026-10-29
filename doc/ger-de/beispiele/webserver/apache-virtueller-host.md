@@ -145,6 +145,9 @@ später); das dokumentierte Beispiel um sie herum ist freie Dokumentation (GFDL 
         # REST API
         RewriteRule ^/api/ /index_rest.php [L]
         RewriteRule ^/index_rest\.php - [L]
+        # SOAP server (soap.ini EnableSOAP=true): index_soap.php since
+        # Exponential 6.0.15, soap.php only forwards to it. Uncomment with SOAP on:
+        #RewriteRule ^/index_soap\.php - [L]
         RewriteRule ^/([^/]+/)?content/treemenu.* /index_treemenu.php [L]
         RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.* - [L]
         # The stored files of PDF exports generated once (Setup > PDF export)
@@ -245,7 +248,10 @@ Und eine Folge daraus: `[L]` beendet hier die Verarbeitung, daher erreicht `/con
 Alles, was nicht auf der Asset-Liste steht, `settings/`, `var/log/`, `vendor/`, `kernel/` und `composer.json`
 eingeschlossen, wird auf `/index.php` umgeschrieben und niemals gesendet. Der Handler `<FilesMatch "\.php$">` übergibt
 `/index.php`, `/index_rest.php` und `/index_treemenu.php` an PHP-FPM; kein anderes Skript wird je erreicht, weil die
-Regeln nichts anderes an eine `.php`-Datei weiterleiten.
+Regeln nichts anderes an eine `.php`-Datei weiterleiten. Mit SOAP an nehmen Sie das Kommentarzeichen vor der Zeile für
+`index_soap.php` weg: Der SOAP-Server heißt seit Exponential 6.0.15 `index_soap.php` (vorher `soap.php`, jetzt ein
+Shim, das dorthin weiterleitet). Was zu ändern und wie es zu testen ist:
+[Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../bc/6.0/soap-einstiegsskript-index-soap.md).
 
 ## Header und Caching
 
@@ -263,6 +269,16 @@ Endet TLS an einem Proxy, behalten Sie nur den Host für Port 80 (ohne seine Wei
 dem Handler und den Regeln des Hosts für 443), lassen Sie den Proxy `X-Forwarded-Proto` und den ursprünglichen `Host`
 senden und tragen Sie die Adresse des Proxys in `site.ini [HTTPHeaderSettings] TrustedProxies[]` ein. Siehe
 [Kapitel 8, Abschnitt 8.8](../../installation/08-die-website-ausliefern.md#88-hinter-einem-reverse-proxy).
+
+## WebDAV
+
+Dieser virtuelle Host leitet WebDAV nicht weiter (standardmäßig aus). Um es auszuliefern, fügen Sie
+`RewriteRule ^index_webdav\.php - [L]` im Block `<Directory>` vor der Auffangregel ein, im **HTTPS**-Host (der Host
+für Port 80 leitet nur weiter), oder einen eigenen virtuellen Host (`webdav.example.com`) mit
+`RewriteRule . /index_webdav.php [L]`. Seit 6.0.15 heißt das Skript `index_webdav.php`; Regeln für `webdav.php`
+funktionieren über einen weiterleitenden Shim bis zu einer späteren Hauptversion weiter. Vorher/nachher und der Test
+(`curl -X PROPFIND -H 'Depth: 1'`, erwartet: `207 Multi-Status`):
+[Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../bc/6.0/webdav-einstiegsskript-index-webdav.md#apache-die-virtuellen-hosts-http-und-https).
 
 ## Prüfen
 

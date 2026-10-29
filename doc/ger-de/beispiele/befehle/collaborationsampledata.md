@@ -2,14 +2,14 @@
 title: exp:collaborationsampledata
 audience: developer, admin
 category: examples
-summary: Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder.
+summary: Legt Beispielinhalte für das Kollaborationswerkzeug an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder (Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:collaborationsampledata, collaborationsampledata, console, command, CLI, collaborationsampledata.php, exp:collaboration:sample-data
 type: generated
 generated: exp:help:examples
 ---
 # exp:collaborationsampledata
 
-Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder.
+Legt Beispielinhalte für das Kollaborationswerkzeug an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder (Probelauf, außer mit --apply).
 
 Skript `bin/php/collaborationsampledata.php`, Code in `kernel/private/classes/commands/collaborationsampledata.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -32,18 +32,22 @@ section and articles that wait for approval, were approved or were denied, with 
 Everything is made through the kernel's own approval workflow and handler, and is marked
 (names start with "Sample: ", remote ids with "sample-collab-") so --remove deletes exactly it.
 The command is idempotent: what exists is left as it is.
+Without --apply nothing is changed: the command lists what it would create (or, with --remove,
+delete). --dry-run means the same as no flag; --apply together with --dry-run is a usage error
+(exit 2).
 
-./console exp:collaboration:sample-data --dry-run
 ./console exp:collaboration:sample-data
-./console exp:collaboration:sample-data --remove
+./console exp:collaboration:sample-data --apply
+./console exp:collaboration:sample-data --remove --apply
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
+| `--apply` |  | Die Änderungen vornehmen (Standard ist ein Probelauf, der sie zeigt und nichts ändert) |
+| `--dry-run` |  | Der Standard, beibehalten für Skripte, die die Option übergeben: zeigen, was getan würde, nichts ändern |
 | `--remove` |  | Die Beispieldaten löschen (und nur sie) |
-| `--dry-run` |  | Zeigen, was getan würde, und nichts ändern |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

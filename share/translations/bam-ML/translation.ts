@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Labɛnni &gt; Cron baaraw</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron baara yɔrɔ si ma baara kɛ fɔlɔ: baara jɛnɔgɔnyaw, donnenw, kunnafonidiw ani ɲinini jirisɛbɛn bɛ makɔnɔni na. I ka php bin/php/installcrontab.php --add --apply kɛ, walima ka --show sariyaw fara crontab kan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Nin sigili ye demo ye min bɛ mɔgɔ bɛɛ bolo: mɔgɔ o mɔgɔ bɛ se ka a marabaga gundodaɲɛ dɔn, ani marabagaw ka gundodaɲɛw tɛ se ka yɛlɛma walima ka segin kokura. I kana foyi gundo don yan.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>I ka minɛnw</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Lakana kɛwalew</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Ko: pakew tɛna sigili bɔ.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontiw mɔgɔ si tɛ minnu baara kɛ walima minnu ka kan ka lajɛ; u bɔ baara la, u da yɛlɛ walima u labɔ.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Baarakɛlaw sɛgɛsɛgɛli sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Jɔn ye fɛn yɛlɛma, jɔn donna walima jɔn ma sɔn, konti kelen kelen; sɛnsɛn ani labɔ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Donni jatebɔsɛbɛn</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Minnu donnen bɛ, donniw ani tiɲɛniw don o don; baarakɛla dɔ bɔ yɔrɔ bɛɛ.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP ɲɛnabɔbaga ka sesiyɔn tɛmɛnenw bɛ bɔsi PHP yɛrɛ fɛ (session.gc_maxlifetime), nin ɲɛ walima session_gc cron baara fan tɛ.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Donni jatebɔsɛbɛn bɛ baarakɛla bɛɛ ka sesiyɔn donnenw jira, k&apos;u bɔ fana; a bɛ baara kɛ ni sesiyɔn ɲɛnabɔbaga bɛɛ ye.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Donni jatebɔsɛbɛn da wuli</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ konti da bila baara la.</translation>
     <message>
         <source>None yet</source>
         <translation>Foyi tɛ fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>I ka donni kɔfɔlɔw, cɛsiri minnu ma ɲɛ ani yɛlɛmaliw i ka gundodaɲɛ, i ka imɛli adiresi ani donni sen fila la kan.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Nin konti in ka donni kɔfɔlɔw, cɛsiri minnu ma ɲɛ ani lakana yɛlɛmaliw.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Kɛwalew lajɛ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Donni minnu ma ɲɛ: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ A filɛ nafaw ɲɛ la walasa ka kunnafoni caman sɔrɔ.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ma sɛbɛn (%reason). Nin sira ninnu fara baarakɛla ka crontab kan min bɛ siti boli, n'o tɛ ɲɛnɔgɔnkɔ, ladamuw, kunnafonidiw ni ɲɛnini taamasiyɛn tɛna boli abada:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>A bɛ sigi kokura ni Kickstarter ye (%file, o kɔ php bin/php/kickstarter.php run --apply) walima ni sigili kura ye.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Imɛli ciyɔrɔ banna ci %count la boli laban na. Imɛli sɛriwɛri ni site.ini MailSettings sɛgɛsɛgɛ.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Kɛwale %count bɛ makɔnɔni na ani kunnafonidi cron baara boli si ma sɛbɛn. Cron baara yɔrɔ «frequent» fara crontab kan, walima exp:notification:run --apply kɛ.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Siti wɛrɛ wala sekisiyɔn wɛrɛ sugandi ni nɔdi sugandibaga ye</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Sisitɛmu kuntigi dama de bɛ se ka tigi yɛlɛma: ./console exp:content-check --fix-permissions --apply kɛ i n&apos;a fɔ root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>empty</source>
         <translation>lankolon</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Bolonɔbila kile tɛmɛna san kelen kan: a yɛlɛma ni exp:audit key rotate --apply ye.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>not sent</source>
         <translation>ci ma kɛ</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Kunnafonidi cron baara b&apos;a boli kelen kelen bɛɛ sɛbɛn yan. Yɔrɔ frequent fara crontab kan, walima exp:notification:run --apply kɛ.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Konsoli kɛ baara la: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>None.</source>
         <translation>Foyi tɛ.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ni authenticator porogaramu ye</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ni kode ye min cira imɛli fɛ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ni lasegin kode ye</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ni donni kile ye</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ni kɛnɛma konti ye</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>A jiranen don i n&apos;a fɔ a ka rezo; adiresi bɛ mara i n&apos;a fɔ siti ka kunnafoniw lakana labɛnw b&apos;a fɔ cogo min na.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>A ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Yɔrɔ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>a ɲɔgɔn</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Manage devices</source>
         <translation>Minɛnw mara</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ni authenticator porogaramu ye</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ni kode ye min cira imɛli fɛ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>ni lasegin kode ye</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>ni donni kile ye</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ni kɛnɛma konti ye</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>A ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Yɔrɔ</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>a ɲɔgɔn</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>View the sessions of this user</source>
         <translation>Nin baarakɛla ka sesiyɔnw lajɛ</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>I ka konti %login min bɛ %site kan, o kɛra sisan ka don ka bɔ yɔrɔ dɔ la, a ma don ka bɔ yɔrɔ min na kɔfɛ in na:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Yɔrɔ a ɲɔgɔn</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser %os kan</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Donni jatebɔsɛbɛn</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Open the page</source>
         <translation>ɲɛ in yɛlɛ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka taa %to, %count la</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Baarakɛla tɔgɔ walima baarakɛla ID: konti min ko kɛwale kɛra, walima baarakɛla min ye kɛwale kɛ.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konti</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kɛwale</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Kɔfɛ</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Jaabi bɛɛ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Sani</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kɛbaga</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Saniya</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>A kɛra</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Kɛwalew bɛ mara tile %days kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Kɛwalew bɛ mara fo u ka bɔsi ni bolo ye.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Kɛwalew</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kɛwale bɛɛ</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Nin konti kɛwalew bɛɛ</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Lisi labɔ CSV la (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>A ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ka bɔ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Lisi dɔgɔya</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Kɛwale si tɛ bɛn.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ɲɛ kelen na</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Sɛbɛnni lajɔlen don audit.ini kɔnɔ ([UserAuditSettings] UserAudit); lisi bɛ min sɛbɛnna fɔlɔ o jira.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A ma sɔn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Jaabi</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Baarakɛlaw sɛgɛsɛgɛli sɛbɛn tabulo tɛ yen. I ka a dilan ni php update/common/scripts/6.0/createuseraudittable.php ye; fo o waati, sɛgɛsɛgɛli fisiyew bɛ kɛwale bɛɛ mara.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Nin ɲɛ mago bɛ kunnafoniso SQL la; a tɛ sɔrɔ MongoDB kan. Sɛgɛsɛgɛli fisiyew bɛ kɛwale bɛɛ mara.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka taa</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Baarakɛlaw sɛgɛsɛgɛli sɛbɛn</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Baarakɛla</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Waati</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Yɔrɔ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Jɔn ye konti jumɛn yɛlɛma, ka a dilan, ka a bila baara la, ka a bɔ baara la, ka a yɔrɔ falen walima ka a bɔsi, jɔn donna walima jɔn ma sɔn, ani jɔyɔrɔ jumɛnw dira: sira kelen kɛwale kelen kelen bɛɛ ye, ni yɔrɔw cogo ye fɔlɔ ani kɔfɛ. Gundodaɲɛw ni gundow tɛ sɛbɛn abada.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>jɛkulu</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistɛmu</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>a tɛ dɔn</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>I ka konti lakana</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Lasegin kode dɔ kɛra ka don i ka konti %login kɔnɔ %site kan.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Lasegin kode dɔ kɛra baara la</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konti</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adiresi a ɲɔgɔn</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Gundodaɲɛ kura ɲini walasa ka don kokura, walima ka siti kuntigiw wele.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Gundodaɲɛ kura ɲini</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Lasegin kode kelen kelen bɛɛ bɛ baara kɛ siɲɛ kelen. Ni i ka telefɔni tununa, i ka authenticator porogaramu labɛn kokura ani ka lasegin kode kuraw mara yɔrɔ lakananen na.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Donni cɛsiri minnu ma ɲɛ i ka konti kan</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Ka bɔ sisan na, donni bɛna kode dɔ ɲini i ka gundodaɲɛ kɔ. Ni e de y&apos;a kɛ, i man kan ka foyi kɛ.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ni e de don ani i ɲinana i ka gundodaɲɛ kɔ, kura dɔ ɲini. Ni e tɛ, gundodaɲɛ barikama sugandi ani ka donni sen fila la daminɛ.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ni e tɛ min y&apos;a kɛ, mɔgɔ dɔ bɛ se k&apos;i ka gundodaɲɛ dɔn: a yɛlɛma sisan ani ka yɔrɔ lajɛ i ka konti donnen bɛ yɔrɔ min na.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Lasegin kode minnu tora</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>I ka minɛnw lajɛ</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Lakana lasɔmini</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Mɔgɔ dɔ y&apos;a ɲini ka don i ka konti %login kɔnɔ %site kan ni gundodaɲɛ filanen ye siɲɛ %count ɲɔgɔn kɔ.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Lakana kɛwale dɔ kɛra i ka konti %login kan %site kan.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Nin ye lakana lasɔmini ye i ka konti ko la. A bɛ ci o yɛlɛmali suguya bɛɛ la ani a tɛ se ka bila.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waati</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Donni sen fila la bilara i ka konti %login ye %site kan.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Donni sen fila la bilara</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Donni sen fila la daminɛna i ka konti %login ye %site kan.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Donni sen fila la daminɛna</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>I ka konti %login min bɛ %site kan, o datugura donni caman minnu ma ɲɛ olu kɔ.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Sisan i ka konti lakananen bɛ i ka gundodaɲɛ dama de fɛ. Ni e tɛ min y&apos;a kɛ, donni sen fila la daminɛ kokura i ka gundodaɲɛ yɛlɛmali kɔ.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>I ka konti datugura</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ka lakana kɛwalew</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>A donna</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Donni cɛsiri min ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>A bɔra</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiyɔnw bɔra</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Donni ka bɔ minɛn kura la</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Donni ka bɔ yɔrɔ kura la</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Mɔgɔya sɛmɛntiyara («I yɛrɛ sɔn»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Mɔgɔya lajɛli ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>A donna ni donni kile ye</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Donni ni donni kile ye ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Donni banna: sen fila kode tɛ yen walima a ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Sen fila kode filanen</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konti datugura donni minnu ma ɲɛ olu kɔ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konti dayɛlɛra</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Gundodaɲɛ yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Gundodaɲɛ yɛlɛmali ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Gundodaɲɛ labɛnna kokura</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Gundodaɲɛ kura ɲinina</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Imɛli adiresi yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Baarakɛla tɔgɔ yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Donni sen fila la bɛ baara la</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Donni sen fila la bɔra baara la</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Lasegin kode kɛra baara la</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Lasegin kode kuraw</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Aplikasiyɔn gundodaɲɛ dilanna</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Aplikasiyɔn gundodaɲɛ bɔra baara la</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Donni kile farala a kan</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Donni kile bɔsira</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konti bilara baara la</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konti bɔra baara la</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Bɛɛ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Donniw ani sesiyɔnw</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Konti yɛlɛmaliw</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>A mago bɛ janto la</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>e fɛ</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>baarakɛla fɛ</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login fɛ</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Wɛbu yaalalan</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sisitɛmu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Minɛn</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Yɔrɔ</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Jamana</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiyɔnw</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Jumɛn</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Cili sira</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Cɛsiri minnu ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Kode minnu tora</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Donni ɲɛnabɔbaga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ka lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Donniw ani yɛlɛmaliw i ka konti lakanali la. Ni i ye fɛn dɔ ye i ma min kɛ, i ka gundodaɲɛ yɛlɛma ani ka minɛn minnu i t&apos;u dɔn, olu bɔ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Donniw ani yɛlɛmaliw nin konti in lakanali la.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>I ka minɛnw</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Gundodaɲɛ yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Segin konti la</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Lakana kɛwalew tɛ sɛbɛn</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>A bɛ kalan ka bɔ baarakɛlaw sɛgɛsɛgɛli sɛbɛn na, a ka tabali expuser_audit tɛ yen walima a tɛ dɛmɛ nin bɛɛjɛfanba in kan. php update/common/scripts/6.0/createuseraudittable.php kɛ, walima 6.0.15 ka bɛɛjɛfanba kuraya.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Don %days labanw</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Donniw don %days labanw kɔnɔ</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Lakana kɛwale kɔfɔlɔw</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>a ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>a banna</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Lakana kɛwale si ma sɛbɛn fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Lakana kɛwalew bɛ mara don %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Lakana kɛwalew bɛ mara fo kuntigi dɔ k&apos;u bɔsi.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>N ka donni kunnafoniw lajigin</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>I ka sesiyɔnw ani i ka lakana kɛwalew i n&apos;a fɔ JSON fisiye.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>A donna</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Donni cɛsiri min ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>A bɔra</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesiyɔnw bɔra</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Donni ka bɔ minɛn kura la</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Donni ka bɔ yɔrɔ kura la</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Mɔgɔya sɛmɛntiyara («I yɛrɛ sɔn»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Mɔgɔya lajɛli ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>A donna ni donni kile ye</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Donni ni donni kile ye ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Donni banna: sen fila kode tɛ yen walima a ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Sen fila kode filanen</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konti datugura donni minnu ma ɲɛ olu kɔ</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konti dayɛlɛra</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Gundodaɲɛ yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Gundodaɲɛ yɛlɛmali ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Gundodaɲɛ labɛnna kokura</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Gundodaɲɛ kura ɲinina</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Imɛli adiresi yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Baarakɛla tɔgɔ yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Donni sen fila la bɛ baara la</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Donni sen fila la bɔra baara la</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Lasegin kode kɛra baara la</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Lasegin kode kuraw</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Aplikasiyɔn gundodaɲɛ dilanna</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Aplikasiyɔn gundodaɲɛ bɔra baara la</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Donni kile farala a kan</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Donni kile bɔsira</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konti bilara baara la</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konti bɔra baara la</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Bɛɛ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Donniw ani sesiyɔnw</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Konti yɛlɛmaliw</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>A mago bɛ janto la</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name ka lakana kɛwalew</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Donniw ani yɛlɛmaliw i ka konti lakanali la. Ni i ye fɛn dɔ ye i ma min kɛ, i ka gundodaɲɛ yɛlɛma ani ka minɛn minnu i t&apos;u dɔn, olu bɔ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>I ka minɛnw</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Gundodaɲɛ yɛlɛma</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Lakana kɛwalew tɛ sɛbɛn nin siti in kan fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Donniw don %days labanw kɔnɔ</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Cɛsiri minnu ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Lakana kɛwale si ma sɛbɛn fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>N ka donni kunnafoniw lajigin</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>I ka sesiyɔnw ani i ka lakana kɛwalew i n&apos;a fɔ JSON fisiye.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Gundodaɲɛ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Gundodaɲɛ ani sen fila kode</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ɲɔgɔndanbaga</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ɲɔgɔndanbaga</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Donni kelen (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>A donna sanni sesiyɔnw ka daminɛ ka sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Donni jatebɔsɛbɛn</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Minnu donnen bɛ siti kɔnɔ, kontiw bɛ don ani u bɛ tiɲɛ siɲɛ joli, ani baarakɛla dɔ bɔli yɔrɔ bɛɛ. A bɛ baara kɛ ni sesiyɔn ɲɛnabɔbaga bɛɛ ye.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesiyɔn bɔra. Minɛn ka kan ka don kokura.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login bɔra sesiyɔn %count kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Sesiyɔn si tun tɛ taa la %login fɛ.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Konti si tɛ min ka ID, baarakɛla tɔgɔ walima imɛli adiresi ye o ye.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Nin ye sesiyɔn ye i bɛ baara kɛ ni min ye. Walasa k&apos;a laban, i ka bɔ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>O sesiyɔn tun banna kaban.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ɲɛ waati tun tɛmɛna. Foyi ma yɛlɛma; hakɛto, i ka a lajɛ kokura.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sesiyɔnw tɛ sɛbɛn nin siti in kan (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabali expuser_session tɛ yen</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesiyɔnw bɛna sɛbɛn n&apos;a dilanna: php update/common/scripts/6.0/createusersessiontable.php, walima 6.0.15 ka bɛɛjɛfanba kuraya.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Sisan ani bi</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesiyɔn minnu bɛ taa la</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Baarakɛla donnenw</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Bi donniw</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Bi cɛsiri minnu ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Baarakɛla dɔ bɔ yɔrɔ bɛɛ</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Konti ka sesiyɔn bɛɛ bɛ ban a ka ɲinini nata la, «N hakili to» ye minnu mara, olu fana. A kɛ ni konti dɔ bɛ se ka kɛ bolo jugu la; o kɔ a ka gundodaɲɛ labɛn kokura.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Baarakɛla ID, baarakɛla tɔgɔ walima imɛli adiresi</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Yɔrɔ bɛɛ bɔ</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>A donnen bɛ sisan</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit minnu kɛra baara la laban na, olu jiranen don.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Baarakɛla</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Minɛn</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adiresi</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>A donna</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Baara laban waati</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Walew</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Nin minɛn in</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>A ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Bɔ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Sesiyɔn si donnen tɛ.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Don %days labanw</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Donniw ani cɛsiri minnu ma ɲɛ, olu bɛ jate ka bɔ baarakɛlaw sɛgɛsɛgɛli sɛbɛn na, min tɛ yen; sesiyɔn kuraw bɛ jate.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Don</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Donniw</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Cɛsiri minnu ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Sesiyɔn kuraw</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Sesiyɔn ɲɛnabɔbaga: %handler. Sesiyɔnw bɛ kalan ka bɔ tabali expuser_session na, o de kosɔn jatebɔsɛbɛn bɛ baara kɛ ni ɲɛnabɔbaga bɛɛ ye.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Lakana lasɔmini i ka konti ko la</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Lakana kɛwale dɔ kɛra i ka konti %login kan: %event. Ni e tun tɛ, i ka konti lakana %url la.</translation>
     </message>
 </context>
 </TS>

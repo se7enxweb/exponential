@@ -17,7 +17,7 @@ and approve or deny it in the administration, as they approve content.
 - An editor cannot move a member into Editors or give an account a location there: that would skip the approval.
 - Everything is recorded in the audit trail: request, approval, denial, refused attempts.
 - Which groups need approval, who approves and who needs none are the settings of the workflow event *Approve user
-  accounts* at Setup > Workflows. A new installation has them; an existing one runs `php bin/php/adduserapproval.php`.
+  accounts* at Setup > Workflows. A new installation has them; an existing one runs `php bin/php/adduserapproval.php --apply`.
 
 ## For editors
 

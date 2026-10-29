@@ -78,7 +78,7 @@ well; the dashboard shows the rate limits the provider last reported.
 
 ## Hands-on exercise
 
-Use a training installation where you have shell access (your own, installed with `php bin/php/console exp:install`,
+Use a training installation where you have shell access (your own, installed with `php bin/php/console exp:install --apply`,
 see [7. The console install](../../../../install/07-console-install.md)). Never on a live site.
 
 1. Read the "Switch it on" steps of the feature page and check which are already done on your installation (is

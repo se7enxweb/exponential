@@ -7465,7 +7465,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -50887,7 +50887,7 @@ See the requirements page for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -56641,7 +56641,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run.</source>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -62484,7 +62484,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -63538,7 +63538,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The signing key is over a year old: rotate it with exp:audit key rotate.</source>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -70144,7 +70144,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run.</source>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -70156,7 +70156,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use the console: ./console exp:notification:run</source>
+        <source>Use the console: ./console exp:notification:run --apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

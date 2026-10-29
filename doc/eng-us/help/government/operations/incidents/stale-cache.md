@@ -43,7 +43,7 @@ can differ.
 | Every page's look after a template change | `./console exp:cache clear --id=template --allow-root-user` |
 | A new template or extension is not picked up | `php bin/php/ezcache.php --clear-id=template-override --allow-root-user` and `--clear-id=design_base` |
 | A settings change has no effect | `php bin/php/ezcache.php --clear-tag=ini --allow-root-user`, then reload PHP or deploy |
-| Pages served by Velocity | `./console exp:velocity cache clear --allow-root-user` |
+| Pages served by Velocity | `./console exp:velocity cache clear --apply --allow-root-user` |
 | The role-aware HTTP cache | `php bin/php/cache.php httpcache clear --allow-root-user` |
 | Static cache files (when `StaticCache=enabled`) | regenerate, or `php bin/php/cache.php static clear --allow-root-user` |
 | Unsure | `php bin/php/ezcache.php --clear-all --allow-root-user` (then the caches in front, then warm) |
@@ -56,7 +56,7 @@ Clear the caches that hold finished pages (HTTP cache, Velocity's response cache
 new code; otherwise a page rendered by the old code in between is stored again and the change "did not work". After a
 code or settings change, `./console exp:velocity deploy --allow-root-user` does every step in the right order
 ([Deploying, section 7](../../../../guides/deploying.md#7-ship-a-php-change-with-one-command)). Then warm the site:
-`php bin/php/preload.php --siteaccess=site --allow-root-user`.
+`php bin/php/preload.php --apply --siteaccess=site --allow-root-user`.
 
 ## Outside Exponential
 

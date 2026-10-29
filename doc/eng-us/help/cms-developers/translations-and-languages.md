@@ -124,7 +124,7 @@ php bin/php/ezcache.php --clear-tag=content --allow-root-user    # lists and pag
 php bin/php/ezcache.php --clear-tag=i18n --allow-root-user       # after changing a .ts file
 ```
 
-With Velocity, also `./console exp:velocity cache clear`. The full list, including URL alias rebuilds:
+With Velocity, also `./console exp:velocity cache clear --apply`. The full list, including URL alias rebuilds:
 [Content languages, section 10](../../guides/content-languages.md#10-commands-for-the-shell).
 
 ## Related pages

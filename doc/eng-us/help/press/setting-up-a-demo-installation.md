@@ -60,10 +60,10 @@ On the development line, one command installs the multisite package on SQLite in
 
 ```bash
 php bin/php/console exp:install --dry-run    # checks the configuration, installs nothing
-php bin/php/console exp:install              # installs
+php bin/php/console exp:install --apply              # installs
 ```
 
-- Many installations add the shortcut `ln -s bin/php/console console`, after which `./console exp:install` is the
+- Many installations add the shortcut `ln -s bin/php/console console`, after which `./console exp:install --apply` is the
   same command; the shortcut is not shipped ([The console install](../../install/07-console-install.md)).
 - Without options the administrator is `admin` with a generated 24-character password, printed in the summary and
   written to `var/log/initial-admin-password`. **Do not record this summary**: it shows the password.
@@ -132,7 +132,7 @@ A recording on your own machine needs nothing more. A demo on the internet whose
   `publish` included; an empty one is refused):
 
   ```bash
-  EXP_DEMO_MODE=1 php bin/php/console exp:install --password='<the password you publish>'
+  EXP_DEMO_MODE=1 php bin/php/console exp:install --apply --password='<the password you publish>'
   ```
 
 - Keep the variable for the site's PHP, cron jobs and console afterwards. While it is set, nobody can change or reset

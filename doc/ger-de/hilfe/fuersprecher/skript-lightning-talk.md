@@ -30,7 +30,7 @@ Satzes. Fünf Minuten sind etwa 650 gesprochene Wörter; das Skript unten hat we
 | 3 | Immer noch da | „Code seit 1999. 15 Releases seit Januar 2024. Ein Unternehmen und eine gemeinnützige Organisation.“ | 1:10 |
 | 4 | Was neu ist | Velocity, Layouts, Exponential Intelligence (nur Entwürfe), eingebaute Hilfe | 2:10 |
 | 5 | Wirklich frei | „Code: GNU GPL. Dokumentation: GNU FDL. Jeder Pull Request wird übernommen.“ | 3:30 |
-| 6 | Probieren Sie es aus | `./console exp:install` und die Community-Links | 4:20 |
+| 6 | Probieren Sie es aus | `./console exp:install --apply` und die Community-Links | 4:20 |
 
 Barrierefreiheit der Folien: [Barrierefreie Folien und Grafiken](barrierefreie-folien-und-grafiken.md).
 

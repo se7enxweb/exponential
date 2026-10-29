@@ -40,8 +40,8 @@ run without it.
 ## Extensions are packages
 
 The root `require` lists the extensions every installation gets as `se7enxweb/*` packages, each with a tilde
-constraint, for example `se7enxweb/exponential-velocity` at `~0.0.4.55` and `se7enxweb/sevenx_authentication_2fa`
-at `~1.0.14`. The legacy installer plugin places them in `extension/`. `suggest` lists optional ones, such as
+constraint, for example `se7enxweb/exponential-velocity` at `~0.0.4.57` and `se7enxweb/sevenx_authentication_2fa`
+at `~1.0.18`. The legacy installer plugin places them in `extension/`. `suggest` lists optional ones, such as
 `se7enxweb/sevenx_valkey_cache` and `se7enxweb/ezfind`, with the PHP extensions each database needs.
 
 ## Constraints and the lock file

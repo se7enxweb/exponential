@@ -2,14 +2,14 @@
 title: exp:cleanupversions
 audience: developer, admin
 category: examples
-summary: "Remove archived content versions beyond the VersionManagement limits (-n: do not wait)."
+summary: "Remove archived content versions beyond the VersionManagement limits (dry run unless --apply; -n: do not wait)."
 keywords: exp:cleanupversions, cleanupversions, console, command, CLI, cleanupversions.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:cleanupversions
 
-Remove archived content versions beyond the VersionManagement limits (-n: do not wait).
+Remove archived content versions beyond the VersionManagement limits (dry run unless --apply; -n: do not wait).
 
 Script `bin/php/cleanupversions.php`, code in `kernel/private/classes/commands/cleanupversions.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -22,15 +22,20 @@ php bin/php/cleanupversions.php --help
 
 ```text
 Remove archived content object versions according to [VersionManagement]/DefaultVersionHistoryLimit and [VersionManagement]/VersionHistoryClass settings
+Without --apply nothing is removed: the script lists per object how many archived versions it would
+remove. --dry-run means the same as no flag; --apply together with --dry-run is a usage error (exit 2).
 
-Example: ./bin/php/cleanupversions.php -n
+Example: ./bin/php/cleanupversions.php
+         ./bin/php/cleanupversions.php --apply -n
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `-n` |  | Do not wait |
+| `--apply` |  | Remove the versions (the default is a dry run that lists them and removes nothing) |
+| `--dry-run` |  | The default: list how many archived versions of each object would be removed |
+| `-n` |  | With --apply: do not wait 10 seconds |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -45,7 +45,7 @@ of its own — **Exponential Velocity** — which is considerably faster. See
 [How Exponential is served](#how-exponential-is-served) below.
 
 **As of 6.0.15, the Velocity Internet / Web Application Server is part of Exponential.** The root `composer.json`
-requires `se7enxweb/exponential-velocity` (`~0.0.4.55`); it is no longer a suggestion, so every installation has it,
+requires `se7enxweb/exponential-velocity` (`~0.0.4.57`); it is no longer a suggestion, so every installation has it,
 on every PHP Exponential supports (8.0 and later, the stock PHP of Red Hat Enterprise Linux 9 included). This marks a
 turning point for the project: a cornerstone, a capstone, and a new level of application system integration, which
 provides even greater features out of the box in the core product, by default. Exponential is a whole working unit,
@@ -82,7 +82,7 @@ The 6.0.15 line also brings, among much else (the full list is in the
   complete (the current totals are at the top of [languages](doc/eng-us/languages.md)); right-to-left languages get
   `dir="rtl"` in content and in the administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
-  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.55`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
+  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.57`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
 
 ## What does Exponential provide for end users building websites?
@@ -141,7 +141,7 @@ the application loaded between requests.**
 ### Part of Exponential as of 6.0.15
 
 As of 6.0.15 Velocity is part of Exponential itself. `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.55`, so `composer install` installs the
+`se7enxweb/exponential-velocity ~0.0.4.57`, so `composer install` installs the
 server with the rest of the product, on PHP 8.0 and later, next to Apache with
 PHP-FPM, nginx and FrankenPHP. It is the recommended engine for every stage;
 FrankenPHP is the production-ready alternative; the traditional servers keep
@@ -215,7 +215,7 @@ raises the ceiling further; it is not what makes the application quick.
 
 ```bash
 ./console exp:velocity deploy          --allow-root-user   # after a change: autoloads, settings, caches, PHP-FPM, Velocity
-./console exp:velocity cache clear     --allow-root-user   # empty Velocity's response cache
+./console exp:velocity cache clear --apply --allow-root-user   # empty Velocity's response cache
 ./bin/php/console exp:velocity start     --allow-root-user
 ./bin/php/console exp:velocity status    --allow-root-user
 ./bin/php/console exp:velocity restart   --allow-root-user
@@ -241,9 +241,9 @@ The same commands drive three servers, chosen with `[ServerSettings] Engine` in
   shipped default because it always works.
 
 ```bash
-./bin/php/console exp:velocity config set ServerSettings Engine qbix --allow-root-user   # every real site
+./bin/php/console exp:velocity config set --apply ServerSettings Engine qbix --allow-root-user   # every real site
 ./bin/php/console exp:velocity start   --allow-root-user
-./bin/php/console exp:velocity config set ServerSettings Engine frankenphp --allow-root-user   # the alternative
+./bin/php/console exp:velocity config set --apply ServerSettings Engine frankenphp --allow-root-user   # the alternative
 ./bin/php/console exp:velocity install --allow-root-user   # fetch and verify the FrankenPHP binary
 ./bin/php/console exp:velocity start --all --allow-root-user   # all three side by side, for tests
 ```
@@ -583,7 +583,7 @@ The shortest path needs only PHP and Composer (SQLite, no database server):
 ```bash
 composer create-project se7enxweb/exponential exponential
 cd exponential
-php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
 

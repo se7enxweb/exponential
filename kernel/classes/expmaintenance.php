@@ -425,7 +425,7 @@ class expMaintenance
         $setupRun = class_exists( 'expSetupLog', false ) ? expSetupLog::runId() : null;
         $environment = $setupRun !== null ? 'EXP_SETUP_RUN=' . escapeshellarg( $setupRun ) . ' ' : '';
         if ( PHP_SAPI === 'cli' && is_file( $root . '/console' ) && function_exists( 'exec' ) )
-            @exec( 'cd ' . escapeshellarg( $root ) . ' && ' . $environment . 'php console exp:velocity cache clear --allow-root-user >/dev/null 2>&1' );
+            @exec( 'cd ' . escapeshellarg( $root ) . ' && ' . $environment . 'php console exp:velocity cache clear --apply --allow-root-user >/dev/null 2>&1' );
     }
 }
 ?>

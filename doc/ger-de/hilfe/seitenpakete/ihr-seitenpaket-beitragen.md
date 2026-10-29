@@ -174,7 +174,7 @@ Testen Sie ein Seitenpaket nie auf einer Website mit echten Inhalten: Das Instal
 2. Richten Sie sie auf Ihre Pakete: Importieren Sie sie entweder in ihr lokales Repository, oder setzen Sie
    `[RepositorySettings] RemotePackagesIndexURL` in ihrer `settings/override/package.ini.append.php` auf einen Ordner, der Ihre Kopie des
    Release-Ordners ausliefert ([Eine Website auf Ihren Paketserver richten](eigene/eine-website-auf-ihren-paketserver-richten.md)).
-3. Installieren Sie mit dem Setup-Assistenten und noch einmal mit `./console exp:install --package=<your_package>` (oder dem Kickstarter),
+3. Installieren Sie mit dem Setup-Assistenten und noch einmal mit `./console exp:install --apply --package=<your_package>` (oder dem Kickstarter),
    sodass beide Frontends belegt sind.
 4. Prüfen Sie das Ergebnis: die Website, die Administration, den Siteaccess der Redaktion, die Rollen, eine Suche, eine Bearbeitung und
    eine Veröffentlichung. Lesen Sie `var/log/error.log` der Sandbox.

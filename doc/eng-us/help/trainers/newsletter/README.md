@@ -51,7 +51,7 @@ groups, and write a skin.
 
 ## Lab setup
 
-- A training installation, for example installed with `php bin/php/console exp:install`
+- A training installation, for example installed with `php bin/php/console exp:install --apply`
   ([7. The console install](../../../install/07-console-install.md)), with `cjw_newsletter` active, its tables
   created, the newsletter tree with its section, and the subscribe form reachable on the public siteaccess. How to
   build and reset a lab: [Module 2: Building the lab](../train-the-trainer/module-02-building-the-lab/README.md) of

@@ -84,7 +84,7 @@ und werden bei der ersten Verwendung erzeugt ([4.6 Schlüssel](../../../bc/6.0/a
 - Sichern Sie die Datei als Geheimnis; ohne die Signaturschlüssel lassen sich alte Archive nicht prüfen
   (`unknown_key`);
 - wechseln Sie den Signaturschlüssel einmal im Jahr, und sofort, wenn er gelesen worden sein könnte:
-  `./console exp:audit key rotate --allow-root-user`; alte Schlüssel bleiben für ihre Archive erhalten;
+  `./console exp:audit key rotate --apply --allow-root-user`; alte Schlüssel bleiben für ihre Archive erhalten;
 - Schlüssel können mit `[AuditKeySettings] GenerateKeys=disabled` aus einem Secrets-Speicher kommen.
 
 ## Verwandte Seiten

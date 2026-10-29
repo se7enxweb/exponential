@@ -38,7 +38,7 @@ Einstellungsdateien der Website ändern darf. Für das Bereinigungsskript brauch
 4. Wenn Sie eine Grenze gesenkt haben, entfernen Sie die überzähligen Versionen aus vorhandenen Objekten:
 
    ```bash
-   php bin/php/cleanupversions.php
+   php bin/php/cleanupversions.php --apply
    ```
 
    Das Skript wartet 10 Sekunden, bevor es beginnt; `-n` überspringt die Wartezeit. Es entfernt nur archivierte

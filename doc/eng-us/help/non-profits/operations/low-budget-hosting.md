@@ -52,7 +52,7 @@ Comparison in detail: [Choosing a hosting model](../../hosting/models/choosing-a
 
 ## Try it first, for free
 
-`./console exp:install` "installs the multisite package on **SQLite**, in `eng-US`", with a site and an administration
+`./console exp:install --apply` "installs the multisite package on **SQLite**, in `eng-US`", with a site and an administration
 ([Installing Exponential in one command](../../../features/6.0/install-in-one-command.md)). A volunteer can try the
 whole product on a laptop before anything is bought, and show it to the board.
 

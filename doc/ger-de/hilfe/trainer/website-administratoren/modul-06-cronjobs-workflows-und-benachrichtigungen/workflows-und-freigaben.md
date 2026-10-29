@@ -66,7 +66,7 @@ bis 7.
 
 ### Häufige Fragen
 
-**Kann ich Workflows ausprobieren, ohne einen zu bauen?** Ja. `php bin/php/console exp:collaborationsampledata` legt
+**Kann ich Workflows ausprobieren, ohne einen zu bauen?** Ja. `php bin/php/console exp:collaborationsampledata --apply` legt
 einen Beispiel-Freigabe-Workflow, Beispiel-Redakteure und drei Artikel an, die auf ihre Freigabe warten; `--remove`
 nimmt alles wieder weg. Führen Sie es zuerst mit `--dry-run` aus, um zu sehen, was es anlegen würde.
 

@@ -68,7 +68,7 @@ standby.
 1. Confirm the administration loads and a page renders from the database (not only from cache).
 2. Clear the caches that may hold error states, after PHP and Velocity run normally:
    `php bin/php/ezcache.php --clear-tag=content --allow-root-user`; under Velocity
-   `./console exp:velocity cache clear --allow-root-user`.
+   `./console exp:velocity cache clear --apply --allow-root-user`.
 3. Check that cronjobs run again (they failed during the outage) and run the frequent part once by hand.
 4. Record the cause; if data may have been lost (a failover to a lagging standby), tell content owners what to check.
 

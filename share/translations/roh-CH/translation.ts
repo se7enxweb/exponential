@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Configuraziun &gt; Incumbensas cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Anc nagina part da las incumbensas cron n&apos;è vegnida exequida: la fila da spetga da las incumbensas, ils imports, ils avis e l&apos;index da tschertga spetgan. Exequi php bin/php/installcrontab.php --add --apply u agiuntai las lingias da --show a la crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Questa installaziun è ina demo publica: mintgin po savair il pled-clav da l'administratur, e ils pleds-clav d'administraturs na pon betg vegnir midads u reinizialisads. Na endatai qua nagut privat.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Voss apparats</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Contos che nagin n'utilisescha u che dovran in sguard; deactivar, debloccar u exportar els.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Protocol d&apos;audit dals utilisaders</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Tgi che ha midà, s&apos;ha annunzià u è vegnì refusà, per conto; filtrar ed exportar.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport da las annunzias</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Tgi ch&apos;è annunzià, annunzias e sbagls per di; deconnectar in utilisader dapertut.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Sesidas scadidas dal manader PHP vegnan allontanadas da PHP sez (session.gc_maxlifetime), betg da questa pagina u da la part da l'incumbensa cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Las sesidas annunziadas da tut ils utilisaders vegnan enumeradas, e deconnectadas, en il rapport da las annunzias che funcziuna cun mintga tractader da sesidas.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Avrir il rapport da las annunzias</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ Voss conto.</translation>
     <message>
         <source>None yet</source>
         <translation>Anc nagin</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Vossas ultimas annunzias, las emprovas betg reussidas e las midadas da Voss pled-clav, da Vossa adressa d&apos;e-mail e da l&apos;annunzia en duas stgalas.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Las ultimas annunzias, las emprovas betg reussidas e las midadas da segirezza da quest conto.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Controllar l&apos;activitad</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Annunzias betg reussidas: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Pli bler infurmaziuns chattais Vus sin la pagina dals requisits.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>La crontab n'è betg vegnida scritta (%reason). Agiuntai questas lingias a la crontab da l'utilisader sut il qual la website exequescha, uschiglio na vegnan la fila da spetga, las importaziuns, ils avis e l'index da tschertga mai exequids:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>La reinstallaziun vegn fatga cun il kickstarter (%file, lura php bin/php/kickstarter.php run --apply) u cun ina nova installaziun.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Il transport d'e-mail ha refusà %count messadis en l'ultima execuziun. Controllai il server d'e-mail e site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Eveniments che spetgan: %count, e nagina execuziun da l&apos;incumbensa cron dals avis n&apos;è registrada. Agiuntai la part da l&apos;incumbensa cron &quot;frequent&quot; a la crontab u exequi exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Tscherner in'autra website u in'autra secziun cun la tscherna da nods</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Mo l&apos;administratur dal sistem po midar il proprietari: exequi ./console exp:content-check --fix-permissions --apply sco root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>empty</source>
         <translation>vid</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>La clav da signatura è pli veglia ch&apos;in onn: remplazzai ella cun exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>not sent</source>
         <translation>betg trames</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>L&apos;incumbensa cron dals avis registrescha qua mintga execuziun. Agiuntai la part frequent a la crontab u exequi exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Utilisai la consola: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>None.</source>
         <translation>Nagina.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>cun ina app d&apos;autentificaziun</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>cun in code per e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cun in code da recuperaziun</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>cun ina clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>cun in conto extern</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Mussà sco sia rait; l&apos;adressa vegn memorisada sco che la protecziun da datas da la website prevesa.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Betg registrà</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lieu</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>approximativ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Manage devices</source>
         <translation>Administrar ils apparats</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>cun ina app d&apos;autentificaziun</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>cun in code per e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>cun in code da recuperaziun</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>cun ina clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>cun in conto extern</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Betg registrà</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lieu</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>approximativ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>View the sessions of this user</source>
         <translation>Mussar las sesidas da quest utilisader</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Cun Voss conto %login sin %site è gist vegnida fatga in&apos;annunzia d&apos;in lieu, dal qual el n&apos;è betg s&apos;annunzià ils ultims temps:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Lieu approximativ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser sin %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport da las annunzias</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Open the page</source>
         <translation>Avrir la pagina</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from fin %to da %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>In num d&apos;annunzia u in ID d&apos;utilisader: il conto che l&apos;eveniment pertutgava u l&apos;utilisader che ha agì.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Conto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acziun</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Suenter</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mintga resultat</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Avant</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Exequì da</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Svidar</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fatg</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ils eveniments vegnan conservads %days dis.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ils eveniments vegnan conservads fin ch&apos;els vegnan allontanads a maun.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eveniments</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Mintga acziun</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Tut ils eveniments da quest conto</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Exportar la glista sco CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Betg reussì</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Restrenscher la glista</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Nagin eveniment na correspunda.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>La registraziun è deactivada en audit.ini ([UserAuditSettings] UserAudit); la glista mussa quai che è vegnì registrà avant.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refusà</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mussar</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>La tabella dal protocol d&apos;audit dals utilisaders manca. Creai-la cun php update/common/scripts/6.0/createuseraudittable.php; fin lura tegnan las datotecas d&apos;audit mintga eveniment.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Questa pagina dovra ina banca da datas SQL; ella n&apos;è betg disponibla cun MongoDB. Las datotecas d&apos;audit tegnan mintga eveniment.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Protocol d&apos;audit dals utilisaders</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utilisader</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cura</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nua</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Tgi che ha midà, creà, activà, deactivà, spustà u allontanà tge conto, tgi che s&apos;ha annunzià u è vegnì refusà e tge rollas ch&apos;èn vegnidas attribuidas: ina lingia per eveniment, cun ils champs avant e suenter. Pleds-clav e secrets na vegnan mai registrads.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>gruppa</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistem</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nunenconuschent</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Proteger Voss conto</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>In code da recuperaziun è vegnì duvrà per s&apos;annunziar en Voss conto %login sin %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>In code da recuperaziun è vegnì duvrà</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Conto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adressa approximativa</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Dumandai in nov pled-clav per s&apos;annunziar danovamain u contactai ils administraturs da la website.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Dumandar in nov pled-clav</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Mintga code da recuperaziun funcziuna mo ina giada. Sche Vus avais pers Voss telefon, configurai danovamain Vossa app d&apos;autentificaziun e conservai ils novs codes da recuperaziun en in lieu segir.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Emprovas d&apos;annunzia betg reussidas en Voss conto</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Da qua davent dumonda l&apos;annunzia in code ultra da Voss pled-clav. Sche Vus avais fatg quai, na stuais Vus far nagut.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Sche Vus eras quai ed avais emblidà Voss pled-clav, dumandai in nov. Uschiglio tscherni in pled-clav pli ferm ed activai l&apos;annunzia en duas stgalas.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Sche Vus n&apos;eras betg quai, enconuscha forsa insatgi Voss pled-clav: midai el ussa e controllai nua che Voss conto è annunzià.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Codes da recuperaziun restants</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Controllar Voss apparats</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Avertiment da segirezza</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Insatgi ha empruvà da s&apos;annunziar en Voss conto %login sin %site cun in pled-clav fallì, %count giadas in suenter l&apos;auter.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>I ha dà in eveniment da segirezza en Voss conto %login sin %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Quai è in avertiment da segirezza davart Voss conto. El vegn tramess per mintga midada da quest gener e na po betg vegnir deactivà.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ura</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>L&apos;annunzia en duas stgalas è vegnida deactivada per Voss conto %login sin %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>L&apos;annunzia en duas stgalas è vegnida deactivada</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>L&apos;annunzia en duas stgalas è vegnida activada per Voss conto %login sin %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>L&apos;annunzia en duas stgalas è vegnida activada</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Voss conto %login sin %site è vegnì bloccà suenter memia bleras annunzias betg reussidas.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Voss conto è ussa protegì mo pli da Voss pled-clav. Sche Vus n&apos;avais betg fatg quai, activai danovamain l&apos;annunzia en duas stgalas suenter avair midà Voss pled-clav.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Voss conto è vegnì bloccà</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Activitad da segirezza da %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Annunzià</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Emprova d&apos;annunzia betg reussida</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Deconnectà</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesidas deconnectadas</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Annunzia d&apos;in nov apparat</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Annunzia d&apos;in nov lieu</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitad confermada (&quot;Confermai ch&apos;i saja Vus&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Verificaziun da l&apos;identitad betg reussida</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Annunzià cun ina clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Annunzia cun clav d&apos;access betg reussida</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Annunzia refusada: il code da l&apos;annunzia en duas stgalas manca u è fallì</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code fallì da l&apos;annunzia en duas stgalas</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Conto bloccà suenter annunzias betg reussidas</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Conto debloccà</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pled-clav midà</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Midada dal pled-clav betg reussida</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pled-clav reinizialisà</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nov pled-clav dumandà</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adressa d&apos;e-mail midada</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Num d&apos;utilisader midà</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Annunzia en duas stgalas activada</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Annunzia en duas stgalas deactivada</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Code da recuperaziun duvrà</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novs codes da recuperaziun</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Pled-clav d&apos;app creà</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Pled-clav d&apos;app revocà</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Clav d&apos;access agiuntada</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Clav d&apos;access allontanada</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Conto activà</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Conto deactivà</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tut</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Annunzias e sesidas</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Midadas dal conto</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Dovra attenziun</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>da Vus</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>da l&apos;utilisader</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>da %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metoda</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Navigatur</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparat</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Lieu</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Pajais</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesidas</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Tgeninas</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Chanal</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Emprovas betg reussidas</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Codes restants</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Tractader d&apos;annunzia</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Activitad da segirezza da %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Annunzias e midadas da la segirezza da Voss conto. Sche Vus vesais insatge che Vus n&apos;avais betg fatg, midai Voss pled-clav e deconnectai ils apparats che Vus na renconuschais betg.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Annunzias e midadas da la segirezza da quest conto.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Voss apparats</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Midar il pled-clav</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Enavos al conto</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>L&apos;activitad da segirezza na vegn betg registrada</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ella vegn legida dal protocol d&apos;audit dals utilisaders, sia tabella expuser_audit manca u na vegn betg sustegnida da questa banca da datas. Exequi php update/common/scripts/6.0/createuseraudittable.php u l&apos;actualisaziun da la banca da datas da la versiun 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ils ultims %days dis</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Annunzias dals ultims %days dis</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Activitad da segirezza recenta</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mussar</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>betg reussì</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refusà</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Anc nagina activitad da segirezza registrada.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Ils eveniments da segirezza vegnan conservads %days dis.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Ils eveniments da segirezza vegnan conservads fin ch&apos;in administratur als allontanescha.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Telechargiar mias datas d&apos;annunzia</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Vossas sesidas e Voss eveniments da segirezza sco datoteca JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Annunzià</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Emprova d&apos;annunzia betg reussida</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Deconnectà</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Sesidas deconnectadas</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Annunzia d&apos;in nov apparat</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Annunzia d&apos;in nov lieu</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identitad confermada (&quot;Confermai ch&apos;i saja Vus&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Verificaziun da l&apos;identitad betg reussida</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Annunzià cun ina clav d&apos;access</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Annunzia cun clav d&apos;access betg reussida</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Annunzia refusada: il code da l&apos;annunzia en duas stgalas manca u è fallì</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code fallì da l&apos;annunzia en duas stgalas</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Conto bloccà suenter annunzias betg reussidas</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Conto debloccà</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pled-clav midà</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Midada dal pled-clav betg reussida</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pled-clav reinizialisà</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nov pled-clav dumandà</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adressa d&apos;e-mail midada</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Num d&apos;utilisader midà</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Annunzia en duas stgalas activada</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Annunzia en duas stgalas deactivada</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Code da recuperaziun duvrà</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novs codes da recuperaziun</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Pled-clav d&apos;app creà</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Pled-clav d&apos;app revocà</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Clav d&apos;access agiuntada</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Clav d&apos;access allontanada</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Conto activà</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Conto deactivà</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tut</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Annunzias e sesidas</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Midadas dal conto</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Dovra attenziun</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Activitad da segirezza</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Activitad da segirezza da %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Annunzias e midadas da la segirezza da Voss conto. Sche Vus vesais insatge che Vus n&apos;avais betg fatg, midai Voss pled-clav e deconnectai ils apparats che Vus na renconuschais betg.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Voss apparats</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Midar il pled-clav</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>L&apos;activitad da segirezza na vegn anc betg registrada sin questa website.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Annunzias dals ultims %days dis</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Emprovas betg reussidas</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Anc nagina activitad da segirezza registrada.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Telechargiar mias datas d&apos;annunzia</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Vossas sesidas e Voss eveniments da segirezza sco datoteca JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Pled-clav</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Pled-clav e code da l&apos;annunzia en duas stgalas</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfatscha REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfatscha SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Annunzia unica (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Annunzià avant che las sesidas vegnivan registradas</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport da las annunzias</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Tgi ch&apos;è annunzià sin la website, quant savens ch&apos;ils contos s&apos;annunzian u na reussan betg da far quai, e deconnectar in utilisader dapertut. Funcziuna cun mintga tractader da sesidas.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>La sesida è vegnida deconnectada. L&apos;apparat sto s&apos;annunziar danovamain.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login è vegnì deconnectà da sesidas: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login n&apos;aveva nagina sesida activa.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Nagin conto n&apos;ha quest ID, quest num d&apos;utilisader u questa adressa d&apos;e-mail.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Quai è la sesida che Vus utilisais. Per la terminar, utilisai &quot;S&apos;deconnectar&quot;.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Questa sesida era gia terminada.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pagina era scadida. Nagut n&apos;è vegnì midà; empruvai anc ina giada.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Las sesidas na vegnan betg registradas sin questa website (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>La tabella expuser_session manca</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Las sesidas vegnan registradas uschespert ch&apos;ella è creada: php update/common/scripts/6.0/createusersessiontable.php u l&apos;actualisaziun da la banca da datas da la versiun 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Ussa ed oz</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Sesidas activas</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Utilisaders annunziads</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Annunzias dad oz</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Emprovas betg reussidas dad oz</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Deconnectar in utilisader dapertut</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Mintga sesida dal conto finescha tar sia proxima dumonda, er quellas mantegnidas cun &quot;Ma regurdar&quot;. Utilisai quai sch&apos;in conto pudess esser en mauns fallids; reinizialisai lura ses pled-clav.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID d&apos;utilisader, num d&apos;utilisader u adressa d&apos;e-mail</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Deconnectar dapertut</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Annunziads ussa</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Las %limit utilisadas il pli recentamain vegnan mussadas.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Utilisader</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adressa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Annunzià</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ultima activitad</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acziuns</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Quest apparat</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Betg registrà</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>S&apos;deconnectar</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nagina sesida n&apos;è annunziada.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ils ultims %days dis</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Las annunzias e las emprovas betg reussidas vegnan dumbradas a basa dal protocol d&apos;audit dals utilisaders che manca; las novas sesidas vegnan dumbradas.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Di</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Annunzias</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Emprovas betg reussidas</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Novas sesidas</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Tractader da sesidas: %handler. Las sesidas vegnan legidas da la tabella expuser_session, perquai funcziuna il rapport cun mintga tractader.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Avertiment da segirezza per Voss conto</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>I ha dà in eveniment da segirezza en Voss conto %login: %event. Sche Vus n&apos;eras betg quai, protegi Voss conto sut %url.</translation>
     </message>
 </context>
 </TS>

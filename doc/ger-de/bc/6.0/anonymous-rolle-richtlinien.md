@@ -54,16 +54,17 @@ Besucher: `ezinfo` (von den Website-Paketen auf öffentlichen Siteaccesses abges
 
 ## Was beim Aktualisieren zu tun ist
 
-Führen Sie das Skript zuerst mit `--dry-run` aus. Es listet jede Richtlinie, die es hinzufügen würde, und den Grund,
-warum eine wegfällt (die Rolle hat sie schon, in irgendeiner Form, auch begrenzt oder als `module/*`; oder das Modul ist
-nicht installiert):
+Führen Sie das Skript zuerst ohne Optionen aus: Das ist ein Probelauf. Es listet jede Richtlinie, die es hinzufügen
+würde, und den Grund, warum eine wegfällt (die Rolle hat sie schon, in irgendeiner Form, auch begrenzt oder als
+`module/*`; oder das Modul ist nicht installiert), und endet mit `PASS: ... (dry run, nothing changed; --apply writes)`.
+Führen Sie es dann mit `--apply` aus:
 
 ```bash
-php bin/php/addanonymouspublicpolicies.php --dry-run
-php bin/php/addanonymouspublicpolicies.php
+php bin/php/addanonymouspublicpolicies.php            # dry run: what it would add
+php bin/php/addanonymouspublicpolicies.php --apply    # adds it
 ```
 
-Es fügt nur hinzu, was fehlt, ohne Begrenzungen, macht den Rollen-Cache ungültig, prüft, was gespeichert wurde, und gibt
+Mit `--apply` fügt es nur hinzu, was fehlt, ohne Begrenzungen, macht den Rollen-Cache ungültig, prüft, was gespeichert wurde, und gibt
 `PASS` oder `FAIL` aus. Ein zweiter Lauf fügt nichts hinzu.
 
 - `--skip=user/register` hält die Registrierung auf einer Website geschlossen, die die Richtlinie absichtlich entfernt

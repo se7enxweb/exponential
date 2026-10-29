@@ -60,7 +60,7 @@ ein Angreifer, der den Server übernimmt, nicht unbemerkt umschreiben
 Der Test sendet einen Eintrag; bitten Sie das SOC zu bestätigen, dass er angekommen ist. Melden Sie sich dann in der
 Administration an und prüfen Sie, dass auch der Eintrag `access.session.login` ankommt. Schlägt die Zustellung fehl,
 werden Einträge zwischengespeichert und vom Teil der Cronjobs gesendet;
-`./console exp:audit sinks flush syslog --allow-root-user` sendet, was wartet.
+`./console exp:audit sinks flush --apply syslog --allow-root-user` sendet, was wartet.
 
 ## Verwandte Seiten
 

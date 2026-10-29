@@ -75,7 +75,7 @@ php bin/php/maintenance.php on --message="Restoring" --allow-root-user
 sqlite3 var/storage/sqlite3/exponential.db ".restore '/backup/exponential-<date>.db'"
 php bin/php/maintenance.php off --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 ```
 
 If `.restore` reports an error, the live database is unchanged; then stop every process that may hold the file

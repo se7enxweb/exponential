@@ -2,14 +2,14 @@
 title: exp:preload
 audience: developer, admin
 category: examples
-summary: "Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones."
+summary: "Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones (dry run unless --apply)."
 keywords: exp:preload, preload, console, command, CLI, preload.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:preload
 
-Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones.
+Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones (dry run unless --apply).
 
 Script `bin/php/preload.php`, code in `kernel/private/classes/commands/preload.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -27,19 +27,26 @@ Requests the section pages of a site, then follows its links, so the caches are 
 before a visitor arrives, and reports the broken links with the pages that link to them.
 The site is the one of --siteaccess (or --target). One preload runs at a time; the run is
 listed in Setup > Preload.
+Without --apply nothing is requested: the script prints the address, the starting pages and
+the limits. --dry-run means the same as no flag; --apply together with --dry-run is a usage
+error (exit 2).
 
-Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--dry-run]
+Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-depth=<n>] [--images] [--apply]
+
+Example: php bin/php/preload.php --siteaccess=site
+         php bin/php/preload.php --siteaccess=site --apply
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
+| `--apply` |  | request the pages (the default is a dry run that prints the plan and requests nothing) |
+| `--dry-run` |  |  |
 | `--target` | required | the siteaccess whose site is preloaded (default: the one of --siteaccess) |
 | `--max-pages` | required | most pages to request (default  |
 | `--max-depth` | required |  |
 | `--images` |  |  |
-| `--dry-run` |  |  |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

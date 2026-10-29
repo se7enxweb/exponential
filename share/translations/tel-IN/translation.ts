@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>సెటప్ &gt; క్రాన్ జాబ్‌లు</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>ఇంకా ఏ క్రాన్ జాబ్ భాగమూ రన్ కాలేదు: జాబ్ క్యూ, దిగుమతులు, నోటిఫికేషన్‌లు మరియు శోధన సూచిక వేచి ఉన్నాయి. php bin/php/installcrontab.php --add --apply ను రన్ చేయండి, లేదా --show చూపే పంక్తులను crontab ఫైల్‌కు జోడించండి.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ఈ ఇన్‌స్టాలేషన్ పబ్లిక్ డెమో: ఎవరికైనా దీని నిర్వాహకుడి పాస్‌వర్డ్ తెలిసి ఉండవచ్చు, మరియు నిర్వాహకుల పాస్‌వర్డ్‌లను మార్చడం లేదా రీసెట్ చేయడం సాధ్యం కాదు. ఇక్కడ ఎలాంటి ప్రైవేట్ సమాచారాన్ని నమోదు చేయకండి.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>ఎవరూ ఉపయోగించని లేదా పరిశీలన అవసరమైన ఖాతాలు; వాటిని నిలిపివేయండి, అన్‌లాక్ చేయండి లేదా ఎగుమతి చేయండి.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>వినియోగదారు ఆడిట్ లాగ్</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>ఖాతా వారీగా ఎవరు మార్చారు, సైన్ ఇన్ చేశారు లేదా తిరస్కరించబడ్డారు; ఫిల్టర్ చేసి ఎగుమతి చేయండి.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>సైన్ ఇన్ నివేదిక</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>ఎవరు సైన్ ఇన్ అయ్యారు, రోజువారీ సైన్ ఇన్‌లు మరియు వైఫల్యాలు; ఒక వినియోగదారును అన్ని చోట్ల నుండి సైన్ అవుట్ చేయండి.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP హ్యాండ్లర్ యొక్క గడువు ముగిసిన సెషన్‌లను ఈ పేజీ లేదా session_gc క్రాన్‌జాబ్ భాగం కాకుండా PHP స్వయంగా (session.gc_maxlifetime) తొలగిస్తుంది.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>వినియోగదారులందరి సైన్ ఇన్ అయిన సెషన్‌లు సైన్ ఇన్ నివేదికలో జాబితా చేయబడతాయి, అక్కడి నుండే సైన్ అవుట్ చేయబడతాయి; అది ప్రతి సెషన్ హ్యాండ్లర్‌తో పనిచేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>సైన్ ఇన్ నివేదికను తెరవండి</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>ఇంకా ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>మీ ఇటీవలి సైన్ ఇన్‌లు, విఫలమైన ప్రయత్నాలు మరియు మీ పాస్‌వర్డ్, ఇమెయిల్ చిరునామా, రెండు దశల సైన్ ఇన్‌లో మార్పులు.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>ఈ ఖాతా యొక్క ఇటీవలి సైన్ ఇన్‌లు, విఫలమైన ప్రయత్నాలు మరియు భద్రతా మార్పులు.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>కార్యకలాపాన్ని సమీక్షించండి</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count విఫలమైన సైన్ ఇన్‌లు</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab రాయబడలేదు (%reason). సైట్ ఏ వినియోగదారుగా నడుస్తుందో ఆ వినియోగదారు crontabకు ఈ పంక్తులను జోడించండి, లేకపోతే క్యూ, దిగుమతులు, నోటిఫికేషన్‌లు మరియు శోధన సూచిక ఎప్పటికీ అమలు కావు:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>మళ్లీ ఇన్‌స్టాల్ చేయడం కిక్‌స్టార్టర్‌తో (%file, ఆపై php bin/php/kickstarter.php run --apply) లేదా కొత్త ఇన్‌స్టలేషన్‌తో జరుగుతుంది.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>చివరి రన్‌లో మెయిల్ ట్రాన్స్‌పోర్ట్ %count సందేశాలను తిరస్కరించింది. మెయిల్ సర్వర్‌ను మరియు site.ini MailSettings‌ను తనిఖీ చేయండి.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count ఈవెంట్‌లు వేచి ఉన్నాయి మరియు నోటిఫికేషన్ క్రాన్ జాబ్ రన్ ఏదీ నమోదు కాలేదు. &quot;frequent&quot; అనే క్రాన్ జాబ్ భాగాన్ని crontab ఫైల్‌కు జోడించండి, లేదా exp:notification:run --apply ను రన్ చేయండి.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>నోడ్ పికర్‌తో మరొక సైట్ లేదా విభాగాన్ని ఎంచుకోండి</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>సిస్టమ్ నిర్వాహకుడు మాత్రమే యజమానిని మార్చగలరు: root గా ./console exp:content-check --fix-permissions --apply ను రన్ చేయండి.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>ఖాళీ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>సంతకం కీ ఒక సంవత్సరం కంటే పాతది: exp:audit key rotate --apply తో దాన్ని మార్చండి.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>పంపబడలేదు</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>నోటిఫికేషన్ క్రాన్ జాబ్ తన ప్రతి రన్‌ను ఇక్కడ నమోదు చేస్తుంది. frequent భాగాన్ని crontab ఫైల్‌కు జోడించండి, లేదా exp:notification:run --apply ను రన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>కన్సోల్ ఉపయోగించండి: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>ఏదీ లేదు.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ప్రామాణీకరణ యాప్‌తో</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ఇమెయిల్ ద్వారా వచ్చిన కోడ్‌తో</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>రికవరీ కోడ్‌తో</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>పాస్‌కీతో</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>బాహ్య ఖాతాతో</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>దాని నెట్‌వర్క్‌గా చూపబడుతుంది; సైట్ యొక్క డేటా రక్షణ సెట్టింగ్‌లు చెప్పిన విధంగా చిరునామా ఉంచబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>స్థానం</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>సుమారుగా</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>పరికరాలను నిర్వహించండి</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>ప్రామాణీకరణ యాప్‌తో</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ఇమెయిల్ ద్వారా వచ్చిన కోడ్‌తో</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>రికవరీ కోడ్‌తో</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>పాస్‌కీతో</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>బాహ్య ఖాతాతో</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>స్థానం</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>సుమారుగా</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>ఈ వినియోగదారు సెషన్‌లను చూడండి</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site సైట్‌లోని మీ ఖాతా %login తో, ఇటీవల సైన్ ఇన్ కాని ఒక స్థలం నుండి ఇప్పుడే సైన్ ఇన్ జరిగింది:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>సుమారు స్థానం</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os లో %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>సైన్ ఇన్ నివేదిక</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>పేజీని తెరవండి</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count లో %from నుండి %to వరకు</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>లాగిన్ పేరు లేదా వినియోగదారు ID: ఈవెంట్ సంబంధించిన ఖాతా లేదా చర్య తీసుకున్న వినియోగదారు.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ఖాతా</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>చర్య</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>తర్వాత</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>ఏ ఫలితమైనా</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ముందు</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>చేసినవారు</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>క్లియర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>పూర్తయింది</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>ఈవెంట్‌లు %days రోజులు ఉంచబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>ఈవెంట్‌లు మాన్యువల్‌గా తీసివేసే వరకు ఉంచబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ఈవెంట్‌లు</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>ప్రతి చర్య</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>ఈ ఖాతా యొక్క అన్ని ఈవెంట్‌లు</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>జాబితాను CSV గా ఎగుమతి చేయండి (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>నుండి</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>జాబితాను కుదించండి</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>ఏ ఈవెంట్ సరిపోలలేదు.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ప్రతి పేజీకి</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini లో ([UserAuditSettings] UserAudit) రికార్డింగ్ ఆఫ్ చేయబడింది; జాబితా ఇంతకు ముందు రికార్డ్ చేసిన వాటిని చూపిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ఫలితం</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>చూపించండి</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>వినియోగదారు ఆడిట్ లాగ్ పట్టిక లేదు. దీన్ని php update/common/scripts/6.0/createuseraudittable.php తో సృష్టించండి; అప్పటి వరకు ఆడిట్ ఫైల్‌లు ప్రతి ఈవెంట్‌ను ఉంచుతాయి.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>ఈ పేజీకి SQL డేటాబేస్ అవసరం; ఇది MongoDB లో అందుబాటులో లేదు. ఆడిట్ ఫైల్‌లు ప్రతి ఈవెంట్‌ను ఉంచుతాయి.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>వరకు</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>వినియోగదారు ఆడిట్ లాగ్</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>వినియోగదారు</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ఎప్పుడు</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ఎక్కడ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>ఎవరు ఏ ఖాతాను మార్చారు, సృష్టించారు, ప్రారంభించారు, నిలిపివేశారు, తరలించారు లేదా తీసివేశారు, ఎవరు సైన్ ఇన్ చేశారు లేదా తిరస్కరించబడ్డారు, ఏ పాత్రలు కేటాయించబడ్డాయి: ప్రతి ఈవెంట్‌కు ఒక పంక్తి, ముందు మరియు తర్వాత ఫీల్డ్‌లతో. పాస్‌వర్డ్‌లు మరియు రహస్యాలు ఎప్పుడూ రికార్డ్ చేయబడవు.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>సమూహం</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>సిస్టమ్</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>తెలియదు</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>మీ ఖాతాను సురక్షితం చేయండి</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site సైట్‌లోని మీ ఖాతా %login లోకి సైన్ ఇన్ చేయడానికి ఒక రికవరీ కోడ్ ఉపయోగించబడింది.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ఒక రికవరీ కోడ్ ఉపయోగించబడింది</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ఖాతా</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>సుమారు చిరునామా</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>మళ్లీ సైన్ ఇన్ చేయడానికి కొత్త పాస్‌వర్డ్‌ను అభ్యర్థించండి, లేదా సైట్ నిర్వాహకులను సంప్రదించండి.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>కొత్త పాస్‌వర్డ్‌ను అభ్యర్థించండి</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ప్రతి రికవరీ కోడ్ ఒక్కసారి మాత్రమే పనిచేస్తుంది. మీరు మీ ఫోన్‌ను పోగొట్టుకుంటే, మీ ప్రామాణీకరణ యాప్‌ను మళ్లీ సెటప్ చేసి, కొత్త రికవరీ కోడ్‌లను సురక్షితమైన చోట ఉంచండి.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>మీ ఖాతాపై విఫలమైన సైన్ ఇన్ ప్రయత్నాలు</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>ఇకపై సైన్ ఇన్ చేసేటప్పుడు మీ పాస్‌వర్డ్‌తో పాటు ఒక కోడ్ అడగబడుతుంది. ఇది మీరే చేసి ఉంటే, మీరు ఏమీ చేయనవసరం లేదు.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>అది మీరే అయి, మీ పాస్‌వర్డ్ మరచిపోయి ఉంటే, కొత్తదాన్ని అభ్యర్థించండి. లేకపోతే, మరింత బలమైన పాస్‌వర్డ్‌ను ఎంచుకుని రెండు దశల సైన్ ఇన్‌ను ఆన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>ఇది మీరు కాకపోతే, ఎవరికైనా మీ పాస్‌వర్డ్ తెలిసి ఉండవచ్చు: ఇప్పుడే దాన్ని మార్చి, మీ ఖాతా ఎక్కడెక్కడ సైన్ ఇన్ అయి ఉందో తనిఖీ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>మిగిలిన రికవరీ కోడ్‌లు</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>మీ పరికరాలను సమీక్షించండి</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>భద్రతా హెచ్చరిక</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>ఎవరో %site సైట్‌లోని మీ ఖాతా %login లోకి తప్పు పాస్‌వర్డ్‌తో వరుసగా %count సార్లు సైన్ ఇన్ చేయడానికి ప్రయత్నించారు.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site సైట్‌లోని మీ ఖాతా %login పై ఒక భద్రతా ఈవెంట్ జరిగింది.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ఇది మీ ఖాతా గురించిన భద్రతా హెచ్చరిక. ఇలాంటి ప్రతి మార్పుకు ఇది పంపబడుతుంది మరియు దీన్ని ఆఫ్ చేయడం సాధ్యం కాదు.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>సమయం</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site సైట్‌లోని మీ ఖాతా %login కు రెండు దశల సైన్ ఇన్ ఆఫ్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>రెండు దశల సైన్ ఇన్ ఆఫ్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site సైట్‌లోని మీ ఖాతా %login కు రెండు దశల సైన్ ఇన్ ఆన్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>రెండు దశల సైన్ ఇన్ ఆన్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>చాలా విఫలమైన సైన్ ఇన్‌ల తర్వాత %site సైట్‌లోని మీ ఖాతా %login లాక్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>మీ ఖాతా ఇప్పుడు మీ పాస్‌వర్డ్‌తో మాత్రమే రక్షించబడుతోంది. ఇది మీరు చేయకపోతే, మీ పాస్‌వర్డ్ మార్చిన తర్వాత రెండు దశల సైన్ ఇన్‌ను మళ్లీ ఆన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>మీ ఖాతా లాక్ చేయబడింది</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name యొక్క భద్రతా కార్యకలాపం</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>విఫలమైన సైన్ ఇన్ ప్రయత్నం</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>సైన్ అవుట్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>కొత్త పరికరం నుండి సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>కొత్త స్థానం నుండి సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>గుర్తింపు నిర్ధారించబడింది (“ఇది మీరే అని ధృవీకరించండి”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>గుర్తింపు తనిఖీ విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>పాస్‌కీతో సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>పాస్‌కీ సైన్ ఇన్ విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>సైన్ ఇన్ తిరస్కరించబడింది: రెండు దశల కోడ్ లేదు లేదా తప్పు</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>తప్పు రెండు దశల కోడ్</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>విఫలమైన సైన్ ఇన్‌ల తర్వాత ఖాతా లాక్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ఖాతా అన్‌లాక్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>పాస్‌వర్డ్ మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>పాస్‌వర్డ్ మార్పు విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>పాస్‌వర్డ్ రీసెట్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>కొత్త పాస్‌వర్డ్ అభ్యర్థించబడింది</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ఇమెయిల్ చిరునామా మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>వినియోగదారు పేరు మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>రెండు దశల సైన్ ఇన్ ఆన్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>రెండు దశల సైన్ ఇన్ ఆఫ్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>రికవరీ కోడ్ ఉపయోగించబడింది</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>కొత్త రికవరీ కోడ్‌లు</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>యాప్ పాస్‌వర్డ్ సృష్టించబడింది</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>యాప్ పాస్‌వర్డ్ రద్దు చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>పాస్‌కీ జోడించబడింది</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>పాస్‌కీ తీసివేయబడింది</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ఖాతా ప్రారంభించబడింది</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ఖాతా నిలిపివేయబడింది</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>అన్నీ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>సైన్ ఇన్‌లు మరియు సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ఖాతా మార్పులు</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>శ్రద్ధ అవసరం</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>మీ ద్వారా</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>వినియోగదారు ద్వారా</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login ద్వారా</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>పద్ధతి</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>బ్రౌజర్</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>ఆపరేటింగ్ సిస్టమ్</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>పరికరం</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>స్థలం</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>దేశం</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>ఏవి</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>పంపిన మార్గం</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>విఫలమైన ప్రయత్నాలు</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>మిగిలిన కోడ్‌లు</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>సైన్ ఇన్ హ్యాండ్లర్</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name యొక్క భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>మీ ఖాతా యొక్క సైన్ ఇన్‌లు మరియు భద్రతలో మార్పులు. మీరు చేయనిది ఏదైనా కనిపిస్తే, మీ పాస్‌వర్డ్ మార్చి, మీరు గుర్తించని పరికరాలను సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>ఈ ఖాతా యొక్క సైన్ ఇన్‌లు మరియు భద్రతలో మార్పులు.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>పాస్‌వర్డ్ మార్చండి</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ఖాతాకు తిరిగి వెళ్లండి</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>భద్రతా కార్యకలాపం నమోదు కావడం లేదు</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ఇది వినియోగదారు ఆడిట్ లాగ్ నుండి చదవబడుతుంది, దాని పట్టిక expuser_audit లేదు లేదా ఈ డేటాబేస్‌లో మద్దతు లేదు. php update/common/scripts/6.0/createuseraudittable.php ను రన్ చేయండి, లేదా 6.0.15 యొక్క డేటాబేస్ నవీకరణను రన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>గత %days రోజులు</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>గత %days రోజుల్లో సైన్ ఇన్‌లు</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>ఇటీవలి భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>చూపించండి</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ఇంకా ఏ భద్రతా కార్యకలాపమూ నమోదు కాలేదు.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>భద్రతా ఈవెంట్‌లు %days రోజులు ఉంచబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>నిర్వాహకుడు తీసివేసే వరకు భద్రతా ఈవెంట్‌లు ఉంచబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>నా సైన్ ఇన్ డేటాను డౌన్‌లోడ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>మీ సెషన్‌లు మరియు భద్రతా ఈవెంట్‌లు JSON ఫైల్‌గా.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>విఫలమైన సైన్ ఇన్ ప్రయత్నం</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>సైన్ అవుట్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>కొత్త పరికరం నుండి సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>కొత్త స్థానం నుండి సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>గుర్తింపు నిర్ధారించబడింది (“ఇది మీరే అని ధృవీకరించండి”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>గుర్తింపు తనిఖీ విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>పాస్‌కీతో సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>పాస్‌కీ సైన్ ఇన్ విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>సైన్ ఇన్ తిరస్కరించబడింది: రెండు దశల కోడ్ లేదు లేదా తప్పు</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>తప్పు రెండు దశల కోడ్</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>విఫలమైన సైన్ ఇన్‌ల తర్వాత ఖాతా లాక్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>ఖాతా అన్‌లాక్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>పాస్‌వర్డ్ మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>పాస్‌వర్డ్ మార్పు విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>పాస్‌వర్డ్ రీసెట్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>కొత్త పాస్‌వర్డ్ అభ్యర్థించబడింది</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ఇమెయిల్ చిరునామా మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>వినియోగదారు పేరు మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>రెండు దశల సైన్ ఇన్ ఆన్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>రెండు దశల సైన్ ఇన్ ఆఫ్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>రికవరీ కోడ్ ఉపయోగించబడింది</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>కొత్త రికవరీ కోడ్‌లు</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>యాప్ పాస్‌వర్డ్ సృష్టించబడింది</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>యాప్ పాస్‌వర్డ్ రద్దు చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>పాస్‌కీ జోడించబడింది</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>పాస్‌కీ తీసివేయబడింది</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>ఖాతా ప్రారంభించబడింది</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>ఖాతా నిలిపివేయబడింది</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>అన్నీ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>సైన్ ఇన్‌లు మరియు సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>ఖాతా మార్పులు</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>శ్రద్ధ అవసరం</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name యొక్క భద్రతా కార్యకలాపం</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>మీ ఖాతా యొక్క సైన్ ఇన్‌లు మరియు భద్రతలో మార్పులు. మీరు చేయనిది ఏదైనా కనిపిస్తే, మీ పాస్‌వర్డ్ మార్చి, మీరు గుర్తించని పరికరాలను సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>పాస్‌వర్డ్ మార్చండి</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>ఈ సైట్‌లో భద్రతా కార్యకలాపం ఇంకా నమోదు కావడం లేదు.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>గత %days రోజుల్లో సైన్ ఇన్‌లు</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>విఫలమైన ప్రయత్నాలు</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>ఇంకా ఏ భద్రతా కార్యకలాపమూ నమోదు కాలేదు.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>నా సైన్ ఇన్ డేటాను డౌన్‌లోడ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>మీ సెషన్‌లు మరియు భద్రతా ఈవెంట్‌లు JSON ఫైల్‌గా.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>పాస్‌వర్డ్</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>పాస్‌వర్డ్ మరియు రెండు దశల కోడ్</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ఇంటర్‌ఫేస్</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ఇంటర్‌ఫేస్</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>సింగిల్ సైన్-ఆన్</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>సెషన్‌లు నమోదు కావడానికి ముందే సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>సైన్ ఇన్ నివేదిక</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>సైట్‌లో ఎవరు సైన్ ఇన్ అయ్యారు, ఖాతాలు ఎంత తరచుగా సైన్ ఇన్ అవుతాయి మరియు విఫలమవుతాయి, ఒక వినియోగదారును అన్ని చోట్ల నుండి సైన్ అవుట్ చేయడం. ఇది ప్రతి సెషన్ హ్యాండ్లర్‌తో పనిచేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>సెషన్ సైన్ అవుట్ చేయబడింది. పరికరం మళ్లీ సైన్ ఇన్ చేయాలి.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login ను %count సెషన్‌ల నుండి సైన్ అవుట్ చేశారు.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login కు నడుస్తున్న సెషన్ ఏదీ లేదు.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>ఈ ID, వినియోగదారు పేరు లేదా ఇమెయిల్ చిరునామాతో ఏ ఖాతా లేదు.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ఇది మీరు ఉపయోగిస్తున్న సెషన్. దాన్ని ముగించడానికి సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ఆ సెషన్ ఇప్పటికే ముగిసింది.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>పేజీ గడువు ముగిసింది. ఏదీ మార్చబడలేదు; దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ఈ సైట్‌లో సెషన్‌లు నమోదు చేయబడవు (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session పట్టిక లేదు</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>అది సృష్టించబడిన వెంటనే సెషన్‌లు నమోదు అవుతాయి: php update/common/scripts/6.0/createusersessiontable.php, లేదా 6.0.15 యొక్క డేటాబేస్ నవీకరణ.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>ఇప్పుడు మరియు ఈ రోజు</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>నడుస్తున్న సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>సైన్ ఇన్ అయిన వినియోగదారులు</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>ఈ రోజు సైన్ ఇన్‌లు</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>ఈ రోజు విఫలమైన ప్రయత్నాలు</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ఒక వినియోగదారును అన్ని చోట్ల నుండి సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>ఖాతా యొక్క ప్రతి సెషన్ దాని తదుపరి అభ్యర్థనలో ముగుస్తుంది, “నన్ను గుర్తుంచుకో” ద్వారా ఉంచబడినవి కూడా. ఒక ఖాతా తప్పుడు చేతుల్లో ఉండవచ్చు అనిపించినప్పుడు దీన్ని ఉపయోగించండి; ఆపై దాని పాస్‌వర్డ్‌ను రీసెట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>వినియోగదారు ID, వినియోగదారు పేరు లేదా ఇమెయిల్ చిరునామా</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>అన్ని చోట్ల నుండి సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ఇప్పుడు సైన్ ఇన్ అయినవి</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>ఇటీవల ఉపయోగించిన %limit చూపబడుతున్నాయి.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>వినియోగదారు</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>పరికరం</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>చిరునామా</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>చివరిగా సక్రియం</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>చర్యలు</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ఈ పరికరం</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ఏ సెషన్ సైన్ ఇన్ అయి లేదు.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>గత %days రోజులు</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>సైన్ ఇన్‌లు మరియు విఫలమైన ప్రయత్నాలు వినియోగదారు ఆడిట్ లాగ్ నుండి లెక్కించబడతాయి, అది లేదు; కొత్త సెషన్‌లు లెక్కించబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>రోజు</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>సైన్ ఇన్‌లు</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>విఫలమైన ప్రయత్నాలు</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>కొత్త సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>సెషన్ హ్యాండ్లర్: %handler. సెషన్‌లు expuser_session పట్టిక నుండి చదవబడతాయి, కాబట్టి నివేదిక ప్రతి హ్యాండ్లర్‌తో పనిచేస్తుంది.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>మీ ఖాతా కోసం భద్రతా హెచ్చరిక</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>మీ ఖాతా %login పై ఒక భద్రతా ఈవెంట్ జరిగింది: %event. ఇది మీరు కాకపోతే, %url వద్ద మీ ఖాతాను సురక్షితం చేయండి.</translation>
     </message>
 </context>
 </TS>

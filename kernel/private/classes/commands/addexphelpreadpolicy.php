@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/addexphelpreadpolicy.php.
- * @description Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first)
+ * @description Grant exphelp/read (the help system) to the Editor role or the roles named (dry run unless --apply)
  * @alias help-grant
  * Guide: doc/eng-us/features/6.0/help-system.md
  *
@@ -23,24 +23,35 @@ class Addexphelpreadpolicy extends \Exponential\Runnable\Command
                 'description' => "Grant the policy exphelp/read, reading the help system, to the Editor role or to the roles\n"
                     . "named with --role, so editors see the Help control and the help pages. New installations give it\n"
                     . "to the Editor role; administrators have it through their */* policy. Roles that have it already\n"
-                    . "are left alone; the script can run again.\n\n"
-                    . "Example: php bin/php/addexphelpreadpolicy.php --dry-run\n"
-                    . "         php bin/php/addexphelpreadpolicy.php --role=Editor --role=5",
+                    . "are left alone; the script can run again. Prints PASS or FAIL at the end.\n"
+                    . "Without --apply nothing is written: the script lists the roles it would grant the policy to.\n"
+                    . "--dry-run is still accepted and means the same as no flag; --apply together with --dry-run is a\n"
+                    . "usage error (exit 2).\n\n"
+                    . "Example: php bin/php/addexphelpreadpolicy.php\n"
+                    . "         php bin/php/addexphelpreadpolicy.php --apply\n"
+                    . "         php bin/php/addexphelpreadpolicy.php --apply --role=Editor --role=5",
                 'use-session' => false,
                 'use-modules' => true,
                 'use-extensions' => true
             )
         );
         $options = $this->startup(
-            "[dry-run][role:*]",
+            "[apply][dry-run][role:*]",
             '',
             array(
-                'dry-run' => "List what would be granted, change nothing",
+                'apply' => "Write the changes (the default is a dry run that lists them and changes nothing)",
+                'dry-run' => "The default, kept for scripts that pass it: list what would be granted, change nothing",
                 'role' => "This role (ID or name), may be repeated; the Editor role when none is named"
             )
         );
 
-        $dryRun = (bool)$options['dry-run'];
+        $apply = self::applyRequested( $options );
+        if ( $apply === null )
+        {
+            $cli->error( 'FAIL: --apply and --dry-run exclude each other; without --apply the script changes nothing' );
+            $script->shutdown( 2 );
+        }
+        $dryRun = !$apply;
         $onlyRoles = $options['role'] ? (array)$options['role'] : array();
 
         $roles = array();
@@ -78,11 +89,25 @@ class Addexphelpreadpolicy extends \Exponential\Runnable\Command
         }
 
         if ( $granted && !$dryRun )
+        {
             \eZRole::expireCache();
+            // Check what was stored: no listed role lacks the policy now.
+            $after = array();
+            foreach ( \eZRole::fetchList() as $role )
+                $after[] = \expHelpReadPolicyGrant::roleData( $role );
+            foreach ( \expHelpReadPolicyGrant::plan( $after, $onlyRoles ) as $entry )
+            {
+                if ( $entry['action'] === 'grant' )
+                {
+                    $cli->error( "FAIL: {$entry['name']} ({$entry['id']}) still lacks exphelp/read" );
+                    $script->shutdown( 1 );
+                }
+            }
+        }
 
         $cli->output();
-        $cli->output( $dryRun ? "$granted role(s) would get exphelp/read (dry run, nothing changed)"
-                              : "$granted role(s) got exphelp/read" );
+        $cli->output( $dryRun ? "PASS: $granted role(s) would get exphelp/read (dry run, nothing changed; --apply writes)"
+                              : "PASS: $granted role(s) got exphelp/read" );
         $script->shutdown();
     }
 }

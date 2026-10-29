@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Whakaritenga &gt; Ngā mahi cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Kāore anō kia rere tētahi wāhanga o te mahi cron: e tatari ana te tūtira mahi, ngā kawemai, ngā pānui me te taupū rapu. Whakahaerehia te php bin/php/installcrontab.php --add --apply, tāpirihia rānei ngā rārangi o --show ki te crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>He whakaaturanga tūmatanui tēnei tāutanga: ka mōhio pea te katoa ki tōna kupuhipa kaiwhakahaere, ā, kāore e taea te panoni, te tautuhi anō rānei i ngā kupuhipa kaiwhakahaere. Kaua e tāuru i tētahi mea tūmataiti i konei.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ō pūrere</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngohe haumarutanga</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ngā pūkete kāore e whakamahia ana e tētahi, me titiro rānei; whakawetohia, wetekia te raka, kaweakehia rānei.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rangitaki arotake kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ko wai i panoni, i takiuru, i whakakāhoretia rānei, mō ia pūkete; tātari, kaweake hoki.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Pūrongo takiurunga</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ko wai kua takiuru, ngā takiurunga me ngā hapa i ia rā; takiputahia tētahi kaiwhakamahi i ngā wāhi katoa.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Ka tangohia e PHP anō ngā wātū kua pau te wā o te kaiwhakahaere PHP (session.gc_maxlifetime), kaua e tēnei whārangi, e te wāhanga mahi cron session_gc rānei.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ka whakarārangitia ngā wātū kua takiuru o ia kaiwhakamahi, ā, ka taea te takiputa, i te pūrongo takiurunga, e mahi ana me ia kaiwhakarite wātū.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Huakina te pūrongo takiurunga</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ i tō pūkete.</translation>
     <message>
         <source>None yet</source>
         <translation>Kāore anō</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngohe haumarutanga</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ō takiurunga o nā tata nei, ngā ngana i rahua me ngā panonitanga ki tō kupuhipa, tō wāhitau īmēra me tō takiuru takirua.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Ngā takiurunga o nā tata nei, ngā ngana i rahua me ngā panonitanga haumarutanga o tēnei pūkete.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Arotakehia te ngohe</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Takiurunga i rahua: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Tirohia te whārangi whāinga mō ētahi atu mōhiohio.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Kāore i tuhia te crontab (%reason). Tāpirihia ēnei rārangi ki te crontab a te kaiwhakamahi e whakahaere ana i te pae, ki te kore, kāore e whakahaerea te tūtira, ngā kawemai, ngā pānui me te tūtohi rapunga:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Ka whakaurua anō mā te kickstarter (%file, kātahi ko php bin/php/kickstarter.php run --apply) mā tētahi tāutanga hou rānei.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>I whakahē te kawe īmēra i ngā karere e %count i te whakahaerenga whakamutunga. Tirohia te tūmau īmēra me site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>E %count ngā takahanga e tatari ana, ā, kāore he rerenga o te mahi cron pānui kua tuhia. Tāpirihia te wāhanga mahi cron &quot;frequent&quot; ki te crontab, whakahaerehia rānei te exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Choose another site or section with the node picker</source>
         <translation>Kōwhiria tētahi atu pae, wāhanga rānei mā te kaikōwhiri pona</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Mā te kaiwhakahaere pūnaha anake e panoni te kaipupuri: whakahaerehia te ./console exp:content-check --fix-permissions --apply hei root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>empty</source>
         <translation>kore</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Neke atu i te kotahi tau te pakeke o te kī waitohu: hurihia mā te exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>not sent</source>
         <translation>kāore i tukuna</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ka tuhia e te mahi cron pānui ōna rerenga katoa ki konei. Tāpirihia te wāhanga frequent ki te crontab, whakahaerehia rānei te exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Whakamahia te papatohu: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>None.</source>
         <translation>Kāore.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>mā tētahi tono kaiwhakamana</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>mā tētahi waehere mā te īmēra</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>mā tētahi waehere whakaora</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>mā tētahi kī uru</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>mā tētahi pūkete o waho</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngohe haumarutanga</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ka whakaaturia hei whatunga; ka puritia te wāhitau e ai ki ngā tautuhinga tiaki raraunga o te pae.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Kāore i tuhia</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Tauwāhi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>āwhiwhi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Manage devices</source>
         <translation>Whakahaere pūrere</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>mā tētahi tono kaiwhakamana</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>mā tētahi waehere mā te īmēra</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>mā tētahi waehere whakaora</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>mā tētahi kī uru</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>mā tētahi pūkete o waho</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngohe haumarutanga</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Kāore i tuhia</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Tauwāhi</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>āwhiwhi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>View the sessions of this user</source>
         <translation>Tirohia ngā wātū o tēnei kaiwhakamahi</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Kātahi anō tō pūkete %login i %site ka whakamahia hei takiuru mai i tētahi wāhi kāore anō kia takiuru mai i reira i nā tata nei:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Tauwāhi āwhiwhi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser i runga i %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Pūrongo takiurunga</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>Open the page</source>
         <translation>Huakina te whārangi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki %to o %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>He ingoa takiuru, he ID kaiwhakamahi rānei: te pūkete i pā ai te takahanga, te kaiwhakamahi rānei nāna i mahi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Pūkete</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Mahi</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>I muri</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ngā hua katoa</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>I mua</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nā</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Ūkui</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kua oti</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Ka puritia ngā takahanga mō te %days rā.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Ka puritia ngā takahanga kia tangohia rā anō ā-ringa.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngā takahanga</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ngā mahi katoa</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ngā takahanga katoa o tēnei pūkete</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Kaweakehia te rārangi hei CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>I rahua</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai i</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Whakawhāitihia te rārangi</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Kāore he takahanga e ōrite ana.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ia whārangi</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kua whakawetohia te hopu i roto i te audit.ini ([UserAuditSettings] UserAudit); ka whakaatu te rārangi i ngā mea i hopukina i mua.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>I whakakāhoretia</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hua</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Whakaatu</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Kei te ngaro te tūtohi o te rangitaki arotake kaiwhakamahi. Waihangatia mā te php update/common/scripts/6.0/createuseraudittable.php; ā mohoa noa, ka puritia e ngā kōnae arotake ia takahanga.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Me whai pātengi raraunga SQL tēnei whārangi; kāore e wātea ana i runga i te MongoDB. Ka puritia e ngā kōnae arotake ia takahanga.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Rangitaki arotake kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Āhea</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kei hea</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ko wai i panoni, i waihanga, i whakahohe, i whakaweto, i nuku, i tango rānei i tēhea pūkete, ko wai i takiuru, i whakakāhoretia rānei, ā, ko ēhea tūranga i tautapahia: kotahi te rārangi mō ia takahanga, me ngā āpure o mua, o muri hoki. Kāore rawa ngā kupuhipa me ngā mea muna e hopukina.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>rōpū</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>pūnaha</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>kāore e mōhiotia</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Whakahaumarutia tō pūkete</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>I whakamahia tētahi waehere whakaora hei takiuru ki tō pūkete %login i %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>I whakamahia tētahi waehere whakaora</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Pūkete</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Wāhitau āwhiwhi</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Tonoa he kupuhipa hou kia takiuru anō ai koe, whakapā atu rānei ki ngā kaiwhakahaere o te pae.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Tonoa he kupuhipa hou</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kotahi noa te mahi a ia waehere whakaora. Mēnā kua ngaro tō waea, whakaritea anō tō tono kaiwhakamana, ā, puritia ngā waehere whakaora hou ki tētahi wāhi haumaru.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Ngā ngana takiuru i rahua ki tō pūkete</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Mai i nāianei, ka tono te takiurunga i tētahi waehere hei āpiti ki tō kupuhipa. Mēnā nāu tēnei, kāore he mahi māu.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Mēnā ko koe tērā, ā, kua wareware koe ki tō kupuhipa, tonoa he mea hou. Ki te kore, kōwhiria he kupuhipa kaha ake, ā, whakahohea te takiuru takirua.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Mēnā ehara i a koe, tērā pea kei te mōhio tētahi atu ki tō kupuhipa: panonitia ināianei, ā, tirohia te wāhi kua takiuru ai tō pūkete.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Ngā waehere whakaora e toe ana</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Arotakehia ō pūrere</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Matohi haumarutanga</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>I ngana tētahi ki te takiuru ki tō pūkete %login i %site me tētahi kupuhipa hē, %count ngā wā i te raupapa.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>I puta tētahi takahanga haumarutanga ki tō pūkete %login i %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>He matohi haumarutanga tēnei mō tō pūkete. Ka tukuna mō ia panonitanga pēnei, ā, kāore e taea te whakaweto.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wā</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Kua whakawetohia te takiuru takirua mō tō pūkete %login i %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Kua whakawetohia te takiuru takirua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kua whakahohea te takiuru takirua mō tō pūkete %login i %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kua whakahohea te takiuru takirua</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Kua rakaina tō pūkete %login i %site i muri i te maha rawa o ngā takiurunga i rahua.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ko tō kupuhipa anake e tiaki ana i tō pūkete ināianei. Mēnā ehara nāu tēnei, whakahohea anō te takiuru takirua ka oti ana tō kupuhipa te panoni.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Kua rakaina tō pūkete</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngohe haumarutanga</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ngohe haumarutanga a %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kua takiuru</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ngana takiuru i rahua</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kua takiputa</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Kua takiputahia ngā wātū</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Takiurunga mai i tētahi pūrere hou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Takiurunga mai i tētahi tauwāhi hou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kua whakaūngia te tuakiri (“Whakamanatia ko koe tēnei”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>I rahua te arotake tuakiri</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>I takiuru mā tētahi kī uru</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>I rahua te takiuru mā te kī uru</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>I whakakāhoretia te takiurunga: kei te ngaro, kei te hē rānei te waehere takirua</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Waehere takirua hē</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kua rakaina te pūkete i muri i ngā takiurunga i rahua</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kua wetekina te pūkete</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kua panonitia te kupuhipa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>I rahua te panoni kupuhipa</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kua tautuhi anōtia te kupuhipa</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kua tonoa he kupuhipa hou</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Kua panonitia te wāhitau īmēra</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kua panonitia te ingoa kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kua whakahohea te takiuru takirua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kua whakawetohia te takiuru takirua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>I whakamahia he waehere whakaora</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ngā waehere whakaora hou</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kua waihangatia he kupuhipa taupānga</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kua unuhia he kupuhipa taupānga</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kua tāpirihia he kī uru</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kua tangohia he kī uru</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kua whakahohea te pūkete</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kua whakawetohia te pūkete</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Katoa</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ngā takiurunga me ngā wātū</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ngā panonitanga pūkete</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Me aro atu</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>nāu</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>nā te kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>nā %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Tikanga</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Pūtirotiro</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Pūnaha whakahaere</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pūrere</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Wāhi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Whenua</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ngā wātū</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Ko ēhea</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Hongere</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ngā ngana i rahua</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Ngā waehere e toe ana</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Kaiwhakarite takiurunga</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngohe haumarutanga</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ngohe haumarutanga a %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ngā takiurunga me ngā panonitanga ki te haumarutanga o tō pūkete. Mēnā ka kite koe i tētahi mea kāore nāu i mahi, panonitia tō kupuhipa, ā, takiputahia ngā pūrere kāore koe e mōhio ana.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Ngā takiurunga me ngā panonitanga ki te haumarutanga o tēnei pūkete.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ō pūrere</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Panonihia te kupuhipa</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Hoki ki te pūkete</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Kāore te ngohe haumarutanga e tuhia ana</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ka pānuitia mai i te rangitaki arotake kaiwhakamahi, kei te ngaro tōna ripanga expuser_audit, kāore rānei e tautokona ki tēnei pātengi raraunga. Whakahaerehia te php update/common/scripts/6.0/createuseraudittable.php, te whakahou pātengi raraunga rānei o 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ngā rā %days kua hipa</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ngā takiurunga i ngā rā %days kua hipa</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ngohe haumarutanga o nā tata nei</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Whakaatu</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>i rahua</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>i whakakāhoretia</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Kāore anō he ngohe haumarutanga kia tuhia.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Ka puritia ngā takahanga haumarutanga mō ngā rā %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Ka puritia ngā takahanga haumarutanga kia tangohia rā anō e tētahi kaiwhakahaere.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Tikiake i aku raraunga takiuru</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ō wātū me ō takahanga haumarutanga hei kōnae JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kua takiuru</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ngana takiuru i rahua</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kua takiputa</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Kua takiputahia ngā wātū</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Takiurunga mai i tētahi pūrere hou</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Takiurunga mai i tētahi tauwāhi hou</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Kua whakaūngia te tuakiri (“Whakamanatia ko koe tēnei”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>I rahua te arotake tuakiri</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>I takiuru mā tētahi kī uru</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>I rahua te takiuru mā te kī uru</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>I whakakāhoretia te takiurunga: kei te ngaro, kei te hē rānei te waehere takirua</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Waehere takirua hē</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kua rakaina te pūkete i muri i ngā takiurunga i rahua</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Kua wetekina te pūkete</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Kua panonitia te kupuhipa</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>I rahua te panoni kupuhipa</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Kua tautuhi anōtia te kupuhipa</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Kua tonoa he kupuhipa hou</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Kua panonitia te wāhitau īmēra</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Kua panonitia te ingoa kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kua whakahohea te takiuru takirua</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kua whakawetohia te takiuru takirua</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>I whakamahia he waehere whakaora</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ngā waehere whakaora hou</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Kua waihangatia he kupuhipa taupānga</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Kua unuhia he kupuhipa taupānga</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Kua tāpirihia he kī uru</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Kua tangohia he kī uru</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Kua whakahohea te pūkete</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Kua whakawetohia te pūkete</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Katoa</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ngā takiurunga me ngā wātū</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ngā panonitanga pūkete</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Me aro atu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ngohe haumarutanga</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ngohe haumarutanga a %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ngā takiurunga me ngā panonitanga ki te haumarutanga o tō pūkete. Mēnā ka kite koe i tētahi mea kāore nāu i mahi, panonitia tō kupuhipa, ā, takiputahia ngā pūrere kāore koe e mōhio ana.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ō pūrere</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Panonihia te kupuhipa</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Kāore anō te ngohe haumarutanga kia tuhia ki tēnei pae.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ngā takiurunga i ngā rā %days kua hipa</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ngā ngana i rahua</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Kāore anō he ngohe haumarutanga kia tuhia.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Tikiake i aku raraunga takiuru</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ō wātū me ō takahanga haumarutanga hei kōnae JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Kupuhipa</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Kupuhipa me te waehere takirua</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Atanga REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Atanga SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Takiuru kotahi</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>I takiuru i mua i te tuhinga o ngā wātū</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Pūrongo takiurunga</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ko wai kua takiuru ki te pae, he hia te auau o te takiuru me te rahunga o ngā pūkete, me te takiputa i tētahi kaiwhakamahi i ngā wāhi katoa. Ka mahi tahi me ia kaiwhakarite wātū.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Kua takiputahia te wātū. Me takiuru anō te pūrere.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Kua takiputahia a %login i ngā wātū %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Kāore he wātū e rere ana a %login.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Kāore he pūkete he pērā tōna ID, ingoa kaiwhakamahi, wāhitau īmēra rānei.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ko te wātū tēnei e whakamahia ana e koe. Hei whakamutu, takiputa.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Kua mutu kē taua wātū.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kua pau te wā o te whārangi. Kāore he mea i panonitia; tēnā koa, ngana anō.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Kāore ngā wātū e tuhia ana ki tēnei pae (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Kei te ngaro te ripanga expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ka tuhia ngā wātū ina waihangatia: php update/common/scripts/6.0/createusersessiontable.php, te whakahou pātengi raraunga rānei o 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Ināianei me tēnei rā</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ngā wātū e rere ana</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Ngā kaiwhakamahi kua takiuru</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Ngā takiurunga o tēnei rā</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Ngā ngana i rahua o tēnei rā</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Takiputahia tētahi kaiwhakamahi i ngā wāhi katoa</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Ka mutu ia wātū o te pūkete i tōna tono e whai ake nei, tae atu ki ērā e puritia ana e “Maumahara ki ahau”. Whakamahia ina tērā pea kei ngā ringa hē tētahi pūkete; kātahi ka tautuhi anō i tōna kupuhipa.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID kaiwhakamahi, ingoa kaiwhakamahi, wāhitau īmēra rānei</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Takiputa i ngā wāhi katoa</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Kua takiuru ināianei</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Ka whakaaturia ngā %limit i whakamahia tata nei.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pūrere</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Wāhitau</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kua takiuru</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Hohe whakamutunga</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ngā mahi</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Tēnei pūrere</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Kāore i tuhia</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Takiputa</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Kāore he wātū kua takiuru.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ngā rā %days kua hipa</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Ka tatauria ngā takiurunga me ngā ngana i rahua mai i te rangitaki arotake kaiwhakamahi, kāore nei i reira; ka tatauria tonutia ngā wātū hou.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Rā</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Ngā takiurunga</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ngā ngana i rahua</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Ngā wātū hou</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Kaiwhakarite wātū: %handler. Ka pānuitia ngā wātū mai i te ripanga expuser_session, nā reira ka mahi te pūrongo me ia kaiwhakarite.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Matohi haumarutanga mō tō pūkete</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>I puta tētahi takahanga haumarutanga ki tō pūkete %login: %event. Mēnā ehara i a koe, whakahaumarutia tō pūkete ki %url.</translation>
     </message>
 </context>
 </TS>

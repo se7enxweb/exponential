@@ -107,7 +107,7 @@ Ein Log, das die Festplatte füllt, kann eine Website lahmlegen. Exponential rot
 - `LogFileRotateCount` (ab Werk 3) gibt an, wie viele Archive behalten werden. Mit den Standardwerten belegt ein Log
   höchstens 8 MB auf der Festplatte
   ([Betrieb einer Site](../../../anleitungen/betrieb-einer-website.md#php-deprecations-und-größe-der-logdateien)).
-- Rotation auf Abruf: `php bin/php/console exp:logs --rotate-all`; alte Archive: `--prune`; beides mit `--dry-run`.
+- Rotation auf Abruf: `php bin/php/console exp:logs --apply --rotate-all`; alte Archive: `--prune`; beides mit `--dry-run`.
 
 Legen Sie mit Ihrem Betrieb fest, wie lange Logs für Ihr Unternehmen und Ihre gesetzlichen Pflichten aufbewahrt werden
 müssen, und stellen Sie die Rotation passend ein. Der Hosting-Bereich behandelt die Aufbewahrung:

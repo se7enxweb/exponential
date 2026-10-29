@@ -2,14 +2,14 @@
 title: exp:ezsubtreeremove
 audience: developer, admin
 category: examples
-summary: Entfernt Teilbäume von Inhalten nach Knoten-ID, in den Papierkorb, außer --ignore-trash ist angegeben.
+summary: Entfernt Inhaltsteilbäume nach Knoten-ID, in den Papierkorb, außer mit --ignore-trash (Probelauf, außer mit --apply).
 keywords: Konsole, Befehl, exp:ezsubtreeremove, ezsubtreeremove, console, command, CLI, ezsubtreeremove.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:ezsubtreeremove
 
-Entfernt Teilbäume von Inhalten nach Knoten-ID, in den Papierkorb, außer --ignore-trash ist angegeben.
+Entfernt Inhaltsteilbäume nach Knoten-ID, in den Papierkorb, außer mit --ignore-trash (Probelauf, außer mit --apply).
 
 Skript `bin/php/ezsubtreeremove.php`, Code in `kernel/private/classes/commands/ezsubtreeremove.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,6 +22,8 @@ php bin/php/ezsubtreeremove.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
+| `--apply` |  | Die Teilbäume entfernen (Standard ist ein Probelauf, der sie auflistet und nichts entfernt) |
+| `--dry-run` |  | Der Standard: auflisten, was entfernt würde, nichts ändern |
 | `--nodes-id` | erforderlich | IDs der Teilbaumknoten (durch Komma ',' getrennt). |
 | `--ignore-trash` |  | Papierkorb übergehen (standardmäßig 'in den Papierkorb verschieben'). |
 

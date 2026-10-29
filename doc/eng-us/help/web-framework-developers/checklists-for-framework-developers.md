@@ -31,7 +31,7 @@ explains it.
 
 ## Setting up a development environment
 
-- [ ] A local installation: `./console exp:install` (SQLite) ([Installing in one command](../../features/6.0/install-in-one-command.md)).
+- [ ] A local installation: `./console exp:install --apply` (SQLite) ([Installing in one command](../../features/6.0/install-in-one-command.md)).
 - [ ] `config.env.php` with `EXP_ENV=dev`; debug output and the `file` mail transport in the `dev` variant
       ([Environments and secrets](environments-and-secrets.md)).
 - [ ] Velocity with `Engine=qbix`, or Apache or nginx with PHP-FPM ([Servers and deployment](servers-and-deployment.md)).

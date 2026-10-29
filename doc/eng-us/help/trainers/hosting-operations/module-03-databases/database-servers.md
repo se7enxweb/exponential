@@ -107,7 +107,7 @@ code for a second training installation.
 
    ```bash
    read -rs EXP_INSTALL_DB_PASSWORD; export EXP_INSTALL_DB_PASSWORD
-   php bin/php/console exp:install --db=pgsql --db-host=127.0.0.1 --db-name=exptraining --db-user=exptraining
+   php bin/php/console exp:install --apply --db=pgsql --db-host=127.0.0.1 --db-name=exptraining --db-user=exptraining
    ```
 
    3a. MariaDB: the same with `--db=mariadb`.

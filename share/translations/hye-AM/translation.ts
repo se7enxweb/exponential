@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Կարգաբերում &gt; Cron առաջադրանքներ</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron առաջադրանքի ոչ մի մաս դեռ չի գործարկվել․ առաջադրանքների հերթը, ներմուծումները, ծանուցումները և որոնման ինդեքսը սպասում են։ Գործարկեք php bin/php/installcrontab.php --add --apply կամ ավելացրեք --show-ի տողերը crontab-ում։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Այս տեղադրումը հանրային ցուցադրություն է. ցանկացած մարդ կարող է իմանալ նրա ադմինիստրատորի գաղտնաբառը, և ադմինիստրատորի գաղտնաբառերը հնարավոր չէ փոխել կամ վերակայել։ Այստեղ ոչ մի անձնական բան մի մուտքագրեք։</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ձեր սարքերը</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Անվտանգության գործունեություն</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Հաշիվներ, որոնք ոչ ոք չի օգտագործում կամ որոնց պետք է հայացք նետել. անջատեք, ապաարգելափակեք կամ արտահանեք դրանք։</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Օգտատերերի աուդիտի մատյան</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ով է փոփոխել, մուտք գործել կամ մերժվել՝ ըստ հաշիվների, զտման և արտահանման հնարավորությամբ։</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Մուտքերի հաշվետվություն</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ով է մուտք գործած, մուտքերն ու ձախողումներն ըստ օրերի, օգտատիրոջ դուրս բերում ամենուրեք։</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP մշակիչի ժամկետանց աշխատաշրջանները հեռացնում է հենց PHP-ն (session.gc_maxlifetime), այլ ոչ թե այս էջը կամ session_gc cron առաջադրանքի մասը։</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Բոլոր օգտատերերի մուտք գործած աշխատաշրջանները ցուցակված են մուտքերի հաշվետվությունում, որտեղից կարելի է նաև ավարտել դրանք․ հաշվետվությունն աշխատում է աշխատաշրջանի ցանկացած մշակիչի հետ։</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Բացել մուտքերի հաշվետվությունը</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Դեռևս ոչ մեկը</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Անվտանգության գործունեություն</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Ձեր վերջին մուտքերը, ձախողված փորձերը և Ձեր գաղտնաբառի, էլփոստի հասցեի և երկքայլ մուտքի փոփոխությունները։</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Այս հաշվի վերջին մուտքերը, ձախողված փորձերը և անվտանգության փոփոխությունները։</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Դիտել գործունեությունը</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Ձախողված մուտքեր: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab-ը չգրվեց (%reason)։ Ավելացրեք այս տողերը այն օգտատիրոջ crontab-ում, որի անունից աշխատում է կայքը, այլապես հերթը, ներմուծումները, ծանուցումները և որոնման ինդեքսը երբեք չեն գործարկվի՝</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Վերատեղադրումը կատարվում է Kickstarter-ով (%file, ապա php bin/php/kickstarter.php run --apply) կամ նոր տեղադրմամբ։</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Վերջին գործարկման ընթացքում փոստային տրանսպորտը մերժել է %count նամակ։ Ստուգեք փոստային սերվերը և site.ini MailSettings-ը։</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Սպասող իրադարձություններ: %count, և ծանուցումների cron առաջադրանքի ոչ մի գործարկում գրանցված չէ։ Ավելացրեք cron առաջադրանքի «frequent» մասը crontab-ում կամ գործարկեք exp:notification:run --apply։</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Ընտրեք այլ կայք կամ բաժին հանգույցների ընտրիչով</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Միայն համակարգի ադմինիստրատորը կարող է փոխել սեփականատիրոջը․ գործարկեք ./console exp:content-check --fix-permissions --apply որպես root։</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>դատարկ</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Ստորագրման բանալին մեկ տարուց ավելի հին է․ փոխարինեք այն exp:audit key rotate --apply հրամանով։</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>չի ուղարկվել</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ծանուցումների cron առաջադրանքն այստեղ գրանցում է իր յուրաքանչյուր գործարկումը։ Ավելացրեք frequent մասը crontab-ում կամ գործարկեք exp:notification:run --apply։</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Օգտագործեք վահանակը: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Ոչ մեկը։</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>նույնականացման հավելվածով</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>էլփոստով ուղարկված կոդով</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>վերականգնման կոդով</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>մուտքի բանալիով</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>արտաքին հաշվով</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Անվտանգության գործունեություն</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Ցուցադրվում է որպես իր ցանցը․ հասցեն պահվում է այնպես, ինչպես սահմանում են կայքի տվյալների պաշտպանության կարգավորումները։</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Գրանցված չէ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Վայր</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>մոտավոր</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Կառավարել սարքերը</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>նույնականացման հավելվածով</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>էլփոստով ուղարկված կոդով</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>վերականգնման կոդով</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>մուտքի բանալիով</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>արտաքին հաշվով</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Անվտանգության գործունեություն</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Գրանցված չէ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Վայր</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>մոտավոր</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Դիտել այս օգտատիրոջ աշխատաշրջանները</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site կայքում Ձեր %login հաշվով հենց նոր մուտք է գործվել մի վայրից, որտեղից վերջերս մուտք չի գործվել:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Մոտավոր վայր</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser, %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Մուտքերի հաշվետվություն</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Բացել էջը</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, ընդամենը %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Մուտքանուն կամ օգտատիրոջ ID՝ այն հաշիվը, որին վերաբերում էր իրադարձությունը, կամ գործողությունը կատարած օգտատերը։</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Հաշիվ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Գործողություն</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Հետո</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ցանկացած արդյունք</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Մինչև</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Կատարող</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Մաքրել</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Կատարված</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Իրադարձությունները պահվում են %days օր։</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Իրադարձությունները պահվում են, մինչև դրանք ձեռքով հեռացվեն։</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Իրադարձություններ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Բոլոր գործողությունները</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Այս հաշվի բոլոր իրադարձությունները</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Արտահանել ցանկը CSV ձևաչափով (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ձախողված</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Սկսած</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Նեղացնել ցանկը</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Համապատասխան իրադարձություն չկա։</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Մեկ էջում</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Գրանցումն անջատված է audit.ini ֆայլում ([UserAuditSettings] UserAudit), ցանկը ցույց է տալիս նախկինում գրանցվածը։</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Մերժված</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Արդյունք</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ցուցադրել</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Օգտատերերի աուդիտի մատյանի աղյուսակը բացակայում է։ Ստեղծեք այն php update/common/scripts/6.0/createuseraudittable.php հրամանով, մինչ այդ աուդիտի ֆայլերը պահում են յուրաքանչյուր իրադարձություն։</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Այս էջին անհրաժեշտ է SQL տվյալների բազա, MongoDB համակարգում այն հասանելի չէ։ Աուդիտի ֆայլերը պահում են յուրաքանչյուր իրադարձություն։</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Մինչև</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Օգտատերերի աուդիտի մատյան</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Օգտատեր</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Երբ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Որտեղ</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ով է փոփոխել, ստեղծել, միացրել, անջատել, տեղափոխել կամ հեռացրել որ հաշիվը, ով է մուտք գործել կամ մերժվել, և որ դերերն են նշանակվել՝ մեկ տող յուրաքանչյուր իրադարձության համար, դաշտերի նախկին և նոր արժեքներով։ Գաղտնաբառերը և գաղտնիքները երբեք չեն գրանցվում։</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>խումբ</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>համակարգ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>անհայտ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Պաշտպանել Ձեր հաշիվը</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site կայքում Ձեր %login հաշիվ մուտք է գործվել վերականգնման կոդով։</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Օգտագործվել է վերականգնման կոդ</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Հաշիվ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Մոտավոր հասցե</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Կրկին մուտք գործելու համար պահանջեք նոր գաղտնաբառ կամ դիմեք կայքի ադմինիստրատորներին։</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Պահանջել նոր գաղտնաբառ</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Յուրաքանչյուր վերականգնման կոդ գործում է մեկ անգամ։ Եթե կորցրել եք Ձեր հեռախոսը, նորից կարգավորեք Ձեր նույնականացման հավելվածը և պահեք նոր վերականգնման կոդերն ապահով տեղում։</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Ձեր հաշիվ մուտք գործելու ձախողված փորձեր</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Այսուհետ մուտքի ժամանակ գաղտնաբառից բացի կպահանջվի նաև կոդ։ Եթե դա արել եք Դուք, ոչինչ անել պետք չէ։</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Եթե դա Դուք էիք և մոռացել եք գաղտնաբառը, պահանջեք նորը։ Եթե ոչ, ընտրեք ավելի ուժեղ գաղտնաբառ և միացրեք երկքայլ մուտքը։</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Եթե դա Դուք չէիք, հնարավոր է, որ ինչ-որ մեկը գիտի Ձեր գաղտնաբառը․ փոխեք այն հիմա և ստուգեք, թե որտեղ է Ձեր հաշիվը մուտք գործած։</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Մնացած վերականգնման կոդեր</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Ստուգել Ձեր սարքերը</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Անվտանգության ահազանգ</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Ինչ-որ մեկը %site կայքում փորձել է մուտք գործել Ձեր %login հաշիվ սխալ գաղտնաբառով %count անգամ անընդմեջ։</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site կայքում Ձեր %login հաշվում տեղի է ունեցել անվտանգության իրադարձություն։</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Սա անվտանգության ահազանգ է Ձեր հաշվի վերաբերյալ։ Այն ուղարկվում է յուրաքանչյուր նման փոփոխության դեպքում և հնարավոր չէ անջատել։</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ժամանակ</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site կայքում Ձեր %login հաշվի երկքայլ մուտքն անջատվել է։</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Երկքայլ մուտքն անջատվել է</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site կայքում Ձեր %login հաշվի երկքայլ մուտքը միացվել է։</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Երկքայլ մուտքը միացվել է</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site կայքում Ձեր %login հաշիվն արգելափակվել է չափազանց շատ ձախողված մուտքերից հետո։</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ձեր հաշիվն այժմ պաշտպանված է միայն գաղտնաբառով։ Եթե դա արել եք ոչ Դուք, գաղտնաբառը փոխելուց հետո կրկին միացրեք երկքայլ մուտքը։</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Ձեր հաշիվն արգելափակվել է</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Անվտանգության գործունեություն</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Անվտանգության գործունեություն: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Մուտք է գործել</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Մուտքի ձախողված փորձ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Դուրս է եկել</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Աշխատաշրջաններն ավարտվել են</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Մուտք նոր սարքից</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Մուտք նոր վայրից</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ինքնությունը հաստատվել է («Հաստատեք, որ դա Դուք եք»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ինքնության ստուգումը ձախողվել է</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Մուտք է գործել մուտքի բանալիով</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Մուտքը մուտքի բանալիով ձախողվել է</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Մուտքը մերժվել է․ երկքայլ մուտքի կոդը բացակայում է կամ սխալ է</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Երկքայլ մուտքի սխալ կոդ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Հաշիվն արգելափակվել է ձախողված մուտքերից հետո</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Հաշիվն ապաարգելափակվել է</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Գաղտնաբառը փոխվել է</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Գաղտնաբառի փոփոխությունը ձախողվել է</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Գաղտնաբառը վերակայվել է</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Պահանջվել է նոր գաղտնաբառ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Էլփոստի հասցեն փոխվել է</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Օգտանունը փոխվել է</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Երկքայլ մուտքը միացվել է</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Երկքայլ մուտքն անջատվել է</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Օգտագործվել է վերականգնման կոդ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Նոր վերականգնման կոդեր</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Հավելվածի գաղտնաբառը ստեղծվել է</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Հավելվածի գաղտնաբառը հետ է կանչվել</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Մուտքի բանալին ավելացվել է</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Մուտքի բանալին հեռացվել է</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Հաշիվը միացվել է</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Հաշիվն անջատվել է</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Բոլորը</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Մուտքեր և աշխատաշրջաններ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Հաշվի փոփոխություններ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Պահանջում է ուշադրություն</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>Ձեր կողմից</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>օգտատիրոջ կողմից</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>կատարող: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Եղանակ</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Դիտարկիչ</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Օպերացիոն համակարգ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Սարք</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Վայր</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Երկիր</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Աշխատաշրջաններ</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Որոնք</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Ալիք</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ձախողված փորձեր</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Մնացած կոդեր</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Մուտքի մշակիչ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Անվտանգության գործունեություն</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Անվտանգության գործունեություն: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ձեր հաշվի մուտքերը և անվտանգության փոփոխությունները։ Եթե տեսնում եք մի բան, որը Դուք չեք արել, փոխեք Ձեր գաղտնաբառը և դուրս բերեք այն սարքերը, որոնք չեք ճանաչում։</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Այս հաշվի մուտքերը և անվտանգության փոփոխությունները։</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ձեր սարքերը</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Փոխել գաղտնաբառը</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Վերադառնալ հաշվին</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Անվտանգության գործունեությունը չի գրանցվում</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Այն կարդացվում է օգտատերերի աուդիտի մատյանից, որի expuser_audit աղյուսակը բացակայում է կամ չի աջակցվում այս տվյալների բազայում։ Գործարկեք php update/common/scripts/6.0/createuseraudittable.php կամ 6.0.15 տարբերակի տվյալների բազայի թարմացումը։</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Վերջին %days օրը</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Մուտքեր վերջին %days օրում</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Անվտանգության վերջին գործունեություն</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ցուցադրել</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ձախողված</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>մերժված</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Անվտանգության գործունեություն դեռ չի գրանցվել։</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Անվտանգության իրադարձությունները պահվում են %days օր։</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Անվտանգության իրադարձությունները պահվում են, մինչև ադմինիստրատորը դրանք հեռացնի։</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Ներբեռնել իմ մուտքի տվյալները</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ձեր աշխատաշրջաններն ու անվտանգության իրադարձությունները JSON ֆայլի տեսքով։</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Մուտք է գործել</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Մուտքի ձախողված փորձ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Դուրս է եկել</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Աշխատաշրջաններն ավարտվել են</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Մուտք նոր սարքից</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Մուտք նոր վայրից</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Ինքնությունը հաստատվել է («Հաստատեք, որ դա Դուք եք»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ինքնության ստուգումը ձախողվել է</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Մուտք է գործել մուտքի բանալիով</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Մուտքը մուտքի բանալիով ձախողվել է</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Մուտքը մերժվել է․ երկքայլ մուտքի կոդը բացակայում է կամ սխալ է</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Երկքայլ մուտքի սխալ կոդ</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Հաշիվն արգելափակվել է ձախողված մուտքերից հետո</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Հաշիվն ապաարգելափակվել է</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Գաղտնաբառը փոխվել է</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Գաղտնաբառի փոփոխությունը ձախողվել է</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Գաղտնաբառը վերակայվել է</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Պահանջվել է նոր գաղտնաբառ</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Էլփոստի հասցեն փոխվել է</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Օգտանունը փոխվել է</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Երկքայլ մուտքը միացվել է</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Երկքայլ մուտքն անջատվել է</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Օգտագործվել է վերականգնման կոդ</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Նոր վերականգնման կոդեր</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Հավելվածի գաղտնաբառը ստեղծվել է</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Հավելվածի գաղտնաբառը հետ է կանչվել</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Մուտքի բանալին ավելացվել է</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Մուտքի բանալին հեռացվել է</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Հաշիվը միացվել է</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Հաշիվն անջատվել է</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Բոլորը</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Մուտքեր և աշխատաշրջաններ</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Հաշվի փոփոխություններ</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Պահանջում է ուշադրություն</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Անվտանգության գործունեություն</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Անվտանգության գործունեություն: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ձեր հաշվի մուտքերը և անվտանգության փոփոխությունները։ Եթե տեսնում եք մի բան, որը Դուք չեք արել, փոխեք Ձեր գաղտնաբառը և դուրս բերեք այն սարքերը, որոնք չեք ճանաչում։</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ձեր սարքերը</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Փոխել գաղտնաբառը</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Այս կայքում անվտանգության գործունեությունը դեռ չի գրանցվում։</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Մուտքեր վերջին %days օրում</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ձախողված փորձեր</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Անվտանգության գործունեություն դեռ չի գրանցվել։</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Ներբեռնել իմ մուտքի տվյալները</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ձեր աշխատաշրջաններն ու անվտանգության իրադարձությունները JSON ֆայլի տեսքով։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Գաղտնաբառ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Գաղտնաբառ և երկքայլ մուտքի կոդ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST միջերես</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP միջերես</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Միասնական մուտք (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Մուտք է գործել մինչև աշխատաշրջանների գրանցումը</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Մուտքերի հաշվետվություն</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ով է մուտք գործած կայք, որքան հաճախ են հաշիվները մուտք գործում և ձախողում, ինչպես նաև օգտատիրոջ դուրս բերում ամենուրեք։ Աշխատում է աշխատաշրջանի ցանկացած մշակիչի հետ։</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Աշխատաշրջանն ավարտվել է։ Սարքը պետք է նորից մուտք գործի։</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login օգտատերը դուրս է բերվել %count աշխատաշրջանից։</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login օգտատերը ընթացիկ աշխատաշրջան չուներ։</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Այդ ID-ով, օգտանունով կամ էլփոստի հասցեով հաշիվ չկա։</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Սա այն աշխատաշրջանն է, որը Դուք օգտագործում եք։ Այն ավարտելու համար դուրս եկեք։</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Այդ աշխատաշրջանն արդեն ավարտված էր։</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Էջի ժամկետն անցել էր։ Ոչինչ չի փոխվել, խնդրում ենք կրկին փորձել։</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Այս կայքում աշխատաշրջանները չեն գրանցվում (site.ini [UserSessionSettings] Tracking=disabled)։</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session աղյուսակը բացակայում է</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Աշխատաշրջանները կգրանցվեն, երբ այն ստեղծվի․ php update/common/scripts/6.0/createusersessiontable.php կամ 6.0.15 տարբերակի տվյալների բազայի թարմացումը։</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Հիմա և այսօր</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ընթացիկ աշխատաշրջաններ</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Մուտք գործած օգտատերեր</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Այսօրվա մուտքեր</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Այսօրվա ձախողված փորձեր</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Դուրս բերել օգտատիրոջն ամենուրեք</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Հաշվի յուրաքանչյուր աշխատաշրջան ավարտվում է իր հաջորդ հարցման ժամանակ, այդ թվում՝ «Հիշել ինձ»-ով պահպանվածները։ Օգտագործեք սա, երբ հաշիվը կարող է սխալ ձեռքերում լինել, ապա վերակայեք դրա գաղտնաբառը։</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Օգտատիրոջ ID, օգտանուն կամ էլփոստի հասցե</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Դուրս գալ ամենուր</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Այժմ մուտք գործած</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Ցուցադրված են վերջին օգտագործված %limit աշխատաշրջանները։</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Օգտատեր</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Սարք</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Հասցե</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Մուտք է գործել</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Վերջին ակտիվություն</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Գործողություններ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Այս սարքը</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Գրանցված չէ</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Դուրս գալ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Մուտք գործած աշխատաշրջան չկա։</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Վերջին %days օրը</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Մուտքերն ու ձախողված փորձերը հաշվվում են օգտատերերի աուդիտի մատյանից, որը բացակայում է․ նոր աշխատաշրջանները հաշվվում են։</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Օր</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Մուտքեր</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ձախողված փորձեր</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Նոր աշխատաշրջաններ</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Աշխատաշրջանի մշակիչ: %handler։ Աշխատաշրջանները կարդացվում են expuser_session աղյուսակից, ուստի հաշվետվությունն աշխատում է ցանկացած մշակիչի հետ։</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Անվտանգության ահազանգ Ձեր հաշվի վերաբերյալ</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Ձեր %login հաշվում տեղի է ունեցել անվտանգության իրադարձություն: %event։ Եթե դա Դուք չէիք, պաշտպանեք Ձեր հաշիվը հետևյալ հասցեով՝ %url։</translation>
     </message>
 </context>
 </TS>

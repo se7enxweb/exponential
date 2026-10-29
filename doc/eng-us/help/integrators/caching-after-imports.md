@@ -77,7 +77,7 @@ for the rebuild.
 
 | Layer | Clear |
 |---|---|
-| Velocity's response cache (when Velocity serves the site) | `php bin/php/console exp:velocity cache clear` |
+| Velocity's response cache (when Velocity serves the site) | `php bin/php/console exp:velocity cache clear --apply` |
 | The HTTP cache | cache id `exphttpcache` ([HTTP cache](../../bc/6.0/httpcache.md)) |
 | A CDN or reverse proxy you run | Its own purge API, driven by `content/cache` events ([example](event-listeners-for-integrations.md#example-purging-a-cdn-when-caches-are-cleared)) |
 | Browsers | Cache headers of your pages; nothing to clear |
@@ -107,7 +107,7 @@ php bin/php/ezcache.php --clear-id=template-block --allow-root-user
 # after installing a package with classes and content (indexing was delayed)
 php bin/php/updatesearchindex.php --allow-root-user
 php bin/php/ezcache.php --clear-id=content,template-block,classid,sortkey --allow-root-user
-php bin/php/console exp:velocity cache clear
+php bin/php/console exp:velocity cache clear --apply
 
 # after a repair that changed content tables directly
 php bin/php/ezcache.php --clear-id=content,template-block,urlalias --allow-root-user

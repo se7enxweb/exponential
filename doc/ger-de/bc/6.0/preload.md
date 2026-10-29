@@ -6,7 +6,7 @@
 > [Caches vorwärmen](../../anleitungen/caches-vorwaermen.md).
 
 Lesen Sie diese Seite, wenn Sie beim Deploy Caches leeren und möchten, dass die ersten Besucher schnelle Seiten
-erhalten. `bin/php/preload.php` (auch `php bin/php/console exp:preload`, neu in Exponential 6.0.15) ruft Ihre Seiten
+erhalten. `bin/php/preload.php` (auch `php bin/php/console exp:preload --apply`, neu in Exponential 6.0.15) ruft Ihre Seiten
 ab, bevor ein Besucher es tut, sodass die Seiten-Caches warm sind, und meldet jeden defekten Link mit den Seiten, die
 auf ihn verweisen.
 
@@ -51,10 +51,10 @@ Ihre Exponential-Website muss **laufen und erreichbar sein**, über HTTP/HTTPS. 
 
 ```bash
 # Warm caches for the default siteaccess configured in site.ini
-php bin/php/preload.php
+php bin/php/preload.php --apply
 
 # Or run it through the console (identical result)
-php bin/php/console exp:preload
+php bin/php/console exp:preload --apply
 ```
 
 Mehr brauchen die meisten Websites nicht.
@@ -66,10 +66,10 @@ Ein Siteaccess ist ein benanntes Konfigurationsprofil in Exponential CMS (zum Be
 Frontend, eine Administration oder eine mobile Website). Haben Sie mehr als einen, können Sie gezielt einen ansprechen:
 
 ```bash
-php bin/php/preload.php --siteaccess=sevenx_site_user
+php bin/php/preload.php --apply --siteaccess=sevenx_site_user
 
 # Same command via the console dispatcher
-php bin/php/console exp:preload --siteaccess=sevenx_site_user
+php bin/php/console exp:preload --apply --siteaccess=sevenx_site_user
 ```
 
 Sie wissen nicht, wie Ihre Siteaccesses heißen? Prüfen Sie:
@@ -236,7 +236,7 @@ crontab -e
 Fügen Sie eine Zeile wie diese hinzu (läuft alle 6 Stunden, protokolliert die Ausgabe):
 
 ```
-0 */6 * * * cd /path/to/exponential-root && php bin/php/preload.php --siteaccess=sevenx_site_user >> /var/log/ezpreload.log 2>&1
+0 */6 * * * cd /path/to/exponential-root && php bin/php/preload.php --apply --siteaccess=sevenx_site_user >> /var/log/ezpreload.log 2>&1
 ```
 
 Ersetzen Sie `/path/to/exponential-root` durch den tatsächlichen Pfad zu Ihrer Website und `sevenx_site_user` durch
@@ -252,7 +252,7 @@ Der häufigste Ablauf:
 php bin/php/console exp:ezcache --clear-all --allow-root-user
 
 # 2. Immediately re-warm them
-php bin/php/console exp:preload --siteaccess=sevenx_site_user --allow-root-user
+php bin/php/console exp:preload --apply --siteaccess=sevenx_site_user --allow-root-user
 ```
 
 
@@ -261,7 +261,7 @@ php bin/php/console exp:preload --siteaccess=sevenx_site_user --allow-root-user
 **In eine Log-Datei umleiten** (nützlich in CI/CD oder bei unbeaufsichtigten Läufen):
 
 ```bash
-php bin/php/preload.php --siteaccess=sevenx_site_user > var/log/preload.log 2>&1
+php bin/php/preload.php --apply --siteaccess=sevenx_site_user > var/log/preload.log 2>&1
 ```
 
 Farben werden automatisch unterdrückt, wenn die Standardausgabe kein Terminal ist — die Log-Datei enthält sauberen,
@@ -305,7 +305,7 @@ Das Startsystem von Exponential warnt, wenn Sie als `root` arbeiten. Hängen Sie
 bestätigen:
 
 ```bash
-php bin/php/preload.php --allow-root-user
+php bin/php/preload.php --apply --allow-root-user
 ```
 
 **Phase 2 liefert nur wenige URLs**  

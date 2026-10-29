@@ -37,7 +37,7 @@ One command installs a complete site on SQLite
 
 ```bash
 ./console exp:install --dry-run
-./console exp:install
+./console exp:install --apply
 ```
 
 Then:
@@ -109,7 +109,7 @@ TEN MINUTES BEFORE
 Finish with three things on one slide or card:
 
 ```text
-Try it:          ./console exp:install        (one command, SQLite)
+Try it:          ./console exp:install --apply        (one command, SQLite)
 Learn:           the help in the admin ("?"), doc.exponential.earth
 Ask and share:   share.exponential.earth/forums   t.me/exponentialcms
 ```

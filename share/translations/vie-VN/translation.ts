@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Thiết lập &gt; Tác vụ cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Chưa có phần cronjob nào chạy: hàng đợi tác vụ, các lần nhập, thông báo và chỉ mục tìm kiếm đang chờ. Hãy chạy php bin/php/installcrontab.php --add --apply, hoặc thêm các dòng của --show vào crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Bản cài đặt này là bản demo công khai: bất kỳ ai cũng có thể biết mật khẩu quản trị viên của nó, và mật khẩu quản trị viên không thể thay đổi hoặc đặt lại. Đừng nhập bất kỳ thông tin riêng tư nào ở đây.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Thiết bị của bạn</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Các tài khoản không ai dùng hoặc cần xem xét; vô hiệu hóa, mở khóa hoặc xuất chúng.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Nhật ký kiểm tra người dùng</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ai đã thay đổi, đăng nhập hoặc bị từ chối, theo từng tài khoản; lọc và xuất.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Báo cáo đăng nhập</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Ai đang đăng nhập, số lượt đăng nhập và lỗi mỗi ngày; đăng xuất một người dùng ở mọi nơi.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Các phiên đã hết hạn của trình xử lý PHP được chính PHP gỡ bỏ (session.gc_maxlifetime), không phải bởi trang này hay phần tác vụ cron session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Các phiên đã đăng nhập của mọi người dùng được liệt kê và có thể đăng xuất trong báo cáo đăng nhập, báo cáo này hoạt động với mọi trình xử lý phiên.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Mở báo cáo đăng nhập</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ tài khoản của bạn.</translation>
     <message>
         <source>None yet</source>
         <translation>Chưa có</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Các lần đăng nhập gần đây, các lần thử thất bại và các thay đổi về mật khẩu, địa chỉ email và đăng nhập hai bước của bạn.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Các lần đăng nhập gần đây, các lần thử thất bại và các thay đổi bảo mật của tài khoản này.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Xem lại hoạt động</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>%count lần đăng nhập thất bại</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Xem trang yêu cầu hệ thống để biết thêm thông tin.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab chưa được ghi (%reason). Hãy thêm các dòng này vào crontab của người dùng mà trang web chạy dưới quyền, nếu không hàng đợi, các lần nhập, thông báo và chỉ mục tìm kiếm sẽ không bao giờ chạy:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Việc cài đặt lại được thực hiện bằng kickstarter (%file, sau đó chạy php bin/php/kickstarter.php run --apply) hoặc bằng một bản cài đặt mới.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Trình truyền thư đã từ chối %count tin nhắn trong lần chạy cuối. Hãy kiểm tra máy chủ thư và site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count sự kiện đang chờ và không có lần chạy nào của cronjob thông báo được ghi nhận. Hãy thêm phần cronjob &quot;frequent&quot; vào crontab, hoặc chạy exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Choose another site or section with the node picker</source>
         <translation>Chọn trang web hoặc khu vực khác bằng bộ chọn nút</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Chỉ quản trị viên hệ thống mới có thể thay đổi chủ sở hữu: hãy chạy ./console exp:content-check --fix-permissions --apply với quyền root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>empty</source>
         <translation>trống</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Khóa ký đã hơn một năm tuổi: hãy xoay vòng khóa bằng exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>not sent</source>
         <translation>chưa gửi</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob thông báo ghi lại từng lần chạy tại đây. Hãy thêm phần frequent vào crontab, hoặc chạy exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Dùng bảng điều khiển dòng lệnh: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>None.</source>
         <translation>Không có.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>bằng ứng dụng xác thực</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>bằng mã qua email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bằng mã khôi phục</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>bằng khóa truy cập</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>bằng tài khoản bên ngoài</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Hiển thị theo mạng của nó; địa chỉ được lưu giữ theo cài đặt bảo vệ dữ liệu của trang web.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Không được ghi nhận</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vị trí</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>gần đúng</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Manage devices</source>
         <translation>Quản lý thiết bị</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>bằng ứng dụng xác thực</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>bằng mã qua email</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>bằng mã khôi phục</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>bằng khóa truy cập</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>bằng tài khoản bên ngoài</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Không được ghi nhận</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vị trí</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>gần đúng</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>View the sessions of this user</source>
         <translation>Xem các phiên của người dùng này</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Tài khoản %login của bạn trên %site vừa được dùng để đăng nhập từ một nơi mà gần đây tài khoản chưa từng đăng nhập:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Vị trí gần đúng</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser trên %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Báo cáo đăng nhập</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Open the page</source>
         <translation>Mở trang</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from đến %to trong tổng số %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Tên đăng nhập hoặc ID người dùng: tài khoản mà sự kiện liên quan đến hoặc người dùng đã thực hiện.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Tài khoản</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hành động</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sau</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mọi kết quả</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Trước</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Người thực hiện</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Xóa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hoàn tất</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Sự kiện được lưu giữ trong %days ngày.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Sự kiện được lưu giữ cho đến khi được gỡ bỏ thủ công.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Sự kiện</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Mọi hành động</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Mọi sự kiện của tài khoản này</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Xuất danh sách dưới dạng CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Từ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Thu hẹp danh sách</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Không có sự kiện nào khớp.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Mỗi trang</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Việc ghi nhận đã bị tắt trong audit.ini ([UserAuditSettings] UserAudit); danh sách hiển thị những gì đã được ghi nhận trước đó.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bị từ chối</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Kết quả</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Thiếu bảng của nhật ký kiểm tra người dùng. Hãy tạo bảng bằng php update/common/scripts/6.0/createuseraudittable.php; cho đến lúc đó, các tệp kiểm tra vẫn lưu giữ mọi sự kiện.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Trang này cần cơ sở dữ liệu SQL; trang không khả dụng trên MongoDB. Các tệp kiểm tra lưu giữ mọi sự kiện.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Đến</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Nhật ký kiểm tra người dùng</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Người dùng</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Thời gian</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nơi</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ai đã thay đổi, tạo, bật, tắt, di chuyển hoặc gỡ bỏ tài khoản nào, ai đã đăng nhập hoặc bị từ chối, và vai trò nào đã được gán: mỗi sự kiện một dòng, kèm các trường trước và sau. Mật khẩu và thông tin bí mật không bao giờ được ghi lại.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>nhóm</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>hệ thống</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>không xác định</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Bảo vệ tài khoản của bạn</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Một mã khôi phục đã được dùng để đăng nhập vào tài khoản %login của bạn trên %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Một mã khôi phục đã được sử dụng</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Tài khoản</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Địa chỉ gần đúng</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Hãy yêu cầu mật khẩu mới để đăng nhập lại, hoặc liên hệ với quản trị viên của trang web.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Yêu cầu mật khẩu mới</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Mỗi mã khôi phục chỉ dùng được một lần. Nếu bạn bị mất điện thoại, hãy thiết lập lại ứng dụng xác thực và cất giữ các mã khôi phục mới ở nơi an toàn.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Có các lần đăng nhập thất bại vào tài khoản của bạn</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Từ bây giờ, khi đăng nhập sẽ cần nhập thêm một mã ngoài mật khẩu của bạn. Nếu chính bạn đã làm việc này, bạn không cần làm gì cả.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Nếu đó là bạn và bạn quên mật khẩu, hãy yêu cầu mật khẩu mới. Nếu không, hãy chọn một mật khẩu mạnh hơn và bật đăng nhập hai bước.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Nếu đó không phải là bạn, có thể ai đó đã biết mật khẩu của bạn: hãy đổi mật khẩu ngay và kiểm tra tài khoản của bạn đang đăng nhập ở đâu.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Số mã khôi phục còn lại</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Xem lại thiết bị của bạn</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Cảnh báo bảo mật</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Ai đó đã thử đăng nhập vào tài khoản %login của bạn trên %site bằng mật khẩu sai %count lần liên tiếp.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Đã có một sự kiện bảo mật trên tài khoản %login của bạn trên %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Đây là cảnh báo bảo mật về tài khoản của bạn. Cảnh báo này được gửi cho mọi thay đổi như vậy và không thể tắt.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Thời gian</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Đăng nhập hai bước đã được tắt cho tài khoản %login của bạn trên %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Đăng nhập hai bước đã được tắt</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Đăng nhập hai bước đã được bật cho tài khoản %login của bạn trên %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Đăng nhập hai bước đã được bật</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Tài khoản %login của bạn trên %site đã bị khóa sau quá nhiều lần đăng nhập thất bại.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Tài khoản của bạn giờ chỉ được bảo vệ bằng mật khẩu. Nếu bạn không làm việc này, hãy bật lại đăng nhập hai bước sau khi đã đổi mật khẩu.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Tài khoản của bạn đã bị khóa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Hoạt động bảo mật của %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Đã đăng nhập</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Lần đăng nhập thất bại</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Đã đăng xuất</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Các phiên đã được đăng xuất</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Đăng nhập từ thiết bị mới</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Đăng nhập từ vị trí mới</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Đã xác nhận danh tính (&quot;Xác minh đó là bạn&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kiểm tra danh tính thất bại</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Đã đăng nhập bằng khóa truy cập</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Đăng nhập bằng khóa truy cập thất bại</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Đăng nhập bị từ chối: mã đăng nhập hai bước bị thiếu hoặc sai</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Mã đăng nhập hai bước sai</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Tài khoản bị khóa sau các lần đăng nhập thất bại</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Đã mở khóa tài khoản</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Đã đổi mật khẩu</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Đổi mật khẩu thất bại</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Đã đặt lại mật khẩu</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Đã yêu cầu mật khẩu mới</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Đã đổi địa chỉ email</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Đã đổi tên người dùng</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Đã bật đăng nhập hai bước</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Đã tắt đăng nhập hai bước</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Đã dùng mã khôi phục</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Mã khôi phục mới</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Đã tạo mật khẩu ứng dụng</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Đã thu hồi mật khẩu ứng dụng</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Đã thêm khóa truy cập</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Đã gỡ khóa truy cập</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Đã kích hoạt tài khoản</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Đã vô hiệu hóa tài khoản</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Đăng nhập và phiên</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Thay đổi tài khoản</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Cần chú ý</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>bởi bạn</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>bởi người dùng</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>bởi %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Phương thức</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Trình duyệt</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Hệ điều hành</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Thiết bị</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Nơi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Quốc gia</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Phiên</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Những phiên nào</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kênh</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Lần thử thất bại</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Số mã còn lại</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Trình xử lý đăng nhập</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Hoạt động bảo mật của %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Các lần đăng nhập và thay đổi về bảo mật của tài khoản bạn. Nếu bạn thấy điều gì mà bạn không làm, hãy đổi mật khẩu và đăng xuất các thiết bị bạn không nhận ra.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Các lần đăng nhập và thay đổi về bảo mật của tài khoản này.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Thiết bị của bạn</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Đổi mật khẩu</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Quay lại tài khoản</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Hoạt động bảo mật không được ghi nhận</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Hoạt động này được đọc từ nhật ký kiểm tra người dùng, nhưng bảng expuser_audit của nó bị thiếu hoặc không được hỗ trợ trên cơ sở dữ liệu này. Hãy chạy php update/common/scripts/6.0/createuseraudittable.php, hoặc bản cập nhật cơ sở dữ liệu của 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ngày qua</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Lượt đăng nhập trong %days ngày qua</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Hoạt động bảo mật gần đây</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>thất bại</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>bị từ chối</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Chưa có hoạt động bảo mật nào được ghi nhận.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Các sự kiện bảo mật được lưu giữ trong %days ngày.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Các sự kiện bảo mật được lưu giữ cho đến khi quản trị viên xóa chúng.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Tải xuống dữ liệu đăng nhập của tôi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Các phiên và sự kiện bảo mật của bạn dưới dạng tệp JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Đã đăng nhập</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Lần đăng nhập thất bại</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Đã đăng xuất</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Các phiên đã được đăng xuất</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Đăng nhập từ thiết bị mới</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Đăng nhập từ vị trí mới</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Đã xác nhận danh tính (&quot;Xác minh đó là bạn&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kiểm tra danh tính thất bại</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Đã đăng nhập bằng khóa truy cập</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Đăng nhập bằng khóa truy cập thất bại</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Đăng nhập bị từ chối: mã đăng nhập hai bước bị thiếu hoặc sai</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Mã đăng nhập hai bước sai</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Tài khoản bị khóa sau các lần đăng nhập thất bại</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Đã mở khóa tài khoản</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Đã đổi mật khẩu</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Đổi mật khẩu thất bại</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Đã đặt lại mật khẩu</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Đã yêu cầu mật khẩu mới</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Đã đổi địa chỉ email</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Đã đổi tên người dùng</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Đã bật đăng nhập hai bước</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Đã tắt đăng nhập hai bước</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Đã dùng mã khôi phục</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Mã khôi phục mới</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Đã tạo mật khẩu ứng dụng</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Đã thu hồi mật khẩu ứng dụng</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Đã thêm khóa truy cập</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Đã gỡ khóa truy cập</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Đã kích hoạt tài khoản</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Đã vô hiệu hóa tài khoản</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Đăng nhập và phiên</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Thay đổi tài khoản</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Cần chú ý</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Hoạt động bảo mật</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Hoạt động bảo mật của %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Các lần đăng nhập và thay đổi về bảo mật của tài khoản bạn. Nếu bạn thấy điều gì mà bạn không làm, hãy đổi mật khẩu và đăng xuất các thiết bị bạn không nhận ra.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Thiết bị của bạn</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Đổi mật khẩu</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Hoạt động bảo mật chưa được ghi nhận trên trang web này.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Lượt đăng nhập trong %days ngày qua</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Lần thử thất bại</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Chưa có hoạt động bảo mật nào được ghi nhận.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Tải xuống dữ liệu đăng nhập của tôi</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Các phiên và sự kiện bảo mật của bạn dưới dạng tệp JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Mật khẩu</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Mật khẩu và mã đăng nhập hai bước</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Giao diện REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Giao diện SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Đăng nhập một lần</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Đã đăng nhập trước khi các phiên được ghi nhận</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Báo cáo đăng nhập</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Ai đang đăng nhập vào trang web, tần suất các tài khoản đăng nhập và đăng nhập thất bại, và đăng xuất một người dùng ở mọi nơi. Báo cáo hoạt động với mọi trình xử lý phiên.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Phiên đã được đăng xuất. Thiết bị phải đăng nhập lại.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login đã được đăng xuất khỏi %count phiên.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login không có phiên nào đang chạy.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Không có tài khoản nào có ID, tên người dùng hoặc địa chỉ email đó.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Đây là phiên bạn đang sử dụng. Để kết thúc phiên này, hãy đăng xuất.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Phiên đó đã kết thúc từ trước.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Trang đã hết hạn. Không có gì thay đổi; vui lòng thử lại.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Các phiên không được ghi nhận trên trang web này (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Thiếu bảng expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Các phiên sẽ được ghi nhận khi bảng được tạo: php update/common/scripts/6.0/createusersessiontable.php, hoặc bản cập nhật cơ sở dữ liệu của 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Hiện tại và hôm nay</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Phiên đang chạy</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Người dùng đang đăng nhập</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Lượt đăng nhập hôm nay</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Lần thử thất bại hôm nay</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Đăng xuất một người dùng ở mọi nơi</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Mọi phiên của tài khoản sẽ kết thúc ở yêu cầu tiếp theo của phiên đó, kể cả các phiên được duy trì bằng &quot;Ghi nhớ đăng nhập&quot;. Hãy dùng khi một tài khoản có thể đã rơi vào tay kẻ xấu; sau đó đặt lại mật khẩu của tài khoản.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID người dùng, tên người dùng hoặc địa chỉ email</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Đăng xuất ở mọi nơi</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Đang đăng nhập</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Hiển thị %limit phiên được sử dụng gần đây nhất.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Người dùng</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Thiết bị</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Địa chỉ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Đã đăng nhập</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Hoạt động lần cuối</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Thao tác</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Thiết bị này</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Không được ghi nhận</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Đăng xuất</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Không có phiên nào đang đăng nhập.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days ngày qua</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Lượt đăng nhập và lần thử thất bại được đếm từ nhật ký kiểm tra người dùng, nhưng nhật ký này không có; các phiên mới thì vẫn được đếm.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ngày</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Lượt đăng nhập</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Lần thử thất bại</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Phiên mới</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Trình xử lý phiên: %handler. Các phiên được đọc từ bảng expuser_session, vì vậy báo cáo hoạt động với mọi trình xử lý.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Cảnh báo bảo mật cho tài khoản của bạn</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Đã có một sự kiện bảo mật trên tài khoản %login của bạn: %event. Nếu đó không phải là bạn, hãy bảo vệ tài khoản của bạn tại %url.</translation>
     </message>
 </context>
 </TS>

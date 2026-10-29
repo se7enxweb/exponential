@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Ìgbékalẹ̀ &gt; Àwọn iṣẹ́ cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Kò sí apá cronjob kankan tí ó tíì ṣiṣẹ́: ìtẹ̀léra iṣẹ́, àwọn ìgbéwọlé, àwọn ìfitónilétí àti atọ́ka ìwádìí ń dúró. Ẹ ṣe php bin/php/installcrontab.php --add --apply, tàbí ẹ fi àwọn ìlà --show kún crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Fífi sori ẹ̀rọ yìí jẹ́ àfihàn gbangba: ẹnikẹ́ni lè mọ ọ̀rọ̀ aṣínà alákòóso rẹ̀, a kò sì lè yí ọ̀rọ̀ aṣínà alákòóso padà tàbí tún un ṣe. Ẹ má ṣe tẹ ohunkóhun tó jẹ́ ti ìkọ̀kọ̀ sí ibí yìí.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Àwọn àkọọ́lẹ̀ tí kò sí ẹni tí ń lò tàbí tí ó nílò àyẹ̀wò; ẹ mú wọn dúró, ṣí wọn sílẹ̀ tàbí gbé wọn jáde.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Àkọsílẹ̀ àyẹ̀wò olùlò</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Ẹni tí ó ṣe àyípadà, tí ó wọlé tàbí tí a kọ̀, fún àkáǹtì kọ̀ọ̀kan; àlẹ̀mọ́ àti gbígbé jáde.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ìròyìn ìwọlé</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Àwọn tí ó ti wọlé, ìwọlé àti ìkùnà lójoojúmọ́; mú olùlò kan jáde níbi gbogbo.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP fúnrarẹ̀ (session.gc_maxlifetime) ni ó ń yọ àwọn ìgbà ìwọlé olùṣàkóso PHP tí àkókò wọn ti parí kúrò, kì í ṣe ojú ìwé yìí tàbí apá session_gc ti cronjob.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ìròyìn ìwọlé ń ṣe àtòjọ àwọn ìgbà ìwọlé ti gbogbo olùlò, ó sì ń mú wọn jáde; ó ń ṣiṣẹ́ pẹ̀lú olùgbọ́ ìgbà ìwọlé èyíkéyìí.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Ṣí ìròyìn ìwọlé</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Kò sí síbẹ̀</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Àwọn ìwọlé yín àìpẹ́ yìí, àwọn ìgbìyànjú tí ó kùnà àti àwọn àyípadà sí ọ̀rọ̀ aṣínà yín, àdírẹ́sì i-meèlì yín àti ìwọlé onípele méjì.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Àwọn ìwọlé àìpẹ́ yìí, àwọn ìgbìyànjú tí ó kùnà àti àwọn àyípadà ààbò ti àkáǹtì yìí.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Ṣàyẹ̀wò ìṣẹ̀lẹ̀</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Àwọn ìwọlé tí ó kùnà: %count</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>A kò kọ crontab náà (%reason). Ẹ fi àwọn ìlà wọ̀nyí kún crontab ti olùlò tí sáìtì náà ń ṣiṣẹ́ lábẹ́ rẹ̀, bí bẹ́ẹ̀ kọ́ ìtẹ̀léra iṣẹ́, àwọn ìgbéwọlé, àwọn ìfitónilétí àti atọ́ka ìwádìí kò ní ṣiṣẹ́ láéláé:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>A ń tún un fi sórí ẹ̀rọ pẹ̀lú Kickstarter (%file, lẹ́yìn náà php bin/php/kickstarter.php run --apply) tàbí pẹ̀lú ìfisórí-ẹ̀rọ tuntun.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Ìrìnnà ìmèlì kọ̀ %count àwọn ìfiránṣẹ́ nínú ìṣiṣẹ́ tó kọjá. Ẹ ṣàyẹ̀wò sáfá ìmèlì àti site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ìṣẹ̀lẹ̀ %count ń dúró, kò sì sí àkọsílẹ̀ ìṣiṣẹ́ cronjob ìfitónilétí kankan. Ẹ fi apá cronjob “frequent” kún crontab, tàbí ẹ ṣe exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Ẹ yan sáìtì tàbí ẹ̀ka mìíràn pẹ̀lú olùyàn ọ̀pá ìsopọ̀</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Alákòóso ètò nìkan ló lè yí olùní padà: ẹ ṣe ./console exp:content-check --fix-permissions --apply gẹ́gẹ́ bí root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>òfo</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Kọ́kọ́rọ́ ìbuwọ́lù ti ju ọdún kan lọ: ẹ pààrọ̀ rẹ̀ pẹ̀lú exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>a kò fi ránṣẹ́</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob ìfitónilétí ń ṣe àkọsílẹ̀ ìṣiṣẹ́ rẹ̀ kọ̀ọ̀kan níbí. Ẹ fi apá frequent kún crontab, tàbí ẹ ṣe exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Ẹ lo kọ́ńsóòlù: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Kò sí.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>pẹ̀lú ohun èlò ìfìdí-ẹni-múlẹ̀</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>pẹ̀lú kóòdù nípasẹ̀ i-meèlì</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>pẹ̀lú kóòdù ìmúpadàbọ̀sípò</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pẹ̀lú kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>pẹ̀lú àkáǹtì ìta</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>A fi hàn gẹ́gẹ́ bí nẹ́tíwọ̀ọ̀kì rẹ̀; a ń tọ́jú àdírẹ́sì náà bí ètò ìdáàbòbò dátà sáìtì ṣe sọ.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>A kò gbà á sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ibùdó</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ní ìsúnmọ́</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Ṣàkóso àwọn ẹ̀rọ</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>pẹ̀lú ohun èlò ìfìdí-ẹni-múlẹ̀</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>pẹ̀lú kóòdù nípasẹ̀ i-meèlì</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>pẹ̀lú kóòdù ìmúpadàbọ̀sípò</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pẹ̀lú kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>pẹ̀lú àkáǹtì ìta</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>A kò gbà á sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ibùdó</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>ní ìsúnmọ́</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Wo àwọn ìgbà ìwọlé ti olùlò yìí</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>A ṣẹ̀ṣẹ̀ lo àkáǹtì yín %login lórí %site láti wọlé láti ibì kan tí kò tíì wọlé láti ibẹ̀ láìpẹ́:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Ibùdó ní ìsúnmọ́</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser lórí %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ìròyìn ìwọlé</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Ṣí ojú ìwé náà</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sí %to nínú %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Orúkọ ìwọlé tàbí ID olùlò: àkáǹtì tí ìṣẹ̀lẹ̀ náà kàn tàbí olùlò tí ó ṣe iṣẹ́ náà.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iṣẹ́</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Lẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Èsì èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ṣáájú</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ẹni tó ṣe é</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Parẹ́</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ó ṣàṣeyọrí</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>A máa ń tọ́jú àwọn ìṣẹ̀lẹ̀ fún ọjọ́ %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>A máa ń tọ́jú àwọn ìṣẹ̀lẹ̀ títí a ó fi pa wọ́n rẹ́ ní ọwọ́.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Àwọn ìṣẹ̀lẹ̀</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Iṣẹ́ èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Gbogbo ìṣẹ̀lẹ̀ àkáǹtì yìí</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Gbé àkójọ jáde bí CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ó kùnà</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Láti</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Dín àkójọ kù</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Kò sí ìṣẹ̀lẹ̀ tó bá a mu.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fún ojú ìwé kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>A ti pa àkọsílẹ̀ ní audit.ini ([UserAuditSettings] UserAudit); àkójọ náà ń fi ohun tí a ti kọ sílẹ̀ tẹ́lẹ̀ hàn.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A kọ̀ ọ́</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Èsì</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fihàn</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tábìlì àkọsílẹ̀ àyẹ̀wò olùlò kò sí. Ẹ ṣẹ̀dá rẹ̀ pẹ̀lú php update/common/scripts/6.0/createuseraudittable.php; títí di ìgbà náà, àwọn fáìlì àyẹ̀wò máa ń tọ́jú gbogbo ìṣẹ̀lẹ̀.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ojú ìwé yìí nílò ibùdó dátà SQL; kò sí lórí MongoDB. Àwọn fáìlì àyẹ̀wò máa ń tọ́jú gbogbo ìṣẹ̀lẹ̀.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Àkọsílẹ̀ àyẹ̀wò olùlò</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Olùlò</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ìgbà</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ibo</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Ẹni tí ó yí àkáǹtì wo padà, tí ó ṣẹ̀dá rẹ̀, tí ó mú un ṣiṣẹ́, tí ó mú un dúró, tí ó gbé e lọ tàbí tí ó yọ ọ́ kúrò, ẹni tí ó wọlé tàbí tí a kọ̀, àti àwọn ipa tí a yàn: ìlà kan fún ìṣẹ̀lẹ̀ kọ̀ọ̀kan, pẹ̀lú àwọn pápá ṣáájú àti lẹ́yìn. A kì í kọ ọ̀rọ̀ aṣínà àti àṣírí sílẹ̀ rárá.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ẹgbẹ́</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>àìmọ̀</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ẹ dáàbò bo àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>A lo kóòdù ìmúpadàbọ̀sípò láti wọ àkáǹtì yín %login lórí %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>A lo kóòdù ìmúpadàbọ̀sípò</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Àdírẹ́sì ní ìsúnmọ́</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Ẹ béèrè fún ọ̀rọ̀ aṣínà tuntun láti tún wọlé, tàbí ẹ kàn sí àwọn alákòóso sáìtì náà.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Béèrè fún ọ̀rọ̀ aṣínà tuntun</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kóòdù ìmúpadàbọ̀sípò kọ̀ọ̀kan ń ṣiṣẹ́ lẹ́ẹ̀kan ṣoṣo. Bí ẹ bá ti sọ fóònù yín nù, ẹ tún ohun èlò ìfìdí-ẹni-múlẹ̀ yín ṣètò, kí ẹ sì pa àwọn kóòdù ìmúpadàbọ̀sípò tuntun mọ́ sí ibi ààbò.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Àwọn ìgbìyànjú ìwọlé tí ó kùnà lórí àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Láti ìsinsìnyí lọ, ìwọlé yóò béèrè fún kóòdù kan ní àfikún sí ọ̀rọ̀ aṣínà yín. Bí ẹ̀yin ni ẹ ṣe èyí, ẹ kò nílò láti ṣe nǹkankan.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Bí ẹ̀yin ni tí ẹ sì gbàgbé ọ̀rọ̀ aṣínà yín, ẹ béèrè fún tuntun. Bí kì í bá ṣe ẹ̀yin, ẹ yan ọ̀rọ̀ aṣínà tí ó lágbára jù, kí ẹ sì tan ìwọlé onípele méjì.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Bí kì í bá ṣe ẹ̀yin ni ẹ ṣe èyí, ẹnì kan lè mọ ọ̀rọ̀ aṣínà yín: ẹ yí i padà nísinsìnyí kí ẹ sì ṣàyẹ̀wò ibi tí àkáǹtì yín ti wọlé sí.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Àwọn kóòdù ìmúpadàbọ̀sípò tí ó kù</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Ṣàyẹ̀wò àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Ìkìlọ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Ẹnì kan gbìyànjú láti wọ àkáǹtì yín %login lórí %site pẹ̀lú ọ̀rọ̀ aṣínà tí kò tọ̀nà ní ìgbà %count léraléra.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò kan wáyé lórí àkáǹtì yín %login lórí %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Èyí jẹ́ ìkìlọ̀ ààbò nípa àkáǹtì yín. A ń fi ránṣẹ́ fún gbogbo irú àyípadà bẹ́ẹ̀, a kò sì lè pa á.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àkókò</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>A pa ìwọlé onípele méjì fún àkáǹtì yín %login lórí %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>A pa ìwọlé onípele méjì</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>A tan ìwọlé onípele méjì fún àkáǹtì yín %login lórí %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>A tan ìwọlé onípele méjì</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>A ti tì àkáǹtì yín %login lórí %site lẹ́yìn ọ̀pọ̀ ìwọlé tí ó kùnà.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Ọ̀rọ̀ aṣínà yín nìkan ló ń dáàbò bo àkáǹtì yín báyìí. Bí kì í bá ṣe ẹ̀yin ni ẹ ṣe èyí, ẹ tún tan ìwọlé onípele méjì lẹ́yìn tí ẹ bá ti yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>A ti tì àkáǹtì yín</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò ti %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ti wọlé</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ìgbìyànjú ìwọlé tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ti jáde</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>A mú àwọn ìgbà ìwọlé jáde</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ìwọlé láti ẹ̀rọ tuntun</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ìwọlé láti ibùdó tuntun</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>A fìdí ìdánimọ̀ múlẹ̀ (“Ẹ jẹ́rìí pé ẹ̀yin ni”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ìyẹ̀wò ìdánimọ̀ kùnà</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ti wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ìwọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé kùnà</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>A kọ ìwọlé: kóòdù onípele méjì kò sí tàbí kò tọ̀nà</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kóòdù onípele méjì tí kò tọ̀nà</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>A tì àkáǹtì lẹ́yìn àwọn ìwọlé tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>A ṣí àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>A yí ọ̀rọ̀ aṣínà padà</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Yíyí ọ̀rọ̀ aṣínà padà kùnà</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>A tún ọ̀rọ̀ aṣínà ṣètò</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>A béèrè fún ọ̀rọ̀ aṣínà tuntun</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>A yí àdírẹ́sì i-meèlì padà</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>A yí orúkọ olùlò padà</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ìwọlé onípele méjì ti wà ní títan</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ìwọlé onípele méjì ti wà ní pípa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>A lo kóòdù ìmúpadàbọ̀sípò kan</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Àwọn kóòdù ìmúpadàbọ̀sípò tuntun</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>A ṣẹ̀dá ọ̀rọ̀ aṣínà áàpù</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>A fagilé ọ̀rọ̀ aṣínà áàpù</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>A fi kọ́kọ́rọ́ ìwọlé kún un</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>A yọ kọ́kọ́rọ́ ìwọlé kúrò</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>A mú àkáǹtì ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>A mú àkáǹtì dúró</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gbogbo</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ìwọlé àti ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Àwọn àyípadà àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ó nílò àfiyèsí</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>láti ọwọ́ yín</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>láti ọwọ́ olùlò náà</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>láti ọwọ́ %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Ọ̀nà</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Aṣàwárí wẹ́ẹ̀bù</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Ẹ̀rọ ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Ibi</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Orílẹ̀-èdè</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Àwọn ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Èwo</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Ọ̀nà ìfiránṣẹ́</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Àwọn ìgbìyànjú tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Àwọn kóòdù tí ó kù</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Olùgbọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò ti %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Àwọn ìwọlé àti àyípadà sí ààbò àkáǹtì yín. Bí ẹ bá rí ohun kan tí ẹ kò ṣe, ẹ yí ọ̀rọ̀ aṣínà yín padà kí ẹ sì mú àwọn ẹ̀rọ tí ẹ kò dá mọ̀ jáde.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Àwọn ìwọlé àti àyípadà sí ààbò àkáǹtì yìí.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Yí ọ̀rọ̀ aṣínà padà</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Padà sí àkáǹtì</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>A kò ṣe àkọsílẹ̀ ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>A ń kà á láti inú àkọsílẹ̀ àyẹ̀wò olùlò, tí tábìlì rẹ̀ expuser_audit kò sí tàbí tí a kò ṣe àtìlẹ́yìn fún lórí ibùdó dátà yìí. Ẹ ṣe php update/common/scripts/6.0/createuseraudittable.php, tàbí ìmúdójúìwọ̀n ibùdó dátà ti 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ọjọ́ %days tó kọjá</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Àwọn ìwọlé ní ọjọ́ %days tó kọjá</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò àìpẹ́ yìí</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fihàn</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ó kùnà</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>a kọ̀ ọ́</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>A kò tíì ṣe àkọsílẹ̀ ìṣẹ̀lẹ̀ ààbò kankan.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>A ń tọ́jú àwọn ìṣẹ̀lẹ̀ ààbò fún ọjọ́ %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>A ń tọ́jú àwọn ìṣẹ̀lẹ̀ ààbò títí alákòóso kan yóò fi yọ wọ́n kúrò.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Gba dátà ìwọlé mi sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Àwọn ìgbà ìwọlé yín àti àwọn ìṣẹ̀lẹ̀ ààbò yín gẹ́gẹ́ bí fáìlì JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ti wọlé</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Ìgbìyànjú ìwọlé tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ti jáde</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>A mú àwọn ìgbà ìwọlé jáde</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ìwọlé láti ẹ̀rọ tuntun</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ìwọlé láti ibùdó tuntun</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>A fìdí ìdánimọ̀ múlẹ̀ (“Ẹ jẹ́rìí pé ẹ̀yin ni”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Ìyẹ̀wò ìdánimọ̀ kùnà</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ti wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ìwọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé kùnà</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>A kọ ìwọlé: kóòdù onípele méjì kò sí tàbí kò tọ̀nà</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Kóòdù onípele méjì tí kò tọ̀nà</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>A tì àkáǹtì lẹ́yìn àwọn ìwọlé tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>A ṣí àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>A yí ọ̀rọ̀ aṣínà padà</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Yíyí ọ̀rọ̀ aṣínà padà kùnà</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>A tún ọ̀rọ̀ aṣínà ṣètò</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>A béèrè fún ọ̀rọ̀ aṣínà tuntun</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>A yí àdírẹ́sì i-meèlì padà</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>A yí orúkọ olùlò padà</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ìwọlé onípele méjì ti wà ní títan</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ìwọlé onípele méjì ti wà ní pípa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>A lo kóòdù ìmúpadàbọ̀sípò kan</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Àwọn kóòdù ìmúpadàbọ̀sípò tuntun</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>A ṣẹ̀dá ọ̀rọ̀ aṣínà áàpù</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>A fagilé ọ̀rọ̀ aṣínà áàpù</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>A fi kọ́kọ́rọ́ ìwọlé kún un</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>A yọ kọ́kọ́rọ́ ìwọlé kúrò</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>A mú àkáǹtì ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>A mú àkáǹtì dúró</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gbogbo</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ìwọlé àti ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Àwọn àyípadà àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Ó nílò àfiyèsí</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò ti %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Àwọn ìwọlé àti àyípadà sí ààbò àkáǹtì yín. Bí ẹ bá rí ohun kan tí ẹ kò ṣe, ẹ yí ọ̀rọ̀ aṣínà yín padà kí ẹ sì mú àwọn ẹ̀rọ tí ẹ kò dá mọ̀ jáde.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Yí ọ̀rọ̀ aṣínà padà</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>A kò tíì ṣe àkọsílẹ̀ ìṣẹ̀lẹ̀ ààbò lórí sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Àwọn ìwọlé ní ọjọ́ %days tó kọjá</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Àwọn ìgbìyànjú tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>A kò tíì ṣe àkọsílẹ̀ ìṣẹ̀lẹ̀ ààbò kankan.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Gba dátà ìwọlé mi sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Àwọn ìgbà ìwọlé yín àti àwọn ìṣẹ̀lẹ̀ ààbò yín gẹ́gẹ́ bí fáìlì JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Ọ̀rọ̀ aṣínà</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Ọ̀rọ̀ aṣínà àti kóòdù onípele méjì</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ojúùwò REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ojúùwò SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ìwọlé ẹ̀ẹ̀kan (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ti wọlé kí a tó máa ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Ìròyìn ìwọlé</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Àwọn tí ó ti wọ sáìtì, ìgbà mélòó ni àwọn àkáǹtì ń wọlé tí wọ́n sì ń kùnà, àti mímú olùlò kan jáde níbi gbogbo. Ó ń ṣiṣẹ́ pẹ̀lú olùgbọ́ ìgbà ìwọlé èyíkéyìí.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>A ti mú ìgbà ìwọlé náà jáde. Ẹ̀rọ náà gbọ́dọ̀ tún wọlé.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>A mú %login jáde kúrò nínú ìgbà ìwọlé %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login kò ní ìgbà ìwọlé tí ń ṣiṣẹ́.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Kò sí àkáǹtì tí ó ní ID, orúkọ olùlò tàbí àdírẹ́sì i-meèlì yẹn.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Èyí ni ìgbà ìwọlé tí ẹ ń lò. Láti parí rẹ̀, ẹ jáde.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ìgbà ìwọlé yẹn ti parí tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ojú ìwé náà ti parí àkókò rẹ̀. A kò yí nǹkankan padà; ẹ jọ̀wọ́ ẹ tún gbìyànjú.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>A kò ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé lórí sáìtì yìí (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tábìlì expuser_session kò sí</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>A ó máa ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé ní kété tí a bá ṣẹ̀dá rẹ̀: php update/common/scripts/6.0/createusersessiontable.php, tàbí ìmúdójúìwọ̀n ibùdó dátà ti 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nísinsìnyí àti lónìí</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Àwọn ìgbà ìwọlé tí ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Àwọn olùlò tí ó ti wọlé</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Àwọn ìwọlé lónìí</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Àwọn ìgbìyànjú tí ó kùnà lónìí</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Mú olùlò kan jáde níbi gbogbo</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Gbogbo ìgbà ìwọlé àkáǹtì náà yóò parí ní ìbéèrè rẹ̀ tó kàn, títí kan àwọn tí “Ẹ ranti mi” ń pa mọ́. Ẹ lò ó nígbà tí àkáǹtì kan lè wà lọ́wọ́ àwọn tí kò yẹ; lẹ́yìn náà ẹ tún ọ̀rọ̀ aṣínà rẹ̀ ṣètò.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID olùlò, orúkọ olùlò tàbí àdírẹ́sì i-meèlì</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Jáde níbi gbogbo</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ti wọlé nísinsìnyí</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>A fi %limit tí a lò kẹ́yìn hàn.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Olùlò</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Àdírẹ́sì</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ti wọlé</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ìgbà ìṣiṣẹ́ kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Àwọn ìṣe</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ẹ̀rọ yìí</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>A kò gbà á sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Jáde</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Kò sí ìgbà ìwọlé kankan tí ó wọlé.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Ọjọ́ %days tó kọjá</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>A ń ka àwọn ìwọlé àti àwọn ìgbìyànjú tí ó kùnà láti inú àkọsílẹ̀ àyẹ̀wò olùlò, tí kò sí; àwọn ìgbà ìwọlé tuntun ni a ń kà.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ọjọ́</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Àwọn ìwọlé</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Àwọn ìgbìyànjú tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Àwọn ìgbà ìwọlé tuntun</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Olùgbọ́ ìgbà ìwọlé: %handler. A ń ka àwọn ìgbà ìwọlé láti inú tábìlì expuser_session, nítorí náà ìròyìn náà ń ṣiṣẹ́ pẹ̀lú olùgbọ́ èyíkéyìí.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Ìkìlọ̀ ààbò fún àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò kan wáyé lórí àkáǹtì yín %login: %event. Bí kì í bá ṣe ẹ̀yin, ẹ dáàbò bo àkáǹtì yín ní %url.</translation>
     </message>
 </context>
 </TS>

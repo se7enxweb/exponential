@@ -250,7 +250,7 @@ swaps the new site in. With demo mode it should set the variable twice:
    with a random one and resetting it afterwards:
 
    ```sh
-   EXP_DEMO_MODE=1 php bin/php/install.php --db=sqlite --password='<the published demo password>' ...
+   EXP_DEMO_MODE=1 php bin/php/install.php --apply --db=sqlite --password='<the published demo password>' ...
    ```
 
    The reset step after the installation (`exp:resetuserpassword`) is then no longer needed, and in demo mode it is

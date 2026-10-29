@@ -14,7 +14,7 @@ The engine comes from the Qbix web server and ships as the Composer package `se7
 ## Part of Exponential as of 6.0.15
 
 As of Exponential 6.0.15 the Velocity Internet / Web Application Server is part of Exponential. The root
-`composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.55` (it was a suggestion before), so every
+`composer.json` requires `se7enxweb/exponential-velocity ~0.0.4.57` (it was a suggestion before), so every
 installation made with `composer install` has the server, on PHP 8.0 and later, the stock PHP 8.0 of Red Hat
 Enterprise Linux 9 included. It runs next to Apache with PHP-FPM, nginx and FrankenPHP: its own server is the
 recommended engine for every stage, FrankenPHP is the production-ready alternative, and the traditional servers keep

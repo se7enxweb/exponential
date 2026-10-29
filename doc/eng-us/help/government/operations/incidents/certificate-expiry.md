@@ -38,7 +38,7 @@ usable ([Velocity HTTPS and certificates](../../../../features/6.0/velocity-http
 
 ```bash
 ./console exp:velocity ssl show --allow-root-user
-./console exp:velocity ssl renew www.example.gov --allow-root-user
+./console exp:velocity ssl renew --apply www.example.gov --allow-root-user
 ```
 
 The running server picks up a renewal within a minute, without a restart. With Let's Encrypt, renewal runs in a

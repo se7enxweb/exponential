@@ -9,7 +9,7 @@ unter einer Millisekunde CPU-Zeit beantwortet und nicht zwischengespeicherte Sei
 Datenbankverbindung, warmen Datei-Caches und einem warmen Opcode-Cache rendert.
 
 **Ab 6.0.15 ist Velocity Teil von Exponential.** `composer.json` verlangt `se7enxweb/exponential-velocity
-~0.0.4.55`, sodass `composer install` den Server mit dem übrigen Produkt installiert, unter PHP 8.0 und neuer. Vor dem
+~0.0.4.57`, sodass `composer install` den Server mit dem übrigen Produkt installiert, unter PHP 8.0 und neuer. Vor dem
 ersten Start muss nichts hinzugefügt werden, und nichts wechselt die Engine von selbst: Die mitgelieferte
 `velocity.ini` startet den eingebauten Server von PHP, bis `[ServerSettings] Engine=qbix` gesetzt ist. Warum das ein
 Wendepunkt, ein Grundstein und ein Schlussstein für das Projekt ist und was es für jede Art von Leser bedeutet:
@@ -133,8 +133,8 @@ zwischen den verglichenen Servern ab, statt sie nacheinander zu messen.
 ```bash
 ./console exp:velocity config list ServerSettings
 ./console exp:velocity config get ServerSettings Workers
-./console exp:velocity config set ServerSettings Workers 8
-./console exp:velocity config unset ServerSettings Workers
+./console exp:velocity config set --apply ServerSettings Workers 8
+./console exp:velocity config unset --apply ServerSettings Workers
 ./console exp:velocity config paths      # which of the three look-alike files is the real one
 ```
 
@@ -166,7 +166,7 @@ September nahm das Ausschalten des Antwort-Cache den beiden anderen stillschweig
 Leeren Sie nach einer Änderung an einem Template oder Stylesheet jeden Cache:
 
 ```bash
-./console exp:velocity cache clear
+./console exp:velocity cache clear --apply
 ```
 
 Für die Schaltflächen unter **Setup > Caches** auf der Kommandozeile siehe

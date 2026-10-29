@@ -18,16 +18,16 @@ Kontexthilfe in anderen Clients.
 
 | Teil | Wo |
 |---|---|
-| Die acht Klassen `help_manual`, `help_section` (Kapitel), `help_concept`, `help_task`, `help_reference`, `help_troubleshooting`, `help_screenshot`, `help_glossary_entry` in der Klassengruppe "Help" | `./console exp:help:content classes` |
-| Die Sektionen `help_public` und `help_internal`, die Objektstatusgruppe `help_status` (Entwurf, Prüfung, Veröffentlicht), der Ordnerbaum (`help-root`, `help-pool` ..., über die remote_id gefunden) | `./console exp:help:content tree` |
-| Die Rollen "Help editor" und "Help release" sowie die eine zusätzliche Richtlinie von Anonymous | `./console exp:help:content roles` |
+| Die acht Klassen `help_manual`, `help_section` (Kapitel), `help_concept`, `help_task`, `help_reference`, `help_troubleshooting`, `help_screenshot`, `help_glossary_entry` in der Klassengruppe "Help" | `./console exp:help:content classes --apply` |
+| Die Sektionen `help_public` und `help_internal`, die Objektstatusgruppe `help_status` (Entwurf, Prüfung, Veröffentlicht), der Ordnerbaum (`help-root`, `help-pool` ..., über die remote_id gefunden) | `./console exp:help:content tree --apply` |
+| Die Rollen "Help editor" und "Help release" sowie die eine zusätzliche Richtlinie von Anonymous | `./console exp:help:content roles --apply` |
 | Der Validator des Styleguides; `--fix` setzt die Sektionen anhand der Zielgruppe | `./console exp:help:content check` |
-| Das anfängliche Glossar und die ersten Themen (die Vorlagen des Styleguides, ein Handbuch) | `./console exp:help:content seed-glossary`, `seed-topics` |
-| Die Handbücher aus der Markdown-Hilfe: eines je Ordner von `doc/eng-us/help/` und je Referenzbereich, bei jedem Release neu erstellt, mit der deutschen Übersetzung | `./console exp:help:content build-manuals` ([unten](#handbücher-aus-der-markdown-hilfe)) |
+| Das anfängliche Glossar und die ersten Themen (die Vorlagen des Styleguides, ein Handbuch) | `./console exp:help:content seed-glossary --apply`, `seed-topics` |
+| Die Handbücher aus der Markdown-Hilfe: eines je Ordner von `doc/eng-us/help/` und je Referenzbereich, bei jedem Release neu erstellt, mit der deutschen Übersetzung | `./console exp:help:content build-manuals --apply` ([unten](#handbücher-aus-der-markdown-hilfe)) |
 | Was installiert ist, Deinstallation | `./console exp:help:content report`, `uninstall` |
 | Ein E-Book (EPUB, PDF) eines Handbuchs | `./console exp:help:content export`, **EPUB/PDF herunterladen** auf der Seite des Handbuchs |
 | Der DITA-1.3-Export (Bookmaps, DITAVAL, Themen, Glossar), nach dem Schreiben geprüft | `./console exp:help:content dita`, **DITA herunterladen** auf der Seite des Handbuchs und in der Liste der Handbücher |
-| Die E-Books, gespeichert als Dateiobjekte unter E-books, versioniert, bei der Veröffentlichung neu erstellt | `./console exp:help:content ebooks` und jede Veröffentlichung eines Themas |
+| Die E-Books, gespeichert als Dateiobjekte unter E-books, versioniert, bei der Veröffentlichung neu erstellt | `./console exp:help:content ebooks --apply` und jede Veröffentlichung eines Themas |
 | Die Themen mit überfälliger Prüfung (Prüfdatum überschritten, zu lange in Prüfung) | das Dashboard der Hilfe, `./console exp:help:content review` |
 | Die acht Klassen als Inhaltsklassen-Paket `exp_help_classes` (.ezpkg) und seine Prüfung | `./console exp:help:content package`, `verify-package` ([das Paket](../../spezifikationen/6.0/hilfeklassen-als-paket.md)) |
 | Ein Thema in der Hilfe: `exphelp/topic/<help_id>`; ein Handbuch: `exphelp/manual/<remote_id>`; die Liste der Handbücher: `exphelp/manual` | Admin, Richtlinie `exphelp/read` |
@@ -36,7 +36,7 @@ Kontexthilfe in anderen Clients.
 | Kontexthilfe als JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | Richtlinie `exphelp/context` |
 | Kontexthilfe für Clients mit Token (OAuth oder ein persönlicher API-Schlüssel): `/api/help/v1/topic/<help_id>`, `/api/help/v1/manual/<remote_id>` ([unten](#kontexthilfe-für-clients-mit-token)) | REST, Scope `help` |
 | Die Hilfe auf den eigenen Seiten der Site: die Voll- und Zeilenansichten der Hilfeklassen ([unten](#hilfe-auf-den-seiten-der-site)) | Extension `exphelpsite` |
-| Die Tabellen `exphelp_help_id` (veröffentlichte help_ids) und `exphelp_feedback` in einer Installation, die älter ist als sie | `./console exp:help:content tables` (ein Schritt von `install`) |
+| Die Tabellen `exphelp_help_id` (veröffentlichte help_ids) und `exphelp_feedback` in einer Installation, die älter ist als sie | `./console exp:help:content tables --apply` (ein Schritt von `install`) |
 
 Der Plan nennt die Skripte `create_classes.php`, `create_tree.php`, `create_roles.php`, `check_help.php`,
 `seed_glossary.php` und `seed_topics.php`. Sie sind die Aktionen `classes`, `tree`, `roles`, `check`, `seed-glossary`
@@ -50,11 +50,11 @@ sich so, wie der Plan es beschreibt:
 
 ```
 ./console exp:help:content install -s admin --dry-run      # the plan
-./console exp:help:content install -s admin                # classes, tree, roles
-./console exp:help:content install -s admin                # No change.
-./console exp:help:content seed-glossary -s admin
-./console exp:help:content seed-topics -s admin --release  # the style guide's templates, Released
-./console exp:help:content check -s admin --fix
+./console exp:help:content install --apply -s admin                # classes, tree, roles
+./console exp:help:content install --apply -s admin                # No change.
+./console exp:help:content seed-glossary --apply -s admin
+./console exp:help:content seed-topics --apply -s admin --release  # the style guide's templates, Released
+./console exp:help:content check --apply -s admin --fix
 ./console exp:help:content report -s admin
 ```
 
@@ -64,15 +64,15 @@ vorhandene Objekte so, wie die Redakteure sie hinterlassen haben, sofern nicht `
 
 ### Bei einer neuen Installation
 
-Der Kickstarter und `./console exp:install` stellen am Ende einer Installation den Aufbau der Handbücher in die
-Warteschlange (`./console exp:help:content build-manuals -s admin --queue`, aus `expKickstarter::installHelpManuals()`)
+Der Kickstarter und `./console exp:install --apply` stellen am Ende einer Installation den Aufbau der Handbücher in die
+Warteschlange (`./console exp:help:content build-manuals --apply -s admin --queue`, aus `expKickstarter::installHelpManuals()`)
 und warten nicht darauf: Die Installation dauert nur wenige Sekunden länger. Der Inhaltsjob `helpmanuals` installiert
 die Hilfe als Inhalt (Klassen, Baum, Rollen) und baut dann die Handbücher in den folgenden 20 bis 30 Minuten im
 Hintergrund auf, während die Site schon genutzt wird ([der Hintergrundjob](#der-hintergrundjob)). `exphelp.ini
 [ManualSettings] BuildOnInstall=disabled` lässt das weg. Scheitert das Einreihen, wird es gemeldet, und die
 Installation bleibt bestehen: Die Site funktioniert ohne die Handbücher, und der Befehl kann jederzeit ausgeführt
 werden. Der Setup-Assistent im Browser reiht ihn nicht ein: Führen Sie nach einer Installation mit dem Assistenten
-einmal `./console exp:help:content build-manuals -s admin --queue` aus. `seed-glossary` und `seed-topics` führen Sie
+einmal `./console exp:help:content build-manuals --apply -s admin --queue` aus. `seed-glossary` und `seed-topics` führen Sie
 von Hand aus, wenn Sie die Startinhalte möchten.
 
 Dieselben Befehle, die eine bestehende Site erweitern, legen auf einer neuen alles an und finden Vorhandenes über
@@ -95,14 +95,14 @@ Styleguides, das Glossar und alles, was Redakteure geschrieben haben, bleiben, w
 
 ```
 ./console exp:help:content build-manuals -s admin --dry-run    # was sich ändern würde
-./console exp:help:content build-manuals -s admin --release    # anlegen, aktualisieren, entfernen; Veröffentlicht setzen
-./console exp:help:content build-manuals -s admin --release    # No change.
-./console exp:help:content build-manuals -s admin --manual=press --release   # ein Handbuch
-./console exp:help:content build-manuals -s admin --language=none            # ohne die Übersetzungen
-./console exp:help:content build-manuals -s admin --queue                    # dasselbe im Hintergrund (Inhaltsjob)
+./console exp:help:content build-manuals --apply -s admin --release    # anlegen, aktualisieren, entfernen; Veröffentlicht setzen
+./console exp:help:content build-manuals --apply -s admin --release    # No change.
+./console exp:help:content build-manuals --apply -s admin --manual=press --release   # ein Handbuch
+./console exp:help:content build-manuals --apply -s admin --language=none            # ohne die Übersetzungen
+./console exp:help:content build-manuals --apply -s admin --queue                    # dasselbe im Hintergrund (Inhaltsjob)
 ./console exp:help:content report -s admin                     # "Handbücher werden erstellt (n von 52)", solange er läuft
-./console exp:help:content ebooks -s admin                     # die E-Books jedes veröffentlichten Handbuchs
-./console exp:help:content ebooks -s admin --language=ger-DE   # und ihre deutsche Ausgabe
+./console exp:help:content ebooks --apply -s admin                     # die E-Books jedes veröffentlichten Handbuchs
+./console exp:help:content ebooks --apply -s admin --language=ger-DE   # und ihre deutsche Ausgabe
 ```
 
 ### Was woraus wird
@@ -214,10 +214,10 @@ Das Markdown ändert sich mit jedem Release, also werden die Handbücher mit ihm
 Releases:
 
 ```
-./console exp:help:content install -s admin                    # neue Zielgruppenoptionen, Rollen (meist No change.)
-./console exp:help:content build-manuals -s admin --release
-./console exp:help:content ebooks -s admin
-./console exp:help:content ebooks -s admin --language=ger-DE
+./console exp:help:content install --apply -s admin                    # neue Zielgruppenoptionen, Rollen (meist No change.)
+./console exp:help:content build-manuals --apply -s admin --release
+./console exp:help:content ebooks --apply -s admin
+./console exp:help:content ebooks --apply -s admin --language=ger-DE
 ```
 
 `--release` veröffentlicht, was der Aufbau erstellt oder geändert hat: Die Seiten wurden vor dem Release im Repository
@@ -308,7 +308,7 @@ Anonymous ebenso `exphelp/feedback`, damit die Leser einer öffentlichen Hilfe "
 
 ## Der Validator
 
-`./console exp:help:content check -s <siteaccess> [--fix] [--json]` prüft jedes Thema, jede Abbildung, jedes Kapitel,
+`./console exp:help:content check --apply -s <siteaccess> [--fix] [--json]` prüft jedes Thema, jede Abbildung, jedes Kapitel,
 jedes Handbuch und jeden Glossareintrag unterhalb von `help-root` (`expHelpContentValidator`, keine Datenbank in den
 Regeln selbst):
 
@@ -531,7 +531,7 @@ Site:
 - **Eine Antwort je Thema und Sitzung** wird gezählt; die Sitzung merkt sich, welche Themen sie beantwortet hat
   (höchstens 50), die Tabelle nicht. Für eine zweite Antwort wird gedankt, gespeichert wird sie nicht.
 - **Wie lange**: `FeedbackKeepDays` (730 Tage). Der Cronjob-Teil `exphelp` (Teil von `infrequent`, oder allein:
-  `php runcronjobs.php exphelp`) entfernt ältere Antworten; `./console exp:help:content feedback --prune` tut es von Hand.
+  `php runcronjobs.php exphelp`) entfernt ältere Antworten; `./console exp:help:content feedback --apply --prune` tut es von Hand.
 - **Wer antworten darf**: wer ein veröffentlichtes Thema sehen darf und `exphelp/read` hat (die Leser der Hilfe in der
   Administrationsoberfläche) oder die neue Richtlinienfunktion `exphelp/feedback` (die Leser der öffentlichen Hilfe
   einer Site). Anonymous erhält `exphelp/feedback` nur mit `AnonymousFeedback=enabled` und dem Rollenschritt. Eine

@@ -1,8 +1,22 @@
-# 1.8.6 (unreleased)
+# 1.8.6 (2026-10-29)
 - Fixed: ezjscore/call, the json_encode template operator and the ajax uploader never answer with an empty JSON
   value for a string that is not valid UTF-8 (a truncated multibyte character, a Latin-1 value of an old import):
   ezjscAjaxContent::jsonEncode() replaces the invalid bytes with U+FFFD, and a value that still cannot be encoded
   (INF, NAN) is logged and answered with the error object ezjscore/call uses for every other failure.
+- Added: translations into 135 more languages, so ezjscore carries 156 locales: afr-ZA, aka-GH, amh-ET, arc-IQ,
+  asm-IN, ast-ES, aze-AZ, bam-ML, bel-BY, ben-BD, bho-IN, bod-CN, bos-BA, bre-FR, brx-IN, bul-BG, cat-ES, ceb-PH,
+  che-RU, chi-CN, chi-TW, ckb-IQ, cym-GB, div-MV, doi-IN, dsb-DE, dzo-BT, ell-GR, eng-AU, epo-EO, est-EE, eus-ES,
+  ewe-GH, fao-FO, fas-AF, fas-IR, fil-PH, fin-FI, fry-NL, ful-SN, gla-GB, gle-IE, glg-ES, guj-IN, hau-NG, haw-US,
+  hin-IN, hsb-DE, hun-HU, huy-IL, hye-AM, ibo-NG, ind-ID, isl-IS, jav-ID, jpn-JP, kab-DZ, kal-GL, kan-IN, kas-IN,
+  kat-GE, kaz-KZ, khm-KH, kik-KE, kin-RW, kir-KG, kok-IN, kor-KP, kor-KR, kur-TR, lao-LA, lav-LV, lin-CD, lit-LT,
+  ltz-LU, lug-UG, mai-IN, mal-IN, mar-IN, mkd-MK, mlg-MG, mlt-MT, mni-IN, mon-MN, mri-NZ, msa-MY, mya-MM, nep-NP,
+  nqo-GN, oci-FR, ori-IN, orm-ET, pan-IN, pcm-NG, pnb-PK, por-PT, pus-AF, que-PE, roh-CH, ron-RO, run-BI, rus-RU,
+  san-IN, sat-IN, ser-SR, sin-LK, slk-SK, slv-SI, sme-NO, sna-ZW, snd-PK, som-SO, sqi-AL, srp-RS, sun-ID, swa-KE,
+  syr-IQ, tam-IN, tat-RU, tel-IN, tgk-TJ, tha-TH, tir-ET, ton-TO, tuk-TM, uig-CN, urd-PK, uzb-UZ, vie-VN, wol-SN,
+  xho-ZA, yid-US, yor-NG, zgh-MA and zul-ZA. They are complete and machine-assisted.
+- Updated: the Spanish (Mexico) and Ukrainian translations correct one message each.
+- Updated: comments and the rad.ini registry name the documentation at its new place, doc/eng-us/.
+- Updated: Version 1.8.6 in ezinfo.php and extension.xml.
 
 # 1.8.5
 - Added: Croatian, Czech, Danish, Dutch, Italian, Norwegian Bokmål, Polish, Portuguese (Brazil), Swedish and

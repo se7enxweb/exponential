@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Bobongisi &gt; Cronjobs</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Eteni moko te ya cronjob esalaki naino: molɔngɔ ya misala, ba-importation, ba-sango mpe index ya boluki ezali kozela. Salisá php bin/php/installcrontab.php --add --apply, to bakisá milɔngɔ ya --show na crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Installation oyo ezali démo ya bato nyɔ́nsɔ: moto nyɔ́nsɔ akoki koyeba liloba ya sekele ya mokambi na yango, mpe ba-liloba ya sekele ya bakambi ekoki te kobongwana to kozongisama. Kɔtisa awa eloko ya sekele te.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Bisaleli na yo</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Ba-compte oyo moto moko te asalelaka to oyo esengi botalisi; bomá, pelisá lisusu to bimisá yango.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Journal ya audit ya basaleli</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Nani abongolaki, akɔtaki to bapekisaki ye, na compte moko moko; filtre mpe bimisá.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport ya bokɔti</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Nani akɔtí, bokɔti mpe ba-échec na mokolo; bimisá mosaleli esika nyɔ́nsɔ.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Ba-session ya handler ya PHP oyo ntango esili elongolami na PHP yango moko (session.gc_maxlifetime), na lokasa oyo te to na eteni ya cronjob session_gc te.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Ba-session oyo ekɔtí ya basaleli nyɔ́nsɔ ezali kolakisama, mpe kobimisama, na rapport ya bokɔti, oyo esalaka na handler nyɔ́nsɔ ya session.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Fungolá rapport ya bokɔti</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ compte na yo.</translation>
     <message>
         <source>None yet</source>
         <translation>Naino te</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Bokɔti na yo ya nsuka, ba-meko oyo elongaki te mpe mbongwana ya liloba na yo ya sekele, adresi ya e-mail mpe bokɔti na etape mibale.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Bokɔti ya nsuka, ba-meko oyo elongaki te mpe mbongwana ya libateli ya compte oyo.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Talá misala</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Bokɔti oyo elongaki te: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Talá lokasa ya bosɛnga mpo na maloba mingi.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ekomamaki te (%reason). Bakisá bamolongo oyo na crontab ya mosaleli oyo site ezali kosala na nkombo na ye, soki te molɔngɔ, kɔtisa, basango mpe index ya boluki ekosala ata mbala moko te:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Kotya lisusu esalemaka na Kickstarter (%file, sima php bin/php/kickstarter.php run --apply) to na installation ya sika.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Transport ya e-mail eboyaki basango %count na kosalisa ya nsuka. Talá serveur ya e-mail mpe site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Makambo %count ezali kozela mpe ntango moko te ya cronjob ya ba-sango ekomami. Bakisá eteni ya cronjob &quot;frequent&quot; na crontab, to salisá exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Ponà site to eteni mosusu na mopesi ya nœud</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Kaka mokambi ya système akoki kobongola nkolo: salisá ./console exp:content-check --fix-permissions --apply lokola root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>empty</source>
         <translation>pamba</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Clé ya kobetela elembo eleki mbula moko: bongolá yango na exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>not sent</source>
         <translation>etindami te</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Cronjob ya ba-sango ekomaka awa ntango nyɔ́nsɔ esalaka. Bakisá eteni frequent na crontab, to salisá exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Salelá console: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>None.</source>
         <translation>Eloko te.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>na application ya authentification</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>na code oyo etindamaki na e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>na code ya bozongisi</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>na passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>na compte ya libándá</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Elakisami lokola réseau na yango; adresi ebombamaka ndenge bibongiseli ya libateli ya ba-donnée ya site elobi.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ekomami te</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Esika</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>pene</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Manage devices</source>
         <translation>Kamba bisaleli</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>na application ya authentification</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>na code oyo etindamaki na e-mail</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>na code ya bozongisi</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>na passkey</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>na compte ya libándá</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ekomami te</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Esika</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>pene</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>View the sessions of this user</source>
         <translation>Talá basessions ya mosaleli oyo</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Compte na yo %login na %site esalelami sika mpo na kokɔta uta esika oyo ekɔtaki wana te na ntango oyo:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Esika ya pene</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser na %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport ya bokɔti</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Open the page</source>
         <translation>Bɔkɔla lokasa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tii %to na kati ya %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Nkómbó ya kokɔta to id ya mosaleli: compte oyo likambo etalaki to mosaleli oyo asalaki.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Compte</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Likambo esalemi</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Sima</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mbuma nyonso</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Liboso</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Esalemi na</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Pɛtɔlá</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Esalemi</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Makambo ebombamaka mikolo %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Makambo ebombamaka tii bakolongola yango na lobɔkɔ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Makambo</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Likambo nyonso</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Makambo nyonso ya compte oyo</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Bimisá liste lokola CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Esalemi te</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Euti na</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Filtre ya liste</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Likambo moko te ekokani.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na lokasa moko</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Kokoma ekangami na audit.ini ([UserAuditSettings] UserAudit); liste ezali kolakisa oyo ekomamaki liboso.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bapekisaki</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Mbuma</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Lakisá</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tableau ya journal ya audit ya basaleli ezali te. Salá yango na php update/common/scripts/6.0/createuseraudittable.php; tii wana, ba fichiers ya audit ebombaka likambo nyonso.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Lokasa oyo esengeli na base de données SQL; ezali te na MongoDB. Ba fichiers ya audit ebombaka likambo nyonso.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Tii</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Journal ya audit ya basaleli</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mosaleli</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ntango</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Esika</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Nani abongolaki, asalaki, apelisaki, abomaki, atambwisaki to alongolaki compte nini, nani akɔtaki to bapekisaki ye, mpe mikumba nini bapesaki: molɔngɔ moko mpo na likambo moko moko, na ba champs liboso mpe sima. Maloba ya sekele mpe makambo ya sekele ekomamaka soki moke te.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>lisanga</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>système</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>eyebani te</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Batelá compte na yo</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Code ya bozongisi esalelamaki mpo na kokɔta na compte na yo %login na %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Code ya bozongisi esalelamaki</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Compte</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adresi ya pene</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Sɛngá liloba ya sekele ya sika mpo na kokɔta lisusu, to solola na bakambi ya site.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Sɛngá liloba ya sekele ya sika</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Code moko na moko ya bozongisi esalaka kaka mbala moko. Soki obungisi telefone na yo, bongisá lisusu application na yo ya authentification mpe bombá ba-code ya sika ya bozongisi na esika ya libateli.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Ba-meko ya bokɔti oyo elongaki te na compte na yo</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Banda sikoyo, bokɔti ekosɛnga code na likoló ya liloba na yo ya sekele. Soki ezali yo osalaki yango, osengeli kosala eloko te.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Soki ezali yo mpe obosani liloba na yo ya sekele, sɛngá ya sika. Soki te, ponà liloba ya sekele ya makasi koleka mpe fungolá bokɔti na etape mibale.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Soki ezali yo te, moto moko akoki koyeba liloba na yo ya sekele: bongolá yango sikoyo mpe talá esika compte na yo ekɔtí.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Ba-code ya bozongisi oyo etikali</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Talá bisaleli na yo</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Likebisi ya libateli</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Moto moko ameki kokɔta na compte na yo %login na %site na liloba ya sekele ya mabe mbala %count na molɔngɔ.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Likambo moko ya libateli esalemaki na compte na yo %login na %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Oyo ezali likebisi ya libateli mpo na compte na yo. Etindamaka mpo na mbongwana nyɔ́nsɔ ya ndenge oyo mpe ekoki kokangama te.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ntángo</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Bokɔti na etape mibale ekangamaki mpo na compte na yo %login na %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Bokɔti na etape mibale ekangamaki</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Bokɔti na etape mibale efungwamaki mpo na compte na yo %login na %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Bokɔti na etape mibale efungwamaki</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Compte na yo %login na %site ekangamaki sima ya bokɔti mingi koleka oyo elongaki te.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Compte na yo ebatelami sikoyo kaka na liloba na yo ya sekele. Soki ezali yo te osalaki yango, fungolá lisusu bokɔti na etape mibale sima ya kobongola liloba na yo ya sekele.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Compte na yo ekangamaki</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Misala ya libateli ya %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Akɔtaki</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Meko ya bokɔti oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Abimaki</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ba-session ebimisami</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Bokɔti uta na appareil ya sika</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Bokɔti uta na esika ya sika</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Bomoto endimisami (&quot;Ndimisá ete ezali yo&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Botali bomoto elongaki te</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Akɔtaki na passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Bokɔti na passkey elongaki te</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Bokɔti eboyami: code ya etape ya mibale ezali te to ezali mabe</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code ya etape ya mibale ya mabe</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Compte ekangami sima ya bokɔti oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Compte efungwami</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Liloba ya sekele ebongwani</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Mbongwana ya liloba ya sekele elongaki te</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Liloba ya sekele etiyami lisusu</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Liloba ya sekele ya sika esɛngami</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adresi ya e-mail ebongwani</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nkómbó ya mosaleli ebongwani</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Bokɔti na etape mibale efungwami</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Bokɔti na etape mibale ekangami</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Code ya bozongisi esalelami</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ba-code ya sika ya bozongisi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Liloba ya sekele ya application esalemi</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Liloba ya sekele ya application ebomami</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ebakisami</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey elongolami</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Compte epeli</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Compte ebomami</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Bokɔti mpe ba-session</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mbongwana ya compte</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Esengeli likebi</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>na yo</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>na mosaleli</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>na %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Lolenge</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Navigateur</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Système d&apos;exploitation</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Appareil</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Esika</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ekólo</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Ba-session</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Nini</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Nzela ya kotinda</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ba-meko oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Ba-code oyo etikali</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Handler ya bokɔti</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Misala ya libateli ya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Bokɔti mpe mbongwana ya libateli ya compte na yo. Soki omoni eloko oyo osalaki te, bongolá liloba na yo ya sekele mpe bimisá bisaleli oyo oyebi te.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Bokɔti mpe mbongwana ya libateli ya compte oyo.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Bisaleli na yo</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Bongolá liloba ya sekele</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Zongá na compte</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Misala ya libateli ekomamaka te</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Etángamaka na journal ya audit ya basaleli, oyo tableau na yango expuser_audit ezali te to endimami te na base de données oyo. Salisá php update/common/scripts/6.0/createuseraudittable.php, to mise à jour ya base de données ya 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Mikolo %days oyo eleki</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Bokɔti na mikolo %days oyo eleki</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Misala ya libateli ya nsuka</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Lakisá</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>elongaki te</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>eboyami</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Misala moko te ya libateli ekomami naino.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Makambo ya libateli ebombamaka mikolo %days.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Makambo ya libateli ebombamaka tii mokambi akolongola yango.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Kitisá ba-donnée na ngai ya bokɔti</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ba-session na yo mpe makambo ya libateli lokola fichier JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Akɔtaki</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Meko ya bokɔti oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Abimaki</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Ba-session ebimisami</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Bokɔti uta na appareil ya sika</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Bokɔti uta na esika ya sika</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Bomoto endimisami (&quot;Ndimisá ete ezali yo&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Botali bomoto elongaki te</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Akɔtaki na passkey</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Bokɔti na passkey elongaki te</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Bokɔti eboyami: code ya etape ya mibale ezali te to ezali mabe</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Code ya etape ya mibale ya mabe</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Compte ekangami sima ya bokɔti oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Compte efungwami</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Liloba ya sekele ebongwani</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Mbongwana ya liloba ya sekele elongaki te</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Liloba ya sekele etiyami lisusu</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Liloba ya sekele ya sika esɛngami</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Adresi ya e-mail ebongwani</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Nkómbó ya mosaleli ebongwani</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Bokɔti na etape mibale efungwami</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Bokɔti na etape mibale ekangami</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Code ya bozongisi esalelami</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Ba-code ya sika ya bozongisi</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Liloba ya sekele ya application esalemi</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Liloba ya sekele ya application ebomami</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Passkey ebakisami</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Passkey elongolami</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Compte epeli</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Compte ebomami</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Bokɔti mpe ba-session</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Mbongwana ya compte</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Esengeli likebi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Misala ya libateli</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Misala ya libateli ya %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Bokɔti mpe mbongwana ya libateli ya compte na yo. Soki omoni eloko oyo osalaki te, bongolá liloba na yo ya sekele mpe bimisá bisaleli oyo oyebi te.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Bisaleli na yo</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Bongolá liloba ya sekele</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Misala ya libateli ekomamaka naino te na site oyo.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Bokɔti na mikolo %days oyo eleki</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ba-meko oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Misala moko te ya libateli ekomami naino.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Kitisá ba-donnée na ngai ya bokɔti</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Ba-session na yo mpe makambo ya libateli lokola fichier JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Liloba ya sekele</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Liloba ya sekele mpe code ya etape ya mibale</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interface REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interface SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Bokɔti mbala moko (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Akɔtaki liboso ba-session ebanda kokomama</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Rapport ya bokɔti</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Nani akɔtí na site, mbala boni ba-compte ekɔtaka mpe elongaka te, mpe kobimisa mosaleli esika nyɔ́nsɔ. Esalaka na handler nyɔ́nsɔ ya session.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Session ebimisami. Appareil esengeli kokɔta lisusu.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login abimisami na ba-session %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login azalaki na session moko te oyo ezali kotambola.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Compte moko te ezali na ID wana, nkómbó ya mosaleli wana to adresi ya e-mail wana.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Oyo ezali session oyo ozali kosalela. Mpo na kosukisa yango, bimá.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Session wana esilaki kala.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ntángo ya lokasa esilaki. Eloko moko te ebongwani; palado, meká lisusu.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ba-session ekomamaka te na site oyo (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tableau expuser_session ezali te</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ba-session ekokomama soki tableau esalemi: php update/common/scripts/6.0/createusersessiontable.php, to mise à jour ya base de données ya 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Sikoyo mpe lelo</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Ba-session oyo ezali kotambola</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Basaleli oyo bakɔtí</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Bokɔti ya lelo</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Ba-meko oyo elongaki te lelo</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Bimisá mosaleli esika nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Session nyɔ́nsɔ ya compte esilaka na bosɛngi na yango oyo ekolanda, ata oyo ebatelami na &quot;Kanisá ngai&quot;. Salelá yango soki compte ekoki kozala na mabɔkɔ ya mabe; sima tyá lisusu liloba na yango ya sekele.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>ID ya mosaleli, nkómbó ya mosaleli to adresi ya e-mail</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Bimisá esika nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Akɔtí sikoyo</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>%limit oyo esalelamaki sika koleka ezali kolakisama.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Mosaleli</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Appareil</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresi</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Akɔtaki</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Mosala ya nsuka</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Misala</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Appareil oyo</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ekomami te</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Bimisá</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Session moko te ekɔtí.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Mikolo %days oyo eleki</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Bokɔti mpe ba-meko oyo elongaki te etángamaka na journal ya audit ya basaleli, oyo ezali te; ba-session ya sika nde etángami.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Mokolo</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Bokɔti</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Ba-meko oyo elongaki te</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Ba-session ya sika</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Handler ya session: %handler. Ba-session etángamaka na tableau expuser_session, yango wana rapport esalaka na handler nyɔ́nsɔ.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Likebisi ya libateli mpo na compte na yo</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Likambo moko ya libateli esalemaki na compte na yo %login: %event. Soki ezali yo te, batelá compte na yo na %url.</translation>
     </message>
 </context>
 </TS>

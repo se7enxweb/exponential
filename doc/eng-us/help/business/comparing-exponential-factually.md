@@ -87,7 +87,7 @@ In a running installation, an administrator can show the database engine under *
 
 > **Tip**
 > Offer the buyer a test installation they control. One command installs a working site on SQLite, with no database
-> server: `./console exp:install` ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
+> server: `./console exp:install --apply` ([Installing Exponential in one command](../../features/6.0/install-in-one-command.md)).
 
 ## No lock-in, point by point
 

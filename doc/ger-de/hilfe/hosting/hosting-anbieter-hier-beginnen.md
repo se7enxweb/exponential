@@ -50,7 +50,7 @@ keine: Sie zeigen, wie Sie messen und entscheiden.
   Workern, empfohlen für jede Phase; FrankenPHP ist eine produktionsreife Alternative; Apache oder nginx mit PHP-FPM
   bleiben vollständig unterstützt und sind das, was Shared Hosting meist anbietet ([Kapitel 8](../../installation/08-die-website-ausliefern.md)).
 - **Seit 6.0.15 ist diese Engine Teil von Exponential.** Die `composer.json` im Wurzelverzeichnis verlangt
-  `se7enxweb/exponential-velocity ~0.0.4.55`, sodass jede Website, die Sie mit Composer installieren, den Velocity
+  `se7enxweb/exponential-velocity ~0.0.4.57`, sodass jede Website, die Sie mit Composer installieren, den Velocity
   Internet / Web Application Server hat, auf demselben PHP wie die Website (8.0 und neuer, einschließlich des
   Standard-PHP 8.0 von Red Hat Enterprise Linux 9). Er braucht die Erweiterung `sockets`, empfohlen sind `pcntl` und
   `openssl`. Nichts wechselt die Engine von selbst, ein Angebot mit Apache oder nginx funktioniert also unverändert

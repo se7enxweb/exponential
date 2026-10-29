@@ -33,6 +33,8 @@ php bin/php/frankenphp.php --help
 | `--keep-global` | required |  |
 | `--https` |  |  |
 | `--no-https` |  |  |
+| `--apply` |  | the commands that write (config set\|unset, cache clear, install ...): make the change; without it they are a dry run, as with exp:velocity |
+| `--dry-run` |  | the default of the commands that write; passed on to exp:velocity |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

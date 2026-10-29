@@ -8,7 +8,7 @@ answers cached pages in well under a millisecond of CPU and renders uncached pag
 warm file caches and a warm opcode cache.
 
 **As of 6.0.15 Velocity is part of Exponential.** `composer.json` requires `se7enxweb/exponential-velocity
-~0.0.4.55`, so `composer install` installs the server with the rest of the product, on PHP 8.0 and later. Nothing has
+~0.0.4.57`, so `composer install` installs the server with the rest of the product, on PHP 8.0 and later. Nothing has
 to be added before the first start, and nothing switches engines on its own: the shipped `velocity.ini` starts PHP's
 built-in server until `[ServerSettings] Engine=qbix` is set. Why this is a turning point, a cornerstone and a capstone
 for the project, and what it means for each kind of reader:
@@ -132,8 +132,8 @@ Change and read settings with the command instead of editing by hand:
 ```bash
 ./console exp:velocity config list ServerSettings
 ./console exp:velocity config get ServerSettings Workers
-./console exp:velocity config set ServerSettings Workers 8
-./console exp:velocity config unset ServerSettings Workers
+./console exp:velocity config set --apply ServerSettings Workers 8
+./console exp:velocity config unset --apply ServerSettings Workers
 ./console exp:velocity config paths      # which of the three look-alike files is the real one
 ```
 
@@ -165,7 +165,7 @@ two). `status` says which caches get APCu and why.
 Clear every cache after a template or stylesheet change:
 
 ```bash
-./console exp:velocity cache clear
+./console exp:velocity cache clear --apply
 ```
 
 For the Setup > Caches buttons from the command line see

@@ -115,7 +115,8 @@ class eZSOAPServer
 
         $dom = new DOMDocument( '1.0', 'utf-8' );
         $dom->preserveWhiteSpace = false;
-        $success = $dom->loadXML( $xmlData );
+        // an empty body throws on PHP 8 instead of returning false; answer it as bad XML like any other
+        $success = trim( (string)$xmlData ) !== '' && $dom->loadXML( $xmlData );
 
         // Check for non-parsing XML, to avoid call to non-object error.
         if ( !$success )
@@ -129,6 +130,13 @@ class eZSOAPServer
         // add namespace fetching on body
         // get the SOAP body
         $body = $dom->getElementsByTagName( "Body" );
+        if ( $body->length === 0 )
+        {
+            $this->showResponse( 'unknown_function_name', 'unknown_namespace_uri',
+                                 new eZSOAPFault( 'Server Error',
+                                                  'Bad XML' ) );
+            return;
+        }
 
         $children = $body->item( 0 )->childNodes;
 

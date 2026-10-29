@@ -32,6 +32,7 @@ um sie zu prüfen.
 | Pfad | Was es ist | Für PHP beschreibbar | Sichern |
 |---|---|---|---|
 | `index.php`, `index_rest.php`, `index_treemenu.php` | die Front-Controller | nein | kommt mit dem Code |
+| `index_soap.php`, `soap.php` | der SOAP-Server und sein früherer Name, der nur dorthin weiterleitet (6.0.15) | nein | kommt mit dem Code |
 | `kernel/`, `lib/`, `bin/`, `share/`, `update/` | der Kernel, Bibliotheken, Skripte, Übersetzungen, Datenbank-Updates | nein | kommt mit dem Code |
 | `vendor/` | die Composer-Pakete | nein (Composer schreibt es) | von Composer aus `composer.lock` neu aufgebaut |
 | `extension/` | Erweiterungen, aus Composer oder von Hand geschrieben | nur, solange Pakete aus der Administration installiert werden | ja, wenn nicht in einem Repository |

@@ -69,7 +69,7 @@ Auf Anforderung oder nächtlich als Benutzer der Website:
 
 ```bash
 ./console exp:logs --prune --dry-run
-./console exp:logs --prune
+./console exp:logs --apply --prune
 # crontab: 15 3 * * * cd /var/www/vhosts/<domain>/<installation> && php runcronjobs.php -q logs
 ```
 

@@ -125,7 +125,7 @@ der Reihe ist, statt es scheitern zu lassen. Die meisten Anfragen einer laufende
 überhaupt nicht, weil drei Cache-Schichten sie zuerst beantworten. Dieser Abschnitt erklärt jeden Teil, damit Sie
 selbst beurteilen können, wo die Grenzen liegen.
 
-Die Voreinstellung des Installers (`php bin/php/console exp:install`, die vorausgewählte Option des
+Die Voreinstellung des Installers (`php bin/php/console exp:install --apply`, die vorausgewählte Option des
 Setup-Assistenten, `settings/setup.ini` `[DatabaseSettings] DefaultType=sqlite3`) ist SQLite. Voraussetzungen:
 
 - Die PHP-Extension `sqlite3` (`php -m | grep -i sqlite3` gibt `sqlite3` aus).
@@ -328,7 +328,7 @@ Anfragen mit drei Schichten von ihr fern, von außen nach innen:
 
 | Schicht | Einstellung | Was ein Treffer kostet | Geleert durch |
 |---|---|---|---|
-| **Velocity-Antwort-Cache** | `settings/velocity.ini` `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` | Beantwortet vom Velocity-Elternprozess: kein PHP-Worker, keine Datenbank. Nur anonyme Besucher; angemeldete Besucher werden nie daraus bedient. | `php bin/php/console exp:velocity cache clear --allow-root-user` |
+| **Velocity-Antwort-Cache** | `settings/velocity.ini` `[CacheSettings] Enabled=enabled`, `DefaultTtl=30` | Beantwortet vom Velocity-Elternprozess: kein PHP-Worker, keine Datenbank. Nur anonyme Besucher; angemeldete Besucher werden nie daraus bedient. | `php bin/php/console exp:velocity cache clear --apply --allow-root-user` |
 | **Inhalts-View-Cache** | `site.ini` `[ContentSettings] ViewCaching=enabled` | Der gerenderte Hauptbereich einer Inhaltsseite wird aus einer Datei gelesen; das Pagelayout darum herum läuft weiterhin. | `php bin/php/ezcache.php --clear-id=content --allow-root-user`, und automatisch beim Veröffentlichen |
 | **Template-Block-Cache** | `site.ini` `[TemplateSettings] TemplateCache=enabled` | `{cache-block}`-Abschnitte des Pagelayouts (Menüs, Fußzeilen) werden aus Dateien gelesen. | `php bin/php/ezcache.php --clear-id=template-block --allow-root-user` |
 
@@ -489,7 +489,7 @@ php bin/php/maintenance.php on --message="Restoring" --allow-root-user
 sqlite3 var/storage/sqlite3/exponential.db ".restore '/backup/exponential-2026-10-05.db'"
 php bin/php/maintenance.php off --allow-root-user
 php bin/php/ezcache.php --clear-all --allow-root-user
-php bin/php/console exp:velocity cache clear --allow-root-user
+php bin/php/console exp:velocity cache clear --apply --allow-root-user
 ```
 
 `.restore` kopiert die Sicherung Seite für Seite unter einer Schreibsperre in die laufende Datenbank. Bei Erfolg gibt
@@ -636,7 +636,7 @@ ConnectRetries=0
 Installieren Sie über die Konsole (das Passwort aus der Umgebung, damit es nicht in der Shell-Historie landet):
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mysql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mysql \
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 
@@ -718,7 +718,7 @@ UsePersistentConnection=disabled
 ```
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=pgsql \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=pgsql \
     --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
 ```
 
@@ -797,7 +797,7 @@ Prozesses vorgehalten, sodass ein Velocity-Worker seine Verbindungen wiederverwe
    Erhöhen Sie vorher das `request_terminate_timeout` von PHP-FPM, oder installieren Sie über die Konsole:
 
    ```bash
-   EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=mongodb \
+   EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=mongodb \
        --db-host=127.0.0.1 --db-name=exponential --db-user=exponential --allow-root-user
    ```
 
@@ -865,7 +865,7 @@ Tablespace.) Dasselbe steht als `php bin/php/console ext:ezoracle:ora-grant` zur
 ### Installieren
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --db=oracle \
+EXP_INSTALL_DB_PASSWORD='<the password>' php bin/php/console exp:install --apply --db=oracle \
     --db-host=127.0.0.1 --db-port=1521 --db-name=FREEPDB1 --db-user=exponential --allow-root-user
 ```
 
@@ -1094,7 +1094,7 @@ Schema-Handlern; auf diesem Weg kamen auch die Unterstützung für Oracle und Mo
 und Update-Dateien, Einträge in den Installern, Tests) steht unter
 [Datenbankunterstützung](../hilfe/datenbankunterstuetzung.md#microsoft-sql-server-möglich-mit-zusätzlichem-aufwand).
 
-**SQLite für öffentliche Demos.** SQLite ist die übliche Datenbank einer öffentlichen Demo, die alle paar Stunden von Grund auf neu aufgebaut wird: `EXP_DEMO_MODE=1 ./console exp:install --db=sqlite --password=<the published password>` installiert eine in etwa einer Minute, ohne dass zwischen den Builds etwas gelöscht werden muss. Der Demo-Modus selbst hängt nicht von der Datenbank-Engine ab ([Demo-Modus](../bc/6.0/demomodus.md)).
+**SQLite für öffentliche Demos.** SQLite ist die übliche Datenbank einer öffentlichen Demo, die alle paar Stunden von Grund auf neu aufgebaut wird: `EXP_DEMO_MODE=1 ./console exp:install --apply --db=sqlite --password=<the published password>` installiert eine in etwa einer Minute, ohne dass zwischen den Builds etwas gelöscht werden muss. Der Demo-Modus selbst hängt nicht von der Datenbank-Engine ab ([Demo-Modus](../bc/6.0/demomodus.md)).
 
 ## Quellen
 

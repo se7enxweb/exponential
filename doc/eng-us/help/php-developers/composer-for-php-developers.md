@@ -80,7 +80,7 @@ Exponential packages use three- and four-part versions (`6.0.15`, `0.0.4.54`). T
 | Constraint | Allows |
 |---|---|
 | `~6.0.15` | `>=6.0.15 <6.1.0` |
-| `~0.0.4.55` | `>=0.0.4.55 <0.0.5.0` |
+| `~0.0.4.57` | `>=0.0.4.57 <0.0.5.0` |
 | `^8.0` | `>=8.0 <9.0` |
 
 After `.9` comes `.10` in the last position (`0.0.4.9`, `0.0.4.10`). Packagist compares each position as a number; a

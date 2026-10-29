@@ -14326,6 +14326,14 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Tämä asennus on julkinen esittelyversio: kuka tahansa voi tietää sen järjestelmänvalvojan salasanan, eikä järjestelmänvalvojien salasanoja voi muuttaa tai palauttaa. Älä syötä tänne mitään yksityistä.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Tietoturvatapahtumat</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15237,6 +15245,22 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Tilit, joita kukaan ei käytä tai jotka kaipaavat tarkistusta; poista ne käytöstä, avaa niiden lukitus tai vie ne.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Käyttäjien valvontaloki</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kuka muutti, kirjautui tai hylättiin, tileittäin; suodata ja vie.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Kirjautumisraportti</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kuka on kirjautuneena, kirjautumiset ja epäonnistumiset päivittäin; kirjaa käyttäjä ulos kaikkialta.</translation>
     </message>
 </context>
 <context>
@@ -33542,6 +33566,14 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP-käsittelijän aikakatkaistut istunnot poistaa PHP itse (session.gc_maxlifetime), ei tämä sivu eikä Cron-työn osa session_gc.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Kaikkien käyttäjien kirjautuneet istunnot näytetään ja kirjataan ulos kirjautumisraportissa, joka toimii kaikkien istuntojen käsittelijöiden kanssa.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Avaa kirjautumisraportti</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37866,6 +37898,26 @@ ohjeita.</translation>
     <message>
         <source>None yet</source>
         <translation>Ei vielä yhtään</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Tietoturvatapahtumat</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Viimeisimmät kirjautumisesi, epäonnistuneet yritykset sekä muutokset salasanaasi, sähköpostiosoitteeseesi ja kaksivaiheiseen kirjautumiseen.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Tämän tilin viimeisimmät kirjautumiset, epäonnistuneet yritykset ja tietoturvamuutokset.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Tarkastele toimintaa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Epäonnistuneita kirjautumisia: %count</translation>
     </message>
 </context>
 <context>
@@ -50956,6 +51008,10 @@ Lisätietoja on vaatimussivulla.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab-tiedostoa ei kirjoitettu (%reason). Lisää nämä rivit sen käyttäjän crontab-tiedostoon, jonka oikeuksilla sivusto toimii, muuten jonoa, tuonteja, ilmoituksia ja hakuindeksiä ei koskaan suoriteta:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Uudelleenasennus tehdään kickstarterilla (%file, sitten php bin/php/kickstarter.php run --apply) tai uudella asennuksella.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56748,6 +56804,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Sähköpostin välitystapa hylkäsi viimeisimmässä ajossa viestejä: %count. Tarkista sähköpostipalvelin ja site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Odottavia tapahtumia: %count, eikä ilmoitusten Cron-työn suorituksia ole kirjattu. Lisää Cron-työn osa ”frequent” crontabiin tai suorita exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63004,6 +63064,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Valitse toinen sivusto tai sivuston osa solmun valitsimella</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Vain järjestelmänvalvoja voi vaihtaa omistajan: suorita ./console exp:content-check --fix-permissions --apply root-käyttäjänä.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64537,6 +64601,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>empty</source>
         <translation>tyhjä</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Allekirjoitusavain on yli vuoden vanha: vaihda se komennolla exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70247,6 +70315,14 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>not sent</source>
         <translation>ei lähetetty</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Ilmoitusten Cron-työ kirjaa tähän jokaisen suorituksensa. Lisää osa frequent crontabiin tai suorita exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Käytä konsolia: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76137,6 +76213,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Setup &gt; Cronjobs</source>
         <translation>Asetukset &gt; Cron-työt</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Mitään Cron-työn osaa ei ole vielä suoritettu: työjono, tuonnit, ilmoitukset ja hakuindeksi odottavat. Suorita php bin/php/installcrontab.php --add --apply tai lisää --show-komennon rivit crontabiin.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/workflow/eventtype/expuserapprove</name>
@@ -76475,6 +76555,46 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>None.</source>
         <translation>Ei yhtään.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>todennussovelluksella</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>sähköpostitse saadulla koodilla</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>palautuskoodilla</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pääsyavaimella</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ulkoisella tilillä</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Tietoturvatapahtumat</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Näytetään verkkona; osoite säilytetään sivuston tietosuoja-asetusten mukaisesti.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ei kirjattu</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Sijainti</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>likimääräinen</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Manage devices</source>
         <translation>Hallitse laitteita</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>todennussovelluksella</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>sähköpostitse saadulla koodilla</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>palautuskoodilla</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>pääsyavaimella</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>ulkoisella tilillä</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Tietoturvatapahtumat</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ei kirjattu</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Sijainti</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>likimääräinen</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>View the sessions of this user</source>
         <translation>Näytä tämän käyttäjän istunnot</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Tililläsi %login sivustolla %site kirjauduttiin juuri sisään paikasta, josta sillä ei ole viime aikoina kirjauduttu:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Likimääräinen sijainti</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser käyttöjärjestelmässä %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Kirjautumisraportti</translation>
     </message>
 </context>
 <context>
@@ -77366,6 +77534,935 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Open the page</source>
         <translation>Avaa sivu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, yhteensä %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Kirjautumistunnus tai käyttäjän ID: tili, jota tapahtuma koski, tai käyttäjä, joka toimi.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Tili</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiminto</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Jälkeen</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Mikä tahansa tulos</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ennen</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Tekijä</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Tyhjennä</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Valmis</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Tapahtumia säilytetään %days päivää.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Tapahtumia säilytetään, kunnes ne poistetaan käsin.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tapahtumat</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Kaikki toiminnot</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Kaikki tämän tilin tapahtumat</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Vie luettelo CSV-muodossa (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Epäonnistui</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alkaen</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Rajaa luetteloa</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Mikään tapahtuma ei vastaa hakua.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sivua kohden</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Tallennus on poistettu käytöstä tiedostossa audit.ini ([UserAuditSettings] UserAudit); luettelo näyttää aiemmin tallennetut tapahtumat.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hylätty</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulos</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Käyttäjien valvontalokin taulu puuttuu. Luo se komennolla php update/common/scripts/6.0/createuseraudittable.php; siihen asti valvontatiedostot säilyttävät jokaisen tapahtuman.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Tämä sivu tarvitsee SQL-tietokannan; se ei ole käytettävissä, kun tietokantana on MongoDB. Valvontatiedostot säilyttävät jokaisen tapahtuman.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Asti</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Käyttäjien valvontaloki</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Käyttäjä</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Milloin</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Missä</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kuka muutti, loi, otti käyttöön, poisti käytöstä, siirsi tai poisti minkäkin tilin, kuka kirjautui tai hylättiin ja mitkä roolit määritettiin: yksi rivi tapahtumaa kohden, kentät ennen ja jälkeen. Salasanoja ja salaisuuksia ei koskaan tallenneta.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>ryhmä</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>järjestelmä</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tuntematon</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Suojaa tilisi</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Tilillesi %login sivustolla %site kirjauduttiin palautuskoodilla.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Palautuskoodia käytettiin</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Tili</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Likimääräinen osoite</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Pyydä uusi salasana kirjautuaksesi uudelleen tai ota yhteyttä sivuston ylläpitäjiin.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Pyydä uusi salasana</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Kukin palautuskoodi toimii kerran. Jos kadotit puhelimesi, määritä todennussovellus uudelleen ja säilytä uudet palautuskoodit turvallisessa paikassa.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Epäonnistuneita kirjautumisyrityksiä tilillesi</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Tästä lähtien kirjautuminen kysyy salasanan lisäksi koodia. Jos teit tämän itse, sinun ei tarvitse tehdä mitään.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Jos se olit sinä ja unohdit salasanasi, pyydä uusi. Jos et, valitse vahvempi salasana ja ota kaksivaiheinen kirjautuminen käyttöön.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Jos se et ollut sinä, joku saattaa tietää salasanasi: vaihda se nyt ja tarkista, missä tilisi on kirjautuneena.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Palautuskoodeja jäljellä</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Tarkista laitteesi</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Tietoturvailmoitus</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Joku yritti kirjautua tilillesi %login sivustolla %site väärällä salasanalla useita kertoja peräkkäin (yrityksiä: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Tililläsi %login sivustolla %site tapahtui tietoturvatapahtuma.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Tämä on tiliäsi koskeva tietoturvailmoitus. Se lähetetään jokaisesta tällaisesta muutoksesta, eikä sitä voi poistaa käytöstä.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aika</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Kaksivaiheinen kirjautuminen poistettiin käytöstä tililtäsi %login sivustolla %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Kaksivaiheinen kirjautuminen poistettiin käytöstä</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Kaksivaiheinen kirjautuminen otettiin käyttöön tilillesi %login sivustolla %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Kaksivaiheinen kirjautuminen otettiin käyttöön</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Tilisi %login sivustolla %site lukittiin liian monen epäonnistuneen kirjautumisen jälkeen.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Tiliäsi suojaa nyt pelkkä salasana. Jos et tehnyt tätä itse, ota kaksivaiheinen kirjautuminen uudelleen käyttöön vaihdettuasi salasanasi.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Tilisi lukittiin</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Tietoturvatapahtumat</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Tietoturvatapahtumat: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirjautunut</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Epäonnistunut kirjautumisyritys</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kirjattu ulos</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Istuntoja kirjattu ulos</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kirjautuminen uudelta laitteelta</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kirjautuminen uudesta sijainnista</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Henkilöllisyys vahvistettu (”Vahvista henkilöllisyytesi”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Henkilöllisyyden tarkistus epäonnistui</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kirjautunut pääsyavaimella</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kirjautuminen pääsyavaimella epäonnistui</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kirjautuminen estetty: kaksivaiheisen kirjautumisen koodi puuttuu tai on väärä</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Väärä kaksivaiheisen kirjautumisen koodi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Tili lukittu epäonnistuneiden kirjautumisten jälkeen</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Tilin lukitus avattu</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Salasana vaihdettu</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Salasanan vaihto epäonnistui</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Salasana nollattu</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Uutta salasanaa pyydetty</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Sähköpostiosoite muutettu</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Käyttäjätunnus muutettu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kaksivaiheinen kirjautuminen otettu käyttöön</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kaksivaiheinen kirjautuminen poistettu käytöstä</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Palautuskoodi käytetty</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Uudet palautuskoodit</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Sovellussalasana luotu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Sovellussalasana mitätöity</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Pääsyavain lisätty</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Pääsyavain poistettu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Tili käytössä</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Tili poistettu käytöstä</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kaikki</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kirjautumiset ja istunnot</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Tilin muutokset</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vaatii huomiota</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>sinun tekemäsi</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>käyttäjän tekemä</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>tekijä: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Menetelmä</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Selain</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Käyttöjärjestelmä</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Laite</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Paikka</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Maa</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Istunnot</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Mitkä</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanava</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Epäonnistuneet yritykset</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Koodeja jäljellä</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Kirjautumisen käsittelijä</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Tietoturvatapahtumat</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Tietoturvatapahtumat: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Tilisi kirjautumiset ja tietoturvamuutokset. Jos näet jotain, mitä et ole tehnyt, vaihda salasanasi ja kirjaa ulos laitteet, joita et tunnista.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Tämän tilin kirjautumiset ja tietoturvamuutokset.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Vaihda salasana</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Takaisin tiliin</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Tietoturvatapahtumia ei kirjata</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ne luetaan käyttäjien valvontalokista, jonka taulu expuser_audit puuttuu tai jota tämä tietokanta ei tue. Suorita php update/common/scripts/6.0/createuseraudittable.php tai version 6.0.15 tietokantapäivitys.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Viimeiset päivät: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kirjautumiset viime päivinä (päiviä: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Viimeaikaiset tietoturvatapahtumat</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>epäonnistui</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>estetty</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Tietoturvatapahtumia ei ole vielä kirjattu.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Tietoturvatapahtumia säilytetään rajatun ajan (päiviä: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Tietoturvatapahtumia säilytetään, kunnes järjestelmänvalvoja poistaa ne.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Lataa kirjautumistietoni</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Istuntosi ja tietoturvatapahtumasi JSON-tiedostona.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirjautunut</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Epäonnistunut kirjautumisyritys</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kirjattu ulos</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Istuntoja kirjattu ulos</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Kirjautuminen uudelta laitteelta</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Kirjautuminen uudesta sijainnista</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Henkilöllisyys vahvistettu (”Vahvista henkilöllisyytesi”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Henkilöllisyyden tarkistus epäonnistui</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Kirjautunut pääsyavaimella</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Kirjautuminen pääsyavaimella epäonnistui</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Kirjautuminen estetty: kaksivaiheisen kirjautumisen koodi puuttuu tai on väärä</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Väärä kaksivaiheisen kirjautumisen koodi</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Tili lukittu epäonnistuneiden kirjautumisten jälkeen</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Tilin lukitus avattu</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Salasana vaihdettu</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Salasanan vaihto epäonnistui</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Salasana nollattu</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Uutta salasanaa pyydetty</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Sähköpostiosoite muutettu</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Käyttäjätunnus muutettu</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Kaksivaiheinen kirjautuminen otettu käyttöön</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Kaksivaiheinen kirjautuminen poistettu käytöstä</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Palautuskoodi käytetty</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Uudet palautuskoodit</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Sovellussalasana luotu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Sovellussalasana mitätöity</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Pääsyavain lisätty</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Pääsyavain poistettu</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Tili käytössä</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Tili poistettu käytöstä</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kaikki</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Kirjautumiset ja istunnot</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Tilin muutokset</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Vaatii huomiota</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Tietoturvatapahtumat</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Tietoturvatapahtumat: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Tilisi kirjautumiset ja tietoturvamuutokset. Jos näet jotain, mitä et ole tehnyt, vaihda salasanasi ja kirjaa ulos laitteet, joita et tunnista.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Vaihda salasana</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Tietoturvatapahtumia ei vielä kirjata tällä sivustolla.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Kirjautumiset viime päivinä (päiviä: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Epäonnistuneet yritykset</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Tietoturvatapahtumia ei ole vielä kirjattu.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Lataa kirjautumistietoni</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Istuntosi ja tietoturvatapahtumasi JSON-tiedostona.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Salasana</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Salasana ja kaksivaiheisen kirjautumisen koodi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-rajapinta</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-rajapinta</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Kertakirjautuminen</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Kirjautunut ennen istuntojen tallentamista</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Kirjautumisraportti</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kuka on kirjautuneena sivustolle, kuinka usein tilit kirjautuvat ja epäonnistuvat siinä, sekä käyttäjän uloskirjaus kaikkialta. Toimii kaikkien istuntojen käsittelijöiden kanssa.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Istunto kirjattiin ulos. Laitteen on kirjauduttava uudelleen sisään.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>Käyttäjä %login kirjattiin ulos istunnoista (istuntoja: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>Käyttäjällä %login ei ollut käynnissä olevaa istuntoa.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Millään tilillä ei ole tätä tunnusta, käyttäjätunnusta tai sähköpostiosoitetta.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Tämä on käyttämäsi istunto. Lopeta se kirjautumalla ulos.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Istunto oli jo päättynyt.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sivu oli vanhentunut. Mitään ei muutettu; yritä uudelleen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Istuntoja ei tallenneta tällä sivustolla (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Taulu expuser_session puuttuu</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Istuntoja tallennetaan, kun taulu on luotu: php update/common/scripts/6.0/createusersessiontable.php tai version 6.0.15 tietokantapäivitys.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nyt ja tänään</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Käynnissä olevat istunnot</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Kirjautuneet käyttäjät</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Kirjautumiset tänään</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Epäonnistuneet yritykset tänään</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Kirjaa käyttäjä ulos kaikkialta</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Tilin jokainen istunto päättyy sen seuraavassa pyynnössä, myös ”Muista minut” -toiminnon ylläpitämät. Käytä tätä, kun tili saattaa olla väärissä käsissä; nollaa sitten sen salasana.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Käyttäjän tunnus, käyttäjätunnus tai sähköpostiosoite</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Kirjaa ulos kaikkialta</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Kirjautuneena nyt</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Näytetään viimeksi käytetyt (enintään: %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Käyttäjä</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Laite</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Osoite</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirjautunut</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Viimeksi aktiivinen</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toiminnot</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Tämä laite</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ei kirjattu</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kirjaa ulos</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Yhtään istuntoa ei ole kirjautuneena.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Viimeiset päivät: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Kirjautumiset ja epäonnistuneet yritykset lasketaan käyttäjien valvontalokista, jota ei ole; uudet istunnot lasketaan.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Päivä</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Kirjautumiset</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Epäonnistuneet yritykset</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Uudet istunnot</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Istuntojen käsittelijä: %handler. Istunnot luetaan taulusta expuser_session, joten raportti toimii kaikkien käsittelijöiden kanssa.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Tilisi tietoturvailmoitus</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Tililläsi %login tapahtui tietoturvatapahtuma: %event. Jos se et ollut sinä, suojaa tilisi osoitteessa %url.</translation>
     </message>
 </context>
 </TS>

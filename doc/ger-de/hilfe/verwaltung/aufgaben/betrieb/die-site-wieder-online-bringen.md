@@ -38,12 +38,12 @@ mit frischen Caches, und das Fenster ist festgehalten. Referenz:
    neuen Code ausführen:
 
    ```bash
-   ./console exp:velocity cache clear --allow-root-user
+   ./console exp:velocity cache clear --apply --allow-root-user
    php bin/php/cache.php httpcache clear --allow-root-user
    ```
 
    Leeren Sie ein CDN, wenn Sie eines verwenden.
-3. Wärmen Sie die wichtigsten Seiten vor: `php bin/php/preload.php --siteaccess=site --allow-root-user`.
+3. Wärmen Sie die wichtigsten Seiten vor: `php bin/php/preload.php --apply --siteaccess=site --allow-root-user`.
 4. Setzen Sie angehaltene Teile der Cronjobs unter **Setup > Cronjobs** fort und führen Sie den häufigen Teil einmal
    aus.
 

@@ -201,7 +201,7 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 
 | Symptom or message | Cause | Fix |
 |---|---|---|
-| "The CreateSites step will modify the database and site settings." / "Re-run with --force to confirm you want to install the site package." | The kickstarter writes the database only with `--force` (`kernel/classes/expkickstarter.php`) | `php bin/php/console exp:kickstarter run --force`, after checking `DatabaseAction`. |
+| "The CreateSites step will modify the database and site settings." / "Re-run with --force to confirm you want to install the site package." | The kickstarter writes the database only with `--force` (`kernel/classes/expkickstarter.php`) | `php bin/php/console exp:kickstarter run --apply --force`, after checking `DatabaseAction`. |
 | "Unknown start step: ..." or "Unknown stop step: ..." | A step name that does not exist | `php bin/php/console exp:kickstarter run --list-steps` lists them. |
 | "This directory already holds an installation (settings/override/site.ini.append.php)." | `exp:install` found a configured database (`bin/php/install.php`) | Add `--force` only to replace that installation; `--dry-run` checks without changing anything. |
 | `kickstart.ini` values are ignored | Leading whitespace before a section or key (`kickstart.ini-dist`: "Remove all leading whitespaces"), a missing `Continue=true`, or stale cached values | Remove the whitespace; set `Continue=true`; delete `var/cache/ini/kickstart-*.php` (the `ini` and `run` subcommands do it themselves). |
@@ -242,7 +242,7 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 
 | Symptom or message | Cause | Fix |
 |---|---|---|
-| `velocity: no server script at ...` | The `qbix` engine needs the Velocity package, which is not installed | `composer install` (it is required), or `composer require se7enxweb/exponential-velocity:~0.0.4.55` (PHP 8.0+); or use `--engine=php` for development. |
+| `velocity: no server script at ...` | The `qbix` engine needs the Velocity package, which is not installed | `composer install` (it is required), or `composer require se7enxweb/exponential-velocity:~0.0.4.57` (PHP 8.0+); or use `--engine=php` for development. |
 | `velocity: already running` | A server of that engine runs already | `php bin/php/console exp:velocity status`; `restart` to apply changes. |
 | `velocity: port ... is already in use by another process (another engine? exp:velocity stop --engine=qbix\|frankenphp)` | Another program or engine holds the port (php and frankenphp engines) | Stop the other engine, or change `Port`/`HTTPSPort` with `exp:velocity config set`. |
 | `velocity: did not start; see <log>` (the `php` and `frankenphp` engines) | The server failed at start-up | Read the named log. |
@@ -269,7 +269,7 @@ Clear the smallest cache that covers the change (`php bin/php/ezcache.php --list
 | a PHP class, under Velocity | `php bin/php/console exp:velocity deploy` (or `restart`) |
 | unsure | `php bin/php/ezcache.php --clear-all` |
 
-Under Velocity also clear its response cache, **after** the restart: `php bin/php/console exp:velocity cache clear`.
+Under Velocity also clear its response cache, **after** the restart: `php bin/php/console exp:velocity cache clear --apply`.
 A page rendered by the old code between a cache clear and the restart is cached again and served as if the change had
 not worked. More in [Cache console](../bc/6.0/cache-console.md) and [Operating a site](../guides/operating-a-site.md).
 

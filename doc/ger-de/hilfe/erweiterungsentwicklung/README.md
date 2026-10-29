@@ -29,7 +29,7 @@ Partner, Exponential-Entwickler und Lernende; sie sind noch nicht verfügbar
 ## Auf dem ganzen Stack entwickeln: Velocity ist Teil von Exponential 6.0.15
 
 Seit 6.0.15 ist der Velocity Internet / Web Application Server Teil von Exponential: Die `composer.json` des
-Hauptpakets verlangt `se7enxweb/exponential-velocity ~0.0.4.55`, sodass Ihre Entwicklungsinstallation denselben Server
+Hauptpakets verlangt `se7enxweb/exponential-velocity ~0.0.4.57`, sodass Ihre Entwicklungsinstallation denselben Server
 hat, auf dem die Produktion läuft, auf PHP 8.0 und neuer. Für einen Erweiterungsentwickler ändert das drei Dinge:
 
 - **Sie entwickeln gegen die Engine, die die Website ausliefert.** Der eigene Server von Velocity ist die empfohlene

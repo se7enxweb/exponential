@@ -53,7 +53,7 @@ liefert die Website mit dem PHP-Server aus, den Exponential für Sie starten kan
 ```bash
 composer create-project se7enxweb/exponential exponential
 cd exponential
-php bin/php/console exp:install --random-password --url=http://localhost:8087
+php bin/php/console exp:install --apply --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
 
@@ -187,12 +187,12 @@ php bin/php/console --version
 
 Die erste Zeile nennt die Version, zum Beispiel `console (Exponential) 6.0.15stable`.
 
-**Exponential Velocity.** `composer.json` verlangt es in `~0.0.4.55`, sodass `composer install` es auf jedem
+**Exponential Velocity.** `composer.json` verlangt es in `~0.0.4.57`, sodass `composer install` es auf jedem
 unterstützten PHP installiert, auch auf 8.0. Bis zu seinem Release 0.0.4.54 brauchte es PHP 8.1 und wurde nur
 vorgeschlagen; eine in dieser Zeit erstellte Installation fügt es hinzu mit:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.55
+composer require se7enxweb/exponential-velocity:~0.0.4.57
 ```
 
 ## 4. Eine Installationsmethode wählen
@@ -204,7 +204,7 @@ Installation.
 
 | | Einrichtungsassistent | Kickstarter | Konsoleninstallation |
 |---|---|---|---|
-| Gestartet durch | Öffnen der Website im Browser | `php bin/php/console exp:kickstarter run --force` | `php bin/php/console exp:install` |
+| Gestartet durch | Öffnen der Website im Browser | `php bin/php/console exp:kickstarter run --apply --force` | `php bin/php/console exp:install --apply` |
 | Antworten kommen aus | den Formularen, eine Seite pro Schritt | `kickstart.ini` im Wurzelverzeichnis der Installation | Kommandozeilenoptionen, jede mit einem Standardwert |
 | Am besten für | eine erste Installation, das Ausprobieren von Exponential | wiederholbare, skriptgesteuerte oder unbeaufsichtigte Installationen | die schnellste Installation; Skripte und CI |
 | Benötigt während der Installation einen Webserver | ja | nein | nein |
@@ -285,7 +285,7 @@ Vorlage ist `kickstart.ini-dist`.
 php bin/php/console exp:kickstarter ini            # write kickstart.ini in an interactive editor
 php bin/php/console exp:kickstarter ini --yes      # write it with the built-in defaults, no questions
 php bin/php/console exp:kickstarter run --dry-run  # check kickstart.ini, the database and the packages
-php bin/php/console exp:kickstarter run --force    # install
+php bin/php/console exp:kickstarter run --apply --force    # install
 ```
 
 `php bin/php/kickstarter.php` akzeptiert dieselben Unterbefehle und Optionen.
@@ -297,12 +297,12 @@ php bin/php/console exp:kickstarter run --force    # install
 | `ini --defaults`, `-d` | Die Beispielwerte aus `kickstart.ini-dist` übernehmen. |
 | `ini --from-installed` | Datenbankserver, -name und -benutzer (niemals das Passwort) eines installierten Siteaccess als Standardwerte übernehmen. Die Datei verweist dann auf eine aktive Datenbank. |
 | `run` | Die Schritte von `Welcome` bis `Final` ausführen. |
-| `run --force` | Immer erforderlich, wenn die Schritte `CreateSites` enthalten, den Schritt, der Datenbank und Einstellungen schreibt. Ohne diese Option bricht `run` mit „Re-run with --force to confirm you want to install the site package." ab. |
+| `run --apply` | Immer erforderlich, wenn die Schritte `CreateSites` enthalten, den Schritt, der Datenbank und Einstellungen schreibt. Ohne diese Option bricht `run` mit „Re-run with --force to confirm you want to install the site package." ab. |
 | `run --dry-run` | `kickstart.ini` validieren, `DatabaseChoice` bis `SiteDetails` ausführen, das Site-Paket und seine Abhängigkeiten in ein temporäres `var/storage/packages/dryrun/` herunterladen (das wieder entfernt wird) und anhalten. Die Datenbank muss erreichbar sein; es wird nichts hineingeschrieben, kein Passwort erzeugt und keine E-Mail gesendet. |
 | `run --list-steps` | Die Schritte auflisten und beenden. Ändert nichts. |
 | `run --start-step=<step>`, `--stop-step=<step>` | Einen Teil der Schritte ausführen, zur Diagnose. Ein Lauf kann einen früheren nicht fortsetzen: Ein Startschritt, dessen spätere Schritte die Ergebnisse früherer benötigen, wird abgelehnt, mit Angabe des Schritts, bei dem begonnen werden muss. Beheben Sie nach einem Fehler die Ursache und führen Sie die gesamte Folge erneut aus. |
 
-Während `run --force` die Datenbank neu aufbaut, beantwortet die Website jeden Besucher mit der Wartungsseite; ein
+Während `run --apply` die Datenbank neu aufbaut, beantwortet die Website jeden Besucher mit der Wartungsseite; ein
 bereits geöffnetes Wartungsfenster bleibt bestehen, und nach einem fehlgeschlagenen Schritt bleibt die Seite stehen, bis
 Sie erneut ausführen oder `php bin/php/maintenance.php off` aufrufen. Jeder Lauf wird mit maskierten Passwörtern in
 `var/log/kickstart.log` protokolliert (frühere Läufe werden als `kickstart.log.1` bis `.9` aufbewahrt;
@@ -428,13 +428,13 @@ allein dieser Befehl das Paket `sevenx_multisite` auf SQLite mit dem Benutzer `a
 installiert:
 
 ```bash
-php bin/php/console exp:install
+php bin/php/console exp:install --apply
 ```
 
 Andere Datenbanken (halten Sie das Passwort mit `EXP_INSTALL_DB_PASSWORD` aus der Shell-Historie heraus):
 
 ```bash
-EXP_INSTALL_DB_PASSWORD='secret' php bin/php/console exp:install --db=mysql --db-host=127.0.0.1 \
+EXP_INSTALL_DB_PASSWORD='secret' php bin/php/console exp:install --apply --db=mysql --db-host=127.0.0.1 \
     --db-name=mysite --db-user=mysite --url=https://www.example.com --random-password
 ```
 
@@ -480,7 +480,7 @@ Zertifikaten, sodass weder Apache noch nginx noch PHP-FPM nötig sind. Installie
 ([Abschnitt 3](#3-den-code-beschaffen)), dann:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Engine qbix
+php bin/php/console exp:velocity config set --apply ServerSettings Engine qbix
 php bin/php/console exp:velocity start
 php bin/php/console exp:velocity status
 ```
@@ -491,9 +491,9 @@ php bin/php/console exp:velocity status
 aus, gebunden an `Host` (`127.0.0.1`). Um ins Netzwerk auszuliefern:
 
 ```bash
-php bin/php/console exp:velocity config set ServerSettings Host 0.0.0.0
-php bin/php/console exp:velocity config set ServerSettings Port 80
-php bin/php/console exp:velocity config set ServerSettings HTTPSPort 443
+php bin/php/console exp:velocity config set --apply ServerSettings Host 0.0.0.0
+php bin/php/console exp:velocity config set --apply ServerSettings Port 80
+php bin/php/console exp:velocity config set --apply ServerSettings HTTPSPort 443
 php bin/php/console exp:velocity restart
 ```
 
@@ -505,9 +505,9 @@ als root, außer bei `AllowRootWorkers=enabled`.
 **HTTPS mit einem vorhandenen Zertifikat** (eine PEM-Datei kann beides enthalten):
 
 ```bash
-php bin/php/console exp:velocity config set HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem
-php bin/php/console exp:velocity config set HTTPSSettings Key /etc/ssl/example.com/privkey.pem
-php bin/php/console exp:velocity config set HTTPSSettings Enabled true
+php bin/php/console exp:velocity config set --apply HTTPSSettings Certificate /etc/ssl/example.com/fullchain.pem
+php bin/php/console exp:velocity config set --apply HTTPSSettings Key /etc/ssl/example.com/privkey.pem
+php bin/php/console exp:velocity config set --apply HTTPSSettings Enabled true
 php bin/php/console exp:velocity restart
 php bin/php/console exp:velocity ssl show
 ```
@@ -529,8 +529,8 @@ Site-Datei `sites-available/<site>.conf` wird bei jedem `start` und `restart` od
 
 ```bash
 php bin/php/console exp:velocity layout                 # show every file the server uses
-php bin/php/console exp:velocity site enable <name>
-php bin/php/console exp:velocity site disable <name>
+php bin/php/console exp:velocity site enable --apply <name>
+php bin/php/console exp:velocity site disable --apply <name>
 ```
 
 **Im Alltag:**
@@ -726,7 +726,7 @@ Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
    | ein Template oder eine Extension hinzugefügt | `php bin/php/ezcache.php --clear-id=template-override` |
    | unsicher | `php bin/php/ezcache.php --clear-all` |
 
-   Mit Velocity zusätzlich `php bin/php/console exp:velocity cache clear`; nach einer Änderung an einer Klasse oder
+   Mit Velocity zusätzlich `php bin/php/console exp:velocity cache clear --apply`; nach einer Änderung an einer Klasse oder
    einer INI-Datei erledigt `exp:velocity
    deploy` all dies in der richtigen Reihenfolge.
 5. **Erzeugen Sie die Autoloads neu**, nachdem Sie in einer Extension eine Klasse hinzugefügt oder umbenannt haben:
@@ -737,8 +737,8 @@ Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
    Markdown-Hilfe in die Warteschlange gestellt (die letzten Zeilen ihrer Ausgabe): Ein Hintergrundjob legt sie in den
    folgenden 20 bis 30 Minuten an, und `./console exp:help:content report -s admin` zeigt "Handbücher werden erstellt
    (n von 52)", bis er fertig ist. Führen Sie nach dem Setup-Assistenten, oder wenn das Einreihen ein Problem gemeldet
-   hat, `./console exp:help:content build-manuals -s admin --queue` aus. Führen Sie
-   `./console exp:help:content build-manuals -s admin --release` nach jeder Aktualisierung aus
+   hat, `./console exp:help:content build-manuals --apply -s admin --queue` aus. Führen Sie
+   `./console exp:help:content build-manuals --apply -s admin --release` nach jeder Aktualisierung aus
    ([Handbücher aus der Markdown-Hilfe](funktionen/6.0/hilfeinhalte.md#handbücher-aus-der-markdown-hilfe)).
 8. **Optional: die Job-Warteschlange und Exponential Intelligence.** `composer.json` bringt die Job-Warteschlange
    `expqueue` und den Schreibassistenten `expai` nach `extension/`, beide inaktiv. Um sie zu verwenden:

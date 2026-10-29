@@ -49,7 +49,7 @@ Elemente verbergen und den Papierkorb nutzen, suchen, Lesezeichen pflegen, ihr K
 ## Aufbau der Übungsumgebung
 
 - Eine Schulungsinstallation, die von jedem Computer der Teilnehmenden aus erreichbar ist, zum Beispiel installiert mit
-  `php bin/php/console exp:install` ([7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md));
+  `php bin/php/console exp:install --apply` ([7. Die Installation über die Konsole](../../../installation/07-installation-ueber-die-konsole.md));
   mit dem Siteaccess des Editors, wenn Sie Modul 9 praktisch unterrichten möchten. Wie Sie eine Übungsumgebung
   aufbauen und zurücksetzen: [Modul 2: Die Übungsumgebung aufbauen](../train-the-trainer/modul-02-die-uebungsumgebung-aufbauen/README.md)
   von Train the Trainer.

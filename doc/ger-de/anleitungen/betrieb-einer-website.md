@@ -153,7 +153,7 @@ Vertiefung: [Generator für den statischen Cache](../funktionen/6.0/generator-fu
 Nach einem Leeren oder einer Bereitstellung bezahlt der erste Besucher für das Rendern. Wärmen Sie die Seiten selbst vor:
 
 ```bash
-php bin/php/preload.php --siteaccess=site --allow-root-user
+php bin/php/preload.php --apply --siteaccess=site --allow-root-user
 ```
 
 Das Skript fragt zuerst die Seiten der Sektionen ab und folgt dann den Links der Site, mit der curl-Erweiterung von PHP (kein `wget` nötig); es läuft immer nur ein Vorladen gleichzeitig, und jeder Lauf wird unter Setup > Vorladen aufgeführt. Um jede veröffentlichte Seite vorzuwärmen, was sich für einen Cron-Eintrag alle paar Minuten eignet:

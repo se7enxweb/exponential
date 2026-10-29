@@ -67,7 +67,7 @@ der Wartung ([Funktion Wartungsmodus](../../../../funktionen/6.0/wartungsmodus.m
 1. Prüfen Sie die Website von einer zugelassenen Adresse aus.
 2. **Website wieder online bringen** unter **Setup > Wartung** oder `php bin/php/maintenance.php off --allow-root-user`.
 3. Leeren Sie die Caches vor der Website, wenn sich Inhalte oder Code geändert haben; unter Velocity:
-   `./console exp:velocity cache clear --allow-root-user`.
+   `./console exp:velocity cache clear --apply --allow-root-user`.
 4. `curl -s -o /dev/null -w '%{http_code}\n' https://www.example.gov/` antwortet über jeden Server mit 200.
 5. Führen Sie die pausierten Cronjob-Teile aus (**Setup > Cronjobs**).
 

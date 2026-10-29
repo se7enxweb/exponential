@@ -28,7 +28,7 @@ requests for public pages inside the server, before PHP; after a change those an
 ## Steps
 
 ```bash
-./console exp:velocity cache clear --allow-root-user
+./console exp:velocity cache clear --apply --allow-root-user
 php bin/php/cache.php velocity status --allow-root-user
 ```
 

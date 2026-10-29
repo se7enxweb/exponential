@@ -76,7 +76,7 @@ Veröffentlichungsdatum angekündigt. Quelle: <Link zum Changelog 6.0.15>.
 | „6.0.15, fällig in diesem Herbst“ | „Für 6.0.15 ist kein Veröffentlichungsdatum angekündigt.“ |
 | „Das neue Release enthält ...“ | „Die Entwicklungslinie enthält ...“ |
 | „6.0.15 stable“ | „die Linie 6.0.15“ |
-| „Alle bekommen Velocity mit dem nächsten Update.“ | „Velocity ist ein eigenes Paket, das die `composer.json` von Exponential in `~0.0.4.55` verlangt“ ([Den Code beschaffen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket)) |
+| „Alle bekommen Velocity mit dem nächsten Update.“ | „Velocity ist ein eigenes Paket, das die `composer.json` von Exponential in `~0.0.4.57` verlangt“ ([Den Code beschaffen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket)) |
 | „Funktion X ist sicher in 6.0.15.“ | „Funktion X ist heute in der Entwicklungslinie“; die Linie kann sich vor einem Tag noch ändern |
 
 Wenn Sie die Entwicklungslinie für eine Rezension installieren, sagen Sie es und folgen Sie

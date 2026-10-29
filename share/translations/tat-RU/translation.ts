@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Көйләү &gt; Cron биремнәре</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Cron биремнәренең бер өлеше дә әле эшләтелмәгән: биремнәр чираты, импорт, белдерүләр һәм эзләү индексы көтә. php bin/php/installcrontab.php --add --apply боерыгын эшләтегез яки --show юлларын crontab файлына өстәгез.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Бу урнаштыру - ачык демо: администратор серсүзен теләсә кем белергә мөмкин, һәм администратор серсүзләрен үзгәртеп яки торгызып булмый. Монда шәхси берни дә кертмәгез.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Сезнең җайланмалар</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Беркем дә кулланмый торган яки игътибар таләп итә торган хисап язмалары; аларны сүндерегез, бикләүдән чыгарыгыз яки экспортлагыз.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Кулланучылар аудиты журналы</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Кем үзгәрткән, кергән яки кире кагылган, һәр хисап язмасы буенча; фильтрлау һәм экспортлау.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Керүләр хисабы</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Кем кергән, көннәр буенча керүләр һәм уңышсыз омтылышлар; кулланучыны барлык җайланмалардан чыгару.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP эшкәрткеченең вакыты чыккан сеансларын бу бит яки session_gc cron биремнең өлеше түгел, PHP үзе алып ташлый (session.gc_maxlifetime).</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Барлык кулланучыларның кергән сеанслары керүләр хисабында күрсәтелә һәм шунда тәмамлана ала; хисап теләсә кайсы сеанс эшкәрткече белән эшли.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Керүләр хисабын ачу</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>Әлегә юк</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Сезнең соңгы керүләрегез, уңышсыз омтылышлар һәм серсүз, электрон почта адресы һәм ике адымлы керү үзгәрешләре.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Бу хисап язмасының соңгы керүләре, уңышсыз омтылышлары һәм куркынычсызлык үзгәрешләре.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Гамәлләрне карау</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Уңышсыз керүләр: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab язылмады (%reason). Бу юлларны сайт эшләгән кулланучының crontab файлына өстәгез, югыйсә чират, импорт, белдерүләр һәм эзләү индексы беркайчан да эшләми:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Яңадан урнаштыру kickstarter ярдәмендә (%file, аннары php bin/php/kickstarter.php run --apply) яки яңа урнаштыру белән башкарыла.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Почта транспорты соңгы башкаруда %count хәбәрне кире какты. Почта серверын һәм site.ini MailSettings көйләүләрен тикшерегез.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Көтүче вакыйгалар: %count, ә белдерүләр cron биременең бер эшләтелеше дә теркәлмәгән. «frequent» cron өлешен crontab файлына өстәгез яки exp:notification:run --apply боерыгын эшләтегез.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>Төен сайлау белән башка сайт яки бүлек сайлау</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Хуҗаны система администраторы гына үзгәртә ала: ./console exp:content-check --fix-permissions --apply боерыгын root буларак эшләтегез.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>буш</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Имза ачкычы бер елдан да иске: аны exp:audit key rotate --apply белән алыштырыгыз.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>җибәрелмәгән</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Белдерүләр cron биреме монда үзенең һәр эшләтелешен теркәп бара. frequent өлешен crontab файлына өстәгез яки exp:notification:run --apply боерыгын эшләтегез.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Консольне кулланыгыз: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>Юк.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>аутентификатор кушымтасы белән</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>электрон почта аша килгән код белән</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>торгызу коды белән</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>керү ачкычы белән</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>тышкы хисап язмасы белән</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Челтәр буларак күрсәтелә; адрес сайтның мәгълүматларны саклау көйләүләре кушканча саклана.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Теркәлмәгән</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Урын</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>якынча</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>Җайланмаларны идарә итү</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>аутентификатор кушымтасы белән</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>электрон почта аша килгән код белән</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>торгызу коды белән</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>керү ачкычы белән</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>тышкы хисап язмасы белән</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Теркәлмәгән</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Урын</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>якынча</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>Бу кулланучының сеансларын карау</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Сезнең %site сайтындагы %login хисап язмагызга әле генә соңгы вакытта кермәгән урыннан керделәр:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Якынча урын</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os өстендә %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Керүләр хисабы</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>Битне ачу</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count эченнән %from – %to</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Кулланучы исеме яки кулланучы ID: вакыйга кагылган хисап язмасы яки гамәл кылган кулланучы.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Хисап язмасы</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Гамәл</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Соңыннан</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Теләсә нинди нәтиҗә</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Алдан</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Башкаручы</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Чистарту</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Башкарылды</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Вакыйгаларның саклану вакыты (көннәрдә): %days.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Вакыйгалар кул белән бетерелгәнчегә кадәр саклана.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Вакыйгалар</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Теләсә нинди гамәл</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Бу хисап язмасының барлык вакыйгалары</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Исемлекне CSV итеп экспортлау (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Барып чыкмады</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Кайчаннан</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Исемлекне тарайту</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Туры килгән вакыйга юк.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Һәр биттә</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Язып бару audit.ini файлында сүндерелгән ([UserAuditSettings] UserAudit); исемлек элек язып алынганны күрсәтә.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Кире кагылды</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиҗә</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Күрсәтү</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Кулланучылар аудиты журналының таблицасы юк. Аны php update/common/scripts/6.0/createuseraudittable.php ярдәмендә булдырыгыз; шуңа кадәр аудит файллары һәр вакыйганы саклый.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Бу биткә SQL мәгълүмат базасы кирәк; MongoDB белән ул эшләми. Аудит файллары һәр вакыйганы саклый.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Кайчанга кадәр</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Кулланучылар аудиты журналы</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Кулланучы</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Кайчан</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Кайда</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Кем кайсы хисап язмасын үзгәрткән, булдырган, кабызган, сүндергән, күчергән яки бетергән, кем кергән яки кире кагылган һәм нинди рольләр билгеләнгән: һәр вакыйгага бер юл, кырларның элекке һәм соңгы кыйммәтләре белән. Серсүзләр һәм серләр беркайчан да язылмый.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>төркем</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>система</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>билгесез</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Хисап язмасын яклау</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Сезнең %site сайтындагы %login хисап язмагызга торгызу коды белән керделәр.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Торгызу коды кулланылды</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Хисап язмасы</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Якынча адрес</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Яңадан керү өчен яңа серсүз сорагыз яки сайт администраторларына мөрәҗәгать итегез.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Яңа серсүз сорау</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Һәр торгызу коды бер тапкыр гына эшли. Әгәр телефоныгызны югалтсагыз, аутентификатор кушымтасын яңадан көйләгез һәм яңа торгызу кодларын ышанычлы урында саклагыз.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Сезнең хисап язмагызга уңышсыз керү омтылышлары</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Моннан соң керү вакытында серсүздән тыш код та сорала. Әгәр моны Сез эшләгән булсагыз, бернәрсә дә эшләргә кирәкми.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Әгәр бу Сез булсагыз һәм серсүзегезне онытсагыз, яңасын сорагыз. Юк икән, ныграк серсүз сайлагыз һәм ике адымлы керүне кабызыгыз.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Әгәр бу Сез булмасагыз, кемдер Сезнең серсүзне белергә мөмкин: аны хәзер үк үзгәртегез һәм хисап язмагыз кайда кергән икәнен тикшерегез.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Калган торгызу кодлары</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Җайланмаларыгызны тикшерү</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Куркынычсызлык кисәтүе</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Кемдер Сезнең %site сайтындагы %login хисап язмагызга рәттән берничә тапкыр ялгыш серсүз белән керергә тырышкан (омтылышлар: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Сезнең %site сайтындагы %login хисап язмагызда куркынычсызлык вакыйгасы булды.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Бу — Сезнең хисап язмагыз турында куркынычсызлык кисәтүе. Ул һәр шундый үзгәреш вакытында җибәрелә һәм аны сүндереп булмый.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вакыт</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Сезнең %site сайтындагы %login хисап язмагыз өчен ике адымлы керү сүндерелде.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Ике адымлы керү сүндерелде</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Сезнең %site сайтындагы %login хисап язмагыз өчен ике адымлы керү кабызылды.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Ике адымлы керү кабызылды</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Сезнең %site сайтындагы %login хисап язмагыз бик күп уңышсыз керүләрдән соң бикләнде.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Хисап язмагыз хәзер серсүз белән генә якланган. Әгәр моны Сез эшләмәгән булсагыз, серсүзегезне үзгәрткәч, ике адымлы керүне яңадан кабызыгыз.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Хисап язмагыз бикләнде</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Куркынычсызлык гамәлләре: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Керелгән</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Уңышсыз керү омтылышы</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Чыгылган</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сеанслар тәмамланды</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Яңа җайланмадан керү</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Яңа урыннан керү</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Шәхес расланды («Бу Сез икәнегезне тикшерү»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Шәхесне тикшерү уңышсыз булды</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Керү ачкычы белән керелгән</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Керү ачкычы белән керү уңышсыз булды</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Керү кире кагылды: ике адымлы керү коды юк яки ялгыш</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Ике адымлы керүнең ялгыш коды</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Хисап язмасы уңышсыз керүләрдән соң бикләнде</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Хисап язмасы ачылды</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Серсүз үзгәртелгән</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Серсүзне үзгәртеп булмады</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Серсүз ташланды</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Яңа серсүз соралды</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Электрон почта адресы үзгәртелде</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Кулланучы исеме үзгәртелде</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ике адымлы керү кабызылды</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ике адымлы керү сүндерелде</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Торгызу коды кулланылды</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Яңа торгызу кодлары</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Кушымта серсүзе булдырылды</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Кушымта серсүзе кире алынды</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Керү ачкычы өстәлде</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Керү ачкычы алып ташланды</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Хисап язмасы кабызылды</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Хисап язмасы сүндерелде</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Керүләр һәм сеанслар</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Хисап язмасы үзгәрешләре</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Игътибар таләп итә</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>Сез тарафыннан</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>кулланучы тарафыннан</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>кулланучы тарафыннан: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Ысул</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Браузер</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Операцион система</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Җайланма</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Урын</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Ил</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеанслар</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Кайсылары</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Канал</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Уңышсыз омтылышлар</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Калган кодлар</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Керү эшкәрткече</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Куркынычсызлык гамәлләре: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Сезнең хисап язмагызга керүләр һәм аның куркынычсызлыгы үзгәрешләре. Әгәр Сез эшләмәгән нәрсәне күрсәгез, серсүзегезне үзгәртегез һәм Сез танымаган җайланмаларны чыгарыгыз.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Бу хисап язмасына керүләр һәм аның куркынычсызлыгы үзгәрешләре.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Сезнең җайланмалар</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Серсүзне үзгәртү</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Хисап язмасына кире кайту</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Куркынычсызлык гамәлләре теркәлми</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Алар кулланучылар аудиты журналыннан укыла, ә аның expuser_audit таблицасы юк яки бу мәгълүматлар базасында хупланмый. php update/common/scripts/6.0/createuseraudittable.php боерыгын яки 6.0.15 мәгълүматлар базасы яңартуын эшләтегез.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Соңгы көннәр: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Соңгы көннәрдәге керүләр (көннәр: %days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Соңгы куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Күрсәтү</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>уңышсыз</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>кире кагылды</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Әлегә бер куркынычсызлык гамәле дә теркәлмәгән.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Куркынычсызлык вакыйгалары саклана (көннәр: %days).</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Куркынычсызлык вакыйгалары администратор аларны алып ташлаганчы саклана.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Керүләрем турындагы мәгълүматларны йөкләп алу</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Сезнең сеанслар һәм куркынычсызлык вакыйгалары JSON файлы буларак.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Керелгән</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Уңышсыз керү омтылышы</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Чыгылган</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Сеанслар тәмамланды</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Яңа җайланмадан керү</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Яңа урыннан керү</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Шәхес расланды («Бу Сез икәнегезне тикшерү»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Шәхесне тикшерү уңышсыз булды</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Керү ачкычы белән керелгән</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Керү ачкычы белән керү уңышсыз булды</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Керү кире кагылды: ике адымлы керү коды юк яки ялгыш</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Ике адымлы керүнең ялгыш коды</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Хисап язмасы уңышсыз керүләрдән соң бикләнде</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Хисап язмасы ачылды</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Серсүз үзгәртелгән</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Серсүзне үзгәртеп булмады</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Серсүз ташланды</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Яңа серсүз соралды</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Электрон почта адресы үзгәртелде</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Кулланучы исеме үзгәртелде</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Ике адымлы керү кабызылды</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Ике адымлы керү сүндерелде</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Торгызу коды кулланылды</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Яңа торгызу кодлары</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Кушымта серсүзе булдырылды</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Кушымта серсүзе кире алынды</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Керү ачкычы өстәлде</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Керү ачкычы алып ташланды</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Хисап язмасы кабызылды</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Хисап язмасы сүндерелде</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Керүләр һәм сеанслар</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Хисап язмасы үзгәрешләре</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Игътибар таләп итә</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Куркынычсызлык гамәлләре: %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Сезнең хисап язмагызга керүләр һәм аның куркынычсызлыгы үзгәрешләре. Әгәр Сез эшләмәгән нәрсәне күрсәгез, серсүзегезне үзгәртегез һәм Сез танымаган җайланмаларны чыгарыгыз.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Сезнең җайланмалар</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Серсүзне үзгәртү</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Бу сайтта куркынычсызлык гамәлләре әлегә теркәлми.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Соңгы көннәрдәге керүләр (көннәр: %days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Уңышсыз омтылышлар</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Әлегә бер куркынычсызлык гамәле дә теркәлмәгән.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Керүләрем турындагы мәгълүматларны йөкләп алу</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Сезнең сеанслар һәм куркынычсызлык вакыйгалары JSON файлы буларак.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Серсүз</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Серсүз һәм ике адымлы керү коды</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST интерфейсы</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP интерфейсы</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Бердәм керү</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Сеанслар теркәлә башлаганчы керелгән</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Керүләр хисабы</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Сайтка кем кергән, хисап язмалары никадәр еш керә һәм керә алмый, шулай ук кулланучыны барлык җайланмалардан чыгару. Теләсә кайсы сеанс эшкәрткече белән эшли.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сеанс тәмамланды. Җайланмага яңадан керергә кирәк.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login кулланучысы чыгарылды, тәмамланган сеанслар: %count.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login кулланучысының эшләүче сеансы юк иде.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Мондый ID, кулланучы исеме яки электрон почта адресы белән хисап язмасы юк.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Бу — Сез кулланган сеанс. Аны тәмамлау өчен системадан чыгыгыз.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Бу сеанс инде тәмамланган иде.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Битнең вакыты чыккан иде. Бернәрсә дә үзгәртелмәде; кабат тырышып карагыз.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Бу сайтта сеанслар теркәлми (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session таблицасы юк</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Ул булдырылгач, сеанслар теркәлә башлый: php update/common/scripts/6.0/createusersessiontable.php яки 6.0.15 мәгълүматлар базасы яңартуы.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Хәзер һәм бүген</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Эшләүче сеанслар</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Кергән кулланучылар</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Бүгенге керүләр</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Бүгенге уңышсыз омтылышлар</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Кулланучыны барлык җайланмалардан чыгару</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Хисап язмасының һәр сеансы киләсе соратуда тәмамлана, «Мине исегездә калдырыгыз» ярдәмендә сакланганнары да. Хисап язмасы ят кулларга эләккән булырга мөмкин булганда моны кулланыгыз; аннары аның серсүзен ташлагыз.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Кулланучы ID, кулланучы исеме яки электрон почта адресы</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Барлык җайланмалардан чыгу</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Хәзер кергән</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Соңгы кулланылганнары күрсәтелә (иң күбе %limit).</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Кулланучы</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Җайланма</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Керелгән</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Соңгы активлык</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Гамәлләр</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Бу җайланма</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Теркәлмәгән</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Чыгу</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Кергән сеанс юк.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>Соңгы көннәр: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Керүләр һәм уңышсыз омтылышлар кулланучылар аудиты журналыннан санала, ә ул юк; яңа сеанслар санала.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Көн</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Керүләр</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Уңышсыз омтылышлар</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Яңа сеанслар</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Сеанс эшкәрткече: %handler. Сеанслар expuser_session таблицасыннан укыла, шуңа күрә хисап теләсә кайсы эшкәрткеч белән эшли.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Хисап язмагыз өчен куркынычсызлык кисәтүе</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Сезнең %login хисап язмагызда куркынычсызлык вакыйгасы булды: %event. Әгәр бу Сез булмасагыз, хисап язмагызны %url адресында яклагыз.</translation>
     </message>
 </context>
 </TS>

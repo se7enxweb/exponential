@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * @description Kickstarter runner. Supports "ini" generation and full "run" setup subcommands.
+ * @description Kickstarter runner: "ini" writes kickstart.ini, "run" installs from it (a dry run unless --apply)
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

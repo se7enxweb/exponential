@@ -886,7 +886,7 @@ A class or static method that creates objects for the caller, so the caller does
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expWebDAVPathFactory` | class extends ezcWebdavAutomaticPathFactory | `kernel/private/classes/webdav/expwebdavpathfactory.php:19` | The path factory of webdav.php: paths inside the server are plain (decoded) text, URIs are encoded. | – |
+| `expWebDAVPathFactory` | class extends ezcWebdavAutomaticPathFactory | `kernel/private/classes/webdav/expwebdavpathfactory.php:19` | The path factory of index_webdav.php: paths inside the server are plain (decoded) text, URIs are encoded. | – |
 
 ### lib/ezfile (2)
 

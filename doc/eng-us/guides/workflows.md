@@ -150,8 +150,8 @@ wait for ever.
 
 ```bash
 ./console exp:collaborationsampledata --dry-run --allow-root-user   # what it would create; nothing is written
-./console exp:collaborationsampledata --allow-root-user             # create it
-./console exp:collaborationsampledata --remove --allow-root-user    # remove all of it again
+./console exp:collaborationsampledata --apply --allow-root-user             # create it
+./console exp:collaborationsampledata --apply --remove --allow-root-user    # remove all of it again
 ```
 
 It creates the workflow *Approval (sample)* on `content/publish/before`, sample editors and approvers, articles
@@ -410,8 +410,8 @@ php runcronjobs.php -s <siteaccess> --script=workflow.php
 
 # the sample approvals: show, create, remove
 ./console exp:collaborationsampledata --dry-run --allow-root-user
-./console exp:collaborationsampledata --allow-root-user
-./console exp:collaborationsampledata --remove --allow-root-user
+./console exp:collaborationsampledata --apply --allow-root-user
+./console exp:collaborationsampledata --apply --remove --allow-root-user
 ```
 
 The cronjobs page shows each of these commands with your installation's path and PHP, with a **Copy** button. Run

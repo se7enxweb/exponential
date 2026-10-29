@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Asbadu &gt; Imahilen cron</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Ulac aḥric n umahil cron i iteddun yakan: tabdart n yimahilen, ikteren, ilɣa d umatar n unadi ttrajun. Selkem php bin/php/installcrontab.php --add --apply, neɣ rnu izirigen n --show ɣer crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Asebded-a d aɣus azayez: yal yiwen yezmer ad yessen awal uffir n unedbal-is, u awalen uffiren n inedbalen ur zmiren ara ad ttwabeddlen neɣ ad ttwaṭṭfen. Ur ttaru ula d acemma uslig dagi.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ibenkan-ik</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Imiḍanen ur yesseqdac yiwen neɣ yesran ad ttwaẓren; sens-iten, kkes-iten seg usekkur neɣ sifeḍ-iten.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Aɣmis n usenqed n yiseqdacen</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Anwa i ibeddlen, i ikecmen neɣ i yettwagin, i yal amiḍan; imsizdeg d usifeḍ.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aneqqis n unekcum</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Wid yekcmen, inekcumen d wuguren i yal ass; ssufeɣ aseqdac seg yal amkan.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Tiɣimiwin yemmden n umsefrak PHP ttwakksent s PHP ɣef yiman-is (session.gc_maxlifetime), mačči s usebter-a neɣ s uḥric session_gc n umahil cron.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>Aneqqis n unekcum yesskanay tiɣimiyin yekcmen n yal aseqdac, yerna yessuffuɣ-itent; iteddu d yal amsefrak n tɣimiyin.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Ldi aneqqis n unekcum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ amiḍan-ik.</translation>
     <message>
         <source>None yet</source>
         <translation>Ulac akka tura</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Inekcumen-ik ineggura, iɛaṛḍen ur neddi ara d yibeddilen n wawal-ik uffir, n tansa-k imayl d unekcum s snat n tikkal.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>Inekcumen ineggura, iɛaṛḍen ur neddi ara d yibeddilen n tɣellist n umiḍan-a.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Senqed armud</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Inekcumen ur neddi ara: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Wali asebter n yimeḥtaǧen i wugar n telɣut.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>Crontab ur yettwaru ara (%reason). Rnu izirigen-agi ɣer crontab n useqdac i yeddukkel asmel, ma ulac abrid n uṛaǧu, d unekter, d alɣuyen akked tneggarut n unadi ur ttedun ara:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Asebded tikkelt nniḍen yettwaxdam s Kickstarter (%file, syin php bin/php/kickstarter.php run --apply) neɣ s usebded amaynut.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>Asurf n yimaylen yugi %count n yiznan deg usedu aneggaru. Senqed aqeddac n yimaylen d site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count n tedyanin ttrajunt yerna ulac aselkem n umahil cron n yilɣa i yettwajerden. Rnu aḥric n umahil cron «frequent» ɣer crontab, neɣ selkem exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Choose another site or section with the node picker</source>
         <translation>Fren asmel neɣ tigezmi-nniḍen s ufran n tikerrisin</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>D anedbal n unagraw kan i izemren ad ibeddel bab-is: selkem ./console exp:content-check --fix-permissions --apply am root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>empty</source>
         <translation>d ilem</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>Tasarut n uzmul tɛedda aseggas: beddel-itt s exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>not sent</source>
         <translation>ur yettwazen ara</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Amahil cron n yilɣa yettjerrid dagi yal aselkem-is. Rnu aḥric frequent ɣer crontab, neɣ selkem exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Seqdec tadiwent: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>None.</source>
         <translation>Ulac.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>s usnas n usentem</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>s tengalt s yimayl</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>s tengalt n tririt</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>s tsarut n unekcum</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>s umiḍan n berra</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Yettwaskan am uẓeṭṭa-ines; tansa tettwaḥrez akken qqaren yiɣewwaren n ummesten n yisefka n usmel.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ur yettwajerred ara</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Adeg</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>s uqarub</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Manage devices</source>
         <translation>Sefrek ibenkan</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>s usnas n usentem</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>s tengalt s yimayl</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>s tengalt n tririt</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>s tsarut n unekcum</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>s umiḍan n berra</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ur yettwajerred ara</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Adeg</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>s uqarub</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>View the sessions of this user</source>
         <translation>Wali tiɣimiyin n useqdac-a</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Amiḍan-ik %login deg %site yettwaseqdec tura i unekcum seg yiwen n wadeg ur yekcim ara segs melmi kan:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Adeg s uqarub</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser ɣef %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aneqqis n unekcum</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Open the page</source>
         <translation>Ldi asebter</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ɣer %to seg %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Isem n useqdac neɣ ID n useqdac: amiḍan ɣef i d-tella tedyant neɣ aseqdac i yexdmen tigawt.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Amiḍan</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tigawt</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Seld</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Yal agmuḍ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Send</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>S ɣur</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Sfeḍ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Yemmed</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Tidyanin ttwaḥrazent %days n wussan.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Tidyanin ttwaḥrazent alamma ttwakksent s ufus.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tidyanin</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Yal tigawt</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Akk tidyanin n umiḍan-a</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Sifeḍ tabdart s umasal CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ur yeddukkel ara</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Seg</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Ssenqes tabdart</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Ulac tadyant i yemṣadan.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>I yal asebter</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Asekles yensa deg audit.ini ([UserAuditSettings] UserAudit); tabdart tesken ayen yettwaskelsen yakan.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Yettwagi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Agmuḍ</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sken</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Tafelwit n uɣmis n usenqed n yiseqdacen ulac-itt. Snulfu-tt s php update/common/scripts/6.0/createuseraudittable.php; alamma d imir, ifuyla n usenqed ḥerzen yal tadyant.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Asebter-a yesra taffa n yisefka SQL; ur yelli ara deg MongoDB. Ifuyla n usenqed ḥerzen yal tadyant.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ɣer</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Aɣmis n usenqed n yiseqdacen</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Aseqdac</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Melmi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Anida</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Anwa i ibeddlen, i d-yesnulfan, i yermden, i yesnesen, i yesmuttin neɣ i yekksen amiḍan, anwa i ikecmen neɣ i yettwagin, akked timlilin i yettunefken: yiwen n yizirig i yal tadyant, s wurtiyen uqbel d seld. Awalen uffiren d yisefka uffiren ur ttwaskelsen ara akk.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>agraw</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>anagraw</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>arussin</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ḥrez amiḍan-ik</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Tangalt n tririt tettwaseqdec i unekcum ɣer umiḍan-ik %login deg %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Tangalt n tririt tettwaseqdec</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Amiḍan</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Tansa s uqarub</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Suter awal uffir amaynut akken ad tkecmeḍ tikkelt nniḍen, neɣ nermes inedbalen n usmel.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Suter awal uffir amaynut</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Yal tangalt n tririt tteddu yiwet n tikkelt. Ma tesruḥeḍ tiliɣri-k, sbadu tikkelt nniḍen asnas-ik n usentem, yerna ḥrez tingalin timaynutin n tririt deg wadeg yettwaḥerzen.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Iɛaṛḍen n unekcum ur neddi ara deg umiḍan-ik</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>Seg tura, anekcum ad isuter tangalt ɣer tama n wawal-ik uffir. Ma d kečč i yexdemen aya, ur tesriḍ ad txedmeḍ kra.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Ma d kečč yerna tettuḍ awal-ik uffir, suter wayeḍ amaynut. Ma mačči d kečč, fren awal uffir yeǧhed ugar, yerna rmed anekcum s snat n tikkal.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Ma mačči d kečč i yexdemen aya, yezmer yiwen yessen awal-ik uffir: beddel-it tura yerna senqed anda yekcem umiḍan-ik.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Tingalin n tririt i d-yeqqimen</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Senqed ibenkan-ik</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Alɣu n tɣellist</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Yiwen yeɛreḍ ad yekcem ɣer umiḍan-ik %login deg %site s wawal uffir ur nelhi ara %count n tikkal yemḍafaren.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Tella tedyant n tɣellist deg umiḍan-ik %login deg %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Wagi d alɣu n tɣellist ɣef umiḍan-ik. Yettwazen i yal abeddel am wa, yerna ur yezmir ara ad yettwasens.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Akud</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>Anekcum s snat n tikkal yettwasens i umiḍan-ik %login deg %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>Anekcum s snat n tikkal yettwasens</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>Anekcum s snat n tikkal yettwarmed i umiḍan-ik %login deg %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>Anekcum s snat n tikkal yettwarmed</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Amiḍan-ik %login deg %site yettwasekker deffir aṭas n yinekcumen ur neddi ara.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Tura amiḍan-ik yettwaḥrez s wawal-ik uffir kan. Ma mačči d kečč i yexdemen aya, rmed tikkelt nniḍen anekcum s snat n tikkal mi ara tbeddleḍ awal-ik uffir.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Amiḍan-ik yettwasekker</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Armud n tɣellist n %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Anekcum</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Aɛraḍ n unekcum ur neddi ara</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Yeffeɣ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Tiɣimiyin ttwassufɣent</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Anekcum seg yibenk amaynut</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Anekcum seg wadeg amaynut</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Timagit tettwasentem («Sentem belli d keččini»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Asenqed n timagit ur yeddi ara</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Anekcum s tsarut n unekcum</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Anekcum s tsarut n unekcum ur yeddi ara</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Anekcum yettwagi: tangalt n snat n tikkal ulac-itt neɣ ur telhi ara</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Tangalt n snat n tikkal ur nelhi ara</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Amiḍan yettwasekker deffir yinekcumen ur neddi ara</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Amiḍan yettwakkes-as usekker</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Awal uffir yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Abeddel n wawal uffir ur yeddi ara</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Awal uffir yettwawennez tikkelt nniḍen</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Awal uffir amaynut yettwasuter</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Tansa imayl tettwabeddel</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Isem n useqdac yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Anekcum s snat n tikkal yermed</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Anekcum s snat n tikkal yensa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Tangalt n tririt tettwaseqdec</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Tingalin timaynutin n tririt</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Awal uffir n usnas yettwasnulfa-d</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Awal uffir n usnas yettwaḥbes</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Tasarut n unekcum tettwarna</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Tasarut n unekcum tettwakkes</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Amiḍan yettwarmed</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Amiḍan yettwasens</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Akk</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Inekcumen d tɣimiyin</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ibeddilen n umiḍan</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Yesra ad yettwaɛass</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>sɣur-k</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>sɣur useqdac</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>sɣur %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Tarrayt</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Iminig</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Anagraw</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ibenk</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Adeg</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Tamurt</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Tiɣimiyin</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Anwa</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Abrid n tuzna</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Iɛaṛḍen ur neddi ara</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Tingalin i d-yeqqimen</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Amsefrak n unekcum</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Armud n tɣellist n %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Inekcumen d yibeddilen n tɣellist n umiḍan-ik. Ma twalaḍ kra ur txedmeḍ ara, beddel awal-ik uffir yerna ssufeɣ ibenkan ur tessineḍ ara.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Inekcumen d yibeddilen n tɣellist n umiḍan-a.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ibenkan-ik</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Beddel awal uffir</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Uɣal ɣer umiḍan</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>Armud n tɣellist ur yettwajerred ara</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Yettwaɣra seg uɣmis n usenqed n yiseqdacen, ideg tafelwit expuser_audit ulac-itt neɣ ur tettwasefrak ara deg taffa-a n yisefka. Selkem php update/common/scripts/6.0/createuseraudittable.php, neɣ aleqqem n taffa n yisefka n 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days n wussan ineggura</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Inekcumen deg %days n wussan ineggura</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Armud aneggaru n tɣellist</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sken</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ur yeddi ara</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>yettwagi</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ulac armud n tɣellist i yettwajerden yakan.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Tidyanin n tɣellist ttwaḥerzent %days n wussan.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Tidyanin n tɣellist ttwaḥerzent alamma yekkes-itent unedbal.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Sider isefka-inu n unekcum</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Tiɣimiyin-ik d tedyanin-ik n tɣellist am ufaylu JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Anekcum</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Aɛraḍ n unekcum ur neddi ara</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Yeffeɣ</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Tiɣimiyin ttwassufɣent</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Anekcum seg yibenk amaynut</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Anekcum seg wadeg amaynut</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Timagit tettwasentem («Sentem belli d keččini»)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Asenqed n timagit ur yeddi ara</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Anekcum s tsarut n unekcum</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Anekcum s tsarut n unekcum ur yeddi ara</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Anekcum yettwagi: tangalt n snat n tikkal ulac-itt neɣ ur telhi ara</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Tangalt n snat n tikkal ur nelhi ara</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Amiḍan yettwasekker deffir yinekcumen ur neddi ara</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Amiḍan yettwakkes-as usekker</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Awal uffir yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Abeddel n wawal uffir ur yeddi ara</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Awal uffir yettwawennez tikkelt nniḍen</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Awal uffir amaynut yettwasuter</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Tansa imayl tettwabeddel</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Isem n useqdac yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Anekcum s snat n tikkal yermed</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Anekcum s snat n tikkal yensa</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Tangalt n tririt tettwaseqdec</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Tingalin timaynutin n tririt</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Awal uffir n usnas yettwasnulfa-d</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Awal uffir n usnas yettwaḥbes</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Tasarut n unekcum tettwarna</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Tasarut n unekcum tettwakkes</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Amiḍan yettwarmed</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Amiḍan yettwasens</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Akk</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Inekcumen d tɣimiyin</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ibeddilen n umiḍan</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Yesra ad yettwaɛass</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Armud n tɣellist n %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Inekcumen d yibeddilen n tɣellist n umiḍan-ik. Ma twalaḍ kra ur txedmeḍ ara, beddel awal-ik uffir yerna ssufeɣ ibenkan ur tessineḍ ara.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ibenkan-ik</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Beddel awal uffir</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>Armud n tɣellist ur yettwajerred ara yakan deg usmel-a.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Inekcumen deg %days n wussan ineggura</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Iɛaṛḍen ur neddi ara</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ulac armud n tɣellist i yettwajerden yakan.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Sider isefka-inu n unekcum</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Tiɣimiyin-ik d tedyanin-ik n tɣellist am ufaylu JSON.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Awal uffir</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Awal uffir d tengalt n snat n tikkal</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Agrudem REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Agrudem SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Anekcum asuf (single sign-on)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Yekcem uqbel ad ttwajerdent tɣimiyin</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Aneqqis n unekcum</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Wid yekcmen ɣer usmel, acḥal n tikkal i kecmen yimiḍanen d wacḥal i ten-iɣelben, d usuffeɣ n useqdac seg yal amkan. Iteddu d yal amsefrak n tɣimiyin.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Tiɣimit tettwassufeɣ. Ibenk ilaq ad yekcem tikkelt nniḍen.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login yettwassufeɣ seg %count n tɣimiyin.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login ur yesɛi ara tiɣimit iteddun.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Ulac amiḍan ɣur-s asulay-a, isem-a n useqdac neɣ tansa-a imayl.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Tagi d tiɣimit i tseqdaceḍ. Akken ad tt-tfakkeḍ, ffeɣ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tiɣimit-nni tfuk yakan.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Asebter yezri wakud-is. Ulac ayen yettwabeddlen; ma ulac aɣilif, ɛreḍ tikkelt nniḍen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Tiɣimiyin ur ttwajerdent ara deg usmel-a (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tafelwit expuser_session ulac-itt</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Tiɣimiyin ad ttwajerdent mi ara tettwasnulfu: php update/common/scripts/6.0/createusersessiontable.php, neɣ aleqqem n taffa n yisefka n 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Tura d wass-a</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Tiɣimiyin iteddun</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Iseqdacen yekcmen</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Inekcumen n wass-a</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Iɛaṛḍen ur neddi ara ass-a</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Ssufeɣ aseqdac seg yal amkan</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Yal tiɣimit n umiḍan tfukk deg tsuturt-is i d-iteddun, ula d tid i yeḥrez «Cfu fell-i». Seqdec-it ma yella amiḍan yezmer ad yili deg ifassen ur nelhi ara; syin wennez awal-is uffir tikkelt nniḍen.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Asulay n useqdac, isem n useqdac neɣ tansa imayl</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Ffeɣ i yal amkan</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Yekcem tura</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>Ttwaskanent %limit i yettwasqedcen taggara.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Aseqdac</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ibenk</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Tansa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Anekcum</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Armud aneggaru</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tigawin</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ibenk-a</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ur yettwajerred ara</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Ffeɣ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ulac tiɣimit yekcmen.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>%days n wussan ineggura</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Inekcumen d yiɛaṛḍen ur neddi ara ttwaḥesben seg uɣmis n usenqed n yiseqdacen, i ulac; tiɣimiyin timaynutin ttwaḥesbent.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Ass</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Inekcumen</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Iɛaṛḍen ur neddi ara</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Tiɣimiyin timaynutin</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Amsefrak n tɣimiyin: %handler. Tiɣimiyin ttwaɣrant seg tfelwit expuser_session, ihi aneqqis iteddu d yal amsefrak.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Alɣu n tɣellist i umiḍan-ik</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Tella tedyant n tɣellist deg umiḍan-ik %login: %event. Ma mačči d kečč, ḥrez amiḍan-ik deg %url.</translation>
     </message>
 </context>
 </TS>

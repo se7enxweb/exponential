@@ -64,7 +64,7 @@ an audit alert such as `admin_role_granted` or `chain_broken`.
 2. Data from the newest clean backup, or review the current database for unknown accounts, roles and content.
 3. Update to the newest 6.0.x if the hole may be a known one.
 4. Change credentials: administrator passwords, database password, API keys and tokens; rotate the audit signing key if
-   it may have been read (`./console exp:audit key rotate --allow-root-user`).
+   it may have been read (`./console exp:audit key rotate --apply --allow-root-user`).
 5. End sessions: password changes sign out other sessions; remove all sessions under **Setup > Sessions** with the
    database session handler.
 6. Clear all caches (`php bin/php/ezcache.php --clear-all --allow-root-user`; restart Velocity and clear its response

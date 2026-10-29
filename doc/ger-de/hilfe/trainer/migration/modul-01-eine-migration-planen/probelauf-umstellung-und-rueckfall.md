@@ -78,7 +78,7 @@ Redaktionszyklus auf dem neuen System.
 
 ## Praktische Übung
 
-Verwenden Sie Ihre eigene Schulungsinstallation (installiert mit `php bin/php/console exp:install`) als „neue
+Verwenden Sie Ihre eigene Schulungsinstallation (installiert mit `php bin/php/console exp:install --apply`) als „neue
 Website“. Sie versetzen sie in den Wartungsmodus und wieder zurück, wie bei einer Umstellung.
 
 1. Zeigen Sie im Wurzelverzeichnis der Installation die Optionen des Wartungsskripts an:

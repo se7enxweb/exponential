@@ -47,7 +47,7 @@ Restores are recorded in the audit as `content.object.restore`; removals to the 
   cronjob part runs.
 - The `trashpurge` part is in no cronjob part by default. With `content.ini [TrashSettings] KeepItemsForDays=<days>`
   it purges only items trashed at least that many days ago; empty or 0 purges everything.
-- On the command line: `php bin/php/trashpurge.php --trashed-days=<days>`.
+- On the command line: `php bin/php/trashpurge.php --apply --trashed-days=<days>`.
 
 ```ini
 # settings/override/content.ini.append.php

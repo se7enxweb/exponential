@@ -29,7 +29,7 @@ Seite erklärt das Thema, wann es passt und was Sie nicht versprechen sollten.
 „With SQLite, a complete Exponential site runs from one file on disk, with no database server to install, configure
 or secure“ ([Unterstützung der SQLite-Datenbank](../../funktionen/6.0/sqlite-datenbank.md)). Es kam in den ersten Monaten
 der Linie 6.0 im Januar 2024 und wurde zum Standard: des Einrichtungsassistenten im September 2026 und des
-Installationsprogramms mit einem Befehl (`./console exp:install`), das auf SQLite installiert, sofern nichts anderes
+Installationsprogramms mit einem Befehl (`./console exp:install --apply`), das auf SQLite installiert, sofern nichts anderes
 angegeben ist ([Installation mit einem Befehl](../../funktionen/6.0/installation-mit-einem-befehl.md)). Das README nennt es „an
 incredible improvement to the kernel“ ([README, Recent improvements](https://github.com/se7enxweb/exponential/blob/main/README.md#recent-improvements-to-exponential)).
 

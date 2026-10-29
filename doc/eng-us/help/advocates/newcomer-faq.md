@@ -27,7 +27,7 @@ proves it. Check the source before you answer: facts change with releases.
 
 | Question | Answer | Page |
 |---|---|---|
-| How do I try it? | `./console exp:install`: a complete site on SQLite in one command | [Install in one command](../../features/6.0/install-in-one-command.md) |
+| How do I try it? | `./console exp:install --apply`: a complete site on SQLite in one command | [Install in one command](../../features/6.0/install-in-one-command.md) |
 | What does it need? | PHP 8.0 or later; a database (SQLite needs no server) | [Operating system support](../os-support.md), [Database support](../database-support.md) |
 | Which web server? | Velocity is recommended; FrankenPHP or Apache/nginx with PHP-FPM work too | [Velocity](../../features/6.0/velocity-persistent-worker-server.md) |
 | Shared hosting? | Possible with Apache or LiteSpeed; Velocity usually not | [Containers, cloud and hosting panels](../os-support.md#containers-cloud-and-hosting-panels) |

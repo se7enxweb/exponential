@@ -96,7 +96,7 @@ composer install
   `vendor/`.
 
 Installieren Sie die Site dann wie gewohnt: [Eine Installationsmethode wählen](../installation/04-installationsweg-waehlen.md)
-oder der eine Befehl `php bin/php/console exp:install` aus [der Konsoleninstallation](../installation/07-installation-ueber-die-konsole.md).
+oder der eine Befehl `php bin/php/console exp:install --apply` aus [der Konsoleninstallation](../installation/07-installation-ueber-die-konsole.md).
 
 **Lieber `composer create-project`?** Auch das kann Klone erzeugen, aber Sie brauchen zwei Optionen zusammen:
 

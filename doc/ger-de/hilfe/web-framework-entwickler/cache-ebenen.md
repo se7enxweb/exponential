@@ -34,7 +34,7 @@ veröffentlicht werden. Der übliche Grund für „meine Änderung erscheint nic
 | Content-View-Cache (`content`) | gerenderte Inhalts-Views, pro Berechtigungskontext | Veröffentlichen des Knotens und verwandter Inhalte (`eZContentCacheManager`) |
 | Template-Block-Cache (`template-block`) | `{cache-block}`-Fragmente | Veröffentlichen (standardmäßig), Ablauf |
 | Rollenbewusster HTTP-Cache (`exphttpcache`) | ganze Seiten pro Berechtigungskontext; aus, bis `httpcache.ini Enabled=enabled` | Inhaltsänderungen ([Der rollenbewusste HTTP-Cache](../../bc/6.0/httpcache.md)) |
-| Velocity-Response-Cache | öffentliche Seiten im Serverprozess; aus, bis er aktiviert wird | eigene Regeln, `./console exp:velocity cache clear` ([Velocity-Response-Cache](../../funktionen/6.0/velocity-antwort-cache.md)) |
+| Velocity-Response-Cache | öffentliche Seiten im Serverprozess; aus, bis er aktiviert wird | eigene Regeln, `./console exp:velocity cache clear --apply` ([Velocity-Response-Cache](../../funktionen/6.0/velocity-antwort-cache.md)) |
 | Weitere | `urlalias`, `imagealias`, `translation`, `design_base`, `user_info_cache`, `querycache` ... | ihre IDs und Tags |
 
 Das Caching von Inhalts-Views steuert `site.ini [ContentSettings] ViewCaching` (mitgeliefert: `enabled`). Die

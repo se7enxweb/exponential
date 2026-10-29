@@ -60,7 +60,7 @@ angezeigt.
 
 **Ein Redakteur sieht die Schaltfläche „?“ nicht.** Die Hilfe-Schaltfläche erscheint nur für Benutzer mit
 `exphelp/read`. Auf einer Installation aus der Zeit vor dem Hilfesystem erteilt ein Administrator sie mit
-`php bin/php/addexphelpreadpolicy.php` (probieren Sie es zuerst mit `--dry-run`).
+`php bin/php/addexphelpreadpolicy.php --apply` (ohne `--apply` listet es nur, was es gewähren würde).
 
 **Ist die Hilfe dasselbe wie die Website `doc.exponential.earth`?** Das Hilfe-Center wird aus dem Verzeichnis `doc/`
 der Installation selbst erzeugt und passt deshalb immer zur installierten Version.

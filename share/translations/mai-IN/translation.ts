@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>सेटअप &gt; क्रॉन जॉब</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>एखन धरि कोनो क्रॉन जॉब भाग नहि चलल अछि: जॉब पंक्ति, आयात, सूचना आ खोज अनुक्रमणिका प्रतीक्षा क&apos; रहल अछि। php bin/php/installcrontab.php --add --apply चलाउ, वा --show क पाँती crontab मे जोड़ू।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ई इंस्टॉलेशन एक सार्वजनिक डेमो अछि: केओ एकर प्रशासक पासवर्ड जानि सकैत अछि, आ प्रशासक पासवर्ड बदलल वा रीसेट नहि कयल जा सकैत अछि। एतय किछुओ निजी दर्ज नहि करू।</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>अहाँक डिवाइस</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>एहन खाता जकर केओ उपयोग नहि करैत अछि वा जकरा पर ध्यान देबाक आवश्यकता अछि; ओकरा निष्क्रिय करू, अनलॉक करू वा निर्यात करू।</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>प्रयोक्ता ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>प्रत्येक खाताक लेल के बदललक, के लॉग इन कयलक वा केकरा अस्वीकार कयल गेल; फ़िल्टर करू आ निर्यात करू।</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>लॉग इन रिपोर्ट</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>के लॉग इन अछि, प्रतिदिनक लॉग इन आ विफलता; कोनो प्रयोक्ता केँ सभ ठाम सँ लॉग आउट करू।</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP हैंडलरक समय-सीमा समाप्त सत्र स्वयं PHP हटबैत अछि (session.gc_maxlifetime), ई पृष्ठ वा session_gc क्रॉन जॉबक भाग नहि।</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>प्रत्येक प्रयोक्ताक लॉग इन कयल सत्र लॉग इन रिपोर्ट मे सूचीबद्ध होइत अछि आ ओतहि सँ लॉग आउट कयल जाइत अछि; ई रिपोर्ट प्रत्येक सत्र हैंडलरक संग काज करैत अछि।</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>लॉग इन रिपोर्ट खोलू</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>एखन धरि कोनो नहि</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>अहाँक हालक लॉग इन, विफल प्रयास आ अहाँक पासवर्ड, ईमेल पता आ दू-चरणीय लॉग इन मे भेल परिवर्तन।</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>एहि खाताक हालक लॉग इन, विफल प्रयास आ सुरक्षा परिवर्तन।</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>गतिविधिक समीक्षा करू</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>विफल लॉग इन: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab नहि लिखल गेल (%reason)। ई पंक्ति सभ ओहि प्रयोक्ता क crontab मे जोड़ू जकर रूप मे साइट चलैत अछि, नहि तँ पंक्ति, आयात, सूचना आ खोज अनुक्रमणिका कहियो नहि चलत:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>पुनः इंस्टॉलेशन किकस्टार्टर सँ (%file, तखन php bin/php/kickstarter.php run --apply) वा नव इंस्टॉलेशन सँ कयल जाइत अछि।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>पछिला रन मे मेल ट्रांसपोर्ट %count संदेश अस्वीकार कयलक। मेल सर्वर आ site.ini MailSettings जाँचू।</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count घटना प्रतीक्षा मे अछि आ सूचना क्रॉन जॉबक कोनो रन दर्ज नहि अछि। क्रॉन जॉब भाग &quot;frequent&quot; crontab मे जोड़ू, वा exp:notification:run --apply चलाउ।</translation>
     </message>
 </context>
 <context>
@@ -63069,6 +63133,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>नोड चयनकर्ता सँ कोनो आन साइट वा खण्ड चुनू</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>केवल सिस्टम प्रशासक मालिक बदलि सकैत छथि: root क रूप मे ./console exp:content-check --fix-permissions --apply चलाउ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64602,6 +64670,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>खाली</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>हस्ताक्षर कुंजी एक वर्ष सँ बेसी पुरान अछि: exp:audit key rotate --apply सँ एकरा बदलू।</translation>
     </message>
 </context>
 <context>
@@ -70312,6 +70384,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>नहि पठाओल गेल</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>सूचना क्रॉन जॉब अपन प्रत्येक रन एतय दर्ज करैत अछि। भाग frequent crontab मे जोड़ू, वा exp:notification:run --apply चलाउ।</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>कंसोलक उपयोग करू: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76485,6 +76565,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>कोनो नहि।</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>प्रमाणक ऐप सँ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ईमेल सँ आयल कोड सँ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>पुनर्प्राप्ति कोड सँ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>पासकी सँ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>बाहरी खाता सँ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>एकर नेटवर्कक रूप मे देखाओल गेल; पता साइटक डेटा संरक्षण सेटिंगक अनुसार राखल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>दर्ज नहि</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>स्थान</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>अनुमानित</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76728,6 +76848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>डिवाइस प्रबंधित करू</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>प्रमाणक ऐप सँ</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>ईमेल सँ आयल कोड सँ</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>पुनर्प्राप्ति कोड सँ</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>पासकी सँ</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>बाहरी खाता सँ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>दर्ज नहि</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>स्थान</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>अनुमानित</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76807,6 +76963,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>एहि प्रयोक्ताक सत्र देखू</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site पर अहाँक खाता %login सँ एखने एहन स्थान सँ लॉग इन भेल अछि जतय सँ हाल मे लॉग इन नहि भेल छल:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>अनुमानित स्थान</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76845,6 +77009,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os पर %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>लॉग इन रिपोर्ट</translation>
     </message>
 </context>
 <context>
@@ -77344,6 +77512,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>पृष्ठ खोलू</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count मे सँ %from सँ %to धरि</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>लॉगिन नाम वा प्रयोक्ता ID: ओ खाता जकरा बारे मे घटना छल, वा ओ प्रयोक्ता जे कार्रवाई कयलक।</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>खाता</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>कार्रवाई</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>बाद मे</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>कोनो परिणाम</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>पहिने</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>करनिहार</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>साफ़ करू</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पूर्ण</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>घटना %days दिन धरि राखल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>घटना तावत धरि राखल जाइत अछि जावत धरि ओकरा हाथ सँ हटाओल नहि जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>घटना सभ</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>सभ कार्रवाई</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>एहि खाताक सभ घटना</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>सूची केँ CSV रूप मे निर्यात करू (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफल</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>सँ</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>सूची सीमित करू</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>कोनो घटना मेल नहि खाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रति पृष्ठ</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini मे रिकॉर्डिंग बंद अछि ([UserAuditSettings] UserAudit); सूची ओ देखबैत अछि जे पहिने रिकॉर्ड कयल गेल छल।</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>अस्वीकृत</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणाम</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>देखाउ</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>प्रयोक्ता ऑडिट लॉगक टेबल नहि अछि। एकरा php update/common/scripts/6.0/createuseraudittable.php सँ बनाउ; ताधरि ऑडिट फ़ाइल सभ प्रत्येक घटना राखैत अछि।</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>एहि पृष्ठ केँ SQL डेटाबेसक आवश्यकता अछि; MongoDB पर ई उपलब्ध नहि अछि। ऑडिट फ़ाइल सभ प्रत्येक घटना राखैत अछि।</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>धरि</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>प्रयोक्ता ऑडिट लॉग</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>प्रयोक्ता</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>कखन</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>कतय</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>के कोन खाता बदललक, बनौलक, सक्रिय कयलक, निष्क्रिय कयलक, स्थानांतरित कयलक वा हटौलक, के लॉग इन कयलक वा केकरा अस्वीकार कयल गेल, आ कोन भूमिका देल गेल: प्रत्येक घटनाक लेल एक पंक्ति, पहिने आ बादक फ़ील्डक संग। पासवर्ड आ गोपनीय जानकारी कहियो रिकॉर्ड नहि कयल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>समूह</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>सिस्टम</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञात</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>अपन खाता सुरक्षित करू</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site पर अहाँक खाता %login मे लॉग इन करबाक लेल एकटा पुनर्प्राप्ति कोडक उपयोग कयल गेल।</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>एकटा पुनर्प्राप्ति कोडक उपयोग कयल गेल</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>खाता</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>अनुमानित पता</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>फेर सँ लॉग इन करबाक लेल नव पासवर्ड माँगू, वा साइटक प्रशासक सभ सँ संपर्क करू।</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>नव पासवर्ड माँगू</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>प्रत्येक पुनर्प्राप्ति कोड केवल एक बेर काज करैत अछि। जँ अहाँक फोन हेरा गेल अछि, तँ अपन प्रमाणक ऐप फेर सँ सेट करू आ नव पुनर्प्राप्ति कोड कोनो सुरक्षित स्थान पर राखू।</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>अहाँक खाता पर विफल लॉग इन प्रयास</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>आब सँ लॉग इन करबा काल अहाँक पासवर्डक अतिरिक्त एकटा कोड सेहो माँगल जायत। जँ ई अहाँ कयने छी, तँ अहाँ केँ किछु करबाक आवश्यकता नहि अछि।</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>जँ ई अहीं छलहुँ आ अहाँ अपन पासवर्ड बिसरि गेलहुँ, तँ नव पासवर्ड माँगू। जँ नहि, तँ बेसी मजगूत पासवर्ड चुनू आ दू-चरणीय लॉग इन सक्रिय करू।</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>जँ ई अहाँ नहि कयलहुँ, तँ संभव अछि जे केओ अहाँक पासवर्ड जनैत होथि: एकरा एखने बदलू आ जाँचू जे अहाँक खाता कतय-कतय लॉग इन अछि।</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>शेष पुनर्प्राप्ति कोड</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>अपन डिवाइसक समीक्षा करू</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>सुरक्षा चेतावनी</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>केओ %site पर अहाँक खाता %login मे गलत पासवर्ड सँ लगातार %count बेर लॉग इन करबाक प्रयास कयलक।</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site पर अहाँक खाता %login मे एकटा सुरक्षा घटना भेल।</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>ई अहाँक खाताक विषय मे एकटा सुरक्षा चेतावनी अछि। ई एहन प्रत्येक परिवर्तन पर पठाओल जाइत अछि आ एकरा बंद नहि कयल जा सकैत अछि।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>समय</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site पर अहाँक खाता %login लेल दू-चरणीय लॉग इन निष्क्रिय कयल गेल।</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>दू-चरणीय लॉग इन निष्क्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site पर अहाँक खाता %login लेल दू-चरणीय लॉग इन सक्रिय कयल गेल।</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>दू-चरणीय लॉग इन सक्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>%site पर अहाँक खाता %login बहुत बेसी विफल लॉग इनक बाद लॉक कयल गेल।</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>अहाँक खाता आब केवल अहाँक पासवर्ड सँ सुरक्षित अछि। जँ ई अहाँ नहि कयलहुँ, तँ अपन पासवर्ड बदललाक बाद दू-चरणीय लॉग इन फेर सँ सक्रिय करू।</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>अहाँक खाता लॉक कयल गेल</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name क सुरक्षा गतिविधि</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>लॉग इन कयल</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>विफल लॉग इन प्रयास</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>लॉग आउट कयल</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>सत्र लॉग आउट कयल गेल</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>नव डिवाइस सँ लॉग इन</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>नव स्थान सँ लॉग इन</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>पहिचानक पुष्टि भेल (&quot;पुष्टि करू जे ई अहाँ छी&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>पहिचानक जाँच विफल</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>पासकी सँ लॉग इन कयल</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>पासकी सँ लॉग इन विफल</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>लॉग इन अस्वीकृत: दू-चरणीय लॉग इनक कोड नहि अछि वा गलत अछि</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>दू-चरणीय लॉग इनक गलत कोड</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>विफल लॉग इनक बाद खाता लॉक कयल गेल</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>खाता अनलॉक कयल गेल</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>पासवर्ड बदलल गेल</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>पासवर्ड बदलब विफल</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>पासवर्ड रीसेट कयल गेल</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>नव पासवर्डक अनुरोध कयल गेल</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ईमेल पता बदलल गेल</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>प्रयोक्ता नाम बदलल गेल</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>दू-चरणीय लॉग इन सक्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>दू-चरणीय लॉग इन निष्क्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>पुनर्प्राप्ति कोडक उपयोग कयल गेल</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>नव पुनर्प्राप्ति कोड</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ऐप पासवर्ड बनाओल गेल</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ऐप पासवर्ड निरस्त कयल गेल</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>पासकी जोड़ल गेल</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>पासकी हटाओल गेल</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>खाता सक्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>खाता निष्क्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सभ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>लॉग इन आ सत्र</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>खाता मे परिवर्तन</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ध्यान देबाक आवश्यकता</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>अहाँक द्वारा</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>प्रयोक्ताक द्वारा</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>%login द्वारा</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>विधि</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>ब्राउज़र</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>सिस्टम</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>डिवाइस</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>ठाम</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>देश</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्र</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>कोन</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>माध्यम</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>विफल प्रयास</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>शेष कोड</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>लॉग इन हैंडलर</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name क सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>अहाँक खाताक सुरक्षा सँ जुड़ल लॉग इन आ परिवर्तन। जँ अहाँ किछु एहन देखी जे अहाँ नहि कयलहुँ, तँ अपन पासवर्ड बदलू आ ओ डिवाइस लॉग आउट करू जकरा अहाँ नहि चिन्हैत छी।</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>एहि खाताक सुरक्षा सँ जुड़ल लॉग इन आ परिवर्तन।</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>अहाँक डिवाइस</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>पासवर्ड बदलू</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>खाता पर वापस</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>सुरक्षा गतिविधि दर्ज नहि होइत अछि</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>ई प्रयोक्ता ऑडिट लॉग सँ पढ़ल जाइत अछि, जकर तालिका expuser_audit नहि अछि वा एहि डेटाबेस पर समर्थित नहि अछि। php update/common/scripts/6.0/createuseraudittable.php चलाउ, वा 6.0.15 क डेटाबेस अपडेट चलाउ।</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>पछिला %days दिन</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>पछिला %days दिन मे लॉग इन</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>हालक सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>देखाउ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>विफल</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>अस्वीकृत</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>एखन धरि कोनो सुरक्षा गतिविधि दर्ज नहि भेल अछि।</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>सुरक्षा घटना %days दिन धरि राखल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>सुरक्षा घटना ता धरि राखल जाइत अछि जा धरि कोनो प्रशासक ओकरा हटा नहि दैत छथि।</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>हमर लॉग इन डेटा डाउनलोड करू</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>अहाँक सत्र आ सुरक्षा घटना एकटा JSON फ़ाइलक रूप मे।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>लॉग इन कयल</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>विफल लॉग इन प्रयास</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>लॉग आउट कयल</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>सत्र लॉग आउट कयल गेल</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>नव डिवाइस सँ लॉग इन</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>नव स्थान सँ लॉग इन</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>पहिचानक पुष्टि भेल (&quot;पुष्टि करू जे ई अहाँ छी&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>पहिचानक जाँच विफल</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>पासकी सँ लॉग इन कयल</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>पासकी सँ लॉग इन विफल</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>लॉग इन अस्वीकृत: दू-चरणीय लॉग इनक कोड नहि अछि वा गलत अछि</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>दू-चरणीय लॉग इनक गलत कोड</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>विफल लॉग इनक बाद खाता लॉक कयल गेल</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>खाता अनलॉक कयल गेल</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>पासवर्ड बदलल गेल</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>पासवर्ड बदलब विफल</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>पासवर्ड रीसेट कयल गेल</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>नव पासवर्डक अनुरोध कयल गेल</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>ईमेल पता बदलल गेल</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>प्रयोक्ता नाम बदलल गेल</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>दू-चरणीय लॉग इन सक्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>दू-चरणीय लॉग इन निष्क्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>पुनर्प्राप्ति कोडक उपयोग कयल गेल</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>नव पुनर्प्राप्ति कोड</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ऐप पासवर्ड बनाओल गेल</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ऐप पासवर्ड निरस्त कयल गेल</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>पासकी जोड़ल गेल</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>पासकी हटाओल गेल</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>खाता सक्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>खाता निष्क्रिय कयल गेल</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सभ</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>लॉग इन आ सत्र</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>खाता मे परिवर्तन</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>ध्यान देबाक आवश्यकता</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name क सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>अहाँक खाताक सुरक्षा सँ जुड़ल लॉग इन आ परिवर्तन। जँ अहाँ किछु एहन देखी जे अहाँ नहि कयलहुँ, तँ अपन पासवर्ड बदलू आ ओ डिवाइस लॉग आउट करू जकरा अहाँ नहि चिन्हैत छी।</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>अहाँक डिवाइस</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>पासवर्ड बदलू</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>एहि साइट पर सुरक्षा गतिविधि एखन धरि दर्ज नहि होइत अछि।</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>पछिला %days दिन मे लॉग इन</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>विफल प्रयास</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>एखन धरि कोनो सुरक्षा गतिविधि दर्ज नहि भेल अछि।</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>हमर लॉग इन डेटा डाउनलोड करू</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>अहाँक सत्र आ सुरक्षा घटना एकटा JSON फ़ाइलक रूप मे।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>पासवर्ड</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>पासवर्ड आ दू-चरणीय लॉग इनक कोड</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST इंटरफ़ेस</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP इंटरफ़ेस</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>सिंगल साइन-ऑन</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>सत्र दर्ज होयबा सँ पहिने लॉग इन कयल</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>लॉग इन रिपोर्ट</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>साइट पर के लॉग इन अछि, खाता कतेक बेर लॉग इन करैत अछि आ कतेक बेर विफल होइत अछि, आ कोनो प्रयोक्ता केँ सभ ठाम सँ लॉग आउट करब। ई प्रत्येक सत्र हैंडलरक संग काज करैत अछि।</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>सत्र लॉग आउट कयल गेल। डिवाइस केँ फेर सँ लॉग इन करय पड़त।</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login केँ %count सत्र सँ लॉग आउट कयल गेल।</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login क कोनो सत्र चालू नहि छल।</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>एहि ID, प्रयोक्ता नाम वा ईमेल पता बला कोनो खाता नहि अछि।</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ई ओ सत्र अछि जकर अहाँ उपयोग क&apos; रहल छी। एकरा समाप्त करबाक लेल लॉग आउट करू।</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ओ सत्र पहिनहि समाप्त भ&apos; गेल छल।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठक समय समाप्त भ&apos; गेल छल। किछु नहि बदलल गेल; कृपया फेर सँ प्रयास करू।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>एहि साइट पर सत्र दर्ज नहि होइत अछि (site.ini [UserSessionSettings] Tracking=disabled)।</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>तालिका expuser_session नहि अछि</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>एकरा बनिते सत्र दर्ज होमय लागत: php update/common/scripts/6.0/createusersessiontable.php, वा 6.0.15 क डेटाबेस अपडेट।</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>एखन आ आइ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>चालू सत्र</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>लॉग इन कयल प्रयोक्ता</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>आजुक लॉग इन</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>आजुक विफल प्रयास</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>कोनो प्रयोक्ता केँ सभ ठाम सँ लॉग आउट करू</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>खाताक प्रत्येक सत्र ओकर अगिला अनुरोध पर समाप्त भ&apos; जाइत अछि, &quot;हमरा मोन राखू&quot; सँ राखल सत्र सेहो। एकर उपयोग तखन करू जखन कोनो खाता गलत हाथ मे भ&apos; सकैत अछि; तकर बाद ओकर पासवर्ड रीसेट करू।</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>प्रयोक्ता ID, प्रयोक्ता नाम वा ईमेल पता</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>सभ ठाम सँ लॉग आउट करू</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>एखन लॉग इन</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>हाल मे उपयोग कयल गेल %limit देखाओल गेल अछि।</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>प्रयोक्ता</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>डिवाइस</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>पता</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>लॉग इन कयल</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>अंतिम बेर सक्रिय</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रिया</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ई डिवाइस</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>दर्ज नहि</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>लॉग आउट करू</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>कोनो सत्र लॉग इन नहि अछि।</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>पछिला %days दिन</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>लॉग इन आ विफल प्रयास प्रयोक्ता ऑडिट लॉग सँ गनल जाइत अछि, जे उपलब्ध नहि अछि; नव सत्र गनल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>दिन</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>लॉग इन</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>विफल प्रयास</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>नव सत्र</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>सत्र हैंडलर: %handler। सत्र तालिका expuser_session सँ पढ़ल जाइत अछि, तेँ रिपोर्ट प्रत्येक हैंडलरक संग काज करैत अछि।</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>अहाँक खाता लेल सुरक्षा चेतावनी</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>अहाँक खाता %login मे एकटा सुरक्षा घटना भेल: %event। जँ ई अहाँ नहि छलहुँ, तँ %url पर अपन खाता सुरक्षित करू।</translation>
     </message>
 </context>
 </TS>

@@ -44,7 +44,7 @@ Anwendungs-Framework (CMF) und ein eingebauter Shop kommen in einem Paket
 ### Für Entscheider: ein Stack, und der Server gehört dazu
 
 Seit 6.0.15 ist der Velocity Internet / Web Application Server Teil von Exponential: Die `composer.json` im
-Wurzelverzeichnis verlangt `se7enxweb/exponential-velocity ~0.0.4.55`, also hat ihn jede Installation, auf PHP 8.0 und
+Wurzelverzeichnis verlangt `se7enxweb/exponential-velocity ~0.0.4.57`, also hat ihn jede Installation, auf PHP 8.0 und
 höher. Das Projekt nennt das einen Wendepunkt, einen Grundstein und einen Schlussstein: eine neue Stufe der Integration
 von Anwendungssystemen, die im Kernprodukt standardmäßig noch mehr Funktionen ab Werk bietet. Was das für Ihre
 Entscheidung bedeutet:

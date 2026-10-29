@@ -68,7 +68,7 @@ THIS FILE" (ist keine Einstellung dieser Datei): Eine Konstante dort bewirkt nic
 ## Mit einem veröffentlichten Passwort installieren
 
 ```bash
-EXP_DEMO_MODE=1 php bin/php/console exp:install --db=sqlite --password='<the published demo password>'
+EXP_DEMO_MODE=1 php bin/php/console exp:install --apply --db=sqlite --password='<the published demo password>'
 ```
 
 Dasselbe funktioniert für den Kickstarter (`[site_admin] Password`) und den Einrichtungsassistenten. "Gelockert wird

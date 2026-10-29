@@ -208,7 +208,7 @@ Alle Meldungen dieser Tabelle stehen in `kernel/setup/steps/ezstep_installer.php
 
 | Symptom oder Meldung | Ursache | Abhilfe |
 |---|---|---|
-| „The CreateSites step will modify the database and site settings.“ / „Re-run with --force to confirm you want to install the site package.“ | Der Kickstarter schreibt die Datenbank nur mit `--force` (`kernel/classes/expkickstarter.php`) | `php bin/php/console exp:kickstarter run --force`, nachdem Sie `DatabaseAction` geprüft haben. |
+| „The CreateSites step will modify the database and site settings.“ / „Re-run with --force to confirm you want to install the site package.“ | Der Kickstarter schreibt die Datenbank nur mit `--force` (`kernel/classes/expkickstarter.php`) | `php bin/php/console exp:kickstarter run --apply --force`, nachdem Sie `DatabaseAction` geprüft haben. |
 | „Unknown start step: ...“ oder „Unknown stop step: ...“ | Ein Schrittname, den es nicht gibt | `php bin/php/console exp:kickstarter run --list-steps` listet sie auf. |
 | „This directory already holds an installation (settings/override/site.ini.append.php).“ | `exp:install` hat eine konfigurierte Datenbank gefunden (`bin/php/install.php`) | Fügen Sie `--force` nur hinzu, um diese Installation zu ersetzen; `--dry-run` prüft, ohne etwas zu ändern. |
 | Werte aus `kickstart.ini` werden ignoriert | Führende Leerzeichen vor einem Abschnitt oder Schlüssel (`kickstart.ini-dist`: „Remove all leading whitespaces“), ein fehlendes `Continue=true` oder veraltete zwischengespeicherte Werte | Entfernen Sie die Leerzeichen; setzen Sie `Continue=true`; löschen Sie `var/cache/ini/kickstart-*.php` (die Unterbefehle `ini` und `run` tun das selbst). |
@@ -249,7 +249,7 @@ Alle Meldungen dieser Tabelle stehen in `kernel/setup/steps/ezstep_installer.php
 
 | Symptom oder Meldung | Ursache | Abhilfe |
 |---|---|---|
-| `velocity: no server script at ...` | Die Engine `qbix` braucht das Velocity-Paket, das nicht installiert ist | `composer install` (das Paket ist erforderlich), oder `composer require se7enxweb/exponential-velocity:~0.0.4.55` (PHP 8.0+); oder verwenden Sie für die Entwicklung `--engine=php`. |
+| `velocity: no server script at ...` | Die Engine `qbix` braucht das Velocity-Paket, das nicht installiert ist | `composer install` (das Paket ist erforderlich), oder `composer require se7enxweb/exponential-velocity:~0.0.4.57` (PHP 8.0+); oder verwenden Sie für die Entwicklung `--engine=php`. |
 | `velocity: already running` | Ein Server dieser Engine läuft bereits | `php bin/php/console exp:velocity status`; `restart`, um Änderungen zu übernehmen. |
 | `velocity: port ... is already in use by another process (another engine? exp:velocity stop --engine=qbix\|frankenphp)` | Ein anderes Programm oder eine andere Engine belegt den Port (Engines php und frankenphp) | Halten Sie die andere Engine an, oder ändern Sie `Port`/`HTTPSPort` mit `exp:velocity config set`. |
 | `velocity: did not start; see <log>` (die Engines `php` und `frankenphp`) | Der Server ist beim Start gescheitert | Lesen Sie das genannte Log. |
@@ -278,7 +278,7 @@ listen sie auf):
 | unsicher | `php bin/php/ezcache.php --clear-all` |
 
 Leeren Sie unter Velocity außerdem dessen Antwort-Cache, und zwar **nach** dem Neustart:
-`php bin/php/console exp:velocity cache clear`. Eine Seite, die zwischen dem Leeren eines Caches und dem Neustart noch
+`php bin/php/console exp:velocity cache clear --apply`. Eine Seite, die zwischen dem Leeren eines Caches und dem Neustart noch
 vom alten Code dargestellt wird, landet erneut im Cache und wird ausgeliefert, als hätte die Änderung nicht
 funktioniert. Mehr dazu in [Cache-Konsole](../bc/6.0/cache-konsole.md) und [Eine Site betreiben](../anleitungen/betrieb-einer-website.md).
 

@@ -7512,6 +7512,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>அமைவு &gt; க்ரான் பணிகள்</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>இதுவரை எந்த க்ரான் பணிப் பகுதியும் இயங்கவில்லை: பணி வரிசை, இறக்குமதிகள், அறிவிப்புகள் மற்றும் தேடல் அட்டவணை காத்திருக்கின்றன. php bin/php/installcrontab.php --add --apply ஐ இயக்குங்கள், அல்லது --show காட்டும் வரிகளை crontab கோப்பில் சேருங்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14381,6 +14385,14 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>இந்த நிறுவல் ஒரு பொது டெமோ ஆகும்: நிர்வாகியின் கடவுச்சொல் யாருக்கும் தெரிந்திருக்கலாம், மேலும் நிர்வாகி கடவுச்சொற்களை மாற்றவோ மீட்டமைக்கவோ முடியாது. தனிப்பட்ட எதையும் இங்கே உள்ளிட வேண்டாம்.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15292,6 +15304,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>யாரும் பயன்படுத்தாத அல்லது கவனிக்க வேண்டிய கணக்குகள்; அவற்றை முடக்கலாம், திறக்கலாம் அல்லது ஏற்றுமதிசெய்யலாம்.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>பயனர் தணிக்கைப் பதிவு</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>கணக்கு வாரியாக யார் மாற்றினார், யார் உள்நுழைந்தார் அல்லது மறுக்கப்பட்டார்; வடிகட்டி ஏற்றுமதி செய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>உள்நுழைவு அறிக்கை</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>யார் உள்நுழைந்துள்ளனர், நாள்தோறும் உள்நுழைவுகளும் தோல்விகளும்; ஒரு பயனரை எல்லா இடங்களிலிருந்தும் வெளியேற்று.</translation>
     </message>
 </context>
 <context>
@@ -33597,6 +33625,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>PHP கையாளுநரின் காலாவதியான அமர்வுகளை PHP தானே (session.gc_maxlifetime) நீக்கும்; இந்தப் பக்கமோ session_gc cronjob பகுதியோ நீக்காது.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>எல்லாப் பயனர்களின் உள்நுழைந்த அமர்வுகளும் உள்நுழைவு அறிக்கையில் பட்டியலிடப்படுகின்றன, அங்கிருந்தே வெளியேற்றப்படுகின்றன; அது எந்த அமர்வு கையாளியுடனும் வேலை செய்யும்.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>உள்நுழைவு அறிக்கையைத் திற</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37921,6 +37957,26 @@ your account.</source>
     <message>
         <source>None yet</source>
         <translation>இன்னும் எதுவுமில்லை</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>உங்கள் சமீபத்திய உள்நுழைவுகள், தோல்வியடைந்த முயற்சிகள், உங்கள் கடவுச்சொல், மின்னஞ்சல் முகவரி மற்றும் இரு-படி உள்நுழைவில் செய்யப்பட்ட மாற்றங்கள்.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>இந்தக் கணக்கின் சமீபத்திய உள்நுழைவுகள், தோல்வியடைந்த முயற்சிகள் மற்றும் பாதுகாப்பு மாற்றங்கள்.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>செயல்பாட்டை மதிப்பாய்வு செய்</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>தோல்வியடைந்த உள்நுழைவுகள்: %count</translation>
     </message>
 </context>
 <context>
@@ -51011,6 +51067,10 @@ See the requirements page for more information.</source>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>crontab எழுதப்படவில்லை (%reason). தளம் எந்தப் பயனராக இயங்குகிறதோ அந்தப் பயனரின் crontab இல் இந்த வரிகளைச் சேருங்கள், இல்லையெனில் வரிசை, இறக்குமதிகள், அறிவிப்புகள் மற்றும் தேடல் அட்டவணை ஒருபோதும் இயங்காது:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>மீண்டும் நிறுவுதல் கிக்ஸ்டார்ட்டர் மூலம் (%file, பின்னர் php bin/php/kickstarter.php run --apply) அல்லது புதிய நிறுவல் மூலம் செய்யப்படுகிறது.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56803,6 +56863,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>கடைசி இயக்கத்தில் அஞ்சல் போக்குவரத்து %count செய்திகளை ஏற்க மறுத்தது. அஞ்சல் சேவையகத்தையும் site.ini MailSettings ஐயும் சரிபார்க்கவும்.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>%count நிகழ்வுகள் காத்திருக்கின்றன, அறிவிப்பு க்ரான் பணியின் எந்த இயக்கமும் பதிவு செய்யப்படவில்லை. &quot;frequent&quot; என்ற க்ரான் பணிப் பகுதியை crontab கோப்பில் சேருங்கள், அல்லது exp:notification:run --apply ஐ இயக்குங்கள்.</translation>
     </message>
 </context>
 <context>
@@ -63059,6 +63123,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Choose another site or section with the node picker</source>
         <translation>முனைத் தேர்வியைப் பயன்படுத்தி வேறொரு தளத்தை அல்லது பிரிவைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>கணினி நிர்வாகி மட்டுமே உரிமையாளரை மாற்ற முடியும்: root ஆக ./console exp:content-check --fix-permissions --apply ஐ இயக்குங்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64592,6 +64660,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>empty</source>
         <translation>காலி</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>கையொப்ப விசை ஓராண்டுக்கும் மேல் பழையது: exp:audit key rotate --apply மூலம் அதை மாற்றுங்கள்.</translation>
     </message>
 </context>
 <context>
@@ -70302,6 +70374,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>not sent</source>
         <translation>அனுப்பப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>அறிவிப்பு க்ரான் பணி தனது ஒவ்வொரு இயக்கத்தையும் இங்கே பதிவு செய்கிறது. frequent பகுதியை crontab கோப்பில் சேருங்கள், அல்லது exp:notification:run --apply ஐ இயக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>கன்சோலைப் பயன்படுத்துங்கள்: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76475,6 +76555,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>None.</source>
         <translation>எதுவுமில்லை.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>அங்கீகரிப்புப் பயன்பாட்டுடன்</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>மின்னஞ்சல் வழியான குறியீட்டுடன்</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>மீட்புக் குறியீட்டுடன்</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>கடவுச்சாவியுடன்</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>வெளிப்புறக் கணக்குடன்</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>அதன் வலையமைப்பாகக் காட்டப்படுகிறது; தளத்தின் தரவுப் பாதுகாப்பு அமைப்புகள் கூறுவதன்படி முகவரி சேமிக்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>இடம்</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>தோராயமாக</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76718,6 +76838,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Manage devices</source>
         <translation>சாதனங்களை நிர்வகி</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>அங்கீகரிப்புப் பயன்பாட்டுடன்</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>மின்னஞ்சல் வழியான குறியீட்டுடன்</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>மீட்புக் குறியீட்டுடன்</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>கடவுச்சாவியுடன்</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>வெளிப்புறக் கணக்குடன்</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>இடம்</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>தோராயமாக</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76797,6 +76953,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>View the sessions of this user</source>
         <translation>இந்தப் பயனரின் அமர்வுகளைக் காண்</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>%site தளத்தில் உள்ள உங்கள் கணக்கு %login மூலம், சமீபத்தில் உள்நுழையாத ஓர் இடத்திலிருந்து இப்போதுதான் உள்நுழைவு நடந்துள்ளது:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>தோராயமான இடம்</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76835,6 +76999,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%os இல் %browser</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>உள்நுழைவு அறிக்கை</translation>
     </message>
 </context>
 <context>
@@ -77334,6 +77502,935 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Open the page</source>
         <translation>பக்கத்தைத் திற</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count இல் %from முதல் %to வரை</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>உள்நுழைவுப் பெயர் அல்லது பயனர் ஐடி: நிகழ்வு தொடர்புடைய கணக்கு அல்லது செயல்பட்ட பயனர்.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>கணக்கு</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>செயல்</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>பின்</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>எந்த முடிவும்</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>முன்</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>செய்தவர்</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>அழி</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>நிகழ்வுகள் %days நாட்களுக்கு வைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>நிகழ்வுகள் கைமுறையாக அகற்றப்படும் வரை வைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>நிகழ்வுகள்</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>எல்லாச் செயல்களும்</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>இந்தக் கணக்கின் எல்லா நிகழ்வுகளும்</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>பட்டியலை CSV ஆக ஏற்றுமதிசெய் (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>முதல்</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>பட்டியலைச் சுருக்கு</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>எந்த நிகழ்வும் பொருந்தவில்லை.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ஒரு பக்கத்துக்கு</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>audit.ini இல் ([UserAuditSettings] UserAudit) பதிவுசெய்தல் முடக்கப்பட்டுள்ளது; முன்பு பதிவுசெய்யப்பட்டவற்றைப் பட்டியல் காட்டுகிறது.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>முடிவு</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>காட்டு</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>பயனர் தணிக்கைப் பதிவின் அட்டவணை இல்லை. php update/common/scripts/6.0/createuseraudittable.php மூலம் அதை உருவாக்குங்கள்; அதுவரை தணிக்கைக் கோப்புகள் ஒவ்வொரு நிகழ்வையும் வைத்திருக்கும்.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>இந்தப் பக்கத்துக்கு SQL தரவுத்தளம் தேவை; இது MongoDB இல் கிடைக்காது. தணிக்கைக் கோப்புகள் ஒவ்வொரு நிகழ்வையும் வைத்திருக்கும்.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>வரை</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>பயனர் தணிக்கைப் பதிவு</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>பயனர்</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>எப்போது</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>எங்கே</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>எந்தக் கணக்கை யார் மாற்றினார், உருவாக்கினார், இயக்கினார், முடக்கினார், நகர்த்தினார் அல்லது அகற்றினார், யார் உள்நுழைந்தார் அல்லது மறுக்கப்பட்டார், எந்தப் பங்குகள் ஒதுக்கப்பட்டன: ஒரு நிகழ்வுக்கு ஒரு வரி, முன் மற்றும் பின் புலங்களுடன். கடவுச்சொற்களும் ரகசியங்களும் ஒருபோதும் பதிவுசெய்யப்படுவதில்லை.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>குழு</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>கணினி</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>தெரியாதது</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>உங்கள் கணக்கைப் பாதுகாக்கவும்</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>%site தளத்தில் உள்ள உங்கள் கணக்கு %login இல் உள்நுழைய ஒரு மீட்புக் குறியீடு பயன்படுத்தப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>ஒரு மீட்புக் குறியீடு பயன்படுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>கணக்கு</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>தோராயமான முகவரி</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>மீண்டும் உள்நுழையப் புதிய கடவுச்சொல்லைக் கோருங்கள், அல்லது தளத்தின் நிர்வாகிகளைத் தொடர்பு கொள்ளுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>புதிய கடவுச்சொல்லைக் கோரு</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>ஒவ்வொரு மீட்புக் குறியீடும் ஒருமுறை மட்டுமே வேலை செய்யும். உங்கள் தொலைபேசியை இழந்திருந்தால், உங்கள் அங்கீகரிப்புப் பயன்பாட்டை மீண்டும் அமைத்து, புதிய மீட்புக் குறியீடுகளைப் பாதுகாப்பான இடத்தில் வையுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>உங்கள் கணக்கில் தோல்வியடைந்த உள்நுழைவு முயற்சிகள்</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>இனிமேல் உள்நுழையும்போது உங்கள் கடவுச்சொல்லுடன் ஒரு குறியீடும் கேட்கப்படும். இதைச் செய்தது நீங்கள் என்றால், நீங்கள் எதுவும் செய்ய வேண்டியதில்லை.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>அது நீங்கள்தான், உங்கள் கடவுச்சொல்லை மறந்துவிட்டீர்கள் என்றால், புதியதைக் கோருங்கள். இல்லையெனில், வலுவான கடவுச்சொல்லைத் தேர்ந்தெடுத்து இரு-படி உள்நுழைவை இயக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>இது நீங்கள் இல்லையெனில், உங்கள் கடவுச்சொல் யாருக்கோ தெரிந்திருக்கலாம்: அதை இப்போதே மாற்றி, உங்கள் கணக்கு எங்கெல்லாம் உள்நுழைந்துள்ளது எனச் சரிபாருங்கள்.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>மீதமுள்ள மீட்புக் குறியீடுகள்</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>உங்கள் சாதனங்களை மதிப்பாய்வு செய்</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>பாதுகாப்பு எச்சரிக்கை</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>%site தளத்தில் உள்ள உங்கள் கணக்கு %login இல் யாரோ தவறான கடவுச்சொல்லுடன் தொடர்ச்சியாக %count முறை உள்நுழைய முயன்றனர்.</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>%site தளத்தில் உள்ள உங்கள் கணக்கு %login இல் ஒரு பாதுகாப்பு நிகழ்வு நடந்தது.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>இது உங்கள் கணக்கு பற்றிய பாதுகாப்பு எச்சரிக்கை. இதுபோன்ற ஒவ்வொரு மாற்றத்துக்கும் இது அனுப்பப்படும், இதை முடக்க முடியாது.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>நேரம்</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>%site தளத்தில் உள்ள உங்கள் கணக்கு %login க்கு இரு-படி உள்நுழைவு முடக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>இரு-படி உள்நுழைவு முடக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>%site தளத்தில் உள்ள உங்கள் கணக்கு %login க்கு இரு-படி உள்நுழைவு இயக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>இரு-படி உள்நுழைவு இயக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>பல உள்நுழைவுகள் தோல்வியடைந்ததால் %site தளத்தில் உள்ள உங்கள் கணக்கு %login பூட்டப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>உங்கள் கணக்கு இப்போது உங்கள் கடவுச்சொல்லால் மட்டுமே பாதுகாக்கப்படுகிறது. இதைச் செய்தது நீங்கள் இல்லையெனில், உங்கள் கடவுச்சொல்லை மாற்றிய பின் இரு-படி உள்நுழைவை மீண்டும் இயக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>உங்கள் கணக்கு பூட்டப்பட்டது</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name இன் பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>தோல்வியடைந்த உள்நுழைவு முயற்சி</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>வெளியேறியது</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>அமர்வுகள் வெளியேற்றப்பட்டன</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>புதிய சாதனத்திலிருந்து உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>புதிய இடத்திலிருந்து உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>அடையாளம் உறுதிசெய்யப்பட்டது (“இது நீங்கள்தான் எனச் சரிபாருங்கள்”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>அடையாளச் சரிபார்ப்பு தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>கடவுச்சாவியுடன் உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>கடவுச்சாவி உள்நுழைவு தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>உள்நுழைவு மறுக்கப்பட்டது: இரு-படிக் குறியீடு இல்லை அல்லது தவறானது</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>தவறான இரு-படிக் குறியீடு</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>தோல்வியடைந்த உள்நுழைவுகளுக்குப் பின் கணக்கு பூட்டப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>கணக்கு திறக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>கடவுச்சொல் மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>கடவுச்சொல் மாற்றம் தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>கடவுச்சொல் மீட்டமைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>புதிய கடவுச்சொல் கோரப்பட்டது</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>மின்னஞ்சல் முகவரி மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>பயனர்பெயர் மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>இரு-படி உள்நுழைவு இயக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>இரு-படி உள்நுழைவு முடக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>மீட்புக் குறியீடு பயன்படுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>புதிய மீட்புக் குறியீடுகள்</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ஆப் கடவுச்சொல் உருவாக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ஆப் கடவுச்சொல் திரும்பப்பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>கடவுச்சாவி சேர்க்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>கடவுச்சாவி அகற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>கணக்கு இயக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>கணக்கு முடக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>அனைத்தும்</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>உள்நுழைவுகளும் அமர்வுகளும்</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>கணக்கு மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>கவனம் தேவை</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>உங்களால்</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>பயனரால்</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>செய்தவர்: %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>முறை</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>உலாவி</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>இயக்க முறைமை</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>சாதனம்</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>இடம்</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>நாடு</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>அமர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>எவை</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>அனுப்பிய வழி</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>தோல்வியடைந்த முயற்சிகள்</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>மீதமுள்ள குறியீடுகள்</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>உள்நுழைவு கையாளி</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name இன் பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>உங்கள் கணக்கின் உள்நுழைவுகளும் பாதுகாப்பில் செய்யப்பட்ட மாற்றங்களும். நீங்கள் செய்யாத ஏதேனும் ஒன்றைக் கண்டால், உங்கள் கடவுச்சொல்லை மாற்றி, நீங்கள் அடையாளம் காணாத சாதனங்களை வெளியேற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>இந்தக் கணக்கின் உள்நுழைவுகளும் பாதுகாப்பில் செய்யப்பட்ட மாற்றங்களும்.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>கடவுச்சொல்லை மாற்று</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>கணக்குக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>பாதுகாப்புச் செயல்பாடு பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>இது பயனர் தணிக்கைப் பதிவிலிருந்து படிக்கப்படுகிறது; அதன் அட்டவணை expuser_audit இல்லை அல்லது இந்தத் தரவுத்தளத்தில் ஆதரிக்கப்படவில்லை. php update/common/scripts/6.0/createuseraudittable.php ஐ இயக்குங்கள், அல்லது 6.0.15 இன் தரவுத்தளப் புதுப்பிப்பை இயக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>கடந்த %days நாட்கள்</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>கடந்த %days நாட்களில் உள்நுழைவுகள்</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>சமீபத்திய பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>காட்டு</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>இதுவரை எந்தப் பாதுகாப்புச் செயல்பாடும் பதிவு செய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>பாதுகாப்பு நிகழ்வுகள் %days நாட்கள் வைக்கப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>ஒரு நிர்வாகி அகற்றும் வரை பாதுகாப்பு நிகழ்வுகள் வைக்கப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>எனது உள்நுழைவுத் தரவைப் பதிவிறக்கு</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>உங்கள் அமர்வுகளும் பாதுகாப்பு நிகழ்வுகளும் JSON கோப்பாக.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>தோல்வியடைந்த உள்நுழைவு முயற்சி</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>வெளியேறியது</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>அமர்வுகள் வெளியேற்றப்பட்டன</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>புதிய சாதனத்திலிருந்து உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>புதிய இடத்திலிருந்து உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>அடையாளம் உறுதிசெய்யப்பட்டது (“இது நீங்கள்தான் எனச் சரிபாருங்கள்”)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>அடையாளச் சரிபார்ப்பு தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>கடவுச்சாவியுடன் உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>கடவுச்சாவி உள்நுழைவு தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>உள்நுழைவு மறுக்கப்பட்டது: இரு-படிக் குறியீடு இல்லை அல்லது தவறானது</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>தவறான இரு-படிக் குறியீடு</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>தோல்வியடைந்த உள்நுழைவுகளுக்குப் பின் கணக்கு பூட்டப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>கணக்கு திறக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>கடவுச்சொல் மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>கடவுச்சொல் மாற்றம் தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>கடவுச்சொல் மீட்டமைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>புதிய கடவுச்சொல் கோரப்பட்டது</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>மின்னஞ்சல் முகவரி மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>பயனர்பெயர் மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>இரு-படி உள்நுழைவு இயக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>இரு-படி உள்நுழைவு முடக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>மீட்புக் குறியீடு பயன்படுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>புதிய மீட்புக் குறியீடுகள்</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>ஆப் கடவுச்சொல் உருவாக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ஆப் கடவுச்சொல் திரும்பப்பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>கடவுச்சாவி சேர்க்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>கடவுச்சாவி அகற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>கணக்கு இயக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>கணக்கு முடக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>அனைத்தும்</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>உள்நுழைவுகளும் அமர்வுகளும்</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>கணக்கு மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>கவனம் தேவை</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>%name இன் பாதுகாப்புச் செயல்பாடு</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>உங்கள் கணக்கின் உள்நுழைவுகளும் பாதுகாப்பில் செய்யப்பட்ட மாற்றங்களும். நீங்கள் செய்யாத ஏதேனும் ஒன்றைக் கண்டால், உங்கள் கடவுச்சொல்லை மாற்றி, நீங்கள் அடையாளம் காணாத சாதனங்களை வெளியேற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>கடவுச்சொல்லை மாற்று</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>இந்தத் தளத்தில் பாதுகாப்புச் செயல்பாடு இன்னும் பதிவு செய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>கடந்த %days நாட்களில் உள்நுழைவுகள்</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>தோல்வியடைந்த முயற்சிகள்</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>இதுவரை எந்தப் பாதுகாப்புச் செயல்பாடும் பதிவு செய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>எனது உள்நுழைவுத் தரவைப் பதிவிறக்கு</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>உங்கள் அமர்வுகளும் பாதுகாப்பு நிகழ்வுகளும் JSON கோப்பாக.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>கடவுச்சொல்</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>கடவுச்சொல்லும் இரு-படிக் குறியீடும்</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST இடைமுகம்</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP இடைமுகம்</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ஒற்றை உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>அமர்வுகள் பதிவு செய்யப்படுவதற்கு முன் உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>உள்நுழைவு அறிக்கை</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>தளத்தில் யார் உள்நுழைந்துள்ளனர், கணக்குகள் எத்தனை முறை உள்நுழைகின்றன, தோல்வியடைகின்றன, மேலும் ஒரு பயனரை எல்லா இடங்களிலிருந்தும் வெளியேற்றுதல். இது எந்த அமர்வு கையாளியுடனும் வேலை செய்யும்.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>அமர்வு வெளியேற்றப்பட்டது. சாதனம் மீண்டும் உள்நுழைய வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login, %count அமர்வுகளிலிருந்து வெளியேற்றப்பட்டார்.</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login க்கு இயங்கும் அமர்வு எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>இந்த ID, பயனர்பெயர் அல்லது மின்னஞ்சல் முகவரி கொண்ட கணக்கு எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>இது நீங்கள் பயன்படுத்தும் அமர்வு. அதை முடிக்க, வெளியேறுங்கள்.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>அந்த அமர்வு ஏற்கெனவே முடிந்துவிட்டது.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>பக்கம் காலாவதியாகிவிட்டது. எதுவும் மாற்றப்படவில்லை; தயவுசெய்து மீண்டும் முயலுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>இந்தத் தளத்தில் அமர்வுகள் பதிவு செய்யப்படுவதில்லை (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session அட்டவணை இல்லை</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>அது உருவாக்கப்பட்டதும் அமர்வுகள் பதிவு செய்யப்படும்: php update/common/scripts/6.0/createusersessiontable.php, அல்லது 6.0.15 இன் தரவுத்தளப் புதுப்பிப்பு.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>இப்போதும் இன்றும்</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>இயங்கும் அமர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>உள்நுழைந்துள்ள பயனர்கள்</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>இன்றைய உள்நுழைவுகள்</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>இன்றைய தோல்வியடைந்த முயற்சிகள்</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>ஒரு பயனரை எல்லா இடங்களிலிருந்தும் வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>கணக்கின் ஒவ்வொரு அமர்வும் அதன் அடுத்த கோரிக்கையில் முடிவடையும், “என்னை நினைவில் வைத்துக்கொள்” மூலம் வைக்கப்பட்டவையும் உட்பட. ஒரு கணக்கு தவறான கைகளில் இருக்கக்கூடும் என்றால் இதைப் பயன்படுத்துங்கள்; பின்னர் அதன் கடவுச்சொல்லை மீட்டமையுங்கள்.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>பயனர் ID, பயனர்பெயர் அல்லது மின்னஞ்சல் முகவரி</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>எல்லா இடங்களிலிருந்தும் வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>இப்போது உள்நுழைந்துள்ளவை</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>மிகச் சமீபத்தில் பயன்படுத்தப்பட்ட %limit காட்டப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>பயனர்</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>சாதனம்</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>முகவரி</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>கடைசியாகச் செயலில்</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>செயல்கள்</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>இந்தச் சாதனம்</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>எந்த அமர்வும் உள்நுழைந்திருக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>கடந்த %days நாட்கள்</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>உள்நுழைவுகளும் தோல்வியடைந்த முயற்சிகளும் பயனர் தணிக்கைப் பதிவிலிருந்து எண்ணப்படுகின்றன, அது இல்லை; புதிய அமர்வுகள் எண்ணப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>நாள்</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>உள்நுழைவுகள்</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>தோல்வியடைந்த முயற்சிகள்</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>புதிய அமர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>அமர்வு கையாளி: %handler. அமர்வுகள் expuser_session அட்டவணையிலிருந்து படிக்கப்படுகின்றன, எனவே அறிக்கை எந்தக் கையாளியுடனும் வேலை செய்யும்.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>உங்கள் கணக்குக்கான பாதுகாப்பு எச்சரிக்கை</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>உங்கள் கணக்கு %login இல் ஒரு பாதுகாப்பு நிகழ்வு நடந்தது: %event. இது நீங்கள் இல்லையெனில், %url என்ற முகவரியில் உங்கள் கணக்கைப் பாதுகாக்கவும்.</translation>
     </message>
 </context>
 </TS>

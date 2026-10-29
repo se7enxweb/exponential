@@ -97,7 +97,7 @@ busy shop checkout also writes; see [Database choice for reliability](database-c
    ([Preloading caches](../../../guides/preloading-caches.md)):
 
    ```bash
-   php bin/php/preload.php --siteaccess=site --allow-root-user
+   php bin/php/preload.php --apply --siteaccess=site --allow-root-user
    ```
 
    Use the name of your own public siteaccess.

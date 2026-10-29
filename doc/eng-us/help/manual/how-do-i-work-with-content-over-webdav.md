@@ -4,7 +4,7 @@ audience: editor
 category: manual
 order: 498
 summary: Where an administrator has switched WebDAV on, connect your file manager to the site's WebDAV address with your usual account; folders are items, dropping files creates items, saving a file of the same name makes a new version, and deleting sends items to the trash.
-keywords: WebDAV, network drive, file manager, upload many files, drag and drop, webdav.php, Content, Media, siteaccess, new version, trash, mount
+keywords: WebDAV, network drive, file manager, upload many files, drag and drop, index_webdav.php, webdav.php, Content, Media, siteaccess, new version, trash, mount
 type: help
 ---
 # How do I work with content as files over WebDAV?
@@ -21,7 +21,11 @@ Any user with an account on the site; the usual roles decide what you may read, 
 
 ## Steps
 
-1. Get the WebDAV address from your administrator.
+1. Get the WebDAV address from your administrator. It is either a host of its own, such as
+   `https://webdav.example.com/<site>/`, or the site's address followed by `/index_webdav.php/<site>/`. An address
+   with `/webdav.php/` still works, but that old name will be removed in a later major version: ask for the
+   `index_webdav.php` address and connect again
+   ([why](../../bc/6.0/webdav-entry-script-index-webdav.md)).
 2. Connect your file manager to it and sign in with your user name and password:
    - Windows: **This PC** > **Map network drive**, or **Add a network location**;
    - macOS: Finder > **Go** > **Connect to Server**;
@@ -40,7 +44,9 @@ Any user with an account on the site; the usual roles decide what you may read, 
 ## What can go wrong
 
 - **The address does not answer.** WebDAV is not switched on, or the web server does not pass the address to
-  Exponential. Ask an administrator.
+  Exponential: since 6.0.15 its rules must name `index_webdav.php`, see
+  [The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md). Ask an
+  administrator.
 - **New items are in the wrong language.** Items made over WebDAV get the language of the site folder you used.
   Choose the folder of the site in the language you want.
 - **Some entries are empty files.** Items that have no file of their own, such as an article, show as empty entries.

@@ -7514,6 +7514,10 @@
         <source>Setup &gt; Cronjobs</source>
         <translation>Agordado &gt; Cron-taskoj</translation>
     </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add --apply, or add the lines of --show to the crontab.</source>
+        <translation>Neniu parto de la cron-taskoj ankoraŭ ruliĝis: la laborvico, la importoj, la sciigoj kaj la serĉindekso atendas. Rulu php bin/php/installcrontab.php --add --apply, aŭ aldonu la liniojn de --show al la crontab.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -14383,6 +14387,14 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ĉi tiu instalaĵo estas publika demonstraĵo: ĉiu rajtas koni ĝian pasvorton de administranto, kaj pasvortoj de administrantoj ne povas esti ŝanĝitaj aŭ restarigitaj. Ne enigu ĉi tie ion privatan.</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Viaj aparatoj</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15294,6 +15306,22 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Kontoj, kiujn neniu uzas aŭ kiuj bezonas rigardon; malŝalti, malŝlosi aŭ eksporti ilin.</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kontrola protokolo de uzantoj</translation>
+    </message>
+    <message>
+        <source>Who changed, signed in or was refused, per account; filter and export.</source>
+        <translation>Kiu ŝanĝis, ensalutis aŭ estis rifuzita, laŭ konto; filtri kaj eksporti.</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raporto pri ensalutoj</translation>
+    </message>
+    <message>
+        <source>Who is signed in, sign-ins and failures per day; sign a user out everywhere.</source>
+        <translation>Kiu estas ensalutinta, ensalutoj kaj malsukcesoj po tago; elsalutigi uzanton ĉie.</translation>
     </message>
 </context>
 <context>
@@ -33599,6 +33627,14 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>Timed out sessions of the PHP handler are removed by PHP itself (session.gc_maxlifetime), not by this page or the session_gc cronjob part.</source>
         <translation>Eksvalidiĝintajn seancojn de la PHP-pritraktilo forprenas PHP mem (session.gc_maxlifetime), ne ĉi tiu paĝo nek la parto session_gc de la cron-tasko.</translation>
     </message>
+    <message>
+        <source>The signed-in sessions of every user are listed, and signed out, on the sign-in report, which works with every session handler.</source>
+        <translation>La ensalutintaj seancoj de ĉiu uzanto estas listigitaj, kaj elsalutigeblaj, en la raporto pri ensalutoj, kiu funkcias kun ĉiu traktilo de seancoj.</translation>
+    </message>
+    <message>
+        <source>Open the sign-in report</source>
+        <translation>Malfermi la raporton pri ensalutoj</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/systemupgrade</name>
@@ -37923,6 +37959,26 @@ vian konton.</translation>
     <message>
         <source>None yet</source>
         <translation>Ankoraŭ neniu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
+    <message>
+        <source>Your recent sign-ins, failed attempts and changes to your password, e-mail address and two-step sign-in.</source>
+        <translation>Viaj lastaj ensalutoj, malsukcesaj provoj kaj ŝanĝoj de via pasvorto, retpoŝtadreso kaj dupaŝa ensaluto.</translation>
+    </message>
+    <message>
+        <source>The recent sign-ins, failed attempts and security changes of this account.</source>
+        <translation>La lastaj ensalutoj, malsukcesaj provoj kaj sekurecaj ŝanĝoj de ĉi tiu konto.</translation>
+    </message>
+    <message>
+        <source>Review activity</source>
+        <translation>Kontroli la agadon</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins</source>
+        <translation>Malsukcesaj ensalutoj: %count</translation>
     </message>
 </context>
 <context>
@@ -51013,6 +51069,10 @@ Legu la paĝon pri postuloj por pliaj informoj.</translation>
         <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
         <translation>La crontab ne estis skribita (%reason). Aldonu ĉi tiujn liniojn al la crontab de la uzanto, sub kiu la retejo funkcias, alie la atendovico, la importoj, la sciigoj kaj la serĉindekso neniam funkcios:</translation>
     </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php run --apply) or with a fresh installation.</source>
+        <translation>Reinstalado okazas per la kickstarter (%file, poste php bin/php/kickstarter.php run --apply) aŭ per freŝa instalado.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -56805,6 +56865,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>The mail transport refused %count messages in the last run. Check the mail server and site.ini MailSettings.</source>
         <translation>La retpoŝta transporto rifuzis %count mesaĝojn en la lasta ruligo. Kontrolu la retpoŝtan servilon kaj site.ini MailSettings.</translation>
+    </message>
+    <message>
+        <source>%count events wait and no run of the notification cronjob is recorded. Add the cronjob part &quot;frequent&quot; to the crontab, or run exp:notification:run --apply.</source>
+        <translation>Atendantaj eventoj: %count, kaj neniu rulo de la sciiga cron-tasko estas registrita. Aldonu la cron-taskan parton &quot;frequent&quot; al la crontab, aŭ rulu exp:notification:run --apply.</translation>
     </message>
 </context>
 <context>
@@ -63061,6 +63125,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Choose another site or section with the node picker</source>
         <translation>Elekti alian retejon aŭ sekcion per la nodo-elektilo</translation>
     </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions --apply as root.</source>
+        <translation>Nur la sistemadministranto povas ŝanĝi la posedanton: rulu ./console exp:content-check --fix-permissions --apply kiel root.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64594,6 +64662,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>empty</source>
         <translation>malplena</translation>
+    </message>
+    <message>
+        <source>The signing key is over a year old: rotate it with exp:audit key rotate --apply.</source>
+        <translation>La subskriba ŝlosilo aĝas pli ol unu jaron: anstataŭigu ĝin per exp:audit key rotate --apply.</translation>
     </message>
 </context>
 <context>
@@ -70304,6 +70376,14 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>not sent</source>
         <translation>ne sendita</translation>
+    </message>
+    <message>
+        <source>The notification cronjob records each of its runs here. Add the part frequent to the crontab, or run exp:notification:run --apply.</source>
+        <translation>La sciiga cron-tasko registras ĉi tie ĉiun sian rulon. Aldonu la parton frequent al la crontab, aŭ rulu exp:notification:run --apply.</translation>
+    </message>
+    <message>
+        <source>Use the console: ./console exp:notification:run --apply</source>
+        <translation>Uzu la konzolon: ./console exp:notification:run --apply</translation>
     </message>
 </context>
 <context>
@@ -76477,6 +76557,46 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>None.</source>
         <translation>Neniu.</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>per aŭtentiga aplikaĵo</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>per kodo per retpoŝto</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>per restariga kodo</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>per alirŝlosilo</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>per ekstera konto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the address is kept as the data protection settings of the site say.</source>
+        <translation>Montrata kiel ĝia reto; la adreso estas konservata kiel diras la datumprotektaj agordoj de la retejo.</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ne registrita</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Loko</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>proksimume</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/sessions</name>
@@ -76720,6 +76840,42 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Manage devices</source>
         <translation>Administri aparatojn</translation>
     </message>
+    <message>
+        <source>with an authenticator app</source>
+        <translation>per aŭtentiga aplikaĵo</translation>
+    </message>
+    <message>
+        <source>with a code by e-mail</source>
+        <translation>per kodo per retpoŝto</translation>
+    </message>
+    <message>
+        <source>with a recovery code</source>
+        <translation>per restariga kodo</translation>
+    </message>
+    <message>
+        <source>with a passkey</source>
+        <translation>per alirŝlosilo</translation>
+    </message>
+    <message>
+        <source>with an external account</source>
+        <translation>per ekstera konto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ne registrita</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Loko</translation>
+    </message>
+    <message>
+        <source>approximate</source>
+        <translation>proksimume</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/new_signin_mail</name>
@@ -76799,6 +76955,14 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>View the sessions of this user</source>
         <translation>Vidi la seancojn de ĉi tiu uzanto</translation>
     </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a place it has not signed in from lately:</source>
+        <translation>Via konto %login ĉe %site ĵus estis uzata por ensaluti el loko, el kiu ĝi lastatempe ne ensalutis:</translation>
+    </message>
+    <message>
+        <source>Approximate location</source>
+        <translation>Proksimuma loko</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -76837,6 +77001,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>%browser on %os</source>
         <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
         <translation>%browser en %os</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raporto pri ensalutoj</translation>
     </message>
 </context>
 <context>
@@ -77336,6 +77504,935 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Open the page</source>
         <translation>Malfermi la paĝon</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/audit</name>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ĝis %to el %count</translation>
+    </message>
+    <message>
+        <source>A login or a user id: the account the event was about or the user who acted.</source>
+        <translation>Salutnomo aŭ uzant-identigilo: la konto, pri kiu temis la evento, aŭ la uzanto, kiu agis.</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ago</translation>
+    </message>
+    <message>
+        <source>After</source>
+        <translation>Poste</translation>
+    </message>
+    <message>
+        <source>Any result</source>
+        <translation>Ajna rezulto</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Antaŭe</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Fare de</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Malplenigi</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Farita</translation>
+    </message>
+    <message>
+        <source>Events are kept for %days days.</source>
+        <translation>Eventoj estas konservataj dum %days tagoj.</translation>
+    </message>
+    <message>
+        <source>Events are kept until they are removed by hand.</source>
+        <translation>Eventoj estas konservataj, ĝis oni forigas ilin permane.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventoj</translation>
+    </message>
+    <message>
+        <source>Every action</source>
+        <translation>Ĉiu ago</translation>
+    </message>
+    <message>
+        <source>Every event of this account</source>
+        <translation>Ĉiuj eventoj de ĉi tiu konto</translation>
+    </message>
+    <message>
+        <source>Export the list as CSV (%count)</source>
+        <translation>Eksporti la liston kiel CSV (%count)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Malsukcesa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>Narrow the list</source>
+        <translation>Malvastigi la liston</translation>
+    </message>
+    <message>
+        <source>No event matches.</source>
+        <translation>Neniu evento kongruas.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po paĝo</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in audit.ini ([UserAuditSettings] UserAudit); the list shows what was recorded before.</source>
+        <translation>Registrado estas malŝaltita en audit.ini ([UserAuditSettings] UserAudit); la listo montras tion, kio estis registrita antaŭe.</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifuzita</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezulto</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>The table of the user audit log is missing. Create it with php update/common/scripts/6.0/createuseraudittable.php; until then the audit files keep every event.</source>
+        <translation>Mankas la tabelo de la kontrola protokolo de uzantoj. Kreu ĝin per php update/common/scripts/6.0/createuseraudittable.php; ĝis tiam la kontrolaj dosieroj konservas ĉiun eventon.</translation>
+    </message>
+    <message>
+        <source>This page needs an SQL database; it is not available on MongoDB. The audit files keep every event.</source>
+        <translation>Ĉi tiu paĝo bezonas SQL-datumbazon; ĝi ne disponeblas ĉe MongoDB. La kontrolaj dosieroj konservas ĉiun eventon.</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ĝis</translation>
+    </message>
+    <message>
+        <source>User audit log</source>
+        <translation>Kontrola protokolo de uzantoj</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Uzanto</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kiam</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kie</translation>
+    </message>
+    <message>
+        <source>Who changed, created, enabled, disabled, moved or removed which account, who signed in or was refused, and which roles were assigned: one line per event, with the fields before and after. Passwords and secrets are never recorded.</source>
+        <translation>Kiu ŝanĝis, kreis, ŝaltis, malŝaltis, movis aŭ forigis kiun konton, kiu ensalutis aŭ estis rifuzita kaj kiuj roloj estis atribuitaj: unu linio por ĉiu evento, kun la kampoj antaŭe kaj poste. Pasvortoj kaj sekretoj neniam estas registrataj.</translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation>grupo</translation>
+    </message>
+    <message>
+        <source>system</source>
+        <translation>sistemo</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nekonata</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security_mail</name>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sekurigi vian konton</translation>
+    </message>
+    <message>
+        <source>A recovery code was used to sign in to your account %login on %site.</source>
+        <translation>Restariga kodo estis uzata por ensaluti al via konto %login ĉe %site.</translation>
+    </message>
+    <message>
+        <source>A recovery code was used</source>
+        <translation>Restariga kodo estis uzata</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Proksimuma adreso</translation>
+    </message>
+    <message>
+        <source>Ask for a new password to sign in again, or contact the administrators of the site.</source>
+        <translation>Petu novan pasvorton por denove ensaluti, aŭ kontaktu la administrantojn de la retejo.</translation>
+    </message>
+    <message>
+        <source>Ask for a new password</source>
+        <translation>Peti novan pasvorton</translation>
+    </message>
+    <message>
+        <source>Each recovery code works once. If you lost your phone, set up your authenticator app again and keep the new recovery codes in a safe place.</source>
+        <translation>Ĉiu restariga kodo funkcias unufoje. Se vi perdis vian telefonon, denove agordu vian aŭtentigan aplikaĵon kaj konservu la novajn restarigajn kodojn en sekura loko.</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempts on your account</source>
+        <translation>Malsukcesaj ensalutprovoj ĉe via konto</translation>
+    </message>
+    <message>
+        <source>From now on, signing in asks for a code besides your password. If you did this, you do not need to do anything.</source>
+        <translation>De nun ensaluto petas kodon krom via pasvorto. Se vi faris tion, vi nenion devas fari.</translation>
+    </message>
+    <message>
+        <source>If it was you and you forgot your password, ask for a new one. If not, choose a stronger password and turn on two-step sign-in.</source>
+        <translation>Se tio estis vi kaj vi forgesis vian pasvorton, petu novan. Se ne, elektu pli fortan pasvorton kaj ŝaltu la dupaŝan ensaluton.</translation>
+    </message>
+    <message>
+        <source>If this was not you, someone may know your password: change it now and check where your account is signed in.</source>
+        <translation>Se tio ne estis vi, iu eble konas vian pasvorton: ŝanĝu ĝin nun kaj kontrolu, kie via konto estas ensalutinta.</translation>
+    </message>
+    <message>
+        <source>Recovery codes left</source>
+        <translation>Restantaj restarigaj kodoj</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Kontroli viajn aparatojn</translation>
+    </message>
+    <message>
+        <source>Security alert</source>
+        <translation>Sekureca averto</translation>
+    </message>
+    <message>
+        <source>Someone tried to sign in to your account %login on %site with a wrong password %count times in a row.</source>
+        <translation>Iu provis ensaluti al via konto %login ĉe %site per malĝusta pasvorto plurfoje sinsekve (nombro: %count).</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login on %site.</source>
+        <translation>Okazis sekureca evento ĉe via konto %login ĉe %site.</translation>
+    </message>
+    <message>
+        <source>This is a security alert about your account. It is sent for every such change and cannot be turned off.</source>
+        <translation>Ĉi tio estas sekureca averto pri via konto. Ĝi estas sendata pro ĉiu tia ŝanĝo kaj ne malŝalteblas.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tempo</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off for your account %login on %site.</source>
+        <translation>La dupaŝa ensaluto estis malŝaltita por via konto %login ĉe %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned off</source>
+        <translation>La dupaŝa ensaluto estis malŝaltita</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on for your account %login on %site.</source>
+        <translation>La dupaŝa ensaluto estis ŝaltita por via konto %login ĉe %site.</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in was turned on</source>
+        <translation>La dupaŝa ensaluto estis ŝaltita</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was locked after too many failed sign-ins.</source>
+        <translation>Via konto %login ĉe %site estis ŝlosita post tro multaj malsukcesaj ensalutoj.</translation>
+    </message>
+    <message>
+        <source>Your account is now protected by your password alone. If you did not do this, turn two-step sign-in on again after you changed your password.</source>
+        <translation>Via konto nun estas protektata nur per via pasvorto. Se vi ne faris tion, denove ŝaltu la dupaŝan ensaluton post kiam vi ŝanĝis vian pasvorton.</translation>
+    </message>
+    <message>
+        <source>Your account was locked</source>
+        <translation>Via konto estis ŝlosita</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security</name>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sekureca agado de la uzanto %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ensalutinta</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Malsukcesa ensalutprovo</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Elsalutinta</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seancoj elsalutigitaj</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ensaluto el nova aparato</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ensaluto el nova loko</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identeco konfirmita (&quot;Kontrolu, ke ĝi estas vi&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kontrolo de identeco malsukcesis</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ensalutinta per alirŝlosilo</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ensaluto per alirŝlosilo malsukcesis</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ensaluto rifuzita: dupaŝa kodo mankas aŭ estas malĝusta</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Malĝusta dupaŝa kodo</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto ŝlosita post malsukcesaj ensalutoj</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto malŝlosita</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pasvorto ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ŝanĝo de pasvorto malsukcesis</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pasvorto restarigita</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nova pasvorto petita</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Retpoŝtadreso ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Uzantnomo ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dupaŝa ensaluto ŝaltita</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dupaŝa ensaluto malŝaltita</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Restariga kodo uzita</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novaj restarigaj kodoj</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Aplika pasvorto kreita</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Aplika pasvorto revokita</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Alirŝlosilo aldonita</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Alirŝlosilo forigita</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto ebligita</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto malebligita</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ĉiuj</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ensalutoj kaj seancoj</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ŝanĝoj de konto</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Bezonas atenton</translation>
+    </message>
+    <message>
+        <source>by you</source>
+        <translation>de vi</translation>
+    </message>
+    <message>
+        <source>by the user</source>
+        <translation>de la uzanto</translation>
+    </message>
+    <message>
+        <source>by %login</source>
+        <translation>de %login</translation>
+    </message>
+    <message>
+        <source>Method</source>
+        <translation>Metodo</translation>
+    </message>
+    <message>
+        <source>Browser</source>
+        <translation>Retumilo</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Operaciumo</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Aparato</translation>
+    </message>
+    <message>
+        <source>Place</source>
+        <translation>Loko</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation>Lando</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seancoj</translation>
+    </message>
+    <message>
+        <source>Which</source>
+        <translation>Kiuj</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Kanalo</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Malsukcesaj provoj</translation>
+    </message>
+    <message>
+        <source>Codes left</source>
+        <translation>Restantaj kodoj</translation>
+    </message>
+    <message>
+        <source>Sign-in handler</source>
+        <translation>Traktilo de ensaluto</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sekureca agado de la uzanto %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ensalutoj kaj ŝanĝoj de la sekureco de via konto. Se vi vidas ion, kion vi ne faris, ŝanĝu vian pasvorton kaj elsalutigu la aparatojn, kiujn vi ne rekonas.</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of this account.</source>
+        <translation>Ensalutoj kaj ŝanĝoj de la sekureco de ĉi tiu konto.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Viaj aparatoj</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ŝanĝi pasvorton</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Reen al la konto</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded</source>
+        <translation>La sekureca agado ne estas registrata</translation>
+    </message>
+    <message>
+        <source>It is read from the user audit log, whose table expuser_audit is missing or not supported on this database. Run php update/common/scripts/6.0/createuseraudittable.php, or the database update of 6.0.15.</source>
+        <translation>Ĝi estas legata el la kontrola protokolo de uzantoj, kies tabelo expuser_audit mankas aŭ ne estas subtenata en ĉi tiu datumbazo. Rulu php update/common/scripts/6.0/createuseraudittable.php, aŭ la datumbazan ĝisdatigon de 6.0.15.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>La lastaj tagoj: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ensalutoj en la lastaj tagoj (%days)</translation>
+    </message>
+    <message>
+        <source>Recent security activity</source>
+        <translation>Lasta sekureca agado</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>malsukcesis</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rifuzita</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ankoraŭ neniu sekureca agado registrita.</translation>
+    </message>
+    <message>
+        <source>Security events are kept for %days days.</source>
+        <translation>Sekurecaj eventoj estas konservataj dum %days tagoj.</translation>
+    </message>
+    <message>
+        <source>Security events are kept until an administrator removes them.</source>
+        <translation>Sekurecaj eventoj estas konservataj, ĝis administranto forigas ilin.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Elŝuti miajn ensalutajn datumojn</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Viaj seancoj kaj sekurecaj eventoj kiel JSON-dosiero.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/security</name>
+    <message>
+        <source>Signed in</source>
+        <translation>Ensalutinta</translation>
+    </message>
+    <message>
+        <source>Failed sign-in attempt</source>
+        <translation>Malsukcesa ensalutprovo</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Elsalutinta</translation>
+    </message>
+    <message>
+        <source>Sessions signed out</source>
+        <translation>Seancoj elsalutigitaj</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new device</source>
+        <translation>Ensaluto el nova aparato</translation>
+    </message>
+    <message>
+        <source>Sign-in from a new location</source>
+        <translation>Ensaluto el nova loko</translation>
+    </message>
+    <message>
+        <source>Identity confirmed (&quot;Verify it is you&quot;)</source>
+        <translation>Identeco konfirmita (&quot;Kontrolu, ke ĝi estas vi&quot;)</translation>
+    </message>
+    <message>
+        <source>Identity check failed</source>
+        <translation>Kontrolo de identeco malsukcesis</translation>
+    </message>
+    <message>
+        <source>Signed in with a passkey</source>
+        <translation>Ensalutinta per alirŝlosilo</translation>
+    </message>
+    <message>
+        <source>Passkey sign-in failed</source>
+        <translation>Ensaluto per alirŝlosilo malsukcesis</translation>
+    </message>
+    <message>
+        <source>Sign-in refused: two-step code missing or wrong</source>
+        <translation>Ensaluto rifuzita: dupaŝa kodo mankas aŭ estas malĝusta</translation>
+    </message>
+    <message>
+        <source>Wrong two-step code</source>
+        <translation>Malĝusta dupaŝa kodo</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto ŝlosita post malsukcesaj ensalutoj</translation>
+    </message>
+    <message>
+        <source>Account unlocked</source>
+        <translation>Konto malŝlosita</translation>
+    </message>
+    <message>
+        <source>Password changed</source>
+        <translation>Pasvorto ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Password change failed</source>
+        <translation>Ŝanĝo de pasvorto malsukcesis</translation>
+    </message>
+    <message>
+        <source>Password reset</source>
+        <translation>Pasvorto restarigita</translation>
+    </message>
+    <message>
+        <source>New password requested</source>
+        <translation>Nova pasvorto petita</translation>
+    </message>
+    <message>
+        <source>E-mail address changed</source>
+        <translation>Retpoŝtadreso ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Username changed</source>
+        <translation>Uzantnomo ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned on</source>
+        <translation>Dupaŝa ensaluto ŝaltita</translation>
+    </message>
+    <message>
+        <source>Two-step sign-in turned off</source>
+        <translation>Dupaŝa ensaluto malŝaltita</translation>
+    </message>
+    <message>
+        <source>Recovery code used</source>
+        <translation>Restariga kodo uzita</translation>
+    </message>
+    <message>
+        <source>New recovery codes</source>
+        <translation>Novaj restarigaj kodoj</translation>
+    </message>
+    <message>
+        <source>App password created</source>
+        <translation>Aplika pasvorto kreita</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Aplika pasvorto revokita</translation>
+    </message>
+    <message>
+        <source>Passkey added</source>
+        <translation>Alirŝlosilo aldonita</translation>
+    </message>
+    <message>
+        <source>Passkey removed</source>
+        <translation>Alirŝlosilo forigita</translation>
+    </message>
+    <message>
+        <source>Account enabled</source>
+        <translation>Konto ebligita</translation>
+    </message>
+    <message>
+        <source>Account disabled</source>
+        <translation>Konto malebligita</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ĉiuj</translation>
+    </message>
+    <message>
+        <source>Sign-ins and sessions</source>
+        <translation>Ensalutoj kaj seancoj</translation>
+    </message>
+    <message>
+        <source>Account changes</source>
+        <translation>Ŝanĝoj de konto</translation>
+    </message>
+    <message>
+        <source>Needs attention</source>
+        <translation>Bezonas atenton</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sekureca agado</translation>
+    </message>
+    <message>
+        <source>Security activity of %name</source>
+        <translation>Sekureca agado de la uzanto %name</translation>
+    </message>
+    <message>
+        <source>Sign-ins and changes to the security of your account. If you see something you did not do, change your password and sign out the devices you do not recognize.</source>
+        <translation>Ensalutoj kaj ŝanĝoj de la sekureco de via konto. Se vi vidas ion, kion vi ne faris, ŝanĝu vian pasvorton kaj elsalutigu la aparatojn, kiujn vi ne rekonas.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Viaj aparatoj</translation>
+    </message>
+    <message>
+        <source>Change password</source>
+        <translation>Ŝanĝi pasvorton</translation>
+    </message>
+    <message>
+        <source>The security activity is not recorded on this site yet.</source>
+        <translation>La sekureca agado ankoraŭ ne estas registrata en ĉi tiu retejo.</translation>
+    </message>
+    <message>
+        <source>Sign-ins in the last %days days</source>
+        <translation>Ensalutoj en la lastaj tagoj (%days)</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Malsukcesaj provoj</translation>
+    </message>
+    <message>
+        <source>No security activity recorded yet.</source>
+        <translation>Ankoraŭ neniu sekureca agado registrita.</translation>
+    </message>
+    <message>
+        <source>Download my sign-in data</source>
+        <translation>Elŝuti miajn ensalutajn datumojn</translation>
+    </message>
+    <message>
+        <source>Your sessions and security events as a JSON file.</source>
+        <translation>Viaj seancoj kaj sekurecaj eventoj kiel JSON-dosiero.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessionreport</name>
+    <message>
+        <source>Password</source>
+        <translation>Pasvorto</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Pasvorto kaj dupaŝa kodo</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-interfaco</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-interfaco</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Unuopa ensaluto</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ensalutinta antaŭ ol seancoj estis registrataj</translation>
+    </message>
+    <message>
+        <source>Sign-in report</source>
+        <translation>Raporto pri ensalutoj</translation>
+    </message>
+    <message>
+        <source>Who is signed in to the site, how often accounts sign in and fail to, and signing a user out everywhere. It works with every session handler.</source>
+        <translation>Kiu estas ensalutinta en la retejo, kiom ofte kontoj ensalutas kaj malsukcesas, kaj elsalutigi uzanton ĉie. Ĝi funkcias kun ĉiu traktilo de seancoj.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>La seanco estis elsalutigita. La aparato devas denove ensaluti.</translation>
+    </message>
+    <message>
+        <source>%login was signed out of %count sessions.</source>
+        <translation>%login estis elsalutigita el seancoj (nombro: %count).</translation>
+    </message>
+    <message>
+        <source>%login had no running session.</source>
+        <translation>%login havis neniun rulantan seancon.</translation>
+    </message>
+    <message>
+        <source>No account has that ID, username or e-mail address.</source>
+        <translation>Neniu konto havas tiun identigilon, uzantnomon aŭ retpoŝtadreson.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ĉi tio estas la seanco, kiun vi uzas. Por fini ĝin, elsalutu.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tiu seanco jam finiĝis.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La paĝo eksvalidiĝis. Nenio estis ŝanĝita; bonvolu reprovi.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Seancoj ne estas registrataj en ĉi tiu retejo (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>La tabelo expuser_session mankas</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seancoj estas registrataj, tuj kiam ĝi estas kreita: php update/common/scripts/6.0/createusersessiontable.php, aŭ la datumbaza ĝisdatigo de 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Now and today</source>
+        <translation>Nun kaj hodiaŭ</translation>
+    </message>
+    <message>
+        <source>Sessions running</source>
+        <translation>Rulantaj seancoj</translation>
+    </message>
+    <message>
+        <source>Users signed in</source>
+        <translation>Ensalutintaj uzantoj</translation>
+    </message>
+    <message>
+        <source>Sign-ins today</source>
+        <translation>Ensalutoj hodiaŭ</translation>
+    </message>
+    <message>
+        <source>Failed attempts today</source>
+        <translation>Malsukcesaj provoj hodiaŭ</translation>
+    </message>
+    <message>
+        <source>Sign a user out everywhere</source>
+        <translation>Elsalutigi uzanton ĉie</translation>
+    </message>
+    <message>
+        <source>Every session of the account ends at its next request, also those kept by Remember me. Use it when an account may be in the wrong hands; then reset its password.</source>
+        <translation>Ĉiu seanco de la konto finiĝas ĉe sia venonta peto, ankaŭ tiuj tenataj de &quot;Memori min&quot;. Uzu tion, kiam konto eble estas en malĝustaj manoj; poste restarigu ĝian pasvorton.</translation>
+    </message>
+    <message>
+        <source>User ID, username or e-mail address</source>
+        <translation>Uzant-identigilo, uzantnomo aŭ retpoŝtadreso</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Elsalutigi ĉie</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ensalutintaj nun</translation>
+    </message>
+    <message>
+        <source>The %limit most recently used are shown.</source>
+        <translation>La plej lastatempe uzataj estas montrataj, ĝis %limit.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Uzanto</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Aparato</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreso</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ensalutinta</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Laste aktiva</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Agoj</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ĉi tiu aparato</translation>
+    </message>
+    <message>
+        <source>Not recorded</source>
+        <translation>Ne registrita</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Elsalutigi</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Neniu seanco estas ensalutinta.</translation>
+    </message>
+    <message>
+        <source>The last %days days</source>
+        <translation>La lastaj tagoj: %days</translation>
+    </message>
+    <message>
+        <source>Sign-ins and failed attempts are counted from the user audit log, which is not there; the new sessions are.</source>
+        <translation>Ensalutoj kaj malsukcesaj provoj estas kalkulataj el la kontrola protokolo de uzantoj, kiu ne ekzistas; la novaj seancoj estas kalkulataj.</translation>
+    </message>
+    <message>
+        <source>Day</source>
+        <translation>Tago</translation>
+    </message>
+    <message>
+        <source>Sign-ins</source>
+        <translation>Ensalutoj</translation>
+    </message>
+    <message>
+        <source>Failed attempts</source>
+        <translation>Malsukcesaj provoj</translation>
+    </message>
+    <message>
+        <source>New sessions</source>
+        <translation>Novaj seancoj</translation>
+    </message>
+    <message>
+        <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
+        <translation>Traktilo de seancoj: %handler. La seancoj estas legataj el la tabelo expuser_session, do la raporto funkcias kun ĉiu traktilo.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/security/mail</name>
+    <message>
+        <source>Security alert for your account</source>
+        <translation>Sekureca averto pri via konto</translation>
+    </message>
+    <message>
+        <source>There was a security event on your account %login: %event. If it was not you, secure your account at %url.</source>
+        <translation>Okazis sekureca evento ĉe via konto %login: %event. Se tio ne estis vi, sekurigu vian konton ĉe %url.</translation>
     </message>
 </context>
 </TS>

@@ -28,7 +28,7 @@ exactly; do not upgrade them in a bid.
 - **Bidders**: cite the page and section, and quote the status as written. Where the status is "Partly complies" or
   "Unverified", say what you will do about the gap for this customer.
 - **Evaluators**: open the link and check that it says what the bid claims. Settings can be checked in a test
-  installation made with `./console exp:install` ([Installing Exponential in one command](../../../../features/6.0/install-in-one-command.md)).
+  installation made with `./console exp:install --apply` ([Installing Exponential in one command](../../../../features/6.0/install-in-one-command.md)).
 
 ## Accessibility
 
