@@ -3,7 +3,7 @@ title: "Swark-Operatoren: Anfrage und System"
 audience: developer, designer, app-creator
 category: development
 order: 432
-summary: Die Anfrage- und Systemoperatoren der Erweiterung swark - charset, current_siteaccess, current_layout, is_post_request, server, cookie, user_id_by_login, variable_names, debug, debug_attributes, redirect, return und clear_object_cache - mit Parametern, Rückgabewerten, welche davon die Anfrage beenden oder Zustand ändern, und Beispielen, die auf alpha gerendert wurden.
+summary: Die Anfrage- und Systemoperatoren der Erweiterung swark - charset, current_siteaccess, current_layout, is_post_request, server, cookie, user_id_by_login, variable_names, debug, debug_attributes, redirect, return und clear_object_cache - mit Parametern, Rückgabewerten, welche davon die Anfrage beenden oder Zustand ändern, und Beispielen, die auf einer Entwicklungsinstallation gerendert wurden.
 keywords: swark, charset, current_siteaccess, current_layout, is_post_request, server, cookie, user_id_by_login, variable_names, debug, debug_attributes, redirect, return, clear_object_cache, Anfrage, System, Weiterleitung, Debug-Ausgabe, Nebenwirkungen, request, side effects
 type: help
 ---
@@ -89,7 +89,7 @@ geht die Liste als Hinweis in die Debug-Ausgabe; mit `0` wird sie zurückgegeben
 7 variable_names: {variable_names( 0 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 charset: utf-8
@@ -126,7 +126,7 @@ angezeigt wird, wenn die Debug-Ausgabe für die Anfrage aktiviert ist), nicht in
 
 ## Operatoren mit Nebenwirkungen
 
-Nicht auf alpha ausgeführt: Diese Operatoren beenden die Anfrage, senden Header oder leeren Caches, was ein
+Nicht auf einer Entwicklungsinstallation ausgeführt: Diese Operatoren beenden die Anfrage, senden Header oder leeren Caches, was ein
 Beispiel, das nur liest, nicht tun darf. Ihr Verhalten ist anhand des Codes beschrieben.
 
 ### redirect

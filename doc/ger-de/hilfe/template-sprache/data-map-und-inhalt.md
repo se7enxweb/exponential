@@ -3,14 +3,14 @@ title: Data Map und Inhalt
 audience: developer, designer, app-creator
 category: development
 order: 240
-summary: Die Felder eines Inhaltsobjekts in Templates lesen - data_map, has_content, content, die rohen data_text und data_int und attribute_view_gui - Feld für Feld an einem echten Artikel auf alpha belegt (ezstring, ezxmltext, ezimage, ezobjectrelationlist, eztags, Daten).
+summary: Die Felder eines Inhaltsobjekts in Templates lesen - data_map, has_content, content, die rohen data_text und data_int und attribute_view_gui - Feld für Feld an einem echten Artikel auf einer Entwicklungsinstallation belegt (ezstring, ezxmltext, ezimage, ezobjectrelationlist, eztags, Daten).
 keywords: data_map, has_content, content, data_text, data_int, attribute_view_gui, ezstring, ezxmltext, output_text, ezimage, Bildvariante, Bild-Alias, ezobjectrelationlist, relation_list, eztags, Datum, datetime, image alias, dates
 type: help
 ---
 # Data Map und Inhalt
 
 `data_map` ist die Tür zu den Feldern eines Inhaltsobjekts: ein Hash vom Bezeichner des Klassenattributs zu einem `eZContentObjectAttribute`.
-Diese Seite liest die Felder eines echten Artikels auf alpha, Knoten 96 „Why Should You Choose Strength Training?“ (Klasse `ng_article`), und
+Diese Seite liest die Felder eines echten Artikels auf einer Entwicklungsinstallation, Knoten 96 „Why Should You Choose Strength Training?“ (Klasse `ng_article`), und
 zeigt, was jede Art von Feld einem Template gibt. Die Tabellen der Attribute stehen in der
 [Referenz von Inhaltsattribut und Version](referenz-von-inhaltsattribut-und-version.md).
 
@@ -41,7 +41,7 @@ Eine Schleife über `data_map` führt die Bezeichner, Datentypen und für jedes 
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Why Should You Choose Strength Training? (ng_article)
@@ -81,7 +81,7 @@ value:     {$title.value|wash}
 sort key:  {$title.sort_key_string|wash}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 content:   Why Should You Choose Strength Training?
@@ -106,7 +106,7 @@ Der Inhalt eines Felds `ezxmltext` ist ein Objekt `eZXMLText`. `output` gibt den
 Stored XML starts with: {$intro.data_text|shorten( 60 )|wash}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ezxmltext
@@ -115,7 +115,7 @@ If you only had 1 hour a week to exercise, that hour should be spent strength tr
 Stored XML starts with: &lt;section xmlns:image=&quot;http://ez.no/namespaces/ezpublish3/...
 ```
 
-Auf alpha ist der Ausgabe-Handler `ExplBlockXHTMLXMLOutput` (von `get_class` klein geschrieben), eine Unterklasse von `eZXHTMLXMLOutput` des
+Auf einer Entwicklungsinstallation ist der Ausgabe-Handler `ExplBlockXHTMLXMLOutput` (von `get_class` klein geschrieben), eine Unterklasse von `eZXHTMLXMLOutput` des
 Kernels, die die Erweiterung explayouts in `ezxml.ini` (`HandlerClass`) registriert. In einer Seite schreiben Sie normalerweise
 `{attribute_view_gui attribute=$node.data_map.body}`, was dasselbe `output_text` über das Ansichts-Template des Datentyps rendert (siehe
 [Templates für Rich Text](../designer/vorlagen/rich-text-templates.md)).
@@ -133,7 +133,7 @@ original: {$image.content.original.width}x{$image.content.original.height} {$ima
 large:    {$large.width}x{$large.height} {$large.url}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ezimagealiashandler
@@ -162,21 +162,21 @@ ein verwandtes Objekt; holen Sie das Objekt oder den Knoten, um es zu lesen:
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 array[1], keys: relation_list
 - object 185, node 187: John Doe
 ```
 
-Die Schlüssel eines Eintrags, wie alpha sie zurückgab:
+Die Schlüssel eines Eintrags, wie eine Entwicklungsinstallation sie zurückgab:
 
 ```tpl
 {def $relation = fetch( 'content', 'node', hash( 'node_id', 96 ) ).data_map.authors.content.relation_list.0}
 {foreach $relation as $key => $value}{$key}={$value}{delimiter}, {/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 identifier=, priority=1, in_trash=, contentobject_id=185, is_modified=, contentobject_version=1, node_id=187, parent_node_id=186, contentclass_id=57, contentclass_identifier=ng_person, contentobject_remote_id=media-o-1013
@@ -196,7 +196,7 @@ einer Zeichenkette verbundenen Schlüsselwörter:
 {foreach $tags.content.tags as $tag}{$tag.keyword|wash} (id {$tag.id}){delimiter}, {/delimiter}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 eztagsStrength training (id 49)
@@ -210,7 +210,7 @@ tag keywords as a string: {$dm.tags.content.keyword_string|wash}
 body is empty: {cond( $dm.body.content.is_empty, 'yes', 'no' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 main_topic: Strength training (parent 36)
@@ -231,7 +231,7 @@ published: {$node.object.published} = {$node.object.published|datetime( 'custom'
 modified:  {$node.object.modified|l10n( 'shortdate' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 published: 1532345053 = 2018-07-23
@@ -252,7 +252,7 @@ das Lesen von `content` gibt Ihnen den Wert, den Sie selbst formatieren:
 [{attribute_view_gui attribute=$node.data_map.full_intro}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [
@@ -277,7 +277,7 @@ teaser: {if $dm.teaser_intro.has_content}{attribute_view_gui attribute=$dm.tease
 related: {if $dm.related_content.has_content}listed below{else}none{/if}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 teaser: empty, use full_intro

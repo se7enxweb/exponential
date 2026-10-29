@@ -37,7 +37,7 @@ Die Hilfe der Administration von Exponential ist selbst eine Dokumentations-Webs
 Klassen in der Klassengruppe „Help“ (Handbuch, Kapitel, Konzept, Aufgabe, Referenz, Fehlerbehebung, Abbildung,
 Glossareintrag), eine Gruppe von Objektzuständen `help_status` mit den Zuständen Draft, Review und Released, die Rollen
 „Help editor“ und „Help release“ und ein Export eines Handbuchs als EPUB oder PDF (`doc/eng-us/features/6.0/help-content.md`).
-Die Demo-Installation unter <https://alpha.se7enx.com> hat diese Klassen.
+Eine Demo-Installation hat diese Klassen.
 
 Sie müssen diese Klassen nicht für die Dokumentation Ihres eigenen Produkts verwenden, aber das Modell lohnt sich zur
 Nachahmung:

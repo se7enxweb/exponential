@@ -31,9 +31,9 @@ Set up the approval of new user accounts: the workflow "
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--dry-run` |  | List what would be created and changed; change nothing |
-| `--required:*` |  |  |
-| `--approvers:*` |  |  |
-| `--requesters:*` |  |  |
+| `--required` | erforderlich | A group whose new accounts need approval (default Editors), may be repeated |
+| `--approvers` | erforderlich | A group whose members approve (default Administrator users), may be repeated |
+| `--requesters` | erforderlich | A group that may create accounts in the required groups and waits for approval (default Editors), may be repeated |
 | `--no-role` |  | Do not create or assign the requesters' role (the requesters have their policies already) |
 | `--admin-id` | erforderlich | The user the workflow is created by (default 14) |
 

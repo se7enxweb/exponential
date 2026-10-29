@@ -36,7 +36,7 @@ Example: php bin/php/addoauthauthorizepolicy.php --dry-run
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--dry-run` |  | Auflisten, was gewährt würde, nichts ändern |
-| `--role:*` |  |  |
+| `--role` | erforderlich | Nur diese Rolle (ID oder Name), kann wiederholt werden; eine genannte Rolle ohne user/login erhält eine unbeschränkte Richtlinie |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

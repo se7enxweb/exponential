@@ -3,14 +3,14 @@ title: eztags and star rating operators
 audience: developer, designer, app-creator
 category: development
 order: 420
-summary: The five operators of the eztags extension (eztagscloud, latest_tags, eztags_parent_string, tag_icon, user_limitations) and the three of ezstarrating (fetch_starrating_stats, fetch_starrating_data, fetch_by_starrating), with parameters, return shapes, the Solr path of the tag cloud, a crash to avoid, and examples rendered on alpha.
+summary: The five operators of the eztags extension (eztagscloud, latest_tags, eztags_parent_string, tag_icon, user_limitations) and the three of ezstarrating (fetch_starrating_stats, fetch_starrating_data, fetch_by_starrating), with parameters, return shapes, the Solr path of the tag cloud, a crash to avoid, and examples rendered on a development installation.
 keywords: eztags, eztagscloud, latest_tags, eztags_parent_string, tag_icon, user_limitations, ezstarrating, fetch_starrating_stats, fetch_starrating_data, fetch_by_starrating, tag cloud, rating
 type: help
 ---
 # eztags and star rating operators
 
 Two extensions, each with its own `autoloads/eztemplateautoload.php`; the operators exist only while the extension is
-active (on alpha both are in `ActiveExtensions[]`).
+active (on a development installation both are in `ActiveExtensions[]`).
 
 | Extension | Class and file | Operators |
 |---|---|---|
@@ -49,7 +49,7 @@ keyword:
 {eztagscloud( hash( 'parent_node_id', 89, 'sort_by', array( 'count', false() ), 'limit', 5, 'post_sort_by', 'keyword' ) )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
     <a href="/tags/view/Topics/Eating" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="118.75" title="27 objects tagged with 'Eating'">Eating</a>    <a href="/tags/view/Topics/HIIT" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="100" title="21 objects tagged with 'HIIT'">HIIT</a>    <a href="/tags/view/Topics/Health" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="200" title="53 objects tagged with 'Health'">Health</a>    <a href="/tags/view/Topics/Running" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="109.375" title="24 objects tagged with 'Running'">Running</a>    <a href="/tags/view/Topics/Workout" class="eztags-cloud-item eztags-cloud-size-10" data-font-size="146.875" title="36 objects tagged with 'Workout'">Workout</a>
@@ -84,7 +84,7 @@ Output on alpha:
 
 - **Input:** the icon file name. **Returns:** the address of `tag_icons/<size>/<icon>` in the design images, through
   `eZURLOperator::eZImage()`. Piped, `first` is the size (default `small`).
-- Without input the code reads `first` as the icon and `second` as the size. On alpha the function form
+- Without input the code reads `first` as the icon and `second` as the size. On a development installation the function form
   `tag_icon( 'people.png' )` ended in a PHP error ("Call to a member function warning() on null"): the operator calls
   `eZImage()` without a template object, and the lookup it made failed. Use the piped form, rendered on the `admin`
   siteaccess:
@@ -94,7 +94,7 @@ Output on alpha:
 2 {'places.png'|tag_icon( 'normal' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 /extension/eztags/design/standard/images/tag_icons/small/people.png
@@ -123,7 +123,7 @@ Output on alpha:
 4 user_limitations tags/read: accessWord={$access.accessWord} simplified={$access.simplifiedLimitations|count}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 latest_tags: Starter (id 243), Angebote (id 244), Urlaub (id 245)
@@ -169,7 +169,7 @@ Output on alpha:
   `group_by_owner`, `class_filter_type` and `class_filter_array`, `include_not_rated`, `main_node_only`,
   `ignore_visibility`, `load_data_map`, `as_object`, `limit`, `offset`, `sort_by`.
 
-No content on alpha has been rated, so only `include_not_rated` returns nodes:
+No content on a development installation has been rated, so only `include_not_rated` returns nodes:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 90 ) )
@@ -181,7 +181,7 @@ No content on alpha has been rated, so only `include_not_rated` returns nodes:
 4 with include_not_rated: {foreach fetch_by_starrating( hash( 'parent_node_id', 89, 'limit', 3, 'include_not_rated', true() ) ) as $n}{$n.name|wash}{delimiter}, {/delimiter}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 stats for an object without ratings: array[1], first row: rating_count=[] rating_average=[] 

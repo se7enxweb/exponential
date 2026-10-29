@@ -2070,6 +2070,8 @@ class expHelpExamplesGenerator
                         if ( $one === '' )
                             continue;
                         $kind = '';
+                        // a quantifier after the value marker ([only:*], [file:+], [x?]) only lets the option repeat
+                        $one = rtrim( $one, '?*+' );
                         if ( preg_match( '/^(.*?)([:;])$/', $one, $mm ) )
                         {
                             $one = $mm[1];

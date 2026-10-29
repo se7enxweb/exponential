@@ -25,7 +25,7 @@ Ihr Administrator nimmt die Änderungen vor; diese Seite hilft Ihnen zu entschei
 
 ## Die Rollen, mit denen Sie beginnen
 
-Die Demo-Installation unter `https://alpha.se7enx.com` zeigt die Rollen, mit denen eine Standardinstallation arbeitet
+Eine Demo-Installation zeigt die Rollen, mit denen eine Standardinstallation arbeitet
 (auf der Live-Installation abgelesen, Oktober 2026):
 
 | Rolle | Wer sie hat | Was sie gibt, in Kürze |

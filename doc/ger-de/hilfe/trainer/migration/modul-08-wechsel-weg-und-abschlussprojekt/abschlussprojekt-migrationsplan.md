@@ -73,7 +73,7 @@ Migrations-Hubs.
 ### Stolperfallen
 
 - **Pläne ohne Rückweg.** Das Bewertungsraster gibt keine Punkte für einen Plan, der nicht zurück kann.
-- **Nachweise auf alpha oder einer anderen gemeinsam genutzten Website.** Nachweise laufen nur auf der eigenen
+- **Nachweise auf einer öffentlichen Demonstrationsinstallation oder einer anderen gemeinsam genutzten Website.** Nachweise laufen nur auf der eigenen
   Schulungsinstallation des Teams.
 - **Erfundene Zahlen.** „Der Import dauert drei Stunden“ ohne Probelauf ist eine Vermutung; schreiben Sie „im
   Probelauf 1 zu messen“.
@@ -126,7 +126,7 @@ Der Trainer bewertet jeden Plan mit diesem Bewertungsraster (drei Stufen pro Kri
 1. Was ist das Erste, was ein Team mit seinem Szenario tut?
 2. Welche drei Dinge muss der Abschnitt zum Rückweg enthalten?
 3. Wo darf ein Team seinen Nachweis ausführen?
-   A. Auf alpha B. Auf einer beliebigen gemeinsam genutzten Website C. Nur auf seiner eigenen Schulungsinstallation
+   A. Auf einer öffentlichen Demonstrationsinstallation B. Auf einer beliebigen gemeinsam genutzten Website C. Nur auf seiner eigenen Schulungsinstallation
    D. Auf der Produktion
 4. Wie behandelt ein Plan eine Dauer, die die Dokumentation nicht angibt?
 5. Richtig oder falsch: Ein Team, das das Abschlussprojekt abschließt, besitzt eine offizielle

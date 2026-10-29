@@ -1,5 +1,6 @@
 {let can_apply=false()}
-<form name="archivelist" method="post" action={concat( '/shop/archivelist' )|ezurl}>
+{include uri='design:shop/siteaccessfilter.tpl' page_uri='/shop/archivelist' siteaccess_filter=$siteaccess_filter}
+<form name="archivelist" method="post" action={concat( '/shop/archivelist', $siteaccess_filter.suffix )|ezurl}>
 
 <div class="context-block">
 
@@ -53,6 +54,7 @@
     <th class="tight">{'Total (ex. VAT)'|i18n( 'design/admin/shop/archivelist' )}</th>
     <th class="tight">{'Total (inc. VAT)'|i18n( 'design/admin/shop/archivelist' )}</th>
     <th class="wide">{'Time'|i18n( 'design/admin/shop/archivelist' )}</th>
+    <th class="wide">{'Siteaccess'|i18n( 'design/admin/content/job' )}</th>
     <th class="wide">{'Status'|i18n( 'design/admin/shop/archivelist' )}</th>
 </tr>
 
@@ -78,6 +80,7 @@
     <td class="number" align="right">{$Orders.item.total_inc_vat|l10n( 'currency', $locale, $symbol )}</td>
 
     <td>{$Orders.item.created|l10n( shortdatetime )}</td>
+    <td>{if $Orders.item.siteaccess_name}{$Orders.item.siteaccess_name|wash}{if ne( $Orders.item.store_name, $Orders.item.siteaccess_name )} ({$Orders.item.store_name|wash}){/if}{else}<span class="a4-muted">{'Unknown'|i18n( 'design/admin/settings' )}</span>{/if}</td>
     <td>
     {$Orders.status_name|wash}
     </td>

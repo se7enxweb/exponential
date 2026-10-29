@@ -31,8 +31,8 @@ clicks are explained in the editor pages that are linked here; this page is abou
 | Help with drafts, summaries and translations | Exponential Intelligence (drafts only, never publishes) | [Exponential Intelligence for owners](../growth/exponential-intelligence.md) |
 
 All of these features are listed in the repository's `README.md` under "Main Exponential features". Which content
-classes your site has (an article, a news item, a gallery) depends on how it was built: the demonstration
-installation at <https://alpha.se7enx.com> carries, among others, the classes Article, News, Gallery, Video and
+classes your site has (an article, a news item, a gallery) depends on how it was built: a demonstration
+installation carries, among others, the classes Article, News, Gallery, Video and
 Event, but your own site may use different names.
 
 ## Who on the desk does what

@@ -3,7 +3,7 @@ title: Einen Operator Schritt für Schritt anlegen
 audience: developer, app-creator
 category: development
 order: 520
-summary: Der ganze Weg von einer Idee zu einem funktionierenden Template-Operator in einer Erweiterung - einen freien Namen wählen, die Klasse schreiben, sie registrieren, Caches leeren, sie interpretiert und kompiliert ausprobieren, ausliefern - oder den Assistenten für Template-Erweiterungen die Arbeit tun lassen; jeder Schritt auf alpha geprüft.
+summary: Der ganze Weg von einer Idee zu einem funktionierenden Template-Operator in einer Erweiterung - einen freien Namen wählen, die Klasse schreiben, sie registrieren, Caches leeren, sie interpretiert und kompiliert ausprobieren, ausliefern - oder den Assistenten für Template-Erweiterungen die Arbeit tun lassen; jeder Schritt auf einer Entwicklungsinstallation geprüft.
 keywords: Operator anlegen, neuer Template-Operator, Erweiterung, Operatorklasse, Assistent, Template-Operator-Assistent, kompiliert, Test, eztemplateautoload.php, ExtensionAutoloadPath, setup/templateoperator, RAD, create operator, new template operator, template extension wizard, compiled
 type: help
 ---
@@ -64,7 +64,7 @@ Assistent geschrieben hat.
 
 Legen Sie die Klasse in Ihre Erweiterung, zum Beispiel `extension/myextension/autoloads/myextensionoperators.php`.
 Das Minimum sind `operatorList()`, `namedParameterPerOperator()`, `namedParameterList()` und `modify()`. Eine Klasse mit
-zwei Operatoren, `exp_initials` und `exp_reading_time( words_per_minute )`, arbeitet auf alpha so:
+zwei Operatoren, `exp_initials` und `exp_reading_time( words_per_minute )`, arbeitet auf einer Entwicklungsinstallation so:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )
@@ -74,7 +74,7 @@ zwei Operatoren, `exp_initials` und `exp_reading_time( words_per_minute )`, arbe
 {exp_initials( 'Bold Agency' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Fit &amp; Healthy -> FH
@@ -132,7 +132,7 @@ php bin/php/ezpgenerateautoloads.php -e        # only if other classes of the ex
 php bin/php/ezcache.php --clear-tag=ini,template --allow-root-user
 ```
 
-Auf alpha, wo Velocity die Registrierungen der Template-Engine aus seinem Warm-up behält, verwenden Sie den einen
+Auf einer Entwicklungsinstallation, wo Velocity die Registrierungen der Template-Engine aus seinem Warm-up behält, verwenden Sie den einen
 Deploy-Befehl, der diese Caches leert, PHP-FPM neu lädt und Velocity neu startet:
 
 ```bash
@@ -141,7 +141,7 @@ Deploy-Befehl, der diese Caches leert, PHP-FPM neu lädt und Velocity neu starte
 
 ## 7. Ihn ausprobieren, interpretiert und kompiliert
 
-Alpha kompiliert Templates (`[TemplateSettings] TemplateCompile=enabled`), und das kompilierte Template ist das, was
+Eine Entwicklungsinstallation kompiliert Templates (`[TemplateSettings] TemplateCompile=enabled`), und das kompilierte Template ist das, was
 Besucher erhalten. Probieren Sie den Operator auf beide Arten aus:
 
 - Schalten Sie in einer Entwicklungsinstallation `TemplateCompile` in einem Siteaccess-Override aus, laden Sie die
@@ -152,14 +152,14 @@ Besucher erhalten. Probieren Sie den Operator auf beide Arten aus:
 - suchen Sie in der Debug-Ausgabe nach `Operator '...' is not registered`, `Object problem with operator '...'` (die
   Klasse wurde nicht gefunden oder hat kein `modify()`) und `Parameter '...' missing`.
 
-Ein weggelassener Pflichtparameter, auf alpha:
+Ein weggelassener Pflichtparameter, auf einer Entwicklungsinstallation:
 
 ```tpl
 {150|exp_clamp( 0, 100 )} {-5|exp_clamp( 0, 100 )} {42|exp_clamp( 0, 100 )}
 {42|exp_clamp( 0 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 100 0 42

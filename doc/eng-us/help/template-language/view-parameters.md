@@ -3,7 +3,7 @@ title: View parameters
 audience: developer, designer, app-creator
 category: development
 order: 320
-summary: The /(name)/value part of a URL - how eZURI parses it, how eZModule::run() maps it to a view's unordered parameters and UserParameters, what content/view turns it into ($view_parameters, one variable per name, content_info.offset), and how it changes the content view cache key - proven on alpha.
+summary: The /(name)/value part of a URL - how eZURI parses it, how eZModule::run() maps it to a view's unordered parameters and UserParameters, what content/view turns it into ($view_parameters, one variable per name, content_info.offset), and how it changes the content view cache key - proven on a development installation.
 keywords: view parameters, user parameters, $view_parameters, unordered_params, UserParameters, (offset), offset, pagination, eZURI, view cache key, namefilter
 type: help
 ---
@@ -29,7 +29,7 @@ to the template.
 `eZURI` (`lib/ezutils/classes/ezuri.php`) splits the URI. An element that matches `^\([a-zA-Z0-9_]+\)` starts a
 parameter; the next element is its value; further elements up to the next parameter are appended to the value with
 `/`. The kernel passes the result, `$this->uri->userParameters()`, to the module (`ezpKernelWeb`). A read-only CLI
-script on alpha parsed some sample URIs with `new eZURI( $uri )`:
+script on a development installation parsed some sample URIs with `new eZURI( $uri )`:
 
 ```text
 content/view/full/96/(offset)/10
@@ -97,7 +97,7 @@ $viewParameters = array(
 $viewParameters = array_merge( $viewParameters, $UserParameters );
 ```
 
-Running the view on alpha read-only (as on [Module view templates](module-view-templates.md)) showed the effect.
+Running the view on a development installation read-only (as on [Module view templates](module-view-templates.md)) showed the effect.
 With the user parameters `offset=10` and `color=red`:
 
 ```text
@@ -162,7 +162,7 @@ Paging through the children of a node, with the hash that `content/view` builds 
 color: {first_set( $view_parameters.color, 'none' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Recipes: 18 children, page 2 of 6
@@ -183,7 +183,7 @@ Append the pairs to the node's URL alias before `ezurl`:
 <a href={concat( $node.url_alias, '/(offset)/', sum( $offset, $limit ) )|ezurl}>Next</a>
 ```
 
-Not run on alpha: a link only shows its use in a browser; the parsing side is proven above. Use names made of
+Not run on a development installation: a link only shows its use in a browser; the parsing side is proven above. Use names made of
 letters, digits and underscores only, or `eZURI` will not see them as parameters.
 
 ## View parameters and the view cache

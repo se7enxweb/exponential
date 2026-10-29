@@ -3,7 +3,7 @@ title: "PHP-Zeichenkettenfunktionen: kodieren und formatieren"
 audience: developer, designer, app-creator
 category: development
 order: 180
-summary: Die Kodierungs- und Formatierungsoperatoren von eZTemplateStringsOperator (bin2hex, hex2bin, convert_uuencode, convert_uudecode, quoted_printable_encode, quoted_printable_decode, htmlentities, html_entity_decode, htmlspecialchars_decode, sprintf, vsprintf, number_format) mit ihrer Zuordnung zu den PHP-Argumenten und ihren Standardwerten, und Beispiele, die auf alpha ausgegeben wurden.
+summary: Die Kodierungs- und Formatierungsoperatoren von eZTemplateStringsOperator (bin2hex, hex2bin, convert_uuencode, convert_uudecode, quoted_printable_encode, quoted_printable_decode, htmlentities, html_entity_decode, htmlspecialchars_decode, sprintf, vsprintf, number_format) mit ihrer Zuordnung zu den PHP-Argumenten und ihren Standardwerten, und Beispiele, die auf einer Entwicklungsinstallation ausgegeben wurden.
 keywords: kodieren, dekodieren, formatieren, HTML-Entitäten, Zahlenformat, bin2hex, hex2bin, convert_uuencode, convert_uudecode, quoted_printable_encode, quoted_printable_decode, htmlentities, html_entity_decode, htmlspecialchars_decode, sprintf, vsprintf, number_format, format, eZTemplateStringsOperator, encode, string functions
 type: help
 ---
@@ -57,7 +57,7 @@ Generierte Referenzen: [quoted_printable_encode](../../beispiele/template-operat
 'Gr=C3=BC=C3=9Fe'|quoted_printable_decode = {'Gr=C3=BC=C3=9Fe'|quoted_printable_decode}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'Fit'|bin2hex = 466974
@@ -114,7 +114,7 @@ Generierte Referenz: [htmlspecialchars_decode](../../beispiele/template-operator
 'it&#039;s'|htmlspecialchars_decode( 0 ) = {'it&#039;s'|htmlspecialchars_decode( 0 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'Café & "Bar"'|htmlentities = Caf&eacute; &amp; &quot;Bar&quot;
@@ -149,7 +149,7 @@ protokolliert es „Missing required parameter: args_array“.
 
 Generierte Referenz: [vsprintf](../../beispiele/template-operatoren/vsprintf.md).
 
-Die erste Zeile verwendet die Kategorie Recipes von alpha (Knoten 144):
+Die erste Zeile verwendet die Kategorie Recipes einer Entwicklungsinstallation (Knoten 144):
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 144 ) )}
@@ -159,7 +159,7 @@ Die erste Zeile verwendet die Kategorie Recipes von alpha (Knoten 144):
 {'%s and %s'|vsprintf( array( 'fit', 'healthy' ) )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Recipes has 18 children
@@ -196,7 +196,7 @@ Gibt eine Zeichenkette zurück. Für Zahlen in der Locale des Besuchers verwende
 1234567.891|number_format( 2, '.', ' ' ) = {1234567.891|number_format( 2, '.', ' ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1234567.891|number_format = 1,234,568

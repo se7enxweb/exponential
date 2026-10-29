@@ -3,7 +3,7 @@ title: PHP-Funktionsoperatoren
 audience: developer, designer, app-creator
 category: development
 order: 190
-summary: Wie template.ini [PHP] PHPOperatorList PHP-Funktionen mit einem Argument über eZTemplatePHPOperator zu Template-Operatoren macht, welche Operatoren sich daraus auf alpha ergeben (urlencode, urldecode, rawurlencode, rawurldecode, nl2br, serialize, unserialize, getenv, strip_tags), welche Erweiterung welchen hinzufügt, die Risiken und Beispiele, auf alpha gerendert.
+summary: Wie template.ini [PHP] PHPOperatorList PHP-Funktionen mit einem Argument über eZTemplatePHPOperator zu Template-Operatoren macht, welche Operatoren sich daraus auf einer Entwicklungsinstallation ergeben (urlencode, urldecode, rawurlencode, rawurldecode, nl2br, serialize, unserialize, getenv, strip_tags), welche Erweiterung welchen hinzufügt, die Risiken und Beispiele, auf einer Entwicklungsinstallation gerendert.
 keywords: PHP-Funktionen, Template-Operatoren, URL-Kodierung, Risiken, Namenskonflikte, PHPOperatorList, template.ini, PHP, eZTemplatePHPOperator, eZTemplateNl2BrOperator, urlencode, urldecode, rawurlencode, rawurldecode, nl2br, serialize, unserialize, getenv, strip_tags
 type: help
 ---
@@ -23,7 +23,7 @@ Namen aus der Einstellung, und `eZPHPOperatorInit()` erzeugt ein `eZTemplatePHPO
 ## Inhalt
 
 1. [Wie sich ein Eintrag verhält](#wie-sich-ein-eintrag-verhält)
-2. [Die Einträge auf alpha](#die-einträge-auf-alpha)
+2. [Die registrierten Einträge](#die-registrierten-einträge)
 3. [Die Operatoren](#die-operatoren)
 4. [Reihenfolge und Konflikte](#reihenfolge-und-konflikte)
 5. [Risiken](#risiken)
@@ -40,9 +40,9 @@ Der Kommentar in `settings/template.ini` empfiehlt, dem Operator einen eigenen N
 sich die Funktion dahinter später ohne Änderungen an den Templates austauschen lässt, und nennt die Grenzen: ein Parameter,
 und die Funktion muss ihr Ergebnis als Wert zurückgeben.
 
-## Die Einträge auf alpha
+## Die registrierten Einträge
 
-Die `settings/template.ini` des Kernels führt vier auf. Die auf alpha aktiven Erweiterungen fügen über ihre
+Die `settings/template.ini` des Kernels führt vier auf. Die auf einer Entwicklungsinstallation aktiven Erweiterungen fügen über ihre
 `settings/template.ini.append.php` weitere hinzu:
 
 | Operator | PHP-Funktion | Deklariert in |
@@ -57,7 +57,7 @@ Die `settings/template.ini` des Kernels führt vier auf. Die auf alpha aktiven E
 | `nl2br` | `nl2br()` | `extension/cjw_newsletter` |
 | `strip_tags` | `strip_tags()` | `extension/ezmultiupload` |
 
-Die Erweiterung ezfind fügt in ihren Einstellungen `array_merge_recursive` und `array_keys` hinzu, ist auf alpha aber keine
+Die Erweiterung ezfind fügt in ihren Einstellungen `array_merge_recursive` und `array_keys` hinzu, ist auf einer Entwicklungsinstallation aber keine
 aktive Erweiterung, daher sind diese beiden hier nicht registriert. INI-Arrays werden zusammengeführt, daher schadet
 derselbe Eintrag an zwei Stellen nicht.
 
@@ -81,7 +81,7 @@ rawurldecode( 'fit%20%26%20healthy' ) = {'fit%20%26%20healthy'|rawurldecode}
 call form: {urlencode( 'a b' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 urlencode = fit+%26+healthy+recipes
@@ -94,7 +94,7 @@ call form: a+b
 ### nl2br
 
 Die Bibliothek hat einen eigenen Operator `nl2br`, `eZTemplateNl2BrOperator`
-(`lib/eztemplate/classes/eztemplatenl2broperator.php`), der auch elementweise auf einem Array arbeitet. Auf alpha ersetzt
+(`lib/eztemplate/classes/eztemplatenl2broperator.php`), der auch elementweise auf einem Array arbeitet. Auf einer Entwicklungsinstallation ersetzt
 ihn der Eintrag in `PHPOperatorList` aus cjw_newsletter, weil `kernel/common/` in `[TemplateSettings] AutoloadPathList` von
 `site.ini` nach `lib/eztemplate/classes/` geladen wird und eine spätere Registrierung eines Namens gewinnt. Für eine
 Zeichenkette liefern beide dasselbe Ergebnis: PHP `nl2br()`, das nicht maskiert; wenden Sie also zuerst wash an
@@ -106,7 +106,7 @@ Generierte Referenz: [nl2br](../../beispiele/template-operatoren/nl2br.md).
 second line"|nl2br}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 first line<br />
@@ -126,7 +126,7 @@ serialize = {$s}
 unserialize = {$s|unserialize|get_type}, tags: {$s|unserialize.tags|implode( ', ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 serialize = a:2:{s:7:"node_id";i:89;s:4:"tags";a:2:{i:0;s:3:"fit";i:1;s:7:"healthy";}}
@@ -143,7 +143,7 @@ kommt aus einer Einstellung einer Erweiterung und hat keine generierte Seite.
 'NO_SUCH_VARIABLE_C11'|getenv = [{'NO_SUCH_VARIABLE_C11'|getenv|choose( 'false', 'true' )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 'NO_SUCH_VARIABLE_C11'|getenv = [false]

@@ -163,7 +163,7 @@ chapters and topics at the next run without `--manual`.
 
 ### How long it takes
 
-The first build makes every object: on the copy of alpha's SQLite database, 52 manuals, 342 chapters and 5,315
+The first build makes every object: on the copy of the installation's SQLite database, 52 manuals, 342 chapters and 5,315
 topics (4,614 of them with a German translation) took 28 minutes on a busy shared server (load around 23, the
 command at the lowest priority); a second run, which only compares, 34 seconds, most of it reading the pages. Most
 of a first build is the publishing of each object (its version, node, names and URL aliases). A release that changes a few pages updates a few objects. The command is

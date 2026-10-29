@@ -716,3 +716,25 @@ CREATE TABLE IF NOT EXISTS exphelp_feedback (
   KEY exphelp_feedback_object (object_id,created),
   KEY exphelp_feedback_created (created)
 ) ENGINE=InnoDB;
+
+--
+-- ezorder.siteaccess: the siteaccess (store or site) an order was placed in
+-- (doc/eng-us/features/6.0/order-siteaccess.md). The shop records it when the
+-- basket becomes an order; the order view and the order lists show it and
+-- filter by it. Orders placed before keep '' and are shown as unknown: which
+-- siteaccess they came from is not recorded; bin/php/expbackfillordersiteaccess.php
+-- infers it from the content tree where it can (dry run unless --apply).
+-- Until the column is there the kernel stores and reads orders without it.
+-- Added only when it is missing, so the lines can run again.
+--
+
+SET @exp_order_siteaccess_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezorder'
+        AND COLUMN_NAME = 'siteaccess' ) = 0,
+    'ALTER TABLE ezorder ADD siteaccess varchar(255) NOT NULL DEFAULT ''''',
+    'DO 0' );
+PREPARE exp_order_siteaccess_stmt FROM @exp_order_siteaccess_sql;
+EXECUTE exp_order_siteaccess_stmt;
+DEALLOCATE PREPARE exp_order_siteaccess_stmt;

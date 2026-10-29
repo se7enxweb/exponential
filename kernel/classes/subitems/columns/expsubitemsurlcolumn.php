@@ -294,31 +294,49 @@ class expSubitemsURLColumn extends expSubitemsFieldColumn
     /**
      * The node's path on the siteaccess whose site.ini is $ini: the URL alias with its PathPrefix
      * taken off (unless PathPrefixExclude[] keeps it), exactly as eZContentObjectTreeNode::urlAlias()
-     * does for the current siteaccess.
+     * does for the current siteaccess. A path outside the prefix is returned whole.
      */
     public static function publicPath( eZContentObjectTreeNode $node, $ini, $path = null )
     {
         $path = $path === null ? (string)$node->pathWithNames() : (string)$path;
+        $served = self::servedPath( $path, $ini );
+        return $served === null ? eZURLAliasML::cleanURL( $path ) : $served;
+    }
+
+    /**
+     * The path $path (a URL alias from the content root) is served at on the siteaccess whose
+     * site.ini is $ini: without its PathPrefix, '' for the prefix itself, whole when the siteaccess
+     * has no prefix or PathPrefixExclude[] keeps it; null when the siteaccess has a prefix and the
+     * path lies outside it, so the siteaccess does not serve it at all. Also used for the order
+     * view's links to the siteaccess an order was placed in (expOrderSiteaccess::servedURL()).
+     *
+     * @param string $path
+     * @param eZINI|null $ini null: no siteaccess, the path whole
+     * @return string|null
+     */
+    public static function servedPath( $path, $ini )
+    {
+        $path = eZURLAliasML::cleanURL( (string)$path );
         if ( !$ini instanceof eZINI )
-            return eZURLAliasML::cleanURL( $path );
+            return $path;
 
         $prefix = $ini->hasVariable( 'SiteAccessSettings', 'PathPrefix' )
             ? eZURLAliasML::cleanURL( (string)$ini->variable( 'SiteAccessSettings', 'PathPrefix' ) ) : '';
         if ( $prefix === '' )
-            return eZURLAliasML::cleanURL( $path );
+            return $path;
 
         $exclude = $ini->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' )
             ? (array)$ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' ) : array();
         foreach ( $exclude as $item )
         {
             if ( $item !== '' && preg_match( '#^' . preg_quote( eZURLAliasML::cleanURL( $item ), '#' ) . '(/.*)?$#i', $path ) )
-                return eZURLAliasML::cleanURL( $path );
+                return $path;
         }
 
         if ( strcasecmp( $path, $prefix ) === 0 )
             return '';
         if ( strncasecmp( $path, $prefix . '/', strlen( $prefix ) + 1 ) === 0 )
             return eZURLAliasML::cleanURL( substr( $path, strlen( $prefix ) + 1 ) );
-        return eZURLAliasML::cleanURL( $path );
+        return null;
     }
 }

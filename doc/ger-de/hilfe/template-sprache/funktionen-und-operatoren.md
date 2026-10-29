@@ -37,7 +37,7 @@ funktioniert das hier nicht?“ beantworten.
 | Registriert in | `$eZTemplateFunctionArray` | `$eZTemplateOperatorArray` |
 | Wichtigste PHP-Methode | `process()` | `modify()` |
 | Haken für den Compiler | `templateNodeTransformation()` | `operatorTemplateHints()` und eine Methode zur Transformation |
-| Auf dem Siteaccess `site` von alpha | 48 registriert | 395 registriert |
+| Auf dem Siteaccess `site` einer Entwicklungsinstallation | 48 registriert | 395 registriert |
 
 ## Dieselbe Aufgabe auf beide Arten
 
@@ -51,7 +51,7 @@ function: {if $tags|count|gt( 2 )}many{else}few{/if}
 operator: {cond( $tags|count|gt( 2 ), 'many', 'few' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 function: news, sport, weatheroperator: news, sport, weather
@@ -70,7 +70,7 @@ Die Ausgabe von Funktionen ist Text, und `set-block` macht aus Text wieder einen
 [{$list}] [{$list|count_chars}] [{$list|upcase}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [<a><b><c>] [9] [<A><B><C>]
@@ -83,7 +83,7 @@ Eine Funktion lässt sich nicht dort nutzen, wo ein Wert erwartet wird. Innerhal
 [{concat( 'a', if( true() ) )}]
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 [a]
@@ -150,7 +150,7 @@ Wenn `site.ini` [TemplateSettings] `TemplateCompile` eingeschaltet ist (der Stan
   `element-transformation-func` genannte Methode (zum Beispiel `phpMapTransformation` für `upcase`). Andere werden zur Laufzeit über
   `modify()` aufgerufen.
 
-So oder so muss die Ausgabe dieselbe sein wie beim interpretierten Template. Die Beispiele dieser Seiten wurden auf alpha auf beide Arten
+So oder so muss die Ausgabe dieselbe sein wie beim interpretierten Template. Die Beispiele dieser Seiten wurden auf einer Entwicklungsinstallation auf beide Arten
 gerendert und verglichen; die tatsächlich gefundenen Unterschiede sind auf [Sections und foreach](sections-und-foreach.md#ein-unterschied-in-kompilierten-templates)
 und in der Referenz zu [foreach](referenz-der-kontrollstrukturen.md#foreach) vermerkt.
 

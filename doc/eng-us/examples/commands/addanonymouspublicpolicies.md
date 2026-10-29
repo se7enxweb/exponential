@@ -38,8 +38,8 @@ Example: php bin/php/addanonymouspublicpolicies.php --dry-run
 |---|---|---|
 | `--dry-run` |  | List what would be added, change nothing |
 | `--role` | required | The role to complete (ID or name); default Anonymous |
-| `--only:*` |  |  |
-| `--skip:*` |  |  |
+| `--only` | required | Only this policy (module/function), may be repeated |
+| `--skip` | required | Never this policy (module/function), may be repeated; e.g. --skip=user/register keeps registration closed |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

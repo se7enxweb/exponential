@@ -3,7 +3,7 @@ title: Eigene Operatoren mit OW Simple Operator
 audience: developer, app-creator
 category: development
 order: 910
-summary: Template-Operatoren als einfache öffentliche Methoden einer Klasse schreiben, die OWSimpleOperator erweitert, jede Methode in owsimpleoperator.ini registrieren, optionale Argumente, die Pipe-Form und was geschieht, wenn die Klasse stattdessen auf dem üblichen Weg registriert wird; jedes Beispiel auf alpha gerendert.
+summary: Template-Operatoren als einfache öffentliche Methoden einer Klasse schreiben, die OWSimpleOperator erweitert, jede Methode in owsimpleoperator.ini registrieren, optionale Argumente, die Pipe-Form und was geschieht, wenn die Klasse stattdessen auf dem üblichen Weg registriert wird; jedes Beispiel auf einer Entwicklungsinstallation gerendert.
 keywords: eigener Operator, Template-Operator-Klasse, Erweiterung, optionale Argumente, owsimpleoperator, OWSimpleOperator, PermittedClassOperatorList, ClassOperators, ExampleOperator, example_sum, custom operator, template operator class, extension
 type: help
 ---
@@ -95,14 +95,14 @@ die bis dahin gesammelte Liste und entfernt die Operatoren, die andere Erweiteru
 
 `extension/owsimpleoperator/autoloads/eztemplateautoload.php` macht aus diesen Zeilen je Klasse einen Eintrag in
 `$eZTemplateOperatorArray` (`script`, `class`, `operator_names`). Leeren Sie nach einer Änderung den INI- und den
-Template-Cache (`php bin/php/ezcache.php --clear-tag=ini --clear-tag=template --allow-root-user`, oder auf alpha
+Template-Cache (`php bin/php/ezcache.php --clear-tag=ini --clear-tag=template --allow-root-user`, oder auf einer Entwicklungsinstallation
 `./console exp:velocity deploy --allow-root-user`). Ihre Klasse braucht keinen Eintrag in den Autoload-Arrays: Der
 Pfad in `script` lädt sie. `OWSimpleOperator` selbst braucht einen, und der Installationsschritt der Erweiterung
 (`php bin/php/ezpgenerateautoloads.php -e`) erzeugt ihn.
 
 ## Die Operatoren verwenden
 
-Auf alpha nicht mit einer Datei ausgeführt: Die Beispiele auf dieser Seite hat ein Skript gerendert, das die beiden
+Auf einer Entwicklungsinstallation nicht mit einer Datei ausgeführt: Die Beispiele auf dieser Seite hat ein Skript gerendert, das die beiden
 Zeilen oben (und die Zeile für das mitgelieferte `ExampleOperator`) nur im Speicher und nur für diesen einen Prozess in
 `owsimpleoperator.ini` eingetragen hat, mit der Klassendatei in einem Arbeitsordner. In die Einstellungen der
 Installation wurde nichts geschrieben.
@@ -118,7 +118,7 @@ Beide Aufrufformen funktionieren für Klassenoperatoren:
 {$node.name|wash} -> {$node.name|initials}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 3
@@ -144,7 +144,7 @@ eigentlichen Standardwert im Methodenrumpf, wie `reading_minutes()` es tut:
 {reading_minutes( $text )} {reading_minutes( $text, 4 )} {$text|reading_minutes( 4 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 3 3
@@ -169,7 +169,7 @@ nichts in `owsimpleoperator.ini` (hier gerendert, indem der Eintrag im Speicher 
 {'Bold Agency'|initials}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 

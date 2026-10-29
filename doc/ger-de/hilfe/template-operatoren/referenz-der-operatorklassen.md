@@ -3,7 +3,7 @@ title: Die Schnittstelle einer Operatorklasse
 audience: developer, app-creator
 category: development
 order: 530
-summary: Jede Methode und jedes Argument, das die Template-Engine an einem Template-Operator-Objekt verwendet - operatorList, namedParameterPerOperator, namedParameterList, modify mit seinen acht Argumenten, operatorTemplateHints und Element-Transformationen, operatorCompiledStaticData - sowie die Schlüssel des Registrierungseintrags, jeweils mit einer Beispielklasse, die auf alpha interpretiert und kompiliert gerendert wurde.
+summary: Jede Methode und jedes Argument, das die Template-Engine an einem Template-Operator-Objekt verwendet - operatorList, namedParameterPerOperator, namedParameterList, modify mit seinen acht Argumenten, operatorTemplateHints und Element-Transformationen, operatorCompiledStaticData - sowie die Schlüssel des Registrierungseintrags, jeweils mit einer Beispielklasse, die auf einer Entwicklungsinstallation interpretiert und kompiliert gerendert wurde.
 keywords: Operatorklasse, Schnittstelle, Template-Operator, Registrierungseintrag, Element-Transformation, Template-Compiler, operator class, operatorList, namedParameterPerOperator, namedParameterList, modify, operatorTemplateHints, element-transformation, input-as-parameter, transform-parameters, elementValue, placement, eztemplateautoload.php, eZTemplateOperatorArray
 type: help
 ---
@@ -28,7 +28,7 @@ Eine geführte Einführung in den ersten eigenen Operator finden Sie unter
 
 ## Die Beispielklasse
 
-Die Beispiele verwenden `C11ExampleOperators`, eine Klasse, die für diese Seiten geschrieben wurde. Sie lief auf alpha nicht als
+Die Beispiele verwenden `C11ExampleOperators`, eine Klasse, die für diese Seiten geschrieben wurde. Sie lief auf einer Entwicklungsinstallation nicht als
 installierte Erweiterung: Das Skript, das die Beispiele gerendert hat, registrierte die Klasse im Speicher bei der Template-Engine
 (mit demselben Eintrag, den die `eztemplateautoload.php` einer Erweiterung hinzufügen würde) und lud sie aus einem Arbeitsordner;
 kompilierte Ergebnisse wurden in einen Arbeitsordner kompiliert. Ihre Operatoren:
@@ -102,7 +102,7 @@ function namedParameterList()
   warnt `Operator '<operator>' has no default value for parameter '<name>'` (in interpretierten Templates einmal pro Anfrage,
   in kompilierten beim Kompilieren).
 
-Optionale und erforderliche Parameter auf alpha:
+Optionale und erforderliche Parameter auf einer Entwicklungsinstallation:
 
 ```tpl
 {def $node = fetch( 'content', 'node', hash( 'node_id', 89 ) )
@@ -112,7 +112,7 @@ Optionale und erforderliche Parameter auf alpha:
 {exp_initials( 'Bold Agency' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Fit &amp; Healthy -> FH
@@ -124,7 +124,7 @@ Fit &amp; Healthy -> FH
 {42|exp_clamp( 0 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 100 0 42
@@ -166,14 +166,14 @@ Was `exp_parameters_seen` über seine Argumente meldet, einmal als Funktion aufg
 {'piped'|exp_parameters_seen}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 value=NULL named={"first":"a","second":"bee"} raw count=2 first raw element type=1 second evaluated again='bee' placement=[[2,0,18],[2,30,48],"var\/tmp\/examples\/ld-op\/03-what-modify-receives.tpl"]
 value='piped' named={"first":"first-default","second":"second-default"} raw count=0 first raw element type=none second evaluated again=NULL placement=[[3,0,51],[3,27,78],"var\/tmp\/examples\/ld-op\/03-what-modify-receives.tpl"]
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 value=NULL named={"first":"a","second":"bee"} raw count=2 first raw element type=1 second evaluated again='bee' placement=false
@@ -232,13 +232,13 @@ kompilierten Templates zeigt, was bei einer Standardinstallation bedeutet: bei j
 {'fit & healthy'|exp_initials} {'fit & healthy'|exp_wrong_hint}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 FH FIT & HEALTHY
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 FH
@@ -279,19 +279,19 @@ Laufzeitaufruf bei. `modify()` muss den Operator für interpretierte Templates t
 {$n|exp_twice} {4|exp_twice|exp_twice}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 42 16
 ```
 
-Ausgabe auf alpha mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
+Ausgabe mit dem Template-Compiler (in einen Arbeitsordner kompiliert):
 
 ```text
 42 16
 ```
 
-Ein Auszug aus dem PHP, das der Compiler auf alpha für die zweite Zeile (`{4|exp_twice|exp_twice}`) erzeugt hat: Die Konstante
+Ein Auszug aus dem PHP, das der Compiler auf einer Entwicklungsinstallation für die zweite Zeile (`{4|exp_twice|exp_twice}`) erzeugt hat: Die Konstante
 wurde in die erste Multiplikation eingefaltet, und es wird kein Operator-Objekt aufgerufen:
 
 ```php

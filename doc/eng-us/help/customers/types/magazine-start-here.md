@@ -29,7 +29,7 @@ This page is for the editor, the art director and the person who owns the site f
 | Related stories | Relations between content items | [Relations and reuse](../../creators/website-creators/relations-and-reuse.md) |
 
 The feature list is in the repository's `README.md` ("Main Exponential features", "Exponential Layouts"). The class
-names above are the ones on the demonstration installation at <https://alpha.se7enx.com>; your site may use others.
+names above are the ones on a demonstration installation; your site may use others.
 
 ## Organizing an issue
 

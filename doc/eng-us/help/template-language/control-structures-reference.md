@@ -3,7 +3,7 @@ title: Control structures reference
 audience: developer, designer, app-creator
 category: development
 order: 130
-summary: Every parameter of if, elseif and else, switch and case (match, in, key and the default case), foreach (key, sequence, offset, max, reverse), for, while and do, and the loop helpers delimiter (with modulo), break, continue and skip - with their exact behavior from the code, each shown on alpha.
+summary: Every parameter of if, elseif and else, switch and case (match, in, key and the default case), foreach (key, sequence, offset, max, reverse), for, while and do, and the loop helpers delimiter (with modulo), break, continue and skip - with their exact behavior from the code, each shown on a development installation.
 keywords: control structures, if, elseif, else, switch, case, match, in, key, foreach, offset, max, reverse, sequence, for, while, do, delimiter, modulo, break, continue, skip, loops
 type: help
 ---
@@ -43,7 +43,7 @@ The condition is one expression; combine tests with `and()`, `or()` and `not()`.
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 noneone7 items
@@ -58,7 +58,7 @@ are `0`, `1`, `''`, `'x'`, `'0'`, `array()`, `array( 0 )`, `false()`, `true()`:
 {foreach array( 0, 1, '', 'x', '0', array(), array( 0 ), false(), true() ) as $v}[{if $v}T{else}F{/if}]{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [F][T][F][T][F][F][T][F][T]
@@ -90,14 +90,14 @@ The first matching case wins. A second case with the same `match` value is skipp
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 onetwo or threedefault for other
 ```
 
 With `key`, the code passes the value to `eZTemplate::variableAttribute()`, which walks a **list** of attribute names. A
-plain string is not turned into a list there, so only the array form finds the element; this is what alpha does today:
+plain string is not turned into a list there, so only the array form finds the element; this is what a development installation does today:
 
 ```tpl
 {def $people = array( hash( 'id', 7, 'name', 'Ada' ), hash( 'id', 9, 'name', 'Lin' ) )}
@@ -105,7 +105,7 @@ key as a string: {switch match=9}{case in=$people key='id'}found{/case}{case}not
 key as an array: {switch match=9}{case in=$people key=array( 'id' )}found{/case}{case}not found{/case}{/switch}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 key as a string: not foundkey as an array: found
@@ -117,7 +117,7 @@ When nothing matches and there is no default case, the switch prints nothing and
 [{switch match=5}{case match=1}one{/case}{/switch}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []
@@ -156,7 +156,7 @@ sequence variables are ordinary variables of the file, not of a namespace.
 {foreach hash( 'one', 1, 'two', 2 ) as $key => $value}{$key}={$value} {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [1:b:x]|[2:c:y]|[3:d:x]4321one=1 two=2
@@ -168,7 +168,7 @@ An empty array runs the body zero times, without a warning:
 [{foreach array() as $v}{$v}{/foreach}] empty array: no output
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [] empty array: no output
@@ -185,13 +185,13 @@ compiled one keeps it with its last value; a variable that existed before the lo
 [{$item}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [v removed after the loop][2]
 ```
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 [v still set][2]
@@ -220,7 +220,7 @@ breaks:
 {foreach array( 1, 2, 3, 4, 5, 6 ) as $v}{if eq( $v, 2 )}{continue}{/if}{if eq( $v, 4 )}{skip}{/if}{if eq( $v, 6 )}{break}{/if}{$v}{delimiter}-{/delimiter}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1--3-5-
@@ -235,7 +235,7 @@ is only printed when the iteration index divides by n:
 {foreach array( 1, 2, 3, 4, 5, 6 ) as $v}{$v}{delimiter modulo=2} / {/delimiter}{/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 12 / 34 / 56
@@ -256,7 +256,7 @@ Counts from first to last inclusive, upward or downward. The loop helpers apply;
 {for 0 to 10 as $i}{if $i|gt( 3 )}{break}{/if}{$i}{delimiter},{/delimiter}{/for}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1o 2e 3o 4e 5o 543210,1,2,3,
@@ -276,7 +276,7 @@ loop does not end:
 {while $n|lt( 3 ) sequence array( 'a', 'b' ) as $s}[{$n}{$s}]{set $n = $n|inc}{/while}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [0a][1b][2a]
@@ -296,7 +296,7 @@ condition is false from the start:
 {do}[{$n}]{set $n = $n|inc}{/do while $n|lt( 3 )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 [5]

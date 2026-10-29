@@ -824,7 +824,7 @@ The fetch function `fetch( 'content', 'language_states', hash( 'object', $object
 `state_main_name`, optional `state_object_id`, `state_href`, `state_current`). Under forced colors the fill and the
 dot are drawn in system colors. `tests/tests/design/AdminLanguageStatesTest.php`.
 
-Cost, measured on alpha with a folder of 50 articles: the sub-items request (`ezjscnode::subtree`, 50 rows) takes
+Cost, measured on a development installation with a folder of 50 articles: the sub-items request (`ezjscnode::subtree`, 50 rows) takes
 the same number of queries before and after the states (357 for 50 rows, 42 for 5, the same both times: nothing per
 row is added); the node view adds the one grouped query of `lastEdited()`, which the SQL query cache answers on the
 second use in the same page (meta line and Translations tab). Since the fetch function belongs to a kernel class, a

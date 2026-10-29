@@ -3,7 +3,7 @@ title: Fetch aliases
 audience: developer, designer, app-creator
 category: development
 order: 600
-summary: What fetch_alias() does, the fetchalias.ini syntax (Module, FunctionName, Parameter[], Constant[]), every alias defined on alpha with what it maps to and an example rendered on alpha, how parameters and constants combine, and how to add your own or change an existing one from an extension.
+summary: What fetch_alias() does, the fetchalias.ini syntax (Module, FunctionName, Parameter[], Constant[]), every alias defined on a development installation with what it maps to and an example rendered on a development installation, how parameters and constants combine, and how to add your own or change an existing one from an extension.
 keywords: fetch_alias, fetchalias.ini, fetch alias, Module, FunctionName, Parameter, Constant, children, children_count, subtree, object, by_identifier, news_list, comments, reviews, xrowextract, eZFunctionHandler::executeAlias
 type: help
 ---
@@ -21,7 +21,7 @@ same class as `fetch`), and the work is done by `eZFunctionHandler::executeAlias
 1. [Syntax](#syntax)
 2. [fetchalias.ini](#fetchaliasini)
 3. [How parameters and constants combine](#how-parameters-and-constants-combine)
-4. [The aliases on alpha](#the-aliases-on-alpha)
+4. [The defined aliases](#the-defined-aliases)
 5. [Adding your own alias](#adding-your-own-alias)
 6. [Changing an existing alias](#changing-an-existing-alias)
 7. [When to use an alias](#when-to-use-an-alias)
@@ -83,7 +83,7 @@ override its constants. The `subtree` alias sorts by `priority;0`; a `sort_by` i
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 - Almond French Toast
@@ -93,13 +93,13 @@ Output on alpha:
 
 Compiled templates take a different path for `fetch_alias` calls whose alias name is a constant
 (`eZTemplateExecuteOperator::fetchTransform()`): the call is turned into PHP at compile time, from the
-function's parameter list. All examples on this page gave the same result interpreted and compiled on alpha. Keep
+function's parameter list. All examples on this page gave the same result interpreted and compiled on a development installation. Keep
 to the documented use (alias keys from `Parameter[]`, function parameter names for anything else) and the two paths
 agree.
 
-## The aliases on alpha
+## The defined aliases
 
-Alpha's `site` siteaccess has the eight aliases of the kernel's `settings/fetchalias.ini` and two from extension
+The `site` siteaccess of a development installation has the eight aliases of the kernel's `settings/fetchalias.ini` and two from extension
 xrowextract (`extension/xrowextract/settings/fetchalias.ini.append.php`).
 
 | Alias | Fetch function | Your keys | Fixed |
@@ -125,7 +125,7 @@ The fetch functions' parameters are documented in [the content fetch functions](
 {$object.id}: {$object.name|wash} ({$object.class_identifier})
 ```
 
-Output on alpha:
+Output:
 
 ```text
 87: Fit &amp; Healthy (ng_frontpage)
@@ -144,7 +144,7 @@ Output on alpha:
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 16 children, the first 5 by name:- Authors (ng_container)
@@ -166,7 +166,7 @@ Node 144 is the Recipes category; `subtree` goes to any depth, sorted by priorit
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 - Gluten-Free Shrimp Pad Thai with Tofu (depth 4)
@@ -177,7 +177,7 @@ Output on alpha:
 
 ### news_list
 
-`news_list` has its whole query fixed: articles of class 2 below node 2. On alpha class 2 exists, but the site's
+`news_list` has its whole query fixed: articles of class 2 below node 2. On a development installation class 2 exists, but the site's
 articles are of class `ng_article`, so the alias finds nothing. It is an example from the original kernel settings,
 not something to rely on; define your own instead ([below](#adding-your-own-alias)).
 
@@ -191,7 +191,7 @@ Class 2 is "{$class.identifier}"; news_list returned {$news|count} item(s).
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Class 2 is "article"; news_list returned 0 item(s).
@@ -209,7 +209,7 @@ a text line (`ezstring`) attribute whose sort key equals the value, through
 Looked up "{$node.name|downcase|wash}": {if $found}object {$found.id}, {$found.name|wash}{else}nothing{/if}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Looked up "privacy policy": object 72, Privacy policy
@@ -220,7 +220,7 @@ it only with values you know are unique.
 
 ### comments and reviews
 
-Both list children of one class (`comment`, `review`) newest first. Alpha has neither class in use below node 89:
+Both list children of one class (`comment`, `review`) newest first. The development installation used here has neither class in use below node 89:
 
 ```tpl
 {def $comments = fetch_alias( 'comments', hash( 'parent_node_id', 89 ) )
@@ -228,7 +228,7 @@ Both list children of one class (`comment`, `review`) newest first. Alpha has ne
 comments: {$comments|count}, reviews: {$reviews|count}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 comments: 0, reviews: 0
@@ -247,7 +247,7 @@ extension is active:
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 - Zucchini Zoodles with Ground Turkey Tomato Sauce
@@ -261,7 +261,7 @@ Output on alpha:
 [{fetch_alias( 'latest_news', hash( 'parent_node_id', 89 ) )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []
@@ -302,14 +302,14 @@ template cache (compiled templates contain the alias's resolved parameters):
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 - Cookie Policy, published 01/25/2023
 - Privacy Policy, published 01/25/2023
 ```
 
-Not run with a file on alpha: the script that rendered this example added the section above to `fetchalias.ini`
+Not run with a file on a development installation: the script that rendered this example added the section above to `fetchalias.ini`
 in memory only, for its own process.
 
 Name aliases with your extension's prefix: alias names share one INI namespace across all extensions.
@@ -335,7 +335,7 @@ nodes' path (`path_string` ascending, the default of `eZContentObjectTreeNode::c
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 - Privacy Policy
@@ -353,7 +353,7 @@ With it, the same template sorts by name:
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 - Authors

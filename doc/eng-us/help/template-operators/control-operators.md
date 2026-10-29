@@ -3,7 +3,7 @@ title: Control operators
 audience: developer, designer, app-creator
 category: development
 order: 130
-summary: cond and first_set from eZTemplateControlOperator - inline conditions and fallbacks that evaluate only what they need, how the interpreter and the compiled template differ for a false default, with examples rendered on alpha.
+summary: cond and first_set from eZTemplateControlOperator - inline conditions and fallbacks that evaluate only what they need, how the interpreter and the compiled template differ for a false default, with examples rendered on a development installation.
 keywords: cond, first_set, condition, ternary, fallback, default value, eZTemplateControlOperator
 type: help
 ---
@@ -44,7 +44,7 @@ Generated reference: [cond](../../examples/template-operators/cond.md).
 {cond( 'only one parameter' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 many children (18)
@@ -60,7 +60,7 @@ A common use is a class attribute in a loop, here on the children of the Fit & H
 {/foreach}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 <li class="first">Fitness</li><li class="topic">Workout</li><li class="item">Fit &amp; Healthy site info - [SITEINFO]</li><li class="item">Tour</li>
@@ -74,15 +74,15 @@ without testing it. The example below was rendered by the interpreter:
 [{cond( false(), 'x', 0 )}]
 ```
 
-Output on alpha:
+Output:
 
 ```text
 []
 ```
 
-Compiled on alpha, where template compiling is enabled, the same line printed `[0]`.
+Compiled on a development installation, where template compiling is enabled, the same line printed `[0]`.
 
-Output on alpha with the template compiler (compiled into a scratch folder):
+Output with the template compiler (compiled into a scratch folder):
 
 ```text
 [0]
@@ -113,7 +113,7 @@ limit = {first_set( $view_parameters.limit, $undefined_limit, 10 )}
 title = {first_set( $no_such_variable, 'Untitled' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 offset = 20

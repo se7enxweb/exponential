@@ -3,14 +3,14 @@ title: "Swark-Operatoren: Arrays, Zeichenketten und URLs"
 audience: developer, designer, app-creator
 category: development
 order: 431
-summary: Alle Array-, Zeichenketten- und URL-Operatoren der Erweiterung swark - sort, rsort, asort, arsort, ksort, krsort, shuffle, array_search, range, set_array_element, remove_array_element, split_by_length, shortenw, preg_match, preg_replace, strpos, strrpos, substr, ltrim, rtrim, str_replace, json_encode, uri_path_segment, add_view_parameters, modify_view_parameter - mit Parametern, Rückgabewerten und Beispielen, die auf alpha ausgegeben wurden.
+summary: Alle Array-, Zeichenketten- und URL-Operatoren der Erweiterung swark - sort, rsort, asort, arsort, ksort, krsort, shuffle, array_search, range, set_array_element, remove_array_element, split_by_length, shortenw, preg_match, preg_replace, strpos, strrpos, substr, ltrim, rtrim, str_replace, json_encode, uri_path_segment, add_view_parameters, modify_view_parameter - mit Parametern, Rückgabewerten und Beispielen, die auf einer Entwicklungsinstallation ausgegeben wurden.
 keywords: swark, Sortieren, Arrays, Zeichenketten, URLs, View-Parameter, sort, rsort, asort, arsort, ksort, krsort, shuffle, array_search, range, set_array_element, remove_array_element, split_by_length, shortenw, preg_match, preg_replace, uri_path_segment, add_view_parameters, modify_view_parameter, strings, view parameters
 type: help
 ---
 # Swark-Operatoren: Arrays, Zeichenketten und URLs
 
 Die Klassen liegen in `extension/swark/autoloads/classes/`, eine je Operator; wie sie registriert werden und warum sich
-manche Namen auf alpha anders verhalten, erklärt [Die swark-Operatoren](swark-operatoren.md). Standardwerte der
+manche Namen auf einer Entwicklungsinstallation anders verhalten, erklärt [Die swark-Operatoren](swark-operatoren.md). Standardwerte der
 Parameter sind Zeichenketten, da die Basisklasse sie aus `name=value` liest. Alle diese Operatoren nehmen ihre Eingabe
 aus dem Wert vor `|` und geben einen neuen Wert zurück; keiner von ihnen ändert etwas außerhalb des Templates.
 
@@ -75,7 +75,7 @@ krsort:  {foreach $h|krsort as $k => $v}{$k}={$v} {/foreach}
 shuffle keeps {$l|shuffle|count} items
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 sort:    apple fig pear
@@ -149,7 +149,7 @@ ein Multibyte-Zeichen geteilt werden.
 5 split_by_length: {'2026101912'|split_by_length( array( 4, 2, 2 ) )|implode( '-' )} / {'abcdef'|split_by_length( 2 )|implode( ' ' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 array_search apple: 1, kiwi: -1, kiwi with default: none
@@ -200,7 +200,7 @@ Eingaben der Anfrage.
 6 modify_view_parameter: {'/recipes/(offset)/20/(tag)/vegan'|modify_view_parameter( 'offset', 40 )} / {'/recipes/(offset)/20'|modify_view_parameter( 'offset', false() )} / {'/recipes'|modify_view_parameter( 'tag', 'soup' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 1 shortenw: The quick brown... / The quick [more]
@@ -214,7 +214,7 @@ Ausgabe auf alpha:
 ### strpos
 
 Parameter `needle` (Pflicht) und `offset` (Standard `0`). Gibt die Position zurück oder **-1**, wenn nichts gefunden
-wird. Auf alpha antwortet oft stattdessen `strpos` aus dem Kernel (das `false` zurückgibt); siehe
+wird. Auf einer Entwicklungsinstallation antwortet oft stattdessen `strpos` aus dem Kernel (das `false` zurückgibt); siehe
 [Ownership can change during a request](swark-operatoren.md#der-besitzer-kann-während-einer-anfrage-wechseln).
 
 ### strrpos
@@ -235,13 +235,13 @@ Parameter `charlist` (Standard leer: Leerraum). Derselbe Vorbehalt.
 
 ### str_replace
 
-Parameter `search` und `replace`: PHP `str_replace()` auf die Eingabe. Auf alpha gehört der Name zu owsimpleoperator,
+Parameter `search` und `replace`: PHP `str_replace()` auf die Eingabe. Auf einer Entwicklungsinstallation gehört der Name zu owsimpleoperator,
 der später registriert wird.
 
 ### json_encode
 
 Parameter `value`: die Eingabe, oder `value`, wenn es keine Eingabe gibt, als JSON (PHP `json_encode()` oder ein
-eigener Encoder, wo diese Funktion fehlt). Auf alpha gehört der Name zu ezjscore; siehe
+eigener Encoder, wo diese Funktion fehlt). Auf einer Entwicklungsinstallation gehört der Name zu ezjscore; siehe
 [ezjscore-Operatoren im Detail](ezjscore-operatoren.md#json_encode).
 
 ## URLs und View-Parameter

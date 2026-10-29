@@ -3,7 +3,7 @@ title: Translation operators i18n, d18n and x18n
 audience: developer, designer, app-creator
 category: development
 order: 310
-summary: The three translation operators of eZi18nOperator, their parameters (context, comment, arguments, extension), how ezpI18n::tr() finds a translation and inserts arguments, how compiled templates translate at compile time, and why d18n exists, with examples rendered in English and German on alpha.
+summary: The three translation operators of eZi18nOperator, their parameters (context, comment, arguments, extension), how ezpI18n::tr() finds a translation and inserts arguments, how compiled templates translate at compile time, and why d18n exists, with examples rendered in English and German on a development installation.
 keywords: i18n, d18n, x18n, translation, translate, ezpI18n, eZi18nOperator, context, arguments, translation.ts, ezlupdate, locale
 type: help
 ---
@@ -92,7 +92,7 @@ locale: {ezini( 'RegionalSettings', 'Locale' )}
 5 {'Search'|x18n( 'myextension', 'design/standard/content/search' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 locale: eng-US

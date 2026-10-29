@@ -169,7 +169,7 @@ Lauf ohne `--manual` ihr Handbuch samt Kapiteln und Themen.
 
 ### Wie lange es dauert
 
-Der erste Aufbau legt jedes Objekt an: Auf der Kopie der SQLite-Datenbank von alpha dauerten 52 Handbücher, 342
+Der erste Aufbau legt jedes Objekt an: Auf der Kopie der SQLite-Datenbank einer Entwicklungsinstallation dauerten 52 Handbücher, 342
 Kapitel und 5.315 Themen (4.614 davon mit deutscher Übersetzung) auf einem stark ausgelasteten gemeinsamen Server
 (Last um 23, der Befehl mit der niedrigsten Priorität) 28 Minuten; ein zweiter Lauf, der nur vergleicht, 34 Sekunden,
 das meiste davon für das Lesen der Seiten. Den größten Teil eines ersten Aufbaus kostet das Veröffentlichen jedes

@@ -3,7 +3,7 @@ title: Text-Hilfsoperatoren des Kernels
 audience: developer, designer, app-creator
 category: development
 order: 340
-summary: Fünf kleine Kernel-Operatoren - alphabet, autolink, simpletags, eztoc und month_overview - mit ihren Parametern, den Einstellungen, die sie lesen, was sie maskieren und was nicht, und auf alpha gerenderten Beispielen.
+summary: Fünf kleine Kernel-Operatoren - alphabet, autolink, simpletags, eztoc und month_overview - mit ihren Parametern, den Einstellungen, die sie lesen, was sie maskieren und was nicht, und auf einer Entwicklungsinstallation gerenderten Beispielen.
 keywords: Text-Hilfsoperatoren, Inhaltsverzeichnis, Kalender, Archiv, Links, Maskierung, Monatsübersicht, alphabet, autolink, simpletags, eztoc, month_overview, table of contents, calendar, archive, links, mailto, AlphabeticalFilterSettings, SimpleTagsOperator, AutoLinkOperator
 type: help
 ---
@@ -37,7 +37,7 @@ Generierte Seite: [alphabet](../../beispiele/template-operatoren/alphabet.md).
 `eZAlphabetOperator::fetchAlphabet()` liest `content.ini` `[AlphabeticalFilterSettings]`: Für jeden Namen in
 `ContentFilterList[]` nimmt es die Bereiche aus `AlphabetList[<name>]` (Unicode-Codepunkte wie `97-122` oder einzelne Buchstaben,
 durch Kommas getrennt), bildet daraus die Buchstaben und wandelt sie in den Zeichensatz der `i18n.ini` um. Eine leere
-`ContentFilterList[]` ergibt `false`; eine Liste, deren Namen keine Bereiche haben, fällt auf `a` bis `z` zurück. Auf alpha ist die
+`ContentFilterList[]` ergibt `false`; eine Liste, deren Namen keine Bereiche haben, fällt auf `a` bis `z` zurück. Auf einer Entwicklungsinstallation ist die
 Liste leer:
 
 ```tpl
@@ -46,7 +46,7 @@ ContentFilterList: {ezini( 'AlphabeticalFilterSettings', 'ContentFilterList', 'c
 alphabet() gives {$letters|get_type}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 ContentFilterList: 0 entries
@@ -75,7 +75,7 @@ maskiert**: Waschen Sie Benutzereingaben zuerst (`|wash|autolink`), sonst wird d
 {$text|autolink( 30 )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Mail <a href='mailto:info@example.com'>info@example.com</a> or read <a href="https://doc.exponential.earth/en/latest/guide/templates/operators/index.html" title="https://doc.exponential.earth/en/latest/guide/templates/operators/index.html">https://doc.exponential.earth/en/...guide/templates/operators/index.html</a> today.
@@ -115,7 +115,7 @@ aufgerufen; daher gehören dort nur vertrauenswürdige Einstellungen hin.
 {$text|simpletags}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 Plain &lt;b&gt;&amp;&lt;/b&gt; text<br />
@@ -145,7 +145,7 @@ Attributs muss passende Anker enthalten, damit die Links funktionieren.
 {eztoc( $node.data_map.body )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 
@@ -250,7 +250,7 @@ week {$number}: {foreach $week as $d}{if $d}{$d.day}{if $d.link}*{/if}{if $d.hig
 a day with content links to {foreach $month.weeks as $week}{foreach $week as $d}{if and( $d, $d.link )}{$d.link} {/if}{/foreach}{/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 August 2018 (previous: July /content/view/archive/144/(year)/2018/(month)/7; next: false)

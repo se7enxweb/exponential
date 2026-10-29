@@ -46,7 +46,7 @@ Die Punkte, die für einen Shop am wichtigsten sind:
 | robots.txt | Warenkorb, Kasse und Kontoseiten aus der Suche heraushalten | [robots.txt](../../ersteller/website-ersteller/robots-txt.md) |
 | Weiterleitungen für entfernte Produkte | Alte Links führen noch irgendwohin | [Weiterleitungen und verschobene Inhalte](../../ersteller/website-ersteller/weiterleitungen-und-verschobene-inhalte.md) |
 
-Auf alpha trägt die Produktklasse ein Feld `xrowmetadata` für Metadaten
+Auf einer Entwicklungsinstallation trägt die Produktklasse ein Feld `xrowmetadata` für Metadaten
 ([xrowmetadata](../../../funktionen/6.0/erweiterungen/xrowmetadata.md)); Sitemaps kommen von `bcgooglesitemaps` oder
 `xrowmetadata` ([XML-Sitemaps](../../ersteller/website-ersteller/sitemaps.md#eine-erweiterung-wählen)).
 

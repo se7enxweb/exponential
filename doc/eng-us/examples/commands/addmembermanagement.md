@@ -37,7 +37,7 @@ Example: php bin/php/addmembermanagement.php --dry-run
 | Option | Value | Help |
 |---|---|---|
 | `--dry-run` |  | List what would be created, added and assigned; change nothing |
-| `--rule:*` |  |  |
+| `--rule` | required | Only this rule ([MemberRule_<name>]), may be repeated |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

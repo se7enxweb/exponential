@@ -3,7 +3,7 @@ title: Referenz der Attribute von Inhaltsobjekten
 audience: developer, designer, app-creator
 category: development
 order: 220
-summary: Jedes Attribut, das ein Template von einem Inhaltsobjekt (eZContentObject) lesen kann - die 12 Datenbankfelder und die 65 Funktionsattribute seiner Definition, die PHP-Methode hinter jedem und der Wert, den jedes für einen echten Artikel auf alpha zurückgab.
+summary: Jedes Attribut, das ein Template von einem Inhaltsobjekt (eZContentObject) lesen kann - die 12 Datenbankfelder und die 65 Funktionsattribute seiner Definition, die PHP-Methode hinter jedem und der Wert, den jedes für einen echten Artikel auf einer Entwicklungsinstallation zurückgab.
 keywords: Attribute von Inhaltsobjekten, eZContentObject, definition, function_attributes, data_map, current, versions, main_node, assigned_nodes, verwandte Objekte, Zustände, Sprachen, Referenz, content object attributes, related objects, states, languages, reference
 type: help
 ---
@@ -18,7 +18,7 @@ type: help
 1. [Wie diese Tabelle entstand](#wie-diese-tabelle-entstand)
 2. [Datenbankfelder](#datenbankfelder)
 3. [Funktionsattribute](#funktionsattribute)
-4. [Ein Beispiel auf alpha](#ein-beispiel-auf-alpha)
+4. [Ein Beispiel](#ein-beispiel)
 5. [Hinweise](#hinweise)
 6. [Verwandte Seiten](#verwandte-seiten)
 
@@ -29,7 +29,7 @@ Dasselbe nur lesende Skript wie für die [Knotenattribute](referenz-der-knotenat
 
 ## Datenbankfelder
 
-| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf alpha (Knoten 96) |
+| Attribut | Datenbankspalte / Mitglied | Datentyp | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|---|
 | `id` | `ID` | integer | integer 94 |
 | `section_id` | `SectionID` | integer | integer 1 |
@@ -49,7 +49,7 @@ Dasselbe nur lesende Skript wie für die [Knotenattribute](referenz-der-knotenat
 `name` und `remote_id` stehen in beiden Listen; ein Template liest die Funktionsattribute (`name()`, `remoteID()`). `name()` gibt den Namen in
 der aktuellen Sprache des Objekts zurück, das Feld `Name` den am Objekt gespeicherten Namen.
 
-| Funktionsattribut | PHP-Methode | Wert auf alpha (Knoten 96) |
+| Funktionsattribut | PHP-Methode | Wert auf einer Entwicklungsinstallation (Knoten 96) |
 |---|---|---|
 | `current` | `eZContentObject::currentVersion()` | Objekt eZContentObjectVersion |
 | `published_version` | `eZContentObject::publishedVersion()` | integer 1 |
@@ -117,7 +117,7 @@ der aktuellen Sprache des Objekts zurück, das Feld `Name` den am Objekt gespeic
 | `state_identifier_array` | `eZContentObject::stateIdentifierArray()` | array(2) aus string |
 | `section_identifier` | `eZContentObject::sectionIdentifier()` | string "standard" |
 
-## Ein Beispiel auf alpha
+## Ein Beispiel
 
 ```tpl
 {def $object = fetch( 'content', 'node', hash( 'node_id', 96 ) ).object}
@@ -132,7 +132,7 @@ related objects:     {$object.related_contentobject_count}, reverse related: {$o
 owner is a user:     {cond( $object.owner.class_identifier|eq( 'user' ), 'yes', 'no' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 id / class:          94 / ng_article (44)

@@ -25,7 +25,7 @@ php bin/php/benchmark.php --help
 |---|---|---|
 | `--base` | required | Server to measure (default: https:// and the SiteURL of the siteaccess) |
 | `--compare` | required | Two or more servers, comma separated, measured back to back (A/B) |
-| `--url:*` |  |  |
+| `--url` | required | A URL or path to measure; repeat it for more |
 | `--urls-file` | required | A file with one URL or path per line (# starts a comment) |
 | `--pages` | required | How many pages of the menu the default list takes (default 3) |
 | `--no-admin` |  | Leave the admin login page out of the default list |
@@ -42,9 +42,9 @@ php bin/php/benchmark.php --help
 | `--cold-clear` |  | Clear the content view cache once before the run (this installation only) |
 | `--insecure` |  | Do not verify TLS certificates (self-signed servers) |
 | `--auth` | required | HTTP basic auth, user:password (or the EXP_BENCHMARK_AUTH variable) |
-| `--header:*` |  |  |
+| `--header` | required | An extra request header, "Name: value"; repeat it for more |
 | `--cookie` | required | A Cookie header to send, e.g. to measure a signed-in page |
-| `--resolve:*` |  |  |
+| `--resolve` | required | host:port:address, as curl --resolve, to reach a host at another address |
 | `--http` | required | HTTP version: 1.1 or 2 (default: what curl negotiates) |
 | `--encoding` | required | The Accept-Encoding to send (default gzip; "none" for none) |
 | `--timeout` | required | Seconds per request (default 30) |
@@ -54,7 +54,7 @@ php bin/php/benchmark.php --help
 | `--repeat` | required | kernel: runs of every probe (default 20); micro: measured iterations of every probe (default 30) |
 | `--boot-repeat` | required | kernel: new processes for boot and the cold render (default 5) |
 | `--node` | required | kernel: the node to render and fetch (default: the front page) |
-| `--probe:*` |  |  |
+| `--probe` | required | kernel, micro: only these probes; repeat it for more |
 | `--json` |  | Print the run as JSON |
 | `--csv` |  | Print the rows as CSV |
 | `--save` | required | Write the run as JSON to this file |

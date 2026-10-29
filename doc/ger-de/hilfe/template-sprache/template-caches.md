@@ -40,7 +40,7 @@ Die Caches, die der Kernel kennt, stehen in `eZCache::fetchList()` (`kernel/clas
 | Übersetzung | `translation` | i18n | | immer |
 
 `php bin/php/ezcache.php --list-ids` und `--list-tags` geben die vollständige Liste einer Installation aus, mit den Caches der Erweiterungen.
-Die template-bezogenen Einstellungen auf dem Siteaccess `site` von alpha:
+Die template-bezogenen Einstellungen auf dem Siteaccess `site` einer Entwicklungsinstallation:
 
 ```tpl
 TemplateCompile:  {ezini( 'TemplateSettings', 'TemplateCompile' )}
@@ -51,7 +51,7 @@ ViewCaching:      {ezini( 'ContentSettings', 'ViewCaching' )}
 CachedViewModes:  {ezini( 'ContentSettings', 'CachedViewModes' )}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 TemplateCompile:  enabled
@@ -82,7 +82,7 @@ Die [Design-Ressource](template-ressourcen-und-overrides.md) hält zwei Nachschl
 ## Der Content-View-Cache
 
 `content/view` speichert das ganze `$Result` einer Knotenansicht (HTML, `content_info`, die persistente Variable, die Liste der genutzten
-Templates) für die Ansichtsmodi in `[ContentSettings] CachedViewModes` (`full;sitemap;pdf;googlesitemap` auf alpha). Der Name der
+Templates) für die Ansichtsmodi in `[ContentSettings] CachedViewModes` (`full;sitemap;pdf;googlesitemap` auf einer Entwicklungsinstallation). Der Name der
 Cache-Datei ist ein Hash aus (`eZNodeviewfunctions::generateViewCacheFile()`):
 
 - Knoten-ID, Ansichtsmodus, Sprache, Offset, Layout;
@@ -102,7 +102,7 @@ Lebensdauer in Sekunden. Leeren mit `--clear-id=content`.
 ## Der Template-Block-Cache (cache-block)
 
 `cache-block` speichert die Ausgabe eines Teils eines Templates (`lib/eztemplate/classes/eztemplatecachefunction.php`,
-`eztemplatecacheblock.php`). Nicht auf alpha ausgeführt: Das Rendern eines cache-block schreibt eine Cache-Datei, dieses Beispiel wird also ohne
+`eztemplatecacheblock.php`). Nicht auf einer Entwicklungsinstallation ausgeführt: Das Rendern eines cache-block schreibt eine Cache-Datei, dieses Beispiel wird also ohne
 Ausgabe gezeigt:
 
 ```tpl

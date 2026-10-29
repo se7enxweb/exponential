@@ -3,7 +3,7 @@ title: Icon operators
 audience: developer, designer, app-creator
 category: development
 order: 320
-summary: The eight operators of eZWordToImageOperator - class_icon, classgroup_icon, mimetype_icon, action_icon, icon, flag_icon, icon_info and wordtoimage - with their positional parameters, the icon.ini theme and size lookup, and examples rendered on alpha.
+summary: The eight operators of eZWordToImageOperator - class_icon, classgroup_icon, mimetype_icon, action_icon, icon, flag_icon, icon_info and wordtoimage - with their positional parameters, the icon.ini theme and size lookup, and examples rendered on a development installation.
 keywords: class_icon, classgroup_icon, mimetype_icon, action_icon, icon, flag_icon, icon_info, wordtoimage, icon.ini, wordtoimage.ini, icon theme, crystal, bootstrap-icons, eZWordToImageOperator
 type: help
 ---
@@ -26,7 +26,7 @@ theme (`StandardTheme`) and the default size (`Size=normal`). `eZWordToImageOper
 themes to try:
 
 1. a type's own `Theme` (`[ClassIcons] Theme` and so on) when set, otherwise the design's theme from
-   `DesignTheme[<SiteDesign>]` (on alpha `admin4` and `admin4l` use `bootstrap-icons`), otherwise `Theme`;
+   `DesignTheme[<SiteDesign>]` (on a development installation `admin4` and `admin4l` use `bootstrap-icons`), otherwise `Theme`;
 2. then `Theme` when a design theme replaced it, then `AdditionalThemeList[]`, then `StandardTheme`.
 
 For each theme it looks in the `icons/` folder of every extension in `[ExtensionSettings] IconExtensions[]` and then
@@ -87,7 +87,7 @@ Generated page: [icon](../../examples/template-operators/icon.md). Input: an ico
 9 {'role'|icon( 'small', 'Roles' )}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 1 <img src="/share/icons/crystal/16x16/filesystems/folder.png" width="16" height="16" alt="folder" title="folder" />
@@ -136,7 +136,7 @@ folder icon={$info.icons.folder}
 mapped classes={$info.icons|count}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 theme=crystal repository=share/icons
@@ -161,7 +161,7 @@ image tags).
 {'Nice day :-)'|wordtoimage}
 ```
 
-Output on alpha:
+Output:
 
 ```text
 Nice day <img src="/share/icons/happy.gif" alt="happy"/>

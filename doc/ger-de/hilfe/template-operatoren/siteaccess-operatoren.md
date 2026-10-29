@@ -3,7 +3,7 @@ title: Siteaccess-Operatoren
 audience: developer, designer, app-creator
 category: development
 order: 360
-summary: Die Kernel-Operatoren, die die Siteaccesses einer Installation kennen - siteaccess_url, siteaccess_menu, siteaccess_menu_key und language_switcher - mit ihren Parametern, den Einstellungen dahinter, was sie zurückgeben, wie sie kompiliert werden, und Beispielen, auf alpha mit drei verschiedenen Siteaccesses gerendert.
+summary: Die Kernel-Operatoren, die die Siteaccesses einer Installation kennen - siteaccess_url, siteaccess_menu, siteaccess_menu_key und language_switcher - mit ihren Parametern, den Einstellungen dahinter, was sie zurückgeben, wie sie kompiliert werden, und Beispielen, auf einer Entwicklungsinstallation mit drei verschiedenen Siteaccesses gerendert.
 keywords: Siteaccess, Sprachumschalter, Siteaccess-Menü, Startseite, Adresse, siteaccess_url, siteaccess_menu, siteaccess_menu_key, language_switcher, siteaccess, AdminSiteAccessMenu, FrontSiteAccess, TranslationSA, LanguageSwitcherClass, switchlanguage, ezpSiteAccessURL, ezpSiteAccessMenu
 type: help
 ---
@@ -53,12 +53,12 @@ Port gleichermaßen. Sie wird weder in Anführungszeichen gesetzt noch maskiert.
 4 not available: {siteaccess_url( 'nosuchsite' )|get_type}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
-1 front: http://alpha.se7enx.com/site/
-2 bold: http://alpha.se7enx.com/bold/
-3 starter_ger: http://alpha.se7enx.com/starter_ger/
+1 front: http://www.example.com/site/
+2 bold: http://www.example.com/bold/
+3 starter_ger: http://www.example.com/starter_ger/
 4 not available: string[0]
 ```
 
@@ -95,11 +95,11 @@ front: {$menu.front.identifier} {$menu.front.display_url}
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 enabled=yes key length=32
-front: site admin.alpha.se7enx.com/site
+front: site admin.example.com/site
 site: bold (eng-US), bold_ger (ger-DE), editor (eng-US), starter (eng-US), starter_ger (ger-DE)
 ```
 
@@ -132,7 +132,7 @@ Generierte Seite: [language_switcher](../../beispiele/template-operatoren/langua
 
 Wenn das Ziel kein `?` enthält, wird der Query-String der aktuellen Anfrage angehängt. Die `url` ist ein Pfad für `ezurl`,
 das das Präfix des aktuellen Siteaccess ergänzt; die Ansicht `switchlanguage/to` (`kernel/private/modules/switchlanguage/to.php`)
-fragt dieselbe Klasse nach der Adresse des Ziels im anderen Siteaccess und leitet dorthin weiter. Auf alpha setzen nur
+fragt dieselbe Klasse nach der Adresse des Ziels im anderen Siteaccess und leitet dorthin weiter. Auf einer Entwicklungsinstallation setzen nur
 einige Siteaccesses `TranslationSA`; auf `starter` gerendert:
 
 ```tpl
@@ -144,7 +144,7 @@ TranslationSA has {ezini( 'RegionalSettings', 'TranslationSA' )|count} entries
 {/foreach}
 ```
 
-Ausgabe auf alpha:
+Ausgabe:
 
 ```text
 TranslationSA has 2 entries

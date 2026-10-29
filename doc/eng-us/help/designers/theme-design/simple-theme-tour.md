@@ -119,7 +119,7 @@ consider:
 
 ## Related pages
 
-- [The themes that ship with Exponential](themes-on-alpha.md)
+- [The themes that ship with Exponential](themes-that-ship-with-exponential.md)
 - [The ezwebin design as a base](ezwebin-as-a-base.md)
 - [Loading stylesheets](loading-stylesheets.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
