@@ -46,7 +46,12 @@ your own LiteSpeed version.
    cp .htaccess_root .htaccess
    ```
 
-   Use `.htaccess_root_static` instead only when the site serves a generated static cache
+   or, as the site's user, `./console exp:setup:htaccess --apply`
+   ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
+   LiteSpeed Enterprise reads it on the next request. OpenLiteSpeed reads only the rewrite rules, only with
+   `autoLoadHtaccess` on and only after a restart; put the rules in its virtual host instead
+   ([LiteSpeed example](../../../examples/web-servers/litespeed.md)).
+   Use `.htaccess_root_static` instead (`--static`) only when the site serves a generated static cache
    ([Static cache](../performance/static-cache.md)).
 3. **PHP:** 8.0 or later with the required extensions ([Chapter 2](../../../install/02-requirements.md#23-php-extensions)),
    `memory_limit` at least 64M (the setup wizard's floor; give production more), `date.timezone` set, `file_uploads`
@@ -95,7 +100,7 @@ must be trusted and must set `X-Forwarded-Proto` ([Chapter 8, Behind a reverse p
 - [ ] Web and CLI PHP are the same version with the same extensions.
 - [ ] The routing checks and the tests above pass on a staging account.
 - [ ] `open_basedir` effects on preload and other background runs are known and documented for support.
-- [ ] After each upgrade, `.htaccess` is refreshed from the new `.htaccess_root`.
+- [ ] After each upgrade, `.htaccess` is refreshed from the new `.htaccess_root` (`./console exp:setup:htaccess` shows the diff; `--force --apply` copies after a backup).
 
 **Demo mode on LiteSpeed.** LiteSpeed reads `SetEnv` in `.htaccess` like Apache and passes it to `lsphp`: `SetEnv EXP_DEMO_MODE 1` in a public demo's `.htaccess` switches demo mode on for its web requests, and `security.log` then shows `demo/mode on ... sapi=litespeed`. [Recipe: run a public demo on LiteSpeed and Plesk](run-a-public-demo-on-litespeed-and-plesk.md).
 
@@ -105,6 +110,7 @@ must be trusted and must set `X-Forwarded-Proto` ([Chapter 8, Behind a reverse p
 - [Shared hosting](../models/shared-hosting.md)
 - [Choosing a web server](choosing-a-web-server.md)
 - [Operating system support](../../os-support.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

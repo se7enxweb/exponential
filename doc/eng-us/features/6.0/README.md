@@ -38,6 +38,7 @@ nginx with PHP-FPM keep working as before.
 
 - [Installing Exponential in one command](install-in-one-command.md)
 - [Kickstarter: install a whole site from one file](kickstarter-cli.md)
+- [Console commands for .htaccess and config.php](setup-files-and-config-php-commands.md)
 - [What a new installation comes with: the default extension distribution](default-extension-distribution.md)
 - [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)
 - [The setup wizard's new look, and the editor siteaccess](setup-wizard-and-editor-siteaccess.md)

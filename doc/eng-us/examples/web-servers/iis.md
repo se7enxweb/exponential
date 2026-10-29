@@ -18,6 +18,10 @@ rewrite rules of `.htaccess_root`, request filtering and the security headers.
 > requests below before you rely on it, and compare it with `.htaccess_root` after every upgrade. See
 > [Operating system support](../../help/os-support.md) for what is known about Windows.
 
+IIS never reads `.htaccess`: `exp:setup:htaccess` does not protect an IIS site, `web.config` does. `config.php` is
+put into place and edited the same way on every server, with `exp:setup:config` and `exp:config:set`; see
+[Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 ## Install it
 
 1. Install IIS with the **CGI** feature (it brings FastCGI), the
@@ -224,4 +228,5 @@ foreach ($p in '/.git/config','/.env','/kernel/classes/ezini.php','/extension/ez
 - [Apache .htaccess](apache-htaccess.md): the rules explained one by one.
 - [Chapter 13, section 13.2: What the web server must never hand out](../../install/13-security-hardening.md#132-what-the-web-server-must-never-hand-out).
 - [Operating system support](../../help/os-support.md), [Web server examples](README.md) and [all examples](../README.md).
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): which servers read `.htaccess`, and `config.php`.
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

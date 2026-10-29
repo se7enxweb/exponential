@@ -36,6 +36,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:clusterize](clusterize.md) |  | Move var files into the database cluster storage (-u moves them back) |
 | [exp:clusterpurge](clusterpurge.md) |  | Physically purge the cluster files of the given scopes (--scopes=scope1,scope2; dry run unless --apply) |
 | [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Build sample content for the collaboration tool (approvals, comments, groups), or remove it again (dry run unless --apply) |
+| [exp:configphp](configphp.md) | exp:config:list, exp:config:get, exp:config:set, exp:config:unset | List, read, set and unset the define() settings of config.php, typed and checked with php -l, documented by config.php-RECOMMENDED (set and unset: dry run unless --apply) |
 | [exp:contentcheck](contentcheck.md) | exp:content-check | Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only; --fix, --quarantine and --fix-permissions are a dry run unless --apply) |
 | [exp:convertezenumtoezselection](convertezenumtoezselection.md) |  |  |
 | [exp:convertprice2multiprice](convertprice2multiprice.md) |  | Convert content objects with 'price' datatype attributes to 'multiprice' |
@@ -107,6 +108,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:publish_content](publish_content.md) |  |  |
 | [exp:resetuserpassword](resetuserpassword.md) |  | Reset a user password with admin authentication or root bypass |
 | [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Compile, list, show and check the kernel service container (verbs compile, list, show, check) |
+| [exp:setupfiles](setupfiles.md) | exp:setup:htaccess, exp:setup:config, exp:setup:status | Copy .htaccess_root (or .htaccess_root_static) to .htaccess and config.php-RECOMMENDED to config.php, with a diff, a backup and --force for an existing file (dry run unless --apply) |
 | [exp:solr](solr.md) | exp:search | Control the Solr search server, once it is installed and configured |
 | [exp:systeminfo](systeminfo.md) | exp:system:info | The facts and health checks of Setup > System information, as text or JSON (--json, --sizes) |
 | [exp:trashpurge](trashpurge.md) |  | Permanently delete all objects in the trash (dry run unless --apply) |

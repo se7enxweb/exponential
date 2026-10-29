@@ -708,6 +708,18 @@ define( 'CUSTOM_LOG_MAX_FILE_SIZE', 10485760 );       // logs written through eZ
 define( 'CUSTOM_LOG_ROTATE_FILES', 10 );
 ```
 
+Ohne Editor schreibt die Konsole dieselben Zeilen (vorher eine Sicherung von `config.php`, eine Prüfung mit `php -l`,
+bevor die Datei ersetzt wird); `./console exp:setup:config --apply` legt `config.php` aus der Vorlage an, wenn es
+noch keine gibt:
+
+```bash
+./console exp:config:set EZPUBLISH_LOG_MAX_FILE_SIZE 10485760 --apply
+./console exp:config:set EZPUBLISH_LOG_ROTATE_FILES 10 --apply
+./console exp:config:list --only-set
+```
+
+Siehe [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md).
+
 **System-Rotation.** Dateien, die der Kernel nicht selbst schreibt (Ihre Dateien `cron-*.log`), brauchen logrotate
 des Systems. Wenn Sie die eingebaute Rotation ausschalten, übernimmt logrotate auch die Logs des Kernels:
 
@@ -956,7 +968,7 @@ eine ist, und nach einer Änderung an einer `.ts`-Datei leeren Sie `--clear-tag=
 5. Eine Sicherung wurde erstellt **und** auf einem anderen Rechner **wiederhergestellt**.
 6. `var/log/error.log` enthält nichts, was Sie nicht erklären können.
 7. Eine Benchmark-Baseline ist in `var/benchmark/` gespeichert.
-8. Die Logs rotieren (eingebaute Grenzen in `config.php`, logrotate für Cron-Logs).
+8. Die Logs rotieren (eingebaute Grenzen in `config.php`, siehe `./console exp:config:list --only-set`; logrotate für Cron-Logs).
 9. Hinter einem Proxy auf einem anderen Rechner: Seine Adresse steht in `TrustedProxies[]`, und HTTPS-Seiten verlinken
    auf `https://`.
 
@@ -1010,7 +1022,7 @@ In diesem Repository:
 - [Benchmark](../funktionen/6.0/benchmark.md), [Wartungsmodus](../funktionen/6.0/wartungsmodus.md),
   [Ein Benutzerpasswort zurücksetzen](../funktionen/6.0/benutzerpasswort-zuruecksetzen.md), [Ihr Passwort ändern](../funktionen/6.0/moderne-passwortaenderung.md),
   [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md).
-- [Vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md), [exp:ini](../funktionen/6.0/exp-ini-befehl.md), [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md),
+- [Vertrauenswürdige Proxys](../bc/6.0/vertrauenswuerdige-proxys.md), [exp:ini](../funktionen/6.0/exp-ini-befehl.md), [.htaccess und config.php von der Konsole aus einrichten](../anleitungen/setup-dateien-von-der-konsole.md), [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-extensions.md),
   [Zusätzliche Extension-Verzeichnisse](../bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md),
   [Einstellungen je Site innerhalb von Extensions](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md),
   [Übersetzungen und Sprachen](../funktionen/6.0/uebersetzungen-und-sprachen.md).

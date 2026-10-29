@@ -116,6 +116,21 @@ composer install
 rest. After the code has changed, `composer.json` and `composer.lock` must match: `composer install` that ends
 without an error proves it.
 
+**Compare your files with the new templates.** A release can change `.htaccess_root`, `.htaccess_root_static` and
+`config.php-RECOMMENDED`; your `.htaccess` and `config.php` stay as they are. Check them (nothing is written without
+`--apply`):
+
+```bash
+./console exp:setup:status                     # is .htaccess still a copy of a template?
+./console exp:setup:htaccess                   # the diff between your .htaccess and the new template
+./console exp:setup:htaccess --force --apply   # take the new rules (backup first), when the diff holds nothing of yours
+./console exp:config:list                      # settings new in config.php-RECOMMENDED show up as (not set)
+```
+
+Set the new settings you want with `./console exp:config:set <NAME> <value> --apply`; the settings you had keep their
+values. Use `--static` with `exp:setup:htaccess` when the site serves the static cache. See
+[Setting up .htaccess and config.php from the console](guides/setup-files-from-the-console.md#12-after-an-upgrade).
+
 ## 5. Update the database
 
 The database update files are in `update/database/<engine>/6.0/`:
@@ -227,6 +242,7 @@ next version, so the way forward after a rollback is the next release, not a pat
 - [Upgrading](guides/upgrading.md): from 4.x, 5.x, 5.90 or LoveStack, and every checklist per period of 6.0.
 - [Uninstalling Exponential 6.0](UNINSTALL.md): the full data export, then the removal.
 - [The upgrade check](guides/upgrade-check.md) and [the file manifest](features/6.0/file-consistency-check.md).
+- [Setting up .htaccess and config.php from the console](guides/setup-files-from-the-console.md): compare both files with the new templates.
 - [Operating a site](guides/operating-a-site.md): backups, caches, cronjobs and repairs.
 - [Deploying](guides/deploying.md) and [Velocity engines](bc/6.0/velocity-engines.md): reload the right PHP-FPM.
 - The installation book: [Upgrading](install/11-upgrading.md).

@@ -34,8 +34,8 @@ practical meaning is: do not loosen a default to make something work; find the c
 
 | Layer | Do | Page in this section |
 |---|---|---|
-| 1. Web server | current rewrite rules (`.htaccess_root` or the derived nginx block); nothing below the root executed; dot files 404 | File uploads and SVG; HTTPS and HSTS |
-| 2. Secrets | `settings/override/` never in version control, mode 0640, backed up as a secret | Secrets in settings/override |
+| 1. Web server | current rewrite rules (`.htaccess_root` or the derived nginx block; `./console exp:setup:htaccess` exits 1 when `.htaccess` has drifted); nothing below the root executed; dot files 404 | File uploads and SVG; HTTPS and HSTS |
+| 2. Secrets | `settings/override/` and `config.php` never in version control, mode 0640, backed up as a secret; old copies in `var/backup/` removed | Secrets in settings/override; [config.php from the console](../../../guides/setup-files-from-the-console.md#10-security) |
 | 3. Administration | its own host name, restricted by network or a second authentication, `RequireUserLogin=true`, setup wizard closed | Separating the administration |
 | 4. Accounts | one personal account per person, `admin` retired, least-privilege roles | Roles and least privilege |
 | 5. Sign-in | two-step sign-in, password policy, lockout decision | Two-step sign-in; Password policy; Account lockout |
@@ -66,6 +66,7 @@ practical meaning is: do not loosen a default to make something work; find the c
 - [Chapter 13: Security hardening for production](../../../install/13-security-hardening.md)
 - [Security and audit: lock it down, see who did what](../../../guides/security-and-audit.md)
 - [Security for hosts](../../hosting/security/README.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

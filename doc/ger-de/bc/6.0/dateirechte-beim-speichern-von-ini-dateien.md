@@ -91,6 +91,17 @@ Beide sind in `config.php-RECOMMENDED` auskommentiert, mit diesen Standardwerten
 `EZP_INI_FILE_PERMISSION` als `0666`, ändern Sie es auf `0644`: Es wirkt sich nicht mehr auf Einstellungsdateien aus,
 macht aber die Cache-Dateien weiterhin für alle beschreibbar.
 
+Beide lassen sich von der Konsole aus lesen und setzen; `exp:config:set` zeigt die Änderung zuerst und schreibt sie
+erst mit `--apply`, nach einer Sicherung:
+
+```bash
+./console exp:config:get EZP_INI_FILE_PERMISSION
+./console exp:config:set EZP_INI_FILE_PERMISSION 0644 --apply
+./console exp:config:set EZP_INI_SAVE_FILE_PERMISSION 0640 --apply
+```
+
+Siehe [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md).
+
 ## Eine Installation einmal korrigieren
 
 ```bash
@@ -123,3 +134,4 @@ beide den neuen Code verwenden.
 - [Installationsanleitung, 13.11 Dateirechte und Besitz](../../installation/13-sicherheitshaertung.md#1311-dateiberechtigungen-und-eigentümer)
 - [eZINI behält Kommentare beim Speichern](ezini-behaelt-kommentare.md)
 - [exp:ini](console-exp-ini.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md): `exp:config:*` für die Konstanten in `config.php`

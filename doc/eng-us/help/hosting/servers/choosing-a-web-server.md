@@ -39,7 +39,7 @@ Taken from [Chapter 8, The choice in one table](../../../install/08-serving-the-
 | Separate HTTPS or certificate tool needed | no: own certificates, self-signed fallback, ACME | no: your certificate or a self-signed one | yes (`mod_ssl` plus certbot or a panel) | yes |
 | Application kept in memory between requests | yes (persistent workers) | no (clean state per request) | no | no |
 | Response cache in front of PHP | yes | not yet | no (the kernel's own caches only) | no |
-| Rewrite rules | built in | generated Caddyfile | `.htaccess_root` | written by you |
+| Rewrite rules | built in | generated Caddyfile | `.htaccess_root` (`exp:setup:htaccess --apply`) | written by you |
 | Suits shared hosting | usually not | usually not | yes | rarely |
 
 Other servers that can rewrite a URL to `index.php` work as well. The README lists LiteSpeed and OpenLiteSpeed,
@@ -143,6 +143,7 @@ Tested on staging on:           <date>, by <role>
 - [Apache with PHP-FPM](apache-with-php-fpm.md)
 - [Choosing a hosting model](../models/choosing-a-hosting-model.md)
 - [Choosing hosting, database and operating system](../../leadership/choosing-hosting-database-and-os.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md): which servers read `.htaccess`
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

@@ -78,7 +78,7 @@ Führen Sie ihn als Benutzer der Website aus, damit die Dateien für den Webserv
 
 | Einrichtung | Was Sie nutzen |
 |---|---|
-| Apache mit `.htaccess` | kopieren Sie `.htaccess_root_static` statt `.htaccess_root` nach `.htaccess`; es ist `.htaccess_root` plus die Regeln zur Auslagerung |
+| Apache mit `.htaccess` | kopieren Sie `.htaccess_root_static` statt `.htaccess_root` nach `.htaccess`; es ist `.htaccess_root` plus die Regeln zur Auslagerung. Von der Konsole aus: `./console exp:setup:htaccess --static --apply` (mit `--force`, um eine vorhandene `.htaccess` zu ersetzen; sie wird vorher gesichert) |
 | Virtueller Host für Apache | die Regeln aus [doc/eng-us/examples/staticcache_offload.conf](../../../../eng-us/examples/staticcache_offload.conf) im Abschnitt `<Directory>` des vhost der **öffentlichen** Website |
 | andere Server | bilden Sie dieselben Bedingungen nach (Methode, leerer Query-String, kein Sitzungscookie, Datei existiert) |
 
@@ -122,6 +122,7 @@ verließen; siehe [Standardwerte des statischen Caches](../../../bc/6.0/standard
 - [Antwort-Cache von Velocity](antwort-cache-von-velocity.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md)
 - [Generator für den statischen Cache](../../../funktionen/6.0/generator-fuer-den-statischen-cache.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

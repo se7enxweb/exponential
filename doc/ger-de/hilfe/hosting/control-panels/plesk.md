@@ -77,6 +77,24 @@ cd /var/www/vhosts/<domain>/<docroot>
 cp .htaccess_root .htaccess
 ```
 
+Oder lassen Sie die Konsole kopieren und bringen Sie `config.php` auf dieselbe Weise an ihren Platz. Im **SSH-Terminal**
+von Plesk (oder per SSH-Anmeldung) als Systembenutzer des Abonnements, mit dem PHP der Domain:
+
+```bash
+cd /var/www/vhosts/<domain>/<docroot>
+/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:status
+/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:htaccess --apply    # .htaccess_root -> .htaccess
+/opt/plesk/php/<version>/bin/php bin/php/console exp:setup:config --apply      # config.php-RECOMMENDED -> config.php
+```
+
+Die Dateien gehören dann dem Benutzer des Abonnements, wie alles andere im Docroot. Als root braucht jeder Befehl
+`--allow-root-user`; eine neue Datei erhält den Eigentümer der Vorlage (niemals root), und
+`--owner=<abonnement-benutzer>:psacln` setzt ihn ausdrücklich. Ohne `--apply` wird nichts geschrieben, und eine
+vorhandene, abweichende Datei wird als Diff gezeigt und behalten, solange Sie nicht `--force` angeben (die alte kommt
+vorher nach `var/backup/setup/<zeit>/`). Der **Dateimanager** von Plesk kann die einfache Kopie ebenfalls anlegen,
+übernimmt aber den Modus nicht und zeigt keinen Diff. Alles dazu:
+[.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md).
+
 Die PHP-Werte, die der Setup-Assistent prüft (`memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`,
 `file_uploads`, `allow_url_fopen`), werden in den PHP-Einstellungen der Domain gesetzt
 ([2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)). Die Notizen zur MongoDB-Portierung setzen FPM-Direktiven wie
@@ -191,7 +209,7 @@ Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselbe
 ## Checkliste
 
 - [ ] PHP-Version der Domain 8.0 oder später (auch für Velocity); „FPM application served by Apache“.
-- [ ] Document Root = Wurzelverzeichnis der Installation; `.htaccess` aus `.htaccess_root` kopiert.
+- [ ] Document Root = Wurzelverzeichnis der Installation; `.htaccess` aus `.htaccess_root` kopiert (`exp:setup:status` bestätigt es).
 - [ ] Mit SOAP an: `index_soap.php` in **Zusätzliche Direktiven für HTTPS** (oder `.htaccess`) durchgelassen, nicht nur
       das alte `soap.php` ([Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../../bc/6.0/soap-einstiegsskript-index-soap.md#plesk)).
 - [ ] Composer, Konsole und Cron nutzen `/opt/plesk/php/<version>/bin/php`.
@@ -207,6 +225,7 @@ Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselbe
 - [Control Panels: Überblick](README.md)
 - [Apache mit PHP-FPM](../server/apache-mit-php-fpm.md), [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-nginx.md)
 - [Kapitel 8: Die Website ausliefern](../../../installation/08-die-website-ausliefern.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

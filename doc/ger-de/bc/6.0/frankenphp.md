@@ -674,6 +674,10 @@ dieser Codebasis brachte OPcache allein den Großteil des Gewinns (~+26 %); das 
 *langsamer* und fehlt bewusst. Behalten Sie `revalidate_freq=0`, damit bearbeitete/neu erzeugte PHP-Dateien bemerkt
 werden.
 
+Das gilt auch für `config.php`: Ein mit `./console exp:config:set <NAME> <Wert> --apply` gesetzter Wert gilt ab der
+nächsten Anfrage. FrankenPHP liest `.htaccess` nicht; das erzeugte Caddyfile enthält das Routing
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
+
 ### Stellschrauben der Go-Laufzeit
 
 FrankenPHP ist ein Go-Programm; die Umgebungsvariablen der Go-Laufzeit gelten und können über die Umgebung des
@@ -923,3 +927,4 @@ tail -n 50 var/vc/frankenphp/log/error.log | jq .
 - [Chronik, 16. bis 30. September 2026](../../geschichte/2026/2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Anleitung zum Bereitstellen](../../anleitungen/bereitstellung.md)
+- [.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)

@@ -405,9 +405,9 @@ Git repository; the others are created by Composer or at run time.
 | `autoload.php` | Loads Composer's autoloader and the kernel's; every entry point starts with it. |
 | `ezpm.php` | The package manager on the command line. |
 | `composer.json` | The requirements: PHP, extensions, Zeta Components. `composer.dev.json` holds the development tools of `make devtools` (installed into `.devtools/`); `composer.json.dist` is an older upstream manifest kept for reference. |
-| `.htaccess_root` | Apache rewrite rules; copy to `.htaccess` (`cp .htaccess_root .htaccess`). `.htaccess_root_static` is the same with the rules that serve the static cache ahead of the application. |
+| `.htaccess_root` | Apache rewrite rules; copy to `.htaccess` with `./console exp:setup:htaccess --apply` (or `cp .htaccess_root .htaccess`). `.htaccess_root_static` is the same with the rules that serve the static cache ahead of the application (`exp:setup:htaccess --static --apply`). |
 | `kickstart.ini-dist` | The commented template of `kickstart.ini`; `kickstart.ini--example` is an example. |
-| `config.php-RECOMMENDED` | A documented list of the settings `config.php` can make; rename to `config.php` and uncomment what you need. |
+| `config.php-RECOMMENDED` | A documented list of the settings `config.php` can make. Copy it to `config.php` with `./console exp:setup:config --apply` (or `cp config.php-RECOMMENDED config.php`), list the settings with `./console exp:config:list` and set one with `./console exp:config:set <NAME> <value> --apply` instead of uncommenting it in an editor. See [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md). |
 | `config.env.php.example` | Copy to `config.env.php` to name the machine's environment (`EXP_ENV`); see [Settings per environment](../features/6.0/environment-settings.md). |
 | `exponential.cron`, `ezpublish.cron` | Example crontabs for the cronjobs (`crontab exponential.cron` after setting its two variables, `EXPONENTIALROOT` and `PHP`). |
 | `sw.js`, `index.js` | The site's service worker. |

@@ -71,6 +71,13 @@ Welches Panel auch immer: Eine Exponential-Website braucht ([Kapitel 2](../../..
 | Geplantes `runcronjobs.php` | die Cron-Seite des Panels |
 | HTTPS | die Zertifikatsverwaltung des Panels |
 
+Mit einer Shell (dem Terminal des Panels oder SSH), ausgeführt als eigener Systembenutzer der Website, bringt die
+Konsole die mitgelieferten Vorlagen an ihren Platz: `php bin/php/console exp:setup:htaccess --apply` (`.htaccess_root`
+nach `.htaccess`) und `php bin/php/console exp:setup:config --apply` (`config.php-RECOMMENDED` nach `config.php`). Als
+root ergänzen Sie `--allow-root-user` und `--owner=<benutzer>:<gruppe>`, wenn die Dateien dem Benutzer der Website
+gehören sollen. Ohne Shell legt der Dateimanager des Panels dieselbe Kopie an. Siehe
+[.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md).
+
 ## Velocity auf einem Server mit Panel
 
 Panels verwalten Apache oder nginx und ihre PHP-FPM-Pools. Velocity ist ein getrennter, lang laufender Prozess; auf einem Server
@@ -88,6 +95,7 @@ Siehe [Velocity neben Apache oder nginx](../server/velocity-neben-apache-oder-ng
 
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Shared Hosting](../modelle/shared-hosting.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md)
 - [Betriebssystemunterstützung](../../betriebssystemunterstuetzung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

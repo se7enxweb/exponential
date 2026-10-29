@@ -65,7 +65,11 @@ The following is general advice derived from the Exponential requirements, not f
    extension settings. Use the same version for the command line if the account has a shell.
 2. **Point the domain's document root at the installation root** (the directory with `index.php`).
 3. **Copy the rewrite rules**: `cp .htaccess_root .htaccess` (or upload `.htaccess_root` as `.htaccess`)
-   ([8.5.1](../../../install/08-serving-the-site.md#851-step-by-step)).
+   ([8.5.1](../../../install/08-serving-the-site.md#851-step-by-step)). With cPanel's **Terminal** (or SSH) the console
+   does it for you, as the account's user: `php bin/php/console exp:setup:htaccess --apply`, and
+   `php bin/php/console exp:setup:config --apply` for `config.php`. Without a shell, copy the files in the
+   **File Manager** (it hides dot files until you switch on "Show Hidden Files")
+   ([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)).
 4. **Create the database and its user** in the panel, if not SQLite. For MariaDB or MySQL use `utf8mb4`
    ([9.3](../../../install/09-databases.md#93-mysql-and-mariadb)). Since 6.0.15 the wizard needs privileges on that
    database only ([A clean installation that fits shared hosting](../../../features/6.0/clean-install-defaults.md)).
@@ -133,6 +137,7 @@ project ... and the row moves up" ([The four tiers](../../os-support.md#the-four
 - [Control panels: overview](README.md), [DirectAdmin](directadmin.md)
 - [Shared hosting](../models/shared-hosting.md)
 - [Setup wizard on shared hosting](../provisioning/setup-wizard-on-shared-hosting.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

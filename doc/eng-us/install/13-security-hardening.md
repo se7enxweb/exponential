@@ -102,9 +102,11 @@ section 4):
 
 What you do:
 
-1. **Apache:** `cp .htaccess_root .htaccess` and leave the security rules in it. Do not delete rules to make
-   something work; find the cause instead. If you keep your own `.htaccess` or virtual host rules, compare them with
-   `.htaccess_root` after every upgrade and merge new rules.
+1. **Apache:** `./console exp:setup:htaccess --apply` (or `cp .htaccess_root .htaccess`) and leave the security rules
+   in it. Do not delete rules to make something work; find the cause instead. If you keep your own `.htaccess` or
+   virtual host rules, compare them with `.htaccess_root` after every upgrade and merge new rules:
+   `./console exp:setup:htaccess` shows the diff between your `.htaccess` and the template and exits 1 when they
+   differ, so a monitoring job or CI can catch drift ([Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md)).
 2. **nginx:** use the derived server block of [chapter 8, section 8.6](08-serving-the-site.md#86-nginx-with-php-fpm)
    or an equivalent that keeps the first two rules (dot files, scripts below the root) ahead of every static location.
 3. **Velocity:** nothing to do; `FollowSymlinks=disabled` (the default) also refuses files reached through a symbolic
@@ -774,7 +776,10 @@ Full guide: [Audit](../bc/6.0/audit.md).
 ## 13.16 Go-live checklist
 
 - [ ] Rewrite rules: `.htaccess` is a current copy of `.htaccess_root` (or the derived nginx block, or Velocity);
-      `/.git/config`, `/settings/site.ini`, `/composer.json` do not return the file.
+      `/.git/config`, `/settings/site.ini`, `/composer.json` do not return the file. `./console exp:setup:status`
+      names the template.
+- [ ] `config.php` not in version control; mode `0640` with the web server's group when it holds a password
+      (`exp:config:set` warns when it does not); `var/backup/` (earlier copies of `config.php`) protected and cleaned up.
 - [ ] `settings/override/` not in version control, backed up as a secret, mode `0640` or stricter.
 - [ ] The generated administrator password changed; `var/log/initial-admin-password` deleted.
 - [ ] A personal administrator account per person; `admin` retired as a sign-in; a tested break-glass procedure

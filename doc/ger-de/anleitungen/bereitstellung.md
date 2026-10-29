@@ -34,8 +34,16 @@ Die erste Zeile zeigt die PHP-Version (8.0 oder neuer, auch für Velocity). Die 
 Das Document Root ist das Installationsverzeichnis selbst. Exponential führt seine eigenen Rewrite-Regeln in einer Datei, die Sie durch Kopieren aktivieren:
 
 ```bash
-cp .htaccess_root .htaccess
+./console exp:setup:htaccess --apply      # oder von Hand: cp .htaccess_root .htaccess
 ```
+
+Der Befehl zeigt ohne `--apply`, was er tun würde, kopiert mit dem Modus der Vorlage (und, als root mit
+`--allow-root-user`, mit ihrem Eigentümer) und lehnt mit einem Diff ab, wenn bereits eine abweichende `.htaccess`
+vorhanden ist; `--force --apply` ersetzt sie dann nach einer Sicherung in `var/backup/setup/<time>/`.
+`./console exp:setup:config --apply` legt `config.php` auf dieselbe Weise an, und
+`./console exp:config:set <NAME> <value> --apply` ändert eine ihrer Einstellungen. Siehe
+[.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md), mit einem
+Bereitstellungsskript für Container und CI.
 
 Die Kopie schaltet den auf `.htaccess` basierenden Virtual-Host-Modus ein: Punktdateien, `.git` und Skripte unterhalb der Front-Controller antworten mit 404, `/api/` geht an `index_rest.php`, statische Design-Dateien werden direkt ausgeliefert und alles andere geht an `index.php`. Entfernen Sie keine Sicherheitsregeln daraus, um etwas zum Laufen zu bringen ([Sicherheitsvorgaben](../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md)).
 
@@ -246,6 +254,9 @@ Führen Sie ihn dreimal aus: Die erste Anfrage füllt die Caches, die anderen ze
 - Der Browser zeigt das Schloss auf der HTTPS-Adresse.
 - `./console exp:velocity deploy --dry-run --allow-root-user` listet einen Schritt `reload PHP-FPM` mit dem richtigen Dienst auf.
 - `./console exp:cache status --allow-root-user` zeigt die Ebenen, die Sie erwarten.
+- Apache: `./console exp:setup:status --allow-root-user` meldet `.htaccess` als Kopie von `.htaccess_root` (oder von
+  `.htaccess_root_static`), und `./console exp:config:list --only-set --allow-root-user` zeigt die Einstellungen in
+  `config.php`, die Sie erwarten.
 
 ## In dieser Anleitung verwendete Einstellungen
 
@@ -272,7 +283,8 @@ Alle stehen in `settings/velocity.ini` (ausgelieferte Standardwerte). `exp:veloc
 
 ## Verwandte Seiten
 
-- Funktionen: [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md), [Velocity HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md).
+- Funktionen: [Velocity-Webserver](../funktionen/6.0/velocity-webserver.md), [Velocity HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md), [Installation mit einem Befehl](../funktionen/6.0/installation-mit-einem-befehl.md), [Befehle für .htaccess und config.php](../funktionen/6.0/befehle-fuer-htaccess-und-config-php.md).
+- Anleitung: [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md), mit einem Bereitstellungsskript für Container und CI.
 - Spezifikationen: [Engine-Einstellungen von Velocity](../spezifikationen/6.0/velocity-engine-einstellungen.md), [Worker-Pool](../spezifikationen/6.0/velocity-worker-pool.md), [HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md).
 - Das Ergebnis messen: [Benchmarks für Exponential](benchmarking.md) (Apache gegen Velocity, eine Bereitstellung auf Regressionen geprüft).
 - Upgrade-Hinweise: [Velocity-Engines](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md), [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md), [Cache-Konsole](../bc/6.0/cache-konsole.md).

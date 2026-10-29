@@ -133,6 +133,11 @@ einer Zeile in eigene Verzeichnisbäume zu legen, verwenden Sie `LogVarDir`, `Ca
 globalen Override: [Logs, INI-Cache und Ablaufzeitstempel je Website](../../funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md).
 Mit `CacheVarDir` muss der Webserver auch die öffentlichen Caches darunter ausliefern: Aktivieren Sie die
 auskommentierte Regel `var_cache` in `.htaccess_root` (oder die entsprechende Regel im Beispiel für Ihren Server).
+Tun Sie das in Ihrer Kopie, `.htaccess` (an ihren Platz gebracht mit `./console exp:setup:htaccess --apply`), nie in der
+Vorlage. Von da an unterscheidet sich Ihre `.htaccess` von `.htaccess_root`: Nach einem Upgrade zeigt
+`./console exp:setup:htaccess` diese Zeile unter den Unterschieden und weigert sich ohne `--force` zu kopieren; nach
+`--force --apply` aktivieren Sie die Regel wieder
+([.htaccess und config.php von der Konsole aus einrichten](../../anleitungen/setup-dateien-von-der-konsole.md)).
 
 **Einstellungen in einer Erweiterung.** Eine Website-Erweiterung kann stattdessen
 `extension/<ext>/settings/siteaccess/<name>/` mitbringen, sodass die Einstellungen unter Versionskontrolle stehen;

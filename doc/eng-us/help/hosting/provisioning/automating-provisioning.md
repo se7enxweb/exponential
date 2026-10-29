@@ -84,7 +84,21 @@ On exit status 1, keep `var/log/setup.log` and stop the pipeline; the site stays
 ### 6. Serve
 
 Configure the web server for the site, or set the Velocity engine and start it
-([Choosing a web server](../servers/choosing-a-web-server.md)). Then check from outside:
+([Choosing a web server](../servers/choosing-a-web-server.md)). Under Apache or LiteSpeed, put `.htaccess` into place,
+and `config.php` with the values this server needs, from the console. Run as root, every command needs
+`--allow-root-user`, and `--owner` gives a new file to the site's user:
+
+```bash
+php bin/php/console exp:setup:htaccess --apply --allow-root-user --owner=<site user>:<site group>
+php bin/php/console exp:setup:config --apply --allow-root-user --owner=<site user>:<site group>
+php bin/php/console exp:config:set EZP_DIR_MODE_MAX 0750 --apply --allow-root-user
+php bin/php/console exp:config:set EZP_FILE_MODE_MAX 0640 --apply --allow-root-user
+php bin/php/console exp:config:list --only-set --allow-root-user
+```
+
+Each command ends with `PASS:` or `FAIL:` and exits 0, 1 or 2; a second run says `nothing to do`
+([Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md#11-in-scripts-containers-and-ci)).
+Then check from outside:
 
 ```bash
 curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/
@@ -117,7 +131,13 @@ site's address in monitoring ([What to back up](../operations/backups-what-to-ba
 - **Never pass `--force` from a pipeline** unless the run is meant to destroy and rebuild that site.
 - **Keep `--db-action=remove` away from databases with data.** A pipeline should always create a new database for a
   new site.
-- **Keep secrets out of logs.** Do not echo the environment; the saved configuration in `var/log/` masks passwords.
+- **Keep secrets out of logs.** Do not echo the environment; the saved configuration in `var/log/` masks passwords,
+  and the `exp:config:*` commands print `********` for every password or key unless given `--show-secrets`. Pass a
+  secret as `--value="$VARIABLE"`, not typed on the command line.
+- **`.htaccess` and `config.php` are safe to repeat.** `exp:setup:htaccess` and `exp:setup:config` never replace a
+  file that differs from its template without `--force`, and `exp:config:set` changes nothing when the value is
+  already there. In a drift check, `exp:setup:htaccess` without `--apply` exits 1 when `.htaccess` has changed, and
+  `exp:config:list --only-set --format=json` gives a document to compare.
 
 ## Removing a site
 
@@ -136,6 +156,7 @@ on the first call.
 - [One-click installers](one-click-installers.md)
 - [Containers: Docker and Podman](../models/containers-docker-and-podman.md)
 - [New server checklist](../checklists/new-server.md)
+- [Setting up .htaccess and config.php from the console](../../../guides/setup-files-from-the-console.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

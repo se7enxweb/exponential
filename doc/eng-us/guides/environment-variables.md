@@ -55,6 +55,14 @@ PHP constants, defined in those files. Setting an environment variable of the sa
 holds for `EXP_DEMO_MODE`: defining a constant of that name in `config.php` does nothing; demo mode comes only from the
 environment.
 
+The two files have different jobs. `config.env.php` holds only what differs per machine, the environment name
+`EXP_ENV`; it is copied from `config.env.php.example` by hand and is not touched by the console. `config.php` holds the
+constants of the installation (file modes, INI checks, cluster storage, log rotation); it is put into place with
+`./console exp:setup:config --apply` and read and changed with `./console exp:config:list`, `exp:config:get`,
+`exp:config:set` and `exp:config:unset`. To take a value from an environment variable into `config.php`, set it at
+deploy or container start: `./console exp:config:set CLUSTER_STORAGE_HOST "$CLUSTER_DB_HOST" --apply`. See
+[Setting up .htaccess and config.php from the console](setup-files-from-the-console.md).
+
 ## Where to set an environment variable
 
 | Where PHP runs | How |
@@ -75,6 +83,7 @@ Examples for demo mode, one per place: [Demo mode examples](../examples/demo-mod
 - [Demo mode](../bc/6.0/demo-mode.md), [Demo mode FAQ](../help/demo-mode-faq.md)
 - [Chapter 2: Requirements](../install/02-requirements.md), [Chapter 13: Security hardening](../install/13-security-hardening.md)
 - [Velocity engines](../bc/6.0/velocity-engines.md)
+- [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md): `config.php` from the command line
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

@@ -39,7 +39,7 @@ Aus [Kapitel 8, Die Wahl in einer Tabelle](../../../installation/08-die-website-
 | Eigenes Werkzeug für HTTPS oder Zertifikate nötig | nein: eigene Zertifikate, selbstsignierter Rückfall, ACME | nein: Ihr Zertifikat oder ein selbstsigniertes | ja (`mod_ssl` plus certbot oder ein Panel) | ja |
 | Anwendung zwischen Anfragen im Speicher gehalten | ja (persistente Worker) | nein (sauberer Zustand pro Anfrage) | nein | nein |
 | Antwort-Cache vor PHP | ja | noch nicht | nein (nur die eigenen Caches des Kernels) | nein |
-| Rewrite-Regeln | eingebaut | erzeugtes Caddyfile | `.htaccess_root` | von Ihnen geschrieben |
+| Rewrite-Regeln | eingebaut | erzeugtes Caddyfile | `.htaccess_root` (`exp:setup:htaccess --apply`) | von Ihnen geschrieben |
 | Passt zu Shared Hosting | meist nicht | meist nicht | ja | selten |
 
 Andere Server, die eine URL auf `index.php` umschreiben können, funktionieren ebenfalls. Das README nennt LiteSpeed und OpenLiteSpeed,
@@ -142,6 +142,7 @@ Tested on staging on:           <date>, by <role>
 - [Apache mit PHP-FPM](apache-mit-php-fpm.md)
 - [Ein Hosting-Modell wählen](../modelle/ein-hosting-modell-waehlen.md)
 - [Hosting, Datenbank und Betriebssystem wählen](../../fuehrung/hosting-datenbank-und-betriebssystem-waehlen.md)
+- [.htaccess und config.php von der Konsole einrichten](../../../anleitungen/setup-dateien-von-der-konsole.md): welche Server `.htaccess` lesen
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

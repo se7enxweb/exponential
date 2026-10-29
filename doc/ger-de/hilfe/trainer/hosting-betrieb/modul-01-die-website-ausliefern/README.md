@@ -40,6 +40,8 @@ Opcode-Cache, der PHP schnell macht. Velocity, der empfohlene Server, hat ein ei
 - Beide Befehlslisten bereit für Systeme im Debian-Stil (`apache2`, `a2enmod`) und im Red-Hat-Stil (`httpd`), falls der
   Kurs gemischt ist.
 - Proben Sie jede Übung auf demselben Betriebssystem und mit derselben PHP-Version, die die Teilnehmenden verwenden.
+- Prüfen Sie, dass `./console exp:setup:status` auf jeder Schulungsinstallation läuft: Lektion 1.2 kopiert `.htaccess`
+  mit `exp:setup:htaccess` ([.htaccess und config.php von der Konsole einrichten](../../../../anleitungen/setup-dateien-von-der-konsole.md)).
 - Drucken Sie das Routing-Diagramm aus [Kapitel 8, Abschnitt 8.2](../../../../installation/08-die-website-ausliefern.md#82-wie-eine-anfrage-beantwortet-wird)
   als Handout aus.
 

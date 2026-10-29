@@ -61,6 +61,13 @@ Run the same requests against your own server with the commands in
   plain-HTTP host to serve them, as the port 80 hosts of the Apache and nginx examples do; Caddy, FrankenPHP and
   Velocity's `qbix` engine answer ACME challenges themselves.
 
+**Which servers read `.htaccess`.** Apache (with `AllowOverride All`) and LiteSpeed Enterprise read it on the next
+request: there, `./console exp:setup:htaccess --apply` copies `.htaccess_root` into place (`--static` copies
+`.htaccess_root_static`) and nothing else is needed. OpenLiteSpeed reads only its rewrite rules, only with
+`autoLoadHtaccess` on and only after a restart. nginx, Caddy, FrankenPHP and IIS never read it: their rules are in the
+configurations on these pages. Velocity has the rules of `.htaccess_root` built in; copy the file anyway when Apache may
+serve the same tree. See [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md).
+
 **WebDAV** is not routed by any of these examples: it is off by default. Since 6.0.15 its entry script is
 `index_webdav.php` (`webdav.php` only forwards to it until a later major version). To serve it, add a rule for
 `index_webdav.php` on Apache, nginx or IIS, or a WebDAV host of its own; Velocity, Caddy and FrankenPHP do not run it.
@@ -80,4 +87,5 @@ Before/after rules for every server, and how to test them:
 - [Chapter 8, Serving the site](../../install/08-serving-the-site.md): Velocity, Apache, nginx and FrankenPHP step by step.
 - [Chapter 13, Security hardening](../../install/13-security-hardening.md): what the web server must never hand out, headers, HTTPS.
 - [Velocity engines](../../bc/6.0/velocity-engines.md) and [FrankenPHP](../../bc/6.0/frankenphp.md).
+- [Setting up .htaccess and config.php from the console](../../guides/setup-files-from-the-console.md): `exp:setup:htaccess`, `exp:setup:config`, `exp:config:*`.
 - [Free documentation](../../help/free-documentation.md): this page is free to copy, translate and improve.

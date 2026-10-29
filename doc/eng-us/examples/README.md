@@ -44,6 +44,11 @@ The rules for writing code (naming, file layout, security, templates without inl
 `staticcache_offload.conf` adds rules that serve pages from the static cache directly. See
 [Apache .htaccess](web-servers/apache-htaccess.md).
 
+The shipped `.htaccess_root` (or `.htaccess_root_static`) and `config.php-RECOMMENDED` are put into place with
+`./console exp:setup:htaccess --apply` and `./console exp:setup:config --apply`, and `config.php` is edited with
+`./console exp:config:set`: see [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md)
+and the generated pages [exp:setupfiles](commands/setupfiles.md) and [exp:configphp](commands/configphp.md).
+
 ## Reference examples generated from the code
 
 | Area | What each page has |

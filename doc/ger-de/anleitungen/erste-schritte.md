@@ -146,6 +146,9 @@ der installierten Site. Halten Sie den Server mit `./console exp:velocity stop -
 Wenn Sie Schritt 3 mit einer anderen `--url` ausgeführt haben, verwenden Sie die Site-Adresse, die das Installationsprogramm ausgegeben hat.
 
 Für den Produktivbetrieb verwenden Sie Apache mit PHP-FPM oder die eigenen Engines `qbix` oder `frankenphp` von Velocity: [Velocity-Engines](../bc/6.0/velocity-engines.md).
+Apache braucht die mitgelieferten Rewrite-Regeln als `.htaccess`: `./console exp:setup:htaccess --apply` kopiert sie,
+und `./console exp:setup:status` zeigt, wie es um `.htaccess` und `config.php` steht
+([.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md)).
 Wenn eine Seite einen Fehler zeigt, verbirgt der Cache noch nichts; lesen Sie `var/log/error.log` und siehe
 [Eine Installation reparieren](../bc/6.0/reparatur.md).
 
@@ -233,6 +236,7 @@ und [Ladereihenfolge der Extensions](../funktionen/6.0/ladereihenfolge-der-exten
 | Die Site gesund halten | [Betrieb einer Site](betrieb-einer-website.md), [Sicherheit und Audit](sicherheit-und-audit.md) |
 | Auf eine neuere Release wechseln | [Upgrade](aktualisieren.md) |
 | Einstellungen auf der Kommandozeile ändern | [exp:ini](../funktionen/6.0/exp-ini-befehl.md) |
+| `.htaccess` und `config.php` anlegen, eine Einstellung in `config.php` ändern | [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md) |
 | Änderungen in der Administration im Blick behalten | [Audit-Protokoll](../funktionen/6.0/pruefprotokoll.md) |
 | Wiederkehrende Aufgaben ausführen | [Cronjob-Konsole](../funktionen/6.0/cronjobs-in-der-konsole.md) |
 | Sehen, was sich wann geändert hat | [Chronik nach Monaten](../geschichte/README.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md) |

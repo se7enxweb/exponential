@@ -208,6 +208,13 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 | The install went into the wrong database engine | A `DatabaseImplementation` left in `settings/override/site.ini.append.php` by an earlier install: the override directory wins over every siteaccess's settings | Set it to the new engine (or remove it) before installing again; check with `php bin/php/console exp:ini get site.ini/DatabaseSettings/DatabaseImplementation`. |
 | Everything in the database is gone after an install | `DatabaseAction=remove` (the default of `exp:install`, `--db-action=remove`) empties the named database first | Restore from backup. Point installs only at databases that hold nothing you need. |
 | The password you gave was replaced | Passwords shorter than `[UserSettings] MinPasswordLength` or well-known ones are replaced with a generated one | Read it from the summary or `var/log/initial-admin-password`. |
+| "FAIL: .htaccess exists and differs from .htaccess_root ...; nothing was changed." (or the same for `config.php`) | `exp:setup:htaccess` or `exp:setup:config` never replaces a file that has changes of its own | Read the diff it printed (`-v` shows all of it): rules or settings of yours are on the `-` lines. Keep the file, or run the command again with `--force --apply`; the old file is backed up to `var/backup/setup/<time>/` first. |
+| "Warning: config.php does not compile: syntax error, ... on line N." at the start of `./console`, or "FAIL: config.php does not compile (...); nothing was read or changed." | A syntax error in `config.php`. The site is down too: PHP stops on it in every request | The console still starts for `exp:setup:*` and `exp:config:*`. Fix the line it names, copy back the last backup from `var/backup/config/` or `var/backup/setup/`, or start again from the template with `./console exp:setup:config --force --apply` (the broken file is backed up first). |
+| "FAIL: cannot write a temporary file in /var/www/example: nothing was changed" | The user running the command cannot write to the installation directory | Run it as the owner of the installation (`sudo -u <owner> ./console ...`) or as root with `--allow-root-user`. |
+| "FAIL: --owner=www-data: only root can give a file to another user" | `--owner` was given to a command not run as root | Leave `--owner` off, or run as root with `--allow-root-user`. |
+| "FAIL: --apply and --dry-run exclude each other; without --apply nothing is written" (exit 2) | Both options were given | Leave `--dry-run` off to write, or `--apply` off to look. |
+
+The whole list, with the output of each case: [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md#9-when-something-goes-wrong).
 
 ## 12.9 Pages and errors at run time
 
@@ -219,7 +226,8 @@ All messages of this table are in `kernel/setup/steps/ezstep_installer.php`, `ez
 | "Down for maintenance" (HTTP 503) | Maintenance mode is on | `php bin/php/maintenance.php status`; `php bin/php/maintenance.php off` when the work is done. |
 | "This form has expired" (HTTP 403) | The form's token was missing or wrong: the page was open a long time, the session ended, or the form came from another page | Reload the form and send it again. Nothing was saved. See [Form expired page](../features/6.0/form-expired-page.md). |
 | A blank page, or 500 with nothing in `error.log` | PHP failed before Exponential could log: a syntax error, a missing PHP extension, memory exhausted | Read the web server's or PHP-FPM's error log; run `php -l` on a changed file; check `php -v` and `vendor/`. |
-| 404 for every page under Apache | `.htaccess` is not read (`AllowOverride All` missing) or `mod_rewrite` is off | `cp .htaccess_root .htaccess`; allow overrides; enable `mod_rewrite`. |
+| 404 for every page under Apache | `.htaccess` is not read (`AllowOverride All` missing) or `mod_rewrite` is off | `./console exp:setup:htaccess --apply` (or `cp .htaccess_root .htaccess`); allow overrides; enable `mod_rewrite`. `./console exp:setup:status` says whether `.htaccess` is there and which template it is a copy of. |
+| HTTP 500 for every page right after a new `.htaccess` | The server lacks a module the rules use (`mod_rewrite`, or `mod_headers` for the SVG rules), or `AllowOverride` does not allow them | Put the backup back (`var/backup/setup/<time>/.htaccess`) and read the Apache error log. |
 | An old page appears every few reloads | The browser's service worker replays a page it cached (the site's worker is `/index.js`, loaded by `/sw.js`) | Keep `/sw.js` in place; a reload after the new worker activates (cache version `exp-nav-v5`) fixes it, or clear the site data in the browser. See [Behaviour changes of 16 to 30 September 2026](../bc/6.0/behaviour-changes-2026-09b.md). |
 | The command line prints "An unexpected error has occurred. Please contact the webmaster." | An uncaught error in a script | Run it again with `-d all`; read `var/log/error.log`. |
 
@@ -276,6 +284,7 @@ not worked. More in [Cache console](../bc/6.0/cache-console.md) and [Operating a
 | Symptom | Cause | Fix |
 |---|---|---|
 | A new template file renders an empty area (HTTP 200) | The template override cache predates the file | `--clear-id=template-override`. |
+| A change to `config.php` (`exp:config:set`, or by hand) has no effect | A persistent server reads `config.php` once per worker; PHP-FPM with `opcache.validate_timestamps=0` keeps the old compiled file | Restart Velocity (`./console exp:velocity restart`) or the FrankenPHP worker; reload PHP-FPM. Check the value with `./console exp:config:get <NAME>`. |
 | `Class ... not found` after adding or renaming a class | The class maps are stale | `php bin/php/ezpgenerateautoloads.php -e` (`-k` for the kernel), then clear the caches; under Velocity restart it. |
 | "The referenced parameter '...' is not registered." from `ezpgenerateautoloads.php`, exit status 1 | An option the generator does not know; nothing was generated | Correct the option (`--help` lists them). Older releases printed their usage and exited with 0 on an unknown option, `--allow-root-user` included, so a deployment script that ran them may never have regenerated anything. |
 | "The audit index classes are not in the autoload array: run bin/php/ezpgenerateautoloads.php -k first." | `createaudittables.php` ran before the kernel class map was regenerated | Run `php bin/php/ezpgenerateautoloads.php -k`, then the script again. |
@@ -318,7 +327,8 @@ In this repository:
 - [Maintenance mode](../features/6.0/maintenance-mode.md), [Form expired page](../features/6.0/form-expired-page.md),
   [Reset a user password](../features/6.0/reset-user-password.md).
 - [The Exp Debug bar](../features/6.0/exp-debug-bar.md), [debug bar reference](../bc/6.0/debug-bar.md),
-  [Settings per environment](../features/6.0/environment-settings.md), [exp:ini](../features/6.0/exp-ini-command.md).
+  [Settings per environment](../features/6.0/environment-settings.md), [exp:ini](../features/6.0/exp-ini-command.md),
+  [Setting up .htaccess and config.php from the console](../guides/setup-files-from-the-console.md).
 - [Cache console](../bc/6.0/cache-console.md), [Operating a site](../guides/operating-a-site.md),
   [Deploying](../guides/deploying.md).
 - [SQLite database support](../features/6.0/sqlite-database.md), [SQLite transactions](../bc/6.0/sqlite-transactions.md),
