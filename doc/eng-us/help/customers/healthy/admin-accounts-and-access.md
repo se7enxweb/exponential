@@ -78,6 +78,8 @@ you the changes made. A yearly, deeper version with a record to keep is in
 - [Security basics](security-basics.md)
 - [User accounts and passwords](../../businesses/security/user-accounts-and-passwords.md)
 - [Accounts and sign-in](../../accounts-and-sign-in.md)
+- [Setting up accounts for editors and administrators](../../setting-up-editor-and-admin-accounts.md)
+- [The user audit log](../../the-user-audit-log.md)
 - [The default administrator password](../../default-administrator-password.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
