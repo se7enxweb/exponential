@@ -37,11 +37,11 @@ wave is done and checked. The languages, their locales and their administration 
 | Administration: strings of `share/translations/untranslated/translation.ts`, in 10 parts | **19,101** (129,281 words) |
 | Shipped extensions (`expimageeditor`, `ezjscore`, `ezoe`) | **567** strings |
 | Help: pages below `doc/eng-us/` (the generated example pages left out) | **5,738** pages, 4,983,792 words |
-| Help: tables of the generated example pages (`.examples/`) | **2,716** entries, 80,820 words |
+| Help: tables of the generated example pages (`.examples/`) | **2,881** entries, 87,397 words |
 | Administration translations, complete of them | **155**, 3 |
 | of them in daily use (administration, extensions and daily-use help ≥ 97 %) | **2** |
 | Languages without an administration translation ([list](#languages-without-a-translation)), being translated on a branch | **22**, 0 |
-| Waves to 100 % in every language | **31,204** |
+| Waves to 100 % in every language | **31,192** |
 
 ### Where each language stands
 
@@ -96,7 +96,7 @@ Percent of the strings (administration, extensions) and of the words (help), rou
 | Galician | `glg-ES` | 2 | 2 | 98 | **80** | **0** | **0** | 204 | #723 `A02` |
 | Ganda | `lug-UG` | 11 | 4 | 98 | **80** | **0** | **0** | 204 | #657 `A02` |
 | Georgian | `kat-GE` | 4 | 4 | 98 | **80** | **0** | **0** | 204 | #746 `A02` |
-| German | `ger-DE` | 135 | 2 | 100 | **76** | 100 | 99 | 13 | #1 `E` |
+| German | `ger-DE` | 135 | 2 | 100 | **76** | 100 | 100 | 1 | #1 `E` |
 | Greek | `ell-GR` | 13 | 3 | 98 | **80** | **0** | **0** | 204 | #604 `A02` |
 | Greenlandic | `kal-GL` | < 1 | 4 | 98 | **80** | **0** | **0** | 204 | #855 `A02` |
 | Gujarati | `guj-IN` | 62 | 4 | 98 | 100 | **0** | **0** | 203 | #469 `A02` |
@@ -212,7 +212,7 @@ Percent of the strings (administration, extensions) and of the words (help), rou
 | Daily use: editors, users, administrators’ how-tos | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 265 | 299,049 | 13 |
 | Product and audience guides | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` and 22 more | 3,683 | 2,879,592 | 112 |
 | Developer reference | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` and 12 more | 1,790 | 1,805,151 | 70 |
-| Tables of the generated examples | `examples` | 2,716 entries | 80,820 | 4 |
+| Tables of the generated examples | `examples` | 2,881 entries | 87,397 | 4 |
 
 <details><summary>The 199 parts of the help</summary>
 
@@ -413,10 +413,10 @@ Percent of the strings (administration, extensions) and of the words (help), rou
 | `H-history-13` | reference | 24 | 33,737 | `history/ledger/ezupdate.md` … `history/ledger/recaptcha.md` |
 | `H-history-14` | reference | 24 | 40,503 | `history/ledger/sevenx-recipes.md` … `history/velocity/installers-and-packages.md` |
 | `H-examples` | reference | 26 | 19,476 | `examples/README.md` … `examples/web-servers/velocity.md` |
-| `X01` | tables | 1,073 entries | 23,946 | `descriptions/01-command-accesscheck.json` … `descriptions/05-ini-settings-content-ini.json` |
-| `X02` | tables | 594 entries | 24,994 | `descriptions/06-ini-settings-debugbar-ini.json` … `descriptions/08-ini-settings-package-ini.json` |
-| `X03` | tables | 730 entries | 29,294 | `descriptions/09-ini-settings-site-ini.json` … `descriptions/workflow-events.json` |
-| `X04` | tables | 319 entries | 2,586 | `strings.json` |
+| `X01` | tables | 1,073 entries | 24,167 | `descriptions/01-command-accesscheck.json` … `descriptions/05-ini-settings-content-ini.json` |
+| `X02` | tables | 594 entries | 25,191 | `descriptions/06-ini-settings-debugbar-ini.json` … `descriptions/08-ini-settings-package-ini.json` |
+| `X03` | tables | 689 entries | 29,271 | `descriptions/09-ini-settings-site-ini.json` … `descriptions/12-shell-checkcalltimeref.json` |
+| `X04` | tables | 525 entries | 8,768 | `descriptions/13-commands-ini-and-cronjobs-2026-10-28.json` … `strings.json` |
 
 </details>
 
@@ -476,7 +476,7 @@ The languages of the shipped locales that the administration shows in English, t
 | 4. New translations | 242 |
 | 5. Extensions of the other languages | 523 |
 | 6. Daily-use help of the other languages | 2,030 |
-| 7. Rest of the help of the priority group | 1,314 |
+| 7. Rest of the help of the priority group | 1,302 |
 | 8. Rest of the help of the other languages | 26,970 |
 
 | # | Wave | Language | Work set | Size (left) | Difficulty | Prerequisites |
@@ -545,7 +545,7 @@ The languages of the shipped locales that the administration shows in English, t
 The whole queue and the pages of a wave: `./console exp:i18n waves --list`, `./console exp:i18n waves --wave=<wave>`.
 
 Made by `./console exp:i18n waves`; `./console exp:i18n waves --check` and the test `expI18nTranslationWavesTest` fail when a percentage changed or a size is more than 3 % off.
-<!-- exp:i18n waves data {"status":{"afr-ZA":[98,100,0,0],"aka-GH":[98,80,0,0],"amh-ET":[98,100,0,0],"ara-SA":[98,80,0,0],"arc-IQ":[98,80,0,0],"asm-IN":[98,80,0,0],"ast-ES":[98,100,0,0],"aze-AZ":[98,80,0,0],"bam-ML":[98,100,0,0],"bel-BY":[98,80,0,0],"ben-BD":[98,100,0,0],"bho-IN":[98,80,0,0],"bod-CN":[98,80,0,0],"bos-BA":[98,80,0,0],"bre-FR":[98,100,0,0],"brx-IN":[98,100,0,0],"bul-BG":[98,100,0,0],"cat-ES":[98,100,0,0],"ceb-PH":[98,80,0,0],"che-RU":[98,80,0,0],"chi-CN":[98,100,0,0],"chi-TW":[98,100,0,0],"ckb-IQ":[98,80,0,0],"cro-HR":[98,80,0,0],"cym-GB":[98,80,0,0],"cze-CZ":[98,80,0,0],"dan-DK":[98,80,0,0],"div-MV":[98,100,0,0],"doi-IN":[98,100,0,0],"dsb-DE":[98,80,0,0],"dut-NL":[98,80,0,0],"dzo-BT":[98,100,0,0],"ell-GR":[98,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[98,100,0,0],"esl-ES":[98,80,0,0],"esl-MX":[98,80,0,0],"est-EE":[98,80,0,0],"eus-ES":[98,80,0,0],"ewe-GH":[98,100,0,0],"fao-FO":[98,100,0,0],"fas-AF":[98,100,0,0],"fas-IR":[98,80,0,0],"fil-PH":[98,80,0,0],"fin-FI":[98,80,0,0],"fre-FR":[98,80,0,0],"fry-NL":[98,100,0,0],"ful-SN":[98,80,0,0],"ger-DE":[100,76,100,99],"gla-GB":[98,80,0,0],"gle-IE":[98,80,0,0],"glg-ES":[98,80,0,0],"guj-IN":[98,100,0,0],"hau-NG":[98,100,0,0],"haw-US":[98,80,0,0],"heb-IL":[98,80,0,0],"hin-IN":[98,80,0,0],"hsb-DE":[98,100,0,0],"hun-HU":[98,80,0,0],"huy-IL":[98,80,0,0],"hye-AM":[98,80,0,0],"ibo-NG":[98,100,0,0],"ind-ID":[98,80,0,0],"isl-IS":[98,80,0,0],"ita-IT":[98,80,0,0],"jav-ID":[98,80,0,0],"jpn-JP":[98,100,0,0],"kab-DZ":[98,100,0,0],"kal-GL":[98,80,0,0],"kan-IN":[98,100,0,0],"kas-IN":[98,100,0,0],"kat-GE":[98,80,0,0],"kaz-KZ":[98,80,0,0],"khm-KH":[98,80,0,0],"kik-KE":[98,80,0,0],"kin-RW":[98,80,0,0],"kir-KG":[98,80,0,0],"kok-IN":[98,100,0,0],"kor-KP":[98,100,0,0],"kor-KR":[98,100,0,0],"kur-TR":[98,80,0,0],"lao-LA":[98,80,0,0],"lat-VA":[98,80,0,0],"lav-LV":[98,80,0,0],"lin-CD":[98,80,0,0],"lit-LT":[98,100,0,0],"ltz-LU":[98,100,0,0],"lug-UG":[98,80,0,0],"mai-IN":[98,80,0,0],"mal-IN":[98,100,0,0],"mar-IN":[98,100,0,0],"mkd-MK":[98,80,0,0],"mlg-MG":[98,80,0,0],"mlt-MT":[98,80,0,0],"mni-IN":[98,100,0,0],"mon-MN":[98,80,0,0],"mri-NZ":[98,80,0,0],"msa-MY":[98,80,0,0],"mya-MM":[98,80,0,0],"nep-NP":[98,80,0,0],"nor-NO":[98,80,0,0],"nqo-GN":[98,100,0,0],"oci-FR":[98,100,0,0],"ori-IN":[98,100,0,0],"orm-ET":[98,80,0,0],"pan-IN":[98,100,0,0],"pcm-NG":[98,80,0,0],"pnb-PK":[98,80,0,0],"pol-PL":[98,80,0,0],"por-BR":[98,80,0,0],"por-PT":[98,100,0,0],"pus-AF":[98,80,0,0],"que-PE":[98,100,0,0],"roh-CH":[98,100,0,0],"ron-RO":[98,80,0,0],"run-BI":[98,80,0,0],"rus-RU":[98,100,0,0],"san-IN":[98,100,0,0],"sat-IN":[98,100,0,0],"ser-SR":[98,100,0,0],"sin-LK":[98,80,0,0],"slk-SK":[98,80,0,0],"slv-SI":[98,80,0,0],"sme-NO":[98,100,0,0],"sna-ZW":[98,80,0,0],"snd-PK":[98,80,0,0],"som-SO":[98,100,0,0],"sqi-AL":[98,80,0,0],"srp-RS":[98,100,0,0],"sun-ID":[98,80,0,0],"swa-KE":[98,80,0,0],"swe-SE":[98,80,0,0],"syr-IQ":[98,80,0,0],"tam-IN":[98,100,0,0],"tat-RU":[98,80,0,0],"tel-IN":[98,100,0,0],"tgk-TJ":[98,80,0,0],"tha-TH":[98,80,0,0],"tir-ET":[98,80,0,0],"tlh-QO":[98,80,0,0],"ton-TO":[98,100,0,0],"tuk-TM":[98,80,0,0],"tur-TR":[98,80,0,0],"uig-CN":[98,80,0,0],"ukr-UA":[98,100,0,0],"urd-PK":[98,100,0,0],"uzb-UZ":[98,80,0,0],"vie-VN":[98,80,0,0],"wol-SN":[98,100,0,0],"xho-ZA":[98,100,0,0],"yid-US":[98,80,0,0],"yor-NG":[98,100,0,0],"zgh-MA":[98,100,0,0],"zul-ZA":[98,100,0,0]},"sizes":{"messages":19101,"extensions":567,"parts":199,"daily_pages":265,"daily_words":299049,"guides_pages":3683,"guides_words":2879592,"reference_pages":1790,"reference_words":1805151,"tables_pages":0,"tables_words":80820},"waves":31204,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
+<!-- exp:i18n waves data {"status":{"afr-ZA":[98,100,0,0],"aka-GH":[98,80,0,0],"amh-ET":[98,100,0,0],"ara-SA":[98,80,0,0],"arc-IQ":[98,80,0,0],"asm-IN":[98,80,0,0],"ast-ES":[98,100,0,0],"aze-AZ":[98,80,0,0],"bam-ML":[98,100,0,0],"bel-BY":[98,80,0,0],"ben-BD":[98,100,0,0],"bho-IN":[98,80,0,0],"bod-CN":[98,80,0,0],"bos-BA":[98,80,0,0],"bre-FR":[98,100,0,0],"brx-IN":[98,100,0,0],"bul-BG":[98,100,0,0],"cat-ES":[98,100,0,0],"ceb-PH":[98,80,0,0],"che-RU":[98,80,0,0],"chi-CN":[98,100,0,0],"chi-TW":[98,100,0,0],"ckb-IQ":[98,80,0,0],"cro-HR":[98,80,0,0],"cym-GB":[98,80,0,0],"cze-CZ":[98,80,0,0],"dan-DK":[98,80,0,0],"div-MV":[98,100,0,0],"doi-IN":[98,100,0,0],"dsb-DE":[98,80,0,0],"dut-NL":[98,80,0,0],"dzo-BT":[98,100,0,0],"ell-GR":[98,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[98,100,0,0],"esl-ES":[98,80,0,0],"esl-MX":[98,80,0,0],"est-EE":[98,80,0,0],"eus-ES":[98,80,0,0],"ewe-GH":[98,100,0,0],"fao-FO":[98,100,0,0],"fas-AF":[98,100,0,0],"fas-IR":[98,80,0,0],"fil-PH":[98,80,0,0],"fin-FI":[98,80,0,0],"fre-FR":[98,80,0,0],"fry-NL":[98,100,0,0],"ful-SN":[98,80,0,0],"ger-DE":[100,76,100,100],"gla-GB":[98,80,0,0],"gle-IE":[98,80,0,0],"glg-ES":[98,80,0,0],"guj-IN":[98,100,0,0],"hau-NG":[98,100,0,0],"haw-US":[98,80,0,0],"heb-IL":[98,80,0,0],"hin-IN":[98,80,0,0],"hsb-DE":[98,100,0,0],"hun-HU":[98,80,0,0],"huy-IL":[98,80,0,0],"hye-AM":[98,80,0,0],"ibo-NG":[98,100,0,0],"ind-ID":[98,80,0,0],"isl-IS":[98,80,0,0],"ita-IT":[98,80,0,0],"jav-ID":[98,80,0,0],"jpn-JP":[98,100,0,0],"kab-DZ":[98,100,0,0],"kal-GL":[98,80,0,0],"kan-IN":[98,100,0,0],"kas-IN":[98,100,0,0],"kat-GE":[98,80,0,0],"kaz-KZ":[98,80,0,0],"khm-KH":[98,80,0,0],"kik-KE":[98,80,0,0],"kin-RW":[98,80,0,0],"kir-KG":[98,80,0,0],"kok-IN":[98,100,0,0],"kor-KP":[98,100,0,0],"kor-KR":[98,100,0,0],"kur-TR":[98,80,0,0],"lao-LA":[98,80,0,0],"lat-VA":[98,80,0,0],"lav-LV":[98,80,0,0],"lin-CD":[98,80,0,0],"lit-LT":[98,100,0,0],"ltz-LU":[98,100,0,0],"lug-UG":[98,80,0,0],"mai-IN":[98,80,0,0],"mal-IN":[98,100,0,0],"mar-IN":[98,100,0,0],"mkd-MK":[98,80,0,0],"mlg-MG":[98,80,0,0],"mlt-MT":[98,80,0,0],"mni-IN":[98,100,0,0],"mon-MN":[98,80,0,0],"mri-NZ":[98,80,0,0],"msa-MY":[98,80,0,0],"mya-MM":[98,80,0,0],"nep-NP":[98,80,0,0],"nor-NO":[98,80,0,0],"nqo-GN":[98,100,0,0],"oci-FR":[98,100,0,0],"ori-IN":[98,100,0,0],"orm-ET":[98,80,0,0],"pan-IN":[98,100,0,0],"pcm-NG":[98,80,0,0],"pnb-PK":[98,80,0,0],"pol-PL":[98,80,0,0],"por-BR":[98,80,0,0],"por-PT":[98,100,0,0],"pus-AF":[98,80,0,0],"que-PE":[98,100,0,0],"roh-CH":[98,100,0,0],"ron-RO":[98,80,0,0],"run-BI":[98,80,0,0],"rus-RU":[98,100,0,0],"san-IN":[98,100,0,0],"sat-IN":[98,100,0,0],"ser-SR":[98,100,0,0],"sin-LK":[98,80,0,0],"slk-SK":[98,80,0,0],"slv-SI":[98,80,0,0],"sme-NO":[98,100,0,0],"sna-ZW":[98,80,0,0],"snd-PK":[98,80,0,0],"som-SO":[98,100,0,0],"sqi-AL":[98,80,0,0],"srp-RS":[98,100,0,0],"sun-ID":[98,80,0,0],"swa-KE":[98,80,0,0],"swe-SE":[98,80,0,0],"syr-IQ":[98,80,0,0],"tam-IN":[98,100,0,0],"tat-RU":[98,80,0,0],"tel-IN":[98,100,0,0],"tgk-TJ":[98,80,0,0],"tha-TH":[98,80,0,0],"tir-ET":[98,80,0,0],"tlh-QO":[98,80,0,0],"ton-TO":[98,100,0,0],"tuk-TM":[98,80,0,0],"tur-TR":[98,80,0,0],"uig-CN":[98,80,0,0],"ukr-UA":[98,100,0,0],"urd-PK":[98,100,0,0],"uzb-UZ":[98,80,0,0],"vie-VN":[98,80,0,0],"wol-SN":[98,100,0,0],"xho-ZA":[98,100,0,0],"yid-US":[98,80,0,0],"yor-NG":[98,100,0,0],"zgh-MA":[98,100,0,0],"zul-ZA":[98,100,0,0]},"sizes":{"messages":19101,"extensions":567,"parts":199,"daily_pages":265,"daily_words":299049,"guides_pages":3683,"guides_words":2879592,"reference_pages":1790,"reference_words":1805151,"tables_pages":0,"tables_words":87397},"waves":31192,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
 <!-- generated: exp:i18n waves (end) -->
 
 ## What the waves are
