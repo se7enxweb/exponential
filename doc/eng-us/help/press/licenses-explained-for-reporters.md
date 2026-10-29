@@ -52,10 +52,10 @@ notices are kept and changed versions stay under the same license
 
 ## Who holds the copyright
 
-"Copyright (C) 1998 - 2026 7x & Exponential Foundation", and "Copyright (C) 1999 - 2014 eZ Systems AS" for the
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.", and "Copyright (C) 1999 - 2014 eZ Systems AS" for the
 inherited code ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)). Contributions are
 released under the GPL, and kernel contributors assign the copyright in their contributions to 7x
-([Copyright assignment (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)). Write "7x and the Exponential Foundation hold the copyright together", never
+([Copyright assignment (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)). Write "The Exponential Foundation and 7x hold the copyright together", never
 "7x owns Exponential".
 
 ## Free of charge, and what is sold
@@ -84,3 +84,11 @@ released under the GPL, and kernel contributors assign the copyright in their co
 - [Talking points: open source and licensing](../advocates/talking-points-open-source-and-licensing.md)
 - [Quoting and reusing the documentation](quoting-and-reusing-the-documentation.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

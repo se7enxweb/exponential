@@ -57,7 +57,7 @@ date; numbers change, so cite the page, not your memory ([Who is 7x?, 7x in numb
 |---|---|
 | "Big company X uses it." | Only with that organization's written consent ([Writing a community case study](writing-a-community-case-study.md)) |
 | "Endorsed by eZ Systems or Ibexa", "official successor" | "Not associated with eZ Systems or Ibexa" ([Who is 7x?, In short](../who-is-7x.md#in-short)) |
-| "7x owns Exponential." | "7x leads it; 7x and the Exponential Foundation hold the copyright; the license is GPL." |
+| "7x owns Exponential." | "7x leads it; the Exponential Foundation and 7x hold the copyright; the license is GPL." |
 | "The Foundation's board is ..." | "The Foundation's governance is not documented in the sources." |
 | "We" (as if you were 7x or the Foundation) | "I", unless they asked you to speak for them ([Disclosure](disclosure-and-conflicts-of-interest.md)) |
 

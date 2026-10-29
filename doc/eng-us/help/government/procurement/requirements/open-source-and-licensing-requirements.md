@@ -55,7 +55,7 @@ license that meets it rather than for "open source" as a label.
 | Network use | Visiting a website is not distribution; nothing obliges the operator to publish the code it runs | [Licensing questions](../../../project/licensing-faq.md) |
 | Source | Public repositories on GitHub under `se7enxweb`, installable with Composer | [Getting the code](../../../../install/03-getting-the-code.md) |
 | Documentation | GNU Free Documentation License 1.3 or later | [The license of this documentation](../../../../README-LICENSE.md), [GFDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html) |
-| Copyright | "7x & Exponential Foundation" and eZ Systems AS for 1999 to 2014, plus contributors; kernel contributors assign the copyright in their contributions to 7x under the CLA ([CONTRIBUTING.md](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)) | [Licensing questions](../../../project/licensing-faq.md) |
+| Copyright | "Exponential Foundation and 7x" and eZ Systems AS for 1999 to 2014, plus contributors; kernel contributors assign the copyright in their contributions to 7x under the CLA ([CONTRIBUTING.md](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)) | [Licensing questions](../../../project/licensing-faq.md) |
 | Extension licenses | Each extension states its license in `ezinfo.php` and `extension.xml` | [Source control and releases](../../../../standards/source-control-and-releases.md), [Package licenses and versions](../../../../features/6.0/package-licenses-and-versions.md) |
 | Third-party services | Some extensions call outside services when activated (analytics, CAPTCHA, social sign-in) | [Privacy standards](../../../../standards/privacy.md) |
 
@@ -83,3 +83,11 @@ See also the template [Intellectual property of custom work](../tender-templates
 - [Tender template: open source license and source availability](../tender-templates/open-source-license-and-source-availability-clause.md)
 - [Exit and portability requirements](exit-and-portability-requirements.md)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../../../copyright-and-copyleft.md).

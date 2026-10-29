@@ -19,7 +19,7 @@ type: help
 
 | Fakt | Quelle |
 |---|---|
-| Der Copyright-Vermerk reicht von 1998 bis 2026 für 7x und die Exponential Foundation | `COPYRIGHT.md` |
+| Der Copyright-Vermerk reicht von 1998 bis 2026 für die Exponential Foundation und 7x | `COPYRIGHT.md` |
 | "Exponential has made it beyond it's end of life in 2021 and survived", also: Exponential hat sein Lebensende 2021 überstanden | `README.md` |
 | 7x übernahm 2023 die Führung; die Linie 6.0 erscheint seit dem 1. Januar 2024 | [Wer ist 7x?](../../wer-ist-7x.md#die-releases-60x) |
 | Die gemeinnützige Exponential Foundation betreibt das Projekt seit 2026 | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#kurz-gesagt) |

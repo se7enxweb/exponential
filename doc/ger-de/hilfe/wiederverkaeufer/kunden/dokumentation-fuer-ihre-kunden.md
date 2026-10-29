@@ -70,8 +70,8 @@ Aus [Freie Dokumentation](../../freie-dokumentation.md):
 Quelle) brauchen zusätzlich eine bearbeitbare Kopie oder einen Hinweis, wo man eine bekommt; mehr als 100 gedruckte
 Kopien brauchen einen Umschlag mit dem vollen Titel und Ihnen als Herausgeber (Abschnitt 3 der Lizenz).
 
-Der Urheberrechtshinweis der Dokumentation lautet „Copyright (C) 1998 - 2026 7x & Exponential Foundation and the
-Exponential contributors“, ohne unveränderliche Abschnitte, ohne Vorderseitentexte und ohne Rückseitentexte
+Der Urheberrechtshinweis der Dokumentation lautet „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“
+(Teile von den Mitwirkenden von Exponential), ohne unveränderliche Abschnitte, ohne Vorderseitentexte und ohne Rückseitentexte
 ([Die Lizenz dieser Dokumentation](../../../README-LIZENZ.md)).
 
 ## Eigene Marke, richtig gemacht
@@ -90,7 +90,7 @@ ob ein Kapitel unabhängig oder abgeleitet ist, ist im Zweifel eine Frage für e
 Ein kurzer Hinweis im Handbuch deckt das meiste ab:
 
 ```text
-This manual is based on the Exponential documentation, Copyright (C) 1998 - 2026 7x & Exponential Foundation
+This manual is based on the Exponential documentation, Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
 and the Exponential contributors, used under the GNU Free Documentation License 1.3 or later.
 Changes: Copyright (C) <year> <Your company>. History: <version>, <date>, <what changed>, <by whom>.
 The license is included at the end of this manual.

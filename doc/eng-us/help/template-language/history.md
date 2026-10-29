@@ -27,7 +27,7 @@ in the source. Nothing here comes from memory or from outside sources.
 
 Exponential continues the code base that was published for many years as eZ Publish. That product was discontinued by
 its creator after almost 18 years; the copyright notice still names both owners of the code: "Copyright (C) 1998 - 2026
-7x & Exponential Foundation" and "Copyright (C) eZ Systems AS", the line at the top of
+Exponential Foundation and 7x" and "Copyright (C) eZ Systems AS", the line at the top of
 `lib/eztemplate/classes/eztemplate.php`. The template library has been part of the code base for its whole recorded
 history, and 7x has carried it forward since taking over the project in 2023 ([Who is 7x?](../who-is-7x.md)).
 

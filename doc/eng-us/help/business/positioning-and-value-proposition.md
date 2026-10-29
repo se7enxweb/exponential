@@ -49,7 +49,7 @@ Sources: `README.md` ("What does Exponential provide", "License", "Requirements"
 | "Exponential is database, platform and browser independent." | `README.md` |
 | The project site calls it "an award-winning, enterprise-grade Open Source Content Management System and development framework with functionality for web publishing, media portals, intranets, e-commerce and extranets". | exponential.earth, quoted on [Who is 7x?](../who-is-7x.md#the-product-what-exponential-is) |
 | "Using Exponential under the terms of the GNU GPL is free of charge. The Professional License is no longer available." | `README.md`, "License" |
-| Copyright notices from 1999 (eZ Systems AS) and from 1998 (7x and the Exponential Foundation); Git history from 2 September 2002 | `COPYRIGHT.md`; [Who is 7x?](../who-is-7x.md#nearly-thirty-years-the-timeline) |
+| Copyright notices from 1999 (eZ Systems AS) and from 1998 (the Exponential Foundation and 7x); Git history from 2 September 2002 | `COPYRIGHT.md`; [Who is 7x?](../who-is-7x.md#nearly-thirty-years-the-timeline) |
 | Releases 6.0.0 (1 January 2024) to 6.0.14 (7 June 2026); 6.0.15 in development | [Who is 7x?](../who-is-7x.md#the-60x-releases) |
 | Six supported databases: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Database support](../database-support.md) |
 | "almost any" operating system "that runs PHP 8.0 or later" | [Operating system support](../os-support.md) |

@@ -10,7 +10,7 @@ type: help
 # Advocating for free documentation
 
 This page is for advocates who believe good documentation should belong to everyone. Exponential's documentation is
-free: "Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors", licensed under the GNU
+free: "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." (portions by the Exponential contributors), licensed under the GNU
 Free Documentation License 1.3 or later ([The license of this documentation](../../README-LICENSE.md)).
 
 ## Contents

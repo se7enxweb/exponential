@@ -28,11 +28,13 @@ compatible with either, such as the GNU Affero GPL version 3, as the website not
 
 ### Who holds the copyright?
 
-The kernel's notice names "7x & Exponential Foundation" for the years from 1998 and eZ Systems AS for 1999 to 2014
-(`COPYRIGHT.md`). The code also contains the work of many contributors over the years. The website's FAQ explains
+The kernel's notice names the "Exponential Foundation and 7x" for the years from 1998 and eZ Systems AS for 1999 to
+2014 (`COPYRIGHT.md`): "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Since
+29 October 2026 the Foundation and 7x hold the copyright together, the Foundation named first; see
+[Copyright and copyleft](../copyright-and-copyleft.md). The code also contains the work of many contributors over the years. The website's FAQ explains
 the rule: contributors agree to release their code under the same license as Exponential.
 
-For code contributions to the core kernel, 7x and the Exponential Foundation also require a signed Contributor
+For code contributions to the core kernel, the Exponential Foundation and 7x also require a signed Contributor
 Licensing Agreement (CLA) before the contribution is merged, and **by signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute your contribution in any way, also under
 other licenses and in commercial products, without asking or paying you; you cannot withdraw it or set conditions. Your own extensions and designs are not affected. See
 [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
@@ -277,7 +279,7 @@ give less.
 
 1. **Ask first.** Most violations are mistakes. Write to the agency or vendor, name what is missing (the license,
    the source, a clause that conflicts with the GPL), cite the sections above and give a reasonable time.
-2. **The copyright holders can enforce the license.** For the kernel these are 7x and the Exponential Foundation,
+2. **The copyright holders can enforce the license.** For the kernel these are the Exponential Foundation and 7x,
    and eZ Systems AS for the inherited code (`COPYRIGHT.md`); for an extension or a design, its authors. Tell them
    what you found: for Exponential, write to 7x at info@se7enx.com. A customer who did not receive what was promised
    may also have claims under the contract; that is a question for the customer's lawyer.

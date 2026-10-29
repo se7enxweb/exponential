@@ -44,7 +44,7 @@ sich aus veröffentlicht; er sendet nichts irgendwohin, solange kein Anbieter ei
 ## Die Organisationen
 
 **Wem gehört Exponential?**
-Niemandem im Sinne eines proprietären Produkts. 7x und die Exponential Foundation halten das Urheberrecht gemeinsam; die
+Niemandem im Sinne eines proprietären Produkts. Die Exponential Foundation und 7x halten das Urheberrecht gemeinsam; die
 Software steht unter der GNU GPL ([Lizenzen für Reporter erklärt](lizenzen-fuer-reporter-erklaert.md)).
 
 **Wer ist 7x?**

@@ -168,9 +168,9 @@ Before you tell a buyer that "everything is GPL", check the About page of the in
 
 | Notice | Where |
 |---|---|
-| "Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved." | `COPYRIGHT.md` |
+| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." | `COPYRIGHT.md` |
 | "Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved." | `COPYRIGHT.md` |
-| "Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors" | the documentation ([The license of this documentation](../../README-LICENSE.md)) |
+| "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." (portions by the Exponential contributors) | the documentation ([The license of this documentation](../../README-LICENSE.md)) |
 
 "All rights reserved" in a notice does not take away the GPL's permissions; the license grants them on top of
 the copyright. Copy these notices exactly when you quote them.
@@ -215,7 +215,7 @@ response commitment in the project's own files is in `SECURITY.md`: a first answ
 | Can we host it anywhere? | Yes, running is not restricted. | `LICENSE.md` section 0 |
 | Is there a warranty? | Not from the license; get one by contract. | `LICENSE.md` sections 1, 11, 12 |
 | Can we copy the help into our manual? | Yes, under the GNU FDL 1.3 conditions. | [Free documentation](../free-documentation.md) |
-| Who holds the copyright? | 7x & Exponential Foundation, with eZ Systems AS for 1999 to 2014. | `COPYRIGHT.md` |
+| Who holds the copyright? | Exponential Foundation and 7x, with eZ Systems AS for 1999 to 2014. | `COPYRIGHT.md` |
 | Does a contribution we make stay ours? | Not under your control. A contribution to the kernel needs a signed CLA, and with it you assign the copyright to 7x and give up control: 7x may use, change, relicense and distribute it without asking or paying you, and you cannot withdraw it. It is also released under GPL v2 or later. Your own custom extensions are not affected. | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla) |
 | Is every part GPL? | The kernel is; check extensions and related products on Info > About. Velocity is MIT. | [About and Copyright pages](../../features/6.0/about-and-package-pages.md) |
 
@@ -228,7 +228,7 @@ Software           Exponential <6.0.x>, package se7enxweb/exponential
 License            GNU General Public License v2 or any later version (GPL-2.0-or-later)
 License fee        None ("Using Exponential under the terms of the GNU GPL is free of charge")
 Commercial license Not available ("The Professional License is no longer available")
-Copyright          7x & Exponential Foundation (1998-2026); eZ Systems AS (1999-2014)
+Copyright          Exponential Copyright © 1998-2026 Exponential Foundation and 7x; eZ Systems AS (1999-2014)
 Documentation      GNU Free Documentation License 1.3 or later
 Extensions in use  <list from Info > About, with each license>
 Other components   <list from Info > About, Third-party software>
@@ -247,3 +247,11 @@ Notes              This summary is not legal advice. License texts: LICENSE.md, 
 - [The license of this documentation](../../README-LICENSE.md), [About and Copyright pages](../../features/6.0/about-and-package-pages.md)
 - The license texts on the web: [GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), [GNU FDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../copyright-and-copyleft.md).

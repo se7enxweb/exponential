@@ -21,7 +21,7 @@ Arbeit eines Partners betreffen. Sie ist keine Rechtsberatung; maßgeblich sind 
 | Der Text des Partnerprogramms | Creative Commons Attribution-ShareAlike 4.0 International (Copyright 2025 7x) | <https://exponential.earth/partner/program> |
 | Erweiterungen | Jede ihre eigene; die des Projekts stehen unter der GPL | `extension.xml` / LICENSE der jeweiligen Erweiterung |
 
-Copyright des Kernels: „Copyright (C) 1998 - 2026 7x & Exponential Foundation“ neben „Copyright (C) 1999 - 2014 eZ
+Copyright des Kernels: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ neben „Copyright (C) 1999 - 2014 eZ
 Systems AS“ ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 
 ## Was Partner dürfen
@@ -62,3 +62,11 @@ Code, der zum Projekt beigetragen wird, wird unter der GPL veröffentlicht („M
 - [Vertriebspartner und Wiederverkäufer](vertriebspartner.md)
 - [Fragen zur Lizenzierung](../projekt/lizenz-faq.md): die FAQ zur Lizenzierung von exponential.earth in einfachen Worten
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

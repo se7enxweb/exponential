@@ -68,7 +68,7 @@ The code base has been developed since 1999; the name is from August 2025 ([Time
 
 ### 10. "7x owns it and can close it."
 
-7x and the Exponential Foundation hold the copyright together and the code is under the GPL, which lets anyone keep and
+The Exponential Foundation and 7x hold the copyright together and the code is under the GPL, which lets anyone keep and
 continue it ([Licenses explained for reporters](licenses-explained-for-reporters.md)).
 
 ## Why the myths exist

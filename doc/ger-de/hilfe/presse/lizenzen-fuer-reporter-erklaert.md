@@ -52,10 +52,10 @@ Hinweise auf Urheberrecht und Lizenz erhalten bleiben und geänderte Fassungen u
 
 ## Wer das Urheberrecht hält
 
-„Copyright (C) 1998 - 2026 7x & Exponential Foundation“ und „Copyright (C) 1999 - 2014 eZ Systems AS“ für den
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ und „Copyright (C) 1999 - 2014 eZ Systems AS“ für den
 übernommenen Code ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)). Beiträge werden
 unter der GPL veröffentlicht, und wer zum Kernel beiträgt, überträgt das Urheberrecht an seinen Beiträgen an 7x
-([Übertragung des Urheberrechts (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)). Schreiben Sie „7x und die Exponential Foundation halten das Urheberrecht
+([Übertragung des Urheberrechts (CLA)](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#copyright-assignment-cla)). Schreiben Sie „Die Exponential Foundation und 7x halten das Urheberrecht
 gemeinsam“, nie „7x gehört Exponential“.
 
 ## Kostenlos, und was verkauft wird
@@ -84,3 +84,11 @@ gemeinsam“, nie „7x gehört Exponential“.
 - [Gesprächspunkte: Open Source und Lizenzen](../fuersprecher/gespraechspunkte-open-source-und-lizenzierung.md)
 - [Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

@@ -208,7 +208,7 @@ history and the code itself.
 
 ### Who owns the code?
 
-The copyright notice of the kernel reads "Copyright (C) 1998 - 2026 7x & Exponential Foundation", next to "Copyright
+The copyright notice of the kernel reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.", next to "Copyright
 (C) 1999 - 2014 eZ Systems AS", and the code carries the work of hundreds of contributors over the years
 ([Who is 7x?, 7x and the Exponential Foundation](help/who-is-7x.md#7x-and-the-exponential-foundation),
 [Contributors and friends of the project](help/who-is-7x.md#contributors-and-friends-of-the-project)). New code

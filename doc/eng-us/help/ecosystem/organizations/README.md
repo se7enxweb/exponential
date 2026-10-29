@@ -34,7 +34,7 @@ type: help
 | Hosting companies and agencies | Run and build Exponential sites | [Hosting companies: start here](../../hosting/hosting-companies-start-here.md) |
 | Other open source projects | Provide code Exponential uses and credits | [Companion projects and other companies](companion-projects-and-other-companies.md) |
 
-The kernel's copyright notice reads "Copyright (C) 1998 - 2026 7x & Exponential Foundation" (`COPYRIGHT.md`).
+The kernel's copyright notice reads "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." (`COPYRIGHT.md`).
 
 ## Related pages
 

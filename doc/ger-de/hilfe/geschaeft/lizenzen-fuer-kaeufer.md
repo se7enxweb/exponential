@@ -179,9 +179,9 @@ wird.
 
 | Vermerk | Wo |
 |---|---|
-| „Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.“ | `COPYRIGHT.md` |
+| „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ | `COPYRIGHT.md` |
 | „Copyright (C) 1999 - 2014 eZ Systems AS. All rights reserved.“ | `COPYRIGHT.md` |
-| „Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors“ | die Dokumentation ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)) |
+| „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ (Teile von den Mitwirkenden von Exponential) | die Dokumentation ([Die Lizenz dieser Dokumentation](../../README-LIZENZ.md)) |
 
 „All rights reserved“ in einem Vermerk hebt die Erlaubnisse der GPL nicht auf; die Lizenz gewährt sie zusätzlich zum
 Copyright. Übernehmen Sie diese Vermerke genau, wenn Sie sie zitieren.
@@ -228,7 +228,7 @@ day“, innerhalb eines Werktags.
 | Können wir es überall hosten? | Ja, das Ausführen ist nicht eingeschränkt. | `LICENSE.md` Abschnitt 0 |
 | Gibt es eine Gewährleistung? | Nicht aus der Lizenz; holen Sie sie sich per Vertrag. | `LICENSE.md` Abschnitte 1, 11, 12 |
 | Dürfen wir die Hilfe in unser Handbuch übernehmen? | Ja, unter den Bedingungen der GNU FDL 1.3. | [Freie Dokumentation](../freie-dokumentation.md) |
-| Wer hält das Copyright? | 7x & Exponential Foundation, für 1999 bis 2014 zusammen mit eZ Systems AS. | `COPYRIGHT.md` |
+| Wer hält das Copyright? | Exponential Foundation and 7x, für 1999 bis 2014 zusammen mit eZ Systems AS. | `COPYRIGHT.md` |
 | Bleibt ein Beitrag von uns unserer? | Sie bleiben Urheber; Sie veröffentlichen den Beitrag unter der GPL v2 oder höher. | `CONTRIBUTING.md` |
 | Steht jeder Teil unter der GPL? | Der Kernel ja; prüfen Sie Erweiterungen und verwandte Produkte unter Info > Über. Velocity steht unter MIT. | [Die Seiten „Über“ und „Copyright“](../../funktionen/6.0/info-und-paketseiten.md) |
 
@@ -241,7 +241,7 @@ Software           Exponential <6.0.x>, package se7enxweb/exponential
 License            GNU General Public License v2 or any later version (GPL-2.0-or-later)
 License fee        None ("Using Exponential under the terms of the GNU GPL is free of charge")
 Commercial license Not available ("The Professional License is no longer available")
-Copyright          7x & Exponential Foundation (1998-2026); eZ Systems AS (1999-2014)
+Copyright          Exponential Copyright © 1998-2026 Exponential Foundation and 7x; eZ Systems AS (1999-2014)
 Documentation      GNU Free Documentation License 1.3 or later
 Extensions in use  <list from Info > About, with each license>
 Other components   <list from Info > About, Third-party software>
@@ -260,3 +260,11 @@ Notes              This summary is not legal advice. License texts: LICENSE.md, 
 - [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md), [Die Seiten „Über“ und „Copyright“](../../funktionen/6.0/info-und-paketseiten.md)
 - Die Lizenztexte im Web: [GNU GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), [GNU FDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

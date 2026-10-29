@@ -43,7 +43,7 @@ own; it sends nothing anywhere until a provider is configured ([Story: Exponenti
 ## The organizations
 
 **Who owns Exponential?**
-Nobody owns it in the sense of a proprietary product. 7x and the Exponential Foundation hold the copyright together; the
+Nobody owns it in the sense of a proprietary product. The Exponential Foundation and 7x hold the copyright together; the
 software is licensed under the GNU GPL ([Licenses explained for reporters](licenses-explained-for-reporters.md)).
 
 **Who is 7x?**

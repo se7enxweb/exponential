@@ -27,8 +27,8 @@ Quellcode. Nichts hier stammt aus dem Gedächtnis oder aus fremden Quellen. Ziti
 ## Woher sie kam
 
 Exponential setzt die Codebasis fort, die viele Jahre lang als eZ Publish veröffentlicht wurde. Dieses Produkt wurde von seinem Hersteller
-nach fast 18 Jahren eingestellt; der Copyright-Hinweis nennt noch beide Eigentümer des Codes, `Copyright (C) 1998 - 2026 7x & Exponential
-Foundation` und `Copyright (C) eZ Systems AS`, die Zeile oben in `lib/eztemplate/classes/eztemplate.php`. Die Template-Bibliothek ist während
+nach fast 18 Jahren eingestellt; der Copyright-Hinweis nennt noch beide Eigentümer des Codes, `Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.`
+und `Copyright (C) eZ Systems AS`, die Zeile oben in `lib/eztemplate/classes/eztemplate.php`. Die Template-Bibliothek ist während
 ihrer ganzen aufgezeichneten Geschichte Teil der Codebasis gewesen, und 7x hat sie weitergeführt, seit es das Projekt 2023 übernommen hat
 ([Wer ist 7x?](../wer-ist-7x.md)).
 

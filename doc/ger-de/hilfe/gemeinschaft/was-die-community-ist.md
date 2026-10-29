@@ -59,7 +59,7 @@ Community:
   „Finanzierung, Verbreitung, Support, Richtung, Bildung, Entwicklung, Förderung und Dokumentation“ des Projekts
   umfasst ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#kurz-gesagt)).
 
-Der Copyright-Hinweis des Kernels nennt beide: „Copyright (C) 1998 - 2026 7x & Exponential Foundation“.
+Der Copyright-Hinweis des Kernels nennt beide: „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“.
 
 ## Was die Community nicht ist
 

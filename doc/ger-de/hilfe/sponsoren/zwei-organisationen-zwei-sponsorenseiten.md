@@ -45,7 +45,7 @@ Sponsoring der Foundation finanziert „das Open-Source-Projekt selbst“.
 Die Foundation beschreibt, dass ihre Arbeit „durch die Arbeit von 7x geschieht, dem derzeit führenden Beitragenden,
 sowohl finanziell als auch bei Code, Entwicklung von Erweiterungen, neuen Funktionen, Infrastruktur, Wartung und vielem
 mehr, das an das Projekt zurückfließt“ (<https://foundation.exponential.earth/supporters>). Das Urheberrecht am Code
-liegt gemeinsam bei „7x & Exponential Foundation“ (COPYRIGHT.md). Wer eine der beiden finanziert, unterstützt
+liegt gemeinsam bei „Exponential Foundation and 7x“ (COPYRIGHT.md). Wer eine der beiden finanziert, unterstützt
 denselben Code, dieselben Releases und dieselbe Community.
 
 ## Verwandte Seiten

@@ -383,7 +383,7 @@ Auf einer Referenzinstallation gab derselbe Befehl mit `--dry-run` die Diffs von
 
 - `--create-extension` legt `extension/<ext>/` mit `settings/` an (und `settings/siteaccess/<sa>/`, wenn das Ziel es
   braucht), eine `extension.xml` und eine `ezinfo.php` (`<ext>Info`, `public static function info()`, Version 1.0.0,
-  License „GNU General Public License v2.0 (or any later version)“, Copyright 7x & Exponential Foundation). Der Name
+  License „GNU General Public License v2.0 (or any later version)“, Copyright Exponential Foundation and 7x). Der Name
   muss aus `a-z`, `0-9` und `_` bestehen. Die neuen Verzeichnisse und Dateien erhalten Besitzer und Gruppe von
   `extension/`. Eine neue Erweiterung hat keine Klassen, daher gibt es keine Autoloads zu erzeugen.
 - `--activate` fügt die Erweiterung über den Editor hinzu: zu `ActiveExtensions[]` in `global` bei einem

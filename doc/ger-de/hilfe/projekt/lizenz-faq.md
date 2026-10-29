@@ -29,8 +29,10 @@ Affero GPL Version 3, wie die Website anmerkt.
 
 ### Wer hält das Urheberrecht?
 
-Der Vermerk des Kernels nennt „7x & Exponential Foundation“ für die Jahre ab 1998 und eZ Systems AS für 1999 bis 2014
-(`COPYRIGHT.md`). Der Code enthält außerdem die Arbeit vieler Mitwirkender über die Jahre. Die FAQ der Website
+Der Vermerk des Kernels nennt die „Exponential Foundation and 7x“ für die Jahre ab 1998 und eZ Systems AS für 1999
+bis 2014 (`COPYRIGHT.md`): „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Seit dem
+29. Oktober 2026 halten die Foundation und 7x das Urheberrecht gemeinsam, die Foundation zuerst genannt; siehe
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md). Der Code enthält außerdem die Arbeit vieler Mitwirkender über die Jahre. Die FAQ der Website
 erklärt die Regel: Mitwirkende behalten das Urheberrecht an ihrem Code und erklären sich bereit, ihn unter derselben
 Lizenz wie Exponential zu veröffentlichen.
 

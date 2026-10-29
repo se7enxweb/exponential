@@ -63,7 +63,7 @@ Erzählen Sie die Zwei-Minuten-Fassung und fügen Sie je nach Zuhörer einen die
 | Aussage | Quelle |
 |---|---|
 | „ein professionelles PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität (Content-Management-System) ... seine bemerkenswerteste Eigenschaft ist sein vollständig anpassbares und erweiterbares Inhaltsmodell“ | [README](https://github.com/se7enxweb/exponential/blob/main/README.md), [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
-| Copyright „1998 - 2026 7x & Exponential Foundation“ und „1999 - 2014 eZ Systems AS“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
+| „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“ und „1999 - 2014 eZ Systems AS“ | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | eZ Publish wurde von seinem Hersteller nach fast achtzehn Jahren eingestellt | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | „7x hat 2023 die Leitung des Projekts übernommen ...“ | [Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt) |
 | 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, fünfzehn Releases; 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |

@@ -37,6 +37,7 @@ ausgegraut oder gar nicht angezeigt.
 |---|---|
 | [Wer ist 7x?](wer-ist-7x.md) | Das Unternehmen hinter Exponential kennenlernen: fast dreißig Jahre mit diesem Code, von den Jahren von eZ Publish bis Exponential 6, die Produkte, die Community und wie Sie mitmachen |
 | [Wer ist die Exponential Foundation?](wer-ist-die-exponential-foundation.md) | Die gemeinnützige Organisation kennenlernen, die das Open-Source-Projekt und die ganze Familie der Exponential-Produkte betreibt, und wozu sich das Projekt verpflichtet |
+| [Urheberrecht und Copyleft](urheberrecht-und-copyleft.md) | Wissen, wer das Copyright an Exponential hält (die Exponential Foundation und 7x gemeinsam, seit dem historischen Wechsel vom 29. Oktober 2026), warum die Foundation zuerst steht, was die GPL Ihnen erlaubt und wie der Hinweis in eigene Dateien und Erweiterungen kommt |
 | [Unsere Ziele](../ziele.md) | Wissen, warum es Exponential gibt, was schon eingebaut ist, damit Sie es nicht bauen müssen, warum es freie Software ist, wie 7x seinen Lebensunterhalt verdient und warum wir Sie einladen mitzumachen, mit ehrlichen Antworten auf Zweifel an unseren Absichten |
 | [Das Projekt Exponential](projekt/README.md) | Die FAQ, die Fragen zur Lizenz, die Roadmap, Unterstützung und die Community-Kanäle finden, und wie Sie bauen, beitragen und geben, so wie die Projektwebsite exponential.earth sie vorstellt |
 

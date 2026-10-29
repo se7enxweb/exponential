@@ -56,7 +56,7 @@ verlangen Sie eine Lizenz, die sie erfüllt, statt „Open Source“ als Etikett
 | Nutzung über ein Netzwerk | Der Besuch einer Website ist keine Weitergabe; nichts verpflichtet den Betreiber, den Code zu veröffentlichen, den er betreibt | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
 | Quellcode | Öffentliche Repositorys auf GitHub unter `se7enxweb`, installierbar mit Composer | [Den Code holen](../../../../installation/03-den-code-beschaffen.md) |
 | Dokumentation | GNU Free Documentation License 1.3 oder neuer | [Die Lizenz dieser Dokumentation](../../../../README-LIZENZ.md), [GFDL 1.3](https://www.gnu.org/licenses/fdl-1.3.html) |
-| Urheberrecht | „7x & Exponential Foundation“ und eZ Systems AS für 1999 bis 2014, dazu Mitwirkende; Mitwirkende am Kernel übertragen das Urheberrecht an ihren Beiträgen unter dem CLA an 7x ([CONTRIBUTING.md](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)) | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
+| Urheberrecht | „Exponential Foundation and 7x“ und eZ Systems AS für 1999 bis 2014, dazu Mitwirkende; Mitwirkende am Kernel übertragen das Urheberrecht an ihren Beiträgen unter dem CLA an 7x ([CONTRIBUTING.md](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)) | [Fragen zur Lizenzierung](../../../projekt/lizenz-faq.md) |
 | Lizenzen der Erweiterungen | Jede Erweiterung gibt ihre Lizenz in `ezinfo.php` und `extension.xml` an | [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md), [Lizenzen und Versionen der Pakete](../../../../funktionen/6.0/paketlizenzen-und-versionen.md) |
 | Dienste Dritter | Manche Erweiterungen rufen bei Aktivierung externe Dienste auf (Analyse, CAPTCHA, Anmeldung über soziale Netzwerke) | [Datenschutzstandards](../../../../standards/datenschutz.md) |
 
@@ -87,3 +87,11 @@ Siehe auch die Vorlage [Rechte an individuellen Entwicklungen](../ausschreibungs
 - [Ausschreibungsvorlage: Open-Source-Lizenz und Verfügbarkeit des Quellcodes](../ausschreibungsvorlagen/klausel-open-source-lizenz-und-quellcode.md)
 - [Anforderungen an Ausstieg und Portabilität](anforderungen-an-ausstieg-und-portabilitaet.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../../../urheberrecht-und-copyleft.md).

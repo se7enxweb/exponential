@@ -145,14 +145,14 @@ New PHP files start with a docblock that names the file's content, the copyright
 /**
  * File containing the expHelpAudience class.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 ```
 
 - Counted for this page in `kernel/` and `lib/` (1,862 PHP files): 1,454 carry the line
-  `Copyright (C) 1998 - 2026 7x & Exponential Foundation`, 1,818 carry `@package`, 1,041 still carry an inherited
+  `Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.`, 1,818 carry `@package`, 1,041 still carry an inherited
   `eZ Systems AS` copyright line next to it, and 1,058 still carry the placeholder `@version //autogentag//`.
 - The `@license` line has two common forms: "GNU General Public License v2.0 (or any later version)" (684 files) and
   the older "For full copyright and license information view LICENSE file distributed with this source code"
@@ -258,3 +258,11 @@ Unix line endings and UTF-8 by hand; phpcs checks the first two for PHP.
 - [Content Security Policy](../features/6.0/content-security-policy.md)
 - [PHP, PHP-FIG and Composer standards](php-and-composer.md)
 - [Testing and continuous integration](testing-and-ci.md)
+
+## Copyright and copyleft
+
+Since 29 October 2026 the copyright of Exponential is held by the Exponential Foundation and 7x together, the
+Foundation named first: "Exponential Copyright © 1998-2026 Exponential Foundation and 7x", in files
+"Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." Who holds it and why, what the
+GPL lets you do, the third-party notices that stay and how to write the notice in new files and extensions:
+[Copyright and copyleft](../help/copyright-and-copyleft.md).

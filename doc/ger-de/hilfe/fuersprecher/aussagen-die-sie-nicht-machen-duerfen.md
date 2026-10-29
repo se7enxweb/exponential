@@ -58,7 +58,7 @@ Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis (
 |---|---|
 | „Das große Unternehmen X nutzt es.“ | Nur mit schriftlicher Zustimmung dieser Organisation ([Eine Community-Fallstudie schreiben](eine-community-fallstudie-schreiben.md)) |
 | „Von eZ Systems oder Ibexa empfohlen“, „offizieller Nachfolger“ | „Steht in keiner Verbindung zu eZ Systems oder Ibexa“ ([Wer ist 7x?, Kurz gesagt](../wer-ist-7x.md#kurz-gesagt)) |
-| „7x gehört Exponential.“ | „7x leitet es; 7x und die Exponential Foundation halten das Copyright; die Lizenz ist die GPL.“ |
+| „7x gehört Exponential.“ | „7x leitet es; die Exponential Foundation und 7x halten das Copyright; die Lizenz ist die GPL.“ |
 | „Der Vorstand der Foundation ist ...“ | „Die Governance der Foundation ist in den Quellen nicht dokumentiert.“ |
 | „Wir“ (als wären Sie 7x oder die Foundation) | „Ich“, es sei denn, diese haben Sie gebeten, für sie zu sprechen ([Offenlegung](offenlegung-und-interessenkonflikte.md)) |
 

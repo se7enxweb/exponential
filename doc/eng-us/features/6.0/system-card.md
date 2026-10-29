@@ -222,7 +222,7 @@ its fully customizable and extendable content model. ...
 [Project]
 Code: GNU General Public License v2.0 (or any later version)
 Documentation: GNU Free Documentation License 1.3 (or any later version)
-Copyright: 1998 - 2026 7x & Exponential Foundation; 1999 - 2014 eZ Systems AS
+Copyright: Exponential Copyright © 1998-2026 Exponential Foundation and 7x; originally Copyright (C) 1999 - 2014 eZ Systems AS
 
 [Links]
 Website: https://exponential.earth

@@ -43,7 +43,7 @@ October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 
 
 | When | What happened | Source |
 |---|---|---|
-| 1998 | First year of the copyright notice of 7x and the Exponential Foundation | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
+| 1998 | First year of the copyright notice of the Exponential Foundation and 7x | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | 1999 | First year of the copyright of eZ Systems AS in the code base | COPYRIGHT.md |
 | 2001 | Brookins Consulting is founded | <https://graham.se7enx.com/7x>, cited on [Who is 7x?](../who-is-7x.md#from-brookins-consulting-to-7x-in-three-stages) |
 | 2 September 2002 | The oldest commit in the repository's history | `git log --reverse` |

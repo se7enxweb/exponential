@@ -105,9 +105,11 @@ ebenfalls Befehle; der Autoload-Generator lädt seine Klasse selbst, da er läuf
 
 ## Copyright und Header
 
-Jeder Copyright-Vermerk nennt zuerst „1998 - 2026 7x & Exponential Foundation“, über dem Vermerk des ursprünglichen
-Rechteinhabers, der erhalten bleibt, wie es die GPL verlangt. Einstiegspunktdateien tragen einen Header von 7x und der
-Exponential Foundation, wobei die Beschreibung erhalten bleibt; der ursprüngliche Header ist in die Klassendatei gewandert.
+Jeder Copyright-Vermerk nennt zuerst die eigenen Rechteinhaber des Projekts, über dem Vermerk des ursprünglichen
+Rechteinhabers, der erhalten bleibt, wie es die GPL verlangt; seit dem 29. Oktober 2026 lautet diese Zeile
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“
+([Urheberrecht und Copyleft](../../hilfe/urheberrecht-und-copyleft.md)). Einstiegspunktdateien tragen einen Header der
+Exponential Foundation und von 7x, wobei die Beschreibung erhalten bleibt; der ursprüngliche Header ist in die Klassendatei gewandert.
 
 ## Kompatibilität
 

@@ -46,8 +46,8 @@ kostenpflichtigen Newsletter, wenn Sie die Hinweise behalten und Ihren bearbeite
 ([Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md)).
 
 ```text
-Adapted from the Exponential documentation, "<page>", (C) 1998-2026 7x & Exponential Foundation and the
-Exponential contributors, GNU FDL 1.3 or later.
+Adapted from the Exponential documentation, "<page>", Exponential Copyright © 1998-2026 Exponential Foundation and 7x,
+and the Exponential contributors, GNU FDL 1.3 or later.
 ```
 
 ## Offenlegung

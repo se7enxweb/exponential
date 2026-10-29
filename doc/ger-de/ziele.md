@@ -218,7 +218,7 @@ Wir versprechen nicht mehr, als die Dokumente sagen. Wir zeigen Ihnen, woran Sie
 
 ### Wem gehört der Code?
 
-Der Copyright-Vermerk des Kernels lautet „Copyright (C) 1998 - 2026 7x & Exponential Foundation“, neben „Copyright (C)
+Der Copyright-Vermerk des Kernels lautet „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“, neben „Copyright (C)
 1999 - 2014 eZ Systems AS“, und der Code trägt die Arbeit von Hunderten von Mitwirkenden über die Jahre
 ([Wer ist 7x?, 7x und die Exponential Foundation](hilfe/wer-ist-7x.md#7x-und-die-exponential-foundation),
 [Mitwirkende und Freunde des Projekts](hilfe/wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)). Neue

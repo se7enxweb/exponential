@@ -32,7 +32,7 @@ most business numbers about Exponential are not published. Saying so plainly is 
 | Website | [se7enx.com](https://se7enx.com/) | [foundation.exponential.earth](https://foundation.exponential.earth/) |
 
 Source for the table: [Who is the Exponential Foundation?, The Foundation and 7x](../who-is-the-exponential-foundation.md#the-foundation-and-7x)
-and [Who is 7x?, In short](../who-is-7x.md#in-short). The copyright is held jointly: "7x & Exponential Foundation"
+and [Who is 7x?, In short](../who-is-7x.md#in-short). The copyright is held jointly: "Exponential Foundation and 7x"
 ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 
 ## The business model as documented

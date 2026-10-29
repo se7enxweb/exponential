@@ -49,7 +49,7 @@ page is <https://github.com/sponsors/exponentialcms>. See [Writing about funding
 
 Two organizations, one project: 7x is a company, the Foundation a nonprofit. The Foundation names 7x "the current
 leader in contributions both financial, code, extension development, new features, infrastructure, maintenance and
-much much more back to the project". Both hold the copyright together ("7x & Exponential Foundation"). Details:
+much much more back to the project". Both hold the copyright together ("Exponential Foundation and 7x"). Details:
 [Two organizations, one project](two-organizations-one-project.md).
 
 ## Names and spelling

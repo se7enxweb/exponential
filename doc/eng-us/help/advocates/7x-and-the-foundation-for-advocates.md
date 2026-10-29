@@ -35,7 +35,7 @@ one project. Getting them right builds trust; mixing them up confuses people. Ev
 Sources: [The Foundation and 7x](../who-is-the-exponential-foundation.md#the-foundation-and-7x),
 [Who is 7x?, In short](../who-is-7x.md#in-short).
 
-The copyright is shared: "Copyright (C) 1998 - 2026 7x & Exponential Foundation"
+The copyright is shared: "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved."
 ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 
 ## Sentences you can say

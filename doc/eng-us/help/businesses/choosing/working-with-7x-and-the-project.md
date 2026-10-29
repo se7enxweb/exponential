@@ -30,7 +30,7 @@ organization can take part. Every fact names its source; the long versions are
 | What it is | a company: "a responsive North American web design, support, development and website hosting company" (<https://se7enx.com/about>) | a nonprofit corporation founded on 19 March 2026 (<https://foundation.exponential.earth/>) |
 | Role | "7x took over leadership of the project and it's development, support, adoption and community growth in 2023" (`README.md`) | "This project is operated by the Exponential Foundation" (<https://exponential.earth/about/project>) |
 | History | formerly Brookins Consulting; working with this code base since the eZ Publish years ([Who is 7x?](../../who-is-7x.md#in-short)) | names 7x "the current leader in contributions" to the project |
-| Copyright | "7x & Exponential Foundation" together (`COPYRIGHT.md`) | |
+| Copyright | "Exponential Foundation and 7x" together (`COPYRIGHT.md`) | |
 
 "This project is not associated with the original eZ Publish software or its original developer, eZ Systems or
 Ibexa" (`README.md`, "Exponential Project Notice").

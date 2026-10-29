@@ -54,8 +54,8 @@ zu schicken. Fragen Sie das Projekt, bevor Sie diese Bilder wiederverwenden ([Pr
 
 ```text
 For images from this help (GFDL):
-  Screenshot: Exponential documentation, (C) 1998-2026 7x & Exponential Foundation and the Exponential
-  contributors, GNU FDL 1.3 (https://www.gnu.org/licenses/fdl-1.3.html)
+  Screenshot: Exponential documentation, Exponential Copyright © 1998-2026 Exponential Foundation and 7x,
+  and the Exponential contributors, GNU FDL 1.3 (https://www.gnu.org/licenses/fdl-1.3.html)
 
 For images from the press kit:
   Image: Exponential press kit

@@ -28,7 +28,7 @@ Lizenztexte, und Ihr Rechtsbeistand entscheidet, wie sie auf Ihr Bundle anzuwend
 |---|---|---|
 | Lizenz | GNU General Public License, Version 2, "or (at your option) any later version" (oder, nach Ihrer Wahl, jede spätere Version) | `COPYRIGHT.md`, `LICENSE.md` (der Text der GPL v2) |
 | Lizenzfeld in Composer | `"license": "GPL-2.0-or-later"` | `composer.json` |
-| Urheberrecht | "Copyright (C) 1998 - 2026 7x & Exponential Foundation" und "Copyright (C) 1999 - 2014 eZ Systems AS" | `COPYRIGHT.md`, `LICENSE` |
+| Urheberrecht | "Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved." und "Copyright (C) 1999 - 2014 eZ Systems AS" | `COPYRIGHT.md`, `LICENSE` |
 | Beiträge | "Mit Ihrem Beitrag stimmen Sie zu, dass Ihre Beiträge unter der GNU General Public License, Version 2.0 oder später, lizenziert werden" | `CONTRIBUTING.md`, zitiert unter [Lizenzierung für Partner](../partner/lizenzierung-fuer-partner.md) |
 | Erweiterungen | jede hat ihre eigene; die des Projekts stehen unter der GPL | `extension.xml`, `ezinfo.php` und Lizenzdatei jeder Erweiterung |
 
@@ -100,3 +100,11 @@ und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-We
 Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
 [Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
 <!-- exp-partner-block:end -->
+
+## Urheberrecht und Copyleft
+
+Seit dem 29. Oktober 2026 halten die Exponential Foundation und 7x das Copyright an Exponential gemeinsam, die
+Foundation zuerst genannt: „Exponential Copyright © 1998-2026 Exponential Foundation and 7x“, in Dateien
+„Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ Wer es hält und warum, was die
+GPL Ihnen erlaubt, welche Hinweise Dritter bleiben und wie der Hinweis in neue Dateien und Erweiterungen kommt:
+[Urheberrecht und Copyleft](../urheberrecht-und-copyleft.md).

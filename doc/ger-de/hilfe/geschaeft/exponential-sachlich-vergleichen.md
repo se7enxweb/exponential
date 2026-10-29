@@ -51,7 +51,7 @@ Wahl ist.
 | Beiträge bleiben frei | „Alle Änderungen am Projekt werden ebenfalls unter derselben Lizenz GPLv2 oder später veröffentlicht“ | `CONTRIBUTING.md` |
 | Lizenz der Dokumentation | GNU Free Documentation License 1.3 oder später | [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md), [Freie Dokumentation](../freie-dokumentation.md) |
 | Quellcode und Historie | Die vollständige Historie ist erhalten, zurück bis zum ältesten Commit vom 2. September 2002; 27.242 Commits auf `main` am 18. Oktober 2026 | [Wer ist 7x?, Die Jahre von eZ Publish](../wer-ist-7x.md#die-jahre-von-ez-publish-1999-bis-2021) |
-| Herkunft | Urheberrechtsvermerk „1998 - 2026 7x & Exponential Foundation“ neben „1999 - 2014 eZ Systems AS“ | `COPYRIGHT.md` |
+| Herkunft | Urheberrechtsvermerk „1998 - 2026 Exponential Foundation and 7x“ neben „1999 - 2014 eZ Systems AS“ | `COPYRIGHT.md` |
 | Selbst-Hosting | Läuft auf „fast jedem [Betriebssystem], auf dem PHP 8.0 oder später läuft“, in vier dokumentierten Stufen | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Datenbanken | „1. SQLite 3 (Standard) · 2. PostgreSQL · 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL“ | [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
 | Webserver | Exponential Velocity (empfohlen), Apache, nginx, FrankenPHP, LiteSpeed, Caddy, IIS, lighttpd und weitere | [Unterstützte Betriebssysteme, Webserver](../betriebssystemunterstuetzung.md#webserver), `README.md` |
